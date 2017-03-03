@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shepard Class Controller-->
+        <scene sceneID="XFS-Ed-snS">
+            <objects>
+                <viewController id="FE8-Fz-nu7" customClass="ShepardClassController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CTG-ij-bLR"/>
+                        <viewControllerLayoutGuide type="bottom" id="BCg-J2-dR4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="343-25-6Qo">
+                        <rect key="frame" x="0.0" y="44" width="600" height="956"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEk-E8-Mxj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="956"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSj-In-syH" userLabel="Interior">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="7228"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8LF-94-JEJ" userLabel="Values">
+                                                <rect key="frame" x="0.0" y="10" width="600" height="7198"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaD-Rh-2xJ" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Soldier"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5G-bE-aiw" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="1000" width="600" height="33"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text">
+                                                                <string key="value">Soldiers can specialize in any weapon, and are the only class with access to assault rifles. They begin with medium armor, and are the only class with access to heavy armor.
+
+Soldiers have combat abilities, but no biotic and tech abilities.
+
+The Soldier class talent increases health, and grants a small amount of health regeneration.</string>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-Yw-LAy" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="1033" width="600" height="1000"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Engineer"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUO-hf-OEM" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="2033" width="600" height="33"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text">
+                                                                <string key="value">Engineers can only equip light armor. They have limited weapon choices.
+
+Engineers have tech abilities, but no combat or biotic abilities.
+
+The Engineer class talent reduces recharge time for tech abilities, and increases tech protection.</string>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fal-wR-vho" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="2066" width="600" height="1000"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Adept"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c19-41-8IL" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="3066" width="600" height="33"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text">
+                                                                <string key="value">Adepts can only equip light armor. They have limited weapon choices.
+
+Adepts have biotic abilities, but no combat or tech abilities.
+
+The Adept class talent reduces recharge time for biotic abilities, and increases biotic protection.</string>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSy-ea-687" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="3099" width="600" height="1000"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Infiltrator"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6O2-F9-DTH" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="4099" width="600" height="33"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text">
+                                                                <string key="value">Infiltrators can gain access to medium armor. They have limited weapon choices, but have access to sniper rifles.
+
+Infiltrators have a mixture of combat and tech abilities, but no biotic abilities. 
+
+The Infiltrator class talent reduces weapon heat buildup, and increases damage for proximity mine explosions.</string>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaL-2S-LFW" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="4132" width="600" height="1000"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Sentinel"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Gl-eZ-NU4" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="5132" width="600" height="33"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text">
+                                                                <string key="value">Sentinels can only equip light armor. They have limited weapon choices.
+
+Sentinels have a mixture of biotic and tech abilities, but no combat abilities. 
+
+The Sentinel class reduces cooldown time on abilities and small improvement to weapon accuracy/damage.</string>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2H4-kq-bed" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="5165" width="600" height="1000"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Vanguard"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrK-ej-pWs" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="6165" width="600" height="33"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text">
+                                                                <string key="value">Vanguards can gain access to medium armor. They have limited weapon choices, but have access to shotguns.
+
+Vanguards have a mixture of combat and biotic abilities, but no tech abilities. 
+
+The Vanguard class talent increases weapon damage, and increases biotic protection.</string>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="Wvl-Rz-f4f" userLabel="Filler">
+                                                        <rect key="frame" x="0.0" y="6198" width="600" height="1000"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="100" id="HTq-TE-pI2"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="8LF-94-JEJ" secondAttribute="bottom" priority="900" constant="20" id="0Tt-Xw-Jwb"/>
+                                            <constraint firstItem="8LF-94-JEJ" firstAttribute="leading" secondItem="DSj-In-syH" secondAttribute="leading" id="Qiu-hQ-JMd"/>
+                                            <constraint firstAttribute="trailing" secondItem="8LF-94-JEJ" secondAttribute="trailing" id="fPm-eH-W8X"/>
+                                            <constraint firstItem="8LF-94-JEJ" firstAttribute="top" secondItem="DSj-In-syH" secondAttribute="top" priority="900" constant="10" id="ido-yn-O6C"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DSj-In-syH" secondAttribute="trailing" id="Chc-Yj-hNg"/>
+                                    <constraint firstItem="DSj-In-syH" firstAttribute="top" secondItem="QEk-E8-Mxj" secondAttribute="top" id="RTM-yG-b5e"/>
+                                    <constraint firstAttribute="bottom" secondItem="DSj-In-syH" secondAttribute="bottom" id="eIh-lj-EWe"/>
+                                    <constraint firstItem="DSj-In-syH" firstAttribute="height" relation="greaterThanOrEqual" secondItem="QEk-E8-Mxj" secondAttribute="height" id="eXb-31-Sx3"/>
+                                    <constraint firstItem="DSj-In-syH" firstAttribute="width" secondItem="QEk-E8-Mxj" secondAttribute="width" id="ekV-Td-4IQ"/>
+                                    <constraint firstItem="DSj-In-syH" firstAttribute="leading" secondItem="QEk-E8-Mxj" secondAttribute="leading" id="uWK-kc-8Nd"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DSj-In-syH" firstAttribute="height" secondItem="343-25-6Qo" secondAttribute="height" priority="100" id="Ddi-2F-Utg"/>
+                            <constraint firstAttribute="trailing" secondItem="QEk-E8-Mxj" secondAttribute="trailing" id="IfD-J5-BXp"/>
+                            <constraint firstItem="Wvl-Rz-f4f" firstAttribute="height" secondItem="343-25-6Qo" secondAttribute="height" priority="100" id="LI3-7f-yaE"/>
+                            <constraint firstItem="QEk-E8-Mxj" firstAttribute="top" secondItem="343-25-6Qo" secondAttribute="top" id="fEf-Ra-ZPf"/>
+                            <constraint firstAttribute="bottom" secondItem="QEk-E8-Mxj" secondAttribute="bottom" id="hAe-Rt-Nof"/>
+                            <constraint firstItem="QEk-E8-Mxj" firstAttribute="leading" secondItem="343-25-6Qo" secondAttribute="leading" id="vvV-ow-tq9"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1000"/>
+                    <connections>
+                        <outlet property="adeptRadio" destination="fal-wR-vho" id="osk-dA-c1X"/>
+                        <outlet property="adeptSideEffectsView" destination="c19-41-8IL" id="DAC-Ez-elU"/>
+                        <outlet property="engineerRadio" destination="nMs-Yw-LAy" id="cY6-iJ-6j2"/>
+                        <outlet property="engineerSideEffectsView" destination="JUO-hf-OEM" id="lmi-Jf-6IU"/>
+                        <outlet property="infiltratorRadio" destination="KSy-ea-687" id="zIG-ML-maL"/>
+                        <outlet property="infiltratorSideEffectsView" destination="6O2-F9-DTH" id="NnB-qi-vQg"/>
+                        <outlet property="sentinelRadio" destination="gaL-2S-LFW" id="9zS-qe-TJ2"/>
+                        <outlet property="sentinelSideEffectsView" destination="4Gl-eZ-NU4" id="bbM-9n-lHd"/>
+                        <outlet property="soldierRadio" destination="TaD-Rh-2xJ" id="OnT-3U-xLm"/>
+                        <outlet property="soldierSideEffectsView" destination="C5G-bE-aiw" id="mTJ-an-sbM"/>
+                        <outlet property="vanguardRadio" destination="2H4-kq-bed" id="10c-9p-465"/>
+                        <outlet property="vanguardSideEffectsView" destination="UrK-ej-pWs" id="pvV-rR-Hsc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5N-bv-Yi9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="271"/>
+        </scene>
+    </scenes>
+</document>

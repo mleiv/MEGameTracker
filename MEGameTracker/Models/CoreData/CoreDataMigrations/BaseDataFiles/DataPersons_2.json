@@ -1,0 +1,840 @@
+{
+	"persons": [{
+		"x-comment-x": "-----------------------SQUAD-------------------------",
+		"id": "S2.Grunt",
+		"name": "Grunt",
+		"description": "Grunt was created as the perfect Krogan specimen on Korlus by Warlord Okeer. Implanted with memories, but is still inexperienced and confused about what it means to be Krogan, he must complete his Rite of Passage or lose his sanity to Krogan Blood Rage.",
+		"personType": "Squad",
+		"race": "Krogan",
+		"profession": "Beserker",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Grunt.png",
+		"voiceActor": "Steven Blum",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Grunt"],
+		"decisionIds": ["D2.GruntLoyalty", "D2.Grunt"],
+		"relatedMissionIds": ["A2.D.Grunt", "A2.L.Grunt"],
+		"gameVersionData": {
+			"3": {
+				"name": "Urdnot Grunt",
+				"personType": "Other",
+				"description": "Grunt (or [megametracker://person?id=O3.Dagg], if Grunt died in Game 2) has been put in charge of [Aralakh Company|https://masseffect.wikia.com/wiki/Aralakh_Company#Aralakh_Company]. He will meet up with Shepard on [megametracker://maplocation?id=G.Att.Nin.Mul.Utukku&type=Map]. It is possible to keep Grunt and the [Rachni Queen||megametracker://person?id=E1.RachniQueen] alive, but it relies on decisions in Game 2."
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "S2.Jack",
+		"name": "Jack",
+		"description": "Also known as Subject Zero, Jack was created by Cerberus on a since-destroyed facility on Pragia. A dangerously powerful but unbalanced biotic, she was imprisoned on Purgatory for a litany of crimes. ",
+		"personType": "Squad",
+		"race": "Human",
+		"profession": "Biotic",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Jack.png",
+		"voiceActor": "Courtenay Taylor",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jack"],
+		"decisionIds": ["D2.JackLoyalty", "D2.LoveJack", "D2.MirandaJack", "D2.Jack", "D3.GrissomAcademy", "D3.LoveJack"],
+		"relatedMissionIds": ["A2.D.Jack", "A2.L.Jack", "A3.GrissomAcademy"],
+        "sideEffects": [
+            "If Shepard fails to save Jack at Grissom Academy, Shepard will face her as a Phantom in the attack on Cerberus Headquarters: [YouTube|https://www.youtube.com/watch?v=yPJj8efNskM]."
+        ],
+		"gameVersionData": {
+			"2": {
+				"isMaleLoveInterest": 1,
+				"loveInterestDecisionId": "D2.LoveJack"
+			},
+			"3": {
+				"personType": "Other",
+				"isMaleLoveInterest": 1,
+				"description": "Also known as Subject Zero, Jack was created by Cerberus on a since-destroyed facility on Pragia. A dangerously powerful but unbalanced biotic, she was imprisoned on Purgatory for a litany of crimes. \n\nJack is now teaching a group of young biotics at [megametracker://maplocation?id=G.Ear.Pet.Vet.Grissom&type=Map], currently threatened by Cerberus (Kahlee Sanders and Jason Prangley fill this role if Jack died in Game 2).",
+				"loveInterestDecisionId": "D3.LoveJack"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "S2.Jacob",
+		"name": "Jacob Taylor",
+		"description": "A former Alliance Corsair, Jacob became disillusioned with the bureaucracy and joined Cerberus to better serve humanity. He was made head of security by [Miranda|megametracker://person?id=S2.Miranda] on Lazarus Research Station, where he met Shepard.",
+		"personType": "Squad",
+		"race": "Human",
+		"profession": "Operative",
+		"organization": "Cerberus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Jacob.png",
+		"voiceActor": "Adam Lazarre-White",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jacob_Taylor"],
+		"relatedMissionIds": ["A2.L.Jacob", "A3.ExCerberusScientists"],
+		"decisionIds": ["D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3", "D2.JacobLoyalty", "D2.LoveJacob", "D2.Jacob"],
+		"sideEffects": [
+			"If Jacob survives Game 2, he leaves Cerberus and can be found defending the ex-Cerberus scientists hiding on Gellix.\n\n After rescuing the scientists, Jacob reveals to Shepard at Huerta Memorial Hospital that [megametracker://person?id=O3.Brynn] is pregnant with their child and she wants to name it after Shepard. Jacob does not."
+		],
+		"gameVersionData": {
+			"2": {
+				"isFemaleLoveInterest": 1,
+				"loveInterestDecisionId": "D2.LoveJacob"
+			},
+			"3": {
+				"personType": "Associate"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "S2.Kasumi",
+		"name": "Kasumi Goto",
+		"description": "A playful but unscrupulous ally, Kasumi is available from Stolen Memory (DLC). She is seeking revenge for the murder of her partner and lover, Keiji, and wants to recover his graybox, the digital store of his memories which also contains incriminating information against the Alliance.",
+		"personType": "Squad",
+		"race": "Human",
+		"profession": "Master Thief",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Kasumi.png",
+		"voiceActor": "Kym Hoy",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kasumi_Goto"],
+		"relatedMissionIds": ["A2.L.Kasumi"],
+		"decisionIds": ["D2.Graybox", "D2.KasumiLoyalty", "D2.Kasumi"],
+		"gameVersionData": {
+			"3": {
+				"personType": "Other",
+				"description": "Kasumi assists Shepard and Spectre Jondum Bau in uncovering an indoctrinated Hanar. If Kasumi kept Keiji's graybox in Game 2 and Shepard succeeds in synthesis, Kasumi and Keiji are shown together again.",
+                "photo": "http://urdnot.com/megametracker/app/images/Game3/3Kasumi.png"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "S2.Legion",
+		"name": "Legion",
+		"description": "A mobile geth platform, Legion was engineered to interact with organics outside the geth territory beyond the Perseus Veil. Shepard first encounters it on the Derelict Reaper. Its group of geth oppose the \"heretics\" who have sided with the Reapers and he allies with Shepard to prevent the heretics from infecting all geth with a virus to drive them to side with the Reapers. Legion and [Tali|megametracker://person?id=S1.Tali] are enemies, as the geth and Quarians have been at war for 300 years.\n\n If Legion does not survive Game 2 (or Shepard in new to Game 3), Legion's role is filled by a similar geth simply called Geth VI.",
+		"personType": "Squad",
+		"race": "Geth",
+		"profession": "Infiltrator",
+		"organization": "Geth Consensus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Legion.png",
+		"voiceActor": "D. C. Douglas",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Legion"],
+		"relatedMissionIds": ["M2.ReaperIFF", "A2.L.Legion"],
+		"decisionIds": ["D2.LegionCerberus", "D2.TaliLegion", "D2.LegionLoyalty", "D2.Heretics", "D2.Legion"],
+        "sideEffects": [
+            "If you give Legion to Cerberus, it will be part of the enemy forces in [megametracker://mission?id=M3.3.CerberusHQ]: [YouTube|https://www.youtube.com/watch?v=Eln_8EN6Bz0]."
+        ],
+		"gameVersionData": {
+			"3": {
+				"personType": "Associate"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "S2.Miranda",
+		"name": "Miranda Lawson",
+		"description": "Created solely from the altered genetic code of the wealthy Henry Lawson, Miranda was raised in luxury with every enhancement to make her a superior human, but with no freedom. She escaped from her father to Cerberus, where she is an exacting and perfectly loyal agent of the [Illusive Man|megametracker://person?id=E2.IllusiveMan]. She spearheads [The Lazarus Project|https://masseffect.wikia.com/wiki/Lazarus_Project] to resurrect Shepard.",
+		"personType": "Squad",
+		"race": "Human",
+		"profession": "Officer",
+		"organization": "Cerberus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Miranda.png",
+		"voiceActor": "Yvonne Strahovski",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Miranda_Lawson"],
+		"relatedMissionIds": ["A2.L.Miranda", "M3.2.Horizon"],
+		"decisionIds": ["D2.MirandaLoyalty", "D2.LoveMiranda", "D2.MirandaJack", "D2.Miranda", "D3.LoveMiranda", "D3.Miranda"],
+        "sideEffects": [
+            "If you fail to complete the required actions for her survival, Miranda will die trying to save her sister Oriana during [megametracker://mission?id=M3.2.Horizon]: [YouTube|https://www.youtube.com/watch?v=Mn6KmahkCA0]."
+        ],
+		"gameVersionData": {
+			"2": {
+				"isMaleLoveInterest": 1,
+				"loveInterestDecisionId": "D2.LoveMiranda"
+			},
+			"3": {
+				"organization": null,
+				"personType": "Associate",
+				"isMaleLoveInterest": 1,
+				"description": "Created solely from the altered genetic code of the wealthy Henry Lawson, Miranda was raised in luxury with every enhancement to make her a superior human, but with no freedom. She escaped from her father to Cerberus. She spearheaded the Lazarus Project to resurrect Shepard in Game 2. \n\nMiranda is now on the run from Cerberus. Shepard will encounter her on the [Citadel|megametracker://maplocation?id=G.C&type=Map] and during the mission to Sanctuary on [megametracker://maplocation?id=G.Att.Sha.Ier.Horizon&type=Map].",
+				"loveInterestDecisionId": "D3.LoveMiranda"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "S2.Mordin",
+		"name": "Mordin Solus",
+		"description": "A scientist and a former operative of the Special Tasks Group, where he performed reconnaissance and participated in the modification of the Genophage, Mordin is a complicated a mysterious ally who is equally comfortable shooting or healing as the circumstances require.",
+		"personType": "Squad",
+		"race": "Salarian",
+		"profession": "Scientist",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Mordin.png",
+		"voiceActor": "Michael Beattie",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mordin_Solus"],
+		"relatedMissionIds": ["A2.D.Mordin", "A2.L.Mordin", "M3.1.SurKesh", "M3.1.Tuchanka"],
+		"decisionIds": ["D1.Wrex", "D2.MordinLoyalty", "D2.Mordin", "D2.MaelonsData", "D3.Eve", "D3.Mordin"],
+		"sideEffects": [
+			"There are many possible outcomes for Mordin in Game 3, depending on choices throughout all the prior games. The only way to save him is to kill Wrex and Eve and the Genophage cure ([YouTube|https://www.youtube.com/watch?v=RKve3voj19A]). If you make all the right choices to save Wrex and Eve and then Renegade Mordin until the very last option, he will apologize for creating the Genophage and die a noble death releasing the cure, and we will all cry buckets of tears."
+		],
+		"gameVersionData": {
+			"3": {
+				"personType": "Associate",
+                "photo": "http://urdnot.com/megametracker/app/images/Game3/3Mordin.png"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "S2.Samara",
+		"name": "Samara",
+		"description": "Samara has sworn as a Justicar to hunt and kill her dangerous Ardat-Yakshi daughter [Morinth|person?id=E2.Morinth], who has evaded her for 400 years and left behind a long trail of bodies. Samara swears fealty to Shepard in order to join his crew without violating her Justicar oaths. ",
+		"personType": "Squad",
+		"race": "Asari",
+		"profession": "Justicar",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Samara.png",
+		"voiceActor": "Maggie Baird",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Samara"],
+		"decisionIds": ["D2.SamaraMorinth", "D2.SamaraLoyalty", "D2.LoveSamara", "D2.Samara", "D3.LoveSamara"],
+		"relatedMissionIds": ["A2.D.Samara", "A2.L.Samara"],
+		"gameVersionData": {
+			"2": {
+				"isMaleLoveInterest": 1,
+				"isFemaleLoveInterest": 1,
+				"loveInterestDecisionId": "D2.LoveSamara"
+			},
+			"3": {
+				"personType": "Associate",
+				"isMaleLoveInterest": 1,
+				"isFemaleLoveInterest": 1,
+				"description": "Shepard can team up with Samara on [megametracker://maplocation?id=G.OuC.Nim.Mes.Lesuss&type=Map], where Reaper forces are assaulting an Ardat-Yakshi monastery.  If she lives through the mission, Shepard can recruit her to the team. If Shepard is paragon and romanced Samara in Game 2, he can do so in Game 3",
+				"loveInterestDecisionId": "D3.LoveSamara"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "S2.Thane",
+		"name": "Thane Krios",
+		"description": "Raised by the hanar to be an assassin, Thane fell in love and began a family, but his wife was murdered in retribution for one of his assignments. He left his young son to pursue her killers, a decision he regrets now. He is dying slowly of Kepral's Syndrome, a common pneumonia-like illness the desert drell acquire from time on the humid hanar homeworld.",
+		"personType": "Squad",
+		"race": "Drell",
+		"profession": "Assassin",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Thane.png",
+		"voiceActor": "Keythe Farley",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Thane_Krios"],
+		"decisionIds": ["D2.ThaneLoyalty", "D2.LoveThane", "D2.Thane", "D3.LoveThane"],
+		"relatedMissionIds": ["A2.D.Thane", "A2.L.Thane"],
+		"gameVersionData": {
+			"2": {
+				"isFemaleLoveInterest": 1,
+				"loveInterestDecisionId": "D2.LoveThane"
+			},
+			"3": {
+				"personType": "Associate",
+				"isFemaleLoveInterest": 1,
+				"description": "Raised by the hanar to be an assassin, Thane fell in love and began a family, but his wife was murdered in retribution for one of his assignments. He left his young son to pursue her killers, a decision he regretted, but now he and his son are on better terms. He is dying of Kepral's Syndrome, a common pneumonia-like illness the desert drell acquire from time on the humid hanar homeworld.",
+                "photo": "http://urdnot.com/megametracker/app/images/Game3/3Thane.png",
+				"loveInterestDecisionId": "D3.LoveThane",
+				"sideEffects": ["If Shepard romances no one else in Game 3, she will get to speak to Thane's spirit at the end of the Citadel DLC pack."]
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "S2.Zaeed",
+		"name": "Zaeed Massani",
+		"description": "One of the founders of the Blue Suns, Zaeed was driven out and nearly killed by his partner, [megametracker://person?id=E2.Vido].",
+		"personType": "Squad",
+		"race": "Human",
+		"profession": "Mercenary",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Zaeed.png",
+		"voiceActor": "Robin Sachs",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Zaeed_Massani"],
+		"decisionIds": ["D2.ZaeedLoyalty", "D2.Zaeed"],
+		"relatedMissionIds": ["A2.L.Zaeed"],
+		"gameVersionData": {
+			"3": {
+				"personType": "Associate",
+				"description": "Shepard runs into Zaaed during a mission to save the volus ambassador, Din Korlack.",
+				"sideEffects": ["If Shepard failed to earn Zaeed's loyalty in Game 2, but he survived the Collector Base mission, he will die in Game 3 saving Korlack."],
+                "photo": "http://urdnot.com/megametracker/app/images/Game3/3Zaeed.png"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------ENEMIES-------------------------",
+		"id": "E2.CollectorGeneral",
+		"name": "Collector General",
+		"description": "A servant of the Reapers, the Collector General commands Reaper forces on the Collector Base, voicing Harbinger's taunts to Shepard until the base is destroyed, when the poor indoctrinated alien is released just before its demise.",
+		"personType": "Enemy",
+		"race": "Collector",
+		"profession": "Controller",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2CollectorGeneral.png",
+		"voiceActor": "Keith Szarabajka",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Collector_General"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.Enyala",
+		"name": "Captain Enyala",
+		"description": "Hired by [Miranda's|megametracker://person?id=S2.Miranda] father to recapture Miranda's sister [Oriana|megametracker://id=O2.Oriana].",
+		"personType": "Enemy",
+		"race": "Asari",
+		"profession": "Commando",
+		"organization": "Eclipse",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Enyala.png",
+		"voiceActor": "TODO",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Captain_Enyala"],
+		"relatedMissionIds": ["A2.L.Miranda"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.Garm",
+		"name": "Garm",
+		"description": "After Archangel tries to assasinate him when he was alone, Garm allies with the other two mercenary groups, led by [megametracker://person?id=E2.Tarak] and [megametracker://person?id=E2.Jaroth],  in the attack against Archangel.",
+		"personType": "Enemy",
+		"race": "Krogan",
+		"profession": "Leader",
+		"organization": "Blood Pack",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Garm.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Garm"],
+		"relatedMissionIds": ["A2.D.Garrus"],
+		"voiceActor": "Peter Giles",
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.Guld",
+		"name": "Weyrloc Guld",
+		"description": "Leader of Clan Weyrloc, Guld is convinced it is his destiny to cure the genophage because he has two surviving children (a rare thing among the krogan), and he seeks out [megametracker://person?id=O2.Maelon] to do so, at any cost.",
+		"personType": "Enemy",
+		"race": "Krogan",
+		"profession": "Chief",
+		"organization": "Clan Weyrloc",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Guld.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Chief_Weyrloc_Guld"],
+		"relatedMissionIds": ["A2.L.Mordin"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.Harbinger",
+		"name": "Harbinger",
+		"description": "Waiting in dark space with the rest of the Reaper fleet, Harbinger remotely controls indoctrinated organics loyal to the Reapers, manipulating galactic events to further Reaper goals. He seems to have a particular interest in Commander Shepard.",
+		"personType": "Enemy",
+		"race": "Reaper",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Harbinger.png",
+		"voiceActor": "Keith Szarabajka",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Harbinger"],
+		"gameVersionData": {
+			"2": {},
+			"3": {
+				"description": "Harbinger leads the Reaper attack on Earth and reappears in the final battle there."
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "E2.Hock",
+		"name": "Donovan Hock",
+		"description": "A wealthy and ruthless arms dealer and art collector, Hock lives in a spacious mansion with a beautiful view on the planet Bekenstein. Kasumi Goto enlists Shepard's help to steal from Hock after Hock murders he former partner, Keiji Okuda, for his graybox.",
+		"personType": "Enemy",
+		"race": "Human",
+		"profession": "Arms Dealer",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Hock.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Donovan_Hock"],
+		"voiceActor": "John Ullyatt",
+		"relatedMissionIds": ["A2.L.Kasumi"],
+		"sideEffects": ["If Shepard does not fight through Kasumi's loyalty mission, Hock lives to Game 3, where he succeeds in decrypting the graybox and is paid handsomely by the salarian Spectre Jondum Bau for its secrets."],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.IllusiveMan",
+		"name": "The Illusive Man",
+		"description": "Having used his extensive influence and assets to recover and revive Shepard, the Illusive Man expects to be able to use him to further Cerberus' agenda. He tolerates and respects Shepard's independence... to a point.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Leader",
+		"organization": "Cerberus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2IllusiveMan.png",
+		"voiceActor": "Martin Sheen",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illusive_Man"],
+		"gameVersionData": {
+			"3": {
+				"description": "",
+				"personType": "Enemy",
+                "photo": "http://urdnot.com/megametracker/app/images/Game3/3IllusiveMan.png"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "E2.Jaroth",
+		"name": "Jaroth",
+		"description": "After Archangel assasinated his brother, Jaroth allies with the other two mercenary groups, led by [megametracker://person?id=E2.Tarak] and [megametracker://person?id=E2.Garm], in the attack against Archangel.",
+		"personType": "Enemy",
+		"race": "Salarian",
+		"profession": "Leader",
+		"organization": "Eclipse",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Jaroth.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jaroth"],
+		"relatedMissionIds": ["A2.D.Garrus"],
+		"voiceActor": "Dwight Schultz",
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.Jedore",
+		"name": "Jedore",
+		"description": "The ranting voice on the loudspeakers throughout your mission on Korlus, Jedore is an unstable, ruthless, insecure leader. She poured money into [Okeer's|megametracker://person?id=O2.Okeer] work when he promised her an army of krogan, but when she realizes he has other goals, she attempts to destroy him and all his cloned children.",
+		"personType": "Enemy",
+		"race": "Human",
+		"profession": "Commander",
+		"organization": "Blue Suns",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Jedore.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jedore"],
+		"relatedMissionIds": ["A2.D.Grunt"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.Kuril",
+		"name": "Kuril",
+		"description": "Warden Kuril runs the for-profit incarceration ship Purgatory. He regularly blackmails planets for casg with the threat of prisoner release, and brutalized the inmates without any remorse.",
+		"personType": "Enemy",
+		"race": "Turian",
+		"profession": "Warden",
+		"organization": "Blue Suns",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Kuril.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kuril"],
+		"relatedMissionIds": ["A2.D.Jack"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.Morinth",
+		"name": "Morinth",
+		"description": "[Samara's|megametracker://person?id=S2.Samara] Ardat-Yakshi daughter, Morinth is the clever and dangerous. She has spent the last 400 years refining her game of hunting and killing her mates, pursued by Samara. When Shepard defeats her, she proposes killing Samara instead and she will assume her mother's place in his crew.",
+		"personType": "Enemy",
+		"race": "Asari",
+		"profession": "Ardat-Yakshi",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Morinth.png",
+		"voiceActor": "Natalia Cigliuti",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Morinth"],
+		"decisionIds": ["D2.SamaraMorinth", "D2.LoveMorinth", "D2.Samara"],
+        "sideEffects": [
+            "If Shepard kept Morinth alive in Game 2, she will appear as a Banshee in the final battle on Earth (but she looks just like other Banshees, it's nothing special)."
+        ],
+		"gameVersionData": {
+			"2": {
+				"isMaleLoveInterest": 1,
+				"isFemaleLoveInterest": 1,
+				"loveInterestDecisionId": "D2.LoveMorinth"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+        }, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.ShadowBroker",
+		"name": "The Shadow Broker",
+		"description": "After finally confronting him in Lair of The Shadow Broker (DLC), [Liara|megametracker://person?id=S1.Liara] identifies the Shadow Broker as a a pre-spaceflight race called the Yahg, only recently discovered, indicating he must have usurped and replaced the much older, prior Shadow Broker. He has allied himself with Harbinger.",
+		"personType": "Enemy",
+		"race": "Yahg",
+		"profession": "Information Broker",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2ShadowBroker.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Shadow_Broker"],
+		"voiceActor": "Steve Blum",
+		"gameVersionData": {
+			"3": {
+				"description": "[Liara|megametracker://person?id=S1.Liara] takes over as the Shadow Broker in Game 3."
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "E2.Tarak",
+		"name": "Tarak",
+		"description": "After Archangel tries to assasinate him in his own home, Tarak allies with the other two mercenary groups, led by [megametracker://person?id=E2.Jaroth] and [megametracker://person?id=E2.Garm],  in the attack against Archangel. He is effectively in charge of the group, but he is unstable and paranoid.",
+		"personType": "Enemy",
+		"race": "Batarian",
+		"profession": "Leader",
+		"organization": "Blue Suns",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Tarak.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tarak"],
+		"relatedMissionIds": ["A2.D.Garrus"],
+		"voiceActor": "Dave Fennoy",
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.Uvenk",
+		"name": "Gatatog Uvenk",
+		"description": "A ruthless old school krogan, Uvenk resents [megametracker://person?id=S1.Wrex] modern reforms. He opposes admitting Grunt - a tank-bred krogan - into a clan, but once Grunt completes his initiation rites, Uvenk demands he join Clan Gatalog so as to best serve Uvenk's interests.",
+		"personType": "Enemy",
+		"race": "Krogan",
+		"profession": "Battlemaster",
+		"organization": "Clan Gatatog",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Uvenk.png",
+		"voiceActor": "Michael Dorn",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Gatatog_Uvenk"],
+		"relatedMissionIds": ["A2.L.Grunt"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.Vasir",
+		"name": "Tela Vasir",
+		"description": "Shepard first encounters Vasir while investigating the disappearance of [Liara|megametracker://person?id=S1.Liara]. They ally briefly, until it becomes apparent that Vasir is in the pocket of the [Shadow Broker|megametracker://person?id=E2.ShadowBroker].",
+		"personType": "Enemy",
+		"race": "Asari",
+		"profession": "Spectre",
+		"organization": "Citadel Council",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Vasir.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tela_Vasir"],
+		"voiceActor": "Jessica Anne Bogart",
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E2.Vido",
+		"name": "Vido Santiago",
+		"description": "A co-founder of the Blue Suns with Zaeed, Vido was in charge of the finances. A disagreement with Zaeed over cheaper labor options led Vido to organize a mutinee and personally shoot Zaeed in the head. He later ceded control of the Blue Suns to a batarian.",
+		"personType": "Enemy",
+		"race": "Human",
+		"profession": "Mercenary Leader",
+		"organization": "Blue Suns",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Vido.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Vido_Santiago"],
+		"voiceActor": "Richard Green",
+		"sideEffects": ["If Vido escapes in Game 2 but Zaeed survives, Zaeed will relate to Shepard that he finally tracked Vido down, only to have Reapers attack and carry Vido off before Zaeed could exact his revenge."],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "P2.Wasea",
+		"name": "Wasea",
+		"description": "Captain of the Eclipse on Illium, Wasea is the last in the chain of mercenaries Shepard kills trying to locate the whereabouts of Samara's target: the Ardat-Yakshi, Morinth. Wasea doesn't talk, but after her death, the information can be found on her desk.",
+		"personType": "Enemy",
+		"race": "Asari",
+		"profession": "Mercenary Captain",
+		"organization": "Eclipse",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Wasea.png",
+		"voiceActor": "Gwendoline Yeo",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Captain_Wasea"],
+		"relatedMissionIds": ["A2.D.Samara"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+
+		"x-comment-x": "-----------------------ASSOCIATES-------------------------",
+		"id": "P2.Aria",
+		"name": "Aria T'Loak",
+		"description": "Fiercely possessive of the space station Omega, Aria will do anything to protect it and maintain her dominance. She can usually be found in the nightclub Afterlife, where she will provide Shepard with some information about the station.",
+		"personType": "Associate",
+		"race": "Asari",
+		"profession": "Pirate Queen of Omega",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Aria.png",
+		"voiceActor": "Carrie-Anne Moss",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Aria_T%27Loak"],
+		"relatedMissionIds": ["DLC3.Omega1", "DLC3.Omega3"],
+		"gameVersionData": {
+			"2": {},
+			"3": {
+				"description": ""
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "P2.Bailey",
+		"name": "Armando-Owen Bailey",
+		"description": "One of several humans promoted inside C-Sec after the formerly turian-heavy force suffered severe losses during the Battle of the Citadel, Bailey is working in the Zakera Wards and can help Shepard resolve C-Sec issues, and provides valuable information.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Officer",
+		"organization": "C-Sec",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Bailey.png",
+		"voiceActor": "Michael Hogan",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Armando-Owen_Bailey"],
+		"relatedMissionIds": ["A2.C.CaptainBailey"],
+		"gameVersionData": {
+			"3": {
+				"description": "Now in-charge of the C-Sec operations of the Citadel Embassies quarters, Bailey is an even more valuable friend and resource for Shepard. He is not terribly pleased with the beaurocracy involved with his new position, and he is worried about his family on Earth, whose whereabouts are unknown.",
+                "photo": "http://urdnot.com/megametracker/app/images/Game3/3Bailey.png"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "P2.Chambers",
+		"name": "Kelly Chambers",
+		"description": "As ship counselor, Kelly provides Shepard with insights to the crew's personal issues, as well as alerts Shepard to any new messages. She flirts with Shepard and, if Shepard paragons enough of the conversations, even offers to feed Shepard's fish.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Yeoman/Psychologist",
+		"organization": "Cerberus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Chambers.png",
+		"voiceActor": "Cara Pifko",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kelly_Chambers"],
+		"sideEffects": [
+            "Chambers is one of the crew that is lost if Shepard delays the pursuit through the Omega 4 Relay.",
+            "If you don't warn Chambers to discguise herself early in Game 3, Cerberus will kill her in the coup (you can hear two bystanders recounting this [YouTube|https://www.youtube.com/watch?v=iR6GzKImbRk])."
+        ],
+		"decisionIds": ["D2.Fish", "D2.LoveKelly", "D3.LoveKelly"],
+		"gameVersionData": {
+			"2": {
+				"isMaleLoveInterest": 1,
+				"isFemaleLoveInterest": 1,
+				"loveInterestDecisionId": "D2.LoveKelly"
+			},
+			"3": {
+				"personType": "Other",
+				"isMaleLoveInterest": 1,
+				"isFemaleLoveInterest": 1,
+				"description": "After becoming disillusioned with Cerberus and still suffering traumatic flashbacks from when she was taken by the Collectors, Kelly is now working at the Citadel refugee camp, helping survivors. She refuses to rejoin Shepard's crew.",
+                "photo": "http://urdnot.com/megametracker/app/images/Game3/3Chambers.png",
+				"loveInterestDecisionId": "D3.LoveKelly"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "P2.Daniels",
+		"name": "Gabriella Daniels",
+		"description": "When [megametracker://person?id=P2.Donnelly] joined Cerberus after the Alliance dismissal of the Reaper threat, Daniels came along. Daniels is passionate about starship engines and she loves working on the Normandy SR2.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Engineer",
+		"organization": "Cerberus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Daniels.png",
+		"voiceActor": "Dannah Feinglass",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Gabriella_Daniels"],
+		"sideEffects": ["Daniels is one of the crew that is lost if Shepard delays the pursuit through the Omega 4 Relay."],
+		"decisionIds": ["D2.NormandyCrew"],
+		"gameVersionData": {
+			"3": {
+				"description": "Taken into custody when the Alliance siezed the Normandy after Game 2, Daniels and [Donnelly|megametracker://person?id=P2.Donnelly] can be released using Shepard's Spectre privileges, and they rejoin the Normandy crew."
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "P2.Donnelly",
+		"name": "Kenneth Donnelly",
+		"description": "Donnelly was working for the Alliance, but after the Alliance discredited the existence of the Reapers following the Battle of the Citadel, Donnelly vocally defended Commander Shepard, with the result that Cerberus took notice and recruited him. [megametracker://person?id=P2.Daniels], a loyal friend and fellow Alliance engineer, insisted on coming along.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Engineer",
+		"organization": "Cerberus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Donnelly.png",
+		"voiceActor": "John Ullyatt",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kenneth_Donnelly"],
+		"sideEffects": ["Donnelly is one of the crew that is lost if Shepard delays the pursuit through the Omega 4 Relay."],
+		"decisionIds": ["D2.NormandyCrew"],
+		"gameVersionData": {
+			"3": {
+				"description": "Taken into custody when the Alliance siezed the Normandy after Game 2, Donnelly and [Daniels|megametracker://person?id=P2.Daniels] can be released using Shepard's Spectre privileges, and they rejoin the Normandy crew."
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "P2.Gardner",
+		"name": "Rupert Gardner",
+		"description": "A loyal operative, he says, \"Cerberus get the job done.\" He is a general handyman on the Normandy as well as the cook.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Mess Sergeant",
+		"organization": "Cerberus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Gardner.png",
+		"voiceActor": "Bill Ratner",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mess_Sergeant_Gardner"],
+		"sideEffects": ["Gardner is one of the crew that is lost if Shepard delays the pursuit through the Omega 4 Relay."],
+		"decisionIds": ["D2.NormandyCrew"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "P2.HenGerrel",
+		"name": "Hen'Gerrel vas Neema",
+		"description": "An old friend of Tali's father [megametracker://person?id=O2.RaelZorah], Hen'Gerrel supports her during her treason trial. However, he firmly supports attacking the geth and reclaiming the quarian homeworld, using any methods necessary.",
+		"personType": "Associate",
+		"race": "Quarian",
+		"profession": "Admiral",
+		"organization": "Migrant Fleet",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2HenGerrel.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Admiral_Han%27Gerrel_vas_Neema"],
+		"relatedMissionIds": ["A2.L.Tali"],
+		"voiceActor": "Simon Templeman",
+		"gameVersionData": {
+			"3": {
+				"description": "An old friend of Tali's father [megametracker://person?id=O2.RaelZorah], Hen'Gerrel supported her during her treason trial in Game 2. However, his ruthless pursuit of conquering the geth and reclaiming the quarian homeworld has been a problem, with him causing trouble along the turian border for years, and now trapping the fleet in a direct assault by the geth in the Perseus Veil. Instead of recognizing his error, he doubles down and - much to the fury of Tali - continues to focus his resources on assault rather than rescuing his own civilians."
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "P2.Koris",
+		"name": "Zaal'Koris vas Qwib-Qwib",
+		"description": "A pacifist and sympathetic to the geth, Zaal'Koris is not well-liked by many other quarians.",
+		"personType": "Other",
+		"race": "Quarian",
+		"profession": "Admiral",
+		"organization": "Migrant Fleet",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2ZaalKoris.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Zaal%27Koris_vas_Qwib_Qwib"],
+		"sideEffects": [
+			"If asked, Zaal'Koris haughtily acknowledges that his ship \"Qwib-Qwib\" was named by its previous (non-quarian) owners and it was just not possible for him to legally change it."
+		],
+		"relatedMissionIds": ["A2.L.Tali"],
+        "decisionIds": ["D3.JammingTower", "D3.Koris"],
+		"voiceActor": "Martin Jarvis",
+		"gameVersionData": {
+			"3": {
+				"description": "A pacifist and sympathetic to the geth, Zaal'Koris is not well-liked by many other quarians. However, his opposition to the geth war is cast in a much better light on Shepard's second encounter with the admiral, where he valiantly fights to protect the Civilian Fleet after the actions of the more hawkish admirals leads to the whole fleet trapped by geth forces in the Perseus Veil."
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "P2.Raan",
+		"name": "Shala'Raan vas Tonbay",
+		"description": "Nicknamed \"Auntie Raan\" by Tali, Shala'Raan was a close friend of her mother and was even present at Tali's birth. She has to recuse herself from presiding over Tali's treason trial, but she provides other support, acting as a moderator and spokesperson on Tali's behalf.",
+		"personType": "Associate",
+		"race": "Quarian",
+		"profession": "Admiral",
+		"organization": "Migrant Fleet",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Raan.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Shala%27Raan_vas_Tonbay"],
+		"relatedMissionIds": ["A2.L.Tali"],
+		"voiceActor": "Shoreh Aghdashloo",
+		"gameVersionData": {
+			"3": {
+				"description": "Nicknamed \"Auntie Raan\" by Tali, Shala'Raan was a close friend of her mother and was even present at Tali's birth. If Tali dies in Game 2, Naan will fill some of her roles in Game 3. She also is quarian envoy aboard the Normandy throughout Game 3."
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "P2.Xen",
+		"name": "Daro'Xen vas Moreh",
+		"description": "An ambitious and sociopathic technologist, Xen is nonetheless usually on Shepard's side, since her ruthless assessment of strategies leads her to believe other routes would not lead to success. She would gladly take apart the geth for research, given the opportunity, and harbors the goal of taking over the entire geth army.",
+		"personType": "Associate",
+		"race": "Quarian",
+		"profession": "Admiral",
+		"organization": "Migrant Fleet",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Xen.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Admiral_Daro%27Xen_vas_Moreh"],
+		"relatedMissionIds": ["A2.L.Tali"],
+		"voiceActor": "Claudia Black",
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}]
+}

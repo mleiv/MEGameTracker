@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="yzf-4T-iho" customClass="GameRow" customModule="MEGameTracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzf-4T-iho" id="Qgq-6p-m1T">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aZA-YO-cAO">
+                        <rect key="frame" x="12" y="8" width="296" height="62.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LM6-Lc-Pow" userLabel="Frame">
+                                <rect key="frame" x="0.0" y="1.5" width="60" height="60"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BsP-uz-ZJT">
+                                        <rect key="frame" x="1" y="1" width="58" height="58"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="BsP-uz-ZJT" secondAttribute="trailing" constant="1" id="MIQ-ek-V13"/>
+                                    <constraint firstItem="BsP-uz-ZJT" firstAttribute="leading" secondItem="LM6-Lc-Pow" secondAttribute="leading" constant="1" id="eiV-n3-zRy"/>
+                                    <constraint firstAttribute="width" secondItem="LM6-Lc-Pow" secondAttribute="height" multiplier="1:1" id="h8C-N3-ASR"/>
+                                    <constraint firstAttribute="bottom" secondItem="BsP-uz-ZJT" secondAttribute="bottom" constant="1" id="hgC-rM-FCz"/>
+                                    <constraint firstAttribute="width" constant="60" id="sLe-Jc-OnO"/>
+                                    <constraint firstItem="BsP-uz-ZJT" firstAttribute="top" secondItem="LM6-Lc-Pow" secondAttribute="top" constant="1" id="yrr-bI-Zu5"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="IWA-yA-NZ1">
+                                <rect key="frame" x="70" y="1.5" width="207" height="59.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="300" verticalCompressionResistancePriority="755" text="John Shepard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNo-50-FPl" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="23.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Header.NormalColor.Medium"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="200" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="754" text="War Hero Colonist Spacer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1X-rw-eor" userLabel="Title" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="23.5" width="151.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.NormalColor.Italic"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="200" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="751" text="Last Played: 1 January, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhq-9D-jeK" userLabel="Date" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="41.5" width="164.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.AccentColor"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="0To-J6-eAi">
+                                <rect key="frame" x="287" y="24" width="9" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="9" id="BJO-gS-k91"/>
+                                    <constraint firstAttribute="height" constant="15" id="voO-5q-At8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imO-UZ-6l9" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="15" y="78.5" width="305" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="CzF-bW-2wt"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                <color key="value" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="imO-UZ-6l9" firstAttribute="top" secondItem="aZA-YO-cAO" secondAttribute="bottom" priority="900" constant="8" id="EUA-xK-9St"/>
+                    <constraint firstItem="imO-UZ-6l9" firstAttribute="leading" secondItem="Qgq-6p-m1T" secondAttribute="leading" constant="15" id="FC0-Rx-VLx"/>
+                    <constraint firstAttribute="trailing" secondItem="imO-UZ-6l9" secondAttribute="trailing" id="Gr6-n8-hGL"/>
+                    <constraint firstItem="aZA-YO-cAO" firstAttribute="top" secondItem="Qgq-6p-m1T" secondAttribute="top" priority="900" constant="8" id="OtS-94-IFx"/>
+                    <constraint firstAttribute="bottom" secondItem="imO-UZ-6l9" secondAttribute="bottom" id="WIC-Bc-fLj"/>
+                    <constraint firstItem="aZA-YO-cAO" firstAttribute="leading" secondItem="Qgq-6p-m1T" secondAttribute="leading" constant="12" id="hyv-at-AoP"/>
+                    <constraint firstAttribute="trailing" secondItem="aZA-YO-cAO" secondAttribute="trailing" constant="12" id="zii-Q1-X4h"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="xhq-9D-jeK" id="xik-iI-3G2"/>
+                <outlet property="nameLabel" destination="dNo-50-FPl" id="J8z-za-joY"/>
+                <outlet property="photoImageView" destination="BsP-uz-ZJT" id="p1s-UR-reD"/>
+                <outlet property="titleLabel" destination="l1X-rw-eor" id="n8E-B7-Fjv"/>
+            </connections>
+            <point key="canvasLocation" x="31" y="258.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Disclosure" width="9" height="15"/>
+    </resources>
+</document>

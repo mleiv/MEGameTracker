@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EDF-di-e8I">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Map Split View Controller-->
+        <scene sceneID="s25-Af-rAk">
+            <objects>
+                <viewController id="EDF-di-e8I" customClass="MapSplitViewController" customModule="MassEffectTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gqM-r6-kPT"/>
+                        <viewControllerLayoutGuide type="bottom" id="WDW-cO-aAa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vbp-u8-LdY" userLabel="Root">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTA-Xm-WFV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="BRt-CN-GBr" customClass="IBIncludedSubThing" customModule="MassEffectTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="Map"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="305" translatesAutoresizingMaskIntoConstraints="NO" id="5EJ-UB-WEk" customClass="HairlineBorderView" customModule="MassEffectTracker" customModuleProvider="target">
+                                        <rect key="frame" x="600" y="0.0" width="0.0" height="600"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="900" constant="1" id="0LY-4h-g65"/>
+                                            <constraint firstAttribute="width" priority="910" constant="1" id="xYG-w4-19N"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0LY-4h-g65"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="BZx-qo-85M" userLabel="Detail Placeholder" customClass="IBIncludedSubThing" customModule="MassEffectTracker" customModuleProvider="target">
+                                        <rect key="frame" x="600" y="0.0" width="0.0" height="600"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="100" id="LbI-sQ-hJV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BZx-qo-85M" firstAttribute="height" secondItem="FTA-Xm-WFV" secondAttribute="height" multiplier="0.4" priority="900" id="YJg-ld-Pgb"/>
+                                    <constraint firstItem="BZx-qo-85M" firstAttribute="width" secondItem="FTA-Xm-WFV" secondAttribute="width" multiplier="0.4" priority="900" id="o5E-Cd-owq"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YJg-ld-Pgb"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FTA-Xm-WFV" secondAttribute="trailing" id="4mZ-M0-lIW"/>
+                            <constraint firstItem="FTA-Xm-WFV" firstAttribute="leading" secondItem="vbp-u8-LdY" secondAttribute="leading" id="66z-8F-vlw"/>
+                            <constraint firstItem="FTA-Xm-WFV" firstAttribute="top" secondItem="gqM-r6-kPT" secondAttribute="bottom" id="Zn1-DW-hfv"/>
+                            <constraint firstAttribute="bottom" secondItem="FTA-Xm-WFV" secondAttribute="bottom" id="kxu-31-mbT"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="detailBorderLeftView" destination="5EJ-UB-WEk" id="O75-YK-uZS"/>
+                        <outlet property="detailBorderLeftViewHeightConstraint" destination="0LY-4h-g65" id="6sZ-Hx-6K1"/>
+                        <outlet property="detailBorderLeftViewWidthConstraint" destination="xYG-w4-19N" id="On7-b4-lyG"/>
+                        <outlet property="detailPlaceholder" destination="BZx-qo-85M" id="s8f-9E-8ML"/>
+                        <outlet property="detailPlaceholderHeightConstraint" destination="YJg-ld-Pgb" id="57u-gN-Bzm"/>
+                        <outlet property="detailPlaceholderWidthConstraint" destination="o5E-Cd-owq" id="Ih6-B7-OLZ"/>
+                        <outlet property="mainPlaceholder" destination="BRt-CN-GBr" id="vWq-iz-Mox"/>
+                        <outlet property="mapPlaceholder" destination="BRt-CN-GBr" id="i2J-zi-CiN"/>
+                        <outlet property="splitViewStack" destination="FTA-Xm-WFV" id="Ekc-TA-JLv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGs-Sd-hEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="495" y="129"/>
+        </scene>
+    </scenes>
+</document>

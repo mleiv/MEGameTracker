@@ -1,0 +1,4368 @@
+{
+	"missions": [{
+		"x-comment-x": "-----------------------FIRST TIME AT CITADEL-------------------------",
+		"id": "A1.C1.JahleedsFears",
+		"sortIndex": 11,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Jahleed's Fears",
+		"aliases": ["Citadel: Jahleed's Fears", "Citadel: Jahleed's Secret", "Citadel: Jahleed and Chorban", "Citadel: Jahleed Returns Materials", "Citadel: Jahleed Arrested", "Citadel: Jahleed Set Free"],
+		"description": "Talk to the volus Jahleed at C-Sec Academy who claims his business partner is trying to kill him.",
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 925,
+			"y": 675,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to Chorban",
+				"options": [{
+					"id": "A1.C1.JahleedsFears.1.P",
+					"type": "Paragon",
+					"value": 8,
+					"context": "Convince Chorban to abandon the scans (will end [megametracker://mission?id=A1.C1.ScanTheKeepers] also)",
+					"trigger": "\"No more.\""
+				}, {
+					"id": "A1.C1.JahleedsFears.1.R",
+					"type": "Renegade",
+					"value": 9,
+					"context": "Kill Chorban",
+					"trigger": "\"You're not leaving.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After not turning Jahleed in",
+				"options": [{
+					"id": "A1.C1.JahleedsFears.2.P",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* Jahleed (Requires 7 Charm)",
+					"trigger": "\"Then do it legally.\""
+				}, {
+					"id": "A1.C1.JahleedsFears.2.R",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* Jahleed (Requires 6 Intimidate)",
+					"trigger": "\"Take it back!\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Jahleed%27s_Fears"
+		],
+		"relatedMissionIds": ["A1.C1.ScanTheKeepers"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Lower Levels"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C1.JahleedsFears.0",
+		"sortIndex": 1100,
+		"inMissionId": "A1.C1.JahleedsFears",
+		"name": "Speak with Jahleed",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"description": "Speak with Jahleed if you want to help him. He's hiding at the C-Sec Academy.",
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 925,
+			"y": 675,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.JahleedsFears.1",
+		"sortIndex": 1101,
+		"inMissionId": "A1.C1.JahleedsFears",
+		"name": "Talk to Chorban",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"description": "Jahleed wants you to talk to Chorban for him. The salarian will meet you in the lower markets. \n\n(If you have not spoken to him prior to this assignment, he will start a fight with you.)",
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 1355,
+			"y": 1355,
+			"radius": 1
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Confronted Chorban"
+		}]
+	}, {
+		"id": "A1.C1.JahleedsFears.2",
+		"sortIndex": 1102,
+		"inMissionId": "A1.C1.JahleedsFears",
+		"name": "Talk to Jahleed",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"description": "Jahleed wasn't telling you the whole truth. You can find him at the C-Sec Academy. \n\nYou may want to finish [megametracker://mission?id=A1.C1.ScanTheKeepers] first (...depending on your conversation with Jahleed). If you don't turn Jahleed in or Charm/Intimidate him, you will earn a bribe.",
+		"events": [{
+			"type": "Triggers",
+			"id": "Confronted Chorban"
+		}]
+	}, {
+		"id": "A1.C1.AsariConsort",
+		"sortIndex": 12,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Asari Consort",
+		"description": "The asari consort, Sha'ira, would like Shepard's help in dealing with an old client spreading lies about her. Speak with her at the [Consort's Chambers|megametracker://maplocation?id=G.C1.Presidium&title=Consort's%20Chambers&location=1468x1468] on the Presidium to begin this assignment.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1468,
+			"y": 1468,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade Septimus to leave Sha'ira alone",
+				"options": [{
+					"id": "A1.C1.AsariConsort.1.P",
+					"type": "Paragon",
+					"value": 0,
+					"context": "*_Charm_* Septimus (requires 4 Charm)",
+					"trigger": "\"Straighten up.\""
+				}, {
+					"id": "A1.C1.AsariConsort.1.R",
+					"type": "Renegade",
+					"value": 0,
+					"context": "*_Intimidate_* Septimus (requires 4 Intimidate)",
+					"trigger": "\"Get a grip.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to Sha'ira at the end of the assignment",
+				"options": [{
+					"id": "A1.C1.AsariConsort.2.P",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Glad to help.\""
+				}, {
+					"id": "A1.C1.AsariConsort.2.R",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Let's talk payment.\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Asari_Consort"
+		],
+		"relatedMissionIds": ["A1.C1.XeltansComplaint"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Presidium"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C1.AsariConsort.1",
+		"sortIndex": 1201,
+		"inMissionId": "A1.C1.AsariConsort",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak with Gen. Septimus",
+		"description": "The general is at Chora's Den in the Lower Wards. Ask him to stop spreading rumors about the Consort.",
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 320,
+			"y": 530,
+			"radius": 1
+		},
+		"sideEffects": [
+			"If Shepard brings Kaidan and Ashley along for this mission, Kaidan mocks Septimus for getting so upset over a woman, and then Ashley mocks Kaidan for not understanding women."
+		],
+		"events": [{
+			"type": "Triggers",
+			"id": "Talked to General Septimus"
+		}]
+	}, {
+		"id": "A1.C1.AsariConsort.2",
+		"sortIndex": 1202,
+		"inMissionId": "A1.C1.AsariConsort",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak with Sha'ira",
+		"description": "Return to Sha'ira and let her know you've spoken to [General Septimus|megametracker://person?id=O1.Septimus].\n\nIf you complete [megametracker://mission?id=A1.C1.XeltansComplaint] before returning to Sha'ira, she will give you an additional reward.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1468,
+			"y": 1468,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.AsariConsort.3",
+		"sortIndex": 1203,
+		"inMissionId": "A1.C1.AsariConsort",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The Consort's Gift",
+		"description": "Take the trinket Sha'ira gave you to the prothean ruin on Eletania.",
+		"inMapId": "G.Ear.Att.Her.Eletania",
+		"mapLocationPoint": {
+			"x": 549,
+			"y": 1564,
+			"radius": 1
+		},
+		"events": [{
+			"type": "Blocked Until",
+			"id": "Unlocked Galaxy Map"
+		}]
+	}, {
+		"id": "A1.C1.XeltansComplaint",
+		"sortIndex": 13,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Xeltan's Complaint",
+		"aliases": ["Citadel: Xeltan's Complaint", "Citadel: Xeltan Convinced"],
+		"description": "[General Septimus|megametracker://person?id=O1.Septimus] would like you to talk to an elcor named [Xeltan|megametracker://person?id=O1.Xeltan] in the embassies.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1984,
+			"y": 634,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Xeltan's_Complaint"
+		],
+		"relatedMissionIds": ["A1.C1.AsariConsort"],
+		"conversationRewards": [{
+			"id": "A1.C1.XeltansComplaint.P",
+			"type": "Paragon",
+			"value": 2,
+			"context": "Talking to Xeltan",
+			"trigger": "\"Don't worry.\""
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Talked to General Septimus"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C1.XeltansComplaint.1",
+		"sortIndex": 1301,
+		"inMissionId": "A1.C1.XeltansComplaint",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak to Xeltan",
+		"description": "Xeltan is at the elcor embassy. Find him and show him the evidence that proves Aha'ira was not to blame for his secrets getting out.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1984,
+			"y": 634,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.RitasSister",
+		"sortIndex": 19,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Rita's Sister",
+		"aliases": ["Citadel: Rita's Sister", "Citadel: Rita's Sister and Chellick"],
+		"description": "[Rita|megametracker://person?id=O1.Rita], a server at Flux, is worried about her sister [Jenna|megametracker://person?id=O1.Jenna], who is working undercover for C-Sec at Chora's Den.",
+		"inMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 895,
+			"y": 1283,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade Chellick to stop using Jenna as an undercover agent",
+				"options": [{
+					"id": "A1.C1.RitasSister.2.P",
+					"type": "Paragon",
+					"value": 2,
+					"context": "*_Charm_* Chellick (requires 7 Charm)",
+					"trigger": "\"You don't need her.\""
+				}, {
+					"id": "A1.C1.RitasSister.2.R",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* Chellick (requires 6 Initimidate)",
+					"trigger": "\"Pathetic.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "(Points granted after reporting back to Chellick)",
+				"options": [{
+					"id": "A1.C1.RitasSister.3.P",
+					"type": "Paragon",
+					"value": 8,
+					"context": "Give Jax his money",
+					"trigger": "\"Keeping tabs on me?\" and \"Of course.\""
+				}, {
+					"id": "A1.C1.RitasSister.3.R",
+					"type": "Renegade",
+					"value": 9,
+					"context": "Attempt to arrest Jax, or start a fight",
+					"trigger": "\"Sorry.\" and \"I didn't like him.\" and \"Shut up.\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Rita's_Sister"
+		],
+		"decisionIds": ["D1.Rita"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Lower Levels"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}, {
+			"type": "Triggers",
+			"id": "Helped Rita"
+		}]
+	}, {
+		"id": "A1.C1.RitasSister.0",
+		"sortIndex": 1900,
+		"inMissionId": "A1.C1.RitasSister",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak with Rita",
+		"description": "Rita, a waitress at Flux in the Upper Wards, is concerned about her sister, Jenna. If you want to help, speka with her.",
+		"inMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 895,
+			"y": 1283,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.RitasSister.1",
+		"sortIndex": 1901,
+		"inMissionId": "A1.C1.RitasSister",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Talk to Jenna",
+		"description": "Jenna is working at Chora's Den in the Lower Wards. Speak to her and try to find out if she really is in danger.",
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 435,
+			"y": 523,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.RitasSister.2",
+		"sortIndex": 1902,
+		"inMissionId": "A1.C1.RitasSister",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Return to Rita",
+		"description": "Jenna will not talk to you. Head back to Flux in the Upper Wards and tell Rita.",
+		"inMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 895,
+			"y": 1283,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.RitasSister.3",
+		"sortIndex": 1903,
+		"inMissionId": "A1.C1.RitasSister",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Talk to Chellick",
+		"description": "[Chellick|megametracker://person?id=O1.Chellick] bumped into you at Chora's Den. He told you to meet him at the C-Sec Academy if you wanted to help Jenna.",
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 757,
+			"y": 1049,
+			"radius": 1
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Talked to Chellick"
+		}]
+	}, {
+		"id": "A1.C1.RitasSister.4",
+		"sortIndex": 1904,
+		"inMissionId": "A1.C1.RitasSister",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Make the Pickup",
+		"description": "Chellick wants you to pick up a weapons shipment from the arms dealers in the Lower Wards Markets. He doesn't want you to cause any trouble. \n\nNote: If you kill Jax, Chellick won't reward you afterwards.",
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 1527,
+			"y": 1527,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.RitasSister.5",
+		"sortIndex": 1905,
+		"inMissionId": "A1.C1.RitasSister",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Return the Shipment to Chellick",
+		"description": "Take the weapons shipment to Chellick at the C-Sec Academy.",
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 757,
+			"y": 1049,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.DoctorMichel",
+		"sortIndex": 18,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Doctor Michel",
+		"aliases": ["Citadel: Doctor Michel", "Citadel: Doctor Michel is Safe"],
+		"description": "The doctor is being blackmailed. Speak to her at the Med Clinic in the Upper Wards if you want to help.",
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After confronting Morlan",
+				"options": [{
+					"id": "A1.C1.DoctorMichel.2.P1",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* the krogan (Requires 6 Charm)",
+					"trigger": "\"You should reconsider.\""
+				}, {
+					"id": "A1.C1.DoctorMichel.2.R1",
+					"type": "Renegade",
+					"value": 9,
+					"context": "*_Intimidate_* the krogan (Requires 3 Intimidate)",
+					"trigger": "\"Talk and you're dead!\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Decide what to do about the krogan",
+				"options": [{
+					"id": "A1.C1.DoctorMichel.2.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Let's work this out.\""
+				}, {
+					"id": "A1.C1.DoctorMichel.2.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Kill him.\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Doctor_Michel"
+		],
+		"relatedMissionIds": ["G.Ter.Far.Maat"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Confronted Fist"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C1.DoctorMichel.1",
+		"sortIndex": 1801,
+		"inMissionId": "A1.C1.DoctorMichel",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Talk to Doctor Michel",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 1848,
+			"y": 1332,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A1.C1.DoctorMichel.2",
+		"sortIndex": 1802,
+		"inMissionId": "A1.C1.DoctorMichel",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Talk to Morlan",
+		"description": "Find [megametracker://person?id=O1.Morlan] and put a stop to the blackmailing. He's a merchant in the Lower Wards Markets.",
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 1527,
+			"y": 1185,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.DoctorMichel.3",
+		"sortIndex": 1803,
+		"inMissionId": "A1.C1.DoctorMichel",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Talk to Doctor Michel",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 1848,
+			"y": 1332,
+			"radius": 1
+		},
+		"description": "The blackmailer is dealt with. Talk to [Doctor Michel|megametracker://person?id=P1.Michel] at the Med Clinic in the Upper Wards and let her know she's safe again."
+	}, {
+		"id": "A1.C1.DoctorMichel.4",
+		"sortIndex": 1804,
+		"inMissionId": "A1.C1.DoctorMichel",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Ask Kahoku about Banes (Optional)",
+		"description": "Find [Captain Anderson|megametracker://person?id=P1.Anderson] and ask him about [megametracker://person?id=O1.Banes]. Then speak to [Rear Admiral Kahoku|megametracker://person?id=O1.Kahoku] in the Citadel Tower. Note: Kahoku will not be available after [megametracker://mission?id=A1.U.MissingMarines].",
+		"inMapId": "G.C1.Tower",
+		"mapLocationPoint": {
+			"x": 1333,
+			"y": 1475,
+			"radius": 1
+		},
+		"events": [{
+			"type": "BlockedAfter",
+			"id": "Missing Marines Found"
+		}]
+	}, {
+		"id": "A1.C1.SignalTracking",
+		"sortIndex": 17,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Signal Tracking",
+		"description": "Scan the suspicious gambling machine in the casino at Flux to begin this assigment.",
+		"inMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 376,
+			"y": 1137,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Signal_Tracking"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Lower Levels"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C1.SignalTracking.1",
+		"sortIndex": 1701,
+		"inMissionId": "A1.C1.SignalTracking",
+		"name": "Track The Signal 1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 460,
+			"y": 360,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.SignalTracking.2",
+		"sortIndex": 1702,
+		"inMissionId": "A1.C1.SignalTracking",
+		"name": "Track The Signal 2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 611,
+			"y": 1292,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.SignalTracking.3",
+		"sortIndex": 1703,
+		"inMissionId": "A1.C1.SignalTracking",
+		"name": "Track The Signal 3",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 687,
+			"y": 1483,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.SignalTracking.4",
+		"sortIndex": 1704,
+		"inMissionId": "A1.C1.SignalTracking",
+		"name": "The Source",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"description": "Abort the AI self-destruct. You can shoot the power junction or solve a puzzle. If you choose the puzzle, you will be rewarded with credits (the amount of which decreases the longer you take to solve it). On XBox: Y-X-Y-A-X-A-A. On Playstation: triangle, square, triangle, cross, square, cross, cross."
+	}, {
+		"id": "A1.C1.PresidiumProphet",
+		"sortIndex": 20,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Presidium Prophet",
+		"description": "Resolve the argument between the hanar evangelist and a C-Sec officer on the Presidium.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 575,
+			"y": 619,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Make the hanar leave",
+						"options": [{
+							"id": "A1.C1.PresidiumProphet.P1",
+							"type": "Paragon",
+							"value": 8,
+							"context": "*_Charm_* the hanar (Requires 4 Charm)",
+							"trigger": "\"This is unworthy of you.\""
+						}, {
+							"id": "A1.C1.PresidiumProphet.R1",
+							"type": "Renegade",
+							"value": 9,
+							"context": "*_Intimidate_* the hanar (Requires 6 Intimidate)",
+							"trigger": "\"There is trouble anyway.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Make the C-Sec officer leave",
+						"options": [{
+							"id": "A1.C1.PresidiumProphet.P2",
+							"type": "Paragon",
+							"value": 8,
+							"context": "*_Charm_* the C-Sec officer (Requires 7 Charm)",
+							"trigger": "\"This is unworthy of you.\""
+						}, {
+							"id": "A1.C1.PresidiumProphet.R2",
+							"type": "Renegade",
+							"value": 9,
+							"context": "*_Intimidate_* the C-Sec officer (Requires 4 Intimidate)",
+							"trigger": "\"There is trouble anyway.\""
+						}]
+					}
+				}, {
+					"id": "A1.C1.PresidiumProphet.P3",
+					"type": "Paragon",
+					"value": 0,
+					"context": "Buy the hanar a permit",
+					"trigger": "\"You do now.\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Presidium_Prophet"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Lower Levels"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C1.PresidiumProphet.1",
+		"sortIndex": 2001,
+		"inMissionId": "A1.C1.PresidiumProphet",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak with the Hanar",
+		"description": "Speak with the hanar preacher in the Presidium. Convince it to purchase an evangelical permit or find someplace else to preach."
+	}, {
+		"id": "A1.C1.PresidiumProphet.2",
+		"sortIndex": 2002,
+		"inMissionId": "A1.C1.PresidiumProphet",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Resolve the Dispute",
+		"description": "You've spoken with both the hanar and the C-Sec officer in the Presidium, but you still need to either get rid of the hanar or convince the C-Sec officer to back off."
+	}, {
+		"id": "A1.C1.PresidiumProphet.3",
+		"sortIndex": 2003,
+		"inMissionId": "A1.C1.PresidiumProphet",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Inform the C-Sec Officer",
+		"description": "Tell the C-Sec officer in the Presidium how you resolved the matter with the hanar preacher."
+	}, {
+		"id": "A1.C1.ReportersRequest",
+		"sortIndex": 16,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Reporter's Request",
+		"description": "[megametracker://person?id=O1.Wong] in the Upper Wards is gathering information on organized crime and corruption on the Citadel. You can find the information she needs during mission [megametracker://mission?id=M1.ExposeSaren.2]. \n\nThis assignment can be started either by talking to Wong or by examining the OSD in [Fist's|megametracker://person?id=E1.Fist] office.",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 930,
+			"y": 1455,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade Wong to give Shepard more money",
+				"options": [{
+					"id": "A1.C1.ReportersRequest.P",
+					"type": "Paragon",
+					"value": 2,
+					"context": "*_Charm_* Wong (Requires 2 Charm)",
+					"trigger": "\"I can offer you more.\""
+				}, {
+					"id": "A1.C1.ReportersRequest.R",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* Wong (Requires 2 Intimidate)",
+					"trigger": "\"You owe me more.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Lower Levels"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}, {
+			"type": "Triggers",
+			"id": "Helped Emily Wong"
+		}]
+	}, {
+		"id": "A1.C1.ReportersRequest.1",
+		"sortIndex": 1601,
+		"inMissionId": "A1.C1.ReportersRequest",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Look for Information",
+		"description": "As you investigate the Citadel, be on the lookout for information that might help Ms. Wong.",
+		"inMapId": "G.C1.LowerWards.Fist",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.C1.ReportersRequest.2",
+		"sortIndex": 1602,
+		"inMissionId": "A1.C1.ReportersRequest",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Deliver Information",
+		"description": "The information you found in Fist's hideout will help Ms. Wong with her report on corruption. Go to the Upper Wards to deliver it to her.",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 930,
+			"y": 1455,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.TheFan",
+		"sortIndex": 15,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: The Fan",
+		"description": "Shepard's biggest fan is on the Citadel and wants an autograph. What harm could there be in talking with him?",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 371,
+			"y": 1300,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Convince Conrad",
+				"options": [{
+					"id": "A1.C1.TheFan.1.P",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* Conrad (Requires 2 Charm)",
+					"trigger": "\"It's not that easy.\" / \"There are other fights.\" / \"Let's talk about trust.\""
+				}, {
+					"id": "A1.C1.TheFan.1.R",
+					"type": "Renegade",
+					"value": 9,
+					"context": "*_Intimidate_* Conrad (Requires 2 Intimidate)",
+					"trigger": "\"That's a load of crap.\" / \"There are no good fights.\" / \"Here's a test.\" (Shepard pulls a gun on Conrad)"
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_The_Fan"
+		],
+		"decisionIds": ["D1.Conrad"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Lower Levels"
+		}]
+	}, {
+		"id": "A1.C1.TheFan.1",
+		"sortIndex": 1501,
+		"inMissionId": "A1.C1.TheFan",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "First Encounter",
+		"description": "[Conrad|megametracker://person?id=P1.Conrad] wants an autograph.",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 371,
+			"y": 1300,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.TheFan.2",
+		"sortIndex": 1502,
+		"inMissionId": "A1.C1.TheFan",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Second Encounter",
+		"description": "[Conrad|megametracker://person?id=P1.Conrad] wants a photograph.",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 371,
+			"y": 1300,
+			"radius": 1
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Spectre Status"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C1.TheFan.3",
+		"sortIndex": 1503,
+		"inMissionId": "A1.C1.TheFan",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Third Encounter",
+		"description": "[Conrad|megametracker://person?id=P1.Conrad] wants to become a Spectre. Dissuade him or he will get killed starting a fight with some turians.",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 371,
+			"y": 1300,
+			"radius": 1
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}]
+	}, {
+		"id": "A1.C1.Homecoming",
+		"sortIndex": 14,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Homecoming",
+		"description": "[megametracker://person?id=O1.Bhatia] at the Embassy reception desk lost his wife Nerali to the geth attack on Eden Prime, but the Alliance won't release her remains.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1595,
+			"y": 655,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"context": "Persuade Bosker to release the body",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A1.C1.Homecoming.1.P",
+							"type": "Paragon",
+							"value": 8,
+							"context": "*_Charm_* Bosker (Requires 2 Charm)",
+							"trigger": "\"This isn't right.\""
+						}, {
+							"id": "A1.C1.Homecoming.1.R",
+							"type": "Renegade",
+							"value": 9,
+							"context": "*_Intimidate_* Bosker (Requires 2 Intimidate)",
+							"trigger": "\"I'm releasing the body.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Persuade Samesh to leave the body with the Alliance",
+						"options": [{
+							"id": "A1.C1.Homecoming.2.P",
+							"type": "Paragon",
+							"value": 8,
+							"context": "*_Charm_* Samesh (Requires 3 Charm)",
+							"trigger": "\"This is important.\""
+						}, {
+							"id": "A1.C1.Homecoming.2.R",
+							"type": "Renegade",
+							"value": 9,
+							"context": "*_Intimidate_* Samesh (Requires 3 Intimidate)",
+							"trigger": "\"This is war.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Homecoming"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Spectre Status"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C1.Homecoming.1",
+		"sortIndex": 1401,
+		"inMissionId": "A1.C1.Homecoming",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Talk with Diplomat",
+		"description": "Speak to [megametracker://person?id=O1.Bosker], the diplomat handling [Mr. Bhatia's|megametracker://person?id=O1.Bhatia] situation and find out why his wife's body has not been returned. He is in the Embassy Lounge on the Presidium.",
+		"inMissionId": "A1.C1.Homecoming",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1595,
+			"y": 655,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.Homecoming.2",
+		"sortIndex": 1402,
+		"inMissionId": "A1.C1.Homecoming",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Inform Mr. Bhatia",
+		"description": "Meet [Bhatia|megametracker://person?id=O1.Bhatia] outside the Presidium Embassies and tell him what was decided about his wife's remains.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1151,
+			"y": 597,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.SchellsTheGambler",
+		"sortIndex": 21,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Schells the Gambler",
+		"aliases": ["Citadel: Schells the Gambler", "Citadel: Schells' Scanner Given Away", "Citadel: Schells has his Data"],
+		"description": "A salarian named [Schells|megametracker://person?id=O1.Schells] is tossed out of Flux for cheating at Quasar. So he asks Shepard to test his gambling device for him. Gathering the required data requires winning 5 games, but winning 7 games will cause casino owner [megametracker://person?id=O1.Doran] to confiscate the device and any winnings. You also have the option of just giving the device to Doran for a reward.",
+		"inMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 1403,
+			"y": 975,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Schells_the_Gambler"
+		],
+		"sideEffects": ["Return to Flux after finishing this assignment and approach Doran on the dance floor and press A to show him Shepard's moves."],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Helped Rita"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C1.SchellsTheGambler.1",
+		"sortIndex": 2101,
+		"inMissionId": "A1.C1.SchellsTheGambler",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak to Schells",
+		"description": "Schells is outside Flux in the Upper Wards. Speak to him if you want to help.",
+		"inMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 1403,
+			"y": 975,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C1.SchellsTheGambler.2",
+		"sortIndex": 2102,
+		"inMissionId": "A1.C1.SchellsTheGambler",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Scan the Machines",
+		"description": "Schells gave you his scanning device. Go to Flux in the Upper Wards and use the gambling machines at least five times. Don't get caught.",
+		"inMapId": "G.C1.Flux.Casino",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.C1.SchellsTheGambler.3",
+		"sortIndex": 2103,
+		"inMissionId": "A1.C1.SchellsTheGambler",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak to Schells",
+		"description": "Go find Schells outside Flux in the Upper Wards.",
+		"inMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 1403,
+			"y": 975,
+			"radius": 1
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------RETURNING TO CITADEL-------------------------",
+		"id": "A1.C2.SnapInspection",
+		"sortIndex": 52,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Snap Inspection",
+		"description": "On returning to the Citadel, [Rear Admiral Mikhailovich|megametracker://person?id=O1.Mikhailovich] demands an inspection of the Normandy.",
+		"inMapId": "G.C1.DockingBay",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Snap_Inspection"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A1.C1.P",
+					"type": "Paragon",
+					"value": 2,
+					"context": "*_Charm_* Mikhailovich (requires 9 Charm)",
+					"trigger": "\"We need to build bridges.\""
+				}, {
+					"id": "A1.C1.R1",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* Mikhailovich (requires 9 Initimidate)",
+					"trigger": "\"We need to kick ass.\""
+				}, {
+					"id": "A1.C1.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Damn right I did.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C2.FamilyMatter",
+		"sortIndex": 54,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Family Matter",
+		"description": "[megametracker://person?id=O1.PetrovskyM] is arguing with his dead brother's wife [Rebekah|megametracker://person?id=O1.PetrovskyR] about treating her unborn child with gene therapy.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 555,
+			"y": 1091,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade Michael to allow Rebekah to skip the gene therapy",
+				"options": [{
+					"id": "A1.C2.FamilyMatter.P1",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* Michael (Requires 2 Charm)",
+					"trigger": "\"It's still her choice.\""
+				}, {
+					"id": "A1.C2.FamilyMatter.R1",
+					"type": "Renegade",
+					"value": 9,
+					"context": "*_Intimidate_* Michael (Requires 3 Intimidate)",
+					"trigger": "\"You're not helping.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade Rebekah to agree with Michael and try the gene therapy",
+				"options": [{
+					"id": "A1.C2.FamilyMatter.P2",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* Rebekah (Requires 3 Charm)",
+					"trigger": "\"It's worth it.\""
+				}, {
+					"id": "A1.C2.FamilyMatter.R2",
+					"type": "Renegade",
+					"value": 9,
+					"context": "*_Intimidate_* Rebekah (Requires 2 Intimidate)",
+					"trigger": "\"Think of the child.\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Family_Matter"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+
+
+
+
+
+
+
+
+	}, {
+		"id": "A1.C2.IRememberMe",
+		"sortIndex": 55,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: I Remember Me",
+		"description": "[Lieutenant Girard|megametracker://person?id=O1.Girard] requests Shepard's help to deal with a fellow colonist, [Talitha|megametracker://person?id=O1.Talitha], who is threatening to kill herself in the docking bay. \n\nUsing the elevator in C-Sec Academy will start this assignment.",
+		"inMapId": "G.C1.DockingBay",
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Dealing with Talitha",
+				"options": [{
+					"id": "A1.C2.IRememberMe.P",
+					"type": "Paragon",
+					"value": 8,
+					"trigger": "Give her the sedative."
+				}, {
+					"id": "A1.C2.IRememberMe.R1",
+					"type": "Renegade",
+					"value": 9,
+					"trigger": "Use the sedative"
+				}, {
+					"id": "A1.C2.IRememberMe.R2",
+					"type": "Renegade",
+					"value": 9,
+					"trigger": "\"Shoot her. That's an order.\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_I_Remember_Me"
+		],
+		"events": [{
+			"type": "RequiresConfig",
+			"id": "Origin Colonist"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C2.IRememberMe.1",
+		"sortIndex": 5501,
+		"inMissionId": "A1.C2.IRememberMe",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Report to Girard",
+		"description": "Go see [Lieutenant Girard|megametracker://person?id=O1.Girard] in the Citadel docking bay.",
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 1503,
+			"y": 1134,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C2.IRememberMe.2",
+		"sortIndex": 5502,
+		"inMissionId": "A1.C2.IRememberMe",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The Needle",
+		"description": "[Lieutenant Girard|megametracker://person?id=O1.Girard] gave you a sedative. If you can use it on [Talitha|megametracker://person?id=O1.Talitha], she will be taken to a psychiatric facility for help. He noted that she gets more agitated the closer you get to her, but you can always walk away if she gets too upset.\n\n_(Note: do not take more than three steps toward Talitha or she will commit suicide.)_",
+		"inMapId": "G.C1.DockingBay"
+	}, {
+		"id": "A1.C2.IRememberMe.3",
+		"sortIndex": 5503,
+		"inMissionId": "A1.C2.IRememberMe",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Report to Girard",
+		"description": "Return to [Lieutenant Girard|megametracker://person?id=O1.Girard] and tell him what happened.",
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 1503,
+			"y": 1134,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C2.OldUnhappyFarOffThings",
+		"sortIndex": 55,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Old, Unhappy, Far-Off Things",
+		"description": "Speak to Zabaleta in the Wards Access section. He claims to know your parents. Requires 4 Charm or 5 Intimidate to see all dialogue options.",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 527,
+			"y": 445,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "On first meeting Zabaleta",
+				"options": [{
+					"id": "A1.C2.OldUnhappyFarOffThings.P",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'll give you the money.\""
+				}, {
+					"id": "A1.C2.OldUnhappyFarOffThings.R",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You're just a drunk.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade Zabaleta to get help",
+				"options": [{
+					"id": "A1.C2.OldUnhappyFarOffThings.2.P1",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* Zabaleta (Requires 4 Charm)",
+					"trigger": "\"The Veteran's Affairs Office\""
+				}, {
+					"id": "A1.C2.OldUnhappyFarOffThings.2.R1",
+					"type": "Renegade",
+					"value": 9,
+					"context": "*_Intimidate_* Zabaleta (Requires 5 Intimidate)",
+					"trigger": "\"No one understands! Waaah!\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Final conversation with Zabaleta",
+				"options": [{
+					"id": "A1.C2.OldUnhappyFarOffThings.2.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'll give you 20 for food.\""
+				}, {
+					"id": "A1.C2.OldUnhappyFarOffThings.2.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Screw you.\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Old,_Unhappy,_Far-Off_Things"
+		],
+		"events": [{
+			"type": "RequiresConfig",
+			"id": "Origin Spacer"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C2.OldUnhappyFarOffThings.1",
+		"sortIndex": 5501,
+		"inMissionId": "A1.C2.OldUnhappyFarOffThings",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Call Home",
+		"description": "Return to the Normandy's Comm Room to contact Shepard's mother.",
+		"inMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 1843,
+			"y": 1050,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C2.OldUnhappyFarOffThings.2",
+		"sortIndex": 5502,
+		"inMissionId": "A1.C2.OldUnhappyFarOffThings",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Return to Zabaleta",
+		"description": "Return to the Wards Access section where Zabaleta is waiting. Convince him to seek help from the Veteran's Affairs Office."
+	}, {
+		"id": "A1.C2.OldFriends",
+		"sortIndex": 55,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Old Friends",
+		"description": "Talk to [megametracker://person?id=O1.Finch] in the Lower Wards, a fellow member of the 10th Street Reds, a gang back on Earth.",
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 1215,
+			"y": 1003,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade the guard to release Weisman",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Persuade the guard to release Weisman",
+						"options": [{
+							"id": "A1.C2.OldFriends.P1",
+							"type": "Paragon",
+							"value": 8,
+							"context": "*_Charm_* the guard (Requires 8 Charm)",
+							"trigger": "\"I need your help.\""
+						}, {
+							"id": "A1.C2.OldFriends.R1",
+							"type": "Renegade",
+							"value": 8,
+							"context": "*_Intimidate_* the guard (Requires 8 Intimidate)",
+							"trigger": "\"Make it negotiable.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "After failing to secure Weisman's release, convince Finch not to talk",
+						"options": [{
+							"id": "A1.C2.OldFriends.P2",
+							"type": "Paragon",
+							"value": 8,
+							"context": "*_Charm_* Finch (Requires 6 Charm)",
+							"trigger": "\"This won't help you.\""
+						}, {
+							"id": "A1.C2.OldFriends.R2",
+							"type": "Renegade",
+							"value": 9,
+							"context": "*_Intimidate_* Finch (Requires 6 Intimidate)",
+							"trigger": "\"So what?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Bribe or kill Finch to keep him silent",
+						"options": [{
+							"id": "A1.C2.OldFriends.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I've got a warning.\" / \"This changes things.\""
+						}, {
+							"id": "A1.C2.OldFriends.R3",
+							"type": "Renegade",
+							"value": 9,
+							"trigger": "Shoot him."
+						}]
+					}
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Old_Friends"
+		],
+		"events": [{
+			"type": "RequiresConfig",
+			"id": "Origin Earthborn"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C2.OldFriends.1",
+		"sortIndex": 5501,
+		"inMissionId": "A1.C2.OldFriends",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find The Turian",
+		"description": "Go talk to the turian guard at Chora's Den in the Lower Wards.",
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 531,
+			"y": 407,
+			"radius": 1
+		}
+
+
+
+
+	}, {
+		"id": "A1.C2.PlantingABug",
+		"sortIndex": 56,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Planting a Bug",
+		"description": "[megametracker://person?id=O1.Wong] in the Citadel Tower is gathering information on dangerously overworked traffic control operators. She wants Shepard to plant a bug in the control room so she can monitor them.",
+		"inMapId": "G.C1.Tower",
+		"mapLocationPoint": {
+			"x": 1043,
+			"y": 1447,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade Wong to drop the story",
+				"options": [{
+					"id": "A1.C2.PlantingABug.P",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* Wong (Requires 4 Charm)",
+					"trigger": "\"I've changed my mind.\""
+				}, {
+					"id": "A1.C2.PlantingABug.R",
+					"type": "Renegade",
+					"value": 9,
+					"context": "*_Intimidate_* Wong (Requires 5 Intimidate)",
+					"trigger": "Lie: \"I already did it\""
+				}]
+			}
+		}, {
+			"id": "A1.C2.PlantingABug.1.P",
+			"type": "Paragon",
+			"value": 2,
+			"context": "After returning to Emily Wong",
+			"trigger": "\"It's a good cause.\" or \"You're welcome.\""
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Planting_a_Bug"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Helped Emily Wong and Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C2.PlantingABug.1",
+		"sortIndex": 5601,
+		"inMissionId": "A1.C2.PlantingABug",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Plant the Bug (Optional)",
+		"description": "Go to Citadel Security and plant a bug in the Citadel Traffic Control Center near the back of C-Sec. \n\nNote: You can just tell Ms. Wong that you did what she asked, without actually planting the bug.",
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 251,
+			"y": 771,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C2.PlantingABug.2",
+		"sortIndex": 5602,
+		"inMissionId": "A1.C2.PlantingABug",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Inform Emily",
+		"description": "Return to the Citadel Tower and inform Emily Wong that you have planted the listening device.",
+		"inMapId": "G.C1.Tower",
+		"mapLocationPoint": {
+			"x": 1043,
+			"y": 1447,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C2.FourthEstate",
+		"sortIndex": 53,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: The Fourth Estate",
+		"description": "[Khalisa al-Jilani|megametracker://person?id=O1.AlJilani] with Westerlund News ambushes Shepard in C-Sec Academy for a hostile interview. Shepard will be rewarded for conducting the interview civilly for as long as possible, revealing nothing about [Saren|megametracker://person?id=E1.Saren].",
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 1540,
+			"y": 990,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A1.C2.FourthEstate.P1",
+					"type": "Paragon",
+					"value": 2,
+					"context": "End the interview",
+					"trigger": "\"This interview is over\""
+				}, {
+					"id": "A1.C2.FourthEstate.R1",
+					"type": "Renegade",
+					"value": 2,
+					"context": "Punch Al-Jilani",
+					"trigger": "\"Time to shut you up.\""
+				}, {
+					"id": "A1.C2.FourthEstate.P2",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* Al-Jilani (Requires 6 Charm)",
+					"trigger": "\"The turians helped build it.\" and \"The crew is still Alliance.\""
+				}, {
+					"id": "A1.C2.FourthEstate.R2",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* Al-Jilani (Requires 5 Intimidate)",
+					"trigger": "\"A great human innovation.\" and \"I command the Normandy.\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_The_Fourth_Estate"
+		],
+		"decisionIds": ["D1.AlJilani"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C2.FourthEstate.1",
+		"sortIndex": 5301,
+		"inMissionId": "A1.C2.FourthEstate",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The Fallout",
+		"description": "[Hackett|megametracker://person?id=P1.Hackett] will want to talk about how the interview went the next time Shepard boards the Normandy.",
+		"inMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 1843,
+			"y": 1050,
+			"radius": 1
+		}
+
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------CITADEL LOCKDOWN-------------------------",
+		"id": "A1.C3.NegotiatorsRequest",
+		"sortIndex": 102,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Negotiator's Request",
+		"description": "The alliance diplomat [megametracker://person?id=O1.Keeler] needs a mental stimulant to gain advantage in an upcoming meeting.",
+		"inMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 1391,
+			"y": 931,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade Keeler to get help",
+				"options": [{
+					"id": "A1.C3.NegotiatorsRequest.P",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* Keeler (Requires 7 Charm)",
+					"trigger": "\"Then do it legally.\""
+				}, {
+					"id": "A1.C3.NegotiatorsRequest.R",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* Keeler (Requires 6 Intimidate)",
+					"trigger": "\"Take it back!\""
+				}]
+			}
+		}, {
+			"id": "A1.C3.NegotiatorsRequest.1.R",
+			"type": "Renegade",
+			"value": 9,
+			"context": "Trick Keeler into taking a depressant instead of a stimulant",
+			"trigger": "Give him the depressant."
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Citadel Lockdown"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.C3.NegotiatorsRequest.1",
+		"sortIndex": 10201,
+		"inMissionId": "A1.C3.NegotiatorsRequest",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Get the Drug",
+		"description": "(Optional) Go to the Med Clinic in the Upper Wards and purchase the drug that [Keeler|megametracker://person?id=O1.Keeler] needs for his treaty negotiation.\n\n_Note: you don't have to buy him a *stimulant*..._",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 1723,
+			"y": 1293,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.C3.OurOwnWorstEnemy",
+		"sortIndex": 101,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Citadel: Our Own Worst Enemy",
+		"description": "[Charles Saracino|megametracker://person?id=O1.Saracino], leader of anti-alien Terra Firma Party, wants Shepard's endorsement in the upcoming election.",
+		"inMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 1391,
+			"y": 931,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Decide whether or not to support Saracino's candidacy",
+				"options": [{
+					"id": "A1.C3.OurOwnWorstEnemy.P",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I won't support you.\""
+				}, {
+					"id": "A1.C3.OurOwnWorstEnemy.R",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You have my support.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Citadel Lockdown"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------FEROS-------------------------",
+		"id": "A1.F.GethInTunnels",
+		"sortIndex": 60,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Feros: Geth in the Tunnels",
+		"description": "Talk to [megametracker://person?id=O1.FaiDan] again and he will explain some of the troubles facing the Zhu's Hope colonists, including that there are geth in the tunnels under the colony, likely guarding a transmitter used to coordinate attacks against the colony.",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 752,
+			"y": 1134,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Feros:_Geth_in_the_Tunnels"
+		],
+		"relatedMissionIds": ["A1.F.PowerCells", "A1.F.VarrenMeat", "A1.F.WaterRestoration", "A1.T.StrangeBehavior"],
+		"conversationRewards": [{
+			"id": "A1.F.GethInTunnels.P",
+			"type": "Paragon",
+			"value": 8,
+			"trigger": "Stopped the geth"
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Drove The Geth Dropship From Zhu's Hope"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Talked to the ExoGeni VI"
+		}]
+	}, {
+		"id": "A1.F.GethInTunnels.1",
+		"sortIndex": 6001,
+		"inMissionId": "A1.F.GethInTunnels",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find the Geth",
+		"description": "Hunt in the tunnels beneath Zhu's Hope for the remaining geth forces and their transmitter.",
+		"inMapId": "G.Ear.Att.The.Fer.Tunnels",
+		"mapLocationPoint": {
+			"x": 1930,
+			"y": 790,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.F.GethInTunnels.2",
+		"sortIndex": 6002,
+		"inMissionId": "A1.F.GethInTunnels",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Inform Fai Dan",
+		"description": "Tell Fai Dan that you have destroyed the geth transmitter.",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 752,
+			"y": 1134,
+			"radius": 1
+		}
+
+	}, {
+		"id": "A1.F.PowerCells",
+		"sortIndex": 62,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Feros: Power Cells",
+		"description": "[megametracker://person?id=O1.OConnell] in Zhu's Hope is trying to restore power to the colony and needs Shepard to locate some power cells for her.",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 1149,
+			"y": 1168,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Feros:_Power_Cells"
+		],
+		"relatedMissionIds": ["A1.F.GethInTunnels", "A1.F.VarrenMeat", "A1.F.WaterRestoration", "A1.T.StrangeBehavior"],
+		"conversationRewards": [{
+			"id": "A1.F.PowerCells.P",
+			"type": "Paragon",
+			"value": 8,
+			"trigger": "\"Take a look at these.\""
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Drove The Geth Dropship From Zhu's Hope"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Talked to the ExoGeni VI"
+		}]
+	}, {
+		"id": "A1.F.PowerCells.1",
+		"sortIndex": 6201,
+		"inMissionId": "A1.F.PowerCells",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Power Cells",
+		"description": "Search the tunnels beneath Zhu's Hope to find the missing power cells.",
+		"inMapId": "G.Ear.Att.The.Fer.Tunnels",
+		"mapLocationPoint": {
+			"x": 720,
+			"y": 622,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.F.PowerCells.2",
+		"sortIndex": 6202,
+		"inMissionId": "A1.F.PowerCells",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Deliver Cells to May O'Connell",
+		"description": "Now that you have the power cells, bring them to May O'Connell.",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 1149,
+			"y": 1168,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.F.VarrenMeat",
+		"sortIndex": 61,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Feros: Varren Meat",
+		"description": "[megametracker://person?id=O1.Reynolds] in the freighter on Zhu's Hope is dealing with a food shortage. He needs Shepard to kill the alpha varren in the tunnels so they can safely hunt the other varren for food.",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 1001,
+			"y": 1193,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Feros:_Varren_Meat"
+		],
+		"relatedMissionIds": ["A1.F.GethInTunnels", "A1.F.PowerCells", "A1.F.WaterRestoration", "A1.T.StrangeBehavior"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A1.F.VarrenMeat.P",
+					"type": "Paragon",
+					"value": 8,
+					"trigger": "\"The alpha male is dead.\""
+				}, {
+					"id": "A1.F.VarrenMeat.R",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Just pay up.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Drove The Geth Dropship From Zhu's Hope"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Talked to the ExoGeni VI"
+		}]
+	}, {
+		"id": "A1.F.VarrenMeat.1",
+		"sortIndex": 6101,
+		"inMissionId": "A1.F.VarrenMeat",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find Alpha Varren",
+		"description": "Find and kill the alpha varren in the tunnels beneath Zhu's Hope.",
+		"inMapId": "G.Ear.Att.The.Fer.Tunnels",
+		"mapLocationPoint": {
+			"x": 579,
+			"y": 871,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.F.VarrenMeat.2",
+		"sortIndex": 6102,
+		"inMissionId": "A1.F.VarrenMeat",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Inform Davin Reynolds",
+		"description": "Now that the alpha varren has been killed, inform Davin Reynolds that it is safe to hunt the varren.",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 1001,
+			"y": 1193,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.F.WaterRestoration",
+		"sortIndex": 63,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Feros: Water Restoration",
+		"description": "[megametracker://person?id=O1.Doyle] is trying to restore water to Zhu's Hope. The valves in the tunnels below the colony were shut off and need to be opened again.",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 1243,
+			"y": 1142,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Feros:_Water_Restoration"
+		],
+		"relatedMissionIds": ["A1.F.GethInTunnels", "A1.F.PowerCells", "A1.F.VarrenMeat", "A1.T.StrangeBehavior"],
+		"conversationRewards": [{
+			"id": "A1.F.WaterRestoration.P",
+			"type": "Paragon",
+			"value": 8,
+			"trigger": "Complete assignment."
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Drove The Geth Dropship From Zhu's Hope"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Talked to the ExoGeni VI"
+		}]
+	}, {
+		"id": "A1.F.WaterRestoration.1",
+		"sortIndex": 6301,
+		"inMissionId": "A1.F.WaterRestoration",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find Valve 1",
+		"inMapId": "G.Ear.Att.The.Fer.Tunnels",
+		"mapLocationPoint": {
+			"x": 1110,
+			"y": 805,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A1.F.WaterRestoration.2",
+		"sortIndex": 6302,
+		"inMissionId": "A1.F.WaterRestoration",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find Valve 2",
+		"inMapId": "G.Ear.Att.The.Fer.Tunnels",
+		"mapLocationPoint": {
+			"x": 1110,
+			"y": 1240,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A1.F.WaterRestoration.3",
+		"sortIndex": 6303,
+		"inMissionId": "A1.F.WaterRestoration",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find Valve 3",
+		"inMapId": "G.Ear.Att.The.Fer.Tunnels",
+		"mapLocationPoint": {
+			"x": 1110,
+			"y": 1651,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A1.F.WaterRestoration.4",
+		"sortIndex": 6304,
+		"inMissionId": "A1.F.WaterRestoration",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Inform Macha Doyle",
+		"description": "You have restored water to the colony. Inform Macha Doyle so she can get to work.",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 1243,
+			"y": 1142,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.F.DataRecovery",
+		"sortIndex": 64,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Feros: Data Recovery",
+		"description": "Talk to [megametracker://person?id=O1.Hossle] among the weigh station refugees on the prothean skyway. He left behind a data disc at his console in the ExoGeni facility and needs Shepard's help to get it back.",
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 1005,
+			"y": 1200,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Feros:_Data_Recovery"
+		],
+		"decisionIds": ["D1.Hossle"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Drove The Geth Dropship From Zhu's Hope"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Completed Feros Mission"
+		}]
+	}, {
+		"id": "A1.F.DataRecovery.1",
+		"sortIndex": 6401,
+		"inMission": "A1.F.DataRecovery",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find the Console",
+		"description": "Hossle's console is located in the ExoGeni base. Find it and download the data onto the OSD that he gave you.",
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1893,
+			"y": 1580,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.F.DataRecovery.2",
+		"sortIndex": 6402,
+		"inMission": "A1.F.DataRecovery",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Deliver OSD to Hossle",
+		"description": "return to Gavin Hossle at the refugee camp and give him the OSD that contains his data.",
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 1005,
+			"y": 1200,
+			"radius": 1
+		}
+
+
+	}, {
+		"x-comment-x": "-----------------------NOVERIA-------------------------",
+		"id": "A1.N.Espionage",
+		"sortIndex": 71,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Noveria: Espionage",
+		"description": "[megametracker://person?id=O1.Calis] in the Port Hanshan Hotel thinks Rafael Vargas, the Binary Helix salesman on the other side of the lobby, is infringing on copyrights of her company, Armali. She asks Shepard to pose as a potential client and distract him long enough for her to hack his network and get the evidence she needs.\n\nMaximum renegade points are obtained by exposing Calis to Vargas, and then lying to her that you did what she asked.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 1509,
+			"y": 1865,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_Espionage"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A1.N.Espionage.P1",
+					"type": "Paragon",
+					"value": 8,
+					"context": "Refuse the assignment",
+					"trigger": "\"Not this time.\""
+				}, {
+					"id": "A1.N.Espionage.P2",
+					"type": "Paragon",
+					"value": 2,
+					"context": "After accepting intially, refuse the assignment",
+					"trigger": "\"This is wrong.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Vargas",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A1.N.Espionage.1.C1",
+							"type": "Paragon",
+							"value": 0,
+							"context": "*_Charm_* Vargas (Requires 1 Charm)",
+							"trigger": "\"That's correct.\""
+						}, {
+							"id": "A1.N.Espionage.1.Loot.I.1",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*_Intimidate_* Vargas (Requires 1 Intimidate)",
+							"trigger": "\"That's irrelevant.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A1.N.Espionage.1.C2",
+							"type": "Paragon",
+							"value": 0,
+							"context": "*_Charm_* Vargas (Requires 8 Charm)",
+							"trigger": "\"Muscle degeneracy?\""
+						}, {
+							"id": "A1.N.Espionage.1.Loot.I.2",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*_Intimidate_* Vargas (Requires 6 Intimidate)",
+							"trigger": "\"Not good enough.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A1.N.Espionage.1.C3",
+							"type": "Paragon",
+							"value": 0,
+							"context": "*_Charm_* Vargas (Requires 11 Charm)",
+							"trigger": "\"What about distribution?\""
+						}, {
+							"id": "A1.N.Espionage.1.Loot.I.3",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*_Intimidate_* Vargas (Requires 9 Intimidate)",
+							"trigger": "\"Don't rip me off.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A1.N.Espionage.1.C4",
+							"type": "Paragon",
+							"value": 0,
+							"context": "*_Charm_* Vargas (Requires 12 Charm)",
+							"trigger": "\"Know of any?\""
+						}, {
+							"id": "A1.N.Espionage.1.Loot.I.4",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*_Intimidate_* Vargas (Requires 11 Intimidate)",
+							"trigger": "\"I don't care.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Reporting to Mallene Calis",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A1.N.Espionage.2.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"It's done.\""
+						}, {
+							"id": "A1.N.Espionage.2.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I told him about you.\""
+						}, {
+							"id": "A1.N.Espionage.2.R2",
+							"type": "Renegade",
+							"value": 9,
+							"context": "After exposing Calis to Vargas",
+							"trigger": "Lie: \"It's done.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A1.N.Espionage.2.C1",
+							"type": "Credits",
+							"value": 500,
+							"trigger": "\"Thanks.\" / \"Good.\" / \"That will do.\""
+						}, {
+							"id": "A1.N.Espionage.2.C2",
+							"type": "Credits",
+							"context": "*_Charm_* Calis (Requires 2 Charm)",
+							"value": 750,
+							"trigger": "\"That's all?\""
+						}, {
+							"id": "A1.N.Espionage.2.C3",
+							"type": "Credits",
+							"value": 750,
+							"context": "*_Intimidate_* Calis (Requires 4 Intimidate)",
+							"trigger": "\"More.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Port"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.N.Espionage.1",
+		"sortIndex": 7101,
+		"inMissionId": "A1.N.Espionage",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Keep Him Talking",
+		"description": "Vargas is at the hotel bar. In order for Mallen's device to work, you have to keep him talking about business. He is a shrewd man who can tell if someone is wasting his time. \n\n_(Requires 12 Charm/11 Intimidate for all dialogue options.)_",
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 1421,
+			"y": 1694,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.N.Espionage.2",
+		"sortIndex": 7102,
+		"inMissionId": "A1.N.Espionage",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Return to Mallene",
+		"description": "You can be honest with Mallene about your conversation with Vargas, or lie and say it worked when it didn't.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 1509,
+			"y": 1865,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.N.Smuggling",
+		"sortIndex": 70,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Noveria: Smuggling",
+		"description": "The hanar [megametracker://person?id=O1.Opold] wants Shepard to use his Spectre status to sneak a package through security.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 1375,
+			"y": 946,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_Smuggling"
+		],
+		"relatedMissionIds": ["M1.Noveria.2PortHanshen", "A1.N.LorikQuiin"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuard Opold to tell you whom the package is for",
+				"options": [{
+					"id": "A1.N.Smuggling.P1",
+					"type": "Paragon",
+					"value": 0,
+					"context": "*_Charm_* Opold (Requires 6 Charm)",
+					"trigger": "\"See it my way.\""
+				}, {
+					"id": "A1.N.Smuggling.R1",
+					"type": "Renegade",
+					"value": 0,
+					"context": "*_Intimidate_* Opold (Requires 4 Intimidate)",
+					"trigger": "\"Tell me or I won't help.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Decide what to do with the smuggled package",
+				"options": [{
+					"set": {
+						"context": "Return the package to Opold",
+						"options": [{
+							"id": "A1.N.Smuggling.2.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I'm in.\" / \"Agreed.\""
+						}, {
+							"set": {
+								"context": "Bargain for a better deal",
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A1.N.Smuggling.2.C1",
+									"type": "Credits",
+									"value": 250,
+									"trigger": "\"It is.\" / \"Deal.\" / \"Cheap bastard.\""
+								}, {
+									"id": "A1.N.Smuggling.2.C2",
+									"type": "Credits",
+									"value": 500,
+									"context": "*_Charm_* Opold (Requires 5 Charm)",
+									"trigger": "\"You needed me.\""
+								}, {
+									"id": "A1.N.Smuggling.2.C3",
+									"type": "Credits",
+									"value": 500,
+									"context": "*_Intimidate_* Opold (Requires 6 Intimidate)",
+									"trigger": "\"I hope that's a joke.\""
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Keep the upgrade (Inamorda will ambush Shepard later)",
+						"options": [{
+							"id": "A1.N.Smuggling.2.C7",
+							"type": "Credits",
+							"value": 200,
+							"context": "*_Charm_* Opold (Requires 7 Charm)",
+							"trigger": "\"I'll keep the upgrade.\""
+						}, {
+							"id": "A1.N.Smuggling.2.C8",
+							"type": "Credits",
+							"value": 200,
+							"context": "*_Intimidate_* Opold (Requires 7 Intimidate)",
+							"trigger": "\"The upgrade is mine.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "Sell the package directly to Inamorda",
+						"options": [{
+							"id": "A1.N.Smuggling.2.R2",
+							"type": "Credits",
+							"value": 500,
+							"trigger": "\"I'm in.\""
+						}, {
+							"set": {
+								"context": "Bargain for a better deal",
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A1.N.Smuggling.2.C4",
+									"type": "Credits",
+									"value": 750,
+									"context": "*_Charm_* Inamorda (Requires 6 Charm)",
+									"trigger": "\"This is worth more.\""
+								}, {
+									"id": "A1.N.Smuggling.2.C5",
+									"type": "Credits",
+									"value": 750,
+									"context": "*_Intimidate_* v (Requires 4 Intimidate)",
+									"trigger": "\"Be serious.\""
+								}]
+							}
+						}]
+					}
+				}, {
+					"id": "A1.N.Smuggling.1.C6",
+					"type": "Credits",
+					"value": 200,
+					"context": "Turn over the smuggled goods to Anoleis for a garage pass",
+					"trigger": "\"Thanks.\" / \"That will do.\" / \"About time.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Port"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Unlocked Noveria: Garage"
+		}]
+	}, {
+		"id": "A1.N.Smuggling.1",
+		"sortIndex": 7001,
+		"inMissionId": "A1.N.Smuggling",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Retrieve the Package",
+		"description": "You've agreed to help Opold. His package has been left outside the Normandy, in the docking bay.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 1305,
+			"y": 632,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A1.N.Smuggling.2",
+		"sortIndex": 7002,
+		"inMissionId": "A1.N.Smuggling",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Return the Package (Optional)",
+		"description": "You've recovered Opold's package. It appears to be a powerful, experimental weapons mod. \n\nYou have several options: return the package to [Opold|megametracker://person?id=O1.Opold] for credits, return it to [Inamorda|megametracker://person?id=O1.Inamorda] for more credits, return the package to [Anoleis|megametracker://person?id=O1.Anoleis] for a garage pass, or keep the package (and fight Inamorda later in the docking bay)."
+	}, {
+		"id": "A1.N.LorikQuiin",
+		"sortIndex": 72,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Noveria: Lorik Qui'in",
+		"description": "[megametracker://person?id=O1.Quiin] offers a garage pass in return for recovering his evidence against Adminstrator Anoleis, in his office at Synthetic Insights. [Gianna Parasini|megametracker://person?id=O1.Gianna] will mention Lorik after you have finished speaking with Anoleis in his office, or you can just talk to Qui'in directly to acquire the mission.",
+		"inMapId": null,
+		"isShowInParentMap": false,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_Lorik_Qui'in"
+		],
+		"relatedMissionIds": ["M1.Noveria.2PortHanshen", "A1.N.Smuggling"],
+		"decisionIds": ["D1.Gianna"],
+		"sideEffects": ["*Infinite Paragon/Renegade Exploit*: It is possible to persuade Qui'in to testify, repeatedly, for an infinite number of Paragon/Renegade points. You just need 5 Charm/Intimidate to exploit this."],
+		"decisionIds": ["D1.Gianna"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to the ERCS guards in Synthetic Insights",
+				"options": [{
+					"id": "A1.N.LorikQuiin.P1",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* guards (Requires 6 Charm)",
+					"trigger": "\"You're here illegally.\""
+				}, {
+					"id": "A1.N.LorikQuiin.R1",
+					"type": "Renegade",
+					"value": 9,
+					"context": "*_Intimidate_* guards (Requires 8 Intimidate)",
+					"trigger": "\"You can't take us.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Confronting Sergeant Stirling after killing the ERCS guards at Synthetic Insights",
+				"options": [{
+					"id": "A1.N.LorikQuiin.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"They didn't give me a choice.\""
+				}, {
+					"id": "A1.N.LorikQuiin.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Bring it on.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Decide what to do with the evidence",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Return the evidence to Qui'in",
+						"options": [{
+							"id": "A1.N.LorikQuiin.2.C1",
+							"type": "Credits",
+							"value": 500,
+							"trigger": "\"Agreed.\" / \"If that's all you have.\""
+						}, {
+							"id": "A1.N.LorikQuiin.2.C2",
+							"type": "Credits",
+							"value": 750,
+							"context": "*_Charm_* Qui'in (Requires 8 Charm)",
+							"trigger": "\"You owe me.\""
+						}, {
+							"id": "A1.N.LorikQuiin.2.C3",
+							"type": "Credits",
+							"value": 750,
+							"context": "*_Intimidate_* Qui'in (Requires 7 Intimidate)",
+							"trigger": "\"Anoleis would pay more.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "Return the evidence to Gianna Parasini",
+						"options": [{
+							"set": {
+								"isExclusiveSet": true,
+								"context": "After speaking with Parasini, convince Qui'in to testify against Anoleis. (*Infinite Paragon/Renegade Exploit*: You can conclude the conversation and then speak to Qui'in again, selecting the same choices, and be rewarded the morality points again.)",
+								"options": [{
+									"id": "A1.N.LorikQuiin.2.P1",
+									"type": "Paragon",
+									"value": 24,
+									"context": "*_Charm_* Qui'in (Requires 5 Charm)",
+									"trigger": "\"You'd be a hero.\""
+								}, {
+									"id": "A1.N.LorikQuiin.2.R1",
+									"type": "Renegade",
+									"value": 25,
+									"context": "*_Intimidate_* Qui'in (Requires 5 Intimidate)",
+									"trigger": "\"Damn right I will.\""
+								}]
+							}
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"context": "After convincing Qui'in to testify, blackmail Anoleis for the garage pass, but keep the evidence",
+								"options": [{
+									"id": "A1.N.LorikQuiin.2.P2",
+									"type": "Paragon",
+									"value": 0,
+									"context": "*_Charm_* Anoleis (Requires 4 Charm)",
+									"trigger": "\"I'm not here to arrest you.\""
+								}, {
+									"id": "A1.N.LorikQuiin.2.R2",
+									"type": "Renegade",
+									"value": 0,
+									"context": "*_Intimidate_* Anoleis (Requires 8 Intimidate)",
+									"trigger": "\"You'll do what I say.\""
+								}]
+							}
+						}, {
+							"context": "Give the evidence to Gianna Parasini",
+							"id": "A1.N.LorikQuiin.2.P3",
+							"type": "Paragon",
+							"value": 8,
+							"trigger": "\"I convinced Qui'in.\""
+						}]
+					}
+				}, {
+					"set": {
+						"options": [{
+							"id": "A1.N.LorikQuiin.2.R3",
+							"type": "Renegade",
+							"value": 9,
+							"context": "Return the evidence to Anoleis",
+							"trigger": "\"I accept.\""
+						}, {
+							"id": "A1.N.LorikQuiin.2.R4",
+							"type": "Renegade",
+							"value": 25,
+							"context": "Expose Gianna Parasini (this results in both of them dead)",
+							"trigger": "\"Gianna is investigating you.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "If Anoleis was arrested, return to the Docking Bay and speak to Captain Matsuo",
+				"options": [{
+					"id": "A1.N.LorikQuiin.2.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"He was a criminal.\""
+				}, {
+					"id": "A1.N.LorikQuiin.2.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Your opinion doesn't matter.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Port"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Unlocked Noveria: Garage"
+		}, {
+			"type": "Triggers",
+			"id": "Unlocked Noveria: Garage"
+		}, {
+			"type": "Triggers",
+			"id": "Garage Pass via A1.N.LorikQuiin"
+		}]
+	}, {
+		"id": "A1.N.LorikQuiin.1",
+		"sortIndex": 7201,
+		"inMissionId": "A1.N.LorikQuiin",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The Evidence",
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 340,
+			"y": 1965,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A1.N.LorikQuiin.2",
+		"sortIndex": 7202,
+		"inMissionId": "A1.N.LorikQuiin",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Select Reward",
+		"description": "You have several options: return the evidence to [megametracker://person?id=O1.Quiin] for credits and a garage passs, talk Qui'in into testifying and return the evidence to [Gianna Parasini|megametracker://person?id=O1.Gianna] for a garage pass, or return the evidence to Anoleis for a garage pass. There are also variants on these choices (like letting Anoleis and Parasini kill each other and taking the garage pass from Anoleis' body)."
+	}, {
+		"id": "A1.N.Quarantine",
+		"sortIndex": 73,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Noveria: Quarantine",
+		"description": "Speak to [Dr. Cohen|megametracker://person?id=O1.Cohen] in the lower Medical Lab. He and his team were exposed to a toxin and if you get them a cure, he will give you access to the maintenance tunnels to the Secure Lab.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.13",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_Quarantine"
+		],
+		"relatedMissionIds": ["M1.Noveria", "M1.Noveria.10RiftStation"],
+		"conversationRewards": [{
+			"id": "A1.N.Espionage.2.P1",
+			"type": "Paragon",
+			"value": 24,
+			"trigger": "Giving Dr. Cohen the cure."
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Rift Station"
+		}]
+	}, {
+		"id": "A1.N.Quarantine.1",
+		"sortIndex": 7301,
+		"inMissionId": "A1.N.Quarantine",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Talk to Ventralis",
+		"description": "You'll need to ask Ventralis for permission to enter the quarantine labs.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 1369,
+			"y": 1475,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.N.Quarantine.2",
+		"sortIndex": 7302,
+		"inMissionId": "A1.N.Quarantine",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Make a Cure",
+		"description": "Head to the quarantine lab, which is downstairs near the science team quarters. There should be equipment and notes that will allow you to replicate the scientists' work and create a cure. \n\n_(Note: [megametracker://person?id=O1.Iallis], a servant of [Matriarch Benezia|megametracker://person?id=E1.Benezia], will ambush you after creating the cure.)_",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.5",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.N.Quarantine.3",
+		"sortIndex": 7303,
+		"inMissionId": "A1.N.Quarantine",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "_Alestia's Attack_",
+		"description": "_(This objective is listed in the game under [megametracker://mission?id=M1.Noveria.10RiftStation])_\n\nYou were attacked by geth in the quarantine lab. [megametracker://person?id=O1.HanOlar] told you they came from the sealed maintenance area. [Dr. Cohen|megametracker://person?id=O1.Cohen] might be able to get you inside.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.5",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.N.Quarantine.4",
+		"sortIndex": 7304,
+		"inMissionId": "A1.N.Quarantine",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Return to Cohen",
+		"description": "You've got the cure. Return it to [Dr. Cohen|megametracker://person?id=O1.Cohen] in the infirmary.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.13",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.N.Quarantine.5",
+		"sortIndex": 7305,
+		"inMissionId": "A1.N.Quarantine",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "_The Back Door_",
+		"description": "_(This objective is listed in the game under [megametracker://mission?id=M1.Noveria.10RiftStation])_\n\nYou persuaded [Dr. Cohen|megametracker://person?id=O1.Cohen] to give you his pass. You can now sneak into the sealed maintenance area near the science team quarters and the quarantine lab.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.1",
+		"isShowInParentMap": true
+
+
+
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------VIRMIRE-------------------------",
+		"id": "A1.V.AssistingKirrahesTeam",
+		"sortIndex": 75,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Virmire: Assisting Kirrahe's Team",
+		"aliases": ["Virmire: Assisting Kirrahe's Team", "Virmire: Kirrahe's team"],
+		"description": "[Kirrahe|megametracker://person?id=P1.Kirrahe] is leading a team against the base on Virmire. He asks Shepard to distract the geth so his team can make it through. His life depends on Shepard completing this mission.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Gro.5",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "When disabling the alarms to the base",
+				"options": [{
+					"id": "A1.V.AssistingKirrahesTeam.4.P",
+					"type": "Paragon",
+					"value": 8,
+					"trigger": "\"They've got enough trouble.\""
+				}, {
+					"id": "A1.V.AssistingKirrahesTeam.4.R",
+					"type": "Renegade",
+					"value": 9,
+					"trigger": "\"They can handle it.\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Virmire:_Assisting_Kirrahe's_Team"
+		],
+		"relatedMissionIds": ["M1.Virmire.5"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Virmire: Salarian Camp"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Unlocked Virmire: Labs"
+		}, {
+			"type": "Triggers",
+			"id": "Unlocked Virmire: Labs"
+		}]
+	}, {
+		"id": "A1.V.AssistingKirrahesTeam.1",
+		"sortIndex": 7501,
+		"inMissionId": "A1.V.AssistingKirrahesTeam",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Disrupt Communications",
+		"description": "Find and destroy the terminal on the communications tower.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Bas.2",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"id": "A1.V.AssistingKirrahesTeam.1.P",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "Disrupt Geth Communications"
+		}]
+	}, {
+		"id": "A1.V.AssistingKirrahesTeam.2",
+		"sortIndex": 7502,
+		"inMissionId": "A1.V.AssistingKirrahesTeam",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy the Satellite Uplink",
+		"description": "Find and destroy the uplink on the satellite tower.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Bas.3",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"id": "A1.V.AssistingKirrahesTeam.2.P",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "Disrupt Satellite Uplink"
+		}]
+	}, {
+		"id": "A1.V.AssistingKirrahesTeam.3",
+		"sortIndex": 7503,
+		"inMissionId": "A1.V.AssistingKirrahesTeam",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy Geth Flyers",
+		"description": "Find the refueling platform and destroy all the geth flyers there.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Bas.4",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"id": "A1.V.AssistingKirrahesTeam.3.P",
+			"type": "Paragon",
+			"value": 8,
+			"trigger": "Destroy Geth Flyers"
+		}]
+	}, {
+		"id": "A1.V.AssistingKirrahesTeam.4",
+		"sortIndex": 7504,
+		"inMissionId": "A1.V.AssistingKirrahesTeam",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Disable Alarms",
+		"description": "Find the terminal to unlock the entrance to the base. Shepard has the option to trigger the alarms there or on the far side of the base. The latter choice will put extra pressure on [Kirrahe's|megametracker://person?id=P1.Kirrahe] team (possible resulting in Kirrahe's death).",
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry"
+	}, {
+		"id": "A1.V.WrexAndTheGenophage",
+		"sortIndex": 76,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "Virmire: Wrex and the Genophage",
+		"aliases": ["Virmire: Wrex and the Genophage", "Virmire: Wrex is Convinced"],
+		"description": "[Wrex|megametracker://person?id=S1.Wrex] has discovered that [Saren|megametracker://person?id=E1.Saren] has a cure for the Genophage and that [Kirrahe|megametracker://person?id=P1.Kirrahe] intends to destroy it. Shepard must deal with him before the mission. 8 Charm or 8 Intimidate or the successful completion of [megametracker://mission?id=A1.L.WrexFamilyArmor] are required to keep Wrex from being killed during this conversation. (Additionally, Wrex will survive if Shepard hasn't recruited [Garrus|megametracker://person?id=S1.Garrus] or Liara, but few players opt for that scenario.)",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Gro.5",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Virmire:_Wrex_and_the_Genophage"
+		],
+		"relatedMissionIds": [],
+		"decisionIds": ["D1.WrexArmor", "D1.Wrex"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Calm Wrex down",
+						"options": [{
+							"id": "A1.V2.1.P1",
+							"type": "Paragon",
+							"value": 28,
+							"context": "*_Charm_* Wrex (Requires 8 Charm)",
+							"trigger": "\"These aren't your people!\""
+						}, {
+							"id": "A1.V2.1.P2",
+							"type": "Paragon",
+							"value": 28,
+							"context": "*_Charm_* Wrex (Requires [megametracker://mission?id=A1.L.WrexFamilyArmor] and 8 Charm)",
+							"trigger": "\"I wouldn't do this otherwise.\" and \"We are.\""
+						}, {
+							"id": "A1.V2.1.R1",
+							"type": "Renegade",
+							"value": 9,
+							"context": "*_Intimidate_* Wrex (Requires 8 Intimidate)",
+							"trigger": "\"Don't be so naive.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Kill Wrex",
+						"options": [{
+							"set": {
+								"options": [{
+									"set": {
+										"isExclusiveSet": true,
+										"options": [{
+											"id": "A1.V2.1.R2",
+											"type": "Renegade",
+											"value": 25,
+											"context": "Shepard shoots Wrex personally",
+											"trigger": "Kill Wrex."
+										}, {
+											"id": "A1.V2.1.R3",
+											"type": "Renegade",
+											"value": 25,
+											"context": "Earlier, Shepard asks Ashley to be ready, and then Shepard signals Ashley to shoot him",
+											"trigger": "Signal Ashley to kill Wrex."
+										}]
+									}
+								}, {
+									"id": "A1.V2.1.P3",
+									"type": "Paragon",
+									"value": 2,
+									"context": "Shepard is regretful afterwards",
+									"trigger": "Damn it."
+								}]
+							}
+						}, {
+							"set": {
+								"context": "Shepard takes too long talking to Wrex, and Ashley kills him to protect Shepard",
+								"options": [{
+									"id": "A1.V2.1.R4",
+									"type": "Renegade",
+									"value": 25,
+									"trigger": "(No dialogue path.)"
+								}, {
+									"id": "A1.V2.1.P4",
+									"type": "Paragon",
+									"value": 8,
+									"context": "Shepard is angry at Ashley",
+									"trigger": "I'm in Command."
+								}]
+							}
+						}]
+					}
+				}, {
+					"id": "A1.V2.1.P5",
+					"type": "Paragon",
+					"value": 0,
+					"context": "Wrex stands down",
+					"trigger": "Complete Virmire having acquired only 4 squadmates (ie, Shepard has not yet met Garrus or Liara)."
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Wrex on Virmire"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Unlocked Virmire: Base Approach"
+		}]
+	}, {
+		"id": "A1.V.WrexAndTheGenophage.1",
+		"sortIndex": 7601,
+		"inMissionId": "A1.V.WrexAndTheGenophage",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Talk to Wrex",
+		"description": "Speak with Wrex and calm him down.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Gro.5",
+		"isShowInParentMap": true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------UNC-------------------------",
+		"id": "A1.U.AsariDiplomacy",
+		"sortIndex": 57,
+		"aliases": ["Investigate Mercenaries", "UNC: Asari Diplomacy"],
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Asari Diplomacy",
+		"description": "After receiving a message from [Nassana Dantius|megametracker://person?id=O1.Dantius] while aboard the Normandy, return to the Citadel and speak to Nassana in [the Embassy Lounge|megametracker://maplocation?id=G.C1.Presidium&title=Nassana%20Dantius&location=1115x687]. She wants Shepard to rescue her kidnapped sister. (You may also start this assignment by hacking into Yaroslev Tartakovsky's logs at the Peak 15 research facility on Noveria.) \n\nYou will be rewarded with special Armali Council product access after completing this assignment.",
+		"inMapId": "G.Ear.Art.Mac.Sharjila",
+		"isShowInParentMap": true,
+		"x-comment-x": "----------------- TODO!! Yaroslev Tartakovsky's logs on Noveria  ------------------",
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A1.U.AsariDiplomacy.2.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Don't bother.\""
+				}, {
+					"id": "A1.U.AsariDiplomacy.2.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"It better be.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A1.U.AsariDiplomacy.2.P2",
+					"type": "Paragon",
+					"value": 0,
+					"context": "*_Charm_* Nassana (Requires 3 Charm)",
+					"trigger": "\"I've got a better deal.\""
+				}, {
+					"id": "A1.U.AsariDiplomacy.2.R2",
+					"type": "Renegade",
+					"value": 0,
+					"context": "*_Intimidate_* Nassana (Requires 4 Intimidate)",
+					"trigger": "\"Credits won't cut it.\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Asari_Diplomacy"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Citadel Lockdown: Exile"
+		}]
+	}, {
+		"id": "A1.U.AsariDiplomacy.0",
+		"sortIndex": 5700,
+		"inMissionId": "A1.U.AsariDiplomacy",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Meet with Nassana",
+		"description": "Speak to Nassana in the Embassy lounge on the Presidium level of the Citadel.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1115,
+			"y": 687,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.AsariDiplomacy.1",
+		"sortIndex": 5701,
+		"inMissionId": "A1.U.AsariDiplomacy",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find Dahlia",
+		"description": "Go to the Macedon System in the Artemis Tau cluster and infiltrate the mercenary base.",
+		"inMapId": "G.Ear.Art.Mac.Sha.Stronghold",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.AsariDiplomacy.3",
+		"sortIndex": 5703,
+		"inMissionId": "A1.U.AsariDiplomacy",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Inform Nassana",
+		"description": "Go to the Embassy Lounge on the Presidium level of the Citadel and tell Nassana Dantius that her sister Dahlia is dead.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1115,
+			"y": 687,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.BesiegedBase",
+		"sortIndex": 83,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Besieged Base",
+		"description": "At 80% Paragon, [Hackett|megametracker://person?id=P1.Hackett] will inform you of a biotic group that have taken the civilians at a research post in [megametracker://maplocation?id=G.Ear.Had.Cac.Cho.1Science&type=Map] hostage.",
+		"inMapId": "G.Ear.Had.Cac.Chohe",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Besieged_Base"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Refusing the assignment while talking to Hackett",
+				"options": [{
+					"id": "A1.U.BesiegedBase.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"That's not my problem.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "During the assault",
+				"options": [{
+					"id": "A1.U.BesiegedBase.P1",
+					"type": "Paragon",
+					"value": 24,
+					"trigger": "No civilian causualties."
+				}, {
+					"id": "A1.U.BesiegedBase.P2",
+					"type": "Paragon",
+					"value": 8,
+					"trigger": "Between one and four civilian casualties."
+				}, {
+					"id": "A1.U.BesiegedBase.R2",
+					"type": "Renegade",
+					"value": 9,
+					"trigger": "More than four civilian casualties."
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "%Paragon 80"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.BesiegedBase.1",
+		"sortIndex": 8301,
+		"inMissionId": "A1.U.BesiegedBase",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Get to Medical Base",
+		"description": "get to the medical base on Chohe, located in the Cacus System of the hAdes Gamma cluster, and eliminate the biotics while avoiding civilian casualties.",
+		"inMapId": "G.Ear.Had.Cac.Chohe",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.BesiegedBase.2",
+		"sortIndex": 8302,
+		"inMissionId": "A1.U.BesiegedBase",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Report to Hackett",
+		"description": "Return to the Normandy and use the galaxy map to report in to Admiral Hackett.",
+		"inMapId": "G.N1.1",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.Cerberus",
+		"sortIndex": 86,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Cerberus",
+		"description": "Upon returning to [Kahoku|megametracker://person?id=O1.Kahoku] after finishing [megametracker://mission?id=A1.U.MissingMarines], he tells you about Cerberus, the group responsible, and asks you to eliminate their research outposts in the [megametracker://map?id=G.Att.Voyager].",
+		"inMapId": "G.Att.Voy.Yan.Binthu",
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A1.U.MissingMarines", "A1.U.HadesDogs"],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Cerberus"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Found Missing Marines"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}, {
+			"type": "Triggers",
+			"id": "Cerberus Binthu Facility Raided"
+		}]
+	}, {
+		"id": "A1.U.Cerberus.1",
+		"sortIndex": 8601,
+		"inMissionId": "A1.U.Cerberus",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Outpost 1",
+		"inMapId": "G.Att.Voy.Yan.Bin.1Research",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.Cerberus.2",
+		"sortIndex": 8602,
+		"inMissionId": "A1.U.Cerberus",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Outpost 2",
+		"inMapId": "G.Att.Voy.Yan.Bin.2Research",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.Cerberus.3",
+		"sortIndex": 8603,
+		"inMissionId": "A1.U.Cerberus",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Outpost 3",
+		"inMapId": "G.Att.Voy.Yan.Bin.3Research",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.DeadScientists",
+		"sortIndex": 51,
+		"aliases": ["Doctor at Risk", "UNC: Dead Scientists"],
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Dead Scientists",
+		"description": "A [terminal|megametracker://maplocation?id=G.Ear.Hor.Pax.Noveria&title=Terminal&location=1310x1963] in the Port Hanshen hotel on Noveria reveals a doctor in the [megametracker://map?id=G.Att.Kep.Newton] who is in danger.",
+		"inMapId": "G.Att.Kep.New.Ontarom",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Dead_Scientists"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A1.U.DeadScientists.P1",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* Toombs (Requires 10 Charm)",
+					"trigger": "\"This isn't Justice.\""
+				}, {
+					"id": "A1.U.DeadScientists.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "Shoot him."
+				}, {
+					"id": "A1.U.DeadScientists.R2",
+					"type": "Renegade",
+					"value": 9,
+					"context": "*_Intimidate_* Toombs (Requires 8 Intimidate)",
+					"trigger": "\"Let me do it.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.DeadScientists.1",
+		"sortIndex": 5101,
+		"inMissionId": "A1.U.DeadScientists",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find the Doctor",
+		"description": "Head to the Newton System in the Kepler Verge and find the one remaining scientist assigned to the secret project.",
+		"inMapId": "G.Att.Kep.New.Ont.Science",
+		"mapLocationPoint": {
+			"x": 643,
+			"y": 1601,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.DeadScientists.3",
+		"sortIndex": 5103,
+		"inMissionId": "A1.U.DeadScientists",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Report to Hackett",
+		"description": "With the situation resolved, you should now make your report to Admiral Hackett.",
+		"inMapId": "G.N1.1"
+	}, {
+		"id": "A1.U.DepotSigma23",
+		"sortIndex": 92,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Depot Sigma-23",
+		"description": "Head to the unidentified space facility in [megametracker://maplocation?id=G.Ear.Argos&type=Map] to find the source of the engineered rachni infestation and destroy it.\n\nMemorize your route through the facility, as you will have to exit in a (timed) hurry.",
+		"inMapId": "G.Ear.Arg.Gor.USF",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Depot_Sigma-23"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed Listening Post Alpha and Theta"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.DepotSigma23.1",
+		"sortIndex": 9201,
+		"inMissionId": "A1.U.DepotSigma23",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to the Gorgon System",
+		"description": "Go to the Gorgon System in the Argos Rho cluster and locate Depot Sigma-23.",
+		"inMapId": "G.Ear.Arg.Gor.USF"
+	}, {
+		"id": "A1.U.DepotSigma23.2",
+		"sortIndex": 9202,
+		"inMissionId": "A1.U.DepotSigma23",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Set Off Demo Charge",
+		"description": "An organization called Cerberus is responsible for the rachni infestations. In order to prevent further problems, activate the station's scuttle system and evacuate to the Normandy. \n\nYou will have 70 seconds to evacuate.",
+		"inMapId": "G.Ear.Arg.Gor.USF",
+		"mapLocationPoint": {
+			"x": 1491,
+			"y": 375,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.DerelictFreighter",
+		"sortIndex": 94,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Derelict Freighter",
+		"description": "You encounter the MSV Cornucopia drifting in [megametracker://map?id=G.Att.Mar.Caspian]. It ventured into the Perseus Veil and returned with the crew tranformed into husks.",
+		"inMapId": "G.Att.Mar.Cas.MSVCornucopia",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Derelict_Freighter"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed Feros Mission"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.GethIncursions",
+		"sortIndex": 89,
+		"aliases": ["Geth Activities", "UNC: Geth Incursions"],
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Geth Incursions",
+		"description": "Reports suggest the geth are setting up outposts in the [megametracker://map?id=G.Att.Armstrong].  These reports can be found on Feros ([megametracker://map?id=G.Ear.Att.The.Fer.Exo.17]) or Virmire ([TODO]). (You can also acquire the assignment by traveling to the [megametracker://map?id=G.Att.Armstrong].)",
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After Hackett gives Shepard the assignment",
+				"options": [{
+					"id": "A1.U.GethIncursions",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I don't have time for this!\""
+				}]
+			}
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Geth_Incursions"
+		],
+		"relatedMissionIds": ["A1.L.TaliAndTheGeth"],
+		"decisionIds": ["D1.TaliData"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}, {
+			"type": "Triggers",
+			"id": "Investigated Geth Outposts"
+		}]
+	}, {
+		"id": "A1.U.GethIncursions.1",
+		"sortIndex": 8901,
+		"inMissionId": "A1.U.GethIncursions",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Eliminate Gagarin Outpost",
+		"inMapId": "G.Att.Arm.Gag.Ray.Outpost",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.GethIncursions.2",
+		"sortIndex": 8902,
+		"inMissionId": "A1.U.GethIncursions",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Eliminate Hong Outpost",
+		"inMapId": "G.Att.Arm.Hon.Cas.4",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.GethIncursions.3",
+		"sortIndex": 8903,
+		"inMissionId": "A1.U.GethIncursions",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Eliminate Tereshkova Outpost",
+		"inMapId": "G.Att.Arm.Ter.Ant.5",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.GethIncursions.4",
+		"sortIndex": 8904,
+		"inMissionId": "A1.U.GethIncursions",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Eliminate Vamshi Outpost",
+		"inMapId": "G.Att.Arm.Vam.Maj.2",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.GethIncursions.5",
+		"sortIndex": 8905,
+		"inMissionId": "A1.U.GethIncursions",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Eliminate Geth Bunker",
+		"inMapId": "G.Att.Arm.Gri.Sol.Outpost",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.ExoGeniFacility",
+		"sortIndex": 65,
+		"aliases": ["Investigate Facility", "UNC: ExoGeni Facility"],
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: ExoGeni Facility",
+		"description": "Hacking a [terminal|megametracker://maplocation?id=G.Att.Mar.Vos.Nod.ExoGeni&title=Terminal&location=1697x2404] on the upper level of the ExoGeni headquarters on Feros reveals some suspicious ExoGeni activity in [megametracker://map?id=G.Att.Mar.Vostok].",
+		"inMapId": "G.Att.Mar.Vos.Nodacrux",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_ExoGeni_Facility"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Refusing Dr. Ross's bribe",
+				"options": [{
+					"id": "A1.U.ExoGeniFacility.P1",
+					"type": "Paragon",
+					"value": 8,
+					"trigger": "\"I can't do that.\""
+				}, {
+					"id": "A1.U.ExoGeniFacility.R1",
+					"type": "Renegade",
+					"value": 9,
+					"trigger": "\"I should kill you right now.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed Feros Mission"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.ExoGeniFacility.1",
+		"sortIndex": 6501,
+		"inMissionId": "A1.U.ExoGeniFacility",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Investigate Facility",
+		"description": "Nodacrux is located in the Vostok system of the Maroon Sea Cluster. Head there and find out what's going on.",
+		"inMapId": "G.Att.Mar.Vos.Nodacrux",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.ExoGeniFacility.2",
+		"sortIndex": 6502,
+		"inMissionId": "A1.U.ExoGeniFacility",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Explore Colony",
+		"description": "Investigate the facilities on the planet Nodacrux in the Vostok System of the Maroon Sea cluster for clues.",
+		"inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.HadesDogs",
+		"sortIndex": 87,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Hades' Dogs",
+		"description": "Having found [Kahoku's|megametracker://person?id=O1.Kahoku] body in [megametracker://mission?id=A1.U.Cerberus], you are now pursuing those responsible to [megametracker://map?id=G.Att.Voy.Col.Nepheron].",
+		"inMapId": "G.Att.Voy.Col.Nepheron",
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A1.U.MissingMarines", "A1.U.Cerberus"],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Hades_Dogs"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Responding to the Shadow Broker's offer to buy the Cerberus data files found on Nepheron",
+				"options": [{
+					"id": "A1.U.HadesDogs.P1",
+					"type": "Paragon",
+					"value": 8,
+					"trigger": "\"I don't trust you.\""
+				}, {
+					"id": "A1.U.HadesDogs.R1",
+					"type": "Renegade",
+					"value": 9,
+					"trigger": "\"Sounds good.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Cerberus Binthu Facility Raided"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.HadesDogs.1",
+		"sortIndex": 8701,
+		"inMissionId": "A1.U.HadesDogs",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy Main Cerberus Facility",
+		"description": "You've found teh location of a major Cerberus facility. Head to Nepheron in the Columbia System of the Voyager Cluster and destroy it.",
+		"inMapId": "G.Att.Voy.Col.Nep.Underground",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.HadesDogs.2",
+		"sortIndex": 8702,
+		"inMissionId": "A1.U.HadesDogs",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Encrypted Files",
+		"inMapId": "G.Att.Voy.Col.Nep.Underground",
+		"mapLocationPoint": {
+			"x": 508,
+			"y": 1608,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.HadesDogs.3",
+		"sortIndex": 8703,
+		"inMissionId": "A1.U.HadesDogs",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The Shadow Broker",
+		"description": "When you return to the Normandy, [the Shadow Broker|megametracker://person?id=E2.ShadowBroker] offers to buy the Cerberus files obtained on Nepheron."
+	}, {
+		"id": "A1.U.Hostage",
+		"sortIndex": 34,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Hostage",
+		"description": "The head of the Alliance Parliamentary Subcommittee on Transhuman Studies, [Chairman Burns|megametracker://person?id=Burns], was kidnapped by biotic extremists. They are holding him aboard the MSV Ontario. \n\nYou will only have 3 minutes to reach the hostage after the biotics realize you are onboard. You can just make a run for it, as fighting will stop once you reach the room with the leader inside.\n\nYou can obtain this mission from the elevator announcements on the Citadel, or by just going to [megametracker://map?id=G.Ear.Had.Farinata].",
+		"inMapId": "G.Ear.Had.Far.MSVOntario",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Hostage"
+		],
+		"decisionIds": ["D1.Burns"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to the L2 biotic leader",
+				"options": [{
+					"id": "A1.U.Hostage.P1",
+					"type": "Paragon",
+					"value": 8,
+					"trigger": "\"You don't have to die.\""
+				}, {
+					"id": "A1.U.Hostage.R1",
+					"type": "Renegade",
+					"value": 9,
+					"context": "(Selecting this option results in a fight and eliminates any further dialog choices)",
+					"trigger": "\"Take them down!\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuading the L2 biotic leader",
+				"options": [{
+					"id": "A1.U.Hostage.P2",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* the leader (Requires 6 Charm)",
+					"trigger": "\"You need Burns!\""
+				}, {
+					"id": "A1.U.Hostage.R2",
+					"type": "Renegade",
+					"value": 9,
+					"context": "*_Intimidate_* the leader (Requires 5 Intimidate)",
+					"trigger": "\"Don't be stupid.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Spectre Status"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.Hostage.1",
+		"sortIndex": 3401,
+		"inMissionId": "A1.U.Hostage",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Board Freighter",
+		"description": "Find the freighter in Farinata System of the Hades Gamma cluster and make your way to the biotics on board.",
+		"inMapId": "G.Ear.Had.Far.MSVOntario",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.Hostage.2",
+		"sortIndex": 3402,
+		"inMissionId": "A1.U.Hostage",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Negotiate with the Leader",
+		"description": "Convince the biotics to release Chairman Burns (or kill them, whatevs).",
+		"inMapId": "G.Ear.Had.Far.MSVOntario",
+		"mapLocationPoint": {
+			"x": 1496,
+			"y": 379,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.ColonyOfTheDead",
+		"sortIndex": 67,
+		"aliases": ["Investigate Samples", "UNC: Colony of the Dead"],
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Colony of the Dead",
+		"description": "A [server node|megametracker://maplocation?id=G.Ear.Att.The.Fer.ExoGeni&title=Server%20Node&location=869x1823] in the ExoGeni Facility on Feros reveals doctor's notes regarding some troubling samples he received from a mysterious group called Cerberus. (You may also start this assignment by just heading out and finding the research station which supplied the samples.)",
+		"inMapId": "G.Att.Mar.Mat.Chasca",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Colony_of_the_Dead"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}, {
+			"type": "Triggers",
+			"id": "ExoGeni Samples Source Found"
+		}]
+	}, {
+		"id": "A1.U.ColonyOfTheDead.1",
+		"sortIndex": 6701,
+		"inMissionId": "A1.U.ColonyOfTheDead",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to System",
+		"description": "The logs mention something about the Matano system, in the Maroon Sea cluster. That would be a good place to start your investigation.",
+		"inMapId": "G.Att.Mar.Mat.Chasca",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.ColonyOfTheDead.2",
+		"sortIndex": 6702,
+		"inMissionId": "A1.U.ColonyOfTheDead",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Search for Clues",
+		"description": "Fight your way through the hostile transformed colonists while searching for survivors and clues.",
+		"inMapId": "G.Att.Mar.Mat.Cha.1Science",
+		"mapLocationPoint": {
+			"x": 508,
+			"y": 1608,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.EspionageProbe",
+		"sortIndex": 66,
+		"aliases": ["Investigate Shipments", "UNC: Espionage Probe"],
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Espionage Probe",
+		"description": "Hacking a [terminal|megametracker://maplocation?id=G.Ear.Att.The.Fer.ZhusHope&title=Terminal&location=991x1300] aboard the downed Borealis on Feros will reveal an Alliance secret: they put a nuclear payload inside an old espionage probe. They need you to recover the probe before this is discovered. \n\nYou may also start this assignment by just heading out and finding the probe.",
+		"inMapId": "G.Att.Voy.Ama.Agebinium",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Espionage_Probe"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.EspionageProbe.1",
+		"sortIndex": 6601,
+		"inMissionId": "A1.U.EspionageProbe",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find the Probe",
+		"description": "The probe's signal is coming from the Amazon System in the Voyager cluster. Head there and track it down.",
+		"inMapId": "G.Att.Voy.Ama.Age.Mine",
+		"mapLocationPoint": {
+			"x": 1203,
+			"y": 505,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.EspionageProbe.2",
+		"sortIndex": 6602,
+		"inMissionId": "A1.U.EspionageProbe",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Escape",
+		"description": "Escape from the trap that Haliat has left for you. If possible, take down Haliat, as well.",
+		"inMapId": "G.Att.Voy.Ama.Agebinium",
+		"mapLocationPoint": {
+			"x": 1171,
+			"y": 550,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.ListeningPostAlpha",
+		"sortIndex": 90,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Listening Post Alpha ",
+		"description": "A group of Alliance soldiers are pinned down by rachni on [megametracker://map?id=G.Att.Sty.Ere.Nepmos]. \n\nThis assignment is obtained from either a [terminal|megametracker://maplocation?id=G.Att.Sty.Ach.Altahe&title=Terminal&location=469x1597] on Altahe or by heading to [megametracker://map?id=G.Att.Sty.Erebus].",
+		"inMapId": "G.Att.Sty.Ere.Nepmos",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Listening_Post_Alpha"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed Noveria Mission"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}, {
+			"type": "Triggers",
+			"id": "Completed Listening Post Alpha"
+		}]
+	}, {
+		"id": "A1.U.ListeningPostAlpha.1",
+		"sortIndex": 9001,
+		"inMissionId": "A1.U.ListeningPostAlpha",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to the Erebus System",
+		"description": "Head to the Erebus System in the Styx Theta cluster. Investigate Listening Post Alpha on the planet Nepmos.",
+		"inMapId": "G.Att.Sty.Ere.Nep.2",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.ListeningPostAlpha.2",
+		"sortIndex": 9002,
+		"inMissionId": "A1.U.ListeningPostAlpha",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy Rachni Base",
+		"description": "Go to the coordinates marked on your map and destroy teh underground racnhi base.",
+		"inMapId": "G.Att.Sty.Ere.Nep.Mine",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.ListeningPostTheta",
+		"sortIndex": 91,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Listening Post Theta",
+		"description": "An Alliance listening post on [megametracker://map?id=G.Att.Sty.Ach.Altahe] has gone silent.\n\nYou can obtain this assignment by either heading to [megametracker://map?id=G.Att.Sty.Acheron], or by completing [megametracker://mission?id=A1.U.ListeningPostAlpha] first.\n\nIf you have not yet completed [megametracker://mission?id=A1.U.ListeningPostAlpha] or [megametracker://mission?id=A1.U.DepotSigma23], there is a [terminal|megametracker://maplocation?id=G.Att.Sty.Ach.Altahe&title=Terminal&location=469x1597] at the end of this assignment that alerts you to the other location(s).",
+		"inMapId": "G.Att.Sty.Ach.Altahe",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Listening_Post_Theta"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed Noveria Mission"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}, {
+			"type": "Triggers",
+			"id": "Completed Listening Post Theta"
+		}]
+	}, {
+		"id": "A1.U.ListeningPostTheta.1",
+		"sortIndex": 9101,
+		"inMissionId": "A1.U.ListeningPostTheta",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The Alliance Listening Post",
+		"inMapId": "G.Att.Sty.Ach.Alt.ListeningPost",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.LostModule",
+		"sortIndex": 85,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Lost Module",
+		"description": "[Hackett|megametracker://person?id=P1.Hackett] needs you to recover a data module from a [downed probe|megametracker://maplocation?id=G.Ear.Att.Her.Ele.2&type=Map] before the geth can get to it. A [space monkey|megametracker://map?id=G.Ear.Att.Her.Ele.Mine&title=Space%20Monkey&location=1636x994] has taken it.",
+		"inMapId": "G.Ear.Att.Her.Eletania",
+		"isShowInParentMap": true,
+		"sideEffects": ["*Infinite Paragon Glitch*: If you don't kill any space monkeys and save right after recovering the data module, you can reload the game and recover the data again, for an unlimited number of times."],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Lost_Module"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A1.U.LostModule.P1",
+					"type": "Paragon",
+					"value": 6,
+					"trigger": "Locate the data without killing any space monkeys. (*Infinite Paragon Glitch*: If you save right after this choice, you can reload the game and recover the data again, for an unlimited number of times.)"
+				}, {
+					"id": "A1.U.LostModule.R1",
+					"type": "Renegade",
+					"value": 4,
+					"trigger": "Kill a space monkey."
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.LostModule.1",
+		"sortIndex": 8501,
+		"inMissionId": "A1.U.LostModule",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to Hercules System",
+		"description": "Travel to the Hercules System in the Attican Beta Cluster and find the drone containing the data module.",
+		"inMapId": "G.Ear.Att.Her.Eletania",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.LostModule.2",
+		"sortIndex": 8502,
+		"inMissionId": "A1.U.LostModule",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Track the data module",
+		"description": "An alien creature has run off with the data module. Track down the alien and recover the data module.",
+		"inMapId": "G.Ear.Att.Her.Ele.Mine",
+		"mapLocationPoint": {
+			"x": 1621,
+			"y": 1000,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.LostFreighter",
+		"sortIndex": 93,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Lost Freighter",
+		"description": "The MSV Worthington is adrift in [megametracker://map?id=G.Ear.Gem.Ming] and seems to be abandoned. Be careful navigating through the hold, as it has been booby-trapped. Listen to the logs to discover what happened and then deal with [megametracker://person?id=O1.Julia] and her boyfriend [megametracker://person?id=O1.Jacob], the man on life support.",
+		"inMapId": "G.Ear.Gem.Min.MSVWorthington",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Lost_Freighter"
+		],
+		"decisionIds": ["D1.MSVWorthington"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.LostFreighter.1",
+		"sortIndex": 9301,
+		"inMissionId": "A1.U.LostFreighter",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Life Support",
+		"inMapId": "G.Ear.Gem.Min.MSVWorthington",
+		"mapLocationPoint": {
+			"x": 1387,
+			"y": 504,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.MissingSurveyTeam",
+		"sortIndex": 40,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Missing Survey Team",
+		"aliases": ["UNC: Missing Colony", "UNC: Missing Survey Team"],
+		"description": "A survey team has gone missing in [megametracker://map?id=G.Ear.Hades].\n\nYou can obtain this mission from the elevator announcements on the Citadel, or by just landing on [megametracker://map?id=G.Ear.Had.Ant.Trebin].",
+		"inMapId": "G.Ear.Had.Ant.Trebin",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Missing_Survey_Team"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Spectre Status"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.MissingSurveyTeam.1",
+		"sortIndex": 4001,
+		"inMissionId": "A1.U.MissingSurveyTeam",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find Missing Researchers",
+		"description": "Travel to the Antaeus System in the Hades Gamma Cluster to look for the missing survey team.",
+		"inMapId": "G.Ear.Had.Ant.Tre.2",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.MissingSurveyTeam.2",
+		"sortIndex": 4002,
+		"inMissionId": "A1.U.MissingSurveyTeam",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Explore Excavation Site",
+		"description": "Log entries indicate the research team discovered something in the nearby excavation site. Go there and find out what happened.",
+		"inMapId": "G.Ear.Had.Ant.Tre.Mine",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.MissingMarines",
+		"sortIndex": 38,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Missing Marines",
+		"description": "If you have completed the assignment [megametracker://mission?id=A1.C1.DoctorMichel], [Anderson|megametracker://person?id=P1.Anderson] will refer you to [Rear Admiral Kahoku|megametracker://person?id=O1.Kahoku] in the [Citadel Tower|megametracker://maplocation?id=G.C1.Tower&title=Kahoku&location=1231x1435], to ask about [megametracker://person?id=O1.Banes]. He reveals that one of his teams found the man's body on a derelict ship. Kahoku sent a unit to the scout the area, and they have gone missing.\n\nYou can also just locate the team on Edolus, or speak to Kahoku independently, and he will ask you to look for his missing unit. \n\nNote: Kahoku will leave the Citadel after you begin [megametracker://mission?id=A1.U.Cerberus], so finish this assignment first or he won't be there when you come back to the Citadel.",
+		"inMapId": "G.Ear.Art.Spa.Edolus",
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A1.U.Cerberus", "A1.U.HadesDogs"],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Missing_Marines"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Spectre Status"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}, {
+			"type": "Triggers",
+			"id": "Found Missing Marines"
+		}]
+	}, {
+		"id": "A1.U.MissingMarines.0",
+		"sortIndex": 3800,
+		"inMissionId": "A1.U.MissingMarines",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Distress Call",
+		"description": "Land on Edolus in the Sparta System of the Artemis Tau Cluster and investigate the source of the distress call.",
+		"inMapId": "G.Ear.Art.Spa.Edolus",
+		"mapLocationPoint": {
+			"x": 958,
+			"y": 767,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.MissingMarines.2",
+		"sortIndex": 3801,
+		"inMissionId": "A1.U.MissingMarines",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak to Kahoku",
+		"description": "You've found the dead bodies of men who served under Admiral Kahoku. Return to the Citadel Tower and inform the admiral of their fate.",
+		"inMapId": "G.C1.Tower",
+		"mapLocationPoint": {
+			"x": 1231,
+			"y": 1435,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.Privateers",
+		"sortIndex": 37,
+		"aliases": ["Missing Person", "UNC: Privateers"],
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Privateers",
+		"description": "The MSV Majesty was attacked by pirates travelling through [megametracker://map?id=G.Ear.Hor.Strenuus]. Find those responsible and inform [Garoth|megametracker://person?id=O1.Garoth] on the Citadel.\n\nYou can obtain this mission by speaking to Garoth in [the Citadel Tower|megametracker://maplocation?id=G.C1.Tower&title=Garoth&location=1027x1047], from a [terminal|megametracker://maplocation?id=G.Ear.Hor.Pax.Noveria&title=Terminal%20(Lower%20Level)&location=355x1975] on Noveria, or by scanning the [megametracker://maplocation?id=G.Ear.Hor.Str.MSVMajesty&type=Map].",
+		"inMapId": "G.Ear.Hor.Str.MSVMajesty",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Privateers"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A1.U.Privateers.P1",
+					"type": "Paragon",
+					"value": 2,
+					"context": "Accept the assignment from Garoth",
+					"trigger": "\"I'll do it.\""
+				}, {
+					"id": "A1.U.Privateers.R1",
+					"type": "Renegade",
+					"value": 2,
+					"context": "Reject the assignment from Garoth (you may return to accept it later)",
+					"trigger": "\"Forget it.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Tell Garoth what happened to his brother",
+				"options": [{
+					"id": "A1.U.Privateers.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"This must be hard on you.\""
+				}, {
+					"id": "A1.U.Privateers.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You were fooling yourself.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Spectre Status"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.Privateers.1",
+		"sortIndex": 3701,
+		"inMissionId": "A1.U.Privateers",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to the Strenuus System",
+		"description": "Go to the Strenuus System in the Horse Head Nebula cluster and search for signs of Garoth's brother and his ship.",
+		"inMapId": "G.Ear.Hor.Str.MSVMajesty",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.Privateers.2",
+		"sortIndex": 3702,
+		"inMissionId": "A1.U.Privateers",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to Xawin",
+		"description": "Go to Xawin in the Strenuus System of the Horse Head Nebula and locate the privateers responsible for destroying the ship.",
+		"inMapId": "G.Ear.Hor.Str.Xaw.Base",
+		"mapLocationPoint": {
+			"x": 1291,
+			"y": 1694,
+			"radius": 1
+		},
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.Privateers.3",
+		"sortIndex": 3703,
+		"inMissionId": "A1.U.Privateers",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Talk to Garoth",
+		"description": "You've discovered what happened to Willem, Garoth's brother. Return to the Citadel Tower and tell Garoth of his brother's fate.",
+		"inMapId": "G.C1.Tower",
+		"mapLocationPoint": {
+			"x": 1031,
+			"y": 1063,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.HostileTakeover",
+		"sortIndex": 39,
+		"aliases": ["A Person of Interest", "UNC: Hostile Takeover"],
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Hostile Takeover",
+		"description": "A [computer console|megametracker://maplocation?id=G.C1.CSecAcademy&title=Console&location=923x1139] in the C-Sec Academy offices reveals that C-Sec is suspicious of Helena Blake, currently at [the Emporium|megametracker://maplocation?id=G.C1.Presidium&title=Helena%20Blake&location=711x1207]. You can also acquire this assigment by speaking to [megametracker://person?id=O1.Helena] directly.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 711,
+			"y": 1207,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Hostile_Takeover"
+		],
+		"decisionIds": ["D1.HelenaBlake"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Helena Blake in the Presidium",
+				"options": [{
+					"id": "A1.U.HostileTakeover.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"No. I won't do this.\""
+				}, {
+					"id": "A1.U.HostileTakeover.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Not a problem.\" or \"I'll do it.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Helena Blake at her mercenary base on Amaranthine",
+				"options": [{
+					"id": "A1.U.HostileTakeover.P2",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* Helena Blake (Requires 10 Charm)",
+					"trigger": "\"Walk away.\""
+				}, {
+					"id": "A1.U.HostileTakeover.R2",
+					"type": "Renegade",
+					"value": 9,
+					"context": "*_Intimidate_* Helena Blake (Requires 7 Intimidate)",
+					"trigger": "\"Don't be stupid.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Helena Blake at her mercenary base on Amaranthine",
+				"options": [{
+					"id": "A1.U.HostileTakeover.P3",
+					"type": "Paragon",
+					"value": 2,
+					"context": "(Results in a fight)",
+					"trigger": "\"You're under arrest.\""
+				}, {
+					"id": "A1.U.HostileTakeover.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You better stay clean.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Therum, Feros, or Noveria"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.HostileTakeover.1",
+		"sortIndex": 3901,
+		"inMissionId": "A1.U.HostileTakeover",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find Helena Blake",
+		"description": "The C-Sec report mentioned that Helena was last seen near the Emporium in the Financial District of the Presidium. \n\nOnce you find her, you can refuse Helena's request for some paragon, and still continue with the assignment.",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 711,
+			"y": 1207,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.HostileTakeover.2",
+		"sortIndex": 3902,
+		"inMissionId": "A1.U.HostileTakeover",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Eliminate Crimelords",
+		"description": "The two crimelords are located in the Han System of teh Gemini Sigma cluster and in the Dis System of the Hades Gamma cluster. Eliminate both of them."
+	}, {
+		"id": "A1.U.HostileTakeover.2.1",
+		"sortIndex": 3904,
+		"inMissionId": "A1.U.HostileTakeover.2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Eliminate Crimelord #1",
+		"inMapId": "G.Ear.Gem.Han.Mav.Hideout",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.HostileTakeover.2.2",
+		"sortIndex": 3905,
+		"inMissionId": "A1.U.HostileTakeover.2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Eliminate Crimelord #2",
+		"inMapId": "G.Ear.Had.Dis.Kle.Hideout",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A1.U.HostileTakeover.6",
+		"sortIndex": 3906,
+		"inMissionId": "A1.U.HostileTakeover",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Meet Helena Blake",
+		"description": "Go to the Fortuna system in the Horse Head Nebula and meet Helena Blake to claim your reward.",
+		"inMapId": "G.Ear.Hor.For.Ama.Outpost",
+		"mapLocationPoint": {
+			"x": 557,
+			"y": 665,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.RogueVI",
+		"sortIndex": 88,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Rogue VI",
+		"description": "On reaching level 20, [Hackett|megametracker://person?id=P1.Hackett] will inform you that the Alliance has lost control of one of their training VIs on the Moon and they need you to eliminate the VI.",
+		"inMapId": "G.Ear.Loc.Sol.Luna",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Rogue_VI"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Accepting the assignment from Admiral Hackett",
+				"options": [{
+					"id": "A1.U.RogueVI.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Was anyone hurt?\""
+				}, {
+					"id": "A1.U.RogueVI.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I've heard that before.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Level 20"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.RogueVI.1",
+		"sortIndex": 8801,
+		"inMissionId": "A1.U.RogueVI",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Engage VI",
+		"description": "Head to the Sol System in the Local Cluster and deal with the rogue VI on Earth's moon.",
+		"inMapId": "G.Ear.Loc.Sol",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.RogueVI.2",
+		"sortIndex": 8802,
+		"inMissionId": "A1.U.RogueVI",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy VI Conduits",
+		"description": "Destroy the conduits in each of the three VI cores. \n\nEach of the three facilities is identical in layout. Neutralize eight VI conduits in each bunker. Attacking the conduits in a bunker will result in a defensive reaction from the VI. The first bunker results in poisonous gas, which reduces healing. The second, energy shields cover the conduits and the doors. The third, more drones are called in.",
+		"inMapId": "G.Ear.Loc.Sol.Lun.VIBunker",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.RogueVI.3",
+		"sortIndex": 8803,
+		"inMissionId": "A1.U.RogueVI",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Specialization Class",
+		"description": "On completion of the assignment, you must select a specialization class. There are six specialization classes, with only two options available to you dependent on your Shepard's main class (Soldier, Engineer, etc.).\n\n*Bastion*: improves Barrier, reduces enemy Stasis, reduces biotic cooldown.\n\n*Commando*: improves weapon damage, improves cooldown on Immunity, Assassinate, Marksman.\n\n*Medic*: improves First Aid, Neural Shock; allows for squad revival with Medi-gel.\n\n*Nemesis*: improves duration, damage and radius of many biotic abilities.\n\n*Operative*: improves cooldowns, radius, and damage for many tech abilities.\n\n*Shock Trooper*: improves health and damage protection, improves cooldown on Immunity, Adrenaline Burst.",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Classes#Specialization_Classes"
+		]
+	}, {
+		"id": "A1.U.MajorKyle",
+		"sortIndex": 36,
+		"aliases": ["Strange Transmission", "UNC: Major Kyle"],
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Major Kyle",
+		"description": "A [computer console|megametracker://maplocation?id=G.C1.Presidium&title=Console&location=1307x719] in C-Sec Headquarters reveals the deaths of two Alliance officials sent to investigate [Major Kyle|megametracker://person?id=O1.Kyle] at his compound in [megametracker://map?id=G.Att.Hawking].",
+		"inMapId": "G.Att.Haw.Cen.Presrop",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Major_Kyle"
+		],
+		"decisionIds": ["D1.MajorKyle"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Responding to Admiral Hackett's request to investigate the commune",
+				"options": [{
+					"id": "A1.U.MajorKyle.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Maybe I can reason with him.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade the cultists to allow you to speak to Major Kyle",
+				"options": [{
+					"id": "A1.U.MajorKyle.P2",
+					"type": "Paragon",
+					"value": 2,
+					"context": "*_Charm_* the cultists (Requires 3 Charm)",
+					"trigger": "\"He needs my help.\""
+				}, {
+					"id": "A1.U.MajorKyle.R2",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* the cultists (Requires 5 Intimidate)",
+					"trigger": "\"He'll get you all killed.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Major Kyle",
+				"options": [{
+					"id": "A1.U.MajorKyle.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I tried to help you.\""
+				}, {
+					"id": "A1.U.MajorKyle.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Enough crazy talk.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade Major Kyle to surrender",
+				"options": [{
+					"id": "A1.U.MajorKyle.P4",
+					"type": "Paragon",
+					"value": 8,
+					"context": "*_Charm_* Major Kyle (Requires 7 Charm)",
+					"trigger": "\"You can't help them now.\""
+				}, {
+					"id": "A1.U.MajorKyle.R4",
+					"type": "Renegade",
+					"value": 9,
+					"context": "*_Intimidate_* Major Kyle (Requires 8 Intimidate)",
+					"trigger": "\"Surrender or they all die!\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Presidium"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.MajorKyle.1",
+		"sortIndex": 3601,
+		"inMissionId": "A1.U.MajorKyle",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Investigate Major Kyle's Compound",
+		"description": "Go to the Century System in the Hawking Eta cluster and investigate Major Kyle and his biotic followers. \n\nEnter the larger structure first, and speak with the cultists inside. If you persuade them to cooperate, you can go directly to the underground facility and speak to [Major Kyle|megametracker://person?id=O1.Kyle] without any fighting. Otherwise, you will need to clear the larger structure and activate the [control panel|megametracker://maplocation?id=G.Att.Haw.Cen.Pre.1Building&title=Control%20Panel&location=943x1769] in the back in order to open the underground facility yourself, where you will have to fight those cultists also (the diplomatic solution is unavailable).",
+		"inMapId": "G.Att.Haw.Cen.Pre.1Building",
+		"isShowInParentMap": true
+	}, {
+		"id": "A1.U.MajorKyle.2",
+		"sortIndex": 3602,
+		"inMissionId": "A1.U.MajorKyle",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Talk to the Major",
+		"description": "Make your way through the compound to find Major Kyle and see if he can be reasoned with.",
+		"inMapId": "G.Att.Haw.Cen.Pre.2Building",
+		"mapLocationPoint": {
+			"x": 671,
+			"y": 1596,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.MajorKyle.3",
+		"sortIndex": 3603,
+		"inMissionId": "A1.U.MajorKyle",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Return to the Normandy",
+		"description": "Admiral Hackett needs to be informed.",
+		"inMapId": "G.N1.1"
+	}, {
+		"id": "A1.U.TheNegotiation",
+		"sortIndex": 84,
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: The Negotiation",
+		"description": "At 80% Renegade, [Hackett|megametracker://person?id=P1.Hackett] will ask you to negotiate a treaty on Element Zero mining rights with a man named [megametracker://person?id=O1.Darius] in [the Plutus System|megametracker://map?id=G.Ear.Had.Plutus].\n\nThe only way to accomplish this is to remain polite and give Darius everything he asks for. Hackett secretly does not want this - he would prefer you kill Darius.",
+		"inMapId": "G.Ear.Had.Plu.Nonuel",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_The_Negotiation"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "During the negotiations with Darius",
+				"options": [{
+					"id": "A1.U.TheNegotiation.P1",
+					"type": "Paragon",
+					"value": 8,
+					"trigger": "\"I would appreciate it.\""
+				}, {
+					"id": "A1.U.TheNegotiation.R1",
+					"type": "Renegade",
+					"value": 25,
+					"trigger": "Kill Darius."
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "%Renegade 80"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.TheNegotiation.1",
+		"sortIndex": 8401,
+		"inMissionId": "A1.U.TheNegotiation",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Meet Darius",
+		"description": "Meet Darius at the rendezvous point on the planet Nonuel in the Plutus System of the Hades Gamma cluster.",
+		"inMapId": "G.Ear.Had.Plu.Non.Outpost",
+		"mapLocationPoint": {
+			"x": 971,
+			"y": 996,
+			"radius": 1
+		}
+	}, {
+		"id": "A1.U.TheNegotiation.2",
+		"sortIndex": 8402,
+		"inMissionId": "A1.U.TheNegotiation",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "report to Hackett",
+		"description": "Return to the Normandy and use the galaxy map to report the outcome to Admiral Hackett.",
+		"inMapId": "G.N1.1"
+	}, {
+		"id": "A1.U.UnusualReadings",
+		"sortIndex": 35,
+		"aliases": ["Unusual Readings", "UNC: Distress Call"],
+		"gameVersion": "1",
+		"missionType": "Assignment",
+		"name": "UNC: Distress Call",
+		"description": "Unusual readings were found in [megametracker://map?id=G.Ear.Argos]. It appears to be a distress call from the medical transport Sacred Angel.\n\nThis assignment can be obtained from the terminal in [megametracker://maplocation?id=G.C1.Presidium.Udina&type=Map] on the Citadel, or by going to [megametracker://map?id=G.Ear.Arg.Hyd.Metgos].",
+		"inMapId": "G.Ear.Arg.Hyd.Metgos",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Distress_Call"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Presidium"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "A1.U.UnusualReadings.2",
+		"sortIndex": 3502,
+		"inMissionId": "A1.U.UnusualReadings",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Investigate Distress Call",
+		"description": "Find the downed med ship in the Hydra System of the Argos Rho cluster and provide assistance.",
+		"inMapId": "G.Ear.Arg.Hyd.Metgos",
+		"mapLocationPoint": {
+			"x": 1262,
+			"y": 1287,
+			"radius": 1
+		}
+
+
+
+
+
+
+	}]
+}

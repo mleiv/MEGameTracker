@@ -1,0 +1,2365 @@
+{
+	"missions": [{
+
+
+		"x-comment-x": "-----------------------CITADEL-------------------------",
+		"id": "A2.C.CaptainBailey",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Citadel: Captain Bailey",
+		"description": "Upon entering the Citadel for the first time, you are flagged by security, because Commander Shepard is deceased. You will need to clear this up with Captain Bailey. This assignment is optional: you will have full access to the Citadel, even while officially listed as dead.",
+		"inMapId": "G.C2.27.CSec",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Captain_Bailey"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.C.TheCouncil",
+		"sortIndex": 2,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Citadel: The Council",
+		"description": "Anderson wants Shepard to meet with the Council and update them on the Reapers. In Game 2, you are normally restricted to the Zakera Ward levels of the Citadel, but for this assignment you can take a cab to the Ambassador's Office on the Presidium. \n\nIf Shepard saved the Destiny Ascension in Game 1, they will meet with you, but dismiss any news of the Reapers. If the Destiny Ascension was destroyed, the Council will not meet with you at all. If the Ascension was saved *or* if Anderson was seated on the Council instead of Udina, you can be additionally reinstated as a Spectre if you want (but there are no consequences to your choice).",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_The_Council"],
+		"decisionIds": ["D1.Council", "D1.Anderson"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.C.CrimeInProgress",
+		"sortIndex": 3,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Citadel: Crime in Progress",
+		"description": "The volus [megametracker://person?id=O2.KorTun] has accused a young quarian, [megametracker://perosn?id=O2.LiaVael] of stealing his credit chit, and is complaining to a human C-Sec officer. Find his credit chit to help the quarian out of the situation.",
+		"experience": 40,
+		"reward": "1,000 Credits",
+		"inMapId": "G.C2.ZakeraWardL26",
+		"mapLocationPoint": {
+			"x": 1100,
+			"y": 1040,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Crime_in_Progress"],
+		"conversationRewards": [{
+			"set": {
+				"context": "After recovering Kor Tun's credit chit",
+				"options": [{
+					"id": "A2.C.CrimeInProgress.P1",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "(complete assignment)"
+				}, {
+					"id": "A2.C.CrimeInProgress.P2",
+					"type": "Paragon",
+					"value": 5,
+					"context": "Pull Spectre rank on the officer",
+					"trigger": "*_Paragon Interrupt_*"
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.C.CrimeInProgress.1",
+		"inMissionId": "A2.C.CrimeInProgress",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Kor Tun's Credit Chit",
+		"inMapId": "G.C2.26.Saronis",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.C.FalsePositives",
+		"sortIndex": 4,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Citadel: False Positives",
+		"aliases": ["Citadel: False Positives", "Citadel: Forged IDs"],
+		"description": "Asari Kalara Tomi is unable to leave the Citadel, after being flagged as a potential threat for geth infiltration. She needs help clearing up the mistake. \n\nThis assignment is acquired either during Garrus' loyalty mission, by picking up a forged id before two large mechs, or by talking to two asari found sitting near the stairs down to Level 26, after completing Thane's loyalty mission. \n\n_Note: You may be able to complete this mission twice, if you do Thane's mission first and help the asari, and then finish Garrus' mission and return to give the (reappeared) asari the fake id._",
+		"experience": 40,
+		"reward": "1,000-2,000 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to the C-Sec Customs agent",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.C.FalsePositives.P1A",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Customs Agent_*",
+					"trigger": "\"They're not geth!\""
+				}, {
+					"id": "A2.C.CrimeInProgress.P2",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Customs agent_*",
+					"trigger": "\"This is crap.\""
+				}, {
+					"id": "A2.C.CrimeInProgress.P1B",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Customs agent_*",
+					"trigger": "\"I'm a Spectre. Let them leave.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Kalara Tomi after speaking to the Customs agent",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.C.FalsePositives.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'm a Spectre.\" or \"Friendly persuasion.\""
+				}, {
+					"id": "A2.C.FalsePositives.R2",
+					"type": "Renegade",
+					"value": 5,
+					"context": "(Using the forged ids found during [megametracker://mission?id=A2.D.Garrus])",
+					"trigger": "\"I have forged IDs.\""
+				}]
+			}
+		}],
+		"inMapId": "G.C2.ZakeraWardL27",
+		"mapLocationPoint": {
+			"x": 683,
+			"y": 647,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Found_Forged_ID"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.C.FalsePositives.1",
+		"inMissionId": "A2.C.FalsePositives",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Forged IDs (Optional)",
+		"inMapId": "TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+		"mapLocationPoint": {
+			"x": 683,
+			"y": 647,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.C.KroganSushi",
+		"sortIndex": 5,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Citadel: Krogan Sushi",
+		"description": "Krogan Kargesh and Rukar and arguing over whether there are any fish in the Presidium lakes. You can resolve their argument by speaking to the [megametracker://person?id=O2.Groundskeeper], a turian at the Dark Star Lounge.",
+		"experience": 40,
+		"reward": "1,000 Credits",
+		"inMapId": "G.C2.ZakeraWardL27",
+		"mapLocationPoint": {
+			"x": 1252,
+			"y": 746,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"context": "Resolving Kargesh and Rukar's argument",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.C.KroganSushi.P1",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "\"There are no fish.\""
+				}, {
+					"id": "A2.C.KroganSushi.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "(Using the forged ids found during [megametracker://mission?id=A2.D.Garrus])",
+					"trigger": "(LIE) \"I have a Presidium fish.\""
+				}]
+			}
+		}],
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Krogan_Sushi"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}],
+		"sideEffects": ["In Game 1, Wrex may comment on the Presidium \"I could use a snack. Think there's any fish out in that lake?\""]
+	}, {
+		"id": "A2.C.KroganSushi.1",
+		"inMissionId": "A2.C.KroganSushi",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Presidium Groundskeeper (Optional)",
+		"inMapId": "G.C2.ZakeraWardL28",
+		"mapLocationPoint": {
+			"x": 1050,
+			"y": 1326,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.C.KroganSushi.2",
+		"inMissionId": "A2.C.KroganSushi",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Buy Fish (Optional)",
+		"inMapId": "G.C2.27.Souvenirs",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+
+
+	}, {
+		"x-comment-x": "-----------------------ILLIUM-------------------------",
+		"id": "A2.I.BlueRoseOfIllium",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Illium: Blue Rose of Illium",
+		"description": "The asari merchant [megametracker://person?id=O2.Ereba] and her krogan boyfriend [megametracker://person?id=O2.Charr] are having problems in their relationship. You might be able to help them decide what to do.\n\nResolving Ereba's problems with Charm or Intimidate results in a discount at the Memories of Illium store.",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"x-comment-y": "TODO: get correct location",
+		"mapLocationPoint": {
+			"x": 1403,
+			"y": 1629,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_Blue_Rose_of_Illium"],
+		"x-comment-z": "TODO: mission 3 link to charr's death message",
+		"sideEffects": ["If Shepard convinces Ereba and Charr to stay together, they later can be seen on Tuchanka."],
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to Ereba",
+				"options": [{
+					"id": "A2.I.BlueRoseOfIllium.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Do you need help?\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.I.BlueRoseOfIllium.P2",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm_* Ereba",
+							"trigger": "\"You should make a decision.\" and \"You should take him back.\""
+						}, {
+							"id": "A2.I.BlueRoseOfIllium.R2",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate_* Ereba",
+							"trigger": "\"You should make a decision.\" and \"Get rid of him.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.I.GiannaParasini",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Illium: Gianna Parasini",
+		"description": "*Only available for Game 1 imports, if Gianna Parasini was not killed.* \n\n[megametracker://person?id=O1.Gianna] meets Shepard for a drink o Illium (as promised in Game 1). She excuses herself early, but leaves a note for Shepard explaining that she is investigating the asari merchant Hermia for smuggling and would appreciate your help in implicating her.\n\nIf you haven't already negotiated a discount from [megametracker://person?id=O2.Hermia], you can do so here for Paragon/Renegade, or you can expose Gianna for a discount and Renegade.",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"mapLocationPoint": {
+			"x": 832,
+			"y": 892,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_Gianna_Parasini"],
+		"decisionIds": ["D1.Gianna"],
+		"experience": 40,
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to Gianna Parasini",
+				"options": [{
+					"id": "A2.I.GiannaParasini.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It was my pleasure.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Negotiating a discount from Hermia at Serrice Technologies",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.GiannaParasini.P2",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm_* Hermia",
+					"trigger": "\"I'm a big spender\""
+				}, {
+					"id": "A2.I.GiannaParasini.R2",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate_* Hermia",
+					"trigger": "\"This stuff might be crap.\""
+				}]
+			}
+		}, {
+			"id": "A2.I.GiannaParasini.R3",
+			"type": "Renegade",
+			"value": 5,
+			"context": "Expose Gianna Parasini to Hermia",
+			"trigger": "\"You're being watched.\""
+		}, {
+			"set": {
+				"context": "Reporting back to Gianna after entrapping Hermia",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.I.GiannaParasini.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You love doing this.\""
+						}, {
+							"id": "A2.I.GiannaParasini.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Is this time real?\""
+						}]
+					}
+				}, {
+					"id": "A2.I.GiannaParasini.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It was good to see you.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.I.GiannaParasini.1",
+		"inMissionId": "A2.I.GiannaParasini",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to Hermia",
+		"description": "Entrap Hermia by persuading her to sell you technology which she doesn't have the licence to sell.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1.Serrice",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.I.IndenturedService",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Illium: Indentured Service",
+		"description": "*This assignment is not available until completing [megametracker://mission?id=A2.I.ATroublemaker], or if that mission is unavailable.*\n\nA quarian slave wishes to be indentured to Synthetic Insights, but due to negative attitudes to indentured service, Synthetic Insights is unwilling to take on the quarian's contract.",
+		"experience": 40,
+		"reward": "2,000 Credits",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"mapLocationPoint": {
+			"x": 1484,
+			"y": 490,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to the slave broker",
+				"options": [{
+					"id": "A2.I.IndenturedService.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Free your slave. Now.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to the Synthetic Insights Rep",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.IndenturedService.P2",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm_* the rep",
+					"trigger": "\"This would be good business.\""
+				}, {
+					"id": "A2.I.IndenturedService.R2",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate_* the rep",
+					"trigger": "\"You're prejudiced!\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Informing the slave broker of a successful conversation",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.IndenturedService.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"No problem.\""
+				}, {
+					"id": "A2.I.IndenturedService.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I don't need your thanks.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Informing the slave broker of an unsuccessful conversation",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.IndenturedService.P4",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm_* the slave broker",
+					"trigger": "\"You can free her!\""
+				}, {
+					"id": "A2.I.IndenturedService.R4",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate_* the slave broker",
+					"trigger": "\"That's enough. Let her go!\""
+				}]
+			}
+		}],
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_Indentured_Service"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.I.IndenturedService.1",
+		"inMissionId": "A2.I.IndenturedService",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to the Synthetic Insights Rep",
+		"description": "Entrap Hermia by persuading her to sell you technology which she doesn't have the licence to sell.",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"mapLocationPoint": {
+			"x": 1535,
+			"y": 300,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.I.IndenturedService.2",
+		"inMissionId": "A2.I.IndenturedService",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Report to Slave Broker",
+		"description": "Return to the slave broker with a Synthetic Insights contract, or convince her to release the quarian anyway.",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"mapLocationPoint": {
+			"x": 1484,
+			"y": 490,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.I.ATroublemaker",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Illium: A Troublemaker",
+		"aliases": ["Illium: A Troublemaker", "Illium: Conrad Verner"],
+		"description": "*Only available if Conrad Verner was helped in Game 1.*\n\nAn Asari outside the Eternity bar on Illium notifies you of a human making trouble inside.",
+		"experience": 40,
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to the asari outside the Eternity bar",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.ATroublemaker.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Good to know.\""
+				}, {
+					"id": "A2.I.ATroublemaker.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Don't do that again.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Conrad inside the Eternity bar",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.I.ATroublemaker.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"For crying out loud...\""
+						}, {
+							"id": "A2.I.ATroublemaker.R2A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "(Hit him.)"
+						}, {
+							"id": "A2.I.ATroublemaker.R2B",
+							"type": "Renegade",
+							"value": 5,
+							"trigger": "(Shoot his foot.)"
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.I.ATroublemaker.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"What were you doing here?\" and \"Let me handle this.\""
+						}, {
+							"id": "A2.I.ATroublemaker.R3",
+							"type": "Renegade",
+							"value": 5,
+							"context": "(Conrad will leave, and later die.)",
+							"trigger": "\"Get lost, Conrad. We're done.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to the merchant at Gateway Personal Defense",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.ATroublemaker.P4",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm_* the merchant (results in store discount)",
+					"trigger": "(Lie) \"I'll help you.\""
+				}, {
+					"id": "A2.I.ATroublemaker.R4A",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate_* the merchant (results in store discount)",
+					"trigger": "\"Shut up and listen.\""
+				}, {
+					"id": "A2.I.ATroublemaker.R4B",
+					"type": "Paragade",
+					"value": 0,
+					"trigger": "\"Leave. Now.\" and \"Don't lie to me!\" or \"I should kill you.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "(Paragon Resolution) Explaining to Conrad after the merchant is arrested",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.ATroublemaker.P5A",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm_* Conrad",
+					"trigger": "(Lie) \"It was a sting.\""
+				}, {
+					"id": "A2.I.ATroublemaker.R5A",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate_* Conrad",
+					"trigger": "\"You blew her cover.\""
+				}, {
+					"id": "A2.I.ATroublemaker.P5B",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm_* Conrad",
+					"trigger": "\"You didn't screw up.\""
+				}, {
+					"id": "A2.I.ATroublemaker.R5B",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate_* Conrad",
+					"trigger": "\"You should have been yourself.\""
+				}, {
+					"id": "A2.I.ATroublemaker.R5C",
+					"type": "Renegade",
+					"value": 2,
+					"context": "(Conrad will leave, and later die.)",
+					"trigger": "\"Yes, you screwed up.\""
+				}, {
+					"id": "A2.I.ATroublemaker.R5D",
+					"type": "Credits",
+					"value": 0,
+					"context": "(Conrad will leave, and later die.)",
+					"trigger": "\"We're done here.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "(Renegade Resolution) Talking to Conrad after the merchant tells him the case is closed",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.ATroublemaker.P6A",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "\"You did fine. Now stop.\""
+				}, {
+					"id": "A2.I.ATroublemaker.R6A",
+					"type": "Renegade",
+					"value": 5,
+					"trigger": "(Lie) \"This was really risky.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "(Neutral Resolution) Talking to Conrad after the merchant disappears",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.ATroublemaker.P7A",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm_* Conrad",
+					"trigger": "\"You didn't screw up.\""
+				}, {
+					"id": "A2.I.ATroublemaker.R7A",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate_* Conrad",
+					"trigger": "\"You should have been yourself.\""
+				}, {
+					"id": "A2.I.ATroublemaker.R7B",
+					"type": "Renegade",
+					"value": 2,
+					"context": "(Conrad will leave, and later die.)",
+					"trigger": "\"Yes, you screwed up.\""
+				}, {
+					"id": "A2.I.ATroublemaker.R7C",
+					"type": "Credits",
+					"value": 0,
+					"context": "(Conrad will leave, and later die.)",
+					"trigger": "\"We're done here.\""
+				}]
+			}
+		}],
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"mapLocationPoint": {
+			"x": 1724,
+			"y": 385,
+			"radius": 1
+		},
+		"decisionIds": ["D1.Conrad", "D2.Conrad"],
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_A_Troublemaker"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.I.ATroublemaker.1",
+		"inMissionId": "A2.I.ATroublemaker",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to Conrad",
+		"description": "Talk to Conrad Verner at the bar. He explains that the dealer at Gateway Personal Defense told him the bartender was selling Red Sand. The bartender insists she is not, and points out that Red Sand is legal on Illium anyway.",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"mapLocationPoint": {
+			"x": 1724,
+			"y": 385,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.I.ATroublemaker.2",
+		"inMissionId": "A2.I.ATroublemaker",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Confront the GPD Merchant",
+		"description": "If you confront the merchant at Gateway Personal Defense, she will admit that she was trying to obtain the deed to the Eternity bar, a valuable piece of real estate.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1.Gateway",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.I.ATroublemaker.3A",
+		"inMissionId": "A2.I.ATroublemaker",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Paragon Resolution (Optional)",
+		"description": "Entrap the merchant into trying to get the Eternity bar deed herself. She will be caught and arrested, leaving several options for explaining this turn of events to Conrad."
+	}, {
+		"id": "A2.I.ATroublemaker.3B",
+		"inMissionId": "A2.I.ATroublemaker",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Renegade Resolution (Optional)",
+		"description": "Convince the merchant to lie to Conrad, telling him that the case was resolved and he helped bring down a Red Sand crime ring."
+	}, {
+		"id": "A2.I.ATroublemaker.3C",
+		"inMissionId": "A2.I.ATroublemaker",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Neutral Resolution (Optional)",
+		"description": "Convince the merchant to disappear."
+	}, {
+		"id": "A2.I.MedicalScans",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Illium: Medical Scans",
+		"description": "A colonist from Zhu's Hope will approach you for help (a green Shiala, if she survived Game 1).\n\nWhile negotiating for necessary medical treatments from Baria Frontiers, the colonists unknowningly signed up for invasive tests. They need your help to convince the Baria Frontiers representative to let them renegotiate the contract.",
+		"experience": 40,
+		"decisionIds": ["D1.Shiala"],
+		"conversationRewards": [{
+			"context": "Talking to Shiala (if she survived Game 1)",
+			"id": "A2.I.MedicalScans.P1",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"Can I offer assistance?\""
+		}, {
+			"set": {
+				"context": "Talking to Erinya",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.MedicalScans.P2",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm_* Erinya",
+					"trigger": "\"Tell me about your family.\""
+				}, {
+					"id": "A2.I.MedicalScans.R2",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate_* Erinya",
+					"trigger": "\"They didn't hate aliens.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Telling Shiala about the renegotiated contract (if she survived Game 1)",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.MedicalScans.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It's not all bad.\""
+				}, {
+					"id": "A2.I.MedicalScans.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Only with death.\""
+				}]
+			}
+		}],
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"mapLocationPoint": {
+			"x": 848,
+			"y": 1626,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_Medical_Scans"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}]
+	}, {
+		"id": "A2.I.MedicalScans.1",
+		"inMissionId": "A2.I.MedicalScans",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to Erinya",
+		"description": "Erinyala, the Baria Frontiers representative, has a very negative opinion of non-Asari peoples. If you talk to her, maybe you can change her mind."
+	}, {
+		"id": "A2.I.LostLocketFound",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Illium: Lost Locket Found",
+		"description": "At the end of [megametracker://mission?id=A2.L.Miranda] is a locket. Return it to its owner for a reward.",
+		"reward": "500 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_The_Prodigal:_Lost_Locket_Found"],
+		"relatedMissionIds": ["A2.L.Miranda"],
+		"inMapId": "G.Ter.Cre.Tas.Ill.4Transfer",
+		"mapLocationPoint": {
+			"x": 2035,
+			"y": 1983,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"context": "Returning the locket",
+				"options": [{
+					"id": "A2.I.LostLocketFound.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Don't bother. I can help.\""
+				}, {
+					"id": "A2.I.LostLocketFound.P2",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "(Completing the assignment.)"
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Acquired: Miranda"
+		}]
+	}, {
+		"id": "A2.I.LostLocketFound.1",
+		"inMissionId": "A2.I.LostLocketFound",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Return Lost Locket",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"mapLocationPoint": {
+			"x": 831,
+			"y": 470,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.SalarianFamilyData",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Illium: Salarian Family Data",
+		"description": "You recover a datapad during [megametracker://mission?id=A2.D.Thane]. Return it to its owner.",
+		"experience": 40,
+		"reward": "1,500 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to the Salarian",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.SalarianFamilyData.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I found your data.\""
+				}, {
+					"id": "A2.I.SalarianFamilyData.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You'll want to see this.\""
+				}]
+			}
+		}, {
+			"context": "Completing the mission",
+			"id": "A2.I.SalarianFamilyData.P1",
+			"type": "Paragon",
+			"value": 2
+		}],
+		"inMapId": "G.Ter.Cre.Tas.Ill.2Darius",
+		"mapLocationPoint": {
+			"x": 1441,
+			"y": 935,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_The_Assassin:_Salarian_Family_Data"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Acquired: Thane"
+		}]
+	}, {
+		"id": "A2.I.SalarianFamilyData.1",
+		"inMissionId": "A2.I.SalarianFamilyData",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Return Salarian Data",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"mapLocationPoint": {
+			"x": 1102,
+			"y": 1034,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.SmugglingEvidence",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Illium: Smuggling Evidence",
+		"description": "There is evidence that Pitne For has been smuggling, found at the Spaceport during [megametracker://mission?id=A2.D.Samara]. You can blackmail Pitne For (Renegade) or alert Detective Anaya (Paragon).\n\n_Note: You cannot return to complete this mission after leaving the spaceport._",
+		"experience": 40,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.I.SmugglingEvidence.P1",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "(Return the evidence to Detective Anaya.)"
+				}, {
+					"id": "A2.I.SmugglingEvidence.R1",
+					"type": "Renegade",
+					"value": 5,
+					"trigger": "(Return the evidence to Pitne For.)"
+				}]
+			}
+		}],
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 1345,
+			"y": 1433,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_The_Justicar:_Smuggling_Evidence"],
+		"relatedMissionIds": ["A2.D.Samara"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}]
+	}, {
+		"id": "A2.I.SmugglingEvidence.R1",
+		"inMissionId": "A2.I.SmugglingEvidence",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Renegade Resolution (Optional)",
+		"description": "Return the evidence to Pitne For.",
+		"reward": "9,000 Credits",
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 490,
+			"y": 805,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.I.SmugglingEvidence.P1",
+		"inMissionId": "A2.I.SmugglingEvidence",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Paragon Resolution (Optional)",
+		"description": "Return the evidence to Detective Anaya.",
+		"reward": "4,200 Credits",
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 448,
+			"y": 930,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.I.StolenGoodsFound",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Illium: Stolen Goods Found",
+		"description": "There is an unsent note regarding some \"lost\" goods, found at the Spaceport during [megametracker://mission?id=A2.D.Samara]. Forward the note to the goods' rightful owner.",
+		"experience": 40,
+		"reward": "1,500 Credits",
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Answering Thax when he asks if you sent the note",
+				"options": [{
+					"id": "A2.I.StolenGoodsFound.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I did.\""
+				}, {
+					"id": "A2.I.StolenGoodsFound.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"What's it to you?\""
+				}]
+			}
+		}, {
+			"id": "A2.I.StolenGoodsFound.R1",
+			"type": "Renegade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 263,
+			"y": 765,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_The_Justicar:_Stolen_Goods_Found"],
+		"relatedMissionIds": ["A2.D.Samara"],
+		"sideEffects": ["The asari responsible for the note can be found by the cabs on Illium. If Shepard forwards the note, she will panic and notify her accompice. If Shepard doesn't forward the note, she gloats about her success."],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}]
+	}, {
+		"id": "A2.I.StolenGoodsFound.1",
+		"inMissionId": "A2.I.StolenGoodsFound",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to Mr. Thax",
+		"todo": "TODO - get map location !!!!!!!!!!!!!!!",
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.SystemHacking",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Illium: System Hacking",
+		"description": "Go speak to Liara in the Administration Office. She will indicate she needs help hacking the systems in Illium to acquire some valuable information. \n\nHack each of the three terminals below and within 60 seconds of each hack, locate the corresponding server and upload the data to Liara. \n\n*_Complete this mission before [megametracker://mission?id=DLC2.LairShadowBroker], or it will be marked as complete automatically, and you will gain no experience or reward._*",
+		"experience": 40,
+		"reward": "2,000 Credits",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1.Administration",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_Liara:_Systems_Hacking"],
+		"relatedMissionIds": ["DLC2.LairShadowBroker", "A2.I.TheObserver"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Liara at the end of the assignment",
+				"options": [{
+					"id": "A2.I.SystemHacking.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Is he after you?\""
+				}, {
+					"id": "A2.I.SystemHacking.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Are you on his side?\""
+				}]
+			}
+		}, {
+			"id": "A2.I.SystemHacking.R1",
+			"type": "Renegade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: System Hacking"
+		}]
+	}, {
+		"id": "A2.I.SystemHacking.1A",
+		"inMissionId": "A2.I.SystemHacking",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Terminal 1",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 800,
+			"y": 1433,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.SystemHacking.1B",
+		"inMissionId": "A2.I.SystemHacking",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Server 1",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 923,
+			"y": 1748,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.SystemHacking.2A",
+		"inMissionId": "A2.I.SystemHacking",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Terminal 2",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 1270,
+			"y": 1366,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.SystemHacking2B",
+		"inMissionId": "A2.I.SystemHacking",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Server 2",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 1491,
+			"y": 1734,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.SystemHacking.3A",
+		"inMissionId": "A2.I.SystemHacking",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Terminal 3",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 1454,
+			"y": 1440,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.SystemHacking.3B",
+		"inMissionId": "A2.I.SystemHacking",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Server 3",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 913,
+			"y": 1366,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.TheObserver",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Illium: The Observer",
+		"description": "Liara explains that she is hunting a senior agent of the Shadow Broker, known only as *The Observer*. She suspects a turian, a salarian, a krogan, a batarian and a vorcha. \n\nLiara needs you to hack 5 data terminals and uncover data fragments that will help identify which one is the agent. \n\n*_Complete this mission before [megametracker://mission?id=DLC2.LairShadowBroker], or it will be marked as complete automatically, and you will gain no experience or reward._*",
+		"experience": 40,
+		"reward": "4,500/5,000 Credits",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1.Administration",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_Liara:_The_Observer"],
+		"relatedMissionIds": ["DLC2.LairShadowBroker", "A2.I.SystemHacking"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After finding the data fragments",
+				"options": [{
+					"id": "A2.I.TheObserver.P2A",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"None of the suspects fit.\""
+				}, {
+					"id": "A2.I.TheObserver.P2B",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "\"Kill the (X).\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Liara at the end of the assignment",
+				"options": [{
+					"id": "A2.I.TheObserver.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Don't give in to temptation.\""
+				}, {
+					"id": "A2.I.TheObserver.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Good luck, Liara.\""
+				}, {
+					"id": "A2.I.TheObserver.PR3",
+					"type": "Paragade",
+					"value": 0,
+					"trigger": "\"(Investigate: Liara's needs)\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: System Hacking"
+		}]
+	}, {
+		"id": "A2.I.TheObserver.1",
+		"inMissionId": "A2.I.TheObserver",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fragment 1",
+		"description": "\"...trader tried to kill the batarian. Claims it was because he hates slavers, but the men were more likely fighting over money. Watch for now.\"",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 818,
+			"y": 622,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.TheObserver.2",
+		"inMissionId": "A2.I.TheObserver",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fragment 2",
+		"description": "\"Smuggler and assassin have refused to work with the vorcha due to lack of trust. Odd to see scruples from the men at this point.\"",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 1727,
+			"y": 480,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.TheObserver.3",
+		"inMissionId": "A2.I.TheObserver",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fragment 3",
+		"description": "\"The turian's asking too many questions. Observer recommends terminating him and framing assassin or salarian contact.\"",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 1190,
+			"y": 774,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.TheObserver.4",
+		"inMissionId": "A2.I.TheObserver",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fragment 4",
+		"description": "\"Turian contact working well with the trader. Observer has rescinded kill order against him, given difficulty in securing contact with the trader through other methods.\"",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 872,
+			"y": 814,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.I.TheObserver.5",
+		"inMissionId": "A2.I.TheObserver",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fragment 5",
+		"description": "\"Vorcha trader has requested no further contact with the salarian. Salarian is becoming more trouble than he is worth. Observer recommends a kill, but she may have a grudge.\"",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 872,
+			"y": 960,
+			"radius": 1
+		},
+		"isOpensDetail": false
+
+
+	}, {
+		"x-comment-x": "-----------------------OMEGA-------------------------",
+		"id": "A2.O.BatarianBartender",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Omega: Batarian Bartender",
+		"description": "A batarian bartender is poisoning humans and has made a personal attack. \n\nThis assignment is acquired by ordering a drink at the lower Afterlife club from the batarian Forvan, and thereby being poisoned. On the upside, after finishing this assignment, you get free drinks at the club for the rest of the game!",
+		"experience": 40,
+		"reward": "Free Drinks",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+		"mapLocationPoint": {
+			"x": 1355,
+			"y": 659,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Batarian_Bartender"],
+		"conversationRewards": [{
+			"set": {
+				"context": "After regaining consciousness after being poisoned at the lower Afterlife bar",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.O.BatarianBartender.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Thanks for the advice.\""
+				}, {
+					"id": "A2.O.BatarianBartender.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"That bartender will pay.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After confronting the bartender, Forvan",
+				"options": [{
+					"id": "A2.O.BatarianBartender.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You're done poisoning people.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.O.BatarianBartender.P3",
+							"type": "Paragon",
+							"value": 5,
+							"trigger": "\"You're not worth my time.\""
+						}, {
+							"id": "A2.O.BatarianBartender.R4",
+							"type": "Paragon",
+							"value": 5,
+							"trigger": "(Incite the Crowd.)"
+						}, {
+							"id": "A2.O.BatarianBartender.R5",
+							"type": "Renegade",
+							"value": 5,
+							"trigger": "(Make him drink it.)"
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.O.DatapadRecovered",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Omega: Datapad Recovered",
+		"description": "A datapad has been discovered while attempting to recruit Archangel. It contains information which Aria T'Loak, ruler of Omega, will want to see.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.3Archangel",
+		"mapLocationPoint": {
+			"x": 256,
+			"y": 781,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Archangel:_Datapad_Recovered"],
+		"relatedMissionIds": ["A2.D.Garrus"],
+		"experience": 40,
+		"reward": "[megametracker://mission?id=A2.N7.EclipseSmugglingDepot]",
+		"conversationRewards": [{
+			"set": {
+				"context": "After completing both [megametracker://mission?id=A2.O.ThePatriarch] and [megametracker://mission?id=A2.O.DatapadRecovered]",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.O.DatapadRecovered.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"No thanks.\""
+				}, {
+					"id": "A2.O.DatapadRecovered.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Just like that?\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.O.MissingAssistant",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Omega: Missing Assistant",
+		"description": "Mordin's assistant, Daniel, has gone missing in vorcha territory. Mordin would be grateful if you would find and bring him back.",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_The_Professor:_Missing_Assistant"],
+		"relatedMissionIds": ["A2.D.Mordin"],
+		"experience": 40,
+		"reward": "None",
+		"inMapId": "G.Ter.Ome.Sah.Ome.2Quarantine",
+		"mapLocationPoint": {
+			"x": 1900,
+			"y": 900,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"context": "Calming down the batarians",
+				"options": [{
+					"id": "A2.O.MissingAssistant.P1A",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Everybody stay calm.\""
+				}, {
+					"id": "A2.O.MissingAssistant.P1B",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Let's talk this out.\""
+				}, {
+					"set": {
+						"context": "Conversation-ending dialog",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.O.MissingAssistant.P2",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charming_* the batarians",
+							"trigger": "\"Nobody needs to die.\""
+						}, {
+							"id": "A2.O.MissingAssistant.R2A",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidating_* the batarians",
+							"trigger": "\"Kill him, and you're next.\""
+						}, {
+							"id": "A2.O.MissingAssistant.R2B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "(Signal henchman.)"
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.O.PackagesForIsh",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Omega: Packages for Ish",
+		"description": "A salarian businessman named Ish needs packages picked up. The packages are near Marab's shop on the Citadel and in Eternity on Illium. You can turn them in to Ish, or to [Anto|megametracker://maplocation?id=G.Ter.Ome.Sah.Ome.1Main&title=Anto&location=913x585], inside Afterlife.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+		"mapLocationPoint": {
+			"x": 1048,
+			"y": 1569,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Packages_for_Ish"],
+		"experience": 40,
+		"reward": "Varies",
+		"sideEffects": ["If Miranda or Jacob are present there will be additional dialog options (they have both had prior dealings with Ish)."],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"context": "Give Ish the packages",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.O.PackagesForIsh.R1",
+							"type": "Renegade",
+							"value": 5,
+							"trigger": "(No conditions.) (+4500 Credits)"
+						}, {
+							"id": "A2.O.PackagesForIsh.P1",
+							"type": "Paragon",
+							"value": 0,
+							"trigger": "\"Aria will find out what you're up to, Ish. I don't envy you when that happens.\" (+3375 Credits) _(bug: mission will never complete)_"
+						}]
+					}
+				}, {
+					"set": {
+						"context": "Give Anto the packages",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.O.PackagesForIsh.P2",
+							"type": "Paragon",
+							"value": 5,
+							"trigger": "\"This is bad for Aria.\" or \"Aria wouldn't be happy.\" and \"Just be careful.\""
+						}, {
+							"id": "A2.O.PackagesForIsh.R2",
+							"type": "Renegade",
+							"value": 5,
+							"trigger": "\"This is bad for Aria.\" or \"Aria wouldn't be happy.\" and \"Take care of Ish.\""
+						}, {
+							"id": "A2.O.PackagesForIsh.R3",
+							"type": "Renegade",
+							"value": 5,
+							"trigger": "\"This is bad for Aria.\" or \"Aria wouldn't be happy.\" and \"Pay me for my silence.\" (+2250 Credits)"
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}]
+	}, {
+		"id": "A2.O.PackagesForIsh.1",
+		"inMissionId": "A2.O.PackagesForIsh",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Package 1",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 1475,
+			"y": 295,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.O.PackagesForIsh.2",
+		"inMissionId": "A2.O.PackagesForIsh",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Package 2",
+		"inMapId": "G.C2.ZakeraWardL26",
+		"mapLocationPoint": {
+			"x": 1300,
+			"y": 1331,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.O.ThePatriarch",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Omega: The Patriarch",
+		"description": "Grizz has a job for you. Aria's old adviser, the Patriarch, is in danger from thugs trying to make a name for themselves. Aria wants the Patriarch moved someplace safe until the threat is gone.",
+		"experience": 40,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"mapLocationPoint": {
+			"x": 649,
+			"y": 585,
+			"radius": 1
+		},
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to the Patriarch",
+				"options": [{
+					"id": "A2.O.ThePatriarch.P1",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "\"You have to get out of here.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.O.ThePatriarch.P2A",
+							"type": "Paragon",
+							"value": 2,
+							"context": "Convince the Patriarch to go into hiding",
+							"trigger": "\"Time to go, Patriarch.\""
+						}, {
+							"id": "A2.O.ThePatriarch.P2B",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm the Patriarch_*",
+							"trigger": "\"Let us be your 'muscle.'\""
+						}, {
+							"id": "A2.O.ThePatriarch.R2",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate the Patriarch_*",
+							"trigger": "\"What kind of krogan are you?\""
+						}]
+					}
+				}, {
+					"id": "A2.O.ThePatriarch.P3",
+					"type": "Paragon",
+					"value": 2,
+					"context": "Convince the Patriarch to go into hiding, after charming him into letting you fight on his behalf",
+					"trigger": "\"New Plan. You get to safety.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to the Patriarch after fighting the Blue Suns.",
+				"options": [{
+					"id": "A2.O.ThePatriarch.P4",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "(Talking to the Patriarch)"
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.O.ThePatriarch.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Goodbye.\""
+						}, {
+							"id": "A2.O.ThePatriarch.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Don't waste this.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "A2.O.ThePatriarch.P6",
+			"type": "Paragon",
+			"value": 2,
+			"context": "Talking to Aria after the Patriarch dies",
+			"trigger": "\"He didn't live like a krogan.\""
+		}],
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_The_Patriarch"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: One Omega Dossier"
+		}]
+	}, {
+		"id": "A2.O.ThePatriarch.1",
+		"inMissionId": "A2.O.ThePatriarch",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to The Patriarch",
+		"description": "You can find the Patriarch in the lower level of Afterlife. There are three resolutions available. The Paragon option is convincing the Patriarch to let your squad fight on his behalf. The Renegade option is to mock the Patriarch, convincing him to rush off into battle and die. The neutral option is to convince the Patriarch to go into hiding until things cool off.",
+		"experience": 40,
+		"reward": "3,000 Credits",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"mapLocationPoint": {
+			"x": 1605,
+			"y": 829,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.O.ThePatriarch.2",
+		"inMissionId": "A2.O.ThePatriarch",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Paragon Resolution (Optional)",
+		"description": "Convince the Patriarch to let your squad fight on his behalf as _krantt_ (this is easier if Grunt is with you, otherwise you will need Paragon points). When you leave Afterlife, two Blood Pack mercenaries will threaten you. You can leave or fight them (cutscene, not real fighting), but either way this concludes the assignment. \n\nIf you speak to the Patriarch afterwards, he will give you some advice about Aria and Omega."
+	}, {
+		"id": "A2.O.ThePatriarch.3",
+		"inMissionId": "A2.O.ThePatriarch",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Renegade Resolution (Optional)",
+		"description": "Goad the Patriarch into fighting the Blood Pack himself, and dying. Aria will not be happy that he is dead, but is glad that he died with glory."
+	}, {
+		"id": "A2.O.ThePatriarch.4",
+		"inMissionId": "A2.O.ThePatriarch",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Neutral Resolution (Optional)",
+		"description": "This is what Aria wants, but it has no morality points."
+	}, {
+		"id": "A2.O.ThePatriarch.5",
+		"inMissionId": "A2.O.ThePatriarch",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Report to Grizz",
+		"description": "If you picked the neutral route, Grizz will thank you and that's it. If you picked the Paragon or Renegade, he will ask you to talk to Aria as well. Then, if you selected the Paragon route, and have completed [megametracker://mission?id=A2.O.DatapadRecovered], Aria will reward you with the location a cache on an uncharted world ([megametracker://mission?id=A2.N7.EclipseSmugglingDepot]).",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"mapLocationPoint": {
+			"x": 1300,
+			"y": 1331,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.O.StrugglingQuarian",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Omega: Struggling Quarian",
+		"description": "A quarian named Kenn is trying to raise enough money to leave Omega, but is being undercut by Harrot, a powerful merchant.",
+		"experience": 40,
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Kenn",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to Harrot",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.O.StrugglingQuarian.P1",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Harrot_*",
+					"trigger": "\"Leave the quarian alone.\""
+				}, {
+					"id": "A2.O.StrugglingQuarian.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Harrot_*",
+					"trigger": "\"Just shut the quarian down.\""
+				}]
+			}
+		}, {
+			"id": "A2.O.StrugglingQuarian.R1",
+			"type": "Paragon",
+			"value": 5,
+			"context": "Talking to Kenn (unavailable after Harrot buys his shop)",
+			"trigger": "(Give him 1000 credits)"
+		}],
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Struggling_Quarian"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.O.StrugglingQuarian.1",
+		"inMissionId": "A2.O.StrugglingQuarian",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Kenn",
+		"description": "Kenn at Kenn's Salvage is struggling to save enough money to leave Omega, but Harrot's Emporium keeps undercutting his prices and he can't make a profit. You can resolve this with Harrot at no expense, or you can buy Kenn's ticket off Omega for him.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Kenn",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.O.StrugglingQuarian.2",
+		"inMissionId": "A2.O.StrugglingQuarian",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Harrot (Optional)",
+		"description": "Convince Harrot to leave Kenn alone (requires Paragon) or just buy Kenn out (requires Renegade). This also rewards a discount on both stores for the rest of the game. \n\nIf you select Renegade, Kenn will be gone when you return to his store. If you select Paragon, you can still buy Kenn a ticket off Omega for more Paragon.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Emporium",
+		"isShowInParentMap": true
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------N7-------------------------",
+		"id": "A2.N7.AbandonedMine",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Abandoned Mine",
+		"description": "_\"Surface scans report potential alien signatures from within the mining facility. Anomalous life signs detected. Whereabouts of the facility staff unknown.\"_\n\n Note: retrieve any loot before destroying the Reaper device.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.OuC.Min.For.Aequitas",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Abandoned_Mine"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N7.AbandonedResearchStation",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Abandoned Research Station",
+		"description": "_\"Data mining confirms the last reported location of merchant freighter MSV Corsica as the Jarrahe Station in the Strabo system. Possibility exists that clues pertaining to the anomaly that caused the mass malfunction of the mechs aboard Corsica can be found aboard Jarrahe Station.\"_\n\n This is the last stop of the MSV Corsica before its VI was compromised and it crashed into the planet. It is quickly apparent that the VI here has also gone rogue and will need to be shut down.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Att.Eag.Str.Jarrahe",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Abandoned_Research_Station"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: MSV Corsica"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Jarrahe Station"
+		}]
+	}, {
+		"id": "A2.N7.AbandonedResearchStation.1",
+		"inMissionId": "A2.N7.AbandonedResearchStation",
+		"sortIndex": 10001,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Restore Power to Living Quarters",
+		"description": "As soon as you turn power back on, the VI will lock you in and you must use the console to unlock the doors. Select the left-most computer, then the right-most computer.",
+		"experience": 0,
+		"inMapId": "G.Att.Eag.Str.Jarrahe"
+	}, {
+		"id": "A2.N7.AbandonedResearchStation.2",
+		"inMissionId": "A2.N7.AbandonedResearchStation",
+		"sortIndex": 10002,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Restore Power to Research Lab",
+		"description": "As soon as you turn power back on, the VI will lock you in and you must explode the tank on the far side of the lab to unlock the doors. Bounce the laser beam to the tank by triggering the first computer once, the second twice, the third once, and the fourth three times.",
+		"experience": 0,
+		"inMapId": "G.Att.Eag.Str.Jarrahe"
+	}, {
+		"id": "A2.N7.AbandonedResearchStation.3",
+		"inMissionId": "A2.N7.AbandonedResearchStation",
+		"sortIndex": 10003,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Restore Power to Engineering",
+		"description": "Avoid the venting plasma jets and turn the power back on. You won't be locked in this time.",
+		"experience": 0,
+		"inMapId": "G.Att.Eag.Str.Jarrahe"
+	}, {
+		"id": "A2.N7.AbandonedResearchStation.4",
+		"inMissionId": "A2.N7.AbandonedResearchStation",
+		"sortIndex": 10004,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Restore Power to the VI",
+		"description": "Turn the power on at the central hub and disable the VI before it uploads to the Normandy.",
+		"experience": 0,
+		"inMapId": "G.Att.Eag.Str.Jarrahe"
+	}, {
+		"id": "A2.N7.AnomalousWeather",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Anomalous Weather Detected",
+		"description": "_\"Sensors detecting anomolous weather patterns on the planet's surface. Geth activity detected. Recommend extreme caution.\"_ \n\nLocate and shut down the geth device causing the extreme weather changes.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Ter.Pyl.Dir.Canalus",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Anomalous_Weather_Detected"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N7.ArcheologicalDig",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Archeological Dig Site",
+		"description": "_\"Mercenary activity detected on planet surface. Communications match Blue Suns encoding protocols. Possible location for rumored site of illegal archeological activity. Blue Suns intentions unknown.\"_ \n\nExoGeni uncovered a prothean artifact and contracted with the Blue Suns to transport it. The Blue Suns decided they could sell it for more elsewhere. Fight your way through several waves of Blue Suns troops to the dig site and the prothean pyramid.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Ter.Ros.Eno.Joab",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Archeological_Dig_Site"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Secured Loyalty: Jacob"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Joab Prothean Pyramid"
+		}]
+	}, {
+		"id": "A2.N7.BloodPackCommunicationsRelay",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Blood Pack Communications Relay",
+		"description": "_\"Preliminary scans indicate a high-powered communications relay on the planet. Communications match known Blood Pack mercenary protocols. A concentration of krogan and vorcha signals are massed inside what appears to be a mining operation. Life signs detected. Unknown species. Advise caution.\"_ \n\nFight through the Blood Pack and klixen (similar to rachni) to shut down the communications relay on the hill. If you have the Shrike Abyssal charts from [megametracker://mission?id=MA2.UC.StarCharts], it is not important which Blood Pack mission you complete first. Otherwise you will need to complete this one first.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Ter.Cre.Lus.Tarith",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Blood_Pack_Communications_Relay"],
+		"relatedMissionIds": ["A2.N7.BloodPackBase"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N7.BloodPackBase",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Blood Pack Base",
+		"description": "_\"Scans show a crude base established on the planet's surface. Communications match known Blood Pack mercenary protocols. Numerous life signs matching vorcha genealogy detected. The base's material resources match our data on weapons manufacturing components.\"_ \n\n Fight through the Blood Pack forces to the facility and detonate the four containment cells inside. If you have the Shrike Abyssal charts from [megametracker://mission?id=A2.UC.StarCharts], it is not important which Blood Pack mission you complete first. Otherwise you will need to complete the communications relay first.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Ter.Shr.XeC.ZadaBan",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Blood_Pack_Base"],
+		"relatedMissionIds": ["A2.N7.BloodPackCommunicationsRelay"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N7.BlueSunsBase",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Blue Suns Base",
+		"description": "_\"Distress beacon detected on initial sweep is confirmed to be a fabrication set in place to lure unsuspecting ships into orbit for pirate ambush. Preliminary scans indicate that shutting down false distress beacon will stop the Blue Suns transmission and disable their ambush site. Surface scans show Blue Suns communication signatures concentrated around a shuttle hangar bay.\"_ \n\nYou will need to enter the mining facility and fight through multiple waves of Blue Suns, two YMIR Mechs at once, and a boss, in order to destroy the transmitter.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Ter.Sig.Dec.Sanctum",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Blue_Suns_Base"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: MSV Strontium Mule"
+		}]
+	}, {
+		"id": "A2.N7.MiningFacility",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Captured Mining Facility",
+		"description": "_\"Mercenary activity detected inside a mining facility on the planet's surface. Facility confirmed registered to Eldfell-Ashland Energy Corporation. Eclipse presence confirmed. Distress beacon powered down at site. Sensors detect multiple space faring vessel launches from facility.\"_ Enter the facility and fight through the Eclipse mercenaries to the central computer. Start decrypting the data there and fight off more mercenaries until it finishes.\n\n",
+		"experience": 125,
+		"reward": "7,500 Credits",
+		"inMapId": "G.Ter.Cre.Zel.Helyme",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Captured_Mining_Facility"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N7.SmugglingDepot",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Eclipse Smuggling Depot",
+		"description": "_\"The planet Daratar in the Faryar system is a suspected Eclipse smuggling site. Cerberus is interested in obtaining the materials kept at this site. Operatives will be paid handsomely for any intact crates retrieved from the site. Be aware that Eclipse would rather see the cargo destroyed than lose it to a rival organization. Payment will be made once the acquisition of undamaged crates is verified.\"_ \n\nThis mission is normally acquired from Aria after bringing her the datapad from Archangel's base and dealing with Patriarch, but you can also just go to the planet and scan it. \n\n*THIS IS A TIMED MISSION!* You need to kill three YMIR Mechs before they destroy the 20 crates. You get more credits the more crates you save.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Ter.Hou.Far.Daratar",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Eclipse_Smuggling_Depot"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N7.ResearchStation",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Endangered Research Station",
+		"description": "_\"Planetary scans indicate that the Sinmara colony is vulnerable to its sun's hazardous solar flares. Malfunction detected in colony's magnetic shield. Shield must be reactivated to avoid exposing colony to unstable solar activity and potential annihilation.\"_ \n\n There is no battle here, just a puzzle. Bypass the central terminal, then continue on and activate the control switch twice then power up the cooling unit on the left, activate the control switch twice then power up the shield generator, activate the control switch twice then power up the shield control and bypass it.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Att.Cal.Sol.Sinmara",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Endangered_Research_Station"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Collector Ship"
+		}]
+	}, {
+		"id": "A2.N7.HahneKedar",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Hahne-Kedar Facility",
+		"description": "\"Surface scan detects mech production facility matching the registration parameters of Hahne-Kedar Corporation. Facility reports emergency lockdown at this location. Personnel scans report no living beings detected. Hazard scans show a large number of virus-infected mechs quarantined within the facility. Deactivation of the primary production line controls should disrupt the creation of additional infected mechs.\"\n\nYou will have to take out two FERNRIS Mechs and two LOKI Mechs just to get inside the facility. Then you will be fighting a sea of various rogue mechs as you make your way down to the production floor. There you can shut down operations from the control center terminal.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Ter.Tit.Has.Capek",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Hahne-Kedar_Facility"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Jarrahe Station"
+		}]
+	}, {
+		"id": "A2.N7.ImminentShipCrash",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Imminent Ship Crash",
+		"description": "_\"Scans detect a rapidly decaying derelict ship in orbit over planet Jonus. Registration matches the MSV Broken Arrow. Ship's manifest notes volatile munitions cargo onboard. If left undisturbed, the ship's trajectory will lead to impact with Jonus. High probability that the crash site will be Fargone, Jonus' largest human colony. Geth signatures detected aboard the MSV Broken Arrow.\"_ \n\n*THIS IS A TIMED MISSION!* There will be a few geth to take down as you go through the ship, but the waves of them start when you reach the engine room. In between waves, activate the two power couplings on each side of the room. When complete, restore power to the engine in the center. \n\nYou will need the Pylos Nebula charts from [megametracker://mission?id=A2.UC.StarCharts] before you can complete this assignment.",
+		"experience": 125,
+		"reward": "7,500 Credits",
+		"inMapId": "G.Ter.Pyl.Nar.MSVArrow",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Imminent_Ship_Crash"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N7.JavelinMissiles",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Javelin Missiles Launched",
+		"description": "_\"Scans detect an Alliance colony defended by a Javelin Mk. II missile base. A distress signal indicates that the base is compromised by batarians who have launched two missiles at the Alliance colony. Total destruction of the colony is imminent. Zero probability of survivors if missiles strike. Find the control panel in the Javelin Mk. II missile base. Time of impact calculated: landing party will have 5 minutes to deactivate the missiles after shuttle touchdown.\"_ \n\n This mission is normally acquired after [megametracker://person?id=P2.N7.BlueSunsBase], but you can also just go to the planet and scan it.\n\n*THIS IS A TIMED MISSION!* Fight your way to the silo control room and bypass the terminal. You will have to make a choice to save the spaceport or the residential district.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Ter.Sig.Ske.Watson",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Javelin_Missiles_Launched"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N7.LostOperative",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Lost Operative",
+		"description": "_\"Signal scans detect a transmitter matching Cerberus encryption. It is registered to an unknown deep cover operative. Cerberus operative life signs unconfirmed. Other transmissions that match known Eclipse coded communications also detected.\"_ \n\nOnce you have eliminated all the Eclipse troops in the main room, bypass the door to the interrogation room. Access the computer and choose whether to give the data to Cerberus, the Alliance, or keep it for youself.",
+		"experience": 125,
+		"reward": "7,500 Credits",
+		"inMapId": "G.Ter.Ome.Fat.Lorek",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Lost_Operative"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N7.MiningTheCanyon",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Mining the Canyon",
+		"description": "_\"Surface scans detect one YMIR Heavy Mech signature matching an unknown (possibly pirate) registration. Mech appears to be disabled but broadcasting a looping message. Message does not appear to be a distress signal. Resource scans indicate large quantities of mineral resources available but obscured behind walls of dense stone.\"_ \n\nThis is a typical guide mission, where you must take the YMIR Mech from battery to battery to reach the other end of the canyon. There are two varren you have to fight to get one of the batteries, but that is the only fighting involved.",
+		"experience": 125,
+		"reward": "7,500 Credits",
+		"inMapId": "G.Att.Cal.Tal.Taitus",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Mining_the_Canyon"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Collector Ship"
+		}]
+	}, {
+		"id": "A2.N7.MSVEstevanico",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: MSV Estevanico",
+		"description": "_\"Alliance sources request that all ships keep watch for signs of the missing freighter MSV Estevanico, lost one year ago in this sector. Any data recovered that sheds light on the Estevanico's fate will be rewarded. Surface scans indicate the presence of a large shipwreck. Signature bears similarities of the Alliance merchant freighter MSV Estevanico. Structural integrity is critical. Life support is damaged but capable of sustaining a skeleton crew. Recommend extreme caution.\"_ \n\nThis is a maze where you must navigate your way to the mainframe. As you progress, the ship will shift and pieces will fall, creating new routes. You can't be hurt during the assignment.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Ter.Hou.Plo.Zanethu",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_MSV_Estevanico"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N7.MSVStrontiumMule",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: MSV Strontium Mule",
+		"description": "After uncovering the prothean pyramid in [megametracker://mission?id=A2.N7.ArcheologicalDig], Cerberus asks you to track down a ship that carried off valuable intel from the dig site.\n\n You will have to eliminate all the Blue Suns and FENRIS Mechs, and then the room with the cargo Cerberus wants is unlocked and you can retrieve it.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Ter.Ome.Ari.MSVMule",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_MSV_Strontium_Mule"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Joab Prothean Pyramid"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: MSV Strontium Mule"
+		}]
+	}, {
+		"id": "A2.N7.QuarianCrashSite",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Quarian Crash Site",
+		"description": "_\"Surface scans show evidence of a shipwreck meeting quarian design specifications. Identity of ship unknown. Number of life signs detected in vicinity uncertain. Local wildlife may interfere with accuracy of biological scan.\"_ \n\nFollow the trail of blood to the wounded quarian survivor. Protect her from waves of varren attacks.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Att.Had.She.Gei",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Quarian_Crash_Site"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N7.WreckedMerchantFreighter",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "N7: Wrecked Merchant Freighter",
+		"description": "_\"Surface scans indicate wreckage of a merchant freighter, configuration unknown. Damage to ship catastrophic. Detecting movement, but no signs of organic life.\"_ \n\nAfter their VI was compromised and cargo of mechs began exploding, the MSV Corsica crashed. Once you have deactivated the distress beacon, you will have to fight off the remaining mechs (180 reported in cargo log), and one YMIR Mech. They will attack in waves as you advance your position back towards the shuttle.",
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"inMapId": "G.Att.Eag.Amu.Neith",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Wrecked_Merchant_Freighter"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: MSV Corsica"
+		}]
+
+
+
+	}, {
+		"x-comment-x": "-----------------------Normandy-------------------------",
+		"id": "A2.N.FBACouplings",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Normandy: FBA Couplings",
+		"description": "The engineers could use the new T6-FBA couplings to make their maintenance work easier. \n\nAcquired by speaking to Kenneth Donnelly or Gabriella Daniels in Engineering.",
+		"x-experience": "TOOD:",
+		"inMapId": "G.N2.4Engineering",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Normandy:_FBA_Couplings"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N.SerriceIceBrandy",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Normandy: Serrice Ice Brandy",
+		"description": "Dr. Chakwas tells you she lost a rare bottle of Serrice Ice Brandy when the original Normandy was destroyed. If you can, find her a new bottle. \n\nAcquired by speaking to Dr. Chakwas in the Medical Bay.",
+		"x-experience": "TOOD:",
+		"objectivesCountToCompletion": 1,
+		"inMapId": "G.N2.3Quarters",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Normandy:_Serrice_Ice_Brandy"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Drinking brandy with Dr. Chakwas",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.N.SerriceIceBrandy.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We must save humanity.\""
+				}, {
+					"id": "A2.N.SerriceIceBrandy.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I want revenge.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.N.SpecialIngredients",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Normandy: Special Ingredients",
+		"description": "The Normandy's cook would appreciate special ingredients to make better food. Most of the supplies he wants are at the Citadel. \n\nAcquired by speaking to Mess Sergeant Garner at the Mess Hall.",
+		"x-experience": "TOOD:",
+		"inMapId": "G.N2.3Quarters",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Normandy:_Special_Ingredients"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------Tuchanka-------------------------",
+		"id": "A2.T.CombustionManifold",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Tuchanka: Combustion Manifold",
+		"description": "The mechanic on Tuchanka needs a Combustion Manifold, which you will run across during [megametracker://mission?id=A2.L.Mordin]. You can talk to the mechanic before boarding the vehicle to the Weyrloc Facility to start the assignment, or just turn the manifold in after completing the loyalty mission.",
+		"experience": 40,
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"relatedMissionIds": ["A2.L.Mordin"],
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tuchanka:_Combustion_Manifold"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Secured Loyalty: Mordin"
+		}]
+	}, {
+		"id": "A2.T.CombustionManifold.1",
+		"inMissionId": "A2.T.CombustionManifold",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Combustion Manifold",
+		"inMapId": "G.InC.Kro.Ara.Tuc.2Weyrlock",
+		"mapLocationPoint": {
+			"x": 275,
+			"y": 363,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.T.CombustionManifold.2",
+		"inMissionId": "A2.T.CombustionManifold",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Return to Mechanic",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Mechanic",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.T.KillingPyjaks",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Tuchanka: Killing Pyjaks",
+		"description": "Ratch invites you to kill some pyjaks - pests on Tuchanka. A minigame is available next to Chief Scout where you can fire dual turrets against three waves of pyjaks. \n\n_Completing this assignment rewards a discount at the store, as well as makes available Pyjak Meat for purchase._",
+		"experience": 40,
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tuchanka:_Killing_Pyjaks"],
+		"sideEffects": [
+			"After completing this mission and buying the Pyjak Meat from Ratch, if you feed the meat to the varren Urz, Urz will become your loyal pet, following you everywhere on Tuchanka."
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Secured Loyalty: Mordin or Grunt"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Killing Pyjacks"
+		}]
+	}, {
+		"id": "A2.T.KillingPyjaks.1",
+		"inMissionId": "A2.T.KillingPyjaks",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Ratch",
+		"description": "",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+
+	}, {
+		"id": "A2.T.KillingPyjaks.2",
+		"inMissionId": "A2.T.KillingPyjaks",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Kill Pyjaks",
+		"description": "",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.T.KillingPyjaks.3",
+		"inMissionId": "A2.T.KillingPyjaks",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Return to Ratch",
+		"description": "",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.T.MissingScout",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Assignment",
+		"name": "Tuchanka: Missing Scout",
+		"description": "Talk to Chief Scout next to the Pyjak firing range. He is looking for missing scout sent into Weyrloc territory. \n\nWhen you find the despondent scout in the Weyrloc facility, you can persuade him to leave. If you lie, he will attack you instead, and the assignment will fail. \n\n_You must speak to Chief Scout before boarding the vehicle for [megametracker://mission>id=A2.L.Mordin], or the missing scout will not be found in the Weyloc Facility_",
+		"experience": 40,
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"conversationRewards": [{
+			"id": "A2.T.MissingScout.P1",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"We were looking for you.\""
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"context": "Selecting the Paragon above.",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.T.MissingScout.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Mordin can help.\""
+						}, {
+							"id": "A2.T.MissingScout.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Just sit tight.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "\"What did they do to you?\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.T.MissingScout.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Can you get out?\""
+						}, {
+							"id": "A2.T.MissingScout.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I dealt with them.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "A2.T.MissingScout.P6",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"I want to help.\""
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.T.MissingScout.P7",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm scout*",
+					"trigger": "\"It doesn't help your clan.\""
+				}, {
+					"id": "A2.T.MissingScout.R7",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate scout*",
+					"trigger": "\"I see what's really going on.\""
+				}, {
+					"id": "A2.T.MissingScout.P8",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Stay here! I'm trying to help!\""
+				}, {
+					"id": "A2.T.MissingScout.R8",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"[Lie] Relax. It's okay.\""
+				}, {
+					"id": "A2.T.MissingScout.R9",
+					"type": "Renegade",
+					"value": 5,
+					"trigger": "\"Forget it. I'm leaving.\""
+				}]
+			}
+		}],
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tuchanka:_Old_Blood:_Missing_Scout"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Secured Loyalty: Mordin"
+		}]
+	}, {
+		"id": "A2.T.MissingScout.1",
+		"inMissionId": "A2.T.MissingScout",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Chief Scout",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.T.MissingScout.2",
+		"inMissionId": "A2.T.MissingScout",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Missing Scout",
+		"inMapId": "G.InC.Kro.Ara.Tuc.2Weyrlock",
+		"mapLocationPoint": {
+			"x": 311,
+			"y": 1263,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.T.MissingScout.3",
+		"inMissionId": "A2.T.MissingScout",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Return to Chief Scout",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+
+
+
+	}]
+}

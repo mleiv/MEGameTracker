@@ -1,0 +1,7327 @@
+{
+	"maps": [{
+		"x-comment-x": "-----------------------Arcturus Stream-------------------------",
+		"id": "G.Ear.Arcturus",
+		"name": "Arcturus Stream",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Arcturus_Stream1.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 2109,
+			"y": 3196,
+			"radius": 30
+		},
+		"annotationNote": "Arcturus, Euler",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Arcturus_Stream"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Arcturus_Stream2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Arcturus_Stream3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"x-comment-x": "--------Arcturus-------",
+		"id": "G.Ear.Arc.Arcturus",
+		"name": "Arcturus",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Arcturus_Stream/Arcturus1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Arcturus",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 681,
+			"y": 1104,
+			"radius": 127
+		},
+		"annotationNote": "Arcturus Station, Themis, Eirene, Eunomia",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Arcturus"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Arcturus_Stream/Arcturus2.pdf"
+			},
+			"3": {
+				"annotationNote": "Alcyoneus, Arcturus Station, Themis, Eirene, Eunomia",
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Arcturus_Stream/Arcturus3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Arc.Arc.Alcyoneus",
+		"name": "Alcyoneus",
+		"inMapId": "G.Ear.Arc.Arcturus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1304,
+			"y": 1171,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Alcyoneus"
+		],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "G.Ear.Arc.Arc.Station",
+		"name": "Arcturus Station",
+		"inMapId": "G.Ear.Arc.Arcturus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1423,
+			"y": 1011,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Arcturus_Station"
+		]
+	}, {
+		"id": "G.Ear.Arc.Arc.Themis",
+		"name": "Themis",
+		"inMapId": "G.Ear.Arc.Arcturus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1310,
+			"y": 612,
+			"radius": 45
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Themis"
+		]
+	}, {
+		"id": "G.Ear.Arc.Arc.Eirene",
+		"name": "Eirene",
+		"inMapId": "G.Ear.Arc.Arcturus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 660,
+			"y": 1588,
+			"radius": 70
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Eirene"
+		]
+	}, {
+		"id": "G.Ear.Arc.Arc.Eunomia",
+		"name": "Eunomia",
+		"inMapId": "G.Ear.Arc.Arcturus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 257,
+			"y": 925,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Eunomia"
+		]
+	}, {
+		"x-comment-x": "--------Euler-------",
+		"id": "G.Ear.Arc.Euler",
+		"name": "Euler",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Arcturus_Stream/Euler1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Arcturus",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1413,
+			"y": 953,
+			"radius": 120
+		},
+		"annotationNote": "Fermi, Benning, Yukawa, Silva",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Euler"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Arcturus_Stream/Euler2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Arcturus_Stream/Euler3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Arc.Eul.Fermi",
+		"name": "Fermi",
+		"inMapId": "G.Ear.Arc.Euler",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 791,
+			"y": 1039,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Fermi"
+		]
+	}, {
+		"id": "G.Ear.Arc.Eul.Benning",
+		"name": "Benning",
+		"inMapId": "G.Ear.Arc.Euler",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1444,
+			"y": 792,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Benning"
+		]
+	}, {
+		"id": "G.Ear.Arc.Eul.Yukawa",
+		"name": "Yukawa",
+		"inMapId": "G.Ear.Arc.Euler",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 627,
+			"y": 494,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Yukawa"
+		]
+	}, {
+		"id": "G.Ear.Arc.Eul.Silva",
+		"name": "Silva",
+		"inMapId": "G.Ear.Arc.Euler",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1740,
+			"y": 1568,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Silva"
+		]
+	}, {
+		"x-comment-x": "-----------------------Argos Rho-------------------------",
+		"id": "G.Ear.Argos",
+		"name": "Argos Rho",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Argos_Rho.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 2744,
+			"y": 2524,
+			"radius": 30
+		},
+		"annotationNote": "Gorgon, Hydra, Phoenix",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Argos_Rho"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Argos_Rho2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Gorgon-------",
+		"id": "G.Ear.Arg.Gorgon",
+		"name": "Gorgon",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Argos_Rho/Gorgon1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Argos",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1025,
+			"y": 1865,
+			"radius": 126
+		},
+		"annotationNote": "Wuo, Vectra, Camaron, Sharblu, Slekon",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gorgon"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Argos_Rho/Gorgon2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Argos_Rho/Gorgon3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Gor.Wuo",
+		"name": "Wuo",
+		"inMapId": "G.Ear.Arg.Gorgon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 696,
+			"y": 1051,
+			"radius": 45
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Wuo"
+		]
+	}, {
+		"id": "G.Ear.Arg.Gor.Vectra",
+		"name": "Vectra",
+		"inMapId": "G.Ear.Arg.Gorgon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1559,
+			"y": 1210,
+			"radius": 50
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vectra"
+		]
+	}, {
+		"id": "G.Ear.Arg.Gor.Camaron",
+		"name": "Camaron",
+		"inMapId": "G.Ear.Arg.Gorgon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 697,
+			"y": 523,
+			"radius": 33
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Camaron"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 697,
+					"y": 523,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Gor.USF",
+		"name": "Unidentified Space Facility",
+		"inMapId": "G.Ear.Arg.Gorgon",
+        "mapType": "Ship",
+		"mapLocationPoint": {
+			"x": 1568,
+			"y": 632,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/UNC:_Depot_Sigma-23"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Generic_Ship.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Gor.USF.1",
+		"name": "To Normandy",
+		"isShowInList": false,
+		"linkToMapId": "G.N1.1",
+		"inMapId": "G.Ear.Arg.Gor.USF",
+		"mapLocationPoint": {
+			"x": 353,
+			"y": 1729,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Gor.Sharblu",
+		"name": "Sharblu",
+		"inMapId": "G.Ear.Arg.Gorgon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1371,
+			"y": 301,
+			"radius": 38
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sharblu"
+		]
+	}, {
+		"id": "G.Ear.Arg.Gor.Slekon",
+		"name": "Slekon",
+		"inMapId": "G.Ear.Arg.Gorgon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 214,
+			"y": 1431,
+			"radius": 70
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Slekon"
+		]
+	}, {
+		"x-comment-x": "--------Hydra-------",
+		"id": "G.Ear.Arg.Hydra",
+		"name": "Hydra",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Argos_Rho/Hydra1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Argos",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1623,
+			"y": 728,
+			"radius": 138
+		},
+		"annotationNote": "Varmalus, Metgos, Theyar, Canrum, Syba",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hydra"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Argos_Rho/Hydra2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Argos_Rho/Hydra3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Hyd.Varmalus",
+		"name": "Varmalus",
+		"inMapId": "G.Ear.Arg.Hydra",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 829,
+			"y": 1175,
+			"radius": 38
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Varmalus"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 815,
+					"y": 934,
+					"radius": 38
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Hyd.Metgos",
+		"name": "Metgos",
+		"inMapId": "G.Ear.Arg.Hydra",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 791,
+			"y": 706,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Metgos"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Metgos/Metgos.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Hyd.Met.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Arg.Hyd.Metgos",
+		"mapLocationPoint": {
+			"x": 1246,
+			"y": 851,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Hyd.Met.2",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Arg.Hyd.Metgos",
+		"mapLocationPoint": {
+			"x": 744,
+			"y": 819,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Hyd.Met.3",
+		"name": "Distress Call",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Arg.Hyd.Metgos",
+		"mapLocationPoint": {
+			"x": 1262,
+			"y": 1287,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Hyd.Met.4",
+		"name": "Turian Corpse",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Arg.Hyd.Metgos",
+		"mapLocationPoint": {
+			"x": 1336,
+			"y": 492,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Hyd.Theyar",
+		"name": "Theyar",
+		"inMapId": "G.Ear.Arg.Hydra",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1310,
+			"y": 626,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Theyar"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 1488,
+					"y": 1264,
+					"radius": 55
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Hyd.Canrum",
+		"name": "Canrum",
+		"inMapId": "G.Ear.Arg.Hydra",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 535,
+			"y": 614,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Canrum"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 535,
+					"y": 614,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Hyd.Syba",
+		"name": "Syba",
+		"inMapId": "G.Ear.Arg.Hydra",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 364,
+			"y": 1416,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Syba"
+		]
+	}, {
+		"x-comment-x": "--------Phoenix-------",
+		"id": "G.Ear.Arg.Phoenix",
+		"name": "Phoenix",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Argos_Rho/Phoenix1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Argos",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 455,
+			"y": 253,
+			"radius": 133
+		},
+		"annotationNote": "Patashi, Sylsalto, Tuntau, Pinnacle Station, Vebinok, Intai'sei",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Phoenix"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Argos_Rho/Phoenix2.pdf"
+			},
+			"3": {
+				"annotationNote": "Patashi, Sylsalto, Intai'sei, Tuntau, Pinnacle Station, Vebinok",
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Argos_Rho/Phoenix3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Patashi",
+		"name": "Patashi",
+		"inMapId": "G.Ear.Arg.Phoenix",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 784,
+			"y": 1219,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Patashi"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 797,
+					"y": 850,
+					"radius": 44
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Asteroid",
+		"name": "Carbonaceous Asteroid",
+		"inMapId": "G.Ear.Arg.Phoenix",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 1267,
+			"y": 715,
+			"radius": 75
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Arg.Pho.Sylsalto",
+		"name": "Sylsalto",
+		"inMapId": "G.Ear.Arg.Phoenix",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1520,
+			"y": 1034,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sylsalto"
+		]
+	}, {
+		"id": "G.Ear.Arg.Pho.Tuntau",
+		"name": "Tuntau",
+		"inMapId": "G.Ear.Arg.Phoenix",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 347,
+			"y": 1443,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tuntau"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 426,
+					"y": 1296,
+					"radius": 40
+				},
+				"image": "Detail_Maps/Game1/UNC/Tuntau/Tuntau.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Tun.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Arg.Pho.Tuntau",
+		"mapLocationPoint": {
+			"x": 1450,
+			"y": 1332,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Tun.2",
+		"name": "Asari Capsule",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Arg.Pho.Tuntau",
+		"mapLocationPoint": {
+			"x": 1566,
+			"y": 574,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Tun.3",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Arg.Pho.Tuntau",
+		"mapLocationPoint": {
+			"x": 692,
+			"y": 708,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Tun.PirateBase",
+		"name": "Pirate Base",
+		"isHidden": true,
+		"inMapId": "G.Ear.Arg.Pho.Tuntau",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1443,
+			"y": 1683,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Mercenary_Base.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Tun.Pir.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Arg.Pho.Tuntau",
+		"inMapId": "G.Ear.Arg.Pho.Tun.PirateBase",
+		"mapLocationPoint": {
+			"x": 698,
+			"y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Tun.Pir.2",
+		"name": "To Upper Level",
+		"isOpensDetail": false,
+		"isShowInList": false,
+		"inMapId": "G.Ear.Arg.Pho.Tun.PirateBase",
+		"mapLocationPoint": {
+			"x": 1136,
+			"y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Tun.Pir.3",
+		"name": "To Lower Level",
+		"isOpensDetail": false,
+		"isShowInList": false,
+		"inMapId": "G.Ear.Arg.Pho.Tun.PirateBase",
+		"mapLocationPoint": {
+			"x": 1582,
+			"y": 1032,
+			"radius": 20
+		}
+	}, {
+		"x-comment-x": "-----------------------Pinnacle Station-------------------------",
+		"id": "G.Ear.Arg.Pho.PinnacleStation",
+		"inMapId": "G.Ear.Arg.Phoenix",
+		"name": "Pinnacle Station",
+        "mapType": "Ship",
+		"mapLocationPoint": {
+			"x": 1708,
+			"y": 463,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pinnacle_Station_(location)"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Pinnacle_Station/Pinnacle_Station.pdf",
+				"referenceSize": "2083x2083",
+				"isSplitMenu": true
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 1708,
+					"y": 463,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.CommandDeck",
+		"inMapId": "G.Ear.Arg.Pho.PinnacleStation",
+		"name": "Pinnacle Station: Command Deck",
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Pinnacle_Station/Pinnacle_Station_Command_Deck.pdf",
+				"referenceSize": "2083x2083",
+				"isHidden": false,
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 134,
+					"width": 1800,
+					"height": 200
+				}
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Com.1",
+		"inMapId": "G.Ear.Arg.Pho.Pin.CommandDeck",
+		"name": "To Normandy",
+		"isShowInList": false,
+		"linkToMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 854,
+			"y": 90,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Com.2",
+		"inMapId": "G.Ear.Arg.Pho.Pin.CommandDeck",
+		"name": "Airlock",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 857,
+			"y": 605,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Com.3",
+		"inMapId": "G.Ear.Arg.Pho.Pin.CommandDeck",
+		"name": "Command Center",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1075,
+			"y": 1028,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Com.4",
+		"inMapId": "G.Ear.Arg.Pho.Pin.CommandDeck",
+		"name": "Observation Deck",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1075,
+			"y": 1640,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Volcanic",
+		"inMapId": "G.Ear.Arg.Pho.PinnacleStation",
+		"name": "Pinnacle Station: Volcanic Scenario",
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Pinnacle_Station/Pinnacle_Station_Volcanic.pdf",
+				"referenceSize": "2083x2083",
+				"isHidden": false,
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 457,
+					"width": 1800,
+					"height": 200
+				}
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Vol.1",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
+		"name": "Control Point",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 762,
+			"y": 629,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Vol.2",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
+		"name": "Control Point",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1129,
+			"y": 1133,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Vol.3",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
+		"name": "Control Point",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1479,
+			"y": 642,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Tropical",
+		"inMapId": "G.Ear.Arg.Pho.PinnacleStation",
+		"name": "Pinnacle Station: Tropical Scenario",
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Pinnacle_Station/Pinnacle_Station_Tropical.pdf",
+				"referenceSize": "2083x2083",
+				"isHidden": false,
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 780,
+					"width": 1800,
+					"height": 200
+				}
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Tro.1",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
+		"name": "Control Point",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 171,
+			"y": 1491,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Tro.2",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
+		"name": "Control Point",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 450,
+			"y": 962,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Tro.3",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
+		"name": "Control Point",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1254,
+			"y": 1508,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Tro.4",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
+		"name": "Control Point",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1850,
+			"y": 925,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Warehouse",
+		"inMapId": "G.Ear.Arg.Pho.PinnacleStation",
+		"name": "Pinnacle Station: Warehouse Scenario",
+		"isHidden": true,
+        "mapType":"Area",
+        "gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Pinnacle_Station/Pinnacle_Station_Warehouse.pdf",
+				"referenceSize": "2083x2083",
+				"isHidden": false,
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1103,
+					"width": 1800,
+					"height": 200
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Subterranean",
+		"inMapId": "G.Ear.Arg.Pho.PinnacleStation",
+		"name": "Pinnacle Station: Subterranean Scenario",
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Pinnacle_Station/Pinnacle_Station_Subterranean.pdf",
+				"referenceSize": "2083x2083",
+				"isHidden": false,
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1427,
+					"width": 1800,
+					"height": 200
+				}
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Sub.1",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Subterranean",
+		"name": "Control Point",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 246,
+			"y": 1283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Sub.2",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Subterranean",
+		"name": "Control Point",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1066,
+			"y": 558,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Sub.3",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Subterranean",
+		"name": "Control Point",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1471,
+			"y": 1137,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Ahern",
+		"inMapId": "G.Ear.Arg.Pho.PinnacleStation",
+		"name": "Pinnacle Station: Ahern's Scenario",
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Pinnacle_Station/Pinnacle_Station_Ahern.pdf",
+				"referenceSize": "2083x2083",
+				"isHidden": false,
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1749,
+					"width": 1800,
+					"height": 200
+				}
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Ahe.1",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Ahern",
+		"name": "Turret",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 543,
+			"y": 647,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Ahe.2",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Ahern",
+		"name": "Turret",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1491,
+			"y": 639,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Pin.Ahe.3",
+		"inMapId": "G.Ear.Arg.Pho.Pin.Ahern",
+		"name": "Data Bank",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1035,
+			"y": 979,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.6",
+		"name": "Vebinok",
+		"inMapId": "G.Ear.Arg.Phoenix",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1510,
+			"y": 207,
+			"radius": 33
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vebinok"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 1437,
+					"y": 341,
+					"radius": 33
+				}
+			}
+		}
+	}, {
+		"x-comment-x": "-----------------------Intai'sei-------------------------",
+		"id": "G.Ear.Arg.Pho.Intaisei",
+		"name": "Intai'sei",
+		"inMapId": "G.Ear.Arg.Phoenix",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 410,
+			"y": 320,
+			"radius": 23
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Intai%27sei"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Intaisei/Intaisei_Solarium.pdf",
+				"referenceSize": "2083x2083"
+			},
+			"2": {
+				"mapLocationPoint": {
+					"x": 522,
+					"y": 622,
+					"radius": 33
+				}
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 522,
+					"y": 622,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Int.1",
+		"inMapId": "G.Ear.Arg.Pho.Intaisei",
+		"name": "To Normandy",
+		"isShowInList": false,
+		"linkToMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 664,
+			"y": 1733,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Int.2",
+		"inMapId": "G.Ear.Arg.Pho.Intaisei",
+		"name": "Stereo",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1166,
+			"y": 487,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Arg.Pho.Int.3",
+		"inMapId": "G.Ear.Arg.Pho.Intaisei",
+		"name": "Personal Computer",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1471,
+			"y": 1198,
+			"radius": 20
+		}
+	}, {
+		"x-comment-x": "-----------------------Artemis Tau-------------------------",
+		"id": "G.Ear.Art",
+		"name": "Artemis Tau",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Artemis_Tau.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3424,
+			"y": 3148,
+			"radius": 30
+		},
+		"annotationNote": "Athens, Knossos, Macedon, Sparta",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Artemis_Tau"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Artemis_Tau1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"x-comment-x": "--------Athens-------",
+		"id": "G.Ear.Art.Athens",
+		"name": "Athens",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Artemis_Tau/Athens.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Art",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 696,
+			"y": 517,
+			"radius": 125
+		},
+		"annotationNote": "Salamis, Proteus, Nausicaa, Circe, Pharos",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Athens"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Artemis_Tau/Athens1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Art.Ath.Salamis",
+		"name": "Salamis",
+		"inMapId": "G.Ear.Art.Athens",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 812,
+			"y": 866,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Salamis"
+		]
+	}, {
+		"id": "G.Ear.Art.Ath.Proteus",
+		"name": "Proteus",
+		"inMapId": "G.Ear.Art.Athens",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1268,
+			"y": 694,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Proteus"
+		]
+	}, {
+		"id": "G.Ear.Art.Ath.Nausicaa",
+		"name": "Nausicaa",
+		"inMapId": "G.Ear.Art.Athens",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 592,
+			"y": 550,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nausicaa"
+		]
+	}, {
+		"id": "G.Ear.Art.Ath.Circe",
+		"name": "Circe",
+		"inMapId": "G.Ear.Art.Athens",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1151,
+			"y": 280,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Circe"
+		]
+	}, {
+		"id": "G.Ear.Art.Ath.Pharos",
+		"name": "Pharos",
+		"inMapId": "G.Ear.Art.Athens",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 332,
+			"y": 1555,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pharos"
+		]
+	}, {
+		"x-comment-x": "--------Knossos-------",
+		"id": "G.Ear.Art.Knossos",
+		"name": "Knossos",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Artemis_Tau/Knossos.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Art",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1622,
+			"y": 586,
+			"radius": 127
+		},
+		"annotationNote": "Phaistos, Therum, Zakros, Armeni, Archanes",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Knossos"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Artemis_Tau/Knossos1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.Phaistos",
+		"name": "Phaistos",
+		"inMapId": "G.Ear.Art.Knossos",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1242,
+			"y": 1086,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Phaistos"
+		]
+	}, {
+		"id": "G.Ear.Art.Kno.Asteroid",
+		"name": "Metallic Asteroid",
+		"inMapId": "G.Ear.Art.Knossos",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 755,
+			"y": 916,
+			"radius": 75
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.Therum",
+		"name": "Therum",
+		"inMapId": "G.Ear.Art.Knossos",
+        "mapType": "Planet",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Therum/Therum.pdf",
+				"referenceSize": "2083x2083",
+				"isSplitMenu": true
+			}
+		},
+		"mapLocationPoint": {
+			"x": 804,
+			"y": 687,
+			"radius": 26
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Therum"
+		]
+	}, {
+		"id": "G.Ear.Art.Kno.The.Grounds",
+		"inMapId": "G.Ear.Art.Kno.Therum",
+		"name": "Therum: Surface",
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Therum/Therum_Grounds.pdf",
+				"referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 653,
+					"width": 1800,
+					"height": 307
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.The.Gro.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Kno.The.Grounds",
+		"mapLocationPoint": {
+			"x": 1974,
+			"y": 1677,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.The.Gro.2",
+		"name": "Refinery",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Kno.The.Grounds",
+		"mapLocationPoint": {
+			"x": 1240,
+			"y": 1515,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.The.Gro.3",
+		"name": "Exit Mako",
+		"isOpensDetail": false,
+		"isShowInList": false,
+		"inMapId": "G.Ear.Art.Kno.The.Grounds",
+		"mapLocationPoint": {
+			"x": 83,
+			"y": 427,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.The.Gro.4",
+		"name": "To Mine",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Art.Kno.The.Mine",
+		"inMapId": "G.Ear.Art.Kno.The.Grounds",
+		"mapLocationPoint": {
+			"x": 237,
+			"y": 264,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.The.Mine",
+		"name": "Therum: Mine",
+		"isHidden": true,
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Art.Kno.Therum",
+        "mapType": "Structure",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Therum/Therum_Mine.pdf",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1139,
+					"width": 1800,
+					"height": 307
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.The.Min.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Art.Kno.The.Grounds",
+		"inMapId": "G.Ear.Art.Kno.The.Mine",
+		"mapLocationPoint": {
+			"x": 127,
+			"y": 324,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.The.Min.2",
+		"name": "Mining Laser",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Kno.The.Mine",
+		"mapLocationPoint": {
+			"x": 1187,
+			"y": 1643,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.The.Min.3",
+		"name": "Elevator",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Kno.The.Mine",
+		"mapLocationPoint": {
+			"x": 1801,
+			"y": 1631,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.Zakros",
+		"name": "Zakros",
+		"inMapId": "G.Ear.Art.Knossos",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 588,
+			"y": 714,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Zakros"
+		]
+	}, {
+		"id": "G.Ear.Art.Kno.Armeni",
+		"name": "Armeni",
+		"inMapId": "G.Ear.Art.Knossos",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1665,
+			"y": 879,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Armeni"
+		]
+	}, {
+		"id": "G.Ear.Art.Kno.Asteroid2",
+		"name": "Carbonaceous Asteroid",
+		"inMapId": "G.Ear.Art.Knossos",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 1031,
+			"y": 255,
+			"radius": 75
+		}
+	}, {
+		"id": "G.Ear.Art.Kno.Archanes",
+		"name": "Archanes",
+		"inMapId": "G.Ear.Art.Knossos",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 225,
+			"y": 1457,
+			"radius": 70
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Archanes"
+		]
+	}, {
+		"x-comment-x": "--------Macedon-------",
+		"id": "G.Ear.Art.Macedon",
+		"name": "Macedon",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Artemis_Tau/Macedon.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Art",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 331,
+			"y": 1453,
+			"radius": 127
+		},
+		"annotationNote": "Sharjila, Porolan, Patavig, Fargeluse",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Macedon"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Artemis_Tau/Macedon1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Art.Mac.Sharjila",
+		"name": "Sharjila",
+		"inMapId": "G.Ear.Art.Macedon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 745,
+			"y": 1192,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sharjila"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Sharjila/Sharjila.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Art.Mac.Sha.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Mac.Sharjila",
+		"mapLocationPoint": {
+			"x": 1075,
+			"y": 1260,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Mac.Sha.2",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Mac.Sharjila",
+		"mapLocationPoint": {
+			"x": 1354,
+			"y": 965,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Mac.Sha.3",
+		"name": "Abandoned Camp",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Mac.Sharjila",
+		"mapLocationPoint": {
+			"x": 482,
+			"y": 890,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Mac.Sha.Stronghold",
+		"name": "Stronghold",
+		"isHidden": true,
+		"inMapId": "G.Ear.Art.Mac.Sharjila",
+		"mapLocationPoint": {
+			"x": 976,
+			"y": 658,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Mercenary_Base.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Art.Mac.Sha.Str.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Art.Mac.Sharjila",
+		"inMapId": "G.Ear.Art.Mac.Sha.Stronghold",
+		"mapLocationPoint": {
+			"x": 698,
+			"y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Mac.Sha.Str.2",
+		"name": "To Lower Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Mac.Sha.Stronghold",
+		"mapLocationPoint": {
+			"x": 1582,
+			"y": 1032,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Mac.Sha.Str.3",
+		"name": "To Upper Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Mac.Sha.Stronghold",
+		"mapLocationPoint": {
+			"x": 1136,
+			"y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Mac.Porolan",
+		"name": "Porolan",
+		"inMapId": "G.Ear.Art.Macedon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 636,
+			"y": 710,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Porolan"
+		]
+	}, {
+		"id": "G.Ear.Art.Mac.Patavig",
+		"name": "Patavig",
+		"inMapId": "G.Ear.Art.Macedon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1610,
+			"y": 741,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Patavig"
+		]
+	}, {
+		"id": "G.Ear.Art.Mac.Asteroid",
+		"name": "Metallic Asteroid",
+		"inMapId": "G.Ear.Art.Macedon",
+        "mapType": "ASteroid",
+		"mapLocationPoint": {
+			"x": 1374,
+			"y": 324,
+			"radius": 75
+		}
+	}, {
+		"id": "G.Ear.Art.Mac.Fargeluse",
+		"name": "Fargeluse",
+		"inMapId": "G.Ear.Art.Macedon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1833,
+			"y": 1501,
+			"radius": 47
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Fargeluse"
+		]
+	}, {
+		"x-comment-x": "--------Sparta-------",
+		"id": "G.Ear.Art.Sparta",
+		"name": "Sparta",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Artemis_Tau/Sparta.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Art",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1741,
+			"y": 1496,
+			"radius": 135
+		},
+		"annotationNote": "Tremanre, Edolus, Altaaya, Ontamalca, Alsages",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sparta"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Artemis_Tau/Sparta1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Art.Spa.Tremanre",
+		"name": "Tremanre",
+		"inMapId": "G.Ear.Art.Sparta",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1167,
+			"y": 878,
+			"radius": 26
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tremanre"
+		]
+	}, {
+		"id": "G.Ear.Art.Spa.Asteroid",
+		"name": "Asteroid Cluster",
+		"inMapId": "G.Ear.Art.Sparta",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 1040,
+			"y": 710,
+			"radius": 75
+		}
+	}, {
+		"id": "G.Ear.Art.Spa.Edolus",
+		"name": "Edolus",
+		"inMapId": "G.Ear.Art.Sparta",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 668,
+			"y": 1250,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Edolus"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Edolus/Edolus.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Art.Spa.Edo.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Spa.Edolus",
+		"mapLocationPoint": {
+			"x": 1012,
+			"y": 1175,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Spa.Edo.2",
+		"name": "Mummified Salarian",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Spa.Edolus",
+		"mapLocationPoint": {
+			"x": 1429,
+			"y": 554,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Spa.Edo.3",
+		"name": "Distress Beacon",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Spa.Edolus",
+		"mapLocationPoint": {
+			"x": 958,
+			"y": 767,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Spa.Edo.4",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Art.Spa.Edolus",
+		"mapLocationPoint": {
+			"x": 1496,
+			"y": 1104,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Art.Spa.Altaaya",
+		"name": "Altaaya",
+		"inMapId": "G.Ear.Art.Sparta",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1470,
+			"y": 1340,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Altaaya"
+		]
+	}, {
+		"id": "G.Ear.Art.Spa.Ontamalca",
+		"name": "Ontamalca",
+		"inMapId": "G.Ear.Art.Sparta",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 362,
+			"y": 1142,
+			"radius": 70
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ontamalca"
+		]
+	}, {
+		"id": "G.Ear.Art.Spa.Alsages",
+		"name": "Alsages",
+		"inMapId": "G.Ear.Art.Sparta",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 642,
+			"y": 217,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Alsages"
+		]
+	}, {
+		"x-comment-x": "-----------------------Attican Beta-------------------------",
+		"id": "G.Ear.Attican",
+		"name": "Attican Beta",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Attican_Beta.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3337,
+			"y": 2517,
+			"radius": 30
+		},
+		"annotationNote": "Hercules, Theseus",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Attican_Beta"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Attican_Beta2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Hercules-------",
+		"id": "G.Ear.Att.Hercules",
+		"name": "Hercules",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Attican_Beta/Hercules1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Attican",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1630,
+			"y": 1644,
+			"radius": 134
+		},
+		"annotationNote": "Xathorron, Syided, Eletania, Zatorus",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hercules"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Attican_Beta/Hercules2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Attican_Beta/Hercules3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Xathorron",
+		"name": "Xathorron",
+		"inMapId": "G.Ear.Att.Hercules",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 849,
+			"y": 1228,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Xathorron"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 1207,
+					"y": 1253,
+					"radius": 32
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Syided",
+		"name": "Syided",
+		"inMapId": "G.Ear.Att.Hercules",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1278,
+			"y": 657,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Syided"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 788,
+					"y": 660,
+					"radius": 30
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Eletania",
+		"name": "Eletania",
+		"inMapId": "G.Ear.Att.Hercules",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 576,
+			"y": 630,
+			"radius": 42
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Eletania"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 449,
+					"y": 1230,
+					"radius": 42
+				},
+				"image": "Detail_Maps/Game1/UNC/Eletania/Eletania.pdf",
+				"referenceSize": "2083x2083"
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 576,
+					"y": 630,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Ele.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.Her.Eletania",
+		"mapLocationPoint": {
+			"x": 1046,
+			"y": 1507,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Ele.2",
+		"name": "Downed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.Her.Eletania",
+		"mapLocationPoint": {
+			"x": 1414,
+			"y": 1175,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Ele.3",
+		"name": "Monkey Colony",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.Her.Eletania",
+		"mapLocationPoint": {
+			"x": 873,
+			"y": 614,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Ele.4",
+		"name": "Monkey Colony",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.Her.Eletania",
+		"mapLocationPoint": {
+			"x": 1472,
+			"y": 1507,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Ele.5",
+		"name": "Engine Debris",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.Her.Eletania",
+		"mapLocationPoint": {
+			"x": 893,
+			"y": 811,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Ele.6",
+		"name": "Prothean Ruin",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.Her.Eletania",
+		"mapLocationPoint": {
+			"x": 549,
+			"y": 1564,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Ele.Mine",
+		"name": "Mine",
+		"inMapId": "G.Ear.Att.Her.Eletania",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1250,
+			"y": 578,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Generic_Mine.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Ele.Min.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Att.Her.Eletania",
+		"inMapId": "G.Ear.Att.Her.Ele.Mine",
+		"mapLocationPoint": {
+			"x": 447,
+			"y": 908,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.Her.Zatorus",
+		"name": "Zatorus",
+		"inMapId": "G.Ear.Att.Hercules",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 474,
+			"y": 1594,
+			"radius": 65
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Zatorus"
+		]
+	}, {
+		"x-comment-x": "--------Theseus-------",
+		"id": "G.Ear.Att.Theseus",
+		"name": "Theseus",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Attican_Beta/Theseus1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Attican",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 476,
+			"y": 364,
+			"radius": 126
+		},
+		"annotationNote": "Sytau, Feros, Sharring, Quana, Logan",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Theseus"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Attican_Beta/Theseus2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Attican_Beta/Theseus3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.The.Sytau",
+		"name": "Sytau",
+		"inMapId": "G.Ear.Att.Theseus",
+		"mapLocationPoint": {
+			"x": 844,
+			"y": 1228,
+			"radius": 42
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sytau"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 899,
+					"y": 812,
+					"radius": 42
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.The.Feros",
+		"name": "Feros",
+		"inMapId": "G.Ear.Att.Theseus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1271,
+			"y": 655,
+			"radius": 31
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Feros"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Feros/Feros.pdf",
+				"referenceSize": "2083x2083",
+				"isSplitMenu": true,
+				"mapLocationPoint": {
+					"x": 665,
+					"y": 789,
+					"radius": 31
+				}
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 1271,
+					"y": 655,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.ZhusHope",
+		"name": "Feros: Zhu's Hope",
+		"inMapId": "G.Ear.Att.The.Feros",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 125,
+					"width": 1800,
+					"height": 279
+				},
+				"referenceSize": "2083x2083",
+				"image": "Detail_Maps/Game1/Feros/Feros_Zhus_Hope.pdf",
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Zhu.1",
+		"name": "To Normandy",
+		"isShowInList": false,
+		"linkToMapId": "G.N1.1",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 1975,
+			"y": 1110,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Zhu.2",
+		"name": "To Tunnels",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Att.The.Fer.Tunnels",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 686,
+			"y": 686,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Zhu.3",
+		"name": "To Skyway",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Att.The.Fer.Skyway",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 733,
+			"y": 831,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Zhu.4",
+		"name": "To Thorian Lair",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 914,
+			"y": 1295,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Zhu.5",
+		"name": "Tower",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 320,
+			"y": 849,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tunnels",
+		"name": "Feros: Tunnels",
+		"isHidden": true,
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Att.The.Feros",
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Feros/Feros_Tunnels.pdf",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 518,
+					"width": 1800,
+					"height": 279
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tun.1",
+		"name": "To Zhu's Hope",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Att.The.Fer.Tunnels",
+		"inMapId": "G.Ear.Att.The.Fer.Tunnels",
+		"mapLocationPoint": {
+			"x": 1565,
+			"y": 1690,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tun.2",
+		"name": "Collapsed Bridge",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Tunnels",
+		"mapLocationPoint": {
+			"x": 479,
+			"y": 683,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Skyway",
+		"name": "Feros: Prothean Skyway",
+		"inMapId": "G.Ear.Att.The.Feros",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Feros/Feros_Prothean_Skyway.pdf",
+				"referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 910,
+					"width": 1800,
+					"height": 279
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.1",
+		"name": "To Zhu's Hope",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 381,
+			"y": 2005,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.2",
+		"name": "Skyway",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 452,
+			"y": 1152,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.3",
+		"name": "To Weigh Station",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 359,
+			"y": 121,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.4",
+		"name": "Access Tunnels",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 366,
+			"y": 1537,
+			"width": 30,
+			"height": 100
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.5",
+		"name": "Access Tunnels",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 477,
+			"y": 671,
+			"width": 30,
+			"height": 100
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.6",
+		"name": "Weigh Station",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 1486,
+			"y": 550,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.7",
+		"name": "To Skyway",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 1490,
+			"y": 780,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.8",
+		"name": "To Upper Weigh Station",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 1170,
+			"y": 416,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.9",
+		"name": "To Refugee Camp",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 1263,
+			"y": 451,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.10",
+		"name": "Refugee Camp",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 908,
+			"y": 1155,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.11",
+		"name": "To Weigh Station",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 1264,
+			"y": 1073,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.12",
+		"name": "Upper Weigh Station",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 1668,
+			"y": 1596,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.13",
+		"name": "To Weigh Station",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 1172,
+			"y": 1582,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Sky.14",
+		"name": "To ExoGeni",
+		"linkToMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"inMapId": "G.Ear.Att.The.Fer.Skyway",
+		"mapLocationPoint": {
+			"x": 1759,
+			"y": 1319,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.ExoGeni",
+		"name": "Feros: ExoGeni Facility",
+		"inMapId": "G.Ear.Att.The.Feros",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Feros/Feros_Exogeni.pdf",
+				"referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1303,
+					"width": 1800,
+					"height": 279
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.1",
+		"name": "To Skyway",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Att.The.Fer.Skyway",
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 296,
+			"y": 1995,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.2",
+		"name": "Approach",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 295,
+			"y": 1015,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.3",
+		"name": "To Garage",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 297,
+			"y": 223,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.4",
+		"name": "Access Tunnels",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 282,
+			"y": 1718,
+			"width": 30,
+			"height": 100
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.5",
+		"name": "Access Tunnels",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 282,
+			"y": 1332,
+			"width": 30,
+			"height": 100
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.6",
+		"name": "Garage",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1750,
+			"y": 540,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.7",
+		"name": "Main Level",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1450,
+			"y": 788,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.8",
+		"name": "To Midden (One-Way)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1412,
+			"y": 911,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.9",
+		"name": "Midden",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1029,
+			"y": 823,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.10",
+		"name": "To Main Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 788,
+			"y": 1123,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.11",
+		"name": "To Midden",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 762,
+			"y": 1171,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.12",
+		"name": "To Upper Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1340,
+			"y": 1122,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.13",
+		"name": "To Main Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1339,
+			"y": 1545,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.14",
+		"name": "To Upper Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1522,
+			"y": 1352,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.15",
+		"name": "To Main Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1523,
+			"y": 1409,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.16",
+		"name": "Upper Level",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1148,
+			"y": 1788,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Exo.17",
+		"name": "ExoGeni Terminal",
+		"isOpensDetail": false,
+		"isHidden": true,
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1222,
+			"y": 1731,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.ThorianLair",
+		"name": "Feros: Thorian Lair",
+		"inMapId": "G.Ear.Att.The.Feros",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Feros/Feros_Thorian_Lair.pdf",
+				"referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1696,
+					"width": 1800,
+					"height": 279
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.1",
+		"name": "To Zhu's Hope",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Att.The.Fer.ZhusHope",
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 879,
+			"y": 1711,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.2",
+		"name": "Level 1",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 180,
+			"y": 1898,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.3",
+		"name": "To Level 2",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 183,
+			"y": 1692,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.4",
+		"name": "To Level 1",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 853,
+			"y": 1340,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.5",
+		"name": "Level 2",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 860,
+			"y": 1500,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.6",
+		"name": "To Level 3",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 1247,
+			"y": 1403,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.7",
+		"name": "To Level 2",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 1980,
+			"y": 1120,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.8",
+		"name": "Level 3",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 1586,
+			"y": 1022,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.9",
+		"name": "To Level 4",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 1586,
+			"y": 862,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.10",
+		"name": "To Level 4 (B)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 1391,
+			"y": 872,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.11",
+		"name": "To Level 4 (C)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 1188,
+			"y": 928,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.12",
+		"name": "To Level 3 & 5",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 1082,
+			"y": 592,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.13",
+		"name": "To Level 3 (B)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 907,
+			"y": 582,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.14",
+		"name": "To Level 3 (C)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 680,
+			"y": 852,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.15",
+		"name": "Level 4",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 1078,
+			"y": 754,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.16",
+		"name": "To Level 4",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 382,
+			"y": 210,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Fer.Tho.17",
+		"name": "Level 5",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 382,
+			"y": 369,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Att.The.Sharring",
+		"name": "Sharring",
+		"inMapId": "G.Ear.Att.Theseus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 797,
+			"y": 501,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sharring"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 459,
+					"y": 913,
+					"radius": 49
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.The.Quana",
+		"name": "Quana",
+		"inMapId": "G.Ear.Att.Theseus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 455,
+			"y": 1415,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Quana"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 1735,
+					"y": 1158,
+					"radius": 48
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Att.The.Logan",
+		"name": "Logan",
+		"inMapId": "G.Ear.Att.Theseus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1436,
+			"y": 263,
+			"radius": 42
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Logan"
+		]
+	}, {
+		"x-comment-x": "-----------------------Exodus Cluster-------------------------",
+		"id": "G.Ear.Exodus",
+		"name": "Exodus Cluster",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Exodus_Cluster1.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 2417,
+			"y": 3100,
+			"radius": 30
+		},
+		"annotationNote": "Utopia, Asgard",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Exodus_Cluster"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Exodus_Cluster2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Exodus_Cluster3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Utopia-------",
+		"id": "G.Ear.Exo.Utopia",
+		"name": "Utopia",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Exodus_Cluster/Utopia1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Exodus",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 304,
+			"y": 1010,
+			"radius": 133
+		},
+		"annotationNote": "Arcadia, Eden Prime, Zion, Nirvana, Xanadu",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Utopia"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Exodus_Cluster/Utopia2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Exodus_Cluster/Utopia3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Uto.Arcadia",
+		"name": "Arcadia",
+		"inMapId": "G.Ear.Exo.Utopia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1300,
+			"y": 971,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Arcadia"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 907,
+					"y": 808,
+					"radius": 37
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Uto.Eden",
+		"name": "Eden Prime",
+		"referenceSize": "2083x2083",
+		"isSplitMenu": true,
+		"image": null,
+		"inMapId": "G.Ear.Exo.Utopia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1392,
+			"y": 926,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Eden_Prime"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 721,
+					"y": 842,
+					"radius": 37
+				},
+				"image": "Detail_Maps/Game1/Eden_Prime/Eden_Prime.pdf"
+			}
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map",
+			"eraseParentValue": true
+		}]
+	}, {
+		"id": "G.Ear.Exo.Uto.Ede.A",
+		"name": "Eden Prime Grounds",
+		"isHidden": true,
+		"referenceSize": "2083x2083",
+		"image": "Detail_Maps/Game1/Eden_Prime/Eden_Prime_Grounds.pdf",
+		"inMapId": "G.Ear.Exo.Uto.Eden",
+        "mapType":"Area",
+		"mapLocationPoint": {
+			"x": 150,
+			"y": 650,
+			"width": 1800,
+			"height": 300
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Exo.Uto.Ede.A.1",
+		"name": "Drop Zone",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Uto.Ede.A",
+		"mapLocationPoint": {
+			"x": 605,
+			"y": 1863,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Uto.Ede.A.2",
+		"name": "Dig Site",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Uto.Ede.A",
+		"mapLocationPoint": {
+			"x": 1003,
+			"y": 999,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Uto.Ede.A.3",
+		"name": "Camp",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Uto.Ede.A",
+		"mapLocationPoint": {
+			"x": 1159,
+			"y": 747,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Uto.Ede.A.4",
+		"name": "Train Station",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Uto.Ede.A",
+		"mapLocationPoint": {
+			"x": 1267,
+			"y": 359,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Uto.Ede.A.5",
+		"name": "To Spaceport",
+		"isHidden": true,
+		"isShowInList": false,
+		"inMapId": "G.Ear.Exo.Uto.Ede.A",
+		"linkToMapId": "G.Ear.Exo.Uto.Ede.B",
+		"mapLocationPoint": {
+			"x": 1883,
+			"y": 147,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Uto.Ede.B",
+		"inMapId": "G.Ear.Exo.Uto.Eden",
+		"name": "Eden Prime Spaceport",
+		"isHidden": true,
+		"referenceSize": "2083x2083",
+		"image": "Detail_Maps/Game1/Eden_Prime/Eden_Prime_Spaceport.pdf",
+        "mapType":"Area",
+		"mapLocationPoint": {
+			"x": 150,
+			"y": 1148,
+			"width": 1800,
+			"height": 300
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Exo.Uto.Ede.B.1",
+		"name": "Prothean Beacon",
+		"inMapId": "G.Ear.Exo.Uto.Ede.B",
+		"mapLocationPoint": {
+			"x": 371,
+			"y": 943,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Uto.Zion",
+		"name": "Zion",
+		"inMapId": "G.Ear.Exo.Utopia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 663,
+			"y": 1314,
+			"radius": 65
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Zion"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 663,
+					"y": 1314,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Uto.Nirvana",
+		"name": "Nirvana",
+		"inMapId": "G.Ear.Exo.Utopia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1510,
+			"y": 614,
+			"radius": 20
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nirvana"
+		]
+	}, {
+		"id": "G.Ear.Exo.Uto.Xanadu",
+		"name": "Xanadu",
+		"inMapId": "G.Ear.Exo.Utopia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1808,
+			"y": 854,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Xanadu"
+		]
+	}, {
+		"x-comment-x": "--------Asgard-------",
+		"id": "G.Ear.Exo.Asgard",
+		"name": "Asgard",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Exodus_Cluster/Asgard1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Exodus",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1775,
+			"y": 991,
+			"radius": 128
+		},
+		"annotationNote": "Terra Nova, Asteroid X57, Borr, Tyr, Loki",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Asgard"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Exodus_Cluster/Asgard2.pdf"
+			},
+			"3": {
+				"annotationNote": "Terra Nova, Borr, Tyr, Loki",
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Exodus_Cluster/Asgard3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.Terra",
+		"name": "Terra Nova",
+		"inMapId": "G.Ear.Exo.Asgard",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1236,
+			"y": 1281,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Terra_Nova"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 745,
+					"y": 950,
+					"radius": 32
+				}
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 1236,
+					"y": 1281,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57",
+		"name": "Asteroid X57",
+		"inMapId": "G.Ear.Exo.Asgard",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 428,
+			"y": 1041,
+			"radius": 25
+		},
+		"isHidden": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Asteroid_X57"
+		],
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Asteroid_X57/Asteroid_X57.pdf",
+                "referenceSize": "2083x2083"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+		"mapLocationPoint": {
+			"x": 696,
+			"y": 1609,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.1TorchFacility",
+		"name": "Torch Facility",
+		"isHidden": true,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1085,
+			"y": 1416,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Mercenary_Base.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.2TorchFacility",
+		"name": "Torch Facility",
+		"isHidden": true,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1403,
+			"y": 1058,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Mercenary_Base.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.3TorchFacility",
+		"name": "Torch Facility",
+		"isHidden": true,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 790,
+			"y": 764,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Mercenary_Base.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.5",
+		"name": "Transmission Tower",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+		"mapLocationPoint": {
+			"x": 892,
+			"y": 1294,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.6",
+		"name": "Radio",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+		"mapLocationPoint": {
+			"x": 1271,
+			"y": 1396,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.7",
+		"name": "Construction Camp",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+		"mapLocationPoint": {
+			"x": 1609,
+			"y": 618,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.8",
+		"name": "Explosives Cache",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+		"mapLocationPoint": {
+			"x": 1637,
+			"y": 396,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.9",
+		"name": "Vehicle Wreckage",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+		"mapLocationPoint": {
+			"x": 521,
+			"y": 1085,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.10",
+		"name": "Survey Station 1",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+		"mapLocationPoint": {
+			"x": 1609,
+			"y": 1609,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.11",
+		"name": "Survey Station 2",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+		"mapLocationPoint": {
+			"x": 587,
+			"y": 378,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.12",
+		"name": "Body",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+		"mapLocationPoint": {
+			"x": 703,
+			"y": 399,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.13",
+		"name": "Survey Station 3",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+		"mapLocationPoint": {
+			"x": 521,
+			"y": 1657,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.1To.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Exo.Asg.X57",
+		"inMapId": "G.Ear.Exo.Asg.X57.1TorchFacility",
+		"mapLocationPoint": {
+            "x": 698,
+            "y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.1To.3",
+		"name": "To Upper Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.1TorchFacility",
+		"mapLocationPoint": {
+            "x": 1135,
+            "y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.1To.2",
+		"name": "To Lower Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.1TorchFacility",
+		"mapLocationPoint": {
+            "x": 1582,
+            "y": 1032,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.2To.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Exo.Asg.X57",
+		"inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
+		"mapLocationPoint": {
+            "x": 698,
+            "y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.2To.3",
+		"name": "To Upper Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
+		"mapLocationPoint": {
+            "x": 1135,
+            "y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.2To.2",
+		"name": "To Lower Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
+		"mapLocationPoint": {
+            "x": 1582,
+            "y": 1032,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.3To.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Exo.Asg.X57",
+		"inMapId": "G.Ear.Exo.Asg.X57.3TorchFacility",
+		"mapLocationPoint": {
+            "x": 698,
+            "y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.3To.3",
+		"name": "To Upper Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.3TorchFacility",
+		"mapLocationPoint": {
+            "x": 1135,
+            "y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.3To.2",
+		"name": "To Lower Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.3TorchFacility",
+		"mapLocationPoint": {
+            "x": 1582,
+            "y": 1032,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.MainFacility",
+		"name": "Main Facility",
+		"isHidden": true,
+		"inMapId": "G.Ear.Exo.Asg.X57",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1190,
+			"y": 412,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Asteroid_X57/Asteroid_X57_Main_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Exo.Asg.X57",
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 832,
+			"y": 314,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.2",
+		"name": "To Upper Level (A)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 530,
+			"y": 736,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.3",
+		"name": "To Lower Level (A)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 1483,
+			"y": 736,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.4",
+		"name": "To Upper Level (B)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 669,
+			"y": 736,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.5",
+		"name": "To Lower Level (B)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 1622,
+			"y": 736,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.6",
+		"name": "To Upper Level (C)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 137,
+			"y": 1308,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.7",
+		"name": "To Lower Level (C)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 1091,
+			"y": 1308,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.8",
+		"name": "To Upper Level (D)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 597,
+			"y": 1753,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.9",
+		"name": "To Lower Level (D)",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 1558,
+			"y": 1754,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.10",
+		"name": "Lower Level",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 571,
+			"y": 1122,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.11",
+		"name": "Upper Level",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 1622,
+			"y": 1240,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.X57.Mai.12",
+		"name": "Medical",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+		"mapLocationPoint": {
+			"x": 1183,
+			"y": 1061,
+			"radius": 20
+		}
+
+
+	}, {
+		"id": "G.Ear.Exo.Asg.Borr",
+		"name": "Borr",
+		"inMapId": "G.Ear.Exo.Asgard",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 521,
+			"y": 1044,
+			"radius": 65
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Borr"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 874,
+					"y": 550,
+					"radius": 65
+				}
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 521,
+					"y": 1044,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.Tyr",
+		"name": "Tyr",
+		"inMapId": "G.Ear.Exo.Asgard",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 321,
+			"y": 933,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tyr"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 606,
+					"y": 1626,
+					"radius": 30
+				}
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 321,
+					"y": 933,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Exo.Asg.Loki",
+		"name": "Loki",
+		"inMapId": "G.Ear.Exo.Asgard",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1625,
+			"y": 1744,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Loki"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1625,
+					"y": 1744,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"x-comment-x": "-----------------------Gemini Sigma-------------------------",
+		"id": "G.Ear.Gemini",
+		"name": "Gemini Sigma",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Gemini_Sigma1.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3084,
+			"y": 2701,
+			"radius": 30
+		},
+		"annotationNote": "Han, Ming",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gemini_Sigma"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Gemini_Sigma2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Gemini_Sigma3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Han-------",
+		"id": "G.Ear.Gem.Han",
+		"name": "Han",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Gemini_Sigma/Han1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Gemini",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 305,
+			"y": 1705,
+			"radius": 128
+		},
+		"annotationNote": "Paravin, Hunington, Mavigon, Farcrothu, Patatanlis",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Han"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Gemini_Sigma/Han2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Gemini_Sigma/Han3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Gem.Han.Paravin",
+		"name": "Paravin",
+		"inMapId": "G.Ear.Gem.Han",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 770,
+			"y": 1043,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Paravin"
+		]
+	}, {
+		"id": "G.Ear.Gem.Han.Hunington",
+		"name": "Hunington",
+		"inMapId": "G.Ear.Gem.Han",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1450,
+			"y": 929,
+			"radius": 62
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hunington"
+		]
+	}, {
+		"id": "G.Ear.Gem.Han.Mavigon",
+		"name": "Mavigon",
+		"inMapId": "G.Ear.Gem.Han",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1042,
+			"y": 540,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Mavigon"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Mavigon/Mavigon.pdf",
+				"referenceSize": "2083x2083"
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 1040,
+					"y": 540,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Gem.Han.Mav.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Gem.Han.Mavigon",
+		"mapLocationPoint": {
+			"x": 950,
+			"y": 811,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Gem.Han.Mav.2",
+		"name": "Mummified Salarian",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Gem.Han.Mavigon",
+		"mapLocationPoint": {
+			"x": 1290,
+			"y": 1053,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Gem.Han.Mav.3",
+		"name": "Abandoned Camp",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Gem.Han.Mavigon",
+		"mapLocationPoint": {
+			"x": 560,
+			"y": 454,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Gem.Han.Mav.4",
+		"name": "Engine Debris",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Gem.Han.Mavigon",
+		"mapLocationPoint": {
+			"x": 721,
+			"y": 1515,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Gem.Han.Mav.Hideout",
+		"name": "Syndicate Hideout",
+		"isHidden": true,
+		"inMapId": "G.Ear.Gem.Han.Mavigon",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1447,
+			"y": 1482,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Research_Facility.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Gem.Han.Mav.Hid.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Gem.Han.Mavigon",
+		"inMapId": "G.Ear.Gem.Han.Mav.Hideout",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 475,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Gem.Han.Farcrothu",
+		"name": "Farcrothu",
+		"inMapId": "G.Ear.Gem.Han",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 555,
+			"y": 1470,
+			"radius": 45
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Farcrothu"
+		]
+	}, {
+		"id": "G.Ear.Gem.Han.Patatanlis",
+		"name": "Patatanlis",
+		"inMapId": "G.Ear.Gem.Han",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 271,
+			"y": 855,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Patatanlis"
+		]
+	}, {
+		"x-comment-x": "--------Ming-------",
+		"id": "G.Ear.Gem.Ming",
+		"name": "Ming",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Gemini_Sigma/Ming1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Gemini",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1786,
+			"y": 324,
+			"radius": 117
+		},
+		"annotationNote": "Antiroprus, MSV Worthington, Parag, Altanorch",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ming"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Gemini_Sigma/Ming2.pdf"
+			},
+			"3": {
+				"annotationNote": "Antiroprus, Parag, Altanorch",
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Gemini_Sigma/Ming3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Gem.Min.Antiroprus",
+		"name": "Antiroprus",
+		"inMapId": "G.Ear.Gem.Ming",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1438,
+			"y": 893,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Antiroprus"
+		]
+	}, {
+		"id": "G.Ear.Gem.Min.MSVWorthington",
+		"name": "MSV Worthington",
+		"inMapId": "G.Ear.Gem.Ming",
+        "mapType": "Ship",
+		"mapLocationPoint": {
+			"x": 1515,
+			"y": 1030,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/MSV_Worthington"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Generic_Ship.pdf",
+				"referenceSize": "2083x2083"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Gem.Min.MSV.1",
+		"name": "To Normandy",
+		"isShowInList": false,
+		"linkToMapId": "G.N1.1",
+		"inMapId": "G.Ear.Gem.Min.MSVWorthington",
+		"mapLocationPoint": {
+            "x": 353,
+            "y": 1729,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Gem.Min.Parag",
+		"name": "Parag",
+		"inMapId": "G.Ear.Gem.Ming",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 487,
+			"y": 753,
+			"radius": 33
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Parag"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 487,
+					"y": 753,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Gem.Min.Altanorch",
+		"name": "Altanorch",
+		"inMapId": "G.Ear.Gem.Ming",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 356,
+			"y": 434,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Altanorch"
+		]
+	}, {
+		"x-comment-x": "-----------------------Hades Gamma-------------------------",
+		"id": "G.Ear.Hades",
+		"name": "Hades Gamma",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma1.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3411,
+			"y": 2843,
+			"radius": 30
+		},
+		"annotationNote": "Antaeus, Cacus, Dis, Farinata, Plutus",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hades_Gamma"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Antaeus-------",
+		"id": "G.Ear.Had.Antaeus",
+		"name": "Antaeus",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Antaeus1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Hades",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1317,
+			"y": 1840,
+			"radius": 133
+		},
+		"annotationNote": "Ageko, Edmos, Ploba, Trebin, Vemal, Hunidor",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Antaeus"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Antaeus2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Antaeus3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Ageko",
+		"name": "Ageko",
+		"inMapId": "G.Ear.Had.Antaeus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1232,
+			"y": 918,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ageko"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 1167,
+					"y": 1232,
+					"radius": 25
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Edmos",
+		"name": "Edmos",
+		"inMapId": "G.Ear.Had.Antaeus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 762,
+			"y": 861,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Edmos"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 762,
+					"y": 861,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Ploba",
+		"name": "Ploba",
+		"inMapId": "G.Ear.Had.Antaeus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 770,
+			"y": 1372,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ploba"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 617,
+					"y": 972,
+					"radius": 54
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Trebin",
+		"name": "Trebin",
+		"inMapId": "G.Ear.Had.Antaeus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 602,
+			"y": 1309,
+			"radius": 65
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Trebin"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 1374,
+					"y": 653,
+					"radius": 45
+				},
+				"image": "Detail_Maps/Game1/UNC/Trebin/Trebin.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Tre.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Ant.Trebin",
+		"mapLocationPoint": {
+			"x": 951,
+			"y": 1471,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Tre.2",
+		"name": "Survey Camp",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Ant.Trebin",
+		"mapLocationPoint": {
+			"x": 1175,
+			"y": 818,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Tre.3",
+		"name": "Transmitter Tower",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Ant.Trebin",
+		"mapLocationPoint": {
+			"x": 514,
+			"y": 493,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Tre.4",
+		"name": "Turian Wreckage",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Ant.Trebin",
+		"mapLocationPoint": {
+			"x": 1604,
+			"y": 1285,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Tre.5",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Ant.Trebin",
+		"mapLocationPoint": {
+			"x": 593,
+			"y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Tre.Mine",
+		"name": "Mine",
+		"inMapId": "G.Ear.Had.Ant.Trebin",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1155,
+			"y": 664,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Generic_Mine.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Tre.Min.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Had.Ant.Trebin",
+		"inMapId": "G.Ear.Had.Ant.Tre.Mine",
+		"mapLocationPoint": {
+            "x": 447,
+            "y": 908,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Vemal",
+		"name": "Vemal",
+		"inMapId": "G.Ear.Had.Antaeus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 890,
+			"y": 375,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vemal"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 531,
+					"y": 1501,
+					"radius": 37
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Ant.Hunidor",
+		"name": "Hunidor",
+		"inMapId": "G.Ear.Had.Antaeus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 442,
+			"y": 504,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hunidor"
+		]
+	}, {
+		"x-comment-x": "--------Cacus-------",
+		"id": "G.Ear.Had.Cacus",
+		"name": "Cacus",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Cacus1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Hades",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1837,
+			"y": 893,
+			"radius": 128
+		},
+		"annotationNote": "Zayarter, Chohe, Xamarri, Faringor, Treyarmus",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Cacus"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Cacus2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Cacus3.pdf"
+			}
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "%Paragon 80"
+		}]
+	}, {
+		"id": "G.Ear.Had.Cac.Zayarter",
+		"name": "Zayarter",
+		"inMapId": "G.Ear.Had.Cacus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1149,
+			"y": 1241,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Zayarter"
+		]
+	}, {
+		"id": "G.Ear.Had.Cac.Chohe",
+		"name": "Chohe",
+		"inMapId": "G.Ear.Had.Cacus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1395,
+			"y": 1185,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Chohe"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 658,
+					"y": 1005,
+					"radius": 37
+				},
+				"image": "Detail_Maps/Game1/UNC/Chohe/Chohe.pdf",
+				"referenceSize": "2083x2083"
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 1395,
+					"y": 1185,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Cac.Cho.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Cac.Chohe",
+		"mapLocationPoint": {
+			"x": 1042,
+			"y": 875,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Cac.Cho.1Science",
+		"name": "Underground Complex",
+		"inMapId": "G.Ear.Had.Cac.Chohe",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1260,
+			"y": 1519,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Research_Facility.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Cac.Cho.1Sc.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Had.Cac.Chohe",
+		"inMapId": "G.Ear.Had.Cac.Cho.1Science",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 475,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Cac.Cho.3",
+		"name": "Abandoned Camp",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Cac.Chohe",
+		"mapLocationPoint": {
+			"x": 1369,
+			"y": 743,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Cac.Cho.4",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Cac.Chohe",
+		"mapLocationPoint": {
+			"x": 550,
+			"y": 1500,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Cac.Cho.5",
+		"name": "Corpse",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Cac.Chohe",
+		"mapLocationPoint": {
+			"x": 532,
+			"y": 811,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Cac.Cho.6",
+		"name": "Thresher Maw",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Cac.Chohe",
+		"mapLocationPoint": {
+			"x": 853,
+			"y": 1483,
+			"radius": 20
+		}
+        
+	}, {
+		"id": "G.Ear.Had.Cac.Xamarri",
+		"name": "Xamarri",
+		"inMapId": "G.Ear.Had.Cacus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 568,
+			"y": 774,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Xamarri"
+		]
+	}, {
+		"id": "G.Ear.Had.Cac.Faringor",
+		"name": "Faringor",
+		"inMapId": "G.Ear.Had.Cacus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 646,
+			"y": 376,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Faringor"
+		]
+	}, {
+		"id": "G.Ear.Had.Cac.Treyarmus",
+		"name": "Treyarmus",
+		"inMapId": "G.Ear.Had.Cacus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1707,
+			"y": 414,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Treyarmus"
+		]
+	}, {
+		"x-comment-x": "--------Dis-------",
+		"id": "G.Ear.Had.Dis",
+		"name": "Dis",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Dis1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Hades",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 240,
+			"y": 386,
+			"radius": 123
+		},
+		"annotationNote": "Jartar, Nearrum, Klensal, Gremar, Raysha",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Dis"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Dis2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Dis3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Dis.Jartar",
+		"name": "Jartar",
+		"inMapId": "G.Ear.Had.Dis",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 899,
+			"y": 1244,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Jartar"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 799,
+					"y": 1105,
+					"radius": 25
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Dis.Nearrum",
+		"name": "Nearrum",
+		"inMapId": "G.Ear.Had.Dis",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1316,
+			"y": 1352,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nearrum"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 699,
+					"y": 809,
+					"radius": 28
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Dis.Klensal",
+		"name": "Klensal",
+		"inMapId": "G.Ear.Had.Dis",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1195,
+			"y": 493,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Klensal"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Klensal/Klensal.pdf",
+				"referenceSize": "2083x2083"
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 1195,
+					"y": 493,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Dis.Kle.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Dis.Klensal",
+		"mapLocationPoint": {
+			"x": 1079,
+			"y": 522,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Dis.Kle.2",
+		"name": "Mummified Salarian",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Dis.Klensal",
+		"mapLocationPoint": {
+			"x": 1096,
+			"y": 1218,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Dis.Kle.3",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Dis.Klensal",
+		"mapLocationPoint": {
+			"x": 861,
+			"y": 1366,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Dis.Kle.4",
+		"name": "Crashed Pod",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Dis.Klensal",
+		"mapLocationPoint": {
+			"x": 1018,
+			"y": 1201,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Dis.Kle.Hideout",
+		"name": "Syndicate Hideout",
+		"isHidden": true,
+		"inMapId": "G.Ear.Had.Dis.Klensal",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 894,
+			"y": 1040,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Mine.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Dis.Kle.Hid.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Had.Dis.Klensal",
+		"inMapId": "G.Ear.Had.Dis.Kle.Hideout",
+		"mapLocationPoint": {
+			"x": 447,
+			"y": 908,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Dis.Asteroid",
+		"name": "Metallic Asteroid",
+		"inMapId": "G.Ear.Had.Dis",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 1670,
+			"y": 823,
+			"radius": 75
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Had.Dis.Gremar",
+		"name": "Gremar",
+		"inMapId": "G.Ear.Had.Dis",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1793,
+			"y": 946,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gremar"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 1793,
+					"y": 1146,
+					"radius": 25
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Dis.Raysha",
+		"name": "Raysha",
+		"inMapId": "G.Ear.Had.Dis",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 674,
+			"y": 179,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Raysha"
+		]
+	}, {
+		"x-comment-x": "--------Farinata-------",
+		"id": "G.Ear.Had.Farinata",
+		"name": "Farinata",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Farinata1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Hades",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1645,
+			"y": 219,
+			"radius": 113
+		},
+		"annotationNote": "Tunshagon, MSV Ontario, Juntauma, Nepneu",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Farinata"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Farinata2.pdf"
+			},
+			"3": {
+				"annotationNote": "Tunshagon, Juntauma, Nepneu",
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Farinata3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Far.Tunshagon",
+		"name": "Tunshagon",
+		"inMapId": "G.Ear.Had.Farinata",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 717,
+			"y": 1237,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tunshagon"
+		]
+	}, {
+		"id": "G.Ear.Had.Far.Asteroid",
+		"name": "Rocky Asteroid",
+		"inMapId": "G.Ear.Had.Farinata",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1420,
+			"y": 751,
+			"radius": 75
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Had.Far.MSVOntario",
+		"name": "MSV Ontario",
+		"inMapId": "G.Ear.Had.Farinata",
+        "mapType": "Ship",
+		"mapLocationPoint": {
+			"x": 490,
+			"y": 622,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/MSV_Ontario"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Generic_Ship.pdf",
+				"referenceSize": "2083x2083"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Had.Far.MSV.1",
+		"name": "To Normandy",
+		"isShowInList": false,
+		"linkToMapId": "G.N1.1",
+		"inMapId": "G.Ear.Had.Far.MSVOntario",
+		"mapLocationPoint": {
+            "x": 353,
+            "y": 1729,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Far.Juntauma",
+		"name": "Juntauma",
+		"inMapId": "G.Ear.Had.Farinata",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1040,
+			"y": 228,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Juntauma"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1040,
+					"y": 228,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Far.Nepneu",
+		"name": "Nepneu",
+		"inMapId": "G.Ear.Had.Farinata",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1978,
+			"y": 1030,
+			"radius": 38
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nepneu"
+		]
+	}, {
+		"x-comment-x": "--------Plutus-------",
+		"id": "G.Ear.Had.Plutus",
+		"name": "Plutus",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Plutus1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Hades",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 703,
+			"y": 1058,
+			"radius": 124
+		},
+		"annotationNote": "Mingito, Maidla, Clocrolis, Nonuel, Veyaria",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Plutus"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Plutus2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Hades_Gamma/Plutus3.pdf"
+			}
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "%Paragon 80"
+		}]
+	}, {
+		"id": "G.Ear.Had.Plu.Mingito",
+		"name": "Mingito",
+		"inMapId": "G.Ear.Had.Plutus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1237,
+			"y": 1154,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Mingito"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 882,
+					"y": 877,
+					"radius": 27
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Maidla",
+		"name": "Maidla",
+		"inMapId": "G.Ear.Had.Plutus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 711,
+			"y": 836,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Maidla"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 833,
+					"y": 1365,
+					"radius": 28
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Clocrolis",
+		"name": "Clocrolis",
+		"inMapId": "G.Ear.Had.Plutus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1269,
+			"y": 552,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Clocrolis"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 516,
+					"y": 910,
+					"radius": 25
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Nonuel",
+		"name": "Nonuel",
+		"inMapId": "G.Ear.Had.Plutus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 366,
+			"y": 1154,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nonuel"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Nonuel/Nonuel.pdf",
+                "referenceSize": "2083x2083"
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 366,
+					"y": 1154,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Non.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Plu.Nonuel",
+		"mapLocationPoint": {
+			"x": 1057,
+			"y": 1328,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Non.2",
+		"name": "Mercenary Outpost",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Plu.Nonuel",
+		"mapLocationPoint": {
+			"x": 717,
+			"y": 1378,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Non.3",
+		"name": "Thresher Maw",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Plu.Nonuel",
+		"mapLocationPoint": {
+			"x": 699,
+			"y": 392,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Non.4",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Had.Plu.Nonuel",
+		"mapLocationPoint": {
+			"x": 540,
+			"y": 1055,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Non.Outpost",
+		"name": "Warlord's Outpost",
+		"isHidden": true,
+		"inMapId": "G.Ear.Had.Plu.Nonuel",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1354,
+			"y": 711,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Mercenary_Base.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Non.Out.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Had.Plu.Nonuel",
+		"inMapId": "G.Ear.Had.Plu.Non.Outpost",
+		"mapLocationPoint": {
+			"x": 698,
+			"y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Non.Out.2",
+		"name": "To Upper Level",
+		"isOpensDetail": false,
+		"isShowInList": false,
+		"inMapId": "G.Ear.Had.Plu.Non.Outpost",
+		"mapLocationPoint": {
+			"x": 1136,
+			"y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Non.Out.3",
+		"name": "To Lower Level",
+		"isOpensDetail": false,
+		"isShowInList": false,
+		"inMapId": "G.Ear.Had.Plu.Non.Outpost",
+		"mapLocationPoint": {
+			"x": 1582,
+			"y": 1032,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Had.Plu.Veyaria",
+		"name": "Veyaria",
+		"inMapId": "G.Ear.Had.Plutus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 249,
+			"y": 573,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Veyaria"
+		]
+	}, {
+		"x-comment-x": "-----------------------Horse Head Nebula-------------------------",
+		"id": "G.Ear.Horse",
+		"name": "Horse Head Nebula",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula1.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 2284,
+			"y": 2780,
+			"radius": 30
+		},
+		"annotationNote": "Fortuna, Pax, Strenuus",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Horse_Head_Nebula"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula2.pdf"
+			},
+			"3": {
+				"annotationNote": "Anadius, Pax",
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Anadius-------",
+		"id": "G.Ear.Hor.Anadius",
+		"name": "Anadius",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula/Anadius.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Horse",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 195,
+			"y": 1576,
+			"radius": 120
+		},
+		"annotationNote": "Cronos Station",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Anadius"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula/Anadius3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "G.Ear.Hor.Ana.Cronos",
+		"name": "Cronos Station",
+		"inMapId": "G.Ear.Hor.Anadius",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1667,
+			"y": 1076,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Cronos_Station"
+		]
+	}, {
+		"x-comment-x": "--------Fortuna-------",
+		"id": "G.Ear.Hor.Fortuna",
+		"name": "Fortuna",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula/Fortuna.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Horse",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 669,
+			"y": 620,
+			"radius": 117
+		},
+		"annotationNote": "Maganlis, Therumlon, Amaranthine, Wentania",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Fortuna"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula/Fortuna1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Hor.For.Maganlis",
+		"name": "Maganlis",
+		"inMapId": "G.Ear.Hor.Fortuna",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1149,
+			"y": 697,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Maganlis"
+		]
+	}, {
+		"id": "G.Ear.Hor.For.Therumlon",
+		"name": "Therumlon",
+		"inMapId": "G.Ear.Hor.Fortuna",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1253,
+			"y": 1507,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Therumlon"
+		]
+	}, {
+		"id": "G.Ear.Hor.For.Amaranthine",
+		"name": "Amaranthine",
+		"inMapId": "G.Ear.Hor.Fortuna",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 520,
+			"y": 532,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Amaranthine"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Amaranthine/Amaranthine.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Hor.For.Ama.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.For.Amaranthine",
+		"mapLocationPoint": {
+			"x": 962,
+			"y": 662,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.For.Ama.2",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.For.Amaranthine",
+		"mapLocationPoint": {
+			"x": 500,
+			"y": 987,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.For.Ama.3",
+		"name": "Ancient Debris",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.For.Amaranthine",
+		"mapLocationPoint": {
+			"x": 733,
+			"y": 1240,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.For.Ama.Outpost",
+		"name": "Engineering Outpost",
+		"isHidden": true,
+		"inMapId": "G.Ear.Hor.For.Amaranthine",
+        "mapType": "Structure",
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"mapLocationPoint": {
+					"x": 855,
+					"y": 1511,
+					"radius": 20
+				},
+				"image": "Detail_Maps/Game1/UNC/Amaranthine/Amaranthine_Mercenary_Base.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Hor.For.Ama.Out.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Hor.For.Amaranthine",
+		"inMapId": "G.Ear.Hor.For.Ama.Outpost",
+		"mapLocationPoint": {
+            "x": 698,
+            "y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.For.Ama.Out.2",
+		"name": "To Upper Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.For.Ama.Outpost",
+		"mapLocationPoint": {
+            "x": 1135,
+            "y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.For.Ama.Out.3",
+		"name": "To Lower Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.For.Ama.Outpost",
+		"mapLocationPoint": {
+            "x": 1582,
+            "y": 1032,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.For.Wentania",
+		"name": "Wentania",
+		"inMapId": "G.Ear.Hor.Fortuna",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1882,
+			"y": 677,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Wentania"
+		]
+	}, {
+		"x-comment-x": "--------Pax-------",
+		"id": "G.Ear.Hor.Pax",
+		"name": "Pax",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula/Pax1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Horse",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1800,
+			"y": 1266,
+			"radius": 123
+		},
+		"annotationNote": "Svarog, Noveria, Morana, Veles",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pax"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula/Pax2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula/Pax3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Svarog",
+		"name": "Svarog",
+		"inMapId": "G.Ear.Hor.Pax",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 784,
+			"y": 1042,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Svarog"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 1234,
+					"y": 863,
+					"radius": 55
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Noveria",
+		"name": "Noveria",
+		"inMapId": "G.Ear.Hor.Pax",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 768,
+			"y": 1340,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Noveria/Noveria.pdf",
+				"referenceSize": "2083x2083",
+				"isSplitMenu": true,
+				"mapLocationPoint": {
+					"x": 770,
+					"y": 737,
+					"radius": 37
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"name": "Noveria: Port Hanshen",
+		"inMapId": "G.Ear.Hor.Pax.Noveria",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 156,
+					"width": 1800,
+					"height": 307
+				},
+				"image": "Detail_Maps/Game1/Noveria/Noveria_Port_Hanshen.pdf",
+				"referenceSize": "2083x2083",
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.1",
+		"name": "Docking Bay",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 1448,
+			"y": 532,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.2",
+		"name": "To Normandy",
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"isShowInList": false,
+		"linkToMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 1457,
+			"y": 738,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.3",
+		"name": "To Plaza",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1517,
+			"y": 105,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.4",
+		"name": "Hotel",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 1438,
+			"y": 1773,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.5",
+		"name": "To Plaza",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1681,
+			"y": 1836,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.6",
+		"name": "Plaza",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 1179,
+			"y": 1163,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.7",
+		"name": "To Hotel",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 848,
+			"y": 975,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.8",
+		"name": "To Docking Bay",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1521,
+			"y": 978,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.10",
+		"name": "To Synthetic Insights",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 732,
+			"y": 1190,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.11",
+		"name": "Administration Office",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 1815,
+			"y": 1277,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.12",
+		"name": "Garage",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 615,
+			"y": 790,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.13",
+		"name": "To Aleutsk Valley",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Hor.Pax.Nov.AleutskValley",
+		"mapLocationPoint": {
+			"x": 607,
+			"y": 88,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.14",
+		"name": "Synthetic Insights",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 490,
+			"y": 1771,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Por.15",
+		"name": "To Plaza",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 732,
+			"y": 1834,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.AleutskValley",
+		"name": "Noveria: Aleutsk Valley",
+		"inMapId": "G.Ear.Hor.Pax.Noveria",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 645,
+					"width": 1800,
+					"height": 307
+				},
+				"referenceSize": "2083x2083",
+				"image": "Detail_Maps/Game1/Noveria/Noveria_Aleutsk_Valley.pdf",
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Ale.1",
+		"name": "To Port Hanshen",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.AleutskValley",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 257,
+			"y": 1536,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Ale.2",
+		"name": "To Peak 15",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.AleutskValley",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 2022,
+			"y": 1416,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Peak15",
+		"name": "Noveria: Peak 15",
+		"inMapId": "G.Ear.Hor.Pax.Noveria",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Noveria/Noveria_Peak_15.pdf",
+				"referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1134,
+					"width": 1800,
+					"height": 307
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.1",
+		"name": "To Aleutsk Valley",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Hor.Pax.Nov.AleutskValley",
+		"mapLocationPoint": {
+			"x": 350,
+			"y": 75,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.2",
+		"name": "Garage",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 248,
+			"y": 564,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.3",
+		"name": "Security",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 583,
+			"y": 426,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.4",
+		"name": "To Administration",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 682,
+			"y": 221,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.5",
+		"name": "Cafeteria",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 1207,
+			"y": 506,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.6",
+		"name": "To Mira Core",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1087,
+			"y": 822,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.7",
+		"name": "To Garage",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1271,
+			"y": 224,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.8",
+		"name": "Mira Core",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 1096,
+			"y": 1643,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.10",
+		"name": "To Roof",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 756,
+			"y": 1647,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.11",
+		"name": "To Administration",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1573,
+			"y": 1711,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.12",
+		"name": "To Reactor",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1162,
+			"y": 1205,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.13",
+		"name": "To Tram",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1233,
+			"y": 2018,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.14",
+		"name": "Reactor Core",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 644,
+			"y": 1281,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.15",
+		"name": "To Observation Deck",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 527,
+			"y": 1438,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.16",
+		"name": "To Mira Core",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1023,
+			"y": 1208,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.17",
+		"name": "Reactor Observation Deck",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 825,
+			"y": 920,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.18",
+		"name": "To Reactor",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 683,
+			"y": 1104,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.19",
+		"name": "Roof",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 153,
+			"y": 1334,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.20",
+		"name": "To Mira Core",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 120,
+			"y": 1650,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.21",
+		"name": "Tram",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 1891,
+			"y": 1349,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.22",
+		"name": "To Mira Core",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1532,
+			"y": 743,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.23",
+		"name": "Decon Chamber",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 1667,
+			"y": 856,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Pea.24",
+		"name": "To Rift Station",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 1927,
+			"y": 1966,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"name": "Noveria: Rift Station",
+		"inMapId": "G.Ear.Hor.Pax.Noveria",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Noveria/Noveria_Rift_Station.pdf",
+				"referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1622,
+					"width": 1800,
+					"height": 307
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.1",
+		"name": "Secure Lab",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 915,
+			"y": 701,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.2",
+		"name": "To Main Level (A)",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1223,
+			"y": 129,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.3",
+		"name": "Scientist Barracks",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 573,
+			"y": 1049,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.4",
+		"name": "To Main Level (B)",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 753,
+			"y": 1183,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.5",
+		"name": "Quarantine Lab",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 539,
+			"y": 1445,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.6",
+		"name": "To Hot Labs",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 905,
+			"y": 1691,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.7",
+		"name": "To Peak 15",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 1015,
+			"y": 1881,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.8",
+		"name": "To Main Level (C)",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 831,
+			"y": 1691,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.9",
+		"name": "Med Bay",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 1775,
+			"y": 1041,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.10",
+		"name": "To Lower Level (A)",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1755,
+			"y": 131,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.11",
+		"name": "To Med Bay",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1273,
+			"y": 1047,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.12",
+		"name": "To Lower Med Bay",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1657,
+			"y": 1103,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.13",
+		"name": "Lower Med Bay",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 1415,
+			"y": 991,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.14",
+		"name": "To Lower Level (B)",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1281,
+			"y": 1183,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.15",
+		"name": "Guard Barracks",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 1969,
+			"y": 1239,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.16",
+		"name": "Security",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 1551,
+			"y": 771,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.17",
+		"name": "Ventralis' Office",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 1641,
+			"y": 1483,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.18",
+		"name": "To Lower Level (C)",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1351,
+			"y": 1693,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.19",
+		"name": "Hot Labs",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 157,
+			"y": 1346,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Nov.Rif.20",
+		"name": "To Lower Level",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 157,
+			"y": 1697,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.3",
+		"name": "Morana",
+		"inMapId": "G.Ear.Hor.Pax",
+		"mapLocationPoint": {
+			"x": 1578,
+			"y": 1125,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Morana"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 1199,
+					"y": 522,
+					"radius": 25
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Hor.Pax.Veles",
+		"name": "Veles",
+		"inMapId": "G.Ear.Hor.Pax",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 325,
+			"y": 757,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Veles"
+		]
+	}, {
+		"x-comment-x": "--------Strenuus-------",
+		"id": "G.Ear.Hor.Strenuus",
+		"name": "Strenuus",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula/Strenuus.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Horse",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1747,
+			"y": 495,
+			"radius": 127
+		},
+		"annotationNote": "Yunthorl, Antitarra, Trelyn, MSV Majesty, Xawin, Thesalgon",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Strenuus"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Horse_Head_Nebula/Strenuus1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Hor.Str.Yunthorl",
+		"name": "Yunthorl",
+		"inMapId": "G.Ear.Hor.Strenuus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1259,
+			"y": 1157,
+			"radius": 33
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Yunthorl"
+		]
+	}, {
+		"id": "G.Ear.Hor.Str.Antitarra",
+		"name": "Antitarra",
+		"inMapId": "G.Ear.Hor.Strenuus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 540,
+			"y": 1042,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Antitarra"
+		]
+	}, {
+		"id": "G.Ear.Hor.Str.Trelyn",
+		"name": "Trelyn",
+		"inMapId": "G.Ear.Hor.Strenuus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 610,
+			"y": 533,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Trelyn"
+		]
+	}, {
+		"id": "G.Ear.Hor.Str.MSVMajesty",
+		"name": "MSV Majesty",
+		"inMapId": "G.Ear.Hor.Strenuus",
+        "mapType": "Ship",
+		"mapLocationPoint": {
+			"x": 1368,
+			"y": 462,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/MSV_Majesty"
+		]
+	}, {
+		"id": "G.Ear.Hor.Str.Xawin",
+		"name": "Xawin",
+		"inMapId": "G.Ear.Hor.Strenuus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1600,
+			"y": 522,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Xawin"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Xawin/Xawin.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Hor.Str.Xaw.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Str.Xawin",
+		"mapLocationPoint": {
+			"x": 1162,
+			"y": 1212,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Str.Xaw.2",
+		"name": "Debris",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Str.Xawin",
+		"mapLocationPoint": {
+			"x": 785,
+			"y": 1312,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Str.Xaw.3",
+		"name": "Thresher Maw",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Str.Xawin",
+		"mapLocationPoint": {
+			"x": 785,
+			"y": 1312,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Str.Xaw.4",
+		"name": "Turian Wreckage",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Str.Xawin",
+		"mapLocationPoint": {
+			"x": 1042,
+			"y": 1044,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Str.Xaw.5",
+		"name": "Geth Beacon",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Str.Xawin",
+		"mapLocationPoint": {
+			"x": 1389,
+			"y": 497,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Str.Xaw.6",
+		"name": "Abandoned Camp",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Hor.Str.Xawin",
+		"mapLocationPoint": {
+			"x": 1469,
+			"y": 1115,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Str.Xaw.Base",
+		"name": "Privateer Base",
+		"isHidden": true,
+		"inMapId": "G.Ear.Hor.Str.Xawin",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 704,
+			"y": 582,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Mercenary_Base.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Hor.Str.Xaw.Bas.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Hor.Str.Xawin",
+		"inMapId": "G.Ear.Hor.Str.Xaw.Base",
+		"mapLocationPoint": {
+			"x": 698,
+			"y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Str.Xaw.Bas.2",
+		"name": "To Upper Level",
+		"isOpensDetail": false,
+		"isShowInList": false,
+		"inMapId": "G.Ear.Hor.Str.Xaw.Base",
+		"mapLocationPoint": {
+			"x": 1136,
+			"y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Str.Xaw.Bas.3",
+		"name": "To Lower Level",
+		"isOpensDetail": false,
+		"isShowInList": false,
+		"inMapId": "G.Ear.Hor.Str.Xaw.Base",
+		"mapLocationPoint": {
+			"x": 1582,
+			"y": 1032,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Hor.Str.Thesalgon",
+		"name": "Thesalgon",
+		"inMapId": "G.Ear.Hor.Strenuus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 699,
+			"y": 171,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Thesalgon"
+		]
+	}, {
+		"x-comment-x": "-----------------------Kite's Nest-------------------------",
+		"id": "G.Ear.Kites",
+		"name": "Kite's Nest",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Kites_Nest.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 2823,
+			"y": 3492,
+			"radius": 30
+		},
+		"annotationNote": "Harsa, Indris, Untrel, Vular",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kite%27s_Nest"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Kites_Nest3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Harsa-------",
+		"id": "G.Ear.Kit.Harsa",
+		"name": "Harsa",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Kites_Nest/Harsa.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Kites",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1350,
+			"y": 387,
+			"radius": 132
+		},
+		"annotationNote": "Dezda, Khar'shan, Verush, Ilem, Spekilas",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Harsa"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Kites_Nest/Harsa3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Kit.Har.Dezda",
+		"name": "Dezda",
+		"inMapId": "G.Ear.Kit.Harsa",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1214,
+			"y": 882,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Dezda"
+		]
+	}, {
+		"id": "G.Ear.Kit.Har.Kharshan",
+		"name": "Khar'shan",
+		"inMapId": "G.Ear.Kit.Harsa",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 677,
+			"y": 1017,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Khar%27shan"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 677,
+					"y": 1017,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Kit.Har.Verush",
+		"name": "Verush",
+		"inMapId": "G.Ear.Kit.Harsa",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1459,
+			"y": 680,
+			"radius": 53
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Verush"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1459,
+					"y": 680,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Kit.Har.Ilem",
+		"name": "Ilem",
+		"inMapId": "G.Ear.Kit.Harsa",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 498,
+			"y": 1389,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ilem"
+		]
+	}, {
+		"id": "G.Ear.Kit.Har.Spekilas",
+		"name": "Spekilas",
+		"inMapId": "G.Ear.Kit.Harsa",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1787,
+			"y": 1278,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Spekilas"
+		]
+	}, {
+		"x-comment-x": "--------Indris-------",
+		"id": "G.Ear.Kit.Indris",
+		"name": "Indris",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Kites_Nest/Indris.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Kites",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 513,
+			"y": 679,
+			"radius": 128
+		},
+		"annotationNote": "Cholis, Camala, Ramlat, Hiba, Kaver Station, Maklan",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Indris"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Kites_Nest/Indris3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Kit.Ind.Cholis",
+		"name": "Cholis",
+		"inMapId": "G.Ear.Kit.Indris",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 895,
+			"y": 894,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Cholis"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 895,
+					"y": 894,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Kit.Ind.Camala",
+		"name": "Camala",
+		"inMapId": "G.Ear.Kit.Indris",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 824,
+			"y": 1349,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Camala"
+		]
+	}, {
+		"id": "G.Ear.Kit.Ind.Ramlat",
+		"name": "Ramlat",
+		"inMapId": "G.Ear.Kit.Indris",
+		"mapLocationPoint": {
+			"x": 1370,
+			"y": 1459,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ramlat"
+		]
+	}, {
+		"id": "G.Ear.Kit.Ind.Hiba",
+		"name": "Hiba",
+		"inMapId": "G.Ear.Kit.Indris",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 419,
+			"y": 805,
+			"radius": 53
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hiba"
+		]
+	}, {
+		"id": "G.Ear.Kit.Ind.Kaver",
+		"name": "Kaver Station",
+		"inMapId": "G.Ear.Kit.Indris",
+		"mapLocationPoint": {
+			"x": 413,
+			"y": 603,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kaver_Station"
+		]
+	}, {
+		"id": "G.Ear.Kit.Ind.Maklan",
+		"name": "Maklan",
+		"inMapId": "G.Ear.Kit.Indris",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1349,
+			"y": 224,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Maklan"
+		]
+	}, {
+		"x-comment-x": "--------Untrel-------",
+		"id": "G.Ear.Kit.Untrel",
+		"name": "Untrel",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Kites_Nest/Untrel.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Kites",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1820,
+			"y": 1077,
+			"radius": 123
+		},
+		"annotationNote": "Ezka, Klos, Adek, Uza",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Untrel"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Kites_Nest/Untrel3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Kit.Unt.Ezka",
+		"name": "Ezka",
+		"inMapId": "G.Ear.Kit.Untrel",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 891,
+			"y": 1247,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ezka"
+		]
+	}, {
+		"id": "G.Ear.Kit.Unt.Klos",
+		"name": "Klos",
+		"inMapId": "G.Ear.Kit.Untrel",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 618,
+			"y": 1008,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Klos"
+		]
+	}, {
+		"id": "G.Ear.Kit.Unt.Adek",
+		"name": "Adek",
+		"inMapId": "G.Ear.Kit.Untrel",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 440,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Adek"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1041,
+					"y": 440,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Kit.Unt.Uza",
+		"name": "Uza",
+		"inMapId": "G.Ear.Kit.Untrel",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 1959,
+			"radius": 61
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Uza"
+		]
+	}, {
+		"x-comment-x": "--------Vular-------",
+		"id": "G.Ear.Kit.Vular",
+		"name": "Vular",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Kites_Nest/Vular.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Kites",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 263,
+			"y": 1639,
+			"radius": 118
+		},
+		"annotationNote": "Erszbat, Azimir, Vana",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vular"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Kites_Nest/Vular3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Kit.Vul.Erszbat",
+		"name": "Erszbat",
+		"inMapId": "G.Ear.Kit.Vular",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 785,
+			"y": 1041,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Erszbat"
+		]
+	}, {
+		"id": "G.Ear.Kit.Vul.Azimir",
+		"name": "Azimir",
+		"inMapId": "G.Ear.Kit.Vular",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1470,
+			"y": 1322,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Azimir"
+		]
+	}, {
+		"id": "G.Ear.Kit.Vul.Vana",
+		"name": "Vana",
+		"inMapId": "G.Ear.Kit.Vular",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1485,
+			"y": 407,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vana"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1485,
+					"y": 407,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"x-comment-x": "-----------------------Local Cluster-------------------------",
+		"id": "G.Ear.Local",
+		"name": "Local Cluster",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Local_Cluster1.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 1900,
+			"y": 3176,
+			"radius": 30
+		},
+		"annotationNote": "Sol",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Local_Cluster"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Local_Cluster2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Local_Cluster3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Level 20"
+		}]
+	}, {
+		"x-comment-x": "--------Sol-------",
+		"id": "G.Ear.Loc.Sol",
+		"name": "Sol",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Local_Cluster/Sol1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Local",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 1041,
+			"radius": 150
+		},
+		"annotationNote": "Mercury, Venus, Earth, Luna, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sol"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Local_Cluster/Sol2.pdf"
+			},
+			"3": {
+				"annotationNote": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto",
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Local_Cluster/Sol3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Mercury",
+		"name": "Mercury",
+		"inMapId": "G.Ear.Loc.Sol",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1164,
+			"y": 977,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Mercury"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 931,
+					"y": 958,
+					"radius": 25
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Venus",
+		"name": "Venus",
+		"inMapId": "G.Ear.Loc.Sol",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 881,
+			"y": 875,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Venus"
+		]
+	}, {
+		"id": "G.Ear.Loc.Sol.Earth",
+		"name": "Earth",
+		"inMapId": "G.Ear.Loc.Sol",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 894,
+			"y": 787,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Earth"
+		]
+	}, {
+		"id": "G.Ear.Loc.Sol.Luna",
+		"name": "Luna",
+		"inMapId": "G.Ear.Loc.Sol",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 941,
+			"y": 762,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Luna"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Luna/Luna.pdf",
+				"referenceSize": "2083x2083"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Ear.Loc.Sol.Lun.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Loc.Sol.Luna",
+		"mapLocationPoint": {
+			"x": 1397,
+			"y": 754,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Lun.2",
+		"name": "Turrets",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Loc.Sol.Luna",
+		"mapLocationPoint": {
+			"x": 883,
+			"y": 1532,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Lun.3",
+		"name": "Turrets",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Loc.Sol.Luna",
+		"mapLocationPoint": {
+			"x": 1332,
+			"y": 1283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Lun.4",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Loc.Sol.Luna",
+		"mapLocationPoint": {
+			"x": 739,
+			"y": 636,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Lun.5",
+		"name": "Rachni Song",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Loc.Sol.Luna",
+		"mapLocationPoint": {
+			"x": 625,
+			"y": 692,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Lun.VIBunker",
+		"name": "VI Bunkers",
+		"isHidden": true,
+		"inMapId": "G.Ear.Loc.Sol.Luna",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 692,
+			"y": 1114,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+				"isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Luna/Luna_VI_Bunker.pdf",
+				"referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Lun.VIB.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Ear.Loc.Sol.Luna",
+		"inMapId": "G.Ear.Loc.Sol.Lun.VIBunker",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 475,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Mars",
+		"name": "Mars",
+		"inMapId": "G.Ear.Loc.Sol",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 758,
+			"y": 793,
+			"radius": 20
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Mars"
+		]
+	}, {
+		"id": "G.Ear.Loc.Sol.Jupiter",
+		"name": "Jupiter",
+		"inMapId": "G.Ear.Loc.Sol",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 666,
+			"y": 1380,
+			"radius": 72
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Jupiter"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 893,
+					"y": 559,
+					"radius": 72
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Saturn",
+		"name": "Saturn",
+		"inMapId": "G.Ear.Loc.Sol",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 486,
+			"y": 775,
+			"radius": 53
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Saturn"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 1337,
+					"y": 501,
+					"radius": 53
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Uranus",
+		"name": "Uranus",
+		"inMapId": "G.Ear.Loc.Sol",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1608,
+			"y": 683,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Uranus"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 371,
+					"y": 962,
+					"radius": 44
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Neptune",
+		"name": "Neptune",
+		"inMapId": "G.Ear.Loc.Sol",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1796,
+			"y": 1181,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Neptune"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 597,
+					"y": 418,
+					"radius": 44
+				}
+			}
+		}
+	}, {
+		"id": "G.Ear.Loc.Sol.Pluto",
+		"name": "Pluto",
+		"inMapId": "G.Ear.Loc.Sol",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1791,
+			"y": 728,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pluto"
+		],
+		"gameVersionData": {
+			"1": {
+				"mapLocationPoint": {
+					"x": 1798,
+					"y": 1349,
+					"radius": 25
+				}
+			}
+		}
+	}, {
+		"x-comment-x": "-----------------------Petra Nebula-------------------------",
+		"id": "G.Ear.Petra",
+		"name": "Petra Nebula",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Petra_Nebula.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 2396,
+			"y": 3325,
+			"radius": 30
+		},
+		"annotationNote": "Vetus",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Petra_Nebula"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Petra_Nebula3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Vetus-------",
+		"id": "G.Ear.Pet.Vetus",
+		"name": "Vetus",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Petra_Nebula/Vetus.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Petra",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 1041,
+			"radius": 134
+		},
+		"annotationNote": "Tyre, Elysium, Grissom Academy, Sidon, Joppa, Gilead",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vetus"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Petra_Nebula/Vetus3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Pet.Vet.Tyre",
+		"name": "Tyre",
+		"inMapId": "G.Ear.Pet.Vetus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1123,
+			"y": 818,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tyre"
+		]
+	}, {
+		"id": "G.Ear.Pet.Vet.Elysium",
+		"name": "Elysium",
+		"inMapId": "G.Ear.Pet.Vetus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1236,
+			"y": 1344,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Elysium"
+		]
+	}, {
+		"id": "G.Ear.Pet.Vet.Grissom",
+		"name": "Grissom Academy",
+		"inMapId": "G.Ear.Pet.Vetus",
+        "mapType": "Ship",
+		"mapLocationPoint": {
+			"x": 1145,
+			"y": 1447,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Grissom_Academy"
+		]
+	}, {
+		"id": "G.Ear.Pet.Vet.Sidon",
+		"name": "Sidon",
+		"inMapId": "G.Ear.Pet.Vetus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 688,
+			"y": 688,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sidon"
+		]
+	}, {
+		"id": "G.Ear.Pet.Vet.Joppa",
+		"name": "Joppa",
+		"inMapId": "G.Ear.Pet.Vetus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 619,
+			"y": 1499,
+			"radius": 53
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Joppa"
+		]
+	}, {
+		"id": "G.Ear.Pet.Vet.Gilead",
+		"name": "Gilead",
+		"inMapId": "G.Ear.Pet.Vetus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1716,
+			"y": 1378,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gilead"
+		]
+	}, {
+		"x-comment-x": "-----------------------Viper Nebula-------------------------",
+		"id": "G.Ear.Viper",
+		"name": "Viper Nebula",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Viper_Nebula.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3249,
+			"y": 3390,
+			"radius": 30
+		},
+		"annotationNote": "Bahak",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Viper_Nebula"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Viper_Nebula2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"x-comment-x": "--------Bahak-------",
+		"id": "G.Ear.Vip.Bahak",
+		"name": "Bahak",
+		"image": "Galaxy_Map/Earth_Systems_Alliance/Viper_Nebula/Bahak.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Ear.Viper",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 1041,
+			"radius": 127
+		},
+		"annotationNote": "Clogon, Aratoht, Yunaca, Urmola, Bastzuda",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Bahak"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Earth_Systems_Alliance/Viper_Nebula/Bahak2.pdf"
+			}
+		}
+	}, {
+		"id": "G.Ear.Vip.Bah.Clogon",
+		"name": "Clogon",
+		"inMapId": "G.Ear.Vip.Bahak",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 820,
+			"y": 953,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Clogon"
+		]
+	}, {
+		"id": "G.Ear.Vip.Bah.Aratoht",
+		"name": "Aratoht",
+		"inMapId": "G.Ear.Vip.Bahak",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1253,
+			"y": 747,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aratoht"
+		]
+	}, {
+		"id": "G.Ear.Vip.Bah.Yunaca",
+		"name": "Yunaca",
+		"inMapId": "G.Ear.Vip.Bahak",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 660,
+			"y": 1257,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Yunaca"
+		]
+	}, {
+		"id": "G.Ear.Vip.Bah.Urmola",
+		"name": "Urmola",
+		"inMapId": "G.Ear.Vip.Bahak",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 495,
+			"y": 915,
+			"radius": 65
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Urmola"
+		]
+	}, {
+		"id": "G.Ear.Vip.Bah.Bastzuda",
+		"name": "Bastzuda",
+		"inMapId": "G.Ear.Vip.Bahak",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1378,
+			"y": 465,
+			"radius": 53
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Bastzuda"
+		]
+        
+        
+        
+        
+        
+        
+	}, {
+		"x-comment-x": "-----------------------Unknown-------------------------",
+		"id": "G.Ear.Lazarus",
+		"name": "Lazarus Research Facility",
+		"inMapId": "G.Base",
+        "mapType": "Ship",
+        "rerootBreadcrumbs": true,
+        "description": "Its location is never revealed on the Galaxy Map, but it is somewhere near the Horse Head Nebula.",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Lazarus_Research_Station"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/_Secondary/Prologue/Prologue.pdf",
+                "referenceSize": "2083x2083"
+			},
+			"3": {
+			}
+		},
+		"mapLocationPoint": {
+			"x": 2446,
+			"y": 2740,
+			"radius": 30
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map 2",
+			"eraseParentValue": true
+		}]
+	}, {
+		"id": "G.Ear.Laz.Start",
+		"inMapId": "G.Ear.Lazarus",
+        "name": "Recovery Ward",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 363,
+			"y": 1334,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Laz.Bay",
+		"inMapId": "G.Ear.Lazarus",
+        "name": "Shuttle Bay",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1914,
+			"y": 673,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ear.Laz.2Shuttle",
+		"inMapId": "G.Ear.Lazarus",
+        "name": "To Shuttle",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1935,
+			"y": 945,
+			"radius": 20
+		}
+	}]
+}

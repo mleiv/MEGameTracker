@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="GcD-aw-UiP" customClass="ShepardAppearanceHeadingNib" customModule="MassEffectTracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WBH-Le-404">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDO-2N-Ag2" customClass="HairlineBorderView" customModule="MassEffectTracker" customModuleProvider="target">
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCh-jq-usA" customClass="IBStyledLabel" customModule="MassEffectTracker" customModuleProvider="target">
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.NormalColor.MediumItalic"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="qCh-jq-usA" firstAttribute="leading" secondItem="ZDO-2N-Ag2" secondAttribute="leading" constant="15" id="02N-7b-j1y"/>
+                                <constraint firstAttribute="trailing" secondItem="qCh-jq-usA" secondAttribute="trailing" constant="15" id="9K3-3I-nqI"/>
+                                <constraint firstItem="qCh-jq-usA" firstAttribute="top" secondItem="ZDO-2N-Ag2" secondAttribute="top" priority="900" constant="10" id="XUa-dy-8WB"/>
+                                <constraint firstAttribute="bottom" secondItem="qCh-jq-usA" secondAttribute="bottom" priority="900" constant="10" id="gqO-CN-vkQ"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                    <color key="value" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="WBH-Le-404" secondAttribute="trailing" id="2NA-0q-uKO"/>
+                <constraint firstAttribute="bottom" secondItem="WBH-Le-404" secondAttribute="bottom" priority="900" id="5hR-5L-q0L"/>
+                <constraint firstItem="WBH-Le-404" firstAttribute="top" secondItem="GcD-aw-UiP" secondAttribute="top" priority="900" id="7cE-z9-5IR"/>
+                <constraint firstItem="WBH-Le-404" firstAttribute="leading" secondItem="GcD-aw-UiP" secondAttribute="leading" id="eMo-9n-6La"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="qCh-jq-usA" id="AZf-Qd-9jo"/>
+            </connections>
+            <point key="canvasLocation" x="44" y="363"/>
+        </view>
+    </objects>
+</document>

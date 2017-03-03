@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EDF-di-e8I">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Persons Groups Controller-->
+        <scene sceneID="s25-Af-rAk">
+            <objects>
+                <viewController id="EDF-di-e8I" customClass="PersonsGroupsController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gqM-r6-kPT"/>
+                        <viewControllerLayoutGuide type="bottom" id="WDW-cO-aAa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bgl-bt-Fg8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QGD-pw-aeq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="kxC-0X-1Th" userLabel="Tabs" customClass="UIHeaderTabs" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Squad,Associates,Enemies"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="eRD-1p-58M" userLabel="Page Controller" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="600"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-ej-rQv" userLabel="Filler">
+                                        <rect key="frame" x="0.0" y="650" width="375" height="17"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eRD-1p-58M" firstAttribute="height" secondItem="QGD-pw-aeq" secondAttribute="height" priority="100" id="si5-bb-t2z"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WDW-cO-aAa" firstAttribute="top" secondItem="QGD-pw-aeq" secondAttribute="bottom" id="PFi-7h-ewn"/>
+                            <constraint firstItem="fjN-ej-rQv" firstAttribute="height" secondItem="bgl-bt-Fg8" secondAttribute="height" priority="1" id="SQP-NN-ga8"/>
+                            <constraint firstItem="QGD-pw-aeq" firstAttribute="leading" secondItem="bgl-bt-Fg8" secondAttribute="leading" id="aQs-0D-qzI"/>
+                            <constraint firstAttribute="trailing" secondItem="QGD-pw-aeq" secondAttribute="trailing" id="gtO-Cf-bwA"/>
+                            <constraint firstItem="QGD-pw-aeq" firstAttribute="top" secondItem="gqM-r6-kPT" secondAttribute="bottom" id="myF-pQ-TcD"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tabs" destination="kxC-0X-1Th" id="Fu1-Ug-iiD"/>
+                        <outlet property="tabsContentWrapper" destination="eRD-1p-58M" id="Gs4-2x-XjO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGs-Sd-hEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="495" y="129"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Xcode 8.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AppData" representedClassName="AppData" syncable="YES" codeGenerationType="class">
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="DataDecisions" representedClassName="DataDecisions" syncable="YES" codeGenerationType="class">
+        <attribute name="gameVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="gamesData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameDecisions" inverseName="dataParent" inverseEntity="GameDecisions" syncable="YES"/>
+    </entity>
+    <entity name="DataEvents" representedClassName="DataEvents" syncable="YES" codeGenerationType="class">
+        <attribute name="gameVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="gamesData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameEvents" inverseName="dataParent" inverseEntity="GameEvents" syncable="YES"/>
+        <relationship name="relatedItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DataItems" inverseName="relatedEvents" inverseEntity="DataItems" syncable="YES"/>
+        <relationship name="relatedMaps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DataMaps" inverseName="relatedEvents" inverseEntity="DataMaps" syncable="YES"/>
+        <relationship name="relatedMissions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DataMissions" inverseName="relatedEvents" inverseEntity="DataMissions" syncable="YES"/>
+        <relationship name="relatedPersons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DataPersons" inverseName="relatedEvents" inverseEntity="DataPersons" syncable="YES"/>
+    </entity>
+    <entity name="DataItems" representedClassName="DataItems" syncable="YES" codeGenerationType="class">
+        <attribute name="gameVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inMapId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inMissionId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isShowInList" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="gamesData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameItems" inverseName="dataParent" inverseEntity="GameItems" syncable="YES"/>
+        <relationship name="relatedEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DataEvents" inverseName="relatedItems" inverseEntity="DataEvents" syncable="YES"/>
+    </entity>
+    <entity name="DataMaps" representedClassName="DataMaps" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="inMapId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inMissionId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isMain" optional="YES" attributeType="Boolean" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <attribute name="isShowInList" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="gamesData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameMaps" inverseName="dataParent" inverseEntity="GameMaps" syncable="YES"/>
+        <relationship name="relatedEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DataEvents" inverseName="relatedMaps" inverseEntity="DataEvents" syncable="YES"/>
+    </entity>
+    <entity name="DataMissions" representedClassName="DataMissions" syncable="YES" codeGenerationType="class">
+        <attribute name="gameVersion" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="inMapId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inMissionId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isShowInList" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="missionType" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="gamesData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameMissions" inverseName="dataParent" inverseEntity="GameMissions" syncable="YES"/>
+        <relationship name="relatedEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DataEvents" inverseName="relatedMissions" inverseEntity="DataEvents" syncable="YES"/>
+    </entity>
+    <entity name="DataPersons" representedClassName="DataPersons" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="isFemaleLoveInterest" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="isMaleLoveInterest" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="personType" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="gamesData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GamePersons" inverseName="dataParent" inverseEntity="GamePersons" syncable="YES"/>
+        <relationship name="relatedEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DataEvents" inverseName="relatedPersons" inverseEntity="DataEvents" syncable="YES"/>
+    </entity>
+    <entity name="DeletedRows" representedClassName="DeletedRows" syncable="YES" codeGenerationType="class">
+        <attribute name="identifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="source" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="GameDecisions" representedClassName="GameDecisions" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gameSequenceUuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSavedToCloud" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isSelected" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="dataParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataDecisions" inverseName="gamesData" inverseEntity="DataDecisions" syncable="YES"/>
+    </entity>
+    <entity name="GameEvents" representedClassName="GameEvents" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gameSequenceUuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gameVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSavedToCloud" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isTriggered" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="dataParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataEvents" inverseName="gamesData" inverseEntity="DataEvents" syncable="YES"/>
+    </entity>
+    <entity name="GameItems" representedClassName="GameItems" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gameSequenceUuid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAcquired" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isSavedToCloud" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="dataParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataItems" inverseName="gamesData" inverseEntity="DataItems" syncable="YES"/>
+    </entity>
+    <entity name="GameMaps" representedClassName="GameMaps" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gameSequenceUuid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="isExplored" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isSavedToCloud" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="dataParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataMaps" inverseName="gamesData" inverseEntity="DataMaps" syncable="YES"/>
+    </entity>
+    <entity name="GameMissions" representedClassName="GameMissions" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gameSequenceUuid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isSavedToCloud" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="dataParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataMissions" inverseName="gamesData" inverseEntity="DataMissions" syncable="YES"/>
+    </entity>
+    <entity name="GameNotes" representedClassName="GameNotes" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gameSequenceUuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gameVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifyingObject" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="isSavedToCloud" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="shepardUuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="GamePersons" representedClassName="GamePersons" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gameSequenceUuid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="isSavedToCloud" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="dataParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataPersons" inverseName="gamesData" inverseEntity="DataPersons" syncable="YES"/>
+    </entity>
+    <entity name="GameSequences" representedClassName="GameSequences" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isSavedToCloud" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="uuid" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="GameShepards" representedClassName="GameShepards" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gameSequenceUuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gameVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSavedToCloud" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="serializedData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="uuid" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AppData" positionX="0" positionY="0" width="128" height="60"/>
+        <element name="DataDecisions" positionX="9" positionY="108" width="128" height="120"/>
+        <element name="DataEvents" positionX="9" positionY="99" width="128" height="165"/>
+        <element name="DataItems" positionX="9" positionY="90" width="128" height="180"/>
+        <element name="DataMaps" positionX="9" positionY="81" width="128" height="180"/>
+        <element name="DataMissions" positionX="0" positionY="72" width="128" height="195"/>
+        <element name="DataPersons" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="DeletedRows" positionX="9" positionY="117" width="128" height="90"/>
+        <element name="GameDecisions" positionX="18" positionY="117" width="128" height="165"/>
+        <element name="GameEvents" positionX="18" positionY="108" width="128" height="180"/>
+        <element name="GameItems" positionX="18" positionY="99" width="128" height="165"/>
+        <element name="GameMaps" positionX="18" positionY="90" width="128" height="165"/>
+        <element name="GameMissions" positionX="9" positionY="90" width="128" height="165"/>
+        <element name="GameNotes" positionX="0" positionY="72" width="128" height="180"/>
+        <element name="GamePersons" positionX="0" positionY="0" width="128" height="150"/>
+        <element name="GameSequences" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="GameShepards" positionX="0" positionY="0" width="128" height="150"/>
+    </elements>
+</model>

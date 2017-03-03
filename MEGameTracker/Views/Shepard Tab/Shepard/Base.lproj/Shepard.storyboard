@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shepard Controller-->
+        <scene sceneID="XFS-Ed-snS">
+            <objects>
+                <viewController id="FE8-Fz-nu7" customClass="ShepardController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CTG-ij-bLR"/>
+                        <viewControllerLayoutGuide type="bottom" id="BCg-J2-dR4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pUp-Qz-wJR">
+                        <rect key="frame" x="0.0" y="44" width="600" height="756"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7f-BY-Nxy">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="756"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi3-2a-qxN">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="756"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysT-3y-8gh">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="927.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="zfv-Dx-DqT" userLabel="Header">
+                                                        <rect key="frame" x="15" y="15" width="570" height="308"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="pFX-8X-ff0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="570" height="308"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-6v-Kpl" userLabel="NameWrapper">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="570" height="50"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="&lt;Loading&gt;" placeholder="John" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zco-9l-Ov9" userLabel="Name Field" customClass="IBStyledTextField" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="109" height="50"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Title.NormalColor.Medium"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                                <connections>
+                                                                                    <action selector="doneChangingName:" destination="FE8-Fz-nu7" eventType="editingDidEnd" id="uxC-pP-pK5"/>
+                                                                                    <action selector="doneChangingName:" destination="FE8-Fz-nu7" eventType="primaryActionTriggered" id="ykr-IZ-b3n"/>
+                                                                                    <action selector="nameChanged:" destination="FE8-Fz-nu7" eventType="editingChanged" id="OR7-R3-umN"/>
+                                                                                    <action selector="startChangingName:" destination="FE8-Fz-nu7" eventType="editingDidBegin" id="GhJ-N7-DTY"/>
+                                                                                </connections>
+                                                                            </textField>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" text="Shepard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqP-pb-4o7" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                <rect key="frame" x="111" y="12" width="459" height="26"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Title.NormalColor.Medium"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="SqP-pb-4o7" firstAttribute="centerY" secondItem="xyn-6v-Kpl" secondAttribute="centerY" id="7jl-RI-opO"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="Zco-9l-Ov9" secondAttribute="bottom" priority="500" id="GTn-AD-TL0"/>
+                                                                            <constraint firstItem="Zco-9l-Ov9" firstAttribute="leading" secondItem="xyn-6v-Kpl" secondAttribute="leading" id="PIv-cq-cae"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="SqP-pb-4o7" secondAttribute="trailing" id="VAk-Cd-Qtg"/>
+                                                                            <constraint firstItem="Zco-9l-Ov9" firstAttribute="top" secondItem="xyn-6v-Kpl" secondAttribute="top" priority="500" id="d1Z-PU-K5t"/>
+                                                                            <constraint firstItem="Zco-9l-Ov9" firstAttribute="centerY" secondItem="xyn-6v-Kpl" secondAttribute="centerY" id="iGc-g4-q9k"/>
+                                                                            <constraint firstItem="SqP-pb-4o7" firstAttribute="leading" secondItem="Zco-9l-Ov9" secondAttribute="trailing" constant="2" id="n8O-0H-Mge"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3n-wS-iYR">
+                                                                        <rect key="frame" x="0.0" y="65" width="570" height="200"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOL-n6-EQC" userLabel="Photo Frame">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                                                                <subviews>
+                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" image="Default BroShep" translatesAutoresizingMaskIntoConstraints="NO" id="m7D-Ro-5UT" userLabel="Photo">
+                                                                                        <rect key="frame" x="1" y="1" width="148" height="198"/>
+                                                                                    </imageView>
+                                                                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msc-1V-qjG">
+                                                                                        <rect key="frame" x="117" y="167" width="32" height="32"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="height" constant="32" id="aM7-RC-sdO"/>
+                                                                                            <constraint firstAttribute="width" constant="32" id="sAv-Gv-Rcj"/>
+                                                                                        </constraints>
+                                                                                        <state key="normal" image="Add"/>
+                                                                                        <state key="selected" image="Add (On)"/>
+                                                                                        <state key="highlighted" image="Add (On)"/>
+                                                                                        <connections>
+                                                                                            <action selector="changePhoto:" destination="FE8-Fz-nu7" eventType="touchUpInside" id="3Xh-iA-vKR"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="trailing" secondItem="m7D-Ro-5UT" secondAttribute="trailing" constant="1" id="HZu-3F-5f6"/>
+                                                                                    <constraint firstItem="m7D-Ro-5UT" firstAttribute="top" secondItem="aOL-n6-EQC" secondAttribute="top" constant="1" id="LVa-wr-i5I"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="msc-1V-qjG" secondAttribute="bottom" constant="1" id="RWx-In-wPR"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="m7D-Ro-5UT" secondAttribute="bottom" constant="1" id="Spn-ql-OhE"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="msc-1V-qjG" secondAttribute="trailing" constant="1" id="gZh-Xg-rWY"/>
+                                                                                    <constraint firstAttribute="width" constant="150" id="iJR-tD-9El"/>
+                                                                                    <constraint firstAttribute="height" constant="200" id="jkX-mE-Zkg"/>
+                                                                                    <constraint firstItem="m7D-Ro-5UT" firstAttribute="leading" secondItem="aOL-n6-EQC" secondAttribute="leading" constant="1" id="vqV-of-QOJ"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KzB-p2-bIb">
+                                                                                <rect key="frame" x="150" y="0.0" width="420" height="200"/>
+                                                                                <subviews>
+                                                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VAQ-zb-J9q" customClass="IBStyledSegmentedControl" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                        <rect key="frame" x="370" y="0.0" width="50" height="29"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="width" constant="50" id="ZJf-ho-i2o"/>
+                                                                                        </constraints>
+                                                                                        <segments>
+                                                                                            <segment title="M"/>
+                                                                                            <segment title="F"/>
+                                                                                        </segments>
+                                                                                        <connections>
+                                                                                            <action selector="genderChanged:" destination="FE8-Fz-nu7" eventType="valueChanged" id="ojx-rr-3ih"/>
+                                                                                        </connections>
+                                                                                    </segmentedControl>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ap3-MV-ssv" userLabel="Values">
+                                                                                        <rect key="frame" x="0.0" y="38" width="435" height="162"/>
+                                                                                        <subviews>
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UuV-kF-VDj" customClass="ShepardOriginView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="435" height="50"/>
+                                                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                <userDefinedRuntimeAttributes>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideHeadingOnCompactView" value="YES"/>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                                                                </userDefinedRuntimeAttributes>
+                                                                                            </view>
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVv-UQ-MzA" customClass="ShepardReputationView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                                <rect key="frame" x="0.0" y="50" width="435" height="50"/>
+                                                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                <userDefinedRuntimeAttributes>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideHeadingOnCompactView" value="YES"/>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
+                                                                                                </userDefinedRuntimeAttributes>
+                                                                                            </view>
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPT-di-MOd" customClass="ShepardClassView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                                <rect key="frame" x="0.0" y="100" width="435" height="62"/>
+                                                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                <userDefinedRuntimeAttributes>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideHeadingOnCompactView" value="YES"/>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="NO"/>
+                                                                                                </userDefinedRuntimeAttributes>
+                                                                                            </view>
+                                                                                        </subviews>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="height" priority="100" id="fM8-gh-Wos"/>
+                                                                                        </constraints>
+                                                                                    </stackView>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="VAQ-zb-J9q" firstAttribute="top" secondItem="KzB-p2-bIb" secondAttribute="top" id="I2e-me-Ae6"/>
+                                                                                    <constraint firstItem="ap3-MV-ssv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VAQ-zb-J9q" secondAttribute="bottom" constant="10" id="LJf-hP-qpE"/>
+                                                                                    <constraint firstItem="ap3-MV-ssv" firstAttribute="leading" secondItem="KzB-p2-bIb" secondAttribute="leading" id="Uzh-7o-rTT"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="VAQ-zb-J9q" secondAttribute="trailing" id="aWx-LA-HHB"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="ap3-MV-ssv" secondAttribute="bottom" id="cwn-3F-19y"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="ap3-MV-ssv" secondAttribute="trailing" constant="-15" id="jss-aL-jF1"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="KzB-p2-bIb" firstAttribute="height" relation="greaterThanOrEqual" secondItem="aOL-n6-EQC" secondAttribute="height" id="rgd-HO-1dM"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iwQ-xh-tdL" customClass="IBStyledSegmentedControl" customModule="MEGameTracker" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="280" width="570" height="29"/>
+                                                                        <segments>
+                                                                            <segment title="Game 1"/>
+                                                                            <segment title="Game 2"/>
+                                                                            <segment title="Game 3"/>
+                                                                        </segments>
+                                                                        <connections>
+                                                                            <action selector="gameChanged:" destination="FE8-Fz-nu7" eventType="valueChanged" id="CVN-th-aFy"/>
+                                                                        </connections>
+                                                                    </segmentedControl>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" priority="100" id="5Gq-sX-DJS"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="pFX-8X-ff0" secondAttribute="trailing" id="JWR-l9-eLd"/>
+                                                            <constraint firstAttribute="bottom" secondItem="pFX-8X-ff0" secondAttribute="bottom" id="ZDG-KA-Rzb"/>
+                                                            <constraint firstItem="pFX-8X-ff0" firstAttribute="leading" secondItem="zfv-Dx-DqT" secondAttribute="leading" id="ifN-N1-mHY"/>
+                                                            <constraint firstAttribute="height" priority="101" id="n3J-oa-Xu0"/>
+                                                            <constraint firstItem="pFX-8X-ff0" firstAttribute="top" secondItem="zfv-Dx-DqT" secondAttribute="top" id="rbI-gg-eaR"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="700" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zxB-id-nwo">
+                                                        <rect key="frame" x="0.0" y="338" width="600" height="569.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="nUh-7j-aNP" userLabel="Level Row" customClass="SliderRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="Rbd-SR-v1e" userLabel="Paragon Row" customClass="SliderRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="50" width="600" height="50"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="8X1-xD-Q9N" userLabel="Renegade Row" customClass="SliderRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="100" width="600" height="50"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="piV-Sv-m4y" customClass="AppearanceLinkView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="150" width="600" height="53.5"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="qYJ-Fc-QTC" userLabel="Love Interest Row" customClass="ShepardLoveInterestView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="203.5" width="600" height="50"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="ie2-VD-KcT" userLabel="Decisions List Link Row" customClass="DecisionsListLinkView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="253.5" width="600" height="50"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="CeN-sY-LeT" userLabel="Notes Row" customClass="NotesView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="303.5" width="600" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-TZ-uOf" customClass="RelatedLinksView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="353.5" width="600" height="65.5"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="http://masseffect.wikia.com/wiki/Commander_Shepard"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTq-2q-gBR" customClass="VoiceActorLinkView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="419" width="600" height="100.5"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="310" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="0FR-o7-0CW" userLabel="FIller">
+                                                                <rect key="frame" x="0.0" y="519.5" width="600" height="50"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="100" id="BX1-E8-c17"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="zxB-id-nwo" secondAttribute="trailing" id="4mX-v1-cfT"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zxB-id-nwo" secondAttribute="bottom" constant="20" id="6BM-vB-EIx"/>
+                                                    <constraint firstItem="zxB-id-nwo" firstAttribute="top" secondItem="zfv-Dx-DqT" secondAttribute="bottom" constant="15" id="9LN-jg-Naf"/>
+                                                    <constraint firstItem="zfv-Dx-DqT" firstAttribute="top" secondItem="ysT-3y-8gh" secondAttribute="top" constant="15" id="KfJ-HR-Seu"/>
+                                                    <constraint firstItem="zxB-id-nwo" firstAttribute="leading" secondItem="ysT-3y-8gh" secondAttribute="leading" id="Kpd-u5-Avs"/>
+                                                    <constraint firstItem="0FR-o7-0CW" firstAttribute="height" secondItem="ysT-3y-8gh" secondAttribute="height" priority="100" id="Mo9-RF-RBc"/>
+                                                    <constraint firstItem="zfv-Dx-DqT" firstAttribute="leading" secondItem="ysT-3y-8gh" secondAttribute="leading" constant="15" id="W2s-qn-tSO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zfv-Dx-DqT" secondAttribute="trailing" constant="15" id="pYh-hR-TRQ"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ysT-3y-8gh" firstAttribute="width" secondItem="gi3-2a-qxN" secondAttribute="width" id="6QH-sY-Mdt"/>
+                                            <constraint firstAttribute="bottom" secondItem="ysT-3y-8gh" secondAttribute="bottom" id="CCA-Uf-fjj"/>
+                                            <constraint firstItem="ysT-3y-8gh" firstAttribute="height" relation="greaterThanOrEqual" secondItem="gi3-2a-qxN" secondAttribute="height" id="H50-kJ-PY0"/>
+                                            <constraint firstAttribute="trailing" secondItem="ysT-3y-8gh" secondAttribute="trailing" id="KL8-YI-15Y"/>
+                                            <constraint firstItem="ysT-3y-8gh" firstAttribute="leading" secondItem="gi3-2a-qxN" secondAttribute="leading" id="SaF-z0-zeV"/>
+                                            <constraint firstItem="ysT-3y-8gh" firstAttribute="top" secondItem="gi3-2a-qxN" secondAttribute="top" id="e4F-Jn-aXm"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ysT-3y-8gh" firstAttribute="height" secondItem="f7f-BY-Nxy" secondAttribute="height" priority="99" id="7IB-Af-zM8"/>
+                                    <constraint firstItem="gi3-2a-qxN" firstAttribute="top" secondItem="f7f-BY-Nxy" secondAttribute="top" id="7bZ-uZ-vzS"/>
+                                    <constraint firstAttribute="trailing" secondItem="gi3-2a-qxN" secondAttribute="trailing" id="Bww-Sg-zP0"/>
+                                    <constraint firstItem="gi3-2a-qxN" firstAttribute="leading" secondItem="f7f-BY-Nxy" secondAttribute="leading" id="OBM-Jn-AJ2"/>
+                                    <constraint firstAttribute="bottom" secondItem="gi3-2a-qxN" secondAttribute="bottom" id="pRb-fZ-oMm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BCg-J2-dR4" firstAttribute="top" secondItem="f7f-BY-Nxy" secondAttribute="bottom" id="N80-yW-zAI"/>
+                            <constraint firstItem="f7f-BY-Nxy" firstAttribute="top" secondItem="pUp-Qz-wJR" secondAttribute="top" id="gnI-0A-Fdy"/>
+                            <constraint firstAttribute="trailing" secondItem="f7f-BY-Nxy" secondAttribute="trailing" id="hXn-GN-Xhd"/>
+                            <constraint firstItem="f7f-BY-Nxy" firstAttribute="leading" secondItem="pUp-Qz-wJR" secondAttribute="leading" id="oX5-zL-YPO"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="800"/>
+                    <connections>
+                        <outlet property="appearanceLinkView" destination="piV-Sv-m4y" id="tNm-1v-jqr"/>
+                        <outlet property="decisionsListLinkView" destination="ie2-VD-KcT" id="ZXs-SW-vJU"/>
+                        <outlet property="gameSegment" destination="iwQ-xh-tdL" id="O7V-Q3-v78"/>
+                        <outlet property="genderSegment" destination="VAQ-zb-J9q" id="hyT-KI-F1z"/>
+                        <outlet property="headerLinks" destination="ap3-MV-ssv" id="keS-99-Lwf"/>
+                        <outlet property="headerWrapper" destination="zfv-Dx-DqT" id="peZ-Lx-ki7"/>
+                        <outlet property="levelRow" destination="nUh-7j-aNP" id="HFX-FO-uHg"/>
+                        <outlet property="nameField" destination="Zco-9l-Ov9" id="gx5-uY-F0v"/>
+                        <outlet property="notesView" destination="CeN-sY-LeT" id="a3l-tx-3R0"/>
+                        <outlet property="paragonRow" destination="Rbd-SR-v1e" id="nrw-4r-2oO"/>
+                        <outlet property="photoImageView" destination="m7D-Ro-5UT" id="J2S-HM-eRC"/>
+                        <outlet property="relatedLinksView" destination="lLa-TZ-uOf" id="QR5-aV-ouJ"/>
+                        <outlet property="renegadeRow" destination="8X1-xD-Q9N" id="Ed7-hA-AlX"/>
+                        <outlet property="shepardClassView" destination="PPT-di-MOd" id="Jox-GS-ex9"/>
+                        <outlet property="shepardLoveInterestView" destination="qYJ-Fc-QTC" id="Pdl-2U-aki"/>
+                        <outlet property="shepardOriginView" destination="UuV-kF-VDj" id="H1r-jK-kam"/>
+                        <outlet property="shepardReputationView" destination="GVv-UQ-MzA" id="7al-6s-wDz"/>
+                        <outlet property="surnameLabel" destination="SqP-pb-4o7" id="j5N-8V-4Qn"/>
+                        <outlet property="voiceActorLinkView" destination="wTq-2q-gBR" id="LZ5-fE-vvs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5N-bv-Yi9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921.60000000000002" y="270.76461769115446"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Add" width="30" height="30"/>
+        <image name="Add (On)" width="30" height="30"/>
+        <image name="Default BroShep" width="300" height="400"/>
+    </resources>
+</document>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="5zZ-mv-i3w" userLabel="Wrapper" customClass="NotesNib" customModule="MassEffectTracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WMn-gn-MQV">
+                    <rect key="frame" x="0.0" y="0.0" width="500" height="75"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjP-Nb-kAL" userLabel="Text">
+                            <rect key="frame" x="0.0" y="0.0" width="500" height="50"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Weg-Jb-tQU">
+                                    <rect key="frame" x="15" y="0.0" width="470" height="50"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JO1-h3-0Q1">
+                                            <rect key="frame" x="0.0" y="0.0" width="405.5" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXx-EN-8Yg" customClass="IBStyledLabel" customModule="MassEffectTracker" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="8" width="405.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.NormalColor"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nXx-EN-8Yg" firstAttribute="leading" secondItem="JO1-h3-0Q1" secondAttribute="leading" id="6NO-3l-HLJ"/>
+                                                <constraint firstItem="nXx-EN-8Yg" firstAttribute="top" secondItem="JO1-h3-0Q1" secondAttribute="top" constant="8" id="CqL-Qg-8ql"/>
+                                                <constraint firstAttribute="bottom" secondItem="nXx-EN-8Yg" secondAttribute="bottom" constant="2" id="Ewv-TM-HXN"/>
+                                                <constraint firstAttribute="trailing" secondItem="nXx-EN-8Yg" secondAttribute="trailing" id="PK7-gu-d2j"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypq-nR-Nhx" userLabel="Add">
+                                            <rect key="frame" x="405.5" y="0.0" width="64.5" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="Add Note" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i3-8r-pna" customClass="IBStyledLabel" customModule="MassEffectTracker" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="8" width="64.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.TintColor.Italic"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPX-RU-Wey">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64.5" height="50"/>
+                                                    <connections>
+                                                        <action selector="addButtonClicked:" destination="5zZ-mv-i3w" eventType="touchUpInside" id="8B5-qq-PrO"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rPX-RU-Wey" firstAttribute="leading" secondItem="Ypq-nR-Nhx" secondAttribute="leading" id="6E6-p6-9hZ"/>
+                                                <constraint firstItem="rPX-RU-Wey" firstAttribute="top" secondItem="Ypq-nR-Nhx" secondAttribute="top" id="7k1-GA-tXw"/>
+                                                <constraint firstItem="7i3-8r-pna" firstAttribute="top" secondItem="Ypq-nR-Nhx" secondAttribute="top" constant="8" id="9Yc-Wh-3lN"/>
+                                                <constraint firstAttribute="trailing" secondItem="7i3-8r-pna" secondAttribute="trailing" id="COH-cM-oxE"/>
+                                                <constraint firstAttribute="trailing" secondItem="rPX-RU-Wey" secondAttribute="trailing" id="HBO-xU-e7R"/>
+                                                <constraint firstAttribute="bottom" secondItem="7i3-8r-pna" secondAttribute="bottom" constant="2" id="IY6-1z-MLI"/>
+                                                <constraint firstAttribute="bottom" secondItem="rPX-RU-Wey" secondAttribute="bottom" id="rDX-uM-pV5"/>
+                                                <constraint firstItem="7i3-8r-pna" firstAttribute="leading" secondItem="Ypq-nR-Nhx" secondAttribute="leading" id="yri-Xm-ljd"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Weg-Jb-tQU" secondAttribute="trailing" constant="15" id="LF1-Ma-pMc"/>
+                                <constraint firstItem="Weg-Jb-tQU" firstAttribute="leading" secondItem="yjP-Nb-kAL" secondAttribute="leading" constant="15" id="T6V-gy-U7y"/>
+                                <constraint firstItem="Weg-Jb-tQU" firstAttribute="top" secondItem="yjP-Nb-kAL" secondAttribute="top" id="guw-0K-Taf"/>
+                                <constraint firstAttribute="bottom" secondItem="Weg-Jb-tQU" secondAttribute="bottom" priority="903" id="ktz-uB-Cmg"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMf-Uh-u6u" userLabel="Border" customClass="HairlineBorderView" customModule="MassEffectTracker" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="50" width="500" height="0.0"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="hTe-6J-iHV"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                    <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uc5-Ab-zpT" customClass="LayoutNotifyingTableView" customModule="MassEffectTracker" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="50" width="500" height="25"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </tableView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="WMn-gn-MQV" secondAttribute="bottom" priority="900" id="1kb-Iw-W2E"/>
+                <constraint firstAttribute="trailing" secondItem="WMn-gn-MQV" secondAttribute="trailing" id="Jq3-dh-isP"/>
+                <constraint firstItem="WMn-gn-MQV" firstAttribute="leading" secondItem="5zZ-mv-i3w" secondAttribute="leading" id="N4O-Xq-kSZ"/>
+                <constraint firstItem="WMn-gn-MQV" firstAttribute="top" secondItem="5zZ-mv-i3w" secondAttribute="top" priority="900" id="vyf-aN-d6k"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                    <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="addButton" destination="rPX-RU-Wey" id="0fQ-Ff-h8D"/>
+                <outlet property="addLabel" destination="7i3-8r-pna" id="8ew-SM-nHz"/>
+                <outlet property="headingLabel" destination="nXx-EN-8Yg" id="bJT-LQ-hSV"/>
+                <outlet property="headingLabelWrapper" destination="yjP-Nb-kAL" id="VOc-jE-WBc"/>
+                <outlet property="tableView" destination="uc5-Ab-zpT" id="Gkb-aH-bgY"/>
+            </connections>
+            <point key="canvasLocation" x="-4" y="120.5"/>
+        </view>
+    </objects>
+</document>

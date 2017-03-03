@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shepard Origin Controller-->
+        <scene sceneID="XFS-Ed-snS">
+            <objects>
+                <viewController id="FE8-Fz-nu7" customClass="ShepardOriginController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CTG-ij-bLR"/>
+                        <viewControllerLayoutGuide type="bottom" id="BCg-J2-dR4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1jD-Wb-SIN">
+                        <rect key="frame" x="0.0" y="44" width="600" height="956"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IN1-5b-ce5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="956"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Fb-7e-rGq" userLabel="Interior">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1051"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AYY-2v-sQD" userLabel="Values">
+                                                <rect key="frame" x="0.0" y="10" width="600" height="1021"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="k51-d7-Fui" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Spacer"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="ovU-Ir-AbC" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="50" width="600" height="50"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Spacer grants a Paragon bonus.  Game 1 Mission Citadel: Old, Unhappy, Far-Off Things is only available if you select Spacer."/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="c7L-kC-Ess" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="100" width="600" height="50"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Colonist"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="kaf-to-08w" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="150" width="600" height="50"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text">
+                                                                <string key="value">Colonist grants a part-Renegade/part-Paragon bonus.  Game 1 Mission Citadel: I Remember Me is only available if you select Colonist.</string>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="g46-5d-vGL" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="200" width="600" height="50"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Earthborn"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="do9-aI-bdT" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="250" width="600" height="50"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Earthborn grants a Renegade bonus.  Game 1 Mission Citadel: Old Friends is only available if you select Earthborn."/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="x61-Tq-pcq" userLabel="Filler">
+                                                        <rect key="frame" x="0.0" y="300" width="600" height="721"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="100" id="8CG-Il-Rdu"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="AYY-2v-sQD" firstAttribute="leading" secondItem="8Fb-7e-rGq" secondAttribute="leading" id="NNx-GO-xf6"/>
+                                            <constraint firstItem="AYY-2v-sQD" firstAttribute="top" secondItem="8Fb-7e-rGq" secondAttribute="top" priority="900" constant="10" id="cnq-Ae-uhx"/>
+                                            <constraint firstAttribute="trailing" secondItem="AYY-2v-sQD" secondAttribute="trailing" id="t2C-7O-2om"/>
+                                            <constraint firstAttribute="bottom" secondItem="AYY-2v-sQD" secondAttribute="bottom" priority="900" constant="20" id="yxv-Bk-uxu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8Fb-7e-rGq" firstAttribute="height" relation="greaterThanOrEqual" secondItem="IN1-5b-ce5" secondAttribute="height" id="NUY-wZ-zLz"/>
+                                    <constraint firstItem="8Fb-7e-rGq" firstAttribute="top" secondItem="IN1-5b-ce5" secondAttribute="top" id="VrW-Hz-nKx"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Fb-7e-rGq" secondAttribute="trailing" id="eyw-R1-wg3"/>
+                                    <constraint firstItem="8Fb-7e-rGq" firstAttribute="width" secondItem="IN1-5b-ce5" secondAttribute="width" id="hpA-0y-5Vn"/>
+                                    <constraint firstItem="8Fb-7e-rGq" firstAttribute="leading" secondItem="IN1-5b-ce5" secondAttribute="leading" id="lXn-TU-waR"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Fb-7e-rGq" secondAttribute="bottom" id="xvN-di-Qlu"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="x61-Tq-pcq" firstAttribute="height" secondItem="1jD-Wb-SIN" secondAttribute="height" priority="100" id="02t-CJ-jfw"/>
+                            <constraint firstAttribute="bottom" secondItem="IN1-5b-ce5" secondAttribute="bottom" id="1H2-IE-37x"/>
+                            <constraint firstItem="IN1-5b-ce5" firstAttribute="leading" secondItem="1jD-Wb-SIN" secondAttribute="leading" id="ATe-CT-U9j"/>
+                            <constraint firstItem="8Fb-7e-rGq" firstAttribute="height" secondItem="1jD-Wb-SIN" secondAttribute="height" priority="100" id="Abl-zy-tgc"/>
+                            <constraint firstItem="IN1-5b-ce5" firstAttribute="top" secondItem="1jD-Wb-SIN" secondAttribute="top" id="lKZ-Wn-S4t"/>
+                            <constraint firstAttribute="trailing" secondItem="IN1-5b-ce5" secondAttribute="trailing" id="rjU-70-k3y"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1000"/>
+                    <connections>
+                        <outlet property="colonistRadio" destination="c7L-kC-Ess" id="iwi-sC-yah"/>
+                        <outlet property="colonistSideEffectsView" destination="kaf-to-08w" id="PSr-Yo-Y91"/>
+                        <outlet property="earthbornRadio" destination="g46-5d-vGL" id="6ue-LD-ZkH"/>
+                        <outlet property="earthbornSideEffectsView" destination="do9-aI-bdT" id="cAL-a0-vzt"/>
+                        <outlet property="spacerRadio" destination="k51-d7-Fui" id="Mpq-x2-TWo"/>
+                        <outlet property="spacerSideEffectsView" destination="ovU-Ir-AbC" id="0hx-Yt-ZYI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5N-bv-Yi9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="271"/>
+        </scene>
+    </scenes>
+</document>

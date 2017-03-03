@@ -1,0 +1,569 @@
+{
+	"missions": [{
+
+		"x-comment-x": "-----------------------DLC QUESTS-------------------------",
+		"id": "DLC3.FromAshes1",
+		"sortIndex": 1001,
+		"gameVersion": "3",
+		"missionType": "DLC",
+		"name": "Priority: Eden Prime",
+		"description": "Cerberus has discovered a Prothean artifact on Eden Prime. \n\n*_This assignment was released as part of the From Ashes DLC pack._*",
+		"inMapId": "G.Ear.Exo.Uto.Eden",
+		"isLinksToParentMap": true,
+		"experience": 0,
+		"reward": "5,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Eden_Prime"],
+		"relatedMissionIds": ["DLC3.FromAshes2"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: The Citadel I"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Eden Prime"
+		}]
+	}, {
+		"id": "DLC3.FromAshes1.1",
+		"inMissionId": "DLC3.FromAshes1",
+		"sortIndex": 10011,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Examine Pod",
+		"description": "Sneak into the camp and investigate the prothean pod Cerberus has dug up. It is too damaged to attempt opening it without instructions and the correct command signal."
+	}, {
+		"id": "DLC3.FromAshes1.2",
+		"inMissionId": "DLC3.FromAshes1",
+		"sortIndex": 10012,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Opening Instructions",
+		"description": "The opening instructions are in a lab to the left. You will see a prothean vision of Javik opening the prothean pod of a fallen teammate."
+	}, {
+		"id": "DLC3.FromAshes1.3",
+		"inMissionId": "DLC3.FromAshes1",
+		"sortIndex": 10013,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Command Signal",
+		"description": "The command signal is in a building to the right. You will see another prothean vision of Javik when the VI send the stasis command signal to all pods."
+	}, {
+		"id": "DLC3.FromAshes1.4",
+		"inMissionId": "DLC3.FromAshes1",
+		"sortIndex": 10014,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Return to Pod",
+		"description": "Cerberus sends reinforcements to keep you from the pod, and destroys the bridge. Find another way."
+	}, {
+		"id": "DLC3.FromAshes1.5",
+		"inMissionId": "DLC3.FromAshes1",
+		"sortIndex": 10015,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Open Pod",
+		"description": "When you have finished fighting off additional Cerberus forces, you can open the pod."
+	}, {
+		"id": "DLC3.FromAshes2",
+		"sortIndex": 1002,
+		"gameVersion": "3",
+		"missionType": "Assignment",
+		"name": "Eden Prime: Resistance Movement",
+		"description": "The colonists of Eden Prime are fighting the Cerberus occupation. Help the resistance movement by getting them Cerberus intel. You will need to gather three pieces of intel in the Cerberus camp. \n\n*_This assignment was released as part of the From Ashes DLC pack._*",
+		"inMapId": "G.Ear.Exo.Uto.Eden",
+		"isLinksToParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Eden_Prime:_Resistance_Movement"],
+		"relatedMissionIds": ["DLC3.FromAshes1"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: The Citadel I"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Completed: Priority: Eden Prime"
+		}]
+	}, {
+		"inMissionId": "DLC3.FromAshes2.1",
+		"id": "DLC3.FromAshes2",
+		"sortIndex": 10021,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Processing Update",
+		"description": ""
+	}, {
+		"inMissionId": "DLC3.FromAshes2.2",
+		"id": "DLC3.FromAshes2",
+		"sortIndex": 10022,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Troop Deployment Update",
+		"description": ""
+	}, {
+		"inMissionId": "DLC3.FromAshes2.3",
+		"id": "DLC3.FromAshes2",
+		"sortIndex": 10023,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Resistance Information Update",
+		"description": ""
+
+
+	}, {
+		"id": "DLC3.Leviathan",
+		"sortIndex": 1090,
+		"gameVersion": "3",
+		"missionType": "DLC",
+		"name": "Leviathan",
+		"aliases": ["Citadel: Dr. Bryson", "Citadel: Leviathan I", "Leviathan: Find Garneau", "Mahavid: Leviathan", "Citadel: Leviathan II", "Leviathan: Find Ann Bryson", "Citadel: Leviathan III", "Leviathan: Scan Locations", "Despoina: Leviathan"],
+		"description": "Hackett sends you to speak with [megametracker://person?id=O2.GBryson], part of Task Force Aurora researcing Reaper legends. He has discovered an ancient race that could destroy Reapers. When you get there, however, Bryson's indoctrinated assistant kills him. The mission then has three steps: locate Garneau, another member of the team on  \n\n*_This assignment was released as part of the Leviathan DLC pack._*",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mass_Effect_3:_Leviathan"],
+		"decisionIds": ["D3.AnnBryson"]
+	}, {
+		"id": "DLC3.Leviathan.1",
+		"inMissionId": "DLC3.Leviathan",
+		"sortIndex": 10901,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Dr. Bryson",
+		"description": "Go to the Citadel to meet Dr. Bryson. Before you can speak with him, Bryson's Indoctrinated assistant, Hadley, kills him. After interrogating Hadley, search the lab for clues. There are six different items relating to Blackout Crimes, Creature Sightings, Rachni Activity, Locations with Element Zero, Prothean Activities, and Reaper Activities. You can add and remove filters to the search map on the first level of the lab, narrowing in on a destination. The three relevant right now are: Creature Sightings, Locations with Element Zero, and Reaper Activities.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Dr._Bryson",
+			"https://masseffect.wikia.com/wiki/Citadel:_Leviathan_I"
+		]
+	}, {
+		"id": "DLC3.Leviathan.2",
+		"inMissionId": "DLC3.Leviathan",
+		"sortIndex": 10902,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Dr. Garneau",
+		"description": "Head to the mining colony and look around for Garneau. The place is locked down and it will take some work to gain access to the medical wing. Take the personnel id from the datapad nearby and use it to get into the personnel area, where the security terminal will give you a patient id you can use to get into the medical wing. There you will find a patient locked up, claiming to be Garneau. Let him out and chase him as he flees. He is obviously Indoctrinated, but the Reaper forces chasing him see him as a threat. You follow him down into the mines, where he chooses to detonate himself and the artifact there rather than let you have it. You find the real Garneau's body nearby. At this point the workers wake up from their Indoctrination, having forgotten the last 10 years of their lives.",
+		"inMapId": "G.Att.Cal.Ays.Mahavid",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Leviathan:_Find_Garneau",
+			"https://masseffect.wikia.com/wiki/Mahavid:_Leviathan"
+		]
+	}, {
+		"id": "DLC3.Leviathan.3",
+		"inMissionId": "DLC3.Leviathan",
+		"sortIndex": 10903,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Find Ann Bryson",
+		"description": "Head back to the lab on the Citadel. EDI has shielded the artifact there to protect anyone else from being Indoctrinated. There is a message from Dr. Bryson's daughter [Ann|megametracker://person?id=O3.ABryson]. \n\nYou will need two more clues to find where Ann is. Open the drawer next to the husk and examine the pda inside. It has an access card to the requisition locker. Inside the locker is a clue. \n\nRead the datapad on the table mentioning Ann's ship, the Icarus. Examine the terminal enough times to show the Icarus. It is a long range ship, another clue.\n\n Use the filters to decide where Ann has gone.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Leviathan_II",
+			"https://masseffect.wikia.com/wiki/Leviathan:_Find_Ann_Bryson"
+		]
+	}, {
+		"id": "DLC3.Leviathan.4",
+		"inMissionId": "DLC3.Leviathan",
+		"sortIndex": 10904,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Ann Bryson's Dig Site",
+		"description": "Go to Ann Bryson's dig site. It is under heavy attack by Reaper forces. You will have to fight your way through to rescue her, and your path will often be altered as the structure collapses.",
+		"inMapId": "G.Ter.Pyl.Zah.Namakli",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Namakli:_Leviathan"
+		]
+	}, {
+		"id": "DLC3.Leviathan.5",
+		"inMissionId": "DLC3.Leviathan",
+		"sortIndex": 10905,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Find Leviathan",
+		"description": "You can use Ann to find Leviathan, by inducing Leviathan to speak through her and tracing the signal back. However, if you leave Ann in Leviathan's control for too long, she will suffer permanent damage and you will lose her as a War Asset.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Leviathan_III",
+			"https://masseffect.wikia.com/wiki/Leviathan:_Scan_Locations"
+		],
+        "sideEffects": [
+            "If you talk to [megametracker://person?id=S3.Vega] repeatedly in the lab when he is examining the husk head, he will eventually ask if you can take the head back to the Normandy for laughs... and you agree."
+        ]
+	}, {
+		"id": "DLC3.Leviathan.6",
+		"inMissionId": "DLC3.Leviathan",
+		"sortIndex": 10906,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Leviathan",
+		"description": "While descending to the planet, your shuttle is disabled by a mysterious pulse. Cortez is able to land on the wreckage of an older downed ship. You will have a few minutes to explore the wreck and learn of their Indoctrinated end, but then Reaper forces descend and you will have a tough fight. \n\nDespite getting the shuttle high enough to provide air support during the attack, Cortez says the pulse won't let you leave the planet. Instead, he suggests heading into the deep to meet Leviathan via the Triton ADS mech left over from the downed ship's cargo. It just needs to be powered up. \n\nThere is another Reaper battle while you gather the batteries to power up the mech. Once it is charged, you can use the mech to help clear out remaining enemies, then simply walk off the downed ship into the water and once you hit the bottom, follow the flares until you find Leviathan. \n\nHe does not want to join the war effort, and tries to take you over, but - as always - Shepard resists, and Leviathan is impressed enough to agree to help.",
+		"inMapId": "G.Ter.Sig.Psi.2181Despoina",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Despoina:_Leviathan"
+		]
+
+	}, {
+		"id": "DLC3.Omega1",
+		"sortIndex": 1017,
+		"gameVersion": "3",
+		"missionType": "DLC",
+		"name": "Citadel: Aria T'Loak",
+		"description": "Speak to Aria at Purgatory club on the Citadel. She wants help retaking Omega from Cerberus. \n\n*_This assignment was released as part of the Omega DLC pack._*",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Aria_T%27Loak"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Palaven"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Completed: Priority: Cerberus Headquarters"
+		}]
+	}, {
+		"id": "DLC3.Omega2",
+		"sortIndex": 1080,
+		"gameVersion": "3",
+		"missionType": "DLC",
+		"name": "Omega: Aria T'Loak",
+		"description": "Accompany Aria back to Omega and fight through Cerberus forces to regain control of the station. \n\n*_This assignment was released as part of the Omega DLC pack._*",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Aria_T%27Loak"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Palaven"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Completed: Priority: Cerberus Headquarters"
+		}]
+	}, {
+		"id": "DLC3.Omega3.Hacker",
+		"sortIndex": 1081,
+		"gameVersion": "3",
+		"missionType": "DLC",
+		"name": "Omega: Assist The Hacker",
+		"description": "Aria's hacker at the bunker will ask you to trigger some consoles as you fight your way through Cerberus territory, so as to let Aria's team reclaim more control over that part of the station. \n\n*_This assignment was released as part of the Omega DLC pack._*",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Assist_the_Hacker"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Palaven"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Completed: Priority: Cerberus Headquarters"
+		}]
+	}, {
+		"id": "DLC3.Omega3.Mechanic",
+		"sortIndex": 1082,
+		"gameVersion": "3",
+		"missionType": "DLC",
+		"name": "Omega: Assist The Mechanic",
+		"description": "The batarian mechanic at Aria's bunker is having problems with the bunker's power inverters - they keep shorting out, and he needs a new one. It can be found behind some boxes at the Talon outpost.\n\n*_This assignment was released as part of the Omega DLC pack._*",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Assist_Harrot"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Palaven"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Completed: Priority: Cerberus Headquarters"
+		}]
+	}, {
+		"id": "DLC3.Omega3.Harrot",
+		"sortIndex": 1083,
+		"gameVersion": "3",
+		"missionType": "DLC",
+		"name": "Omega: Assist Harrot",
+		"description": "[megametracker://person?id=O2.Harrot] is looking for Aria's favorite couch. [megametracker://person?id=E3.Petrovsky] threw it out of Afterlife. Look for it as you fight your way back to the club. \n\n*_This assignment was released as part of the Omega DLC pack._*",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Assist_Harrot"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Palaven"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Completed: Priority: Cerberus Headquarters"
+		}]
+
+	}, {
+		"id": "DLC3.Citadel",
+		"sortIndex": 1500,
+		"gameVersion": "3",
+		"missionType": "DLC",
+		"name": "Citadel: Shore Leave",
+		"description": "The Normandy is due for repairs. Admiral Anderson has given you his apartment on the Citadel to relax during the retrofit. \n\nWhen you meet Joker for dinner, it begins a long, funny mission where you join up with all your past teammates and end up fighting your clone. When you win, you have a party with everyone and play games at the arcade. Like [megametracker://mission?id=DLC1.PS.CombatMissions] and [megametracker://mission?id=DLC2.LairShadowBroker], this DLC provides some extra currency (by winning the Armax Arsenal Arena). \n\n*_This assignment was released as part of the Citadel DLC pack._*",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Shore_Leave"],
+        "decisionIds": ["D3.Brooks"],
+        "sideEffects": [
+            "I recommend saving the game at the point where you bring a team to board the Normandy, so you can experiment with various squad conversations on the ride there. EDI is particularly hilarious."
+        ]
+
+	}, {
+		"id": "DLC3.ExtendedCut",
+		"sortIndex": 2000,
+		"gameVersion": "3",
+		"missionType": "DLC",
+		"name": "Extended Cut",
+		"description": "The original ending cut scenes of Game 3 were short and unsatisfying, with many plot holes. This provides a longer and more meaningful ending. \n\n*_This was released as part of the Extended Cut DLC pack._*",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mass_Effect_3:_Extended_Cut"]
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------Collections-------------------------",
+		"id": "A3.WarAssets",
+		"sortIndex": 990,
+		"gameVersion": "3",
+		"missionType": "Collection",
+		"name": "War Assets",
+		"description": "There are too many war assets for me to track them all (at least for now). I am only including here the assets retrieved through planetary scans, etc., which are not tied to any other assignment.",
+		"z-comment-z": "-------------   War Assets in Items_Scans    ---------------"
+	}, {
+		"id": "A3.Artifacts",
+		"sortIndex": 995,
+		"gameVersion": "3",
+		"missionType": "Collection",
+		"name": "Artifacts"
+	}, {
+		"id": "A3.Souvenirs",
+		"sortIndex": 997,
+		"gameVersion": "3",
+		"missionType": "Collection",
+		"name": "Souvenirs"
+
+
+	}, {
+		"x-comment-x": "-----------------------Artifacts-------------------------",
+		"id": "A3.ProtheanSphere",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1232,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Hades Nexus: Prothean Sphere",
+		"description": "A refugee in the Citadel docks thinks he knows where a prothean sphere is. Locate it and let him know it was found.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Hades_Nexus:_Prothean_Sphere"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Rannoch"
+		}]
+	}, {
+		"id": "A3.ObeliskofKarza",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1231,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Hades Nexus: Obelisk of Karza",
+		"description": "A researcher in the courtyard at the Citadel is looking for an artifact with prothean language translations. When you find the Obelisk, let him know that it is what he is looking for.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Hades_Nexus:_Obelisk_of_Karza"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Rannoch"
+		}]
+	}, {
+		"id": "A3.KakliosaurFossil",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1236,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Citadel: Kakliosaur Fossil",
+		"description": "A salarian scientist near the Citadel apartments thinks he might be able to improve krogan endurance in toxic environments if he had a preserved kakliosaur specimin. When you find the fossil, turn it over for this project.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Kakliosaur_Fossil"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Geth Dreadnought"
+		}]
+	}, {
+		"id": "A3.CodeOfTheAncients",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1230,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Dekuuna: Code of the Ancients",
+		"description": "An elcor just outside the Purgatory elevator needs the ancient elcor text, the Code of the Ancients, to inspire his people, but it is on Dekuuna. Bring it to him when you have found it.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dekuuna:_Code_of_the_Ancients"],
+		"relatedMissionIds": ["A3.ElcorExtraction"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Rannoch"
+		}]
+	}, {
+		"id": "A3.ApienCrest",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1006,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Apien Crest: Banner of the First Regiment",
+		"description": "A turian officer hanging out in Purgatory needs the Banner of the First Regiment to inspire his troops. Find it and notify him that you have it.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Apien_Crest:_Banner_of_the_First_Regiment"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: The Citadel I"
+		}]
+	}, {
+		"id": "A3.ProtheanObelisk",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1005,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Shrike Abyssal: Prothean Obelisk",
+		"description": "A volus diplomat in the Citadel embassy is looking for a lost Prothean obelisk. Find it and give it to him.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Shrike_Abyssal:_Prothean_Obelisk"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Palaven"
+		}]
+	}, {
+		"id": "A3.BookOfPlenix",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1030,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Irune: Book of Plenix",
+		"description": "A volus in the Presidium Commons wants to inspire his people, but he needs the rare Book of Plenix. Find it and bring it back to him.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Irune:_Book_of_Plenix"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Palaven"
+		}, {
+			"type": "BlockedAfter",
+			"id": "Completed: Priority: The Citadel II"
+		}]
+	}, {
+		"id": "A3.PillarsOfStrength",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1035,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Kite's Nest: Pillars of Strength",
+		"description": "A batarian preacher in the Citadel docks wants the Pillars of Strength to inspire the batarian refugees. Find them and bring them to him.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kite%27s_Nest:_Pillars_of_Strength"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: The Citadel II"
+		}]
+	}, {
+		"id": "A3.HesperiaPeriodStatue",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1205,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Athena Nebula: Hesperia-Period Statue",
+		"description": "An asari working on the Crucible in the Citadel Commons needs a statue from the Hesperia period. Find one and bring it to her.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Athena_Nebula:_Hesperia-Period_Statue"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: The Citadel II"
+		}]
+	}, {
+		"id": "A3.LibraryofAsha",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1233,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Nimbus Cluster: Library of Asha",
+		"description": "An asari military trainer in Purgatory is looking for instructional texts. When you find the Library of Asha, delvier it to her.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Nimbus_Cluster:_Library_of_Asha"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: The Citadel II"
+		}]
+	}, {
+		"id": "A3.RingsofAlune",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1234,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Silean Nebula: Rings of Alune",
+		"description": "An Asari consultant on the Citadel needs the Rings of Alune. Find them in the Silean Nebula and return them to her at the Huerta Memorial Hospital.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Silean_Nebula:_Rings_of_Alune"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Rannoch"
+		}]
+	}, {
+		"id": "A3.ProtheanDataDrives",
+		"inMissionId": "A3.Artifacts",
+		"sortIndex": 1235,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Valhallan Threshold: Prothean Data Drives",
+		"description": "An Alliance soldier knows the location of Prothean drives that could help with the Crucible project. Recover them from Garvug in the Valhallan Threshold and bring them to him at the Citadel docking bay.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Valhallan_Threshold:_Prothean_Data_Drives"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: The Citadel II"
+		}]
+	}]
+}

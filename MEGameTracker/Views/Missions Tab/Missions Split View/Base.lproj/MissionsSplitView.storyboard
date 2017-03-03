@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EDF-di-e8I">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Missions Split View Controller-->
+        <scene sceneID="s25-Af-rAk">
+            <objects>
+                <viewController id="EDF-di-e8I" customClass="MissionsSplitViewController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gqM-r6-kPT"/>
+                        <viewControllerLayoutGuide type="bottom" id="WDW-cO-aAa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vbp-u8-LdY" userLabel="Root">
+                        <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="FTA-Xm-WFV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRt-CN-GBr" customClass="IBIncludedSubThing" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="Missions"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="305" translatesAutoresizingMaskIntoConstraints="NO" id="5EJ-UB-WEk" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="375" y="0.0" width="0.0" height="623"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="900" constant="1" id="xYG-w4-19N"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZx-qo-85M" userLabel="Detail Placeholder" customClass="IBIncludedSubThing" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="375" y="0.0" width="0.0" height="623"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BZx-qo-85M" firstAttribute="bottom" secondItem="BRt-CN-GBr" secondAttribute="bottom" id="7Gt-lx-Aov"/>
+                                    <constraint firstItem="5EJ-UB-WEk" firstAttribute="height" secondItem="BRt-CN-GBr" secondAttribute="height" id="SeL-ct-XNX"/>
+                                    <constraint firstItem="BZx-qo-85M" firstAttribute="width" secondItem="FTA-Xm-WFV" secondAttribute="width" multiplier="0.6" priority="900" id="o5E-Cd-owq"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FTA-Xm-WFV" firstAttribute="top" secondItem="vbp-u8-LdY" secondAttribute="top" id="1Jm-6C-6Fj"/>
+                            <constraint firstAttribute="trailing" secondItem="FTA-Xm-WFV" secondAttribute="trailing" id="4mZ-M0-lIW"/>
+                            <constraint firstItem="FTA-Xm-WFV" firstAttribute="leading" secondItem="vbp-u8-LdY" secondAttribute="leading" id="66z-8F-vlw"/>
+                            <constraint firstItem="BZx-qo-85M" firstAttribute="top" secondItem="gqM-r6-kPT" secondAttribute="bottom" id="frl-HO-Dcw"/>
+                            <constraint firstAttribute="bottom" secondItem="FTA-Xm-WFV" secondAttribute="bottom" id="kxu-31-mbT"/>
+                            <constraint firstItem="BRt-CN-GBr" firstAttribute="height" secondItem="vbp-u8-LdY" secondAttribute="height" id="vcY-fb-vpM"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="detailBorderLeftView" destination="5EJ-UB-WEk" id="qF4-y1-REf"/>
+                        <outlet property="detailPlaceholder" destination="BZx-qo-85M" id="sSI-Dg-pDr"/>
+                        <outlet property="mainPlaceholder" destination="BRt-CN-GBr" id="S2E-Zw-fBf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGs-Sd-hEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="495" y="129"/>
+        </scene>
+    </scenes>
+</document>

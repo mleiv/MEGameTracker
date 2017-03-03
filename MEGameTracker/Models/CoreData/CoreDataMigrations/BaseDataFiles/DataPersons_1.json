@@ -1,0 +1,616 @@
+{
+	"persons": [{
+		"x-comment-x": "-----------------------SQUAD-------------------------",
+		"id": "S1.Ashley",
+		"name": "Ashley Williams",
+		"description": "From a long line of Alliance soldiers, Ashley enlisted early and was promoted quickly. After losing her squad on Eden Prime, searching for answers, she joins Shepard's squad.",
+		"personType": "Squad",
+		"isMaleLoveInterest": 1,
+		"race": "Human",
+		"profession": "Soldier",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Ashley.png",
+		"voiceActor": "Kimberly Brooks",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Ashley_Williams"],
+		"relatedMissionIds": ["M1.Prologue", "M1.Virmire.10"],
+		"decisionIds": ["D1.Ashley", "D1.LoveAshley", "D3.LoveAshley"],
+		"loveInterestDecisionId": "D1.LoveAshley",
+        "sideEffects": [
+            "If you make bad decisions in Game 3, you are forced to kill Ashley during [megametracker://mission?id=M3.2.Citadel2]: [YouTube|https://www.youtube.com/watch?v=ljXiscn5hjE]."
+        ],
+		"gameVersionData": {
+			"2": {
+
+				"personType": "Associate",
+				"isMaleLoveInterest": 0,
+				"description": "A loyal friend and former squadmate, Ashley has mixed feelings seeing Shepard alive but working for Cerberus on Horizon. She is suspicious that Cerberus has tampered with Shepard's mind.",
+				"loveInterestDecisionId": null,
+				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Ashley.png"
+			},
+			"3": {
+				"profession": "Officer",
+				"description": "Ashley begins Game 3 on Shepard's team, but whether she remains depends on how hard Shepard works to persuade her that Cerberus didn't change Shepard in Game 2.",
+				"loveInterestDecisionId": "D3.LoveAshley",
+				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Ashley.png"
+			}
+		}
+	}, {
+		"id": "S1.Garrus",
+		"name": "Garrus Vakarian",
+		"description": "A former C-Sec officer, Garrus investigated [Saren|megametracker://person?id=E1.Saren] after the claims he had gone rogue. However, Saren's spectre status hampered the inquiry, and the Council closed the investigation. But Garrus refuses to let this stop him.",
+		"personType": "Squad",
+		"race": "Turian",
+		"profession": "Agent",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Garrus.png",
+		"voiceActor": "Brandon Keener",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Garrus_Vakarian"],
+		"relatedMissionIds": ["M1.Garrus", "A1.L.FindDrSaleon"],
+		"decisionIds": ["D2.LoveGarrus", "D2.Garrus", "D3.LoveGarrus"],
+		"gameVersionData": {
+			"1": {
+				"organization": "C-Sec"
+			},
+			"2": {
+				"loveInterestDecisionId": "D2.LoveGarrus",
+				"isFemaleLoveInterest": 1,
+				"description": "After Shepard's death, Garrus moved on to fight corruption on Omega. When his team was betrayed and massacred, Garrus became the mysterious and threatening Archangel, taking on all three Omega gangs single-handed.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Garrus.png"
+			},
+			"3": {
+				"profession": "Rebel",
+				"isFemaleLoveInterest": 1,
+				"description": "After convincing the turian Primarch of the coming Reaper threat, Garrus is heading a Reaper task force as their homeworld, Palaven, prepares for a fight no one may survive.\n\nGarrus is only available as a love interest in Game 3 if he was previously romanced in Game 2",
+				"loveInterestDecisionId": "D3.LoveGarrus",
+				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Garrus.png"
+			}
+		}
+	}, {
+		"id": "S1.Kaidan",
+		"name": "Kaidan Alenko",
+		"description": "Staff Lieutenant aboard the Normandy, Kaiden is the first addition to Shepard's squad. Kaidan's biotic abilities came at a high cost, emotionally and physically, and the older L2 implants cause him constant migraines.",
+		"personType": "Squad",
+		"isFemaleLoveInterest": 1,
+		"race": "Human",
+		"profession": "Sentinel",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Kaidan.png",
+		"voiceActor": "Raphael Sbarge",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kaidan_Alenko"],
+		"relatedMissionIds": ["M1.Prologue", "M1.Virmire.10"],
+		"decisionIds": ["D1.Kaidan", "D1.LoveKaidan", "D3.LoveKaidan"],
+		"loveInterestDecisionId": "D1.LoveKaidan",
+        "sideEffects": [
+            "If you make bad decisions in Game 3, you are forced to kill Kaidan during [megametracker://mission?id=M3.2.Citadel2]: [YouTube|https://www.youtube.com/watch?v=XDnp86lUnB4]."
+        ],
+		"gameVersionData": {
+			"2": {
+
+				"personType": "Associate",
+				"isFemaleLoveInterest": 0,
+				"description": "A loyal friend and former squadmate, Kaidan has mixed feelings seeing Shepard alive but working for Cerberus on Horizon. He is suspicious that Cerberus has tampered with Shepard's mind.",
+				"loveInterestDecisionId": null,
+				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Kaidan.png"
+			},
+			"3": {
+				"description": "Kaiden begins Game 3 on Shepard's team, but whether he remains depends on how hard Shepard works to persuade him that Cerberus didn't change Shepard in Game 2.",
+				"loveInterestDecisionId": "D3.LoveKaidan",
+				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Kaidan.png"
+			}
+		}
+	}, {
+		"id": "S1.Liara",
+		"name": "Liara T'soni",
+		"description": "An archeologist specializing in the ancient prothean culture, Liara is the \"pureblood\" daughter of [megametracker://person?id=E1.Benezia]. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued her research.",
+		"personType": "Squad",
+		"isMaleLoveInterest": 1,
+		"isFemaleLoveInterest": 1,
+		"race": "Asari",
+		"profession": "Scientist",
+		"organization": null,
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Liara.png",
+		"voiceActor": "Ali Hillis",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Liara_T%27Soni"],
+		"relatedMissionIds": ["M1.Therum"],
+		"decisionIds": ["D1.LoveLiara", "D2.LoveLiara", "D3.LoveLiara"],
+		"loveInterestDecisionId": "D1.LoveLiara",
+		"gameVersionData": {
+			"2": {
+				"personType": "Associate",
+				"profession": "Information Broker",
+				"description": "Liara was a close friend, but now she has her own agenda on Illium, turning her research skills to hunting valuable secrets, and she only briefly allies with Shepard for the Lair of the Shadow Broker (DLC) missions.\n\nPursuing her as a love interest in Game 2 is difficult but not impossible [Romancing Liara in Game 2|https://masseffect.wikia.com/wiki/Romance#Lair_of_the_Shadow_Broker].",
+				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Liara.png",
+				"loveInterestDecisionId": "D2.LoveLiara"
+			},
+			"3": {
+				"profession": "Pure Biotic",
+				"description": "After a Cerberus raid destroyed the Shadow Broker's lair, Liara fled with all the resources she could take with her. She is using all her Shadow Broker assets to search for a way to fight the Reapers, and she may have found it in the Mars Archives.",
+				"loveInterestDecisionId": "D3.LoveLiara",
+				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Liara.png"
+			}
+		}
+	}, {
+		"id": "S1.Tali",
+		"name": "Tali'Zorah nar Rayya",
+		"description": "A young Quarian on her first pilgrimage, Tali accidentally found information incriminating [Saren|megametracker://person?id=E1.Saren] when scavenging geth machines. She fled, pursued by Saren's forces, to the [megametracker://map?id=G.C]. If Shepard saves her life, she brings her evidence to the Council and afterwards joins the Normandy crew, eager to prove herself an ally against the geth.",
+		"personType": "Squad",
+		"race": "Quarian",
+		"profession": "Machinist",
+		"organization": "Migrant Fleet",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Tali.png",
+		"voiceActor": "Ash Sroka",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tali%27Zorah_nar_Rayya"],
+		"relatedMissionIds": ["M1.ExposeSaren.3", "A1.L.TaliAndTheGeth"],
+		"decisionIds": ["D1.TaliData", "D2.TaliLoyalty", "D2.TaliNotExiled", "D2.RaelZorahReputation", "D2.LoveTali", "D2.TaliLegion", "D2.Tali", "D3.LoveTali", "D3.Quarians"],
+		"gameVersionData": {
+			"2": {
+				"loveInterestDecisionId": "D2.LoveTali",
+				"isMaleLoveInterest": 1,
+				"description": "After Shepard's death, Tali returned to the Migrant Fleet and joined the crew of the Neema. She first meets Shepard again on Freedom's Progress. She is deeply suspicious of Cerberus and all of Shepard's Cerberus squadmates, but she remains loyal to Shepard.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Tali.png"
+			},
+			"3": {
+				"isMaleLoveInterest": 1,
+				"description": "If Tali was not exiled from the Quarian fleet in Game 2, she has since been promoted to Admiral, but either way she is spending her time assisting the fleet in its quest to retake the Quarian homeworld, [Rannoch|megametracker://maplocation?id=G.Ter.Per.Tik.Rannoch].\n\nTali is only available as a love interest in Game 3 if she was previously romanced in Game 2",
+				"loveInterestDecisionId": "D3.LoveTali"
+			}
+		}
+	}, {
+		"id": "S1.Wrex",
+		"name": "Urdnot Wrex",
+		"description": "Wrex is a violent and ruthless mercenary, but nonetheless believes the future of the Krogan lies in curing the Genophage and not in war. He is often at cross-purposes to Shepard when Krogan interests are at stake.",
+		"personType": "Squad",
+		"race": "Krogan",
+		"profession": "Battlemaster",
+		"organization": null,
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Wrex.png",
+		"voiceActor": "Steven Barr",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Urdnot_Wrex"],
+		"relatedMissionIds": ["M1.ShadowBroker", "A1.L.WrexFamilyArmor", "A1.V.WrexAndTheGenophage", "A2.L.Grunt", "A2.L.Mordin", "M3.1.Tuchanka"],
+		"decisionIds": ["D1.WrexArmor", "D1.Wrex"],
+        "sideEffects": [
+            "If Wrex survives Virmire but you sabotage the cure, Wrex will come after you during [megametracker://mission?id=M3.2.Citadel3] and you will be forced to kill him: [YouTube|https://www.youtube.com/watch?v=WrAncE0WUIg]."
+        ],
+		"gameVersionData": {
+			"2": {
+				"personType": "Associate",
+				"profession": "Leader",
+				"organization": "Clan Urdnot",
+				"description": "Wrex is a violent and ruthless mercenary, but nonetheless believes the future of the Krogan lies in curing the Genophage and not in war. He is often at cross-purposes to Shepard when Krogan interests are at stake.\n\n Now Clan Urdnot leader, Wrex is seeking to unify the Krogan and cure the Genophage.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Wrex.png"
+			},
+			"3": {
+				"personType": "Associate",
+				"profession": "Leader",
+				"organization": "Clan Urdnot",
+				"description": "Wrex is a violent and ruthless mercenary, but nonetheless believes the future of the Krogan lies in curing the Genophage and not in war. He is often at cross-purposes to Shepard when Krogan interests are at stake.\n\n Now Clan Urdnot leader, Wrex refuses to assist Shepard or the Council in the Reaper war until the Krogan are given a cure to the Genophage."
+			}
+		}
+
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------ENEMIES-------------------------",
+		"id": "E1.Balak",
+		"name": "Ka'hairal Balak",
+		"description": "Leader of the terrorist group attacking Asteroid X57, Balak is brutally anti-human and seeking revenge for the [Skyllian Blitz|https://masseffect.wikia.com/wiki/Skyllian_Blitz]. His plan is to crash the asteroid into the human colony [megametracker://map?id=G.Ear.Exo.Asg.Terra].",
+		"personType": "Enemy",
+		"race": "Batarian",
+		"profession": "Terrorist Captain",
+		"organization": null,
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Balak.png",
+		"voiceActor": "Fred Tatasciore",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Ka%27hairal_Balak"],
+		"relatedMissionIds": ["DLC1.X57.BringDownTheSky", "A3.BatarianCodes"],
+		"decisionIds": ["D1.X57Hostages", "D3.Balak"],
+		"gameVersionData": {
+			"3": {
+				"personType": "Other",
+				"description": "If you saved the hostages in Game 1, you will encounter Balak again at the Citadel for mission Citadel: Batarian Codes, and be given another chance to kill him. If Balak died in Game 1, a generic batarian will take his place (and you can't kill that character)."
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "E1.Benezia",
+		"name": "Matriarch Benezia",
+		"description": "A wise and powerful biotic, highly respected by the asari, Matriarch Benezia is also [Liara T'Soni's|megametracker://person?id=S1.Liara] mother. She has aligned herself with [Saren|megametracker://person?id=E1.Saren] for her own reasons and will prove a dangerous foe to Shepard.",
+		"personType": "Enemy",
+		"race": "Asari",
+		"profession": "Matriarch",
+		"organization": null,
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Benezia.png",
+		"voiceActor": "Marina Sirtis",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Matriarch_Benezia"],
+		"relatedMissionIds": ["M1.Noveria"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E1.Fist",
+		"name": "Fist",
+		"description": "A former agent of the Shadow Broker, Fist was paid by [Saren|megametracker://person?id=E1.Saren] to switch sides.",
+		"personType": "Enemy",
+		"race": "Human",
+		"profession": "Criminal",
+		"organization": null,
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Fist.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Fist"],
+		"relatedMissionIds": ["M1.ExposeSaren.2"],
+		"decisionIds": ["D1.Fist"],
+		"gameVersionData": {
+			"1": {},
+			"2": {
+				"description": "If Fist was not killed in Game 1, Shepard may encounter him at Afterlife on [Omega|megametracker://maplocation?id=G.Ter.Ome.Sah.Omega].",
+				"personType": "Other"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E1.RachniQueen",
+		"name": "The Rachni Queen",
+		"description": "Long thought extinct, this mother of the last rachni controlled her children by singing to them, but Binary Helix on [megametracker://maplocation?id=G.Ear.Hor.Pax.Noveria&type=Map] interfered so as to better use the brood, with terrible consequences. If Shepard saves her, she may prove an asset in Game 3.",
+		"personType": "Enemy",
+		"race": "Rachni",
+		"profession": "Queen",
+		"organization": null,
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1RachniQueen.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Rachni_Queen"],
+		"relatedMissionIds": ["M1.Noveria.10RiftStation"],
+		"decisionIds": ["D1.RachniQueen"],
+		"sideEffects": ["If the Rachni Queen survived, in Game 2 she sends an asari agent to thank Shepard on Illium."],
+		"gameVersionData": {
+			"3": {
+				"description": "Long thought extinct, the Rachni Queen and her children were brought back by Binary Helix on Noveria in Game 1. In Game 3, the Queen and her brood reappear on [megametracker://map?id=G.Att.Nin.Mul.Utukku], indocrinated by the Reapers. If Shepard killed the Queen in Game 1, this one is called the \"Breeder\" instead."
+			}
+		}
+	}, {
+		"id": "E1.Saren",
+		"name": "Saren Arterius",
+		"description": "A cunning and ruthless Spectre - the unregulated arm of Citadel enforcement - Saren is viciously and openly anti-human. It appears he has aligned himself with [Matriarch Benezia|megametracker://person?id=E1.Benezia] and the mysterious [Sovereign|megametracker://person?id=E1.Sovereign], intent on destroying all life in the galaxy.",
+		"personType": "Enemy",
+		"race": "Turian",
+		"profession": "Spectre",
+		"organization": "Citadel Council",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Saren.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Saren_Arterius"],
+		"voiceActor": "Fred Tatasciore",
+		"relatedMissionIds": ["M1.Prologue", "M1.ExposeSaren", "M1.Virmire", "M1.RaceAgainstTime", "M1.Ilos"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E1.Sovereign",
+		"name": "Sovereign",
+		"description": "Sovereign initially appears to be simply an ancient, powerful starship reactivated by [Saren|megametracker://person?id=E1.Saren], but Shepard soon discovers it is a sentient AI capable of influencing - and even enslaving - organic minds through a process called \"Indoctrination.\"",
+		"personType": "Enemy",
+		"race": "Reaper",
+		"profession": "Flagship",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Sovereign.png",
+		"voiceActor": "Peter Jessop",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Sovereign"],
+		"relatedMissionIds": [],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "E1.Thorian",
+		"name": "The Thorian",
+		"description": "Also called Species 37, the Thorian is an ancient sentient plant with mind-controlling and telepathic abilities, and a massive sensory network. It releases spores into the air that allows the Thorian to control those who inhale them, using pain to control their behaviour.",
+		"personType": "Enemy",
+		"race": "Plant",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Thorian.png",
+		"voiceActor": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Thorian"],
+		"relatedMissionIds": ["M1.Feros"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------ASSOCIATES-------------------------",
+		"id": "P1.Adams",
+		"name": "Greg Adams",
+		"description": "Adams can usually be found in the engineering room, moitoring the Normandy's drive core.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Chief Engineer",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Adams.png",
+		"voiceActor": "Roger Jackson",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Greg_Adams"],
+		"relatedMissionIds": [],
+		"gameVersionData": {
+			"3": {
+				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Adams.png"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "P1.Anderson",
+		"name": "David Anderson",
+		"description": "The previous commander of the Normandy, Anderson is a mentor and friend of Shepard. He has a bad history with [Saren|megametracker://person?id=E1.Saren], who prevented him from being promoted to Spectre himself many years ago. He remains on the [megametracker://map?id=G.C] after Eden Prime and provides Shepard with information and advice.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Captain",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Anderson.png",
+		"voiceActor": "Keith David Patrick Seitz",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/David_Anderson"],
+		"relatedMissionIds": ["M1.Prologue"],
+		"decisionIds": ["D1.Anderson"],
+		"gameVersionData": {
+			"2": {
+				"profession": "Diplomat",
+				"description": "As either Human Ambassador on the Council, or aid to [Ambassador Udina|megametracker://person?id=P1.Udina], Anderson remains Shepard's friend and information source on the Citadel.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Anderson.png"
+			},
+			"3": {
+				"profession": "Admiral",
+				"description": "After leaving the Citadel and its beaurocracy, Anderson has returned to Earth and the Systems Alliance, and is busy helping Humanity prepare for the impending Reaper invasion.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Anderson.png"
+			}
+		}
+	}, {
+		"id": "P1.Conrad",
+		"name": "Conrad Verner",
+		"description": "A persistent fan, Verner follows all the news regarding Shepard. He appears in all three games, pestering Shepard for autographs and attention, and getting into trouble with his attempts to be just like his favorite human Spectre.\n\nIn Game 1, Conrad tries to sign up as a Spectre and member of Shepard's squad.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Fan",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Conrad.png",
+		"voiceActor": "Jeff Page",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Conrad_Verner"],
+		"decisionIds": ["D1.Conrad", "D2.Conrad", "D3.Conrad"],
+		"relatedMissionIds": ["A1.C1.TheFan", "TODO:GAME2", "TODO:GAME3"],
+		"sideEffects": [
+			"If Shepard helps Conrad in all three games, but doesn't help [Jenna|megametracker://person?id=O1.Jenna] in Game 1, Conrad will die in Game 3 saving Shepard's life.",
+			"In the *Mass Effect: New Earth* ride at Great America, Conrad is now a ship's captain, taking prospective buyers on your basic timeshare sales tour of Terra Nova."
+		],
+		"gameVersionData": {
+			"2": {
+				"description": "A persistent fan, Verner follows all the news regarding Shepard. He appears in all three games, pestering Shepard for autographs and attention, and getting into trouble with his attempts to be just like his favorite human Spectre.\n\nIn Game 2, Conrad is impersonating an Alliance officer, working \"undercover\" to harass the owner of the Eternity bar.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Conrad.png"
+			},
+			"3": {
+				"description": "A persistent fan, Verner follows all the news regarding Shepard. He appears in all three games, pestering Shepard for autographs and attention, and getting into trouble with his attempts to be just like his favorite human Spectre.\n\nIn Game 3, Conrad has become a recruiter for Cerberus because Shepard worked for them in Game 2.",
+				"profession": "Fan / XenoScientist"
+			}
+		}
+	}, {
+		"id": "P1.Chakwas",
+		"name": "Karin Chakwas",
+		"description": "Dr. Chakwas can usually be found in the infirmary of the [megametracker://map?id=G.N]. She enlisted early and feels a deep attachment and loyalty to the soldiers she treats.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Medical Doctor",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Chakwas.png",
+		"voiceActor": "Carolyn Seymour",
+		"relatedMissionIds": [],
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dr._Karin_Chakwas"],
+		"gameVersionData": {
+			"2": {
+				"organization": "Cerberus",
+				"description": "After Shepard's death, Dr. Chakwas was posted at the Mars Naval Medical Center, but - missing the excitement of a starship - Chakwas joins the crew of the new Normandy (though she doesn't work for Cerberus). She can be found in the new Medical Lab on the Normandy.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Chakwas.png"
+			},
+			"3": {
+				"description": "Dr. Chakwas has spent the time since Game 2 working at an Alliance R&D lab at Shalta Wards, closely coordinating with [Admiral Hackett|megametracker://person?id=P1.Hackett]. Shepard can recruit her at Huerta Memorial Hospital on the Citadel, or select Dr. Michel instead and Chakwas will continue her work at the lab and be counted as a war asset.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Chakwas.png"
+			}
+		}
+	}, {
+		"id": "P1.Hackett",
+		"name": "Steven Hackett",
+		"description": "A top-ranking military man and commander of the Fifth Fleet, Hackett was one of the three officers to recommend Shepard as Spectre. Hackett often contacts Shepard with new missions and assignments.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Admiral",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Hackett.png",
+		"voiceActor": "Lance Henriksen",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Admiral_Hackett"],
+		"relatedMissionIds": [],
+		"gameVersionData": {
+			"2": {
+				"personType": "Other",
+				"description": "Hackett plays a lesser role in Game 2, but he will direct Shepard to recover the crew dog tags from the Normandy SR1 and place a monument at the crash site, and also alerts Shepard to the Arrival DLC mission, to rescue his friend Dr. Kenson."
+			},
+			"3": {
+				"description": "Hackett resumes his role from Game 1, alerting Shepard to galaxy missions. He will also give a pre-battle speech before the final assault on Earth.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Hackett.png"
+			}
+		}
+	}, {
+		"id": "P1.Jenkins",
+		"name": "Richard L. Jenkins",
+		"description": "A brief member of Shepard's squad, he is killed by geth on [megametracker://map?id=G.Ear.Exo.Uto.Eden].",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Corporal",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Jenkins.png",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Richard_L._Jenkins"],
+		"relatedMissionIds": ["M1.Prologue"],
+		"voiceActor": "Josh Dean",
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "P1.Joker",
+		"name": "Jeff \"Joker\" Moreau",
+		"description": "Pilot of the Normandy, Joker has a stellar list of awards and commendations. He is defensive about his health problems due to Vrolik syndrome. When Shepard is ashore, Joker gives direction and notifies him of any important events.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Flight Lieutenant",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Joker.png",
+		"voiceActor": "Seth Green",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jeff_%22Joker%22_Moreau"],
+		"relatedMissionIds": ["M2.CollectorBase.1"],
+		"decisionIds": ["D3.EdiJoker"],
+		"gameVersionData": {
+			"2": {
+				"organization": "Cerberus",
+				"description": "After losing Shepard and the Normandy, Joker struggled to assimilate into a new role in the Alliance. Cerberus recruited him with the hope of Shepard's return, and, more importantly, a new Normandy SR-2 to pilot.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Joker.png"
+			},
+			"3": {
+				"description": "Joker was arrested with Shepard after the events of Game 2, but he was kept on hand during repairs to the Normandy to work with [EDI|megametracker://person?id=S3.EDI], who was pretending to be a VI that would only respond to his commands. He uses this position to take the Normandy and rescue Shepard at the beginning of Game 3.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Joker.png"
+			}
+		}
+	}, {
+		"id": "P1.Kirrahe",
+		"name": "Kirrahe",
+		"description": "Kirrahe is a member of the 3rd Infiltration Regiment STG, and discovered [Saren's|megametracker://person?id=E1.Saren] base on [megametracker://map?id=G.Att.Sen.Hoc.Virmire]. He provides a rousing speech to his men before the battle on Virmire.",
+		"personType": "Other",
+		"race": "Salarian",
+		"profession": "Captain",
+		"organization": "Special Tasks Group",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Kirrahe.png",
+		"voiceActor": "George Szilagyi",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kirrahe"],
+		"relatedMissionIds": ["A1.V.AssistingKirrahesTeam"],
+		"decisionIds": ["D1.Kirrahe"],
+		"gameVersionData": {
+			"3": {
+				"description": "Kirrahe discovered [Saren's|megametracker://person?id=E1.Saren] base on [megametracker://map?id=G.Att.Sen.Hoc.Virmire] in Game 1. He resurfaces on Sur'Kesh in Game 3, and helps Shepard during the mission there."
+			}
+		},
+		"sideEffects": [
+			"[megametracker://person?id=S2.Mordin] mentions in Game 2 also serving with Kirrahe. If Kirrahe is still alive, Mordin makes fun of his \"Hold the Line\" speech.",
+			"If Kirrahe does not die in Game 1, and Thane Krios dies in Game 2 or Shepard does not talk to him in Game 3, then Kirrahe will play Than's role in thwarting Kai Leng's attempt to kill the salarian member of the Council. If both Kirrahe and Thane are dead, the councilor dies.",
+			"If Wrex dies in Game 3 and krogan support is lost, Kirrahe and his unit take their place on Earth for the final battle."
+		],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "P1.Michel",
+		"name": "Chloe Michel",
+		"description": "Dr. Michel works at the [megametracker://person?id=G.C1.UpperWards.MedClinic]. She was fired from her previous job for giving away medical supplies for free.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Medical Doctor",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Michel.png",
+		"voiceActor": "Jan Alexandra Smith",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dr._Chloe_Michel"],
+		"relatedMissionIds": ["M1.Garrus.2", "A1.C1.DoctorMichel"],
+		"sideEffects": [
+			"If Shepard completed [megametracker://mission?id=A1.C1.DoctorMichel] in Game 1, Dr. Michel sends an email in Game 2, asking for help getting in touch with Garrus (whom she seems to have a bit of a crush on).",
+			"If Shepard brings Tali and Garrus along for [megametracker://mission?id=M3.2.GethDreadnought], Garrus mentions that Dr. Michel gave him a box of turian chocolates and Tali mocks this. \n\nIf Shepard listens in to Michel's conversations with [megametracker://person?id=P1.Adams], she explains the chocolates away and insists that Garrus is just a friend."
+		],
+		"gameVersionData": {
+			"3": {
+				"personType": "Associate",
+				"description": "Dr. Michel is working at Huerta Memorial Hospital on the Citadel. Either she or [Dr. Chakwas|megametracker://person?id=P1.Chakwas] can be selected to be the Normandy's doctor, but Shepard will need to reject Chakwas first to recruit Michel. If not recruited, she will disappear from the Hospital after [Priority: The Citadel II|megametracker://mission?id=M3.2.Citadel2].",
+				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Michel.png"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "P1.Nihlus",
+		"name": "Nihlus Kryik",
+		"description": "Viewed with suspicion by the Normandy's human crew, Nihlus is aboard to retrieve an artifact for the Council, but more importantly to covertly evaluate Shepard.",
+		"personType": "Associate",
+		"race": "Turian",
+		"profession": "Spectre",
+		"organization": "Citadel Council",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Nihlus.png",
+		"voiceActor": "Alastair Duncan",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Nihlus_Kryik"],
+		"relatedMissionIds": ["M1.Prologue"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "P1.Pressly",
+		"name": "Charles Pressly",
+		"description": "Uncomfortable with aliens, Pressly will nevertheless follow Shepard's lead in his treatment of the non-human team members on the Normandy.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Executive Officer",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Pressly.png",
+		"voiceActor": "Dwight Schultz",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Charles_Pressly"],
+		"relatedMissionIds": ["A1.T.AliensOnNormandy"],
+		"gameVersionData": {
+			"1": {},
+			"2": {
+				"description": "Like many of Shepard's former crew, Pressly died in the attack on the Normandy."
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "P1.Udina",
+		"name": "Donnel Udina",
+		"description": "A scheming politician and resident Ambassador on the [megametracker://map?id=G.C], Udina is often repellant to work with, but his vast ambitions always have humanity's interests at heart. He is determined to see humanity earn a seat on the Council.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Ambassador",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Udina.png",
+		"voiceActor": "Bill Ratner",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Donnel_Udina"],
+		"relatedMissionIds": [],
+		"decisionIds": ["D1.Udina"],
+		"gameVersionData": {
+			"2": {
+				"description": "As either Human Ambassador on the Council, or aid to Ambassador Anderson, Udina remains a scheming politician whom Shepard can barely tolerate.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Udina.png"
+			},
+			"3": {
+				"description": "After the Reaper losses, Udina is now the Alliance's top political official. He fails to convince the Council to help Earth, but works to gather resources for the Crucible project.",
+				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Udina.png"
+			}
+		}
+	}]
+}

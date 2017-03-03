@@ -1,0 +1,2368 @@
+{
+	"missions": [{
+		"id": "M1.Prologue",
+		"sortIndex": 1,
+		"gameVersion": "1",
+		"missionType": "Mission",
+		"name": "Prologue: On The Normandy",
+		"aliases": ["Prologue: On The Normandy", "Prologue: Find The Beacon"],
+		"description": "Shepard's first mission, it is also an introduction to characters and game play.",
+		"inMapId": "G.N1.1",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Prologue:_On_the_Normandy"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Joker and Kaiden before Eden Prime",
+				"options": [{
+					"id": "M1.Prologue.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I agree.\""
+				}, {
+					"id": "M1.Prologue.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Cut the chatter\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Jenkins and Dr. Chakwas before Eden Prime",
+				"options": [{
+					"id": "M1.Prologue.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Relax, Jenkins.\""
+				}, {
+					"id": "M1.Prologue.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Part of the job, Doc.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After Jenkins dies on Eden Prime",
+				"options": [{
+					"id": "M1.Prologue.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"He deserves a burial.\""
+				}, {
+					"id": "M1.Prologue.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Forget about him.\""
+				}]
+			}
+		}, {
+			"id": "M1.Prologue.P4",
+			"type": "Paragon",
+			"value": 2,
+			"context": "After encountering Ashley for the first time on Eden Prime",
+			"trigger": "\"Are you okay?\""
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Asking Ashley about her squad",
+				"options": [{
+					"id": "M1.Prologue.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Don't blame yourself.\""
+				}, {
+					"id": "M1.Prologue.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You abandoned them.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After telling Ashley to stay behind",
+				"options": [{
+					"id": "M1.Prologue.R6",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Fine, come with us.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After finding Dr. Warren and Manuel at the Dig Site",
+				"options": [{
+					"id": "M1.Prologue.P7",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You're safe.\""
+				}, {
+					"id": "M1.Prologue.R7",
+					"type": "Renegade",
+					"value": 9,
+					"context": "After asking Dr. Warren about her assistant",
+					"trigger": "\"I can shut him up.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting Cole and the Colonists at the Dig Site",
+				"options": [{
+					"id": "M1.Prologue.P8",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It's safe.\""
+				}, {
+					"id": "M1.Prologue.R8",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* Cole (requires 1 Intimidate)",
+					"trigger": "\"You're holding out on me.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Persuade Cole to fess up about the smuggling ring",
+				"options": [{
+					"id": "M1.Prologue.P9",
+					"type": "Paragon",
+					"value": 2,
+					"context": "*_Charm_* Cole (requires 2 Charm)",
+					"trigger": "\"He may know something.\""
+				}, {
+					"id": "M1.Prologue.R9",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* Cole (requires 2 Intimidate)",
+					"trigger": "\"Is he worth dying for?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Powell at the Spaceport (after getting Powell's name from Cole)",
+				"options": [{
+					"id": "M1.Prologue.P10",
+					"type": "Paragon",
+					"value": 2,
+					"context": "Asking about the smuggling ring (after getting Powell's name from Cole)",
+					"trigger": "\"Let it go, Williams.\""
+				}, {
+					"id": "M1.Prologue.R10",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* Powell (requires 1 Intimidate)",
+					"trigger": "\"You're lying!\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to Kaidan after the mission",
+				"options": [{
+					"id": "M1.Prologue.P11",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You helped.\""
+				}, {
+					"id": "M1.Prologue.R11",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"The mission failed.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to Ashley after the mission",
+				"options": [{
+					"id": "M1.Prologue.P12",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You helped.\""
+				}, {
+					"id": "M1.Prologue.R12",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"The mission failed.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "Triggers",
+			"id": "Unlocked Citadel: Presidium"
+		}]
+	}, {
+		"id": "M1.Prologue.1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak to the Captain",
+		"description": "After speaking to the crew, talk to [Captain Anderson|megametracker://person?id=P1.Anderson] in the Normandy Comm Room.",
+		"inMissionId": "M1.Prologue",
+		"inMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 1843,
+			"y": 1050,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Prologue:_On_the_Normandy#Normandy_Pre-Mission"
+		],
+		"events": [{
+			"type": "Triggers",
+			"id": "Unlocked Eden Prime"
+		}]
+	}, {
+		"id": "M1.Prologue.2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Head to the Dig Site",
+		"description": "Locate the dig site on the map and head towards it.",
+		"inMissionId": "M1.Prologue",
+		"inMapId": "G.Ear.Exo.Uto.Ede.A",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Prologue:_On_the_Normandy#Eden_Prime_Surface"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Eden Prime"
+		}]
+	}, {
+		"id": "M1.Prologue.3",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Continue to the Dig Site",
+		"description": "Having lost one team member, continue on the mission and you will find someone new.",
+		"inMissionId": "M1.Prologue",
+		"inMapId": "G.Ear.Exo.Uto.Ede.A",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Prologue:_On_the_Normandy#Prothean_Dig_Site"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Eden Prime"
+		}]
+	}, {
+		"id": "M1.Prologue.4",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Investigate Research Camp",
+		"description": "Above the dig site is a research camp. Speak with any survivors there.",
+		"inMissionId": "M1.Prologue",
+		"inMapId": "G.Ear.Exo.Uto.Ede.A",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Prologue:_On_the_Normandy#Prothean_Dig_Site"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Eden Prime"
+		}]
+	}, {
+		"id": "M1.Prologue.5",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Head to the Spaceport",
+		"description": "Above the research camp is a spaceport. There are more survivors on the way, and some crucial information when you reach the port.",
+		"inMissionId": "M1.Prologue",
+		"inMapId": "G.Ear.Exo.Uto.Ede.A",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Prologue:_On_the_Normandy#Eden_Prime_Starport"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Eden Prime"
+		}]
+	}, {
+		"id": "M1.Prologue.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Take the Train",
+		"description": "Pursue Saren on the train and disarm the four demolition charges. Investigating the Prothean Beacon will conclude the mission. There is a cutscene often missed that is triggered by approaching the railing to the left of the beacon.",
+		"inMissionId": "M1.Prologue",
+		"inMapId": "G.Ear.Exo.Uto.Ede.B",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Prologue:_On_the_Normandy#Spaceport_Platform_Two"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Eden Prime"
+		}, {
+			"type": "Triggers",
+			"id": "Unlocked Normandy"
+		}]
+	}, {
+		"id": "M1.Prologue.6.1",
+		"name": "Disarm Demolition Charge 1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"inMapId": "G.Ear.Exo.Uto.Ede.B",
+		"inMissionId": "M1.Prologue.6",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1280,
+			"y": 1513,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Prologue.6.2",
+		"name": "Disarm Demolition Charge 2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"inMapId": "G.Ear.Exo.Uto.Ede.B",
+		"inMissionId": "M1.Prologue.6",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 975,
+			"y": 1747,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Prologue.6.3",
+		"name": "Disarm Demolition Charge 3",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"inMapId": "G.Ear.Exo.Uto.Ede.B",
+		"inMissionId": "M1.Prologue.6",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 975,
+			"y": 1367,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Prologue.6.4",
+		"name": "Disarm Demolition Charge 4",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"inMapId": "G.Ear.Exo.Uto.Ede.B",
+		"inMissionId": "M1.Prologue.6",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 975,
+			"y": 359,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Prologue.7",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak to Joker",
+		"description": "You can now fully explore the Normandy. Talk to [Joker|megametracker://person?id=P1.Joker] when you are ready to go to the Citadel.",
+		"inMissionId": "M1.Prologue",
+		"inMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 239,
+			"y": 1050,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Prologue:_On_the_Normandy#Normandy"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Eden Prime"
+		}]
+	}, {
+		"id": "M1.ExposeSaren",
+		"sortIndex": 2,
+		"gameVersion": "1",
+		"missionType": "Mission",
+		"name": "Citadel: Expose Saren",
+		"description": "Prove to the Citadel Council that [Saren|megametracker://person?id=E1.Saren] has gone rogue.",
+		"inMapId": "G.C1.Presidium",
+        "linkToParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren"
+		],
+		"relatedMissionIds": ["M1.Garrus", "M1.ShadowBroker"],
+		"conversationRewards": [{
+			"id": "M1.ExposeSaren.P1",
+			"type": "Paragon",
+			"value": 2,
+			"context": "Talking to the Council",
+			"trigger": "\"Quit protecting him!\""
+		}, {
+			"id": "M1.ExposeSaren.R1",
+			"type": "Renegade",
+			"value": 2,
+			"context": "Talking to Udina on the Citadel",
+			"trigger": "\"They're blind.\""
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "While going after Fist in Chora's Den",
+				"options": [{
+					"id": "M1.ExposeSaren.2P1",
+					"type": "Paragon",
+					"value": 2,
+					"context": "*_Charm_* the warehouse workers (requires 3 Charm)",
+					"trigger": "\"Save yourselves.\""
+				}, {
+					"id": "M1.ExposeSaren.2R1",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* the warehouse workers (requires 3 Intimidate)",
+					"trigger": "\"You're making a mistake.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M1.ExposeSaren.2P2",
+					"type": "Paragon",
+					"value": 2,
+					"context": "Confronting Fist",
+					"trigger": "\"You don't deserve to live.\""
+				}, {
+					"id": "M1.ExposeSaren.2R2",
+					"type": "Renegade",
+					"value": 2,
+					"context": "After killing Fist",
+					"trigger": "\"He deserved it.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to the Council after presenting the evidence of Saren's guilt",
+				"options": [{
+					"id": "M1.ExposeSaren.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It's the best solution.\""
+				}, {
+					"id": "M1.ExposeSaren.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Quit holding us back!\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to Udina after becoming a Spectre",
+				"options": [{
+					"id": "M1.ExposeSaren.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'll be careful.\""
+				}, {
+					"id": "M1.ExposeSaren.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"That's your job.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Presidium"
+		}]
+	}, {
+		"id": "M1.ExposeSaren.1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to the Tower",
+		"description": "Go to the Citadel tower and speak to the Council.",
+		"inMissionId": "M1.ExposeSaren",
+		"inMapId": "G.C1.Tower",
+		"mapLocationPoint": {
+			"x": 1049,
+			"y": 1836,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Report_to_the_Council"
+		],
+		"events": [{
+			"type": "Triggers",
+			"id": "Unlocked Citadel: Lower Levels"
+		}]
+	}, {
+		"id": "M1.Garrus",
+		"sortIndex": 3,
+		"gameVersion": "1",
+		"missionType": "Mission",
+		"name": "Citadel: Garrus",
+		"isOptional": true,
+		"description": "Find the turian investigating Saren, [Garrus|megametracker://person?id=S1.Garrus].",
+		"inMapId": "G.C1.Tower",
+		"mapLocationPoint": {
+			"x": 1049,
+			"y": 571,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Report_to_the_Council"
+		],
+		"relatedMissionIds": ["M1.ExposeSaren", "M1.ShadowBroker"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After the fight at the Med Clinic",
+				"options": [{
+					"id": "M1.Garrus.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It was a big risk.\""
+				}, {
+					"id": "M1.Garrus.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Nice shot.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Lower Levels"
+		}]
+	}, {
+		"id": "M1.Garrus.1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak to Harkin",
+		"description": "Go to Chora's Den in the Lower Wards and speak with [Harkin|megametracker://person?id=O1.Harkin], a C-Sec agent who might know where [Garrus|megametracker://person?id=S1.Garrus] can be found.",
+		"inMissionId": "M1.Garrus",
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 363,
+			"y": 703,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Going_to_Harkin"
+		]
+	}, {
+		"id": "M1.Garrus.2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to the Med Clinic",
+		"description": "[Garrus|megametracker://person?id=S1.Garrus] went to the Med Clinic in the Upper Wards to follow up a lead on [Saren|megametracker://person?id=E1.Saren].",
+		"inMissionId": "M1.Garrus",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 1848,
+			"y": 1332,
+			"radius": 1
+		},
+		"relatedMissionIds": ["A1.C4"],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Going_to_Harkin"
+		]
+	}, {
+		"id": "M1.ShadowBroker",
+		"sortIndex": 4,
+		"gameVersion": "1",
+		"missionType": "Mission",
+		"name": "Citadel: Shadow Broker",
+		"inMapId": "G.C1.Presidium",
+		"aliases": ["Citadel: Shadow Broker", "Citadel: Wrex"],
+		"isOptional": true,
+		"description": "[The Shadow Broker|megametracker://person?id=E2.ShadowBroker] trades in information. If anyone might know some dirty secrets on Saren, it's him.",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Going_to_Barla_Von"
+		],
+		"relatedMissionIds": ["M1.ExposeSaren", "M1.Garrus"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Lower Levels"
+		}]
+	}, {
+		"id": "M1.ShadowBroker.1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go See Barla Von",
+		"description": "Head to the Bank in the Financial District of the Presidium and speak with [megametracker://person?id=O1.BarlaVon], an agent of [the Shadow Broker|megametracker://person?id=E2.ShadowBroker].",
+		"inMissionId": "M1.ShadowBroker",
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 611,
+			"y": 1292,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Going_to_Barla_Von"
+		],
+		"events": [{
+			"type": "Triggers",
+			"id": "Sent to Meet Wrex"
+		}]
+	}, {
+		"id": "M1.ShadowBroker.2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak to Wrex",
+		"description": "[Wrex|megametracker://person?id=S1.Wrex], the krogan bounty hunter hired to kill [megametracker://person?id=E1.Fist], is being questioned at C-Sec Academy. You can meet him there if you want to speak with him.",
+		"inMissionId": "M1.ShadowBroker",
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 1475,
+			"y": 971,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Going_to_Barla_Von"
+		],
+		"events": [{
+			"type": "Triggers",
+			"id": "Wrex Joined Team"
+		}]
+	}, {
+		"id": "M1.ExposeSaren.2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Take Down Fist",
+		"description": "Head down to Chora's Den to confront [megametracker://person?id=E1.Fist]. (You might want to save your game first.)",
+		"inMissionId": "M1.ExposeSaren",
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 791,
+			"y": 623,
+			"radius": 1
+		},
+		"decisionIds": ["D1.Fist"],
+		"relatedMissionIds": ["A1.C1.ReportersRequest"],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Going_after_Fist"
+		],
+		"events": [{
+			"type": "Triggers",
+			"id": "Confronted Fist"
+		}]
+	}, {
+		"id": "M1.ExposeSaren.3",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Save the Quarian",
+		"description": "A timed mission, Shepard has four minutes to locate the Quarian information source before [Saren|megametracker://person?id=E1.Saren] does.",
+		"inMissionId": "M1.ExposeSaren",
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 687,
+			"y": 1205,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Rescue_the_Quarian"
+		],
+		"events": [{
+			"type": "Triggers",
+			"id": "Discovered Tali"
+		}]
+	}, {
+		"id": "M1.ExposeSaren.4",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Return to the Tower",
+		"description": "Bring [Tali's|megametracker://person?id=S1.Tali] information to the Council.",
+		"inMissionId": "M1.ExposeSaren",
+        "inMapId": "G.C1.Tower",
+		"mapLocationPoint": {
+			"x": 1049,
+			"y": 1836,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Expose_Saren"
+		],
+		"events": [{
+			"type": "Triggers",
+			"id": "Spectre Status"
+		}]
+	}, {
+		"id": "M1.ExposeSaren.5",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak to the Ambassador",
+		"description": "Talk to [Captain Anderson|megametracker://person?id=P1.Anderson] and [Ambassador Udina|megametracker://person?id=P1.Udina] for leads on Saren's current whereabouts.",
+		"inMissionId": "M1.ExposeSaren",
+		"inMapId": "G.C1.DockingBay",
+		"mapLocationPoint": {
+			"x": 1063,
+			"y": 571,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Expose_Saren"
+		],
+		"events": [{
+			"type": "Triggers",
+			"id": "Unlocked Galaxy Map"
+		}]
+	}, {
+		"id": "M1.Therum",
+		"sortIndex": 5,
+		"gameVersion": "1",
+		"missionType": "Mission",
+		"name": "Find Liara T'Soni",
+		"description": "The daughter of [Matriarch Benezia|megametracker://person?id=E1.Benezia] is believed to be in the uncharted Artemis Tau cluster.",
+		"inMapId": "G.Ear.Art.Kno.Therum",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Find_Liara_T'Soni"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map"
+		}, {
+			"type": "Triggers",
+			"id": "Completed Therum"
+		}, {
+			"type": "Triggers",
+			"id": "Alert Citadel Lockdown Pending"
+		}]
+	}, {
+		"id": "M1.Therum.1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go To Artemis Tau",
+		"description": "Explore the uncharted worlds of the Artemis Tau cluster to find [Liara T'Soni[megametracker://person?id=S1.Liara].",
+		"inMissionId": "M1.Therum",
+		"inMapId": "G.Ear.Art.Kno.Therum",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Therum.1.1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The Refinery",
+		"description": "Take the Mako north between the cliffs and the lava. Stop at the refinery and fight off the geth drop ship. You will need to locate the north gate controls to open the gate to continue on.",
+		"inMissionId": "M1.Therum.1",
+		"inMapId": "G.Ear.Art.Kno.The.Grounds",
+		"mapLocationPoint": {
+			"x": 1240,
+			"y": 1515,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Therum.1.2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The Canyon",
+		"description": "Take the Mako further north, through two tunnels guarded by geth. Then the path narrows and you must continue on foot.",
+		"inMissionId": "M1.Therum.1",
+		"inMapId": "G.Ear.Art.Kno.The.Grounds",
+		"mapLocationPoint": {
+			"x": 83,
+			"y": 427,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Therum.1.3",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The Mining Camp",
+		"description": "Attack the geth guarding the mining camp and make your way inside.",
+		"inMissionId": "M1.Therum.1",
+		"inMapId": "G.Ear.Art.Kno.The.Grounds",
+		"mapLocationPoint": {
+			"x": 237,
+			"y": 264,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Therum.1.4",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find Dr. T'Soni",
+		"description": "Descend into the mine until you find Dr. T'Soni.",
+		"inMissionId": "M1.Therum.1",
+		"inMapId": "G.Ear.Art.Kno.The.Mine",
+		"mapLocationPoint": {
+			"x": 1547,
+			"y": 1179,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Therum.1.5",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Free Dr. T'Soni",
+		"description": "Descend further into the mine, searching for a way to free [Liara[megametracker://person?id=S1.Liara] from the prothean force field she is caught inside. There is a mining laser at the bottom level with the code *A-X-B-Y*.",
+		"inMissionId": "M1.Therum.1",
+		"inMapId": "G.Ear.Art.Kno.The.Mine",
+		"mapLocationPoint": {
+			"x": 1187,
+			"y": 1643,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Therum.1.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Escape The Mine",
+		"description": "The laser has triggered seismic activity and the mine is going to collapse. Take the elevator to the top level. Defeat the geth and the krogan there before you can escape.",
+		"inMissionId": "M1.Therum.1",
+		"inMapId": "G.Ear.Art.Kno.The.Mine",
+		"mapLocationPoint": {
+			"x": 1801,
+			"y": 1631,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Therum.1.7",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Complete",
+		"description": "After returning to the Normandy, find out what [Liara[megametracker://person?id=S1.Liara] knows about the protheans.",
+		"inMissionId": "M1.Therum.1",
+		"inMapId": "G.N1.1"
+	}, {
+		"id": "M1.Feros",
+		"sortIndex": 6,
+		"gameVersion": "1",
+		"missionType": "Mission",
+		"name": "Feros: Geth Attack",
+		"aliases": ["Feros: Geth Attack", "Feros: The Thorian", "Feros: Colony Lost", "Feros: Colony Saved"],
+		"description": "[Saren|megametracker://person?id=E1.Saren] has sent the geth to attack the small colony of Zhu's Hope on Feros. Find out what is so valuable there. Shepard will need 12 Charm/10 Intimidate for all dialogue opportunities during the later events of this mission.",
+		"inMapId": "G.Ear.Art.Kno.Feros",
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A1.F.DataRecovery", "A1.U.GethIncursions", "A1.U.ColonyOfTheDead"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Fai Dan after clearing the geth from the tower in Zhu's Hope",
+				"options": [{
+					"id": "M1.Feros.P0",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Happy to help.\""
+				}, {
+					"id": "M1.Feros.R0",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I didn't do it for you.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to Lizbeth before leaving the ExoGeni facility to return to Zhu's Hope",
+				"options": [{
+					"id": "M1.Feros.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I believe you.\""
+				}, {
+					"id": "M1.Feros.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I don't care.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After restoring communication at the ExoGeni facility, persuade Jeong at the refugee camp to let the colonists live",
+				"options": [{
+					"id": "M1.Feros.P2",
+					"type": "Paragon",
+					"value": 24,
+					"context": "*_Charm_* Jeong (Requires 12 Charm)",
+					"trigger": "\"What about the big picture?\""
+				}, {
+					"id": "M1.Feros.R2",
+					"type": "Renegade",
+					"value": 25,
+					"context": "*_Intimidate_* Jeong (Requires 12 Intimidate)",
+					"trigger": "\"I'll kill you first.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After talking down Jeong at the refugee camp",
+				"options": [{
+					"id": "M1.Feros.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Sounds logical.\""
+				}, {
+					"id": "M1.Feros.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Can't take that chance.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to Juliana Baynham before returning to Zhu's Hope (reward: 3 Anti-Thorian grenades)",
+				"options": [{
+					"id": "vM1.Feros.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'll do it.\" / \"Sure.\""
+				}, {
+					"id": "M1.Feros.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"No.\" / \"Forget it.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Fighting through Zhu's Hope to the Thorian Lair",
+				"options": [{
+					"id": "M1.Feros.P5",
+					"type": "Paragon",
+					"value": 32,
+					"trigger": "Save all the colonists (2 points each)."
+				}, {
+					"id": "M1.Feros.R5",
+					"type": "Renegade",
+					"value": 32,
+					"trigger": "Kill all the colonists (2 points each)."
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to the Thorian",
+				"options": [{
+					"id": "M1.Feros.P6",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Let the colonists go.\""
+				}, {
+					"id": "MM1.Feros.R6",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'll destroy you.\""
+				}]
+			}
+		}, {
+			"id": "M1.Feros.R7",
+			"type": "Renegade",
+			"value": 9,
+			"context": "Kill Shiala after killing the Thorian (she does not fight Shepard)",
+			"trigger": "\"I can't let you live.\""
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Report to the Council after Feros (optional)",
+				"options": [{
+					"id": "M1.Feros.P8",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I help everyone.\" or \"I wanted to help them.\""
+				}, {
+					"id": "M1.Feros.R8",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Don't be stupid!\""
+				}]
+			}
+		}, {
+			"id": "M1.Feros.P9",
+			"type": "Paragon",
+			"value": 2,
+			"context": "Report to the Council",
+			"trigger": "\"I understood it.\""
+		}, {
+			"id": "M1.Feros.P10",
+			"type": "Paragon",
+			"value": 8,
+			"trigger": "Complete mission."
+		}],
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Feros:_Geth_Attack",
+			"https://masseffect.wikia.com/wiki/Feros:_The_Thorian"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map"
+		}, {
+			"type": "Triggers",
+			"id": "Completed Feros Mission"
+		}, {
+			"type": "Triggers",
+			"id": "Alert Citadel Lockdown Pending"
+		}]
+	}, {
+		"id": "M1.Feros.0",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to Feros",
+		"description": "Investigate Feros to see why the Zhu's Hope colony was attacked by geth.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Art.Kno.Feros",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Feros.1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak with Fai Dan",
+		"description": "[megametracker://person?id=O1.FaiDan], the leader of the colonists, may have the information you need. Go up the stairs and through the downed freighter to speak with him.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Art.Kno.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 752,
+			"y": 1134,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Feros.2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Stop Geth in Tower",
+		"description": "The geth have taken control of a tower. Go up the stairs and make your way to the tower to stope their advance.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Art.Kno.Fer.Zhu.5",
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A1.F.GethInTunnels", "A1.F.PowerCells", "A1.F.VarrenMeat", "A1.F.WaterRestoration", "A1.U.EspionageProbe"],
+		"events": [{
+			"type": "Triggers",
+			"id": "Drove The Geth Dropship From Zhu's Hope"
+		}]
+	}, {
+		"id": "M1.Feros.3",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Inform Fai Dan",
+		"description": "Tell [megametracker://person?id=O1.FaiDan] that the geth have been cleared from the tower. He will alert you to additional optional assignments in Zhu's Hope.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Art.Kno.Fer.ZhusHope",
+		"mapLocationPoint": {
+			"x": 752,
+			"y": 1134,
+			"radius": 1
+		},
+		"relatedMissionIds": ["A1.F.GethInTunnels", "A1.F.PowerCells", "A1.F.VarrenMeat", "A1.F.WaterRestoration", "A1.U.EspionageProbe", "A1.T.StrangeBehavior"]
+	}, {
+		"id": "M1.Feros.4",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Get to ExoGeni Headquarters",
+		"description": "Take the elevator from Zhu's Hope down to the prothean skyway. User your vehicle to make your way to the ExoGeni headquarters and investigate the geth activities.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Att.The.Fer.Zhu.3",
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A1.F.DataRecovery"]
+	}, {
+		"id": "M1.Feros.5",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Investigate Mysterious Signal",
+		"description": "You've detected a mysterious signal that seems to be coming from a different group of colonists. If you think it worth your time, track down these colonists before heading to the ExoGeni headquarters",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Att.The.Fer.Sky.10",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Feros.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Investigate ExoGeni Headquarters",
+		"description": "Based on what the refugees told you, the geth are indeed at ExoGeni. Go there to investigate them, and be on the lookout for Lizbeth Baynham, as well.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni"
+	}, {
+		"id": "M1.Feros.6.1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Lizbeth Baynham",
+		"description": "Talk to Lizbeth in the ExoGeni Midden and get her access card.",
+		"inMissionId": "M1.Feros.6",
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1167,
+			"y": 747,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Feros.6.2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The ExoGeni VI",
+		"description": "Talk to the [megametracker://person?id=O2.ExoGeniVI] and find out what they were researching on Feros.",
+		"inMissionId": "M1.Feros.6",
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 652,
+			"y": 1243,
+			"radius": 1
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Talked to the ExoGeni VI"
+		}]
+	}, {
+		"id": "M1.Feros.7",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Remove Force Field",
+		"description": "You need to take the geth force field down in order to warn the Normandy about [the Thorian|megametracker://person?id=E1.Thorian]. Disabling or destroying one of those claws might do the trick.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"relatedMissionIds": ["M1.Feros.8"]
+	}, {
+		"id": "M1.Feros.8",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy Geth Ship Claws",
+		"description": "The geth ship's claws are too large to disable with conventional weapons. Find the geth ship's primary claw and figure out a way to destroy it.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1111,
+			"y": 1378,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Feros.9",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Exit ExoGeni",
+		"description": "You have destroyed the geth ship. Now get Lizbeth Baynham and leave ExoGeni.\n\nIn order to return to the Mako, you will need to release the Shuttle Bay door controls. Set the internal pressure to 31 and 34 pounds per inch and activate the first, third, and fourth switch.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+		"mapLocationPoint": {
+			"x": 769,
+			"y": 1799,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Feros.10",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak with Refugees",
+		"description": "You need more information before returning to Zhu's Hope. Talk with Lizbeth Baynham's mother Juliana at the refugee camp to find out what they know about [the Thorian|megametracker://person?id=E1.Thorian].\n\nAlso, now that communication has been restored, ExoGeni has ordered the colony exterminated to cover its tracks. Persuade Jeong not to follow these orders, or kill him if you have to.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Att.The.Fer.Sky.10",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Feros.11",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Return to Zhu's Hope",
+		"description": "Take the rover back along the prothean skyway to Zhu's Hope and find the entrance to [the Thorian's|megametracker://person?id=E1.Thorian] lair. Equip the anti-Thorian gas upgrade to your grenades to disable mind-controlled colonists without killing them. (Note: these special grenades can be obtained from Juliana Baynham.)",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Att.The.Fer.Zhu.3",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Feros.12",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Minimize Casualties",
+		"description": "Fight your way to the freighter and down into the Throians's lair. Kill Thorian creepers at will, but avoid slaying the colonists. You can safely knock them out using melee attacks or grenades equipped with the anti-Thorian upgrade. \n\nTell your squad, \"Don’t shoot the colonists,\" to keep them attacking Creepers only. You have very few anti-Thorian grenades, so use them sparingly.",
+		"inMissionId": "M1.Feros",
+		"decisionIds": ["D1.ZhusHope"]
+	}, {
+		"id": "M1.Feros.13",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy the Thorian",
+		"description": "[The Thorian|megametracker://person?id=E1.Thorian] is not interested in talking. Find a weak point on the enormous creature and take it down.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 340,
+			"y": 1896,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Feros.13.1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy Neural Node",
+		"inMissionId": "M1.Feros.13",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 341,
+			"y": 1697,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Feros.13.2",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy Neural Node",
+		"inMissionId": "M1.Feros.13",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 1285,
+			"y": 1476,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Feros.13.3",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy Neural Node",
+		"inMissionId": "M1.Feros.13",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 1154,
+			"y": 1008,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Feros.13.4",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy Neural Node",
+		"inMissionId": "M1.Feros.13",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 1586,
+			"y": 1256,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Feros.13.5",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy Neural Node",
+		"inMissionId": "M1.Feros.13",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 876,
+			"y": 574,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Feros.13.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Destroy Neural Node",
+		"inMissionId": "M1.Feros.13",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 382,
+			"y": 609,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Feros.13.7",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The Cypher",
+		"description": "With [the Thorian|megametracker://person?id=E1.Thorian] defeated, an asari emerges from one of its pods, [Shiala|megametracker://person?id=O1.Shiala]. She worked for [Matriarch Benezia|megametracker://person?id=E1.Benezia] and [Saren|megametracker://person?id=E1.Saren] used her to interface with the Thorian. Now she is done with both of them and offers you the same cypher she gave to [Saren|megametracker://person?id=E1.Saren], which he used to understand the Prothean Beacon.",
+		"inMissionId": "M1.Feros.13",
+		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
+		"mapLocationPoint": {
+			"x": 340,
+			"y": 1896,
+			"radius": 1
+		},
+		"decisionIds": ["D1.Shiala"]
+	}, {
+		"id": "M1.Feros.14",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Complete",
+		"description": "With [Liara's[megametracker://person?id=S1.Liara] help, use the cypher to make sense of the Prothean Beacon's visions.",
+		"inMissionId": "M1.Feros",
+		"inMapId": "G.N1.1",
+		"relatedMissionIds": ["A1.T.UdinaOnFeros"]
+	}, {
+		"id": "M1.Noveria",
+		"sortIndex": 7,
+		"gameVersion": "1",
+		"missionType": "Mission",
+		"name": "Noveria: Geth Interest",
+		"aliases": ["Noveria: Geth Interest", "Noveria: Matriarch Benezia", "Noveria: Death of a Matriarch"],
+		"description": "The Council has received reports of geth interest in the corporate research colony of Noveria.",
+		"inMapId": "G.Ear.Hor.Pax.Noveria",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_Geth_Interest"
+		],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Captain Matsuo during the Docking Bay encounter",
+				"options": [{
+					"id": "M1.Noveria.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We'll cooperate.\""
+				}, {
+					"id": "M1.Noveria.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'm keeping my gun.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking again to Captain Matsuo and Sergeant Stirling after the Docking Bay encounter",
+				"options": [{
+					"id": "M1.Noveria.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Forget about it.\""
+				}, {
+					"id": "M1.Noveria.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Humiliating, wasn't it?\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to Ventralis at Rift Station",
+				"options": [{
+					"id": "M1.Noveria.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'll see what I can do.\""
+				}, {
+					"id": "M1.Noveria.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'm not here to help.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After talking to Ventralis at Rift Station",
+				"options": [{
+					"id": "M1.Noveria.P4",
+					"type": "Paragon",
+					"value": 2,
+					"context": "Help Ventralis with the rachni",
+					"trigger": "\"No problem.\""
+				}, {
+					"id": "M1.Noveria.R4",
+					"type": "Renegade",
+					"value": 2,
+					"context": "Don't help Ventralis with the rachni",
+					"trigger": "\"You're welcome.\" / \"You couldn't handle it?\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Report to the Council after Noveria (optional)",
+				"options": [{
+					"id": "M1.Noveria.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"They won't.\" or \"It was the only way.\""
+				}, {
+					"id": "M1.Noveria.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Should I guess?\" or \"Sometimes.\""
+				}]
+			}
+		}, {
+			"id": "M1.Noveria.P6",
+			"type": "Paragon",
+			"value": 2,
+			"context": "Reporting to the Council (only available if the Rachni Queen was freed)",
+			"trigger": "\"Not these ones.\""
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map"
+		}, {
+			"type": "Triggers",
+			"id": "Completed Noveria Mission"
+		}, {
+			"type": "Triggers",
+			"id": "Alert Citadel Lockdown Pending"
+		}]
+	}, {
+		"id": "M1.Noveria.1",
+		"inMissionId": "M1.Noveria",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to Noveria",
+		"description": "Head to Noveria to investigate reports of geth on the world.",
+		"inMapId": "G.Ear.Hor.Pax.Noveria",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Unlocked Noveria: Port"
+		}]
+	}, {
+		"id": "M1.Noveria.1.1",
+		"inMissionId": "M1.Noveria.1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Noveria Port Security",
+		"description": "There is some difficulty landing the Normandy at Port Hanshen. [Captain Matsuo|megametracker://person?id=O1.Matsuo] and a security team from Elanus Risk Control Services confront you in the Docking Bay.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 1513,
+			"y": 382,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Noveria.1.2",
+		"inMissionId": "M1.Noveria.1",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Noveria Port Customs",
+		"description": "As you pass through Customs, [Gianna Parasini|megametracker://person?id=O1.Gianna], assistant to [Administrator Anoleis|megametracker://person?id=O1.Anoleis], will explain that [Matriarch Benezia|megametracker://person?id=E1.Benezia] left for Peak 15 a few days earlier and if you want to pursue her, you will need a Garage Pass from Administrator Anoleis.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+		"mapLocationPoint": {
+			"x": 1451,
+			"y": 157,
+			"radius": 1
+		}
+	}, {
+		"id": "M1.Noveria.2PortHanshen",
+		"gameVersion": "1",
+		"sortIndex": 8,
+		"missionType": "Mission",
+		"name": "Noveria: Leave Port Hanshen",
+		"description": "There are several ways to get a garage pass. Your first option (and least violent) is to turn over Opold's package in [megametracker://mission?id=A1.N.Smuggling] to [Anoleis|megametracker://person?id=O1.Anoleis]. Your other options result from completing [megametracker://mission?id=A1.N.LorikQuiin], with any of its final reward paths.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Por.12",
+		"isShowInParentMap": false,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_Leave_Port_Hanshen"
+		],
+		"relatedMissionIds": ["A1.N.Smuggling", "A1.N.LorikQuiin"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Port"
+		}, {
+			"type": "Triggers",
+			"id": "Unlocked Noveria: Garage"
+		}, {
+			"type": "Triggers",
+			"id": "Garage Pass via M1.Noveria.2PortHanshen"
+		}]
+	}, {
+		"id": "M1.Noveria.2PortHanshen.1",
+		"inMissionId": "M1.Noveria.2PortHanshen",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Administrator Anoleis",
+		"description": "[Gianna|megametracker://person?id=O1.Gianna] said to speak with [Administrator Anoleis|megametracker://person?id=O1.Anoleis] to leave Port Hanshan. His office is upstairs.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Por.11",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Noveria.2PortHanshen.2",
+		"inMissionId": "M1.Noveria.2PortHanshen",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "A Stumbling Block",
+		"description": "[Anoleis|megametracker://person?id=O1.Anoleis] was unimpressed with your credentials. You need to figure out how to leave Port Hanshan.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Por.11",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Noveria.3Peak15",
+		"gameVersion": "1",
+		"sortIndex": 9,
+		"missionType": "Mission",
+		"name": "Noveria: Peak 15",
+		"description": "Contact has been lost with the Peak 15 facility. Reestablish contact by reactivating [megametracker://person?id=O1.Mira]. \n\n*This mission can be acquired in several ways A) from an NPC in Port Hanshan Plaza (first objective below), B) from Lilihierax, C) from [Gianna Parasini|megametracker://person?id=O1.Gianna] after she reveals she is working for Internal Affairs (second objective below), or D) by just reactivating Mira (which also completes the mission).",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_Peak_15"
+		],
+		"relatedMissionIds": ["M1.Noveria.2", "M1.Noveria.3", "M1.Noveria.5Landlines", "M1.Noveria.6Reactor"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Port"
+		}, {
+			"type": "Triggers",
+			"id": "Unlocked Noveria: Peak 15"
+		}]
+	}, {
+		"id": "M1.Noveria.3Peak15.1",
+		"inMissionId": "M1.Noveria.3Peak15",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Mysterious Rumors",
+		"description": "Port Hanshen in full of rumors about Peak 15, but few facts.\n\n Talk to one of the business NPCs in Port Hanshen Plaza to acquire this mission.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Por.6",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Noveria.3Peak15.3",
+		"inMissionId": "M1.Noveria.3Peak15",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Computer's Damaged",
+		"description": "Peak 15's Virtual Intelligence computer program has suffered some kind of failure, and requires a manual reboot. \n\nThe puzzle to accomplish this is a classic Towers of Hanoi game ([https://en.wikipedia.org/wiki/Tower_of_Hanoi#Iterative_solution]).",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Pea.8",
+		"isShowInParentMap": true,
+		"sideEffects": ["In Game 3 at the Castle Arcade, there is a Towers of Hanoi game, but when trying to play it, Shepard refuses, saying: \"Towers of Hanoi? I don't think so.\""]
+	}, {
+		"id": "M1.Noveria.4",
+		"inMissionId": "M1.Noveria",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "To Peak 15",
+		"description": "[Matriarch Benezia|megametracker://person?id=E1.Benezia], [Saren's|megametracker://person?id=E1.Saren] aide, is at a remote complex called Peak 15. You need to drive out to investigate.\n\n You will first need to obtain a garage pass - see [megametracker://mission?id=M1.Noveria.2PortHanshen]",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15"
+	}, {
+		"id": "M1.Noveria.4.1",
+		"inMissionId": "M1.Noveria.4",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Clear the Garage",
+		"description": "Benezia has left geth guarding the Port Hanshen garage. You will need to clear them out before leaving for Peak 15.  If you decrypt the lock on the nearby crawler, its guns will attack the geth.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Por.12",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Garage"
+		}]
+	}, {
+		"id": "M1.Noveria.4.2",
+		"inMissionId": "M1.Noveria.4",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Aleutsk Valley",
+		"description": "The road to Peak 15 is defended by geth. Abandoned vehicles along the way may have loot. Tunnels are hazardous chokepoints.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.AleutskValley",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Garage"
+		}]
+	}, {
+		"id": "M1.Noveria.4.3",
+		"inMissionId": "M1.Noveria.4",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Enter Peak 15",
+		"description": "Krogan and geth are defending the garage at Peak 15. You will need to destroy them to enter the facility. Head up to the administration level when done.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Pea.2",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Garage"
+		}]
+	}, {
+		"id": "M1.Noveria.4.4",
+		"inMissionId": "M1.Noveria.4",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Rachni in the Cafeteria",
+		"description": "Eliminate the rachni swarming the Cafeteria before taking the elevator down to Mira Core.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Pea.5",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Garage"
+		}]
+	}, {
+		"id": "M1.Noveria.5Landlines",
+		"gameVersion": "1",
+		"sortIndex": 10,
+		"missionType": "Mission",
+		"name": "Noveria: Reconnect Landlines",
+		"description": "The landlines must be reconnected. They can be found on the roof of Peak 15.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 105,
+			"y": 207,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_Reconnect_Landlines"
+		],
+		"relatedMissionIds": ["M1.Noveria.5Landlines", "M1.Noveria.6Reactor"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Peak 15"
+		}, {
+			"type": "Triggers",
+			"id": "Noveria Landlines Repaired"
+		}]
+	}, {
+		"id": "M1.Noveria.6Reactor",
+		"gameVersion": "1",
+		"sortIndex": 11,
+		"missionType": "Mission",
+		"name": "Noveria: Reactor Repair",
+		"description": "The helium-3 fuel lines for the fusion plant have been cut. They must be restored using the controls on the central reactor core.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
+		"mapLocationPoint": {
+			"x": 526,
+			"y": 1284,
+			"radius": 1
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_Reactor_Repair"
+		],
+		"relatedMissionIds": ["M1.Noveria.3", "M1.Noveria.5Landlines"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Peak 15"
+		}, {
+			"type": "Triggers",
+			"id": "Noveria Reactor Repaired"
+		}]
+	}, {
+		"id": "M1.Noveria.7Contamination",
+		"gameVersion": "1",
+		"sortIndex": 12,
+		"missionType": "Mission",
+		"name": "Noveria: Contamination",
+		"description": "You'll need to unseal the decontamination chamber in order to get to the trams. [megametracker://person?id=O1.Mira] might be able to help.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Pea.23",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_Contamination"
+		],
+		"relatedMissionIds": ["M1.Noveria.3Peak15"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Noveria Peak 15 Repaired"
+		}, {
+			"type": "Triggers",
+			"id": "Noveria Decontamination Chamber Cleared"
+		}]
+	}, {
+		"id": "M1.Noveria.8",
+		"inMissionId": "M1.Noveria",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "To Rift Station",
+		"description": "You are tracking down [Matriarch Benezia|megametracker://person?id=E1.Benezia]. She has gone to the Rift Station facility, which is accessed via Peak 15's passenger trams.\n\nThe trams are not working currently - you will need to reactivate [megametracker://person?id=O1.Mira] and restore power, see [megametracker://mission?id=M1.Noveria.3Peak15], [megametracker://mission?id=M1.Noveria.5Landlines], and [megametracker://mission?id=M1.Noveria.6Reactor]. Then clear out the Decontaimination Chamber ([megametracker://mission?id=M1.Noveria.7Contamination]), and take the tram to Rift Station",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Pea.24",
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["M1.Noveria.3Peak15", "M1.Noveria.5Landlines", "M1.Noveria.6Reactor", "M1.Noveria.7Contamination"]
+	}, {
+		"id": "M1.Noveria.9",
+		"inMissionId": "M1.Noveria",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "To the Hot Labs",
+		"description": "You are tracking down [Matriarch Benezia|megametracker://person?id=E1.Benezia]. She left Rift Station to battle the creatures in the infested Hot Labs. The labs can be accessed via an emergency elevator between Ventralis' barricade and the tram station.\n\n_(Note: The real mission here is to find Benezia. Also, you do not have to stay and help Ventralis fight off rachni if you don't want to.)_",
+		"sideEffects": ["Ventralis is an agent of Benezia. If you go to the Hot Labs as Ventralis suggests, when you return he will be waiting in the Barracks and attack you there. If you confront Benezia first, you can return and kill him at his station."],
+		"relatedMissionIds": ["M1.Noveria.10RiftStation"],
+		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+		"mapLocationPoint": {
+			"x": 1369,
+			"y": 1475,
+			"radius": 1
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Rift Station"
+		}]
+	}, {
+		"id": "M1.Noveria.10RiftStation",
+		"gameVersion": "1",
+		"sortIndex": 13,
+		"missionType": "Mission",
+		"name": "Noveria: Rift Station",
+		"description": "You've discovered a sealed section of the Rift Station labs. It would be possible to blast your way in, but there may be a more subtle way. \n\nYou can acquire this mission in three ways: A) approaching the [Security|megametracker://maplocation?id=G.Ear.Hor.Pax.Nov.Rif.16&type=Map] section of Rift Station's main level, B) from [megametracker://person?id=O1.HanOlar] after [Alestia Iallis'|megametracker://person?id=O1.Iallis] attack in [megametracker://mission?id=A1.N.Quarantine], C) complete [megametracker://mission?id=M1.Noveria.11HotLabs].",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.1",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_Rift_Station"
+		],
+		"relatedMissionIds": ["M1.Noveria.9", "M1.Noveria.11HotLabs", "A1.N.Quarantine"],
+		"decisionIds": ["D1.RachniQueen"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M1.Noveria.6P1",
+					"type": "Paragon",
+					"value": 24,
+					"trigger": "Save the Queen"
+				}, {
+					"id": "M1.Noveria.6R1",
+					"type": "Renegade",
+					"value": 25,
+					"trigger": "Kill The Queen"
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Rift Station"
+		}, {
+			"type": "Triggers",
+			"id": "Noveria Rachni Queen Decision Made"
+		}, {
+			"type": "Triggers",
+			"id": "Noveria Rachni Queen via M1.Noveria.10RiftStation"
+		}]
+	}, {
+		"id": "M1.Noveria.11HotLabs",
+		"gameVersion": "1",
+		"sortIndex": 14,
+		"missionType": "Mission",
+		"name": "Noveria: The Hot Labs",
+		"description": "The Hot Labs have a self-destruct mechanism called a neutron purge. This would eliminate all of the rachni in Rift Station. If you enter the Hot Labs, you will have to activate the purge. If you activate the purge before confronting Benezia, all the survivors will attack you when exit the elevator afterwards.\n\nYou can acquire this mission from Yaroslev Tartakovsky, or by talking to [the Mira VI|megametracker://person?id=O1.Mira] in the Hot Labs. The codes to activate the purge can be found on Tartakovsky's body.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.19",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Noveria:_The_Hot_Labs"
+		],
+		"relatedMissionIds": ["M1.Noveria.10RiftStation"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Rift Station"
+		}, {
+			"type": "Triggers",
+			"id": "Noveria Rachni Purged"
+		}]
+	}, {
+		"id": "M1.Noveria.11HotLabs.1",
+		"inMissionId": "M1.Noveria.11HotLabs",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Arm the Purge",
+		"description": "You need a key card to arm the neutron purge system; only administrators have one."
+	}, {
+		"id": "M1.Noveria.11HotLabs.2",
+		"inMissionId": "M1.Noveria.11HotLabs",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "The Pass Card",
+		"description": "You have the card needed to arm the neutron purge. Use it on the controls in the Operations Center."
+	}, {
+		"id": "M1.Noveria.11HotLabs.3",
+		"inMissionId": "M1.Noveria.11HotLabs",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Purge Armed",
+		"description": "The purge has been armed. You need a verbal code from an adminstrator to begin the final countdown."
+	}, {
+		"id": "M1.Noveria.11HotLabs.4",
+		"inMissionId": "M1.Noveria.11HotLabs",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Acquired Codes",
+		"description": "You hvae the codes needed to activate the purge controls. All that's left is to order [megametracker://person?id=O1.Mira] to being the countdown."
+	}, {
+		"id": "M1.Noveria.11HotLabs.5",
+		"inMissionId": "M1.Noveria.11HotLabs",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Code Omega",
+		"description": "The neutron purge is armed and counting down. Run up to the elevator!"
+	}, {
+		"id": "M1.Noveria.9.1",
+		"inMissionId": "M1.Noveria.9",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find Benezia",
+		"description": "You have three options to locate [Matriarch Benezia|megametracker://person?id=E1.Benezia]. \n\nFirst: Help [Dr. Cohen|megametracker://person?id=O1.Cohen] in [megametracker://mission?id=A1.N.Quarantine], and use the maintenance tunnels access in the science barracks (don't take the elevator or you will find yourself in scenario #3). \n\nSecond: Follow Ventralis' suggestion and take the elevator down to the Hot Labs. Benezia is not there, but you will then have access to both the maintenance tunnels in scenario #1 and the security entrance in scenario #3. \n\nThird: Decrypt the security entrance on the north side of the mess hall on the main level, fight all the soldiers and drones in the complex, and take the elevator down to the lower level.",
+		"relatedMissionIds": ["M1.Noveria.10RiftStation", "M1.Noveria.11HotLabs", "A1.N.Quarantine"],
+		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.1",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Rift Station"
+		}]
+	}, {
+		"id": "M1.Noveria.9.2",
+		"inMissionId": "M1.Noveria.9",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Kill Benezia",
+		"description": "She will send waves of servants to attack you. Dispatch them first, then attack Benezia in between, while she is weakened. The final fight occurs after she initiates a conversation with you. At that point, focus all your efforts on Benezia.",
+		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.1",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Noveria: Rift Station"
+		}, {
+			"type": "Triggers",
+			"id": "Noveria Benezia Dead"
+		}]
+	}, {
+		"id": "M1.Noveria.12",
+		"inMissionId": "M1.Noveria",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Deal With Hot Labs",
+		"description": "If you have not already destroyed the rachni in the Hot Labs ([megametracker://mission?id=M1.Noveria.11HotLabs]), complete it now.",
+		"relatedMissionIds": ["M1.Noveria.11HotLabs"]
+	}, {
+		"id": "M1.Noveria.13",
+		"inMissionId": "M1.Noveria",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Mission Complete",
+		"description": "Debrief on the Normandy, as usual. Speak to [Liara[megametracker://person?id=S1.Liara] about her mother, and talk to the Council.",
+		"inMapId": "G.N1.1",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed Noveria Rift Station"
+		}]
+	}, {
+		"id": "M1.Virmire",
+		"sortIndex": 15,
+		"gameVersion": "1",
+		"missionType": "Mission",
+		"name": "Virmire",
+		"aliases": ["Virmire", "Virmire: Saren's Plan", "Virmire: Assault", "Virmire: Base Destroyed"],
+		"description": "After you complete two of the primary plot worlds (Therum, Feros, or Noveria), the Council contacts you with the news that they've lost contact with a salarian reconnaissance group investigating [Saren's|megametracker://person?id=E1.Saren] activities on the planet Virmire.",
+		"inMapId": "G.Att.Sen.Hoc.Virmire",
+		"isShowInParentMap": true,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Virmire_(mission)"
+		],
+        "decisionIds": ["D1.Kirrahe"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to the Council when alerted to the mission",
+				"options": [{
+					"id": "M1.Virmire.1.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Good.\""
+				}, {
+					"id": "M1.Virmire.1.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"This is my investigation.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Kaidan or Ashley (whichever Shepard chooses not to rescue)",
+				"options": [{
+					"id": "M1.Virmire.9.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'm sorry.\""
+				}, {
+					"id": "M1.Virmire.9.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Of course it was.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Attempt to convince Saren he is indoctrinated",
+				"options": [{
+					"id": "M1.Virmire.10.P1",
+					"type": "Paragon",
+					"value": 2,
+					"context": "*_Charm_* Saren (Requires 7 Charm)",
+					"trigger": "\"Join me.\""
+				}, {
+					"id": "M1.Virmire.10.R1",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*_Intimidate_* Saren (Requires 7 Intimidate)",
+					"trigger": "\"Sovereign will betray you.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the Council after (optional)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M1.Virmire.11.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You need proof?\""
+						}, {
+							"id": "M1.Virmire.11.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Screw you!\""
+						}]
+					}
+				}, {
+					"id": "M1.Virmire.11.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You have to trust me.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Two of Therum, Feros, or Noveria"
+		}, {
+			"type": "Triggers",
+			"id": "Completed Virmire Mission"
+		}, {
+			"type": "Triggers",
+			"id": "Alert Citadel Lockdown Pending"
+		}]
+	}, {
+		"id": "M1.Virmire.1",
+		"inMissionId": "M1.Virmire",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to Virmire",
+		"description": "Head to Virmire and rendezvous with the salarian team.",
+		"inMapId": "G.Att.Sen.Hoc.Virmire",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Virmire.2",
+		"inMissionId": "M1.Virmire",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Disable the AA Tower",
+		"description": "Take the Mako and find the AA Tower. Disable the guns so the Normandy can land.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Gro.3",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Virmire.3",
+		"inMissionId": "M1.Virmire",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Head to the Salarian Camp",
+		"description": "The AA guns are down and the Normandy can land at the salarian camp. Continue on and meet them there.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Grounds",
+		"events": [{
+			"type": "Triggers",
+			"id": "Unlocked Virmire: Salarian Camp"
+		}]
+	}, {
+		"id": "M1.Virmire.4",
+		"inMissionId": "M1.Virmire",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Speak with the Salarians",
+		"description": "You've made it to the camp. Find whoever's in charge and speak with them.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Gro.5",
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A1.V.AssistingKirrahesTeam", "A1.V.WrexAndTheGenophage"]
+	}, {
+		"id": "M1.Virmire.5",
+		"inMissionId": "M1.Virmire",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Prepare for Assault",
+		"description": "Prepare your team for the assault on [Saren's|megametracker://person?id=E1.Saren] base. When you're ready, talk to [Captain Kirrahe|megametracker://person?id=P1.Kirrahe].\n\nCaptain Kirrahe's plan is to infiltrate [Saren's|megametracker://person?id=E1.Saren] base in two teams, and set off a bomb rigged from his ship's drive core. You will need to send either [Kaidan|megametracker://person?id=S1.Kaidan] or [Ashley|megametracker://person?id=S1.Ashley] with Kirrahe's team (don't worry: this choice does not impact later events, except that you won't have that person on your team for this assault).",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Gro.5",
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A1.V.AssistingKirrahesTeam", "A1.V.WrexAndTheGenophage"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Virmire: Salarian Camp"
+		}, {
+			"type": "Triggers",
+			"id": "Unlocked Virmire: Base Approach"
+		}]
+	}, {
+		"id": "M1.Virmire.6",
+		"inMissionId": "M1.Virmire",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Infiltrate Saren's Base",
+		"description": "Go to the main geth base. Try to slow the geth defenses.\n\nYou can choose to help Kirrahe's team in [megametracker://mission?id=A1.V.AssistingKirrahesTeam], or simply continue to the base yourself.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseApproach",
+		"relatedMissionIds": ["A1.V.AssistingKirrahesTeam"]
+	}, {
+		"id": "M1.Virmire.6.1",
+		"inMissionId": "M1.Virmire.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Enter the Base",
+		"description": "There are two way into the base, one on the main level and a lower one to the left through the sewers. Either direction requires deactivating base security, which may affect [megametracker://mission?id=A1.V.AssistingKirrahesTeam.4].",
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"relatedMissionIds": ["A1.V.AssistingKirrahesTeam.4"],
+		"events": [{
+			"type": "Triggers",
+			"id": "Unlocked Virmire: Labs"
+		}]
+	}, {
+		"id": "M1.Virmire.6.2",
+		"inMissionId": "M1.Virmire.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Saren's Experiments",
+		"description": "As you go upstairs from the sewers or through the main entrance warehouse and maintenance rooms, you will have to fight indoctrinated salarians. You will also encounter prisoners in Cell Blocks A and B. If you want to interact with them, read more in [megametracker://mission?id=A1.T.VirmirePrisoners]. When you are finished with this area, head back to the entry level and take the elevator to the labs.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"relatedMissionIds": ["A1.T.VirmirePrisoners"]
+	}, {
+		"id": "M1.Virmire.6.3",
+		"inMissionId": "M1.Virmire.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Genophage Research",
+		"description": "In the labs you will have to fight [Dr. Droyas|megametracker://person?id=O1.Droyas] and his assitant, and all the husks. In the next room is the asari [megametracker://person?id=O1.Rana], who will reveal a lot more information about [Saren|megametracker://person?id=E1.Saren] and [Sovereign|megametracker://person?id=E1.Sovereign]. You can choose whether or not to kill her. Then take the elevator to the Communications Tower.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Labs"
+	}, {
+		"id": "M1.Virmire.6.4",
+		"inMissionId": "M1.Virmire.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Sovereign",
+		"description": "Activate the beacon on the lower level of the tower, and activate the communications panel on the upper level to speak to [Sovereign|megametracker://person?id=E1.Sovereign]. It will explain the Reaper plan to destroy all life in the universe. Then the panel will explode and [Joker|megametracker://person?id=P1.Joker] will come over the radio with a warning that Sovereign is on the move.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Lab.6",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Virmire.7",
+		"inMissionId": "M1.Virmire",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Disable AA Guns",
+		"description": "Disable the AA guns so the Normandy can drop off the Nuke.\n\n Return to the labs and take the bridge to the main level ([megametracker://maplocation?id=G.Att.Sen.Hoc.Vir.Lab.2&type=Map]), fighting off krogan and geth along the way.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Labs"
+	}, {
+		"id": "M1.Virmire.8",
+		"inMissionId": "M1.Virmire",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Disable Final AA Gun",
+		"description": "Kirrahe's team is taking on one AA turret and your team will take the other. After you disable the turret control, fight off geth from the ramp behind you and through the elevator. Make your way down to Breeding Trench East ([megametracker://maplocation?id=G.Att.Sen.Hoc.Vir.Mai.12&type=Map]) and through it to the central open area to meet the Normandy.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel"
+	}, {
+		"id": "M1.Virmire.8.1",
+		"inMissionId": "M1.Virmire.8",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Disable Turret Control",
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 1353,
+			"y": 911,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "M1.Virmire.9",
+		"inMissionId": "M1.Virmire",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Provide Backup",
+		"description": "[Kirrahe's|megametracker://person?id=P1.Kirrahe] team is under heavy fire. head to the second AA tower to provide support while [Kaidan|megametracker://person?id=S1.Kaidan] or [Ashley|megametracker://person?id=S1.Ashley] secures the bomb at the landing pad (whichever one did not go with Kirrahe's team). \n\nYou may need to select a new team. Head to Breeding Trench West ([megametracker://maplocation?id=G.Att.Sen.Hoc.Vir.Mai.10&type=Map]), which is filled with geth and krogan. Fight through them to the elevator up to Main Level West ([megametracker://maplocation?id=G.Att.Sen.Hoc.Vir.Mai.3&type=Map]).",
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel"
+	}, {
+		"id": "M1.Virmire.10",
+		"inMissionId": "M1.Virmire",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Bomb Site / AA Tower",
+		"description": "A geth ship appears, heading to the bomb site. You have to make a choice: rescue [Kaidan|megametracker://person?id=S1.Kaidan] or [Ashley|megametracker://person?id=S1.Ashley]. This is the single most important decision of all three games, as it eliminates a major character from the other two games. Whichever way you go - up to the tower, or down to the bomb site, there is a major fight ahead.",
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"decisionIds": ["D1.Kaidan", "D1.Ashley"]
+	}, {
+		"id": "M1.Virmire.11",
+		"inMissionId": "M1.Virmire",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Complete",
+		"description": "The Council is waiting to talk to you, and most of the crew will want to express their condolences at the lost team member. Any surviving members of [Kirrahe's|megametracker://person?id=P1.Kirrahe] team are down in the Vehicle Bay (although they will leave as soon as a new mission is started).",
+		"inMapId": "G.N1.1"
+	}, {
+		"id": "M1.RaceAgainstTime",
+		"sortIndex": 17,
+		"gameVersion": "1",
+		"missionType": "Mission",
+		"name": "Race Against Time",
+		"aliases": ["Race Against Time", "Race Against Time: Sovereign", "Race Against Time: Conduit", "Race Against Time: Final Battle"],
+		"description": "Find the Conduit before [Saren|megametracker://person?id=E1.Saren] and prevent him from his plan to unleash the Reapers on our galaxy.",
+		"inMapId": null,
+		"isShowInParentMap": false,
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Race_Against_Time"
+		],
+		"conversationRewards": [{
+			"id": "M1.RaceAgainstTime.1",
+			"type": "Renegade",
+			"value": 2,
+			"context": "Speaking to Ambassador Udina after the Normandy is grounded",
+			"trigger": "\"You son of a bitch.\""
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Vigil on Ilos about deactivating the prothean life pods to save energy",
+				"options": [{
+					"id": "M1.RaceAgainstTime.5.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"That's monstrous!\" / \"You betrayed them.\""
+				}, {
+					"id": "M1.RaceAgainstTime.5.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"It was necessary.\""
+				}]
+
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Confronting Saren on the Citadel, after travelling through the Conduit",
+				"options": [{
+					"id": "M1.RaceAgainstTime.6.3.P1",
+					"type": "Paragon",
+					"value": 24,
+					"context": "*_Charm_* Saren (Requires 12 Charm, or 9 Charm if you previously persuaded Saren on Virmire)",
+					"trigger": "\"That's not true.\""
+				}, {
+					"id": "M1.RaceAgainstTime.6.3.R1",
+					"type": "Renegade",
+					"value": 25,
+					"context": "*_Intimidate_* Saren (Requires 12 Intimidate, or 9 Intimidate if you previously persuaded Saren on Virmire)",
+					"trigger": "\"It's never too late!\""
+				}]
+
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "When the geth attack the ships fleeing the Citadel during the final battle",
+				"options": [{
+					"id": "M1.RaceAgainstTime.6.4.P1",
+					"type": "Paragon",
+					"value": 28,
+					"context": "Save the Destiny Ascension",
+					"trigger": "\"Save the Council.\""
+				}, {
+					"id": "M1.RaceAgainstTime.6.4.R1",
+					"type": "Renegade",
+					"value": 29,
+					"context": "Refuse to save the Destiny Ascension",
+					"trigger": "\"Let the Council die.\""
+				}, {
+					"id": "M1.RaceAgainstTime.6.4.P2",
+					"type": "Paragade",
+					"value": 0,
+					"paragadeValue": [8, 9],
+					"context": "Refuse to choose",
+					"trigger": "\"Concentrate on Sovereign.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Two of Therum, Feros, or Noveria"
+		}, {
+			"type": "Triggers",
+			"id": "Finished Game 1"
+		}]
+	}, {
+		"id": "M1.RaceAgainstTime.1",
+		"inMissionId": "M1.RaceAgainstTime",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Find the Conduit",
+		"description": "You need to explore Feros, Noveria, the Artmeis Tau cluster, and Virmire to find the clues that will lead you to the Conduit before Saren."
+	}, {
+		"id": "M1.RaceAgainstTime.2",
+		"inMissionId": "M1.RaceAgainstTime",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Report to the Council",
+		"description": "Report to the Countil to warn them of [Saren's|megametracker://person?id=E1.Saren] plan to attack the Citadel.",
+		"inMapId": "G.C1.Tower.Council",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Citadel Lockdown"
+		}, {
+			"type": "Triggers",
+			"id": "Alert Citadel Lockdown"
+		}]
+	}, {
+		"id": "M1.RaceAgainstTime.4",
+		"inMissionId": "M1.RaceAgainstTime",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Meet With Anderson",
+		"description": "[Anderson|megametracker://person?id=P1.Anderson] is waiting for you in the wards at Flux. He may be able to help you get off the Citadel.\n\nAnderson proposes two different ideas for circumventing the lockdown: breaking into Citadel Control, or hacking [Ambassador Udina's|megametracker://person?id=P1.Udina] computer. They both end with the same result: you escape the Citadel on the Normandy to pursue Saren to Ilos.",
+		"inMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 920,
+			"y": 1311,
+			"radius": 1
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Citadel Lockdown"
+		}, {
+			"type": "Triggers",
+			"id": "Citadel Lockdown: Exile"
+		}, {
+			"type": "Triggers",
+			"id": "Alert Citadel Lockdown Exile"
+		}]
+	}, {
+		"id": "M1.RaceAgainstTime.5",
+		"inMissionId": "M1.RaceAgainstTime",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Go to Ilos",
+		"description": "Use the Mu Relay to go to Ilos and stop [Saren|megametracker://person?id=E1.Saren] before he uses the Conduit to unleash a Repaer invasion on the galaxy.",
+		"sideEffects": ["Liara will be very put out if you don't bring her along on the squad to Ilos."],
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Citadel Lockdown"
+		}, {
+			"type": "Triggers",
+			"id": "Ilos Started"
+		}, {
+			"type": "Triggers",
+			"id": "Spoke to Vigil"
+		}]
+	}, {
+		"id": "M1.RaceAgainstTime.5.1",
+		"inMissionId": "M1.RaceAgainstTime.5",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Prothean Archives",
+		"description": "You will need to find a way into the Prothean Archives below Ilos, to pursue [Saren|megametracker://person?id=E1.Saren] and beat him to the Conduit. See [megametracker://mission?id=M1.Ilos] for more."
+	}, {
+		"id": "M1.RaceAgainstTime.5.2",
+		"inMissionId": "M1.RaceAgainstTime.5",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Vigil",
+		"description": "Drive the Mako through the underground passage. Before you reach the end, an energy barrier will barr your path, and then another forms behind you. At this point, exit the Mako and take the elevator to the right and continue until you find [megametracker://person?id=O1.Vigil], an ancient prothean VI \n\nVigil will answer many of your questions about the protheans, the Reapers, the Citadel, and the Conduit (and delight [Liara[megametracker://person?id=S1.Liara] if she was brought along).",
+		"inMapId": "G.Att.Pan.Ref.Ilo.Arc.2",
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["M1.Ilos"]
+	}, {
+		"id": "M1.Ilos",
+		"sortIndex": 16,
+		"gameVersion": "1",
+		"missionType": "Mission",
+		"name": "Ilos: Find The Conduit",
+		"description": "Pursue [Saren|megametracker://person?id=E1.Saren] into the underground passageways below the ruins of Ilos.",
+		"inMapId": "G.Att.Pan.Ref.Ilo.Trench",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ilos:_Find_the_Conduit"
+		],
+		"relatedMissionIds": ["M1.RaceAgainstTime.5"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Ilos Started"
+		}]
+	}, {
+		"id": "M1.Ilos.1",
+		"inMissionId": "M1.Ilos",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Override the Security",
+		"description": "You need to find a security control room to open the sealed doors leading into the underground archive.",
+		"inMapId": "G.Att.Pan.Ref.Ilo.Rui.9",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.Ilos.2",
+		"inMissionId": "M1.Ilos",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Enter the Archives",
+		"description": "The security system is disabled. Return to your vehicle and follow [Saren|megametracker://person?id=E1.Saren] into the underground archives.",
+		"inMapId": "G.Att.Pan.Ref.Ilo.Rui.1",
+		"isShowInParentMap": true
+	}, {
+		"id": "M1.RaceAgainstTime.5.3",
+		"inMissionId": "M1.RaceAgainstTime.5",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Race to The Conduit",
+		"description": "Vigil has given you a special data file to take control of the Citadel. But you must reach the Conduit in time. Return to the Mako and race through the aqueduct trenches after [Saren|megametracker://person?id=E1.Saren]. Do not waste time fighting the geth along the route, just try to keep damage to a minimum.",
+		"inMapId": "G.Att.Pan.Ref.Ilo.Tre.2",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Spoke to Vigil"
+		}, {
+			"type": "Triggers",
+			"id": "Accessed Conduit to Citadel"
+		}]
+	}, {
+		"id": "M1.RaceAgainstTime.6",
+		"inMissionId": "M1.RaceAgainstTime",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Save the Citadel",
+		"description": "[Saren|megametracker://person?id=E1.Saren] has used the Conduit to get onto the Citadel. You have to stop him from transferring control of the Citadel to [Sovereign|megametracker://person?id=E1.Sovereign]."
+	}, {
+		"id": "M1.RaceAgainstTime.6.1",
+		"inMissionId": "M1.RaceAgainstTime.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Presidium",
+		"description": "The Mako travels through the Conduit and crashes in the Presidium. You can talk to [megametracker://person?id=O1.Avina] there for more information about the status of the Citadel and where [Saren|megametracker://person?id=E1.Saren] went. Head to the elevator to pursue him.",
+		"inMapId": "G.C1.Exhaust.1",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Accessed Conduit to Citadel"
+		}]
+	}, {
+		"id": "M1.RaceAgainstTime.6.2",
+		"inMissionId": "M1.RaceAgainstTime.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Citadel Exterior",
+		"description": "The elevator is destroyed by [Sovereign's|megametracker://person?id=E1.Sovereign] landing on the Citadel. Make your way outside and across the Maintenance Shaft. You will be attacked by geth, and by a krogan as you round the corner between the Maintenance Shaft and the Exhaust Plain. A geth dropship will approach the Exhaust Plain and begin dropping troops. You can activate the turrets to drive the dropship off. Continue on to the Exterior Defense Grid. There you will be attacked by krogans, geth destroyers, then a juggernaut, and geth turrets. When you have finished them all off, head to the Citadel Tower.",
+		"inMapId": "G.C1.Exhaust.12",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Accessed Conduit to Citadel"
+		}]
+	}, {
+		"id": "M1.RaceAgainstTime.6.3",
+		"inMissionId": "M1.RaceAgainstTime.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Defeat Saren",
+		"description": "There is a small force of geth in the Council Chambers, but the real fight will be against [Saren|megametracker://person?id=E1.Saren], whom [Sovereign|megametracker://person?id=E1.Sovereign] has further altered to be a superior synthetic version of himself. You can try persuading him to acknowledge he is indoctrinated, but eventually he will fight you anyway.",
+		"inMapId": "G.C1.Tower.Council",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Accessed Conduit to Citadel"
+		}]
+	}, {
+		"id": "M1.RaceAgainstTime.6.4",
+		"inMissionId": "M1.RaceAgainstTime.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Take The Citadel",
+		"description": "Make your way to the Control Terminal and use Vigil's data file to take control of the Citadel. You can open the arms of the Citadel, but now you must decide what to do about the Council's flagship, the Destiny Ascension, which is under heavy fire. The entire Council is onboard. [Joker|megametracker://person?id=P1.Joker] is waiting with an Alliance fleet and they can save the Ascension, but there will be heavy losses to the human forces.\n\nThis is also your last chance to save the game.",
+		"inMapId": "G.C1.Tower.Council",
+		"isShowInParentMap": true,
+		"decisionIds": ["D1.Council"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Accessed Conduit to Citadel"
+		}]
+	}, {
+		"id": "M1.RaceAgainstTime.6.5",
+		"inMissionId": "M1.RaceAgainstTime.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Defeat Synthetic Saren",
+		"description": "[Sovereign|megametracker://person?id=E1.Sovereign] revives [Saren|megametracker://person?id=E1.Saren] as a fully synthetic creature and you must defeat him again. Keep moving until Saren is down to 25% health. At that point, the fleet entering the Citadel will begin firing on Sovereign. When your battle resumes, Saren has full shields again, but not full health. Keep fighting until the Saren husk dies, at which point Sovereign's shields will also drop and it will detach from the Citadel.",
+		"inMapId": "G.C1.Tower.Council",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Accessed Conduit to Citadel"
+		}]
+	}, {
+		"id": "M1.RaceAgainstTime.6.6",
+		"inMissionId": "M1.RaceAgainstTime.6",
+		"gameVersion": "1",
+		"missionType": "Objective",
+		"name": "Finale",
+		"description": "The fleet destroys [Sovereign|megametracker://person?id=E1.Sovereign], but some of the wreckage slams into the Citadel Tower and buries Shepard. It is uncertain for a moment if you survived, but at the last minute you emerge from the wreckage, wounded but alive. If you saved the Council, they will be waiting to thank you, and to finally grant humanity a seat on the Council. If you let the Council die, [Udina|megametracker://person?id=P1.Udina] will propose establishing an all-human Council to take their place.",
+		"inMapId": "G.C1.Tower.Council",
+		"isShowInParentMap": true,
+		"decisionIds": ["D1.Udina", "D1.Anderson", "D1.HumanCouncil"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Accessed Conduit to Citadel"
+		}]
+	}]
+}

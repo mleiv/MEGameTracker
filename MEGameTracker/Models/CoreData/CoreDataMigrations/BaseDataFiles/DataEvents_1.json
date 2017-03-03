@@ -1,0 +1,610 @@
+{
+	"events": [{
+		"id": "Game1",
+		"description": "Game 1"
+	}, {
+		"id": "Game2",
+		"description": "Game 2"
+	}, {
+		"id": "Game3",
+		"description": "Game 3"
+	}, {
+		"id": "Origin Earthborn",
+		"description": "Origin Earthborn"
+	}, {
+		"id": "Origin Spacer",
+		"description": "Origin Spacer"
+	}, {
+		"id": "Origin Colonist",
+		"description": "Origin Colonist"
+	}, {
+		"id": "Unlocked Eden Prime",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Prologue.1]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "M1.Prologue"
+			},
+			"changes": {
+				"On": {
+					"name": "Prologue: Find The Beacon"
+				},
+				"Off": {
+					"name": "Prologue: On The Normandy"
+				}
+			}
+		}]
+	}, {
+		"id": "Unlocked Normandy",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Prologue.6]"
+	}, {
+		"id": "Unlocked Citadel: Presidium",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Prologue]"
+	}, {
+		"id": "Unlocked Citadel: Lower Levels",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.ExposeSaren.1]"
+	}, {
+		"id": "Sent to Meet Wrex",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.ShadowBroker]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "M1.ShadowBroker"
+			},
+			"changes": {
+				"On": {
+					"name": "Citadel: Wrex"
+				},
+				"Off": {
+					"name": "Citadel: Shadow Broker"
+				}
+			}
+		}]
+	}, {
+		"id": "Wrex Joined Team",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.ShadowBroker.2]"
+	}, {
+		"id": "Confronted Fist",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.ExposeSaren.2]"
+	}, {
+		"id": "Discovered Tali",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.ExposeSaren.3]"
+	}, {
+		"id": "Helped Emily Wong",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.C1.ReportersRequest]"
+	}, {
+		"id": "Confronted Chorban",
+		"gameVersion": "1",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "A1.C2A"
+			},
+			"changes": {
+				"On": {
+					"name": "Citadel: Jahleed's Fears"
+				},
+				"Off": {
+					"name": "Citadel: Jahleed's Secret"
+				}
+			}
+		}]
+	}, {
+		"id": "Talked to General Septimus",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.C1.AsariConsort.1]"
+	}, {
+		"id": "Talked to Chellick",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.C1.RitasSister.2]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "A1.C2.4"
+			},
+			"changes": {
+				"On": {
+					"name": "Citadel: Rita's Sister and Chellick"
+				},
+				"Off": {
+					"name": "Citadel: Rita's Sister"
+				}
+			}
+		}]
+	}, {
+		"id": "Helped Rita",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.C1.RitasSister]"
+
+	}, {
+		"id": "Unlocked Galaxy Map",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.ExposeSaren]"
+	}, {
+		"id": "Spectre Status",
+		"gameVersion": "1",
+		"description": "[Spectre Status|megametracker://mission?id=M1.ExposeSaren.4]"
+
+	}, {
+		"id": "Therum, Feros, or Noveria",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Therum], [megametracker://mission?id=M1.Feros], or [megametracker://mission?id=M1.Noveria]",
+		"dependentOn": {
+			"countTo": 1,
+			"events": [
+				"Completed Therum",
+				"Completed Feros Mission",
+				"Completed Noveria Mission"
+			]
+		}
+	}, {
+		"id": "Helped Emily Wong and Therum, Feros, or Noveria",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.C1.ReportersRequest], [megametracker://mission?id=M1.Therum], [megametracker://mission?id=M1.Feros], or [megametracker://mission?id=M1.Noveria]",
+		"dependentOn": {
+			"countTo": 1,
+			"events": [
+				"Helped Emily Wong",
+				"Therum, Feros, or Noveria"
+			]
+		}
+	}, {
+		"id": "Two of Therum, Feros, or Noveria",
+		"gameVersion": "1",
+		"description": "two of [megametracker://mission?id=M1.Therum], [megametracker://mission?id=M1.Feros], or [megametracker://mission?id=M1.Noveria]",
+		"dependentOn": {
+			"countTo": 2,
+			"events": [
+				"Completed Therum",
+				"Completed Feros Mission",
+				"Completed Noveria Mission"
+			]
+		}
+	}, {
+		"id": "Therum, Feros, and Noveria",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Therum], [megametracker://mission?id=M1.Feros], and [megametracker://mission?id=M1.Noveria]",
+		"dependentOn": {
+			"countTo": 3,
+			"events": [
+				"Completed Therum",
+				"Completed Feros Mission",
+				"Completed Noveria Mission"
+			]
+		}
+	}, {
+		"id": "Therum, Feros, Noveria, and Virmire",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Therum], [megametracker://mission?id=M1.Feros], [megametracker://mission?id=M1.Noveria], and [megametracker://mission?id=M1.Virmire]",
+		"dependentOn": {
+			"countTo": 4,
+			"events": [
+				"Completed Therum",
+				"Completed Feros Mission",
+				"Completed Noveria Mission",
+				"Completed Virmire Mission"
+			]
+		}
+	}, {
+		"id": "Completed Therum",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Therum]"
+
+	}, {
+		"id": "Drove The Geth Dropship From Zhu's Hope",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Feros.2]"
+	}, {
+		"id": "Talked to the ExoGeni VI",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Feros.6.2]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "M1.Feros"
+			},
+			"changes": {
+				"On": {
+					"name": "Feros: The Thorian"
+				},
+				"Off": {
+					"name": "Feros: Geth Attack"
+				}
+			}
+		}]
+	}, {
+		"id": "Completed Feros Mission",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Feros]"
+	}, {
+
+		"id": "Unlocked Noveria: Port",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.6Reactor]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "M1.Noveria"
+			},
+			"changes": {
+				"On": {
+					"name": "Noveria: Matriarch Benezia"
+				},
+				"Off": {
+					"name": "Noveria: Geth Interest"
+				}
+			}
+		}]
+	}, {
+		"id": "Unlocked Noveria: Garage",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.2PortHanshen]"
+
+	}, {
+		"id": "Garage Pass via M1.Noveria.2PortHanshen",
+		"gameVersion": "1"
+	}, {
+		"id": "Garage Pass via A1.N.LorikQuiin",
+		"gameVersion": "1",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "M1.Noveria.2PortHanshen"
+			},
+			"changes": {
+				"On": {
+					"isCompleted": true
+				},
+				"Off": {
+					"isCompleted": false
+				}
+			}
+		}]
+	}, {
+		"id": "Unlocked Noveria: Peak 15",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.5Landlines]"
+	}, {
+		"id": "Noveria Landlines Repaired",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.5Landlines]"
+	}, {
+		"id": "Noveria Reactor Repaired",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.6Reactor]"
+	}, {
+		"id": "Noveria Peak 15 Repaired",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.5Landlines] and [megametracker://mission?id=M1.Noveria.6Reactor]",
+		"dependentOn": {
+			"countTo": 2,
+			"events": [
+				"Noveria Landlines Repaired",
+				"Noveria Reactor Repaired"
+			]
+		}
+	}, {
+		"id": "Noveria Decontamination Chamber Cleared",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.7Contamination]"
+	}, {
+		"id": "Unlocked Noveria: Rift Station",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.5Landlines], [megametracker://mission?id=M1.Noveria.6Reactor], and [megametracker://mission?id=M1.Noveria.7Contamination]",
+		"dependentOn": {
+			"countTo": 3,
+			"events": [
+				"Noveria Landlines Repaired",
+				"Noveria Reactor Repaired",
+				"Noveria Decontamination Chamber Cleared"
+			]
+		}
+	}, {
+		"id": "Noveria Benezia Dead",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.9.2]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "M1.Noveria"
+			},
+			"changes": {
+				"On": {
+					"name": "Noveria: Death of a Matriarch"
+				},
+				"Off": {
+					"name": "Noveria: Matriarch Benezia"
+				}
+			}
+		}]
+	}, {
+		"id": "Noveria Rachni Queen Decision Made",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.10RiftStation]"
+	}, {
+		"id": "Noveria Rachni Purged",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.11HotLabs]"
+	}, {
+		"id": "Completed Noveria Rift Station",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria.10RiftStation] and [megametracker://mission?id=M1.Noveria.11HotLabs]",
+		"dependentOn": {
+			"countTo": 2,
+			"events": [
+				"Noveria Rachni Queen Decision Made",
+				"Noveria Rachni Purged"
+			]
+		}
+	}, {
+		"id": "Completed Noveria Mission",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Noveria]"
+	}, {
+		"id": "Wrex on Virmire",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Therum] and [megametracker://mission?id=M1.Virmire.3]",
+		"dependentOn": {
+			"countTo": 2,
+			"events": [
+				"Wrex Joined Team",
+				"Unlocked Virmire: Salarian Camp"
+			]
+		}
+	}, {
+		"id": "Unlocked Virmire: Salarian Camp",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Virmire.3]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "M1.Virmire"
+			},
+			"changes": {
+				"On": {
+					"name": "Virmire: Saren's Plan"
+				},
+				"Off": {
+					"name": "Virmire"
+				}
+			}
+		}]
+	}, {
+		"id": "Unlocked Virmire: Base Approach",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Virmire.2]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "M1.Virmire"
+			},
+			"changes": {
+				"On": {
+					"name": "Virmire: Assault"
+				},
+				"Off": {
+					"name": "Virmire: Saren's Plan"
+				}
+			}
+		}]
+	}, {
+		"id": "Unlocked Virmire: Labs",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Virmire.6.1]"
+	}, {
+		"id": "Completed Virmire Mission",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Virmire]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "M1.RaceAgainstTime"
+			},
+			"changes": {
+				"On": {
+					"name": "Race Against Time: Sovereign"
+				},
+				"Off": {
+					"name": "Race Against Time"
+				}
+			}
+		}, {
+			"target": {
+				"type": "Mission",
+				"id": "M1.Virmire"
+			},
+			"changes": {
+				"On": {
+					"name": "Virmire: Base Destroyed"
+				},
+				"Off": {
+					"name": "Virmire: Assault"
+				}
+			}
+		}]
+	}, {
+		"id": "Ilos Started",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.Ilos.1]"
+	}, {
+		"id": "Spoke to Vigil",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.RaceAgainstTime.5]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "M1.RaceAgainstTime"
+			},
+			"changes": {
+				"On": {
+					"name": "Race Against Time: Conduit"
+				},
+				"Off": {
+					"name": "Race Against Time: Sovereign"
+				}
+			}
+		}]
+	}, {
+		"id": "Accessed Conduit to Citadel",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.RaceAgainstTime.6]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "M1.RaceAgainstTime"
+			},
+			"changes": {
+				"On": {
+					"name": "Race Against Time: Final Battle"
+				},
+				"Off": {
+					"name": "Race Against Time: Conduit"
+				}
+			}
+		}]
+
+
+
+
+
+	}, {
+		"id": "ExoGeni Samples Source Found",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.U.ColonyOfTheDead.1]",
+		"actions": [{
+			"target": {
+				"type": "Mission",
+				"id": "A1.U.ColonyOfTheDead"
+			},
+			"changes": {
+				"On": {
+					"name": "UNC: Colony of the Dead"
+				},
+				"Off": {
+					"name": "Investigating Samples"
+				}
+			}
+		}]
+	}, {
+		"id": "Acquired Wrex's Family Armor",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.L.WrexFamilyArmor]",
+		"actions": [{
+			"target": {
+				"type": "Decision",
+				"id": "D1.WrexArmor"
+			},
+			"changes": {
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
+			}
+		}]
+	}, {
+		"id": "Found Missing Marines",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.U.MissingMarines]"
+	}, {
+		"id": "Cerberus Binthu Facility Raided",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.U.Cerberus]"
+	}, {
+		"id": "Investigated Geth Outposts",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.U.GethIncursions]"
+	}, {
+		"id": "Completed Listening Post Alpha",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.U.ListeningPostAlpha]"
+	}, {
+		"id": "Completed Listening Post Theta",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.U.ListeningPostTheta]"
+	}, {
+		"id": "Completed Listening Post Alpha and Theta",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=A1.U.ListeningPostAlpha] and [megametracker://mission?id=A1.U.ListeningPostTheta]",
+		"dependentOn": {
+			"countTo": 2,
+			"events": [
+				"Completed Listening Post Alpha",
+				"Completed Listening Post Theta"
+			]
+		}
+	}, {
+		"id": "Completed Ahern's Challenge",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=DLC1.PS.CombatMissions]"
+	}, {
+
+
+
+
+		"x-comment-x": "-----------Matching pattern used, Level \\d+----------",
+		"id": "Level 20",
+		"gameVersion": "1",
+		"description": "Requires Level 20"
+	}, {
+		"x-comment-x": "-----------Matching pattern used, %Paragon \\d+----------",
+		"id": "%Paragon 80",
+		"gameVersion": "1",
+		"description": "Requires 80% Paragon"
+	}, {
+		"x-comment-x": "-----------Matching pattern used, %Renegade \\d+----------",
+		"id": "%Renegade 80",
+		"gameVersion": "1",
+		"description": "Requires 80% Renegade"
+
+
+
+	}, {
+		"id": "Alert Citadel Lockdown Pending",
+		"gameVersion": "1",
+		"description": "Completing Therum, Feros, Noveria, and Virmire will trigger Citadel Lockdown. \n\nYou will want to wrap up any outstanding galaxy assignments requiring Citadel turn-in, because after lockdown is in effect, you will no longer have the freedom to travel between the Citadel and other Galaxy Map locations.",
+		"isAlert": true,
+		"dependentOn": {
+			"countTo": 3,
+			"limitTo": 3,
+			"events": [
+				"Completed Therum",
+				"Completed Feros Mission",
+				"Completed Noveria Mission",
+				"Completed Virmire Mission"
+			]
+		}
+	}, {
+		"id": "Alert Citadel Lockdown",
+		"gameVersion": "1",
+		"description": "You will not be permitted to finish any outstanding Citadel assignments after breaking the lockdown, so wrap them up now.",
+		"isAlert": true
+	}, {
+		"id": "Alert Citadel Lockdown Exile",
+		"gameVersion": "1",
+		"description": "You will not be permitted to finish any outstanding galaxy assignments after landing on Ilos, so wrap them up now.",
+		"isAlert": true
+	}, {
+		"id": "Citadel Lockdown",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.RaceAgainstTime.2]"
+	}, {
+		"id": "Citadel Lockdown: Exile",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.RaceAgainstTime.4]"
+	}, {
+		"id": "Finished Game 1",
+		"gameVersion": "1",
+		"description": "[megametracker://mission?id=M1.RaceAgainstTime]"
+	}]
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RHP-DU-19Y">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Conversation Rewards-->
+        <scene sceneID="X43-Vf-J0e">
+            <objects>
+                <tableViewController id="nbj-kY-xnF" customClass="ConversationRewardsDetailController" customModule="MassEffectTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3ok-7V-SdF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="anL-2D-6rY">
+                            <rect key="frame" x="0.0" y="64" width="375" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNP-mi-hjH" customClass="TextDataRow" customModule="MassEffectTracker" customModuleProvider="target">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="SNP-mi-hjH" firstAttribute="top" secondItem="anL-2D-6rY" secondAttribute="top" id="78J-bd-mcx"/>
+                                <constraint firstItem="SNP-mi-hjH" firstAttribute="leading" secondItem="anL-2D-6rY" secondAttribute="leading" id="VcM-A0-XEK"/>
+                                <constraint firstAttribute="bottom" secondItem="SNP-mi-hjH" secondAttribute="bottom" id="awg-Ti-Ph6"/>
+                                <constraint firstAttribute="trailing" secondItem="SNP-mi-hjH" secondAttribute="trailing" id="nlU-h8-Zmj"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="wUF-zU-gxE" customClass="HairlineBorderView" customModule="MassEffectTracker" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="137" width="375" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                    <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Default" textLabel="25F-yL-1iU" style="IBUITableViewCellStyleDefault" id="LwT-Ec-TUc">
+                                <rect key="frame" x="0.0" y="93" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LwT-Ec-TUc" id="Dd6-wU-LXJ">
+                                    <frame key="frameInset" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="25F-yL-1iU">
+                                            <frame key="frameInset" minX="15" width="345" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nbj-kY-xnF" id="nPP-fR-NP5"/>
+                            <outlet property="delegate" destination="nbj-kY-xnF" id="6OO-fI-Y66"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Conversation Rewards" id="b8w-2f-gcD">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="coe-oA-jkP">
+                            <connections>
+                                <action selector="cancel:" destination="nbj-kY-xnF" id="fYG-mi-ELv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="originHintView" destination="SNP-mi-hjH" id="TEo-qp-jpj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bm-z7-T25" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2262" y="66"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cfb-gP-4yE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RHP-DU-19Y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F9J-vK-aq0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nbj-kY-xnF" kind="relationship" relationship="rootViewController" id="GGf-qy-NBY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddH-xH-IjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1595" y="66"/>
+        </scene>
+    </scenes>
+</document>

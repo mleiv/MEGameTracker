@@ -1,0 +1,6478 @@
+{
+	"maps": [{
+		"x-comment-x": "-----------------------Armstrong Nebula-------------------------",
+		"id": "G.Att.Armstrong",
+		"name": "Armstrong Nebula",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3705,
+			"y": 1968,
+			"radius": 30
+		},
+		"annotationNote": "Gagarin, Grissom, Hong, Tereshkova, Vamshi",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Armstrong_Nebula"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"x-comment-x": "--------Gagarin-------",
+		"id": "G.Att.Arm.Gagarin",
+		"name": "Gagarin",
+		"image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula/Gagarin.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Armstrong",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 421,
+			"y": 1605,
+			"radius": 132
+		},
+		"annotationNote": "Junthor, Pressha, Rayingri, Sogelrus, Antirumgon",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gagarin"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula/Gagarin1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Gag.Junthor",
+		"name": "Junthor",
+		"inMapId": "G.Att.Arm.Gagarin",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 914,
+			"y": 776,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Junthor"
+		]
+	}, {
+		"id": "G.Att.Arm.Gag.Pressha",
+		"name": "Pressha",
+		"inMapId": "G.Att.Arm.Gagarin",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1363,
+			"y": 1367,
+			"radius": 60
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pressha"
+		]
+	}, {
+		"id": "G.Att.Arm.Gag.Rayingri",
+		"name": "Rayingri",
+		"inMapId": "G.Att.Arm.Gagarin",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 471,
+			"y": 1239,
+			"radius": 45
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Rayingri"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Rayingri/Rayingri.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Gag.Ray.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Gag.Rayingri",
+		"mapLocationPoint": {
+			"x": 957,
+			"y": 580,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gag.Ray.2",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Gag.Rayingri",
+		"mapLocationPoint": {
+			"x": 1618,
+			"y": 1004,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gag.Ray.3",
+		"name": "Crashed Escape Pod",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Gag.Rayingri",
+		"mapLocationPoint": {
+			"x": 604,
+			"y": 1433,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gag.Ray.4",
+		"name": "Scavenger Corpses",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Gag.Rayingri",
+		"mapLocationPoint": {
+			"x": 479,
+			"y": 562,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gag.Ray.5",
+		"name": "Abandoned Camp",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Gag.Rayingri",
+		"mapLocationPoint": {
+			"x": 594,
+			"y": 1033,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gag.Ray.Outpost",
+		"name": "Geth Outpost",
+        "isHidden": true,
+		"inMapId": "G.Att.Arm.Gag.Rayingri",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1160,
+			"y": 1214,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Research_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Gag.Ray.Out.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Arm.Gag.Rayingri",
+		"inMapId": "G.Att.Arm.Gag.Ray.Outpost",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 475,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gag.Sogelrus",
+		"name": "Sogelrus",
+		"inMapId": "G.Att.Arm.Gagarin",
+		"mapLocationPoint": {
+			"x": 586,
+			"y": 340,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sogelrus"
+		]
+	}, {
+		"id": "G.Att.Arm.Gag.Antirumgon",
+		"name": "Antirumgon",
+		"inMapId": "G.Att.Arm.Gagarin",
+		"mapLocationPoint": {
+			"x": 1344,
+			"y": 183,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Antirumgon"
+		]
+	}, {
+		"x-comment-x": "--------Grissom-------",
+		"id": "G.Att.Arm.Grissom",
+		"name": "Grissom",
+		"image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula/Grissom.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Armstrong",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1004,
+			"y": 1479,
+			"radius": 127
+		},
+		"annotationNote": "Benda, Zaherux, Notanban, Solcrum",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Grissom"
+		],
+		"gameVersionData": {
+			"1": {
+                "image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula/Grissom1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Gri.Benda",
+		"name": "Benda",
+		"inMapId": "G.Att.Arm.Grissom",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 819,
+			"y": 836,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Benda"
+		]
+	}, {
+		"id": "G.Att.Arm.Gri.Zaherux",
+		"name": "Zaherux",
+		"inMapId": "G.Att.Arm.Grissom",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 845,
+			"y": 601,
+			"radius": 33
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Zaherux"
+		]
+	}, {
+		"id": "G.Att.Arm.Gri.Notanban",
+		"name": "Notanban",
+		"inMapId": "G.Att.Arm.Grissom",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1462,
+			"y": 470,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Notanban"
+		]
+	}, {
+		"id": "G.Att.Arm.Gri.Solcrum",
+		"name": "Solcrum",
+		"inMapId": "G.Att.Arm.Grissom",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1508,
+			"y": 506,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Solcrum"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Solcrum/Solcrum.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Gri.Sol.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Gri.Solcrum",
+		"mapLocationPoint": {
+			"x": 803,
+			"y": 1194,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gri.Sol.2",
+		"name": "Asari Capsule",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Gri.Solcrum",
+		"mapLocationPoint": {
+			"x": 686,
+			"y": 1537,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gri.Sol.3",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Gri.Solcrum",
+		"mapLocationPoint": {
+			"x": 1122,
+			"y": 1666,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gri.Sol.Outpost",
+		"name": "Geth Headquarters",
+        "isHidden": true,
+		"inMapId": "G.Att.Arm.Gri.Solcrum",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1283,
+			"y": 1093,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Mercenary_Base.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Gri.Sol.Out.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Arm.Gri.Solcrum",
+		"inMapId": "G.Att.Arm.Gri.Sol.Outpost",
+		"mapLocationPoint": {
+			"x": 698,
+			"y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gri.Sol.Out.2",
+		"name": "To Upper Level",
+		"isOpensDetail": false,
+		"isShowInList": false,
+		"inMapId": "G.Att.Arm.Gri.Sol.Outpost",
+		"mapLocationPoint": {
+			"x": 1136,
+			"y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gri.Sol.Out.3",
+		"name": "To Lower Level",
+		"isOpensDetail": false,
+		"isShowInList": false,
+		"inMapId": "G.Att.Arm.Gri.Sol.Outpost",
+		"mapLocationPoint": {
+			"x": 1582,
+			"y": 1032,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Gri.Asteroid",
+		"name": "Rocky Asteroid",
+		"inMapId": "G.Att.Arm.Grissom",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 1301,
+			"y": 273,
+			"radius": 75
+		}
+	}, {
+		"x-comment-x": "--------Hong-------",
+		"id": "G.Att.Arm.Hong",
+		"name": "Hong",
+		"image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula/Hong.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Armstrong",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1107,
+			"y": 640,
+			"radius": 140
+		},
+		"annotationNote": "Pomal, Casbin, Matar, Theshaca, Treagir",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hong"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula/Hong1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Hon.Pomal",
+		"name": "Pomal",
+		"inMapId": "G.Att.Arm.Hong",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1263,
+			"y": 1158,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pomal"
+		]
+	}, {
+		"id": "G.Att.Arm.Hon.Casbin",
+		"name": "Casbin",
+		"inMapId": "G.Att.Arm.Hong",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1066,
+			"y": 602,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Casbin"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Casbin/Casbin.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Hon.Cas.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Hon.Casbin",
+		"mapLocationPoint": {
+			"x": 982,
+			"y": 1403,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Hon.Cas.2",
+		"name": "Beacon",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Hon.Casbin",
+		"mapLocationPoint": {
+			"x": 685,
+			"y": 1087,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Hon.Cas.3",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Hon.Casbin",
+		"mapLocationPoint": {
+			"x": 540,
+			"y": 823,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Hon.Cas.4",
+		"name": "Geth Outpost",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Hon.Casbin",
+		"mapLocationPoint": {
+			"x": 1408,
+			"y": 1046,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Hon.Cas.5",
+		"name": "Geth Encampment",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Hon.Casbin",
+		"mapLocationPoint": {
+			"x": 703,
+			"y": 605,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Hon.Matar",
+		"name": "Matar",
+		"inMapId": "G.Att.Arm.Hong",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 618,
+			"y": 577,
+			"radius": 26
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Matar"
+		]
+	}, {
+		"id": "G.Att.Arm.Hon.Theshaca",
+		"name": "Theshaca",
+		"inMapId": "G.Att.Arm.Hong",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 254,
+			"y": 962,
+			"radius": 60
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Theshaca"
+		]
+	}, {
+		"id": "G.Att.Arm.Hon.Treagir",
+		"name": "Treagir",
+		"inMapId": "G.Att.Arm.Hong",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1759,
+			"y": 1612,
+			"radius": 60
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Treagir"
+		]
+	}, {
+		"x-comment-x": "--------Tereshkova-------",
+		"id": "G.Att.Arm.Tereshkova",
+		"name": "Tereshkova",
+		"image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula/Tereshkova.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Armstrong",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 518,
+			"y": 788,
+			"radius": 126
+		},
+		"annotationNote": "Antibaar, Patamalrus, Hunsalra, Thegeuse, Solmarlon, Mawinor",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tereshkova"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula/Tereshkova1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Ter.Asteroid",
+		"name": "Carbonaceous Asteroid",
+		"inMapId": "G.Att.Arm.Tereshkova",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 1246,
+			"y": 1047,
+			"radius": 75
+		}
+	}, {
+		"id": "G.Att.Arm.Ter.Antibaar",
+		"name": "Antibaar",
+		"inMapId": "G.Att.Arm.Tereshkova",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 840,
+			"y": 774,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Antibaar"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Antibaar/Antibaar.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Ter.Ant.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Ter.Antibaar",
+		"mapLocationPoint": {
+			"x": 898,
+			"y": 1209,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Ter.Ant.2",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Ter.Antibaar",
+		"mapLocationPoint": {
+			"x": 1278,
+			"y": 719,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Ter.Ant.3",
+		"name": "Prothean Ruin",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Ter.Antibaar",
+		"mapLocationPoint": {
+			"x": 479,
+			"y": 1089,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Ter.Ant.4",
+		"name": "Thresher Maw",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Ter.Antibaar",
+		"mapLocationPoint": {
+			"x": 550,
+			"y": 1169,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Ter.Ant.5",
+		"name": "Geth Outpost",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Ter.Antibaar",
+		"mapLocationPoint": {
+			"x": 1230,
+			"y": 460,
+			"radius": 20
+		}
+        
+	}, {
+		"id": "G.Att.Arm.Ter.Patamalrus",
+		"name": "Patamalrus",
+		"inMapId": "G.Att.Arm.Tereshkova",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1396,
+			"y": 717,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Patamalrus"
+		]
+	}, {
+		"id": "G.Att.Arm.Ter.Hunsalra",
+		"name": "Hunsalra",
+		"inMapId": "G.Att.Arm.Tereshkova",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 562,
+			"y": 1407,
+			"radius": 58
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hunsalra"
+		]
+	}, {
+		"id": "G.Att.Arm.Ter.Thegeuse",
+		"name": "Thegeuse",
+		"inMapId": "G.Att.Arm.Tereshkova",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1315,
+			"y": 362,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Thegeuse"
+		]
+	}, {
+		"id": "G.Att.Arm.Ter.Solmarlon",
+		"name": "Solmarlon",
+		"inMapId": "G.Att.Arm.Tereshkova",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 263,
+			"y": 741,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Solmarlon"
+		]
+	}, {
+		"id": "G.Att.Arm.Ter.Mawinor",
+		"name": "Mawinor",
+		"inMapId": "G.Att.Arm.Tereshkova",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 437,
+			"y": 320,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Mawinor"
+		]
+	}, {
+		"x-comment-x": "--------Vamshi-------",
+		"id": "G.Att.Arm.Vamshi",
+		"name": "Vamshi",
+		"image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula/Vamshi.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Armstrong",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1694,
+			"y": 489,
+			"radius": 130
+		},
+		"annotationNote": "Maji, Pregel, Almos",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vamshi"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Armstrong_Nebula/Vamshi1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Vam.Maji",
+		"name": "Maji",
+		"inMapId": "G.Att.Arm.Vamshi",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 750,
+			"y": 885,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Maji"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Maji/Maji.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Arm.Vam.Maj.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Vam.Maji",
+		"mapLocationPoint": {
+			"x": 657,
+			"y": 1285,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Vam.Maj.2",
+		"name": "Geth Outpost",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Vam.Maji",
+		"mapLocationPoint": {
+			"x": 759,
+			"y": 520,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Vam.Maj.3",
+		"name": "Ancient Debris",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Vam.Maji",
+		"mapLocationPoint": {
+			"x": 1155,
+			"y": 1615,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Vam.Maj.4",
+		"name": "Odd Skull",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Vam.Maji",
+		"mapLocationPoint": {
+			"x": 1287,
+			"y": 1493,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Arm.Vam.Maj.5",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Arm.Vam.Maji",
+		"mapLocationPoint": {
+			"x": 1578,
+			"y": 1436,
+			"radius": 20
+		}
+        
+	}, {
+		"id": "G.Att.Arm.Vam.Pregel",
+		"name": "Pregel",
+		"inMapId": "G.Att.Arm.Vamshi",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1581,
+			"y": 1042,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pregel"
+		]
+	}, {
+		"id": "G.Att.Arm.Vam.Almos",
+		"name": "Almos",
+		"inMapId": "G.Att.Arm.Vamshi",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 673,
+			"y": 182,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Almos"
+		]
+	}, {
+		"x-comment-x": "-----------------------Caleston Rift-------------------------",
+		"id": "G.Att.Caleston",
+		"name": "Caleston Rift",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift1.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3110,
+			"y": 1463,
+			"radius": 30
+		},
+		"annotationNote": "Aysur, Balor, Solveig, Talava, Yakawa",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Caleston_Rift"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"x-comment-x": "--------Aysur-------",
+		"id": "G.Att.Cal.Aysur",
+		"name": "Aysur",
+		"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Aysur1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Caleston",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1815,
+			"y": 1391,
+			"radius": 136
+		},
+		"annotationNote": "Agnin, Shasu, Dranen, Arvuna, Mahavid, Alformus, Shir, Tamgauta",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aysur"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Aysur2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Aysur3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Cal.Ays.Agnin",
+		"name": "Agnin",
+		"inMapId": "G.Att.Cal.Aysur",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 982,
+			"y": 938,
+			"radius": 208
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Agnin"
+		]
+	}, {
+		"id": "G.Att.Cal.Ays.Shasu",
+		"name": "Shasu",
+		"inMapId": "G.Att.Cal.Aysur",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1206,
+			"y": 1159,
+			"radius": 204
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Shasu"
+		]
+	}, {
+		"id": "G.Att.Cal.Ays.Dranen",
+		"name": "Dranen",
+		"inMapId": "G.Att.Cal.Aysur",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 791,
+			"y": 786,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Dranen"
+		]
+	}, {
+		"id": "G.Att.Cal.Ays.Arvuna",
+		"name": "Arvuna",
+		"inMapId": "G.Att.Cal.Aysur",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 860,
+			"y": 728,
+			"radius": 200
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Arvuna"
+		],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Att.Cal.Ays.Mahavid",
+		"name": "Mahavid",
+		"inMapId": "G.Att.Cal.Aysur",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 804,
+			"y": 1556,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Mahavid"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 804,
+					"y": 1556,
+					"radius": 100
+				}
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "G.Att.Cal.Ays.Alformus",
+		"name": "Alformus",
+		"inMapId": "G.Att.Cal.Aysur",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1721,
+			"y": 886,
+			"radius": 59
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Alformus"
+		]
+	}, {
+		"id": "G.Att.Cal.Ays.Shir",
+		"name": "Shir",
+		"inMapId": "G.Att.Cal.Aysur",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1792,
+			"y": 655,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Shir"
+		]
+	}, {
+		"id": "G.Att.Cal.Ays.Tamgauta",
+		"name": "Tamgauta",
+		"inMapId": "G.Att.Cal.Aysur",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1905,
+			"y": 1488,
+			"radius": 38
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tamgauta"
+		]
+	}, {
+		"x-comment-x": "--------Balor-------",
+		"id": "G.Att.Cal.Balor",
+		"name": "Balor",
+		"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Balor1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Caleston",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 565,
+			"y": 1463,
+			"radius": 132
+		},
+		"annotationNote": "Cernunnos, Caleston, Bres, Elatha, Partholon",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Balor"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Balor2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Balor3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Cal.Bal.Cernunnos",
+		"name": "Cernunnos",
+		"inMapId": "G.Att.Cal.Balor",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1199,
+			"y": 922,
+			"radius": 102
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Cernunnos"
+		]
+	}, {
+		"id": "G.Att.Cal.Bal.Caleston",
+		"name": "Caleston",
+		"inMapId": "G.Att.Cal.Balor",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1383,
+			"y": 1075,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Caleston"
+		]
+	}, {
+		"id": "G.Att.Cal.Bal.Bres",
+		"name": "Bres",
+		"inMapId": "G.Att.Cal.Balor",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 820,
+			"y": 666,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Bres"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 820,
+					"y": 666,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Cal.Bal.Elatha",
+		"name": "Elatha",
+		"inMapId": "G.Att.Cal.Balor",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 639,
+			"y": 1342,
+			"radius": 49
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Elatha"
+		]
+	}, {
+		"id": "G.Att.Cal.Bal.Partholon",
+		"name": "Partholon",
+		"inMapId": "G.Att.Cal.Balor",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1652,
+			"y": 581,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Partholon"
+		]
+	}, {
+		"x-comment-x": "--------Solveig-------",
+		"id": "G.Att.Cal.Solveig",
+		"name": "Solveig",
+		"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Solveig.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Caleston",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 817,
+			"y": 836,
+			"radius": 103
+		},
+		"annotationNote": "Surtur, Sinmara, Thrivaldi",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Solveig"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Solveig2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Att.Cal.Sol.Surtur",
+		"name": "Surtur",
+		"inMapId": "G.Att.Cal.Solveig",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1294,
+			"y": 1084,
+			"radius": 66
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Surtur"
+		]
+	}, {
+		"id": "G.Att.Cal.Sol.Sinmara",
+		"name": "Sinmara",
+		"inMapId": "G.Att.Cal.Solveig",
+        "mapType": "Moon",
+		"mapLocationPoint": {
+			"x": 1400,
+			"y": 1073,
+			"radius": 20
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sinmara"
+		]
+	}, {
+		"id": "G.Att.Cal.Sol.Thrivaldi",
+		"name": "Thrivaldi",
+		"inMapId": "G.Att.Cal.Solveig",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 233,
+			"y": 1282,
+			"radius": 97
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Thrivaldi"
+		]
+	}, {
+		"x-comment-x": "--------Talava-------",
+		"id": "G.Att.Cal.Talava",
+		"name": "Talava",
+		"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Talava.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Caleston",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 228,
+			"y": 939,
+			"radius": 120
+		},
+		"annotationNote": "Aitarus, Kaushus, Maitrum, Taitus",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Talava"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Talava2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Att.Cal.Tal.Aitarus",
+		"name": "Aitarus",
+		"inMapId": "G.Att.Cal.Talava",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 948,
+			"y": 870,
+			"radius": 42
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aitarus"
+		]
+	}, {
+		"id": "G.Att.Cal.Tal.Kaushus",
+		"name": "Kaushus",
+		"inMapId": "G.Att.Cal.Talava",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1189,
+			"y": 1302,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kaushus"
+		]
+	}, {
+		"id": "G.Att.Cal.Tal.Maitrum",
+		"name": "Maitrum",
+		"inMapId": "G.Att.Cal.Talava",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 715,
+			"y": 1595,
+			"radius": 51
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Maitrum"
+		]
+	}, {
+		"id": "G.Att.Cal.Tal.Taitus",
+		"name": "Taitus",
+		"inMapId": "G.Att.Cal.Talava",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1979,
+			"y": 1040,
+			"radius": 42
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Taitus"
+		]
+	}, {
+		"x-comment-x": "--------Yakawa-------",
+		"id": "G.Att.Cal.Yakawa",
+		"name": "Yakawa",
+		"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Yakawa.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Caleston",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1626,
+			"y": 730,
+			"radius": 138
+		},
+		"annotationNote": "Sakata, Nambu, Maskawa, Karumto, Kobayashi",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Yakawa"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Caleston_Rift/Yakawa2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Att.Cal.Yak.Sakata",
+		"name": "Sakata",
+		"inMapId": "G.Att.Cal.Yakawa",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 985,
+			"y": 1194,
+			"radius": 31
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sakata"
+		]
+	}, {
+		"id": "G.Att.Cal.Yak.Nambu",
+		"name": "Nambu",
+		"inMapId": "G.Att.Cal.Yakawa",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 958,
+			"y": 773,
+			"radius": 50
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nambu"
+		]
+	}, {
+		"id": "G.Att.Cal.Yak.Maskawa",
+		"name": "Maskawa",
+		"inMapId": "G.Att.Cal.Yakawa",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1235,
+			"y": 672,
+			"radius": 39
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Maskawa"
+		]
+	}, {
+		"id": "G.Att.Cal.Yak.Karumto",
+		"name": "Karumto",
+		"inMapId": "G.Att.Cal.Yakawa",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 510,
+			"y": 1384,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Karumto"
+		]
+	}, {
+		"id": "G.Att.Cal.Yak.Kobayashi",
+		"name": "Kobayashi",
+		"inMapId": "G.Att.Cal.Yakawa",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1931,
+			"y": 1159,
+			"radius": 105
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kobayashi"
+		]
+	}, {
+		"x-comment-x": "-----------------------Eagle Nebula-------------------------",
+		"id": "G.Att.Eagle",
+		"name": "Eagle Nebula",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 920,
+			"y": 1576,
+			"radius": 30
+		},
+		"annotationNote": "Amun, Imir, Malgus, Relic, Strabo",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Eagle_Nebula"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"x-comment-x": "--------Amun-------",
+		"id": "G.Att.Eag.Amun",
+		"name": "Amun",
+		"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula/Amun.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Eagle",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1527,
+			"y": 487,
+			"radius": 126
+		},
+		"annotationNote": "Sekhmet, Sobek, Anhur, Neith, Bast",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Amun"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula/Amun2.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Eag.Amu.Sekhmet",
+		"name": "Sekhmet",
+		"inMapId": "G.Att.Eag.Amun",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1144,
+			"y": 950,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sekhmet"
+		]
+	}, {
+		"id": "G.Att.Eag.Amu.Sobek",
+		"name": "Sobek",
+		"inMapId": "G.Att.Eag.Amun",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 741,
+			"y": 1208,
+			"radius": 82
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sobek"
+		]
+	}, {
+		"id": "G.Att.Eag.Amu.Anhur",
+		"name": "Anhur",
+		"inMapId": "G.Att.Eag.Amun",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 725,
+			"y": 538,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Anhur"
+		]
+	}, {
+		"id": "G.Att.Eag.Amu.Neith",
+		"name": "Neith",
+		"inMapId": "G.Att.Eag.Amun",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 458,
+			"y": 1526,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Neith"
+		]
+	}, {
+		"id": "G.Att.Eag.Amu.Bast",
+		"name": "Bast",
+		"inMapId": "G.Att.Eag.Amun",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1935,
+			"y": 820,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Bast"
+		]
+	}, {
+		"x-comment-x": "--------Imir-------",
+		"id": "G.Att.Eag.Imir",
+		"name": "Imir",
+		"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula/Imir.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Eagle",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1267,
+			"y": 1208,
+			"radius": 130
+		},
+		"annotationNote": "Osalri, Korlus, Quodis, Gregas",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Imir"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula/Imir2.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Eag.Imi.Osalri",
+		"name": "Osalri",
+		"inMapId": "G.Att.Eag.Imir",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 896,
+			"y": 842,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Osalri"
+		]
+	}, {
+		"id": "G.Att.Eag.Imi.Korlus",
+		"name": "Korlus",
+		"inMapId": "G.Att.Eag.Imir",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1368,
+			"y": 988,
+			"radius": 30
+		},
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/_Secondary/Korlus/Korlus.pdf",
+				"referenceSize": "2083x2083",
+			}
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Korlus"
+		]
+	}, {
+		"id": "G.Att.Eag.Imi.Kor.1",
+		"inMapId": "G.Att.Eag.Imi.Korlus",
+		"name": "Drop Zone",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 185,
+			"y": 815,
+			"radius": 20
+		}
+        
+        
+        
+	}, {
+		"id": "G.Att.Eag.Imi.Quodis",
+		"name": "Quodis",
+		"inMapId": "G.Att.Eag.Imir",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 560,
+			"y": 1406,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Quodis"
+		]
+	}, {
+		"id": "G.Att.Eag.Imi.Gregas",
+		"name": "Gregas",
+		"inMapId": "G.Att.Eag.Imir",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1728,
+			"y": 662,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gregas"
+		]
+	}, {
+		"x-comment-x": "--------Malgus-------",
+		"id": "G.Att.Eag.Malgus",
+		"name": "Malgus",
+		"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula/Malgus.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Eagle",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 917,
+			"y": 727,
+			"radius": 105
+		},
+		"annotationNote": "Uzin, Wrill, Flett",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Malgus"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula/Malgus2.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Eag.Mal.Uzin",
+		"name": "Uzin",
+		"inMapId": "G.Att.Eag.Malgus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1248,
+			"y": 901,
+			"radius": 109
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Uzin"
+		]
+	}, {
+		"id": "G.Att.Eag.Mal.Wrill",
+		"name": "Wrill",
+		"inMapId": "G.Att.Eag.Malgus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 504,
+			"y": 656,
+			"radius": 46
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Wrill"
+		]
+	}, {
+		"id": "G.Att.Eag.Mal.Flett",
+		"name": "Flett",
+		"inMapId": "G.Att.Eag.Malgus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1901,
+			"y": 1269,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Flett"
+		]
+	}, {
+		"x-comment-x": "--------Relic-------",
+		"id": "G.Att.Eag.Relic",
+		"name": "Relic",
+		"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula/Relic.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Eagle",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1811,
+			"y": 841,
+			"radius": 140
+		},
+		"annotationNote": "Murky Water, Fitful Current, First Land, Island Wind, Rough Tide,  Preying Mouth, Beach Thunder",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Relic"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula/Relic2.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Eag.Rel.Murky",
+		"name": "Murky Water",
+		"inMapId": "G.Att.Eag.Relic",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1093,
+			"y": 900,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Murky_Water"
+		]
+	}, {
+		"id": "G.Att.Eag.Rel.Fitful",
+		"name": "Fitful Current",
+		"inMapId": "G.Att.Eag.Relic",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1272,
+			"y": 1043,
+			"radius": 208
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Fitful_Current"
+		]
+	}, {
+		"id": "G.Att.Eag.Rel.First",
+		"name": "First Land",
+		"inMapId": "G.Att.Eag.Relic",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1247,
+			"y": 744,
+			"radius": 46
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/First_Land"
+		]
+	}, {
+		"id": "G.Att.Eag.Rel.Island",
+		"name": "Island Wind",
+		"inMapId": "G.Att.Eag.Relic",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 693,
+			"y": 687,
+			"radius": 46
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Island_Wind"
+		]
+	}, {
+		"id": "G.Att.Eag.Rel.Rough",
+		"name": "Rough Tide",
+		"inMapId": "G.Att.Eag.Relic",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1180,
+			"y": 1608,
+			"radius": 207
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Rough_Tide"
+		]
+	}, {
+		"id": "G.Att.Eag.Rel.Preying",
+		"name": "Preying Mouth",
+		"inMapId": "G.Att.Eag.Relic",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1495,
+			"y": 1698,
+			"radius": 53
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Preying_Mouth"
+		]
+	}, {
+		"id": "G.Att.Eag.Rel.Beach",
+		"name": "Beach Thunder",
+		"inMapId": "G.Att.Eag.Relic",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1971,
+			"y": 1263,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Beach_Thunder"
+		]
+	}, {
+		"x-comment-x": "--------Strabo-------",
+		"id": "G.Att.Eag.Strabo",
+		"name": "Strabo",
+		"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula/Strabo.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Eagle",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 371,
+			"y": 1568,
+			"radius": 140
+		},
+		"annotationNote": "Antigar, Jarrahe Station",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Strabo"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Eagle_Nebula/Strabo2.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Eag.Str.Antigar",
+		"name": "Antigar",
+		"inMapId": "G.Att.Eag.Strabo",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1636,
+			"y": 1073,
+			"radius": 104
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Antigar"
+		]
+	}, {
+		"id": "G.Att.Eag.Str.Jarrahe",
+		"name": "Jarrahe Station",
+		"inMapId": "G.Att.Eag.Strabo",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1859,
+			"y": 938,
+			"radius": 78
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Jarrahe_Station"
+		]
+	}, {
+		"x-comment-x": "-----------------------Hades Nexus-------------------------",
+		"id": "G.Att.Hades",
+		"name": "Hades Nexus",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3998,
+			"y": 1438,
+			"radius": 30
+		},
+		"annotationNote": "Hekate, Hoplos, Pamyat, Sheol",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hades_Nexus"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"x-comment-x": "--------Hekate-------",
+		"id": "G.Att.Had.Hekate",
+		"name": "Hekate",
+		"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Hekate1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Hades",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1293,
+			"y": 1296,
+			"radius": 135
+		},
+		"annotationNote": "Ker, Triodia, Bothros",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hekate"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Hekate2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Hekate3.pdf",
+				"annotationNote": "Asteria, Ker, Triodia, Bothros"
+			}
+		}
+	}, {
+		"id": "G.Att.Had.Hek.Asteria",
+		"name": "Asteria",
+		"inMapId": "G.Att.Had.Hekate",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 904,
+			"y": 791,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Asteria"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 904,
+					"y": 791,
+					"radius": 100
+				}
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "G.Att.Had.Hek.Ker",
+		"name": "Ker",
+		"inMapId": "G.Att.Had.Hekate",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1212,
+			"y": 596,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ker"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 814,
+					"y": 624,
+					"radius": 28
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Had.Hek.Triodia",
+		"name": "Triodia",
+		"inMapId": "G.Att.Had.Hekate",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1666,
+			"y": 883,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Triodia"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1583,
+					"y": 689,
+					"radius": 48
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Had.Hek.Bothros",
+		"name": "Bothros",
+		"inMapId": "G.Att.Had.Hekate",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 262,
+			"y": 1015,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Bothros"
+		]
+	}, {
+		"x-comment-x": "--------Hoplos-------",
+		"id": "G.Att.Had.Hoplos",
+		"name": "Hoplos",
+		"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Hoplos1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Hades",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1848,
+			"y": 822,
+			"radius": 126
+		},
+		"annotationNote": "Talaria, Makhaira, Kopis, Trident, Aegis",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hoplos"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Hoplos2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Hoplos3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Had.Hop.Talaria",
+		"name": "Talaria",
+		"inMapId": "G.Att.Had.Hoplos",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1124,
+			"y": 1275,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Talaria"
+		]
+	}, {
+		"id": "G.Att.Had.Hop.Makhaira",
+		"name": "Makhaira",
+		"inMapId": "G.Att.Had.Hoplos",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1319,
+			"y": 696,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Makhaira"
+		]
+	}, {
+		"id": "G.Att.Had.Hop.Kopis",
+		"name": "Kopis",
+		"inMapId": "G.Att.Had.Hoplos",
+		"mapLocationPoint": {
+			"x": 1371,
+			"y": 634,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kopis"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1267,
+					"y": 752,
+					"radius": 25
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Had.Hop.Trident",
+		"name": "Trident",
+		"inMapId": "G.Att.Had.Hoplos",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 721,
+			"y": 501,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Trident"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 489,
+					"y": 747,
+					"radius": 35
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Had.Hop.Aegis",
+		"name": "Aegis",
+		"inMapId": "G.Att.Had.Hoplos",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1777,
+			"y": 1555,
+			"radius": 78
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aegis"
+		]
+	}, {
+		"x-comment-x": "--------Pamyat-------",
+		"id": "G.Att.Had.Pamyat",
+		"name": "Pamyat",
+		"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Pamyat1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Hades",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 893,
+			"y": 777,
+			"radius": 130
+		},
+		"annotationNote": "Komarov, Dobrovolski, Patsayev, Volkov",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pamyat"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Pamyat2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Pamyat3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Had.Pam.Komarov",
+		"name": "Komarov",
+		"inMapId": "G.Att.Had.Pamyat",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1124,
+			"y": 1267,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Komarov"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 927,
+					"y": 830,
+					"radius": 27
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Had.Pam.Dobrovolski",
+		"name": "Dobrovolski",
+		"inMapId": "G.Att.Had.Pamyat",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 765,
+			"y": 721,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Dobrovolski"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 765,
+					"y": 721,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Had.Pam.Patsayev",
+		"name": "Patsayev",
+		"inMapId": "G.Att.Had.Pamyat",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1515,
+			"y": 682,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Patsayev"
+		]
+	}, {
+		"id": "G.Att.Had.Pam.Volkov",
+		"name": "Volkov",
+		"inMapId": "G.Att.Had.Pamyat",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 493,
+			"y": 1621,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Volkov"
+		]
+	}, {
+		"x-comment-x": "--------Sheol-------",
+		"id": "G.Att.Had.Sheol",
+		"name": "Sheol",
+		"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Sheol1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Hades",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 219,
+			"y": 1110,
+			"radius": 128
+		},
+		"annotationNote": "Gei Hinnom",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sheol"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Sheol2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Hades_Nexus/Sheol3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Had.She.Gei",
+		"name": "Gei Hinnom",
+		"inMapId": "G.Att.Had.Sheol",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1542,
+			"y": 513,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gei_Hinnom"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1069,
+					"y": 1770,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"x-comment-x": "-----------------------Hawking Eta-------------------------",
+		"id": "G.Att.Hawking",
+		"name": "Hawking Eta",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta1.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 2536,
+			"y": 1506,
+			"radius": 30
+		},
+		"annotationNote": "Century, Chandrasekhar, Schwarzschild, Thorne, Verr",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hawking_Eta"
+		],
+		"gameVersionData": {
+			"1": {
+				"annotationNote": "Century"
+			},
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"x-comment-x": "--------Century-------",
+		"id": "G.Att.Haw.Century",
+		"name": "Century",
+		"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta/Century1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Hawking",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1197,
+			"y": 374,
+			"radius": 135
+		},
+		"annotationNote": "Tamahera, Klendagon, Presrop, Canctra, Tharopto",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Century"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta/Century2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta/Century3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Tamahera",
+		"name": "Tamahera",
+		"inMapId": "G.Att.Haw.Century",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1258,
+			"y": 1158,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tamahera"
+		],
+		"gameVersionData": {
+			"2": {
+				"mapLocationPoint": {
+					"x": 1157,
+					"y": 820,
+					"radius": 37
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Klendagon",
+		"name": "Klendagon",
+		"inMapId": "G.Att.Haw.Century",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 654,
+			"y": 896,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Klendagon"
+		]
+	}, {
+		"id": "G.Att.Haw.Cen.Presrop",
+		"name": "Presrop",
+		"inMapId": "G.Att.Haw.Century",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 717,
+			"y": 924,
+			"radius": 20
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Presrop"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Presrop/Presrop.pdf",
+                "referenceSize": "2083x2083"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Haw.Cen.Presrop",
+		"mapLocationPoint": {
+			"x": 1180,
+			"y": 667,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.2",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Haw.Cen.Presrop",
+		"mapLocationPoint": {
+			"x": 582,
+			"y": 990,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.3",
+		"name": "Ancient Debris",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Haw.Cen.Presrop",
+		"mapLocationPoint": {
+			"x": 792,
+			"y": 889,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.4",
+		"name": "Abandoned Camp",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Haw.Cen.Presrop",
+		"mapLocationPoint": {
+			"x": 923,
+			"y": 587,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.5",
+		"name": "Mercenary Camp",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Haw.Cen.Presrop",
+		"mapLocationPoint": {
+			"x": 1514,
+			"y": 1125,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.6",
+		"name": "Thresher Maw",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Haw.Cen.Presrop",
+		"mapLocationPoint": {
+			"x": 1451,
+			"y": 698,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.1Building",
+		"name": "Biotic Commune Bldg #1",
+        "isHidden": true,
+		"inMapId": "G.Att.Haw.Cen.Presrop",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 747,
+			"y": 1387,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Mercenary_Base.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.1Bu.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Haw.Cen.Presrop",
+		"inMapId": "G.Att.Haw.Cen.Pre.1Building",
+		"mapLocationPoint": {
+            "x": 698,
+            "y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.1Bu.2",
+		"name": "To Upper Level",
+		"isOpensDetail": false,
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Haw.Cen.Presrop",
+		"inMapId": "G.Att.Haw.Cen.Pre.1Building",
+		"mapLocationPoint": {
+			"x": 1136,
+			"y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.1Bu.3",
+		"name": "To Lower Level",
+		"isOpensDetail": false,
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Haw.Cen.Presrop",
+		"inMapId": "G.Att.Haw.Cen.Pre.1Building",
+		"mapLocationPoint": {
+			"x": 1582,
+			"y": 1032,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.2Building",
+		"name": "Biotic Commune Bldg #2",
+        "isHidden": true,
+		"inMapId": "G.Att.Haw.Cen.Presrop",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 747,
+			"y": 1387,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Research_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Pre.2Bu.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Haw.Cen.Presrop",
+		"inMapId": "G.Att.Haw.Cen.Pre.2Building",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 475,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Asteroid",
+		"name": "Metallic Asteroid",
+		"inMapId": "G.Att.Haw.Century",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 807,
+			"y": 627,
+			"radius": 75
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Canctra",
+		"name": "Canctra",
+		"inMapId": "G.Att.Haw.Century",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 335,
+			"y": 984,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Canctra"
+		],
+		"gameVersionData": {
+			"2": {
+				"mapLocationPoint": {
+					"x": 1486,
+					"y": 492,
+					"radius": 36
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Haw.Cen.Tharopto",
+		"name": "Tharopto",
+		"inMapId": "G.Att.Haw.Century",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1569,
+			"y": 348,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tharopto"
+		],
+		"gameVersionData": {
+			"2": {
+				"mapLocationPoint": {
+					"x": 283,
+					"y": 600,
+					"radius": 54
+				}
+			}
+		}
+	}, {
+		"x-comment-x": "--------Chandrasekhar-------",
+		"id": "G.Att.Haw.Chandrasekhar",
+		"name": "Chandrasekhar",
+		"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta/Chandrasekhar.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Hawking",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 671,
+			"y": 954,
+			"radius": 127
+		},
+		"annotationNote": "Teshub, Hebat",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Chandrasekhar"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta/Chandrasekhar2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "G.Att.Haw.Cha.Teshub",
+		"name": "Teshub",
+		"inMapId": "G.Att.Haw.Chandrasekhar",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1155,
+			"y": 766,
+			"radius": 107
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Teshub"
+		]
+	}, {
+		"id": "G.Att.Haw.Cha.Hebat",
+		"name": "Hebat",
+		"inMapId": "G.Att.Haw.Chandrasekhar",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 504,
+			"y": 636,
+			"radius": 65
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hebat"
+		]
+	}, {
+		"x-comment-x": "--------Schwarzschild-------",
+		"id": "G.Att.Haw.Schwarzschild",
+		"name": "Schwarzschild",
+		"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta/Schwarzschild.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Hawking",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 281,
+			"y": 1670,
+			"radius": 127
+		},
+		"annotationNote": "Atahil, Etamis, Linossa, Rihali",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Schwarzschild"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta/Schwarzschild2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "G.Att.Haw.Sch.Atahil",
+		"name": "Atahil",
+		"inMapId": "G.Att.Haw.Schwarzschild",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1165,
+			"y": 995,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Atahil"
+		]
+	}, {
+		"id": "G.Att.Haw.Sch.Etamis",
+		"name": "Etamis",
+		"inMapId": "G.Att.Haw.Schwarzschild",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 829,
+			"y": 785,
+			"radius": 23
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Etamis"
+		]
+	}, {
+		"id": "G.Att.Haw.Sch.Linossa",
+		"name": "Linossa",
+		"inMapId": "G.Att.Haw.Schwarzschild",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 421,
+			"y": 1238,
+			"radius": 65
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Linossa"
+		]
+	}, {
+		"id": "G.Att.Haw.Sch.Rihali",
+		"name": "Rihali",
+		"inMapId": "G.Att.Haw.Schwarzschild",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 283,
+			"y": 601,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Rihali"
+		]
+	}, {
+		"x-comment-x": "--------Thorne-------",
+		"id": "G.Att.Haw.Thorne",
+		"name": "Thorne",
+		"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta/Thorne.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Hawking",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1421,
+			"y": 1486,
+			"radius": 95
+		},
+		"annotationNote": "Mnemosyne, Lethe, Derelict Reaper",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Thorne"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta/Thorne2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "G.Att.Haw.Tho.Mnemosyne",
+		"name": "Mnemosyne",
+		"inMapId": "G.Att.Haw.Thorne",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 414,
+			"y": 728,
+			"radius": 97
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Mnemosyne"
+		]
+	}, {
+		"id": "G.Att.Haw.Tho.Lethe",
+		"name": "Lethe",
+		"inMapId": "G.Att.Haw.Thorne",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 264,
+			"y": 820,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Lethe"
+		]
+	}, {
+		"id": "G.Att.Haw.Tho.Reaper",
+		"name": "Derelict Reaper",
+		"inMapId": "G.Att.Haw.Thorne",
+        "mapType": "Ship",
+		"mapLocationPoint": {
+			"x": 611,
+			"y": 657,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Derelict_Reaper"
+		]
+	}, {
+		"x-comment-x": "--------Verr-------",
+		"id": "G.Att.Haw.Verr",
+		"name": "Verr",
+		"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta/Verr.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Hawking",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1834,
+			"y": 753,
+			"radius": 115
+		},
+		"annotationNote": "Corang, Allusah, Serao",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Verr"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Hawking_Eta/Verr2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "G.Att.Haw.Ver.Corang",
+		"name": "Corang",
+		"inMapId": "G.Att.Haw.Verr",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 776,
+			"y": 1042,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Corang"
+		]
+	}, {
+		"id": "G.Att.Haw.Ver.Allusah",
+		"name": "Allusah",
+		"inMapId": "G.Att.Haw.Verr",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1389,
+			"y": 1311,
+			"radius": 85
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Allusah"
+		]
+	}, {
+		"id": "G.Att.Haw.Ver.Serao",
+		"name": "Serao",
+		"inMapId": "G.Att.Haw.Verr",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 328,
+			"y": 819,
+			"radius": 85
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Serao"
+		]
+	}, {
+		"x-comment-x": "-----------------------Ismar Frontier-------------------------",
+		"id": "G.Att.Ismar",
+		"name": "Ismar Frontier",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Ismar_Frontier1.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 343,
+			"y": 1700,
+			"radius": 30
+		},
+		"annotationNote": "Aquila, Alysta, Faia",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ismar_Frontier"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Ismar_Frontier2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Ismar_Frontier3.pdf",
+				"annotationNote": "Aquila"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"x-comment-x": "--------Aquila-------",
+		"id": "G.Att.Ism.Aquila",
+		"name": "Aquila",
+		"image": "Galaxy_Map/Attican_Traverse/Ismar_Frontier/Aquila1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Ismar",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 553,
+			"y": 1478,
+			"radius": 140
+		},
+		"annotationNote": "Lepini, Vecchio, Volturno, Metaponto, Pollino",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aquila"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Ismar_Frontier/Aquila2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Ismar_Frontier/Aquila3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Ism.Aqu.Lepini",
+		"name": "Lepini",
+		"inMapId": "G.Att.Ism.Aquila",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 916,
+			"y": 913,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Lepini"
+		]
+	}, {
+		"id": "G.Att.Ism.Aqu.Vecchio",
+		"name": "Vecchio",
+		"inMapId": "G.Att.Ism.Aquila",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1258,
+			"y": 1158,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vecchio"
+		]
+	}, {
+		"id": "G.Att.Ism.Aqu.Volturno",
+		"name": "Volturno",
+		"inMapId": "G.Att.Ism.Aquila",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 704,
+			"y": 792,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Volturno"
+		]
+	}, {
+		"id": "G.Att.Ism.Aqu.Metaponto",
+		"name": "Metaponto",
+		"inMapId": "G.Att.Ism.Aquila",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1566,
+			"y": 704,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Metaponto"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1566,
+					"y": 704,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Ism.Aqu.Pollino",
+		"name": "Pollino",
+		"inMapId": "G.Att.Ism.Aquila",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1815,
+			"y": 1216,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pollino"
+		]
+	}, {
+		"x-comment-x": "--------Elysta-------",
+		"id": "G.Att.Ism.Elysta",
+		"name": "Elysta",
+		"image": "Galaxy_Map/Attican_Traverse/Ismar_Frontier/Elysta.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Ismar",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1761,
+			"y": 750,
+			"radius": 128
+		},
+		"annotationNote": "Saleas, Zeona, Odasst, Hesano, Melile",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Elysta"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Ismar_Frontier/Elysta2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Att.Ism.Ely.Saleas",
+		"name": "Saleas",
+		"inMapId": "G.Att.Ism.Elysta",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1144,
+			"y": 894,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Saleas"
+		]
+	}, {
+		"id": "G.Att.Ism.Ely.Zeona",
+		"name": "Zeona",
+		"inMapId": "G.Att.Ism.Elysta",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1040,
+			"y": 1310,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Zeona"
+		]
+	}, {
+		"id": "G.Att.Ism.Ely.Odasst",
+		"name": "Odasst",
+		"inMapId": "G.Att.Ism.Elysta",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1308,
+			"y": 689,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Odasst"
+		]
+	}, {
+		"id": "G.Att.Ism.Ely.Hesano",
+		"name": "Hesano",
+		"inMapId": "G.Att.Ism.Elysta",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 423,
+			"y": 810,
+			"radius": 53
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hesano"
+		]
+	}, {
+		"id": "G.Att.Ism.Ely.Melile",
+		"name": "Melile",
+		"inMapId": "G.Att.Ism.Elysta",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1842,
+			"y": 689,
+			"radius": 38
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Melile"
+		]
+	}, {
+		"x-comment-x": "--------Faia-------",
+		"id": "G.Att.Ism.Faia",
+		"name": "Faia",
+		"image": "Galaxy_Map/Attican_Traverse/Ismar_Frontier/Faia.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Ismar",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 320,
+			"y": 594,
+			"radius": 128
+		},
+		"annotationNote": "Imaen, Zorya, Viantel, Hito",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Faia"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Ismar_Frontier/Faia2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Att.Ism.Fai.Imaen",
+		"name": "Imaen",
+		"inMapId": "G.Att.Ism.Faia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1186,
+			"y": 866,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Imaen"
+		]
+	}, {
+		"id": "G.Att.Ism.Fai.Zorya",
+		"name": "Zorya",
+		"inMapId": "G.Att.Ism.Faia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1477,
+			"y": 1148,
+			"radius": 34
+		},
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/_Secondary/Zorya/Zorya.pdf",
+				"referenceSize": "2083x2083",
+			}
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Zorya"
+		]
+	}, {
+		"id": "G.Att.Ism.Fai.Zor.1",
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"name": "Drop Zone",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 145,
+			"y": 1366,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Ism.Fai.Zor.2",
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"name": "To Vido",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 2043,
+			"y": 1163,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Ism.Fai.Viantel",
+		"name": "Viantel",
+		"inMapId": "G.Att.Ism.Faia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 666,
+			"y": 1588,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Viantel"
+		]
+	}, {
+		"id": "G.Att.Ism.Fai.Hito",
+		"name": "Hito",
+		"inMapId": "G.Att.Ism.Faia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1845,
+			"y": 1384,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hito"
+		]
+	}, {
+		"x-comment-x": "-----------------------Kepler Verge-------------------------",
+		"id": "G.Att.Kepler",
+		"name": "Kepler Verge",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Kepler_Verge1.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3295,
+			"y": 1839,
+			"radius": 30
+		},
+		"annotationNote": "Herschel, Newton",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kepler_Verge"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Kepler_Verge2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Kepler_Verge3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Herschel-------",
+		"id": "G.Att.Kep.Herschel",
+		"name": "Herschel",
+		"image": "Galaxy_Map/Attican_Traverse/Kepler_Verge/Herschel.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Kepler",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 620,
+			"y": 1690,
+			"radius": 136
+		},
+		"annotationNote": "Tungel, Matol, Clugon, MSV Fedele, Clobaka",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Herschel"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Kepler_Verge/Herschel1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.Att.Kep.Her.Tungel",
+		"name": "Tungel",
+		"inMapId": "G.Att.Kep.Herschel",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 796,
+			"y": 1039,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tungel"
+		]
+	}, {
+		"id": "G.Att.Kep.Her.Matol",
+		"name": "Matol",
+		"inMapId": "G.Att.Kep.Herschel",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 625,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Matol"
+		]
+	}, {
+		"id": "G.Att.Kep.Her.Clugon",
+		"name": "Clugon",
+		"inMapId": "G.Att.Kep.Herschel",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1607,
+			"y": 1211,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Clugon"
+		]
+	}, {
+		"id": "G.Att.Kep.Her.MSVFedele",
+		"name": "MSV Fedele",
+		"inMapId": "G.Att.Kep.Herschel",
+        "mapType": "Ship",
+		"mapLocationPoint": {
+			"x": 1605,
+			"y": 1348,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/MSV_Fedele"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/MSV_Fedele/MSV_Fedele.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Kep.Her.MSV.1",
+		"name": "To Normandy",
+		"isShowInList": false,
+		"linkToMapId": "G.N1.1",
+		"inMapId": "G.Att.Kep.Her.MSVFedele",
+		"mapLocationPoint": {
+			"x": 353,
+			"y": 1729,
+			"radius": 20
+		}
+        
+	}, {
+		"id": "G.Att.Kep.Her.Asteroid",
+		"name": "Rocky Asteroid",
+		"inMapId": "G.Att.Kep.Herschel",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 626,
+			"y": 497,
+			"radius": 75
+		}
+	}, {
+		"id": "G.Att.Kep.Her.Clobaka",
+		"name": "Clobaka",
+		"inMapId": "G.Att.Kep.Herschel",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 233,
+			"y": 707,
+			"radius": 53
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Clobaka"
+		]
+	}, {
+		"x-comment-x": "--------Newton-------",
+		"id": "G.Att.Kep.Newton",
+		"name": "Newton",
+		"image": "Galaxy_Map/Attican_Traverse/Kepler_Verge/Newton1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Kepler",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1471,
+			"y": 385,
+			"radius": 130
+		},
+		"annotationNote": "Ontarom, Klencory, Juncro, Sesmose",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Herschel"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Kepler_Verge/Newton2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Kepler_Verge/Newton3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Kep.New.Ontarom",
+		"inMapId": "G.Att.Kep.Newton",
+		"name": "Ontarom",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 795,
+			"y": 1040,
+			"radius": 38
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ontarom"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Ontarom/Ontarom.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Kep.New.Ont.1",
+		"inMapId": "G.Att.Kep.New.Ontarom",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 718,
+			"y": 610,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Kep.New.Ont.2",
+		"inMapId": "G.Att.Kep.New.Ontarom",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1533,
+			"y": 1311,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Kep.New.Ont.3",
+		"inMapId": "G.Att.Kep.New.Ontarom",
+		"name": "Turian Corpse",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1111,
+			"y": 782,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Kep.New.Ont.Science",
+		"inMapId": "G.Att.Kep.New.Ontarom",
+		"name": "Science Facility",
+        "isHidden": true,
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1518,
+			"y": 1575,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Research_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Kep.New.Ont.Sci.1",
+		"inMapId": "G.Att.Kep.New.Ont.Science",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Kep.New.Ontarom",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 475,
+			"radius": 20
+		}
+        
+	}, {
+		"id": "G.Att.Kep.New.Ont.Cow",
+		"inMapId": "G.Att.Kep.New.Ontarom",
+		"gameVersion": "1",
+		"name": "Shifty Looking Cow",
+        "description": "*Beware!* The shifty looking cow will slowly steal your credits if you ever turn your back on it. If you kill it, it will just respawn.",
+		"mapLocationPoint": {
+			"x": 704,
+			"y": 1625,
+			"radius": 20
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Shifty_Looking_Cow"
+		]
+	}, {
+		"id": "G.Att.Kep.New.Klencory",
+		"name": "Klencory",
+		"inMapId": "G.Att.Kep.Newton",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 680,
+			"y": 734,
+			"radius": 33
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Klencory"
+		]
+	}, {
+		"id": "G.Att.Kep.New.Juncro",
+		"name": "Juncro",
+		"inMapId": "G.Att.Kep.Newton",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1651,
+			"y": 1315,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Juncro"
+		]
+	}, {
+		"id": "G.Att.Kep.New.Sesmose",
+		"name": "Sesmose",
+		"inMapId": "G.Att.Kep.Newton",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 166,
+			"y": 960,
+			"radius": 47
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sesmose"
+		]
+	}, {
+		"x-comment-x": "-----------------------Maroon Sea-------------------------",
+		"id": "G.Att.Maroon",
+		"name": "Maroon Sea",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Maroon_Sea.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3024,
+			"y": 2258,
+			"radius": 30
+		},
+		"annotationNote": "Caspian, Matano, Vostok",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Maroon_Sea"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Maroon_Sea1.pdf"
+			}
+		},
+		"events": [{
+            "type": "BlockedUntil",
+            "id": "Completed Feros Mission"
+        }, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"x-comment-x": "--------Caspian-------",
+		"id": "G.Att.Mar.Caspian",
+		"name": "Caspian",
+		"image": "Galaxy_Map/Attican_Traverse/Maroon_Sea/Caspian.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Maroon",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1839,
+			"y": 1192,
+			"radius": 120
+		},
+		"annotationNote": "MSV Cornucopia, Clotanca, Farnuri, Almarcrux, Antida",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Caspian"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Maroon_Sea/Caspian1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Mar.Cas.MSVCornucopia",
+		"name": "MSV Cornucopia",
+		"inMapId": "G.Att.Mar.Caspian",
+        "mapType": "Ship",
+		"mapLocationPoint": {
+			"x": 830,
+			"y": 820,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/MSV_Cornucopia"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Generic_Ship.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Mar.Cas.MSV.1",
+		"name": "To Normandy",
+		"isShowInList": false,
+		"linkToMapId": "G.N1.1",
+		"inMapId": "G.Att.Mar.Cas.MSVCornucopia",
+		"mapLocationPoint": {
+			"x": 353,
+			"y": 1729,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Cas.Clotanca",
+		"name": "Clotanca",
+		"inMapId": "G.Att.Mar.Caspian",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1245,
+			"y": 656,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Clotanca"
+		]
+	}, {
+		"id": "G.Att.Mar.Cas.Farnuri",
+		"name": "Farnuri",
+		"inMapId": "G.Att.Mar.Caspian",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1625,
+			"y": 1007,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Farnuri"
+		]
+	}, {
+		"id": "G.Att.Mar.Cas.Almarcrux",
+		"name": "Almarcrux",
+		"inMapId": "G.Att.Mar.Caspian",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 366,
+			"y": 778,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Almarcrux"
+		]
+	}, {
+		"id": "G.Att.Mar.Cas.Antida",
+		"name": "Antida",
+		"inMapId": "G.Att.Mar.Caspian",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 655,
+			"y": 258,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Antida"
+		]
+	}, {
+		"x-comment-x": "--------Matano-------",
+		"id": "G.Att.Mar.Matano",
+		"name": "Matano",
+		"image": "Galaxy_Map/Attican_Traverse/Maroon_Sea/Matano.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Maroon",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 274,
+			"y": 1496,
+			"radius": 129
+		},
+		"annotationNote": "Inti, Chasca, Apo, Illapa, Supay",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Matano"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Maroon_Sea/Matano1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Inti",
+		"name": "Inti",
+		"inMapId": "G.Att.Mar.Matano",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 791,
+			"y": 1032,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Inti"
+		]
+	}, {
+		"id": "G.Att.Mar.Mat.Chasca",
+		"name": "Chasca",
+		"inMapId": "G.Att.Mar.Matano",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1190,
+			"y": 738,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Chasca"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Chasca/Chasca.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Mar.Mat.Chasca",
+		"mapLocationPoint": {
+			"x": 1383,
+			"y": 953,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.2",
+		"name": "Prothean Pyramid",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Mar.Mat.Chasca",
+		"mapLocationPoint": {
+			"x": 1315,
+			"y": 1558,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.3",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Mar.Mat.Chasca",
+		"mapLocationPoint": {
+			"x": 797,
+			"y": 1640,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.1Civilian",
+		"name": "Civilian Facility",
+        "isHidden": true,
+		"inMapId": "G.Att.Mar.Mat.Chasca",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 713,
+			"y": 1207,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Chasca/Chasca_Civilian_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.2Civilian",
+		"name": "Civilian Facility",
+        "isHidden": true,
+		"inMapId": "G.Att.Mar.Mat.Chasca",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 858,
+			"y": 1440,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Chasca/Chasca_Civilian_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.1Ci.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Mar.Mat.Chasca",
+		"inMapId": "G.Att.Mar.Mat.Cha.1Civilian",
+		"mapLocationPoint": {
+            "x": 698,
+            "y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.1Ci.2",
+		"name": "To Upper Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Mar.Mat.Cha.1Civilian",
+		"mapLocationPoint": {
+            "x": 1135,
+            "y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.1Ci.3",
+		"name": "To Lower Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Mar.Mat.Cha.1Civilian",
+		"mapLocationPoint": {
+            "x": 1582,
+            "y": 1032,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.2Ci.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Mar.Mat.Chasca",
+		"inMapId": "G.Att.Mar.Mat.Cha.2Civilian",
+		"mapLocationPoint": {
+            "x": 698,
+            "y": 283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.2Ci.2",
+		"name": "To Upper Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Mar.Mat.Cha.2Civilian",
+		"mapLocationPoint": {
+            "x": 1135,
+            "y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.2Ci.3",
+		"name": "To Lower Level",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Mar.Mat.Cha.2Civilian",
+		"mapLocationPoint": {
+            "x": 1582,
+            "y": 1032,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.1Science",
+		"name": "Science Facility",
+        "isHidden": true,
+		"inMapId": "G.Att.Mar.Mat.Chasca",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 562,
+			"y": 1348,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Research_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Cha.1Sc.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Mar.Mat.Chasca",
+		"inMapId": "G.Att.Mar.Mat.Cha.1Science",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 475,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Asteroid",
+		"name": "Metallic Asteroid",
+		"inMapId": "G.Att.Mar.Matano",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 1445,
+			"y": 829,
+			"radius": 75
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Apo",
+		"name": "Apo",
+		"inMapId": "G.Att.Mar.Matano",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 758,
+			"y": 525,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Apo"
+		]
+	}, {
+		"id": "G.Att.Mar.Mat.Illapa",
+		"name": "Illapa",
+		"inMapId": "G.Att.Mar.Matano",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1695,
+			"y": 1256,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Illapa"
+		]
+	}, {
+		"id": "G.Att.Mar.Mat.Asteroid2",
+		"name": "Rocky Asteroid",
+		"inMapId": "G.Att.Mar.Matano",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 408,
+			"y": 565,
+			"radius": 75
+		}
+	}, {
+		"id": "G.Att.Mar.Mat.Supay",
+		"name": "Supay",
+		"inMapId": "G.Att.Mar.Matano",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 252,
+			"y": 1508,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Supay"
+		]
+	}, {
+		"x-comment-x": "--------Vostok-------",
+		"id": "G.Att.Mar.Vostok",
+		"name": "Vostok",
+		"image": "Galaxy_Map/Attican_Traverse/Maroon_Sea/Vostok.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Maroon",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1331,
+			"y": 513,
+			"radius": 127
+		},
+		"annotationNote": "Clomarthu, Nodacrux, Alko, Pataiton",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vostok"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Maroon_Sea/Vostok1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Mar.Vos.Clomarthu",
+		"name": "Clomarthu",
+		"inMapId": "G.Att.Mar.Vostok",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 791,
+			"y": 1038,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Clomarthu"
+		]
+	}, {
+		"id": "G.Att.Mar.Vos.Nodacrux",
+		"name": "Nodacrux",
+		"inMapId": "G.Att.Mar.Vostok",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1445,
+			"y": 1028,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nodacrux"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Nodacrux/Nodacrux.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Mar.Vos.Nod.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Mar.Vos.Nodacrux",
+		"mapLocationPoint": {
+			"x": 932,
+			"y": 626,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Vos.Nod.2",
+		"name": "Ancient Wreckage",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Mar.Vos.Nodacrux",
+		"mapLocationPoint": {
+			"x": 1562,
+			"y": 497,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Vos.Nod.3",
+		"name": "Crashed Ship",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Mar.Vos.Nodacrux",
+		"mapLocationPoint": {
+			"x": 650,
+			"y": 635,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Vos.Nod.4",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Mar.Vos.Nodacrux",
+		"mapLocationPoint": {
+			"x": 1407,
+			"y": 1021,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Vos.Nod.ExoGeni",
+		"name": "ExoGeni Facility",
+        "isHidden": true,
+		"inMapId": "G.Att.Mar.Vos.Nodacrux",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1454,
+			"y": 1361,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Research_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Mar.Vos.Nod.Exo.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Mar.Vos.Nodacrux",
+		"inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 475,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Mar.Vos.Asteroid",
+		"name": "Metallic Asteroid",
+		"inMapId": "G.Att.Mar.Vostok",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 1556,
+			"y": 737,
+			"radius": 75
+		}
+	}, {
+		"id": "G.Att.Mar.Vos.Alko",
+		"name": "Alko",
+		"inMapId": "G.Att.Mar.Vostok",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 554,
+			"y": 450,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Alko"
+		]
+	}, {
+		"id": "G.Att.Mar.Vos.Pataiton",
+		"name": "Pataiton",
+		"inMapId": "G.Att.Mar.Vostok",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1555,
+			"y": 307,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pataiton"
+		]
+	}, {
+		"x-comment-x": "-----------------------Ninmah Cluster-------------------------",
+		"id": "G.Att.Ninmah",
+		"name": "Ninmah Cluster",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Ninmah_Cluster.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 2760,
+			"y": 1689,
+			"radius": 30
+		},
+		"annotationNote": "Maskim Xul, Mulla Xul",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ninmah_Cluster"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Ninmah_Cluster3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Maskim Xul-------",
+		"id": "G.Att.Nin.Maskim",
+		"name": "Maskim Xul",
+		"image": "Galaxy_Map/Attican_Traverse/Ninmah_Cluster/Maskim_Xul.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Ninmah",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 630,
+			"y": 709,
+			"radius": 120
+		},
+		"annotationNote": "Suen, Kashshaptu, Damkianna, Listening Post X-19",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Maskim_Xul"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Ninmah_Cluster/Maskim_Xul3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Nin.Mas.Suen",
+		"name": "Suen",
+		"inMapId": "G.Att.Nin.Maskim",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 882,
+			"y": 1233,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Suen"
+		]
+	}, {
+		"id": "G.Att.Nin.Mas.Kashshaptu",
+		"name": "Kashshaptu",
+		"inMapId": "G.Att.Nin.Maskim",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1236,
+			"y": 682,
+			"radius": 23
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kashshaptu"
+		]
+	}, {
+		"id": "G.Att.Nin.Mas.Damkianna",
+		"name": "Damkianna",
+		"inMapId": "G.Att.Nin.Maskim",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1349,
+			"y": 1512,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Damkianna"
+		]
+	}, {
+		"id": "G.Att.Nin.Mas.Post",
+		"name": "Listening Post X-19",
+		"inMapId": "G.Att.Nin.Maskim",
+        "mapType": "Ship",
+		"mapLocationPoint": {
+			"x": 1895,
+			"y": 1031,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Listening_Post_X-19"
+		]
+	}, {
+		"x-comment-x": "--------Mulla Xul-------",
+		"id": "G.Att.Nin.Mulla",
+		"name": "Mulla Xul",
+		"image": "Galaxy_Map/Attican_Traverse/Ninmah_Cluster/Mulla_Xul.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Ninmah",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1452,
+			"y": 1245,
+			"radius": 120
+		},
+		"annotationNote": "Maldor, Utukku, Inakhos, Keph",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Mulla_Xul"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Ninmah_Cluster/Mulla_Xul3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Nin.Mul.Maldor",
+		"name": "Maldor",
+		"inMapId": "G.Att.Nin.Mulla",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1257,
+			"y": 818,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Maldor"
+		]
+	}, {
+		"id": "G.Att.Nin.Mul.Utukku",
+		"name": "Utukku",
+		"inMapId": "G.Att.Nin.Mulla",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 778,
+			"y": 664,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Utukku"
+		]
+	}, {
+		"id": "G.Att.Nin.Mul.Inakhos",
+		"name": "Inakhos",
+		"inMapId": "G.Att.Nin.Mulla",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 395,
+			"y": 1193,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Inakhos"
+		]
+	}, {
+		"id": "G.Att.Nin.Mul.Keph",
+		"name": "Keph",
+		"inMapId": "G.Att.Nin.Mulla",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1914,
+			"y": 1011,
+			"radius": 67
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Keph"
+		]
+	}, {
+		"x-comment-x": "-----------------------Nubian Expanse-------------------------",
+		"id": "G.Att.Nubian",
+		"name": "Nubian Expanse",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Nubian_Expanse.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3771,
+			"y": 2162,
+			"radius": 30
+		},
+		"annotationNote": "Dakka, Kalabsha, Qertassi",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nubian_Expanse"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Nubian_Expanse1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"x-comment-x": "--------Dakka-------",
+		"id": "G.Att.Nub.Dakka",
+		"name": "Dakka",
+		"image": "Galaxy_Map/Attican_Traverse/Nubian_Expanse/Dakka1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Nubian",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 460,
+			"y": 1546,
+			"radius": 123
+		},
+		"annotationNote": "Bannik, Pragia, Alkonost, Gamayun, Zirnitra",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Dakka"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Nubian_Expanse/Dakka2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Nubian_Expanse/Dakka3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Nub.Dak.Bannik",
+		"name": "Bannik",
+		"inMapId": "G.Att.Nub.Dakka",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 895,
+			"y": 1120,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Bannik"
+		]
+	}, {
+		"id": "G.Att.Nub.Dak.Pragia",
+		"name": "Pragia",
+		"inMapId": "G.Att.Nub.Dakka",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1276,
+			"y": 1042,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pragia"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1276,
+					"y": 1042,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Nub.Dak.Alkonost",
+		"name": "Alkonost",
+		"inMapId": "G.Att.Nub.Dakka",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1074,
+			"y": 691,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Alkonost"
+		]
+	}, {
+		"id": "G.Att.Nub.Dak.Gamayun",
+		"name": "Gamayun",
+		"inMapId": "G.Att.Nub.Dakka",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 523,
+			"y": 884,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gamayun"
+		]
+	}, {
+		"id": "G.Att.Nub.Dak.Zirnitra",
+		"name": "Zirnitra",
+		"inMapId": "G.Att.Nub.Dakka",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1458,
+			"y": 397,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Zirnitra"
+		]
+	}, {
+		"x-comment-x": "--------Kalabsha-------",
+		"id": "G.Att.Nub.Kalabsha",
+		"name": "Kalabsha",
+		"image": "Galaxy_Map/Attican_Traverse/Nubian_Expanse/Kalabsha1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Nubian",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 876,
+			"y": 423,
+			"radius": 118
+		},
+		"annotationNote": "Yamm, Tefnut",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kalabsha"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Nubian_Expanse/Kalabsha2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Nubian_Expanse/Kalabsha3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Nub.Kal.Yamm",
+		"name": "Yamm",
+		"inMapId": "G.Att.Nub.Kalabsha",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 565,
+			"y": 833,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Yamm"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 565,
+					"y": 833,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.Att.Nub.Kal.Tefnut",
+		"name": "Tefnut",
+		"inMapId": "G.Att.Nub.Kalabsha",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1112,
+			"y": 275,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tefnut"
+		]
+	}, {
+		"x-comment-x": "--------Qertassi-------",
+		"id": "G.Att.Nub.Qertassi",
+		"name": "Qertassi",
+		"image": "Galaxy_Map/Attican_Traverse/Nubian_Expanse/Qertassi1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Nubian",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1636,
+			"y": 1060,
+			"radius": 111
+		},
+		"annotationNote": "Norehsa",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Qertassi"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Attican_Traverse/Nubian_Expanse/Qertassi2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Attican_Traverse/Nubian_Expanse/Qertassi3.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Nub.Qer.Norehsa",
+		"name": "Norehsa",
+		"inMapId": "G.Att.Nub.Qertassi",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 296,
+			"y": 1208,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Norehsa"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 296,
+					"y": 1208,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"x-comment-x": "-----------------------Pangaea Expanse-------------------------",
+		"id": "G.Att.Pangea",
+		"name": "Pangaea Expanse",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Pangaea_Expanse.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 2601,
+			"y": 1104,
+			"radius": 30
+		},
+		"annotationNote": "Refuge",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pangaea_Expanse"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Pangaea_Expanse1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"x-comment-x": "--------Refuge-------",
+		"id": "G.Att.Pan.Refuge",
+		"name": "Refuge",
+		"image": "Galaxy_Map/Attican_Traverse/Pangaea_Expanse/Refuge.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Pangea",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 1041,
+			"radius": 116
+		},
+		"annotationNote": "Agetoton, Ilos, Zafe",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Refuge"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Pangaea_Expanse/Refuge1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Agetoton",
+		"name": "Agetoton",
+		"inMapId": "G.Att.Pan.Refuge",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1319,
+			"y": 1286,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Agetoton"
+		]
+	}, {
+		"id": "G.Att.Pan.Ref.Ilos",
+		"name": "Ilos",
+		"inMapId": "G.Att.Pan.Refuge",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 412,
+			"y": 1262,
+			"radius": 52
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ilos"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Ilos/Ilos.pdf",
+				"referenceSize": "2083x2083",
+				"isSplitMenu": true
+			}
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Ruins",
+		"name": "Ilos: Ruins",
+		"isHidden": true,
+		"inMapId": "G.Att.Pan.Ref.Ilos",
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Ilos/Ilos_Ruins.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 391,
+					"width": 1800,
+					"height": 305
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.1",
+		"name": "Drop Zone / To Archives",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Pan.Ref.Ilo.Archives",
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 892,
+			"y": 93,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.2",
+		"name": "Plaza",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 924,
+			"y": 611,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.3",
+		"name": "Courtyard",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 993,
+			"y": 1604,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.4",
+		"name": "To Lower Ruins (A)",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 791,
+			"y": 391,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.5",
+		"name": "To Lower Ruins (B)",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 1160,
+			"y": 805,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.4",
+		"name": "To Security Station (C)",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 792,
+			"y": 745,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.5",
+		"name": "To Security Station (D)",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 795,
+			"y": 1962,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.6",
+		"name": "Lower Ruins",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 1766,
+			"y": 420,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.7",
+		"name": "To Upper Ruins (A)",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 1383,
+			"y": 392,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.8",
+		"name": "To Upper Ruins (B)",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 1753,
+			"y": 805,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.9",
+		"name": "Security Station",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 310,
+			"y": 1093,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.10",
+		"name": "To Upper Ruins (C)",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 371,
+			"y": 745,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.11",
+		"name": "To Upper Ruins (D)",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 371,
+			"y": 1962,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Rui.12",
+		"name": "Armature Bay",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"mapLocationPoint": {
+			"x": 310,
+			"y": 1351,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Archives",
+		"name": "Ilos: Archives",
+		"isHidden": true,
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Pan.Ref.Ilos",
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Ilos/Ilos_Archives.pdf",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 879,
+					"width": 1800,
+					"height": 305
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Arc.1",
+		"name": "To Upper Ruins",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+		"inMapId": "G.Att.Pan.Ref.Ilo.Archives",
+		"mapLocationPoint": {
+			"x": 142,
+			"y": 2029,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Arc.2",
+		"name": "Vigil",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Pan.Ref.Ilo.Archives",
+		"mapLocationPoint": {
+			"x": 1907,
+			"y": 354,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Arc.3",
+		"name": "To Trench",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Pan.Ref.Ilo.Trench",
+		"inMapId": "G.Att.Pan.Ref.Ilo.Archives",
+		"mapLocationPoint": {
+			"x": 142,
+			"y": 45,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Trench",
+		"name": "Ilos: Trench",
+		"isHidden": true,
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Pan.Ref.Ilos",
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Ilos/Ilos_Trench.pdf",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1369,
+					"width": 1800,
+					"height": 305
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Tre.1",
+		"name": "To Archives",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Pan.Ref.Ilo.Trench",
+		"inMapId": "G.Att.Pan.Ref.Ilo.Trench",
+		"mapLocationPoint": {
+			"x": 372,
+			"y": 1600,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Ilo.Tre.2",
+		"name": "Conduit / To Citadel",
+        "isShowInList": false,
+		"linkToMapId": "C",
+		"inMapId": "G.Att.Pan.Ref.Ilo.Trench",
+		"mapLocationPoint": {
+			"x": 1935,
+			"y": 1449,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Pan.Ref.Zafe",
+		"name": "Zafe",
+		"inMapId": "G.Att.Pan.Refuge",
+		"mapLocationPoint": {
+			"x": 1507,
+			"y": 250,
+			"radius": 38
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Zafe"
+		]
+	}, {
+		"x-comment-x": "-----------------------Sentry Omega-------------------------",
+		"id": "G.Att.Sentry",
+		"name": "Sentry Omega",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Sentry_Omega.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3635,
+			"y": 1349,
+			"radius": 30
+		},
+		"annotationNote": "Hoc",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sentry_Omega"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Sentry_Omega1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"x-comment-x": "--------Hoc-------",
+		"id": "G.Att.Sen.Hoc",
+		"name": "Hoc",
+		"image": "Galaxy_Map/Attican_Traverse/Sentry_Omega/Hoc.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Sentry",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 1041,
+			"radius": 128
+		},
+		"annotationNote": "Jarfor, Nemata, Virmire, Cloroplon, Prescyla",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hoc"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Sentry_Omega/Hoc1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Jarfor",
+		"name": "Jarfor",
+		"inMapId": "G.Att.Sen.Hoc",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 811,
+			"y": 951,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Jarfor"
+		]
+	}, {
+		"id": "G.Att.Sen.Hoc.Nemata",
+		"name": "Nemata",
+		"inMapId": "G.Att.Sen.Hoc",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 848,
+			"y": 719,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nemata"
+		]
+	}, {
+		"id": "G.Att.Sen.Hoc.Virmire",
+		"name": "Virmire",
+		"inMapId": "G.Att.Sen.Hoc",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1347,
+			"y": 592,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Virmire"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Virmire/Virmire.pdf",
+				"referenceSize": "2083x2083",
+				"isSplitMenu": true
+			}
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Grounds",
+		"name": "Virmire: Route to Salarian Camp",
+		"inMapId": "G.Att.Sen.Hoc.Virmire",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Virmire/Virmire_Grounds.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 143,
+					"width": 1800,
+					"height": 258
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Gro.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.Grounds",
+		"mapLocationPoint": {
+			"x": 1969,
+			"y": 590,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Gro.2",
+		"name": "Gatehouse",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.Grounds",
+		"mapLocationPoint": {
+			"x": 1088,
+			"y": 818,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Gro.3",
+		"name": "Gatehouse",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.Grounds",
+		"mapLocationPoint": {
+			"x": 845,
+			"y": 1379,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Gro.4",
+		"name": "Gatehouse",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.Grounds",
+		"mapLocationPoint": {
+			"x": 703,
+			"y": 1379,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Gro.5",
+		"name": "Salarian Camp",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.Grounds",
+		"mapLocationPoint": {
+			"x": 127,
+			"y": 1367,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.BaseApproach",
+		"name": "Virmire: Base Approach",
+		"isHidden": true,
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Sen.Hoc.Virmire",
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Virmire/Virmire_Base_Approach.pdf",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 530,
+					"width": 1800,
+					"height": 258
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bas.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseApproach",
+		"mapLocationPoint": {
+			"x": 1981,
+			"y": 1333,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bas.2",
+		"name": "Communications Tower",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseApproach",
+		"mapLocationPoint": {
+			"x": 1817,
+			"y": 751,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bas.3",
+		"name": "Satellite Uplink Tower",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseApproach",
+		"mapLocationPoint": {
+			"x": 837,
+			"y": 1185,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bas.4",
+		"name": "Refueling Platform",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseApproach",
+		"mapLocationPoint": {
+			"x": 795,
+			"y": 775,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bas.5",
+		"name": "To Base Entry (A)",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseApproach",
+		"mapLocationPoint": {
+			"x": 285,
+			"y": 505,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bas.6",
+		"name": "To Base Entry (B)",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseApproach",
+		"mapLocationPoint": {
+			"x": 99,
+			"y": 1249,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"name": "Virmire: Base Entry",
+		"inMapId": "G.Att.Sen.Hoc.Virmire",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Virmire/Virmire_Base_Entry.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 917,
+					"width": 1800,
+					"height": 258
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.1",
+		"name": "Base Entry",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 1120,
+			"y": 575,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.2",
+		"name": "Warehouse",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 1126,
+			"y": 362,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.3",
+		"name": "Maintenance",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 821,
+			"y": 647,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.4",
+		"name": "Security Office",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 374,
+			"y": 1093,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.5",
+		"name": "To Base Approach (A)",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Sen.Hoc.Vir.BaseApproach",
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 947,
+			"y": 833,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.6",
+		"name": "To Base Approach (B)",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Sen.Hoc.Vir.BaseApproach",
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 1948,
+			"y": 1771,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.7",
+		"name": "To Cell Block B",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 200,
+			"y": 1225,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.8",
+		"name": "To Cell Block A",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 353,
+			"y": 998,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.9",
+		"name": "To Labs",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Sen.Hoc.Vir.Labs",
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 317,
+			"y": 1066,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.10",
+		"name": "Cell Block A",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 905,
+			"y": 1084,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.11",
+		"name": "To Base Entry",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 683,
+			"y": 1180,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.12",
+		"name": "Cell Block B",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 644,
+			"y": 1564,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.13",
+		"name": "To Base Entry",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 644,
+			"y": 1354,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.14",
+		"name": "To Storage Room",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 536,
+			"y": 1717,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.15",
+		"name": "Storage Room",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 1066,
+			"y": 1771,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.16",
+		"name": "To Maintenance Bay",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 1093,
+			"y": 1693,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.17",
+		"name": "Maintenance Bay",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 1420,
+			"y": 1837,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.18",
+		"name": "To Cell Block B",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 995,
+			"y": 1555,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Bae.19",
+		"name": "To Storage Room",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"mapLocationPoint": {
+			"x": 1489,
+			"y": 1693,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Labs",
+		"name": "Virmire: Labs",
+		"inMapId": "G.Att.Sen.Hoc.Virmire",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Virmire/Virmire_Labs.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1305,
+					"width": 1800,
+					"height": 258
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Lab.1",
+		"name": "To Base Entry",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Labs",
+		"mapLocationPoint": {
+			"x": 1396,
+			"y": 77,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Lab.2",
+		"name": "To Main Level",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"inMapId": "G.Att.Sen.Hoc.Vir.Labs",
+		"mapLocationPoint": {
+			"x": 1270,
+			"y": 1363,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Lab.3",
+		"name": "Genophage Labs",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.Labs",
+		"mapLocationPoint": {
+			"x": 1471,
+			"y": 1150,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Lab.4",
+		"name": "Security Office",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.Labs",
+		"mapLocationPoint": {
+			"x": 920,
+			"y": 1432,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Lab.5",
+		"name": "To Communications Tower",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.Labs",
+		"mapLocationPoint": {
+			"x": 836,
+			"y": 1918,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Lab.6",
+		"name": "Communications Tower",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.Labs",
+		"mapLocationPoint": {
+			"x": 407,
+			"y": 1915,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Lab.7",
+		"name": "To Labs",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.Labs",
+		"mapLocationPoint": {
+			"x": 545,
+			"y": 1918,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"name": "Virmire: Main Level / Breeding Grounds",
+		"inMapId": "G.Att.Sen.Hoc.Virmire",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Virmire/Virmire_Main_Level.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1693,
+					"width": 1800,
+					"height": 258
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.1",
+		"name": "To Labs",
+        "isShowInList": false,
+		"linkToMapId": "G.Att.Sen.Hoc.Vir.Labs",
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 1969,
+			"y": 1085,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.2",
+		"name": "AA Turret",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 195,
+			"y": 365,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.3",
+		"name": "To Main Level West",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 197,
+			"y": 555,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.4",
+		"name": "Main Level West",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 369,
+			"y": 921,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.5",
+		"name": "To AA Turret",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 195,
+			"y": 809,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.6",
+		"name": "To Breeding Trench West",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 403,
+			"y": 1017,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.7",
+		"name": "Main Level East",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 1685,
+			"y": 825,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.8",
+		"name": "Turret Control",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 1353,
+			"y": 911,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.9",
+		"name": "To Breeding Trench East",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 1351,
+			"y": 737,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.10",
+		"name": "Breeding Trench West",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 467,
+			"y": 1777,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.11",
+		"name": "To Main Level West",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 227,
+			"y": 1777,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.12",
+		"name": "Breeding Trench East",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 1300,
+			"y": 1365,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Vir.Mai.13",
+		"name": "To Main Level East",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
+		"mapLocationPoint": {
+			"x": 1670,
+			"y": 1153,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sen.Hoc.Cloroplon",
+		"name": "Cloroplon",
+		"inMapId": "G.Att.Sen.Hoc",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 350,
+			"y": 1331,
+			"radius": 49
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Cloroplon"
+		]
+	}, {
+		"id": "G.Att.Sen.Hoc.Prescyla",
+		"name": "Prescyla",
+		"inMapId": "G.Att.Sen.Hoc",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1812,
+			"y": 1539,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Prescyla"
+		]
+	}, {
+		"x-comment-x": "-----------------------Shadow Sea-------------------------",
+		"id": "G.Att.Shadow",
+		"name": "Shadow Sea",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Shadow_Sea.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 2767,
+			"y": 2217,
+			"radius": 30
+		},
+		"annotationNote": "Iera",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Shadow_Sea"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Shadow_Sea1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"x-comment-x": "--------Iera-------",
+		"id": "G.Att.Sha.Iera",
+		"name": "Iera",
+		"image": "Galaxy_Map/Attican_Traverse/Shadow_Sea/Iera.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Shadow",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 1041,
+			"radius": 125
+		},
+		"annotationNote": "Venture, Prospect, Horizon, Watchman",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Iera"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Shadow_Sea/Iera1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Sha.Ier.Venture",
+		"name": "Venture",
+		"inMapId": "G.Att.Sha.Iera",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1206,
+			"y": 1043,
+			"radius": 50
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Venture"
+		]
+	}, {
+		"id": "G.Att.Sha.Ier.Prospect",
+		"name": "Prospect",
+		"inMapId": "G.Att.Sha.Iera",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1347,
+			"y": 830,
+			"radius": 50
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Prospect"
+		]
+	}, {
+		"id": "G.Att.Sha.Ier.Horizon",
+		"name": "Horizon",
+		"inMapId": "G.Att.Sha.Iera",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 495,
+			"y": 1043,
+			"radius": 33
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Horizon"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/_Secondary/Horizon/Horizon.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Sha.Ier.Hor.Start",
+		"inMapId": "G.Att.Sha.Ier.Horizon",
+        "name": "Drop Zone",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1929,
+			"y": 500,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sha.Ier.Hor.WL",
+		"inMapId": "G.Att.Sha.Ier.Horizon",
+        "name": "Weapons Locker",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1349,
+			"y": 1441,
+			"radius": 20
+		}
+        
+	}, {
+		"id": "G.Att.Sha.Ier.Watchman",
+		"name": "Watchman",
+		"inMapId": "G.Att.Sha.Iera",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1792,
+			"y": 1042,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Watchman"
+		]
+	}, {
+		"x-comment-x": "-----------------------Styx Theta-------------------------",
+		"id": "G.Att.Styx",
+		"name": "Styx Theta",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Styx_Theta.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 2824,
+			"y": 1809,
+			"radius": 30
+		},
+		"annotationNote": "Acheron, Erebus",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Styx_Theta"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Styx_Theta1.pdf"
+			}
+		},
+		"events": [{
+            "type": "BlockedUntil",
+            "id": "Completed Noveria Mission"
+        }, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"x-comment-x": "--------Acheron-------",
+		"id": "G.Att.Sty.Acheron",
+		"name": "Acheron",
+		"image": "Galaxy_Map/Attican_Traverse/Styx_Theta/Acheron.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Styx",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1834,
+			"y": 1266,
+			"radius": 126
+		},
+		"annotationNote": "Farthorl, Altahe, Grosalgen, Imaneya",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Acheron"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Styx_Theta/Acheron1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Sty.Ach.Farthorl",
+		"name": "Farthorl",
+		"inMapId": "G.Att.Sty.Acheron",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1335,
+			"y": 1120,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Farthorl"
+		]
+	}, {
+		"id": "G.Att.Sty.Ach.Altahe",
+		"name": "Altahe",
+		"inMapId": "G.Att.Sty.Acheron",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 913,
+			"y": 554,
+			"radius": 33
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Altahe"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Altahe/Altahe.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Sty.Ach.Alt.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sty.Ach.Altahe",
+		"mapLocationPoint": {
+			"x": 775,
+			"y": 612,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ach.Alt.2",
+		"name": "Rachni Pits",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sty.Ach.Altahe",
+		"mapLocationPoint": {
+			"x": 1450,
+			"y": 1378,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ach.Alt.3",
+		"name": "Crashed Pod",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sty.Ach.Altahe",
+		"mapLocationPoint": {
+			"x": 1466,
+			"y": 644,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ach.Alt.4",
+		"name": "Asari Capsule",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Sty.Ach.Altahe",
+		"mapLocationPoint": {
+			"x": 869,
+			"y": 1339,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ach.Alt.ListeningPost",
+		"name": "Altahe Listening Post",
+        "isHidden": true,
+		"inMapId": "G.Att.Sty.Ach.Altahe",
+        "mapType": "Structure",
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+                "mapLocationPoint": {
+                    "x": 933,
+                    "y": 1494,
+                    "radius": 20
+                },
+				"image": "Detail_Maps/Game1/UNC/Generic_Research_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Sty.Ach.Alt.Lis.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Sty.Ach.Altahe",
+		"inMapId": "G.Att.Sty.Ach.Alt.ListeningPost",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 476,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ach.Asteroid",
+		"name": "Carbonaceous Asteroid",
+		"inMapId": "G.Att.Sty.Acheron",
+        "mapType": "Asteroid",
+		"mapLocationPoint": {
+			"x": 714,
+			"y": 497,
+			"radius": 75
+		}
+	}, {
+		"id": "G.Att.Sty.Ach.Grosalgen",
+		"name": "Grosalgen",
+		"inMapId": "G.Att.Sty.Acheron",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 383,
+			"y": 603,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Grosalgen"
+		]
+	}, {
+		"id": "G.Att.Sty.Ach.Imaneya",
+		"name": "Imaneya",
+		"inMapId": "G.Att.Sty.Acheron",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1938,
+			"y": 864,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Imaneya"
+		]
+	}, {
+		"x-comment-x": "--------Erebus-------",
+		"id": "G.Att.Sty.Erebus",
+		"name": "Erebus",
+		"image": "Galaxy_Map/Attican_Traverse/Styx_Theta/Erebus.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Styx",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 247,
+			"y": 823,
+			"radius": 128
+		},
+		"annotationNote": "Nepmos, Quaji, Wermani, Chofen",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Erebus"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Styx_Theta/Erebus1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Sty.Ere.Nepmos",
+		"name": "Nepmos",
+		"inMapId": "G.Att.Sty.Erebus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 742,
+			"y": 1043,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nepmos"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Nepmos/Nepmos.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Sty.Ere.Nep.1",
+		"inMapId": "G.Att.Sty.Ere.Nepmos",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 898,
+			"y": 882,
+			"radius": 20
+		} 
+	}, {
+		"id": "G.Att.Sty.Ere.Nep.2",
+		"inMapId": "G.Att.Sty.Ere.Nepmos",
+		"name": "Listening Post",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1300,
+			"y": 1541,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ere.Nep.3",
+		"inMapId": "G.Att.Sty.Ere.Nepmos",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 565,
+			"y": 1604,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ere.Nep.4",
+		"inMapId": "G.Att.Sty.Ere.Nepmos",
+		"name": "Buried Safebox",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 561,
+			"y": 968,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ere.Nep.5",
+		"inMapId": "G.Att.Sty.Ere.Nepmos",
+		"name": "Mining Operation",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1434,
+			"y": 555,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ere.Nep.6",
+		"inMapId": "G.Att.Sty.Ere.Nepmos",
+		"name": "Rachni Pit",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 798,
+			"y": 1122,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ere.Nep.7",
+		"inMapId": "G.Att.Sty.Ere.Nepmos",
+		"name": "Rachni Pit",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1250,
+			"y": 778,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ere.Nep.Mine",
+		"inMapId": "G.Att.Sty.Ere.Nepmos",
+		"name": "Mine",
+        "isHidden": true,
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 678,
+			"y": 1419,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Mine.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Sty.Ere.Nep.Min.1",
+		"inMapId": "G.Att.Sty.Ere.Nep.Mine",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Sty.Ere.Nepmos",
+		"mapLocationPoint": {
+			"x": 447,
+			"y": 908,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Sty.Ere.Quaji",
+		"name": "Quaji",
+		"inMapId": "G.Att.Sty.Erebus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1625,
+			"y": 1043,
+			"radius": 33
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Quaji"
+		]
+	}, {
+		"id": "G.Att.Sty.Ere.Wermani",
+		"name": "Wermani",
+		"inMapId": "G.Att.Sty.Erebus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 485,
+			"y": 572,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Wermani"
+		]
+	}, {
+		"id": "G.Att.Sty.Ere.Chofen",
+		"name": "Chofen",
+		"inMapId": "G.Att.Sty.Erebus",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 125,
+			"radius": 33
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Chofen"
+		]
+	}, {
+		"x-comment-x": "-----------------------Voyager Cluster-------------------------",
+		"id": "G.Att.Voyager",
+		"name": "Voyager Cluster",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Attican_Traverse/Voyager_Cluster.pdf",
+		"referenceSize": "2083x2083",
+        "mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 3728,
+			"y": 2675,
+			"radius": 30
+		},
+		"annotationNote": "Amazon, Columbia, Yangtze",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Voyager_Cluster"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Voyager_Cluster1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"x-comment-x": "--------Amazon-------",
+		"id": "G.Att.Voy.Amazon",
+		"name": "Amazon",
+		"image": "Galaxy_Map/Attican_Traverse/Voyager_Cluster/Amazon.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Voyager",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 586,
+			"y": 381,
+			"radius": 124
+		},
+		"annotationNote": "Agebinium, Derneuca, Sonedma, Sybin, Tremar",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Amazon"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Voyager_Cluster/Amazon1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Voy.Ama.Agebinium",
+		"name": "Agebinium",
+		"inMapId": "G.Att.Voy.Amazon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 813,
+			"y": 987,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Agebinium"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Agebinium/Agebinium.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Voy.Ama.Age.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Voy.Ama.Agebinium",
+		"mapLocationPoint": {
+			"x": 1212,
+			"y": 1283,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Ama.Age.2",
+		"name": "Scavenger Corpse",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Voy.Ama.Agebinium",
+		"mapLocationPoint": {
+			"x": 1326,
+			"y": 512,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Ama.Age.3",
+		"name": "Corpse",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Voy.Ama.Agebinium",
+		"mapLocationPoint": {
+			"x": 1562,
+			"y": 704,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Ama.Age.4",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Voy.Ama.Agebinium",
+		"mapLocationPoint": {
+			"x": 1045,
+			"y": 460,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Ama.Age.Mine",
+		"name": "Mine",
+        "isHidden": true,
+		"inMapId": "G.Att.Voy.Ama.Agebinium",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 817,
+			"y": 718,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Agebinium/Agebinium_Mine.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Voy.Ama.Age.Min.1",
+		"name": "Entrance / To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Voy.Ama.Agebinium",
+		"inMapId": "G.Att.Voy.Ama.Age.Mine",
+		"mapLocationPoint": {
+			"x": 447,
+			"y": 908,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Ama.Age.Min.2",
+		"name": "Exit / To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Voy.Ama.Agebinium",
+		"inMapId": "G.Att.Voy.Ama.Age.Mine",
+		"mapLocationPoint": {
+			"x": 1636,
+			"y": 994,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Ama.Derneuca",
+		"name": "Derneuca",
+		"inMapId": "G.Att.Voy.Amazon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 874,
+			"y": 669,
+			"radius": 33
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Derneuca"
+		]
+	}, {
+		"id": "G.Att.Voy.Ama.Sonedma",
+		"name": "Sonedma",
+		"inMapId": "G.Att.Voy.Amazon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 545,
+			"y": 775,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sonedma"
+		]
+	}, {
+		"id": "G.Att.Voy.Ama.Sybin",
+		"name": "Sybin",
+		"inMapId": "G.Att.Voy.Amazon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 878,
+			"y": 334,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sybin"
+		]
+	}, {
+		"id": "G.Att.Voy.Ama.Tremar",
+		"name": "Tremar",
+		"inMapId": "G.Att.Voy.Amazon",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1548,
+			"y": 333,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tremar"
+		]
+	}, {
+		"x-comment-x": "--------Columbia-------",
+		"id": "G.Att.Voy.Columbia",
+		"name": "Columbia",
+		"image": "Galaxy_Map/Attican_Traverse/Voyager_Cluster/Columbia.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Voyager",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1468,
+			"y": 1847,
+			"radius": 117
+		},
+		"annotationNote": "Clojiia, Nepheron, Ontaheter, Gromar",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Columbia"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Voyager_Cluster/Columbia1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Voy.Col.Clojiia",
+		"name": "Clojiia",
+		"inMapId": "G.Att.Voy.Columbia",
+		"mapLocationPoint": {
+			"x": 1199,
+			"y": 867,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Clojiia"
+		]
+	}, {
+		"id": "G.Att.Voy.Col.Nepheron",
+		"name": "Nepheron",
+		"inMapId": "G.Att.Voy.Columbia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 713,
+			"y": 687,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nepheron"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Nepheron/Nepheron.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Voy.Col.Nep.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Voy.Col.Nepheron",
+		"mapLocationPoint": {
+			"x": 1337,
+			"y": 771,
+			"radius": 20
+		} 
+	}, {
+		"id": "G.Att.Voy.Col.Nep.2",
+		"name": "Mummified Salarian",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Voy.Col.Nepheron",
+		"mapLocationPoint": {
+			"x": 875,
+			"y": 1073,
+			"radius": 20
+		} 
+	}, {
+		"id": "G.Att.Voy.Col.Nep.3",
+		"name": "Shack",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Voy.Col.Nepheron",
+		"mapLocationPoint": {
+			"x": 668,
+			"y": 1251,
+			"radius": 20
+		} 
+	}, {
+		"id": "G.Att.Voy.Col.Nep.4",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Voy.Col.Nepheron",
+		"mapLocationPoint": {
+			"x": 1165,
+			"y": 1611,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Col.Nep.Underground",
+		"name": "Underground Facility",
+        "isHidden": true,
+		"inMapId": "G.Att.Voy.Col.Nepheron",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1004,
+			"y": 1266,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Generic_Research_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Voy.Col.Nep.Und.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Voy.Col.Nepheron",
+		"inMapId": "G.Att.Voy.Col.Nep.Underground",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 475,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Col.Ontaheter",
+		"name": "Ontaheter",
+		"inMapId": "G.Att.Voy.Columbia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1386,
+			"y": 516,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ontaheter"
+		]
+	}, {
+		"id": "G.Att.Voy.Col.Gromar",
+		"name": "Gromar",
+		"inMapId": "G.Att.Voy.Columbia",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 191,
+			"y": 1379,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gromar"
+		]
+	}, {
+		"x-comment-x": "--------Yangtze-------",
+		"id": "G.Att.Voy.Yangtze",
+		"name": "Yangtze",
+		"image": "Galaxy_Map/Attican_Traverse/Voyager_Cluster/Yangtze.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.Att.Voyager",
+        "mapType": "System",
+		"mapLocationPoint": {
+			"x": 1496,
+			"y": 269,
+			"radius": 122
+		},
+		"annotationNote": "Renshato, Binthu, Dregir, Alrumter, Patajiri",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Yangtze"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Attican_Traverse/Voyager_Cluster/Yangtze1.pdf"
+			}
+		}
+	}, {
+		"id": "G.Att.Voy.Yan.Renshato",
+		"name": "Renshato",
+		"inMapId": "G.Att.Voy.Yangtze",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 833,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Renshato"
+		]
+	}, {
+		"id": "G.Att.Voy.Yan.Binthu",
+		"name": "Binthu",
+		"inMapId": "G.Att.Voy.Yangtze",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 742,
+			"y": 735,
+			"radius": 31
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Binthu"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/UNC/Binthu/Binthu.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Voy.Yan.Bin.1",
+		"name": "Drop Zone",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Voy.Yan.Binthu",
+		"mapLocationPoint": {
+			"x": 1000,
+			"y": 1094,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Yan.Bin.2",
+		"name": "Crashed Probe",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Voy.Yan.Binthu",
+		"mapLocationPoint": {
+			"x": 469,
+			"y": 1089,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Yan.Bin.3",
+		"name": "Prothean Pyramid",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Voy.Yan.Binthu",
+		"mapLocationPoint": {
+			"x": 1112,
+			"y": 1494,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Yan.Bin.1Research",
+		"name": "Research Facility",
+        "isHidden": true,
+		"inMapId": "G.Att.Voy.Yan.Binthu",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 848,
+			"y": 578,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Binthu/Binthu_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Voy.Yan.Bin.2Research",
+		"name": "Research Facility",
+        "isHidden": true,
+		"inMapId": "G.Att.Voy.Yan.Binthu",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 1325,
+			"y": 898,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Binthu/Binthu_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Voy.Yan.Bin.3Research",
+		"name": "Research Facility",
+        "isHidden": true,
+		"inMapId": "G.Att.Voy.Yan.Binthu",
+        "mapType": "Structure",
+		"mapLocationPoint": {
+			"x": 980,
+			"y": 1473,
+			"radius": 20
+		},
+		"gameVersionData": {
+			"1": {
+                "isHidden": false,
+				"image": "Detail_Maps/Game1/UNC/Binthu/Binthu_Facility.pdf",
+                "referenceSize": "2083x2083"
+			}
+		}
+	}, {
+		"id": "G.Att.Voy.Yan.Bin.1Re.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Voy.Yan.Binthu",
+		"inMapId": "G.Att.Voy.Yan.Bin.1Research",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 476,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Yan.Bin.2Re.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Voy.Yan.Binthu",
+		"inMapId": "G.Att.Voy.Yan.Bin.2Research",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 476,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Yan.Bin.3Re.1",
+		"name": "To Surface",
+		"isShowInList": false,
+		"linkToMapId": "G.Att.Voy.Yan.Binthu",
+		"inMapId": "G.Att.Voy.Yan.Bin.3Research",
+		"mapLocationPoint": {
+			"x": 1612,
+			"y": 476,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Att.Voy.Yan.Dregir",
+		"name": "Dregir",
+		"inMapId": "G.Att.Voy.Yangtze",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 424,
+			"y": 842,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Dregir"
+		]
+	}, {
+		"id": "G.Att.Voy.Yan.Alrumter",
+		"name": "Alrumter",
+		"inMapId": "G.Att.Voy.Yangtze",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1712,
+			"y": 1321,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Alrumter"
+		]
+	}, {
+		"id": "G.Att.Voy.Yan.Patajiri",
+		"name": "Patajiri",
+		"inMapId": "G.Att.Voy.Yangtze",
+        "mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 741,
+			"y": 221,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Patajiri"
+		]
+	}]
+}

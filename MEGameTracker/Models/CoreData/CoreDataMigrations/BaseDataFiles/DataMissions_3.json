@@ -1,0 +1,729 @@
+{
+	"missions": [{
+
+
+		"x-comment-x": "-----------------------MISSIONS-------------------------",
+		"id": "M3.0.Earth",
+		"sortIndex": 1,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Prologue: Earth",
+		"description": "The game opens with you grounded for the events of Game 2 (either the destruction of Bahak in [megametracker://mission?id=DLC2.Arrival] or for joining Cerberus). You are called before the Defense Committee about a large force taking out Alliance outposts. As you are speaking to the committee, Reapers attack Earth. In an introduction to gameplay, you flee with [megametracker://person?id=P1.Anderson] through the wreckage of Vancouver until the Normandy picks you up, with your former teammate [megametracker://person?id=S1.Ashley] or [megametracker://person?id=S1.Kaidan], and a new squad member, [megametracker://person?id=S3.Vega]. Anderson elects to stay behind to lead the resistance, but orders you to head to the Citadel and ask for help from the Council.",
+		"inMapId": "G.Ear.Loc.Sol.Earth",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Prologue:_Earth"],
+		"events": [{
+			"type": "Triggers",
+			"id": "Completed: Prologue: Earth"
+		}]
+	}, {
+		"id": "M3.0.Mars",
+		"sortIndex": 2,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: Mars",
+		"description": "Hackett diverts you to Mars. The research team there is not responding and Hackett is desperate to recover the ancient prothean archives there, before the Reapers arrive. When you land, it is immediately apparent the the facility is overrun by Cerberus. Once inside, [megametracker://person?id=S1.Liara] drops in, a part of the research team. Cerberus has killed all the other scientists, betrayed by a Cerberus mole, [megametracker://person?id=E3.Eva]. \n\nWhen you find Dr. Coré, she is downloading the data onto a disk for the Illusive Man and she wipes the mainframe. There is a chase, and when you catch up, she brutally attacks Ashley/Kaidan. With Vega's help, she is killed, and it emerges that she is not even human, but a synthetic AI. \n\nVega carries Eva's unit back to the Normandy while you carry the gravely wounded squad member.",
+		"inMapId": "G.Ear.Loc.Sol.Mars",
+		"isShowInParentMap": true,
+		"experience": 2000,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Mars"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Prologue: Earth"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Mars"
+		}]
+	}, {
+		"id": "M3.0.Citadel1",
+		"sortIndex": 3,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: The Citadel I",
+		"description": "It becomes imperative to reach the Citadel now, to save Ashley/Kaidan's life. You leave the Eva unit with EDI to investigate, and Ashley or Kaidan is taken to Huerta Memorial Hospital, leaving you to explore the Citadel. There are many miscellaneous tasks you can accomplish, like recruiting [megametracker://person?id=P1.Chakwas] or [megametracker://person?id=P1.Michel], and [megametracker://person?id=P3.Allers]. When you are ready to move on, talk to Udina, where you will learn that the turians have lost contact with the Primarch and that if you want the turians help for Earth, you will have to go to Palaven and find him.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "35,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_The_Citadel_I"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Mars"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: The Citadel I"
+		}]
+
+
+	}, {
+		"id": "M3.1.Palaven",
+		"sortIndex": 10,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: Palaven",
+		"description": "When you land on Palaven's moon, [megametracker://person?id=O3.Corinthus] informs you that the Primarch was killed an hour ago. He needs the comm tower repaired so he can contact Palaven and learn who is the next Primarch. There will be some fighting as you head to the tower and repair it. \n\nYou then encounter [megametracker://person?id=S1.Garrus] (if he survived Game 2) and he will join your team. Corinthus will ask you to defend the airstrip from Reaper attack, and then send you off to find the new Primarch, [megametracker://person?id=P3.VictusA]. \n\nWhen you ask Victus for help, he tells you that the only way he will agree to divert turian forces to defend Earth is if the krogan agree to come defend Palaven.",
+		"inMapId": "G.InC.Api.Tre.Palaven",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "12,500 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Palaven"],
+		"decisionIds": ["D2.Garrus"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: The Citadel I"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Palaven"
+		}]
+	}, {
+		"id": "M3.1.SurKesh",
+		"sortIndex": 11,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: Sur'Kesh",
+		"description": "When you dock with the [megametracker://maplocation?id=G.InC.Ann.Pra.Ships&type=Map], old teammate [megametracker://person?id=S1.Wrex] (if he survived Game 1) comes aboard and you learn that the krogan condition for helping in the war effort is a cure for the Genophage. \n\nWhether or not you saved Maelon's data in Game 2, Wrex has learned that the salarians are holding several krogan female survivors of Maelon's experiments. A cure could be synthesized from them. \n\nOn Sur'Kesh, you meet up with by [megametracker://person?id=P1.Kirrahe] (if he survived Game 1) and [megametracker://person?id=S2.Mordin], if he survived Game 2, otherwise [megametracker://person?id=O3.Wiks]. Mordin (or Wiks) reveals that he was the leak to Clan Urdnot. You learn that only one female has survived, but before you can bring her aboard the Normandy, Cerberus attacks. Mordin (or Wiks) leaves with the krogan and instructs you to meet him at the next checkpoint. \n\nYou need to fight your way up two flights through wreckage and Cerberus troops to reach and activate that checkpoint. Head up another flight and activate the power terminal, then climb the ladder up one last level and activate the release for Mordin and the krogan.",
+		"inMapId": "G.InC.Ann.Pra.SurKesh",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "12,500 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Sur%27Kesh"],
+		"sideEffects": [
+			"On the top level at the far side opposite the elevator, don't miss the salarian at the console with the button you can press. Press that button. Press it lots. [YouTube|https://www.youtube.com/watch?v=cPIIaK4Vl20]",
+			"Your ship's doctor (Chakwas or Michel) will move to the crew quarters to make room for Mordin and Eve."
+		],
+		"decisionIds": ["D1.Wrex", "D1.MaelonsData", "D1.Kirrahe", "D2.Mordin"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Palaven"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Sur'Kesh"
+		}]
+	}, {
+		"id": "M3.1.Tuchanka",
+		"sortIndex": 12,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: Tuchanka",
+		"description": "Reaper forces have occupied the area around the Shroud, the best point for dispersing the Genophage cure. You will escort Mordin (or Wiks) and [megametracker://person?id=P3.Eve] with the krogan ground troops to the shroud, while the turians fly air support in the attack. \n\nThe [megametracker://person?id=P3.Dalatrass] contacts you privately with a scheme to release a fake Genophage cure. She threatens to withhold salarian support from the war effort if you refuse.",
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "25,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Tuchanka"],
+		"sideEffects": [
+			"Some Citadel assignments will no longer be available after this mission is completed, because [megametracker://mission?id=M3.2.Citadel2] begins the next time you return to the Citadel.",
+			"Dialogue opportunities with the following people on the Citadel will be unavailable after this mission is completed: [megametracker://person?id=P2.Kelly], [megametracker://person?id=S2.Thane], [megametracker://person?id=O2.Aethyta]."
+		],
+		"decisionIds": ["D1.Wrex", "D1.MaelonsData", "D2.Mordin", "D3.GenophageCure", "D3.Eve", "D3.Mordin"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Sur'Kesh and Krogan or Turian Mission"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Tuchanka"
+		}]
+	}, {
+		"id": "M3.1.Tuchanka.1",
+		"inMissionId": "M3.1.Tuchanka",
+		"sortIndex": 121,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "The Hollows",
+		"description": "Heading for the krogan meeting ground, the Hollows, there is a brief battle with husks. Once there, you encounter an angry krogan group (led by either [megametracker://person?id=O2.Wreave] or [megametracker://person?id=O3.Jorgal])."
+	}, {
+		"id": "M3.1.Tuchanka.2",
+		"inMissionId": "M3.1.Tuchanka",
+		"sortIndex": 122,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Convoy",
+		"description": "The convoy sets out for the Shroud. Before you make it very far, Reaper forces demolish your route and halt the convoy. When you are done gathering loot and talking to the krogan there, speak to the krogan scout to continue onwards."
+	}, {
+		"id": "M3.1.Tuchanka.3",
+		"inMissionId": "M3.1.Tuchanka",
+		"sortIndex": 123,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "The Catacombs",
+		"description": "The underground remnants of ancient krogan civilization, the Catacombs are full of old artifacts and paintings. When you emerge, you are attacked by three waves of Reaper forces. After they are defeated and as you head over the bridge, [megametracker://person?id=O3.Kalros] appears and destroys it. You have to jump over, and face another brief fight with Reaper forces."
+	}, {
+		"id": "M3.1.Tuchanka.4",
+		"inMissionId": "M3.1.Tuchanka",
+		"sortIndex": 124,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "The Maw Hammers",
+		"description": "In krogan legend, the Maw Hammers are supposed to summon [megametracker://person?id=O3.Kalros] to defend Tuchanka. Eve suggests using them to summon Kalros to attack the Reaper. Mordin (or Wiks) and Eve will leave to finish the cure, Wrex (or Wreave) will stay to take out the rachni, and your squad is tasked with sounding the two hammers. \n\nThis is the worst battle of the mission, with the Reaper itself firing at you and the very real risk of being stepped on by giant Reaper legs, along with all the other Reaper ground forces attacking you. The reward is the final cutscene, as Kalros beats that Reaper's ass."
+	}, {
+		"id": "M3.1.Tuchanka.5",
+		"inMissionId": "M3.1.Tuchanka",
+		"sortIndex": 125,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "The Shroud",
+		"description": "If you saved Maelon's data, Eve will have survived the synthesizing of a cure. If not, Mordin (or Padok Wiks) will report her death to you as he tries to stabilize the Shroud after extensive damage by the Reaper. In almost every ending, Mordin (or Wiks) dies - either in reversing the sabotage and releasing the cure, or if you shoot him to prevent the real cure from being dispersed. \n\nIf you released a real cure, the salarians will not join the war effort, but you may be awarded pockets of salarian support anyway from [megametracker://person?id=P1.Kirrahe] and others. If you don't release the cure, Wrex will eventually suss out the fraud and die confronting you, substantially weakening your krogan support. If Wrex is dead, well, Wreave is not so smart, and you will have full krogan support (at the lesser Wreave score) in addition to the salarians (this is the highest war assets combination).",
+		"sideEffects": [
+			"If you have Mordin here, there are some very different final dialogue options, depending on how you play this. If you renegade him all the way through the mission until the last conversation, he will apologize for what he did to the krogan ([YouTube|https://www.youtube.com/watch?v=nmlMVmAeQdw]).",
+			"Here is the one scenario in which Mordin does *not* die: [YouTube|https://www.youtube.com/watch?v=RKve3voj19A].",
+			"If you save Mordin *and* you saved the [megametracker://person?id=E1.RachniQueen], a Control ending leads to the rachni taking over Tuchanka: [YouTube|https://www.youtube.com/watch?v=NplYcIptkiY])."
+		],
+		"decisionIds": ["D3.GenophageCure", "D3.Eve", "D3.Mordin"]
+
+
+	}, {
+		"id": "M3.2.Citadel2",
+		"sortIndex": 20,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: The Citadel II",
+		"description": "The next time you land on the Citadel, there is no one responding on the comms. Joker gets through to [megametracker://person?id=S2.Thane] (or [megametracker://person?id=P2.Bailey], if Thane died in Game 2), and learns that Cerberus has attacked and taken over C-Sec.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_The_Citadel_II"],
+		"decisionIds": ["D1.Kirrahe", "D1.LoveAshley", "D1.LoveKaidan", "D1.Council", "D2.Thane", "D3.AshleyKaidanParagon", "D3.AshleyKaidan"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Tuchanka"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: The Citadel II"
+		}]
+	}, {
+		"id": "M3.2.Citadel2.1",
+		"inMissionId": "M3.2.Citadel2",
+		"sortIndex": 201,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "C-Sec",
+		"description": "You are dropped off outside C-Sec headquarters. You will meet Bailey there and must fight your way inside. Head upstairs and take the elevator up."
+	}, {
+		"id": "M3.2.Citadel2.1",
+		"inMissionId": "M3.2.Citadel2",
+		"sortIndex": 201,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Save The Councilor",
+		"description": "There is a cafe here where you will fight off more Cerberus troops. Then head upstairs to the Executor's office. The Executor is dead, and then the salarian councilor appears - back in the cafe. There is no time to reach him before [megametracker://person?id=E3.KaiLeng] attacks. The councilor reveals that [megametracker://person?id=P1.Udina] is spearheading the coup. If Thane or [megametracker://person?id=P1.Kirrahe] are alive in Game 3, they will save him from Kai Leng, although being mortally wounded in the process. Otherwise, the salarian councilor dies. Kai Leng then disappears to rendesvous with Udina and the Council."
+	}, {
+		"id": "M3.2.Citadel2.1",
+		"inMissionId": "M3.2.Citadel2",
+		"sortIndex": 201,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Presidium",
+		"description": "Bailey gets you a C-Sec car to go warn the Council, but Kai Leng disables it. You must proceed on foot through the Presidium to the elevators."
+	}, {
+		"id": "M3.2.Citadel2.1",
+		"inMissionId": "M3.2.Citadel2",
+		"sortIndex": 201,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Stop The Elevators",
+		"description": "You fail to reach the elevators before Kai Leng takes one up to the Council. So you break into the elevator shaft and hitch a ride on top of an elevator car. As you rise, shoot out the two conduits on top or below the three Cerberus elevator cars heading up. Then jump on top of the Council's elevator car. They are now guarded by Ashley or Kaidan, the second human Spectre. Ashley or Kaidan (understandably) shoot through the roof at you, and Udina evacuates the Council out to the shuttle pad."
+	}, {
+		"id": "M3.2.Citadel2.1",
+		"inMissionId": "M3.2.Citadel2",
+		"sortIndex": 201,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Confronting Udina",
+		"description": "The Council's evacuation shuttle is, of course, already destroyed by Cerberus. Your squad disables the elevator so the Council can't take Ashley/Kaidan's advice and head back into Kai Leng's waiting ambush. Udina claims you are the threat, working with Cerberus. You must talk down, or shoot, Ashley/Kaidan and prevent the Council from opening the elevator. Then you must shoot Udina. \n\nWhen the elevator doors open, Bailey comes out instead of Kai Leng. He explains that Kai Leng and all the Cerberus troops have fled, through tunnels under the station.",
+		"decisionIds": ["D3.AshleyKaidan"]
+
+	}, {
+		"id": "M3.2.PerseusVeil",
+		"sortIndex": 21,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: Perseus Veil",
+		"description": "Rendezvous with the quarian fleet and obtain their help in the war effort.",
+		"inMapId": "G.Ter.Far.Dho.Ship",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Priority:_Perseus_Veil"
+		],
+		"decisionIds": ["D2.Tali"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: The Citadel II"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Perseus Veil"
+		}]
+	}, {
+		"id": "M3.2.PerseusVeil.1",
+		"inMissionId": "M3.2.PerseusVeil",
+		"sortIndex": 210,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Speak to The Admirals",
+		"description": "The quarian admirals reveal they began a war with the geth to retake their former homeworld, Rannoch, and they were winning until the Reapers interfered and upgraded the geth, controlling them and turning the battle. The quarian fleet is now trapped and will be destroyed without your help. If [megametracker://person?id=S1.Tali] did not die in Game 2, she will be present (whether or not she was exiled)."
+	}, {
+		"id": "M3.2.GethDreadnought",
+		"sortIndex": 22,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: Geth Dreadnought",
+		"description": "Destroy the geth dreadnought broadcasting the Reaper control signal.",
+		"inMapId": "G.Ter.Per.Tik.Dreadnought",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "12,500 Credits",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Priority:_Geth_Dreadnought"
+		],
+		"decisionIds": ["D2.Tali", "D2.Legion", "D3.Legion"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Perseus Veil"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Geth Dreadnought"
+		}]
+	}, {
+		"id": "M3.2.GethDreadnought.2",
+		"inMissionId": "M3.2.GethDreadnought",
+		"sortIndex": 222,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Airlock",
+		"description": "Head through the exposed docking tube to the airlock, walking up or down the inner hull to avoid obstacles. At the airlock you can admit your squad."
+	}, {
+		"id": "M3.2.GethDreadnought.3",
+		"inMissionId": "M3.2.GethDreadnought",
+		"sortIndex": 223,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Operations Center",
+		"description": ""
+	}, {
+		"id": "M3.2.GethDreadnought.4",
+		"inMissionId": "M3.2.GethDreadnought",
+		"sortIndex": 224,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Main Battery",
+		"description": "Avoid the periodic shockwave."
+	}, {
+		"id": "M3.2.GethDreadnought.5",
+		"inMissionId": "M3.2.GethDreadnought",
+		"sortIndex": 225,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Reaper Signal",
+		"description": "Shut down the reaper signal. You will find the Reapers were using [megametracker://person?id=S2.Legion] to power this (if it survived [megametracker://mission?id=M2.CollectorBase.5]), otherwise it will be filled by Geth VI. Eliminate the rest of the hostile geth.",
+		"decisionIds": ["D3.Legion"]
+	}, {
+		"id": "M3.2.Rannoch",
+		"sortIndex": 23,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: Rannoch",
+		"description": "Land on Rannoch and, using a prototype targeting laser, assist the Normandy in destroying the Reaper base. \n\nIf Tali did not survive Game 2, her role in this assignment will be filled by [megametracker://person?id=P2.Raan].",
+		"inMapId": "G.Ter.Per.Tik.Rannoch",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "25,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Rannoch"],
+		"decisionIds": ["D2.Tali", "D3.Legion", "D3.GethIntelligent", "D3.Quarians"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Geth Dreadnought"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Rannoch"
+		}]
+	}, {
+		"id": "M3.2.Rannoch.1",
+		"inMissionId": "M3.2.Rannoch",
+		"sortIndex": 231,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Enter Facility",
+		"description": "Fight your way through the first level, then take the elevator up and destroy the hostiles there also. After you have eliminated the three geth Primes, equip the targeting laser and point it down at the center of the facility."
+	}, {
+		"id": "M3.2.Rannoch.2",
+		"inMissionId": "M3.2.Rannoch",
+		"sortIndex": 232,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Reaper",
+		"description": "Guess what? There's a Reaper hiding down there. Sprint for the ship Legion has acquired before it fries you. \n\nLegion will take the squad to a safe distance while you stay behind to take down the Reaper. Target its red eye with the laser, dodging as it fires back at you. Each time the Normandy successfully strikes it, the Reaper will move closer to you."
+	}, {
+		"id": "M3.2.Rannoch.3",
+		"inMissionId": "M3.2.Rannoch",
+		"sortIndex": 233,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Modified Reaper Code",
+		"description": "The disabled geth are currently being destroyed by the quarian fleet. Legion (or Geth VI) has modified the Reaper code which was controlling the geth and it believes uploading it to the geth fleet will give them all true intelligence. \n\nIf you permit it to upload the code, the geth will rejoin the battle and potentially eliminate the quarians. This leads to Tali (or Raan) throwing themselves off the cliff. Despite the teasing Paragon Interrupt, you can't stop this. \n\nLegion (or Geth VI) will attack you and die if you stop it, and will die during the upload if you permit it.",
+		"decisionIds": ["D3.GethIntelligent", "D3.Quarians"]
+	}, {
+		"id": "M3.2.Citadel3",
+		"sortIndex": 24,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: The Citadel III",
+		"description": "",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "The asari councilor [megametracker://person?id=P1.Valern] (or [megametracker://person?id=O2.Esheel] if Valern died in Game 1) urgently requests to speak with you on the Citadel. You can find her in the Citadel Embassies at Udina's former office. \n\nIf you betrayed Wrex during [megametracker://mission?id=M3.1.Tuchanka], you will need to avoid the Normandy dock (say, by completing assignments which terminate back in the Normandy) or you will be confronted and have to kill him.",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_The_Citadel_III"],
+		"decisionIds": ["D1.Council", "D1.Wrex", "D3.GenophageCure"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Rannoch"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: The Citadel III"
+		}]
+	}, {
+		"id": "M3.2.Thessia",
+		"sortIndex": 25,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: Thessia",
+		"description": "The asaris have revealed that they possess an artifact that may hold the key to finding the Catalyst. They have been keeping it in the temple to Athane on Thessia. A scientific team is watiting for you there but you must hurry since Thessia has been invaded by the Reapers.",
+		"inMapId": "G.OuC.Ath.Par.Thessia",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Thessia"],
+		"sideEffects": [
+			"You may want to replay the intial temple scene a few times with different squad combinations. Javik in particular is good company here."
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: The Citadel III"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Thessia"
+		}]
+	}, {
+		"id": "M3.2.Thessia.1",
+		"inMissionId": "M3.2.Thessia",
+		"sortIndex": 251,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Barricade",
+		"description": "[megametracker://person?id=O3.Kurin] directs you to take the turret gun to defend the barricade."
+	}, {
+		"id": "M3.2.Thessia.2",
+		"inMissionId": "M3.2.Thessia",
+		"sortIndex": 252,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Outpost Tykis",
+		"description": "Cross the bridge and head to the outpost. Once you take down the reaper forces attacking, you can talk to the last asari soldier there. A gunship will help out with the fighting, but as you near the temple, it is shot down."
+	}, {
+		"id": "M3.2.Thessia.3",
+		"inMissionId": "M3.2.Thessia",
+		"sortIndex": 253,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Temple",
+		"description": "When you reach the temple, the scientific team is already dead, murdered and not by Reapers. Then you realize the temple holds a prothean beacon, touch the artifacts around the temple until you locate all the required keys to activate the beacon. [megametracker://person?id=O3.Vendetta]. Before Vendetta can explain what the Catalyst is, [megametracker://person?id=E3.KaiLeng] shows up with a message from the Illusive Man."
+	}, {
+		"id": "M3.2.Thessia.1",
+		"inMissionId": "M3.2.Thessia",
+		"sortIndex": 251,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Kai Leng",
+		"description": "Battle Kai Leng and his gunship. In the end, he knocks the ground out from under you and your team, takes Vendetta, and leaves you to die."
+	}, {
+		"id": "M3.2.Horizon",
+		"sortIndex": 26,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: Horizon",
+		"description": "EDI and Traynor have tracked [megametracker://person?id=E3.KaiLeng] to the refugee facility Sanctuary on Horizon. Investigate the facility to determine its connection to Cerberus.",
+		"inMapId": "G.Att.Sha.Ier.Horizon",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "15,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Horizon"],
+		"decisionIds": ["D2.MirandaLoyalty", "D2.Miranda", "D3.Miranda"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Thessia"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Horizon"
+		}]
+	}, {
+		"id": "M3.2.Horizon.1",
+		"inMissionId": "M3.2.Horizon",
+		"sortIndex": 261,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Reception Area",
+		"description": "Fight the Cerberus troops at the entrance and then explore the reception area. You will find a recording from [megametracker://person?id=S2.Miranda] (or her sister [megametracker://person?id=O2.Oriana], if Miranda did not survive Game 2), warning that Sanctuary is a front for Cerberus, experimenting on the unwitting refugees fleeing there."
+	}, {
+		"id": "M3.2.Horizon.2",
+		"inMissionId": "M3.2.Horizon",
+		"sortIndex": 262,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Empty Pool",
+		"description": "To proceed, find the controls to empty the pool and reveal the entrance to the hidden parts of the facility. Find the command center and activate the console to turn the power back on. The room after that has a video of Miranda (or Oriana) turning off the power, with [megametracker://person?id=E3.KaiLeng] on her heels."
+	}, {
+		"id": "M3.2.Horizon.3",
+		"inMissionId": "M3.2.Horizon",
+		"sortIndex": 263,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Laboratories",
+		"description": "The next area holds the laboratory terminals in a long, tiered hallway, and has scattered Reaper forces. When you have defeated them, you will find a message from Miranda (or Oriana) that she is going to the tower to disable the communications scrambler."
+	}, {
+		"id": "M3.2.Horizon.4",
+		"inMissionId": "M3.2.Horizon",
+		"sortIndex": 264,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Level 2",
+		"description": "Head upstairs. There is another tiered hallway full of experiment tanks and another big fight. There is another message from Miranda (or Oriana) there. She reveals that [megametracker://person?id=E3.Lawson] was working with the Illusive Man to unravel Indoctrination and use it to control the Reapers. At the end of the videa, she is attacked by Kai Leng."
+	}, {
+		"id": "M3.2.Horizon.5",
+		"inMissionId": "M3.2.Horizon",
+		"sortIndex": 265,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Level 3",
+		"description": "Head up the ladder to another tiered hallway for the another battle. When finished, leap over the walkway recommended by your squadmate. Shoot out the panel on the middle top of the platform, to reveal a control panel. Active it to move the platform down the hallway, then jump back across to a doorway."
+	}, {
+		"id": "M3.2.Horizon.6",
+		"inMissionId": "M3.2.Horizon",
+		"sortIndex": 266,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Final Battle",
+		"description": "The next tiered hallway is a mess, with wreckage and Reaper forces and Banshees and Brutes everywhere. Defeat them and take the elevator up to the tower."
+	}, {
+		"id": "M3.2.Horizon.7",
+		"inMissionId": "M3.2.Horizon",
+		"sortIndex": 267,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Dr. Lawson",
+		"description": "[megametracker://person?id=E3.Lawson] is holding his daughter [Oriana|megametracker://person?id=O2.Oriana] hostage. There are a few different options for how this plays out. You can Charm or Intimidate  Dr. Lawson into letting Oriana go, although Miranda will shoot him anyway if she is present, and you can also shoot him yourself. If you can't or don't persuade him, you can wound Oriana with a Renegade Interrupt to get her clear, and then either you or Miranda will shoot Dr. Lawson. If Miranda is not there and you do not take any of the other options, Oriana will die by stepping off the edge and dragging Dr. Lawson with her.",
+		"decisionIds": ["D3.Miranda"]
+
+
+	}, {
+		"id": "M3.3.CerberusHQ",
+		"sortIndex": 30,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: Cerberus Headquarters",
+		"description": "*Warning: this mission commences the end game. Do not begin it until you are done with everything else you want to do.*\n\nWith the data from Horizon, you have located the Illusive Man's Headquarters. Storm the facility and reaquire [megametracker://person?id=O3.Vendetta], the only source left with information on the Catalyst.",
+		"inMapId": "G.Ear.Hor.Ana.Cronos",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "55,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Cerberus_Headquarters"],
+		"decisionIds": ["D2.LegionCerberus", "D3.GrissomAcademy"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Horizon"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Cerberus Headquarters"
+		}]
+	}, {
+		"id": "M3.3.CerberusHQ.1",
+		"inMissionId": "M3.3.CerberusHQ",
+		"sortIndex": 301,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Shuttle Bay",
+		"description": "Ignore the Central Lab prompt for now, but once inside the hangar it is a guide to let you know you are heading in the right direction. \n\nClear the hangar bay of hostiles. When you are done, it will trigger a defensive venting of the hangar. Head up the ladder on the left and find the Active Console to shut down the venting. EDI will be unable to open any route inside the base, but she brings up a fighter jet inside the hangar. \n\nThere is another batch of Cerberus troops to dispatch, but when they are dealt with head down to the floor and to the Clamp Release console to launch the fighter (into the wall of the hangar). \n\nNow you will have to fight an Atlas. There is an empty Atlas on the right inside the hangar which you can override and use yourself. Additionally, Cerberus will attempt to take the empty Atlas on the left."
+	}, {
+		"id": "M3.3.CerberusHQ.2",
+		"inMissionId": "M3.3.CerberusHQ",
+		"sortIndex": 302,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Fighter Wreckage",
+		"description": "After EDI bypasses the door inside the facility, head down the ladder for another fight. When those troops are dispatched, head up the other ladder and EDI will bypass another door. There is a console there with information on Project Lazarus. \n\nThrough the door, you will run into fighter wreckage. Hop the obstacles and head down to the lower level for another fight. Head up the ladder and EDI will bypass another door. There is a console in this room with history on EDI. There is another door to bypass immediately after, and more fighter wreckage. Hop down the damaged shaft immediately after the door."
+	}, {
+		"id": "M3.3.CerberusHQ.3",
+		"inMissionId": "M3.3.CerberusHQ",
+		"sortIndex": 303,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Human Reaper",
+		"description": "Whatever was salvaged from [megametracker://mission?id=M2.CollectorBase.5] is in the next area (either the head or the heart of the human Reaper). This is a wide open area for the next fight. If Cerberus has [megametracker://person?id=S2.Jack] or [megametracker://person?id=S2.Legion], they will fight you here. Head up along the catwalks and ladders. The room at the top has a console with information about Reaper implants. Head up the ramp to the lab.",
+		"sideEffects": ["The victim mentioned in the logs in Paul Grayson, a character in the novels *Mass Effect: Ascension*, *Retribution*, and *Deception*."]
+	}, {
+		"id": "M3.3.CerberusHQ.4",
+		"inMissionId": "M3.3.CerberusHQ",
+		"sortIndex": 304,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Central Lab",
+		"description": "This is the Illusive Man's office, but he is only here as a hologram. [megametracker://person?id=O3.Vendetta] is in the lab, and you can finally discover what the Catalyst is. You just have to kill [megametracker://person?id=E3.KaiLeng] first. \n\nThis battle will be in intervals, like most boss fights, where you alternate between attacking Kai Leng and the Cerberus troops when Kai Leng is recharging his shields. After you defeat him, there will be one final cut scene where Kai Leng tries to sneak behind you, but - regardless of the Renegade Interrupt - he does not succeed and you kill him.",
+		"sideEffects": [
+			"Vendetta mentions that the Catalyst harnesses Dark Energy. This is intriguing given the comments by the lead writer for Games 1 and 2 about his original ideas for the ending and Dark Energy/Biotics [EuroGamer Interview|https://www.eurogamer.net/articles/2013-06-19-ex-bioware-writer-discusses-dropped-ideas-for-mass-effect-trilogy-ending]. It suggests that only a biological intelligence could activate the Catalyst."
+		]
+	}, {
+		"id": "M3.3.Earth",
+		"sortIndex": 30,
+		"gameVersion": "3",
+		"missionType": "Mission",
+		"name": "Priority: Earth",
+		"description": "Rendezvous with [megametracker://person?id=P1.Hackett] above Earth. Anderson is stationed in London with the resistance. The Citadel has been closed and the only way in is via a Reaper beam from Earth. The Hammer team can't land there while the area is defended by Hades canons. So the plan is: take out a canon, land the team, take the Reaper beam to the Citadel, open the Citadel, and dock the Crucible.",
+		"inMapId": "G.Ear.Loc.Sol.Earth",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Earth"],
+		"decisionIds": ["D3.Cortez", "D3.Control", "D3.Synthesis", "D3.Destroy", "D3.Refusal"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: Cerberus Headquarters"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Priority: Earth"
+		}]
+	}, {
+		"id": "M3.3.Earth.1",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 301,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Hackett's Speech",
+		"description": "In the male equivalent of a period romance formal dance (ie, tedious and unnecessary), Hackett delivers a long military speech to the amassed fleet."
+	}, {
+		"id": "M3.3.Earth.2",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 302,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Reaper Cannon",
+		"description": "Fight through Reaper forces and make your way up the hill until you find the missile launcher. Use it destroy the Reaper cannon. There's a second missile launcher if you need it. Cortez will die here if you have not fulfilled the requirements to save him.",
+		"decisionIds": ["D3.Cortez"]
+	}, {
+		"id": "M3.3.Earth.3",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 303,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Evac Shuttle",
+		"description": "Fight through Reaper forces to reach the shuttle back to the base."
+	}, {
+		"id": "M3.3.Earth.4",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 304,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Forward Operations Base 1",
+		"description": "You have an opportunity to speak to some of your teammates for the last time. You can use the Communications Tech Officer to speak to others via the vidcomm. You won't see Liara, Wrex, EDI, Tali, and Anderson - they are in the next area. When you reach [megametracker://person?id=P3.VictusA], be careful heading out the door and up the ramp, as it begins the next stage and you will not be able to return to this area."
+	}, {
+		"id": "M3.3.Earth.5",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 305,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Forward Operations Base 2",
+		"description": "Take control of the turret gun to fend off the Reaper troops attacking the base. When you are done, you can continue to the other side of the base and talk to the rest of your teammates. Speak to Anderson to move on to the next step."
+	}, {
+		"id": "M3.3.Earth.6",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 306,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Shepard's Speech",
+		"description": "Oh look, another military rah-rah speech."
+	}, {
+		"id": "M3.3.Earth.7",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 307,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Parking Garage",
+		"description": "Fight up the wreckage to the parking garage."
+	}, {
+		"id": "M3.3.Earth.8",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 308,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Streets",
+		"description": "Fight through the streets until you reach the intersection with the tank with the Thanix missiles on top."
+	}, {
+		"id": "M3.3.Earth.9",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 309,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Thanix Missiles",
+		"description": "Clear the area around the tank and then activate the console. A new wave of enemies will spawn. When EDI notifies you, head back and activate the console again to fire the missile. There's a Hydra weapon here you probably want to save for later. The first missile misfires. Activate the missile console again and fight off the next wave. During this batch you will also be dodging the Reaper's beam as well. At the very end of this battle you are going to need that Hydra against all the Banshees. When EDI notifies you, head back to the tank to fire the second missile."
+	}, {
+		"id": "M3.3.Earth.10",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 310,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Hammer Assault",
+		"description": "Team Hammer heads for the beam to the Citadel. If you have [megametracker://mission?id=DLC3.ExtendedCut] your military effectiveness rating is not high enough, your teammates will die during this cutscene. Otherwise they are picked up by the Normandy and carried to safety."
+	}, {
+		"id": "M3.3.Earth.11",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 311,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Walk to The Beam",
+		"description": "Harbinger has destroyed Hammer. You are alone and badly wounded. In slow motion, kill the approaching Husks, followed by one Marauder. Take the beam to the Citadel."
+	}, {
+		"id": "M3.3.Earth.12",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 312,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Citadel",
+		"description": "You are in one of the access tunnels under the Citadel and it is filled with bodies. Anderson will contact you on the comm and you both make your way to the control platform."
+	}, {
+		"id": "M3.3.Earth.13",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 313,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Illusive Man",
+		"description": "The Illusive Man beat you to the Citadel, and Anderson is under his control, via his new Indoctrination abilities learned from the Horizon research. He then forces you to shoot Anderson. If you have the Paragon option here, you can convince him he is wrong. The other routes involve one to two Renegade Interrupts, and if you fail to use them, you will die. If you succeed, you will then open the arms to the Citadel and collapse with Anderson to watch the arms open to reveal Earth."
+	}, {
+		"id": "M3.3.Earth.14",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 314,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Catalyst",
+		"description": "Anderson is dead when Hackett wakes you on the comms, warning you that the Crucible has not been activated. The Catalyst (aka the God Child), in the form of the boy you saw die on Earth, will approach. He delivers a long speech about the Reapers purpose, which is hardly necessary after [megametracker://mission?id=DLC3.Leviathan]. He then explains your choices for how to end the war. Pick a color.",
+		"sideEffects": [
+			"Listen carefully to the God Child's voice and you will hear echoes of BroShep and FemShep under the child's voice. It's pretty cool.",
+			"If you, like most people, hate all the endings offered, you might want to read what the lead writer for Games 1 and 2 said about his original ideas for the ending and Dark Energy/Biotics [EuroGamer Interview|https://www.eurogamer.net/articles/2013-06-19-ex-bioware-writer-discusses-dropped-ideas-for-mass-effect-trilogy-ending], or the [Indoctrination Theory|https://gamerant.com/mass-effect-3-ending-indoctrination-theory-spoilers-benk-139605/].",
+			"You also might try the Refusal Ending: [YouTube|https://www.youtube.com/watch?v=WFwsL-bj4Mo]."
+		]
+	}, {
+		"id": "M3.3.Earth.20",
+		"inMissionId": "M3.3.Earth",
+		"sortIndex": 321,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Final Choice",
+		"description": "You have to select one of the four endings. The outcome will vary somewhat based on your military effectiveness (a combination of War Assets and Galactic Readiness). Destroy and Refusal choices also destroy the Citadel, although whether anyone is still alive there is debateable.",
+		"decisionIds": ["D3.Control", "D3.Synthesis", "D3.Destroy", "D3.Refusal"],
+		"noteToSelf": "TODO: Add galactic readiness/war assets slider to per-game tracking data on Shepard page?"
+
+
+	}]
+}

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Eoj-Re-qaQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Missions-->
+        <scene sceneID="18K-GC-WeP">
+            <objects>
+                <viewController title="Missions" id="Eoj-Re-qaQ" customClass="MissionsFlowController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D4K-fR-5Eh"/>
+                        <viewControllerLayoutGuide type="bottom" id="T24-mZ-dO5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GMd-Kx-MxH" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MissionsGroups"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" title="Missions" id="JaG-Xt-y0f"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MissionsGroups"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="WOD-en-YYc" kind="show" identifier="Show MissionsFlow.MissionsGroup" id="Bhg-oQ-Jt1"/>
+                        <segue destination="upW-UY-JZg" kind="show" identifier="Show MissionsFlow.Mission" id="Pws-hy-Dfr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJY-ES-tnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3890" y="2227"/>
+        </scene>
+        <!--Mission Groups-->
+        <scene sceneID="Ypa-cg-7AG">
+            <objects>
+                <viewController storyboardIdentifier="Mission Group" title="Missions" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WOD-en-YYc" userLabel="Mission Groups" customClass="MissionsFlowController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p7g-yA-UOF"/>
+                        <viewControllerLayoutGuide type="bottom" id="oKV-bz-oc7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vsZ-Uu-G1l" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MissionsSplitView"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" title="Missions" id="kek-XH-KGA"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MissionsSplitView"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="upW-UY-JZg" kind="show" identifier="Show MissionsFlow.Mission" id="nlD-Cc-xaK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3X-iV-XCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4598" y="2227"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JP2-ly-9jU">
+            <objects>
+                <navigationController storyboardIdentifier="Nav-Wrapped Mission" id="JSE-bS-lj0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P6H-UL-txE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="upW-UY-JZg" kind="relationship" relationship="rootViewController" id="wjB-K1-EVO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xTg-WI-tjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5374" y="1519"/>
+        </scene>
+        <!--Mission-->
+        <scene sceneID="OEf-1g-Ner">
+            <objects>
+                <viewController storyboardIdentifier="Mission" id="upW-UY-JZg" customClass="MissionsFlowController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o33-hF-QGc"/>
+                        <viewControllerLayoutGuide type="bottom" id="vYJ-u6-7Qd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ofy-5K-IlE" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="Mission"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mission" id="Urg-Th-jco"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="Mission"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qq2-1C-1Uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5375" y="2227"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nlD-Cc-xaK"/>
+    </inferredMetricsTieBreakers>
+</document>

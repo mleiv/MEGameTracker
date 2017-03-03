@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jhM-oG-Zvq">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map Callouts Controller-->
+        <scene sceneID="k35-b6-Myz">
+            <objects>
+                <viewController id="jhM-oG-Zvq" customClass="MapCalloutsController" customModule="MassEffectTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t5j-Po-3EX"/>
+                        <viewControllerLayoutGuide type="bottom" id="eW0-FI-qRC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RcE-eH-j77">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oog-5y-6Gq">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9UF-SQ-haD">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hBd-hy-0MD">
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAP-8M-DpE" customClass="CalloutsView" customModule="MassEffectTracker" customModuleProvider="target">
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="101" id="t15-Zl-nwy"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="hBd-hy-0MD" firstAttribute="top" secondItem="9UF-SQ-haD" secondAttribute="top" id="ZcG-0z-gHo"/>
+                                            <constraint firstAttribute="trailing" secondItem="hBd-hy-0MD" secondAttribute="trailing" id="fc8-hV-mxM"/>
+                                            <constraint firstAttribute="bottom" secondItem="hBd-hy-0MD" secondAttribute="bottom" priority="800" constant="40" id="lEO-tj-ytU"/>
+                                            <constraint firstItem="hBd-hy-0MD" firstAttribute="leading" secondItem="9UF-SQ-haD" secondAttribute="leading" id="yo8-kW-bDf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9UF-SQ-haD" firstAttribute="width" secondItem="Oog-5y-6Gq" secondAttribute="width" id="61L-ZT-xxZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="9UF-SQ-haD" secondAttribute="bottom" id="6HA-eQ-27n"/>
+                                    <constraint firstItem="9UF-SQ-haD" firstAttribute="leading" secondItem="Oog-5y-6Gq" secondAttribute="leading" id="6YM-hi-RzP"/>
+                                    <constraint firstItem="9UF-SQ-haD" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Oog-5y-6Gq" secondAttribute="height" priority="900" id="Dby-Ag-oL8"/>
+                                    <constraint firstItem="9UF-SQ-haD" firstAttribute="top" secondItem="Oog-5y-6Gq" secondAttribute="top" id="ftm-7m-Ag8"/>
+                                    <constraint firstAttribute="trailing" secondItem="9UF-SQ-haD" secondAttribute="trailing" id="mmf-t9-wuc"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="eW0-FI-qRC" firstAttribute="top" secondItem="Oog-5y-6Gq" secondAttribute="bottom" id="1qa-zy-Uhz"/>
+                            <constraint firstItem="Oog-5y-6Gq" firstAttribute="leading" secondItem="RcE-eH-j77" secondAttribute="leading" id="4rd-8V-lm7"/>
+                            <constraint firstItem="Oog-5y-6Gq" firstAttribute="top" secondItem="RcE-eH-j77" secondAttribute="top" id="DT9-ya-VF0"/>
+                            <constraint firstAttribute="trailing" secondItem="Oog-5y-6Gq" secondAttribute="trailing" id="JGU-dY-u89"/>
+                            <constraint firstItem="9UF-SQ-haD" firstAttribute="height" secondItem="RcE-eH-j77" secondAttribute="height" priority="100" id="whg-e3-1aV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calloutsView" destination="mAP-8M-DpE" id="0Oq-V1-tLt"/>
+                        <outlet property="scrollView" destination="Oog-5y-6Gq" id="kkj-ED-hnr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="irr-Ae-IX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="-1179"/>
+        </scene>
+    </scenes>
+</document>

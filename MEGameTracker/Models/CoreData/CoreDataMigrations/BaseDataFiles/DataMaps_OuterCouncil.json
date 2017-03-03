@@ -1,0 +1,2037 @@
+{
+	"maps": [{
+		"x-comment-x": "-----------------------Athena Nebula-------------------------",
+		"id": "G.OuC.Athena",
+		"name": "Athena Nebula",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Outer_Council/Athena_Nebula.pdf",
+		"referenceSize": "2083x2083",
+		"mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 743,
+			"y": 2529,
+			"radius": 30
+		},
+		"annotationNote": "Ialessa, Orisoni, Parnitha, Tomaros, Vernio",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Athena_Nebula"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Athena_Nebula3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Ialessa-------",
+		"id": "G.OuC.Ath.Ialessa",
+		"name": "Ialessa",
+		"image": "Galaxy_Map/Outer_Council/Athena_Nebula/Ialessa.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Athena",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1500,
+			"y": 332,
+			"radius": 124
+		},
+		"annotationNote": "Ilmnos, Sanves, Zylium, Trikalon, Nossia",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ialessa"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Athena_Nebula/Ialessa3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Ath.Ial.Ilmnos",
+		"name": "Ilmnos",
+		"inMapId": "G.OuC.Ath.Ialessa",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 926,
+			"y": 1212,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ilmnos"
+		]
+	}, {
+		"id": "G.OuC.Ath.Ial.Sanves",
+		"name": "Sanves",
+		"inMapId": "G.OuC.Ath.Ialessa",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1373,
+			"y": 956,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sanves"
+		]
+	}, {
+		"id": "G.OuC.Ath.Ial.Zylium",
+		"name": "Zylium",
+		"inMapId": "G.OuC.Ath.Ialessa",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 689,
+			"y": 577,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Zylium"
+		]
+	}, {
+		"id": "G.OuC.Ath.Ial.Trikalon",
+		"name": "Trikalon",
+		"inMapId": "G.OuC.Ath.Ialessa",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1608,
+			"y": 545,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Trikalon"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1608,
+					"y": 545,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.OuC.Ath.Ial.Nossia",
+		"name": "Nossia",
+		"inMapId": "G.OuC.Ath.Ialessa",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 343,
+			"y": 1644,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nossia"
+		]
+	}, {
+		"x-comment-x": "--------Orisoni-------",
+		"id": "G.OuC.Ath.Orisoni",
+		"name": "Orisoni",
+		"image": "Galaxy_Map/Outer_Council/Athena_Nebula/Orisoni.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Athena",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 380,
+			"y": 554,
+			"radius": 121
+		},
+		"annotationNote": "Thissioni, Niacal, Kralla, Egalic",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Orisoni"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Athena_Nebula/Orisoni3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Ath.Ori.Thissioni",
+		"name": "Thissioni",
+		"inMapId": "G.OuC.Ath.Orisoni",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1040,
+			"y": 1333,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Thissioni"
+		]
+	}, {
+		"id": "G.OuC.Ath.Ori.Niacal",
+		"name": "Niacal",
+		"inMapId": "G.OuC.Ath.Orisoni",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 543,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Niacal"
+		]
+	}, {
+		"id": "G.OuC.Ath.Ori.Kralla",
+		"name": "Kralla",
+		"inMapId": "G.OuC.Ath.Orisoni",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1595,
+			"y": 604,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kralla"
+		]
+	}, {
+		"id": "G.OuC.Ath.Ori.Egalic",
+		"name": "Egalic",
+		"inMapId": "G.OuC.Ath.Orisoni",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 124,
+			"y": 1043,
+			"radius": 70
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Egalic"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 124,
+					"y": 1043,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"x-comment-x": "--------Parnitha-------",
+		"id": "G.OuC.Ath.Parnitha",
+		"name": "Parnitha",
+		"image": "Galaxy_Map/Outer_Council/Athena_Nebula/Parnitha.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Athena",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1025,
+			"y": 951,
+			"radius": 148
+		},
+		"annotationNote": "Kurinth, Thessia, Piares, Janiri, Athame, Tevura",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Parnitha"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Athena_Nebula/Parnitha3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Ath.Par.Kurinth",
+		"name": "Kurinth",
+		"inMapId": "G.OuC.Ath.Parnitha",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 887,
+			"y": 902,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kurinth"
+		]
+	}, {
+		"id": "G.OuC.Ath.Par.Thessia",
+		"name": "Thessia",
+		"inMapId": "G.OuC.Ath.Parnitha",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1273,
+			"y": 1280,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Thessia"
+		]
+	}, {
+		"id": "G.OuC.Ath.Par.Piares",
+		"name": "Piares",
+		"inMapId": "G.OuC.Ath.Parnitha",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1351,
+			"y": 720,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Piares"
+		]
+	}, {
+		"id": "G.OuC.Ath.Par.Janiri",
+		"name": "Janiri",
+		"inMapId": "G.OuC.Ath.Parnitha",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1607,
+			"y": 1117,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Janiri"
+		]
+	}, {
+		"id": "G.OuC.Ath.Par.Athame",
+		"name": "Athame",
+		"inMapId": "G.OuC.Ath.Parnitha",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 370,
+			"y": 1163,
+			"radius": 63
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Athame"
+		]
+	}, {
+		"id": "G.OuC.Ath.Par.Tevura",
+		"name": "Tevura",
+		"inMapId": "G.OuC.Ath.Parnitha",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 480,
+			"y": 481,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tevura"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 480,
+					"y": 481,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"x-comment-x": "--------Tomaros-------",
+		"id": "G.OuC.Ath.Tomaros",
+		"name": "Tomaros",
+		"image": "Galaxy_Map/Outer_Council/Athena_Nebula/Tomaros.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Athena",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 261,
+			"y": 1699,
+			"radius": 126
+		},
+		"annotationNote": "Lusia, Niagolon, Pronoia, Beness",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tomaros"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Athena_Nebula/Tomaros3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Ath.Tom.Lusia",
+		"name": "Lusia",
+		"inMapId": "G.OuC.Ath.Tomaros",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1196,
+			"y": 797,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Lusia"
+		]
+	}, {
+		"id": "G.OuC.Ath.Tom.Niagolon",
+		"name": "Niagolon",
+		"inMapId": "G.OuC.Ath.Tomaros",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 589,
+			"y": 1266,
+			"radius": 62
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Niagolon"
+		]
+	}, {
+		"id": "G.OuC.Ath.Tom.Pronoia",
+		"name": "Pronoia",
+		"inMapId": "G.OuC.Ath.Tomaros",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1745,
+			"y": 993,
+			"radius": 95
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pronoia"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1745,
+					"y": 993,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.OuC.Ath.Tom.Beness",
+		"name": "Beness",
+		"inMapId": "G.OuC.Ath.Tomaros",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 711,
+			"y": 185,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Beness"
+		]
+	}, {
+		"x-comment-x": "--------Vernio-------",
+		"id": "G.OuC.Ath.Vernio",
+		"name": "Vernio",
+		"image": "Galaxy_Map/Outer_Council/Athena_Nebula/Vernio.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Athena",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1835,
+			"y": 1556,
+			"radius": 110
+		},
+		"annotationNote": "Nauti, Promavess, Sotera, Tritogenith, Polissa",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vernio"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Athena_Nebula/Vernio3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Ath.Ver.Nauti",
+		"name": "Nauti",
+		"inMapId": "G.OuC.Ath.Vernio",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 797,
+			"y": 1038,
+			"radius": 40
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nauti"
+		]
+	}, {
+		"id": "G.OuC.Ath.Ver.Promavess",
+		"name": "Promavess",
+		"inMapId": "G.OuC.Ath.Vernio",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 890,
+			"y": 654,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Promavess"
+		]
+	}, {
+		"id": "G.OuC.Ath.Ver.Sotera",
+		"name": "Sotera",
+		"inMapId": "G.OuC.Ath.Vernio",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1309,
+			"y": 724,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sotera"
+		]
+	}, {
+		"id": "G.OuC.Ath.Ver.Tritogenith",
+		"name": "Tritogenith",
+		"inMapId": "G.OuC.Ath.Vernio",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1524,
+			"y": 1584,
+			"radius": 60
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tritogenith"
+		]
+	}, {
+		"id": "G.OuC.Ath.Ver.Polissa",
+		"name": "Polissa",
+		"inMapId": "G.OuC.Ath.Vernio",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 144,
+			"y": 1225,
+			"radius": 62
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Polissa"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 144,
+					"y": 1225,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"x-comment-x": "-----------------------Minos Wasteland-------------------------",
+		"id": "G.OuC.Minos",
+		"name": "Minos Wasteland",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Outer_Council/Minos_Wasteland1.pdf",
+		"referenceSize": "2083x2083",
+		"mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 565,
+			"y": 2067,
+			"radius": 30
+		},
+		"annotationNote": "Arrae, Caestus, Fortis",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Minos_Wasteland"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Outer_Council/Minos_Wasteland2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Minos_Wasteland3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"x-comment-x": "--------Arrae-------",
+		"id": "G.OuC.Min.Arrae",
+		"name": "Arrae",
+		"image": "Galaxy_Map/Outer_Council/Minos_Wasteland/Arrae.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Minos",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 441,
+			"y": 1171,
+			"radius": 117
+		},
+		"annotationNote": "Erros, Gellix, Antinax, Nirrus",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Arrae"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Minos_Wasteland/Arrae3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "G.OuC.Min.Arr.Erros",
+		"name": "Erros",
+		"inMapId": "G.OuC.Min.Arrae",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1279,
+			"y": 1042,
+			"radius": 38
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Erros"
+		]
+	}, {
+		"id": "G.OuC.Min.Arr.Gellix",
+		"name": "Gellix",
+		"inMapId": "G.OuC.Min.Arrae",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 637,
+			"y": 1232,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gellix"
+		]
+	}, {
+		"id": "G.OuC.Min.Arr.Antinax",
+		"name": "Antinax",
+		"inMapId": "G.OuC.Min.Arrae",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1600,
+			"y": 1400,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Antinax"
+		]
+	}, {
+		"id": "G.OuC.Min.Arr.Nirrus",
+		"name": "Nirrus",
+		"inMapId": "G.OuC.Min.Arrae",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 532,
+			"y": 279,
+			"radius": 62
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nirrus"
+		]
+	}, {
+		"x-comment-x": "--------Caestus-------",
+		"id": "G.OuC.Min.Caestus",
+		"name": "Caestus",
+		"image": "Galaxy_Map/Outer_Council/Minos_Wasteland/Caestus.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Minos",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1080,
+			"y": 1586,
+			"radius": 95
+		},
+		"annotationNote": "Invictus, Temerarus",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Caestus"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Outer_Council/Minos_Wasteland/Caestus2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.OuC.Min.Cae.Invictus",
+		"name": "Invictus",
+		"inMapId": "G.OuC.Min.Caestus",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1139,
+			"y": 683,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Invictus"
+		]
+	}, {
+		"id": "G.OuC.Min.Cae.Temerarus",
+		"name": "Temerarus",
+		"inMapId": "G.OuC.Min.Caestus",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1381,
+			"y": 468,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Temerarus"
+		]
+	}, {
+		"x-comment-x": "--------Fortis-------",
+		"id": "G.OuC.Min.Fortis",
+		"name": "Fortis",
+		"image": "Galaxy_Map/Outer_Council/Minos_Wasteland/Fortis1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Minos",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1640,
+			"y": 487,
+			"radius": 117
+		},
+		"annotationNote": "Vir, Pietas, Aequitas",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Fortis"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Outer_Council/Minos_Wasteland/Fortis2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Minos_Wasteland/Fortis3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Min.For.Vir",
+		"name": "Vir",
+		"inMapId": "G.OuC.Min.Fortis",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 833,
+			"y": 1042,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vir"
+		]
+	}, {
+		"id": "G.OuC.Min.For.Pietas",
+		"name": "Pietas",
+		"inMapId": "G.OuC.Min.Fortis",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1373,
+			"y": 1166,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pietas"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1373,
+					"y": 1166,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.OuC.Min.For.Aequitas",
+		"name": "Aequitas",
+		"inMapId": "G.OuC.Min.Fortis",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1670,
+			"y": 663,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aequitas"
+		]
+	}, {
+		"x-comment-x": "-----------------------Nimbus Cluster-------------------------",
+		"id": "G.OuC.Nimbus",
+		"name": "Nimbus Cluster",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Outer_Council/Nimbus_Cluster.pdf",
+		"referenceSize": "2083x2083",
+		"mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 426,
+			"y": 2482,
+			"radius": 30
+		},
+		"annotationNote": "Agaiou, Kallini, Mesana, Pelion",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nimbus_Cluster"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Nimbus_Cluster3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Agaiou-------",
+		"id": "G.OuC.Nim.Agaiou",
+		"name": "Agaiou",
+		"image": "Galaxy_Map/Outer_Council/Nimbus_Cluster/Agaiou.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Nimbus",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 338,
+			"y": 1315,
+			"radius": 116
+		},
+		"annotationNote": "Carcosa, Neargas",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Agaiou"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Nimbus_Cluster/Agaiou3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Nim.Aga.Carcosa",
+		"name": "Carcosa",
+		"inMapId": "G.OuC.Nim.Agaiou",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1487,
+			"y": 550,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Carcosa"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1487,
+					"y": 550,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.OuC.Nim.Aga.Neargas",
+		"name": "Neargas",
+		"inMapId": "G.OuC.Nim.Agaiou",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 149,
+			"y": 1244,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Neargas"
+		]
+	}, {
+		"x-comment-x": "--------Kallini-------",
+		"id": "G.OuC.Nim.Kallini",
+		"name": "Kallini",
+		"image": "Galaxy_Map/Outer_Council/Nimbus_Cluster/Kallini.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Nimbus",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1723,
+			"y": 530,
+			"radius": 116
+		},
+		"annotationNote": "Ithrone, Pania, Lemnia",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kallini"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Nimbus_Cluster/Kallini3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Nim.Kal.Ithrone",
+		"name": "Ithrone",
+		"inMapId": "G.OuC.Nim.Kallini",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1161,
+			"y": 825,
+			"radius": 39
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ithrone"
+		]
+	}, {
+		"id": "G.OuC.Nim.Kal.Pania",
+		"name": "Pania",
+		"inMapId": "G.OuC.Nim.Kallini",
+		"mapLocationPoint": {
+			"x": 593,
+			"y": 1011,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pania"
+		]
+	}, {
+		"id": "G.OuC.Nim.Kal.Lemnia",
+		"name": "Lemnia",
+		"inMapId": "G.OuC.Nim.Kallini",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1378,
+			"y": 350,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Lemnia"
+		]
+	}, {
+		"x-comment-x": "--------Mesana-------",
+		"id": "G.OuC.Nim.Mesana",
+		"name": "Mesana",
+		"image": "Galaxy_Map/Outer_Council/Nimbus_Cluster/Mesana.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Nimbus",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 672,
+			"y": 559,
+			"radius": 124
+		},
+		"annotationNote": "Lesuss, Lymetis, Medokos, Shastessia, Vylius",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Mesana"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Nimbus_Cluster/Mesana3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Nim.Mes.Lesuss",
+		"name": "Lesuss",
+		"inMapId": "G.OuC.Nim.Mesana",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 896,
+			"y": 1188,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Lesuss"
+		]
+	}, {
+		"id": "G.OuC.Nim.Mes.Lymetis",
+		"name": "Lymetis",
+		"inMapId": "G.OuC.Nim.Mesana",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1395,
+			"y": 1099,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Lymetis"
+		]
+	}, {
+		"id": "G.OuC.Nim.Mes.Medokos",
+		"name": "Medokos",
+		"inMapId": "G.OuC.Nim.Mesana",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 993,
+			"y": 525,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Medokos"
+		]
+	}, {
+		"id": "G.OuC.Nim.Mes.Shastessia",
+		"name": "Shastessia",
+		"inMapId": "G.OuC.Nim.Mesana",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 326,
+			"y": 885,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Shastessia"
+		]
+	}, {
+		"id": "G.OuC.Nim.Mes.Vylius",
+		"name": "Vylius",
+		"inMapId": "G.OuC.Nim.Mesana",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1902,
+			"y": 1164,
+			"radius": 56
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vylius"
+		]
+	}, {
+		"x-comment-x": "--------Pelion-------",
+		"id": "G.OuC.Nim.Pelion",
+		"name": "Pelion",
+		"image": "Galaxy_Map/Outer_Council/Nimbus_Cluster/Pelion.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Nimbus",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1395,
+			"y": 1459,
+			"radius": 128
+		},
+		"annotationNote": "Zosteros, Sthenia, Trategos, Aitis",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pelion"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Nimbus_Cluster/Pelion3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Nim.Pel.Zosteros",
+		"name": "Zosteros",
+		"inMapId": "G.OuC.Nim.Pelion",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1274,
+			"y": 958,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Zosteros"
+		]
+	}, {
+		"id": "G.OuC.Nim.Pel.Sthenia",
+		"name": "Sthenia",
+		"inMapId": "G.OuC.Nim.Pelion",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 691,
+			"y": 1217,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sthenia"
+		]
+	}, {
+		"id": "G.OuC.Nim.Pel.Trategos",
+		"name": "Trategos",
+		"inMapId": "G.OuC.Nim.Pelion",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1103,
+			"y": 462,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Trategos"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1103,
+					"y": 462,
+					"radius": 75
+				}
+			}
+		}
+	}, {
+		"id": "G.OuC.Nim.Pel.Aitis",
+		"name": "Aitis",
+		"inMapId": "G.OuC.Nim.Pelion",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1803,
+			"y": 932,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aitis"
+		]
+	}, {
+		"x-comment-x": "-----------------------Serpent Nebula-------------------------",
+		"id": "G.OuC.Serpent",
+		"name": "Serpent Nebula",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Outer_Council/Serpent_Nebula1.pdf",
+		"referenceSize": "2083x2083",
+		"mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 1173,
+			"y": 2535,
+			"radius": 30
+		},
+		"annotationNote": "Boltzmann, Widow",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Serpent_Nebula"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Outer_Council/Serpent_Nebula2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Serpent_Nebula3.pdf"
+			}
+		}
+	}, {
+		"x-comment-x": "--------Boltzmann-------",
+		"id": "G.OuC.Ser.Boltzmann",
+		"name": "Boltzmann",
+		"image": "Galaxy_Map/Outer_Council/Serpent_Nebula/Boltzmann.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Serpent",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1585,
+			"y": 1418,
+			"radius": 116
+		},
+		"annotationNote": "Wheeler, Bekenstein, Thooft, Veltman, Feynman",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Boltzmann"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Outer_Council/Serpent_Nebula/Boltzmann2.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.OuC.Ser.Bol.Wheeler",
+		"name": "Wheeler",
+		"inMapId": "G.OuC.Ser.Boltzmann",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1177,
+			"y": 885,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Wheeler"
+		]
+	}, {
+		"id": "G.OuC.Ser.Bol.Bekenstein",
+		"name": "Bekenstein",
+		"inMapId": "G.OuC.Ser.Boltzmann",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 958,
+			"y": 1387,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Bekenstein"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/_Secondary/Bekenstein/Bekenstein.pdf",
+				"referenceSize": "2083x2083",
+				"isSplitMenu": true
+			},
+			"3": {}
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.1Home",
+		"name": "Bekenstein: Hock's Mansion",
+		"inMapId": "G.OuC.Ser.Bol.Bekenstein",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+		"mapType": "Area",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/_Secondary/Bekenstein/Bekenstein1.pdf",
+				"referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 139,
+					"y": 655,
+					"width": 1800,
+					"height": 300
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.1.Start",
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"name": "Entrance",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 598,
+			"y": 1715,
+			"radius": 20
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.1.Bedroom",
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"name": "Private Rooms",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1752,
+			"y": 1070,
+			"radius": 20
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.1.Balcony",
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"name": "Balcony Railing",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 851,
+			"y": 866,
+			"radius": 20
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.1.Security",
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"name": "Security Rooms",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 213,
+			"y": 1438,
+			"radius": 20
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.1.VaultE",
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"name": "Vault Entrance",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 597,
+			"y": 452,
+			"radius": 20
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.1.Vault",
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"name": "To Vault",
+		"isShowInList": false,
+		"linkToMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"mapLocationPoint": {
+			"x": 600,
+			"y": 543,
+			"radius": 20
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Bekenstein: Hock's Vault",
+		"inMapId": "G.OuC.Ser.Bol.Bekenstein",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+		"mapType": "Area",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/_Secondary/Bekenstein/Bekenstein2.pdf",
+				"referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 139,
+					"y": 1123,
+					"width": 1800,
+					"height": 300
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Vault",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "From Vault Entrance",
+		"isShowInList": false,
+		"linkToMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"mapLocationPoint": {
+			"x": 232,
+			"y": 907,
+			"radius": 20
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art1",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Krogan Statue",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 324,
+			"y": 823,
+			"width": 28,
+			"height": 24
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art2",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Krogan Statue",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 323,
+			"y": 744,
+			"width": 22,
+			"height": 22
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art3",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Rachni Queen",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 291,
+			"y": 744,
+			"width": 22,
+			"height": 22
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art4",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Tablets",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 257,
+			"y": 744,
+			"width": 22,
+			"height": 22
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art5",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Michelangelo's David",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 265,
+			"y": 822,
+			"width": 25,
+			"height": 25
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art6",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Prothean Statue",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 181,
+			"y": 822,
+			"width": 25,
+			"height": 25
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art7",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Quarian Stone Tablets",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 190,
+			"y": 744,
+			"width": 22,
+			"height": 22
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art8",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Statue",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 157,
+			"y": 744,
+			"width": 22,
+			"height": 27
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art9",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Art",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 125,
+			"y": 744,
+			"width": 22,
+			"height": 22
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art10",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Egyptian Statue",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 121,
+			"y": 823,
+			"width": 28,
+			"height": 24
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art11",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Statue of Liberty's Head",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 52,
+			"y": 727,
+			"radius": 18
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art12",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Krogan Statue",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 121,
+			"y": 607,
+			"width": 28,
+			"height": 24
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art14",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Sculpture",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 157,
+			"y": 684,
+			"width": 22,
+			"height": 22
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art15",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Krogan Soldier",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 190,
+			"y": 684,
+			"width": 22,
+			"height": 22
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art16",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Turian Ship",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 181,
+			"y": 608,
+			"width": 25,
+			"height": 25
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art17",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Creature Statue",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 265,
+			"y": 608,
+			"width": 25,
+			"height": 25
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art18",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Creature Statue",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 257,
+			"y": 684,
+			"width": 22,
+			"height": 22
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art19",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Turian Sculpture",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 291,
+			"y": 682,
+			"width": 22,
+			"height": 27
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art20",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Tablets",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 323,
+			"y": 684,
+			"width": 22,
+			"height": 22
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Art21",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Statue",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 324,
+			"y": 607,
+			"width": 28,
+			"height": 24
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.WL",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Weapons Locker",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 408,
+			"y": 705,
+			"radius": 20
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Canon",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Mass Accelerator Canon",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 866,
+			"y": 890,
+			"radius": 20
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.Platform",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Landing Platform",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1977,
+			"y": 1400,
+			"radius": 20
+		}
+	}, {
+		"id": "G.OuC.Ser.Bol.Bek.2.2Normandy",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"name": "Shuttle to Normandy",
+		"isShowInList": false,
+		"linkToMapId": "G.N2.2CIC",
+		"mapLocationPoint": {
+			"x": 1977,
+			"y": 1459,
+			"radius": 20
+		}
+
+
+	}, {
+		"id": "G.OuC.Ser.Bol.Thooft",
+		"name": "Thooft",
+		"inMapId": "G.OuC.Ser.Boltzmann",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1584,
+			"y": 1143,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Thooft"
+		]
+	}, {
+		"id": "G.OuC.Ser.Bol.Veltman",
+		"name": "Veltman",
+		"inMapId": "G.OuC.Ser.Boltzmann",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1040,
+			"y": 1776,
+			"radius": 61
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Veltman"
+		]
+	}, {
+		"id": "G.OuC.Ser.Bol.Feynman",
+		"name": "Feynman",
+		"inMapId": "G.OuC.Ser.Boltzmann",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 445,
+			"y": 396,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Feynman"
+		]
+	}, {
+		"x-comment-x": "--------Widow-------",
+		"id": "G.OuC.Ser.Widow",
+		"name": "Widow",
+		"image": "Galaxy_Map/Outer_Council/Serpent_Nebula/Widow1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Serpent",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 467,
+			"y": 555,
+			"radius": 97
+		},
+		"annotationNote": "Citadel",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Widow"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Outer_Council/Serpent_Nebula/Widow2.pdf"
+			},
+			"3": {
+				"annotationNote": "Citadel, Aria's Fleet",
+				"image": "Galaxy_Map/Outer_Council/Serpent_Nebula/Widow3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Ser.Wid.Fleet",
+		"name": "Aria's Fleet",
+		"isHidden": false,
+		"inMapId": "G.OuC.Ser.Widow",
+		"mapType": "Fleet",
+		"mapLocationPoint": {
+			"x": 728,
+			"y": 705,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aria%27s_Fleet"
+		],
+		"gameVersionData": {
+			"1": {
+				"isHidden": true
+			},
+			"2": {
+				"isHidden": true
+			}
+		}
+	}, {
+		"x-comment-x": "-----------------------Silean Nebula-------------------------",
+		"id": "G.OuC.Silean",
+		"name": "Silean Nebula",
+		"inMapId": "G.Base",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Outer_Council/Silean_Nebula.pdf",
+		"referenceSize": "2083x2083",
+		"mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 724,
+			"y": 2858,
+			"radius": 30
+		},
+		"annotationNote": "Kypladon, Loropi, Nahuala, Phontes, Teyolia",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Silean_Nebula"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Silean_Nebula3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "--------Kypladon-------",
+		"id": "G.OuC.Sil.Kypladon",
+		"name": "Kypladon",
+		"image": "Galaxy_Map/Outer_Council/Silean_Nebula/Kypladon.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Silean",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 885,
+			"y": 1509,
+			"radius": 127
+		},
+		"annotationNote": "Hanalei, Cyone, Katebolo",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kypladon"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Silean_Nebula/Kypladon3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Sil.Kyp.Hanalei",
+		"name": "Hanalei",
+		"inMapId": "G.OuC.Sil.Kypladon",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1203,
+			"y": 914,
+			"radius": 38
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hanalei"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1203,
+					"y": 914,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.OuC.Sil.Kyp.Cyone",
+		"name": "Cyone",
+		"inMapId": "G.OuC.Sil.Kypladon",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 728,
+			"y": 863,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Cyone"
+		]
+	}, {
+		"id": "G.OuC.Sil.Kyp.Katebolo",
+		"name": "Katebolo",
+		"inMapId": "G.OuC.Sil.Kypladon",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1751,
+			"y": 1290,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Katebolo"
+		]
+	}, {
+		"x-comment-x": "--------Loropi-------",
+		"id": "G.OuC.Sil.Loropi",
+		"name": "Loropi",
+		"image": "Galaxy_Map/Outer_Council/Silean_Nebula/Loropi.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Silean",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 252,
+			"y": 1406,
+			"radius": 114
+		},
+		"annotationNote": "Paphos, Yasilium",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Loropi"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Silean_Nebula/Loropi3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Sil.Lor.Wreckage",
+		"name": "Wreckage",
+		"inMapId": "G.OuC.Sil.Loropi",
+		"mapType": "Wreckage",
+		"mapLocationPoint": {
+			"x": 1573,
+			"y": 1016,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Wreckage_(Loropi)"
+		]
+	}, {
+		"id": "G.OuC.Sil.Lor.Paphos",
+		"name": "Paphos",
+		"inMapId": "G.OuC.Sil.Loropi",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 399,
+			"y": 1217,
+			"radius": 70
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Paphos"
+		]
+	}, {
+		"id": "G.OuC.Sil.Lor.Yasilium",
+		"name": "Yasilium",
+		"inMapId": "G.OuC.Sil.Loropi",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 485,
+			"y": 356,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Yasilium"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 485,
+					"y": 356,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"x-comment-x": "--------Nahuala-------",
+		"id": "G.OuC.Sil.Nahuala",
+		"name": "Nahuala",
+		"image": "Galaxy_Map/Outer_Council/Silean_Nebula/Nahuala.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Silean",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 401,
+			"y": 809,
+			"radius": 117
+		},
+		"annotationNote": "Agessia, Hyetiana, Phoros",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nahuala"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Silean_Nebula/Nahuala3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Sil.Nah.Agessia",
+		"name": "Agessia",
+		"inMapId": "G.OuC.Sil.Nahuala",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 832,
+			"y": 1246,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Agessia"
+		]
+	}, {
+		"id": "G.OuC.Sil.Nah.Hyetiana",
+		"name": "Hyetiana",
+		"inMapId": "G.OuC.Sil.Nahuala",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 979,
+			"y": 545,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Hyetiana"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 979,
+					"y": 545,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.OuC.Sil.Nah.Phoros",
+		"name": "Phoros",
+		"inMapId": "G.OuC.Sil.Nahuala",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1581,
+			"y": 356,
+			"radius": 49
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Phoros"
+		]
+	}, {
+		"x-comment-x": "--------Phontes-------",
+		"id": "G.OuC.Sil.Phontes",
+		"name": "Phontes",
+		"image": "Galaxy_Map/Outer_Council/Silean_Nebula/Phontes.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Silean",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 843,
+			"y": 700,
+			"radius": 120
+		},
+		"annotationNote": "Lenuamund, Dekuuna, Oltan, Telluune, Sangel",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Phontes"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Silean_Nebula/Phontes3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Sil.Pho.Lenuamund",
+		"name": "Lenuamund",
+		"inMapId": "G.OuC.Sil.Phontes",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 908,
+			"y": 1199,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Lenuamund"
+		]
+	}, {
+		"id": "G.OuC.Sil.Pho.Dekuuna",
+		"name": "Dekuuna",
+		"inMapId": "G.OuC.Sil.Phontes",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1040,
+			"y": 646,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Dekuuna"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1040,
+					"y": 646,
+					"radius": 75
+				}
+			}
+		}
+	}, {
+		"id": "G.OuC.Sil.Pho.Oltan",
+		"name": "Oltan",
+		"inMapId": "G.OuC.Sil.Phontes",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 932,
+			"y": 742,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Oltan"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 932,
+					"y": 742,
+					"radius": 50
+				}
+			}
+		}
+	}, {
+		"id": "G.OuC.Sil.Pho.Telluune",
+		"name": "Telluune",
+		"inMapId": "G.OuC.Sil.Phontes",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1564,
+			"y": 784,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Telluune"
+		]
+	}, {
+		"id": "G.OuC.Sil.Pho.Sangel",
+		"name": "Sangel",
+		"inMapId": "G.OuC.Sil.Phontes",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 161,
+			"y": 785,
+			"radius": 64
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sangel"
+		]
+	}, {
+		"x-comment-x": "--------Teyolia-------",
+		"id": "G.OuC.Sil.Teyolia",
+		"name": "Teyolia",
+		"image": "Galaxy_Map/Outer_Council/Silean_Nebula/Teyolia.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.OuC.Silean",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1825,
+			"y": 485,
+			"radius": 118
+		},
+		"annotationNote": "Loxia, Nevos, Quirezia, Atebolos",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Teyolia"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Outer_Council/Silean_Nebula/Teyolia3.pdf"
+			}
+		}
+	}, {
+		"id": "G.OuC.Sil.Tey.Loxia",
+		"name": "Loxia",
+		"inMapId": "G.OuC.Sil.Teyolia",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1202,
+			"y": 1169,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Loxia"
+		]
+	}, {
+		"id": "G.OuC.Sil.Tey.Nevos",
+		"name": "Nevos",
+		"inMapId": "G.OuC.Sil.Teyolia",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 607,
+			"y": 982,
+			"radius": 31
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nevos"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 607,
+					"y": 982,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.OuC.Sil.Tey.Quirezia",
+		"name": "Quirezia",
+		"inMapId": "G.OuC.Sil.Teyolia",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 663,
+			"y": 491,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Quirezia"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 663,
+					"y": 491,
+					"radius": 100
+				}
+			}
+		}
+	}, {
+		"id": "G.OuC.Sil.Tey.Atebolos",
+		"name": "Atebolos",
+		"inMapId": "G.OuC.Sil.Teyolia",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 132,
+			"y": 1150,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Atebolos"
+		]
+	}]
+}

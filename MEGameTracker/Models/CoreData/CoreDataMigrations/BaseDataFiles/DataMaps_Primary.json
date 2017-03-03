@@ -1,0 +1,1882 @@
+{
+	"maps": [{
+		"id": "G.Base",
+		"name": "Galaxy Map",
+		"isMain": true,
+		"image": "Galaxy_Map/Galaxy_Map1.pdf",
+		"referenceSize": "4166x4083",
+        "mapType": "Galaxy",
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Galaxy_Map2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Galaxy_Map3.pdf"
+			}
+		},
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }]
+	}, {
+		"id": "G.Core",
+		"name": "Galactic Core",
+		"inMapId": "G.Base",
+        "rerootBreadcrumbs": true,
+		"mapLocationPoint": {
+			"x": 2086,
+			"y": 1943,
+			"radius": 30
+		},
+		"gameVersionData": {
+			"2": {
+				"annotationNote": "Collector Base"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+
+
+
+
+	}, {
+		"id": "G.N",
+		"name": "Normandy",
+		"isMain": true,
+        "isExplorable": false,
+		"gameVersionData": {
+			"1": {
+				"name": "Normandy SR1",
+                "image": "Detail_Maps/Game1/Normandy/NormandySR1.pdf",
+                "referenceSize": "2083x2083",
+                "isSplitMenu": true,
+                "relatedLinks": ["https://masseffect.wikia.com/wiki/SSV_Normandy"]
+			},
+			"2": {
+				"name": "Normandy SR2",
+                "image": "Detail_Maps/Game2/Normandy/NormandySR2.pdf",
+                "referenceSize": "2083x2083",
+                "isSplitMenu": true,
+                "relatedLinks": ["https://masseffect.wikia.com/wiki/Normandy_SR-2"]
+			},
+			"3": {
+				"name": "Normandy SR2",
+                "image": "Detail_Maps/Game2/Normandy/NormandySR2.pdf",
+                "referenceSize": "2083x2083",
+                "isSplitMenu": true,
+                "relatedLinks": ["https://masseffect.wikia.com/wiki/Normandy_SR-2"]
+			}
+		}
+	}, {
+		"id": "G.N1.1",
+		"name": "SR1 Deck 1: Command Deck",
+		"isHidden": true,
+		"inMapId": "G.N",
+        "mapType":"Level",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Normandy/NormandySR1_Level1.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 147,
+					"y": 413,
+					"width": 1800,
+					"height": 300
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.N1.1.1",
+		"name": "Bridge",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 239,
+			"y": 1050,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.1.2",
+		"name": "Galaxy Map",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 1219,
+			"y": 1050,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.1.3",
+		"name": "Comm Room",
+		"isOpensDetail": false,
+		"inMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 1843,
+			"y": 1050,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.1.4",
+		"name": "Airlock",
+		"isOpensDetail": false,
+		"inMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 387,
+			"y": 1383,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.1.5",
+		"name": "To Level 2 (A)",
+		"isShowInList": false,
+		"inMapId": "G.N1.1",
+		"linkToMapId": "G.N1.2",
+		"mapLocationPoint": {
+			"x": 1625,
+			"y": 916,
+			"radius": 20
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Normandy"
+		}]
+	}, {
+		"id": "G.N1.1.6",
+		"name": "To Level 2 (B)",
+		"isShowInList": false,
+		"inMapId": "G.N1.1",
+		"linkToMapId": "G.N1.2",
+		"mapLocationPoint": {
+			"x": 1625,
+			"y": 1182,
+			"radius": 20
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Normandy"
+		}]
+	}, {
+		"id": "G.N1.2",
+		"name": "SR1 Deck 2: Quarters",
+		"isHidden": true,
+		"inMapId": "G.N",
+        "mapType":"Level",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Normandy/NormandySR1_Level2.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 147,
+					"y": 899,
+					"width": 1800,
+					"height": 300
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Normandy"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.N1.2.1",
+		"name": "Medical Bay",
+		"isOpensDetail": false,
+		"inMapId": "G.N1.2",
+		"mapLocationPoint": {
+			"x": 946,
+			"y": 650,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.2.2",
+		"name": "Mess Hall",
+		"isOpensDetail": false,
+		"inMapId": "G.N1.2",
+		"mapLocationPoint": {
+			"x": 1282,
+			"y": 1039,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.2.3",
+		"name": "Captain's Office",
+		"isOpensDetail": false,
+		"inMapId": "G.N1.2",
+		"mapLocationPoint": {
+			"x": 685,
+			"y": 1375,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.2.4",
+		"name": "Sleeping Pods",
+		"isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.N1.2",
+		"mapLocationPoint": {
+			"x": 524,
+			"y": 1040,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.2.5",
+		"name": "Lab and Storage",
+		"isOpensDetail": false,
+		"inMapId": "G.N1.2",
+		"mapLocationPoint": {
+			"x": 423,
+			"y": 697,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.2.6",
+		"name": "Shepard's Locker",
+		"isOpensDetail": false,
+		"inMapId": "G.N1.2",
+		"mapLocationPoint": {
+			"x": 1088,
+			"y": 913,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.2.7",
+		"name": "To Level 1 (A)",
+		"isShowInList": false,
+		"inMapId": "G.N1.2",
+		"linkToMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 1454,
+			"y": 622,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.2.8",
+		"name": "To Level 1 (B)",
+		"isShowInList": false,
+		"inMapId": "G.N1.2",
+		"linkToMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 1454,
+			"y": 1460,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.2.9",
+		"name": "To Level 3",
+		"isShowInList": false,
+		"inMapId": "G.N1.2",
+		"linkToMapId": "N1.3",
+		"mapLocationPoint": {
+			"x": 1554,
+			"y": 1049,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.3",
+		"name": "SR1 Deck 3: Engineering",
+		"isHidden": true,
+		"inMapId": "G.N",
+        "mapType":"Level",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Normandy/NormandySR1_Level3.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 147,
+					"y": 1387,
+					"width": 1800,
+					"height": 300
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Normandy"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.N1.3.1",
+		"name": "Vehicle Bay",
+		"isOpensDetail": false,
+		"inMapId": "G.N1.3",
+		"mapLocationPoint": {
+			"x": 580,
+			"y": 1049,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.3.2",
+		"name": "Alliance Requisition Officer",
+		"isOpensDetail": false,
+		"inMapId": "G.N1.3",
+		"mapLocationPoint": {
+			"x": 886,
+			"y": 736,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.3.3",
+		"name": "Squad Lockers",
+		"isOpensDetail": false,
+		"inMapId": "G.N1.3",
+		"mapLocationPoint": {
+			"x": 365,
+			"y": 1367,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.3.4",
+		"name": "Engine Room",
+		"isOpensDetail": false,
+		"inMapId": "G.N1.3",
+		"mapLocationPoint": {
+			"x": 1814,
+			"y": 1049,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N1.3.5",
+		"name": "To Level 2",
+		"isShowInList": false,
+		"inMapId": "G.N1.3",
+		"linkToMapId": "N1.2",
+		"mapLocationPoint": {
+			"x": 1094,
+			"y": 1049,
+			"radius": 20
+		}
+        
+        
+	}, {
+		"id": "G.N2.1Cabin",
+		"name": "SR2 Deck 1: Captain's Cabin",
+		"isHidden": true,
+		"inMapId": "G.N",
+        "mapType":"Level",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/Normandy/NormandySR2_Level1.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 139,
+					"y": 183,
+					"width": 1800,
+					"height": 305
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.N2.1.Elevator",
+		"name": "Elevator To Level 2",
+		"isShowInList": false,
+		"inMapId": "G.N2.1Cabin",
+		"linkToMapId": "G.N2.2CIC",
+		"mapLocationPoint": {
+			"x": 1559,
+			"y": 1043,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.1.Terminal",
+		"name": "Private Terminal",
+		"inMapId": "G.N2.1Cabin",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 906,
+			"y": 954,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.1.Aquarium",
+		"name": "Aquarium",
+        "annotationNote": "Feed your fish!",
+		"inMapId": "G.N2.1Cabin",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 993,
+			"y": 1205,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.1.Locker",
+		"name": "Armor Locker",
+		"inMapId": "G.N2.1Cabin",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 555,
+			"y": 1195,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.1.Medals",
+		"name": "Medals",
+		"inMapId": "G.N2.1Cabin",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 987,
+			"y": 885,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.1.Ships",
+		"name": "Ship Display Case",
+		"inMapId": "G.N2.1Cabin",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 875,
+			"y": 985,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.2CIC",
+		"name": "SR2 Deck 2: CIC",
+		"isHidden": true,
+		"inMapId": "G.N",
+        "mapType":"Level",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/Normandy/NormandySR2_Level2.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 139,
+					"y": 648,
+					"width": 1800,
+					"height": 305
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.N2.2.Elevator1",
+		"name": "Elevator To Level 1",
+		"isShowInList": false,
+		"inMapId": "G.N2.2CIC",
+		"linkToMapId": "G.N2.1Cabin",
+		"mapLocationPoint": {
+			"x": 1389,
+			"y": 1041,
+			"width": 45,
+			"height": 95,
+		}
+	}, {
+		"id": "G.N2.2.Elevator2",
+		"name": "Elevator To Level 3",
+		"isShowInList": false,
+		"inMapId": "G.N2.2CIC",
+		"linkToMapId": "G.N2.3Quarters",
+		"mapLocationPoint": {
+			"x": 1389,
+			"y": 1041,
+			"width": 45,
+			"height": 95,
+		}
+	}, {
+		"id": "G.N2.2.Bridge",
+		"name": "Bridge",
+		"inMapId": "G.N2.2CIC",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 363,
+			"y": 1038,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.2.Map",
+		"name": "Galaxy Map",
+		"inMapId": "G.N2.2CIC",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1168,
+			"y": 1040,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.2.Lab",
+		"name": "Lab",
+		"inMapId": "G.N2.2CIC",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1599,
+			"y": 868,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.2.Terminal",
+		"name": "Research Terminal",
+		"inMapId": "G.N2.2CIC",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1468,
+			"y": 805,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.2.Briefing",
+		"name": "Briefing Room",
+		"inMapId": "G.N2.2CIC",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1692,
+			"y": 1041,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.2.Armory",
+		"name": "Armory",
+		"inMapId": "G.N2.2CIC",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1599,
+			"y": 1213,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.2.Locker",
+		"name": "Weapons Locker",
+		"inMapId": "G.N2.2CIC",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1468,
+			"y": 1276,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.2.Airlock",
+		"name": "Airlock",
+		"inMapId": "G.N2.2CIC",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 460,
+			"y": 1143,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.3Quarters",
+		"name": "SR2 Deck 3: Crew Quarters",
+		"isHidden": true,
+		"inMapId": "G.N",
+        "mapType":"Level",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/Normandy/NormandySR2_Level3.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 139,
+					"y": 1113,
+					"width": 1800,
+					"height": 305
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.N2.3.Elevator1",
+		"name": "Elevator To Level 2",
+		"inMapId": "G.N2.3Quarters",
+		"linkToMapId": "G.N2.2CIC",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1543,
+			"y": 1036,
+			"width": 45,
+			"height": 95,
+		}
+	}, {
+		"id": "G.N2.3.Elevator2",
+		"name": "Elevator To Level 4",
+		"inMapId": "G.N2.3Quarters",
+		"linkToMapId": "G.N2.4Engineering",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1543,
+			"y": 1036,
+			"width": 45,
+			"height": 95,
+		}
+	}, {
+		"id": "G.N2.3.Cabin",
+		"name": "Miranda's Cabin",
+		"inMapId": "G.N2.3Quarters",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1006,
+			"y": 1260,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.3.Battery",
+		"name": "Main Battery",
+		"inMapId": "G.N2.3Quarters",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 550,
+			"y": 1038,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.3.Core",
+		"name": "AI Core",
+		"inMapId": "G.N2.3Quarters",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 786,
+			"y": 817,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.3.Lab",
+		"name": "Medical Lab",
+		"inMapId": "G.N2.3Quarters",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1082,
+			"y": 817,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.3.Starboard",
+		"name": "Starboard Observation Deck",
+		"inMapId": "G.N2.3Quarters",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1709,
+			"y": 698,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.3.Port",
+		"name": "Port Observation Deck",
+		"inMapId": "G.N2.3Quarters",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1714,
+			"y": 1375,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.3.Mens",
+		"name": "Men's Restroom",
+		"inMapId": "G.N2.3Quarters",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1605,
+			"y": 1251,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.3.Womens",
+		"name": "Women's Restroom",
+		"inMapId": "G.N2.3Quarters",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1605,
+			"y": 820,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.3.Support",
+		"name": "Life Support",
+		"inMapId": "G.N2.3Quarters",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1904,
+			"y": 1155,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.3.Kitchen",
+		"name": "Kitchen",
+		"inMapId": "G.N2.3Quarters",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1148,
+			"y": 1121,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.3.Quarters",
+		"name": "Sleeping Quarters",
+		"inMapId": "G.N2.3Quarters",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1904,
+			"y": 917,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.4Engineering",
+		"name": "SR2 Deck 4: Engineering",
+		"isHidden": true,
+		"inMapId": "G.N",
+        "mapType":"Level",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/Normandy/NormandySR2_Level4.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 139,
+					"y": 1578,
+					"width": 1800,
+					"height": 305
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.N2.4.Elevator",
+		"name": "Elevator To Level 3",
+		"isShowInList": false,
+		"inMapId": "G.N2.4Engineering",
+		"linkToMapId": "G.N2.3Quarters",
+		"mapLocationPoint": {
+			"x": 920,
+			"y": 1040,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.4.Station",
+		"name": "Engineering Station",
+		"inMapId": "G.N2.4Engineering",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1194,
+			"y": 1040,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.4.SubDeck",
+		"name": "Sub-Deck",
+		"inMapId": "G.N2.4Engineering",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 318,
+			"y": 1040,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.4.Starboard",
+		"name": "Starboard Cargo",
+		"inMapId": "G.N2.4Engineering",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 627,
+			"y": 579,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.4.Port",
+		"name": "Port Cargo",
+		"inMapId": "G.N2.4Engineering",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 627,
+			"y": 1492,
+			"radius": 20
+		}
+	}, {
+		"id": "G.N2.4.Core",
+		"name": "Engine Core",
+		"inMapId": "G.N2.4Engineering",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1740,
+			"y": 1040,
+			"radius": 20
+		}
+
+
+
+
+
+
+
+
+
+
+
+	}, {
+		"id": "G.C",
+		"name": "Citadel",
+		"inMapId": "G.OuC.Ser.Widow",
+        "mapType": "City",
+		"mapLocationPoint": {
+			"x": 622,
+			"y": 901,
+			"radius": 75
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel"],
+		"gameVersionData": {
+            "1": {
+                "image": "Detail_Maps/Game1/Citadel/Citadel1.pdf",
+                "referenceSize": "2083x2083",
+                "isSplitMenu": true
+            },
+			"2": {
+                "image": "Detail_Maps/Game2/Citadel/Citadel.pdf",
+                "referenceSize": "2083x2083",
+                "isSplitMenu": true,
+				"mapLocationPoint": {
+					"x": 1093,
+					"y": 744,
+					"radius": 75
+				}
+			},
+			"3": {
+				"mapLocationPoint": {
+					"x": 1359,
+					"y": 884,
+					"radius": 75
+				}
+			}
+		},
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map",
+            "eraseParentValue": true
+        }, {
+			"type": "BlockedUntil",
+			"id": "Unlocked Citadel: Presidium"
+        }]
+	}, {
+		"id": "G.C1.Presidium",
+		"name": "Citadel: Presidium",
+		"inMapId": "G.C",
+        "mapType":"Level",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Citadel/Citadel1_Presidium.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 140,
+					"width": 1800,
+					"height": 158
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+        }]
+	}, {
+		"id": "G.C1.Presidium.Udina",
+		"name": "Ambassador Udina's Office",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1795,
+			"y": 720,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Presidium.VolusElcor",
+		"name": "Volus and Elcor Offices",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1984,
+			"y": 634,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Presidium.EmbLounge",
+		"name": "Embassy Lounge",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1148,
+			"y": 642,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Presidium.CSecHQ",
+		"name": "C-Sec HQ",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1307,
+			"y": 719,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Presidium.Bank",
+		"name": "Bank",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 611,
+			"y": 1292,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Presidium.Consort",
+		"name": "Consort Chambers",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1468,
+			"y": 1468,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Presidium.Emporium",
+		"name": "Emporium",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 776,
+			"y": 1373,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Presidium.8",
+		"name": "To C-Sec Academy (C)",
+		"isShowInList": false,
+		"inMapId": "G.C1.Presidium",
+		"linkToMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 1449,
+			"y": 853,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Presidium.9",
+		"name": "To Citadel Tower (A)",
+		"isShowInList": false,
+		"inMapId": "G.C1.Presidium",
+		"linkToMapId": "G.C1.Tower",
+		"mapLocationPoint": {
+			"x": 242,
+			"y": 443,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Presidium.10",
+		"name": "To Upper Wards (B)",
+		"isShowInList": false,
+		"inMapId": "G.C1.Presidium",
+		"linkToMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 682,
+			"y": 449,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Tower",
+		"name": "Citadel: Tower",
+		"inMapId": "G.C",
+        "mapType":"Level",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Citadel/Citadel1_Tower.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 417,
+					"width": 1800,
+					"height": 158
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C1.Tower.Council",
+		"name": "Council Chambers",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Tower",
+		"mapLocationPoint": {
+			"x": 1049,
+			"y": 1836,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Tower.2",
+		"name": "To Presidium (A)",
+		"isShowInList": false,
+		"inMapId": "G.C1.Tower",
+		"linkToMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1049,
+			"y": 102,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.CSecAcademy",
+		"name": "Citadel: C-Sec Academy",
+		"isHidden": true,
+		"inMapId": "G.C",
+        "mapType":"Level",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Citadel/Citadel1_CSec_Academy.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 694,
+					"width": 1800,
+					"height": 158
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Lower Levels"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C1.CSecAcademy.Chellick",
+		"name": "Chellick's Office",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 757,
+			"y": 1049,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.CSecAcademy.Requisition",
+		"name": "Requisition Office",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 1908,
+			"y": 823,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.CSecAcademy.Waiting",
+		"name": "Waiting Room",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 849,
+			"y": 768,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.CSecAcademy.Atrium",
+		"name": "Atrium",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 1503,
+			"y": 1029,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.CSecAcademy.Traffic",
+		"name": "Traffic Control",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 203,
+			"y": 937,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.CSecAcademy.6",
+		"name": "To Presidium (C)",
+		"isShowInList": false,
+		"inMapId": "G.C1.CSecAcademy",
+		"linkToMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 1503,
+			"y": 757,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.CSecAcademy.7",
+		"name": "To Docks (D)",
+		"isShowInList": false,
+		"inMapId": "G.C1.CSecAcademy",
+		"linkToMapId": "G.C1.DockingBay",
+		"mapLocationPoint": {
+			"x": 1503,
+			"y": 1134,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.CSecAcademy.10",
+		"name": "To Upper Wards (E)",
+		"isShowInList": false,
+		"inMapId": "G.C1.CSecAcademy",
+		"linkToMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 1503,
+			"y": 1487,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Flux",
+		"name": "Citadel: Flux",
+		"isHidden": true,
+		"inMapId": "G.C",
+        "mapType":"Level",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Citadel/Citadel1_Flux.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 972,
+					"width": 1800,
+					"height": 158
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Lower Levels"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C1.Flux.Casino",
+		"name": "Casino",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 561,
+			"y": 1070,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Flux.2",
+		"name": "To Upper Wards (H)",
+		"isShowInList": false,
+		"inMapId": "G.C1.Flux",
+		"linkToMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 1556,
+			"y": 1232,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.UpperWards",
+		"name": "Citadel: Upper Wards",
+		"inMapId": "G.C",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Level",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Citadel/Citadel1_Upper_Wards.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1248,
+					"width": 1800,
+					"height": 158
+				},
+				"isHidden": false
+			}
+		},
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Lower Levels"
+		}, {
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C1.UpperWards.1",
+		"name": "To Presidium (B)",
+		"isShowInList": false,
+		"inMapId": "G.C1.UpperWards",
+		"linkToMapId": "G.C1.Presidium",
+		"mapLocationPoint": {
+			"x": 203,
+			"y": 487,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.UpperWards.2",
+		"name": "To C-Sec Academy (E)",
+		"isShowInList": false,
+		"inMapId": "G.C1.UpperWards",
+		"linkToMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 1735,
+			"y": 227,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.UpperWards.MedClinic",
+		"name": "Med Clinic",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 1848,
+			"y": 1332,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.UpperWards.Markets",
+		"name": "Upper Markets",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 218,
+			"y": 1431,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.UpperWards.3",
+		"name": "To Lower Wards (J)",
+		"isShowInList": false,
+		"inMapId": "G.C1.UpperWards",
+		"linkToMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 107,
+			"y": 1200,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.UpperWards.4",
+		"name": "To Lower Markets (I)",
+		"isShowInList": false,
+		"inMapId": "G.C1.UpperWards",
+		"linkToMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 377,
+			"y": 1537,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.UpperWards.5",
+		"name": "To Flux (H)",
+		"isShowInList": false,
+		"inMapId": "G.C1.UpperWards",
+		"linkToMapId": "G.C1.Flux",
+		"mapLocationPoint": {
+			"x": 905,
+			"y": 1252,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.LowerWards",
+		"name": "Citadel: Lower Wards",
+		"inMapId": "G.C",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Level",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Citadel/Citadel1_Lower_Wards.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1525,
+					"width": 1800,
+					"height": 158
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Lower Levels"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C1.LowerWards.ChorasDen",
+		"name": "Chora's Den",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 537,
+			"y": 619,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.LowerWards.Fist",
+		"name": "Fist's Office",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 788,
+			"y": 1579,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.LowerWards.Markets",
+		"name": "Lower Markets",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.LowerWards",
+		"mapLocationPoint": {
+			"x": 1509,
+			"y": 1346,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.LowerWards.4",
+		"name": "To Upper Wards (J)",
+		"isShowInList": false,
+		"inMapId": "G.C1.LowerWards",
+		"linkToMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 1549,
+			"y": 1069,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.LowerWards.5",
+		"name": "To Upper Markets (I)",
+		"isShowInList": false,
+		"inMapId": "G.C1.LowerWards",
+		"linkToMapId": "G.C1.UpperWards",
+		"mapLocationPoint": {
+			"x": 1812,
+			"y": 1166,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.DockingBay",
+		"name": "Citadel: Docking Bay",
+		"inMapId": "G.C",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Level",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Citadel/Citadel1_Docking_Bay.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 146,
+					"y": 1801,
+					"width": 1800,
+					"height": 158
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Lower Levels"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C1.DockingBay.1",
+		"name": "To Normandy",
+		"isShowInList": false,
+		"linkToMapId": "G.N1.1",
+		"inMapId": "G.C1.DockingBay",
+		"linkToMapId": "G.N1.1",
+		"mapLocationPoint": {
+			"x": 1643,
+			"y": 623,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.DockingBay.2",
+		"name": "To C-Sec Academy (C)",
+		"isShowInList": false,
+		"inMapId": "G.C1.DockingBay",
+		"linkToMapId": "G.C1.CSecAcademy",
+		"mapLocationPoint": {
+			"x": 1047,
+			"y": 241,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust",
+		"name": "Citadel Exhaust",
+        "mapType":"Area",
+		"isHidden": true,
+		"inMapId": "G.C",
+		"gameVersionData": {
+			"1": {
+				"image": "Detail_Maps/Game1/Citadel/Citadel1_Exhaust.pdf",
+                "referenceSize": "2083x2083"
+			}
+		},
+		"events": [{
+            "type": "BlockedUntil",
+            "id": "Accessed Conduit to Citadel"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C1.Exhaust.1",
+		"name": "Presidium",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 1828,
+			"y": 188,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.2",
+		"name": "Avina",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 1825,
+			"y": 277,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.3",
+		"name": "Conduit",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 1986,
+			"y": 147,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.4",
+		"name": "Mako",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 1974,
+			"y": 379,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.5",
+		"name": "To Elevator",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 1834,
+			"y": 528,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.6",
+		"name": "To Maintenance Shaft",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 1824,
+			"y": 644,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.7",
+		"name": "Maintenance Shaft",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 1888,
+			"y": 1236,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.8",
+		"name": "To Exhaust Plain",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 1724,
+			"y": 1929,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.9",
+		"name": "Exhaust Plain",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 1245,
+			"y": 562,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.10",
+		"name": "From Maintenance Shaft",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 954,
+			"y": 301,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.11",
+		"name": "To Exterior Defense Grid",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 1183,
+			"y": 1436,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.12",
+		"name": "Exterior Defense Grid",
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 399,
+			"y": 1377,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.13",
+		"name": "From Exhaust Plain",
+        "isShowInList": false,
+		"isOpensDetail": false,
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 701,
+			"y": 747,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C1.Exhaust.14",
+		"name": "To Tower",
+        "isShowInList": false,
+		"linkToMapId": "G.C1.Tower",
+		"inMapId": "G.C1.Exhaust",
+		"mapLocationPoint": {
+			"x": 491,
+			"y": 1958,
+			"radius": 20
+		}
+        
+        
+	}, {
+		"id": "G.C2.ZakeraWardL26",
+		"name": "Citadel: Zakera Ward Level 26",
+		"inMapId": "G.C",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Level",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/Citadel/Citadel_ZakeraWard26.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 140,
+					"y": 156,
+					"width": 1800,
+					"height": 260
+				},
+				"isHidden": false
+			}
+		},
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Zakera Ward"
+		}, {
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C2.26.Stairs",
+		"inMapId": "G.C2.ZakeraWardL26",
+        "name": "To Level 27",
+		"linkToMapId": "G.C2.ZakeraWardL27",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1631,
+			"y": 641,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.26.UsedShips",
+		"inMapId": "G.C2.ZakeraWardL26",
+        "name": "Used Ships",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1420,
+			"y": 1090,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.26.Saronis",
+		"inMapId": "G.C2.ZakeraWardL26",
+        "name": "Saronis Applications",
+		"mapLocationPoint": {
+			"x": 1388,
+			"y": 1386,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.26.Sirta",
+		"inMapId": "G.C2.ZakeraWardL26",
+        "name": "Sirta Foundation",
+		"mapLocationPoint": {
+			"x": 873,
+			"y": 1275,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.26.Warehouse",
+		"inMapId": "G.C2.ZakeraWardL26",
+        "name": "Shipping Warehouse",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 547,
+			"y": 1042,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.ZakeraWardL27",
+		"name": "Citadel: Zakera Ward Level 27",
+		"inMapId": "G.C",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Level",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/Citadel/Citadel_ZakeraWard27.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 140,
+					"y": 540,
+					"width": 1800,
+					"height": 260
+				},
+				"isHidden": false
+			}
+		},
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Zakera Ward"
+		}, {
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C2.27.Stairs1",
+		"inMapId": "G.C2.ZakeraWardL27",
+        "name": "To Level 26",
+		"linkToMapId": "G.C2.ZakeraWardL26",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 673,
+			"y": 508,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.27.Stairs2",
+		"inMapId": "G.C2.ZakeraWardL27",
+        "name": "To Level 28",
+		"linkToMapId": "G.C2.ZakeraWardL28",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1637,
+			"y": 620,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.27.Dock",
+		"inMapId": "G.C2.ZakeraWardL27",
+        "name": "To Normandy",
+		"linkToMapId": "G.N2.2CIC",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 1180,
+			"y": 1730,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.27.Souvenirs",
+		"inMapId": "G.C2.ZakeraWardL27",
+        "name": "Citadel Souvenirs",
+		"mapLocationPoint": {
+			"x": 1346,
+			"y": 1105,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.27.Cafe",
+		"inMapId": "G.C2.ZakeraWardL27",
+        "name": "Zakera Cafe",
+		"mapLocationPoint": {
+			"x": 833,
+			"y": 1105,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.27.CSec",
+		"inMapId": "G.C2.ZakeraWardL27",
+        "name": "C-Sec",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1190,
+			"y": 1084,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.ZakeraWardL28",
+		"name": "Citadel: Zakera Ward Level 28",
+		"inMapId": "G.C",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Level",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/Citadel/Citadel_ZakeraWard28.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 140,
+					"y": 926,
+					"width": 1800,
+					"height": 260
+				},
+				"isHidden": false
+			}
+		},
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Zakera Ward"
+		}, {
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C2.28.Stairs",
+		"inMapId": "G.C2.ZakeraWardL28",
+        "name": "To Level 27",
+		"linkToMapId": "G.C2.ZakeraWardL27",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 725,
+			"y": 665,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.28.Rodam",
+		"inMapId": "G.C2.ZakeraWardL28",
+        "name": "Rodam Expeditions",
+		"mapLocationPoint": {
+			"x": 821,
+			"y": 987,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.28.DarkStar",
+		"inMapId": "G.C2.ZakeraWardL28",
+        "name": "Dark Star Lounge",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1160,
+			"y": 1611,
+			"radius": 20
+		}
+	}]
+}

@@ -1,0 +1,5637 @@
+{
+	"missions": [{
+
+
+		"x-comment-x": "-----------------------DLC QUESTS-------------------------",
+		"id": "DLC2.0Genesis",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "DLC",
+		"name": "Genesis",
+		"description": "This feature allows new players to choose from key decisions of Game 1, in the form of an interactive comic. If you imported a Game 1 Shepard, your choices will just carry over (along with many more decisions unavailable to new Game 2 players). \n\n*_This assignment was released as part of the Cerberus Network DLC pack._*",
+		"decisionIds": ["D1.LoveLiara", "D1.LoveKaidan", "D1.LoveAshley", "D1.RachniQueen", "D1.Wrex", "D1.Ashley", "D1.Kaidan", "D1.Council", "D1.Udina", "D1.Anderson"],
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mass_Effect:_Genesis"]
+	}, {
+		"id": "DLC2.Arrival",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "DLC",
+		"name": "Arrival",
+		"description": "Hackett has asked you to rescue a deep-cover operative, [megametracker://person?id=O2.Kenson], who is being held at a batarian outpost and who claims to have proof of a Reaper invasion. This mission is particularly significant to the Reaper story arc and I like to do it at the end of Game 2, since Game 3 opens with Shepard's Alliance trial regarding the actions taken here. \n\n*_This assignment was released as part of the Arrival DLC pack._*",
+		"inMapId": "G.Ear.Vip.Bah.Aratoht",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Arrival_(assignment)"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Admiral Hackett",
+				"options": [{
+					"id": "DLC2.Arrival.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'll save her.\""
+				}, {
+					"id": "DLC2.Arrival.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"If I have time.\""
+				}]
+			}
+		}, {
+			"context": "Rescuing Dr. Kenson",
+			"id": "DLC2.Arrival.R2",
+			"type": "Renegade",
+			"value": 2,
+			"trigger": "\"I'm here for the evidence.\""
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After activating the project to push the asteroid into the mass relay",
+				"options": [{
+					"id": "DLC2.Arrival.P3",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "(Warn batarian colonies.)"
+				}, {
+					"id": "DLC2.Arrival.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "(Call Normandy for pickup.)"
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Responding to Dr. Kenson's threats",
+				"options": [{
+					"id": "DLC2.Arrival.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You're wasting your time.\""
+				}, {
+					"id": "DLC2.Arrival.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I will stop you.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Rescuing Dr. Kenson",
+				"options": [{
+					"id": "DLC2.Arrival.R5",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Shoot Kenson (fails to stop her grenade)."
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speaking to Harbinger",
+				"options": [{
+					"id": "DLC2.Arrival.P6",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We will not go quietly.\""
+				}, {
+					"id": "DLC2.Arrival.R6",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"No cost is too great.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Defending your actions to Hackett",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC2.Arrival.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I had no choice.\""
+						}, {
+							"id": "DLC2.Arrival.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I did what I had to do.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC2.Arrival.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"What I did saved a lot more.\""
+						}, {
+							"id": "DLC2.Arrival.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"It was worth the price.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC2.Arrival.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'll turn myself in.\""
+						}, {
+							"id": "DLC2.Arrival.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"They should be thanking me.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "DLC2.Arrival.P10",
+			"type": "Renegade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "DLC2.Arrival.1",
+		"inMissionId": "DLC2.Arrival",
+		"sortIndex": 10001,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Rescue Kenson",
+		"description": "One of the achievements for this DLC is to get to Kenson without engaging any batarians, so it is possible to sneak through the outpost, fighting only the varren. \n\nUse the power relay to the right to open the door into the outpost. When you reach the drop where the bridge is out, head down and activate the bridge control there to remedy it (killing the varren). Continue upstairs to the power relay (killing the varren) and turn it off also. Go past the security beams where you hear Dr. Kenson and find an explosive under an overhead pipe and shoot it. This will ignite vents across the building, but you can use valves placed conveniently nearby to redirect the plasma and move through. Go upstairs and outside. Sneak behind the truck to cut the power relay and disable the security beams, then climb up over the truck to go inside the door. Head to the hangar and use the controls to move the crane out of the way and then activate the vehicle lift below to access the lower level. Head back to Kenson's cell."
+	}, {
+		"id": "DLC2.Arrival.2",
+		"inMissionId": "DLC2.Arrival",
+		"sortIndex": 10002,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Escape",
+		"description": "Kenson will find a console and work on a way out. You must protect her from waves of batarian attackers. Kenson will instruct you to close the door you came from, but once you do this, the batarians will just come in from another location. Once Kenson finishes, she will say that the hangar doors must be open. At this point, she will help in the battle. Shoot out the hangar door locks on each side."
+	}, {
+		"id": "DLC2.Arrival.3",
+		"inMissionId": "DLC2.Arrival",
+		"sortIndex": 10003,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Tour Project Base",
+		"description": "The shuttle will take you back to Kenson's base and she will show you the work they have been doing. She will take you down to the artifact they found, and reveal that the whole team has been Indoctrinated and then they attack you."
+	}, {
+		"id": "DLC2.Arrival.4",
+		"inMissionId": "DLC2.Arrival",
+		"sortIndex": 10004,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Destroy Mass Relay",
+		"description": "The shuttle will take you back to Kenson's base and she will show you the work they have been doing. She will take you down to the artifact they found, and reveal that the whole team has been Indoctrinated and then they attack you in five waves. If you survive the five waves, you get an achievement. If you don't, it's not that important because you always wake up in the Med Bay. You have a 1.5 hour countdown to finish, which is more than enough time for the following events, but you could try running it down if you want to."
+	}, {
+		"id": "DLC2.Arrival.4.1",
+		"inMissionId": "DLC2.Arrival.4",
+		"sortIndex": 100041,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Escape Med Bay",
+		"description": "Head through the Med Bay to the living quarters and into the Mess Hall, taking out Kenson's forces as they attack. Get to the project control room and activate the engines. You have a few seconds to try to warn the colonists or contact the Normandy, but Kenson interrupts either way, notifying you that now she is going to blow up the whole asteroid to stop it. She starts a core meltdown."
+	}, {
+		"id": "DLC2.Arrival.4.2",
+		"inMissionId": "DLC2.Arrival.4",
+		"sortIndex": 100042,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Cooling Rod A",
+		"description": "Head up the elevator to the Control Station A and talk to the VI, who will instruct you to insert the cooling rod there and then head over to Control Station B and do the same."
+	}, {
+		"id": "DLC2.Arrival.4.3",
+		"inMissionId": "DLC2.Arrival.4",
+		"sortIndex": 100043,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Cooling Rod B",
+		"description": "Head down the elevator and abort the plasma venting to unlock the door. When you come to the next locked door, shoot the explosive crate next to it and go that way. Use the security console to override the lock and go up the next two elevators. Down the hall is Cooling Station B. When you have inserted the second cooling rod, you run into Kenson and she will blow herself up whatever you do, and the explosion will knock you out."
+	}, {
+		"id": "DLC2.Arrival.4.4",
+		"inMissionId": "DLC2.Arrival.4",
+		"sortIndex": 100044,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Escape",
+		"description": "When you wake up, you only have 30 minutes left until impact. The VI informs you that communications are down and you need to go to the communications tower or take a shuttle. Head up the elevator and outside. You will have a scenic view of the approaching mass relay as you fight through more troops and a heavy mech. The shuttle takes off without you. When you reach the comm controls, Harbinger intercepts the communications with a menacing warning. Then the Normandy picks you up and you escape just before the relay (and everything in the Bahak system) is destroyed."
+	}, {
+		"id": "DLC2.NormandyCrashSite",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "DLC",
+		"name": "Normandy Crash Site",
+		"description": "_\"Scans confirm the wreckage of SSV Normandy on the planet's surface. No life signs or mechanical activity detected. Stable landing zone located amid the crash site.\"_ \n\n*_This assignment was released as part of the Cerberus Network DLC pack._*",
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Normandy_Crash_Site_(assignment)"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "DLC2.NormandyCrashSite.1",
+		"inMissionId": "DLC2.NormandyCrashSite",
+		"sortIndex": 10001,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Explore Site",
+		"description": "There are several locations you may want to visit and view flashbacks to Game 1. These are all optional to the mission."
+	}, {
+		"id": "DLC2.NormandyCrashSite.1.1",
+		"inMissionId": "DLC2.NormandyCrashSite.1",
+		"sortIndex": 100011,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Normandy Sign",
+		"isOpensDetail": false
+	}, {
+		"id": "DLC2.NormandyCrashSite.1.2",
+		"inMissionId": "DLC2.NormandyCrashSite.1",
+		"sortIndex": 100011,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Cockpit",
+		"isOpensDetail": false
+	}, {
+		"id": "DLC2.NormandyCrashSite.1.3",
+		"inMissionId": "DLC2.NormandyCrashSite.1",
+		"sortIndex": 100011,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Sleeper Pods",
+		"isOpensDetail": false
+	}, {
+		"id": "DLC2.NormandyCrashSite.1.4",
+		"inMissionId": "DLC2.NormandyCrashSite.1",
+		"sortIndex": 100011,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Mako",
+		"isOpensDetail": false
+	}, {
+		"id": "DLC2.NormandyCrashSite.1.5",
+		"inMissionId": "DLC2.NormandyCrashSite.1",
+		"sortIndex": 100011,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "CIC",
+		"isOpensDetail": false
+	}, {
+		"id": "DLC2.NormandyCrashSite.1.6",
+		"inMissionId": "DLC2.NormandyCrashSite.1",
+		"sortIndex": 100011,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Pressly's Datapad",
+		"isOpensDetail": false
+	}, {
+		"id": "DLC2.NormandyCrashSite.1.7",
+		"inMissionId": "DLC2.NormandyCrashSite.1",
+		"sortIndex": 100011,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Mess Hall",
+		"isOpensDetail": false
+	}, {
+		"id": "DLC2.NormandyCrashSite.2",
+		"inMissionId": "DLC2.NormandyCrashSite",
+		"sortIndex": 10002,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Dog Tags",
+		"description": "Gather the dog tags of at least 16 of the 20 missing crewmembers."
+	}, {
+		"id": "DLC2.NormandyCrashSite.3",
+		"inMissionId": "DLC2.NormandyCrashSite",
+		"sortIndex": 10003,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Place Monument",
+		"description": "When you are done gathering the dog tags and exploring the wreckage, place the monument and return to the shuttle."
+	}, {
+		"id": "DLC2.Overlord",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "DLC",
+		"name": "Overlord",
+		"description": "Project Overlord has stopped communicating with Cerberus. When you land to investigate, [Dr. Archer|megametracker://person?id=O2.ArcherG] reveals that the VI has gone rogue and is trying to upload its program offsite via the satellite transmission dish. \n\nYou may want to complete [megametracker://mission?id=DLC2.Firewalker] first, as an introduction to operating the Hammerhead exploration vehicle. \n\n*_This assignment was released as part of the Overlord DLC pack._*",
+		"inMapId": "G.Ter.Pho.Typ.Aite",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord"],
+		"decisionIds": ["D2.ArcherD"],
+		"conversationRewards": [{
+			"set": {
+				"context": "What to do with David",
+				"options": [{
+					"id": "DLC2.Overlord.P1",
+					"type": "Paragon",
+					"value": 0,
+					"trigger": "(Take David to Grissom Academy.)"
+				}, {
+					"id": "DLC2.Overlord.R1",
+					"type": "Renegade",
+					"value": 0,
+					"trigger": "(Leave David with Dr. Archer.)"
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After Dr. Archer shoots at you for removing David from the experiment",
+				"options": [{
+					"id": "DLC2.Overlord.P2",
+					"type": "Paragon",
+					"value": 0,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Pistol-whip Dr. Archer."
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "DLC2.Overlord.1",
+		"inMissionId": "DLC2.Overlord",
+		"sortIndex": 10001,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Overlord: Hermes Station",
+		"description": "Speak to Dr. Archer and prevent the VI from using the satellite dish.",
+		"experience": 250,
+		"reward": "3,750 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord_(assignment)"],
+		"events": [{
+			"type": "Triggers",
+			"id": "Completed: Overlord: Hermes Station"
+		}]
+	}, {
+		"id": "DLC2.Overlord.1.1",
+		"inMissionId": "DLC2.Overlord.1",
+		"sortIndex": 100011,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Retract Satellite Dish",
+		"description": "Enter the facility and head down the ramp. Shoot out the cracked window and through that room. The door on the right leads to the dish controls. Retract the dish."
+	}, {
+		"id": "DLC2.Overlord.1.2",
+		"inMissionId": "DLC2.Overlord.1",
+		"sortIndex": 100012,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Take Tram",
+		"description": "The VI overrides your actions, and now you must destroy the satellite dish to stop it. Head out through the mess hall, which is now overrun with geth. You will want to head upstairs and make your way to the tram. Activate it and travel to the dish location."
+	}, {
+		"id": "DLC2.Overlord.1.3",
+		"inMissionId": "DLC2.Overlord.1",
+		"sortIndex": 100013,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Cross Walkway to Dish",
+		"description": "Note: Despite what Dr. Archer says, this is not a timed mission. \n\nHead across the catwalks, eliminating the small group of geth that attack you. Activate the walkway controls and cross over to the dish itself. There will be a major battle here."
+	}, {
+		"id": "DLC2.Overlord.1.4",
+		"inMissionId": "DLC2.Overlord.1",
+		"sortIndex": 100014,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Destroy Dish",
+		"description": "There are four capacitors spaced across the edge of the dish and you will need to destroy three of them to take down the dish. Destroying each capacitor will spawn a new geth attack."
+	}, {
+		"id": "DLC2.Overlord.1.5",
+		"inMissionId": "DLC2.Overlord.1",
+		"sortIndex": 100015,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Archer",
+		"description": "Archer reveals that Project Overlord's goal was integrating a human mind into a VI. Archer chose his brother, but [David|megametracker://person?id=O2.ArcherD] was overpowered by the VI. Three override signals must be sent to disable the VI, located at Atlas Station. Archer will take care of Hermes station, but you must send the override signals from Prometheus and Vulcan stations."
+	}, {
+		"id": "DLC2.Overlord.2",
+		"inMissionId": "DLC2.Overlord",
+		"sortIndex": 10002,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Overlord: Vulcan Station",
+		"description": "Activate the override switch inside Vulcan Station, which is a geothermal facility located atop a volcano.",
+		"experience": 250,
+		"reward": "3,750 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord:_Vulcan_Station"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Overlord: Hermes Station"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Overlord: Vulcan Station"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Overlord: Vulcan and Prometheus Station"
+		}]
+	}, {
+		"id": "DLC2.Overlord.2.1",
+		"inMissionId": "DLC2.Overlord.2",
+		"sortIndex": 100021,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Outpost",
+		"description": "Take the Hammerhead toward the Vulcan station, using steam vents for elevation boosts, and avoiding lava. At the outpost you will be blocked from continuing, so exit, enter the facility and eliminate the geth there. Use the console to reactivate the malfunctioning valve. Get back in the Hammerhead and use the steam vents to continue on."
+	}, {
+		"id": "DLC2.Overlord.2.2",
+		"inMissionId": "DLC2.Overlord.2",
+		"sortIndex": 100022,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Station Interior",
+		"description": "Once you have reached Vulcan Station, exit the Hammerhead and enter the facility. You will have to fight many mechs of various sizes to reach the override switch. Activate it and return to the Hammerhead."
+	}, {
+		"id": "DLC2.Overlord.3",
+		"inMissionId": "DLC2.Overlord",
+		"sortIndex": 10003,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Overlord: Prometheus Station",
+		"description": "Activate the override switch inside Prometheus Station, which was constructed inside a downed geth ship.",
+		"experience": 250,
+		"reward": "3,750 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord:_Prometheus_Station"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Overlord: Hermes Station"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Overlord: Prometheus Station"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Overlord: Vulcan and Prometheus Station"
+		}]
+	}, {
+		"id": "DLC2.Overlord.3.1",
+		"inMissionId": "DLC2.Overlord.3",
+		"sortIndex": 100031,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Take Out Shield",
+		"description": "When you reach Prometheus Station, it is protected by a shield. You will need to take out the shield generators, which unfortunately are also behind the shield. There is also a cannon targeting the Hammerhead. You can trick the cannon into firing on the shield generators, or use the Hammerhead's missiles to take them out."
+	}, {
+		"id": "DLC2.Overlord.3.2",
+		"inMissionId": "DLC2.Overlord.3",
+		"sortIndex": 100032,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Cross to Control Station",
+		"description": "There is initially no danger entering the facility, as all the geth are locked in stasis. The VI will lock doors behind you as you go. But the large room housing the control station has been shifted to prevent access. You must move the platforms to create a bridge to the control station. \n\nMove the middle piece up one space. Move the left piece right one and up one. Cross and activate the override."
+	}, {
+		"id": "DLC2.Overlord.3.3",
+		"inMissionId": "DLC2.Overlord.3",
+		"sortIndex": 100033,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Escape",
+		"description": "Now you have to fight your way through all the geth you saw on the way in. When you are finally outside, reboard the Hammerhead."
+	}, {
+		"id": "DLC2.Overlord.4",
+		"inMissionId": "DLC2.Overlord",
+		"sortIndex": 10004,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Overlord: Atlas Station",
+		"description": "Take out the VI inside Atlas Station.",
+		"experience": 250,
+		"reward": "7,500 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord:_Atlas_Station"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Overlord: Vulcan and Prometheus Station"
+		}]
+	}, {
+		"id": "DLC2.Overlord.4.1",
+		"inMissionId": "DLC2.Overlord.4",
+		"sortIndex": 100041,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Elevator",
+		"description": "The facility can be reached under the waterfall. Exit the Hammerhead and head inside. The elevator is damaged, so you will need to call it several times to convince it to come to your level, level 7. be prepared for all the geth inside when it opens. When they are dealt with, take the elevator down. It will crash, but you get to level 1 at least. Head down the hall and open the panel to cut off network access."
+	}, {
+		"id": "DLC2.Overlord.4.2",
+		"inMissionId": "DLC2.Overlord.4",
+		"sortIndex": 100042,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Inside The VI",
+		"description": "When you try to disconnect Atlas Station, you are pulled into a virtual reality. It will alternate between green visions of the past and orange present where you can be killed by the geth. You will be fighting alone here. Head down the hallway and make you way to the second elevator, operated by a computer, and also full of geth. When they are dispatched, take the elevator down."
+	}, {
+		"id": "DLC2.Overlord.4.3",
+		"inMissionId": "DLC2.Overlord.4",
+		"sortIndex": 100043,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "David",
+		"description": "David is attempting to upload himself to the Normandy. You will alternate between fighting geth, shooting out the control nodes travelling down the cables to David, and shooting at the core (ie, David), whenever its shields drop. Once the core is destroyed, you are returned to reality and you can see the real David hooked up to the VI."
+	}, {
+		"id": "DLC2.Overlord.4.4",
+		"inMissionId": "DLC2.Overlord.4",
+		"sortIndex": 100044,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Aftermath",
+		"description": "Dr. Archer shows up and, despite everything that has happened, he wants to continue the experiment. You can talk him down and in the end have two choices: to take David with you and entrust him to Jon Grissom Academy, where he will later reappear in Game 3 (Paragon), or leave him with Dr. Archer where he will later die (Renegade)."
+	}, {
+		"id": "DLC2.Firewalker",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "DLC",
+		"name": "Project Firewalker",
+		"description": "A survey ship with a prototype exploration vehicle has gone missing. Cerberus would like the vehicle recovered, along with any news of the researchers aboard. \n\n*_This assignment was released as part of the Cerberus Network DLC pack._*",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Firewalker_Pack"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "DLC2.Firewalker.Rosalie",
+		"inMissionId": "DLC2.Firewalker",
+		"sortIndex": 10001,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Project Firewalker: Rosalie Lost",
+		"description": "After you are dropped off by the wreckage, bypass the cargo computer to open the crate and retrieve the Hammerhead. Then there is a basic gathering assignment as an introduction to the Hammerhead's controls. Follow the instructions to collect all the research packets.",
+		"inMapId": "G.Att.Ism.Ely.Zeona",
+		"isShowInParentMap": true,
+		"experience": 125,
+		"reward": "7,500 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Project_Firewalker:_Rosalie_Lost"],
+		"events": [{
+			"type": "Triggers",
+			"id": "Completed: Firewalker: Rosalie Lost"
+		}]
+	}, {
+		"id": "DLC2.Firewalker.Geth",
+		"inMissionId": "DLC2.Firewalker",
+		"sortIndex": 10002,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Project Firewalker: Geth Incursion",
+		"description": "_\"Planetary scans detect signals from sensor pods left on the planet's surface. These pods may contain valuable data. Warning: Surface temperatures are extremely low. Advise keeping Hammerhead exposure to the cold at an absolute minimum.\"_ \n\nYou must scan 10 sites before the Hammerhead freezes - each scan will warm the Hammerhead slightly.",
+		"inMapId": "G.Ter.Pho.Cho.Lattesh",
+		"isShowInParentMap": true,
+		"experience": 125,
+		"reward": "2,500 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Project_Firewalker:_Geth_Incursion"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Firewalker: Rosalie Lost"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Firewalker: Geth Incursion"
+		}]
+	}, {
+		"id": "DLC2.Firewalker.Survey",
+		"inMissionId": "DLC2.Firewalker",
+		"sortIndex": 10003,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Project Firewalker: Survey Sites Located",
+		"description": "There are five sites you must scan on this planet, while avoiding or destroying various geth forces.",
+		"inMapId": "G.Att.Haw.Ver.Corang",
+		"isShowInParentMap": true,
+		"experience": 125,
+		"reward": "1,250 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Project_Firewalker:_Survey_Sites_Located"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Firewalker: Rosalie Lost"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Firewalker: Survey Sites Located"
+		}]
+	}, {
+		"id": "DLC2.Firewalker.Volcano",
+		"inMissionId": "DLC2.Firewalker",
+		"sortIndex": 10004,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Project Firewalker: Volcano Station",
+		"description": "_\"Research station detected within volcano on planet's surface. The research station's data storage systems are still active and may contain valuable information. Warning: Volcano is unstable. Advise extreme caution.\"_ \n\nTake the Hammerhead, scanning what sites you can, to the research station, which you must explor on foot. Go to the control center and activate the sensors. This will trigger seismic activity and you will have to find an alternate exit. Get back in the Hammerhead and head up and through the tunnel. There is a dropoff when the tunnel ends, then jump across to the next platform and then to the next tunnel. You have to jump across at the end of this tunnel also, and then it cuts to sliding into the Normandy hanger bay and you are done.",
+		"inMapId": "G.Att.Cal.Yak.Karumto",
+		"isShowInParentMap": true,
+		"experience": 125,
+		"reward": "1,250 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Project_Firewalker:_Volcano_Station"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Firewalker: Rosalie Lost"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Firewalker: Volcano Station"
+		}]
+	}, {
+		"id": "DLC2.Firewalker.Prothean",
+		"inMissionId": "DLC2.Firewalker",
+		"sortIndex": 10005,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"inMapId": "G.Att.Had.Hop.Kopis",
+		"isShowInParentMap": true,
+		"experience": 125,
+		"reward": "3,750 Credits",
+		"name": "Project Firewalker: Prothean Site",
+		"description": "_\"Prothean artifacts detected on planet's [sic] surface. Artifact site is protected by a powerful energy barrier. Scans detected muted mechanical signatures consistent with hidden automated defenses.\"_ Take out the barrier around the dig site by destroying the shield generators, while fighting off rocket drones. Proceed on foot down into the dig site. You will need to bypass the computer to access the relic. Examine the relic. It will shrink and later you can find it on the coffee table in your cabin.\n\n",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Project_Firewalker:_Prothean_Site"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Firewalker: Prothean Site Unlocked"
+		}]
+	}, {
+		"id": "DLC2.LairShadowBroker",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "DLC",
+		"name": "Lair of the Shadow Broker",
+		"description": "In recovering Shepard's body, Liara ended up losing her partner, [megametracker://person?id=O2.Feron]. Feron was an agent of the Shadow Broker, who betrayed him to help Liara. She wants to track down the Shadow Broker and find out what happened to Feron. \n\nComplete [megametracker://mission?id=A2.I.TheObserver] first, or you will lose the opportunity. \n\n*_This assignment was released as part of the Lair of the Shadow Broker DLC pack._*",
+		"inMapId": null,
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Lair_of_the_Shadow_Broker_(mission)"],
+		"relatedMissionIds": ["A2.I.SystemHacking", "A2.I.TheObserver"],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Giving the Cerberus intel to Liara",
+				"options": [{
+					"id": "DLC2.LairShadowBroker.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You saved me.\""
+				}, {
+					"id": "DLC2.LairShadowBroker.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Why give me to Cerberus?\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After finding the backup disk in Liara's apartment",
+				"options": [{
+					"id": "DLC2.LairShadowBroker.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"She's in danger.\""
+				}, {
+					"id": "DLC2.LairShadowBroker.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"So she did find something.\""
+				}]
+			}
+		}, {
+			"context": "After finding Liara",
+			"id": "DLC2.LairShadowBroker.P3",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"Wait, Liara. She's a friend\""
+		}, {
+			"context": "After realizing Vasir is working for the Shadow Broker",
+			"id": "DLC2.LairShadowBroker.R4",
+			"type": "Renegade",
+			"value": 2,
+			"trigger": "\"It was you?\""
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "When Vasir takes a hostage in the cafe",
+				"options": [{
+					"id": "DLC2.LairShadowBroker.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Mariana, I'm here to help.\""
+				}, {
+					"id": "DLC2.LairShadowBroker.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Escaping won't help you.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC2.LairShadowBroker.P5A",
+					"type": "Paragon",
+					"value": 15,
+					"context": "*_Charming Vasir_*",
+					"trigger": "\"I'll shoot if I have to.\""
+				}, {
+					"id": "DLC2.LairShadowBroker.R5A",
+					"type": "Renegade",
+					"value": 15,
+					"context": "*_Intimidating Vasir_*",
+					"trigger": "\"You're pathetic.\""
+				}, {
+					"id": "DLC2.LairShadowBroker.P5B",
+					"type": "Paragon",
+					"value": 15,
+					"trigger": "(Drop thermal clips.)"
+				}, {
+					"id": "DLC2.LairShadowBroker.R5B",
+					"type": "Renegade",
+					"value": 15,
+					"trigger": "(Wound the hostage.)"
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After taking Vasir down",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC2.LairShadowBroker.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You crossed the line.\""
+						}, {
+							"id": "DLC2.LairShadowBroker.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I don't buy it.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC2.LairShadowBroker.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Yes.\""
+						}, {
+							"id": "DLC2.LairShadowBroker.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"What they had to do.\""
+						}]
+					}
+				}, {
+					"id": "DLC2.LairShadowBroker.P8",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Reassure Liara that you will rescue Feron."
+				}, {
+					"id": "DLC2.LairShadowBroker.P9",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Chide Liara for being so callous."
+				}, {
+					"id": "DLC2.LairShadowBroker.P10",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Try to convince Liara to take a moment for some personal time."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Finding Feron",
+				"options": [{
+					"id": "DLC2.LairShadowBroker.P11",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Are you all right?\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC2.LairShadowBroker.P12",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We're all leaving.\""
+						}, {
+							"id": "DLC2.LairShadowBroker.R12",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"The Broker's overconfident.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When Liara takes over as the new Shadow Broker",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC2.LairShadowBroker.P13",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You're sure about this?\""
+				}, {
+					"id": "DLC2.LairShadowBroker.R13",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Good. Useful Intel.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Comforting Liara",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC2.LairShadowBroker.P14",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "(Hug her.) - And kiss a Game 1 love interest Liara."
+				}, {
+					"id": "DLC2.LairShadowBroker.R14",
+					"type": "Renegade",
+					"value": 5,
+					"trigger": "\"It's just nerves.\""
+				}]
+			}
+		}, {
+			"context": "Leaving Liara on Hagalaz",
+			"id": "DLC2.LairShadowBroker.P14",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"I'll miss you.\""
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}]
+
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------DLC LOYALTY -------------------------",
+		"id": "A2.D.Zaeed",
+		"sortIndex": 200,
+		"gameVersion": "2",
+		"missionType": "Dossier",
+		"name": "The Veteran (DLC)",
+		"description": "\n\n*_This assignment was released as part of the Cerberus Network DLC pack._*",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"mapLocationPoint": {
+			"x": 722,
+			"y": 1786,
+			"radius": 20
+		},
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Veteran"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Meeting Zaeed",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Zaeed.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Welcome aboard.\""
+						}, {
+							"id": "A2.D.Zaeed.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Report to the Normandy.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Zaeed.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"No. He didn't.\""
+						}, {
+							"id": "A2.D.Zaeed.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"There's always a catch.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Zaeed.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We can do that.\""
+						}, {
+							"id": "A2.D.Zaeed.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"If there's time.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}, {
+			"type": "Triggers",
+			"id": "Acquired: Zaeed"
+		}]
+	}, {
+		"id": "A2.L.Zaeed",
+		"sortIndex": 301,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Zaeed: The Price of Revenge (DLC)",
+		"isLoyaltyMission": true,
+		"description": "Before Zaeed can commmit himself to helping you defeat the Collectors, he needs your help finishing some prior business he has on Zorya at a Blue Suns refinery. \n\n*_This assignment was released as part of the Cerberus Network DLC pack._*",
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Zaeed:_The_Price_of_Revenge"],
+		"experience": 1000,
+		"reward": "30,000 Credits Paragon/15,000 Credits Renegade",
+		"objectivesCountToCompletion": 4,
+		"conversationRewards": [{
+			"set": {
+				"context": "After extending the bridge",
+				"options": [{
+					"id": "A2.L.Zaeed.P1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You know this guy?\""
+				}, {
+					"id": "A2.L.Zaeed.R1",
+					"type": "Renegade",
+					"value": 2,
+					"context": "\"Vido sounds dangerous.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After the first encounter with Vido at the gatehouse",
+				"options": [{
+					"id": "A2.L.Zaeed.P3",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Punch Zaeed in the face (the _Paragon_ response)."
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Zaeed.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That was unnecessary.\""
+						}, {
+							"id": "A2.L.Zaeed.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Warn me next time.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Zaeed.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We came to save these people.\""
+						}, {
+							"id": "A2.L.Zaeed.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You do what I tell you.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Zaeed.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Keep to the mission, or else.\""
+						}, {
+							"id": "A2.L.Zaeed.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"If that's what you need.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After the worker begs for help",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Zaeed.P6",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You suggest we leave them?\""
+				}, {
+					"id": "A2.L.Zaeed.R6",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You must really want him dead.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When Zaeed demands you help him pursue Vido and leave the workers to die",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Zaeed.P7",
+					"type": "Paragon",
+					"value": 15,
+					"trigger": "\"Forget Loyalty. We save them.\""
+				}, {
+					"id": "A2.L.Zaeed.R7",
+					"type": "Renegade",
+					"value": 15,
+					"trigger": "\"Zaeed's right. Vido must die.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "At the end of the Paragon path",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Zaeed.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Are you hurt?\""
+						}, {
+							"id": "A2.L.Zaeed.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You deserved that.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Zaeed.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I don't want you on my ship.\""
+						}, {
+							"id": "A2.L.Zaeed.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Why should I trust you?\""
+						}]
+					}
+				}, {
+					"id": "A2.L.Zaeed.P10",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You owe me big for this.\""
+				}, {
+					"id": "A2.L.Zaeed.P11",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Come on, Zaeed. Let's go.\""
+				}, {
+					"id": "A2.L.Zaeed.P12",
+					"type": "Paragon",
+					"value": 7,
+					"context": "*_Charm Zaeed_*",
+					"trigger": "\"You brought this on yourself.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Acquired: Zaeed"
+		}]
+	}, {
+		"id": "A2.L.Zaeed.1",
+		"inMissionId": "A2.L.Zaeed",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Southern Gatehouse",
+		"description": "Make your way to the southern gatehouse. There will be some fighting in the first clearing. When the mercenaries are cleared out, follow the path left and activate the bridge controls. Continue up the path and the gatehouse in in a huge clearing. You will have to bypass the door to break inside, where there is a cutscene with Zaeed's enemy Vido.",
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"mapLocationPoint": {
+			"x": 600,
+			"y": 500,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Zaeed.2",
+		"inMissionId": "A2.L.Zaeed",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Paragon/Renegade Decision",
+		"description": "When you have eliminated the initial forces at the gatehouse and continued through the rapidly deteriorating wreckage outside the refinery, you will reach a [door|megametracker://maplocation?id=G.Att.Ism.Fai.Zorya&title=Morality%20Choice&location=895x595] that leads to a single-outcome morality decision. To earn Zaeed's loyalty, you either have to select the Renegade option and leave the refinery workers to die terribly (you will hear them screaming throughout the rest of the mission), or - if you have enough Paragon points - at the very end you may have the option to *charm* Zaeed into accepting your Paragon decision. Additionally, there is one upgrade on this mission: a Heavy Weapons Upgrade for Paragon or an Assault Rifle Damage for Renegade. \n\nSince the Paragon required is scaled by level, it is difficult to know until the end if you have enough points. So if you want to keep Zaeed, your best chances are to suck it up and go Renegade.",
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"mapLocationPoint": {
+			"x": 895,
+			"y": 595,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Zaeed.3",
+		"inMissionId": "A2.L.Zaeed",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Paragon Route (Optional)",
+		"description": "Put out the refinery fire. You will rejoin with the Renegade route just before the final battle.",
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"mapLocationPoint": {
+			"x": 923,
+			"y": 519,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Zaeed.3.1",
+		"inMissionId": "A2.L.Zaeed.3",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fuel Control Station 1",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"mapLocationPoint": {
+			"x": 1063,
+			"y": 415,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Zaeed.3.2",
+		"inMissionId": "A2.L.Zaeed.3",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fuel Control Station 2",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"mapLocationPoint": {
+			"x": 1071,
+			"y": 487,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Zaeed.3.3",
+		"inMissionId": "A2.L.Zaeed.3",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fuel Control Station 3",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"mapLocationPoint": {
+			"x": 1179,
+			"y": 511,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Zaeed.3.4",
+		"inMissionId": "A2.L.Zaeed.3",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fire Control Station",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"mapLocationPoint": {
+			"x": 1147,
+			"y": 807,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Zaeed.4",
+		"inMissionId": "A2.L.Zaeed",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Renegade Route (Optional)",
+		"description": "Pursue Vido",
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"mapLocationPoint": {
+			"x": 895,
+			"y": 983,
+			"radius": 20
+		},
+		"isShowPin": false
+	}, {
+		"id": "A2.L.Zaeed.5",
+		"inMissionId": "A2.L.Zaeed",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Pursue Vido",
+		"description": "Fight the final battle at the refinery to reach Vido. \n\nIf you selected the Renegade route, you will catch up with Vido at the end and Zaeed will take his revenge. The refinery is destroyed along with everyone in it, but you have Zaeed's loyalty. \n\nIf you selected the Paragon route, the workers are saved but Zaeed is injured and Vido gets away. If you don't have enough Paragon points, you will lose Zaeed's loyalty. Additionally, if you complete this assignment *after* the final Collector mission (the \"suicide mission\"), then there is an additional option to leave Zaeed to die.",
+		"inMapId": "G.Att.Ism.Fai.Zorya",
+		"mapLocationPoint": {
+			"x": 2043,
+			"y": 1163,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Kasumi",
+		"sortIndex": 205,
+		"gameVersion": "2",
+		"missionType": "Dossier",
+		"name": "The Master Thief (DLC)",
+		"description": "Kasumi left a message for you in one of the Citadel advertizing pillars. Listen to [the message|megametracker://maplocation?id=G.C2.ZakeraWardL27&title=Advertisement&location=1200x1580] and she will join the squad. \n\n*_This assignment was released as part of the Stolen Memory DLC pack._*",
+		"inMapId": "G.C2.ZakeraWardL27",
+		"mapLocationPoint": {
+			"x": 1200,
+			"y": 1580,
+			"radius": 1
+		},
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Master_Thief"],
+		"decisionIds": ["D2.Graybox"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}, {
+			"type": "Triggers",
+			"id": "Acquired: Kasumi"
+		}],
+		"conversationRewards": [{
+			"set": {
+				"context": "Acquiring Kasumi",
+				"options": [{
+					"id": "A2.D.Kasumi.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Cut the crap.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Kasumi.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Welcome aboard.\""
+						}, {
+							"id": "A2.D.Kasumi.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Let's head out.\""
+						}]
+					}
+				}]
+			}
+		}]
+	}, {
+		"id": "A2.L.Kasumi",
+		"sortIndex": 300,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Kasumi: Stealing Memory (DLC)",
+		"isLoyaltyMission": true,
+		"description": "Kasumi Goto's former partner, [Keiji|megametracker://person?id=O2.Keiji], was killed by the ruthless arms dealer, [megametracker://person?id=O2.Hock], for a valuable neural implant, called a graybox, containing dangerous secrets. Kasumi needs your help to break into Hock's vault and recover the graybox.\n\n*_This assignment was released as part of the Stolen Memory DLC pack._*",
+		"inMapId": "G.OuC.Ser.Bol.Bekenstein",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kasumi:_Stealing_Memory"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Acquired: Kasumi"
+		}, {
+			"type": "Triggers",
+			"id": "Secured Loyalty: Kasumi"
+		}],
+		"experience": 750,
+		"reward": "30,000 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to Kasumi on the way to the party",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Kasumi.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"What's the plan?\""
+				}, {
+					"id": "A2.L.Kasumi.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I can do this alone.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting Hock",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Kasumi.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Of course.\""
+				}, {
+					"id": "A2.L.Kasumi.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"If that's what it takes.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Keeping Hock talking (for the voice recording)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Kasumi.P3",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm_* Hock",
+							"trigger": "\"Expecting Trouble?\""
+						}, {
+							"id": "A2.L.Kasumi.R3",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate_* Hock",
+							"trigger": "\"Understandable.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "After saying: \"I understand.\" or \"Not a problem.\" or \"Just this once.\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Kasumi.P4",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm_* Hock",
+							"trigger": "\"I think we could be allies.\" or \"[Flirt] You're not offensive.\""
+						}, {
+							"id": "A2.L.Kasumi.R4",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate_* Hock",
+							"trigger": "\"Don't walk away from me.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "After saying: \"Have time to talk?\" or \"You trust all these people?\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A2.L.Kasumi.P5",
+									"type": "Paragon",
+									"value": 5,
+									"context": "*_Charm_* Hock",
+									"trigger": "\"We should do business.\""
+								}, {
+									"id": "A2.L.Kasumi.R5",
+									"type": "Renegade",
+									"value": 5,
+									"context": "*_Intimidate_* Hock",
+									"trigger": "\"My enemy is your enemy.\""
+								}]
+							}
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A2.L.Kasumi.P6",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"You have great taste in wine.\""
+								}, {
+									"id": "A2.L.Kasumi.R6",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"Not much of a party.\""
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "While Hock is lecturing you in the vault",
+				"options": [{
+					"id": "A2.L.Kasumi.R7",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Shoot up some of the expensive art and piss Hock off."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "In the shuttle with Kasumi afterwards",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Kasumi.P8",
+							"type": "Paragon",
+							"value": 5,
+							"trigger": "\"Keep the graybox.\""
+						}, {
+							"id": "A2.L.Kasumi.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Destroy the graybox.\" or \"It's what he wants.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "After convincing Kasumi to destroy the graybox",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Kasumi.P9",
+							"type": "Paragon",
+							"value": 5,
+							"trigger": "\"Let me do it.\""
+						}, {
+							"id": "A2.L.Kasumi.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Do it.\""
+						}]
+					}
+				}]
+			}
+		}]
+	}, {
+		"id": "A2.L.Kasumi.1",
+		"inMissionId": "A2.L.Kasumi",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Break Into The Vault",
+		"description": "Hock has the best security measures in place to protect his vault. You will need to acquire several things before you can break in.",
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home"
+	}, {
+		"id": "A2.L.Kasumi.1.1",
+		"inMissionId": "A2.L.Kasumi.1",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Vault Password",
+		"description": "The vault password is changed daily. Break into the security room and locate the [datapad|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Donovan%20Hock&location=173x1494] with the vault password stored on it.",
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"mapLocationPoint": {
+			"x": 173,
+			"y": 1494,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Kasumi.1.2",
+		"inMissionId": "A2.L.Kasumi.1",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Record Hock's Voice",
+		"description": "The vault password is only valid in Hock's own voice. Keep [Hock|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Donovan%20Hock&location=599x1289] talking until Kasumi gets enough to reconstruct the voice password for the Vault.",
+		"sideEffects": ["This same ploy was used in the 1992 movie [Sneakers|https://www.imdb.com/title/tt0105435/], where Mary McDonnell (Battlestar Galactica) has to trick her date into saying all the words in his corporate voice passport."],
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"mapLocationPoint": {
+			"x": 599,
+			"y": 1289,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Kasumi.1.3",
+		"inMissionId": "A2.L.Kasumi.1",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Get Hock's DNA",
+		"description": "To get Hock's DNA, you will need to break into his private rooms. There are two ways to get there: \n\n1) Use the [datapad|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Datapad&location=398x810] with information about Chief Roe to convince the guard to let you in. \n\n2) Jump down from the [balcony|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1.Balcony&type=Map] to outside of the mansion and then shoot the glass to get back inside the hallway outside Hock's rooms. \n\nThe DNA you need is on the Wine Glass, the Couch Cushion, and the Datapad. \n\nDo not touch the [Alarm Clock|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Alarm%20Clock&location=1803x1199] or more guards will show up.",
+		"inMapId": "G.OuC.Ser.Bol.Bek.1.Bedroom",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Kasumi.1.3.1",
+		"inMissionId": "A2.L.Kasumi.1.3",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Wine Glass",
+		"isOpensDetail": false,
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"mapLocationPoint": {
+			"x": 1775,
+			"y": 1005,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Kasumi.1.3.2",
+		"inMissionId": "A2.L.Kasumi.1.3",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Couch Cushion",
+		"isOpensDetail": false,
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"mapLocationPoint": {
+			"x": 1785,
+			"y": 920,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Kasumi.1.3.3",
+		"inMissionId": "A2.L.Kasumi.1.3",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Datapad",
+		"isOpensDetail": false,
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"mapLocationPoint": {
+			"x": 1718,
+			"y": 1372,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Kasumi.1.4",
+		"inMissionId": "A2.L.Kasumi.1",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Cut the Power",
+		"description": "Cut the power to the kinetic barrier by pulling the [statuette|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Statuette&location=365x1194] on the wall.",
+		"inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+		"mapLocationPoint": {
+			"x": 365,
+			"y": 1194,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Kasumi.2",
+		"inMissionId": "A2.L.Kasumi",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Keiji's Graybox",
+		"description": "The vault is full of valuable art. Locate the graybox. The signal will pulse louder and more rapidly the closer you get to the graybox. As soon as you take the graybox, Hock's forces will attack.",
+		"sideEffects": [
+			"If you look into the next room past the Statue of Liberty's head, you can see two Conduit scultptures, probably modelled after the one on the Citadel in Game 1 (where it was assumed to be ancient Prothean art).",
+			"After examining the Statue of Liberty's head, you are rewarded with a [codex entry|https://masseffect.wikia.com/wiki/Codex/The_Master_Thief:_Kasumi's_Secrets#Lady_Liberty] of its history, detailing how secessionists blew up the statue preceding the Second American Civil War."
+		],
+		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+		"mapLocationPoint": {
+			"x": 136,
+			"y": 695,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Kasumi.3",
+		"inMissionId": "A2.L.Kasumi",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Escape Outside",
+		"description": "Hock seals you in the garage. To escape, you need to make a new door. Make your way to the factory and use the [canon|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.2.Canon&type=Map] on the [volatile canisters|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.2Vault&title=Volatile%20Canisters&location=1018x903] to get out to the truck loading bay and from there to the wharf.",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2.Canon",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Kasumi.4",
+		"inMissionId": "A2.L.Kasumi",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Destroy Hock's Gunship",
+		"description": "Hock's mercenaries will attack you in waves while his personal gunship attacks you. You can attack the gunship to speed up the process, but his shields won't fall until Kasumi's cut-scene. At that point, you can destroy the gunship and complete the mission. Take the shuttle when you are done looting the wharf.",
+		"inMapId": "G.OuC.Ser.Bol.Bek.2.Platform",
+		"isShowInParentMap": true
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------DOSSIER QUESTS-------------------------",
+		"id": "A2.D.Garrus",
+		"sortIndex": 203,
+		"gameVersion": "2",
+		"missionType": "Dossier",
+		"name": "Archangel",
+		"description": "A formidable mercenary commander and expert sniper, Archangel is currently involved in a one-man war against the three gangs of Omega. You must extract him from this battle alive if you want him on the squad.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_Archangel"],
+		"relatedMissionIds": ["A2.O.DatapadRecovered"],
+		"experience": 1000,
+		"reward": "20,000 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "Ridiculed by the mercenary recruiter (if Shepard is female)",
+				"options": [{
+					"id": "A2.D.Garrus.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Taunt the mercenary on the size of his gun."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to the young man who is signing on after you",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Garrus.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"How old are you?\""
+						}, {
+							"id": "A2.D.Garrus.R2",
+							"type": "Credits",
+							"value": 2000,
+							"context": "\"Yes.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Garrus.P3",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Break the young man's gun."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Tarak",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Garrus.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Calm down.\""
+						}, {
+							"id": "A2.D.Garrus.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"What an ass.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Garrus.R5",
+					"type": "Renegade",
+					"value": 2,
+					"context": "(Only if Zaeed is present)",
+					"trigger": "\"This should be good.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Sergeant Cathka",
+				"options": [{
+					"id": "A2.D.Garrus.R6",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Electrocute Cathka."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Archangel",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Garrus.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"It's good to see you.\""
+						}, {
+							"id": "A2.D.Garrus.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Is that you, Garrus?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Garrus.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"They won't get through.\""
+						}, {
+							"id": "A2.D.Garrus.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Let's kick ass.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Garrus.R8",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Sniper a LOKI Mech."
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Garrus.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm not leaving you alone.\""
+						}, {
+							"id": "A2.D.Garrus.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You need help.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "A2.D.Garrus.P10",
+			"type": "Paragade",
+			"value": 0,
+			"paragadeValue": [5, 5],
+			"trigger": "(Completing the assignment.)"
+		}, {
+			"set": {
+				"context": "Talking to Garrus on the Normandy afterwards",
+				"options": [{
+					"id": "A2.D.Garrus.P11",
+					"type": "Paragon",
+					"value": 2,
+					"context": "\"No worse than usual, buddy.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Garrus.P12",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You've got my back.\""
+						}, {
+							"id": "A2.D.Garrus.R12",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Cerberus is right this time.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}, {
+			"type": "Triggers",
+			"id": "Acquired: Garrus"
+		}, {
+			"type": "Triggers",
+			"id": "Horizon Warning 1"
+		}, {
+			"type": "Triggers",
+			"id": "Horizon Triggered"
+		}]
+	}, {
+		"id": "A2.D.Garrus.1",
+		"inMissionId": "A2.D.Garrus",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Sign on to Attack Archangel",
+		"description": "If you have not already spoken to Aria, you must first make a token appearance before the ruler of Omega before you can begin the Archangel mission. Then you can sign up as a freelancer with the mercenary groups, to be frontline fodder in the attack on Archangel. \n\nAfter signing on, you can pick up a ride to Archangel's base in Kima District with a Blue Suns driver at the [Transport Depot|megametracker://maplocation?id=G.Ter.Ome.Sah.Ome.1.Depot&type=Map].",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Private",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Garrus.3",
+		"inMissionId": "A2.D.Garrus",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Sabotage Mercenary Attack",
+		"description": "Before you head out to find Archangel, look around for ways to sabotage the mercenary attack.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.3Archangel",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Garrus.3.1",
+		"inMissionId": "A2.D.Garrus.3",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Sabotage YMIR Mech",
+		"description": "Bypass the heavy mech to make it turn on the mercenaries during the battle.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.3.Mech",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Garrus.3.2",
+		"inMissionId": "A2.D.Garrus.3",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Sabotage Gunship",
+		"description": "Talk to Cathka while he is repairing the gunship. There will be a renegade interrupt to injure Cathka and thereby prevent any repairs to the ship. \n\n_Note: talking to Cathka/Cathka's Assistant will move the story along to the attack on Archangel's base. You will no longer have access to the mercenary area after the conversation._",
+		"inMapId": "G.Ter.Ome.Sah.Ome.3Archangel",
+		"mapLocationPoint": {
+			"x": 582,
+			"y": 829,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Garrus.4",
+		"inMissionId": "A2.D.Garrus",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Meet Archangel",
+		"description": "Turn on the other mercenaries during the attack (don't shoot Archangel!). When they are down, go upstairs to talk to Archangel. He has a health status bar that will appear throughout the rest of the mission. If it falls to zero, the mission fails.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.3Archangel",
+		"mapLocationPoint": {
+			"x": 997,
+			"y": 466,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Garrus.5",
+		"inMissionId": "A2.D.Garrus",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Eclipse Attack",
+		"description": "From the balcony, fend off the attack by Eclipse. If you sabotaged the YMIR mech, it will assist in the battle. Don't let it live too long though, or it will revert to its original programming and attack you. \n\nIn the final wave, the head of the Eclipse forces, Jaroth, will attack. Once he is dead and the remaining mercenaries killed, you are free to explore Archangel's base for loot.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.3Archangel",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Garrus.6",
+		"inMissionId": "A2.D.Garrus",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Blood Pack Attack",
+		"description": "After you speak to Garrus, Blood Pack mercenaries attack, breaching the tunnels under the base. Garrus instructs you to go down to the lower levels and close the three emergency shutters to keep them out. \n\nYou have to decide whether to take your full squad with you or leave someone with Garrus. Leaving a squadmate will improve his chances of survival. \n\nApproaching each shutter triggers an endless stream of mercenaries to attack (they will not attack until you approach, so there is no time pressure). They will not stop coming until you close the shutter. When all three are closed, Garrus will alert you that he is being attacked upstairs. \n\nThere will be another massive attack by Blood Pack, led by Garm. Kill him, and delay speaking to Garrus until you are ready for the next stage.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.3Archangel",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Garrus.6.1",
+		"inMissionId": "A2.D.Garrus.6",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Close Shutter 1",
+		"inMapId": "G.Ter.Ome.Sah.Ome.3.Shutter1",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.D.Garrus.6.2",
+		"inMissionId": "A2.D.Garrus.6",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Close Shutter 2",
+		"inMapId": "G.Ter.Ome.Sah.Ome.3.Shutter2",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.D.Garrus.6.3",
+		"inMissionId": "A2.D.Garrus.6",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Close Shutter 3",
+		"inMapId": "G.Ter.Ome.Sah.Ome.3.Shutter3",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.D.Garrus.7",
+		"inMissionId": "A2.D.Garrus",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Blue Suns Attack",
+		"description": "The Blue Suns attack with the gunship (if sabotaged, it will be down to half its armor). The gunship will drop mercenaries right into the upper room, including elite attacker Jentha. Blue Suns leader Tarak will drop in a cutscene and attack Garrus, and Garrus is shot by a rocket. You must then take down the gunship before Garrus dies.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.3Archangel",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Garrus.8",
+		"inMissionId": "A2.D.Garrus",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Debrief",
+		"description": "Talk to Garrus on the Normandy.",
+		"inMapId": "G.N2.2.Briefing",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Thane",
+		"sortIndex": 210,
+		"gameVersion": "2",
+		"missionType": "Dossier",
+		"name": "The Assassin",
+		"description": "Thane Krios is a drell trained from childhood as an elite assassin, proficient in both long-range sniping kills and close infiltration. He has slowed his activities in recent years but is rumored to have a target on Illium.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.2Darius",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Assassin"],
+		"experience": 1000,
+		"reward": "30,000 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to Seryna",
+				"options": [{
+					"id": "A2.D.Thane.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Show some respect.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Where is he?\""
+						}, {
+							"id": "A2.D.Thane.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Then talk fast.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to the wounded salarian",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm sorry.\""
+						}, {
+							"id": "A2.D.Thane.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You're lucky.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.P4A",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*Paragon Interrupt*",
+							"trigger": "Heal the salarian."
+						}, {
+							"id": "A2.D.Thane.P4B",
+							"type": "Paragon",
+							"value": 5,
+							"trigger": "\"Hang on.\""
+						}, {
+							"id": "A2.D.Thane.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We're done here.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to the salarian workers, Daroth and Shelum",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.D.Thane.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Yes.\""
+				}, {
+					"id": "A2.D.Thane.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"No.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to the Eclipse trooper",
+				"options": [{
+					"id": "A2.D.Thane.R6",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I need answers.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I've got an offer.\""
+						}, {
+							"id": "A2.D.Thane.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Listen carefully.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.R8",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*Renegade Interrupt*",
+							"trigger": "Throw the trooper off the roof."
+						}, {
+							"id": "A2.D.Thane.P9",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm_* the trooper",
+							"trigger": "\"Don't be stupid.\""
+						}, {
+							"id": "A2.D.Thane.R9",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate_* the trooper",
+							"trigger": "\"I hope you can fly.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to the salarians, Telon and Chesith",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.R10",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*Renegade Interrupt*",
+							"trigger": ""
+						}, {
+							"id": "A2.D.Thane.P11",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm_* the salarians",
+							"trigger": "\"Let me help you.\""
+						}, {
+							"id": "A2.D.Thane.R12",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate_* the salarians",
+							"trigger": "\"Put down the gun.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.P13",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I don't think so.\""
+						}, {
+							"id": "A2.D.Thane.R13",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Not that one.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Nassana",
+				"options": [{
+					"set": {
+						"context": "If Shepard helped Nassana in Game 1",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.P14",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Interesting idea.\""
+						}, {
+							"id": "A2.D.Thane.R14",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Is that what you think?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.P15",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You still think it's me?\""
+						}, {
+							"id": "A2.D.Thane.R15",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You're delusional.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.P16",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I met some of your workers.\""
+						}, {
+							"id": "A2.D.Thane.R16",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You're pathetic.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting Thane",
+				"options": [{
+					"id": "A2.D.Thane.P17",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Bastard.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.P18",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Saving lives.\""
+						}, {
+							"id": "A2.D.Thane.R18",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Killing bad guys.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.P19",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We'll find a way.\""
+						}, {
+							"id": "A2.D.Thane.R19",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"So I've heard.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Thane.P20",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm sorry.\""
+						}, {
+							"id": "A2.D.Thane.R20",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You're worried about humans?\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "A2.D.Thane.P25",
+			"type": "Paragade",
+			"value": 0,
+			"paragadeValue": [5, 5],
+			"trigger": "(Completing the assignment.)"
+		}, {
+			"set": {
+				"context": "Debrief on the Normandy",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P26",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"What's the problem, Jacob?\""
+						}, {
+							"id": "A2.D.Grunt.R26",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Watch yourself, Thane.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Thane.P27",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Keep an eye on him.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "Triggers",
+			"id": "Acquired: Thane"
+		}]
+	}, {
+		"id": "A2.D.Thane.1",
+		"inMissionId": "A2.D.Thane",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to Liara",
+		"description": "Liara has information on Thane Krios and his target on Illium.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1.Administration",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Thane.2",
+		"inMissionId": "A2.D.Thane",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to Seryna",
+		"description": "Seryna used to be head of security for Nassana Dantius. After she confronted Nassana about a series of assassinations, she was fired. She provided information to Thane and has an idea where he has gone.",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"mapLocationPoint": {
+			"x": 1538,
+			"y": 1213,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Thane.3",
+		"inMissionId": "A2.D.Thane",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Level One",
+		"description": "There are mechs and mercenaries on level one. Once you have eliminated them, go talk to the [surviving salarian|megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.2Darius&title=Wounded%20Salarian&location=488x1105], who tells you that Nassana sent the mechs to get rid of all the night workers in the second tower, a paranoid attempt to eliminate any threats.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.2Darius"
+	}, {
+		"id": "A2.D.Thane.4",
+		"inMissionId": "A2.D.Thane",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Level Two",
+		"description": "After going up the ramp to level two, you will need to fight off four waves of mercenary/mech attacks. Afterwards, you can go talk to some [salarian workers|megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.2Darius&title=Salarian%Workers&location=695x545], locked in a room by a mysterious benefactor. Warning: there is another battle as soon as you request the elevator to go to the next level.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.2Darius"
+	}, {
+		"id": "A2.D.Thane.5",
+		"inMissionId": "A2.D.Thane",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Level Three",
+		"description": "After clearing out the room, talk to the [salarian workers|megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.2Darius&title=Salarian%Workers&location=1291x590] hiding in the side room. You can also annoy Nassana over the [comm terminal|megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.2Darius&title=Salarian%Workers&location=1279x389].",
+		"inMapId": "G.Ter.Cre.Tas.Ill.2Darius"
+	}, {
+		"id": "A2.D.Thane.6",
+		"inMissionId": "A2.D.Thane",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Roof",
+		"description": "Fight your way across the roof and over the bridge to Tower One. There is a final wave of attackers coming from Nassana's penthouse.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.2Darius"
+	}, {
+		"id": "A2.D.Thane.7",
+		"inMissionId": "A2.D.Thane",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Finish Mission",
+		"description": "There is a cutscene when you enter the penthouse and you will finally meet Thane.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.2Darius",
+		"mapLocationPoint": {
+			"x": 1759,
+			"y": 1875,
+			"radius": 1
+		}
+
+	}, {
+		"id": "A2.D.Jack",
+		"sortIndex": 206,
+		"gameVersion": "2",
+		"missionType": "Dossier",
+		"name": "The Convict",
+		"description": "Jack, a powerful human biotic, is being held on the prison ship Purgatory. Cerberus has negotiated for the prisoner's release.",
+		"inMapId": "G.Ter.Hou.Osu.Purgatory",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Convict"],
+		"experience": 1000,
+		"reward": "15,000 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "When the guard demands Shepard's weapons",
+				"options": [{
+					"id": "A2.D.Jack.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Go to hell.\""
+				}, {
+					"id": "A2.D.Jack.R2",
+					"type": "Renegade",
+					"value": 2,
+					"context": "\"It's not going to happen.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the guard outside the first prisoner cell",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Jack.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Is this necessary?\""
+						}, {
+							"id": "A2.D.Jack.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"That's justice.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "After intervening in the prisoner beating",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Jack.P4",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charming the guard_*",
+							"trigger": "\"This is beneath you.\""
+						}, {
+							"id": "A2.D.Jack.R4",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidating the guard_*",
+							"trigger": "\"I told you to stop.\""
+						}, {
+							"id": "A2.D.Jack.R4B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You're doing the right thing.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After Warden Kuril reveals his plan to detain Shepard in Outprocessing",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.D.Jack.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Let's negotiate.\""
+				}, {
+					"id": "A2.D.Jack.R5",
+					"type": "Renegade",
+					"value": 2,
+					"context": "(If this was discussed in a previous conversation with the warden)",
+					"trigger": "\"What about serving the galaxy?\""
+				}, {
+					"id": "A2.D.Jack.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Hell, no.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting Jack",
+				"options": [{
+					"id": "A2.D.Jack.R6",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You're welcome.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Jack.R7A",
+							"type": "Paragade",
+							"value": 0,
+							"paragadeValue": [7, 5],
+							"trigger": "\"To rescue you.\""
+						}, {
+							"id": "A2.D.Jack.R7B",
+							"type": "Paragade",
+							"value": 0,
+							"paragadeValue": [5, 5],
+							"trigger": "\"I'm Commander Shepard.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Jack.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm not your enemy.\""
+						}, {
+							"id": "A2.D.Jack.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Being my enemy is unhealthy.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Jack.R9",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Yes.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Jack.P10",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"No.\""
+						}, {
+							"id": "A2.D.Jack.R10",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Maybe we should.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Jack.P11",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You don't have to bargain.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Debrief with Jack on the Normandy",
+				"options": [{
+					"set": {
+						"context": "When Jack asks for her Cerberus files",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Jack.P12",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Give her the files now.\""
+						}, {
+							"id": "A2.D.Jack.R12",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You can wait for your files.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "Checking on Jack in the Engineering sub-level",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Jack.P13",
+							"type": "Paragon",
+							"value": 2,
+							"context": "(If you did share the Cerberus files)",
+							"trigger": "\"Glad they're helping.\""
+						}, {
+							"id": "A2.D.Jack.R13",
+							"type": "Renegade",
+							"value": 2,
+							"context": "(If you did not share the Cerberus files)",
+							"trigger": "\"I didn't let you.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Checking on Jack in the Engineering sub-level",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Jack.P14",
+							"type": "Paragon",
+							"value": 2,
+							"context": "(If you did share the Cerberus files)",
+							"trigger": "\"Glad they're helping.\""
+						}, {
+							"id": "A2.D.Jack.R14",
+							"type": "Renegade",
+							"value": 2,
+							"context": "(If you did not share the Cerberus files)",
+							"trigger": "\"I didn't let you.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Jack.P15",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Do you want better quarters?\""
+				}, {
+					"set": {
+						"context": "(If you offer better quarters)",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Jack.P16",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"My mission is too important.\""
+						}, {
+							"id": "A2.D.Jack.R16",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"How would you help?\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}, {
+			"type": "Triggers",
+			"id": "Acquired: Jack"
+		}, {
+			"type": "Triggers",
+			"id": "Horizon Warning 1"
+		}, {
+			"type": "Triggers",
+			"id": "Horizon Triggered"
+		}]
+	}, {
+		"id": "A2.D.Jack.1",
+		"inMissionId": "A2.D.Jack",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Facility Tour",
+		"description": "The guards of Purgatory will demand that your team relinquish its weapons before entering the facility. However, Warden Kuril will allow you to enter armed, and gives you a brief tour of the ship. He then leaves you to look around yourself (with most areas of the ship still unavailable). You can speak to a [prison guard|megametracker://maplocation?id=G.Ter.Hou.Osu.Purgatory&title=Prison%20Guard&location=697x1327], or a [prisoner|megametracker://maplocation?id=G.Ter.Hou.Osu.Purgatory&title=Prisoner&location=639x1295] or another [prisoner|megametracker://maplocation?id=G.Ter.Hou.Osu.Purgatory&title=Prisoner&location=583x1295]. When you are ready, head over to outprocessing to pick up Jack.",
+		"inMapId": "G.Ter.Hou.Osu.Purgatory",
+		"mapLocationPoint": {
+			"x": 1509,
+			"y": 1251,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Jack.2",
+		"inMissionId": "A2.D.Jack",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Spring The Trap",
+		"description": "Warden Kuril has no intention of letting Jack go, and has decided to lock up Shepard as well. You'll need to fight your way out of the outprocessing room and find Jack yourself.",
+		"inMapId": "G.Ter.Hou.Osu.Purgatory",
+		"mapLocationPoint": {
+			"x": 61,
+			"y": 1277,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Jack.3",
+		"inMissionId": "A2.D.Jack",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Super Max Wing",
+		"description": "Get to the security room and use the console to override security across the ship. This will release Jack, and then you just have to catch up to her. You will have to fight both prisoners and guards - and, in both of the big rooms, an YMIR mech - as the facility literally falls apart around you.",
+		"inMapId": "G.Ter.Hou.Osu.Purgatory",
+		"mapLocationPoint": {
+			"x": 285,
+			"y": 1139,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Jack.4",
+		"inMissionId": "A2.D.Jack",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Warden Kuril",
+		"description": "Destroy the three shield generators feeding the shields around Warden Kuril, while fighting off waves of attackers. Then you can attack the warden directly.",
+		"inMapId": "G.Ter.Hou.Osu.Purgatory",
+		"mapLocationPoint": {
+			"x": 2025,
+			"y": 805,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Jack.4.1",
+		"inMissionId": "A2.D.Jack.4",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Shield Generator 1",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Hou.Osu.Purgatory",
+		"mapLocationPoint": {
+			"x": 1887,
+			"y": 785,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Jack.4.2",
+		"inMissionId": "A2.D.Jack.4",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Shield Generator 2",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Hou.Osu.Purgatory",
+		"mapLocationPoint": {
+			"x": 1905,
+			"y": 861,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Jack.4.3",
+		"inMissionId": "A2.D.Jack.4",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Shield Generator 3",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Hou.Osu.Purgatory",
+		"mapLocationPoint": {
+			"x": 2051,
+			"y": 961,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Samara",
+		"sortIndex": 209,
+		"gameVersion": "2",
+		"missionType": "Dossier",
+		"name": "The Justicar",
+		"description": "Samara is a justicar, a rare member of an asari monastic group trained in enhanced combat biotics alongside standard weapons. Samara was recently sighted on Illium, outside normal asari space.",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Justicar"],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"decisionIds": ["D2.NiftuCal"],
+		"relatedMissionIds": ["A2.I.SmugglingEvidence", "A2.I.StolenGoodsFound"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Finding Officer Dara",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.D.Samara.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I only want to talk.\""
+				}, {
+					"id": "A2.D.Samara.R1",
+					"type": "Renegade",
+					"value": 2,
+					"context": "\"So what if she did?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting Samara",
+				"options": [{
+					"id": "A2.D.Samara.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You killed in cold blood.\""
+				}, {
+					"set": {
+						"options": [{
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A2.D.Samara.P3",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"Yes, I am.\""
+								}, {
+									"id": "A2.D.Samara.R3",
+									"type": "Renegade",
+									"value": 2,
+									"context": "\"No, not really.\""
+								}]
+							}
+						}, {
+							"id": "A2.D.Samara.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I need you on my team.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Samara.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Maybe I can help.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Pitne For",
+				"options": [{
+					"id": "A2.D.Samara.R6",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Draw a gun."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Elnora",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.D.Samara.P7",
+					"type": "Paragon",
+					"value": 5,
+					"context": "Paragon",
+					"trigger": "\"Go.\""
+				}, {
+					"id": "A2.D.Samara.R7",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Dhoot Elnora."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Niftu Cal",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Samara.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Calm down.\""
+						}, {
+							"id": "A2.D.Samara.R8",
+							"type": "Renegade",
+							"value": 2,
+							"context": "\"You're high.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Samara.P9",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*Paragon Interrupt*",
+							"trigger": "Tip Niftu Cal over."
+						}, {
+							"id": "A2.D.Samara.R10",
+							"type": "Renegade",
+							"value": 5,
+							"trigger": "\"We're right behind you.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "A2.D.Samara.PR11",
+			"type": "Paragade",
+			"value": 0,
+			"paragadeValue": [5, 5],
+			"trigger": "(Completing the assignment.)"
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.D.Samara.P12",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I am honored.\""
+				}, {
+					"id": "A2.D.Samara.P13",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Welcome to the team.\""
+				}, {
+					"id": "A2.D.Samara.R14",
+					"type": "Renegade",
+					"value": 2,
+					"context": "\"You'll do anything I say?\""
+				}]
+			}
+		}, {
+			"context": "Debrief on the Normandy",
+			"id": "A2.D.Samara.R15",
+			"type": "Renegade",
+			"value": 2,
+			"trigger": "\"We need her.\""
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "Triggers",
+			"id": "Acquired: Samara"
+		}]
+	}, {
+		"id": "A2.D.Samara.1",
+		"inMissionId": "A2.D.Samara",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to Dara",
+		"description": "Samara registered with Tracking Officer Dara before heading to the spaceport. Talk to Dara to follow the justicar, or just hail a cab at the [megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.1.Cab&type=Map].",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 787,
+			"y": 1555,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Samara.2",
+		"inMissionId": "A2.D.Samara",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to Anaya",
+		"description": "Detective Anaya is investigating the murder at the spaceport. She reveals that Samara is there, and that Anaya has been ordered to detain her, something Anaya is afraid to do. She is eager to help you, in the hopes that you can persuade Samara to leave Illium.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 448,
+			"y": 930,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Samara.3",
+		"inMissionId": "A2.D.Samara",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Samara",
+		"description": "You now have permission to enter the crime scene. As you enter pass the guards, check the terminal on the right for [masseffectracker://mission?id=MA2.I.StolenGoodsFound]. Continue through the hallways until you reach a closed door. Samara is behind it.\n\nAfter the cut scene, Samara is detained by Detective Anaya. She consents to wait one day, but after that she will kill the detective if she interferes with the justicar's mission. If you could complete Samara's mission first, Anaya would *really* appreciate it.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 58,
+			"y": 147,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Samara.4",
+		"inMissionId": "A2.D.Samara",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to Pitne For",
+		"description": "Pitne For, a volus outside the police station, is being detained on Illium pending the investigation into his business partner's murder. Once he confesses that he has been smuggling toxic drugs onto Illium, he will offer you his pass card into the base.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 490,
+			"y": 805,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Samara.5",
+		"inMissionId": "A2.D.Samara",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Eclipse Hideout",
+		"description": "You will head up through four levels, with several canisters of the toxic drug Pitne For smuggled in. If they explode, the resulting gas will briefly boost your biotics, but it is lethal under any longer exposure."
+	}, {
+		"id": "A2.D.Samara.6",
+		"inMissionId": "A2.D.Samara",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Elnora (Optional)",
+		"description": "On the first level, you may meet Eclipse recruit [megametracker://person?id=O2.Elnora]. You can kill her or let her go. Later on, you will run across [Elnora's Diary|megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.3Spaceport&title=Elnora%27s%20Diary&location=1177x1456] where she recounts her first murder, likely Pitne For's business partner.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 794,
+			"y": 446,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Samara.7",
+		"inMissionId": "A2.D.Samara",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Gunship",
+		"description": "Here you will have to take down the Eclipse gunship.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 1162,
+			"y": 1341,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Samara.8",
+		"inMissionId": "A2.D.Samara",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Shipping Manifest (Optional)",
+		"description": "This is the document Pitne For wants back so badly. It begins assignment [megametracker://mission?id=A2.I.SmugglingEvidence].",
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 1345,
+			"y": 1433,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Samara.9",
+		"inMissionId": "A2.D.Samara",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Niftu Cal",
+		"description": "You will encounter a drug-addled member of the volus merchant group, [megametracker://person?id=O2.NiftuCal]. He has been dosed by the Eclipse with some of the drugs they were smuggling, which have temporarily granted him biotic powers. You have the option to send him in first to attack Wasea, with amusing - if tragic - consequences.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 1440,
+			"y": 1387,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Samara.10",
+		"inMissionId": "A2.D.Samara",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Captain Wasea's Data",
+		"description": "Once you have defeated Wasea and her mercenaries, you can find the data Samara needs on a datapad on Wasea's desk.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+		"mapLocationPoint": {
+			"x": 1900,
+			"y": 1390,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Mordin",
+		"sortIndex": 202,
+		"gameVersion": "2",
+		"missionType": "Dossier",
+		"name": "The Professor",
+		"description": "Recruit the salarian Mordin Solus, currently operating a Medical Clinic in the slums of Omega. He may have the technology to counter the Collector attacks.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Professor"],
+		"relatedMissionIds": ["A2.O.MissingAssistant"],
+		"sideEffects": ["Acquiring Mordin unlocks the tech lab on the Normandy, opening up the ability to research upgrades acquired during other missions. It is a good strategy to complete this dossier first."],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to the sick batarian just inside the slums",
+				"options": [{
+					"id": "A2.D.Mordin.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Leave him.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Mordin.P2",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*Paragon Interrupt*",
+							"trigger": "Heal the angry batarian with omni-gel."
+						}, {
+							"id": "A2.D.Mordin.R2",
+							"type": "Credits",
+							"value": 2000,
+							"context": "(Let the angry batarian die.)"
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "(After healing the batarian)",
+						"options": [{
+							"id": "A2.D.Mordin.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm here to help.\""
+						}, {
+							"id": "A2.D.Mordin.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I need information.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Telling the refugee to go to the medical clinic",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.D.Mordin.P4",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "\"I'll help you get there.\""
+				}, {
+					"id": "A2.D.Mordin.R4",
+					"type": "Renegade",
+					"value": 5,
+					"trigger": "\"Hiding here won't save you.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Interrupting the human looters",
+				"options": [{
+					"id": "A2.D.Mordin.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I don't like looters.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Hypocritically demanding the humans stop looting",
+						"options": [{
+							"id": "A2.D.Mordin.P6",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm_* the looters",
+							"trigger": "\"No... but someone will.\""
+						}, {
+							"id": "A2.D.Mordin.R6A",
+							"type": "Renegade",
+							"value": 2,
+							"context": "*_Intimidate_* the looters",
+							"trigger": "\"If I have to.\""
+						}, {
+							"id": "A2.D.Mordin.R6B",
+							"type": "Renegade",
+							"value": 2,
+							"context": "*_Intimidate_* the looters",
+							"trigger": "\"Yes.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting Mordin for the first time",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Mordin.R7",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*Renegade Interrupt*",
+							"trigger": "Interrupt Mordin's babble."
+						}, {
+							"id": "A2.D.Mordin.P7",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*Paragon Interrupt* (After the Renegade Interrupt)",
+							"trigger": "Smooth-talk Mordin into shutting up."
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Hypocritically demanding the humans stop looting",
+						"options": [{
+							"id": "A2.D.Mordin.P8",
+							"type": "Paragon",
+							"value": 2,
+							"context": "*_Charm_* the looters",
+							"trigger": "\"I'll take care of it.\""
+						}, {
+							"id": "A2.D.Mordin.R8",
+							"type": "Renegade",
+							"value": 2,
+							"context": "*_Intimidate_* the looters",
+							"trigger": "\"Why can't anything be simple?\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to the vorcha in the environmental control room",
+				"options": [{
+					"id": "A2.D.Mordin.P9",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Why are you doing this?\""
+				}, {
+					"id": "A2.D.Mordin.R9",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You're dead.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Confirming Mordin is joining the team",
+				"options": [{
+					"id": "A2.D.Mordin.P10",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Will you join me?\""
+				}, {
+					"id": "A2.D.Mordin.R10",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Don't forget our deal.\""
+				}]
+			}
+		}, {
+			"id": "A2.D.Mordin.P10Z",
+			"type": "Paragade",
+			"value": 0,
+			"paragadeValue": [5, 5],
+			"trigger": "(Completing the assignment.)"
+		}, {
+			"set": {
+				"context": "After Mordin asks about Daneil",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"context": "(If Shepard saved Daniel and let the Batarians leave)",
+						"options": [{
+							"id": "A2.D.Mordin.P11",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm not like that.\""
+						}, {
+							"id": "A2.D.Mordin.R11",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I thought about it.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "(If Shepard saved Daniel and killed the batarians)",
+						"options": [{
+							"id": "A2.D.Mordin.P12",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I saved your life!\""
+						}, {
+							"id": "A2.D.Mordin.R12",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You ungrateful little ass!\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "(If Daniel is killed)",
+						"options": [{
+							"id": "A2.D.Mordin.P13",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm sorry. He's dead.\""
+						}, {
+							"id": "A2.D.Mordin.R13",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"He got himself killed.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "(If Shepard doesn't bother with Daniel at all)",
+						"options": [{
+							"id": "A2.D.Mordin.P14",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Sorry, no.\""
+						}, {
+							"id": "A2.D.Mordin.R14",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I didn't look.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Mordin on the Normandy afterwards",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"context": "When Mordin asks about Cerberus' questionable past",
+						"options": [{
+							"id": "A2.D.Mordin.P15",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Cerberus hasn't changed.\""
+						}, {
+							"id": "A2.D.Mordin.R15",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Cerberus does good work.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Mordin.R16",
+					"type": "Renegade",
+					"value": 2,
+					"context": "Not using an interrupt while Mordin is talking",
+					"trigger": "\"You think this is fascinating?\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Mordin.P17",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Yes.\""
+						}, {
+							"id": "A2.D.Mordin.R17",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Stay focused, Professor.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"TODO": "Move this to a misc assignment for odd morality like this",
+				"isExclusiveSet": true,
+				"context": "Speaking to Captain Gavorn back in the Omega Merchant District, when he asks about all the dead vorcha in the Quarantine Zone. \n\n(You may need to speak to the vorcha Shisk near Kenn's Salvage first.)",
+				"options": [{
+					"id": "A2.D.Mordin.P18",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Who, me? Nah.\""
+				}, {
+					"id": "A2.D.Mordin.R18",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I did you a favor.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}, {
+			"type": "Triggers",
+			"id": "Acquired: Mordin"
+		}, {
+			"type": "Triggers",
+			"id": "Horizon Warning 1"
+		}, {
+			"type": "Triggers",
+			"id": "Horizon Triggered"
+		}]
+	}, {
+		"id": "A2.D.Mordin.1",
+		"inMissionId": "A2.D.Mordin",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Go to The Quarantine Zone",
+		"description": "The Quarantine Zone is restricted. To convince the turian guard to allow your group inside will require some persuasion. If your morality is not high enough, you will have to kill the guards.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Quarantine",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Mordin.2",
+		"inMissionId": "A2.D.Mordin",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Help the Batarian Victim",
+		"description": "There is a sick batarian lying alone in the slums. You have the opportunity to help him.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.2Quarantine",
+		"mapLocationPoint": {
+			"x": 267,
+			"y": 948,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Mordin.3",
+		"inMissionId": "A2.D.Mordin",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fight to the Clinic",
+		"description": "The Blood Pack and Blue Suns mercenaries fighting in this area (Kokomo Plaza) are going to make it difficult for you to reach Mordin's clinic.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.2.Clinic",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Mordin.4",
+		"inMissionId": "A2.D.Mordin",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Mordin",
+		"description": "Find Mordin inside the Medical Clinic. He will explain that he can't help you until the plague is taken care of. He has a cure, but needs a way to distribute it. Just then, the Blood Pack shut off the air circulation system. Mordin realizes this is an opportunity - you can turn the air circulation back on and use it to distribute the cure. \n\nHe also mentions that his assistant Daniel has gone missing ([megametracker://mission?id=MA2.O.MissingAssistant]), and he'd appreciate it if you could find him and bring him back to the clinic.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.2Quarantine",
+		"mapLocationPoint": {
+			"x": 1245,
+			"y": 1641,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Mordin.5",
+		"inMissionId": "A2.D.Mordin",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fight to Environmental Control",
+		"description": "The Blood Pack controls all the territory between the Clinic and Environmental Control. There are two large rooms and some smaller encounters. Directly after the first big fight, you will walk past the room where [Daniel|megametracker://mission?id=A2.O.MissingAssistant] is being held.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.2.Vents",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Mordin.6",
+		"inMissionId": "A2.D.Mordin",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Distribute The Cure",
+		"description": "Once you take down the first group holding Environmental Control, you can program the computer to distribute Mordin's cure. You will immediately be attacked again. When the room is clear, pick which of the two ventilation controls to turn on first - the order doesn't matter and the attacks at each are fairly similar. Once you have turned both controls back on, the mission ends and you are returned to the Medical Clinic.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.2.Vents",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Mordin.7",
+		"inMissionId": "A2.D.Mordin",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Debrief",
+		"description": "Once you have spoken to Mordin at the Medical Clinic and he has agreed to join the squad, you are free to complete other Omega missions. When you do finally return to the Normandy, speak to Mordin to wrap up the final dialog options.",
+		"inMapId": "G.N2.2.Briefing",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Tali",
+		"sortIndex": 208,
+		"gameVersion": "2",
+		"missionType": "Dossier",
+		"name": "Tali",
+		"description": "Tali'Zorah, the quarian engineer who helped Shepard defeat Saren in Game 1, is currently on a classified assignment for the Migrant Fleet on Haestrom, a planet in geth-controlled space. \n\nDue to intense solar radiation on Haestrom, prolonged exposure to sunlight will damage shields.",
+		"inMapId": "G.Ter.Far.Dho.Haestrom",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_Tali"],
+		"decisionIds": ["D2.KalReegar"],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "Answering the Quarian radio",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Tali.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm here to help.\""
+						}, {
+							"id": "A2.D.Tali.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"They're all dead.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Tali.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"What's your current status?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Tali on the communications console",
+				"options": [{
+					"id": "A2.D.Tali.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"No one else is left.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Tali.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I came to help.\""
+						}, {
+							"id": "A2.D.Tali.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I'm recruiting you.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Kal'Reegar during fight with geth Colossus",
+				"options": [{
+					"id": "A2.D.Tali.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Is she safe?\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Tali.R6",
+							"type": "Renegade",
+							"value": 15,
+							"trigger": "\"Sounds like a plan.\""
+						}, {
+							"id": "A2.D.Tali.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"No. Stay down.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Tali.P7",
+					"type": "Paragon",
+					"value": 15,
+					"context": "*Paragon Interrupt* (also requires paragon choice above)",
+					"trigger": "Prevent Kal'Reegar from joining fight."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Finding Tali",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.D.Tali.P8",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Can you join me now?\""
+				}, {
+					"id": "A2.D.Tali.R8",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"The quarians owe me.\""
+				}]
+
+			}
+		}, {
+			"set": {
+				"context": "Talking to Kal'Reegar after the fight (if he's alive)",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.D.Tali.P9",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Do you need transportation?\""
+				}, {
+					"id": "A2.D.Tali.R9",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Tali's with me now.\""
+				}]
+
+			}
+		}, {
+			"set": {
+				"context": "Debrief on Normandy",
+				"options": [{
+					"id": "A2.D.Tali.P10",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I agree completely.\""
+				}, {
+					"id": "A2.D.Tali.P11",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Feel free to study the ship.\""
+				}]
+
+			}
+		}, {
+			"id": "A2.D.Tali.PR12",
+			"type": "Paragade",
+			"value": 0,
+			"paragadeValue": [5, 5],
+			"trigger": "(Completing the assignment.)"
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "Triggers",
+			"id": "Acquired: Tali"
+		}]
+	}, {
+		"id": "A2.D.Tali.1",
+		"inMissionId": "A2.D.Tali",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Open Gate",
+		"description": "The only hazard until this point is the solar radiation.",
+		"inMapId": "G.Ter.Far.Dho.Hae.Gate",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Tali.2",
+		"inMissionId": "A2.D.Tali",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Answer Radio",
+		"description": "Eliminate the geth attackers while avoiding solar exposure. Then make contact with the Quarians via the radio.",
+		"inMapId": "G.Ter.Far.Dho.Hae.Radio",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Tali.3",
+		"inMissionId": "A2.D.Tali",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Clear Fallen Pillar",
+		"description": "Gather the two demolition charges and use them to clear the pillar that has collapsed just in front of the next door. Take cover or move a distance away after setting the charges. \n\nWhile gathering the charges, you may also want to listen to Tali's journals [here|megametracker://maplocation?id=G.Ter.Far.Dho.Haestrom&title=Tali%27s%20Journal&location=1246x1210], [here|megametracker://maplocation?id=G.Ter.Far.Dho.Haestrom&title=Tali%27s%20Journal&location=601x1066], and [here|megametracker://maplocation?id=G.Ter.Far.Dho.Haestrom&title=Tali%27s%20Journal&location=1719x271]",
+		"inMapId": "G.Ter.Far.Dho.Haestrom",
+		"mapLocationPoint": {
+			"x": 1253,
+			"y": 816,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Tali.3.1",
+		"inMissionId": "A2.D.Tali.3",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Demolition Charge",
+		"inMapId": "G.Ter.Far.Dho.Haestrom",
+		"mapLocationPoint": {
+			"x": 1246,
+			"y": 1210,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.D.Tali.3.2",
+		"inMissionId": "A2.D.Tali.3",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Demolition Charge",
+		"inMapId": "G.Ter.Far.Dho.Haestrom",
+		"mapLocationPoint": {
+			"x": 872,
+			"y": 1075,
+			"radius": 1
+		},
+		"isOpensDetail": false
+	}, {
+		"id": "A2.D.Tali.4",
+		"inMissionId": "A2.D.Tali",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Activate Comm Control",
+		"description": "The next door is locked. Contact Tali through the Communication Control and she will unlock it for you.",
+		"inMapId": "G.Ter.Far.Dho.Hae.Comm",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Tali.5",
+		"inMissionId": "A2.D.Tali",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Open Shutters",
+		"description": "There is a large open courtyard to fight through. Enter the room at the far end and activate the shutter control to open up the next area.",
+		"inMapId": "G.Ter.Far.Dho.Hae.Shutter",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.D.Tali.6",
+		"inMissionId": "A2.D.Tali",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Defeat Geth Colossus",
+		"description": "You can find [Kal'Reegar|megametracker://maplocation?id=G.Ter.Far.Dho.Haestrom&title=Kal%27Reegar&location=837x457] wounded just down the stairs from the shutter control. He will offer strategy advice against the geth Colossus and may help in the fight, depnding on conversation choices. _Note: if Kal'Reegar is still attacking the Colossus when it powers down, it will kill him when it comes back online._",
+		"inMapId": "G.Ter.Far.Dho.Haestrom",
+		"mapLocationPoint": {
+			"x": 481,
+			"y": 383,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Tali.7",
+		"inMissionId": "A2.D.Tali",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Tali",
+		"description": "Enter the final room and rescue Tali.",
+		"inMapId": "G.Ter.Far.Dho.Haestrom",
+		"mapLocationPoint": {
+			"x": 294,
+			"y": 447,
+			"radius": 1
+		}
+
+	}, {
+		"id": "A2.D.Grunt",
+		"sortIndex": 207,
+		"gameVersion": "2",
+		"missionType": "Dossier",
+		"name": "The Warlord",
+		"description": "",
+		"inMapId": "G.Att.Eag.Imi.Korlus",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Warlord"],
+		"experience": 1000,
+		"reward": "20,000 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to the wounded mercenary",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Medi-gel change your mind?\""
+						}, {
+							"id": "A2.D.Grunt.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Where's the warlord?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P2A",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm_* the mercenary",
+							"trigger": "\"Get rid of them.\""
+						}, {
+							"id": "A2.D.Grunt.R2A",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate_* the mercenary",
+							"trigger": "\"Reply with bad instructions.\""
+						}, {
+							"id": "A2.D.Grunt.R2B",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*Renegade Interrupt* (After saying \"Don't answer.\")",
+							"trigger": "Shoot merc"
+						}]
+					}
+				}, {
+					"id": "A2.D.Grunt.P3",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm_* the mercenary",
+					"trigger": "\"Start running.\" or \"Get out of here.\" or \"You won't be around to see it.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Rana (if she survived Game 1)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Why are you here?\""
+						}, {
+							"id": "A2.D.Grunt.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Everyone there should be dead.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Try harder to avoid trouble.\""
+						}, {
+							"id": "A2.D.Grunt.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Stay out of my way.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Okeer",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Okeer, I presume?\""
+						}, {
+							"id": "A2.D.Grunt.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Change your tone.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"A tough decision.\""
+						}, {
+							"id": "A2.D.Grunt.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I did what I had to do.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Will you join us?\""
+						}, {
+							"id": "A2.D.Grunt.R7A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Is your soldier ready?\""
+						}, {
+							"id": "A2.D.Grunt.R7B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I'm handing you to Cerberus.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Why so concerned?\""
+						}, {
+							"id": "A2.D.Grunt.R8A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Why should I trust you?\""
+						}, {
+							"id": "A2.D.Grunt.R8B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Looks like I hold power now.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Discussing bring the tank aboard the Normandy",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"He's hard to pass up.\" or \"Professional jealousy, Mordin?\""
+						}, {
+							"id": "A2.D.Grunt.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Is he worth the headache?\" or \"That's my call.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "A2.D.Grunt.R10",
+			"type": "Paragade",
+			"value": 0,
+			"paragadeValue": [5, 5],
+			"trigger": "(Completing the assignment.)"
+		}, {
+			"set": {
+				"context": "Debrief on the Normandy",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P11",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Relax, it's sealed.\""
+						}, {
+							"id": "A2.D.Grunt.R11",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Keep it to yourselves.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P12",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"So we'll be careful.\""
+						}, {
+							"id": "A2.D.Grunt.R12",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Replaceable.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Waking up the tank-bred krogan",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P13",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"He's too valuable to leave.\""
+						}, {
+							"id": "A2.D.Grunt.R13",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Do as I say, EDI.\""
+						}]
+					}
+				}, {
+					"id": "A2.D.Grunt.P14",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You'll get more than that.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.P15",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm_* Grunt",
+							"trigger": "\"Join my crew. We'll find it.\""
+						}, {
+							"id": "A2.D.Grunt.R15",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate_* Grunt",
+							"trigger": "\"My command is your reason.\""
+						}, {
+							"id": "A2.D.Grunt.P16",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Stand down or else.\""
+						}, {
+							"id": "A2.D.Grunt.R16",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I released you. You owe me.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "If you don't *_Charm_* or *_Intimidate_* Grunt",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.D.Grunt.R18B",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*Renegade Interrupt*",
+							"trigger": "Shoot Grunt."
+						}, {
+							"id": "A2.D.Grunt.P18",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You leave me no choice.\""
+						}, {
+							"id": "A2.D.Grunt.R18A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I was being generous.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}, {
+			"type": "Triggers",
+			"id": "Acquired: Grunt"
+		}, {
+			"type": "Triggers",
+			"id": "Horizon Warning 1"
+		}, {
+			"type": "Triggers",
+			"id": "Horizon Triggered"
+		}]
+	}, {
+		"id": "A2.D.Grunt.1",
+		"inMissionId": "A2.D.Grunt",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Wounded Mercenary",
+		"description": "After the first fight, you will run into a wounded mercenary who can provide some information about what is going on.",
+		"inMapId": "G.Att.Eag.Imi.Korlus",
+		"mapLocationPoint": {
+			"x": 521,
+			"y": 419,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Grunt.2",
+		"inMissionId": "A2.D.Grunt",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Tank-Grown Krogan",
+		"description": "Stay in cover while fighting the mercenaries at a distance. You will encounter a passive krogan who can tell you more about Okeer's work on Korlus.",
+		"inMapId": "G.Att.Eag.Imi.Korlus",
+		"mapLocationPoint": {
+			"x": 1223,
+			"y": 339,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Grunt.3",
+		"inMissionId": "A2.D.Grunt",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Research Base",
+		"description": "From here you will be fighting a mix of mercenaries and tank-bred krogan. Fight your way through the buildings to make your way to the lab.",
+		"inMapId": "G.Att.Eag.Imi.Korlus",
+		"mapLocationPoint": {
+			"x": 1888,
+			"y": 623,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Grunt.4",
+		"inMissionId": "A2.D.Grunt",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Okeer",
+		"description": "If you let [megametracker://person?id=O1.Rana] live in Game 1, she can be found in the research lab's antechamber and will tell you how she escaped Saren's base and what she is doing working for Okeer. In the next room is Okeer. He agrees to help you with the Collectors if you kill his patron, Jedore, first.",
+		"inMapId": "G.Att.Eag.Imi.Korlus",
+		"mapLocationPoint": {
+			"x": 1455,
+			"y": 1675,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Grunt.5",
+		"inMissionId": "A2.D.Grunt",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Jedore",
+		"description": "Defeat Jedore and her forces.",
+		"inMapId": "G.Att.Eag.Imi.Korlus",
+		"mapLocationPoint": {
+			"x": 1675,
+			"y": 1863,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.D.Grunt.6",
+		"inMissionId": "A2.D.Grunt",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Okeer's Son",
+		"description": "Return to Okeer. You will be too late to save him, but you can save his last, perfect, tank-bred krogan.",
+		"inMapId": "G.Att.Eag.Imi.Korlus",
+		"mapLocationPoint": {
+			"x": 1455,
+			"y": 1675,
+			"radius": 1
+		}
+
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------LOYALTY QUESTS-------------------------",
+		"id": "A2.L.Garrus",
+		"sortIndex": 305,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Garrus: Eye for an Eye",
+		"isLoyaltyMission": true,
+		"description": "Garrus lost his entire squad on Omega after they were betrayed by one of their own, Sidonis. He has found out that a criminal named Fade helped Sidonis disappear. Find Fade, locate Sidonis, and help Garrus find closure.",
+		"inMapId": "G.C2.ZakeraWardL26",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Garrus:_Eye_for_an_Eye"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Threatening the volus in the warehouse",
+				"options": [{
+					"id": "A2.L.Garrus.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": ""
+				}, {
+					"id": "A2.L.Garrus.R2A",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Shut up.\""
+				}, {
+					"id": "A2.L.Garrus.R2B",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I can't wait.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Confronting Harkin",
+				"options": [{
+					"id": "A2.L.Garrus.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Ouch.\""
+				}, {
+					"id": "A2.L.Garrus.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Be reasonable.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Garrus.P5",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*Paragon Interrupt*",
+							"trigger": ""
+						}, {
+							"set": {
+								"context": "(Without interrupt)",
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A2.L.Garrus.P6",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"That wasn’t necessary.\""
+								}, {
+									"id": "A2.L.Garrus.R3",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"Shut up.\" or \"Quit complaining.\""
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Garrus in the cab on the way to meet Sidonis",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Garrus.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You Okay?\""
+						}, {
+							"id": "A2.L.Garrus.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"He's not worth it.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Garrus.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I don't know.\" or \"You sure about this?\""
+						}, {
+							"id": "A2.L.Garrus.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You bet.\""
+						}]
+					}
+				}, {
+					"id": "A2.L.Garrus.P9",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Give me a chance.\""
+				}, {
+					"id": "A2.L.Garrus.P10",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Do you really believe that?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Sidonis",
+				"options": [{
+					"set": {
+						"options": [{
+							"id": "A2.L.Garrus.P11",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "(Warn Sidonis.)"
+						}, {
+							"id": "A2.L.Garrus.R11",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "(Move to the side.)"
+						}]
+					}
+				}, {
+					"id": "A2.L.Garrus.P12",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": ""
+				}, {
+					"id": "A2.L.Garrus.P13",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "(Keep talking.)"
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Garrus.P14",
+							"type": "Paragon",
+							"value": 15,
+							"trigger": "\"Don't do it, Garrus.\""
+						}, {
+							"id": "A2.L.Garrus.R14A",
+							"type": "Renegade",
+							"value": 15,
+							"trigger": "(Let Garrus take the shot.)"
+						}, {
+							"id": "A2.L.Garrus.R14B",
+							"type": "Renegade",
+							"value": 15,
+							"trigger": "\"I can't help you.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Parting words to Sidonis if he survives",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Garrus.P15",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You're lucky.\""
+				}, {
+					"id": "A2.L.Garrus.R15",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Leave.\""
+				}]
+			}
+		}, {
+			"context": "Speaking to Garrus after Sidonis is killed",
+			"id": "A2.L.Garrus.R16",
+			"type": "Renegade",
+			"value": 2,
+			"trigger": "\"You're done with this.\""
+		}, {
+			"set": {
+				"context": "Speaking to Garrus after Sidonis leaves alive",
+				"options": [{
+					"id": "A2.L.Garrus.P17",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It's for the best.\""
+				}, {
+					"id": "A2.L.Garrus.P18",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I understand.\""
+				}, {
+					"id": "A2.L.Garrus.P19",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Trust your heart.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Acquired: Garrus"
+		}, {
+			"type": "Triggers",
+			"id": "Secured Loyalty: Garrus"
+		}]
+	}, {
+		"id": "A2.L.Grunt",
+		"sortIndex": 306,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Grunt: Rite of Passage",
+		"isLoyaltyMission": true,
+		"description": "Grunt finds it difficult to control his rage. He needs to undergo the krogan Rite of Passage.",
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Grunt:_Rite_of_Passage"],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"conversationRewards": [],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Acquired: Grunt"
+		}, {
+			"type": "Triggers",
+			"id": "Secured Loyalty: Grunt"
+		}]
+	}, {
+		"id": "A2.L.Jack",
+		"sortIndex": 309,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Jack: Subject Zero",
+		"isLoyaltyMission": true,
+		"description": "Jack was raised in a Cerberus facility, tortured by the Cerberus staff and the other children there as well. It was long since abandoned and she wants to go back and blow it up.",
+		"inMapId": "G.Att.Nub.Dak.Pragia",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jack:_Subject_Zero"],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Acquired: Jack"
+		}]
+	}, {
+		"id": "A2.L.Jacob",
+		"sortIndex": 304,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Jacob: The Gift of Greatness",
+		"isLoyaltyMission": true,
+		"description": "After going missing ten years ago with Jacob's father onboard, the Hugo Gernsback sent out a distress call last week from the planet Aeia.",
+		"experience": 1000,
+		"reward": "15,000 Credits",
+		"inMapId": "G.Ter.Ros.Alp.2175Aeia",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jacob:_The_Gift_of_Greatness"],
+		"decisionIds": ["D2.JacobLoyalty", "D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Acquiring the mission",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Jacob.P1A",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You left a note with Chambers.\""
+				}, {
+					"id": "A2.L.Jacob.P1B",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Something on your mind?\""
+				}, {
+					"id": "A2.L.Jacob.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I decide what's personal.\""
+				}]
+			}
+		}, {
+			"id": "A2.L.Jacob.R2",
+			"type": "Renegade",
+			"value": 2,
+			"trigger": "\"Get to the point.\""
+		}, {
+			"id": "A2.L.Jacob.P3",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"You don't want to find him?\""
+		}, {
+			"set": {
+				"context": "Encountering the first survivor",
+				"options": [{
+					"id": "A2.L.Jacob.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Calm down!\""
+				}, {
+					"id": "A2.L.Jacob.P5",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Save the woman from the hunters."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting the doctor",
+				"options": [{
+					"id": "A2.L.Jacob.P6",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"We're waiting\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Jacob.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Sounds like he cracked.\""
+						}, {
+							"id": "A2.L.Jacob.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Harsh, but defendable.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Jacob.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Does this make sense to you?\""
+						}, {
+							"id": "A2.L.Jacob.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"They're fighting back now.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Ronald Taylor",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Jacob.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm Shepard. You know Jacob.\""
+						}, {
+							"id": "A2.L.Jacob.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Nevermind. Explain Yourself.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Jacob.P10",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Let's hear the truth.\""
+						}, {
+							"id": "A2.L.Jacob.R10",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Surprised?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Jacob.P11",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"A decade, Taylor. Why?\""
+						}, {
+							"id": "A2.L.Jacob.R11",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Touching, but I don't buy it.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Jacob.P12A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We can undo the damage.\""
+						}, {
+							"id": "A2.L.Jacob.P12B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You'll answer for this.\""
+						}, {
+							"id": "A2.L.Jacob.R12",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Tempting, but taken too far.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Deciding what to do with Captain Taylor",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Jacob.P13",
+					"type": "Paragon",
+					"value": 15,
+					"trigger": "\"He can't escape the law now.\""
+				}, {
+					"id": "A2.L.Jacob.PR13",
+					"type": "Paragade",
+					"value": 0,
+					"paragadeValue": [5, 5],
+					"trigger": "\"Leave him in the hell he made.\""
+				}, {
+					"id": "A2.L.Jacob.R13",
+					"type": "Renegade",
+					"value": 15,
+					"trigger": "\"I'd shoot him.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Debrief on the Normandy",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Jacob.P14",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Good job.\""
+						}, {
+							"id": "A2.L.Jacob.R14",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We'd better be.\""
+						}]
+					}
+				}, {
+					"id": "A2.L.Jacob.R15",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Still toying with us?\""
+				}, {
+					"id": "A2.L.Jacob.R16",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"To help or mess with him?\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Jacob.P17",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You're welcome.\""
+						}, {
+							"id": "A2.L.Jacob.R17",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"One time only.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "Triggers",
+			"id": "Secured Loyalty: Jacob"
+		}]
+	}, {
+		"id": "A2.L.Jac.1",
+		"inMissionId": "A2.L.Jacob",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Beacon",
+		"description": "Locate the ship's beacon. Explore the wreckage for ship's logs: [Officer's Log|megametracker://maplocation?id=G.Ter.Ros.Alp.2175Aeia&title=Officer%27s%20Log&location=343x1455], [Crew Log|megametracker://maplocation?id=G.Ter.Ros.Alp.2175Aeia&title=Crew%20Log&location=227x1275], [Crew Log|megametracker://maplocation?id=G.Ter.Ros.Alp.2175Aeia&title=Crew%20Log&location=267x1187], [Doctor's Log|megametracker://maplocation?id=G.Ter.Ros.Alp.2175Aeia&title=Doctor%27s%20Log&location=327x1247].",
+		"inMapId": "G.Ter.Ros.Alp.Aei.2",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Jac.2",
+		"inMissionId": "A2.L.Jacob",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Survivor",
+		"description": "Meet the first survivor. You will be attacked by hunters immediately after.",
+		"inMapId": "G.Ter.Ros.Alp.2175Aeia",
+		"mapLocationPoint": {
+			"x": 459,
+			"y": 1171,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Jac.3",
+		"inMissionId": "A2.L.Jacob",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Statue",
+		"description": "You will find an encampment with female survivors and a strange statue. As you move to the back of the camp, mechs will attack. Afterwards, you can talk the [Doctor|megametracker://maplocation?id=G.Ter.Ros.Alp.2175Aeia&title=Doctor&location=923x783] and learn more about what has happened in the past decade.",
+		"inMapId": "G.Ter.Ros.Alp.Aei.3",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Jac.4",
+		"inMissionId": "A2.L.Jacob",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Inactive Mech",
+		"description": "Bypass the mech to blow up the barricade and continue down the path.",
+		"inMapId": "G.Ter.Ros.Alp.2175Aeia",
+		"mapLocationPoint": {
+			"x": 939,
+			"y": 703,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Jac.5",
+		"inMissionId": "A2.L.Jacob",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Dead Bodies",
+		"description": "When you come upon the dead bodies, Ronald Taylor will come over the loudspeaker, saying the crew mutinied. You will be attacked by more mechs on your way up the path.",
+		"inMapId": "G.Ter.Ros.Alp.2175Aeia",
+		"mapLocationPoint": {
+			"x": 1047,
+			"y": 675,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Jac.6",
+		"inMissionId": "A2.L.Jacob",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Large Encampment",
+		"description": "There is a larger encampment surrounded by large walls. Guards and mechs will attack, including an YMIR Mech.",
+		"inMapId": "G.Ter.Ros.Alp.2175Aeia",
+		"mapLocationPoint": {
+			"x": 1559,
+			"y": 215,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Jac.7",
+		"inMissionId": "A2.L.Jacob",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Ronald Taylor",
+		"description": "Head over to the beach where Ronald Taylor is waiting.",
+		"inMapId": "G.Ter.Ros.Alp.2175Aeia",
+		"mapLocationPoint": {
+			"x": 1879,
+			"y": 431,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Legion",
+		"sortIndex": 310,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Legion: A House Divided",
+		"isLoyaltyMission": true,
+		"description": "The geth are divided into two camps, one committed to co-existing with organic life and the other to destroying it. The latter group, the Heretics, has found a Reaper virus and modified it to force all geth to join their side. Legion asks you to board Heretic Station with him and destroy the virus.",
+		"inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Legion:_A_House_Divided"],
+        "decisionIds": ["D2.Heretics"],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Acquired: Legion"
+		}, {
+			"type": "Triggers",
+			"id": "Secured Loyalty: Legion"
+		}]
+	}, {
+		"id": "A2.L.Miranda",
+		"sortIndex": 302,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Miranda: The Prodigal",
+		"isLoyaltyMission": true,
+		"description": "Miranda reveals that she has a younger sister, [megametracker://person?id=O2.Oriana], a genetic clone created by her wealthy and ruthless father. Miranda has been keeping Oriana's location secret, but her father has finally located her. You need to reach the girl before Miranda's father does.",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Miranda:_The_Prodigal"],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"relatedMissionIds": ["A2.I.LostLocketFound"],
+		"conversationRewards": [{
+			"context": "Acquiring the mission",
+			"id": "A2.L.Miranda.P1",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"Of course.\""
+		}, {
+			"set": {
+				"context": "Speaking to Lanteia",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Miranda.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"What should we do?\""
+				}, {
+					"id": "A2.L.Miranda.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"We're altering the plan?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the merc leader",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Miranda.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm with Miranda.\""
+						}, {
+							"id": "A2.L.Miranda.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Get lost. Now.\""
+						}]
+					}
+				}, {
+					"id": "A2.L.Miranda.R4",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": ""
+				}]
+			}
+		}, {
+			"context": "Speaking to Miranda on the elevator (first time)",
+			"id": "A2.L.Miranda.P5",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"We need to get to your sister.\""
+		}, {
+			"set": {
+				"context": "Speaking to Miranda on the elevator (second time)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Miranda.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Maybe you're right.\""
+						}, {
+							"id": "A2.L.Miranda.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Niket betrayed you.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Miranda.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"What happens now?\""
+						}, {
+							"id": "A2.L.Miranda.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Kill him.\""
+						}]
+					}
+				}, {
+					"id": "A2.L.Miranda.P8",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We can solve this peacefully.\""
+				}, {
+					"id": "A2.L.Miranda.P9",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": ""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Miranda on the elevator (third time)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Miranda.P10",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You couldn't have.\""
+						}, {
+							"id": "A2.L.Miranda.R10",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Live and learn.\""
+						}]
+					}
+				}, {
+					"context": "If Miranda killed Niket",
+					"id": "A2.L.Miranda.P11",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You would've regretted it.\""
+				}, {
+					"context": "If Miranda did not kill Niket",
+					"id": "A2.L.Miranda.P12",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Don't blame yourself.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Watching Oriana leave",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Miranda.P13",
+					"type": "Paragon",
+					"value": 15,
+					"trigger": "\"You should speak with her.\""
+				}, {
+					"id": "A2.L.Miranda.R13",
+					"type": "Renegade",
+					"value": 15,
+					"trigger": "\"If you say so.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Debrief on the Normandy",
+				"options": [{
+					"id": "A2.L.Miranda.P14",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"What about Oriana?\""
+				}, {
+					"id": "A2.L.Miranda.P15",
+					"type": "Paragon",
+					"value": 2,
+					"context": "(Male Shepard)",
+					"trigger": "\"It's nice to see you smile\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}]
+	}, {
+		"id": "A2.L.Mir.1",
+		"inMissionId": "A2.L.Miranda",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to Lanteia",
+		"description": "Talk to [megametracker://person?id=O2.Lanteia] at the Eternity Bar on Illium to start the assignment. You will need Miranda on your squad.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 1383,
+			"y": 443,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Mir.2",
+		"inMissionId": "A2.L.Miranda",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Eclipse Engineer",
+		"description": "A group of Eclipse mercenaries attack as you land the cab in the Transfer Station. The Eclipse engineer leading them tells you his captain, [megametracker://person?id=E2.Enyala], is close to capturing Oriana, and his snipers are moving into place to take down your squad. After you deal with him, there will be a fight with the remaining forces.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.4Transfer",
+		"mapLocationPoint": {
+			"x": 161,
+			"y": 219,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Mir.3",
+		"inMissionId": "A2.L.Miranda",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Niket and Enyala",
+		"description": "Confront [megametracker://person?id=O2.Niket]. Whatever the outcome, a fight will ensue with the Eclipse captain, Enyala, and her forces.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.4Transfer",
+		"mapLocationPoint": {
+			"x": 1913,
+			"y": 1779,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Mir.4",
+		"inMissionId": "A2.L.Miranda",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "To Oriana",
+		"description": "End the mission by seeing Oriana and her family off to their new home, still safe from Miranda's father.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.4Transfer",
+		"mapLocationPoint": {
+			"x": 2007,
+			"y": 2027,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Mordin",
+		"sortIndex": 307,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Mordin: Old Blood",
+		"isLoyaltyMission": true,
+		"description": "Mordin needs your help rescuing his former protege, Maelon, who has been kidnapped by Blood Pack mercenaries and is being held on Tuchanka. \n\nBefore heading out to look for Maelon, you may want to acquire [megametracker://mission?id=A2.T.CombustionManifold] and [megametracker://mission?id=A2.T.MissingScout], both of which are accomplished during this assignment.",
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mordin:_Old_Blood"],
+		"relatedMissionIds": ["A2.T.CombustionManifold", "A2.T.MissingScout"],
+		"decisionIds": ["D2.Maelon", "D2.MaelonsData"],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "Acquiring the mission",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Mordin.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Remind me.\" and \"That's impressive work.\" and \"That's horrific!\" and \"I don't buy that.\""
+				}, {
+					"id": "A2.L.Mordin.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Remind me.\" and \"That's impressive work.\" and \"Damn right it did.\""
+				}]
+			}
+		}, {
+			"id": "A2.L.Mordin.P2",
+			"type": "Paragon",
+			"value": 2,
+			"context": "Examining the dead human just inside the Weyrloc facility",
+			"trigger": "\"I'm stopping this.\""
+		}, {
+			"set": {
+				"context": "Talking to Weyrloc Clanspeaker",
+				"options": [{
+					"id": "A2.L.Mordin.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Look what I've done so far.\""
+				}, {
+					"id": "A2.L.Mordin.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"No one else has to die.\""
+				}, {
+					"id": "A2.L.Mordin.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Why not try diplomacy?\""
+				}, {
+					"id": "A2.L.Mordin.R6",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Blow up pipe, incinerating Klanspeaker and nearby krogan."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Examining the dead krogan female",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Mordin.P7",
+							"type": "Paragon",
+							"value": 0,
+							"trigger": "\"That sounded religious.\" and \"You had a crisis of faith.\" and \"How do you deal with that?\""
+						}, {
+							"id": "A2.L.Mordin.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We killed dozens already.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "After selecting Paragon above",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Mordin.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Like undo the genophage.\""
+						}, {
+							"id": "A2.L.Mordin.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Great. Talk about the corpse.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "After selecting Renegade on either above",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Mordin.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"The genophage was wrong.\""
+						}, {
+							"id": "A2.L.Mordin.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"The genophage was right.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "After selecting Paragon on either above",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Mordin.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That's garbage.\""
+						}, {
+							"id": "A2.L.Mordin.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I agree with you.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Confronting Maelon",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Mordin.P10",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"He didn't need rescuing.\""
+						}, {
+							"id": "A2.L.Mordin.R10",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Weyrloc is controlling him.\" and \"He betrayed you.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Mordin.P11",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"What now, Mordin?\""
+						}, {
+							"id": "A2.L.Mordin.R11",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"The project is over.\""
+						}]
+					}
+				}, {
+					"id": "A2.L.Mordin.P12",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Stop Mordin from shooting Maelon."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After Maelon lives or dies",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Mordin.P13",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Are you okay?\""
+						}, {
+							"id": "A2.L.Mordin.R13",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Are we done?\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "After selecting Paragon above",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Mordin.P14",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You were hurting too.\" or \"Remember that.\""
+						}, {
+							"id": "A2.L.Mordin.R14B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"It was his fault.\" or \"Found a spot of racism?\""
+						}, {
+							"id": "A2.L.Mordin.R14",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Are we done?\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Considering the research data",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Mordin.P15",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"His research was sick.\""
+						}, {
+							"id": "A2.L.Mordin.R15",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Might be worth keeping.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Final decision on the research data (Game 3 consequences)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Mordin.P15",
+							"type": "Paragon",
+							"value": 15,
+							"trigger": "\"You should help the krogan.\" or \"Hold onto the data.\""
+						}, {
+							"id": "A2.L.Mordin.R15",
+							"type": "Renegade",
+							"value": 15,
+							"trigger": "\"Genophage was the right call.\" or \"Destroy the data for now.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Acquired: Mordin"
+		}, {
+			"type": "Triggers",
+			"id": "Secured Loyalty: Mordin"
+		}]
+	}, {
+		"id": "A2.L.Mor.1",
+		"inMissionId": "A2.L.Mordin",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Take Transport",
+		"description": "Head over to the mechanic and use the transport there to travel out to the Weyrloc facility.",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Mechanic",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Mor.2",
+		"inMissionId": "A2.L.Mordin",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Hospital Approach",
+		"description": "You will have to fight Blood Pack mercenaries through the Tuchanka ruins in order to reach the Weyrloc facility. You can also find the Combustion Manifold, if you have that assignment.",
+		"inMapId": "G.InC.Kro.Ara.Tuc.2.Approach",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Mor.3",
+		"inMissionId": "A2.L.Mordin",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Hospital Interior",
+		"description": "Inside the facility, inbetween fights with Clan Weyrloc, you will uncover clues to Maelon's true purpose here. You can also find the Missing Scout, if you have that assignment. In the final battle, you will face [Chief Weyrloc Guld|megametracker://person?id=E2.Guld].",
+		"inMapId": "G.InC.Kro.Ara.Tuc.2.Hospital",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Mor.4",
+		"inMissionId": "A2.L.Mordin",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Maelon",
+		"description": "There is no battle waiting inside the laboratory, but in the final bitter confrontation between Mordin and Maelon, you will again face one of the most crucial and ethically confounding plot lines in the game, the krogan Genophage, and choose to save or destroy Maelon and/or his data.",
+		"inMapId": "G.InC.Kro.Ara.Tuc.2Weyrlock",
+		"mapLocationPoint": {
+			"x": 1000,
+			"y": 1715,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Samara",
+		"sortIndex": 303,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Samara: Ardat-Yakshi",
+		"isLoyaltyMission": true,
+		"description": "As Samara revealed when first meeting you, she is hunting an Ardat-Yakshi, a dangerous Asari serial killer. She feels personally responsible because this Ardat-Yakshi is her daughter, Morinth. Track down Morinth on Omega so Samara can kill her.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Samara:_The_Ardat-Yakshi"],
+        "decisionIds": ["D2.SamaraMorinth"],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Acquired: Samara"
+		}, {
+			"type": "Triggers",
+			"id": "Secured Loyalty: Samara"
+		}]
+	}, {
+		"id": "A2.L.Tali",
+		"sortIndex": 308,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Tali: Treason",
+		"isLoyaltyMission": true,
+		"description": "Tali is summoned before the Migrant Fleet on mysterious charges of treason. During her trial, it is revealed that her father was experimenting on live geth. The court demands that she board his ship the Alarei and locate evidence of what happened and that she was not involved.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tali:_Treason"],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Acquired: Tali"
+		}, {
+			"type": "Triggers",
+			"id": "Secured Loyalty: Tali"
+		}]
+	}, {
+		"id": "A2.L.Thane",
+		"sortIndex": 304,
+		"gameVersion": "2",
+		"missionType": "Loyalty",
+		"name": "Thane: Sins of the Father",
+		"isLoyaltyMission": true,
+		"description": "Thane abandoned his son Kolyat as a boy when pursuing the people who murdered Kolyat's mother Irikah. Kolyat has decided to follow in his father's footsteps and become an assassin. Thane wants to find him on the Citadel and stop him.",
+		"inMapId": "G.C2.ZakeraWardL28",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Thane:_Sins_of_the_Father"],
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "BlockedUntil",
+			"id": "Acquired: Thane"
+		}, {
+			"type": "Triggers",
+			"id": "Secured Loyalty: Thane"
+		}]
+
+
+
+	}, {
+		"x-comment-x": "-----------------------UPGRADES-------------------------",
+		"id": "A2.UC.1NormandyUpgrades",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Upgrade",
+		"name": "Normandy",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Normandy_SR-2_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Normandy_SR-2_Upgrades"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+
+	}, {
+		"id": "A2.UC.2ArmorUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Upgrade",
+		"name": "Armor",
+		"description": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Upgrade_Guide"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map 2"
+		}]
+	}, {
+		"id": "A2.UC.ArmorUpgrades.DP",
+		"inMissionId": "A2.UC.2ArmorUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Shield Upgrades",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Shield_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Shield_Upgrades"
+		]
+	}, {
+		"id": "A2.UC.ArmorUpgrades.BD",
+		"inMissionId": "A2.UC.2ArmorUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Bio-Amp Upgrades",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Bio-Amp_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Bio-Amp_Upgrades"
+		]
+	}, {
+		"id": "A2.UC.ArmorUpgrades.TD",
+		"inMissionId": "A2.UC.2ArmorUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Omni-Tool Upgrades",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Omni-Tool_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Omni-Tool_Upgrades"
+		]
+	}, {
+		"id": "A2.UC.ArmorUpgrades.MG",
+		"inMissionId": "A2.UC.2ArmorUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Medical Upgrades",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Medical_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Medical_Upgrades"
+		]
+	}, {
+		"id": "A2.UC.ArmorUpgrades.Cyb",
+		"inMissionId": "A2.UC.2ArmorUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Cybernetic Upgrades",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Cybernetic_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Cybernetic_Upgrades"
+		]
+
+	}, {
+		"id": "A2.UC.3WeaponUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Upgrade",
+		"name": "Weapons",
+		"description": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Upgrade_Guide"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map 2"
+		}]
+	}, {
+		"id": "A2.UC.WeaponUpgrades.AR",
+		"inMissionId": "A2.UC.3WeaponUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Assault Rifle Upgrades",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Assault_Rifle_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Assault_Rifles"
+		]
+	}, {
+		"id": "A2.UC.WeaponUpgrades.HP",
+		"inMissionId": "A2.UC.3WeaponUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Heavy Pistol Upgrades",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Heavy_Pistol_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Heavy_Pistols"
+		]
+	}, {
+		"id": "A2.UC.WeaponUpgrades.SG",
+		"inMissionId": "A2.UC.3WeaponUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Shotgun Damage Upgrades",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Shotgun_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Shotguns"
+		]
+	}, {
+		"id": "A2.UC.WeaponUpgrades.SR",
+		"inMissionId": "A2.UC.3WeaponUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Sniper Rifle Upgrades",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Sniper_Rifle_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Sniper_Rifles"
+		]
+	}, {
+		"id": "A2.UC.WeaponUpgrades.SMG",
+		"inMissionId": "A2.UC.3WeaponUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Submachine Gun Upgrades",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#SMG_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Submachine_Guns"
+		]
+	}, {
+		"id": "A2.UC.WeaponUpgrades.HW",
+		"inMissionId": "A2.UC.3WeaponUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Heavy Weapon Upgrades",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Heavy_Weapon_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Heavy_Weapons"
+		]
+
+	}, {
+		"id": "A2.UC.4SquadUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Upgrade",
+		"name": "Squad",
+		"description": "",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Upgrade_Guide#Squad_Member_Upgrades",
+			"https://masseffect.wikia.com/wiki/Research#Squad_Member_Upgrades"
+		],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map 2"
+		}]
+	}, {
+		"id": "A2.UC.SquadUpgrades.KV",
+		"inMissionId": "A2.UC.4SquadUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Krogan Vitality Upgrades",
+		"description": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Upgrade_Guide"]
+	}, {
+		"id": "A2.UC.SquadUpgrades.GSS",
+		"inMissionId": "A2.UC.4SquadUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Set",
+		"pageTitle": "Upgrade",
+		"name": "Geth Shield Strength Upgrades",
+		"description": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Upgrade_Guide"]
+
+	}, {
+		"id": "A2.UC.5MiscUpgrades",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Upgrade",
+		"name": "Special",
+		"description": "",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map 2"
+		}]
+
+
+
+	}, {
+		"x-comment-x": "-----------------------COLLECTIONS-------------------------",
+		"id": "A2.UC.Pets",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Collection",
+		"name": "Pets",
+		"description": "",
+		"sideEffects": "Keeping the Prejek Paddlefish alive throughout Game 3 and New Game+ results in an Intel Bonus from Liara after the Mars Mission (10% Weapon or Power Damage). It also becomes a War Asset.",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Fish", "https://masseffect.wikia.com/wiki/Space_Hamster"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.UC.Ships",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Collection",
+		"name": "Model Ships",
+		"description": "The Normandy SR2 is already included in your collection.",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Model_Ships"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.UC.Souvenirs",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Collection",
+		"name": "Souvenirs",
+		"description": "",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.UC.StarCharts",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Collection",
+		"name": "Star Charts",
+		"description": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Baria_Frontiers_(shop)"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+
+
+	}]
+}

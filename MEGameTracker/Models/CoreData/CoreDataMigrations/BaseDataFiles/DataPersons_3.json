@@ -1,0 +1,352 @@
+{
+	"persons": [{
+		"x-comment-x": "-----------------------SQUAD-------------------------",
+		"id": "S3.EDI",
+		"name": "EDI",
+		"description": "Created by Cerberus secretly, since AIs are absolutely forbidden by the Council, EDI was installed aboard the new Normandy SR-2 with strict safeguards.\n\nEDI assumes [Joker's|megametracker://person?id=P1.Joker] role in the first game of providing information to Shepard when ashore, and directing Shepard when exploring the galaxy.\n\n EDI acquires a physical platform (a body) from [Dr. Eva Core's|megametracker://person?id=E3.Eva] remains after the events of [megametracker://mission?id=M3.0.Mars]. Joker is, not surprisingly, delighted by this and there is an option for the two to begin a romantic relationship.",
+		"personType": "Squad",
+		"race": "Synthetic",
+		"profession": null,
+		"organization": "Cerberus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3EDI.png",
+		"voiceActor": "Tricia Helfer",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/EDI"],
+		"decisionIds": ["D3.EdiJoker"],
+		"gameVersionData": {
+			"1": {
+				"personType": "Associate"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "S3.Javik",
+		"name": "Javik",
+		"description": "The last survivor of the prothean race, Javik was recovered from an ancient pod unearthed on Eden Prime. He is ruthless and condescending to the current species whom he considers vastly inferior to the protheans. \n\n*_Javik is only available as part of the From Ashes DLC pack._*",
+		"personType": "Squad",
+		"race": "Prothean",
+		"profession": "",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Javik.png",
+		"voiceActor": "Ike Amadi",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Javik"],
+		"relatedMissionIds": ["DLC3.FromAshes1"],
+		"decisionIds": ["D3.LoveJavik"],
+		"gameVersionData": {
+			"3": {
+                "isFemaleLoveInterest": 1,
+				"loveInterestDecisionId": "D3.LoveJavik"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "S3.Vega",
+		"name": "James Vega",
+		"description": "Vega was assigned to escort Shepard to the hearing at the beginning of Game 3. After the Reapers attack, Admiral Anderson sends an unwilling Vega with Shepard off of Earth.",
+		"personType": "Squad",
+		"race": "Human",
+		"profession": "Lieutenant Marine",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Vega.png",
+		"voiceActor": "Freddie Prinze Jr.",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/James_Vega"],
+		"sideEffects": ["Vega's backstory is told in the comics *Mass Effect: Paragon Lost* and *Mass Effect: Conviction*"],
+		"decisionIds": ["D3.LoveVega"],
+		"gameVersionData": {
+			"3": {
+                "isFemaleLoveInterest": 1,
+				"loveInterestDecisionId": "D3.LoveVega"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "-----------------------ENEMIES-------------------------",
+		"id": "E3.Brooks",
+		"name": "Maya Brooks",
+		"description": "Once a Cerberus operative, Maya (also known as Rasa) left when she was repeatedly ignored for other operatives like [megametracker://person?id=S2.Miranda] and [megametracker://person?id=E3.KaiLeng] and she found her ideals diverging from the Illusive Man. before leaving, she smuggles out a clone of Shepard created by Cerberus, with whom she allies in a plot to replace the real Shepard.",
+		"personType": "Enemy",
+		"race": "Human",
+		"profession": "Staff Analyst",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Brooks.png",
+		"voiceActor": "Siobhan Hewlett",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Maya_Brooks"],
+		"relatedMissionIds": ["DLC3.Citadel"],
+		"decisionIds": ["D3.Brooks"],
+		"sideEffects": [
+            "Brooks says she named her hacking program after her cat, Mr. Biscuits, which is an awesome cat name (although myself, I named my cat Kasumi).",
+            "Brooks' backstory is told in the comic *Mass Effect: Foundation*"
+        ],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "E3.Eva",
+		"name": "Eva Coré",
+		"description": "Masquerading as a Systems Alliance researcher on the prothean team on Mars, Dr Coré is actually a Cerberus mole, and in addition, not even human. She was created after EDI's defection as a replacement, and her AI was coded to be completely loyal to Cerberus, rather than an independent intelligence.",
+		"personType": "Enemy",
+		"race": "Synthetic",
+		"profession": "Doctor",
+		"organization": "Cerberus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Eva.png",
+		"voiceActor": "Laura Bailey",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Eva_Cor%C3%A9_(Mass_Effect_3)"],
+		"relatedMissionIds": ["M3.0.Mars"],
+		"sideEffects": ["A character named Eva Coré appears in the comic *Mass Effect: Evolution*, and is likely the Illusive Man's source for the name, despite it sounding like an EDI-successor computer reference."],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "E3.KaiLeng",
+		"name": "Kai Leng",
+		"description": "Formerly N7 Systems Alliance, Kai Leng was recruited to Cerberus and is now the Illusive Man's top operative and a constant thorn in Shepard's side. Leng constantly taunts Shepard during their battles and proves a frustrating target.",
+		"personType": "Enemy",
+		"race": "Human",
+		"profession": "Assassin",
+		"organization": "Cerberus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3KaiLeng.png",
+		"voiceActor": "Josh Shibata",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kai_Leng"],
+		"relatedMissionIds": ["M3.2.Citadel3", "M3.2.Thessia", "M3.2.Horizon", "M3.3.CerberusHQ"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "E3.Lawson",
+		"name": "Henry Lawson",
+		"description": "The father of [megametracker://person?id=S2.Miranda] and [megametracker://person?id=O2.Oriana], Lawson is a powerful and wealthy businessman operating in cutting-edge medical research. He apparently had old ties to Cerberus, which were broken when the organization sheltered Miranda after she ran away. When Miranda defects from Cerberus, however, he reestablishes contact and sets up a facility for the Illusive Man on Horizon, researching Reaper Indoctrination and using refugees as unwilling test subjects.",
+		"personType": "Enemy",
+		"race": "Human",
+		"profession": "Doctor",
+		"organization": "Cerberus",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Lawson.png",
+		"voiceActor": "Alan Dale",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Henry_Lawson"],
+		"relatedMissionIds": ["M3.2.Horizon"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	}, {
+		"id": "E3.Petrovsky",
+		"name": "Oleg Petrovsky",
+		"description": "Formerly Systems Alliance, Petrovsky left to become one of Cerberus' most repected operatives. He is intelligent (as both a scholar and stategist), ethical, and reasonable. He took Omega from Aria with minimal bloodshed. When Shepard defeats him, he offers to assist the Systems Alliance with information about Cerberus.",
+		"personType": "Enemy",
+		"race": "Human",
+		"profession": "General",
+		"organization": "The Illusive Man",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Petrovsky.png",
+		"voiceActor": "Brian George",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Oleg_Petrovsky"],
+		"relatedMissionIds": ["DLC3.Omega3"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"x-comment-x": "-----------------------ASSOCIATES-------------------------",
+		"id": "P3.Allers",
+		"name": "Diana Allers",
+		"description": "Unlike most of Shepard's other encounters with news reporters, Allers is genuinely motivated to cast the Commander in the best light possible. She takes her role seriously, often pondering how to reveal news without losing allies or endangering lives. She is a non-exclusive love interest option (if Shepard is not already involved with an exclusive love interest). \n\n*_Don't kick Allers off the Normandy unless you really mean it, because she does leave and you can't get her back._*",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "War Correspondent",
+		"organization": "ANN",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Allers.png",
+		"voiceActor": "Jessica Chobot",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Diana_Allers"],
+		"sideEffects": ["If Shepard refuses Allers' request to travel with the Normandy, she will choose the SSV Shasta instead. She then dies with the rest of the crew when the ship is destroyed."],
+		"decisionIds": ["D3.LoveAllers"],
+		"gameVersionData": {
+			"3": {
+                "isMaleLoveInterest": 1,
+                "isFemaleLoveInterest": 1,
+				"loveInterestDecisionId": "D3.LoveAllers"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "P3.Cortez",
+		"name": "Steve Cortez",
+		"description": "Cortez pilots the Kodiak shuttle on the Normandy. He lost his husband to a Reaper attack and can be heard playing his last message, over and over.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Lieutenant Pilot",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Cortez.png",
+		"voiceActor": "Matthew Del Negro",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Steve_Cortez"],
+		"decisionIds": ["D3.LoveSteve"],
+        "sideEffects": [
+            "If Shepard does not speak to Cortez and help him deal with his grief, he dies during [megametracker://mission?id=M3.3.Earth], when his shuttle is shot and crashes: [YouTube|https://www.youtube.com/watch?v=7k2U9KgnOTs]."
+        ],
+		"gameVersionData": {
+			"3": {
+                "isMaleLoveInterest": 1,
+				"loveInterestDecisionId": "D3.LoveSteve"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "P3.Dalatrass",
+		"name": "Dalatrass Linros",
+		"description": "A ruthless and punitive leader with deeply-held racial hatred for the krogan, the Dalatrass will withdraw salarian support from the war effort if Shepard cures the Genophage.",
+		"personType": "Other",
+		"race": "Salarian",
+		"profession": "Dalatrass",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Dalatrass.png",
+		"voiceActor": "Grey DeLisle",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dalatrass_Linron"],
+		"relatedMissionIds": ["M3.1.SurKesh", "M3.1.Tuchanka"],
+		"sideEffects": ["Linron is the name of the Dalatrass' salarian bloodline, so we never learn her birth name."],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "P3.Eve",
+		"name": "\"Eve\" Urdnot Bakara",
+		"description": "Having surrendered her birth name when she became a shaman, Eve is so named by Mordin after she is rescued from Sur'Kesh. She is the only survivor of [Maelon's|megametracker://person?id=O2.Maelon] experiments. At the end of [megametracker://mission?id=M3.1.Tuchanka], she finally reveals her birth name (Bakara) to Shepard.\n\n If Maelon's data was not kept in Game 2, Eve dies from complications when creating the cure for the Genophage. Eve may also die if Shepard fails to disarm the turian bomb in [megametracker://mission?id=MA3.Bomb]. If she dies, the krogan's score as a war asset is reduced.",
+		"personType": "Associate",
+		"race": "Krogan",
+		"profession": "Shaman",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Eve.png",
+		"voiceActor": "Lani Minella",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Eve"],
+		"relatedMissionIds": ["M3.1.Tuchanka", "A3.Bomb"],
+		"decisionIds": ["D2.MaelonsData", "D3.Eve"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "P3.Leviathan",
+		"name": "Leviathan",
+		"description": "The last of an ancient aquatic race with knowledge of Indoctrination, Leviathan is hiding from the Reapers and reacts violently to all of Shepard's attempts to locate it. When finally encountered, it reveals that its species created the Reapers and eventually agrees to assist in the war effort.\n\n*_Leviathan is only available as part of the Leviathan DLC pack._*",
+		"personType": "Associate",
+		"race": "Leviathan",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Leviathan.png",
+		"voiceActor": "Anthony Skordi",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Leviathan"],
+        "relatedMissionIds": ["DLC3.Leviathan"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "P3.Nyreen",
+		"name": "Nyreen Kandros",
+		"description": "Nyreen left the biotic-wary turian army after her powers emerged. She became a mercenary and found her way to Omega where Aria mentored her and the two were briefly involved romantically. When Omega was taken by Cerberus, she remained behind and took over the Talons gang, leading the resistance efforts. She is very protective of the people of Omega, and although she is an ally (and at times, squad member), she resists Aria when her vengeful plans put Omega's inhabitants at risk.",
+		"personType": "Associate",
+		"race": "Turian",
+		"profession": "Mercenary",
+		"organization": "Talons",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Nyreen.png",
+		"voiceActor": "Sumalee Montano",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Nyreen_Kandros"],
+		"relatedMissionIds": ["DLC3.Omega3"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "P3.Traynor",
+		"name": "Samantha Traynor",
+		"description": "Filling roughly the same role as [megametracker://person?id=P2.Chambers] did in Game 2, Traynor notifies Shepard when he has messages or crew he should speak with. Also, in one of the most entertaining scenes of the game, she ends up saving the Normandy with her toothbrush.",
+		"personType": "Associate",
+		"race": "Human",
+		"profession": "Comm Specialist",
+		"organization": "Systems Alliance",
+		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Traynor.png",
+		"voiceActor": "Alix Wilton Regan",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Samantha_Traynor"],
+		"relatedMissionIds": ["DLC3.Citadel"],
+		"sideEffects": [
+			"If Shepard romances Traynor, there is a conversationg where she says, sweet talk all she wants, but \"I still won't feed your fish\", a nod to Kelly Chambers in Game 2",
+			"If Shepard romances Traynor, during the Citadel DLC party, Joker suggests Traynor check to see if Shepard's back glows red during sex, a reference to Battlestar Galactica."
+		],
+		"decisionIds": ["D3.LoveTraynor"],
+		"gameVersionData": {
+			"3": {
+                "isFemaleLoveInterest": 1,
+				"loveInterestDecisionId": "D3.LoveTraynor"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}, {
+		"id": "P3.VictusA",
+		"name": "Adrien Victus",
+		"description": "After the Reaper attack on Palaven, Victus is left the senior turian official and, despite his loathing of poiltics, he is named Primarch. Victus agrees to send the turian forces to defend Earth if Shepard can convince the krogan to defend Palaven. In a later complication, he sent [his son's|megametracker://person?id=O3.VictusT] platoon on a particularly sensitive assignment to Tuchanka, and ends up having to ask Shepard to retrieve him when the platoon goes missing.",
+		"personType": "Associate",
+		"race": "Turian",
+		"profession": "Primarch",
+		"voiceActor": "Daniel Riordan",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Adrien_Victus"],
+		"relatedMissionIds": ["M3.1.Palaven", "A3.Bomb"],
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	}]
+}

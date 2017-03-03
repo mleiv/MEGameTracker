@@ -1,0 +1,494 @@
+{
+	"events": [{
+		"id": "Unlocked Galaxy Map 2",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=M2.Prologue2]"
+
+
+
+
+	}, {
+		"x-comment-x": "-----------------------DOSSIER-------------------------",
+		"id": "Acquired: Garrus",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.D.Garrus]"
+	}, {
+		"id": "Acquired: Grunt",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.D.Grunt]"
+	}, {
+		"id": "Acquired: Jack",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.D.Jack]"
+	}, {
+		"id": "Acquired: Kasumi",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.D.Kasumi]"
+	}, {
+		"id": "Acquired: Legion",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=M2.ReaperIFF]"
+	}, {
+		"id": "Acquired: Mordin",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.D.Mordin]"
+	}, {
+		"id": "Acquired: Samara",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.D.Samara]"
+	}, {
+		"id": "Acquired: Tali",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.D.Tali]"
+	}, {
+		"id": "Acquired: Thane",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.D.Thane]"
+	}, {
+		"id": "Acquired: Zaeed",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.D.Zaeed]"
+
+
+
+	}, {
+		"x-comment-x": "-----------------------LOYALTY-------------------------",
+		"id": "Secured Loyalty: Garrus",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Garrus]",
+		"actions": [{
+			"target": {
+				"type": "Decision",
+				"id": "D2.GarrusLoyalty"
+			},
+			"changes": {
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
+			}
+		}]
+	}, {
+		"id": "Secured Loyalty: Grunt",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Grunt]",
+		"actions": [{
+			"target": {
+				"type": "Decision",
+				"id": "D2.GruntLoyalty"
+			},
+			"changes": {
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
+			}
+		}]
+	}, {
+		"id": "Secured Loyalty: Jacob",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Jacob]",
+		"actions": [{
+			"target": {
+				"type": "Decision",
+				"id": "D2.JacobLoyalty"
+			},
+			"changes": {
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
+			}
+		}]
+	}, {
+		"id": "Secured Loyalty: Kasumi",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Kasumi]",
+		"actions": [{
+			"target": {
+				"type": "Decision",
+				"id": "D2.KasumiLoyalty"
+			},
+			"changes": {
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
+			}
+		}]
+	}, {
+		"id": "Secured Loyalty: Legion",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Legion]",
+		"actions": [{
+			"target": {
+				"type": "Decision",
+				"id": "D2.LegionLoyalty"
+			},
+			"changes": {
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
+			}
+		}]
+	}, {
+		"id": "Secured Loyalty: Mordin",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Mordin]",
+		"actions": [{
+			"target": {
+				"type": "Decision",
+				"id": "D2.MordinLoyalty"
+			},
+			"changes": {
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
+			}
+		}]
+	}, {
+		"id": "Secured Loyalty: Samara",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Samara]",
+		"actions": [{
+			"target": {
+				"type": "Decision",
+				"id": "D2.SamaraLoyalty"
+			},
+			"changes": {
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
+			}
+		}]
+	}, {
+		"id": "Secured Loyalty: Tali",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Tali]",
+		"actions": [{
+			"target": {
+				"type": "Decision",
+				"id": "D2.TaliLoyalty"
+			},
+			"changes": {
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
+			}
+		}]
+	}, {
+		"id": "Secured Loyalty: Thane",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Thane]",
+		"actions": [{
+			"target": {
+				"type": "Decision",
+				"id": "D2.ThaneLoyalty"
+			},
+			"changes": {
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
+			}
+		}]
+
+	}, {
+		"id": "Secured Loyalty: Mordin or Grunt",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Grunt] or [megametracker://mission?id=A2.L.Mordin]",
+		"dependentOn": {
+			"countTo": 1,
+			"events": [
+				"Secured Loyalty: Mordin",
+				"Secured Loyalty: Grunt"
+			]
+		}
+
+
+
+
+
+	}, {
+		"id": "Upgrades: 2nd Biotic Damage",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.ArmorUpgrades.BD.Loot.I.2]"
+	}, {
+		"id": "Upgrades: 3rd Biotic Damage",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.ArmorUpgrades.BD.Loot.I.3]"
+	}, {
+		"id": "Upgrades: 2nd Tech Damage",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.ArmorUpgrades.TD.Loot.I.2]"
+	}, {
+		"id": "Upgrades: 3rd Tech Damage",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.ArmorUpgrades.TD.Loot.I.3]"
+	}, {
+		"id": "Upgrades: 2nd Medi-Gel",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.ArmorUpgrades.MG.Loot.I.2]"
+	}, {
+		"id": "Upgrades: 3rd Medi-Gel",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.ArmorUpgrades.MG.Loot.I.3]"
+	}, {
+		"id": "Upgrades: 2nd Damage Protection",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.DP.Loot.I.2]"
+	}, {
+		"id": "Upgrades: 2nd Heavy Skin Weave",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.ArmorUpgrades.Cyb.Loot.I.2]"
+	}, {
+		"id": "Upgrades: 3rd Heavy Skin Weave",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.ArmorUpgrades.Cyb.Loot.I.3]"
+	}, {
+		"id": "Upgrades: 3rd Damage Protection",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.DP.Loot.I.3]"
+	}, {
+		"id": "Upgrades: 2nd Heavy Pistol",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.HP.Loot.I.2]"
+	}, {
+		"id": "Upgrades: 3rd Heavy Pistol",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.HP.Loot.I.3]"
+	}, {
+		"id": "Upgrades: 2nd Assault Rifle",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.AR.Loot.I.2]"
+	}, {
+		"id": "Upgrades: 3rd Assault Rifle",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.AR.Loot.I.3]"
+	}, {
+		"id": "Upgrades: 2nd Submachine Gun",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.SMG.Loot.I.2]"
+	}, {
+		"id": "Upgrades: 3rd Submachine Gun",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.SMG.Loot.I.3]"
+	}, {
+		"id": "Upgrades: 2nd Shotgun",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.SG.Loot.I.2]"
+	}, {
+		"id": "Upgrades: 3rd Shotgun",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.SG.Loot.I.3]"
+	}, {
+		"id": "Upgrades: 2nd Sniper Rifle",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.SR.Loot.I.2]"
+	}, {
+		"id": "Upgrades: 3rd Sniper Rifle",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.SR.Loot.I.3]"
+	}, {
+		"id": "Upgrades: 1st Heavy Weapon Ammo",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.HW.Loot.I.1]"
+	}, {
+		"id": "Upgrades: 2nd Heavy Weapon Ammo",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.HW.Loot.I.2]"
+	}, {
+		"id": "Upgrades: 3rd Heavy Weapon Ammo",
+		"gameVersion": "2",
+		"description": "[megametracker://item?id=A2.UC.WeaponUpgrades.HW.Loot.I.3]"
+
+
+	}, {
+		"id": "Completed: Killing Pyjacks",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.T.KillingPyjaks]"
+	}, {
+		"id": "Completed: System Hacking",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.I.SystemHacking]"
+	}, {
+		"id": "Completed: System Hacking",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.I.SystemHacking]"
+	}, {
+		"id": "Completed: Firewalker: Rosalie Lost",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=DLC2.Firewalker.Rosalie]"
+	}, {
+		"id": "Completed: Firewalker: Geth Incursion",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=DLC2.Firewalker.Geth]"
+	}, {
+		"id": "Completed: Firewalker: Survey Sites Located",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=DLC2.Firewalker.Survey]"
+	}, {
+		"id": "Completed: Firewalker: Volcano Station",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=DLC2.Firewalker.Volcano]"
+	}, {
+		"id": "Firewalker: Prothean Site Unlocked",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=DLC2.Firewalker.Geth], [megametracker://mission?id=DLC2.Firewalker.Survey], and [megametracker://mission?id=DLC2.Firewalker.Volcano]",
+		"dependentOn": {
+			"countTo": 3,
+			"events": [
+				"Completed: Firewalker: Geth Incursion",
+				"Completed: Firewalker: Survey Sites Located",
+				"Completed: Firewalker: Volcano Station"
+			]
+		}
+	}, {
+		"id": "Completed: Overlord: Hermes Station",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=DLC2.Overlord.1]"
+	}, {
+		"id": "Completed: Overlord: Vulcan Station",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=DLC2.Overlord.2]"
+	}, {
+		"id": "Completed: Overlord: Prometheus Station",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=DLC2.Overlord.3]"
+	}, {
+		"id": "Completed: Overlord: Vulcan and Prometheus Stations",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=DLC2.Overlord.2] and [megametracker://mission?id=DLC2.Overlord.3]",
+		"dependentOn": {
+			"countTo": 2,
+			"events": [
+				"Completed: Overlord: Vulcan Station",
+				"Completed: Overlord: Prometheus Station"
+			]
+		}
+	}, {
+		"id": "Completed: MSV Corsica",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.N7.WreckedMerchantFreighter]"
+	}, {
+		"id": "Completed: Jarrahe Station",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.N7.AbandonedResearchStation]"
+	}, {
+		"id": "Completed: Joab Prothean Pyramid",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.N7.ArcheologicalDig]"
+	}, {
+		"id": "Completed: MSV Strontium Mule",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.N7.MSVStrontiumMule]"
+
+
+
+
+
+
+	}, {
+		"id": "Completed: Prologue 1",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=M2.Prologue1]"
+	}, {
+		"id": "Completed: Prologue 2",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=M2.Prologue2]"
+	}, {
+		"id": "Completed: Freedom's Progress",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=M2.FreedomsProgress]"
+	}, {
+		"id": "Completed: One Omega Dossier",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.D.Garrus] or [megametracker://mission?id=A2.D.Mordin].",
+		"dependentOn": {
+			"countTo": 1,
+			"limitTo": 1,
+			"events": [
+				"Acquired: Garrus",
+				"Acquired: Mordin"
+			]
+		}
+	}, {
+		"id": "Horizon Warning 1",
+		"gameVersion": "2",
+		"description": "Completing the four available dossiers (excluding DLC Kasumi and Zaeed) triggers Horizon. \n\nYou may want to do choose other assignments if you want to raise your experience first.",
+		"isAlert": true,
+		"dependentOn": {
+			"countTo": 1,
+			"limitTo": 1,
+			"events": [
+				"Acquired: Garrus",
+				"Acquired: Grunt",
+				"Acquired: Jack",
+				"Acquired: Mordin",
+			]
+		}
+	}, {
+		"id": "Horizon Triggered",
+		"gameVersion": "2",
+		"description": "You have completed the four dossiers. The next time you return to the Normandy, you will be diverted to Horizon.",
+		"isAlert": true,
+		"dependentOn": {
+			"countTo": 4,
+			"events": [
+				"Acquired: Garrus",
+				"Acquired: Grunt",
+				"Acquired: Jack",
+				"Acquired: Mordin",
+			]
+		}
+	}, {
+		"id": "Completed: Horizon",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=M2.Horizon]"
+	}, {
+		"id": "Collector Ship Warning",
+		"gameVersion": "2",
+		"description": "The rules to trigger [megametracker://mission?id=M2.CollectorShip] are complicated, but basically after you complete five missions and have eight squad members, you will be diverted to the Collector Ship.",
+		"isAlert": true
+	}, {
+		"id": "Completed: Collector Ship",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=M2.CollectorShip]"
+	}, {
+		"id": "Completed: Reaper IFF",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=M2.ReaperIFF]"
+	}, {
+		"id": "Normandy Attacked",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=M2.CollectorBase.1]"
+	}, {
+		"id": "Completed: Collector Base",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=M2.CollectorBase.5]"
+
+
+	}]
+}

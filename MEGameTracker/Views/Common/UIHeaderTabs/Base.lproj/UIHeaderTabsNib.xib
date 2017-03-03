@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Z3Q-sP-nnP" userLabel="Wrapper" customClass="UIHeaderTabsNib" customModule="MassEffectTracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsH-G6-rur" userLabel="Content Wrapper">
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="go1-lW-kU6"/>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="go1-lW-kU6" firstAttribute="top" secondItem="hsH-G6-rur" secondAttribute="top" id="IDc-o2-qjq"/>
+                        <constraint firstAttribute="bottom" secondItem="go1-lW-kU6" secondAttribute="bottom" priority="900" id="KG7-iM-XsV"/>
+                        <constraint firstItem="go1-lW-kU6" firstAttribute="leading" secondItem="hsH-G6-rur" secondAttribute="leading" id="QCG-NY-C83"/>
+                        <constraint firstAttribute="trailing" secondItem="go1-lW-kU6" secondAttribute="trailing" id="kJN-jF-ozV"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hsH-G6-rur" secondAttribute="trailing" id="1pD-Z3-CkH"/>
+                <constraint firstItem="hsH-G6-rur" firstAttribute="leading" secondItem="Z3Q-sP-nnP" secondAttribute="leading" id="DYf-QH-ef7"/>
+                <constraint firstAttribute="bottom" secondItem="hsH-G6-rur" secondAttribute="bottom" id="WU9-kJ-pGF"/>
+                <constraint firstItem="hsH-G6-rur" firstAttribute="top" secondItem="Z3Q-sP-nnP" secondAttribute="top" id="vQS-th-wps"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="sampleTabStack" destination="go1-lW-kU6" id="fao-Rw-gNi"/>
+                <outlet property="sampleTabWrapper" destination="hsH-G6-rur" id="BcK-o5-2Ws"/>
+            </connections>
+            <point key="canvasLocation" x="-4" y="112"/>
+        </view>
+    </objects>
+</document>

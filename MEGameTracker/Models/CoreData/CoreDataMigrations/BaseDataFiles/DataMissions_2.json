@@ -1,0 +1,1739 @@
+{
+	"missions": [{
+		"id": "M2.Prologue1",
+		"sortIndex": 1,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "Prologue: Save Joker",
+		"description": "The Normandy has suffered critical damage, and you must reach Joker in the cockpit and convince him to jump ship. \n\nThis mission briefly reintroduces old characters from Game 1, and provides a cursory introduction to game play.\n\n_If this is not an imported game, you will have an opportunity to choose your major Game 1 decisions in [megametracker://mission?id=DLC2.0Genesis] before the next mission, [megametracker://mission?id=M2.Prologue2]._",
+		"inMapId": "G.N2.2.Bridge",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Prologue:_Save_Joker"],
+		"conversationRewards": [],
+		"sideEffects": [
+			"If you have imported a Game 1 Shepard, you will be speaking with your love interest from Game 1, or - if there was no love interest - the surviving Alliance teammate (Ashley or Kaidan). If you have no imported data, you will speak to Liara, because the game logic does not yet know whether Ashley or Kaidan survived Virmire."
+		],
+		"events": [{
+			"type": "Triggers",
+			"id": "Completed: Prologue 1"
+		}]
+	}, {
+		"id": "M2.Prologue2",
+		"sortIndex": 2,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "Prologue: Awakening",
+		"description": "You awake in a Cerberus Medical Facility under attack. Guided by the voice of Miranda, and helped by the operative, Jacob, you must make your way to the [Shuttle Bay|megametracker://maplocation?id=G.Ear.Laz.Bay], where you can escape from the facility. At the end of the mission, Miranda will take you to see the Illusive Man, head of Cerberus. \n\nThis mission is also an introduction to new characters and game play.",
+		"inMapId": "G.Ear.Lazarus",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Prologue:_Awakening"],
+		"experience": 1000,
+		"reward": "3,750 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "Meeting Jacob",
+				"options": [{
+					"id": "M2.Prologue2.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I need answers!\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Just a few questions.\""
+						}, {
+							"id": "M2.Prologue2.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I'm tired of taking orders!\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting Wilson",
+				"options": [{
+					"id": "M2.Prologue2.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Let's get you out of here.\""
+				}, {
+					"id": "M2.Prologue2.R3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It doesn't matter.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"But she tried to help me.\""
+						}, {
+							"id": "M2.Prologue2.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Maybe, maybe not.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After Jacob's confession",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That sounds familiar...\""
+						}, {
+							"id": "M2.Prologue2.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You lied to me.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'll never work for Cerberus!\""
+						}, {
+							"id": "M2.Prologue2.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"What are you after?\" or \"He'd better have answers.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "M2.Prologue2.P7",
+			"type": "Renegade",
+			"value": 2,
+			"context": "Meeting Miranda",
+			"trigger": "\"I knew he was lying.\""
+		}, {
+			"set": {
+				"context": "Background Check (Origins)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"context": "(War Hero)",
+						"options": [{
+							"id": "M2.Prologue2.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I had no choice.\""
+						}, {
+							"id": "M2.Prologue2.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I had to win.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "(Sole Survivor)",
+						"options": [{
+							"id": "M2.Prologue2.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"It was painful.\""
+						}, {
+							"id": "M2.Prologue2.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I refused to die.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "(Ruthless)",
+						"options": [{
+							"id": "M2.Prologue2.P10",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I lost a lot of people.\""
+						}, {
+							"id": "M2.Prologue2.R10",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I did what was necessary.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Background Check (Virmire)",
+				"options": [{
+					"id": "M2.Prologue2.P11",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It was a hard choice.\""
+				}, {
+					"id": "M2.Prologue2.R11",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"It was that or die.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting the Illusive Man",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P12",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You don't know me.\""
+						}, {
+							"id": "M2.Prologue2.R12",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I need some answers.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P13",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You're not my friend.\""
+						}, {
+							"id": "M2.Prologue2.R13A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Skip the pleasantries.\""
+						}, {
+							"id": "M2.Prologue2.R13B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Not bad.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P14A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'll need a lot of convincing.\""
+						}, {
+							"id": "M2.Prologue2.P14B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Maybe I believe you.\""
+						}, {
+							"id": "M2.Prologue2.R14",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Where do we start?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P15",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Do I have a choice?\""
+						}, {
+							"id": "M2.Prologue2.R15",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I'll find the evidence.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Miranda after",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P16A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Thanks for resurrecting me.\""
+						}, {
+							"id": "M2.Prologue2.P16B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'll do my best.\""
+						}, {
+							"id": "M2.Prologue2.R16",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You sound jealous.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P17",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We don't have to be enemies.\""
+						}, {
+							"id": "M2.Prologue2.R17A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Is there a problem here?\""
+						}, {
+							"id": "M2.Prologue2.R17B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"What's your problem?\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Jacob after",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P18",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Those colonists need my help.\""
+						}, {
+							"id": "M2.Prologue2.R18A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I didn't join Cerberus.\""
+						}, {
+							"id": "M2.Prologue2.R18B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I'll reserve judgment.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Prologue2.P19A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Yes.\""
+						}, {
+							"id": "M2.Prologue2.R19B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm not sure.\""
+						}, {
+							"id": "M2.Prologue2.R19",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"No.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Prologue 1"
+		}, {
+			"type": "Triggers",
+			"id": "Unlocked Galaxy Map 2"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Prologue 2"
+		}]
+	}, {
+		"id": "M2.Prologue2.1",
+		"inMissionId": "M2.Prologue2",
+		"sortIndex": 20,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Get a Pistol",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Lazarus",
+		"mapLocationPoint": {
+			"x": 420,
+			"y": 1259,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.Prologue2.2",
+		"inMissionId": "M2.Prologue2",
+		"sortIndex": 21,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Pick up the Grenade Launcher",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Lazarus",
+		"mapLocationPoint": {
+			"x": 401,
+			"y": 1097,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.Prologue2.3",
+		"inMissionId": "M2.Prologue2",
+		"sortIndex": 22,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Meet Jacob",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Lazarus",
+		"mapLocationPoint": {
+			"x": 1083,
+			"y": 1367,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.Prologue2.4",
+		"inMissionId": "M2.Prologue2",
+		"sortIndex": 23,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Heal Wilson",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Lazarus",
+		"mapLocationPoint": {
+			"x": 1360,
+			"y": 777,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.Prologue2.5",
+		"inMissionId": "M2.Prologue2",
+		"sortIndex": 24,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Get to The Shuttle",
+		"isOpensDetail": false,
+		"inMapId": "G.Ear.Lazarus",
+		"mapLocationPoint": {
+			"x": 1935,
+			"y": 945,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.Prologue2.6",
+		"inMissionId": "M2.Prologue2",
+		"sortIndex": 25,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak With The Illusive Man",
+		"description": "Your first morality points can be earned talking to Miranda on the shuttle to Minuteman Station, to meet the Illusive Man. See the Conversation Rewards link under any top-level mission to review any opportunities for Paragon/Renegade points throughout that mission (it also includes notes on other important dialogue opportunities)."
+	}, {
+		"id": "M2.FreedomsProgress",
+		"sortIndex": 3,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "Freedom's Progress",
+		"description": "",
+		"inMapId": "G.Ter.Freedoms",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Freedom%27s_Progress_(mission)"],
+		"experience": 1000,
+		"reward": "10,000 Credits",
+		"conversationRewards": [{
+			"set": {
+				"context": "Directing Miranda and Jacob",
+				"options": [{
+					"id": "M2.FreedomsProgress.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Someone could still be alive.\""
+				}, {
+					"id": "M2.FreedomsProgress.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Do whatever it takes.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting Tali and Prazza",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.FreedomsProgress.P2",
+							"type": "Paragon",
+							"value": 5,
+							"context": "(If Tali's loyalty mission was completed in Game 1)",
+							"trigger": "\"I'll prove it's really me.\""
+						}, {
+							"id": "M2.FreedomsProgress.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Don't point those guns at me.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.FreedomsProgress.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I didn't have a choice.\""
+						}, {
+							"id": "M2.FreedomsProgress.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I did it to help humanity.\""
+						}]
+					}
+				}, {
+					"id": "M2.FreedomsProgress.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You think he's alive?\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.FreedomsProgress.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We need to team up.\""
+						}, {
+							"id": "M2.FreedomsProgress.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We'll handle it from here.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.FreedomsProgress.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Sounds like a plan.\""
+						}, {
+							"id": "M2.FreedomsProgress.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Forget it.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting Veetor",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.FreedomsProgress.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You're safe now.\""
+						}, {
+							"id": "M2.FreedomsProgress.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Snap out of it!\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.FreedomsProgress.P8",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*Paragon Interrupt*",
+							"trigger": ""
+						}, {
+							"id": "M2.FreedomsProgress.R8",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*Renegade Interrupt*",
+							"trigger": ""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.FreedomsProgress.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Thank you, Veetor.\""
+						}, {
+							"id": "M2.FreedomsProgress.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"What a waste of time.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.FreedomsProgress.P10",
+							"type": "Paragon",
+							"value": 15,
+							"trigger": "\"Veetor goes with Tali.\""
+						}, {
+							"id": "M2.FreedomsProgress.R10",
+							"type": "Renegade",
+							"value": 15,
+							"trigger": "\"Veetor has to come with us.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the Illusive Man after",
+				"options": [{
+					"id": "M2.FreedomsProgress.P11",
+					"type": "Paragon",
+					"value": 2,
+					"context": "(After sending Veetor home)",
+					"trigger": "\"Having friends pays off.\""
+				}, {
+					"id": "M2.FreedomsProgress.P12",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"What aren't you telling me?\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.FreedomsProgress.P13",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I can't do it alone.\""
+						}, {
+							"id": "M2.FreedomsProgress.R13",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Agreed!\""
+						}]
+					}
+				}, {
+					"id": "M2.FreedomsProgress.P14",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I decide who's on my team.\" and \"I hope so.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting EDI",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.FreedomsProgress.P15",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Joker won't like this.\""
+						}, {
+							"id": "M2.FreedomsProgress.R15",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"AIs are dangerous.\""
+						}]
+					}
+				}, {
+					"id": "M2.FreedomsProgress.R16",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Glad to hear it.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Prologue 2"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "M2.FreedomsProgress.1",
+		"inMissionId": "M2.FreedomsProgress",
+		"sortIndex": 31,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Meet Tali",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Freedoms",
+		"mapLocationPoint": {
+			"x": 806,
+			"y": 765,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.FreedomsProgress.2",
+		"inMissionId": "M2.FreedomsProgress",
+		"sortIndex": 32,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Veetor",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Freedoms",
+		"mapLocationPoint": {
+			"x": 2021,
+			"y": 774,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.FreedomsProgress.3",
+		"inMissionId": "M2.FreedomsProgress",
+		"sortIndex": 33,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Debrief",
+		"description": "After speaking with the Illusive Man, you are re-introduced to Joker, who has signed up with Cerberus to pilot their fancy new ship - the Normandy SR2."
+	}, {
+		"id": "M2.StopCollectors",
+		"sortIndex": 4,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "Stop The Collectors",
+		"aliases": ["Stop The Collectors", "Stop the Collectors: Assemble a team", "Stop the Collectors: Go to Horizon", "Stop the Collectors: Investigate Collector Ship", "Stop the Collectors: Acquire Reaper IFF", "Stop the Collectors: Await IFF Installation", "Stop the Collectors: Use Omega-4 Relay", "Stop the Collectors: Defeat the Collectors"],
+		"description": "This is a general wrapper mission for the remaining plot missions of Game 2. We suggest completely ignoring it until the end, and checking it completed before moving to Game 3.",
+		"todo": "TODO: Make events for all the things that change the title of this mission",
+		"inMapId": null,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Stop_the_Collectors"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "M2.Horizon",
+		"sortIndex": 5,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "Horizon",
+		"description": "_Triggered after the first four Dossier assignments are completed (Kasumi and Zaeed are not counted)._ \n",
+		"experience": 1000,
+		"reward": "30,000 Credits",
+		"inMapId": "G.Att.Sha.Ier.Horizon",
+		"isShowInParentMap": true,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Horizon_(mission)"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Examining the husk",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M2.Horizon.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Let's go save the colonists.\""
+				}, {
+					"id": "M2.Horizon.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"We're wasting time here.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting the mechanic Delan",
+				"options": [{
+					"id": "M2.Horizon.R2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Calm down!\""
+				}, {
+					"id": "M2.Horizon.P3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Who are you?\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Horizon.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Wait here.\""
+						}, {
+							"id": "M2.Horizon.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We might need your help.\" and \"You're a coward.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Delan after defeating the Praetorian",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Horizon.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"It's too late.\""
+						}, {
+							"id": "M2.Horizon.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"What do you expect me to do?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Horizon.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm sorry.\""
+						}, {
+							"id": "M2.Horizon.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Blame them, not me.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Kaidan or Ashley",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Horizon.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"It's good to see you again.\""
+						}, {
+							"id": "M2.Horizon.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I was. We can't get into it.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Horizon.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I didn't want to hurt you.\""
+						}, {
+							"id": "M2.Horizon.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I have important things to do.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Horizon.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Cerberus isn't the enemy.\""
+						}, {
+							"id": "M2.Horizon.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I don't work for Cerberus.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Horizon.P10",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm not a traitor.\""
+						}, {
+							"id": "M2.Horizon.R10",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Get over it.\""
+						}]
+					}
+				}, {
+					"id": "M2.Horizon.P11",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You're too emotional, 'Virmire Survivor.'\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Horizon.P12",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Don't go. Join Me.\""
+						}, {
+							"id": "M2.Horizon.R12",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Fat Chance.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "M2.Horizon.PR13",
+			"type": "Paragade",
+			"value": 0,
+			"paragadeValue": [5, 5],
+			"trigger": "(Completing the assignment.)"
+		}, {
+			"set": {
+				"context": "Debrief with the Illusive Man",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Horizon.P14",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I didn't save everyone.\""
+						}, {
+							"id": "M2.Horizon.R14",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I enjoyed the fight.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Horizon.P15",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"No more colonies get hit.\""
+						}, {
+							"id": "M2.Horizon.R15",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Let's go on the offensive.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.Horizon.P16",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"My team is strong.\""
+						}, {
+							"id": "M2.Horizon.R16",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Don't worry so much.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Debrief with Jacob",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M2.Horizon.P17",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We can do this.\""
+				}, {
+					"id": "M2.Horizon.R17",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Don't lose your nerve now.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Dialog with Kelly (if Kaidan or Ashley was a possible love interest in Game 1) - don't say \"Fine.\"",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M2.Horizon.P18",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"That is history,\" or \"Yes.\" and \"Thank you.\""
+				}, {
+					"id": "M2.Horizon.R18",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"That is history,\" or \"Yes.\" and \"No, it's easy.\""
+				}, {
+					"id": "M2.Horizon.R19",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"No.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}, {
+			"type": "Triggers",
+			"id": "Collector Ship Warning"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Horizon"
+		}]
+	}, {
+		"id": "M2.Horizon.1",
+		"inMissionId": "M2.Horizon",
+		"sortIndex": 50,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Dead Husk",
+		"description": "Head into the colony, fighting off the Collectors who remain. Examine a dead husk left behind. There will be a battle in the next area.",
+		"inMapId": "G.Att.Sha.Ier.Horizon",
+		"mapLocationPoint": {
+			"x": 643,
+			"y": 791,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.Horizon.2",
+		"inMissionId": "M2.Horizon",
+		"sortIndex": 51,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Stasis Colonists",
+		"description": "Examine the frozen colonists to learn more about what has happened. When you pass that section of buildings, the Collectors will attack again and Harbinger will direct the battle personally.",
+		"inMapId": "G.Att.Sha.Ier.Horizon",
+		"mapLocationPoint": {
+			"x": 900,
+			"y": 1141,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.Horizon.3",
+		"inMissionId": "M2.Horizon",
+		"sortIndex": 52,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Mechanic",
+		"description": "There is an unharmed mechanic hiding in the garage. He can tell you more about the attack and what happened to your former squadmate (Ashley or Kaidan).",
+		"inMapId": "G.Att.Sha.Ier.Horizon",
+		"mapLocationPoint": {
+			"x": 1283,
+			"y": 1403,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.Horizon.4",
+		"inMissionId": "M2.Horizon",
+		"sortIndex": 53,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Entrance to Starport",
+		"description": "After defeating the Collectors and Scions in the outer buildings, open the doors to the starport and the final battle.",
+		"inMapId": "TODO"
+	}, {
+		"id": "M2.Horizon.5",
+		"inMissionId": "M2.Horizon",
+		"sortIndex": 54,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Transmitter",
+		"description": "Eliminate the forces defending the transmitter, then activate it and defend the area from three waves of enemy attacks.",
+		"inMapId": "G.Att.Sha.Ier.Horizon",
+		"mapLocationPoint": {
+			"x": 431,
+			"y": 1795,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.Horizon.6",
+		"inMissionId": "M2.Horizon",
+		"sortIndex": 55,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Debrief",
+		"description": "After the Collectors retreat from Horizon and you find Ashley/Kaidan, you will return to the Normandy to be debriefed by the Illusive Man. It turns out that he lured the Collectors to Horizon, to force a confrontation. He also delivers more dossiers to add to the squad.",
+		"inMapId": "G.N2.2.Briefing",
+		"isShowInParentMap": true
+	}, {
+		"id": "M2.CollectorShip",
+		"sortIndex": 6,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "Collector Ship",
+		"description": "_Note: The rules for triggering this mission are complicated ([https://masseffect.wikia.com/wiki/Collector_Ship_(mission)#Acquisition]), but the basics are: five missions after Horizon, and eight squad members._ \n\nIf you miss the upgrades on this mission, you can buy them at [megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.1.Serrice&type=Map] on Illium.",
+		"inMapId": "G.CollectorShip",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Collector_Ship_(mission)"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Investigating the pile of bodies",
+				"options": [{
+					"id": "M2.CollectorShip.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Maybe they're better off.\""
+				}, {
+					"id": "M2.CollectorShip.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"We can't help them now.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Investigating the control terminal",
+				"options": [{
+					"id": "M2.CollectorShip.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"The Collectors are Protheans!\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.CollectorShip.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That's a horrible fate.\""
+						}, {
+							"id": "M2.CollectorShip.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"They'd be better off dead.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Contacting the Normandy at the command console",
+				"options": [{
+					"id": "M2.CollectorShip.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We're okay...\""
+				}, {
+					"id": "M2.CollectorShip.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Status report — now!\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After the platform battle",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.CollectorShip.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Good work.\""
+						}, {
+							"id": "M2.CollectorShip.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"About time.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.CollectorShip.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Don't jump to conclusions.\""
+						}, {
+							"id": "M2.CollectorShip.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"He betrayed us!\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "M2.CollectorShip.P7",
+			"type": "Paragade",
+			"value": 0,
+			"paragadeValue": [5, 5],
+			"trigger": "(Completing the assignment.)"
+		}, {
+			"set": {
+				"context": "Confronting the Illusive Man",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.CollectorShip.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I knew I couldn't trust you.\""
+						}, {
+							"id": "M2.CollectorShip.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"What the hell is going on?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.CollectorShip.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'd have found another way.\""
+						}, {
+							"id": "M2.CollectorShip.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Never again, you hear me?\""
+						}]
+					}
+				}, {
+					"id": "M2.CollectorShip.R10",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Another 'derelict' ship?\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Debrief with the squad",
+				"options": [{
+					"id": "M2.CollectorShip.P11",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I agree.\""
+				}, {
+					"id": "M2.CollectorShip.R11",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I still don't like it.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to Kelly",
+				"options": [{
+					"id": "M2.CollectorShip.P12",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Thank the entire crew.\""
+				}, {
+					"id": "M2.CollectorShip.R12",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I didn't need her.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Collector Ship"
+		}]
+	}, {
+		"id": "M2.CollectorShip.1",
+		"inMissionId": "M2.CollectorShip",
+		"sortIndex": 61,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Control Terminal",
+		"description": "Head to the control terminal next to the dead collector in a pod. EDI will reveal the Collectors have prothean DNA. There is a [pile of new weapons nearby|megametracker://maplocation?id=G.CollectorShip&title=Weapons&position=787x1239]. When you loot it, you are given an Advanced Weapons Training menu offering a new weapon specialization (first time playthrough only - New Game+ is not offered this bonus). If your class already has the weapon specialization, you are instead offered a powerful unique weapon of that type.",
+		"inMapId": "G.CollectorShip.Terminal"
+	}, {
+		"id": "M2.CollectorShip.2",
+		"inMissionId": "M2.CollectorShip",
+		"sortIndex": 62,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Command Console",
+		"description": "Continue through the ship to the command console. When you activate it, the Normandy is attacked by the [megametracker://person?id=E2.CollectorGeneral]. EDI manages to divert the overload to non-critical systems but warns you that this is definitely a trap, and they have infiltrated her systems. While she fights for the Normandy, you have to fight off the Collectors. Activate the console again when the attacks let up, and EDI will let you know that Cerberus knew this was a trap all along. Then Joker warns you that the ship is powering up its guns and you need to exit fast before the Normandy is targeted.",
+		"inMapId": "G.CollectorShip.CC2"
+	}, {
+		"id": "M2.CollectorShip.3",
+		"inMissionId": "M2.CollectorShip",
+		"sortIndex": 63,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Escape",
+		"description": "Once the platforms docks, head off down the tunnel. You will have two large, open-area battles in addition to skirmishes in the tunnels. You will be approximately retracing your prior path, but one level up, until the end when you race for the shuttle.",
+		"inMapId": "G.CollectorShip.Exit"
+	}, {
+		"id": "M2.ReaperIFF",
+		"sortIndex": 7,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "Reaper IFF",
+		"description": "_Note: Since this mission triggers a countdown to the Normandy attack, you may want to complete all your other loyalty missions beforehand, so you have room to complete Legion's loyalty mission immediately after._ \n\n",
+		"experience": 1000,
+		"reward": "25,000 Credits",
+		"inMapId": null,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Reaper_IFF"],
+        "decisionIds": ["D2.LegionCerberus"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Examining Dragon's teeth (if Jacob, Garrus, or Tali is present)",
+				"options": [{
+					"id": "M2.ReaperIFF.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"They don't deserve this.\""
+				}, {
+					"id": "M2.ReaperIFF.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Nobody touch anything.\""
+				}]
+			}
+		}, {
+			"id": "M2.ReaperIFF.P2",
+			"type": "Paragade",
+			"value": 0,
+			"paragadeValue": [5, 5],
+			"trigger": "(Completing the assignment.)"
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Deciding what to do with Legion",
+				"options": [{
+					"id": "M2.ReaperIFF.P3",
+					"type": "Paragon",
+					"value": 15,
+					"trigger": "\"I want to talk to it first.\""
+				}, {
+					"id": "M2.ReaperIFF.R3",
+					"type": "Renegade",
+					"value": 15,
+					"trigger": "\"Cerberus gets the geth.\""
+				}]
+			}
+		}, {
+			"id": "M2.ReaperIFF.P4",
+			"type": "Paragade",
+			"value": 2,
+			"trigger": "\"Just be careful.\""
+		}, {
+			"set": {
+				"context": "Activating Legion",
+				"options": [{
+					"id": "M2.ReaperIFF.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Why not?\""
+				}, {
+					"id": "M2.ReaperIFF.R6",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"All geth are the same.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Activating Legion",
+						"options": [{
+							"id": "M2.ReaperIFF.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You want to work with me?\""
+						}, {
+							"id": "M2.ReaperIFF.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I don't \"cooperate.\" I lead.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Activating Legion",
+						"options": [{
+							"id": "M2.ReaperIFF.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That works.\""
+						}, {
+							"id": "M2.ReaperIFF.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Quiet, EDI.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Collector Ship"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Reaper IFF"
+		}]
+	}, {
+		"id": "M2.CollectorBase.1",
+		"sortIndex": 8,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "The Normandy Attacked",
+		"description": "The Normandy is attacked by Collectors. As Joker, you must get down to the [megametracker://maplocation?id=G.N2.3.Core&type=Map] and unshackle EDI so she can save the ship. EDI provides directions, but Joker must evade the Collectors or the mission will fail.",
+		"inMapId": null,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Stop_the_Collectors#Save_the_Ship"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "On the shuttle before the Normandy is attacked, when EDI says the IFF is ready but needs testing",
+				"options": [{
+					"id": "M2.CollectorBase.1.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You thought of everything.\""
+				}, {
+					"id": "M2.CollectorBase.1.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Let's move!\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After the Normandy crew is taken",
+				"options": [{
+					"id": "M2.CollectorBase.1.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Are you okay, Joker?\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.CollectorBase.1.P3A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Is the virus contained?\""
+						}, {
+							"id": "M2.CollectorBase.1.P3B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We need to get the crew back.\""
+						}, {
+							"id": "M2.CollectorBase.1.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I'm not interested in excuses.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.CollectorBase.1.P4A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I trust it.\""
+						}, {
+							"id": "M2.CollectorBase.1.P4B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"So the ship is ready to go?\""
+						}, {
+							"id": "M2.CollectorBase.1.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You're equipment, not crew.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Reaper IFF"
+		}, {
+			"type": "Triggers",
+			"id": "Normandy Attacked"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Collector Base"
+		}]
+	}, {
+		"id": "M2.CollectorBase.2",
+		"sortIndex": 9,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "The Omega 4 Relay",
+		"description": "You take the fight through the Omega 4 Relay to the Collector Base in the Galactic Core. If you have not upgraded the Normandy's defenses, key members of the crew will die as Joker maneuvers the Normandy through the debris field and evades the attacking Collector ships. And Oculus punches through the ship and you must fight it off. When you have successfully cleared the ship of hostiles, the Normandy will engage the Collector Cruser and the resulting explosion will force the Normandy to crash land on the Collector Base. \n\n_Note: If you delay going through the Omega 4 Relay after the Collectors, members of the Normandy crew may die before you can rescue them._",
+		"inMapId": null,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Stop_the_Collectors#Use_Omega_4_Relay"],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Normandy Attacked"
+		}]
+	}, {
+		"id": "M2.CollectorBase.3",
+		"sortIndex": 10,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "Collector Base: Infiltration",
+		"description": "To enter the base, you will split up into two teams, minus a tech specialist assigned to the thermal vents. Your task is to escort the tech, fighting off Collector forces and opening valves along the way, so he or she is not burned in the process. To keep everyone alive, you should pick (loyal) Legion, Tali, or Kasumi as the tech specialist, and (loyal) Garrus, Miranda, or Jacob to lead the other team.",
+		"inMapId": null,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Collector_Base:_Infiltration"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to the Illusive Man before going through the Omega 4 Relay",
+				"options": [{
+					"id": "M2.CollectorBase.2.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"The team is strong.\""
+				}, {
+					"id": "M2.CollectorBase.2.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I don't need to know.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Reaper IFF"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Collector Base"
+		}]
+	}, {
+		"id": "M2.CollectorBase.4",
+		"sortIndex": 11,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "Collector Base: The Long Walk",
+		"description": "You rescue whichever members of the Normandy crew are still alive. You are again splitting up to continue to the heart of the base, and you will need a biotic specialist this time to get you through, also you should send an escort with the rescued crew back to the Normandy. To keep everyone alive, your best bet is (loyal) Samara/Morinth or Jack for the biotic specialist, (loyal) Garrus, Miranda, or Jacob to lead the other team, and (loyal) Mordin, Tali, Kasumi, or Jack back to the Normandy. \n\nAs you slowly move through the base and fend off Collector attacks, you must stay within the biotic bubble or the seeker swarms will kill you. When you make it to the final door, several of your teammates may die if they are not loyal or were not \"ideal.\"",
+		"inMapId": null,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Collector_Base:_The_Long_Walk"],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Rescuing the crew from their pods",
+				"options": [{
+					"id": "M2.CollectorBase.3.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'd never abandon my crew.\""
+				}, {
+					"id": "M2.CollectorBase.3.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I didn't come for you.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Rescuing the crew (if someone died)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"context": "Rescuing the crew (if someone died)",
+						"options": [{
+							"id": "M2.CollectorBase.3.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We must honor the fallen.\""
+						}, {
+							"id": "M2.CollectorBase.3.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"People died. Make it count.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M2.CollectorBase.3.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"The galaxy is depending on us.\""
+						}, {
+							"id": "M2.CollectorBase.3.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Feel sorry for the Collectors.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Deciding how to evacuate the rescued crew",
+				"options": [{
+					"id": "M2.CollectorBase.3.P4",
+					"type": "Paragon",
+					"value": 15,
+					"trigger": "\"I'll have someone escort you.\""
+				}, {
+					"id": "M2.CollectorBase.3.R4",
+					"type": "Renegade",
+					"value": 15,
+					"trigger": "\"The mission comes first.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Reaper IFF"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Collector Base"
+		}]
+	}, {
+		"id": "M2.CollectorBase.5",
+		"sortIndex": 12,
+		"gameVersion": "2",
+		"missionType": "Mission",
+		"name": "Final Battle",
+		"description": "The team splits up again, with one side tasked with holding off the Collector forces at the door, and the other with accompanying you to uncover the base's secrets (as well as fight the final boss battle). This team selection is more fuzzy, but you want to leave some squad members with good defensive abilities like Grunt, Garrus, and Zaeed to guard your back, or that team will die. You should only take loyal squad members on your team, or they will die after the final battle. \n\nIn the central chamber, you will find the Collector's project: a human Reaper, made from liquified humans. This will be a platform battle, like the one in the middle of [megametracker://mission?id=M2.CollectorShip]. You will need to fight off attackers while shooting out the feeding tubes of the Reaper. When you have finished destroying the tubes, you must decide whether to salvage the technology for Cerberus or blow the base up. \n\nUnfortunately, then the human Reaper wakes up and attacks you itself, *while* Collector forces continue to attack. When you finally dispatch it, the base begins to fall apart and Joker arrives for emergency pickup in a shuttle. If you have less than two squad members left, you will die at this point. Otherwise the Normandy will evacuate the base before it explodes. \n\nIf you saved the base for the Illusive Man, the explosion is blue and leaves the base (somewhat) intact afterwards. Otherwise, it annhilates pretty much everything back to the relay.",
+		"inMapId": null,
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Suicide_Mission#Final_Battle"],
+        "decisionIds": ["D2.Garrus", "D2.Grunt", "D2.Jack", "D2.Jacob", "D2.Kasumi", "D2.Legion", "D2.Miranda", "D2.Mordin", "D2.Samara", "D2.Tali", "D2.Thane"],
+        "sideEffects": [
+            "If you want to see what happens when everyone dies, here you go: [YouTube|https://www.youtube.com/watch?v=ScrdrJZu-0g]"
+        ],
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Facing the human Reaper",
+				"options": [{
+					"id": "M2.CollectorBase.4.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We can't let it survive.\""
+				}, {
+					"id": "M2.CollectorBase.4.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Let's take it down.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "The Illusive Man checks in",
+				"options": [{
+					"id": "M2.CollectorBase.4.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I didn't do it alone.\""
+				}, {
+					"id": "M2.CollectorBase.4.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'm just getting started.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "After the Illusive Man's proposes to save the Collector base for research",
+				"options": [{
+					"id": "M2.CollectorBase.4.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"This place is an abomination.\""
+				}, {
+					"id": "M2.CollectorBase.4.P3B",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"How would you use it?\" and \"How can I trust you?\""
+				}, {
+					"id": "M2.CollectorBase.4.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You think it can help?\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "If you select the uncertain \"How can I trust you?\" above",
+				"options": [{
+					"id": "M2.CollectorBase.4.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"This doesn't feel right.\""
+				}, {
+					"id": "M2.CollectorBase.4.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Are you sure?\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Deciding what to do with the Collector base",
+				"options": [{
+					"id": "M2.CollectorBase.4.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"No. We don't need it.\""
+				}, {
+					"id": "M2.CollectorBase.4.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"OK, let's take it and use it.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Reaper IFF"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Collector Base"
+		}]
+	}]
+}
