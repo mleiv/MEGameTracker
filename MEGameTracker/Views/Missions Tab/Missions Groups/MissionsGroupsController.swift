@@ -448,69 +448,74 @@ extension MissionsGroupsController {
         Mission.onChange.cancelSubscription(for: self)
         _ = Mission.onChange.subscribe(on: self) { [weak self] changed in
             DispatchQueue.global(qos: .background).async { [weak self] in
-                var reloadRows: [IndexPath] = []
-                // check counts and cache
-                if (self?.precachedMissions ?? [:]).reduce(false, {
-                        $0 || $1.1.contains(where: { $0.id == changed.id })
-                    }),
-                    let newMission = changed.object ?? Mission.get(id: changed.id),
-                    newMission.missionType != .objective,
-                    let index = self?.precachedMissions[newMission.missionType]?.index(where: { $0.id == changed.id }) {
-                    let oldMission = self?.precachedMissions[newMission.missionType]?[index]
-                    if oldMission?.isAvailable != newMission.isAvailable
-                        || oldMission?.isCompleted != newMission.isCompleted {
-                        var offsets: MissionsGroupCounts = (available: 0, unavailable: 0, completed: 0)
-                        if oldMission?.isAvailable != newMission.isAvailable {
-                            offsets.available = newMission.isAvailable ? 1 : -1
-                            offsets.unavailable = newMission.isAvailable ? -1 : 1
-                        }
-                        if oldMission?.isCompleted != newMission.isCompleted {
-                            offsets.completed = newMission.isCompleted ? 1 : -1
-                            if newMission.isAvailable {
-                                offsets.available -= 1
-                            } else {
-                                offsets.unavailable -= 1
-                            }
-                        }
-                        self?.missionCounts[newMission.missionType]?.available += offsets.available
-                        self?.missionCounts[newMission.missionType]?.available = max(0, self?.missionCounts[newMission.missionType]?.available ?? 0)
-                        self?.missionCounts[newMission.missionType]?.unavailable += offsets.unavailable
-                        self?.missionCounts[newMission.missionType]?.unavailable = max(0, self?.missionCounts[newMission.missionType]?.unavailable ?? 0)
-                        self?.missionCounts[newMission.missionType]?.completed += offsets.completed
-                        self?.missionCounts[newMission.missionType]?.completed = max(0, self?.missionCounts[newMission.missionType]?.completed ?? 0)
-                    }
-                    if let index = self?.missionsRowByType(newMission.missionType) {
-                        reloadRows.append(IndexPath(row: index, section: MissionsGroupsSection.main.rawValue))
-                    }
-                    if self?.precachedMissions.keys.contains(newMission.missionType) == true {
-                        self?.precachedMissions[newMission.missionType]?[index] = newMission
-                        self?.precachedMissions[newMission.missionType] = self?.precachedMissions[newMission.missionType]?.sorted(by: Mission.sort)
-                    }
-                }
-                // check recently viewed
-                if let index = self?.recentMissions.index(where: { $0.id == changed.id }), let newMission = changed.object ?? Mission.get(id: changed.id) {
-                    self?.recentMissions[index] = newMission
-                    reloadRows.append(IndexPath(row: index, section: MissionsGroupsSection.recent.rawValue))
-                }
-                // update rows
-                if !reloadRows.isEmpty {
-                    self?.reloadRows(reloadRows)
-                }
+                self?.processChangedMission(changed)
             }
         }
         // decisions are loaded at detail page, don't have to listen
     }
     
-    func updateMissionOnChange(_ map: Map){
-//        guard !isUpdating else { return }
-//        for (section, maps) in self.maps {
-//            if let index = maps.indexOf(map) {
-//                self.maps[section]?[index] = map
-//            }
-//        }
-//        isUpdating = true
-//        tableView.reloadData()
-//        isUpdating = false
+    /// Changes any local data and UI to reflect an updated mission.
+    private func processChangedMission(_ changed: (id: String, object: Mission?)) {
+    
+        // check counts and cache
+        // we do a pre-check that this mission id is in our list, and then a proper index later once we know mission type.
+        if precachedMissions.reduce(false, { $0 || $1.1.contains(where: { $0.id == changed.id }) }),
+            let newMission = changed.object ?? Mission.get(id: changed.id),
+            newMission.missionType != .objective,
+            let index = precachedMissions[newMission.missionType]?.index(where: { $0.id == newMission.id }) {
+            // change counts
+            processChangedMissionCounts(newMission)
+            // update cached data
+            if precachedMissions.keys.contains(newMission.missionType) {
+                var missions = precachedMissions[newMission.missionType] ?? []
+                missions[index] = newMission
+                precachedMissions[newMission.missionType] = missions.sorted(by: Mission.sort)
+            }
+        }
+        
+        // check recently viewed
+        if let index = recentMissions.index(where: { $0.id == changed.id }), let newMission = changed.object ?? Mission.get(id: changed.id) {
+            recentMissions[index] = newMission
+            reloadRows([IndexPath(row: index, section: MissionsGroupsSection.recent.rawValue)])
+        }
+    }
+    
+    /// Changes any local data and UI to reflect updated missions groups counts.
+    private func processChangedMissionCounts(_ newMission: Mission) {
+        guard let index = precachedMissions[newMission.missionType]?.index(where: { $0.id == newMission.id }) else { return }
+        
+        let oldMission = precachedMissions[newMission.missionType]?[index]
+        
+        // check for changes
+        let isCompletedCountChange = oldMission?.isCompleted != newMission.isCompleted
+        let isAvailableCountChange = oldMission?.isAvailable != newMission.isAvailable
+        if isCompletedCountChange || isAvailableCountChange {
+        
+            var currentCounts: MissionsGroupCounts = missionCounts[newMission.missionType]
+                ?? (available: 0, unavailable: 0, completed: 0)
+            
+            if isCompletedCountChange {
+                // change completed counts
+                currentCounts.completed += newMission.isCompleted ? 1 : -1
+            } else if isAvailableCountChange {
+                // change availability counts
+                currentCounts.available += newMission.isAvailable ? 1 : -1
+                currentCounts.unavailable += newMission.isAvailable ? -1 : 1
+            }
+            
+            // make sure none are below zero
+            currentCounts.available = max(0, currentCounts.available)
+            currentCounts.unavailable = max(0, currentCounts.unavailable)
+            currentCounts.completed = max(0, currentCounts.completed)
+            
+            // save changes
+            missionCounts[newMission.missionType] = currentCounts
+        
+            // update rows
+            if let rowIndex = missionsRowByType(newMission.missionType) {
+                reloadRows([IndexPath(row: rowIndex, section: MissionsGroupsSection.main.rawValue)])
+            }
+        }
     }
 }
 
