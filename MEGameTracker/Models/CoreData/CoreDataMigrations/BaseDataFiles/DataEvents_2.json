@@ -454,7 +454,7 @@
 	}, {
 		"id": "Horizon Triggered",
 		"gameVersion": "2",
-		"description": "You have completed the four dossiers. The next time you return to the Normandy, you will be diverted to Horizon.",
+		"description": "You have completed the four dossiers. \n\nThe next time you return to the Normandy, you will be diverted to Horizon.",
 		"isAlert": true,
 		"dependentOn": {
 			"countTo": 4,
@@ -472,7 +472,7 @@
 	}, {
 		"id": "Collector Ship Warning",
 		"gameVersion": "2",
-		"description": "The rules to trigger [megametracker://mission?id=M2.CollectorShip] are complicated, but basically after you complete five missions and have eight squad members, you will be diverted to the Collector Ship.",
+		"description": "Warning: after you complete five more missions and have eight squad members, you will be diverted to the Collector Ship.",
 		"isAlert": true
 	}, {
 		"id": "Completed: Collector Ship",

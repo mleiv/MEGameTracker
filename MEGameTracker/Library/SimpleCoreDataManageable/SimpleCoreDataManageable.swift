@@ -261,6 +261,9 @@ extension SimpleCoreDataManageable {
     }
     
     /// Retrieve multiple rows with criteria closure, and transform them to another data type.
+    ///
+    /// WARNING: Do not perform any core data action in transformEntity.
+    ///   Just retrieve your values and do stuff with them later, or it will deadlock!
     public func getAllTransformed<T: NSManagedObject, U>(
         transformEntity: @escaping TransformEntity<T,U>,
         alterFetchRequest: @escaping AlterFetchRequest<T>

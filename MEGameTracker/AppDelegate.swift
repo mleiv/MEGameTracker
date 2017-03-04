@@ -110,8 +110,10 @@ extension AppDelegate {
         // set up a listener to the show-an-alert signal
         Alert.onSignal.cancelSubscription(for: self)
         _ = Alert.onSignal.subscribe(on: self) { [weak self] (alert: Alert) in
-            if let controller = self?.window?.rootViewController?.activeViewController {
-                alert.show(fromController: controller)
+            DispatchQueue.main.async {
+                if let controller = self?.window?.rootViewController?.activeViewController {
+                    alert.show(fromController: controller)
+                }
             }
         }
     }

@@ -450,7 +450,9 @@ extension MissionsGroupsController {
             DispatchQueue.global(qos: .background).async { [weak self] in
                 var reloadRows: [IndexPath] = []
                 // check counts and cache
-                if changed.object == nil || changed.object?.gameVersion == App.current.gameVersion,
+                if (self?.precachedMissions ?? [:]).reduce(false, {
+                        $0 || $1.1.contains(where: { $0.id == changed.id })
+                    }),
                     let newMission = changed.object ?? Mission.get(id: changed.id),
                     newMission.missionType != .objective,
                     let index = self?.precachedMissions[newMission.missionType]?.index(where: { $0.id == changed.id }) {

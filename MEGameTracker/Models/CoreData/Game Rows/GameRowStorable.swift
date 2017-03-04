@@ -155,9 +155,14 @@ extension GameRowStorable {
         var one: Self = create(using: data, with: manager)
         do {
             // get game-specific data if it exists
-            if let coreItem = one.entity(context: manager?.context),
-                let serializedData = coreItem.value(forKey: Self.serializedDataKey) as? Data {
-                one.setData(try SerializableData(serializedData: serializedData))
+            if let data: Data = manager?.getOneTransformed(
+                transformEntity: { coreEntity -> Data? in
+                    coreEntity.value(forKey: Self.serializedDataKey) as? Data
+                }, alterFetchRequest: { fetchRequest in
+                    one.setIdentifyingPredicate(fetchRequest: fetchRequest)
+                }
+            ) {
+                one.setData(try SerializableData(serializedData: data))
             }
         } catch {}
         return one

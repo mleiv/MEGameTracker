@@ -213,41 +213,45 @@ extension Event {
         }
         if generalData.isAlert && isTriggered && generalData.dependentOn?.isTriggered != false { // nil or true
             let alert = Alert(title: nil, description: generalData.description ?? "")
-            Delay.bySeconds(0, { Alert.onSignal.fire(alert) })
+            DispatchQueue.global(qos: .userInitiated).async {
+                Alert.onSignal.fire(alert)
+            }
         }
         if isNotify {
-            self.notifyDataOwnersOfChange()
-//            Event.onChange.fire(self)
+            let copySelf = self
+            DispatchQueue.global(qos: .background).async {
+                copySelf.notifyDataOwnersOfChange()
+            }
         }
     }
     
     public func notifyDataOwnersOfChange() {
         // reload any changed missions not the current one
-        Event.getAffectedIds(ofType: DataMission.self, relatedToEvent: self).forEach {
+        Event.getAffectedIds(ofType: DataMission.self, relatedToEvent: self).forEach { id in
 //            print("Event \(id)=\(isTriggered) affected \($0)")
-            if $0 != inMissionId {
-                Mission.onChange.fire((id: $0, object: nil))
+            if id != inMissionId {
+                Mission.onChange.fire((id: id, object: nil))
             }
         }
         // reload any changed maps not the current one
-        Event.getAffectedIds(ofType: DataMap.self, relatedToEvent: self).forEach {
+        Event.getAffectedIds(ofType: DataMap.self, relatedToEvent: self).forEach { id in
 //            print("Event \(id)=\(isTriggered) affected \($0)")
-            if $0 != inMapId {
-                Map.onChange.fire((id: $0, object: nil))
+            if id != inMapId {
+                Map.onChange.fire((id: id, object: nil))
             }
         }
         // reload any changed persons not the current one
-        Event.getAffectedIds(ofType: DataPerson.self, relatedToEvent: self).forEach {
+        Event.getAffectedIds(ofType: DataPerson.self, relatedToEvent: self).forEach { id in
 //            print("Event \(id)=\(isTriggered) affected \($0)")
-            if $0 != inPersonId {
-                Person.onChange.fire((id: $0, object: nil))
+            if id != inPersonId {
+                Person.onChange.fire((id: id, object: nil))
             }
         }
         // reload any changed items not the current one
-        Event.getAffectedIds(ofType: DataItem.self, relatedToEvent: self).forEach {
+        Event.getAffectedIds(ofType: DataItem.self, relatedToEvent: self).forEach { id in
 //            print("Event \(id)=\(isTriggered) affected \($0)")
-            if $0 != inItemId {
-                Item.onChange.fire((id: $0, object: nil))
+            if id != inItemId {
+                Item.onChange.fire((id: id, object: nil))
             }
         }
     }
