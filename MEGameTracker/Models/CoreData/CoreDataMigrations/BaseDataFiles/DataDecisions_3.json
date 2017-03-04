@@ -184,7 +184,7 @@
 		"name": "Romanced Ashley",
         "description": "Male Shepard only. Provides a Paramour achievement. Only one Paramour partner is allowed.",
         "loveInterestId": "S1.Ashley",
-		"blocksDecisionIds": ["D3.LoveJack", "D3.LoveMiranda", "D3.LoveTali", "D3.LoveSteve", "D3.LoveKaiden", "D3.LoveLiara"],
+		"blocksDecisionIds": ["D3.LoveJack", "D3.LoveMiranda", "D3.LoveTali", "D3.LoveSteve", "D3.LoveKaidan", "D3.LoveLiara"],
         "sortIndex": 199
 	}, {
 		"id": "D3.LoveSteve",
@@ -192,7 +192,7 @@
 		"name": "Romanced Steve",
         "description": "Male Shepard only. Provides a Paramour achievement. Only one Paramour partner is allowed.",
         "loveInterestId": "A3.Cortez",
-		"blocksDecisionIds": ["D3.LoveJack", "D3.LoveMiranda", "D3.LoveTali", "D3.LoveAshley", "D3.LoveKaiden", "D3.LoveLiara"],
+		"blocksDecisionIds": ["D3.LoveJack", "D3.LoveMiranda", "D3.LoveTali", "D3.LoveAshley", "D3.LoveKaidan", "D3.LoveLiara"],
         "sortIndex": 199
         
 	}, {
@@ -201,7 +201,7 @@
 		"name": "Romanced Garrus",
         "description": "Female Shepard only. Only allowed if character was romanced in Game 2. Provides a Paramour achievement. Only one Paramour partner is allowed.",
         "loveInterestId": "S1.Garrus",
-		"blocksDecisionIds": ["D3.LoveTraynor", "D3.LoveKaiden", "D3.LoveLiara"],
+		"blocksDecisionIds": ["D3.LoveTraynor", "D3.LoveKaidan", "D3.LoveLiara"],
         "sortIndex": 200
 	}, {
 		"id": "D3.LoveTraynor",
@@ -209,7 +209,7 @@
 		"name": "Romanced Traynor",
         "description": "Female Shepard only. Provides a Paramour achievement. Only one Paramour partner is allowed.",
         "loveInterestId": "A3.Traynor",
-		"blocksDecisionIds": ["D3.LoveGarrus", "D3.LoveKaiden", "D3.LoveLiara"],
+		"blocksDecisionIds": ["D3.LoveGarrus", "D3.LoveKaidan", "D3.LoveLiara"],
         "sortIndex": 200
         
 	}, {
@@ -226,7 +226,7 @@
 		"name": "Romanced Liara",
         "description": "Provides a Paramour achievement. Only one Paramour partner is allowed.",
         "loveInterestId": "S1.Liara",
-		"blocksDecisionIds": ["D3.LoveJack", "D3.LoveMiranda", "D3.LoveTali", "D3.LoveAshley", "D3.LoveSteve", "D3.LoveKaiden", "D3.LoveTraynor", "D3.LoveGarrus"],
+		"blocksDecisionIds": ["D3.LoveJack", "D3.LoveMiranda", "D3.LoveTali", "D3.LoveAshley", "D3.LoveSteve", "D3.LoveKaidan", "D3.LoveTraynor", "D3.LoveGarrus"],
         "sortIndex": 201
 	}, {
     
@@ -235,7 +235,7 @@
 		"name": "Romanced Miranda",
         "description": "Some time after you warn Miranda about Kai Leng, she will invite you to her safehouse on the Citadel.\n\n Male Shepard only. Only allowed if character was romanced in Game 2. Provides a Paramour achievement. Only one Paramour partner is allowed.",
         "loveInterestId": "S2.Miranda",
-		"blocksDecisionIds": ["D3.LoveJack", "D3.LoveTali", "D3.LoveAshley", "D3.LoveSteve", "D3.LoveKaiden", "D3.LoveLiara"],
+		"blocksDecisionIds": ["D3.LoveJack", "D3.LoveTali", "D3.LoveAshley", "D3.LoveSteve", "D3.LoveKaidan", "D3.LoveLiara"],
         "sortIndex": 202
 	}, {
 		"id": "D3.LoveJack",
@@ -243,7 +243,7 @@
 		"name": "Romanced Jack",
         "description": "You can hook up at Purgatory after the events of Grissom Academy and [megametracker://mission?id=M3.2.Citadel2].\n\n Male Shepard only. Only allowed if character was romanced in Game 2. Provides a Paramour achievement. Only one Paramour partner is allowed.",
         "loveInterestId": "S2.Jack",
-		"blocksDecisionIds": ["D3.LoveMiranda", "D3.LoveTali", "D3.LoveAshley", "D3.LoveSteve", "D3.LoveKaiden", "D3.LoveLiara"],
+		"blocksDecisionIds": ["D3.LoveMiranda", "D3.LoveTali", "D3.LoveAshley", "D3.LoveSteve", "D3.LoveKaidan", "D3.LoveLiara"],
         "sortIndex": 202
 	}, {
 		"id": "D3.LoveTali",
@@ -251,7 +251,7 @@
 		"name": "Romanced Tali",
         "description": "Call her up to your room before [megametracker://mission?id=M3.2.Rannoch].\n\n Male Shepard only. Only allowed if character was romanced in Game 2. Provides a Paramour achievement. Only one Paramour partner is allowed.",
         "loveInterestId": "S2.Tali",
-		"blocksDecisionIds": ["D3.LoveJack", "D3.LoveMiranda", "D3.LoveAshley", "D3.LoveSteve", "D3.LoveKaiden", "D3.LoveLiara"],
+		"blocksDecisionIds": ["D3.LoveJack", "D3.LoveMiranda", "D3.LoveAshley", "D3.LoveSteve", "D3.LoveKaidan", "D3.LoveLiara"],
         "sortIndex": 202
 	}, {
     
@@ -269,11 +269,12 @@
         "loveInterestId": "A2.Chambers",
         "sortIndex": 203
 	}, {
-		"id": "D2.LoveSamara",
+		"id": "D3.LoveSamara",
 		"gameVersion": "3",
 		"name": "Romanced Samara",
         "description": "Available at the end of Citadel DLC.\n\n Only allowed if character was romanced in Game 2. Does not block subsequent romances. Does not provide the Paramour achievement.",
         "loveInterestId": "S2.Samara",
+		"blocksDecisionIds": ["D3.LoveVega", "S3.LoveJavik"],
         "sortIndex": 203
         
 	}, {
@@ -289,6 +290,7 @@
 		"name": "Romanced Javik",
         "description": "Available after the Citadel DLC party.\n\n Female Shepard only. Does not block subsequent romances. Does not provide the Paramour achievement.",
         "loveInterestId": "S3.Javik",
+		"blocksDecisionIds": ["D3.LoveSamara", "D3.LoveVega"],
         "sortIndex": 204
 	}, {
 		"id": "D3.LoveVega",
@@ -296,6 +298,7 @@
 		"name": "Romanced Vega",
         "description": "Available after the Citadel DLC party.\n\n Female Shepard only. Does not block subsequent romances. Does not provide the Paramour achievement.",
         "loveInterestId": "S3.Vega",
+		"blocksDecisionIds": ["D3.LoveSamara", "D3.LoveJavik"],
         "sortIndex": 204
         
         

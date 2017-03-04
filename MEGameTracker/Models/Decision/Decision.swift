@@ -126,7 +126,7 @@ extension Decision {
                 for decisionId in blocksDecisionIds {
                     // new thread?
                     var decision = Decision.get(id: decisionId)
-                    decision?.change(isSelected: false, isSave: true)
+                    decision?.change(isSelected: false, isSave: true, isCascadeChanges: .none)
                 }
             }
         }
@@ -141,6 +141,8 @@ extension Decision {
     ) {
         // mark the correlating love interest decision for later tracking
         guard let loveInterestId = self.loveInterestId,
+            let loveInterest = Person.get(id: loveInterestId, gameVersion: gameVersion),
+            loveInterest.isParamour, // require exclusive love interest to change shepard
             var shepard = App.current.game?.getShepardFromVersion(gameVersion) ?? App.current.game?.shepard
         else {
             return

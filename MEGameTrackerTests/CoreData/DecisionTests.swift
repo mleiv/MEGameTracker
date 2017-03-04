@@ -21,7 +21,7 @@ final class DecisionTests: MEGameTrackerTests {
     
     let saveAshleyJson = "{\"id\": \"D1.Ashley\",\"gameVersion\": \"1\",\"name\": \"Saved Ashley Williams on Virmire\",\"description\": \"If you save Ashley, she will play a key role in Games 2 and 3.\",\"blocksDecisionIds\": [\"D1.Kaidan\"],\"sortIndex\": 203}"
 
-    let saveKaidanJson = "{\"id\": \"D1.Kaidan\",\"gameVersion\": \"1\",\"name\": \"Saved Kaiden Alenko on Virmire\",\"description\": \"If you save Kaiden, he will play a key role in Games 2 and 3.\",\"blocksDecisionIds\": [\"D1.Ashley\"],\"sortIndex\": 203}"
+    let saveKaidanJson = "{\"id\": \"D1.Kaidan\",\"gameVersion\": \"1\",\"name\": \"Saved Kaidan Alenko on Virmire\",\"description\": \"If you save Kaidan, he will play a key role in Games 2 and 3.\",\"blocksDecisionIds\": [\"D1.Ashley\"],\"sortIndex\": 203}"
     
     override func setUp() {
         super.setUp()
