@@ -20,6 +20,7 @@ final public class MapRow: UITableViewCell {
     
     @IBOutlet fileprivate weak var checkboxStack: UIStackView?
     @IBOutlet fileprivate weak var checkboxImageView: UIImageView?
+    @IBOutlet fileprivate weak var checkboxButton: UIButton?
     
     @IBOutlet fileprivate weak var parentMapLabel: MarkupLabel?
     @IBOutlet fileprivate weak var nameLabel: MarkupLabel?
@@ -106,6 +107,7 @@ final public class MapRow: UITableViewCell {
         }
         
         checkboxStack?.isHidden = !(map?.isExplorable ?? true)
+        checkboxButton?.isHidden = checkboxStack?.isHidden ?? false
         setCheckboxImage(isExplored: map?.isExplored ?? false, isAvailable: map?.isAvailable ?? false)
         
         disclosureImageView?.isHidden = !allowsSegue || !(map?.isOpensDetail ?? true)
@@ -136,7 +138,7 @@ final public class MapRow: UITableViewCell {
     }
     
     fileprivate func toggleMap() {
-        guard let nameLabel = self.nameLabel else { return }
+        guard map?.isExplorable == true, let nameLabel = self.nameLabel else { return }
         let isExplored = !(self.map?.isExplored ?? false)
         let spinnerController = origin as? Spinnerable
         DispatchQueue.main.async {

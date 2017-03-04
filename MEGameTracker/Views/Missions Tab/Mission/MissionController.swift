@@ -79,7 +79,7 @@ final public class MissionController: UIViewController, UIImagePickerControllerD
     @IBOutlet public weak var decisionsView: DecisionsView?
     public var decisions: [Decision] = [] {
         didSet {
-            mission?.decisionIds = decisions.map { $0.id } // local changes only
+            mission?.relatedDecisionIds = decisions.map { $0.id } // local changes only
         }
     }
     // Describable
@@ -300,7 +300,7 @@ extension MissionController: Decisionsable {
     
     func setupDecisions() {
         DispatchQueue.main.async { [weak self] in
-            if let decisionIds = self?.mission?.decisionIds {
+            if let decisionIds = self?.mission?.relatedDecisionIds {
                 self?.decisions = Decision.getAll(ids: decisionIds)
                 self?.decisions = self?.decisions.sorted(by: Decision.sort) ?? []
             } else {

@@ -9,7 +9,7 @@
 		"missionType": "DLC",
 		"name": "Genesis",
 		"description": "This feature allows new players to choose from key decisions of Game 1, in the form of an interactive comic. If you imported a Game 1 Shepard, your choices will just carry over (along with many more decisions unavailable to new Game 2 players). \n\n*_This assignment was released as part of the Cerberus Network DLC pack._*",
-		"decisionIds": ["D1.LoveLiara", "D1.LoveKaidan", "D1.LoveAshley", "D1.RachniQueen", "D1.Wrex", "D1.Ashley", "D1.Kaidan", "D1.Council", "D1.Udina", "D1.Anderson"],
+		"relatedDecisionIds": ["D1.LoveLiara", "D1.LoveKaidan", "D1.LoveAshley", "D1.RachniQueen", "D1.Wrex", "D1.Ashley", "D1.Kaidan", "D1.Council", "D1.Udina", "D1.Anderson"],
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mass_Effect:_Genesis"]
 	}, {
 		"id": "DLC2.Arrival",
@@ -330,7 +330,7 @@
 		"inMapId": "G.Ter.Pho.Typ.Aite",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord"],
-		"decisionIds": ["D2.ArcherD"],
+		"relatedDecisionIds": ["D2.ArcherD"],
 		"conversationRewards": [{
 			"set": {
 				"context": "What to do with David",
@@ -658,8 +658,8 @@
 		"gameVersion": "2",
 		"missionType": "DLC",
 		"name": "Lair of the Shadow Broker",
-		"description": "In recovering Shepard's body, Liara ended up losing her partner, [megametracker://person?id=O2.Feron]. Feron was an agent of the Shadow Broker, who betrayed him to help Liara. She wants to track down the Shadow Broker and find out what happened to Feron. \n\nComplete [megametracker://mission?id=A2.I.TheObserver] first, or you will lose the opportunity. \n\n*_This assignment was released as part of the Lair of the Shadow Broker DLC pack._*",
-		"inMapId": null,
+		"description": "In recovering Shepard's body, Liara ended up losing her partner, [megametracker://person?id=O2.Feron]. Feron was an agent of the Shadow Broker, but betrayed him to help Liara. Now she wants to track down the Shadow Broker and find out what happened to Feron. \n\nLike the Pinnacle Station DLC in Game 1, completing this assigment results in an ongoing set of rewards. Completing it early will boost your finances. \n\n*_This assignment was released as part of the Lair of the Shadow Broker DLC pack._*",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1.Administration",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Lair_of_the_Shadow_Broker_(mission)"],
 		"relatedMissionIds": ["A2.I.SystemHacking", "A2.I.TheObserver"],
@@ -873,9 +873,231 @@
 			"type": "BlockedUntil",
 			"id": "Completed: Horizon"
 		}]
+	}, {
+		"id": "DLC2.LairShadowBroker.1",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10001,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Talk to Liara",
+		"description": "Share [the Illusive Man's|megametracker://person?id=E2.IllusiveMan] information about [megametracker://person?id=E2.ShadowBroker] with Liara. She will leave to investigate and instruct you to rendezvous at her apartment when you are ready to start the mission. \n\n[megametracker://mission?id=A2.I.TheObserver] cannot be completed after this point.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1.Administration",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Started: Shadow Broker"
+		}]
+	}, {
+		"id": "DLC2.LairShadowBroker.2",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10002,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Take Cab",
+		"description": "Head over to the Taxi Hub and request a cab to Liara's apartment. \n\nNote: once started, you will not be returning to Nos Astra or the Normandy until the entire assignment is completed.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1.Cab",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC2.LairShadowBroker.3",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10003,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Backup Disk",
+		"description": "Liara's apartment is a crime scene when you arrive, and Liara is nowhere to be found. The Spectre [megametracker://person?id=E2.Vasir] is investigating, but has not been able to find any clues. \n\nExamine the apartment yourself. A message from one of Liara's contacts [megametracker://person?id=O2.Sekat] is hidden there. Sekat asks Liara to come to his office in the Baria Frontiers office at the Dracon Trade Center.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.5Liaras",
+		"mapLocationPoint": {
+			"x": 867,
+			"y": 1048,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.LairShadowBroker.4",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10004,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Baria Frontiers",
+		"description": "Travel to the Dracon Trade Center. Before you go far, there is an explosion, taking out several floors. Vasir heads to the roof while you head in to investigate from below. Head upstairs (the elevator is out) and up to the plaza and to the left for the Baria Frontiers office. Check the log to find that Liara was there just minutes earlier.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.6Dracon",
+		"mapLocationPoint": {
+			"x": 907,
+			"y": 343,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.LairShadowBroker.5",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10005,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Sekat",
+		"description": "This floor is crawling with Shadow Broker troops. Fight your way down the hallways, past the explosion epicenter, through the cafeteria, and upstairs (activating the [Fire Suppression System|megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.6Dracon&title=Suppression System&location=715x583] first). \n\nAt the end of the upstairs hallway is a door to a room which runs the length of the hallway. Fight your way through. \n\nWhen you open the door at the end of the room, Sekat is killed by a Shadow Broker agent on the other side, and then the agent is killed by Vasir. Then Liara reveals herself.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.6Dracon",
+		"mapLocationPoint": {
+			"x": 963,
+			"y": 1211,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.LairShadowBroker.6",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10006,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Liara",
+		"description": "Liara confronts Vasir, whom she reveals is also a Shadow Broker agent. In the ensuing fight, you and Vasir plummet down to the plaza on the prior level. Shadow Broker troops pour out from the Eldfell-Ashland Energy offices and Vasir heads downstairs. \n\nOnce you have eliminated all of them, follow Vasir down to the entrance. She will escape in her car, and you and Liara follow in a cab.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.6Dracon",
+		"mapLocationPoint": {
+			"x": 963,
+			"y": 1211,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.LairShadowBroker.7",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10007,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Sky Chase",
+		"description": "Pursue Vasir through the skies of Illium. Avoid obstacles and other vehicles, and go fast enough that you don't lose her. At the end, she crashes into the Hotel Azure."
+	}, {
+		"id": "DLC2.LairShadowBroker.8",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10008,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Vasir",
+		"description": "Vasir leaves a [bloody trail|megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.7Azure&title=Blood%20Trail&location=1086x1693] as she flees through the hotel. Shadow Broker troops land to distract you from the chase. Eliminate them and then follow Vasir to the outdoor cafe, where she takes a hostage. If you have high enough Reputation, you and Liara can rescue the hostage unwounded.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.7Azure",
+		"mapLocationPoint": {
+			"x": 305,
+			"y": 786,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.LairShadowBroker.9",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10009,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Kill Vasir",
+		"description": "Vasir and a huge force of Shadow Broker troops attack. This is your typical Mass Effect battle, where you can only attack Vasir for short windows, followed by her leaving the fight and more ground troops distracting you. \n\nOnce Vasir is down, Liara retrieves her data and Vasir lectures you on what is a good Spectre.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.7Azure",
+		"mapLocationPoint": {
+			"x": 305,
+			"y": 786,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.LairShadowBroker.10",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10010,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Enter Base",
+		"description": "After a brief interlude talking to Liara, you head out to the Shadow Broker's base near Hagalaz. The ship's exterior has two hazards - Shadow Broker troops and lightning strikes. Be careful when you are near the capacitors. Fight your way across the ship to the maintenance hatch. When Liara starts hacking it, you will have to defend her from five waves of Shadow Broker forces.",
+		"inMapId": "G.Ter.Hou.Sow.Hag.1.Start",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC2.LairShadowBroker.10.1",
+		"inMissionId": "DLC2.LairShadowBroker.10",
+		"sortIndex": 100101,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Rod Controls",
+		"description": "Activate the Rod Controls to continue.",
+		"inMapId": "G.Ter.Hou.Sow.Hag.1Exterior",
+		"mapLocationPoint": {
+			"x": 610,
+			"y": 1789,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.LairShadowBroker.10.2",
+		"inMissionId": "DLC2.LairShadowBroker.10",
+		"sortIndex": 100102,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Panel Controls",
+		"description": "Activate the Panel Controls to continue.",
+		"inMapId": "G.Ter.Hou.Sow.Hag.1Exterior",
+		"mapLocationPoint": {
+			"x": 80,
+			"y": 1441,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.LairShadowBroker.10.3",
+		"inMissionId": "DLC2.LairShadowBroker.10",
+		"sortIndex": 100103,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Rod Controls",
+		"description": "Activate the Rod Controls to continue.",
+		"inMapId": "G.Ter.Hou.Sow.Hag.1Exterior",
+		"mapLocationPoint": {
+			"x": 1328,
+			"y": 490,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.LairShadowBroker.10.4",
+		"inMissionId": "DLC2.LairShadowBroker.10",
+		"sortIndex": 100104,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Hatch Controls",
+		"description": "Activate the Hatch Controls to enter the base.",
+		"inMapId": "G.Ter.Hou.Sow.Hag.1Exterior",
+		"mapLocationPoint": {
+			"x": 406,
+			"y": 428,
+			"radius": 1
+		}
 
-
-
+	}, {
+		"id": "DLC2.LairShadowBroker.11",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10011,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Feron",
+		"description": "Fight small pockets of Shadow Broker troops down to Feron's holding cell. He can't be removed without killing him, so you will have to confront the Shadow Broker himself.",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+		"mapLocationPoint": {
+			"x": 727,
+			"y": 743,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.LairShadowBroker.12",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10012,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Shadow Broker",
+		"description": "Continue to the Shadow Broker's office. You find that the Shadow Broker, like the Dread Pirate Roberts, is more of a role than a person. When Liara points out that his species hasn't even acquired space travel yet, the Shadow Broker attacks. He is a tough enemy, but just the one. Kill him.",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+		"mapLocationPoint": {
+			"x": 1503,
+			"y": 475,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.LairShadowBroker.13",
+		"inMissionId": "DLC2.LairShadowBroker",
+		"sortIndex": 10013,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Aftermath",
+		"description": "Feron is freed and Liara takes over as the Shadow Broker. You now have full access to all the Shadow Broker's resources. There are investment opportunities and upgrades, as well as a souvenir Shadow Broker ship for your cabin. You can examine video archives or speak to Feron in the back room.",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+		"mapLocationPoint": {
+			"x": 1503,
+			"y": 475,
+			"radius": 1
+		}
 
 
 
@@ -1130,7 +1352,7 @@
 	}, {
 		"id": "A2.L.Zaeed.1",
 		"inMissionId": "A2.L.Zaeed",
-		"sortIndex": 1,
+		"sortIndex": 3011,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Southern Gatehouse",
@@ -1144,7 +1366,7 @@
 	}, {
 		"id": "A2.L.Zaeed.2",
 		"inMissionId": "A2.L.Zaeed",
-		"sortIndex": 1,
+		"sortIndex": 3012,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Paragon/Renegade Decision",
@@ -1158,7 +1380,7 @@
 	}, {
 		"id": "A2.L.Zaeed.3",
 		"inMissionId": "A2.L.Zaeed",
-		"sortIndex": 1,
+		"sortIndex": 3013,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Paragon Route (Optional)",
@@ -1172,7 +1394,7 @@
 	}, {
 		"id": "A2.L.Zaeed.3.1",
 		"inMissionId": "A2.L.Zaeed.3",
-		"sortIndex": 1,
+		"sortIndex": 30131,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Fuel Control Station 1",
@@ -1186,7 +1408,7 @@
 	}, {
 		"id": "A2.L.Zaeed.3.2",
 		"inMissionId": "A2.L.Zaeed.3",
-		"sortIndex": 1,
+		"sortIndex": 30132,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Fuel Control Station 2",
@@ -1200,7 +1422,7 @@
 	}, {
 		"id": "A2.L.Zaeed.3.3",
 		"inMissionId": "A2.L.Zaeed.3",
-		"sortIndex": 1,
+		"sortIndex": 30133,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Fuel Control Station 3",
@@ -1214,7 +1436,7 @@
 	}, {
 		"id": "A2.L.Zaeed.3.4",
 		"inMissionId": "A2.L.Zaeed.3",
-		"sortIndex": 1,
+		"sortIndex": 30134,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Fire Control Station",
@@ -1228,7 +1450,7 @@
 	}, {
 		"id": "A2.L.Zaeed.4",
 		"inMissionId": "A2.L.Zaeed",
-		"sortIndex": 1,
+		"sortIndex": 3014,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Renegade Route (Optional)",
@@ -1243,7 +1465,7 @@
 	}, {
 		"id": "A2.L.Zaeed.5",
 		"inMissionId": "A2.L.Zaeed",
-		"sortIndex": 1,
+		"sortIndex": 3015,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Pursue Vido",
@@ -1268,7 +1490,7 @@
 			"radius": 1
 		},
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Master_Thief"],
-		"decisionIds": ["D2.Graybox"],
+		"relatedDecisionIds": ["D2.Graybox"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
@@ -1484,7 +1706,7 @@
 	}, {
 		"id": "A2.L.Kasumi.1",
 		"inMissionId": "A2.L.Kasumi",
-		"sortIndex": 1000,
+		"sortIndex": 3001,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Break Into The Vault",
@@ -1493,7 +1715,7 @@
 	}, {
 		"id": "A2.L.Kasumi.1.1",
 		"inMissionId": "A2.L.Kasumi.1",
-		"sortIndex": 1000,
+		"sortIndex": 30011,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Find Vault Password",
@@ -1507,7 +1729,7 @@
 	}, {
 		"id": "A2.L.Kasumi.1.2",
 		"inMissionId": "A2.L.Kasumi.1",
-		"sortIndex": 1000,
+		"sortIndex": 30012,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Record Hock's Voice",
@@ -1522,7 +1744,7 @@
 	}, {
 		"id": "A2.L.Kasumi.1.3",
 		"inMissionId": "A2.L.Kasumi.1",
-		"sortIndex": 1000,
+		"sortIndex": 30013,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Get Hock's DNA",
@@ -1532,7 +1754,7 @@
 	}, {
 		"id": "A2.L.Kasumi.1.3.1",
 		"inMissionId": "A2.L.Kasumi.1.3",
-		"sortIndex": 1000,
+		"sortIndex": 300131,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Wine Glass",
@@ -1546,7 +1768,7 @@
 	}, {
 		"id": "A2.L.Kasumi.1.3.2",
 		"inMissionId": "A2.L.Kasumi.1.3",
-		"sortIndex": 1000,
+		"sortIndex": 300132,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Couch Cushion",
@@ -1560,7 +1782,7 @@
 	}, {
 		"id": "A2.L.Kasumi.1.3.3",
 		"inMissionId": "A2.L.Kasumi.1.3",
-		"sortIndex": 1000,
+		"sortIndex": 300133,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Datapad",
@@ -1574,7 +1796,7 @@
 	}, {
 		"id": "A2.L.Kasumi.1.4",
 		"inMissionId": "A2.L.Kasumi.1",
-		"sortIndex": 1000,
+		"sortIndex": 30014,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Cut the Power",
@@ -1588,7 +1810,7 @@
 	}, {
 		"id": "A2.L.Kasumi.2",
 		"inMissionId": "A2.L.Kasumi",
-		"sortIndex": 1000,
+		"sortIndex": 3002,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Find Keiji's Graybox",
@@ -1606,7 +1828,7 @@
 	}, {
 		"id": "A2.L.Kasumi.3",
 		"inMissionId": "A2.L.Kasumi",
-		"sortIndex": 1000,
+		"sortIndex": 3003,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Escape Outside",
@@ -1616,7 +1838,7 @@
 	}, {
 		"id": "A2.L.Kasumi.4",
 		"inMissionId": "A2.L.Kasumi",
-		"sortIndex": 1000,
+		"sortIndex": 3004,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Destroy Hock's Gunship",
@@ -1820,7 +2042,7 @@
 	}, {
 		"id": "A2.D.Garrus.1",
 		"inMissionId": "A2.D.Garrus",
-		"sortIndex": 1000,
+		"sortIndex": 2031,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Sign on to Attack Archangel",
@@ -1830,7 +2052,7 @@
 	}, {
 		"id": "A2.D.Garrus.3",
 		"inMissionId": "A2.D.Garrus",
-		"sortIndex": 1000,
+		"sortIndex": 2033,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Sabotage Mercenary Attack",
@@ -1840,7 +2062,7 @@
 	}, {
 		"id": "A2.D.Garrus.3.1",
 		"inMissionId": "A2.D.Garrus.3",
-		"sortIndex": 1000,
+		"sortIndex": 20331,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Sabotage YMIR Mech",
@@ -1850,7 +2072,7 @@
 	}, {
 		"id": "A2.D.Garrus.3.2",
 		"inMissionId": "A2.D.Garrus.3",
-		"sortIndex": 1000,
+		"sortIndex": 20332,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Sabotage Gunship",
@@ -1864,7 +2086,7 @@
 	}, {
 		"id": "A2.D.Garrus.4",
 		"inMissionId": "A2.D.Garrus",
-		"sortIndex": 1000,
+		"sortIndex": 2034,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Meet Archangel",
@@ -1878,7 +2100,7 @@
 	}, {
 		"id": "A2.D.Garrus.5",
 		"inMissionId": "A2.D.Garrus",
-		"sortIndex": 1000,
+		"sortIndex": 2035,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Eclipse Attack",
@@ -1888,7 +2110,7 @@
 	}, {
 		"id": "A2.D.Garrus.6",
 		"inMissionId": "A2.D.Garrus",
-		"sortIndex": 1000,
+		"sortIndex": 2036,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Blood Pack Attack",
@@ -1898,7 +2120,7 @@
 	}, {
 		"id": "A2.D.Garrus.6.1",
 		"inMissionId": "A2.D.Garrus.6",
-		"sortIndex": 1000,
+		"sortIndex": 20361,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Close Shutter 1",
@@ -1908,7 +2130,7 @@
 	}, {
 		"id": "A2.D.Garrus.6.2",
 		"inMissionId": "A2.D.Garrus.6",
-		"sortIndex": 1000,
+		"sortIndex": 20362,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Close Shutter 2",
@@ -1918,7 +2140,7 @@
 	}, {
 		"id": "A2.D.Garrus.6.3",
 		"inMissionId": "A2.D.Garrus.6",
-		"sortIndex": 1000,
+		"sortIndex": 20363,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Close Shutter 3",
@@ -1928,7 +2150,7 @@
 	}, {
 		"id": "A2.D.Garrus.7",
 		"inMissionId": "A2.D.Garrus",
-		"sortIndex": 1000,
+		"sortIndex": 2037,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Blue Suns Attack",
@@ -1938,7 +2160,7 @@
 	}, {
 		"id": "A2.D.Garrus.8",
 		"inMissionId": "A2.D.Garrus",
-		"sortIndex": 1000,
+		"sortIndex": 2038,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Debrief",
@@ -2278,7 +2500,7 @@
 	}, {
 		"id": "A2.D.Thane.1",
 		"inMissionId": "A2.D.Thane",
-		"sortIndex": 1000,
+		"sortIndex": 2101,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Talk to Liara",
@@ -2288,7 +2510,7 @@
 	}, {
 		"id": "A2.D.Thane.2",
 		"inMissionId": "A2.D.Thane",
-		"sortIndex": 1000,
+		"sortIndex": 2102,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Talk to Seryna",
@@ -2302,7 +2524,7 @@
 	}, {
 		"id": "A2.D.Thane.3",
 		"inMissionId": "A2.D.Thane",
-		"sortIndex": 1000,
+		"sortIndex": 2103,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Level One",
@@ -2311,7 +2533,7 @@
 	}, {
 		"id": "A2.D.Thane.4",
 		"inMissionId": "A2.D.Thane",
-		"sortIndex": 1000,
+		"sortIndex": 2104,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Level Two",
@@ -2320,7 +2542,7 @@
 	}, {
 		"id": "A2.D.Thane.5",
 		"inMissionId": "A2.D.Thane",
-		"sortIndex": 1000,
+		"sortIndex": 2105,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Level Three",
@@ -2329,7 +2551,7 @@
 	}, {
 		"id": "A2.D.Thane.6",
 		"inMissionId": "A2.D.Thane",
-		"sortIndex": 1000,
+		"sortIndex": 2106,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Roof",
@@ -2338,7 +2560,7 @@
 	}, {
 		"id": "A2.D.Thane.7",
 		"inMissionId": "A2.D.Thane",
-		"sortIndex": 1000,
+		"sortIndex": 2107,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Finish Mission",
@@ -2608,7 +2830,7 @@
 	}, {
 		"id": "A2.D.Jack.1",
 		"inMissionId": "A2.D.Jack",
-		"sortIndex": 1,
+		"sortIndex": 2061,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Facility Tour",
@@ -2622,7 +2844,7 @@
 	}, {
 		"id": "A2.D.Jack.2",
 		"inMissionId": "A2.D.Jack",
-		"sortIndex": 1,
+		"sortIndex": 2062,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Spring The Trap",
@@ -2636,7 +2858,7 @@
 	}, {
 		"id": "A2.D.Jack.3",
 		"inMissionId": "A2.D.Jack",
-		"sortIndex": 1,
+		"sortIndex": 2063,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Super Max Wing",
@@ -2650,7 +2872,7 @@
 	}, {
 		"id": "A2.D.Jack.4",
 		"inMissionId": "A2.D.Jack",
-		"sortIndex": 1,
+		"sortIndex": 2064,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Warden Kuril",
@@ -2664,7 +2886,7 @@
 	}, {
 		"id": "A2.D.Jack.4.1",
 		"inMissionId": "A2.D.Jack.4",
-		"sortIndex": 1,
+		"sortIndex": 20641,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Shield Generator 1",
@@ -2678,7 +2900,7 @@
 	}, {
 		"id": "A2.D.Jack.4.2",
 		"inMissionId": "A2.D.Jack.4",
-		"sortIndex": 1,
+		"sortIndex": 20642,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Shield Generator 2",
@@ -2692,7 +2914,7 @@
 	}, {
 		"id": "A2.D.Jack.4.3",
 		"inMissionId": "A2.D.Jack.4",
-		"sortIndex": 1,
+		"sortIndex": 20643,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Shield Generator 3",
@@ -2715,7 +2937,7 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Justicar"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
-		"decisionIds": ["D2.NiftuCal"],
+		"relatedDecisionIds": ["D2.NiftuCal"],
 		"relatedMissionIds": ["A2.I.SmugglingEvidence", "A2.I.StolenGoodsFound"],
 		"conversationRewards": [{
 			"set": {
@@ -2880,7 +3102,7 @@
 	}, {
 		"id": "A2.D.Samara.1",
 		"inMissionId": "A2.D.Samara",
-		"sortIndex": 1,
+		"sortIndex": 2091,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Talk to Dara",
@@ -2894,7 +3116,7 @@
 	}, {
 		"id": "A2.D.Samara.2",
 		"inMissionId": "A2.D.Samara",
-		"sortIndex": 1,
+		"sortIndex": 2092,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Talk to Anaya",
@@ -2908,7 +3130,7 @@
 	}, {
 		"id": "A2.D.Samara.3",
 		"inMissionId": "A2.D.Samara",
-		"sortIndex": 1,
+		"sortIndex": 2093,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Find Samara",
@@ -2922,7 +3144,7 @@
 	}, {
 		"id": "A2.D.Samara.4",
 		"inMissionId": "A2.D.Samara",
-		"sortIndex": 1,
+		"sortIndex": 2094,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Talk to Pitne For",
@@ -2936,7 +3158,7 @@
 	}, {
 		"id": "A2.D.Samara.5",
 		"inMissionId": "A2.D.Samara",
-		"sortIndex": 1,
+		"sortIndex": 2095,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Eclipse Hideout",
@@ -2944,7 +3166,7 @@
 	}, {
 		"id": "A2.D.Samara.6",
 		"inMissionId": "A2.D.Samara",
-		"sortIndex": 1,
+		"sortIndex": 2096,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Elnora (Optional)",
@@ -2958,7 +3180,7 @@
 	}, {
 		"id": "A2.D.Samara.7",
 		"inMissionId": "A2.D.Samara",
-		"sortIndex": 1,
+		"sortIndex": 2097,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Gunship",
@@ -2972,7 +3194,7 @@
 	}, {
 		"id": "A2.D.Samara.8",
 		"inMissionId": "A2.D.Samara",
-		"sortIndex": 1,
+		"sortIndex": 2098,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Shipping Manifest (Optional)",
@@ -2986,7 +3208,7 @@
 	}, {
 		"id": "A2.D.Samara.9",
 		"inMissionId": "A2.D.Samara",
-		"sortIndex": 1,
+		"sortIndex": 2099,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Niftu Cal",
@@ -3000,7 +3222,7 @@
 	}, {
 		"id": "A2.D.Samara.10",
 		"inMissionId": "A2.D.Samara",
-		"sortIndex": 1,
+		"sortIndex": 2100,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Captain Wasea's Data",
@@ -3341,7 +3563,7 @@
 	}, {
 		"id": "A2.D.Mordin.1",
 		"inMissionId": "A2.D.Mordin",
-		"sortIndex": 1000,
+		"sortIndex": 2021,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Go to The Quarantine Zone",
@@ -3351,7 +3573,7 @@
 	}, {
 		"id": "A2.D.Mordin.2",
 		"inMissionId": "A2.D.Mordin",
-		"sortIndex": 1000,
+		"sortIndex": 2022,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Help the Batarian Victim",
@@ -3365,7 +3587,7 @@
 	}, {
 		"id": "A2.D.Mordin.3",
 		"inMissionId": "A2.D.Mordin",
-		"sortIndex": 1000,
+		"sortIndex": 2023,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Fight to the Clinic",
@@ -3375,7 +3597,7 @@
 	}, {
 		"id": "A2.D.Mordin.4",
 		"inMissionId": "A2.D.Mordin",
-		"sortIndex": 1000,
+		"sortIndex": 2024,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Speak to Mordin",
@@ -3389,7 +3611,7 @@
 	}, {
 		"id": "A2.D.Mordin.5",
 		"inMissionId": "A2.D.Mordin",
-		"sortIndex": 1000,
+		"sortIndex": 2025,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Fight to Environmental Control",
@@ -3399,7 +3621,7 @@
 	}, {
 		"id": "A2.D.Mordin.6",
 		"inMissionId": "A2.D.Mordin",
-		"sortIndex": 1000,
+		"sortIndex": 2026,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Distribute The Cure",
@@ -3409,7 +3631,7 @@
 	}, {
 		"id": "A2.D.Mordin.7",
 		"inMissionId": "A2.D.Mordin",
-		"sortIndex": 1000,
+		"sortIndex": 2027,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Debrief",
@@ -3426,7 +3648,7 @@
 		"inMapId": "G.Ter.Far.Dho.Haestrom",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_Tali"],
-		"decisionIds": ["D2.KalReegar"],
+		"relatedDecisionIds": ["D2.KalReegar"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
 		"conversationRewards": [{
@@ -3577,7 +3799,7 @@
 	}, {
 		"id": "A2.D.Tali.1",
 		"inMissionId": "A2.D.Tali",
-		"sortIndex": 1000,
+		"sortIndex": 2081,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Open Gate",
@@ -3587,7 +3809,7 @@
 	}, {
 		"id": "A2.D.Tali.2",
 		"inMissionId": "A2.D.Tali",
-		"sortIndex": 1000,
+		"sortIndex": 2082,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Answer Radio",
@@ -3597,7 +3819,7 @@
 	}, {
 		"id": "A2.D.Tali.3",
 		"inMissionId": "A2.D.Tali",
-		"sortIndex": 1000,
+		"sortIndex": 2083,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Clear Fallen Pillar",
@@ -3611,7 +3833,7 @@
 	}, {
 		"id": "A2.D.Tali.3.1",
 		"inMissionId": "A2.D.Tali.3",
-		"sortIndex": 1000,
+		"sortIndex": 20831,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Demolition Charge",
@@ -3625,7 +3847,7 @@
 	}, {
 		"id": "A2.D.Tali.3.2",
 		"inMissionId": "A2.D.Tali.3",
-		"sortIndex": 1000,
+		"sortIndex": 20832,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Demolition Charge",
@@ -3639,7 +3861,7 @@
 	}, {
 		"id": "A2.D.Tali.4",
 		"inMissionId": "A2.D.Tali",
-		"sortIndex": 1000,
+		"sortIndex": 2084,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Activate Comm Control",
@@ -3649,7 +3871,7 @@
 	}, {
 		"id": "A2.D.Tali.5",
 		"inMissionId": "A2.D.Tali",
-		"sortIndex": 1000,
+		"sortIndex": 2085,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Open Shutters",
@@ -3659,7 +3881,7 @@
 	}, {
 		"id": "A2.D.Tali.6",
 		"inMissionId": "A2.D.Tali",
-		"sortIndex": 1000,
+		"sortIndex": 2086,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Defeat Geth Colossus",
@@ -3673,7 +3895,7 @@
 	}, {
 		"id": "A2.D.Tali.7",
 		"inMissionId": "A2.D.Tali",
-		"sortIndex": 1000,
+		"sortIndex": 2087,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Find Tali",
@@ -4012,7 +4234,7 @@
 	}, {
 		"id": "A2.D.Grunt.1",
 		"inMissionId": "A2.D.Grunt",
-		"sortIndex": 1000,
+		"sortIndex": 2071,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Wounded Mercenary",
@@ -4026,7 +4248,7 @@
 	}, {
 		"id": "A2.D.Grunt.2",
 		"inMissionId": "A2.D.Grunt",
-		"sortIndex": 1000,
+		"sortIndex": 2072,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Tank-Grown Krogan",
@@ -4040,7 +4262,7 @@
 	}, {
 		"id": "A2.D.Grunt.3",
 		"inMissionId": "A2.D.Grunt",
-		"sortIndex": 1000,
+		"sortIndex": 2073,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Research Base",
@@ -4054,7 +4276,7 @@
 	}, {
 		"id": "A2.D.Grunt.4",
 		"inMissionId": "A2.D.Grunt",
-		"sortIndex": 1000,
+		"sortIndex": 2074,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Okeer",
@@ -4068,7 +4290,7 @@
 	}, {
 		"id": "A2.D.Grunt.5",
 		"inMissionId": "A2.D.Grunt",
-		"sortIndex": 1000,
+		"sortIndex": 2075,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Jedore",
@@ -4082,7 +4304,7 @@
 	}, {
 		"id": "A2.D.Grunt.6",
 		"inMissionId": "A2.D.Grunt",
-		"sortIndex": 1000,
+		"sortIndex": 2076,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Okeer's Son",
@@ -4378,7 +4600,7 @@
 		"inMapId": "G.Ter.Ros.Alp.2175Aeia",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jacob:_The_Gift_of_Greatness"],
-		"decisionIds": ["D2.JacobLoyalty", "D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3"],
+		"relatedDecisionIds": ["D2.JacobLoyalty", "D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3"],
 		"conversationRewards": [{
 			"set": {
 				"context": "Acquiring the mission",
@@ -4614,7 +4836,7 @@
 	}, {
 		"id": "A2.L.Jac.1",
 		"inMissionId": "A2.L.Jacob",
-		"sortIndex": 1000,
+		"sortIndex": 3041,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Beacon",
@@ -4624,7 +4846,7 @@
 	}, {
 		"id": "A2.L.Jac.2",
 		"inMissionId": "A2.L.Jacob",
-		"sortIndex": 1000,
+		"sortIndex": 3042,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Survivor",
@@ -4638,7 +4860,7 @@
 	}, {
 		"id": "A2.L.Jac.3",
 		"inMissionId": "A2.L.Jacob",
-		"sortIndex": 1000,
+		"sortIndex": 3043,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Statue",
@@ -4648,7 +4870,7 @@
 	}, {
 		"id": "A2.L.Jac.4",
 		"inMissionId": "A2.L.Jacob",
-		"sortIndex": 1000,
+		"sortIndex": 3044,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Inactive Mech",
@@ -4662,7 +4884,7 @@
 	}, {
 		"id": "A2.L.Jac.5",
 		"inMissionId": "A2.L.Jacob",
-		"sortIndex": 1000,
+		"sortIndex": 3045,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Dead Bodies",
@@ -4676,7 +4898,7 @@
 	}, {
 		"id": "A2.L.Jac.6",
 		"inMissionId": "A2.L.Jacob",
-		"sortIndex": 1000,
+		"sortIndex": 3046,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Large Encampment",
@@ -4690,7 +4912,7 @@
 	}, {
 		"id": "A2.L.Jac.7",
 		"inMissionId": "A2.L.Jacob",
-		"sortIndex": 1000,
+		"sortIndex": 3047,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Ronald Taylor",
@@ -4712,7 +4934,7 @@
 		"inMapId": "G.Ter.Pho.Sea.Station",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Legion:_A_House_Divided"],
-        "decisionIds": ["D2.Heretics"],
+		"relatedDecisionIds": ["D2.Heretics"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
 		"events": [{
@@ -4911,7 +5133,7 @@
 	}, {
 		"id": "A2.L.Mir.1",
 		"inMissionId": "A2.L.Miranda",
-		"sortIndex": 1000,
+		"sortIndex": 3021,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Talk to Lanteia",
@@ -4925,7 +5147,7 @@
 	}, {
 		"id": "A2.L.Mir.2",
 		"inMissionId": "A2.L.Miranda",
-		"sortIndex": 1000,
+		"sortIndex": 3022,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Eclipse Engineer",
@@ -4939,7 +5161,7 @@
 	}, {
 		"id": "A2.L.Mir.3",
 		"inMissionId": "A2.L.Miranda",
-		"sortIndex": 1000,
+		"sortIndex": 3023,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Niket and Enyala",
@@ -4953,7 +5175,7 @@
 	}, {
 		"id": "A2.L.Mir.4",
 		"inMissionId": "A2.L.Miranda",
-		"sortIndex": 1000,
+		"sortIndex": 3024,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "To Oriana",
@@ -4976,7 +5198,7 @@
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mordin:_Old_Blood"],
 		"relatedMissionIds": ["A2.T.CombustionManifold", "A2.T.MissingScout"],
-		"decisionIds": ["D2.Maelon", "D2.MaelonsData"],
+		"relatedDecisionIds": ["D2.Maelon", "D2.MaelonsData"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
 		"conversationRewards": [{
@@ -5232,7 +5454,7 @@
 	}, {
 		"id": "A2.L.Mor.1",
 		"inMissionId": "A2.L.Mordin",
-		"sortIndex": 1000,
+		"sortIndex": 3071,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Take Transport",
@@ -5242,7 +5464,7 @@
 	}, {
 		"id": "A2.L.Mor.2",
 		"inMissionId": "A2.L.Mordin",
-		"sortIndex": 1000,
+		"sortIndex": 3072,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Hospital Approach",
@@ -5252,7 +5474,7 @@
 	}, {
 		"id": "A2.L.Mor.3",
 		"inMissionId": "A2.L.Mordin",
-		"sortIndex": 1000,
+		"sortIndex": 3073,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Hospital Interior",
@@ -5262,7 +5484,7 @@
 	}, {
 		"id": "A2.L.Mor.4",
 		"inMissionId": "A2.L.Mordin",
-		"sortIndex": 1000,
+		"sortIndex": 3074,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Maelon",
@@ -5284,7 +5506,7 @@
 		"inMapId": "G.Ter.Ome.Sah.Omega",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Samara:_The_Ardat-Yakshi"],
-        "decisionIds": ["D2.SamaraMorinth"],
+		"relatedDecisionIds": ["D2.SamaraMorinth"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
 		"events": [{
@@ -5365,7 +5587,7 @@
 
 	}, {
 		"id": "A2.UC.2ArmorUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 10000,
 		"gameVersion": "2",
 		"missionType": "Upgrade",
 		"name": "Armor",
@@ -5378,7 +5600,7 @@
 	}, {
 		"id": "A2.UC.ArmorUpgrades.DP",
 		"inMissionId": "A2.UC.2ArmorUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5391,7 +5613,7 @@
 	}, {
 		"id": "A2.UC.ArmorUpgrades.BD",
 		"inMissionId": "A2.UC.2ArmorUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5404,7 +5626,7 @@
 	}, {
 		"id": "A2.UC.ArmorUpgrades.TD",
 		"inMissionId": "A2.UC.2ArmorUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5417,7 +5639,7 @@
 	}, {
 		"id": "A2.UC.ArmorUpgrades.MG",
 		"inMissionId": "A2.UC.2ArmorUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5430,7 +5652,7 @@
 	}, {
 		"id": "A2.UC.ArmorUpgrades.Cyb",
 		"inMissionId": "A2.UC.2ArmorUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5443,7 +5665,7 @@
 
 	}, {
 		"id": "A2.UC.3WeaponUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 10000,
 		"gameVersion": "2",
 		"missionType": "Upgrade",
 		"name": "Weapons",
@@ -5456,7 +5678,7 @@
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR",
 		"inMissionId": "A2.UC.3WeaponUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5469,7 +5691,7 @@
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HP",
 		"inMissionId": "A2.UC.3WeaponUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5482,7 +5704,7 @@
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG",
 		"inMissionId": "A2.UC.3WeaponUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5495,7 +5717,7 @@
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR",
 		"inMissionId": "A2.UC.3WeaponUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5508,7 +5730,7 @@
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG",
 		"inMissionId": "A2.UC.3WeaponUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5521,7 +5743,7 @@
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW",
 		"inMissionId": "A2.UC.3WeaponUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5534,7 +5756,7 @@
 
 	}, {
 		"id": "A2.UC.4SquadUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 10000,
 		"gameVersion": "2",
 		"missionType": "Upgrade",
 		"name": "Squad",
@@ -5550,7 +5772,7 @@
 	}, {
 		"id": "A2.UC.SquadUpgrades.KV",
 		"inMissionId": "A2.UC.4SquadUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5560,7 +5782,7 @@
 	}, {
 		"id": "A2.UC.SquadUpgrades.GSS",
 		"inMissionId": "A2.UC.4SquadUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"missionType": "Set",
 		"pageTitle": "Upgrade",
@@ -5570,7 +5792,7 @@
 
 	}, {
 		"id": "A2.UC.5MiscUpgrades",
-		"sortIndex": 1000,
+		"sortIndex": 10000,
 		"gameVersion": "2",
 		"missionType": "Upgrade",
 		"name": "Special",
@@ -5585,7 +5807,7 @@
 	}, {
 		"x-comment-x": "-----------------------COLLECTIONS-------------------------",
 		"id": "A2.UC.Pets",
-		"sortIndex": 1000,
+		"sortIndex": 10000,
 		"gameVersion": "2",
 		"missionType": "Collection",
 		"name": "Pets",
@@ -5598,7 +5820,7 @@
 		}]
 	}, {
 		"id": "A2.UC.Ships",
-		"sortIndex": 1000,
+		"sortIndex": 10000,
 		"gameVersion": "2",
 		"missionType": "Collection",
 		"name": "Model Ships",
@@ -5610,7 +5832,7 @@
 		}]
 	}, {
 		"id": "A2.UC.Souvenirs",
-		"sortIndex": 1000,
+		"sortIndex": 10000,
 		"gameVersion": "2",
 		"missionType": "Collection",
 		"name": "Souvenirs",
@@ -5621,7 +5843,7 @@
 		}]
 	}, {
 		"id": "A2.UC.StarCharts",
-		"sortIndex": 1000,
+		"sortIndex": 10000,
 		"gameVersion": "2",
 		"missionType": "Collection",
 		"name": "Star Charts",

@@ -72,7 +72,7 @@
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Hanar_Diplomat"],
-		"decisionIds": ["D3.Bau", "D3.Kahje"],
+		"relatedDecisionIds": ["D3.Bau", "D3.Kahje"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -228,7 +228,7 @@
 		"experience": 210,
 		"reward": "5,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Batarian_Codes"],
-		"decisionIds": ["D1.X57Hostages", "D3.Balak"],
+		"relatedDecisionIds": ["D1.X57Hostages", "D3.Balak"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -417,7 +417,7 @@
 		"experience": 30,
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Medi-Gel_Sabotage"],
-		"decisionIds": ["D1.Conrad", "D2.Conrad", "D3.Conrad", "D1.ElkossLicense", "D1.Hossle", "D1.AsariWritings", "D1.Rita"],
+		"relatedDecisionIds": ["D1.Conrad", "D2.Conrad", "D3.Conrad", "D1.ElkossLicense", "D1.Hossle", "D1.AsariWritings", "D1.Rita"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -492,7 +492,7 @@
 		"experience": 210,
 		"reward": "5,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Volus_Ambassador"],
-		"decisionIds": ["D2.Zaeed"],
+		"relatedDecisionIds": ["D2.Zaeed"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -910,7 +910,7 @@
 		"reward": "12,500 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Rannoch:_Admiral_Koris"],
 		"relatedMissionIds": ["A3.TargetJammingTechnology"],
-        "decisionIds": ["D3.Koris"],
+        "relatedDecisionIds": ["D3.Koris"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Geth Dreadnought"
@@ -1037,7 +1037,7 @@
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Grissom_Academy:_Emergency_Evacuation"],
 		"relatedMissionIds": ["A3.BioticAmp"],
-        "decisionIds": ["D2.Jack", "D2.ArcherD", "D3.GrissomStudents"],
+        "relatedDecisionIds": ["D2.Jack", "D2.ArcherD", "D3.GrissomStudents"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -1136,7 +1136,7 @@
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Attican_Traverse:_Krogan_Team"],
 		"relatedMissionIds": ["A3.KroganDying"],
-        "decisionIds": ["D1.RachniQueen", "D2.Grunt", "D2.GruntLoyalty", "D3.RachniQueen"],
+        "relatedDecisionIds": ["D1.RachniQueen", "D2.Grunt", "D2.GruntLoyalty", "D3.RachniQueen"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh"
@@ -1189,7 +1189,7 @@
 		"experience": 0,
 		"reward": "12,500 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Arrae:_Ex-Cerberus_Scientists"],
-		"decisionIds": ["D2.Jacob", "D3.ArcherG", "D3.ArcherD"],
+		"relatedDecisionIds": ["D2.Jacob", "D3.ArcherG", "D3.ArcherD"],
 		"relatedMissionIds": ["A3.CerberusTurianPoison"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -1238,7 +1238,7 @@
 		"reward": "12,500 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kallini:_Ardat-Yakshi_Monastery"],
 		"relatedMissionIds": ["A3.AsariWidow"],
-		"decisionIds": ["D2.Samara", "D2.Morinth", "D3.Morinth", "D3.Falere"],
+		"relatedDecisionIds": ["D2.Samara", "D2.Morinth", "D3.Morinth", "D3.Falere"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"

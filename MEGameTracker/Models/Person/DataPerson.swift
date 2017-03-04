@@ -26,9 +26,10 @@ public struct DataPerson: Photographical {
     public fileprivate(set) var organization: String?
     public fileprivate(set) var isMaleLoveInterest: Bool = false
     public fileprivate(set) var isFemaleLoveInterest: Bool = false
+    public fileprivate(set) var isParamour: Bool = true
     public fileprivate(set) var voiceActor: String?
     public fileprivate(set) var relatedLinks: [String] = []
-    public internal(set) var decisionIds: [String] = [] // transient changes in Person
+    public internal(set) var relatedDecisionIds: [String] = [] // transient changes in Person
     public fileprivate(set) var loveInterestDecisionId: String?
     public fileprivate(set) var sideEffects: [String] = []
     public fileprivate(set) var relatedMissionIds: [String] = []
@@ -76,11 +77,12 @@ public struct DataPerson: Photographical {
         
         isMaleLoveInterest = gameVersionData["isMaleLoveInterest"]?.bool ?? (rawGeneralData["isMaleLoveInterest"]?.bool ?? isMaleLoveInterest)
         isFemaleLoveInterest = gameVersionData["isFemaleLoveInterest"]?.bool ?? (rawGeneralData["isFemaleLoveInterest"]?.bool ?? isFemaleLoveInterest)
+        isParamour = gameVersionData["isParamour"]?.bool ?? (rawGeneralData["isParamour"]?.bool ?? isParamour)
         
         voiceActor = gameVersionData["voiceActor"]?.string ?? rawGeneralData["voiceActor"]?.string
         
         relatedLinks = ((gameVersionData["relatedLinks"]?.array ?? rawGeneralData["relatedLinks"]?.array) ?? []).flatMap({ $0.string })
-        decisionIds = ((gameVersionData["decisionIds"]?.array ?? rawGeneralData["decisionIds"]?.array) ?? []).flatMap({ $0.string })
+        relatedDecisionIds = ((gameVersionData["relatedDecisionIds"]?.array ?? rawGeneralData["relatedDecisionIds"]?.array) ?? []).flatMap({ $0.string })
         loveInterestDecisionId = knownGameVersionKeys.contains("loveInterestDecisionId") ?
             gameVersionData["loveInterestDecisionId"]?.string : rawGeneralData["loveInterestDecisionId"]?.string
         sideEffects = ((gameVersionData["sideEffects"]?.array ?? rawGeneralData["sideEffects"]?.array) ?? []).flatMap({ $0.string })
@@ -179,9 +181,15 @@ extension DataPerson: SerializedDataRetrievable {
     
 }
 
-// MARK: Equatable
-extension DataPerson: Equatable {}
-
-public func ==(a: DataPerson, b: DataPerson) -> Bool { // not true equality, just same db row
-    return a.id == b.id
+//MARK: Equatable
+extension DataPerson: Equatable {
+    public static func ==(a: DataPerson, b: DataPerson) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
 }
+
+// MARK: Hashable
+extension DataPerson: Hashable {
+    public var hashValue: Int { return id.hashValue }
+}
+

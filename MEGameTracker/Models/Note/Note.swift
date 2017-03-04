@@ -161,9 +161,14 @@ extension Note: DateModifiable {}
 // MARK: GameModifying
 extension Note: GameModifying {}
 
-// MARK: Equatable
-extension Note: Equatable {}
+//MARK: Equatable
+extension Note: Equatable {
+    public static func ==(a: Note, b: Note) -> Bool { // not true equality, just same db row
+        return a.uuid == b.uuid
+    }
+}
 
-public func ==(lhs: Note, rhs: Note) -> Bool { // not true equality, just same db row
-    return lhs.uuid == rhs.uuid
+// MARK: Hashable
+extension Note: Hashable {
+    public var hashValue: Int { return uuid.hashValue }
 }

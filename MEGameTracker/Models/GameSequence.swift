@@ -205,10 +205,14 @@ extension GameSequence {
     }
 }
 
-// MARK: Equatable
-extension GameSequence: Equatable {}
-
-public func ==(lhs: GameSequence, rhs: GameSequence) -> Bool { // not true equality, just same db row
-    return lhs.uuid == rhs.uuid
+//MARK: Equatable
+extension GameSequence: Equatable {
+    public static func ==(a: GameSequence, b: GameSequence) -> Bool { // not true equality, just same db row
+        return a.uuid == b.uuid
+    }
 }
 
+// MARK: Hashable
+extension GameSequence: Hashable {
+    public var hashValue: Int { return uuid.hashValue }
+}

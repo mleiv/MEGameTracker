@@ -53,8 +53,9 @@ import UIKit
     /// defaults to onChange behavior if no onClick was set
     public func click(_ sender: AnyObject?) {
         if onClick != nil && enabled {
-            isOn = !isOn
-            nib?.radioOn?.isHidden = !isOn
+            toggle(isOn: !isOn)
+//            isOn = !isOn
+//            nib?.radioOn?.isHidden = !isOn
             onClick?(self)
         }
     }

@@ -13,7 +13,7 @@
 			"https://masseffect.wikia.com/wiki/X57:_Bring_Down_the_Sky"
 		],
 		"relatedMissionIds": ["DLC1.X57.MissingEngineers", "DLC1.X57.AvoidTheBlastingCaps"],
-		"decisionIds": ["D1.X57Hostages"],
+		"relatedDecisionIds": ["D1.X57Hostages"],
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
@@ -215,7 +215,7 @@
 		"name": "Deal With Balak",
 		"description": "[Balak|megametracker://person?id=E1.Balak] has locked up the hostages in a cell with a bomb. \n\nIf you kill Balak, he will kill all the hostages and then you will have to fight him and his bodyguards and varren (and you then have the choice of killing Balak, torturing him, leaving him to die, or turning him over to the Alliance). \n\nIf you let Balak go, you will have 10 minutes to find and disable the three bombs concealed in the facility.",
 		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
-		"decisionIds": ["D1.X57Hostages"]
+		"relatedDecisionIds": ["D1.X57Hostages"]
 	}, {
 		"id": "DLC1.X57.BringDownTheSky.6.1",
 		"sortIndex": 9510,
@@ -850,7 +850,7 @@
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/UNC:_Asari_Writings"
 		],
-		"decisionIds": ["D1.AsariWritings"],
+		"relatedDecisionIds": ["D1.AsariWritings"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Unlocked Galaxy Map"
@@ -1133,7 +1133,7 @@
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Wrex:_Family_Armor"
 		],
-        "decisionIds": ["D1.WrexArmor"],
+        "relatedDecisionIds": ["D1.WrexArmor"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Unlocked Galaxy Map"

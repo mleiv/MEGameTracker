@@ -47,7 +47,7 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
     @IBOutlet public weak var decisionsView: DecisionsView?
     public var decisions: [Decision] = [] {
         didSet {
-            person?.decisionIds = decisions.map { $0.id } // local changes only
+            person?.relatedDecisionIds = decisions.map { $0.id } // local changes only
         }
     }
     // Describable
@@ -125,6 +125,7 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
         parent?.navigationItem.title = person?.personType.stringValue ?? parent?.navigationItem.title
         
         if person?.isAvailableLoveInterest == true {
+            heartButton.isParamour = person?.isParamour ?? true
             heartButton.toggle(isOn: person?.isLoveInterest ?? false)
             heartButton.onClick = changeLoveSetting
             heartButton.isHidden = false
@@ -308,7 +309,7 @@ extension PersonController: Decisionsable {
     //public var decisions: [Decision] // already declared
     
     func setupDecisions() {
-        if let decisionIds = person?.decisionIds {
+        if let decisionIds = person?.relatedDecisionIds {
             decisions = Decision.getAll(ids: decisionIds)
             decisions = decisions.sorted(by: Decision.sort)
         } else {

@@ -24,7 +24,7 @@ public struct DataItem: MapLocationable {
     public var price: String?
     
     public fileprivate(set) var relatedLinks: [String] = []
-    public internal(set) var decisionIds: [String] = [] // transient changes in Mission
+    public internal(set) var relatedDecisionIds: [String] = [] // transient changes in Mission
     public fileprivate(set) var sideEffects: [String] = []
     public fileprivate(set) var relatedMissionIds: [String] = []
     public fileprivate(set) var photo: Photo?
@@ -152,7 +152,7 @@ extension DataItem: SerializedDataRetrievable {
         price = data["price"]?.string
         
         relatedLinks = (data["relatedLinks"]?.array ?? []).flatMap({ $0.string })
-        decisionIds = (data["decisionIds"]?.array ?? []).flatMap({ $0.string })
+        relatedDecisionIds = (data["relatedDecisionIds"]?.array ?? []).flatMap({ $0.string })
         sideEffects = (data["sideEffects"]?.array ?? []).flatMap({ $0.string })
         relatedMissionIds = (data["relatedMissionIds"]?.array ?? []).flatMap({ $0.string })
         
@@ -162,8 +162,13 @@ extension DataItem: SerializedDataRetrievable {
 }
 
 //MARK: Equatable
-extension DataItem: Equatable {}
+extension DataItem: Equatable {
+    public static func ==(a: DataItem, b: DataItem) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
+}
 
-public func ==(a: DataItem, b: DataItem) -> Bool { // not true equality, just same db row
-    return a.id == b.id
+// MARK: Hashable
+extension DataItem: Hashable {
+    public var hashValue: Int { return id.hashValue }
 }

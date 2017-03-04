@@ -548,11 +548,15 @@ extension Shepard: SerializedDataRetrievable {
 extension Shepard: DateModifiable {}
 
 //MARK: Equatable
-extension Shepard: Equatable {}
-
-public func ==(a: Shepard, b: Shepard) -> Bool { // not true equality, just same db row
-    return a.uuid == b.uuid
+extension Shepard: Equatable {
+    public static func ==(a: Shepard, b: Shepard) -> Bool { // not true equality, just same db row
+        return a.uuid == b.uuid
+    }
 }
 
+// MARK: Hashable
+extension Shepard: Hashable {
+    public var hashValue: Int { return uuid.hashValue }
+}
 
 

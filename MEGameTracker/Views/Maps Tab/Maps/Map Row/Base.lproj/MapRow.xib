@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="331" height="104"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzf-4T-iho" id="Qgq-6p-m1T">
-                <rect key="frame" x="0.0" y="0.0" width="331" height="103"/>
+                <rect key="frame" x="0.0" y="0.0" width="331" height="104"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YRo-QY-jxu">
@@ -163,6 +163,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="availabilityLabel" destination="OEE-Mk-tWU" id="yeo-Ub-Z5R"/>
+                <outlet property="checkboxButton" destination="b6y-kq-3kD" id="Ooe-5S-Ww8"/>
                 <outlet property="checkboxImageView" destination="ezv-J3-zn4" id="Cvy-Dk-S7t"/>
                 <outlet property="checkboxStack" destination="jAT-Lu-5tn" id="lEo-Ea-Zvl"/>
                 <outlet property="descriptionLabel" destination="PTW-GM-Y21" id="hzz-Fi-dgb"/>

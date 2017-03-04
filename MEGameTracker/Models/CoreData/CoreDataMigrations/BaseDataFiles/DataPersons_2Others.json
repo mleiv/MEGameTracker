@@ -88,7 +88,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2ArcherD.png",
 		"voiceActor": "Jesse Gervais",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/David_Archer"],
-		"decisionIds": ["D2.ArcherD", "D3.GrissomAcademy"],
+		"relatedDecisionIds": ["D2.ArcherD", "D3.GrissomAcademy"],
 		"gameVersionData": {
 			"2": {
 				"relatedLinks": ["https://masseffect.wikia.com/wiki/David_Archer#Mass_Effect_2"]
@@ -113,7 +113,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2ArcherG.png",
 		"voiceActor": "Simon Templeman",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dr._Gavin_Archer"],
-		"decisionIds": ["D2.ArcherD", "D3.GrissomAcademy", "D3.ArcherG"],
+		"relatedDecisionIds": ["D2.ArcherD", "D3.GrissomAcademy", "D3.ArcherG"],
 		"gameVersionData": {
 			"3": {
 				"description": "Formerly chief scientist of Project Overlord for the Illusive Man, Dr. Archer took advantage of his autistic brother [megametracker://person?id=O2.ArcherD] to further his research. \n\nGavin's current life depends greatly on Shepard's actions. If David dies in Game 3 (or Shepard claims he did), Gavin will kill himself."
@@ -380,7 +380,7 @@
 		"voiceActor": "Grey DeLisle",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel_Council#Salarian"],
 		"relatedMissionIds": [],
-		"decisionIds": ["D1.Council"],
+		"relatedDecisionIds": ["D1.Council"],
 		"gameVersionData": {
 			"2": {},
 			"3": {
@@ -611,7 +611,7 @@
 		"voiceActor": "Susan Eisenberg",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel_Council#Asari"],
 		"relatedMissionIds": [],
-		"decisionIds": ["D1.Council"],
+		"relatedDecisionIds": ["D1.Council"],
 		"gameVersionData": {
 			"2": {},
 			"3": {
@@ -652,7 +652,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2KalReegar.png",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kal%27Reegar"],
 		"relatedMissionIds": ["A2.D.Tali"],
-		"decisionIds": ["D2.KalReegar"],
+		"relatedDecisionIds": ["D2.KalReegar"],
 		"voiceActor": "Adam Baldwin",
 		"events": [{
 			"type": "UnavailableInGame",
@@ -706,7 +706,7 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Keiji_Okuda"],
 		"voiceActor": "Brian Bloom",
 		"relatedMissionIds": ["A2.L.Kasumi"],
-		"decisionIds": ["D2.Graybox"],
+		"relatedDecisionIds": ["D2.Graybox"],
 		"sideEffects": ["If Shepard does not persuade Kasumi to destroy the graybox and also opts for synthesis at the end of Game 3, Keiji is reunited with Kasumi in the final cutscenes."],
 		"events": [{
 			"type": "UnavailableInGame",
@@ -838,7 +838,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Maelon.png",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Maelon"],
 		"relatedMissionIds": ["A2.L.Mordin"],
-		"decisionIds": ["D2.Maelon", "D2.MaelonsData"],
+		"relatedDecisionIds": ["D2.Maelon", "D2.MaelonsData"],
 		"voiceActor": "Stefan Marks",
 		"sideEffects": [
 			"If Maelon survives Game 2, he opens a clinic on Omega (like Mordin did), but is forced to leave it when Clan Weyrloc puts a price on his head. If the genophage is cured, he sends a message thanking you and says he hopes to return to the clinic now, and hopes one day to meet the survivors of his experiments and ask their forgiveness."
@@ -947,7 +947,7 @@
 		"profession": "Biotic God",
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2NiftuCal.png",
 		"voiceActor": "Mark Meer",
-		"decisionIds": ["D2.NiftuCal"],
+		"relatedDecisionIds": ["D2.NiftuCal"],
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Niftu_Cal"],
 		"relatedMissionIds": ["A2.D.Samara"],
 		"sideEffects": [
@@ -1080,7 +1080,7 @@
 		"voiceActor": null,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel_Council#Turian"],
 		"relatedMissionIds": [],
-		"decisionIds": ["D1.Council"],
+		"relatedDecisionIds": ["D1.Council"],
 		"gameVersionData": {
 			"2": {},
 			"3": {
@@ -1234,7 +1234,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2RTaylor.png",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Ronald_Taylor"],
 		"voiceActor": "Dave Fennoy",
-		"decisionIds": ["D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3"],
+		"relatedDecisionIds": ["D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3"],
 		"relatedMissionIds": ["A2.L.Jacob"],
 		"events": [{
 			"type": "UnavailableInGame",
@@ -1270,7 +1270,7 @@
 		"voiceActor": "Jason Singer",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Sidonis"],
 		"relatedMissionIds": ["A2.L.Garrus"],
-		"decisionIds": ["D2.Sidonis"],
+		"relatedDecisionIds": ["D2.Sidonis"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game1"
@@ -1289,7 +1289,7 @@
 		"voiceActor": "Chris Edgerly",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Etarn_Tiron"],
 		"sideEffects": ["If Shepard saved the Council and acquires the store discount, Tiron comments that he would name his first-born after Shepard if asked to."],
-		"decisionIds": ["D1.Council"],
+		"relatedDecisionIds": ["D1.Council"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game1"
@@ -1363,7 +1363,7 @@
 		"voiceActor": "Jim Cummings",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Urdnot_Wreav"],
 		"relatedMissionIds": ["M3.1.Tuchanka"],
-		"decisionIds": ["D1.Wrex"],
+		"relatedDecisionIds": ["D1.Wrex"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game1"

@@ -38,7 +38,7 @@ final class ConversationRewardsDetailRow: UITableViewCell {
         data: ConversationRewards.FlatData?,
         parent: ConversationRewardsDetailController? = nil
     ) {
-//        isDefined = true
+        isDefined = true
         self.conversationRewardsFlatData = data
         self.parent = parent
         setup()

@@ -291,9 +291,9 @@
                 "referenceSize": "2083x2083",
 				"mapLocationPoint": {
 					"x": 139,
-					"y": 137,
+					"y": 147,
 					"width": 1800,
-					"height": 210
+					"height": 165
 				},
 				"isHidden": false
 			}
@@ -408,9 +408,9 @@
                 "referenceSize": "2083x2083",
 				"mapLocationPoint": {
 					"x": 139,
-					"y": 471,
+					"y": 430,
 					"width": 1800,
-					"height": 210
+					"height": 165
 				},
 				"isHidden": false
 			}
@@ -457,10 +457,10 @@
 				"image": "Detail_Maps/Game2/Illium/Illium_Spaceport.pdf",
                 "referenceSize": "2083x2083",
 				"mapLocationPoint": {
-					"x": 136,
-					"y": 807,
+					"x": 139,
+					"y": 711,
 					"width": 1800,
-					"height": 210
+					"height": 165
 				},
 				"isHidden": false
 			}
@@ -549,9 +549,9 @@
                 "referenceSize": "2083x2083",
 				"mapLocationPoint": {
 					"x": 139,
-					"y": 1135,
+					"y": 987,
 					"width": 1800,
-					"height": 210
+					"height": 165
 				},
 				"isHidden": false
 			}
@@ -578,7 +578,88 @@
 		}
         
 	}, {
-		"id": "G.Ter.Cre.Tas.Ill.5Dracon",
+		"id": "G.Ter.Cre.Tas.Ill.5Liaras",
+		"name": "Illium: Liara's Apartment",
+		"inMapId": "G.Ter.Cre.Tas.Illium",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/Illium/Illium_LiarasApartment.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 139,
+					"y": 1275,
+					"width": 1800,
+					"height": 165
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.5.Shot",
+		"inMapId": "G.Ter.Cre.Tas.Ill.5Liaras",
+        "name": "Shot Impact",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 704,
+			"y": 678,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.5.Armor",
+		"inMapId": "G.Ter.Cre.Tas.Ill.5Liaras",
+        "name": "N7 armor",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 985,
+			"y": 769,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.5.Painting",
+		"inMapId": "G.Ter.Cre.Tas.Ill.5Liaras",
+        "name": "Painting",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 590,
+			"y": 1205,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.5.Degree",
+		"inMapId": "G.Ter.Cre.Tas.Ill.5Liaras",
+        "name": "Degree",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1067,
+			"y": 1067,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.5.Picture",
+		"inMapId": "G.Ter.Cre.Tas.Ill.5Liaras",
+        "name": "Picture",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1435,
+			"y": 1490,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.5.Relic",
+		"inMapId": "G.Ter.Cre.Tas.Ill.5Liaras",
+        "name": "Prothean Relic",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 867,
+			"y": 1048,
+			"radius": 20
+		}
+        
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.6Dracon",
 		"name": "Illium: Dracon Trade Center",
 		"inMapId": "G.Ter.Cre.Tas.Illium",
         "rerootBreadcrumbs": true,
@@ -590,17 +671,47 @@
                 "referenceSize": "2083x2083",
 				"mapLocationPoint": {
 					"x": 139,
-					"y": 1467,
+					"y": 1547,
 					"width": 1800,
-					"height": 210
+					"height": 165
 				},
 				"isHidden": false
 			}
-		},
-        "todo": "TODO: ADD COORDINATES!!!!!!!!!!!!!"
+		}
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.6.Start",
+		"inMapId": "G.Ter.Cre.Tas.Ill.6Dracon",
+        "name": "Landing Site",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1467,
+			"y": 1695,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.6.Explosion",
+		"inMapId": "G.Ter.Cre.Tas.Ill.6Dracon",
+        "name": "Explosion Epicenter",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 239,
+			"y": 439,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.6.Azure",
+		"inMapId": "G.Ter.Cre.Tas.Ill.6Dracon",
+        "name": "To Azure Hotel",
+		"isShowInList": false,
+		"linkToMapId": "G.Ter.Cre.Tas.Ill.7Azure",
+		"mapLocationPoint": {
+			"x": 961,
+			"y": 1208,
+			"radius": 20
+		}
          
 	}, {
-		"id": "G.Ter.Cre.Tas.Ill.6Azure",
+		"id": "G.Ter.Cre.Tas.Ill.7Azure",
 		"name": "Illium: Azure Hotel",
 		"inMapId": "G.Ter.Cre.Tas.Illium",
         "rerootBreadcrumbs": true,
@@ -612,14 +723,33 @@
                 "referenceSize": "2083x2083",
 				"mapLocationPoint": {
 					"x": 139,
-					"y": 1795,
+					"y": 1831,
 					"width": 1800,
-					"height": 210
+					"height": 165
 				},
 				"isHidden": false
 			}
-		},
-        "todo": "TODO: ADD COORDINATES!!!!!!!!!!!!!"
+		}
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.7.Start",
+		"inMapId": "G.Ter.Cre.Tas.Ill.7Azure",
+        "name": "Landing Site",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1678,
+			"y": 1608,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Cre.Tas.Ill.7.WL",
+		"inMapId": "G.Ter.Cre.Tas.Ill.7Azure",
+        "name": "Weapons Locker",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 800,
+			"y": 1131,
+			"radius": 20
+		}
         
         
 	}, {
@@ -1441,6 +1571,11 @@
 			"https://masseffect.wikia.com/wiki/Hagalaz"
 		],
 		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/_Secondary/Hagalaz/Hagalaz.pdf",
+                "referenceSize": "2083x2083",
+                "isSplitMenu": true
+			},
 			"3": {
 				"mapLocationPoint": {
 					"x": 1316,
@@ -1449,6 +1584,169 @@
 				}
 			}
 		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.1Exterior",
+		"name": "Shadow Broker Ship: Exterior",
+		"inMapId": "G.Ter.Hou.Sow.Hagalaz",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/_Secondary/Hagalaz/Shadow_Broker_Base_Exterior.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 143,
+					"y": 167,
+					"width": 1800,
+					"height": 800
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.1.Start",
+		"inMapId": "G.Ter.Hou.Sow.Hag.1Exterior",
+        "name": "Drop Zone",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 2020,
+			"y": 1858,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.1.ToInterior",
+		"inMapId": "G.Ter.Hou.Sow.Hag.1Exterior",
+        "name": "To Interior",
+		"linkToMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 315,
+			"y": 429,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.2Interior",
+		"name": "Shadow Broker Ship: Interior",
+		"inMapId": "G.Ter.Hou.Sow.Hagalaz",
+        "rerootBreadcrumbs": true,
+		"isHidden": true,
+        "mapType":"Area",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/_Secondary/Hagalaz/Shadow_Broker_Base_Interior.pdf",
+                "referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 143,
+					"y": 1135,
+					"width": 1800,
+					"height": 800
+				},
+				"isHidden": false
+			}
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.2.ToExterior",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+        "name": "To Exterior",
+		"linkToMapId": "G.Ter.Hou.Sow.Hag.1Exterior",
+		"isShowInList": false,
+		"mapLocationPoint": {
+			"x": 662,
+			"y": 1994,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.2.Dossiers",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+        "name": "Dossiers",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1335,
+			"y": 887,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.2.Investments",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+        "name": "Investments",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1675,
+			"y": 887,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.2.Pickup",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+        "name": "Delivery Pickup",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1453,
+			"y": 455,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.2.Training",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+        "name": "Advanced Training",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1304,
+			"y": 455,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.2.Surveys",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+        "name": "Surveys",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1709,
+			"y": 455,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.2.Shutters",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+        "name": "Shutter Control",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1743,
+			"y": 527,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.2.WL",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+        "name": "Armor Locker",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1360,
+			"y": 337,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.2.Research",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+        "name": "Research Terminal",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1652,
+			"y": 337,
+			"radius": 20
+		}
+	}, {
+		"id": "G.Ter.Hou.Sow.Hag.2.Archive",
+		"inMapId": "G.Ter.Hou.Sow.Hag.2Interior",
+        "name": "Video Archive",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1245,
+			"y": 135,
+			"radius": 20
+		}
+        
 	}, {
 		"id": "G.Ter.Hou.Sow.Ansuz",
 		"name": "Ansuz",

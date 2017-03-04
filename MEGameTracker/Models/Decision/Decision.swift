@@ -235,8 +235,13 @@ extension Decision {
 }
 
 // MARK: Equatable
-extension Decision: Equatable {}
+extension Decision: Equatable {
+    public static func ==(a: Decision, b: Decision) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
+}
 
-public func ==(a: Decision, b: Decision) -> Bool { // not true equality, just same db row
-    return a.id == b.id
+// MARK: Hashable
+extension Decision: Hashable {
+    public var hashValue: Int { return id.hashValue }
 }

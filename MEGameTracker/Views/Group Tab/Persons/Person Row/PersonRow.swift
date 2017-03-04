@@ -76,6 +76,7 @@ final class PersonRow: UITableViewCell {
             availabilityLabel?.isHidden = true
         }
         titleLabel?.text = person?.title
+        heartButton?.isParamour = person?.isParamour ?? true
         heartButton?.isHidden = person?.isAvailableLoveInterest != true
         heartButton?.toggle(isOn: isLoveInterest)
         heartButton?.onClick = changeLoveSetting
@@ -89,10 +90,10 @@ final class PersonRow: UITableViewCell {
     /// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
     fileprivate func clearRow() {
         photoImageView?.image = nil
-        nameLabel?.text = ""
-        titleLabel?.text = ""
-        statusLabel?.text = ""
-        availabilityLabel?.text = ""
+        nameLabel?.text = " "
+        titleLabel?.text = " "
+        statusLabel?.text = " "
+        availabilityLabel?.text = " "
         heartButton?.isOn = false
     }
     

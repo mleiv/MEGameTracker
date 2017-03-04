@@ -61,11 +61,11 @@ public struct Item: MapLocationable, Eventsable {
     public var hasNoAdditionalData: Bool { return generalData.hasNoAdditionalData }
     
     /// **Warning:** no changes are saved.
-    public var decisionIds: [String] {
+    public var relatedDecisionIds: [String] {
         // Changing the value of decisionIds does not get saved.
         // This is only for refreshing local data without a core data call.
-        get { return generalData.decisionIds }
-        set { generalData.decisionIds = newValue }
+        get { return generalData.relatedDecisionIds }
+        set { generalData.relatedDecisionIds = newValue }
     }
     
     
@@ -302,9 +302,14 @@ extension Item {
     }
 }
 
-// MARK: Equatable
-extension Item: Equatable {}
+//MARK: Equatable
+extension Item: Equatable {
+    public static func ==(a: Item, b: Item) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
+}
 
-public func ==(a: Item, b: Item) -> Bool { // not true equality, just same db row
-    return a.id == b.id
+// MARK: Hashable
+extension Item: Hashable {
+    public var hashValue: Int { return id.hashValue }
 }

@@ -24,7 +24,7 @@ public struct DataMission: MapLocationable {
     public var description: String?
     
     public fileprivate(set) var relatedLinks: [String] = []
-    public internal(set) var decisionIds: [String] = [] // transient changes in Mission
+    public internal(set) var relatedDecisionIds: [String] = [] // transient changes in Mission
     public fileprivate(set) var sideEffects: [String] = []
     public fileprivate(set) var relatedMissionIds: [String] = []
     public fileprivate(set) var photo: Photo?
@@ -148,7 +148,7 @@ extension DataMission: SerializedDataRetrievable {
         sortIndex = data["sortIndex"]?.int ?? 0
         
         relatedLinks = (data["relatedLinks"]?.array ?? []).flatMap({ $0.string })
-        decisionIds = (data["decisionIds"]?.array ?? []).flatMap({ $0.string })
+        relatedDecisionIds = (data["relatedDecisionIds"]?.array ?? []).flatMap({ $0.string })
         sideEffects = (data["sideEffects"]?.array ?? []).flatMap({ $0.string })
         relatedMissionIds = (data["relatedMissionIds"]?.array ?? []).flatMap({ $0.string })
         
@@ -159,9 +159,15 @@ extension DataMission: SerializedDataRetrievable {
     
 }
 
-// MARK: Equatable
-extension DataMission: Equatable {}
-
-public func ==(a: DataMission, b: DataMission) -> Bool { // not true equality, just same db row
-    return a.id == b.id
+//MARK: Equatable
+extension DataMission: Equatable {
+    public static func ==(a: DataMission, b: DataMission) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
 }
+
+// MARK: Hashable
+extension DataMission: Hashable {
+    public var hashValue: Int { return id.hashValue }
+}
+

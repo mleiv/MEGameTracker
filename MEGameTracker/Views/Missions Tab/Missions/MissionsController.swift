@@ -86,7 +86,7 @@ final class MissionsController: UITableViewController, Spinnerable {
     func fetchData() {
         guard !UIWindow.isInterfaceBuilder else { return }
         shepardUuid = App.current.game?.shepard?.uuid
-        missions = Mission.getAllType(missionsType, gameVersion: App.current.gameVersion)
+        missions = Mission.getAllType(missionsType, gameVersion: App.current.gameVersion).sorted(by: Mission.sort)
     }
     
     func setupRow(_ row: Int, cell: MissionRow) {

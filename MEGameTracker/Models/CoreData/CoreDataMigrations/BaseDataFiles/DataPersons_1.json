@@ -5,7 +5,8 @@
 		"name": "Ashley Williams",
 		"description": "From a long line of Alliance soldiers, Ashley enlisted early and was promoted quickly. After losing her squad on Eden Prime, searching for answers, she joins Shepard's squad.",
 		"personType": "Squad",
-		"isMaleLoveInterest": 1,
+		"isMaleLoveInterest": true,
+		"isParamour": true,
 		"race": "Human",
 		"profession": "Soldier",
 		"organization": "Systems Alliance",
@@ -13,7 +14,7 @@
 		"voiceActor": "Kimberly Brooks",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Ashley_Williams"],
 		"relatedMissionIds": ["M1.Prologue", "M1.Virmire.10"],
-		"decisionIds": ["D1.Ashley", "D1.LoveAshley", "D3.LoveAshley"],
+		"relatedDecisionIds": ["D1.Ashley", "D1.LoveAshley", "D3.LoveAshley"],
 		"loveInterestDecisionId": "D1.LoveAshley",
         "sideEffects": [
             "If you make bad decisions in Game 3, you are forced to kill Ashley during [megametracker://mission?id=M3.2.Citadel2]: [YouTube|https://www.youtube.com/watch?v=ljXiscn5hjE]."
@@ -22,8 +23,8 @@
 			"2": {
 
 				"personType": "Associate",
-				"isMaleLoveInterest": 0,
 				"description": "A loyal friend and former squadmate, Ashley has mixed feelings seeing Shepard alive but working for Cerberus on Horizon. She is suspicious that Cerberus has tampered with Shepard's mind.",
+				"isMaleLoveInterest": false,
 				"loveInterestDecisionId": null,
 				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Ashley.png"
 			},
@@ -45,20 +46,22 @@
 		"voiceActor": "Brandon Keener",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Garrus_Vakarian"],
 		"relatedMissionIds": ["M1.Garrus", "A1.L.FindDrSaleon"],
-		"decisionIds": ["D2.LoveGarrus", "D2.Garrus", "D3.LoveGarrus"],
+		"relatedDecisionIds": ["D2.LoveGarrus", "D2.Garrus", "D3.LoveGarrus"],
 		"gameVersionData": {
 			"1": {
 				"organization": "C-Sec"
 			},
 			"2": {
 				"loveInterestDecisionId": "D2.LoveGarrus",
-				"isFemaleLoveInterest": 1,
+				"isFemaleLoveInterest": true,
+                "isParamour": true,
 				"description": "After Shepard's death, Garrus moved on to fight corruption on Omega. When his team was betrayed and massacred, Garrus became the mysterious and threatening Archangel, taking on all three Omega gangs single-handed.",
 				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Garrus.png"
 			},
 			"3": {
 				"profession": "Rebel",
-				"isFemaleLoveInterest": 1,
+				"isFemaleLoveInterest": true,
+                "isParamour": true,
 				"description": "After convincing the turian Primarch of the coming Reaper threat, Garrus is heading a Reaper task force as their homeworld, Palaven, prepares for a fight no one may survive.\n\nGarrus is only available as a love interest in Game 3 if he was previously romanced in Game 2",
 				"loveInterestDecisionId": "D3.LoveGarrus",
 				"photo": "http://urdnot.com/megametracker/app/images/Game3/3Garrus.png"
@@ -69,7 +72,8 @@
 		"name": "Kaidan Alenko",
 		"description": "Staff Lieutenant aboard the Normandy, Kaiden is the first addition to Shepard's squad. Kaidan's biotic abilities came at a high cost, emotionally and physically, and the older L2 implants cause him constant migraines.",
 		"personType": "Squad",
-		"isFemaleLoveInterest": 1,
+		"isFemaleLoveInterest": true,
+        "isParamour": true,
 		"race": "Human",
 		"profession": "Sentinel",
 		"organization": "Systems Alliance",
@@ -77,7 +81,7 @@
 		"voiceActor": "Raphael Sbarge",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kaidan_Alenko"],
 		"relatedMissionIds": ["M1.Prologue", "M1.Virmire.10"],
-		"decisionIds": ["D1.Kaidan", "D1.LoveKaidan", "D3.LoveKaidan"],
+		"relatedDecisionIds": ["D1.Kaidan", "D1.LoveKaidan", "D3.LoveKaidan"],
 		"loveInterestDecisionId": "D1.LoveKaidan",
         "sideEffects": [
             "If you make bad decisions in Game 3, you are forced to kill Kaidan during [megametracker://mission?id=M3.2.Citadel2]: [YouTube|https://www.youtube.com/watch?v=XDnp86lUnB4]."
@@ -86,8 +90,8 @@
 			"2": {
 
 				"personType": "Associate",
-				"isFemaleLoveInterest": 0,
 				"description": "A loyal friend and former squadmate, Kaidan has mixed feelings seeing Shepard alive but working for Cerberus on Horizon. He is suspicious that Cerberus has tampered with Shepard's mind.",
+				"isFemaleLoveInterest": false,
 				"loveInterestDecisionId": null,
 				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Kaidan.png"
 			},
@@ -102,8 +106,9 @@
 		"name": "Liara T'soni",
 		"description": "An archeologist specializing in the ancient prothean culture, Liara is the \"pureblood\" daughter of [megametracker://person?id=E1.Benezia]. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued her research.",
 		"personType": "Squad",
-		"isMaleLoveInterest": 1,
-		"isFemaleLoveInterest": 1,
+		"isMaleLoveInterest": true,
+		"isFemaleLoveInterest": true,
+        "isParamour": true,
 		"race": "Asari",
 		"profession": "Scientist",
 		"organization": null,
@@ -111,7 +116,7 @@
 		"voiceActor": "Ali Hillis",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Liara_T%27Soni"],
 		"relatedMissionIds": ["M1.Therum"],
-		"decisionIds": ["D1.LoveLiara", "D2.LoveLiara", "D3.LoveLiara"],
+		"relatedDecisionIds": ["D1.LoveLiara", "D2.LoveLiara", "D3.LoveLiara"],
 		"loveInterestDecisionId": "D1.LoveLiara",
 		"gameVersionData": {
 			"2": {
@@ -119,7 +124,8 @@
 				"profession": "Information Broker",
 				"description": "Liara was a close friend, but now she has her own agenda on Illium, turning her research skills to hunting valuable secrets, and she only briefly allies with Shepard for the Lair of the Shadow Broker (DLC) missions.\n\nPursuing her as a love interest in Game 2 is difficult but not impossible [Romancing Liara in Game 2|https://masseffect.wikia.com/wiki/Romance#Lair_of_the_Shadow_Broker].",
 				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Liara.png",
-				"loveInterestDecisionId": "D2.LoveLiara"
+				"loveInterestDecisionId": "D2.LoveLiara",
+                "isParamour": false
 			},
 			"3": {
 				"profession": "Pure Biotic",
@@ -140,17 +146,19 @@
 		"voiceActor": "Ash Sroka",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tali%27Zorah_nar_Rayya"],
 		"relatedMissionIds": ["M1.ExposeSaren.3", "A1.L.TaliAndTheGeth"],
-		"decisionIds": ["D1.TaliData", "D2.TaliLoyalty", "D2.TaliNotExiled", "D2.RaelZorahReputation", "D2.LoveTali", "D2.TaliLegion", "D2.Tali", "D3.LoveTali", "D3.Quarians"],
+		"relatedDecisionIds": ["D1.TaliData", "D2.TaliLoyalty", "D2.TaliNotExiled", "D2.RaelZorahReputation", "D2.LoveTali", "D2.TaliLegion", "D2.Tali", "D3.LoveTali", "D3.Quarians"],
 		"gameVersionData": {
 			"2": {
 				"loveInterestDecisionId": "D2.LoveTali",
-				"isMaleLoveInterest": 1,
 				"description": "After Shepard's death, Tali returned to the Migrant Fleet and joined the crew of the Neema. She first meets Shepard again on Freedom's Progress. She is deeply suspicious of Cerberus and all of Shepard's Cerberus squadmates, but she remains loyal to Shepard.",
+				"isMaleLoveInterest": true,
+                "isParamour": true,
 				"photo": "http://urdnot.com/megametracker/app/images/Game2/2Tali.png"
 			},
 			"3": {
-				"isMaleLoveInterest": 1,
 				"description": "If Tali was not exiled from the Quarian fleet in Game 2, she has since been promoted to Admiral, but either way she is spending her time assisting the fleet in its quest to retake the Quarian homeworld, [Rannoch|megametracker://maplocation?id=G.Ter.Per.Tik.Rannoch].\n\nTali is only available as a love interest in Game 3 if she was previously romanced in Game 2",
+				"isMaleLoveInterest": true,
+                "isParamour": true,
 				"loveInterestDecisionId": "D3.LoveTali"
 			}
 		}
@@ -166,7 +174,7 @@
 		"voiceActor": "Steven Barr",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Urdnot_Wrex"],
 		"relatedMissionIds": ["M1.ShadowBroker", "A1.L.WrexFamilyArmor", "A1.V.WrexAndTheGenophage", "A2.L.Grunt", "A2.L.Mordin", "M3.1.Tuchanka"],
-		"decisionIds": ["D1.WrexArmor", "D1.Wrex"],
+		"relatedDecisionIds": ["D1.WrexArmor", "D1.Wrex"],
         "sideEffects": [
             "If Wrex survives Virmire but you sabotage the cure, Wrex will come after you during [megametracker://mission?id=M3.2.Citadel3] and you will be forced to kill him: [YouTube|https://www.youtube.com/watch?v=WrAncE0WUIg]."
         ],
@@ -204,7 +212,7 @@
 		"voiceActor": "Fred Tatasciore",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Ka%27hairal_Balak"],
 		"relatedMissionIds": ["DLC1.X57.BringDownTheSky", "A3.BatarianCodes"],
-		"decisionIds": ["D1.X57Hostages", "D3.Balak"],
+		"relatedDecisionIds": ["D1.X57Hostages", "D3.Balak"],
 		"gameVersionData": {
 			"3": {
 				"personType": "Other",
@@ -245,7 +253,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Fist.png",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Fist"],
 		"relatedMissionIds": ["M1.ExposeSaren.2"],
-		"decisionIds": ["D1.Fist"],
+		"relatedDecisionIds": ["D1.Fist"],
 		"gameVersionData": {
 			"1": {},
 			"2": {
@@ -268,7 +276,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1RachniQueen.png",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Rachni_Queen"],
 		"relatedMissionIds": ["M1.Noveria.10RiftStation"],
-		"decisionIds": ["D1.RachniQueen"],
+		"relatedDecisionIds": ["D1.RachniQueen"],
 		"sideEffects": ["If the Rachni Queen survived, in Game 2 she sends an asari agent to thank Shepard on Illium."],
 		"gameVersionData": {
 			"3": {
@@ -368,7 +376,7 @@
 		"voiceActor": "Keith David Patrick Seitz",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/David_Anderson"],
 		"relatedMissionIds": ["M1.Prologue"],
-		"decisionIds": ["D1.Anderson"],
+		"relatedDecisionIds": ["D1.Anderson"],
 		"gameVersionData": {
 			"2": {
 				"profession": "Diplomat",
@@ -391,7 +399,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Conrad.png",
 		"voiceActor": "Jeff Page",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Conrad_Verner"],
-		"decisionIds": ["D1.Conrad", "D2.Conrad", "D3.Conrad"],
+		"relatedDecisionIds": ["D1.Conrad", "D2.Conrad", "D3.Conrad"],
 		"relatedMissionIds": ["A1.C1.TheFan", "TODO:GAME2", "TODO:GAME3"],
 		"sideEffects": [
 			"If Shepard helps Conrad in all three games, but doesn't help [Jenna|megametracker://person?id=O1.Jenna] in Game 1, Conrad will die in Game 3 saving Shepard's life.",
@@ -483,7 +491,7 @@
 		"voiceActor": "Seth Green",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jeff_%22Joker%22_Moreau"],
 		"relatedMissionIds": ["M2.CollectorBase.1"],
-		"decisionIds": ["D3.EdiJoker"],
+		"relatedDecisionIds": ["D3.EdiJoker"],
 		"gameVersionData": {
 			"2": {
 				"organization": "Cerberus",
@@ -507,7 +515,7 @@
 		"voiceActor": "George Szilagyi",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kirrahe"],
 		"relatedMissionIds": ["A1.V.AssistingKirrahesTeam"],
-		"decisionIds": ["D1.Kirrahe"],
+		"relatedDecisionIds": ["D1.Kirrahe"],
 		"gameVersionData": {
 			"3": {
 				"description": "Kirrahe discovered [Saren's|megametracker://person?id=E1.Saren] base on [megametracker://map?id=G.Att.Sen.Hoc.Virmire] in Game 1. He resurfaces on Sur'Kesh in Game 3, and helps Shepard during the mission there."
@@ -601,7 +609,7 @@
 		"voiceActor": "Bill Ratner",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Donnel_Udina"],
 		"relatedMissionIds": [],
-		"decisionIds": ["D1.Udina"],
+		"relatedDecisionIds": ["D1.Udina"],
 		"gameVersionData": {
 			"2": {
 				"description": "As either Human Ambassador on the Council, or aid to Ambassador Anderson, Udina remains a scheming politician whom Shepard can barely tolerate.",

@@ -626,7 +626,7 @@
 			"y": 623,
 			"radius": 1
 		},
-		"decisionIds": ["D1.Fist"],
+		"relatedDecisionIds": ["D1.Fist"],
 		"relatedMissionIds": ["A1.C1.ReportersRequest"],
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Going_after_Fist"
@@ -1152,7 +1152,7 @@
 		"name": "Minimize Casualties",
 		"description": "Fight your way to the freighter and down into the Throians's lair. Kill Thorian creepers at will, but avoid slaying the colonists. You can safely knock them out using melee attacks or grenades equipped with the anti-Thorian upgrade. \n\nTell your squad, \"Don’t shoot the colonists,\" to keep them attacking Creepers only. You have very few anti-Thorian grenades, so use them sparingly.",
 		"inMissionId": "M1.Feros",
-		"decisionIds": ["D1.ZhusHope"]
+		"relatedDecisionIds": ["D1.ZhusHope"]
 	}, {
 		"id": "M1.Feros.13",
 		"gameVersion": "1",
@@ -1257,7 +1257,7 @@
 			"y": 1896,
 			"radius": 1
 		},
-		"decisionIds": ["D1.Shiala"]
+		"relatedDecisionIds": ["D1.Shiala"]
 	}, {
 		"id": "M1.Feros.14",
 		"gameVersion": "1",
@@ -1666,7 +1666,7 @@
 			"https://masseffect.wikia.com/wiki/Noveria:_Rift_Station"
 		],
 		"relatedMissionIds": ["M1.Noveria.9", "M1.Noveria.11HotLabs", "A1.N.Quarantine"],
-		"decisionIds": ["D1.RachniQueen"],
+		"relatedDecisionIds": ["D1.RachniQueen"],
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
@@ -1811,7 +1811,7 @@
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Virmire_(mission)"
 		],
-        "decisionIds": ["D1.Kirrahe"],
+        "relatedDecisionIds": ["D1.Kirrahe"],
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
@@ -2048,7 +2048,7 @@
 		"name": "Bomb Site / AA Tower",
 		"description": "A geth ship appears, heading to the bomb site. You have to make a choice: rescue [Kaidan|megametracker://person?id=S1.Kaidan] or [Ashley|megametracker://person?id=S1.Ashley]. This is the single most important decision of all three games, as it eliminates a major character from the other two games. Whichever way you go - up to the tower, or down to the bomb site, there is a major fight ahead.",
 		"inMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
-		"decisionIds": ["D1.Kaidan", "D1.Ashley"]
+		"relatedDecisionIds": ["D1.Kaidan", "D1.Ashley"]
 	}, {
 		"id": "M1.Virmire.11",
 		"inMissionId": "M1.Virmire",
@@ -2332,7 +2332,7 @@
 		"description": "Make your way to the Control Terminal and use Vigil's data file to take control of the Citadel. You can open the arms of the Citadel, but now you must decide what to do about the Council's flagship, the Destiny Ascension, which is under heavy fire. The entire Council is onboard. [Joker|megametracker://person?id=P1.Joker] is waiting with an Alliance fleet and they can save the Ascension, but there will be heavy losses to the human forces.\n\nThis is also your last chance to save the game.",
 		"inMapId": "G.C1.Tower.Council",
 		"isShowInParentMap": true,
-		"decisionIds": ["D1.Council"],
+		"relatedDecisionIds": ["D1.Council"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Accessed Conduit to Citadel"
@@ -2359,7 +2359,7 @@
 		"description": "The fleet destroys [Sovereign|megametracker://person?id=E1.Sovereign], but some of the wreckage slams into the Citadel Tower and buries Shepard. It is uncertain for a moment if you survived, but at the last minute you emerge from the wreckage, wounded but alive. If you saved the Council, they will be waiting to thank you, and to finally grant humanity a seat on the Council. If you let the Council die, [Udina|megametracker://person?id=P1.Udina] will propose establishing an all-human Council to take their place.",
 		"inMapId": "G.C1.Tower.Council",
 		"isShowInParentMap": true,
-		"decisionIds": ["D1.Udina", "D1.Anderson", "D1.HumanCouncil"],
+		"relatedDecisionIds": ["D1.Udina", "D1.Anderson", "D1.HumanCouncil"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Accessed Conduit to Citadel"

@@ -29,8 +29,9 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1AlJilani.png",
 		"voiceActor": "April Banigan",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Khalisah_al-Jilani"],
-		"decisionIds": ["D1.AlJilani"],
+		"relatedDecisionIds": ["D1.AlJilani"],
 		"relatedMissionIds": ["A1.C2.FourthEstate"],
+        "relatedDecisionIds": ["D1.AlJilani", "D2.AlJilani", "D3.AlJilani"],
 		"gameVersionData": {
 			"2": {
 				"photo": "http://urdnot.com/megametracker/app/images/Game2/2AlJilani.png"
@@ -167,7 +168,7 @@
 		"voiceActor": "Bill Ratner",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Hollis_Blake"],
 		"relatedMissionIds": ["A1.T.StrangeBehavior"],
-		"decisionIds": ["D1.ZhusHope"],
+		"relatedDecisionIds": ["D1.ZhusHope"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -186,7 +187,7 @@
 		"voiceActor": "Marianne Copithorne",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Calantha_Blake"],
 		"relatedMissionIds": ["A1.T.StrangeBehavior"],
-		"decisionIds": ["D1.ZhusHope"],
+		"relatedDecisionIds": ["D1.ZhusHope"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -224,7 +225,7 @@
 		"voiceActor": "Audrey Wasilewski",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kate_Bowman"],
 		"relatedMissionIds": ["DLC1.X57.BringDownTheSky"],
-		"decisionIds": ["D1.X57Hostages"],
+		"relatedDecisionIds": ["D1.X57Hostages"],
 		"sideEffects": ["If you save the hostages, Kate will send you an e-mail thanking you in Game 2. She will also be mentioned in a newscast for giving a speech at the Terra Nova memorial. If the hostages die, a Reverend Bowman will hold a prayer session for them at that memorial."],
 		"events": [{
 			"type": "UnavailableInGame",
@@ -245,7 +246,7 @@
 		"relatedMissionIds": ["A1.U.Hostage"],
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Martin_Burns"],
 		"voiceActor": "Brian George",
-		"decisionIds": ["D1.Burns"],
+		"relatedDecisionIds": ["D1.Burns"],
 		"realtedMissionIds": ["A1.U.Hostage"],
 		"sideEffects": ["If you save Burns, there is a news report that L2 biotics have received reparations and Burns will send you a thank you message in Game 2, for changing his mind on the L2s."],
 		"events": [{
@@ -526,7 +527,7 @@
 		"voiceActor": "Cree Summer",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Macha_Doyle"],
 		"relatedMissionIds": ["A1.F.WaterRestoration"],
-		"decisionIds": ["D1.ZhusHope"],
+		"relatedDecisionIds": ["D1.ZhusHope"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -673,7 +674,7 @@
 		"voiceActor": "Wendy Braun",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Gianna_Parasini"],
 		"relatedMissionIds": ["M1.Noveria.2PortHanshen", "A1.N.LorikQuiin"],
-		"decisionIds": ["D1.Gianna"],
+		"relatedDecisionIds": ["D1.Gianna"],
 		"gameVersionData": {
 			"2": {
 				"description": "Gianna (if she lived through Game 1) has an assignment for Shepard on Illium.",
@@ -735,7 +736,7 @@
 		"voiceActor": "Kim Mai Guest",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Hana_Murakami"],
 		"relatedMissionIds": ["M1.Feros"],
-		"decisionIds": ["D1.ZhusHope"],
+		"relatedDecisionIds": ["D1.ZhusHope"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -799,7 +800,7 @@
 		"voiceActor": "Jane Singer",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Helena_Blake"],
 		"relatedMissionIds": ["A1.U.HostileTakeover"],
-		"decisionIds": ["D1.HelenaBlake"],
+		"relatedDecisionIds": ["D1.HelenaBlake"],
 		"gameVersionData": {
 			"2": {
 				"description": "Helena can be found on Afterlife in Game 2. If she lived through the assault on [megametracker://map?id=G.Ear.Hor.For.Amaranthine] and you persuaded her to disband her gang, she is employed as a social worker, otherwise she is working for Aria.",
@@ -822,7 +823,7 @@
 		"voiceActor": "John Wright",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Gavin_Hossle"],
 		"relatedMissionIds": ["A1.F.DataRecovery"],
-		"decisionIds": ["D1.Hossle"],
+		"relatedDecisionIds": ["D1.Hossle"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -859,7 +860,7 @@
 		"voiceActor": "Tim Conlon",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Ian_Newstead"],
 		"relatedMissionIds": ["A1.T.StrangeBehavior"],
-		"decisionIds": ["D1.ZhusHope"],
+		"relatedDecisionIds": ["D1.ZhusHope"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -914,7 +915,7 @@
 		"organization": "Alliance",
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Jacob.png",
 		"relatedMissionIds": ["A1.U.LostFreighter"],
-		"decisionIds": ["D1.MSVWorthington"],
+		"relatedDecisionIds": ["D1.MSVWorthington"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -969,6 +970,7 @@
 		"voiceActor": "Ash Sroka",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jenna"],
 		"relatedMissionIds": ["A1.C1.RitasSister"],
+		"relatedDecisionIds": ["D1.Rita"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -1084,7 +1086,7 @@
 		"voiceActor": "Peter Jessop",
 		"relatedMissionIds": ["A1.U.MajorKyle"],
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Major_Kyle"],
-		"decisionIds": ["D1.MajorKyle"],
+		"relatedDecisionIds": ["D1.MajorKyle"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -1102,7 +1104,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Ledra.png",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Ledra"],
 		"relatedMissionIds": ["M1.Feros"],
-		"decisionIds": ["D1.ZhusHope"],
+		"relatedDecisionIds": ["D1.ZhusHope"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -1175,7 +1177,7 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Arcelia_Silva_Martinez"],
 		"relatedMissionIds": [],
 		"voiceActor": "Wendy Braun",
-		"decisionIds": ["D1.ZhusHope"],
+		"relatedDecisionIds": ["D1.ZhusHope"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -1306,7 +1308,7 @@
 		"voiceActor": "Jennifer Hale",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/May_O%27Connell"],
 		"relatedMissionIds": ["A1.F.PowerCells"],
-		"decisionIds": ["D1.ZhusHope"],
+		"relatedDecisionIds": ["D1.ZhusHope"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -1477,7 +1479,7 @@
 		"voiceActor": "Belinda Cornish",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Rana_Thanoptis"],
 		"relatedMissionIds": ["M1.Virmire.6"],
-		"decisionIds": ["D1.Rana"],
+		"relatedDecisionIds": ["D1.Rana"],
 		"gameVersionData": {
 			"2": {
 				"description": "Rana is a former employee of [megametracker://person?id=E1.Saren]. If she survived Virmire in Game 1, she will appear in Game 2 on Korlus working for Okeer, implanting memories in tank-bred krogan.",
@@ -1520,7 +1522,7 @@
 		"voiceActor": "Kim McCaw",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Davin_Reynolds"],
 		"relatedMissionIds": ["A1.F.VarrenMeat"],
-		"decisionIds": ["D1.ZhusHope"],
+		"relatedDecisionIds": ["D1.ZhusHope"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
@@ -1538,7 +1540,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Rita.png",
 		"voiceActor": "Dannah Feinglass Phirman",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Rita"],
-		"decisionIds": ["D1.Rita"],
+		"relatedDecisionIds": ["D1.Rita"],
 		"relatedMissionIds": ["A1.C1.RitasSister"],
 		"events": [{
 			"type": "UnavailableInGame",
@@ -1687,7 +1689,7 @@
 		"voiceActor": "Gwendoline Yeo",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Shiala"],
 		"relatedMissionIds": ["M1.Feros.13.7"],
-		"decisionIds": ["D1.Shiala"],
+		"relatedDecisionIds": ["D1.Shiala"],
 		"gameVersionData": {
 			"2": {
 				"description": "Shepard first encountered Shiala during the Feros attack on the Thorian in Game 1. If Shepard did not kill Shiala there, she reappears in Game 2 on Illium, assisting the Zhu's Hope colonists in negotiating with ExoGeni over a medical contract that is hurting them.",
@@ -1729,7 +1731,7 @@
 		"voiceActor": "Alastair Duncan",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel_Council#Turian"],
 		"relatedMissionIds": [],
-		"decisionIds": ["D1.Council"],
+		"relatedDecisionIds": ["D1.Council"],
 		"gameVersionData": {
 			"2": {},
 			"3": {
@@ -1803,7 +1805,7 @@
 		"voiceActor": "Jan Alexandra Smith",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel_Council#Asari"],
 		"relatedMissionIds": [],
-		"decisionIds": ["D1.Council"],
+		"relatedDecisionIds": ["D1.Council"],
 		"gameVersionData": {
 			"2": {},
 			"3": {
@@ -1845,7 +1847,7 @@
 		"voiceActor": "Armin Shimerman",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel_Council#Salarian"],
 		"relatedMissionIds": [],
-		"decisionIds": ["D1.Council"],
+		"relatedDecisionIds": ["D1.Council"],
 		"gameVersionData": {
 			"2": {},
 			"3": {

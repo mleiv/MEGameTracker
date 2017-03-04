@@ -77,8 +77,13 @@ extension DataEvent: SerializedDataRetrievable {
 }
 
 //MARK: Equatable
-extension DataEvent: Equatable {}
+extension DataEvent: Equatable {
+    public static func ==(a: DataEvent, b: DataEvent) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
+}
 
-public func ==(a: DataEvent, b: DataEvent) -> Bool { // not true equality, just same db row
-    return a.id == b.id
+// MARK: Hashable
+extension DataEvent: Hashable {
+    public var hashValue: Int { return id.hashValue }
 }

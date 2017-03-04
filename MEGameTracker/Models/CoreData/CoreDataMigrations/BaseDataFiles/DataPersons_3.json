@@ -11,7 +11,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game3/3EDI.png",
 		"voiceActor": "Tricia Helfer",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/EDI"],
-		"decisionIds": ["D3.EdiJoker"],
+		"relatedDecisionIds": ["D3.EdiJoker"],
 		"gameVersionData": {
 			"1": {
 				"personType": "Associate"
@@ -32,10 +32,11 @@
 		"voiceActor": "Ike Amadi",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Javik"],
 		"relatedMissionIds": ["DLC3.FromAshes1"],
-		"decisionIds": ["D3.LoveJavik"],
+		"relatedDecisionIds": ["D3.LoveJavik"],
 		"gameVersionData": {
 			"3": {
-                "isFemaleLoveInterest": 1,
+				"isFemaleLoveInterest": true,
+                "isParamour": false,
 				"loveInterestDecisionId": "D3.LoveJavik"
 			}
 		},
@@ -58,10 +59,11 @@
 		"voiceActor": "Freddie Prinze Jr.",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/James_Vega"],
 		"sideEffects": ["Vega's backstory is told in the comics *Mass Effect: Paragon Lost* and *Mass Effect: Conviction*"],
-		"decisionIds": ["D3.LoveVega"],
+		"relatedDecisionIds": ["D3.LoveVega"],
 		"gameVersionData": {
 			"3": {
-                "isFemaleLoveInterest": 1,
+				"isFemaleLoveInterest": true,
+                "isParamour": false,
 				"loveInterestDecisionId": "D3.LoveVega"
 			}
 		},
@@ -85,7 +87,7 @@
 		"voiceActor": "Siobhan Hewlett",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Maya_Brooks"],
 		"relatedMissionIds": ["DLC3.Citadel"],
-		"decisionIds": ["D3.Brooks"],
+		"relatedDecisionIds": ["D3.Brooks"],
 		"sideEffects": [
             "Brooks says she named her hacking program after her cat, Mr. Biscuits, which is an awesome cat name (although myself, I named my cat Kasumi).",
             "Brooks' backstory is told in the comic *Mass Effect: Foundation*"
@@ -184,11 +186,12 @@
 		"voiceActor": "Jessica Chobot",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Diana_Allers"],
 		"sideEffects": ["If Shepard refuses Allers' request to travel with the Normandy, she will choose the SSV Shasta instead. She then dies with the rest of the crew when the ship is destroyed."],
-		"decisionIds": ["D3.LoveAllers"],
+		"relatedDecisionIds": ["D3.LoveAllers"],
 		"gameVersionData": {
 			"3": {
-                "isMaleLoveInterest": 1,
-                "isFemaleLoveInterest": 1,
+                "isMaleLoveInterest": true,
+				"isFemaleLoveInterest": true,
+                "isParamour": false,
 				"loveInterestDecisionId": "D3.LoveAllers"
 			}
 		},
@@ -210,13 +213,14 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Cortez.png",
 		"voiceActor": "Matthew Del Negro",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Steve_Cortez"],
-		"decisionIds": ["D3.LoveSteve"],
+		"relatedDecisionIds": ["D3.LoveSteve"],
         "sideEffects": [
             "If Shepard does not speak to Cortez and help him deal with his grief, he dies during [megametracker://mission?id=M3.3.Earth], when his shuttle is shot and crashes: [YouTube|https://www.youtube.com/watch?v=7k2U9KgnOTs]."
         ],
 		"gameVersionData": {
 			"3": {
-                "isMaleLoveInterest": 1,
+                "isMaleLoveInterest": true,
+                "isParamour": true,
 				"loveInterestDecisionId": "D3.LoveSteve"
 			}
 		},
@@ -257,7 +261,7 @@
 		"voiceActor": "Lani Minella",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Eve"],
 		"relatedMissionIds": ["M3.1.Tuchanka", "A3.Bomb"],
-		"decisionIds": ["D2.MaelonsData", "D3.Eve"],
+		"relatedDecisionIds": ["D2.MaelonsData", "D3.Eve"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game1"
@@ -317,10 +321,11 @@
 			"If Shepard romances Traynor, there is a conversationg where she says, sweet talk all she wants, but \"I still won't feed your fish\", a nod to Kelly Chambers in Game 2",
 			"If Shepard romances Traynor, during the Citadel DLC party, Joker suggests Traynor check to see if Shepard's back glows red during sex, a reference to Battlestar Galactica."
 		],
-		"decisionIds": ["D3.LoveTraynor"],
+		"relatedDecisionIds": ["D3.LoveTraynor"],
 		"gameVersionData": {
 			"3": {
-                "isFemaleLoveInterest": 1,
+                "isFemaleLoveInterest": true,
+                "isParamour": true,
 				"loveInterestDecisionId": "D3.LoveTraynor"
 			}
 		},

@@ -32,7 +32,7 @@ public struct DataMap: MapLocationable {
     public internal(set) var isExplorable: Bool = false
     
     public fileprivate(set) var relatedLinks: [String] = []
-    public internal(set) var decisionIds: [String] = [] // transient changes in Map
+    public internal(set) var relatedDecisionIds: [String] = [] // transient changes in Map
     public fileprivate(set) var sideEffects: [String] = []
     public fileprivate(set) var relatedMissionIds: [String] = []
     
@@ -167,7 +167,7 @@ public struct DataMap: MapLocationable {
         sortIndex = gameVersionData["sortIndex"]?.int ?? (rawGeneralData["sortIndex"]?.int ?? sortIndex)
         
         relatedLinks = ((gameVersionData["relatedLinks"]?.array ?? rawGeneralData["relatedLinks"]?.array) ?? []).flatMap({ $0.string })
-        decisionIds = ((gameVersionData["decisionIds"]?.array ?? rawGeneralData["decisionIds"]?.array) ?? []).flatMap({ $0.string })
+        relatedDecisionIds = ((gameVersionData["relatedDecisionIds"]?.array ?? rawGeneralData["relatedDecisionIds"]?.array) ?? []).flatMap({ $0.string })
         sideEffects = ((gameVersionData["sideEffects"]?.array ?? rawGeneralData["sideEffects"]?.array) ?? []).flatMap({ $0.string })
         relatedMissionIds = ((gameVersionData["relatedMissionIds"]?.array ?? rawGeneralData["relatedMissionIds"]?.array) ?? []).flatMap({ $0.string })
     
@@ -285,9 +285,15 @@ extension DataMap: SerializedDataRetrievable {
     
 }
 
-// MARK: Equatable
-extension DataMap: Equatable {}
-
-public func ==(a: DataMap, b: DataMap) -> Bool { // not true equality, just same db row
-    return a.id == b.id
+//MARK: Equatable
+extension DataMap: Equatable {
+    public static func ==(a: DataMap, b: DataMap) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
 }
+
+// MARK: Hashable
+extension DataMap: Hashable {
+    public var hashValue: Int { return id.hashValue }
+}
+

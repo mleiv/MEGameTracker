@@ -70,7 +70,7 @@
 		"experience": 0,
 		"reward": "12,500 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Palaven"],
-		"decisionIds": ["D2.Garrus"],
+		"relatedDecisionIds": ["D2.Garrus"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel I"
@@ -94,7 +94,7 @@
 			"On the top level at the far side opposite the elevator, don't miss the salarian at the console with the button you can press. Press that button. Press it lots. [YouTube|https://www.youtube.com/watch?v=cPIIaK4Vl20]",
 			"Your ship's doctor (Chakwas or Michel) will move to the crew quarters to make room for Mordin and Eve."
 		],
-		"decisionIds": ["D1.Wrex", "D1.MaelonsData", "D1.Kirrahe", "D2.Mordin"],
+		"relatedDecisionIds": ["D1.Wrex", "D1.MaelonsData", "D1.Kirrahe", "D2.Mordin"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -118,7 +118,7 @@
 			"Some Citadel assignments will no longer be available after this mission is completed, because [megametracker://mission?id=M3.2.Citadel2] begins the next time you return to the Citadel.",
 			"Dialogue opportunities with the following people on the Citadel will be unavailable after this mission is completed: [megametracker://person?id=P2.Kelly], [megametracker://person?id=S2.Thane], [megametracker://person?id=O2.Aethyta]."
 		],
-		"decisionIds": ["D1.Wrex", "D1.MaelonsData", "D2.Mordin", "D3.GenophageCure", "D3.Eve", "D3.Mordin"],
+		"relatedDecisionIds": ["D1.Wrex", "D1.MaelonsData", "D2.Mordin", "D3.GenophageCure", "D3.Eve", "D3.Mordin"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh and Krogan or Turian Mission"
@@ -171,7 +171,7 @@
 			"Here is the one scenario in which Mordin does *not* die: [YouTube|https://www.youtube.com/watch?v=RKve3voj19A].",
 			"If you save Mordin *and* you saved the [megametracker://person?id=E1.RachniQueen], a Control ending leads to the rachni taking over Tuchanka: [YouTube|https://www.youtube.com/watch?v=NplYcIptkiY])."
 		],
-		"decisionIds": ["D3.GenophageCure", "D3.Eve", "D3.Mordin"]
+		"relatedDecisionIds": ["D3.GenophageCure", "D3.Eve", "D3.Mordin"]
 
 
 	}, {
@@ -186,7 +186,7 @@
 		"experience": 0,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_The_Citadel_II"],
-		"decisionIds": ["D1.Kirrahe", "D1.LoveAshley", "D1.LoveKaidan", "D1.Council", "D2.Thane", "D3.AshleyKaidanParagon", "D3.AshleyKaidan"],
+		"relatedDecisionIds": ["D1.Kirrahe", "D1.LoveAshley", "D1.LoveKaidan", "D1.Council", "D2.Thane", "D3.AshleyKaidanParagon", "D3.AshleyKaidan"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Tuchanka"
@@ -234,7 +234,7 @@
 		"missionType": "Objective",
 		"name": "Confronting Udina",
 		"description": "The Council's evacuation shuttle is, of course, already destroyed by Cerberus. Your squad disables the elevator so the Council can't take Ashley/Kaidan's advice and head back into Kai Leng's waiting ambush. Udina claims you are the threat, working with Cerberus. You must talk down, or shoot, Ashley/Kaidan and prevent the Council from opening the elevator. Then you must shoot Udina. \n\nWhen the elevator doors open, Bailey comes out instead of Kai Leng. He explains that Kai Leng and all the Cerberus troops have fled, through tunnels under the station.",
-		"decisionIds": ["D3.AshleyKaidan"]
+		"relatedDecisionIds": ["D3.AshleyKaidan"]
 
 	}, {
 		"id": "M3.2.PerseusVeil",
@@ -250,7 +250,7 @@
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Priority:_Perseus_Veil"
 		],
-		"decisionIds": ["D2.Tali"],
+		"relatedDecisionIds": ["D2.Tali"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -280,7 +280,7 @@
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Priority:_Geth_Dreadnought"
 		],
-		"decisionIds": ["D2.Tali", "D2.Legion", "D3.Legion"],
+		"relatedDecisionIds": ["D2.Tali", "D2.Legion", "D3.Legion"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Perseus Veil"
@@ -320,7 +320,7 @@
 		"missionType": "Objective",
 		"name": "Reaper Signal",
 		"description": "Shut down the reaper signal. You will find the Reapers were using [megametracker://person?id=S2.Legion] to power this (if it survived [megametracker://mission?id=M2.CollectorBase.5]), otherwise it will be filled by Geth VI. Eliminate the rest of the hostile geth.",
-		"decisionIds": ["D3.Legion"]
+		"relatedDecisionIds": ["D3.Legion"]
 	}, {
 		"id": "M3.2.Rannoch",
 		"sortIndex": 23,
@@ -333,7 +333,7 @@
 		"experience": 0,
 		"reward": "25,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Rannoch"],
-		"decisionIds": ["D2.Tali", "D3.Legion", "D3.GethIntelligent", "D3.Quarians"],
+		"relatedDecisionIds": ["D2.Tali", "D3.Legion", "D3.GethIntelligent", "D3.Quarians"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Geth Dreadnought"
@@ -365,7 +365,7 @@
 		"missionType": "Objective",
 		"name": "Modified Reaper Code",
 		"description": "The disabled geth are currently being destroyed by the quarian fleet. Legion (or Geth VI) has modified the Reaper code which was controlling the geth and it believes uploading it to the geth fleet will give them all true intelligence. \n\nIf you permit it to upload the code, the geth will rejoin the battle and potentially eliminate the quarians. This leads to Tali (or Raan) throwing themselves off the cliff. Despite the teasing Paragon Interrupt, you can't stop this. \n\nLegion (or Geth VI) will attack you and die if you stop it, and will die during the upload if you permit it.",
-		"decisionIds": ["D3.GethIntelligent", "D3.Quarians"]
+		"relatedDecisionIds": ["D3.GethIntelligent", "D3.Quarians"]
 	}, {
 		"id": "M3.2.Citadel3",
 		"sortIndex": 24,
@@ -378,7 +378,7 @@
 		"experience": 0,
 		"reward": "The asari councilor [megametracker://person?id=P1.Valern] (or [megametracker://person?id=O2.Esheel] if Valern died in Game 1) urgently requests to speak with you on the Citadel. You can find her in the Citadel Embassies at Udina's former office. \n\nIf you betrayed Wrex during [megametracker://mission?id=M3.1.Tuchanka], you will need to avoid the Normandy dock (say, by completing assignments which terminate back in the Normandy) or you will be confronted and have to kill him.",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_The_Citadel_III"],
-		"decisionIds": ["D1.Council", "D1.Wrex", "D3.GenophageCure"],
+		"relatedDecisionIds": ["D1.Council", "D1.Wrex", "D3.GenophageCure"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Rannoch"
@@ -452,7 +452,7 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Horizon"],
-		"decisionIds": ["D2.MirandaLoyalty", "D2.Miranda", "D3.Miranda"],
+		"relatedDecisionIds": ["D2.MirandaLoyalty", "D2.Miranda", "D3.Miranda"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Thessia"
@@ -516,7 +516,7 @@
 		"missionType": "Objective",
 		"name": "Dr. Lawson",
 		"description": "[megametracker://person?id=E3.Lawson] is holding his daughter [Oriana|megametracker://person?id=O2.Oriana] hostage. There are a few different options for how this plays out. You can Charm or Intimidate  Dr. Lawson into letting Oriana go, although Miranda will shoot him anyway if she is present, and you can also shoot him yourself. If you can't or don't persuade him, you can wound Oriana with a Renegade Interrupt to get her clear, and then either you or Miranda will shoot Dr. Lawson. If Miranda is not there and you do not take any of the other options, Oriana will die by stepping off the edge and dragging Dr. Lawson with her.",
-		"decisionIds": ["D3.Miranda"]
+		"relatedDecisionIds": ["D3.Miranda"]
 
 
 	}, {
@@ -531,7 +531,7 @@
 		"experience": 0,
 		"reward": "55,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Cerberus_Headquarters"],
-		"decisionIds": ["D2.LegionCerberus", "D3.GrissomAcademy"],
+		"relatedDecisionIds": ["D2.LegionCerberus", "D3.GrissomAcademy"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Horizon"
@@ -587,7 +587,7 @@
 		"experience": 0,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Earth"],
-		"decisionIds": ["D3.Cortez", "D3.Control", "D3.Synthesis", "D3.Destroy", "D3.Refusal"],
+		"relatedDecisionIds": ["D3.Cortez", "D3.Control", "D3.Synthesis", "D3.Destroy", "D3.Refusal"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Cerberus Headquarters"
@@ -611,7 +611,7 @@
 		"missionType": "Objective",
 		"name": "Reaper Cannon",
 		"description": "Fight through Reaper forces and make your way up the hill until you find the missile launcher. Use it destroy the Reaper cannon. There's a second missile launcher if you need it. Cortez will die here if you have not fulfilled the requirements to save him.",
-		"decisionIds": ["D3.Cortez"]
+		"relatedDecisionIds": ["D3.Cortez"]
 	}, {
 		"id": "M3.3.Earth.3",
 		"inMissionId": "M3.3.Earth",
@@ -721,7 +721,7 @@
 		"missionType": "Objective",
 		"name": "Final Choice",
 		"description": "You have to select one of the four endings. The outcome will vary somewhat based on your military effectiveness (a combination of War Assets and Galactic Readiness). Destroy and Refusal choices also destroy the Citadel, although whether anyone is still alive there is debateable.",
-		"decisionIds": ["D3.Control", "D3.Synthesis", "D3.Destroy", "D3.Refusal"],
+		"relatedDecisionIds": ["D3.Control", "D3.Synthesis", "D3.Destroy", "D3.Refusal"],
 		"noteToSelf": "TODO: Add galactic readiness/war assets slider to per-game tracking data on Shepard page?"
 
 

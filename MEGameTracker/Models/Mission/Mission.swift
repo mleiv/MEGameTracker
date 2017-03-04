@@ -73,11 +73,11 @@ public struct Mission: MapLocationable, Eventsable {
     }
     
     /// **Warning:** no changes are saved.
-    public var decisionIds: [String] {
+    public var relatedDecisionIds: [String] {
         // Changing the value of decisionIds does not get saved.
         // This is only for refreshing local data without a core data call.
-        get { return generalData.decisionIds }
-        set { generalData.decisionIds = newValue }
+        get { return generalData.relatedDecisionIds }
+        set { generalData.relatedDecisionIds = newValue }
     }
     
     public var conversationRewardsDescription: String? {
@@ -187,13 +187,13 @@ extension Mission {
     }
     
     public func getObjectives() -> [MapLocationable] {
-        return Mission.getAllObjectives(underId: id)
+        return Mission.getAllObjectives(underId: id).sorted(by: MapLocation.sort)
     }
     
     public func getRelatedMissions(completion: @escaping (([Mission])->Void) = { _ in }) {
         let missionIds = generalData.relatedMissionIds
         DispatchQueue.global(qos: .background).async {
-            completion(Mission.getAllMissions(ids: missionIds))
+            completion(Mission.getAllMissions(ids: missionIds).sorted(by: Mission.sort))
         }
     }
     
@@ -438,9 +438,14 @@ extension Mission {
     }
 }
 
-// MARK: Equatable
-extension Mission: Equatable {}
+//MARK: Equatable
+extension Mission: Equatable {
+    public static func ==(a: Mission, b: Mission) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
+}
 
-public func ==(a: Mission, b: Mission) -> Bool { // not true equality, just same db row
-    return a.id == b.id
+// MARK: Hashable
+extension Mission: Hashable {
+    public var hashValue: Int { return id.hashValue }
 }

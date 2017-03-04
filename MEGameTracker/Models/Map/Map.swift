@@ -80,11 +80,11 @@ public struct Map: MapLocationable, Eventsable {
     }
     
     /// **Warning:** no changes are saved.
-    public var decisionIds: [String] {
+    public var relatedDecisionIds: [String] {
         // Changing the value of decisionIds does not get saved.
         // This is only for refreshing local data without a core data call.
-        get { return generalData.decisionIds }
-        set { generalData.decisionIds = newValue }
+        get { return generalData.relatedDecisionIds }
+        set { generalData.relatedDecisionIds = newValue }
     }
     
     public func isAvailableInGame(_ gameVersion: GameVersion) -> Bool {
@@ -179,42 +179,42 @@ extension Map {
     }
     
     public func getMapLocations() -> [MapLocationable] {
-        return MapLocation.getAll(inMapId: id, gameVersion: gameVersion)
+        return MapLocation.getAll(inMapId: id, gameVersion: gameVersion).sorted(by: MapLocation.sort)
     }
     
-    public func getMissions(isCompleted: Bool? = nil) -> [Mission] {
-        let missions = MapLocation.getAllMissions(inMapId: id, gameVersion: gameVersion).flatMap { $0 as? Mission }
-        if let isCompleted = isCompleted {
-            return missions.filter { $0.isCompleted == isCompleted }
-        }
-        return missions
-    }
+//    public func getMissions(isCompleted: Bool? = nil) -> [Mission] {
+//        let missions = MapLocation.getAllMissions(inMapId: id, gameVersion: gameVersion).flatMap { $0 as? Mission }
+//        if let isCompleted = isCompleted {
+//            return missions.filter{ $0.isCompleted == isCompleted }.sorted(by: Mission.sort)
+//        }
+//        return missions
+//    }
+//    
+//    public func getMissionsRatio(missions: [Mission]) -> String {
+//        let acquired = missions.filter{ $0.isCompleted }.count
+//        let pending = missions.count - acquired
+//        return "\(acquired)/\(pending)"
+//    }
+//    
+//    public func getItems(isAcquired: Bool? = nil) -> [Item] {
+//        let items = MapLocation.getAllItems(inMapId: id, gameVersion: gameVersion).flatMap { $0 as? Item }
+//        if let isAcquired = isAcquired {
+//            return items.filter{ $0.isAcquired == isAcquired }.sorted(by: Item.sort)
+//        }
+//        return items
+//    }
+//    
+//    public func getItemsRatio(items: [Item]) -> String {
+//        let acquired = items.filter{ $0.isAcquired }.count
+//        let pending = items.count - acquired
+//        return "\(acquired)/\(pending)"
+//    }
+//    
     
-    public func getMissionsRatio(missions: [Mission]) -> String {
-        let acquired = missions.filter({ $0.isCompleted }).count
-        let pending = missions.count - acquired
-        return "\(acquired)/\(pending)"
-    }
-    
-    public func getItems(isAcquired: Bool? = nil) -> [Item] {
-        let items = MapLocation.getAllItems(inMapId: id, gameVersion: gameVersion).flatMap { $0 as? Item }
-        if let isAcquired = isAcquired {
-            return items.filter { $0.isAcquired == isAcquired }
-        }
-        return items
-    }
-    
-    public func getItemsRatio(items: [Item]) -> String {
-        let acquired = items.filter({ $0.isAcquired }).count
-        let pending = items.count - acquired
-        return "\(acquired)/\(pending)"
-    }
-    
-    
-    public func getMaps(isExplored: Bool? = nil) -> [Map] {
+    public func getChildMaps(isExplored: Bool? = nil) -> [Map] {
         let maps = MapLocation.getAllMaps(inMapId: id, gameVersion: gameVersion).flatMap { $0 as? Map }
         if let isExplored = isExplored {
-            return maps.filter { $0.isExplored == isExplored }
+            return maps.filter{ $0.isExplored == isExplored }.sorted(by: Map.sort)
         }
         return maps
     }
@@ -283,7 +283,7 @@ extension Map {
         isSave: Bool,
         isCascadeChanges: EventDirection = .all
     ) {
-        let maps = getMaps()
+        let maps = getChildMaps()
         if isCascadeChanges != .up {
             for childMap in maps where childMap.isExplorable && childMap.isExplored != isExplored {
                 // complete/uncomplete all submaps if parent was just completed/uncompleted
@@ -292,7 +292,7 @@ extension Map {
             }
         }
         if isCascadeChanges != .down, var parentMap = self.parentMap, parentMap.isExplorable {
-            let siblingMaps = parentMap.getMaps()
+            let siblingMaps = parentMap.getChildMaps()
             if !isExplored && parentMap.isExplored {
                 // uncomplete parent
                 parentMap.change(isExplored: false, isSave: isSave, isCascadeChanges: .up) // don't uncomplete other children
@@ -414,9 +414,15 @@ extension Map {
     }
 }
 
-// MARK: Equatable
-extension Map: Equatable {}
-
-public func ==(a: Map, b: Map) -> Bool { // not true equality, just same db row
-    return a.id == b.id && a.gameVersion == b.gameVersion
+//MARK: Equatable
+extension Map: Equatable {
+    public static func ==(a: Map, b: Map) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
 }
+
+// MARK: Hashable
+extension Map: Hashable {
+    public var hashValue: Int { return id.hashValue }
+}
+

@@ -318,9 +318,14 @@ extension Event: DateModifiable {}
 // MARK: GameModifying
 extension Event: GameModifying {}
 
-// MARK: Equatable
-extension Event: Equatable {}
+//MARK: Equatable
+extension Event: Equatable {
+    public static func ==(a: Event, b: Event) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
+}
 
-public func ==(a: Event, b: Event) -> Bool { // not true equality, just same db row
-    return a.id == b.id
+// MARK: Hashable
+extension Event: Hashable {
+    public var hashValue: Int { return id.hashValue }
 }

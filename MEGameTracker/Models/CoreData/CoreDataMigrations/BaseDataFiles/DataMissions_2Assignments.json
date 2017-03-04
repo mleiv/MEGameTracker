@@ -24,7 +24,7 @@
 		"name": "Citadel: The Council",
 		"description": "Anderson wants Shepard to meet with the Council and update them on the Reapers. In Game 2, you are normally restricted to the Zakera Ward levels of the Citadel, but for this assignment you can take a cab to the Ambassador's Office on the Presidium. \n\nIf Shepard saved the Destiny Ascension in Game 1, they will meet with you, but dismiss any news of the Reapers. If the Destiny Ascension was destroyed, the Council will not meet with you at all. If the Ascension was saved *or* if Anderson was seated on the Council instead of Udina, you can be additionally reinstated as a Spectre if you want (but there are no consequences to your choice).",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_The_Council"],
-		"decisionIds": ["D1.Council", "D1.Anderson"],
+		"relatedDecisionIds": ["D1.Council", "D1.Anderson"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
@@ -282,7 +282,7 @@
 			"radius": 1
 		},
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_Gianna_Parasini"],
-		"decisionIds": ["D1.Gianna"],
+		"relatedDecisionIds": ["D1.Gianna"],
 		"experience": 40,
 		"conversationRewards": [{
 			"set": {
@@ -653,7 +653,7 @@
 			"y": 385,
 			"radius": 1
 		},
-		"decisionIds": ["D1.Conrad", "D2.Conrad"],
+		"relatedDecisionIds": ["D1.Conrad", "D2.Conrad"],
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Illium:_A_Troublemaker"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -715,7 +715,7 @@
 		"name": "Illium: Medical Scans",
 		"description": "A colonist from Zhu's Hope will approach you for help (a green Shiala, if she survived Game 1).\n\nWhile negotiating for necessary medical treatments from Baria Frontiers, the colonists unknowningly signed up for invasive tests. They need your help to convince the Baria Frontiers representative to let them renegotiate the contract.",
 		"experience": 40,
-		"decisionIds": ["D1.Shiala"],
+		"relatedDecisionIds": ["D1.Shiala"],
 		"conversationRewards": [{
 			"context": "Talking to Shiala (if she survived Game 1)",
 			"id": "A2.I.MedicalScans.P1",
@@ -1181,6 +1181,9 @@
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: System Hacking"
+        }, {
+			"type": "BlockedAfter",
+			"id": "Started: Shadow Broker"
 		}]
 	}, {
 		"id": "A2.I.TheObserver.1",

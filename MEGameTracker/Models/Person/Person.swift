@@ -56,6 +56,7 @@ public struct Person: Photographical, Eventsable {
     public var personType: PersonType { return generalData.personType }
     public var isMaleLoveInterest: Bool { return generalData.isMaleLoveInterest }
     public var isFemaleLoveInterest: Bool { return generalData.isFemaleLoveInterest }
+    public var isParamour: Bool { return generalData.isParamour }
     public var voiceActor: String? { return generalData.voiceActor }
     public var relatedLinks: [String] { return generalData.relatedLinks }
     public var loveInterestDecisionId: String? { return generalData.loveInterestDecisionId }
@@ -80,11 +81,11 @@ public struct Person: Photographical, Eventsable {
     }
     
     /// **Warning:** no changes are saved.
-    public var decisionIds: [String] {
+    public var relatedDecisionIds: [String] {
         // Changing the value of decisionIds does not get saved.
         // This is only for refreshing local data without a core data call.
-        get { return generalData.decisionIds }
-        set { generalData.decisionIds = newValue }
+        get { return generalData.relatedDecisionIds }
+        set { generalData.relatedDecisionIds = newValue }
     }
     
     public var isAvailable: Bool {
@@ -135,7 +136,7 @@ extension Person {
     public func getRelatedMissions(completion: @escaping (([Mission])->Void) = {_ in }) {
         let missionIds = generalData.relatedMissionIds
         DispatchQueue.global(qos: .background).async {
-            completion(Mission.getAllMissions(ids: missionIds))
+            completion(Mission.getAllMissions(ids: missionIds).sorted(by: Mission.sort))
         }
     }
 }
@@ -220,7 +221,7 @@ extension Person {
 
 extension Person {
     public static func getDummy(json: String? = nil) -> Person? {
-        let json = json ?? "{\"id\": \"S1.Liara\",\"name\": \"Liara T\'soni\",\"description\": \"An archeologist specializing in the ancient prothean culture, Liara is the \\\"pureblood\\\" daughter of [megametracker:\\/\\/person?id=E1.Benezia]. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued her research.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": 1,\"isFemaleLoveInterest\": 1,\"race\": \"Asari\",\"profession\": \"Scientist\",\"organization\": null,\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game1\\/1Liara.png\",\"voiceActor\": \"Ali Hillis\",\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Liara_T%27Soni\"],\"relatedMissionIds\": [\"M1.Therum\"],\"decisionIds\": [\"D1.LoveLiara\", \"D2.LoveLiara\", \"D3.LoveLiara\"],\"loveInterestDecisionId\": \"D1.LoveLiara\",\"gameVersionData\": {\"2\": {\"personType\": \"Associate\",\"profession\": \"Information Broker\",\"description\": \"Liara was a close friend, but now she has her own agenda on Illium, turning her research skills to hunting valuable secrets, and she only briefly allies with Shepard for the Lair of the Shadow Broker (DLC) missions.\\n\\nPursuing her as a love interest in Game 2 is difficult but not impossible [Romancing Liara in Game 2|https:\\/\\/masseffect.wikia.com\\/wiki\\/Romance#Lair_of_the_Shadow_Broker].\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game2\\/2Liara.png\",\"loveInterestDecisionId\": \"D2.LoveLiara\"},\"3\": {\"profession\": \"Pure Biotic\",\"description\": \"After a Cerberus raid destroyed the Shadow Broker\'s lair, Liara fled with all the resources she could take with her. She is using all her Shadow Broker assets to search for a way to fight the Reapers, and she may have found it in the Mars Archives.\",\"loveInterestDecisionId\": \"D3.LoveLiara\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game3\\/3Liara.png\"}}}"
+        let json = json ?? "{\"id\": \"S1.Liara\",\"name\": \"Liara T\'soni\",\"description\": \"An archeologist specializing in the ancient prothean culture, Liara is the \\\"pureblood\\\" daughter of [megametracker:\\/\\/person?id=E1.Benezia]. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued her research.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": 1,\"isFemaleLoveInterest\": 1,\"race\": \"Asari\",\"profession\": \"Scientist\",\"organization\": null,\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game1\\/1Liara.png\",\"voiceActor\": \"Ali Hillis\",\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Liara_T%27Soni\"],\"relatedMissionIds\": [\"M1.Therum\"],\"relatedDecisionIds\": [\"D1.LoveLiara\", \"D2.LoveLiara\", \"D3.LoveLiara\"],\"loveInterestDecisionId\": \"D1.LoveLiara\",\"gameVersionData\": {\"2\": {\"personType\": \"Associate\",\"profession\": \"Information Broker\",\"description\": \"Liara was a close friend, but now she has her own agenda on Illium, turning her research skills to hunting valuable secrets, and she only briefly allies with Shepard for the Lair of the Shadow Broker (DLC) missions.\\n\\nPursuing her as a love interest in Game 2 is difficult but not impossible [Romancing Liara in Game 2|https:\\/\\/masseffect.wikia.com\\/wiki\\/Romance#Lair_of_the_Shadow_Broker].\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game2\\/2Liara.png\",\"loveInterestDecisionId\": \"D2.LoveLiara\"},\"3\": {\"profession\": \"Pure Biotic\",\"description\": \"After a Cerberus raid destroyed the Shadow Broker\'s lair, Liara fled with all the resources she could take with her. She is using all her Shadow Broker assets to search for a way to fight the Reapers, and she may have found it in the Mars Archives.\",\"loveInterestDecisionId\": \"D3.LoveLiara\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game3\\/3Liara.png\"}}}"
         if var basePerson = DataPerson(serializedString: json) {
             basePerson.isDummyData = true
             let person = Person(id: "1", generalData: basePerson)
@@ -295,9 +296,14 @@ extension Person {
     }
 }
 
-// MARK: Equatable
-extension Person: Equatable {}
+//MARK: Equatable
+extension Person: Equatable {
+    public static func ==(a: Person, b: Person) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
+}
 
-public func ==(a: Person, b: Person) -> Bool { // not true equality, just same db row
-    return a.id == b.id && a.gameVersion == b.gameVersion
+// MARK: Hashable
+extension Person: Hashable {
+    public var hashValue: Int { return id.hashValue }
 }

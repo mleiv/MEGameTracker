@@ -10,7 +10,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Grunt.png",
 		"voiceActor": "Steven Blum",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Grunt"],
-		"decisionIds": ["D2.GruntLoyalty", "D2.Grunt"],
+		"relatedDecisionIds": ["D2.GruntLoyalty", "D2.Grunt"],
 		"relatedMissionIds": ["A2.D.Grunt", "A2.L.Grunt"],
 		"gameVersionData": {
 			"3": {
@@ -33,20 +33,22 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Jack.png",
 		"voiceActor": "Courtenay Taylor",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jack"],
-		"decisionIds": ["D2.JackLoyalty", "D2.LoveJack", "D2.MirandaJack", "D2.Jack", "D3.GrissomAcademy", "D3.LoveJack"],
+		"relatedDecisionIds": ["D2.JackLoyalty", "D2.LoveJack", "D2.MirandaJack", "D2.Jack", "D3.GrissomAcademy", "D3.LoveJack"],
 		"relatedMissionIds": ["A2.D.Jack", "A2.L.Jack", "A3.GrissomAcademy"],
         "sideEffects": [
             "If Shepard fails to save Jack at Grissom Academy, Shepard will face her as a Phantom in the attack on Cerberus Headquarters: [YouTube|https://www.youtube.com/watch?v=yPJj8efNskM]."
         ],
 		"gameVersionData": {
 			"2": {
-				"isMaleLoveInterest": 1,
+				"isMaleLoveInterest": true,
+                "isParamour": true,
 				"loveInterestDecisionId": "D2.LoveJack"
 			},
 			"3": {
 				"personType": "Other",
-				"isMaleLoveInterest": 1,
 				"description": "Also known as Subject Zero, Jack was created by Cerberus on a since-destroyed facility on Pragia. A dangerously powerful but unbalanced biotic, she was imprisoned on Purgatory for a litany of crimes. \n\nJack is now teaching a group of young biotics at [megametracker://maplocation?id=G.Ear.Pet.Vet.Grissom&type=Map], currently threatened by Cerberus (Kahlee Sanders and Jason Prangley fill this role if Jack died in Game 2).",
+				"isMaleLoveInterest": true,
+                "isParamour": true,
 				"loveInterestDecisionId": "D3.LoveJack"
 			}
 		},
@@ -66,13 +68,14 @@
 		"voiceActor": "Adam Lazarre-White",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jacob_Taylor"],
 		"relatedMissionIds": ["A2.L.Jacob", "A3.ExCerberusScientists"],
-		"decisionIds": ["D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3", "D2.JacobLoyalty", "D2.LoveJacob", "D2.Jacob"],
+		"relatedDecisionIds": ["D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3", "D2.JacobLoyalty", "D2.LoveJacob", "D2.Jacob"],
 		"sideEffects": [
 			"If Jacob survives Game 2, he leaves Cerberus and can be found defending the ex-Cerberus scientists hiding on Gellix.\n\n After rescuing the scientists, Jacob reveals to Shepard at Huerta Memorial Hospital that [megametracker://person?id=O3.Brynn] is pregnant with their child and she wants to name it after Shepard. Jacob does not."
 		],
 		"gameVersionData": {
 			"2": {
-				"isFemaleLoveInterest": 1,
+				"isFemaleLoveInterest": true,
+                "isParamour": true,
 				"loveInterestDecisionId": "D2.LoveJacob"
 			},
 			"3": {
@@ -94,7 +97,7 @@
 		"voiceActor": "Kym Hoy",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kasumi_Goto"],
 		"relatedMissionIds": ["A2.L.Kasumi"],
-		"decisionIds": ["D2.Graybox", "D2.KasumiLoyalty", "D2.Kasumi"],
+		"relatedDecisionIds": ["D2.Graybox", "D2.KasumiLoyalty", "D2.Kasumi"],
 		"gameVersionData": {
 			"3": {
 				"personType": "Other",
@@ -118,7 +121,7 @@
 		"voiceActor": "D. C. Douglas",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Legion"],
 		"relatedMissionIds": ["M2.ReaperIFF", "A2.L.Legion"],
-		"decisionIds": ["D2.LegionCerberus", "D2.TaliLegion", "D2.LegionLoyalty", "D2.Heretics", "D2.Legion"],
+		"relatedDecisionIds": ["D2.LegionCerberus", "D2.TaliLegion", "D2.LegionLoyalty", "D2.Heretics", "D2.Legion"],
         "sideEffects": [
             "If you give Legion to Cerberus, it will be part of the enemy forces in [megametracker://mission?id=M3.3.CerberusHQ]: [YouTube|https://www.youtube.com/watch?v=Eln_8EN6Bz0]."
         ],
@@ -143,20 +146,22 @@
 		"voiceActor": "Yvonne Strahovski",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Miranda_Lawson"],
 		"relatedMissionIds": ["A2.L.Miranda", "M3.2.Horizon"],
-		"decisionIds": ["D2.MirandaLoyalty", "D2.LoveMiranda", "D2.MirandaJack", "D2.Miranda", "D3.LoveMiranda", "D3.Miranda"],
+		"relatedDecisionIds": ["D2.MirandaLoyalty", "D2.LoveMiranda", "D2.MirandaJack", "D2.Miranda", "D3.LoveMiranda", "D3.Miranda"],
         "sideEffects": [
             "If you fail to complete the required actions for her survival, Miranda will die trying to save her sister Oriana during [megametracker://mission?id=M3.2.Horizon]: [YouTube|https://www.youtube.com/watch?v=Mn6KmahkCA0]."
         ],
 		"gameVersionData": {
 			"2": {
-				"isMaleLoveInterest": 1,
+				"isMaleLoveInterest": true,
+                "isParamour": true,
 				"loveInterestDecisionId": "D2.LoveMiranda"
 			},
 			"3": {
 				"organization": null,
 				"personType": "Associate",
-				"isMaleLoveInterest": 1,
 				"description": "Created solely from the altered genetic code of the wealthy Henry Lawson, Miranda was raised in luxury with every enhancement to make her a superior human, but with no freedom. She escaped from her father to Cerberus. She spearheaded the Lazarus Project to resurrect Shepard in Game 2. \n\nMiranda is now on the run from Cerberus. Shepard will encounter her on the [Citadel|megametracker://maplocation?id=G.C&type=Map] and during the mission to Sanctuary on [megametracker://maplocation?id=G.Att.Sha.Ier.Horizon&type=Map].",
+				"isMaleLoveInterest": true,
+                "isParamour": true,
 				"loveInterestDecisionId": "D3.LoveMiranda"
 			}
 		},
@@ -175,7 +180,7 @@
 		"voiceActor": "Michael Beattie",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mordin_Solus"],
 		"relatedMissionIds": ["A2.D.Mordin", "A2.L.Mordin", "M3.1.SurKesh", "M3.1.Tuchanka"],
-		"decisionIds": ["D1.Wrex", "D2.MordinLoyalty", "D2.Mordin", "D2.MaelonsData", "D3.Eve", "D3.Mordin"],
+		"relatedDecisionIds": ["D1.Wrex", "D2.MordinLoyalty", "D2.Mordin", "D2.MaelonsData", "D3.Eve", "D3.Mordin"],
 		"sideEffects": [
 			"There are many possible outcomes for Mordin in Game 3, depending on choices throughout all the prior games. The only way to save him is to kill Wrex and Eve and the Genophage cure ([YouTube|https://www.youtube.com/watch?v=RKve3voj19A]). If you make all the right choices to save Wrex and Eve and then Renegade Mordin until the very last option, he will apologize for creating the Genophage and die a noble death releasing the cure, and we will all cry buckets of tears."
 		],
@@ -199,19 +204,21 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Samara.png",
 		"voiceActor": "Maggie Baird",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Samara"],
-		"decisionIds": ["D2.SamaraMorinth", "D2.SamaraLoyalty", "D2.LoveSamara", "D2.Samara", "D3.LoveSamara"],
+		"relatedDecisionIds": ["D2.SamaraMorinth", "D2.SamaraLoyalty", "D2.LoveSamara", "D2.Samara", "D3.LoveSamara"],
 		"relatedMissionIds": ["A2.D.Samara", "A2.L.Samara"],
 		"gameVersionData": {
 			"2": {
-				"isMaleLoveInterest": 1,
-				"isFemaleLoveInterest": 1,
+				"isMaleLoveInterest": true,
+				"isFemaleLoveInterest": true,
+                "isParamour": false,
 				"loveInterestDecisionId": "D2.LoveSamara"
 			},
 			"3": {
 				"personType": "Associate",
-				"isMaleLoveInterest": 1,
-				"isFemaleLoveInterest": 1,
 				"description": "Shepard can team up with Samara on [megametracker://maplocation?id=G.OuC.Nim.Mes.Lesuss&type=Map], where Reaper forces are assaulting an Ardat-Yakshi monastery.  If she lives through the mission, Shepard can recruit her to the team. If Shepard is paragon and romanced Samara in Game 2, he can do so in Game 3",
+				"isMaleLoveInterest": true,
+				"isFemaleLoveInterest": true,
+                "isParamour": false,
 				"loveInterestDecisionId": "D3.LoveSamara"
 			}
 		},
@@ -229,19 +236,21 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Thane.png",
 		"voiceActor": "Keythe Farley",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Thane_Krios"],
-		"decisionIds": ["D2.ThaneLoyalty", "D2.LoveThane", "D2.Thane", "D3.LoveThane"],
+		"relatedDecisionIds": ["D2.ThaneLoyalty", "D2.LoveThane", "D2.Thane", "D3.LoveThane"],
 		"relatedMissionIds": ["A2.D.Thane", "A2.L.Thane"],
 		"gameVersionData": {
 			"2": {
-				"isFemaleLoveInterest": 1,
+				"isFemaleLoveInterest": true,
+                "isParamour": true,
 				"loveInterestDecisionId": "D2.LoveThane"
 			},
 			"3": {
 				"personType": "Associate",
-				"isFemaleLoveInterest": 1,
 				"description": "Raised by the hanar to be an assassin, Thane fell in love and began a family, but his wife was murdered in retribution for one of his assignments. He left his young son to pursue her killers, a decision he regretted, but now he and his son are on better terms. He is dying of Kepral's Syndrome, a common pneumonia-like illness the desert drell acquire from time on the humid hanar homeworld.",
-                "photo": "http://urdnot.com/megametracker/app/images/Game3/3Thane.png",
+				"isFemaleLoveInterest": true,
+                "isParamour": false,
 				"loveInterestDecisionId": "D3.LoveThane",
+                "photo": "http://urdnot.com/megametracker/app/images/Game3/3Thane.png",
 				"sideEffects": ["If Shepard romances no one else in Game 3, she will get to speak to Thane's spirit at the end of the Citadel DLC pack."]
 			}
 		},
@@ -259,7 +268,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Zaeed.png",
 		"voiceActor": "Robin Sachs",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Zaeed_Massani"],
-		"decisionIds": ["D2.ZaeedLoyalty", "D2.Zaeed"],
+		"relatedDecisionIds": ["D2.ZaeedLoyalty", "D2.Zaeed"],
 		"relatedMissionIds": ["A2.L.Zaeed"],
 		"gameVersionData": {
 			"3": {
@@ -478,14 +487,15 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Morinth.png",
 		"voiceActor": "Natalia Cigliuti",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Morinth"],
-		"decisionIds": ["D2.SamaraMorinth", "D2.LoveMorinth", "D2.Samara"],
+		"relatedDecisionIds": ["D2.SamaraMorinth", "D2.LoveMorinth", "D2.Samara"],
         "sideEffects": [
             "If Shepard kept Morinth alive in Game 2, she will appear as a Banshee in the final battle on Earth (but she looks just like other Banshees, it's nothing special)."
         ],
 		"gameVersionData": {
 			"2": {
-				"isMaleLoveInterest": 1,
-				"isFemaleLoveInterest": 1,
+				"isMaleLoveInterest": true,
+				"isFemaleLoveInterest": true,
+                "isParamour": false,
 				"loveInterestDecisionId": "D2.LoveMorinth"
 			}
 		},
@@ -669,18 +679,20 @@
             "Chambers is one of the crew that is lost if Shepard delays the pursuit through the Omega 4 Relay.",
             "If you don't warn Chambers to discguise herself early in Game 3, Cerberus will kill her in the coup (you can hear two bystanders recounting this [YouTube|https://www.youtube.com/watch?v=iR6GzKImbRk])."
         ],
-		"decisionIds": ["D2.Fish", "D2.LoveKelly", "D3.LoveKelly"],
+		"relatedDecisionIds": ["D2.Fish", "D2.LoveKelly", "D3.LoveKelly"],
 		"gameVersionData": {
 			"2": {
-				"isMaleLoveInterest": 1,
-				"isFemaleLoveInterest": 1,
+				"isMaleLoveInterest": true,
+				"isFemaleLoveInterest": true,
+                "isParamour": false,
 				"loveInterestDecisionId": "D2.LoveKelly"
 			},
 			"3": {
 				"personType": "Other",
-				"isMaleLoveInterest": 1,
-				"isFemaleLoveInterest": 1,
 				"description": "After becoming disillusioned with Cerberus and still suffering traumatic flashbacks from when she was taken by the Collectors, Kelly is now working at the Citadel refugee camp, helping survivors. She refuses to rejoin Shepard's crew.",
+				"isMaleLoveInterest": true,
+				"isFemaleLoveInterest": true,
+                "isParamour": true,
                 "photo": "http://urdnot.com/megametracker/app/images/Game3/3Chambers.png",
 				"loveInterestDecisionId": "D3.LoveKelly"
 			}
@@ -701,7 +713,7 @@
 		"voiceActor": "Dannah Feinglass",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Gabriella_Daniels"],
 		"sideEffects": ["Daniels is one of the crew that is lost if Shepard delays the pursuit through the Omega 4 Relay."],
-		"decisionIds": ["D2.NormandyCrew"],
+		"relatedDecisionIds": ["D2.NormandyCrew"],
 		"gameVersionData": {
 			"3": {
 				"description": "Taken into custody when the Alliance siezed the Normandy after Game 2, Daniels and [Donnelly|megametracker://person?id=P2.Donnelly] can be released using Shepard's Spectre privileges, and they rejoin the Normandy crew."
@@ -723,7 +735,7 @@
 		"voiceActor": "John Ullyatt",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kenneth_Donnelly"],
 		"sideEffects": ["Donnelly is one of the crew that is lost if Shepard delays the pursuit through the Omega 4 Relay."],
-		"decisionIds": ["D2.NormandyCrew"],
+		"relatedDecisionIds": ["D2.NormandyCrew"],
 		"gameVersionData": {
 			"3": {
 				"description": "Taken into custody when the Alliance siezed the Normandy after Game 2, Donnelly and [Daniels|megametracker://person?id=P2.Daniels] can be released using Shepard's Spectre privileges, and they rejoin the Normandy crew."
@@ -745,7 +757,7 @@
 		"voiceActor": "Bill Ratner",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mess_Sergeant_Gardner"],
 		"sideEffects": ["Gardner is one of the crew that is lost if Shepard delays the pursuit through the Omega 4 Relay."],
-		"decisionIds": ["D2.NormandyCrew"],
+		"relatedDecisionIds": ["D2.NormandyCrew"],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game1"
@@ -788,7 +800,7 @@
 			"If asked, Zaal'Koris haughtily acknowledges that his ship \"Qwib-Qwib\" was named by its previous (non-quarian) owners and it was just not possible for him to legally change it."
 		],
 		"relatedMissionIds": ["A2.L.Tali"],
-        "decisionIds": ["D3.JammingTower", "D3.Koris"],
+        "relatedDecisionIds": ["D3.JammingTower", "D3.Koris"],
 		"voiceActor": "Martin Jarvis",
 		"gameVersionData": {
 			"3": {

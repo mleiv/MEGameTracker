@@ -81,8 +81,13 @@ extension DataDecision: SerializedDataRetrievable {
 }
 
 //MARK: Equatable
-extension DataDecision: Equatable {}
+extension DataDecision: Equatable {
+    public static func ==(a: DataDecision, b: DataDecision) -> Bool { // not true equality, just same db row
+        return a.id == b.id
+    }
+}
 
-public func ==(a: DataDecision, b: DataDecision) -> Bool { // not true equality, just same db row
-    return a.id == b.id
+// MARK: Hashable
+extension DataDecision: Hashable {
+    public var hashValue: Int { return id.hashValue }
 }
