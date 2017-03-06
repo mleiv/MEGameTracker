@@ -19,17 +19,18 @@ public enum MissionType: Int {
     case collection
     case upgrade
     case task
+    case conversation
     case objective
     case subset
     
     /// Returns a list of all possible enum variations.
     public static func list() -> [MissionType] {
-        return [.mission, .assignment, .dossier, .loyalty, .dlc, .collection, .upgrade, .task, .objective, .subset]
+        return [.mission, .assignment, .dossier, .loyalty, .dlc, .collection, .upgrade, .task, .conversation, .objective, .subset]
     }
     
     /// Returns a list of all enums to be shown in headings (objective, subset excluded).
     public static func listHeadings() -> [MissionType] {
-        return [.mission, .assignment, .dossier, .loyalty, .dlc, .collection, .upgrade, .task]
+        return [.mission, .assignment, .dossier, .loyalty, .dlc, .collection, .upgrade, .conversation, .task]
     }
     
     /// Returns the string values of all the enum variations.
@@ -42,6 +43,7 @@ public enum MissionType: Int {
         .collection: "Collection",
         .upgrade: "Upgrade",
         .task: "Task",
+        .conversation: "Conversation",
         .objective: "Objective",
         .subset: "Set",
     ]
@@ -56,6 +58,7 @@ public enum MissionType: Int {
         .collection: "Collections",
         .upgrade: "Upgrades",
         .task: "Tasks",
+        .conversation: "Conversations",
         .subset: "Sets",
     ]
     

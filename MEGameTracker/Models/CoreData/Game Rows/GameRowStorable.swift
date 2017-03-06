@@ -34,6 +34,7 @@ public protocol GameRowStorable: SimpleSerializedCoreDataStorable {
     /// returns a game-specific object for the data object, if it exists, otherwise it creates one.
     static func getOrCreate(
         using data: DataRowType,
+        gameSequenceUuid: String?,
         with manager: SimpleSerializedCoreDataManageable?
     ) -> Self?
     
@@ -78,11 +79,13 @@ public protocol GameRowStorable: SimpleSerializedCoreDataStorable {
     /// Return a game value made from the data value.
     static func get(
         id: String,
+        gameSequenceUuid: String?,
         with manager: SimpleSerializedCoreDataManageable?
     ) -> Self?
     
     /// Return a game value made from the data value.
     static func getFromData(
+        gameSequenceUuid: String?,
         with manager: SimpleSerializedCoreDataManageable?,
         alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
     ) -> Self?
@@ -90,11 +93,13 @@ public protocol GameRowStorable: SimpleSerializedCoreDataStorable {
     /// Return all matching game values made from the data values.
     static func getAll(
         ids: [String],
+        gameSequenceUuid: String?,
         with manager: SimpleSerializedCoreDataManageable?
     ) -> [Self]
     
     /// Return all matching game values made from the data values.
     static func getAllFromData(
+        gameSequenceUuid: String?,
         with manager: SimpleSerializedCoreDataManageable?,
         alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
     ) -> [Self]
@@ -150,9 +155,11 @@ extension GameRowStorable {
     /// Initializes value type from core data object with serialized data.
     public static func getOrCreate(
         using data: DataRowType,
+        gameSequenceUuid: String?,
         with manager: SimpleSerializedCoreDataManageable?
     ) -> Self? {
         var one: Self = create(using: data, with: manager)
+        one.gameSequenceUuid = gameSequenceUuid ?? one.gameSequenceUuid
         do {
             // get game-specific data if it exists
             if let data: Data = manager?.getOneTransformed(
@@ -166,6 +173,14 @@ extension GameRowStorable {
             }
         } catch {}
         return one
+    }
+    
+    /// Convenience version on getOrCreate:data:gameSequenceUuid:manager (no gameSequenceUuid)
+    public static func getOrCreate(
+        using data: DataRowType,
+        with manager: SimpleSerializedCoreDataManageable? = nil
+    ) -> Self? {
+        return getOrCreate(using: data, gameSequenceUuid: nil, with: manager)
     }
     
 // MARK: Remove Default Get
@@ -185,7 +200,7 @@ extension GameRowStorable {
         with manager: SimpleSerializedCoreDataManageable? = nil
         // can't use alterFetchRequest here - they have different types
     ) -> Self? {
-        return getFromData(with: manager) { _ in }
+        return getFromData(gameSequenceUuid: nil, with: manager) { _ in }
     }
     
     /// (SimpleSerializedCoreDataStorable Protocol override)
@@ -203,7 +218,7 @@ extension GameRowStorable {
         with manager: SimpleSerializedCoreDataManageable? = nil
         // can't use alterFetchRequest here - they have different types
     ) -> [Self] {
-        return getAllFromData(with: manager) { _ in }
+        return getAllFromData(gameSequenceUuid: nil, with: manager) { _ in }
     }
     
 // MARK: Get Existing Only
@@ -232,7 +247,7 @@ extension GameRowStorable {
     /// Convenience version of getExisting:id:gameSequenceUuid:manager:alterFetchRequest (no manager, alterFetchRequest required).
     public static func getExisting(
         id: String?,
-        gameSequenceUuid: String?,
+        gameSequenceUuid: String? = nil,
         with manager: SimpleSerializedCoreDataManageable? = nil
     ) -> Self? {
         return getExisting(id: id, gameSequenceUuid: gameSequenceUuid, with: manager) { _ in }
@@ -275,7 +290,7 @@ extension GameRowStorable {
         return some
     }
     
-    /// Convenience version of getAllExisting:id:gameSequenceUuid:manager:alterFetchRequest (no id, manager, alterFetchRequest required).
+    /// Convenience version of getAllExisting:ids:gameSequenceUuid:manager:alterFetchRequest (no id, manager, alterFetchRequest required).
     public static func getAllExisting(
         gameSequenceUuid: String?,
         with manager: SimpleSerializedCoreDataManageable? = nil,
@@ -309,74 +324,106 @@ extension GameRowStorable {
     /// Return a game value made from the data value.
     public static func get(
         id: String,
+        gameSequenceUuid: String?,
         with manager: SimpleSerializedCoreDataManageable?
     ) -> Self? {
-        return getFromData(with: manager) { fetchRequest in
+        return getFromData(gameSequenceUuid: gameSequenceUuid, with: manager) { fetchRequest in
             fetchRequest.predicate = NSPredicate(format: "(id == %@)", id)
         }
     }
     
-    /// Convenience version of get:id:manager (no manager required).
+    /// Convenience version of get:id:gameSequenceUuid:manager (no gameSequenceUuid required).
     public static func get(
-        id: String
+        id: String,
+        with manager: SimpleSerializedCoreDataManageable?
     ) -> Self? {
-        return get(id: id, with: nil)
+        return get(id: id, gameSequenceUuid: nil, with: manager)
+    }
+    
+    /// Convenience version of get:id:gameSequenceUuid:manager (no manager required).
+    public static func get(
+        id: String,
+        gameSequenceUuid: String? = nil
+    ) -> Self? {
+        return get(id: id, gameSequenceUuid: gameSequenceUuid, with: nil)
     }
     
     /// (Protocol default)
     /// Return a game value made from the data value.
     public static func getFromData(
+        gameSequenceUuid: String?,
         with manager: SimpleSerializedCoreDataManageable?,
         alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
     ) -> Self? {
-        return getAllFromData(with: manager, alterFetchRequest: alterFetchRequest).first
+        return getAllFromData(gameSequenceUuid: gameSequenceUuid, with: manager, alterFetchRequest: alterFetchRequest).first
     }
     
-    /// Convenience version of getFromData:manager:alterFetchRequest (no manager required).
+    /// Convenience version of getFromData:gameSequenceUuid:manager:alterFetchRequest (no manager required).
     public static func getFromData(
+        gameSequenceUuid: String? = nil,
         alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
     ) -> Self? {
-        return getFromData(with: nil, alterFetchRequest: alterFetchRequest)
+        return getFromData(gameSequenceUuid: gameSequenceUuid, with: nil, alterFetchRequest: alterFetchRequest)
     }
     
     /// (Protocol default)
     /// Return all matching game values made from the data values.
     public static func getAll(
         ids: [String],
+        gameSequenceUuid: String? = nil,
         with manager: SimpleSerializedCoreDataManageable?
     ) -> [Self] {
-        let all: [Self] = getAllFromData(with: manager) { fetchRequest in
+        let all: [Self] = getAllFromData(gameSequenceUuid: gameSequenceUuid, with: manager) { fetchRequest in
             fetchRequest.predicate = NSPredicate(format: "(id in %@)", ids)
         }
         return all
     }
     
-    /// Convenience version of getAll:id:manager (no manager required).
+    /// Convenience version of getAll:ids:gameSequenceUuid:manager (no manager required).
     public static func getAll(
-        ids: [String]
+        ids: [String],
+        gameSequenceUuid: String? = nil
     ) -> [Self] {
-        return getAll(ids: ids, with: nil)
+        return getAll(ids: ids, gameSequenceUuid: gameSequenceUuid, with: nil)
+    }
+    
+    /// Convenience version of getAll:ids:gameSequenceUuid:manager (no gameSequenceUuid required).
+    public static func getAll(
+        ids: [String],
+        with manager: SimpleSerializedCoreDataManageable?
+    ) -> [Self] {
+        return getAll(ids: ids, gameSequenceUuid: nil, with: manager)
     }
     
     /// (Protocol default)
     /// Return all matching game values made from the data values.
     public static func getAllFromData(
+        gameSequenceUuid: String?,
         with manager: SimpleSerializedCoreDataManageable?,
         alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
     ) -> [Self] {
         let manager = manager ?? defaultManager
         let dataItems = DataRowType.getAll(with: manager, alterFetchRequest: alterFetchRequest)
         let some: [Self] = dataItems.flatMap { (dataItem: DataRowType) -> Self? in
-            Self.getOrCreate(using: dataItem, with: manager)
+            Self.getOrCreate(using: dataItem, gameSequenceUuid: gameSequenceUuid, with: manager)
         }
         return some
     }
     
-    /// Convenience version of getAllFromData:manager:alterFetchRequest (no manager required).
+    /// Convenience version of getAllFromData:gameSequenceUuid:manager:alterFetchRequest (no gameSequenceUuid required).
     public static func getAllFromData(
+        with manager: SimpleSerializedCoreDataManageable?,
         alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
     ) -> [Self] {
-        return getAllFromData(with: nil, alterFetchRequest: alterFetchRequest)
+        return getAllFromData(gameSequenceUuid: nil, with: nil, alterFetchRequest: alterFetchRequest)
+    }
+    
+    /// Convenience version of getAllFromData:gameSequenceUuid:manager:alterFetchRequest (no manager required).
+    public static func getAllFromData(
+        gameSequenceUuid: String? = nil,
+        alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType> = { _ in }
+    ) -> [Self] {
+        return getAllFromData(gameSequenceUuid: gameSequenceUuid, with: nil, alterFetchRequest: alterFetchRequest)
     }
     
 // MARK: Save

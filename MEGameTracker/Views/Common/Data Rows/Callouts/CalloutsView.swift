@@ -152,6 +152,10 @@ final public class CalloutsView: SimpleArrayDataRow {
                     self.stopParentSpinner()
                 }
                 return
+            } else if let missionId = (callout as? Item)?.inMissionId, let linkedMission = Mission.get(id: missionId)  {
+                if self.openMission(linkedMission) {
+                    return
+                }
             } else if let _ = callout as? Item {
                 DispatchQueue.main.async {
                     // TODO: an items detail page?
@@ -160,44 +164,55 @@ final public class CalloutsView: SimpleArrayDataRow {
                     self.stopParentSpinner()
                 }
                 return
-            } else if let mission = callout as? Mission {
-                if let flowController = UIStoryboard(name: "MissionsFlow", bundle: Bundle(for: type(of: self))).instantiateViewController(withIdentifier: "Mission") as? MissionsFlowController,
-                    let missionController = flowController.includedController as? MissionController {
-                    missionController.mission = mission
-                    DispatchQueue.main.async {
-                        self.controller?.navigationPushController?.pushViewController(flowController, animated: true)
-                        self.closeCalloutsWindowIfFound(isForce: true)
-                        self.stopParentSpinner()
-                    }
+            } else if let mission = callout as? Mission, mission.missionType != .objective {
+                if self.openMission(mission) {
+                    return
+                }
+            } else if let missionId = (callout as? Mission)?.inMissionId, let linkedMission = Mission.get(id: missionId)  {
+                if self.openMission(linkedMission) {
                     return
                 }
             } else if let mapId = (callout as? Map)?.linkToMapId, let linkedMap = Map.get(id: mapId)  {
-                if let flowController = UIStoryboard(name: "MapsFlow", bundle: Bundle(for: type(of: self))).instantiateViewController(withIdentifier: "Map") as? MapsFlowController,
-                    let mapController = flowController.includedController as? MapSplitViewController {
-                    // configure detail
-                    mapController.map = linkedMap
-                    DispatchQueue.main.async {
-                        self.controller?.navigationPushController?.pushViewController(flowController, animated: true)
-                        self.closeCalloutsWindowIfFound(isForce: true)
-                        self.stopParentSpinner()
-                    }
+                if self.openMap(linkedMap) {
                     return
                 }
-            } else if let map = callout as? Map , map.isOpensDetail == true { // skip stuff that has no other data
-                if let flowController = UIStoryboard(name: "MapsFlow", bundle: Bundle(for: type(of: self))).instantiateViewController(withIdentifier: "Map") as? MapsFlowController,
-                    let mapController = flowController.includedController as? MapSplitViewController {
-                    // configure detail
-                    mapController.map = map
-                    DispatchQueue.main.async {
-                        self.controller?.navigationPushController?.pushViewController(flowController, animated: true)
-                        self.closeCalloutsWindowIfFound(isForce: true)
-                        self.stopParentSpinner()
-                    }
+            } else if let map = callout as? Map, map.isOpensDetail == true { // skip stuff that has no other data
+                if self.openMap(map) {
                     return
                 }
             }
             self.stopParentSpinner()
         }
+    }
+    
+    private func openMission(_ mission: Mission) -> Bool {
+        if let flowController = UIStoryboard(name: "MissionsFlow", bundle: Bundle(for: type(of: self))).instantiateViewController(withIdentifier: "Mission") as? MissionsFlowController,
+            let missionController = flowController.includedController as? MissionController {
+            // configure detail
+            missionController.mission = mission
+            DispatchQueue.main.async {
+                self.controller?.navigationPushController?.pushViewController(flowController, animated: true)
+                self.closeCalloutsWindowIfFound(isForce: true)
+                self.stopParentSpinner()
+            }
+            return true
+        }
+        return false
+    }
+    
+    private func openMap(_ map: Map) -> Bool {
+        if let flowController = UIStoryboard(name: "MapsFlow", bundle: Bundle(for: type(of: self))).instantiateViewController(withIdentifier: "Map") as? MapsFlowController,
+            let mapController = flowController.includedController as? MapSplitViewController {
+            // configure detail
+            mapController.map = map
+            DispatchQueue.main.async {
+                self.controller?.navigationPushController?.pushViewController(flowController, animated: true)
+                self.closeCalloutsWindowIfFound(isForce: true)
+                self.stopParentSpinner()
+            }
+            return true
+        }
+        return false
     }
     
     override func startListeners() {

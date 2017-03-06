@@ -89,6 +89,24 @@
 			}
 		}]
 	}, {
+		"id": "Secured Loyalty: Jack",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Jck]",
+		"actions": [{
+			"target": {
+				"type": "Decision",
+				"id": "D2.JackLoyalty"
+			},
+			"changes": {
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
+			}
+		}]
+	}, {
 		"id": "Secured Loyalty: Jacob",
 		"gameVersion": "2",
 		"description": "[megametracker://mission?id=A2.L.Jacob]",

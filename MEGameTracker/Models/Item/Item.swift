@@ -112,7 +112,7 @@ public struct Item: MapLocationable, Eventsable {
     public var isShowInParentMap: Bool { return generalData.isShowInParentMap }
 //    public var isShowInList: Bool { return generalData.isShowInList }
     public var isShowPin: Bool { return generalData.isShowPin }
-    public var isOpensDetail: Bool { return generalData.isOpensDetail }
+    public var isOpensDetail: Bool { return inMissionId != nil || generalData.isOpensDetail }
     
 // MARK: Change Listeners And Change Status Flags
     

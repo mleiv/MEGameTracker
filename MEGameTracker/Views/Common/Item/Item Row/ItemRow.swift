@@ -116,7 +116,7 @@ final class ItemRow: UITableViewCell {
             }
             // TODO: make item popover with more information
             let hasLinkToMap = !isCalloutBoxRow && item?.inMapId != nil
-            disclosureImageView?.isHidden = (item?.hasNoAdditionalData ?? true) && !hasLinkToMap
+            disclosureImageView?.isHidden = item?.inMissionId == nil && (item?.hasNoAdditionalData ?? false) && !hasLinkToMap
         }
         setCheckboxImage(isAcquired: item?.isAcquired ?? false, isAvailable: item?.isAvailable ?? false)
 

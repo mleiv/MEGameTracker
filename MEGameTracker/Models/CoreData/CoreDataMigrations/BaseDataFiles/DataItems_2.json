@@ -290,7 +290,7 @@
 		"id": "A2.UC.Souvenirs.I.1Couplings",
 		"inMissionId": "A2.N.FBACouplings",
 		"gameVersion": "2",
-		"itemType": "Souvenir",
+		"itemType": "Request",
 		"itemDisplayType": "Goal",
 		"name": "Nashan Stellar Dynamics T6-FBA Couplings",
 		"price": "-500 Credits",
@@ -300,7 +300,7 @@
 		"id": "A2.UC.NormandyRequests.I.1Provisions",
 		"inMissionId": "A2.N.SpecialIngredients",
 		"gameVersion": "2",
-		"itemType": "Souvenir",
+		"itemType": "Request",
 		"itemDisplayType": "Goal",
 		"name": "High-Grade Provisions",
 		"price": "-500 Credits",
@@ -310,7 +310,7 @@
 		"id": "A2.UC.NormandyRequests.I.1IceBrandy",
 		"inMissionId": "A2.N.SerriceIceBrandy",
 		"gameVersion": "2",
-		"itemType": "Souvenir",
+		"itemType": "Request",
 		"itemDisplayType": "Goal",
 		"name": "Serrice Ice Brandy (Option 1)",
 		"price": "-1,000 Credits",
@@ -324,7 +324,7 @@
 		"id": "A2.UC.NormandyRequests.I.2IceBrandy",
 		"inMissionId": "A2.N.SerriceIceBrandy",
 		"gameVersion": "2",
-		"itemType": "Souvenir",
+		"itemType": "Request",
 		"itemDisplayType": "Goal",
 		"name": "Serrice Ice Brandy (Option 2)",
 		"price": "-1,000 Credits",
@@ -334,7 +334,7 @@
 		"id": "A2.UC.NormandyRequests.I.3IceBrandy",
 		"inMissionId": "A2.N.SerriceIceBrandy",
 		"gameVersion": "2",
-		"itemType": "Souvenir",
+		"itemType": "Request",
 		"itemDisplayType": "Goal",
 		"name": "Serrice Ice Brandy (Option 3)",
 		"price": "-1,000 Credits",
@@ -343,7 +343,7 @@
 		"id": "A2.UC.NormandyRequests.I.4IceBrandy",
 		"inMissionId": "A2.N.SerriceIceBrandy",
 		"gameVersion": "2",
-		"itemType": "Souvenir",
+		"itemType": "Request",
 		"itemDisplayType": "Goal",
 		"name": "Serrice Ice Brandy (Option 4)",
 		"price": "-1,000 Credits",
@@ -362,7 +362,8 @@
 		"name": "Argus Scanner Array (Advanced Mineral Scanner)",
 		"annotationNote": "Faster Planet Scanning",
 		"price": "-15,000 Iridium",
-		"mapNoteForLater": "TODO: Speaking to Miranda, Normandy Upgrade"
+		"id": "G.N2.3.Cabin",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.NormandyUpgrades.I.2HSA",
 		"inMissionId": "A2.UC.1NormandyUpgrades",
@@ -372,7 +373,8 @@
 		"name": "Heavy Ship Armor (Silaris Armor Tech)",
 		"annotationNote": "Stengthens Hull Integrity",
 		"price": "-15,000 Palladium",
-		"mapNoteForLater": "TODO: Speaking to Jacob, Normandy Upgrade"
+		"inMapId": "G.N2.2.Armory",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.NormandyUpgrades.I.3MPB",
 		"inMissionId": "A2.UC.1NormandyUpgrades",
@@ -382,7 +384,8 @@
 		"name": "Modular Probe Bay (Probe Booster)",
 		"annotationNote": "Doubles Probe Capacity",
 		"price": "-15,000 Iridium",
-		"mapNoteForLater": "TODO: Speaking to Thane, Normandy Upgrade"
+		"inMapId": "G.N2.3.Support",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.NormandyUpgrades.I.4MS",
 		"inMissionId": "A2.UC.1NormandyUpgrades",
@@ -392,7 +395,8 @@
 		"name": "Multicore Shielding (Cyclone Shield Tech)",
 		"annotationNote": "Stengthens Ship Shields",
 		"price": "-15,000 Palladium",
-		"mapNoteForLater": "TODO: Speaking to Tali, Normandy Upgrade"
+		"inMapId": "G.N2.4.Station",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.NormandyUpgrades.I.5TC",
 		"inMissionId": "A2.UC.1NormandyUpgrades",
@@ -402,7 +406,8 @@
 		"name": "Thanix Cannon (Particle Cannon)",
 		"annotationNote": "Stengthens Ship Weapon",
 		"price": "-15,000 Platinum",
-		"mapNoteForLater": "TODO: Speaking to Garrus, Normandy Upgrade"
+		"inMapId": "G.N2.3.Battery",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.NormandyUpgrades.I.6FC",
 		"inMissionId": "A2.UC.1NormandyUpgrades",
@@ -412,7 +417,8 @@
 		"name": "Extended Fuel Cells (Helios Thruster Tech)",
 		"annotationNote": "+50% Fuel Capacity",
 		"price": "-3,000 Element Zero",
-		"mapNoteForLater": "TODO: Speaking to Samara/Morinth, Normandy Upgrade"
+		"inMapId": "G.N2.3.Starboard",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.NormandyUpgrades.I.7MBU",
 		"inMissionId": "A2.UC.1NormandyUpgrades",
@@ -1977,7 +1983,8 @@
 		"name": "Mordin Omni-Tool (Tech Upgrade)",
 		"annotationNote": "Mordin: +20% Tech Damage",
 		"price": "-3,000 Element Zero",
-		"mapNoteForLater": "TODO: Speaking to Mordin, Normandy upgrade"
+		"id": "G.N2.3.Lab",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.SquadUpgrades.I.2SZBB",
 		"inMissionId": "A2.UC.4SquadUpgrades",
@@ -1987,7 +1994,8 @@
 		"name": "Subject Zero Biotic Boost (Multicore Implants)",
 		"annotationNote": "Jack: +20% Biotic Damage",
 		"price": "-3,000 Element Zero",
-		"mapNoteForLater": "TODO: Speaking to Jack, Normandy Upgrade"
+		"inMapId": "G.N2.4.SubDeck",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.SquadUpgrades.I.3GSR",
 		"inMissionId": "A2.UC.4SquadUpgrades",
@@ -1998,7 +2006,8 @@
 		"annotationNote": "Legion: Exclusive Weapon",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/M-98_Widow"],
 		"price": "-15,000 Platinum",
-		"mapNoteForLater": "TODO: Speaking to Legion, Normandy Upgrade"
+		"inMapId": "G.N2.3.Core",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.SquadUpgrades.I.4KS",
 		"inMissionId": "A2.UC.4SquadUpgrades",
@@ -2009,7 +2018,8 @@
 		"annotationNote": "Grunt: Exclusive Weapon",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/M-300_Claymore"],
 		"price": "-15,000 Platinum",
-		"mapNoteForLater": "TODO: Speaking to Grunt, Normandy Upgrade"
+		"inMapId": "G.N2.4.Port",
+		"isShowInParentMap": true
 
 
 	}, {

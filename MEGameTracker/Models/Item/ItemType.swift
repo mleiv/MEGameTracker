@@ -13,6 +13,7 @@ public enum ItemType {
 
     case unknown
     case souvenir
+    case request
     case pet
     case weapon
     case ammo
@@ -30,13 +31,14 @@ public enum ItemType {
     
     /// Returns a list of all possible enum variations.
     public static func list() -> [ItemType] {
-        return [.weapon, .armor, .upgrade, .loot, .ammo, .medkit,.intel, .scan, .artifact, .collection, .salvage, .wreckage, .warAsset, .souvenir, .pet, .unknown]
+        return [.weapon, .armor, .upgrade, .loot, .ammo, .medkit,.intel, .scan, .artifact, .collection, .salvage, .wreckage, .warAsset, .souvenir, .request, .pet, .unknown]
     }
     
     /// Returns the string values of all the enum variations.
     fileprivate static let stringValues: [ItemType: String] = [
         .unknown: "Unknown",
         .souvenir: "Souvenir",
+        .request: "Request",
         .pet: "Pet",
         .weapon: "Weapon",
         .ammo: "Ammo",
@@ -57,6 +59,7 @@ public enum ItemType {
     fileprivate static let headingValues: [ItemType: String] = [
         .unknown: "Unknown",
         .souvenir: "Souvenirs",
+        .request: "Requests",
         .pet: "Pets",
         .weapon: "Weapons",
         .ammo: "Ammo",
