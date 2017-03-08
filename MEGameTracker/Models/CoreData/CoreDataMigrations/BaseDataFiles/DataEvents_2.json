@@ -245,6 +245,28 @@
 			]
 		}
 
+	}, {
+		"id": "Secured Loyalty: Miranda and Jack",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Miranda] or [megametracker://mission?id=A2.L.Jack]",
+		"dependentOn": {
+			"countTo": 2,
+			"events": [
+				"Secured Loyalty: Miranda",
+				"Secured Loyalty: Jack"
+			]
+		}
+	}, {
+		"id": "Secured Loyalty: Tali and Legion",
+		"gameVersion": "2",
+		"description": "[megametracker://mission?id=A2.L.Tali] or [megametracker://mission?id=A2.L.Legion]",
+		"dependentOn": {
+			"countTo": 2,
+			"events": [
+				"Secured Loyalty: Tali",
+				"Secured Loyalty: Legion"
+			]
+		}
 
 
 
@@ -426,6 +448,27 @@
         "id": "Started: Shadow Broker",
 		"gameVersion": "2",
 		"description": "[megametracker://mission?id=DLC2.LairShadowBroker]"
+        
+	}, {
+        "id": "Saved Veetor",
+		"gameVersion": "2",
+		"description": "Refused to give Veetor to Cerberus.",
+		"dependentOn": {
+			"countTo": 1,
+			"decisions": [
+				"D2.Veetor"
+			]
+		}
+	}, {
+        "id": "Saved Kal'Reegar",
+		"gameVersion": "2",
+		"description": "Saved Kal'Reegar on Haestrom",
+		"dependentOn": {
+			"countTo": 1,
+			"decisions": [
+				"D2.KalReegar"
+			]
+		}
 
 
 

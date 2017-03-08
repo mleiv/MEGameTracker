@@ -2952,7 +2952,7 @@
 					"id": "A2.D.Samara.R1",
 					"type": "Renegade",
 					"value": 2,
-					"context": "\"So what if she did?\""
+					"trigger": "\"So what if she did?\""
 				}]
 			}
 		}, {
@@ -4332,6 +4332,7 @@
 		"inMapId": "G.C2.ZakeraWardL26",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Garrus:_Eye_for_an_Eye"],
+		"relatedMissionIds": ["A2.Convo.Garrus.2"],
 		"conversationRewards": [{
 			"set": {
 				"context": "Threatening the volus in the warehouse",
@@ -4553,10 +4554,188 @@
 		"description": "Grunt finds it difficult to control his rage. He needs to undergo the krogan Rite of Passage.",
 		"inMapId": "G.InC.Kro.Ara.Tuchanka",
 		"isShowInParentMap": true,
-		"relatedLinks": ["https://masseffect.wikia.com/wiki/Grunt:_Rite_of_Passage"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
-		"conversationRewards": [],
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Grunt:_Rite_of_Passage"],
+		"relatedMissionIds": ["A2.Convo.Grunt.3"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Urdnet Wrex or Wreave",
+				"options": [{
+					"id": "A2.L.Grunt.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"His call.\""
+				}, {
+					"id": "A2.L.Grunt.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Does that change anything?\" or \"Grunt's link to Okeer is good?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the Shaman",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Grunt.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We have permission.\""
+						}, {
+							"id": "A2.L.Grunt.R2A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"He dares stand in Grunt's way?\""
+						}, {
+							"id": "A2.L.Grunt.R2B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I want this crap over with.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Grunt.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"He is part of my crew.\""
+						}, {
+							"id": "A2.L.Grunt.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We will kill for Grunt.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Grunt.R5",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*Renegade Interrupt*",
+							"trigger": ""
+						}, {
+							"id": "A2.L.Grunt.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You defy a shaman?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Grunt.R3A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Do you want to die, Uvenk?\""
+						}, {
+							"id": "A2.L.Grunt.R3B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Let's get this crap going!\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "\"What is your problem, Uvenk?\"",
+				"options": [{
+					"id": "A2.L.Grunt.P5",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Uvenk_*",
+					"trigger": "\"You argue like an alien.\""
+				}, {
+					"id": "A2.L.Grunt.R5",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Uvenk_*",
+					"trigger": "\"So you're fearful.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After the rite",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"context": "Shepard survived five minutes",
+						"options": [{
+							"id": "A2.L.Grunt.PR10",
+							"type": "Paragade",
+							"value": 0,
+							"paragadeValue": [5, 5],
+							"trigger": "(Completing the assignment.)"
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A2.L.Grunt.P10",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"This is sacrilege.\""
+								}, {
+									"id": "A2.L.Grunt.R10",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"This is just political.\""
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"context": "Shepard killed the Thresher Maw",
+						"options": [{
+							"id": "A2.L.Grunt.PR11",
+							"type": "Paragade",
+							"value": 0,
+							"paragadeValue": [15, 15],
+							"trigger": "(Completing the assignment.)"
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A2.L.Grunt.P12",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"He's the ultimate krogan.\""
+								}, {
+									"id": "A2.L.Grunt.R12",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"Are you here to fight?\""
+								}]
+							}
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A2.L.Grunt.P13",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"Your call, Grunt.\""
+								}, {
+									"id": "A2.L.Grunt.R13",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"He can't join your clan.\""
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Horizon"
@@ -4577,9 +4756,11 @@
 		"description": "Jack was raised in a Cerberus facility, tortured by the Cerberus staff and the other children there as well. It was long since abandoned and she wants to go back and blow it up.",
 		"inMapId": "G.Att.Nub.Dak.Pragia",
 		"isShowInParentMap": true,
-		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jack:_Subject_Zero"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jack:_Subject_Zero"],
+		"relatedMissionIds": ["A2.Convo.Jack.4", "A2.Convo.MirandaJack"],
+		"conversationRewards": [],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Horizon"
@@ -4603,7 +4784,8 @@
 		"inMapId": "G.Ter.Ros.Alp.2175Aeia",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jacob:_The_Gift_of_Greatness"],
-		"relatedDecisionIds": ["D2.JacobLoyalty", "D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3"],
+		"relatedDecisionIds": ["D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3"],
+		"relatedMissionIds": ["A2.Convo.Jacob.4"],
 		"conversationRewards": [{
 			"set": {
 				"context": "Encountering the first survivor",
@@ -4860,11 +5042,13 @@
 		"description": "The geth are divided into two camps, one committed to co-existing with organic life and the other to destroying it. The latter group, the Heretics, has found a Reaper virus and modified it to force all geth to join their side. Legion asks you to board Heretic Station with him and destroy the virus.",
 		"inMapId": "G.Ter.Pho.Sea.Station",
 		"isShowInParentMap": true,
-		"relatedLinks": ["https://masseffect.wikia.com/wiki/Legion:_A_House_Divided"],
-		"relatedDecisionIds": ["D2.Heretics"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Legion:_A_House_Divided"],
+		"relatedDecisionIds": ["D2.Heretics"],
+		"relatedMissionIds": ["A2.Convo.Legion.2", "A2.Convo.TaliLegion"],
 		"conversationTodo": "include http://masseffect.wikia.com/wiki/Morality_Guide_(Mass_Effect_2)#Legion",
+		"conversationRewards": [],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Horizon"
@@ -4888,7 +5072,7 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Miranda:_The_Prodigal"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
-		"relatedMissionIds": ["A2.I.LostLocketFound"],
+		"relatedMissionIds": ["A2.I.LostLocketFound", "A2.Convo.Miranda.3", "A2.Convo.MirandaJack"],
 		"conversationRewards": [{
 			"set": {
 				"context": "Speaking to Lanteia",
@@ -5103,7 +5287,7 @@
 		"inMapId": "G.InC.Kro.Ara.Tuchanka",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mordin:_Old_Blood"],
-		"relatedMissionIds": ["A2.T.CombustionManifold", "A2.T.MissingScout"],
+		"relatedMissionIds": ["A2.T.CombustionManifold", "A2.T.MissingScout", "A2.Convo.Mordin.3"],
 		"relatedDecisionIds": ["D2.Maelon", "D2.MaelonsData"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
@@ -5395,10 +5579,123 @@
 		"description": "As Samara revealed when first meeting you, she is hunting an Ardat-Yakshi, a dangerous Asari serial killer. She feels personally responsible because this Ardat-Yakshi is her daughter, Morinth. Track down Morinth on Omega so Samara can kill her.",
 		"inMapId": "G.Ter.Ome.Sah.Omega",
 		"isShowInParentMap": true,
-		"relatedLinks": ["https://masseffect.wikia.com/wiki/Samara:_The_Ardat-Yakshi"],
-		"relatedDecisionIds": ["D2.SamaraMorinth"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Samara:_The_Ardat-Yakshi"],
+		"relatedDecisionIds": ["D2.SamaraMorinth"],
+		"relatedMissionIds": ["A2.Convo.Samara.3"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to Nef's mother",
+				"options": [{
+					"id": "A2.L.Samara.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I believe you.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Samara.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm on your side.\""
+						}, {
+							"id": "A2.L.Samara.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Yes.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Samara.P3",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*Paragon Interrupt*",
+							"trigger": ""
+						}, {
+							"id": "A2.L.Samara.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"No promises.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After reading Nef's journal",
+				"options": [{
+					"id": "A2.L.Samara.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"This sounds easy.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Samara.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"A perfect predator.\""
+						}, {
+							"id": "A2.L.Samara.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Can't wait to meet her.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"context": "Talking to Vij",
+			"id": "A2.L.Samara.R6",
+			"type": "Renegade",
+			"value": 2,
+			"trigger": "\"Get away from me.\""
+		}, {
+			"context": "*_Intimidate Verf_*",
+			"id": "A2.L.Samara.R7",
+			"type": "Renegade",
+			"value": 5,
+			"trigger": "\"Let's step outside.\""
+		}, {
+			"context": "*_Charm Bartender Edwin_*",
+			"id": "A2.L.Samara.P8",
+			"type": "Paragon",
+			"value": 5,
+			"trigger": "\"Treat your customers.\""
+		}, {
+			"context": "*_Intimidate Vertin_*",
+			"id": "A2.L.Samara.R9",
+			"type": "Renegade",
+			"value": 5,
+			"trigger": "\"Not much.\""
+		}, {
+			"set": {
+				"context": "After confrontation between Samara and Morinth",
+				"options": [{
+					"id": "A2.L.Samara.P10",
+					"type": "Paragon",
+					"value": 30,
+					"trigger": "(Choose Samara.)"
+				}, {
+					"id": "A2.L.Samara.R10",
+					"type": "Renegade",
+					"value": 45,
+					"trigger": "(Choose Morinth.)"
+				}]
+			}
+		}, {
+			"context": "After choosing Samara",
+			"id": "A2.L.Samara.P11",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"Are you okay?\""
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Horizon"
@@ -5420,8 +5717,431 @@
 		"inMapId": "G.Ter.Val.Rah.Fleet",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tali:_Treason"],
-		"experience": 1000,
-		"reward": "25,000 Credits",
+		"relatedDecisionIds": ["D2.TaliNotExiled", "D2.RaelZorahReputation"],
+		"relatedMissionIds": ["A2.Convo.Tali.2", "A2.Convo.TaliLegion"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Meeting Captain Kar'Danna",
+				"options": [{
+					"set": {
+						"context": "(With Legion)",
+						"options": [{
+							"id": "A2.L.Tali.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I owe Tali a great deal.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"context": "(Without Legion)",
+						"options": [{
+							"id": "A2.L.Tali.R2",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*Renegade Interrupt*",
+							"trigger": ""
+						}, {
+							"id": "A2.L.Tali.P2A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Calm down.\""
+						}, {
+							"id": "A2.L.Tali.P2B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"It's called Legion.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P3A",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm Kar'Danna_*",
+							"trigger": "\"You'll have to shoot us both.\""
+						}, {
+							"id": "A2.L.Tali.R3",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate Kar'Danna_*",
+							"trigger": "\"If it acts up, I'll kill it.\""
+						}, {
+							"id": "A2.L.Tali.P3B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'll do this for Tali.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Admiral Shala'Raan before the hearing",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Tali.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'm honored.\""
+				}, {
+					"id": "A2.L.Tali.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"This is a terrible idea.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "During the hearing",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P6",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm Shala'Raan_*",
+							"trigger": "\"It's my pleasure.\""
+						}, {
+							"id": "A2.L.Tali.R6A",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate Shala'Raan_*",
+							"trigger": "\"Look at her record.\""
+						}, {
+							"id": "A2.L.Tali.R6B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"What's the point?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P7",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm Shala'Raan_*",
+							"trigger": "\"We need to help.\""
+						}, {
+							"id": "A2.L.Tali.R7",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate Shala'Raan_*",
+							"trigger": "\"You've got a lot of nerve.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We must. For Tali's sake.\""
+						}, {
+							"id": "A2.L.Tali.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"If it proves her loyalty.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"context": "Talking to Veetor (if he was not given to Cerberus)",
+			"id": "A2.L.Tali.P10",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"I hope you feel better.\""
+		}, {
+			"set": {
+				"context": "Speaking to Shala'Raan after the hearing",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Tali.P15",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You went too far.\""
+				}, {
+					"id": "A2.L.Tali.R15",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Thanks. Will it help?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Shala'Raan after the hearing",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P15",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You went too far.\""
+						}, {
+							"id": "A2.L.Tali.R15",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Thanks. Will it help?\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Aboard the Alarei, when Tali recalls that her father promised to build her a home on Rannoch",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P20",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That's a bad idea.\""
+						}, {
+							"id": "A2.L.Tali.R20",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"That's a worthy promise.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P21",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Then find another world.\" or \"Settle down somewhere else.\""
+						}, {
+							"id": "A2.L.Tali.R21",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"So take it back, then.\" or \"It's worth it.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After finding Rael'Zorah's body",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P25A",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*Paragon Interrupt*",
+							"trigger": "Hug Tali."
+						}, {
+							"id": "A2.L.Tali.P25B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"This wasn't his choice.\""
+						}, {
+							"id": "A2.L.Tali.R20",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We'll destroy the geth.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P26",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"He did what he could.\""
+						}, {
+							"id": "A2.L.Tali.R26",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"The geth cut him off.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After recovering the evidence incriminating Rael'Zorah",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Tali.P30",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"He wanted to keep his promise.\""
+				}, {
+					"id": "A2.L.Tali.P30",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"That's what we needed.\""
+				}, {
+					"id": "A2.L.Tali.R30",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"That sounded bad.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "During the resumed trial",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P35",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You should pardon Tali.\""
+						}, {
+							"id": "A2.L.Tali.R35",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You could have waited.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P36A",
+							"type": "Paragon",
+							"value": 30,
+							"context": "*_Charm the board_*",
+							"trigger": "\"I don't need evidence.\""
+						}, {
+							"id": "A2.L.Tali.R36B",
+							"type": "Renegade",
+							"value": 30,
+							"context": "*_Intimidate the board_*",
+							"trigger": "\"You're wasting our time!\""
+						}, {
+							"id": "A2.L.Tali.P36B",
+							"type": "Renegade",
+							"value": 30,
+							"context": "(If Veetor and Kal'Reegar are there)",
+							"trigger": "\"[Rally the Crowd.]\""
+						}, {
+							"id": "A2.L.Tali.P36B",
+							"type": "Paragon",
+							"value": 30,
+							"trigger": "\"We have no evidence.\""
+						}, {
+							"id": "A2.L.Tali.R36C",
+							"type": "Renegade",
+							"value": 30,
+							"trigger": "\"Yes. Here is the evidence.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Tali.P37A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Don't go to war.\""
+						}, {
+							"id": "A2.L.Tali.P37B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"She's with me.\""
+						}, {
+							"id": "A2.L.Tali.R37",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Good luck in the war.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Admiral Daro'Xen after the trial",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Tali.P40",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Your ideas are wrong.\""
+				}, {
+					"id": "A2.L.Tali.R40",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"All that matters is victory.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "(If Tali was exiled) Speaking to Admiral Shala'Raan after the trial",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Tali.P45",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I support Tali.\""
+				}, {
+					"id": "A2.L.Tali.R45",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"She had no choice!\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Admiral Hen'Gerrel after the trial",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Tali.P50",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"This was Rael's fault.\" or \"I'm sorry.\""
+				}, {
+					"id": "A2.L.Tali.R50",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You don't want to know.\" or \"That's not my problem.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "(If Tali was exonerated) Speaking to Admiral Zaal'Koris after the trial",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Tali.P55",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Keep pushing for peace.\" or \"It's unfortunate but needed.\""
+				}, {
+					"id": "A2.L.Tali.R55",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You need to go to war.\""
+				}]
+			}
+		}, {
+			"context": "(If Shepard rallied the crowd) Talking to Veetor after the trial",
+			"id": "A2.L.Tali.P60",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"You were motivated.\""
+		}, {
+			"context": "(If Shepard rallied the crowd) Talking to Kal'Reegar after the trial",
+			"id": "A2.L.Tali.P60",
+			"type": "Paragon",
+			"value": 2,
+			"trigger": "\"Thanks for standing by me.\""
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Horizon"
@@ -5433,6 +6153,179 @@
 			"id": "Secured Loyalty: Tali"
 		}]
 	}, {
+		"id": "A2.L.Tali.1",
+		"inMissionId": "A2.L.Tali",
+		"sortIndex": 3081,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Board the Rayya",
+		"description": "Head to the Migrant Fleet and board the Rayya, with Tali's passphrase. Captain Kar'Danna will greet you and explain the charges against Tali: smuggling active geth. Then you will speak with Admiral Shala'Raan, an old friend of Tali's mother. She reveals that Tali has been stripped of her ship name, a step towards exile. She is evasive when Tali asks about her father.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Tali.2",
+		"inMissionId": "A2.L.Tali",
+		"sortIndex": 3082,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "The Hearing",
+		"description": "Tali is brought before the Admiralty Board. They surprise her with the news that her father's ship, the Alarei, was overrun by geth and everyone aboard is presumed dead. The Board blames Tali for supplying the Alarei with live geth. They offer her one chance to clear her name: board the Alarei and find proof of her innocence.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Tali.3",
+		"inMissionId": "A2.L.Tali",
+		"sortIndex": 3083,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Garden Plaza (Optional)",
+		"description": "You can speak privately with the admirals and other quarians present in the plaza.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Tali.3.1",
+		"inMissionId": "A2.L.Tali.3",
+		"sortIndex": 30831,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Admiral Shala'Raan",
+		"description": "[megametracker://person?id=P2.Raan] apologizes for blind-siding Tali with the news about her father. She hopes Tali will find evidence of her innocence on the Alarei.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Tali.3.2",
+		"inMissionId": "A2.L.Tali.3",
+		"sortIndex": 30832,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Admiral Daro'Xen",
+		"description": "[megametracker://person?id=P2.Raan] is uninterested in the purported reasons for the trial, but she sees its true purpose as defining whether the quarians continue to fear the geth or move forward to reclaim their past. She wants to research AI again and to use geth to further her technical knowledge.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Tali.3.3",
+		"inMissionId": "A2.L.Tali.3",
+		"sortIndex": 30833,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Admiral Hen'Gerrel",
+		"description": "[megametracker://person?id=P2.Gerrel] wants to start a war with the geth and retake the quarian homeworld. He considered Rael'Zorah both an old friend and an ally. He thinks Tali is innocent.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Tali.3.4",
+		"inMissionId": "A2.L.Tali.3",
+		"sortIndex": 30834,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Admiral Zaal'Koris",
+		"description": "[megametracker://person?id=P2.Koris] wants peace with the geth. He sees Rael'Zorah's weapons research as inherently reckless, and wants Tali's exile to be symbol to other quarians to stop such efforts in the future.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Tali.3.5",
+		"inMissionId": "A2.L.Tali.3",
+		"sortIndex": 30835,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Kal'Reegar",
+		"description": "[megametracker://person?id=O2.KalReegar] is present if he did not die during [megametracker://mission?id=A2.D.Tali].",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Saved Kal'Reegar"
+		}]
+	}, {
+		"id": "A2.L.Tali.3.6",
+		"inMissionId": "A2.L.Tali.3",
+		"sortIndex": 30836,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Veetor'Nara",
+		"description": "[megametracker://person?id=O2.Veetor] is present if he was not given to Cerberus after [megametracker://mission?id=M2.FreedomsProgress], with Dr. Elan'Shiya, who is helping with his recovery.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Saved Veetor"
+		}]
+	}, {
+		"id": "A2.L.Tali.3.7",
+		"inMissionId": "A2.L.Tali.3",
+		"sortIndex": 30837,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Captain Kar'Danna",
+		"description": "[megametracker://person?id=O2.Danna] will apologize for not telling Tali about her father.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Saved Veetor"
+		}]
+	}, {
+		"id": "A2.L.Tali.4",
+		"inMissionId": "A2.L.Tali",
+		"sortIndex": 3084,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Board the Alarei",
+		"description": "Take a shuttle to the Alarei. Fight through the geth on the first level, recovering any crew logs of the events preceeding the geth takeover.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Tali.5",
+		"inMissionId": "A2.L.Tali",
+		"sortIndex": 3085,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Damaged Console",
+		"description": "Head upstairs and through the Chem Lab to the console. Tali will hack it looking for information.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Tali.6",
+		"inMissionId": "A2.L.Tali",
+		"sortIndex": 3086,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Rael'Zorah",
+		"description": "There will be an elevated battle after opening the next door, with the geth entering from a doorway below. When they are all disposed of, head down the ramp and through that doorway to find Rael'Zorah. Tali finds a message on his body, directing Tali to recover evidence on the bridge which exonerates her.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Tali.7",
+		"inMissionId": "A2.L.Tali",
+		"sortIndex": 3087,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Recover Evidence",
+		"description": "Head upstairs for a final battle on the bridge. When they are eliminated, get the evidence left by Rael'Zorah. The record affirms that he never told Tali what he was doing, but unfortunately also incriminates Rael'Zorah.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true,
+		"sideEffects": ["The Quarian Model Ship is in this room."]
+	}, {
+		"id": "A2.L.Tali.8",
+		"inMissionId": "A2.L.Tali",
+		"sortIndex": 3088,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Trial",
+		"description": "Return to the Rayya to conclude the trial. If you reveal the evidence you recovered from the Alarei, Tali will be furious and not speak to you for the rest of the game. If you don't have Kal'Reegar and Veetor there to assist with her defense, she may be exiled, which has huge consequences for Game 3.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Tali.9",
+		"inMissionId": "A2.L.Tali",
+		"sortIndex": 3089,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Wrap-up (Optional)",
+		"description": "You can again speak privately with the admirals and other quarians about the outcome of the trial. Gerrel and Xen are particularly curious about what you found on the Alarei, if you did not reveal it during the trial.",
+		"inMapId": "G.Ter.Val.Rah.Fleet",
+		"isShowInParentMap": true
+	}, {
 		"id": "A2.L.Thane",
 		"sortIndex": 304,
 		"gameVersion": "2",
@@ -5442,9 +6335,231 @@
 		"description": "Thane abandoned his son Kolyat as a boy when pursuing the people who murdered Kolyat's mother Irikah. Kolyat has decided to follow in his father's footsteps and become an assassin. Thane wants to find him on the Citadel and stop him.",
 		"inMapId": "G.C2.ZakeraWardL28",
 		"isShowInParentMap": true,
-		"relatedLinks": ["https://masseffect.wikia.com/wiki/Thane:_Sins_of_the_Father"],
 		"experience": 1000,
 		"reward": "25,000 Credits",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Thane:_Sins_of_the_Father"],
+		"relatedMissionIds": ["A2.Convo.Thane.4"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Talking to Mouse",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Thane.R1A",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade interrupt*",
+					"trigger": ""
+				}, {
+					"id": "A2.L.Thane.P1",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Mouse_*",
+					"trigger": "\"We'll protect you.\""
+				}, {
+					"id": "A2.L.Thane.R1B",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Mouse_*",
+					"trigger": "\"I'm losing patience.\""
+				}, {
+					"id": "A2.L.Thane.R1C",
+					"type": "Credits",
+					"value": -3000,
+					"trigger": "(Bribe Mouse.)"
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Interrogating Kelham",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Thane.PR5",
+							"type": "Paragade",
+							"value": 0,
+							"paragadeValue": [5, 5],
+							"context": "*_Intimidate Kellum_*",
+							"trigger": "\"I'm a Spectre. Start talking.\""
+						}, {
+							"id": "A2.L.Thane.R5",
+							"type": "Renegard",
+							"value": 5,
+							"context": "3rd *Renegade interrupt*",
+							"trigger": ""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Thane.P6",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm Kellum_*",
+							"trigger": "\"We'll sweeten the pot.\""
+						}, {
+							"id": "A2.L.Thane.R6",
+							"type": "Renegard",
+							"value": 5,
+							"context": "*_Intimidate Kellum_*",
+							"trigger": "\"You should talk to us.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Thane.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That's democracy for you.\""
+						}, {
+							"id": "A2.L.Thane.R7",
+							"type": "Renegard",
+							"value": 2,
+							"trigger": "\"Not my problem.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Encountering Reynolds on the catwalks",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Thane.P10",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm Reynolds_*",
+							"trigger": "\"I'm a health inspector.\""
+						}, {
+							"id": "A2.L.Thane.R10",
+							"type": "Renegard",
+							"value": 5,
+							"context": "*_Intimidate Reynolds_*",
+							"trigger": "\"There's a bomb.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "\"Nothing bad.\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Thane.R11A",
+							"type": "Renegard",
+							"value": 5,
+							"context": "*Renegade interrupt*",
+							"trigger": ""
+						}, {
+							"id": "A2.L.Thane.P11",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm Reynolds_*",
+							"trigger": "\"I'm lost.\""
+						}, {
+							"id": "A2.L.Thane.R11B",
+							"type": "Renegard",
+							"value": 5,
+							"context": "*_Intimidate Reynolds_*",
+							"trigger": "\"You can't stop me.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "\"It's not important.\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Thane.R11A",
+							"type": "Renegard",
+							"value": 5,
+							"context": "*Renegade interrupt*",
+							"trigger": ""
+						}, {
+							"id": "A2.L.Thane.P11",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm Reynolds_*",
+							"trigger": "\"Here's the truth.\""
+						}, {
+							"id": "A2.L.Thane.R11B",
+							"type": "Renegard",
+							"value": 5,
+							"context": "*_Intimidate Reynolds_*",
+							"trigger": "\"A life is at stake.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Confronting Kolyat",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Thane.P20",
+							"type": "Paragon",
+							"value": 15,
+							"context": "*Paragon interrupt*",
+							"trigger": ""
+						}, {
+							"id": "A2.L.Thane.R20",
+							"type": "Renegard",
+							"value": 15,
+							"trigger": "(Kill the Hostage)"
+						}, {
+							"id": "A2.L.Thane.PR20",
+							"type": "Paragade",
+							"value": 0,
+							"paragadeValue": [5, 5],
+							"trigger": "(Disable Kolyat)"
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.L.Thane.P21",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Thane's dying.\""
+						}, {
+							"id": "A2.L.Thane.R21",
+							"type": "Renegard",
+							"value": 2,
+							"trigger": "\"He did this for you.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "A2.L.Thane.P25",
+			"type": "Paragade",
+			"value": 0,
+			"paragadeValue": [5, 5],
+			"trigger": "(Completing the assignment.)"
+		}, {
+			"set": {
+				"context": "\"Talking to Captain Bailey\"",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Thane.P30",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Bailey_*",
+					"trigger": "\"Those guys were criminals.\""
+				}, {
+					"id": "A2.L.Thane.R30",
+					"type": "Renegard",
+					"value": 5,
+					"context": "*_Intimidate Bailey_*",
+					"trigger": "\"Who cares about them?\""
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Horizon"
@@ -5455,6 +6570,66 @@
 			"type": "Triggers",
 			"id": "Secured Loyalty: Thane"
 		}]
+	}, {
+		"id": "A2.L.Thane.1",
+		"inMissionId": "A2.L.Thane",
+		"sortIndex": 3041,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Bailey",
+		"description": "Ask Bailey for information on Kolyat. He will direct you to [megametracker://person?id=O2.Mouse], last seen talking to a drell.",
+		"inMapId": "G.C2.ZakeraWardL28",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Thane.2",
+		"inMissionId": "A2.L.Thane",
+		"sortIndex": 3042,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Mouse",
+		"description": "Convince Mouse to give up the name of Kolyat's employer. Eventually he tells you it was [megametracker://person?id=O2.Kelham].",
+		"inMapId": "G.C2.ZakeraWardL28",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Thane.3",
+		"inMissionId": "A2.L.Thane",
+		"sortIndex": 3043,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Bailey",
+		"description": "Unfortunately, [megametracker://person?id=O2.Kelham] is an informant for Bailey and he is reluctant to bring him in for questioning. Nonetheless, Bailey agrees to arrange some subterfuge to bring Kelham in without Bailey's direct involvement.",
+		"inMapId": "G.C2.ZakeraWardL28",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Thane.4",
+		"inMissionId": "A2.L.Thane",
+		"sortIndex": 3044,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Elias Kelham",
+		"description": "You need to get Kelham to give up the assassination target. Bailey stalls Kelham's lawyer to buy you time, but you have to work quickly. The quickest way to make him talk is claim Spectre status, if you have the Renegade points. You can also beat an answer out of him (only requires the third interrupt). The two Charm/ntimidate options require you to commit - for charm you must take on good cop yourself and select all paragon options, the reverse for intimidate. Otherwise the lawyer interrupts and your only remaining options are to make a deal. \n\nKelham gives up the name of the target, [megametracker://person?id=O2.Talid], a particularly repllant anti-human politician.",
+		"inMapId": "G.C2.ZakeraWardL28",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Thane.5",
+		"inMissionId": "A2.L.Thane",
+		"sortIndex": 3045,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Follow Talid",
+		"description": "This is a twist on the typical escort quest, where you must discretely tail [megametracker://person?id=O2.Talid] from the catwalks. In a cutscene at the end, Kolyat will move to shoot Talid and you distract him by shouting his name.",
+		"inMapId": "G.C2.ZakeraWardL28",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Thane.6",
+		"inMissionId": "A2.L.Thane",
+		"sortIndex": 3046,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Follow Talid",
+		"description": "You and Thane chase Kolyat into an apartment where he is holding a gun to Talid's head. Bailey storms in at this point with his men, threatening to shoot Kolyat. You have the option to distract or wound Kolyat, or to shoot Talid (because he really is terrible). However the standoff ends, Kolyat is not happy to see his father. Thane explains and apologizes for his abandonment of Kolyat as a child. Bailey then ends the scene to give the two some privacy to finish their conversation.",
+		"inMapId": "G.C2.ZakeraWardL28",
+		"isShowInParentMap": true
 
 
 
@@ -5751,7 +6926,7 @@
 
 	}, {
 		"x-comment-x": "-----------------------CONVERSATIONS-------------------------",
-		"id": "A2.Convo.Chambers",
+		"id": "A2.Convo.Kelly",
 		"sortIndex": 9010,
 		"gameVersion": "2",
 		"missionType": "Conversation",
@@ -5759,12 +6934,13 @@
 		"description": "Conversations with Kelly Chambers aboard the Normandy.",
 		"inMapId": "G.N2.2.Map",
 		"isShowInParentMap": true,
+		"relatedDecisionIds": ["D2.LoveKelly"],
 		"conversationRewards": [{
 			"set": {
 				"context": "During first conversation",
 				"options": [{
 					"context": "\"The pleasure is mine.\" and \"Sure.\"",
-					"id": "A2.Convo.Chambers.P1",
+					"id": "A2.Convo.Kelly.P1",
 					"type": "Paragon",
 					"value": 0,
 					"trigger": "You can now address her as \"Kelly.\""
@@ -5774,19 +6950,19 @@
 			"set": {
 				"context": "\"What do you think of Cerberus?\" and \"Does Cerberus hate aliens?\"",
 				"options": [{
-					"id": "A2.Convo.Chambers.P2",
+					"id": "A2.Convo.Kelly.P2",
 					"type": "Paragon",
 					"value": 2,
 					"trigger": "\"You are very loving.\""
 				}, {
-					"id": "A2.Convo.Chambers.R2",
+					"id": "A2.Convo.Kelly.R2",
 					"type": "Renegade",
 					"value": 2,
 					"trigger": "\"You're naive.\""
 				}]
 			}
 		}, {
-			"id": "A2.Convo.Chambers.P3",
+			"id": "A2.Convo.Kelly.P3",
 			"type": "Paragade",
 			"value": 0,
 			"paragadeValue": [5, 5],
@@ -5801,6 +6977,8 @@
 		"description": "Conversations with Garrus after his recruitment aboard the Normandy.",
 		"inMapId": "G.N2.3.Battery",
 		"isShowInParentMap": true,
+		"relatedDecisionIds": ["D2.LoveGarrus"],
+		"relatedMissionIds": ["A2.L.Garrus"],
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
@@ -5842,7 +7020,8 @@
 		"annotationNote": "Loyalty Mission Dialogue",
 		"description": "Garrus has located Sidonis and wants your help in taking him down.",
 		"inMapId": "G.N2.3.Battery",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Garrus"]
 	}, {
 		"id": "A2.Convo.Garrus.3",
 		"inMissionId": "A2.Convo.Garrus",
@@ -5897,6 +7076,7 @@
 		"description": "Conversations with Grunt after his recruitment aboard the Normandy.",
 		"inMapId": "G.N2.4.Port",
 		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Grunt"],
 		"conversationRewards": [{
 			"set": {
 				"context": "During first conversation",
@@ -6032,7 +7212,8 @@
 		"annotationNote": "Loyalty Mission Dialogue",
 		"description": "Grunt is confused by the undirected rage filling him. He needs help from the krogan to make sense of this stage in his development.",
 		"inMapId": "G.N2.4.Port",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Grunt"]
 	}, {
 		"id": "A2.Convo.Grunt.4",
 		"inMissionId": "A2.Convo.Grunt",
@@ -6070,6 +7251,8 @@
 		"description": "Conversations with Jack after her recruitment aboard the Normandy.",
 		"inMapId": "G.N2.4.SubDeck",
 		"isShowInParentMap": true,
+		"relatedDecisionIds": ["D2.LoveJack"],
+		"relatedMissionIds": ["A2.L.Jack"],
 		"conversationRewards": [{
 			"set": {
 				"context": "During first conversation",
@@ -6369,7 +7552,8 @@
 		"annotationNote": "Loyalty Mission Dialogue",
 		"description": "Jack discusses her childhood in a Cerberus research facility. She has found the coordinates in the Cerberus files and she wants to go blow it up.",
 		"inMapId": "G.N2.4.SubDeck",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Jack"]
 	}, {
 		"id": "A2.Convo.Jack.5",
 		"inMissionId": "A2.Convo.Jack",
@@ -6438,6 +7622,8 @@
 		"description": "Conversations with Jacob aboard the Normandy.",
 		"inMapId": "G.N2.2.Armory",
 		"isShowInParentMap": true,
+		"relatedDecisionIds": ["D2.LoveJacob"],
+		"relatedMissionIds": ["A2.L.Jacob"],
 		"conversationRewards": [{
 			"set": {
 				"context": "During first conversation",
@@ -6841,7 +8027,8 @@
 		"annotationNote": "Loyalty Mission Dialogue",
 		"description": "Jacob reveals that his father's ship went missing 10 years ago. Cerberus has finally uncovered a lead to its crash site and Jacob wants to investigate.",
 		"inMapId": "G.N2.2.Armory",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Jacob"]
 	}, {
 		"id": "A2.Convo.Jacob.5",
 		"inMissionId": "A2.Convo.Jacob",
@@ -6896,6 +8083,7 @@
 		"description": "Conversations with Legion after its recruitment aboard the Normandy.",
 		"inMapId": "G.N2.3.Core",
 		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Legion"],
 		"conversationRewards": [{
 			"set": {
 				"context": "During fifth conversation",
@@ -7007,7 +8195,8 @@
 		"annotationNote": "Loyalty Mission Dialogue",
 		"description": "",
 		"inMapId": "G.N2.3.Core",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Legion"]
 	}, {
 		"id": "A2.Convo.Legion.3",
 		"inMissionId": "A2.Convo.Legion",
@@ -7073,6 +8262,8 @@
 		"description": "Conversations with Miranda aboard the Normandy.",
 		"inMapId": "G.N2.3.Cabin",
 		"isShowInParentMap": true,
+		"relatedDecisionIds": ["D2.LoveMiranda"],
+		"relatedMissionIds": ["A2.L.Miranda"],
 		"conversationRewards": [{
 			"set": {
 				"context": "During second conversation",
@@ -7183,6 +8374,10 @@
 					"trigger": "\"That's not true.\""
 				}]
 			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
 		}]
 	}, {
 		"id": "A2.Convo.Miranda.1",
@@ -7214,7 +8409,8 @@
 		"annotationNote": "Loyalty Mission Dialogue",
 		"description": "Miranda reveals that she has a sister - or rather, a younger genetic clone - whom she has hidden from her father. But he has tracked her down and Miranda needs your help to relocate her.",
 		"inMapId": "G.N2.3.Cabin",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Miranda"]
 	}, {
 		"id": "A2.Convo.Miranda.4",
 		"inMissionId": "A2.Convo.Miranda",
@@ -7284,6 +8480,7 @@
 		"description": "Conversations with Mordin after his recruitment aboard the Normandy.",
 		"inMapId": "G.N2.2.Lab",
 		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Mordin"],
 		"conversationRewards": [{
 			"set": {
 				"context": "During second conversation",
@@ -7459,7 +8656,8 @@
 		"annotationNote": "Loyalty Mission Dialogue",
 		"description": "Mordin reveals that a member of his STG team, [megametracker://person?id=O2.Maelon], was taken by the krogan and needs rescue.",
 		"inMapId": "G.N2.2.Lab",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.Loyalty.Mordin"]
 	}, {
 		"id": "A2.Convo.Mordin.4",
 		"inMissionId": "A2.Convo.Mordin",
@@ -7525,6 +8723,8 @@
 		"description": "Conversations with Samara (or Morinth) after her recruitment aboard the Normandy.",
 		"inMapId": "G.N2.3.Starboard",
 		"isShowInParentMap": true,
+		"relatedDecisionIds": ["D2.LoveSamara"],
+		"relatedMissionIds": ["A2.L.Samara"],
 		"conversationRewards": [{
 			"set": {
 				"context": "During third conversation",
@@ -7661,7 +8861,8 @@
 		"annotationNote": "Loyalty Mission Dialogue",
 		"description": "Samara reveals that she is hunting is her daughter Morinth, one of a dangerous breed of killers the asari have named the \"Ardat-Yakshi,\" who consume their victims when mating.",
 		"inMapId": "G.N2.3.Starboard",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Samara"]
 	}, {
 		"id": "A2.Convo.Samara.4",
 		"inMissionId": "A2.Convo.Samara",
@@ -7729,6 +8930,8 @@
 		"description": "Conversations with Tali after her recruitment aboard the Normandy.",
 		"inMapId": "G.N2.4.Station",
 		"isShowInParentMap": true,
+		"relatedDecisionIds": ["D2.LoveTali", "D2.RaelZorahReputation"],
+		"relatedMissionIds": ["A2.L.Tali"],
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
@@ -7842,7 +9045,8 @@
 		"annotationNote": "Loyalty Mission Dialogue",
 		"description": "Tali reveals that the quarian Admiralty Board has accused her of treason and she must return to stand trial. She has no idea what the charges are.",
 		"inMapId": "G.N2.4.Station",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Tali"]
 	}, {
 		"id": "A2.Convo.Tali.3",
 		"inMissionId": "A2.Convo.Tali",
@@ -7853,6 +9057,7 @@
 		"description": "If you revealed that Tali's father committed treason to save Tali, she is furious and refuses to speak to you again. If you did not, she apologizes for dragging you into the trial and dicusses the power vacuum created by her father's death.",
 		"inMapId": "G.N2.4.Station",
 		"isShowInParentMap": true,
+		"relatedDecisionIds": ["D2.RaelZorahReputation"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Secured Loyalty: Tali"
@@ -7911,11 +9116,13 @@
 		"description": "Conversations with Thane after his recruitment aboard the Normandy.",
 		"inMapId": "G.N2.3.Support",
 		"isShowInParentMap": true,
+		"relatedDecisionIds": ["D2.LoveThane"],
+		"relatedMissionIds": ["A2.L.Thane"],
 		"conversationRewards": [{
 			"set": {
 				"context": "During first conversation",
 				"options": [{
-					"id": "A2.Convo.Thane.P1",
+					"id": "A2.Convo.Thane.P10",
 					"type": "Paragon",
 					"value": 2,
 					"trigger": "\"Can we help?\""
@@ -7926,12 +9133,12 @@
 				"isExclusiveSet": true,
 				"context": "During second conversation",
 				"options": [{
-					"id": "A2.Convo.Thane.P2",
+					"id": "A2.Convo.Thane.P20",
 					"type": "Paragon",
 					"value": 2,
 					"trigger": "\"You're not a typical assassin.\""
 				}, {
-					"id": "A2.Convo.Thane.R2",
+					"id": "A2.Convo.Thane.R20",
 					"type": "Paragon",
 					"value": 2,
 					"trigger": "\"You don't seem confident.\""
@@ -7941,12 +9148,12 @@
 			"set": {
 				"context": "During third conversation",
 				"options": [{
-					"id": "A2.Convo.Thane.P3",
+					"id": "A2.Convo.Thane.P30",
 					"type": "Paragon",
 					"value": 2,
 					"trigger": "\"Every pang of guilt.\""
 				}, {
-					"id": "A2.Convo.Thane.P4",
+					"id": "A2.Convo.Thane.P31",
 					"type": "Paragon",
 					"value": 2,
 					"trigger": "\"My gun doesn't have free will.\""
@@ -7954,12 +9161,12 @@
 					"set": {
 						"isExclusiveSet": true,
 						"options": [{
-							"id": "A2.Convo.Thane.P5",
+							"id": "A2.Convo.Thane.P32",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"That's irresponsible.\""
 						}, {
-							"id": "A2.Convo.Thane.R5",
+							"id": "A2.Convo.Thane.R32",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"That's convenient.\""
@@ -7970,24 +9177,24 @@
 						"isExclusiveSet": true,
 						"context": "\"You're lonely.\"",
 						"options": [{
-							"id": "A2.Convo.Thane.P6A",
+							"id": "A2.Convo.Thane.P33A",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"Just a friend?\" or \"You're a good man, Thane.\""
 						}, {
-							"id": "A2.Convo.Thane.P6B",
+							"id": "A2.Convo.Thane.P33B",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"It's never too late to change.\""
 						}, {
-							"id": "A2.Convo.Thane.R6",
+							"id": "A2.Convo.Thane.R33",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"That a 'poor me' I hear?\""
 						}]
 					}
 				}, {
-					"id": "A2.Convo.Thane.R7",
+					"id": "A2.Convo.Thane.R34",
 					"type": "Renegade",
 					"value": 2,
 					"trigger": "\"It's just business.\""
@@ -7995,9 +9202,91 @@
 			}
 		}, {
 			"set": {
+				"context": "During fourth conversation",
+				"options": [{
+					"set": {
+						"context": "\"That's not what I expected.\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.Convo.Thane.P40",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Why didn't you take him?\""
+						}, {
+							"id": "A2.Convo.Thane.R40",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You abandoned him.\""
+						}]
+					}
+				}, {
+					"id": "A2.Convo.Thane.R41",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Get on with it.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "During fifth conversation",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.Convo.Thane.P50",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Yes, but I could wait.\""
+						}, {
+							"id": "A2.Convo.Thane.R50",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"No kidding.\""
+						}]
+					}
+				}, {
+					"id": "A2.Convo.Thane.R51",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You were careless.\""
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.Convo.Thane.P52",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Your body did. Not your soul.\""
+						}, {
+							"id": "A2.Convo.Thane.R52",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I would have, too.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.Convo.Thane.P53A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You're my crew.\""
+						}, {
+							"id": "A2.Convo.Thane.P53B",
+							"type": "Paragon",
+							"value": 2,
+							"context": "(Female Shepard only)",
+							"trigger": "\"I want you, Thane.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
 				"context": "During sixth conversation",
 				"options": [{
-					"id": "A2.Convo.Thane.R8",
+					"id": "A2.Convo.Thane.R60",
 					"type": "Paragon",
 					"value": 2,
 					"trigger": "\"Don't I always?\""
@@ -8005,12 +9294,12 @@
 					"set": {
 						"isExclusiveSet": true,
 						"options": [{
-							"id": "A2.Convo.Thane.P8",
+							"id": "A2.Convo.Thane.P61",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"I'm happy for you.\""
 						}, {
-							"id": "A2.Convo.Thane.R8",
+							"id": "A2.Convo.Thane.R61",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"Don't leave it yet.\""
@@ -8063,7 +9352,8 @@
 		"annotationNote": "Loyalty Mission Dialogue",
 		"description": "Thane reveals that he abandoned his son when his wife died, and now Kolyat has decided to become an assassin. Thane wants to prevent this.",
 		"inMapId": "G.N2.3.Support",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"relatedMissionIds": ["A2.L.Thane"]
 	}, {
 		"id": "A2.Convo.Thane.5",
 		"inMissionId": "A2.Convo.Thane",
@@ -8109,7 +9399,516 @@
 			"type": "BlockedUntil",
 			"id": "Secured Loyalty: Thane"
 		}]
+	}, {
+		"id": "A2.Convo.Disputes",
+		"sortIndex": 9050,
+		"gameVersion": "2",
+		"missionType": "Conversation",
+		"name": "Disputes",
+		"description": "Disputes between squad members.",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.Convo.MirandaJack",
+		"inMissionId": "A2.Convo.Disputes",
+		"sortIndex": 9050,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Jack and Miranda",
+		"description": "",
+		"inMapId": "G.N2.2.Briefing",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"context": "Resolving the dispute while maintaining both squad members loyalty",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.JackMiranda.P1",
+					"type": "Paragon",
+					"value": 15,
+					"trigger": "\"This is a distraction.\""
+				}, {
+					"id": "A2.Convo.JackMiranda.R1",
+					"type": "Renegade",
+					"value": 15,
+					"trigger": "\"This ends now!\""
+				}, {
+					"set": {
+						"context": "\"Back off, Miranda.\" and then returning to speak to Miranda",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.Convo.JackMiranda.P5",
+							"type": "Paragon",
+							"value": 15,
+							"trigger": "\"Be the better woman.\""
+						}, {
+							"id": "A2.Convo.JackMiranda.R5",
+							"type": "Renegade",
+							"value": 15,
+							"trigger": "\"Don't give me that crap.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "\"Too bad, Jack.\" and then returning to speak to Jack",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.Convo.JackMiranda.P10",
+							"type": "Paragon",
+							"value": 15,
+							"trigger": "\"It was lip service.\""
+						}, {
+							"id": "A2.Convo.JackMiranda.R10",
+							"type": "Renegade",
+							"value": 15,
+							"trigger": "\"I like you angry.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Secured Loyalty: Miranda and Jack"
+		}]
+	}, {
+		"id": "A2.Convo.TaliLegion",
+		"inMissionId": "A2.Convo.Disputes",
+		"sortIndex": 9050,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Tali and Legion",
+		"description": "",
+		"inMapId": "G.N2.2.Briefing",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"context": "Resolving the dispute while maintaining both squad members loyalty",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.TaliLegion.P1",
+					"type": "Paragon",
+					"value": 15,
+					"trigger": "\"You are both right.\""
+				}, {
+					"id": "A2.Convo.TaliLegion.R1",
+					"type": "Renegade",
+					"value": 15,
+					"trigger": "\"Knock this crap off.\""
+				}, {
+					"set": {
+						"context": "\"Back off, Tali.\" and then returning to speak to Tali",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.Convo.TaliLegion.P5",
+							"type": "Paragon",
+							"value": 15,
+							"trigger": "\"We need Legion.\""
+						}, {
+							"id": "A2.Convo.TaliLegion.R5",
+							"type": "Renegade",
+							"value": 15,
+							"trigger": "\"He's not a pet.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "\"Legion, stop transmitting.\" and then returning to speak to Legion",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A2.Convo.TaliLegion.P10",
+							"type": "Paragon",
+							"value": 15,
+							"trigger": "\"You're right, I am sorry.\""
+						}, {
+							"id": "A2.Convo.TaliLegion.R10",
+							"type": "Renegade",
+							"value": 15,
+							"trigger": "\"I lied to her.\""
+						}]
+					}
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Secured Loyalty: Tali and Legion"
+		}]
 
+	}, {
+		"id": "A2.Convo.Shops",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Conversation",
+		"name": "Shops",
+		"description": "Conversations with shopowners.",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.Convo.CitadelSouvenirs",
+		"inMissionId": "A2.Convo.Shops",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Citadel Souvenirs Discount",
+		"description": "Convince Deleia Sanassi to give you a discount at the Citadel Souvenirs store.",
+		"inMapId": "G.C2.27.Souvenirs",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.CitadelSouvenirs.P1A",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Deleia_*",
+					"trigger": "\"Want an endorsement?\""
+				}, {
+					"id": "A2.Convo.CitadelSouvenirs.P1B",
+					"type": "Paragon",
+					"value": 5,
+					"context": "(If re-instated as a Spectre)",
+					"trigger": "\"I'm a Spectre\""
+				}, {
+					"id": "A2.Convo.CitadelSouvenirs.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Deleia_*",
+					"trigger": "(Accuse her of classism.)"
+				}]
+			}
+		}]
+	}, {
+		"id": "A2.Convo.RodamExpeditions",
+		"inMissionId": "A2.Convo.Shops",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Rodam Expeditions Discount",
+		"description": "Convince Etarn Tiron to give you a discount at the Rodam Expeditions store.",
+		"inMapId": "G.C2.28.Rodam",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.RodamExpeditions.P1",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Etarn_*",
+					"trigger": "\"Want an endorsement?\" or \"I'd like a discount.\""
+				}, {
+					"id": "A2.Convo.RodamExpeditions.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Etarn_*",
+					"trigger": "\"You should give me a discount.\" or \"Give me a discount.\""
+				}]
+			}
+		}]
+	}, {
+		"id": "A2.Convo.SirtaFoundation",
+		"inMissionId": "A2.Convo.Shops",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Sirta Foundation Discount",
+		"description": "Convince Kian Louros to give you a discount at the Sirta Foundation store.",
+		"inMapId": "G.C2.26.Sirta",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.SirtaFoundation.P1",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Kian_*",
+					"trigger": "\"Want an endorsement?\""
+				}, {
+					"id": "A2.Convo.SirtaFoundation.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Kian_*",
+					"trigger": "\"You should give me a discount.\""
+				}]
+			}
+		}]
+	}, {
+		"id": "A2.Convo.SaronisApplications",
+		"inMissionId": "A2.Convo.Shops",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Saronis Applications Discount",
+		"description": "Convince Marab to give you a discount at the Saronis Applications store.",
+		"inMapId": "G.C2.26.Saronis",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.SaronisApplications.P1",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Marab_*",
+					"trigger": "\"Want an endorsement?\""
+				}, {
+					"id": "A2.Convo.SaronisApplications.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Marab_*",
+					"trigger": "\"You should give me a discount.\""
+				}]
+			}
+		}]
+	}, {
+		"id": "A2.Convo.SerriceTechnology",
+		"inMissionId": "A2.Convo.Shops",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Serrice Technology Discount",
+		"description": "Convince Hermia to give you a discount at the Serrice Technology store.",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1.Serrice",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.SerriceTechnology.P1",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Hermia_*",
+					"trigger": "\"I'm a big spender.\""
+				}, {
+					"id": "A2.Convo.SerriceTechnology.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Hermia_*",
+					"trigger": "\"This stuff might be crap.\""
+				}]
+			}
+		}]
+	}, {
+		"id": "A2.Convo.KennsSalvage",
+		"inMissionId": "A2.Convo.Shops",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Kenn's Salvage Discount",
+		"description": "Convince Kenn to give you a discount at the Kenn's Salvage store (before getting a discount at Harrot's).",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Kenn",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.KennsSalvage.P1",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Kenn_*",
+					"trigger": "\"Maybe we can cut a deal.\""
+				}, {
+					"id": "A2.Convo.KennsSalvage.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Kenn_*",
+					"trigger": "\"Your prices are insulting.\""
+				}]
+			}
+		}],
+		"relatedMissionIds": ["A2.O.StrugglingQuarian"]
+	}, {
+		"id": "A2.Convo.OmegaMarket",
+		"inMissionId": "A2.Convo.Shops",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Omega Market Discount",
+		"description": "Convince Marsh to give you a discount at the Omega Market store.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Market",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.SerriceTechnology.P1",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Marsh_*",
+					"trigger": "\"Convince me to shop here.\""
+				}, {
+					"id": "A2.Convo.SerriceTechnology.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Marsh_*",
+					"trigger": "\"These prices are insulting.\""
+				}]
+			}
+		}]
+	}, {
+		"id": "A2.Convo.Miscellaneous",
+		"sortIndex": 9095,
+		"gameVersion": "2",
+		"missionType": "Conversation",
+		"name": "Miscellaneous",
+		"description": "Conversations with various lesser characters in Mass Effect 2.",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "A2.Convo.RachniAgent",
+		"inMissionId": "A2.Convo.Miscellaneous",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Rachni Agent",
+		"description": "If the Rachni Queen was spared in Game 1, her asari agent approaches you on Illium.",
+		"x-inMapId": "TODO: Illium Spaceport",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.RachniAgent.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Stop controlling her!\""
+				}, {
+					"id": "A2.Convo.RachniAgent.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "Tell her to be good."
+				}]
+			}
+		}],
+		"relatedDecisionIds": ["D1.RachniQueen"]
+	}, {
+		"id": "A2.Convo.Fist2",
+		"inMissionId": "A2.Convo.Miscellaneous",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fist",
+		"description": "If Fist was spared in Game 1, you will encounter him again in the lower level of Afterlife on Omega.",
+		"x-inMapId": "TODO: Lower Afterlife",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.Fist2.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You're welcome.\""
+				}, {
+					"id": "A2.Convo.Fist2.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "I don't remember or care."
+				}]
+			}
+		}],
+		"relatedDecisionIds": ["D1.Fist"]
+	}, {
+		"id": "A2.Convo.Kylan",
+		"inMissionId": "A2.Convo.Miscellaneous",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Kylan",
+		"description": "A bravo and his men threaten you outside Afterlife on Omega.",
+		"x-inMapId": "TODO: Outside Afterlife",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.Kylan.P1",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Kylan_*",
+					"trigger": "\"Careful, now.\""
+				}, {
+					"id": "A2.Convo.Kylan.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Kylan_*",
+					"trigger": "A dead man."
+				}]
+			}
+		}]
+	}, {
+		"id": "A2.Convo.AlJilani",
+		"inMissionId": "A2.Convo.Miscellaneous",
+		"sortIndex": 9090,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Khalisah Al-Jilani",
+		"description": "Khalisah Al-Jilani again tries to interview and humiliate you on the Citadel.",
+		"x-inMapId": "TODO: Dark Star Lounge",
+		"isShowInParentMap": true,
+		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.AlJilani.P1A",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You made me look bad.\""
+				}, {
+					"id": "A2.Convo.AlJilani.P1B",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Yes, I remember.\""
+				}, {
+					"id": "A2.Convo.AlJilani.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Am I supposed to know you?\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.Convo.AlJilani.R2A",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "(End conversation.)"
+				}, {
+					"id": "A2.Convo.AlJilani.P2A",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Al-Jilani_*",
+					"trigger": "\"We stood as one to save many.\" or \"We created an opportunity.\""
+				}, {
+					"id": "A2.Convo.AlJilani.R2B",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Al-Jilani_*",
+					"trigger": "Don't disrespect the dead."
+				}, {
+					"id": "A2.Convo.AlJilani.P2C",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'm not doing this.\""
+				}, {
+					"id": "A2.Convo.AlJilani.R2C",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I don't need this garbage.\""
+				}]
+			}
+		}],
+		"relatedDecisionIds": ["D2.AlJilani"]
 
 	}]
 }
