@@ -68,13 +68,16 @@ final public class MissionController: UIViewController, UIImagePickerControllerD
     // Available
     @IBOutlet weak var availabilityView: TextDataRow?
     public var availabilityMessage: String?
-    lazy var availabilityType: AvailabilityType = { return AvailabilityType(controller: self, view: self.availabilityView) }()
+    lazy var availabilityRowType: AvailabilityRowType = { return AvailabilityRowType(controller: self, view: self.availabilityView) }()
     // Unavailable
     @IBOutlet weak var unavailabilityView: TextDataRow?
     public var unavailabilityMessage: String?
-    lazy var unavailabilityType: UnavailabilityType = { return UnavailabilityType(controller: self, view: self.unavailabilityView) }()
+    lazy var unavailabilityRowType: UnavailabilityRowType = { return UnavailabilityRowType(controller: self, view: self.unavailabilityView) }()
     // ConversationRewardsable
-    @IBOutlet weak var conversationRewardsView: ConversationRewardsView?
+    @IBOutlet weak var conversationRewardsView: ValueDataRow?
+    lazy var conversationRewardsType: ConversationRewardsRowType = {
+		return ConversationRewardsRowType(controller: self, view: self.conversationRewardsView)
+	}()
     // Decisionsable
     @IBOutlet public weak var decisionsView: DecisionsView?
     public var decisions: [Decision] = [] {
@@ -86,7 +89,10 @@ final public class MissionController: UIViewController, UIImagePickerControllerD
     @IBOutlet public weak var descriptionView: TextDataRow?
     lazy var descriptionType: DescriptionType = { return DescriptionType(controller: self, view: self.descriptionView) }()
     // MapLinkable
-    @IBOutlet public weak var mapLinkView: MapLinkView?
+    @IBOutlet public weak var mapLinkView: ValueDataRow?
+	lazy var mapLinkType: MapLinkType = {
+		return MapLinkType(controller: self, view: self.mapLinkView)
+	}()
     public var inMapId: String? {
         didSet {
             mission?.inMapId = inMapId // local changes only
@@ -266,7 +272,7 @@ extension MissionController: Available {
     
     func setupAvailability() {
         availabilityMessage = mission?.unavailabilityMessages.joined(separator: ", ")
-        availabilityType.setupView()
+        availabilityRowType.setupView()
         pageLoadStatus.markIsDone(.availability)
         conditionalSpinnerStop()
     }
@@ -277,7 +283,7 @@ extension MissionController: Unavailable {
     
     func setupUnavailability() {
         unavailabilityMessage = mission?.isAvailable == true ? mission?.unavailabilityAfterMessages.joined(separator: ", ") : nil
-        unavailabilityType.setupView()
+        unavailabilityRowType.setupView()
         pageLoadStatus.markIsDone(.unavailability)
         conditionalSpinnerStop()
     }
@@ -288,7 +294,7 @@ extension MissionController: ConversationRewardsable {
     //public var mission: Mission? // already declared
     
     func setupConversationRewards() {
-        conversationRewardsView?.controller = self
+        conversationRewardsType.setupView()
         pageLoadStatus.markIsDone(.conversationRewards)
         conditionalSpinnerStop()
     }
@@ -299,17 +305,20 @@ extension MissionController: Decisionsable {
     //public var decisions: [Decision] // already declared
     
     func setupDecisions() {
-        DispatchQueue.main.async { [weak self] in
-            if let decisionIds = self?.mission?.relatedDecisionIds {
-                self?.decisions = Decision.getAll(ids: decisionIds)
-                self?.decisions = self?.decisions.sorted(by: Decision.sort) ?? []
-            } else {
-                self?.decisions = []
-            }
-            self?.decisionsView?.controller = self
-            self?.pageLoadStatus.markIsDone(.decisions)
-            self?.conditionalSpinnerStop()
-        }
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+			if let decisionIds = self?.mission?.relatedDecisionIds {
+				self?.decisions = Decision.getAll(ids: decisionIds)
+				self?.decisions = self?.decisions.sorted(by: Decision.sort) ?? []
+			} else {
+				self?.decisions = []
+			}
+			DispatchQueue.main.async {
+				self?.decisionsView?.controller = self
+				self?.decisionsView?.setup()
+				self?.pageLoadStatus.markIsDone(.decisions)
+				self?.conditionalSpinnerStop()
+			}
+		}
     }
 }
 
@@ -333,7 +342,7 @@ extension MissionController: MapLinkable {
     func setupMapLink() {
         DispatchQueue.main.async { [weak self] in
             self?.inMapId = self?.mission?.inMapId
-            self?.mapLinkView?.controller = self
+            self?.mapLinkType.setupView()
             self?.pageLoadStatus.markIsDone(.mapLink)
             self?.conditionalSpinnerStop()
         }
@@ -349,6 +358,7 @@ extension MissionController: Notesable {
             DispatchQueue.main.async{
                 self?.notes = notes
                 self?.notesView?.controller = self
+                self?.notesView?.setup()
                 self?.pageLoadStatus.markIsDone(.notes)
                 self?.conditionalSpinnerStop()
             }
@@ -364,11 +374,14 @@ extension MissionController: Objectivesable {
     //public var objectives: [MapLocationable] // already declared
     
     func setupObjectives() {
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             self?.objectives = self?.mission?.getObjectives() ?? []
-            self?.objectivesView?.controller = self
-            self?.pageLoadStatus.markIsDone(.objectives)
-            self?.conditionalSpinnerStop()
+			DispatchQueue.main.async {
+				self?.objectivesView?.controller = self
+				self?.objectivesView?.setup()
+				self?.pageLoadStatus.markIsDone(.objectives)
+				self?.conditionalSpinnerStop()
+			}
         }
     }
 }
@@ -395,12 +408,15 @@ extension MissionController: RelatedLinksable {
     //public var relatedLinks: [String] // already declared
     
     func setupRelatedLinks() {
-        DispatchQueue.main.async { [weak self] in
-            self?.relatedLinks = self?.mission?.relatedLinks ?? []
-            self?.relatedLinksView?.controller = self
-            self?.pageLoadStatus.markIsDone(.relatedLinks)
-            self?.conditionalSpinnerStop()
-        }
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+			self?.relatedLinks = self?.mission?.relatedLinks ?? []
+			DispatchQueue.main.async {
+				self?.relatedLinksView?.controller = self
+				self?.relatedLinksView?.setup()
+				self?.pageLoadStatus.markIsDone(.relatedLinks)
+				self?.conditionalSpinnerStop()
+			}
+		}
     }
 }
 
@@ -408,14 +424,17 @@ extension MissionController: RelatedMissionsable {
     //public var relatedMissions: [Mission] // already declared
     
     func setupRelatedMissions() {
-        mission?.getRelatedMissions() { [weak self] (missions: [Mission]) in
-            DispatchQueue.main.async{
-                self?.relatedMissions = missions
-                self?.relatedMissionsView?.controller = self
-                self?.pageLoadStatus.markIsDone(.relatedMissions)
-                self?.conditionalSpinnerStop()
-            }
-        }
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+			self?.mission?.getRelatedMissions() { (missions: [Mission]) in
+				DispatchQueue.main.async{
+					self?.relatedMissions = missions
+					self?.relatedMissionsView?.controller = self
+					self?.relatedMissionsView?.setup()
+					self?.pageLoadStatus.markIsDone(.relatedMissions)
+					self?.conditionalSpinnerStop()
+				}
+			}
+		}
     }
 }
 
@@ -426,6 +445,7 @@ extension MissionController: SideEffectsable {
         DispatchQueue.main.async { [weak self] in
             self?.sideEffects = self?.mission?.sideEffects ?? []
             self?.sideEffectsView?.controller = self
+            self?.sideEffectsView?.setup()
             self?.pageLoadStatus.markIsDone(.sideEffects)
             self?.conditionalSpinnerStop()
         }

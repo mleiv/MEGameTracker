@@ -9,112 +9,109 @@
 import UIKit
 
 @IBDesignable
-open class TextDataRow: UIView {
+open class TextDataRow: HairlineBorderView, IBViewable {
     
+// MARK: Inspectable
      @IBInspectable open var typeName: String = "None" {
-        didSet {
-            if UIWindow.isInterfaceBuilder {
-                setDummyDataRowType()
-            }
-        }
+        didSet { setDummyDataRowType() }
     }
-    
-    @IBInspectable open var showRowDivider: Bool = false
-    
-    @IBInspectable open var borderTop: Bool = false {
-        didSet {
-            nib?.top = borderTop
-        }
-    }
-    
-    @IBInspectable open var borderBottom: Bool = false {
-        didSet {
-            nib?.bottom = borderBottom
-        }
-    }
+	
     @IBInspectable open var noPadding: Bool = false {
         didSet {
             setPadding(top: 0, right: 0, bottom: 0, left: 0)
         }
     }
     
-    open weak var nib: TextDataRowNib?
+    @IBInspectable open var showRowDivider: Bool = false
+    @IBInspectable open var isHideOnEmpty: Bool = true
+	
+// MARK: Outlets
+    @IBOutlet open weak var textView: MarkupTextView?
+    
+    @IBOutlet open weak var leadingPaddingConstraint: NSLayoutConstraint?
+    @IBOutlet open weak var trailingPaddingConstraint: NSLayoutConstraint?
+    @IBOutlet open weak var bottomPaddingConstraint: NSLayoutConstraint?
+    @IBOutlet open weak var topPaddingConstraint: NSLayoutConstraint?
+    
+    @IBOutlet open weak var rowDivider: HairlineBorderView?
+    
+// MARK: Properties
     private weak var heightConstraint: NSLayoutConstraint?
     
     open var didSetup = false
     open var isSettingUp = false
     var isChangingTableHeader = false
+	
+	// Protocol: IBViewable
+	public var isLoadedNib = false
+	public var isLoadedAttachedNib = false
     
+// MARK: Do not change
+	
+	// attachedNib
+
+	/// Blocks IBViewable from overriding nib view
+	open override func prepareForInterfaceBuilder() {
+		if superview == nil {
+			isLoadedAttachedNib = true
+		}
+		super.prepareForInterfaceBuilder()
+	}
+	
     open override func layoutSubviews() {
-        if !didSetup {
+        if !UIWindow.isInterfaceBuilder && !isLoadedAttachedNib && isHideOnEmpty && !didSetup {
             isHidden = true
-            setup()
         }
         super.layoutSubviews()
     }
     
-    func setup() {
-        guard !didSetup else { return }
-        
-        if nib == nil, let newNib = TextDataRowNib.loadNib() {
-            insertSubview(newNib, at: 0)
-            newNib.fillView(self)
-            nib = newNib
-        }
-        
-        didSetup = true
-    }
-    
     public func setPadding(top: CGFloat, right: CGFloat, bottom: CGFloat, left: CGFloat) {
-        nib?.topPaddingConstraint?.constant = top
-        nib?.bottomPaddingConstraint?.constant = bottom
-        nib?.leadingPaddingConstraint?.constant = left
-        nib?.trailingPaddingConstraint?.constant = right
+        topPaddingConstraint?.constant = top
+        bottomPaddingConstraint?.constant = bottom
+        leadingPaddingConstraint?.constant = left
+        trailingPaddingConstraint?.constant = right
         layoutIfNeeded()
     }
     
     /// reload table headers because they are finnicky.
     /// to utilize, wrap the text header in a useless extra wrapper view, so we can pop it out and into a new wrapper.
-    func setupTableHeader() {
+    func setupTableHeader(view: UIView?) {
+		guard isLoadedAttachedNib else { return }
         guard !isChangingTableHeader,
-            let tableView = superview as? UITableView ?? superview?.superview as? UITableView,
-            tableView.tableHeaderView == self || tableView.tableHeaderView == superview
+			let wrapperNib = self.superview,
+			let superview = wrapperNib.superview,
+            let tableView = superview.superview as? UITableView,
+            tableView.tableHeaderView == superview
         else { return }
-        
-        let text = nib?.textView?.text ?? ""
         
         isChangingTableHeader = true
         
-        removeFromSuperview()
-        
-        frame.size.height = bounds.height
-        layoutIfNeeded()
+        wrapperNib.removeFromSuperview()
+        wrapperNib.frame.size.height = wrapperNib.bounds.height
         
         let newWrapper = UIView(frame: bounds)
-        newWrapper.addSubview(self)
-        fillView(newWrapper)
-        tableView.tableHeaderView = !text.isEmpty ? newWrapper : UIView(frame: CGRect.zero)
+        newWrapper.addSubview(wrapperNib)
+        wrapperNib.fillView(newWrapper)
+		
+        tableView.tableHeaderView = newWrapper
+		
+		tableView.reloadData()
         
         isChangingTableHeader = false
     }
     
     func setDummyDataRowType() {
+        guard isInterfaceBuilder && !isLoadedAttachedNib else { return }
         var dataRowType: TextDataRowType?
         switch typeName {
             case "Aliases": dataRowType = AliasesType()
-            case "Availability": dataRowType = AvailabilityType()
-            case "Unavailability": dataRowType = UnavailabilityType()
+            case "Availability": dataRowType = AvailabilityRowType()
+            case "Unavailability": dataRowType = UnavailabilityRowType()
             case "Description": dataRowType = DescriptionType()
             case "OriginHint": dataRowType = OriginHintType()
             default: break
         }
-        dataRowType?.view = self
+        dataRowType?.row = self
         dataRowType?.setupView()
     }
 }
-
-extension TextDataRow: Bordered {
-//    var borderTop: Bool { get set }
-//    var borderBottom: Bool { get set }
-}
- 

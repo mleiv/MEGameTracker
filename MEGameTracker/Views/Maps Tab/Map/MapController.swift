@@ -83,7 +83,7 @@ final public class MapController: UIViewController, Spinnerable, UIScrollViewDel
     // Available
     @IBOutlet weak var availabilityView: TextDataRow?
     public var availabilityMessage: String?
-    lazy var availabilityType: AvailabilityType = { return AvailabilityType(controller: self, view: self.availabilityView) }()
+    lazy var availabilityRowType: AvailabilityRowType = { return AvailabilityRowType(controller: self, view: self.availabilityView) }()
     // Describable
     @IBOutlet public weak var descriptionView: TextDataRow?
     lazy var descriptionType: DescriptionType = { return DescriptionType(controller: self, view: self.descriptionView) }()
@@ -685,7 +685,7 @@ extension MapController: Available {
     
     func setupAvailability() {
         availabilityMessage = map?.unavailabilityMessages.joined(separator: ", ")
-        availabilityType.setupView()
+        availabilityRowType.setupView()
     }
 }
 
@@ -721,6 +721,7 @@ extension MapController: Notesable {
             DispatchQueue.main.async{
                 self?.notes = notes
                 self?.notesView?.controller = self
+                self?.notesView?.setup()
             }
         }
     }
@@ -750,5 +751,6 @@ extension MapController: RelatedLinksable {
     func setupRelatedLinks() {
         relatedLinks = map?.relatedLinks ?? []
         relatedLinksView?.controller = self
+        relatedLinksView?.setup()
     }
 }

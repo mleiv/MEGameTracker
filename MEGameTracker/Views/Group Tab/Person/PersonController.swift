@@ -316,6 +316,7 @@ extension PersonController: Decisionsable {
             decisions = []
         }
         decisionsView?.controller = self
+        decisionsView?.setup()
     }
 }
 
@@ -352,6 +353,7 @@ extension PersonController: Notesable {
             DispatchQueue.main.async{
                 self?.notes = notes
                 self?.notesView?.controller = self
+                self?.notesView?.setup()
             }
         }
     }
@@ -381,6 +383,7 @@ extension PersonController: RelatedLinksable {
     func setupRelatedLinks() {
         relatedLinks = person?.relatedLinks ?? []
         relatedLinksView?.controller = self
+        relatedLinksView?.setup()
     }
 }
 
@@ -392,6 +395,7 @@ extension PersonController: RelatedMissionsable {
             DispatchQueue.main.async{
                 self?.relatedMissions = missions
                 self?.relatedMissionsView?.controller = self
+                self?.relatedMissionsView?.setup()
             }
         }
     }
@@ -403,6 +407,7 @@ extension PersonController: SideEffectsable {
     func setupSideEffects() {
         sideEffects = person?.sideEffects ?? []
         sideEffectsView?.controller = self
+        sideEffectsView?.setup()
     }
 }
 
@@ -412,5 +417,6 @@ extension PersonController: VoiceActorLinkable {
     func setupVoiceActor() {
         voiceActorName = person?.voiceActor
         voiceActorLinkView?.controller = self
+        voiceActorLinkView?.setup()
     }
 }

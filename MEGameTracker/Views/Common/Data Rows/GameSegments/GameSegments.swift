@@ -22,9 +22,9 @@ final public class GameSegments: UIView {
     fileprivate var didSetup = false
     
     public override func layoutSubviews() {
-        if !didSetup {
-            setup()
-        }
+//        if !didSetup {
+//            setup()
+//        }
         super.layoutSubviews()
     }
     

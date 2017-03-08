@@ -26,15 +26,45 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
     @IBOutlet weak var photoImageView: UIImageView!
 
     // Appearanceable
-    @IBOutlet weak var appearanceLinkView: AppearanceLinkView?
+    @IBOutlet weak var appearanceLinkView: ValueDataRow?
+    lazy var appearanceType: AppearanceLinkType = {
+		return AppearanceLinkType(controller: self, view: self.appearanceLinkView) { [weak self] sender in
+            self?.openChangeableSegue("Appearance", sender: sender)
+        }
+	}()
     // Backstory
-    @IBOutlet weak var shepardOriginView: ShepardOriginView?
-    @IBOutlet weak var shepardReputationView: ShepardReputationView?
-    @IBOutlet weak var shepardClassView: ShepardClassView?
+    @IBOutlet weak var shepardOriginRow: ValueAltDataRow?
+    lazy var shepardOriginRowType: ShepardOriginRowType = {
+		return ShepardOriginRowType(controller: self, view: self.shepardOriginRow) { [weak self] sender in
+            self?.openChangeableSegue("Origin", sender: sender)
+        }
+	}()
+    @IBOutlet weak var shepardReputationRow: ValueAltDataRow?
+    lazy var shepardReputationRowType: ShepardReputationRowType = {
+		return ShepardReputationRowType(controller: self, view: self.shepardReputationRow) { [weak self] sender in
+            self?.openChangeableSegue("Reputation", sender: sender)
+        }
+	}()
+    @IBOutlet weak var shepardClassRow: ValueAltDataRow?
+    lazy var shepardClassRowType: ShepardClassRowType = {
+		return ShepardClassRowType(controller: self, view: self.shepardClassRow) { [weak self] sender in
+            self?.openChangeableSegue("Class", sender: sender)
+        }
+	}()
     // DecisionsListLinkable
-    @IBOutlet weak var decisionsListLinkView: DecisionsListLinkView?
+    @IBOutlet weak var decisionsListLinkView: ValueDataRow?
+	lazy var decisionsListLinkType: DecisionsListLinkType = {
+		return DecisionsListLinkType(controller: self, view: self.decisionsListLinkView) { [weak self] sender in
+            self?.openChangeableSegue("Decisions", sender: sender)
+        }
+	}()
     // Love Interest
-    @IBOutlet weak var shepardLoveInterestView: ShepardLoveInterestView?
+    @IBOutlet weak var shepardLoveInterestRow: ShepardLoveInterestRow?
+	lazy var shepardLoveInterestRowType: ShepardLoveInterestRowType = {
+		return ShepardLoveInterestRowType(controller: self, view: self.shepardLoveInterestRow) { [weak self] sender in
+            self?.openChangeableSegue("Love Interest", sender: sender)
+        }
+	}()
     // Notesable
     @IBOutlet weak var notesView: NotesView?
     public var notes: [Note] = []
@@ -141,6 +171,7 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
     func fetchData() {
         guard !UIWindow.isInterfaceBuilder else { return fetchDummyData() }
         shepard = App.current.game?.shepard
+		
     }
     
     func fetchDummyData() {
@@ -244,15 +275,15 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
         //listen for shepard changes
         App.onCurrentShepardChange.cancelSubscription(for: self)
         _ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadDataOnChange)
-        // listen for decision changes
-        Decision.onChange.cancelSubscription(for: self)
-        _ = Decision.onChange.subscribe(on: self) { [weak self] changed in
-            if changed.object?.loveInterestId != nil {
-                DispatchQueue.main.async{
-                    self?.shepardLoveInterestView?.reloadData()
-                }
-            }
-        }
+//        // listen for love interest decision changes
+//        Decision.onChange.cancelSubscription(for: self)
+//        _ = Decision.onChange.subscribe(on: self) { [weak self] changed in
+//            if let object = changed.object, object.loveInterestId != nil {
+//                DispatchQueue.main.async {
+//					self?.setupLoveInterest()
+//                }
+//            }
+//        }
     }
     
 }
@@ -309,14 +340,10 @@ extension ShepardController: UIImagePickerControllerDelegate {
 }
 
 
-extension ShepardController: Appearanceable {
-    //public var shepard: Shepard? // already declared
+extension ShepardController { // Appearance
     
     func setupAppearanceLink() {
-        appearanceLinkView?.controller = self
-        appearanceLinkView?.onClick = { [weak self] sender in
-            self?.openChangeableSegue("Appearance", sender: sender)
-        }
+        appearanceType.setupView()
     }
 }
 
@@ -326,18 +353,9 @@ extension ShepardController { // Backstory
     //public var shepard: Shepard? // already declared
     
     func setupBackstory() {
-        shepardOriginView?.controller = self
-        shepardOriginView?.onClick = { [weak self] sender in
-            self?.openChangeableSegue("Origin", sender: sender)
-        }
-        shepardClassView?.controller = self
-        shepardClassView?.onClick = { [weak self] sender in
-            self?.openChangeableSegue("Class", sender: sender)
-        }
-        shepardReputationView?.controller = self
-        shepardReputationView?.onClick = { [weak self] sender in
-            self?.openChangeableSegue("Reputation", sender: sender)
-        }
+		shepardOriginRowType.setupView()
+		shepardReputationRowType.setupView()
+		shepardClassRowType.setupView()
     }
 }
 
@@ -345,10 +363,7 @@ extension ShepardController { // Backstory
 extension ShepardController: DecisionsListLinkable {
     
     func setupDecisionsListLink() {
-        decisionsListLinkView?.controller = self
-        decisionsListLinkView?.onClick = { [weak self] sender in
-            self?.openChangeableSegue("Decisions", sender: sender)
-        }
+        decisionsListLinkType.setupView()
     }
 }
 
@@ -356,11 +371,7 @@ extension ShepardController { // Love Interest
     //public var shepard: Shepard? // already declared
     
     func setupLoveInterest() {
-        shepardLoveInterestView?.loveInterest = shepard?.getLoveInterest()
-        shepardLoveInterestView?.onClick = { [weak self] sender in
-            self?.openChangeableSegue("Love Interest", sender: sender)
-        }
-        shepardLoveInterestView?.controller = self
+		shepardLoveInterestRowType.setupView()
     }
 }
 
@@ -381,6 +392,7 @@ extension ShepardController: Notesable {
             DispatchQueue.main.async{
                 self?.notes = notes
                 self?.notesView?.controller = self
+                self?.notesView?.setup()
             }
         }
     }
@@ -400,6 +412,7 @@ extension ShepardController: RelatedLinksable {
     func setupRelatedLinks() {
         relatedLinks = ["https://masseffect.wikia.com/wiki/Commander_Shepard"]
         relatedLinksView?.controller = self
+        relatedLinksView?.setup()
     }
 }
 
@@ -488,5 +501,6 @@ extension ShepardController: VoiceActorLinkable {
     func setupVoiceActor() {
         voiceActorName = shepard?.gender == .male ? "Mark Meer" : "Jennifer Hale"
         voiceActorLinkView?.controller = self
+        voiceActorLinkView?.setup()
     }
 }

@@ -1,5 +1,5 @@
 //
-//  UnavailabilityType.swift
+//  UnavailabilityRowType.swift
 //  MEGameTracker
 //
 //  Created by Emily Ivie on 1/25/17.
@@ -8,12 +8,14 @@
 
 import UIKit
 
-public struct UnavailabilityType: TextDataRowType {
+public struct UnavailabilityRowType: TextDataRowType {
+	public typealias RowType = TextDataRow
+	var view: RowType? { return row }
+    public var row: TextDataRow?
 
     public var identifier: String = "\(UUID().uuidString)"
     
     public var controller: Unavailable?
-    public var view: TextDataRow?
     
     public var text: String? {
         return UIWindow.isInterfaceBuilder ? "Unavailable after Mission X" : controller?.unavailabilityMessage
@@ -28,20 +30,25 @@ public struct UnavailabilityType: TextDataRowType {
     public init() {}
     public init(controller: Unavailable, view: TextDataRow?) {
         self.controller = controller
-        self.view = view
+        self.row = view
     }
+	
+	public mutating func setupView() {
+		setupView(type: RowType.self)
+	}
     
-    public mutating func setup(dataRow: TextDataRow) {
+    public mutating func setup(view: UIView?) {
+		guard let view = view as? RowType else { return }
         if UIWindow.isInterfaceBuilder || !didSetup {
             didSetup = true
-            dataRow.nib?.backgroundColor = UIColor.darkGray
-            dataRow.nib?.textView?.identifier = "Caption.DisabledOppositeColor.MediumItalic"
-            dataRow.nib?.textView?.linkTextAttributes = [
+            view.backgroundColor = UIColor.darkGray
+            view.textView?.identifier = "Caption.DisabledOppositeColor.MediumItalic"
+            view.textView?.linkTextAttributes = [
                 NSForegroundColorAttributeName: Styles.Colors.linkOnBlackColor
             ]
-            dataRow.nib?.textView?.textAlignment = .center
+            view.textView?.textAlignment = .center
         }
-        dataRow.nib?.textView?.text = text
+        view.textView?.text = text
     }
 }
 

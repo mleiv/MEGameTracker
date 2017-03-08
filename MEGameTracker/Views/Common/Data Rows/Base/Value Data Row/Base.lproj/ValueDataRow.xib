@@ -9,9 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ValueDataRow" customModule="MEGameTracker" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="Z3Q-sP-nnP" userLabel="Wrapper" customClass="SimpleValueDataRowNib" customModule="MEGameTracker" customModuleProvider="target">
+        <view opaque="NO" contentMode="scaleToFill" id="Z3Q-sP-nnP" userLabel="Wrapper" customClass="ValueDataRow" customModule="MEGameTracker" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="500" height="52"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -30,10 +30,10 @@
                                         <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.NormalColor"/>
                                     </userDefinedRuntimeAttributes>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bih-Qw-ptw">
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bih-Qw-ptw" userLabel="description">
                                     <rect key="frame" x="0.0" y="19.5" width="459" height="16.5"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rN9-qF-pT4">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rN9-qF-pT4" userLabel="Inset">
                                             <rect key="frame" x="0.0" y="0.0" width="10" height="16.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="10" id="rlL-YV-LSS"/>
@@ -116,11 +116,11 @@
                 <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="button" destination="SvE-Gu-f0c" id="TY1-3A-y0f"/>
-                <outlet property="disclosureImageView" destination="Q5Q-gd-qd1" id="tlw-Bk-yLQ"/>
-                <outlet property="headingLabel" destination="L8j-Aw-a0a" id="XMs-C0-1wQ"/>
-                <outlet property="rowDivider" destination="i6y-db-UpG" id="hmg-vt-WJg"/>
-                <outlet property="valueLabel" destination="vRm-vw-8rk" id="6Ct-HE-TbS"/>
+                <outlet property="button" destination="SvE-Gu-f0c" id="23R-WJ-ENj"/>
+                <outlet property="disclosureImageView" destination="Q5Q-gd-qd1" id="tsA-pB-bWz"/>
+                <outlet property="headingLabel" destination="L8j-Aw-a0a" id="UrP-74-yT9"/>
+                <outlet property="rowDivider" destination="i6y-db-UpG" id="e7T-4v-0ue"/>
+                <outlet property="valueLabel" destination="vRm-vw-8rk" id="aZK-7K-cEf"/>
             </connections>
             <point key="canvasLocation" x="-4" y="120.5"/>
         </view>

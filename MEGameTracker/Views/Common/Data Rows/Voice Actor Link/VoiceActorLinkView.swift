@@ -22,11 +22,7 @@ final public class VoiceActorLinkView: SimpleArrayDataRow {
         }
         return []
     }
-    public var controller: VoiceActorLinkable? {
-        didSet {
-            reloadData()
-        }
-    }
+    public var controller: VoiceActorLinkable? 
     
     let googleSearchActorTemplate = "https://www.google.com/webhp?#q=%%22Mass+Effect%%22+wikipedia+IMDB+%%22%@%%22"
     let linkHandler = LinkHandler()

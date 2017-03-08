@@ -9,9 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ValueAltDataRow" customModule="MEGameTracker" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="Z3Q-sP-nnP" userLabel="Wrapper" customClass="SimpleValueAltDataRowNib" customModule="MEGameTracker" customModuleProvider="target">
+        <view opaque="NO" contentMode="scaleToFill" id="Z3Q-sP-nnP" userLabel="Wrapper" customClass="ValueAltDataRow" customModule="MEGameTracker" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="500" height="65"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -97,11 +97,11 @@
                 <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="button" destination="SvE-Gu-f0c" id="TY1-3A-y0f"/>
-                <outlet property="disclosureImageView" destination="Q5Q-gd-qd1" id="tlw-Bk-yLQ"/>
-                <outlet property="headingLabel" destination="L8j-Aw-a0a" id="XMs-C0-1wQ"/>
-                <outlet property="rowDivider" destination="s9H-EQ-bmS" id="gUN-Qh-L92"/>
-                <outlet property="valueLabel" destination="vRm-vw-8rk" id="6Ct-HE-TbS"/>
+                <outlet property="button" destination="SvE-Gu-f0c" id="MKz-tW-LXq"/>
+                <outlet property="disclosureImageView" destination="Q5Q-gd-qd1" id="QKd-dO-BQQ"/>
+                <outlet property="headingLabel" destination="L8j-Aw-a0a" id="mLg-BI-iJa"/>
+                <outlet property="rowDivider" destination="s9H-EQ-bmS" id="nRB-1m-Ygf"/>
+                <outlet property="valueLabel" destination="vRm-vw-8rk" id="wdN-cq-WHa"/>
             </connections>
             <point key="canvasLocation" x="-4" y="135.5"/>
         </view>

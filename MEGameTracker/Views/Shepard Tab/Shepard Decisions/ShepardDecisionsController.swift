@@ -134,8 +134,6 @@ extension ShepardDecisionsController: Decisionsable {
         decisions = allDecisions[gameVersion] ?? []
         decisionsView?.isShowGameVersion = false
         decisionsView?.controller = self
-        if isReloadData && !UIWindow.isInterfaceBuilder {
-            decisionsView?.reloadData()
-        }
+        decisionsView?.setup()
     }
 }

@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="756"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysT-3y-8gh">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="927.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="933.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="zfv-Dx-DqT" userLabel="Header">
                                                         <rect key="frame" x="15" y="15" width="570" height="308"/>
@@ -125,32 +125,47 @@
                                                                                         </connections>
                                                                                     </segmentedControl>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ap3-MV-ssv" userLabel="Values">
-                                                                                        <rect key="frame" x="0.0" y="38" width="435" height="162"/>
+                                                                                        <rect key="frame" x="0.0" y="50" width="435" height="150"/>
                                                                                         <subviews>
-                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UuV-kF-VDj" customClass="ShepardOriginView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UuV-kF-VDj" customClass="ValueAltDataRow" customModule="MEGameTracker" customModuleProvider="target">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="435" height="50"/>
                                                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                 <userDefinedRuntimeAttributes>
                                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hideHeadingOnCompactView" value="YES"/>
                                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
-                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                                                        <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                    </userDefinedRuntimeAttribute>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Origin"/>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHideOnEmpty" value="NO"/>
                                                                                                 </userDefinedRuntimeAttributes>
                                                                                             </view>
-                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVv-UQ-MzA" customClass="ShepardReputationView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVv-UQ-MzA" customClass="ValueAltDataRow" customModule="MEGameTracker" customModuleProvider="target">
                                                                                                 <rect key="frame" x="0.0" y="50" width="435" height="50"/>
                                                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                 <userDefinedRuntimeAttributes>
                                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hideHeadingOnCompactView" value="YES"/>
                                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
+                                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                                                        <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                    </userDefinedRuntimeAttribute>
+                                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Reputation"/>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHideOnEmpty" value="NO"/>
                                                                                                 </userDefinedRuntimeAttributes>
                                                                                             </view>
-                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPT-di-MOd" customClass="ShepardClassView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="100" width="435" height="62"/>
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPT-di-MOd" customClass="ValueAltDataRow" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                                <rect key="frame" x="0.0" y="100" width="435" height="50"/>
                                                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                 <userDefinedRuntimeAttributes>
-                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hideHeadingOnCompactView" value="YES"/>
                                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="NO"/>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                                                        <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                    </userDefinedRuntimeAttribute>
+                                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Class"/>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHideOnEmpty" value="NO"/>
                                                                                                 </userDefinedRuntimeAttributes>
                                                                                             </view>
                                                                                         </subviews>
@@ -199,7 +214,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="700" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zxB-id-nwo">
-                                                        <rect key="frame" x="0.0" y="338" width="600" height="569.5"/>
+                                                        <rect key="frame" x="0.0" y="338" width="600" height="575.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="nUh-7j-aNP" userLabel="Level Row" customClass="SliderRowView" customModule="MEGameTracker" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
@@ -224,39 +239,53 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="piV-Sv-m4y" customClass="AppearanceLinkView" customModule="MEGameTracker" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="piV-Sv-m4y" customClass="ValueDataRow" customModule="MEGameTracker" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="150" width="600" height="53.5"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                        <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Appearance"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHideOnEmpty" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="qYJ-Fc-QTC" userLabel="Love Interest Row" customClass="ShepardLoveInterestView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="203.5" width="600" height="50"/>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="qYJ-Fc-QTC" userLabel="Love Interest Row" customClass="ShepardLoveInterestRow" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="203.5" width="600" height="56"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                        <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHideOnEmpty" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="LoveInterest"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="ie2-VD-KcT" userLabel="Decisions List Link Row" customClass="ValueDataRow" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="259.5" width="600" height="50"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="ie2-VD-KcT" userLabel="Decisions List Link Row" customClass="DecisionsListLinkView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="253.5" width="600" height="50"/>
-                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                        <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="DecisionsListLink"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHideOnEmpty" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="CeN-sY-LeT" userLabel="Notes Row" customClass="NotesView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="303.5" width="600" height="50"/>
+                                                                <rect key="frame" x="0.0" y="309.5" width="600" height="50"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-TZ-uOf" customClass="RelatedLinksView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="353.5" width="600" height="65.5"/>
+                                                                <rect key="frame" x="0.0" y="359.5" width="600" height="65.5"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
@@ -264,13 +293,13 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTq-2q-gBR" customClass="VoiceActorLinkView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="419" width="600" height="100.5"/>
+                                                                <rect key="frame" x="0.0" y="425" width="600" height="100.5"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="310" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="0FR-o7-0CW" userLabel="FIller">
-                                                                <rect key="frame" x="0.0" y="519.5" width="600" height="50"/>
+                                                                <rect key="frame" x="0.0" y="525.5" width="600" height="50"/>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
@@ -323,8 +352,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
-                        <outlet property="appearanceLinkView" destination="piV-Sv-m4y" id="tNm-1v-jqr"/>
-                        <outlet property="decisionsListLinkView" destination="ie2-VD-KcT" id="ZXs-SW-vJU"/>
+                        <outlet property="appearanceLinkView" destination="piV-Sv-m4y" id="EQD-Ca-bXQ"/>
+                        <outlet property="decisionsListLinkView" destination="ie2-VD-KcT" id="HsG-BC-Mas"/>
                         <outlet property="gameSegment" destination="iwQ-xh-tdL" id="O7V-Q3-v78"/>
                         <outlet property="genderSegment" destination="VAQ-zb-J9q" id="hyT-KI-F1z"/>
                         <outlet property="headerLinks" destination="ap3-MV-ssv" id="keS-99-Lwf"/>
@@ -336,10 +365,10 @@
                         <outlet property="photoImageView" destination="m7D-Ro-5UT" id="J2S-HM-eRC"/>
                         <outlet property="relatedLinksView" destination="lLa-TZ-uOf" id="QR5-aV-ouJ"/>
                         <outlet property="renegadeRow" destination="8X1-xD-Q9N" id="Ed7-hA-AlX"/>
-                        <outlet property="shepardClassView" destination="PPT-di-MOd" id="Jox-GS-ex9"/>
-                        <outlet property="shepardLoveInterestView" destination="qYJ-Fc-QTC" id="Pdl-2U-aki"/>
-                        <outlet property="shepardOriginView" destination="UuV-kF-VDj" id="H1r-jK-kam"/>
-                        <outlet property="shepardReputationView" destination="GVv-UQ-MzA" id="7al-6s-wDz"/>
+                        <outlet property="shepardClassRow" destination="PPT-di-MOd" id="PX3-J5-UJX"/>
+                        <outlet property="shepardLoveInterestRow" destination="qYJ-Fc-QTC" id="SOd-qw-O89"/>
+                        <outlet property="shepardOriginRow" destination="UuV-kF-VDj" id="ipW-dY-jVU"/>
+                        <outlet property="shepardReputationRow" destination="GVv-UQ-MzA" id="TUS-rJ-oGJ"/>
                         <outlet property="surnameLabel" destination="SqP-pb-4o7" id="j5N-8V-4Qn"/>
                         <outlet property="voiceActorLinkView" destination="wTq-2q-gBR" id="LZ5-fE-vvs"/>
                     </connections>

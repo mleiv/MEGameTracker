@@ -9,11 +9,13 @@
 import UIKit
 
 public struct OriginHintType: TextDataRowType {
+	public typealias RowType = TextDataRow
+	var view: RowType? { return row }
+    public var row: TextDataRow?
 
     public var identifier: String = "\(UUID().uuidString)"
     
     public var controller: OriginHintable?
-    public var view: TextDataRow?
     
     public var overrideOriginHint: String?
     public var overrideOriginPrefix: String?
@@ -39,16 +41,21 @@ public struct OriginHintType: TextDataRowType {
     public init() {}
     public init(controller: OriginHintable, view: TextDataRow?) {
         self.controller = controller
-        self.view = view
+        self.row = view
     }
+	
+	public mutating func setupView() {
+		setupView(type: RowType.self)
+	}
 
-    public func setup(dataRow: TextDataRow) {
-        if !dataRow.didSetup {
-            dataRow.nib?.backgroundColor = UIColor.red
-            dataRow.nib?.textView?.identifier = "Caption.DisabledColor"
-            dataRow.nib?.bottomPaddingConstraint?.constant = defaultPaddingBottom
-            dataRow.nib?.leadingPaddingConstraint?.constant = defaultPaddingSides
-            dataRow.nib?.trailingPaddingConstraint?.constant = defaultPaddingSides
+    public mutating func setup(view: UIView?) {
+		guard let view = view as? RowType else { return }
+        if !view.didSetup {
+//            view.backgroundColor = UIColor.red
+            view.textView?.identifier = "Caption.DisabledColor"
+            view.bottomPaddingConstraint?.constant = defaultPaddingBottom
+            view.leadingPaddingConstraint?.constant = defaultPaddingSides
+            view.trailingPaddingConstraint?.constant = defaultPaddingSides
         }
     }
 }

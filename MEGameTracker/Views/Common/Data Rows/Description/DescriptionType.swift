@@ -9,11 +9,13 @@
 import UIKit
 
 public struct DescriptionType: TextDataRowType {
+	public typealias RowType = TextDataRow
+	var view: RowType? { return row }
+    public var row: TextDataRow?
 
     public var identifier: String = "\(UUID().uuidString)"
     
     public var controller: Describable?
-    public var view: TextDataRow?
     
     public var text: String? {
         if UIWindow.isInterfaceBuilder {
@@ -35,15 +37,20 @@ public struct DescriptionType: TextDataRowType {
     public init() {}
     public init(controller: Describable, view: TextDataRow?) {
         self.controller = controller
-        self.view = view
+        self.row = view
     }
-    
-    public mutating func setup(dataRow: TextDataRow) {
+	
+	public mutating func setupView() {
+		setupView(type: RowType.self)
+	}
+	
+    public mutating func setup(view: UIView?) {
+		guard let view = view as? RowType else { return }
         if UIWindow.isInterfaceBuilder || !didSetup {
-            if dataRow.noPadding {
-                dataRow.setPadding(top: 2.0, right: 0, bottom: 2.0, left: 0)
+            if view.noPadding == true {
+                view.setPadding(top: 2.0, right: 0, bottom: 2.0, left: 0)
             } else {
-                dataRow.setPadding(top: defaultPaddingTop, right: paddingSides, bottom: defaultPaddingBottom, left: paddingSides)
+                view.setPadding(top: defaultPaddingTop, right: paddingSides, bottom: defaultPaddingBottom, left: paddingSides)
             }
         }
         didSetup = true

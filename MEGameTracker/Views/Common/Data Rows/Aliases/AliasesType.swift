@@ -9,11 +9,13 @@
 import UIKit
 
 public struct AliasesType: TextDataRowType {
+	public typealias RowType = TextDataRow
+	var view: RowType? { return row }
+    public var row: TextDataRow?
 
     public var identifier: String = "\(UUID().uuidString)"
     
     public var controller: Aliasable?
-    public var view: TextDataRow?
     
     public var text: String? {
         if UIWindow.isInterfaceBuilder {
@@ -33,13 +35,18 @@ public struct AliasesType: TextDataRowType {
     public init() {}
     public init(controller: Aliasable, view: TextDataRow?) {
         self.controller = controller
-        self.view = view
+        self.row = view
     }
+	
+	public mutating func setupView() {
+		setupView(type: RowType.self)
+	}
     
-    public func setup(dataRow: TextDataRow) {
-        if !dataRow.didSetup {
-            dataRow.nib?.textView?.identifier = "Caption.DisabledColor"
-            dataRow.nib?.topPaddingConstraint?.constant = defaultPaddingTop
+    public mutating func setup(view: UIView?) {
+		guard let view = view as? RowType else { return }
+        if view.didSetup != true {
+            view.textView?.identifier = "Caption.DisabledColor"
+            view.topPaddingConstraint?.constant = defaultPaddingTop
         }
     }
 }

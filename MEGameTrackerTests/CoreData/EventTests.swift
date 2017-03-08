@@ -139,6 +139,10 @@ final class EventTests: MEGameTrackerTests {
     /// Test Event dependent on others
     func testCombinedEvents() {
         initializeCurrentGame() // needed for saving event with game uuid
+        var noveria1 = create(Event.self, from: noveria1Json)
+        var noveria2 = create(Event.self, from: noveria2Json)
+        var noveriaCombined = create(Event.self, from: noveriaCombinedJson)
+        _ = create(Mission.self, from: noveriaCombinedMissionJson)
         
         let expectationMissionOnChange = expectation(description: "Mission on change triggered")
         Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
@@ -148,11 +152,7 @@ final class EventTests: MEGameTrackerTests {
                 expectationMissionOnChange.fulfill()
             }
         }
-        
-        var noveria1 = create(Event.self, from: noveria1Json)
-        var noveria2 = create(Event.self, from: noveria2Json)
-        var noveriaCombined = create(Event.self, from: noveriaCombinedJson)
-        _ = create(Mission.self, from: noveriaCombinedMissionJson)
+		
         XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
         noveria1?.change(isTriggered: true)
         noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")

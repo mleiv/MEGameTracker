@@ -20,11 +20,7 @@ final public class NotesView: SimpleArrayDataRow {
     public var notes: [Note] {
         return UIWindow.isInterfaceBuilder ? dummyNotes : (controller?.notes ?? [])
     }
-    public var controller: Notesable? {
-        didSet {
-            reloadData()
-        }
-    }
+    public var controller: Notesable? 
     var _borderBottom: Bool?
     var notesNib: NotesNib?
     
