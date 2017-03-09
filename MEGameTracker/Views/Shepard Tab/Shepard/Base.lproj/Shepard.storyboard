@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="756"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysT-3y-8gh">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="933.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="937"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="zfv-Dx-DqT" userLabel="Header">
                                                         <rect key="frame" x="15" y="15" width="570" height="308"/>
@@ -214,7 +214,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="700" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zxB-id-nwo">
-                                                        <rect key="frame" x="0.0" y="338" width="600" height="575.5"/>
+                                                        <rect key="frame" x="0.0" y="338" width="600" height="579"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="nUh-7j-aNP" userLabel="Level Row" customClass="SliderRowView" customModule="MEGameTracker" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
@@ -265,7 +265,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="ie2-VD-KcT" userLabel="Decisions List Link Row" customClass="ValueDataRow" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="259.5" width="600" height="50"/>
+                                                                <rect key="frame" x="0.0" y="259.5" width="600" height="53.5"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="NO"/>
@@ -278,14 +278,14 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="CeN-sY-LeT" userLabel="Notes Row" customClass="NotesView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="309.5" width="600" height="50"/>
+                                                                <rect key="frame" x="0.0" y="313" width="600" height="50"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-TZ-uOf" customClass="RelatedLinksView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="359.5" width="600" height="65.5"/>
+                                                                <rect key="frame" x="0.0" y="363" width="600" height="65.5"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
@@ -293,13 +293,13 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTq-2q-gBR" customClass="VoiceActorLinkView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="425" width="600" height="100.5"/>
+                                                                <rect key="frame" x="0.0" y="428.5" width="600" height="100.5"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="310" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="0FR-o7-0CW" userLabel="FIller">
-                                                                <rect key="frame" x="0.0" y="525.5" width="600" height="50"/>
+                                                                <rect key="frame" x="0.0" y="529" width="600" height="50"/>
                                                             </view>
                                                         </subviews>
                                                         <constraints>

@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 final public class ShepardLoveInterestRow: HairlineBorderView, ValueDataRowDisplayable {
     
 // MARK: Inspectable
@@ -34,28 +35,36 @@ final public class ShepardLoveInterestRow: HairlineBorderView, ValueDataRowDispl
     open var isSettingUp = false
 	
 	// Protocol: IBViewable
-	public var isLoadedNib = false
-	public var isLoadedAttachedNib = false
+	public var isAttachedNibWrapper = false
+	public var isAttachedNib = false
 	
 	public var onClick: ((UIButton)->Void)?
 	
-	/// Blocks IBViewable from overriding nib view
-	open override func prepareForInterfaceBuilder() {
-		if superview == nil {
-			isLoadedAttachedNib = true
-		}
-		super.prepareForInterfaceBuilder()
-	}
+// MARK: IBViewable
+	
+    override public func awakeFromNib() {
+        super.awakeFromNib()
+        _ = attachedNib()
+    }
+
+	override public func prepareForInterfaceBuilder() {
+        _ = attachedNib()
+        super.prepareForInterfaceBuilder()
+    }
+	
+// MARK: Hide when not initialized (as though if empty)
 	
     open override func layoutSubviews() {
-        if !UIWindow.isInterfaceBuilder && !isLoadedAttachedNib && isHideOnEmpty && !didSetup {
+        if !UIWindow.isInterfaceBuilder && !isAttachedNib && isHideOnEmpty && !didSetup {
             isHidden = true
         }
         super.layoutSubviews()
     }
 	
+// MARK: Customization Options 
+
     private func setDummyDataRowType() {
-        guard isInterfaceBuilder && !isLoadedAttachedNib else { return }
+        guard isInterfaceBuilder && !isAttachedNib else { return }
         var dataRowType = ShepardLoveInterestRowType()
         dataRowType.row = self
         dataRowType.setupView()

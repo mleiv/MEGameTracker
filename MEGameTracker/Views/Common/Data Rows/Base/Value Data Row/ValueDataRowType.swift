@@ -34,7 +34,7 @@ extension ValueDataRowType {
 	
     public mutating func setupView<T: ValueDataRowDisplayable>(type: T.Type) {
         guard let row = row as? T,
-			let view = row.attachedNib() as? T,
+			let view = row.attachedNib(),
 			!view.isSettingUp else { return }
         view.isSettingUp = true
         

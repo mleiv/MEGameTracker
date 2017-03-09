@@ -8,15 +8,15 @@
 import UIKit
 
 @IBDesignable
-open class ValueAltDataRow: HairlineBorderView, ValueDataRowDisplayable {
+final public class ValueAltDataRow: HairlineBorderView, ValueDataRowDisplayable {
 	
 // MARK: Inspectable
-	@IBInspectable open var typeName: String = "None" {
+	@IBInspectable public var typeName: String = "None" {
         didSet { setDummyDataRowType() }
     }
-	@IBInspectable open var hideHeadingOnCompactView: Bool = false
-    @IBInspectable open var showRowDivider: Bool = false
-   @IBInspectable open var isHideOnEmpty: Bool = true
+	@IBInspectable public var hideHeadingOnCompactView: Bool = false
+    @IBInspectable public var showRowDivider: Bool = false
+   @IBInspectable public var isHideOnEmpty: Bool = true
 	
 // MARK: Outlets
     @IBOutlet weak public var headingLabel: IBStyledLabel?
@@ -29,36 +29,40 @@ open class ValueAltDataRow: HairlineBorderView, ValueDataRowDisplayable {
     @IBAction public func buttonClicked(_ sender: UIButton) { onClick?(sender) }
 	
 // MARK: Properties
-    open var didSetup = false
-    open var isSettingUp = false
+    public var didSetup = false
+    public var isSettingUp = false
 	
 	// Protocol: IBViewable
-	public var isLoadedNib = false
-	public var isLoadedAttachedNib = false
+	public var isAttachedNibWrapper = false
+	public var isAttachedNib = false
 	
 	public var onClick: ((UIButton)->Void)?
 	
     var lastHorizontalSizeClass: UIUserInterfaceSizeClass?
 	
-// MARK: Do not change
+// MARK: IBViewable
 	
-	// attachedNib
+    override public func awakeFromNib() {
+        super.awakeFromNib()
+        _ = attachedNib()
+    }
+
+	override public func prepareForInterfaceBuilder() {
+        _ = attachedNib()
+        super.prepareForInterfaceBuilder()
+    }
 	
-	/// Blocks IBViewable from overriding nib view
-	open override func prepareForInterfaceBuilder() {
-		if superview == nil {
-			isLoadedAttachedNib = true
-		}
-		super.prepareForInterfaceBuilder()
-	}
+// MARK: Hide when not initialized (as though if empty)
 	
-    open override func layoutSubviews() {
-        if !UIWindow.isInterfaceBuilder && !isLoadedAttachedNib && isHideOnEmpty && !didSetup {
+    public override func layoutSubviews() {
+        if !UIWindow.isInterfaceBuilder && !isAttachedNib && isHideOnEmpty && !didSetup {
             isHidden = true
         }
         configureViewForSizeClass()
         super.layoutSubviews()
     }
+	
+// MARK: iPad-sensitive configuration
 
     internal func configureViewForSizeClass() {
         if lastHorizontalSizeClass != .regular && traitCollection.horizontalSizeClass == .regular {
@@ -78,8 +82,10 @@ open class ValueAltDataRow: HairlineBorderView, ValueDataRowDisplayable {
         headingLabel?.isHidden = hideHeadingOnCompactView
     }
 	
+// MARK: Customization Options
+
     private func setDummyDataRowType() {
-        guard isInterfaceBuilder && !isLoadedAttachedNib else { return }
+        guard isInterfaceBuilder && !isAttachedNib else { return }
         var dataRowType: ValueDataRowType?
         switch typeName {
             case "Class": dataRowType = ShepardClassRowType()

@@ -9,57 +9,59 @@
 import UIKit
 
 @IBDesignable
-open class TextDataRow: HairlineBorderView, IBViewable {
+final public class TextDataRow: HairlineBorderView, IBViewable {
     
 // MARK: Inspectable
-     @IBInspectable open var typeName: String = "None" {
+     @IBInspectable public var typeName: String = "None" {
         didSet { setDummyDataRowType() }
     }
 	
-    @IBInspectable open var noPadding: Bool = false {
+    @IBInspectable public var noPadding: Bool = false {
         didSet {
             setPadding(top: 0, right: 0, bottom: 0, left: 0)
         }
     }
     
-    @IBInspectable open var showRowDivider: Bool = false
-    @IBInspectable open var isHideOnEmpty: Bool = true
+    @IBInspectable public var showRowDivider: Bool = false
+    @IBInspectable public var isHideOnEmpty: Bool = true
 	
 // MARK: Outlets
-    @IBOutlet open weak var textView: MarkupTextView?
+    @IBOutlet public weak var textView: MarkupTextView?
     
-    @IBOutlet open weak var leadingPaddingConstraint: NSLayoutConstraint?
-    @IBOutlet open weak var trailingPaddingConstraint: NSLayoutConstraint?
-    @IBOutlet open weak var bottomPaddingConstraint: NSLayoutConstraint?
-    @IBOutlet open weak var topPaddingConstraint: NSLayoutConstraint?
+    @IBOutlet public weak var leadingPaddingConstraint: NSLayoutConstraint?
+    @IBOutlet public weak var trailingPaddingConstraint: NSLayoutConstraint?
+    @IBOutlet public weak var bottomPaddingConstraint: NSLayoutConstraint?
+    @IBOutlet public weak var topPaddingConstraint: NSLayoutConstraint?
     
-    @IBOutlet open weak var rowDivider: HairlineBorderView?
+    @IBOutlet public weak var rowDivider: HairlineBorderView?
     
 // MARK: Properties
     private weak var heightConstraint: NSLayoutConstraint?
     
-    open var didSetup = false
-    open var isSettingUp = false
+    public var didSetup = false
+    public var isSettingUp = false
     var isChangingTableHeader = false
 	
 	// Protocol: IBViewable
-	public var isLoadedNib = false
-	public var isLoadedAttachedNib = false
+	public var isAttachedNibWrapper = false
+	public var isAttachedNib = false
     
-// MARK: Do not change
+// MARK: IBViewable
 	
-	// attachedNib
+    override public func awakeFromNib() {
+        super.awakeFromNib()
+        _ = attachedNib()
+    }
 
-	/// Blocks IBViewable from overriding nib view
-	open override func prepareForInterfaceBuilder() {
-		if superview == nil {
-			isLoadedAttachedNib = true
-		}
-		super.prepareForInterfaceBuilder()
-	}
+	override public func prepareForInterfaceBuilder() {
+        _ = attachedNib()
+        super.prepareForInterfaceBuilder()
+    }
 	
-    open override func layoutSubviews() {
-        if !UIWindow.isInterfaceBuilder && !isLoadedAttachedNib && isHideOnEmpty && !didSetup {
+// MARK: Hide when not initialized (as though if empty)
+	
+    public override func layoutSubviews() {
+        if !UIWindow.isInterfaceBuilder && !isAttachedNib && isHideOnEmpty && !didSetup {
             isHidden = true
         }
         super.layoutSubviews()
@@ -76,7 +78,7 @@ open class TextDataRow: HairlineBorderView, IBViewable {
     /// reload table headers because they are finnicky.
     /// to utilize, wrap the text header in a useless extra wrapper view, so we can pop it out and into a new wrapper.
     func setupTableHeader(view: UIView?) {
-		guard isLoadedAttachedNib else { return }
+		guard isAttachedNib else { return }
         guard !isChangingTableHeader,
 			let wrapperNib = self.superview,
 			let superview = wrapperNib.superview,
@@ -100,8 +102,10 @@ open class TextDataRow: HairlineBorderView, IBViewable {
         isChangingTableHeader = false
     }
     
+// MARK: Customization Options
+
     func setDummyDataRowType() {
-        guard isInterfaceBuilder && !isLoadedAttachedNib else { return }
+        guard isInterfaceBuilder && !isAttachedNib else { return }
         var dataRowType: TextDataRowType?
         switch typeName {
             case "Aliases": dataRowType = AliasesType()
