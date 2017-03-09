@@ -211,16 +211,16 @@ extension Event {
                 }
             }
         }
+        if isNotify {
+            let copySelf = self
+            DispatchQueue.global(qos: .background).sync { // blocking - signals firing at same time == problems
+                copySelf.notifyDataOwnersOfChange()
+            }
+        }
         if generalData.isAlert && isTriggered && generalData.dependentOn?.isTriggered != false { // nil or true
             let alert = Alert(title: nil, description: generalData.description ?? "")
             DispatchQueue.global(qos: .userInitiated).async {
                 Alert.onSignal.fire(alert)
-            }
-        }
-        if isNotify {
-            let copySelf = self
-            DispatchQueue.global(qos: .background).async {
-                copySelf.notifyDataOwnersOfChange()
             }
         }
     }
