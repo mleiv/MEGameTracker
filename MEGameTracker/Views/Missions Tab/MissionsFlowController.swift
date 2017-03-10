@@ -11,4 +11,3 @@ import UIKit
 final class MissionsFlowController: IBIncludedThing {
 
 }
-

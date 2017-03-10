@@ -9,5 +9,5 @@
 import UIKit
 
 public protocol CalloutCellType {
-    var estimatedWidth: CGFloat { get }
+	var estimatedWidth: CGFloat { get }
 }

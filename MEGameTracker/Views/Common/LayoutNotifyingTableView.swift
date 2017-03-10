@@ -10,21 +10,21 @@ import UIKit
 
 public class LayoutNotifyingTableView: UITableView {
 
-    public var onLayout: (() -> Void) = {}
-    public var heightConstraint: NSLayoutConstraint?
-    
-    override public func layoutSubviews() {
-        super.layoutSubviews()
-        if heightConstraint == nil {
-            heightConstraint = heightAnchor.constraint(equalToConstant: 0)
-        }
-        onLayout()
-    }
+	public var onLayout: (() -> Void) = {}
+	public var heightConstraint: NSLayoutConstraint?
 
-    /// You have to wire this up yourself if you want to use it.
-    /// Example: layoutTable.onLayout = layoutTable.constrainTableHeight
-    public func constrainTableHeight() {
-        heightConstraint?.constant = contentSize.height
-        heightConstraint?.isActive = true
-    }
+	override public func layoutSubviews() {
+		super.layoutSubviews()
+		if heightConstraint == nil {
+			heightConstraint = heightAnchor.constraint(equalToConstant: 0)
+		}
+		onLayout()
+	}
+
+	/// You have to wire this up yourself if you want to use it.
+	/// Example: layoutTable.onLayout = layoutTable.constrainTableHeight
+	public func constrainTableHeight() {
+		heightConstraint?.constant = contentSize.height
+		heightConstraint?.isActive = true
+	}
 }

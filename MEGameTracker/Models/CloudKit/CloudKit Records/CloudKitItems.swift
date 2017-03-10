@@ -10,10 +10,10 @@ import Foundation
 import CloudKit
 
 extension Item: CloudDataStorable {
-    
-    /// (CloudDataStorable) Set any additional fields, specific to the object in question, for a cloud kit object.
-    public func setAdditionalCloudFields(record: CKRecord) {
-        record.setValue(isAcquired as NSNumber, forKey: "isAcquired")
-    }
-    
+
+	/// (CloudDataStorable) Set any additional fields, specific to the object in question, for a cloud kit object.
+	public func setAdditionalCloudFields(record: CKRecord) {
+		record.setValue(isAcquired as NSNumber, forKey: "isAcquired")
+	}
+
 }

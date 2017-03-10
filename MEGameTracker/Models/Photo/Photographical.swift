@@ -11,6 +11,6 @@ import Foundation
 /// Describes common properties and methods for managing photos. 
 /// Allows for default values and custom uploads.
 public protocol Photographical {
-    var photoFileNameIdentifier: String { get }
-    var photo: Photo? { get }
+	var photoFileNameIdentifier: String { get }
+	var photo: Photo? { get }
 }

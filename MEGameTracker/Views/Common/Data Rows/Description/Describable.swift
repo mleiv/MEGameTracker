@@ -10,6 +10,5 @@ import Foundation
 
 public protocol Describable: class {
 
-    var descriptionMessage: String? { get }
+	var descriptionMessage: String? { get }
 }
-

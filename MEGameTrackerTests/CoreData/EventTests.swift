@@ -11,158 +11,162 @@ import XCTest
 
 final class EventTests: MEGameTrackerTests {
 
-    let noveria1Json = "{\"id\": \"Noveria Landlines Repaired\",\"gameVersion\": \"1\",\"description\": \"[megametracker:\\/\\/mission?id=M1.Noveria.5Landlines]\"}"
+	// swiftlint:disable line_length
 
-    let noveria2Json = "{\"id\": \"Noveria Reactor Repaired\",\"gameVersion\": \"1\",\"description\": \"[megametracker:\\/\\/mission?id=M1.Noveria.6Reactor]\"}"
+	let noveria1Json = "{\"id\": \"Noveria Landlines Repaired\",\"gameVersion\": \"1\",\"description\": \"[megametracker:\\/\\/mission?id=M1.Noveria.5Landlines]\"}"
 
-    let noveriaCombinedJson = "{\"id\": \"Noveria Peak 15 Repaired\",\"gameVersion\": \"1\",\"description\": \"[megametracker:\\/\\/mission?id=M1.Noveria.5Landlines] and [megametracker:\\/\\/mission?id=M1.Noveria.6Reactor]\",\"dependentOn\": {\"countTo\": 2,\"events\": [\"Noveria Landlines Repaired\",\"Noveria Reactor Repaired\"]}}"
-    
-    let noveriaCombinedMissionJson = "{\"id\": \"M1.Noveria.7Contamination\",\"gameVersion\": \"1\",\"sortIndex\": 12,\"missionType\": \"Mission\",\"name\": \"Noveria: Contamination\",\"events\": [{\"type\": \"BlockedUntil\",\"id\": \"Noveria Peak 15 Repaired\"}]}"
+	let noveria2Json = "{\"id\": \"Noveria Reactor Repaired\",\"gameVersion\": \"1\",\"description\": \"[megametracker:\\/\\/mission?id=M1.Noveria.6Reactor]\"}"
 
-    let prologueMissionJson = "{\"id\": \"M1.Prologue\",\"sortIndex\": 1,\"gameVersion\": \"1\",\"missionType\": \"Mission\",\"name\": \"Prologue: On The Normandy\",\"aliases\": [\"Prologue: On The Normandy\", \"Prologue: Find The Beacon\"]}"
+	let noveriaCombinedJson = "{\"id\": \"Noveria Peak 15 Repaired\",\"gameVersion\": \"1\",\"description\": \"[megametracker:\\/\\/mission?id=M1.Noveria.5Landlines] and [megametracker:\\/\\/mission?id=M1.Noveria.6Reactor]\",\"dependentOn\": {\"countTo\": 2,\"events\": [\"Noveria Landlines Repaired\",\"Noveria Reactor Repaired\"]}}"
 
-    let prologueEventJson = "{\"id\": \"Unlocked Eden Prime\",\"gameVersion\": \"1\",\"description\": \"[megametracker:\\/\\/mission?id=M1.Prologue.1]\",\"actions\": [{\"target\": {\"type\": \"Mission\",\"id\": \"M1.Prologue\"},\"changes\": {\"On\": {\"name\": \"Prologue: Find The Beacon\"},\"Off\": {\"name\": \"Prologue: On The Normandy\"}}}]}"
+	let noveriaCombinedMissionJson = "{\"id\": \"M1.Noveria.7Contamination\",\"gameVersion\": \"1\",\"sortIndex\": 12,\"missionType\": \"Mission\",\"name\": \"Noveria: Contamination\",\"events\": [{\"type\": \"BlockedUntil\",\"id\": \"Noveria Peak 15 Repaired\"}]}"
 
-    let wrexDecisionJson = "{\"id\": \"D1.WrexArmor\",\"gameVersion\": \"1\",\"name\": \"Retrieved Wrex\'s family armor\",\"description\": \"Wrex will trust Shepard if Shepard helps him retrieve his family\'s armor. The argument later on Virmire will end peacefully if this occurs.\",\"sortIndex\": 81}"
+	let prologueMissionJson = "{\"id\": \"M1.Prologue\",\"sortIndex\": 1,\"gameVersion\": \"1\",\"missionType\": \"Mission\",\"name\": \"Prologue: On The Normandy\",\"aliases\": [\"Prologue: On The Normandy\", \"Prologue: Find The Beacon\"]}"
 
-    let wrexEventJson = "{\"id\": \"Acquired Wrex\'s Family Armor\",\"gameVersion\": \"1\",\"description\": \"[megametracker:\\/\\/mission?id=A1.L.WrexFamilyArmor]\",\"actions\": [{\"target\": {\"type\": \"Decision\",\"id\": \"D1.WrexArmor\"},\"changes\": {\"On\": {\"isSelected\": true},\"Off\": {\"isSelected\": false}}}]}"
+	let prologueEventJson = "{\"id\": \"Unlocked Eden Prime\",\"gameVersion\": \"1\",\"description\": \"[megametracker:\\/\\/mission?id=M1.Prologue.1]\",\"actions\": [{\"target\": {\"type\": \"Mission\",\"id\": \"M1.Prologue\"},\"changes\": {\"On\": {\"name\": \"Prologue: Find The Beacon\"},\"Off\": {\"name\": \"Prologue: On The Normandy\"}}}]}"
 
-    let prologue2EventJson = "{\"id\": \"Completed: Prologue 1\", \"gameVersion\": \"2\",\"description\": \"[megametracker:\\/\\/mission?id=M2.Prologue1]\"}"
-    
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testEquality() {
-        let event1 = create(Event.self, from: noveria1Json)
-        let event2 = create(Event.self, from: noveria1Json)
-        XCTAssert(event1 == event2, "Equality not working")
-    }
+	let wrexDecisionJson = "{\"id\": \"D1.WrexArmor\",\"gameVersion\": \"1\",\"name\": \"Retrieved Wrex\'s family armor\",\"description\": \"Wrex will trust Shepard if Shepard helps him retrieve his family\'s armor. The argument later on Virmire will end peacefully if this occurs.\",\"sortIndex\": 81}"
 
-    /// Test Event get methods.
-    func testGetOne() {
-        _ = create(Event.self, from: noveria1Json)
-        let noveria1 = Event.get(id: "Noveria Landlines Repaired")
-        XCTAssert(noveria1?.id == "Noveria Landlines Repaired", "Failed to load by id")
-    }
-    
-    /// Test Event getAll methods.
-    func testGetAll() {
-        _ = create(Event.self, from: noveria1Json)
-        _ = create(Event.self, from: noveria2Json)
-        _ = create(Event.self, from: noveriaCombinedJson)
-        let events = Event.getAll()
-        XCTAssert(events.count == 3, "Failed to get all events")
-    }
-    
-    /// Test Event game version variations
-    func testGetByGameVersion() {
-        initializeCurrentGame() // needed for game version
-        _ = create(Event.self, from: noveria1Json)
-        _ = create(Event.self, from: noveria2Json)
-        _ = create(Event.self, from: prologue2EventJson)
-        let matches1 = Event.getAll(gameVersion: .game1)
-        XCTAssert(matches1.count == 2, "Failed to get all game 1 events")
-        let matches2 = Event.getAll(gameVersion: .game2)
-        XCTAssert(matches2.count == 1, "Failed to get all game 2 events")
-    }
-    
-    /// Test Event change action.
-    func testChange() {
-        initializeCurrentGame() // needed for saving event with game uuid
-        
-        var event = create(Event.self, from: noveria1Json)
-        XCTAssert(event?.isTriggered == false, "Reported incorrect initial event state")
-        event?.change(isTriggered: true, isSave: true)
-        let event2 = Event.get(id: "Noveria Landlines Repaired")
-        XCTAssert(event2?.isTriggered == true, "Reported incorrect triggered event state")
-        
-        // events don't fire on change for just the event
-    }
-    
-    /// Test Event change action which alters other objects.
-    func testChangeValues() {
-        initializeCurrentGame() // needed for saving event with game uuid
-        
-        // #1 Event changes mission title
-        
-        // - verify signal is fired
-        let expectationMissionOnChange = expectation(description: "Mission on change triggered")
-        Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
-            if changed.id == "M1.Prologue",
-                let mission = changed.object ?? Mission.get(id: changed.id),
-                mission.name == "Prologue: On The Normandy" {
-                expectationMissionOnChange.fulfill()
-            }
-        }
-        
-        var event1 = create(Event.self, from: prologueEventJson)
-        var mission = create(Mission.self, from: prologueMissionJson)
-        XCTAssert(mission?.name == "Prologue: On The Normandy", "Reported incorrect initial mission name")
-        event1?.change(isTriggered: true)
-        mission = Mission.get(id: "M1.Prologue")
-        XCTAssert(mission?.name == "Prologue: Find The Beacon", "Reported incorrect changed mission name")
-        event1?.change(isTriggered: false)
-        mission = Mission.get(id: "M1.Prologue")
-        XCTAssert(mission?.name == "Prologue: On The Normandy", "Reported incorrect changed back mission name")
-        
-        // - wait for signal
-        waitForExpectations(timeout: 0.1) { _ in }
-        Mission.onChange.cancelSubscription(for: self)
-        
-        // #2 Event changes decision selection
-        
-        // - verify signal is fired
-        let expectationDecisionOnChange = expectation(description: "Decision on change triggered")
-        Decision.onChange.subscribe(on: self) { (changed: (id: String, object: Decision?)) in
-            if changed.id == "D1.WrexArmor" {
-                expectationDecisionOnChange.fulfill()
-            }
-        }
-        
-        var event2 = create(Event.self, from: wrexEventJson)
-        var decision = create(Decision.self, from: wrexDecisionJson)
-        XCTAssert(decision?.isSelected == false, "Reported incorrect initial decision")
-        event2?.change(isTriggered: true)
-        decision = Decision.get(id: "D1.WrexArmor")
-        XCTAssert(decision?.isSelected == true, "Reported incorrect selected decision")
-        
-        // - wait for signal
-        waitForExpectations(timeout: 0.1) { _ in }
-        Decision.onChange.cancelSubscription(for: self)
-    }
-    
-    /// Test Event dependent on others
-    func testCombinedEvents() {
-        initializeCurrentGame() // needed for saving event with game uuid
-        var noveria1 = create(Event.self, from: noveria1Json)
-        var noveria2 = create(Event.self, from: noveria2Json)
-        var noveriaCombined = create(Event.self, from: noveriaCombinedJson)
-        _ = create(Mission.self, from: noveriaCombinedMissionJson)
-        
-        let expectationMissionOnChange = expectation(description: "Mission on change triggered")
-        Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
-            if changed.id == "M1.Noveria.7Contamination",
-                let mission = changed.object ?? Mission.get(id: changed.id),
-                mission.isAvailable {
-                expectationMissionOnChange.fulfill()
-            }
-        }
-		
-        XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
-        noveria1?.change(isTriggered: true)
-        noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
-        XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
-        noveria2?.change(isTriggered: true)
-        noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
-        XCTAssert(noveriaCombined?.isTriggered == true, "Reported incorrect triggered event state")
-        
-        waitForExpectations(timeout: 0.1) { _ in }
-        Mission.onChange.cancelSubscription(for: self)
-    }
-    
+	let wrexEventJson = "{\"id\": \"Acquired Wrex\'s Family Armor\",\"gameVersion\": \"1\",\"description\": \"[megametracker:\\/\\/mission?id=A1.L.WrexFamilyArmor]\",\"actions\": [{\"target\": {\"type\": \"Decision\",\"id\": \"D1.WrexArmor\"},\"changes\": {\"On\": {\"isSelected\": true},\"Off\": {\"isSelected\": false}}}]}"
+
+	let prologue2EventJson = "{\"id\": \"Completed: Prologue 1\", \"gameVersion\": \"2\",\"description\": \"[megametracker:\\/\\/mission?id=M2.Prologue1]\"}"
+
+	// swiftlint:enable line_length
+
+	override func setUp() {
+		super.setUp()
+	}
+
+	override func tearDown() {
+		super.tearDown()
+	}
+
+	func testEquality() {
+		let event1 = create(Event.self, from: noveria1Json)
+		let event2 = create(Event.self, from: noveria1Json)
+		XCTAssert(event1 == event2, "Equality not working")
+	}
+
+	/// Test Event get methods.
+	func testGetOne() {
+		_ = create(Event.self, from: noveria1Json)
+		let noveria1 = Event.get(id: "Noveria Landlines Repaired")
+		XCTAssert(noveria1?.id == "Noveria Landlines Repaired", "Failed to load by id")
+	}
+
+	/// Test Event getAll methods.
+	func testGetAll() {
+		_ = create(Event.self, from: noveria1Json)
+		_ = create(Event.self, from: noveria2Json)
+		_ = create(Event.self, from: noveriaCombinedJson)
+		let events = Event.getAll()
+		XCTAssert(events.count == 3, "Failed to get all events")
+	}
+
+	/// Test Event game version variations
+	func testGetByGameVersion() {
+		initializeCurrentGame() // needed for game version
+		_ = create(Event.self, from: noveria1Json)
+		_ = create(Event.self, from: noveria2Json)
+		_ = create(Event.self, from: prologue2EventJson)
+		let matches1 = Event.getAll(gameVersion: .game1)
+		XCTAssert(matches1.count == 2, "Failed to get all game 1 events")
+		let matches2 = Event.getAll(gameVersion: .game2)
+		XCTAssert(matches2.count == 1, "Failed to get all game 2 events")
+	}
+
+	/// Test Event change action.
+	func testChange() {
+		initializeCurrentGame() // needed for saving event with game uuid
+
+		var event = create(Event.self, from: noveria1Json)
+		XCTAssert(event?.isTriggered == false, "Reported incorrect initial event state")
+		event?.change(isTriggered: true, isSave: true)
+		let event2 = Event.get(id: "Noveria Landlines Repaired")
+		XCTAssert(event2?.isTriggered == true, "Reported incorrect triggered event state")
+
+		// events don't fire on change for just the event
+	}
+
+	/// Test Event change action which alters other objects.
+	func testChangeValues() {
+		initializeCurrentGame() // needed for saving event with game uuid
+
+		// #1 Event changes mission title
+
+		// - verify signal is fired
+		let expectationMissionOnChange = expectation(description: "Mission on change triggered")
+		Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+			if changed.id == "M1.Prologue",
+				let mission = changed.object ?? Mission.get(id: changed.id),
+				mission.name == "Prologue: On The Normandy" {
+				expectationMissionOnChange.fulfill()
+			}
+		}
+
+		var event1 = create(Event.self, from: prologueEventJson)
+		var mission = create(Mission.self, from: prologueMissionJson)
+		XCTAssert(mission?.name == "Prologue: On The Normandy", "Reported incorrect initial mission name")
+		event1?.change(isTriggered: true)
+		mission = Mission.get(id: "M1.Prologue")
+		XCTAssert(mission?.name == "Prologue: Find The Beacon", "Reported incorrect changed mission name")
+		event1?.change(isTriggered: false)
+		mission = Mission.get(id: "M1.Prologue")
+		XCTAssert(mission?.name == "Prologue: On The Normandy", "Reported incorrect changed back mission name")
+
+		// - wait for signal
+		waitForExpectations(timeout: 0.1) { _ in }
+		Mission.onChange.cancelSubscription(for: self)
+
+		// #2 Event changes decision selection
+
+		// - verify signal is fired
+		let expectationDecisionOnChange = expectation(description: "Decision on change triggered")
+		Decision.onChange.subscribe(on: self) { (changed: (id: String, object: Decision?)) in
+			if changed.id == "D1.WrexArmor" {
+				expectationDecisionOnChange.fulfill()
+			}
+		}
+
+		var event2 = create(Event.self, from: wrexEventJson)
+		var decision = create(Decision.self, from: wrexDecisionJson)
+		XCTAssert(decision?.isSelected == false, "Reported incorrect initial decision")
+		event2?.change(isTriggered: true)
+		decision = Decision.get(id: "D1.WrexArmor")
+		XCTAssert(decision?.isSelected == true, "Reported incorrect selected decision")
+
+		// - wait for signal
+		waitForExpectations(timeout: 0.1) { _ in }
+		Decision.onChange.cancelSubscription(for: self)
+	}
+
+	/// Test Event dependent on others
+	func testCombinedEvents() {
+		initializeCurrentGame() // needed for saving event with game uuid
+		var noveria1 = create(Event.self, from: noveria1Json)
+		var noveria2 = create(Event.self, from: noveria2Json)
+		var noveriaCombined = create(Event.self, from: noveriaCombinedJson)
+		_ = create(Mission.self, from: noveriaCombinedMissionJson)
+
+		let expectationMissionOnChange = expectation(description: "Mission on change triggered")
+		Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+			if changed.id == "M1.Noveria.7Contamination",
+				let mission = changed.object ?? Mission.get(id: changed.id),
+				mission.isAvailable {
+				expectationMissionOnChange.fulfill()
+			}
+		}
+
+		XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
+		noveria1?.change(isTriggered: true)
+		noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
+		XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
+		noveria2?.change(isTriggered: true)
+		noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
+		XCTAssert(noveriaCombined?.isTriggered == true, "Reported incorrect triggered event state")
+
+		waitForExpectations(timeout: 0.1) { _ in }
+		Mission.onChange.cancelSubscription(for: self)
+	}
+
 }

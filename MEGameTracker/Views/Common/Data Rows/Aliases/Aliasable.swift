@@ -10,7 +10,6 @@ import Foundation
 
 public protocol Aliasable: class {
 
-    var aliases: [String] { get }
-    var currentName: String? { get }
+	var aliases: [String] { get }
+	var currentName: String? { get }
 }
-

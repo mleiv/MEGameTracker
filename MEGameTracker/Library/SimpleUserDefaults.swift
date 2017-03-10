@@ -29,93 +29,92 @@ import UIKit
 /// myLocalToken.set(changeToken)
 /// ````
 public struct SimpleUserDefaults<Type> {
-    let name: String
-    var value: Type?
-    var defaultValue: Type?
-    var hasCachedValue: Bool = false
-    
-    /// Creates a cacheable UserDefaults entry of generic type.
-    ///
-    /// - Parameter name: The key to use when storing to UserDefaults. Should be unique.
-    /// - Parameter defaultValue: A default for when there is no stored data, or stored data is nil.
-    public init(name: String, defaultValue: Type? = nil) {
-        self.name = name
-        self.defaultValue = defaultValue
-    }
-    
-    /// Clears any prior cached values. (Chainable)
-    ///
-    /// - Returns: this SimpleUserDefaults object
-    public mutating func invalidateCache() -> SimpleUserDefaults {
-        value = nil
-        hasCachedValue = false
-        return self
-    }
-    
-    /// Retrieves the current UserDefaults stored value.
-    ///
-    /// Returns:
-    /// 1. The cached value, if found.
-    /// 2. The stored UserDefaults value, if found.
-    /// 3. The default value, if found.
-    /// 4. nil.
-    public mutating func get() -> Type? {
-        if !hasCachedValue {
-            if Type.self == URL.self {
-                hasCachedValue = true
-                value = UserDefaults.standard.url(forKey: name) as? Type
-            } else if Type.self == Bool.self
-                || Type.self == Int.self
-                || Type.self == Decimal.self
-                || Type.self == Double.self
-                || Type.self == Float.self
-                || Type.self == CGFloat.self
-                || Type.self == String.self {
-                hasCachedValue = true
-                value = UserDefaults.standard.object(forKey: name) as? Type
-            } else {
-                // we don't always have to archive Array and Dictionary
-                // but this is easier
-                hasCachedValue = true
-                if let data = UserDefaults.standard.object(forKey: name) as? Data {
-                    value = (NSKeyedUnarchiver.unarchiveObject(with: data) as? Type)
-                }
-            }
-        }
-        return value ?? defaultValue
-    }
-    
-    /// Stores a new value to UserDefaults and caches it locally.
-    ///
-    /// - Parameter value: The new value to store.
-    public mutating func set(_ value: Type?) {
-        self.value = value
-        hasCachedValue = true
-        if Type.self == URL.self
-            || Type.self == Bool.self
-            || Type.self == Int.self
-            || Type.self == Decimal.self
-            || Type.self == Double.self
-            || Type.self == Float.self
-            || Type.self == CGFloat.self
-            || Type.self == String.self {
-            hasCachedValue = true
-            if let value = value {
-                UserDefaults.standard.set(value, forKey: name)
-            } else {
-                UserDefaults.standard.set(nil, forKey: name)
-            }
-        } else {
-            hasCachedValue = true
-            if let value = value {
-                UserDefaults.standard.set(
-                    NSKeyedArchiver.archivedData(withRootObject: value),
-                    forKey: name
-                )
-            } else {
-                UserDefaults.standard.set(nil, forKey: name)
-            }
-        }
-    }
-}
+	let name: String
+	var value: Type?
+	var defaultValue: Type?
+	var hasCachedValue: Bool = false
 
+	/// Creates a cacheable UserDefaults entry of generic type.
+	///
+	/// - Parameter name: The key to use when storing to UserDefaults. Should be unique.
+	/// - Parameter defaultValue: A default for when there is no stored data, or stored data is nil.
+	public init(name: String, defaultValue: Type? = nil) {
+		self.name = name
+		self.defaultValue = defaultValue
+	}
+
+	/// Clears any prior cached values. (Chainable)
+	///
+	/// - Returns: this SimpleUserDefaults object
+	public mutating func invalidateCache() -> SimpleUserDefaults {
+		value = nil
+		hasCachedValue = false
+		return self
+	}
+
+	/// Retrieves the current UserDefaults stored value.
+	///
+	/// Returns:
+	/// 1. The cached value, if found.
+	/// 2. The stored UserDefaults value, if found.
+	/// 3. The default value, if found.
+	/// 4. nil.
+	public mutating func get() -> Type? {
+		if !hasCachedValue {
+			if Type.self == URL.self {
+				hasCachedValue = true
+				value = UserDefaults.standard.url(forKey: name) as? Type
+			} else if Type.self == Bool.self
+				|| Type.self == Int.self
+				|| Type.self == Decimal.self
+				|| Type.self == Double.self
+				|| Type.self == Float.self
+				|| Type.self == CGFloat.self
+				|| Type.self == String.self {
+				hasCachedValue = true
+				value = UserDefaults.standard.object(forKey: name) as? Type
+			} else {
+				// we don't always have to archive Array and Dictionary
+				// but this is easier
+				hasCachedValue = true
+				if let data = UserDefaults.standard.object(forKey: name) as? Data {
+					value = (NSKeyedUnarchiver.unarchiveObject(with: data) as? Type)
+				}
+			}
+		}
+		return value ?? defaultValue
+	}
+
+	/// Stores a new value to UserDefaults and caches it locally.
+	///
+	/// - Parameter value: The new value to store.
+	public mutating func set(_ value: Type?) {
+		self.value = value
+		hasCachedValue = true
+		if Type.self == URL.self
+			|| Type.self == Bool.self
+			|| Type.self == Int.self
+			|| Type.self == Decimal.self
+			|| Type.self == Double.self
+			|| Type.self == Float.self
+			|| Type.self == CGFloat.self
+			|| Type.self == String.self {
+			hasCachedValue = true
+			if let value = value {
+				UserDefaults.standard.set(value, forKey: name)
+			} else {
+				UserDefaults.standard.set(nil, forKey: name)
+			}
+		} else {
+			hasCachedValue = true
+			if let value = value {
+				UserDefaults.standard.set(
+					NSKeyedArchiver.archivedData(withRootObject: value),
+					forKey: name
+				)
+			} else {
+				UserDefaults.standard.set(nil, forKey: name)
+			}
+		}
+	}
+}

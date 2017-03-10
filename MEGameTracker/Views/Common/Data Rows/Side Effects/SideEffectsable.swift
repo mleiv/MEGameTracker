@@ -10,7 +10,6 @@ import Foundation
 
 public protocol SideEffectsable: class {
 
-    var sideEffects: [String]? { get set }
-    // handles onChange, select internally
+	var sideEffects: [String]? { get set }
+	// handles onChange, select internally
 }
-

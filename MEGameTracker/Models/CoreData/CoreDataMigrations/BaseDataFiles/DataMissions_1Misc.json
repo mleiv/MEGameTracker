@@ -370,8 +370,6 @@
 		"isShowInParentMap": true
 
 
-
-
 	}, {
 		"id": "DLC1.PS.CombatMissions",
 		"sortIndex": 98,
@@ -804,19 +802,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 	}, {
 		"x-comment-x": "-----------------------Collections-------------------------",
 		"id": "A1.C1.ScanTheKeepers",
@@ -995,9 +980,6 @@
 		}]
 
 
-
-
-
 	}, {
 		"x-comment-x": "-----------------------LOYALTY QUESTS-------------------------",
 		"id": "A1.L.FindDrSaleon",
@@ -1133,7 +1115,7 @@
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Wrex:_Family_Armor"
 		],
-        "relatedDecisionIds": ["D1.WrexArmor"],
+		"relatedDecisionIds": ["D1.WrexArmor"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Unlocked Galaxy Map"
@@ -1172,11 +1154,6 @@
 			"y": 1694,
 			"radius": 1
 		}
-
-
-
-
-
 
 
 
@@ -1240,7 +1217,7 @@
 		"description": "Talking to [megametracker://person?id=P1.Pressly] has a morality dialogue opportunity.",
 		"inMapId": "G.N1.1",
 		"conversationRewards": [{
-			"***TODO***": "   find out if exclusive set?      ",
+			"x-comment-y": "TODO: find out if exclusive set?",
 			"id": "A1.T.AliensOnNormandy.P1",
 			"type": "Paragon",
 			"value": 2,

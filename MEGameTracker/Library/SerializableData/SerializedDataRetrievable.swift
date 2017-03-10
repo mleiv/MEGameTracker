@@ -10,47 +10,42 @@
 
 import Foundation
 
-
-//MARK: SerializedDataRetrievable Protocol
+// MARK: SerializedDataRetrievable Protocol
 // (can be extended to any type you want, just implement init?(data))
 
 public protocol SerializedDataRetrievable {
-    init?(data: SerializableData?) // implement this
-    init?(serializedString json: String) // implement in class (not required in struct)
-    init?(serializedData jsonData: Data) // implement in class (not required in struct)
-    
-    /// (Optional) A convenience method to change values of the local object based on serialized data.
-    mutating func setData(_ data: SerializableData)
+	init?(data: SerializableData?) // implement this
+	init?(serializedString json: String) // implement in class (not required in struct)
+	init?(serializedData jsonData: Data) // implement in class (not required in struct)
+
+	/// (Optional) A convenience method to change values of the local object based on serialized data.
+	mutating func setData(_ data: SerializableData)
 }
 
 // default protocol functions:
 
 extension SerializedDataRetrievable {
-    public init?(serializedString json: String) {
-        self.init(data: try? SerializableData(jsonString: json))
-    }
-    public init?(serializedData jsonData: Data) {
-        self.init(data: try? SerializableData(jsonData: jsonData))
-    }
-    /*
-    // COPY THIS TO ANY SerializedDataRetrievable CLASSES:
-    public required convenience init?(serializedString json: String) {
-        self.init(data: try? SerializableData(jsonString: json))
-    }
-    public required convenience init?(serializedData jsonData: NSData) {
-        self.init(data: try? SerializableData(jsonData: jsonData))
-    }
-    */
-    
-    /// Empty method for optional function.
-    public mutating func setData(_ data: SerializableData) {}
+	public init?(serializedString json: String) {
+		self.init(data: try? SerializableData(jsonString: json))
+	}
+	public init?(serializedData jsonData: Data) {
+		self.init(data: try? SerializableData(jsonData: jsonData))
+	}
+	/*
+	// COPY THIS TO ANY SerializedDataRetrievable CLASSES:
+	public required convenience init?(serializedString json: String) {
+		self.init(data: try? SerializableData(jsonString: json))
+	}
+	public required convenience init?(serializedData jsonData: NSData) {
+		self.init(data: try? SerializableData(jsonData: jsonData))
+	}
+	*/
+
+	/// Empty method for optional function.
+	public mutating func setData(_ data: SerializableData) {}
 }
 
 extension SerializedDataRetrievable where Self: SerializedDataStorable {
-    public var serializedString: String {
-        get { return getData().jsonString }
-    }
-    public var serializedData: Data? {
-        get { return getData().toData() as Data? }
-    }
+	public var serializedString: String { return getData().jsonString }
+	public var serializedData: Data? { return getData().toData() as Data? }
 }

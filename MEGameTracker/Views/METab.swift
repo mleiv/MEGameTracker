@@ -7,5 +7,5 @@
 //
 
 public enum MEMainTab: Int {
-    case shepard = 0, group, missions, maps
+	case shepard = 0, group, missions, maps
 }

@@ -10,7 +10,6 @@ import Foundation
 
 public protocol ConversationRewardsable: class {
 
-    var mission: Mission? { get set }
-    var originHint: String? { get }
+	var mission: Mission? { get set }
+	var originHint: String? { get }
 }
-

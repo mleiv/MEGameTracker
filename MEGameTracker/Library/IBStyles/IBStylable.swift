@@ -12,17 +12,17 @@ import UIKit
 /// Protocol for stylable UIKit elements. 
 /// See IBStyledThings for examples.
 public protocol IBStylable: class {
-    var styler: IBStyler? { get }
-    var identifier: String? { get }
-    func layoutIfNeeded()
-    func setNeedsLayout()
-    var defaultIdentifier: String { get } // optional
-    func applyStyles() // optional
-    func changeContentSizeCategory() // optional
+	var styler: IBStyler? { get }
+	var identifier: String? { get }
+	func layoutIfNeeded()
+	func setNeedsLayout()
+	var defaultIdentifier: String { get } // optional
+	func applyStyles() // optional
+	func changeContentSizeCategory() // optional
 }
 
 extension IBStylable {
-    public var defaultIdentifier: String { return "" }
-    public func applyStyles() {}
-    public func changeContentSizeCategory() {}
+	public var defaultIdentifier: String { return "" }
+	public func applyStyles() {}
+	public func changeContentSizeCategory() {}
 }

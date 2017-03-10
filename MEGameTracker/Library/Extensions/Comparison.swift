@@ -8,42 +8,37 @@
 
 import Foundation
 
-
-public func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+public func < <T: Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
-    return l < r
+	return l < r
   case (nil, _?):
-    return true
+	return true
   default:
-    return false
+	return false
   }
 }
-
-public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+public func > <T: Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
-    return l > r
+	return l > r
   default:
-    return rhs < lhs
+	return rhs < lhs
   }
 }
-
-public func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+public func >= <T: Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
-    return l >= r
+	return l >= r
   default:
-    return !(lhs < rhs)
+	return !(lhs < rhs)
   }
 }
-
-public func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+public func <= <T: Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
-    return l <= r
+	return l <= r
   default:
-    return !(lhs > rhs)
+	return !(lhs > rhs)
   }
 }
-

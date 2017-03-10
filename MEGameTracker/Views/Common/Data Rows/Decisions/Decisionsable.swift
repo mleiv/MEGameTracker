@@ -10,8 +10,7 @@ import Foundation
 
 public protocol Decisionsable: class {
 
-    var decisions: [Decision] { get set }
-    var originHint: String? { get }
-    // handles onChange, select internally
+	var decisions: [Decision] { get set }
+	var originHint: String? { get }
+	// handles onChange, select internally
 }
-

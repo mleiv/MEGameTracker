@@ -10,7 +10,6 @@ import Foundation
 
 public protocol RelatedLinksable: class {
 
-    var relatedLinks: [String] { get set }
-    // handles onChange, select internally
+	var relatedLinks: [String] { get set }
+	// handles onChange, select internally
 }
-

@@ -11,31 +11,30 @@
 import UIKit
 
 final public class UIHeaderTab: UIView {
-    
-    @IBOutlet weak var unselectedWrapper: UIView?
-    @IBOutlet weak var selectedWrapper: UIView?
-    @IBOutlet weak var button: UIButton?
-    @IBOutlet weak var label1: UILabel?
-    @IBOutlet weak var label2: UILabel?
-    @IBOutlet weak var selectedUnderline: UIView?
-    
-    var selected: Bool = false
-    var index: Int = 0
-    var onClick: ((Int) -> Void)?
-    
-    @IBAction func onClick(_ sender: UIButton) {
-        onClick?(index)
-    }
-    
-    public func setup(title: String, selected: Bool = false, index: Int = 0, onClick: ((Int) -> Void)? = nil) {
-        self.index = index
-        label1?.text = title
-        label2?.text = title
-        self.selected = selected
-        unselectedWrapper?.isHidden = selected
-        selectedWrapper?.isHidden = !selected
-        self.onClick = onClick
-        layoutIfNeeded()
-    }
+
+	@IBOutlet weak var unselectedWrapper: UIView?
+	@IBOutlet weak var selectedWrapper: UIView?
+	@IBOutlet weak var button: UIButton?
+	@IBOutlet weak var label1: UILabel?
+	@IBOutlet weak var label2: UILabel?
+	@IBOutlet weak var selectedUnderline: UIView?
+
+	var selected: Bool = false
+	var index: Int = 0
+	var onClick: ((Int) -> Void)?
+
+	@IBAction func onClick(_ sender: UIButton) {
+		onClick?(index)
+	}
+
+	public func setup(title: String, selected: Bool = false, index: Int = 0, onClick: ((Int) -> Void)? = nil) {
+		self.index = index
+		label1?.text = title
+		label2?.text = title
+		self.selected = selected
+		unselectedWrapper?.isHidden = selected
+		selectedWrapper?.isHidden = !selected
+		self.onClick = onClick
+		layoutIfNeeded()
+	}
 }
- 

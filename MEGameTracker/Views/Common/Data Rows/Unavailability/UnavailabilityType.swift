@@ -11,45 +11,43 @@ import UIKit
 public struct UnavailabilityRowType: TextDataRowType {
 	public typealias RowType = TextDataRow
 	var view: RowType? { return row }
-    public var row: TextDataRow?
+	public var row: TextDataRow?
 
-    public var identifier: String = "\(UUID().uuidString)"
-    
-    public var controller: Unavailable?
-    
-    public var text: String? {
-        return UIWindow.isInterfaceBuilder ? "Unavailable after Mission X" : controller?.unavailabilityMessage
-    }
+	public var identifier: String = "\(UUID().uuidString)"
 
-    let defaultPaddingTop: CGFloat = 0.0
-    let defaultPaddingSides: CGFloat = 15.0
-    var didSetup = false
-    
-    var viewController: UIViewController? { return controller as? UIViewController }
+	public var controller: Unavailable?
 
-    public init() {}
-    public init(controller: Unavailable, view: TextDataRow?) {
-        self.controller = controller
-        self.row = view
-    }
-	
+	public var text: String? {
+		return UIWindow.isInterfaceBuilder ? "Unavailable after Mission X" : controller?.unavailabilityMessage
+	}
+
+	let defaultPaddingTop: CGFloat = 0.0
+	let defaultPaddingSides: CGFloat = 15.0
+	var didSetup = false
+
+	var viewController: UIViewController? { return controller as? UIViewController }
+
+	public init() {}
+	public init(controller: Unavailable, view: TextDataRow?) {
+		self.controller = controller
+		self.row = view
+	}
+
 	public mutating func setupView() {
 		setupView(type: RowType.self)
 	}
-    
-    public mutating func setup(view: UIView?) {
+
+	public mutating func setup(view: UIView?) {
 		guard let view = view as? RowType else { return }
-        if UIWindow.isInterfaceBuilder || !didSetup {
-            didSetup = true
-            view.backgroundColor = UIColor.darkGray
-            view.textView?.identifier = "Caption.DisabledOppositeColor.MediumItalic"
-            view.textView?.linkTextAttributes = [
-                NSForegroundColorAttributeName: Styles.Colors.linkOnBlackColor
-            ]
-            view.textView?.textAlignment = .center
-        }
-        view.textView?.text = text
-    }
+		if UIWindow.isInterfaceBuilder || !didSetup {
+			didSetup = true
+			view.backgroundColor = UIColor.darkGray
+			view.textView?.identifier = "Caption.DisabledOppositeColor.MediumItalic"
+			view.textView?.linkTextAttributes = [
+				NSForegroundColorAttributeName: Styles.Colors.linkOnBlackColor
+			]
+			view.textView?.textAlignment = .center
+		}
+		view.textView?.text = text
+	}
 }
-
-

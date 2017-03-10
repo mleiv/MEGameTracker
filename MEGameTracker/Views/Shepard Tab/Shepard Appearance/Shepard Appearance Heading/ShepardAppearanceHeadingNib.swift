@@ -9,16 +9,18 @@
 import UIKit
 
 class ShepardAppearanceHeadingNib: UIView {
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    class func loadNib(title: String?) -> ShepardAppearanceHeadingNib? {
-        let bundle = Bundle(for: ShepardAppearanceHeadingNib.self)
-        if let view = bundle.loadNibNamed("ShepardAppearanceHeadingNib", owner: self, options: nil)?.first as? ShepardAppearanceHeadingNib {
-            view.titleLabel.text = title
-            return view
-        }
-        return nil
-    }
+
+	@IBOutlet weak var titleLabel: UILabel!
+
+	class func loadNib(title: String?) -> ShepardAppearanceHeadingNib? {
+		let bundle = Bundle(for: ShepardAppearanceHeadingNib.self)
+		if let view = bundle.loadNibNamed("ShepardAppearanceHeadingNib",
+			owner: self,
+			options: nil
+		)?.first as? ShepardAppearanceHeadingNib {
+			view.titleLabel.text = title
+			return view
+		}
+		return nil
+	}
 }
- 

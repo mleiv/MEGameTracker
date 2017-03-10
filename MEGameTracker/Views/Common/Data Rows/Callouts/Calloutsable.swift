@@ -10,12 +10,12 @@ import UIKit
 
 public protocol Calloutsable: class {
 
-    var inMap: Map? { get }
-    var callouts: [MapLocationable] { get set }
-    var viewController: UIViewController? { get }
-    var navigationPushController: UINavigationController? { get }
-//    var originHint: String? { get }
-    
-    // handles onChange, select internally
-}
+	var inMap: Map? { get }
+	var callouts: [MapLocationable] { get set }
+	var viewController: UIViewController? { get }
+	var navigationPushController: UINavigationController? { get }
 
+//	var originHint: String? { get }
+
+	// handles onChange, select internally
+}

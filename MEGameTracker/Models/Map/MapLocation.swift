@@ -10,19 +10,19 @@ import Foundation
 
 /// Not a real entity. This gathers up all common actions against MapLocationable objects.
 public struct MapLocation {
-    static let onChangeSelection = Signal<(MapLocationable)>()
+	static let onChangeSelection = Signal<(MapLocationable)>()
 
-    static func sort(_ a: MapLocationable, b: MapLocationable) -> Bool {
-        if a.mapLocationType != b.mapLocationType {
-            return a.mapLocationType.intValue < b.mapLocationType.intValue
-        } else if let aMission = a as? Mission, let bMission = b as? Mission {
-            return Mission.sort(aMission, b: bMission)
-        } else if let aMap = a as? Map, let bMap = b as? Map {
-            return Map.sort(aMap, b: bMap)
-        } else if let aItem = a as? Item, let bItem = b as? Item {
-            return Item.sort(aItem, b: bItem)
-        } else {
-            return false
-        }
-    }
+	static func sort(_ first: MapLocationable, _ second: MapLocationable) -> Bool {
+		if first.mapLocationType != second.mapLocationType {
+			return first.mapLocationType.intValue < second.mapLocationType.intValue
+		} else if let firstMission = first as? Mission, let secondMission = second as? Mission {
+			return Mission.sort(firstMission, secondMission)
+		} else if let firstMap = first as? Map, let secondMap = second as? Map {
+			return Map.sort(firstMap, secondMap)
+		} else if let firstItem = first as? Item, let secondItem = second as? Item {
+			return Item.sort(firstItem, secondItem)
+		} else {
+			return false
+		}
+	}
 }

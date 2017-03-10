@@ -9,12 +9,11 @@
 import Foundation
 
 public struct CoreDataMigrations {
-    
-    // post-load migrations
-    
-    public static var isRunning = false
-    public static var onStart = Signal<Void>()
-    public static var onPercentProgress = Signal<Int>()
-    public static var onFinish = Signal<Void>()
+
+	// post-load migrations
+
+	public static var isRunning = false
+	public static var onStart = Signal<Void>()
+	public static var onPercentProgress = Signal<Int>()
+	public static var onFinish = Signal<Void>()
 }
-    

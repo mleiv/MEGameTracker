@@ -10,21 +10,21 @@ import Foundation
 
 extension Shepard {
 
-    public enum AppearanceGroupType {
-    
-        case facialStructure, head, eyes, jaw, mouth, nose, hair, makeup
-        
-        var title: String {
-            switch self {
-            case .facialStructure: return "Facial Structure"
-            case .head: return "Head"
-            case .eyes: return "Eyes"
-            case .jaw: return "Jaw"
-            case .mouth: return "Mouth"
-            case .nose: return "Nose"
-            case .hair: return "Hair"
-            case .makeup: return "Makeup"
-            }
-        }
-    }
+	public enum AppearanceGroupType {
+
+		case facialStructure, head, eyes, jaw, mouth, nose, hair, makeup
+
+		var title: String {
+			switch self {
+			case .facialStructure: return "Facial Structure"
+			case .head: return "Head"
+			case .eyes: return "Eyes"
+			case .jaw: return "Jaw"
+			case .mouth: return "Mouth"
+			case .nose: return "Nose"
+			case .hair: return "Hair"
+			case .makeup: return "Makeup"
+			}
+		}
+	}
 }

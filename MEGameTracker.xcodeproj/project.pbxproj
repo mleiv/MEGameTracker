@@ -67,7 +67,6 @@
 		B049C6FE1BB77F5C007D8BB0 /* MapLocationable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B049C6FD1BB77F5C007D8BB0 /* MapLocationable.swift */; };
 		B049C7001BB782CF007D8BB0 /* MapLocationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B049C6FF1BB782CF007D8BB0 /* MapLocationPoint.swift */; };
 		B049C7041BB785B2007D8BB0 /* MapLocationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B049C7031BB785B2007D8BB0 /* MapLocationType.swift */; };
-		B04BF1651BA12C2E00072DA2 /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BF1521BA12C2E00072DA2 /* Delay.swift */; };
 		B04BF1661BA12C2E00072DA2 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BF1541BA12C2E00072DA2 /* Dictionary.swift */; };
 		B04BF1671BA12C2E00072DA2 /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BF1551BA12C2E00072DA2 /* NSBundle.swift */; };
 		B04BF1681BA12C2E00072DA2 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BF1561BA12C2E00072DA2 /* NSDate.swift */; };
@@ -170,6 +169,7 @@
 		B136B1241E6CA4B80017F738 /* Change20170305.swift in Sources */ = {isa = PBXBuildFile; fileRef = B136B1231E6CA4B80017F738 /* Change20170305.swift */; };
 		B137FC4A1BA4C970000D312E /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137FC481BA4C970000D312E /* BorderView.swift */; };
 		B137FC4B1BA4C970000D312E /* HairlineBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137FC491BA4C970000D312E /* HairlineBorderView.swift */; };
+		B13CC9501E720C8B00E5AD64 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC94F1E720C8B00E5AD64 /* Stylesheet.swift */; };
 		B1427AE51D1E1ED20038932B /* GameMapLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1427AE41D1E1ED20038932B /* GameMapLocations.swift */; };
 		B14313C21CEBE28C00B4B28B /* ConversationRewardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14313C11CEBE28C00B4B28B /* ConversationRewardsTests.swift */; };
 		B145FDC21E679AB500403A36 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = B145FDC01E679AB500403A36 /* Action.swift */; };
@@ -322,6 +322,7 @@
 		B1B11FE21E4E9D2F00D97CA1 /* CoreDataMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B11FE11E4E9D2F00D97CA1 /* CoreDataMigration.swift */; };
 		B1B11FE61E4E9E8B00D97CA1 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1B11FE31E4E9E8B00D97CA1 /* CoreData.xcdatamodeld */; };
 		B1B1C56C1CCCAAB100CB2996 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B1C56B1CCCAAB100CB2996 /* UIApplication.swift */; };
+		B1B43AD81E7272C200746CB0 /* CalloutBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B43AD71E7272C200746CB0 /* CalloutBalloon.swift */; };
 		B1B55C481E70317E0095A526 /* ValueAltDataRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1B55C401E70317E0095A526 /* ValueAltDataRow.xib */; };
 		B1B55C491E70317E0095A526 /* ValueDataRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1B55C421E70317E0095A526 /* ValueDataRow.xib */; };
 		B1B55C4A1E70317E0095A526 /* ValueAltDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B55C441E70317E0095A526 /* ValueAltDataRow.swift */; };
@@ -565,7 +566,6 @@
 		B049C6FD1BB77F5C007D8BB0 /* MapLocationable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocationable.swift; sourceTree = "<group>"; };
 		B049C6FF1BB782CF007D8BB0 /* MapLocationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocationPoint.swift; sourceTree = "<group>"; };
 		B049C7031BB785B2007D8BB0 /* MapLocationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocationType.swift; sourceTree = "<group>"; };
-		B04BF1521BA12C2E00072DA2 /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
 		B04BF1541BA12C2E00072DA2 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		B04BF1551BA12C2E00072DA2 /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
 		B04BF1561BA12C2E00072DA2 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
@@ -667,6 +667,7 @@
 		B136B1231E6CA4B80017F738 /* Change20170305.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Change20170305.swift; sourceTree = "<group>"; };
 		B137FC481BA4C970000D312E /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		B137FC491BA4C970000D312E /* HairlineBorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineBorderView.swift; sourceTree = "<group>"; };
+		B13CC94F1E720C8B00E5AD64 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		B1427AE41D1E1ED20038932B /* GameMapLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMapLocations.swift; sourceTree = "<group>"; };
 		B14313C11CEBE28C00B4B28B /* ConversationRewardsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRewardsTests.swift; sourceTree = "<group>"; };
 		B145FDC01E679AB500403A36 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -820,6 +821,7 @@
 		B1B11FE41E4E9E8B00D97CA1 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		B1B11FE51E4E9E8B00D97CA1 /* CoreData20170208.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData20170208.xcdatamodel; sourceTree = "<group>"; };
 		B1B1C56B1CCCAAB100CB2996 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		B1B43AD71E7272C200746CB0 /* CalloutBalloon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutBalloon.swift; sourceTree = "<group>"; };
 		B1B55C411E70317E0095A526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ValueAltDataRow.xib; sourceTree = "<group>"; };
 		B1B55C431E70317E0095A526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ValueDataRow.xib; sourceTree = "<group>"; };
 		B1B55C441E70317E0095A526 /* ValueAltDataRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueAltDataRow.swift; sourceTree = "<group>"; };
@@ -1132,6 +1134,7 @@
 		B02739B61BBF885F0096F6AC /* Map Annotation */ = {
 			isa = PBXGroup;
 			children = (
+				B1B43AD71E7272C200746CB0 /* CalloutBalloon.swift */,
 				B070853F1BE285E20055711D /* MapCalloutsBoxNib.xib */,
 				B02739BD1BBF885F0096F6AC /* MapCalloutsBoxNib.swift */,
 			);
@@ -1237,7 +1240,6 @@
 		B04BF1511BA12C2E00072DA2 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				B04BF1521BA12C2E00072DA2 /* Delay.swift */,
 				B04BF1531BA12C2E00072DA2 /* Extensions */,
 				B04BF15C1BA12C2E00072DA2 /* IBIncluded */,
 				B1F466D01DA0AE7200EBA563 /* IBStyles */,
@@ -2276,6 +2278,7 @@
 				B1F466D71DA0AE7200EBA563 /* IBStyledThings.swift */,
 				B1F466D81DA0AE7200EBA563 /* IBStyler.swift */,
 				B1F466D91DA0AE7200EBA563 /* IBStyles.swift */,
+				B13CC94F1E720C8B00E5AD64 /* Stylesheet.swift */,
 			);
 			path = IBStyles;
 			sourceTree = "<group>";
@@ -2330,6 +2333,7 @@
 				B028AF1E1BA12B1900C73373 /* Frameworks */,
 				B028AF1F1BA12B1900C73373 /* Resources */,
 				B13632831E30624900FC5F33 /* CopyFiles */,
+				B1F39AB71E71EB4F00B48E76 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2608,6 +2612,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B1F39AB71E71EB4F00B48E76 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B028AF1D1BA12B1900C73373 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -2624,13 +2644,13 @@
 				B0E6E3181C7E3AFD00C6DB0C /* MapSplitViewController.swift in Sources */,
 				B1B55C4A1E70317E0095A526 /* ValueAltDataRow.swift in Sources */,
 				B099985B1BAB490100ADAA5D /* LineCenteredTextImage.swift in Sources */,
+				B1B43AD81E7272C200746CB0 /* CalloutBalloon.swift in Sources */,
 				B1F466E01DA0AE7200EBA563 /* IBStyler.swift in Sources */,
 				B0F25DA61BC6E0EC007DB127 /* UIPDFView.swift in Sources */,
 				B12B82DB1D012F4F006C83AA /* EventDirection.swift in Sources */,
 				B1A882091CF29AD100603253 /* NotesView.swift in Sources */,
 				B1A6E8231C962B5F00EE6CB1 /* Decision.swift in Sources */,
 				B17DAF011CC87519009EBD90 /* CoreDataStructuralMigrations.swift in Sources */,
-				B04BF1651BA12C2E00072DA2 /* Delay.swift in Sources */,
 				B169BB9E1CF406CB006BC234 /* VoiceActorLinkRow.swift in Sources */,
 				B19684891CF8FC16005608A7 /* Describable.swift in Sources */,
 				B16F8D891E18CD120074F66B /* CloudKitNotes.swift in Sources */,
@@ -2721,6 +2741,7 @@
 				B1A882111CF29AD100603253 /* SideEffectRow.swift in Sources */,
 				B1D4D2611C8CC55A0000F150 /* PersonsGroupsController.swift in Sources */,
 				B1DE27981CFB84D10041D341 /* RadioOptionRowView.swift in Sources */,
+				B13CC9501E720C8B00E5AD64 /* Stylesheet.swift in Sources */,
 				B1E1A2881E23114E00029CBE /* DataRowStorable.swift in Sources */,
 				B01D8F1D1BA139500039E003 /* METab.swift in Sources */,
 				B16D72391D2B5F00002296DD /* RecentlyViewedImages.swift in Sources */,

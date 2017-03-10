@@ -9,17 +9,16 @@
 import UIKit
 
 @IBDesignable open class CalloutsNib: SimpleArrayDataRowNib {
-    
-    override open class func loadNib(heading: String? = nil, cellNibs: [String] = []) -> CalloutsNib? {
-        let bundle = Bundle(for: CalloutsNib.self)
-        if let view = bundle.loadNibNamed("CalloutsNib", owner: self, options: nil)?.first as? CalloutsNib {
-            let bundle =  Bundle(for: CalloutsNib.self)
-            for nib in cellNibs {
-                view.tableView?.register(UINib(nibName: nib, bundle: bundle), forCellReuseIdentifier: nib)
-            }
-            return view
-        }
-        return nil
-    }
+
+	override open class func loadNib(heading: String? = nil, cellNibs: [String] = []) -> CalloutsNib? {
+		let bundle = Bundle(for: CalloutsNib.self)
+		if let view = bundle.loadNibNamed("CalloutsNib", owner: self, options: nil)?.first as? CalloutsNib {
+			let bundle =  Bundle(for: CalloutsNib.self)
+			for nib in cellNibs {
+				view.tableView?.register(UINib(nibName: nib, bundle: bundle), forCellReuseIdentifier: nib)
+			}
+			return view
+		}
+		return nil
+	}
 }
- 

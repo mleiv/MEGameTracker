@@ -1,7 +1,6 @@
 {
 	"missions": [{
 
-
 		"x-comment-x": "-----------------------MISSIONS-------------------------",
 		"id": "M3.0.Earth",
 		"sortIndex": 1,
@@ -56,7 +55,6 @@
 			"type": "Triggers",
 			"id": "Completed: Priority: The Citadel I"
 		}]
-
 
 	}, {
 		"id": "M3.1.Palaven",
@@ -172,7 +170,6 @@
 			"If you save Mordin *and* you saved the [megametracker://person?id=E1.RachniQueen], a Control ending leads to the rachni taking over Tuchanka: [YouTube|https://www.youtube.com/watch?v=NplYcIptkiY])."
 		],
 		"relatedDecisionIds": ["D3.GenophageCure", "D3.Eve", "D3.Mordin"]
-
 
 	}, {
 		"id": "M3.2.Citadel2",
@@ -518,7 +515,6 @@
 		"description": "[megametracker://person?id=E3.Lawson] is holding his daughter [Oriana|megametracker://person?id=O2.Oriana] hostage. There are a few different options for how this plays out. You can Charm or Intimidate  Dr. Lawson into letting Oriana go, although Miranda will shoot him anyway if she is present, and you can also shoot him yourself. If you can't or don't persuade him, you can wound Oriana with a Renegade Interrupt to get her clear, and then either you or Miranda will shoot Dr. Lawson. If Miranda is not there and you do not take any of the other options, Oriana will die by stepping off the edge and dragging Dr. Lawson with her.",
 		"relatedDecisionIds": ["D3.Miranda"]
 
-
 	}, {
 		"id": "M3.3.CerberusHQ",
 		"sortIndex": 30,
@@ -723,7 +719,6 @@
 		"description": "You have to select one of the four endings. The outcome will vary somewhat based on your military effectiveness (a combination of War Assets and Galactic Readiness). Destroy and Refusal choices also destroy the Citadel, although whether anyone is still alive there is debateable.",
 		"relatedDecisionIds": ["D3.Control", "D3.Synthesis", "D3.Destroy", "D3.Refusal"],
 		"noteToSelf": "TODO: Add galactic readiness/war assets slider to per-game tracking data on Shepard page?"
-
 
 	}]
 }

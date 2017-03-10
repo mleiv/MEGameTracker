@@ -10,7 +10,6 @@ import Foundation
 
 public protocol RelatedMissionsable: class {
 
-    var relatedMissions: [Mission] { get set }
-    // handles onChange, select internally
+	var relatedMissions: [Mission] { get set }
+	// handles onChange, select internally
 }
-

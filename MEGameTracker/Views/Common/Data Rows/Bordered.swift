@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol Bordered {
-    var borderTop: Bool { get set }
-    var borderBottom: Bool { get set }
+	var borderTop: Bool { get set }
+	var borderBottom: Bool { get set }
 }

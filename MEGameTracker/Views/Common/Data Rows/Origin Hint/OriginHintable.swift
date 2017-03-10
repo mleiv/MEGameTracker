@@ -10,11 +10,10 @@ import Foundation
 
 public protocol OriginHintable: class {
 
-    var originHint: String? { get }
-    var originPrefix: String? { get }
+	var originHint: String? { get }
+	var originPrefix: String? { get }
 }
 
 extension OriginHintable {
-    public var originPrefix: String? { return nil }
+	public var originPrefix: String? { return nil }
 }
-

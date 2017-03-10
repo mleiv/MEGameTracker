@@ -10,9 +10,9 @@ import Foundation
 import CloudKit
 
 extension Decision: CloudDataStorable {
-    
-    /// (CloudDataStorable) Set any additional fields, specific to the object in question, for a cloud kit object.
-    public func setAdditionalCloudFields(record: CKRecord) {
-        record.setValue(isSelected as NSNumber, forKey: "isSelected")
-    }
+
+	/// (CloudDataStorable) Set any additional fields, specific to the object in question, for a cloud kit object.
+	public func setAdditionalCloudFields(record: CKRecord) {
+		record.setValue(isSelected as NSNumber, forKey: "isSelected")
+	}
 }

@@ -1,7 +1,6 @@
 {
 	"missions": [{
 
-
 		"x-comment1-x": "-----------------------Citadel-------------------------",
 
 		"id": "A3.AlienMediGel",
@@ -573,7 +572,6 @@
 		"inMapId": "G.OuC.Nim.Mes.Lesuss",
 		"isShowInParentMap": true
 
-
 	}, {
 		"x-comment-x": "-----------------------ARIA-------------------------",
 		"id": "A3.Aria1",
@@ -631,7 +629,6 @@
 			"type": "BlockedAfter",
 			"id": "Completed: Priority: Tuchanka"
 		}]
-
 
 	}, {
 		"x-comment-x": "-----------------------N7-------------------------",
@@ -825,7 +822,6 @@
 		"name": "Hacking Device 3",
 		"description": ""
 
-
 	}, {
 		"x-comment-x": "-----------------------Tuchanka-------------------------",
 		"id": "A3.TurianPlatoon",
@@ -895,7 +891,7 @@
 			"id": "Completed: Priority: Rannoch"
 		}, {
 			"type": "Triggers",
-            "id": "Completed: Rannoch: Geth Fighter Squadrons"
+			"id": "Completed: Rannoch: Geth Fighter Squadrons"
 		}]
 	}, {
 		"id": "A3.AdmiralKoris",
@@ -910,16 +906,16 @@
 		"reward": "12,500 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Rannoch:_Admiral_Koris"],
 		"relatedMissionIds": ["A3.TargetJammingTechnology"],
-        "relatedDecisionIds": ["D3.Koris"],
+		"relatedDecisionIds": ["D3.Koris"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Geth Dreadnought"
 		}, {
 			"type": "BlockedAfter",
 			"id": "Completed: Priority: Rannoch"
-        }, {
+		}, {
 			"type": "Triggers",
-            "id": "Completed: Rannoch: Admiral Koris"
+			"id": "Completed: Rannoch: Admiral Koris"
 		}]
 	}, {
 		"id": "A3.AdmiralKoris.1",
@@ -970,7 +966,6 @@
 		"name": "Save Koris' Crew (Optional)",
 		"description": "This is only a moral victory. Without Koris' leadership, some ships of the Civilian Fleet panic and try to flee, and are cut down by the geth."
 
-
 	}, {
 		"x-comment-x": "-----------------------Dekuuna-------------------------",
 		"id": "A3.ElcorExtraction",
@@ -989,8 +984,6 @@
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Rannoch"
 		}]
-
-
 
 
 	}, {
@@ -1037,7 +1030,7 @@
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Grissom_Academy:_Emergency_Evacuation"],
 		"relatedMissionIds": ["A3.BioticAmp"],
-        "relatedDecisionIds": ["D2.Jack", "D2.ArcherD", "D3.GrissomStudents"],
+		"relatedDecisionIds": ["D2.Jack", "D2.ArcherD", "D3.GrissomStudents"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -1136,7 +1129,7 @@
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Attican_Traverse:_Krogan_Team"],
 		"relatedMissionIds": ["A3.KroganDying"],
-        "relatedDecisionIds": ["D1.RachniQueen", "D2.Grunt", "D2.GruntLoyalty", "D3.RachniQueen"],
+		"relatedDecisionIds": ["D1.RachniQueen", "D2.Grunt", "D2.GruntLoyalty", "D3.RachniQueen"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh"
@@ -1176,7 +1169,7 @@
 		"missionType": "Objective",
 		"name": "Rachni Queen",
 		"description": "If you did not save the [megametracker://person?id=E1.RachniQueen], the rachni queen here is called the \"Breeder\". \n\nYou must choose whether to save the queen or not. Saving her will sacrifice Aralakh Company. If this is the Breeder, she will also betray you later, so that is not smart. If you save the queen and Grunt was loyal, he will still survive after all the rest of Aralakh Company dies."
-        
+		
 	}, {
 		"id": "A3.ExCerberusScientists",
 		"sortIndex": 1200,
@@ -1275,8 +1268,6 @@
 		"missionType": "Objective",
 		"name": "Destroy Monastery",
 		"description": "Rila finds the detonator, but refuses to leave with you. You must drag Falere away to the elevator. Banshees swarm the room and attack Rila, but she detonates the bomb before she dies. \n\nIf Samara is present, she will then attempt to shoot herself, to avoid having to kill Falere (who is now a threat, as an Ardat-Yakshi without a monastery). If you have the reputation, you can stop her. If Samara is not present, you decide whether to let Falere live."
-
-
 
 
 	}]

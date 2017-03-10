@@ -9,7 +9,7 @@
 import Foundation
 
 extension Bundle {
-    static var currentAppBundle: Bundle {
-        return Bundle(for: ShepardFlowController.self) 
-    }
+	static var currentAppBundle: Bundle {
+		return Bundle(for: ShepardFlowController.self)
+	}
 }

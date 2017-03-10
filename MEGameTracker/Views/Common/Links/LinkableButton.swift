@@ -9,5 +9,5 @@
 import UIKit
 
 public class LinkableButton: UIButton, Linkable {
-    public weak var linkOriginController: UIViewController?
+	public weak var linkOriginController: UIViewController?
 }

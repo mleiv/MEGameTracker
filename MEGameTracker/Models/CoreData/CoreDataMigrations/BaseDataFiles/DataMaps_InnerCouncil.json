@@ -1,955 +1,955 @@
 {
-    "maps": [{
-        "x-comment-x": "-----------------------Aethon Cluster-------------------------",
-        "id": "G.InC.Aethon",
-        "name": "Aethon Cluster",
+	"maps": [{
+		"x-comment-x": "-----------------------Aethon Cluster-------------------------",
+		"id": "G.InC.Aethon",
+		"name": "Aethon Cluster",
 		"inMapId": "G.Base",
-        "rerootBreadcrumbs": true,
-        "image": "Galaxy_Map/Inner_Council/Aethon_Cluster.pdf",
-        "referenceSize": "2083x2083",
-        "mapType": "Cluster",
-        "mapLocationPoint": {
-            "x": 1563,
-            "y": 3505,
-            "radius": 30
-        },
-        "annotationNote": "Aru, Esori, Nura, Satu Arrd",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Aethon_Cluster"
-        ],
-        "gameVersionData": {
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Aethon_Cluster3.pdf"
-            }
-        },
-        "events": [{
-            "type": "UnavailableInGame",
-            "id": "Game1"
-        }, {
-            "type": "UnavailableInGame",
-            "id": "Game2"
-        }]
-    },
-    {
-        "x-comment-x": "--------Aru-------",
-        "id": "G.InC.Aet.Aru",
-        "name": "Aru",
-        "image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Aru.pdf",
-        "referenceSize": "2083x2083",
-        "inMapId": "G.InC.Aethon",
-        "mapType": "System",
-        "mapLocationPoint": {
-            "x": 1194,
-            "y": 388,
-            "radius": 124
-        },
-        "annotationNote": "Jak Ser, Irune, Locil, Cherk Sab, Doldit",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Aru"
-        ],
-        "gameVersionData": {
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Aru3.pdf"
-            }
-        }
-    },
-    {
-        "id": "G.InC.Aet.Aru.JakSer",
-        "name": "Jak Ser",
-        "inMapId": "G.InC.Aet.Aru",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 803,
-            "y": 1043,
-            "radius": 36
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Jak_Ser"
-        ]
-    },
-    {
-        "id": "G.InC.Aet.Aru.Irune",
-        "name": "Irune",
-        "inMapId": "G.InC.Aet.Aru",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1042,
-            "y": 656,
-            "radius": 32
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Irune"
-        ],
-        "gameVersionData": {
-            "3": {
-                "mapLocationPoint": {
-                    "x": 1042,
-                    "y": 656,
-                    "radius": 100
-                }
-            }
-        }
-    },
-    {
-        "id": "G.InC.Aet.Aru.Locil",
-        "name": "Locil",
-        "inMapId": "G.InC.Aet.Aru",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1564,
-            "y": 1380,
-            "radius": 53
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Locil"
-        ]
-    },
-    {
-        "id": "G.InC.Aet.Aru.CherkSab",
-        "name": "Cherk Sab",
-        "inMapId": "G.InC.Aet.Aru",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 292,
-            "y": 1278,
-            "radius": 48
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Cherk_Sab"
-        ],
-        "gameVersionData": {
-            "3": {
-                "mapLocationPoint": {
-                    "x": 292,
-                    "y": 1278,
-                    "radius": 100
-                }
-            }
-        }
-    },
-    {
-        "id": "G.InC.Aet.Aru.Doldit",
-        "name": "Doldit",
-        "inMapId": "G.InC.Aet.Aru",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1039,
-            "y": 1960,
-            "radius": 60
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Doldit"
-        ]
-    },
-    {
-        "x-comment-x": "--------Esori-------",
-        "id": "G.InC.Aet.Esori",
-        "name": "Esori",
-        "image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Esori.pdf",
-        "referenceSize": "2083x2083",
-        "inMapId": "G.InC.Aethon",
-        "mapType": "System",
-        "mapLocationPoint": {
-            "x": 639,
-            "y": 732,
-            "radius": 123
-        },
-        "annotationNote": "Mola, Atos Irn, Yan Tao, Kailo, Solu Paolis",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Esori"
-        ],
-        "gameVersionData": {
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Esori3.pdf"
-            }
-        }
-    },
-    {
-        "id": "G.InC.Aet.Eso.Mola",
-        "name": "Mola",
-        "inMapId": "G.InC.Aet.Esori",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1182,
-            "y": 853,
-            "radius": 27
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Mola"
-        ]
-    },
-    {
-        "id": "G.InC.Aet.Eso.AtosIrn",
-        "name": "Atos Irn",
-        "inMapId": "G.InC.Aet.Esori",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 833,
-            "y": 1367,
-            "radius": 32
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Atos_Irn"
-        ]
-    },
-    {
-        "id": "G.InC.Aet.Eso.YanTao",
-        "name": "Yan Tao",
-        "inMapId": "G.InC.Aet.Esori",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 603,
-            "y": 633,
-            "radius": 36
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Yan_Tao"
-        ]
-    },
-    {
-        "id": "G.InC.Aet.Eso.Kailo",
-        "name": "Kailo",
-        "inMapId": "G.InC.Aet.Esori",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1791,
-            "y": 1049,
-            "radius": 35
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Kailo"
-        ]
-    },
-    {
-        "id": "G.InC.Aet.Eso.Solu",
-        "name": "Solu Paolis",
-        "inMapId": "G.InC.Aet.Esori",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1529,
-            "y": 265,
-            "radius": 48
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Solu_Paolis"
-        ],
-        "gameVersionData": {
-            "3": {
-                "mapLocationPoint": {
-                    "x": 1529,
-                    "y": 265,
-                    "radius": 100
-                }
-            }
-        }
-    },
-    {
-        "x-comment-x": "--------Nura-------",
-        "id": "G.InC.Aet.Nura",
-        "name": "Nura",
-        "image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Nura.pdf",
-        "referenceSize": "2083x2083",
-        "inMapId": "G.InC.Aethon",
-        "mapType": "System",
-        "mapLocationPoint": {
-            "x": 1856,
-            "y": 795,
-            "radius": 123
-        },
-        "annotationNote": "Lahu, Oma Ker, Welm Urun, Gorgun",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Nura"
-        ],
-        "gameVersionData": {
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Nura3.pdf"
-            }
-        }
-    },
-    {
-        "id": "G.InC.Aet.Nur.Lahu",
-        "name": "Lahu",
-        "inMapId": "G.InC.Aet.Nura",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 924,
-            "y": 1247,
-            "radius": 35
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Lahu"
-        ]
-    },
-    {
-        "id": "G.InC.Aet.Nur.OmaKer",
-        "name": "Oma Ker",
-        "inMapId": "G.InC.Aet.Nura",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 804,
-            "y": 737,
-            "radius": 27
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Oma_Ker"
-        ],
-        "gameVersionData": {
-            "3": {
-                "mapLocationPoint": {
-                    "x": 804,
-                    "y": 737,
-                    "radius": 100
-                }
-            }
-        }
-    },
-    {
-        "id": "G.InC.Aet.Nur.WelmUrun",
-        "name": "Welm Urun",
-        "inMapId": "G.InC.Aet.Nura",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1747,
-            "y": 1068,
-            "radius": 70
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Welm_Urun"
-        ]
-    },
-    {
-        "id": "G.InC.Aet.Nur.Gorgun",
-        "name": "Gorgun",
-        "inMapId": "G.InC.Aet.Nura",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 332,
-            "y": 456,
-            "radius": 48
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Gorgun"
-        ]
-    },
-    {
-        "x-comment-x": "--------Satu Arrd-------",
-        "id": "G.InC.Aet.Satu",
-        "name": "Satu Arrd",
-        "image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Satu_Arrd.pdf",
-        "referenceSize": "2083x2083",
-        "inMapId": "G.InC.Aethon",
-        "mapType": "System",
-        "mapLocationPoint": {
-            "x": 225,
-            "y": 1552,
-            "radius": 109
-        },
-        "annotationNote": "Poloh Tem, Rilar, Nalisin",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Satu_Arrd"
-        ],
-        "gameVersionData": {
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Satu_Arrd3.pdf"
-            }
-        }
-    },
-    {
-        "id": "G.InC.Aet.Sat.Poloh",
-        "name": "Poloh Tem",
-        "inMapId": "G.InC.Aet.Satu",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 900,
-            "y": 800,
-            "radius": 32
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Poloh_Tem"
-        ]
-    },
-    {
-        "id": "G.InC.Aet.Sat.Rilar",
-        "name": "Rilar",
-        "inMapId": "G.InC.Aet.Satu",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1424,
-            "y": 1295,
-            "radius": 36
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Rilar"
-        ]
-    },
-    {
-        "id": "G.InC.Aet.Sat.Nalisin",
-        "name": "Nalisin",
-        "inMapId": "G.InC.Aet.Satu",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 171,
-            "y": 1124,
-            "radius": 30
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Nalisin"
-        ],
-        "gameVersionData": {
-            "3": {
-                "mapLocationPoint": {
-                    "x": 171,
-                    "y": 1124,
-                    "radius": 100
-                }
-            }
-        }
-    },
-    {
-        "x-comment-x": "-----------------------Annos Basin-------------------------",
-        "id": "G.InC.Annos",
-        "name": "Annos Basin",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Inner_Council/Aethon_Cluster.pdf",
+		"referenceSize": "2083x2083",
+		"mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 1563,
+			"y": 3505,
+			"radius": 30
+		},
+		"annotationNote": "Aru, Esori, Nura, Satu Arrd",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aethon_Cluster"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Aethon_Cluster3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	},
+	{
+		"x-comment-x": "--------Aru-------",
+		"id": "G.InC.Aet.Aru",
+		"name": "Aru",
+		"image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Aru.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.InC.Aethon",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1194,
+			"y": 388,
+			"radius": 124
+		},
+		"annotationNote": "Jak Ser, Irune, Locil, Cherk Sab, Doldit",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aru"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Aru3.pdf"
+			}
+		}
+	},
+	{
+		"id": "G.InC.Aet.Aru.JakSer",
+		"name": "Jak Ser",
+		"inMapId": "G.InC.Aet.Aru",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 803,
+			"y": 1043,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Jak_Ser"
+		]
+	},
+	{
+		"id": "G.InC.Aet.Aru.Irune",
+		"name": "Irune",
+		"inMapId": "G.InC.Aet.Aru",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1042,
+			"y": 656,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Irune"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1042,
+					"y": 656,
+					"radius": 100
+				}
+			}
+		}
+	},
+	{
+		"id": "G.InC.Aet.Aru.Locil",
+		"name": "Locil",
+		"inMapId": "G.InC.Aet.Aru",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1564,
+			"y": 1380,
+			"radius": 53
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Locil"
+		]
+	},
+	{
+		"id": "G.InC.Aet.Aru.CherkSab",
+		"name": "Cherk Sab",
+		"inMapId": "G.InC.Aet.Aru",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 292,
+			"y": 1278,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Cherk_Sab"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 292,
+					"y": 1278,
+					"radius": 100
+				}
+			}
+		}
+	},
+	{
+		"id": "G.InC.Aet.Aru.Doldit",
+		"name": "Doldit",
+		"inMapId": "G.InC.Aet.Aru",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1039,
+			"y": 1960,
+			"radius": 60
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Doldit"
+		]
+	},
+	{
+		"x-comment-x": "--------Esori-------",
+		"id": "G.InC.Aet.Esori",
+		"name": "Esori",
+		"image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Esori.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.InC.Aethon",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 639,
+			"y": 732,
+			"radius": 123
+		},
+		"annotationNote": "Mola, Atos Irn, Yan Tao, Kailo, Solu Paolis",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Esori"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Esori3.pdf"
+			}
+		}
+	},
+	{
+		"id": "G.InC.Aet.Eso.Mola",
+		"name": "Mola",
+		"inMapId": "G.InC.Aet.Esori",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1182,
+			"y": 853,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Mola"
+		]
+	},
+	{
+		"id": "G.InC.Aet.Eso.AtosIrn",
+		"name": "Atos Irn",
+		"inMapId": "G.InC.Aet.Esori",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 833,
+			"y": 1367,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Atos_Irn"
+		]
+	},
+	{
+		"id": "G.InC.Aet.Eso.YanTao",
+		"name": "Yan Tao",
+		"inMapId": "G.InC.Aet.Esori",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 603,
+			"y": 633,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Yan_Tao"
+		]
+	},
+	{
+		"id": "G.InC.Aet.Eso.Kailo",
+		"name": "Kailo",
+		"inMapId": "G.InC.Aet.Esori",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1791,
+			"y": 1049,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kailo"
+		]
+	},
+	{
+		"id": "G.InC.Aet.Eso.Solu",
+		"name": "Solu Paolis",
+		"inMapId": "G.InC.Aet.Esori",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1529,
+			"y": 265,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Solu_Paolis"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1529,
+					"y": 265,
+					"radius": 100
+				}
+			}
+		}
+	},
+	{
+		"x-comment-x": "--------Nura-------",
+		"id": "G.InC.Aet.Nura",
+		"name": "Nura",
+		"image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Nura.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.InC.Aethon",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1856,
+			"y": 795,
+			"radius": 123
+		},
+		"annotationNote": "Lahu, Oma Ker, Welm Urun, Gorgun",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nura"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Nura3.pdf"
+			}
+		}
+	},
+	{
+		"id": "G.InC.Aet.Nur.Lahu",
+		"name": "Lahu",
+		"inMapId": "G.InC.Aet.Nura",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 924,
+			"y": 1247,
+			"radius": 35
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Lahu"
+		]
+	},
+	{
+		"id": "G.InC.Aet.Nur.OmaKer",
+		"name": "Oma Ker",
+		"inMapId": "G.InC.Aet.Nura",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 804,
+			"y": 737,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Oma_Ker"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 804,
+					"y": 737,
+					"radius": 100
+				}
+			}
+		}
+	},
+	{
+		"id": "G.InC.Aet.Nur.WelmUrun",
+		"name": "Welm Urun",
+		"inMapId": "G.InC.Aet.Nura",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1747,
+			"y": 1068,
+			"radius": 70
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Welm_Urun"
+		]
+	},
+	{
+		"id": "G.InC.Aet.Nur.Gorgun",
+		"name": "Gorgun",
+		"inMapId": "G.InC.Aet.Nura",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 332,
+			"y": 456,
+			"radius": 48
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gorgun"
+		]
+	},
+	{
+		"x-comment-x": "--------Satu Arrd-------",
+		"id": "G.InC.Aet.Satu",
+		"name": "Satu Arrd",
+		"image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Satu_Arrd.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.InC.Aethon",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 225,
+			"y": 1552,
+			"radius": 109
+		},
+		"annotationNote": "Poloh Tem, Rilar, Nalisin",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Satu_Arrd"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Aethon_Cluster/Satu_Arrd3.pdf"
+			}
+		}
+	},
+	{
+		"id": "G.InC.Aet.Sat.Poloh",
+		"name": "Poloh Tem",
+		"inMapId": "G.InC.Aet.Satu",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 900,
+			"y": 800,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Poloh_Tem"
+		]
+	},
+	{
+		"id": "G.InC.Aet.Sat.Rilar",
+		"name": "Rilar",
+		"inMapId": "G.InC.Aet.Satu",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1424,
+			"y": 1295,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Rilar"
+		]
+	},
+	{
+		"id": "G.InC.Aet.Sat.Nalisin",
+		"name": "Nalisin",
+		"inMapId": "G.InC.Aet.Satu",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 171,
+			"y": 1124,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nalisin"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 171,
+					"y": 1124,
+					"radius": 100
+				}
+			}
+		}
+	},
+	{
+		"x-comment-x": "-----------------------Annos Basin-------------------------",
+		"id": "G.InC.Annos",
+		"name": "Annos Basin",
 		"inMapId": "G.Base",
-        "rerootBreadcrumbs": true,
-        "image": "Galaxy_Map/Inner_Council/Annos_Basin.pdf",
-        "referenceSize": "2083x2083",
-        "mapType": "Cluster",
-        "mapLocationPoint": {
-            "x": 1817,
-            "y": 2731,
-            "radius": 30
-        },
-        "annotationNote": "Pranas",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Annos_Basin"
-        ],
-        "gameVersionData": {
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Annos_Basin3.pdf"
-            }
-        },
-        "events": [{
-            "type": "UnavailableInGame",
-            "id": "Game1"
-        }, {
-            "type": "UnavailableInGame",
-            "id": "Game2"
-        }]
-    },
-    {
-        "x-comment-x": "--------Pranas-------",
-        "id": "G.InC.Ann.Pranas",
-        "name": "Pranas",
-        "image": "Galaxy_Map/Inner_Council/Annos_Basin/Pranas.pdf",
-        "referenceSize": "2083x2083",
-        "inMapId": "G.InC.Annos",
-        "mapType": "System",
-        "mapLocationPoint": {
-            "x": 1041,
-            "y": 1041,
-            "radius": 119
-        },
-        "annotationNote": "Saradril, Sur'Kesh, Dragel, Halegeuse, Paeto",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Pranas"
-        ],
-        "gameVersionData": {
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Annos_Basin/Pranas3.pdf"
-            }
-        }
-    },
-    {
-        "id": "G.InC.Ann.Pra.Saradril",
-        "name": "Saradril",
-        "inMapId": "G.InC.Ann.Pranas",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1277,
-            "y": 1042,
-            "radius": 27
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Saradril"
-        ]
-    },
-    {
-        "id": "G.InC.Ann.Pra.SurKesh",
-        "name": "Sur'Kesh",
-        "inMapId": "G.InC.Ann.Pranas",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 831,
-            "y": 750,
-            "radius": 30
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Sur%27Kesh"
-        ]
-    },
-    {
-        "id": "G.InC.Ann.Pra.Ships",
-        "name": "Diplomatic Ships",
-        "inMapId": "G.InC.Ann.Pranas",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 688,
-            "y": 846,
-            "radius": 75
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Diplomatic_Ships"
-        ]
-    },
-    {
-        "id": "G.InC.Ann.Pra.Dragel",
-        "name": "Dragel",
-        "inMapId": "G.InC.Ann.Pranas",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1253,
-            "y": 625,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Dragel"
-        ]
-    },
-    {
-        "id": "G.InC.Ann.Pra.Halegeuse",
-        "name": "Halegeuse",
-        "inMapId": "G.InC.Ann.Pranas",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 554,
-            "y": 1371,
-            "radius": 70
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Halegeuse"
-        ]
-    },
-    {
-        "id": "G.InC.Ann.Pra.Paeto",
-        "name": "Paeto",
-        "inMapId": "G.InC.Ann.Pranas",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1780,
-            "y": 1041,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Paeto"
-        ]
-    },
-    {
-        "x-comment-x": "-----------------------Apien Crest-------------------------",
-        "id": "G.InC.Apien",
-        "name": "Apien Crest",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Inner_Council/Annos_Basin.pdf",
+		"referenceSize": "2083x2083",
+		"mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 1817,
+			"y": 2731,
+			"radius": 30
+		},
+		"annotationNote": "Pranas",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Annos_Basin"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Annos_Basin3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	},
+	{
+		"x-comment-x": "--------Pranas-------",
+		"id": "G.InC.Ann.Pranas",
+		"name": "Pranas",
+		"image": "Galaxy_Map/Inner_Council/Annos_Basin/Pranas.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.InC.Annos",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1041,
+			"y": 1041,
+			"radius": 119
+		},
+		"annotationNote": "Saradril, Sur'Kesh, Dragel, Halegeuse, Paeto",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pranas"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Annos_Basin/Pranas3.pdf"
+			}
+		}
+	},
+	{
+		"id": "G.InC.Ann.Pra.Saradril",
+		"name": "Saradril",
+		"inMapId": "G.InC.Ann.Pranas",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1277,
+			"y": 1042,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Saradril"
+		]
+	},
+	{
+		"id": "G.InC.Ann.Pra.SurKesh",
+		"name": "Sur'Kesh",
+		"inMapId": "G.InC.Ann.Pranas",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 831,
+			"y": 750,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sur%27Kesh"
+		]
+	},
+	{
+		"id": "G.InC.Ann.Pra.Ships",
+		"name": "Diplomatic Ships",
+		"inMapId": "G.InC.Ann.Pranas",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 688,
+			"y": 846,
+			"radius": 75
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Diplomatic_Ships"
+		]
+	},
+	{
+		"id": "G.InC.Ann.Pra.Dragel",
+		"name": "Dragel",
+		"inMapId": "G.InC.Ann.Pranas",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1253,
+			"y": 625,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Dragel"
+		]
+	},
+	{
+		"id": "G.InC.Ann.Pra.Halegeuse",
+		"name": "Halegeuse",
+		"inMapId": "G.InC.Ann.Pranas",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 554,
+			"y": 1371,
+			"radius": 70
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Halegeuse"
+		]
+	},
+	{
+		"id": "G.InC.Ann.Pra.Paeto",
+		"name": "Paeto",
+		"inMapId": "G.InC.Ann.Pranas",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1780,
+			"y": 1041,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Paeto"
+		]
+	},
+	{
+		"x-comment-x": "-----------------------Apien Crest-------------------------",
+		"id": "G.InC.Apien",
+		"name": "Apien Crest",
 		"inMapId": "G.Base",
-        "rerootBreadcrumbs": true,
-        "image": "Galaxy_Map/Inner_Council/Apien_Crest.pdf",
-        "referenceSize": "2083x2083",
-        "mapType": "Cluster",
-        "mapLocationPoint": {
-            "x": 1195,
-            "y": 3322,
-            "radius": 30
-        },
-        "annotationNote": "Castellus, Gemmae, Trebia",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Apien_Crest"
-        ],
-        "gameVersionData": {
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Apien_Crest3.pdf"
-            }
-        },
-        "events": [{
-            "type": "UnavailableInGame",
-            "id": "Game1"
-        }, {
-            "type": "UnavailableInGame",
-            "id": "Game2"
-        }]
-    },
-    {
-        "x-comment-x": "--------Castellus-------",
-        "id": "G.InC.Api.Castellus",
-        "name": "Castellus",
-        "image": "Galaxy_Map/Inner_Council/Apien_Crest/Castellus.pdf",
-        "referenceSize": "2083x2083",
-        "inMapId": "G.InC.Apien",
-        "mapType": "System",
-        "mapLocationPoint": {
-            "x": 469,
-            "y": 620,
-            "radius": 132
-        },
-        "annotationNote": "Carborix, Nios, Digeris, Fiax, Iritum",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Castellus"
-        ],
-        "gameVersionData": {
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Apien_Crest/Castellus3.pdf"
-            }
-        }
-    },
-    {
-        "id": "G.InC.Api.Cas.Carborix",
-        "name": "Carborix",
-        "inMapId": "G.InC.Api.Castellus",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 914,
-            "y": 845,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Carborix"
-        ]
-    },
-    {
-        "id": "G.InC.Api.Cas.Nios",
-        "name": "Nios",
-        "inMapId": "G.InC.Api.Castellus",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1368,
-            "y": 1167,
-            "radius": 27
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Nios"
-        ]
-    },
-    {
-        "id": "G.InC.Api.Cas.Digeris",
-        "name": "Digeris",
-        "inMapId": "G.InC.Api.Castellus",
-        "mapLocationPoint": {
-            "x": 957,
-            "y": 1502,
-            "radius": 32
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Digeris"
-        ],
-        "gameVersionData": {
-            "3": {
-                "mapLocationPoint": {
-                    "x": 957,
-                    "y": 1502,
-                    "radius": 100
-                }
-            }
-        }
-    },
-    {
-        "id": "G.InC.Api.Cas.Fiax",
-        "name": "Fiax",
-        "inMapId": "G.InC.Api.Castellus",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1628,
-            "y": 888,
-            "radius": 38
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Fiax"
-        ]
-    },
-    {
-        "id": "G.InC.Api.Cas.Iritum",
-        "name": "Iritum",
-        "inMapId": "G.InC.Api.Castellus",
-        "mapLocationPoint": {
-            "x": 414,
-            "y": 556,
-            "radius": 55
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Iritum"
-        ]
-    },
-    {
-        "x-comment-x": "--------Gemmae-------",
-        "id": "G.InC.Api.Gemmae",
-        "name": "Gemmae",
-        "image": "Galaxy_Map/Inner_Council/Apien_Crest/Gemmae.pdf",
-        "referenceSize": "2083x2083",
-        "inMapId": "G.InC.Apien",
-        "mapType": "System",
-        "mapLocationPoint": {
-            "x": 1636,
-            "y": 1405,
-            "radius": 107
-        },
-        "annotationNote": "Pheiros",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Gemmae"
-        ],
-        "gameVersionData": {
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Apien_Crest/Gemmae3.pdf"
-            }
-        }
-    },
-    {
-        "id": "G.InC.Api.Gem.Pheiros",
-        "name": "Pheiros",
-        "inMapId": "G.InC.Api.Gemmae",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1443,
-            "y": 262,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Pheiros"
-        ],
-        "gameVersionData": {
-            "3": {
-                "mapLocationPoint": {
-                    "x": 1443,
-                    "y": 262,
-                    "radius": 100
-                }
-            }
-        }
-    },
-    {
-        "x-comment-x": "--------Trebia-------",
-        "id": "G.InC.Api.Trebia",
-        "name": "Trebia",
-        "image": "Galaxy_Map/Inner_Council/Apien_Crest/Trebia.pdf",
-        "referenceSize": "2083x2083",
-        "inMapId": "G.InC.Apien",
-        "mapType": "System",
-        "mapLocationPoint": {
-            "x": 1338,
-            "y": 694,
-            "radius": 137
-        },
-        "annotationNote": "Aventen, Caelax, Palaven, Menae, Impera, Essenus, Datriux",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Trebia"
-        ],
-        "gameVersionData": {
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Apien_Crest/Trebia3.pdf"
-            }
-        }
-    },
-    {
-        "id": "G.InC.Api.Tre.Aventen",
-        "name": "Aventen",
-        "inMapId": "G.InC.Api.Trebia",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 866,
-            "y": 1111,
-            "radius": 30
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Aventen"
-        ]
-    },
-    {
-        "id": "G.InC.Api.Tre.Caelax",
-        "name": "Caelax",
-        "inMapId": "G.InC.Api.Trebia",
-        "mapLocationPoint": {
-            "x": 736,
-            "y": 978,
-            "radius": 28
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Caelax"
-        ]
-    },
-    {
-        "id": "G.InC.Api.Tre.Palaven",
-        "name": "Palaven",
-        "inMapId": "G.InC.Api.Trebia",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1423,
-            "y": 1229,
-            "radius": 34
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Palaven"
-        ]
-    },
-    {
-        "id": "G.InC.Api.Tre.Menae",
-        "name": "Menae",
-        "inMapId": "G.InC.Api.Trebia",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1408,
-            "y": 1299,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Menae"
-        ]
-    },
-    {
-        "id": "G.InC.Api.Tre.Impera",
-        "name": "Impera",
-        "inMapId": "G.InC.Api.Trebia",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 686,
-            "y": 628,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Impera"
-        ]
-    },
-    {
-        "id": "G.InC.Api.Tre.Essenus",
-        "name": "Essenus",
-        "inMapId": "G.InC.Api.Trebia",
-        "mapLocationPoint": {
-            "x": 958,
-            "y": 376,
-            "radius": 70
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Essenus"
-        ]
-    },
-    {
-        "id": "G.InC.Api.Tre.Datriux",
-        "name": "Datriux",
-        "inMapId": "G.InC.Api.Trebia",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1494,
-            "y": 1678,
-            "radius": 29
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Datriux"
-        ]
-    },
-    {
-        "x-comment-x": "-----------------------Krogan DMZ-------------------------",
-        "id": "G.InC.Krogan",
-        "name": "Krogan DMZ",
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Inner_Council/Apien_Crest.pdf",
+		"referenceSize": "2083x2083",
+		"mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 1195,
+			"y": 3322,
+			"radius": 30
+		},
+		"annotationNote": "Castellus, Gemmae, Trebia",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Apien_Crest"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Apien_Crest3.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game2"
+		}]
+	},
+	{
+		"x-comment-x": "--------Castellus-------",
+		"id": "G.InC.Api.Castellus",
+		"name": "Castellus",
+		"image": "Galaxy_Map/Inner_Council/Apien_Crest/Castellus.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.InC.Apien",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 469,
+			"y": 620,
+			"radius": 132
+		},
+		"annotationNote": "Carborix, Nios, Digeris, Fiax, Iritum",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Castellus"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Apien_Crest/Castellus3.pdf"
+			}
+		}
+	},
+	{
+		"id": "G.InC.Api.Cas.Carborix",
+		"name": "Carborix",
+		"inMapId": "G.InC.Api.Castellus",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 914,
+			"y": 845,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Carborix"
+		]
+	},
+	{
+		"id": "G.InC.Api.Cas.Nios",
+		"name": "Nios",
+		"inMapId": "G.InC.Api.Castellus",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1368,
+			"y": 1167,
+			"radius": 27
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nios"
+		]
+	},
+	{
+		"id": "G.InC.Api.Cas.Digeris",
+		"name": "Digeris",
+		"inMapId": "G.InC.Api.Castellus",
+		"mapLocationPoint": {
+			"x": 957,
+			"y": 1502,
+			"radius": 32
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Digeris"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 957,
+					"y": 1502,
+					"radius": 100
+				}
+			}
+		}
+	},
+	{
+		"id": "G.InC.Api.Cas.Fiax",
+		"name": "Fiax",
+		"inMapId": "G.InC.Api.Castellus",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1628,
+			"y": 888,
+			"radius": 38
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Fiax"
+		]
+	},
+	{
+		"id": "G.InC.Api.Cas.Iritum",
+		"name": "Iritum",
+		"inMapId": "G.InC.Api.Castellus",
+		"mapLocationPoint": {
+			"x": 414,
+			"y": 556,
+			"radius": 55
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Iritum"
+		]
+	},
+	{
+		"x-comment-x": "--------Gemmae-------",
+		"id": "G.InC.Api.Gemmae",
+		"name": "Gemmae",
+		"image": "Galaxy_Map/Inner_Council/Apien_Crest/Gemmae.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.InC.Apien",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1636,
+			"y": 1405,
+			"radius": 107
+		},
+		"annotationNote": "Pheiros",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Gemmae"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Apien_Crest/Gemmae3.pdf"
+			}
+		}
+	},
+	{
+		"id": "G.InC.Api.Gem.Pheiros",
+		"name": "Pheiros",
+		"inMapId": "G.InC.Api.Gemmae",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1443,
+			"y": 262,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Pheiros"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1443,
+					"y": 262,
+					"radius": 100
+				}
+			}
+		}
+	},
+	{
+		"x-comment-x": "--------Trebia-------",
+		"id": "G.InC.Api.Trebia",
+		"name": "Trebia",
+		"image": "Galaxy_Map/Inner_Council/Apien_Crest/Trebia.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.InC.Apien",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1338,
+			"y": 694,
+			"radius": 137
+		},
+		"annotationNote": "Aventen, Caelax, Palaven, Menae, Impera, Essenus, Datriux",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Trebia"
+		],
+		"gameVersionData": {
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Apien_Crest/Trebia3.pdf"
+			}
+		}
+	},
+	{
+		"id": "G.InC.Api.Tre.Aventen",
+		"name": "Aventen",
+		"inMapId": "G.InC.Api.Trebia",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 866,
+			"y": 1111,
+			"radius": 30
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aventen"
+		]
+	},
+	{
+		"id": "G.InC.Api.Tre.Caelax",
+		"name": "Caelax",
+		"inMapId": "G.InC.Api.Trebia",
+		"mapLocationPoint": {
+			"x": 736,
+			"y": 978,
+			"radius": 28
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Caelax"
+		]
+	},
+	{
+		"id": "G.InC.Api.Tre.Palaven",
+		"name": "Palaven",
+		"inMapId": "G.InC.Api.Trebia",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1423,
+			"y": 1229,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Palaven"
+		]
+	},
+	{
+		"id": "G.InC.Api.Tre.Menae",
+		"name": "Menae",
+		"inMapId": "G.InC.Api.Trebia",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1408,
+			"y": 1299,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Menae"
+		]
+	},
+	{
+		"id": "G.InC.Api.Tre.Impera",
+		"name": "Impera",
+		"inMapId": "G.InC.Api.Trebia",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 686,
+			"y": 628,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Impera"
+		]
+	},
+	{
+		"id": "G.InC.Api.Tre.Essenus",
+		"name": "Essenus",
+		"inMapId": "G.InC.Api.Trebia",
+		"mapLocationPoint": {
+			"x": 958,
+			"y": 376,
+			"radius": 70
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Essenus"
+		]
+	},
+	{
+		"id": "G.InC.Api.Tre.Datriux",
+		"name": "Datriux",
+		"inMapId": "G.InC.Api.Trebia",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1494,
+			"y": 1678,
+			"radius": 29
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Datriux"
+		]
+	},
+	{
+		"x-comment-x": "-----------------------Krogan DMZ-------------------------",
+		"id": "G.InC.Krogan",
+		"name": "Krogan DMZ",
 		"inMapId": "G.Base",
-        "rerootBreadcrumbs": true,
-        "image": "Galaxy_Map/Inner_Council/Krogan_DMZ.pdf",
-        "referenceSize": "2083x2083",
-        "mapType": "Cluster",
-        "mapLocationPoint": {
-            "x": 1263,
-            "y": 2807,
-            "radius": 30
-        },
-        "annotationNote": "Aralakh, Dranek, Nith",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Krogan_DMZ"
-        ],
-        "gameVersionData": {
-            "1": {
-                "image": "Galaxy_Map/Inner_Council/Krogan_DMZ1.pdf"
-            }
-        },
-        "events": [{
-            "type": "UnavailableInGame",
-            "id": "Game1"
-        }]
-    },
-    {
-        "x-comment-x": "--------Aralakh-------",
-        "id": "G.InC.Kro.Aralakh",
-        "name": "Aralakh",
-        "image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Aralakh.pdf",
-        "referenceSize": "2083x2083",
-        "inMapId": "G.InC.Krogan",
-        "mapType": "System",
-        "mapLocationPoint": {
-            "x": 1700,
-            "y": 1149,
-            "radius": 127
-        },
-        "annotationNote": "Durak, Kanin, Kruban, Tuchanka, Ruam, Vaul",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Aralakh"
-        ],
-        "gameVersionData": {
-            "1": {
-                "image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Aralakh1.pdf"
-            }
-        }
-    },
-    {
-        "id": "G.InC.Kro.Ara.Durak",
-        "name": "Durak",
-        "inMapId": "G.InC.Kro.Aralakh",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1090,
-            "y": 906,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Durak"
-        ]
-    },
-    {
-        "id": "G.InC.Kro.Ara.Kanin",
-        "name": "Kanin",
-        "inMapId": "G.InC.Kro.Aralakh",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 816,
-            "y": 874,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Kanin"
-        ]
-    },
-    {
-        "id": "G.InC.Kro.Ara.Kruban",
-        "name": "Kruban",
-        "inMapId": "G.InC.Kro.Aralakh",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1195,
-            "y": 1340,
-            "radius": 34
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Kruban"
-        ]
-    },
-    {
-        "id": "G.InC.Kro.Ara.Tuchanka",
-        "name": "Tuchanka",
-        "inMapId": "G.InC.Kro.Aralakh",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1523,
-            "y": 1046,
-            "radius": 36
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Tuchanka"
-        ],
+		"rerootBreadcrumbs": true,
+		"image": "Galaxy_Map/Inner_Council/Krogan_DMZ.pdf",
+		"referenceSize": "2083x2083",
+		"mapType": "Cluster",
+		"mapLocationPoint": {
+			"x": 1263,
+			"y": 2807,
+			"radius": 30
+		},
+		"annotationNote": "Aralakh, Dranek, Nith",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Krogan_DMZ"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Inner_Council/Krogan_DMZ1.pdf"
+			}
+		},
+		"events": [{
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}]
+	},
+	{
+		"x-comment-x": "--------Aralakh-------",
+		"id": "G.InC.Kro.Aralakh",
+		"name": "Aralakh",
+		"image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Aralakh.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.InC.Krogan",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1700,
+			"y": 1149,
+			"radius": 127
+		},
+		"annotationNote": "Durak, Kanin, Kruban, Tuchanka, Ruam, Vaul",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Aralakh"
+		],
+		"gameVersionData": {
+			"1": {
+				"image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Aralakh1.pdf"
+			}
+		}
+	},
+	{
+		"id": "G.InC.Kro.Ara.Durak",
+		"name": "Durak",
+		"inMapId": "G.InC.Kro.Aralakh",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1090,
+			"y": 906,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Durak"
+		]
+	},
+	{
+		"id": "G.InC.Kro.Ara.Kanin",
+		"name": "Kanin",
+		"inMapId": "G.InC.Kro.Aralakh",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 816,
+			"y": 874,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kanin"
+		]
+	},
+	{
+		"id": "G.InC.Kro.Ara.Kruban",
+		"name": "Kruban",
+		"inMapId": "G.InC.Kro.Aralakh",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1195,
+			"y": 1340,
+			"radius": 34
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kruban"
+		]
+	},
+	{
+		"id": "G.InC.Kro.Ara.Tuchanka",
+		"name": "Tuchanka",
+		"inMapId": "G.InC.Kro.Aralakh",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1523,
+			"y": 1046,
+			"radius": 36
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tuchanka"
+		],
 		"gameVersionData": {
 			"2": {
 				"image": "Detail_Maps/Game2/Tuchanka/Tuchanka.pdf",
-                "referenceSize": "2083x2083",
-                "isSplitMenu": true
+				"referenceSize": "2083x2083",
+				"isSplitMenu": true
 			},
 			"3": {
 			}
@@ -958,13 +958,13 @@
 		"id": "G.InC.Kro.Ara.Tuc.1Main",
 		"name": "Tuchanka: Main",
 		"inMapId": "G.InC.Kro.Ara.Tuchanka",
-        "rerootBreadcrumbs": true,
+		"rerootBreadcrumbs": true,
 		"isHidden": true,
-        "mapType":"Area",
+		"mapType":"Area",
 		"gameVersionData": {
 			"2": {
 				"image": "Detail_Maps/Game2/Tuchanka/Tuchanka_Main.pdf",
-                "referenceSize": "2083x2083",
+				"referenceSize": "2083x2083",
 				"mapLocationPoint": {
 					"x": 139,
 					"y": 427,
@@ -977,7 +977,7 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.1.Dock",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1Main",
-        "name": "To Normandy",
+		"name": "To Normandy",
 		"linkToMapId": "G.N2.1Cabin",
 		"isShowInList": false,
 		"mapLocationPoint": {
@@ -988,7 +988,7 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.1.Ratch",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1Main",
-        "name": "Ratch's Wares",
+		"name": "Ratch's Wares",
 		"mapLocationPoint": {
 			"x": 711,
 			"y": 859,
@@ -997,7 +997,7 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.1.Fortack",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1Main",
-        "name": "Med-Lab / Fortack's Database",
+		"name": "Med-Lab / Fortack's Database",
 		"mapLocationPoint": {
 			"x": 1143,
 			"y": 319,
@@ -1006,7 +1006,7 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.1.Throne",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1Main",
-        "name": "Throne",
+		"name": "Throne",
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 1295,
@@ -1016,7 +1016,7 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.1.Defense",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1Main",
-        "name": "Defense Gun Controls",
+		"name": "Defense Gun Controls",
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 693,
@@ -1026,7 +1026,7 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.1.Pit",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1Main",
-        "name": "Varren Fighting Pit",
+		"name": "Varren Fighting Pit",
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 1047,
@@ -1036,7 +1036,7 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.1.Mechanic",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1Main",
-        "name": "Mechanic",
+		"name": "Mechanic",
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 777,
@@ -1047,13 +1047,13 @@
 		"id": "G.InC.Kro.Ara.Tuc.2Weyrlock",
 		"name": "Tuchanka: Weyrlock Facility",
 		"inMapId": "G.InC.Kro.Ara.Tuchanka",
-        "rerootBreadcrumbs": true,
+		"rerootBreadcrumbs": true,
 		"isHidden": true,
-        "mapType":"Area",
+		"mapType":"Area",
 		"gameVersionData": {
 			"2": {
 				"image": "Detail_Maps/Game2/Tuchanka/Tuchanka_WeyrlocFacility.pdf",
-                "referenceSize": "2083x2083",
+				"referenceSize": "2083x2083",
 				"mapLocationPoint": {
 					"x": 139,
 					"y": 891,
@@ -1066,7 +1066,7 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.2.Start",
 		"inMapId": "G.InC.Kro.Ara.Tuc.2Weyrlock",
-        "name": "Start",
+		"name": "Start",
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 1815,
@@ -1076,7 +1076,7 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.2.WL",
 		"inMapId": "G.InC.Kro.Ara.Tuc.2Weyrlock",
-        "name": "Weapons Locker",
+		"name": "Weapons Locker",
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 1855,
@@ -1086,7 +1086,7 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.2.Approach",
 		"inMapId": "G.InC.Kro.Ara.Tuc.2Weyrlock",
-        "name": "Approach",
+		"name": "Approach",
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 907,
@@ -1096,7 +1096,7 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.2.Hospital",
 		"inMapId": "G.InC.Kro.Ara.Tuc.2Weyrlock",
-        "name": "Hospital",
+		"name": "Hospital",
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 907,
@@ -1107,13 +1107,13 @@
 		"id": "G.InC.Kro.Ara.Tuc.3Ruins",
 		"name": "Tuchanka: Urdnot Ruins",
 		"inMapId": "G.InC.Kro.Ara.Tuchanka",
-        "rerootBreadcrumbs": true,
+		"rerootBreadcrumbs": true,
 		"isHidden": true,
-        "mapType":"Area",
+		"mapType":"Area",
 		"gameVersionData": {
 			"2": {
 				"image": "Detail_Maps/Game2/Tuchanka/Tuchanka_UrdnotRuins.pdf",
-                "referenceSize": "2083x2083",
+				"referenceSize": "2083x2083",
 				"mapLocationPoint": {
 					"x": 139,
 					"y": 1355,
@@ -1126,200 +1126,200 @@
 	}, {
 		"id": "G.InC.Kro.Ara.Tuc.3.Keystone",
 		"inMapId": "G.InC.Kro.Ara.Tuc.3Ruins",
-        "name": "Start",
+		"name": "Start",
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 1139,
 			"y": 1047,
 			"radius": 20
 		}
-        
-        
-        
-        
-        
-        
-    }, {
-        "id": "G.InC.Kro.Ara.Ruam",
-        "name": "Ruam",
-        "inMapId": "G.InC.Kro.Aralakh",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1490,
-            "y": 551,
-            "radius": 37
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Ruam"
-        ]
-    }, {
-        "id": "G.InC.Kro.Ara.Vaul",
-        "name": "Vaul",
-        "inMapId": "G.InC.Kro.Aralakh",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 267,
-            "y": 1187,
-            "radius": 65
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Vaul"
-        ]
-    }, {
-        "x-comment-x": "--------Dranek-------",
-        "id": "G.InC.Kro.Dranek",
-        "name": "Dranek",
-        "image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Dranek1.pdf",
-        "referenceSize": "2083x2083",
-        "inMapId": "G.InC.Krogan",
-        "mapType": "System",
-        "mapLocationPoint": {
-            "x": 1416,
-            "y": 660,
-            "radius": 123
-        },
-        "annotationNote": "Kelim, Dor, Sazgoth, Rothla",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Dranek"
-        ],
-        "gameVersionData": {
-            "2": {
-                "image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Dranek2.pdf"
-            },
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Dranek3.pdf"
-            }
-        }
-    }, {
-        "id": "G.InC.Kro.Dra.Kelim",
-        "name": "Kelim",
-        "inMapId": "G.InC.Kro.Dranek",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 815,
-            "y": 935,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Kelim"
-        ]
-    }, {
-        "id": "G.InC.Kro.Dra.Dor",
-        "name": "Dor",
-        "inMapId": "G.InC.Kro.Dranek",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 618,
-            "y": 1148,
-            "radius": 54
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Dor"
-        ]
-    },
-    {
-        "id": "G.InC.Kro.Dra.Sazgoth",
-        "name": "Sazgoth",
-        "inMapId": "G.InC.Kro.Dranek",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1479,
-            "y": 537,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Sazgoth"
-        ]
-    },
-    {
-        "id": "G.InC.Kro.Dra.Rothla",
-        "name": "Rothla",
-        "inMapId": "G.InC.Kro.Dranek",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1893,
-            "y": 1246,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Rothla"
-        ],
-        "gameVersionData": {
-            "3": {
-                "mapLocationPoint": {
-                    "x": 1893,
-                    "y": 1246,
-                    "radius": 100
-                }
-            }
-        }
-    },
-    {
-        "x-comment-x": "--------Nith-------",
-        "id": "G.InC.Kro.Nith",
-        "name": "Nith",
-        "image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Nith1.pdf",
-        "referenceSize": "2083x2083",
-        "inMapId": "G.InC.Krogan",
-        "mapType": "System",
-        "mapLocationPoint": {
-            "x": 357,
-            "y": 1349,
-            "radius": 104
-        },
-        "annotationNote": "Mantun, Tula, Vard",
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Nith"
-        ],
-        "gameVersionData": {
-            "2": {
-                "image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Nith2.pdf"
-            },
-            "3": {
-                "image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Nith3.pdf"
-            }
-        }
-    },
-    {
-        "id": "G.InC.Kro.Nit.Mantun",
-        "name": "Mantun",
-        "inMapId": "G.InC.Kro.Nith",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1479,
-            "y": 1041,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Mantun"
-        ]
-    },
-    {
-        "id": "G.InC.Kro.Nit.Tula",
-        "name": "Tula",
-        "inMapId": "G.InC.Kro.Nith",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 1212,
-            "y": 399,
-            "radius": 25
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Tula"
-        ]
-    },
-    {
-        "id": "G.InC.Kro.Nit.Vard",
-        "name": "Vard",
-        "inMapId": "G.InC.Kro.Nith",
-        "mapType": "Planet",
-        "mapLocationPoint": {
-            "x": 165,
-            "y": 1042,
-            "radius": 44
-        },
-        "relatedLinks": [
-            "https://masseffect.wikia.com/wiki/Vard"
-        ]
-    }]
+
+		
+
+		
+
+		
+	}, {
+		"id": "G.InC.Kro.Ara.Ruam",
+		"name": "Ruam",
+		"inMapId": "G.InC.Kro.Aralakh",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1490,
+			"y": 551,
+			"radius": 37
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Ruam"
+		]
+	}, {
+		"id": "G.InC.Kro.Ara.Vaul",
+		"name": "Vaul",
+		"inMapId": "G.InC.Kro.Aralakh",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 267,
+			"y": 1187,
+			"radius": 65
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vaul"
+		]
+	}, {
+		"x-comment-x": "--------Dranek-------",
+		"id": "G.InC.Kro.Dranek",
+		"name": "Dranek",
+		"image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Dranek1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.InC.Krogan",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 1416,
+			"y": 660,
+			"radius": 123
+		},
+		"annotationNote": "Kelim, Dor, Sazgoth, Rothla",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Dranek"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Dranek2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Dranek3.pdf"
+			}
+		}
+	}, {
+		"id": "G.InC.Kro.Dra.Kelim",
+		"name": "Kelim",
+		"inMapId": "G.InC.Kro.Dranek",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 815,
+			"y": 935,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Kelim"
+		]
+	}, {
+		"id": "G.InC.Kro.Dra.Dor",
+		"name": "Dor",
+		"inMapId": "G.InC.Kro.Dranek",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 618,
+			"y": 1148,
+			"radius": 54
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Dor"
+		]
+	},
+	{
+		"id": "G.InC.Kro.Dra.Sazgoth",
+		"name": "Sazgoth",
+		"inMapId": "G.InC.Kro.Dranek",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1479,
+			"y": 537,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Sazgoth"
+		]
+	},
+	{
+		"id": "G.InC.Kro.Dra.Rothla",
+		"name": "Rothla",
+		"inMapId": "G.InC.Kro.Dranek",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1893,
+			"y": 1246,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Rothla"
+		],
+		"gameVersionData": {
+			"3": {
+				"mapLocationPoint": {
+					"x": 1893,
+					"y": 1246,
+					"radius": 100
+				}
+			}
+		}
+	},
+	{
+		"x-comment-x": "--------Nith-------",
+		"id": "G.InC.Kro.Nith",
+		"name": "Nith",
+		"image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Nith1.pdf",
+		"referenceSize": "2083x2083",
+		"inMapId": "G.InC.Krogan",
+		"mapType": "System",
+		"mapLocationPoint": {
+			"x": 357,
+			"y": 1349,
+			"radius": 104
+		},
+		"annotationNote": "Mantun, Tula, Vard",
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Nith"
+		],
+		"gameVersionData": {
+			"2": {
+				"image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Nith2.pdf"
+			},
+			"3": {
+				"image": "Galaxy_Map/Inner_Council/Krogan_DMZ/Nith3.pdf"
+			}
+		}
+	},
+	{
+		"id": "G.InC.Kro.Nit.Mantun",
+		"name": "Mantun",
+		"inMapId": "G.InC.Kro.Nith",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1479,
+			"y": 1041,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Mantun"
+		]
+	},
+	{
+		"id": "G.InC.Kro.Nit.Tula",
+		"name": "Tula",
+		"inMapId": "G.InC.Kro.Nith",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 1212,
+			"y": 399,
+			"radius": 25
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Tula"
+		]
+	},
+	{
+		"id": "G.InC.Kro.Nit.Vard",
+		"name": "Vard",
+		"inMapId": "G.InC.Kro.Nith",
+		"mapType": "Planet",
+		"mapLocationPoint": {
+			"x": 165,
+			"y": 1042,
+			"radius": 44
+		},
+		"relatedLinks": [
+			"https://masseffect.wikia.com/wiki/Vard"
+		]
+	}]
 }

@@ -1,7 +1,6 @@
 {
 	"missions": [{
 
-
 		"x-comment-x": "-----------------------DLC QUESTS-------------------------",
 		"id": "DLC2.0Genesis",
 		"sortIndex": 1000,
@@ -1099,8 +1098,6 @@
 			"radius": 1
 		}
 
-
-
 	}, {
 		"x-comment-x": "-----------------------DLC LOYALTY -------------------------",
 		"id": "A2.D.Zaeed",
@@ -1845,9 +1842,6 @@
 		"description": "Hock's mercenaries will attack you in waves while his personal gunship attacks you. You can attack the gunship to speed up the process, but his shields won't fall until Kasumi's cut-scene. At that point, you can destroy the gunship and complete the mission. Take the shuttle when you are done looting the wharf.",
 		"inMapId": "G.OuC.Ser.Bol.Bek.2.Platform",
 		"isShowInParentMap": true
-
-
-
 
 
 	}, {
@@ -4317,9 +4311,6 @@
 		}
 
 
-
-
-
 	}, {
 		"x-comment-x": "-----------------------LOYALTY QUESTS-------------------------",
 		"id": "A2.L.Garrus",
@@ -4760,7 +4751,207 @@
 		"reward": "25,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jack:_Subject_Zero"],
 		"relatedMissionIds": ["A2.Convo.Jack.4", "A2.Convo.MirandaJack"],
-		"conversationRewards": [],
+		"conversationRewards": [{
+			"set": {
+				"context": "On the shuttle to the facility",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Jack.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Settle down.\""
+				}, {
+					"id": "A2.L.Jack.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"We're going in.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After the varren fight",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Jack.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Maybe there was more to it.\""
+				}, {
+					"id": "A2.L.Jack.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Or not.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After the two-way mirror",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Jack.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Don't blame yourself.\""
+				}, {
+					"id": "A2.L.Jack.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Makes sense.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After the two-way mirror",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Jack.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You were distracted.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Encountering Kureck",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Jack.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Why are you here?\""
+				}, {
+					"id": "A2.L.Jack.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Get ready to fight.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Encountering Aresh",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Jack.P6",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"He was drawn here, like you.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When Jack threatens Aresh",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"options": [{
+							"id": "A2.L.Jack.P7A",
+							"type": "Paragon",
+							"value": 15,
+							"conext": "*_Charm Jack_*",
+							"trigger": "\"Killing him changes nothing.\""
+						}, {
+							"set": {
+								"options": [{
+									"id": "A2.L.Jack.P8A",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"Good work.\""
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"options": [{
+							"id": "A2.L.Jack.R7A",
+							"type": "Renegade",
+							"value": 15,
+							"conext": "*_Intimidate Jack_*",
+							"trigger": "\"Do it.\""
+						}, {
+							"set": {
+								"options": [{
+									"id": "A2.L.Jack.R8A",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"You're free.\""
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"options": [{
+							"id": "A2.L.Jack.P7B",
+							"type": "Paragon",
+							"value": 5,
+							"trigger": "\"Leave him alone.\""
+						}, {
+							"set": {
+								"options": [{
+									"id": "A2.L.Jack.P8B",
+									"type": "Paragon",
+									"value": 10,
+									"context": "*Paragon Interrupt*",
+									"trigger": ""
+								}, {
+									"set": {
+										"options": [{
+											"id": "A2.L.Jack.P9B",
+											"type": "Paragon",
+											"value": 2,
+											"trigger": "\"Good work.\""
+										}]
+									}
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"options": [{
+							"id": "A2.L.Jack.R7B",
+							"type": "Renegade",
+							"value": 5,
+							"trigger": "\"Kill him.\""
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"set": {
+										"options": [{
+											"id": "A2.L.Jack.R8B",
+											"type": "Renegade",
+											"value": 10,
+											"context": "*Renegade Interrupt*",
+											"trigger": ""
+										}, {
+											"set": {
+												"options": [{
+													"id": "A2.L.Jack.R9B",
+													"type": "Renegade",
+													"value": 2,
+													"trigger": "\"You're free.\""
+												}]
+											}
+										}]
+									}
+								}, {
+									"set": {
+										"options": [{
+											"id": "A2.L.Jack.P8C",
+											"type": "Paragon",
+											"value": 2,
+											"trigger": "\"Good work.\""
+										}]
+									}
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Horizon"
@@ -5047,8 +5238,103 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Legion:_A_House_Divided"],
 		"relatedDecisionIds": ["D2.Heretics"],
 		"relatedMissionIds": ["A2.Convo.Legion.2", "A2.Convo.TaliLegion"],
-		"conversationTodo": "include http://masseffect.wikia.com/wiki/Morality_Guide_(Mass_Effect_2)#Legion",
-		"conversationRewards": [],
+		"conversationRewards": [{
+			"set": {
+				"context": "While boarding Heretic Station, Legion asks to rewrite the heretics when done",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Legion.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Rewriting is unethical.\""
+				}, {
+					"id": "A2.L.Legion.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"They're just machines.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When Legion explains how geth think collectively, with no individual identity",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Legion.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"The heretics are part of you.\""
+				}, {
+					"id": "A2.L.Legion.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Why worry about brainwashing?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When Legion explains that all geth will experience the heretics trauma when they reintegrate",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Legion.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"That could be traumatizing.\" or \"You'd lose that perspective.\""
+				}, {
+					"id": "A2.L.Legion.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You feel guilty.\" or \"Their judgment sucks.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When Legion discovers that the heretics spied on the other geth",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Legion.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Things change.\""
+				}, {
+					"id": "A2.L.Legion.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You were naive.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Legion laments the divergence that has made the heretics so different",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Legion.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It's not your fault.\""
+				}, {
+					"id": "A2.L.Legion.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"It's their fault.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Deciding the heretics' fate",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A2.L.Legion.P6",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We'll rewrite them.\""
+				}, {
+					"id": "A2.L.Legion.R6",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"It's safer to kill them.\""
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Horizon"
@@ -6631,8 +6917,6 @@
 		"inMapId": "G.C2.ZakeraWardL28",
 		"isShowInParentMap": true
 
-
-
 	}, {
 		"x-comment-x": "-----------------------UPGRADES-------------------------",
 		"id": "A2.UC.1NormandyUpgrades",
@@ -6867,8 +7151,6 @@
 			"id": "Unlocked Galaxy Map 2"
 		}]
 
-
-
 	}, {
 		"x-comment-x": "-----------------------COLLECTIONS-------------------------",
 		"id": "A2.UC.Pets",
@@ -6918,9 +7200,6 @@
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
 		}]
-
-
-
 
 
 

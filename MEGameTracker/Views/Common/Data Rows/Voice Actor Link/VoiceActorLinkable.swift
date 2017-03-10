@@ -10,7 +10,6 @@ import Foundation
 
 public protocol VoiceActorLinkable: class {
 
-    var voiceActorName: String? { get set }
-    // handles onChange, select internally
+	var voiceActorName: String? { get set }
+	// handles onChange, select internally
 }
-

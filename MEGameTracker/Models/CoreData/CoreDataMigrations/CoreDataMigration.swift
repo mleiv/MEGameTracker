@@ -9,11 +9,11 @@
 import Foundation
 
 public struct CoreDataMigration {
-    
-    public let fromBuild: Int
-    public let loadMigration: (() -> CoreDataMigrationType)
-    public init(fromBuild: Int, loadMigration: @escaping (() -> CoreDataMigrationType)) {
-        self.fromBuild = fromBuild
-        self.loadMigration = loadMigration
-    }
+
+	public let fromBuild: Int
+	public let loadMigration: (() -> CoreDataMigrationType)
+	public init(fromBuild: Int, loadMigration: @escaping (() -> CoreDataMigrationType)) {
+		self.fromBuild = fromBuild
+		self.loadMigration = loadMigration
+	}
 }

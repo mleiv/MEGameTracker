@@ -10,9 +10,8 @@ import Foundation
 
 public protocol Notesable: class {
 
-    var notes: [Note] { get set }
-    var originHint: String? { get }
-    func getBlankNote() -> Note?
-    // handles onChange, select internally
+	var notes: [Note] { get set }
+	var originHint: String? { get }
+	func getBlankNote() -> Note?
+	// handles onChange, select internally
 }
-

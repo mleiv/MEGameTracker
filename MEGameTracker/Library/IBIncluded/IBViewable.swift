@@ -7,26 +7,54 @@
 
 import UIKit
 
-/// Provides a method for previewing nib views inside storyboards.
+/// Provides functionality for previewing nib views inside storyboards.
 /// 
 /// Usage Example:
 ///
-///    public var isAttachedNibWrapper = false
-///    public var isAttachedNib = false
-///    open override func draw(_ rect: CGRect) {
-///    		if !attachedNib() {
-///    			// now you can make changes and they will appear in both nib and storyboard
-///    			super.draw(rect)
-///    		}
-///    	}
+/// @IBDesignable class TestView: UIView, IBViewable {
+///	public var isAttachedNibWrapper = false
+///	public var isAttachedNib = false
+///	override public func awakeFromNib() {
+///		super.awakeFromNib()
+///		_ = attachOrAttachedNib()
+///	}
+
+///	   override public func prepareForInterfaceBuilder() {
+///		_ = attachOrAttachedNib()
+///		super.prepareForInterfaceBuilder()
+///	}
+
+///	override public func layoutSubviews() {
+///		super.layoutSubviews()
+///		if isAttachedNib {
+///			// ... do stuff (*don't* do stuff if isAttachedNibWrapper)
+///		}
+
+///	}
+
+/// }
 public protocol IBViewable: class {
-	// Required
+
+// MARK: Required
+
+	/// Marks an IBViewable UIView which has an attached view as a child.
 	var isAttachedNibWrapper: Bool { get set }
+
+	/// Marks the attached view of an IBViewable UIView.
 	var isAttachedNib: Bool { get set }
-	// Optional
-	func attachedNib() -> Self?
-	// Defined
+
+// MARK: Optional
+
+	/// Returns the attached view, or creates it.
+	func attachOrAttachedNib() -> Self?
+
+// MARK: Defined
+
+	/// Set the nibName if the nib has a different name than the UIView class.
 	var nibName: String? { get }
+
+	/// Returns whether the current environment is Interface Builder.
+	/// Note: prepareForInterfaceBuilder is not a reliable gauge for this flag.
 	var isInterfaceBuilder: Bool { get }
 }
 
@@ -51,8 +79,11 @@ extension IBViewable where Self: UIView {
 // didMoveToSuperview()
 // layoutSubviews()
 // draw(_ rect: CGRect)
-	
-	public func attachedNib() -> Self? {
+
+	/// (Protocol default)
+	/// Returns whether the current environment is Interface Builder.
+	/// Note: prepareForInterfaceBuilder is not a reliable gauge for this flag.
+	public func attachOrAttachedNib() -> Self? {
 		// check if already loaded and return that instead
 		guard !isAttachedNib else {
 			return self
@@ -89,14 +120,18 @@ extension IBViewable where Self: UIView {
 		return nil
 	}
 
+	/// (Protocol default)
+	/// Set the nibName if the nib has a different name than the UIView class.
 	public var nibName: String? { return nil }
-	
-	public var isInterfaceBuilder: Bool {
-        #if TARGET_INTERFACE_BUILDER
-            return true
-        #else
-            return false
-        #endif
-    }
-}
 
+	/// (Protocol default)
+	/// Returns whether the current environment is Interface Builder.
+	/// Note: prepareForInterfaceBuilder is not a reliable gauge for this flag.
+	public var isInterfaceBuilder: Bool {
+		#if TARGET_INTERFACE_BUILDER
+			return true
+		#else
+			return false
+		#endif
+	}
+}

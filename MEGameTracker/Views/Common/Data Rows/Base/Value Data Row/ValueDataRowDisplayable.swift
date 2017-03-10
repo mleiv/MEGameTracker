@@ -18,22 +18,22 @@ public protocol ValueDataRowDisplayable: IBViewable {
 	var showRowDivider: Bool { get }
 	var isSettingUp: Bool { get set }
 	var didSetup: Bool { get set }
-	var onClick: ((UIButton)->Void)? { get set }
+	var onClick: ((UIButton) -> Void)? { get set }
 }
 
 extension ValueDataRowDisplayable where Self: Spinnerable {
-    func startParentSpinner(controller: UIViewController?) {
-        guard !isInterfaceBuilder else { return }
-        let parentView = (controller?.view is UITableView) ? controller?.view.superview : controller?.view
-        DispatchQueue.main.async {
-            self.startSpinner(inView: parentView)
-        }
-    }
-    func stopParentSpinner(controller: UIViewController?) {
-        guard !isInterfaceBuilder else { return }
-        let parentView = (controller?.view is UITableView) ? controller?.view.superview : controller?.view
-        DispatchQueue.main.async {
-            self.stopSpinner(inView: parentView)
-        }
-    }
+	func startParentSpinner(controller: UIViewController?) {
+		guard !isInterfaceBuilder else { return }
+		let parentView = (controller?.view is UITableView) ? controller?.view.superview : controller?.view
+		DispatchQueue.main.async {
+			self.startSpinner(inView: parentView)
+		}
+	}
+	func stopParentSpinner(controller: UIViewController?) {
+		guard !isInterfaceBuilder else { return }
+		let parentView = (controller?.view is UITableView) ? controller?.view.superview : controller?.view
+		DispatchQueue.main.async {
+			self.stopSpinner(inView: parentView)
+		}
+	}
 }

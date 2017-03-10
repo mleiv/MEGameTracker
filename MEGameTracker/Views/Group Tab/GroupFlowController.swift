@@ -10,7 +10,7 @@ import UIKit
 
 class GroupFlowController: IBIncludedThing {
 
-    @IBAction func closeSearch(_ sender: AnyObject!) {
-        dismiss(animated: true, completion: nil)
-    }
+	@IBAction func closeSearch(_ sender: AnyObject!) {
+		dismiss(animated: true, completion: nil)
+	}
 }

@@ -10,6 +10,5 @@ import Foundation
 
 public protocol Unavailable: class {
 
-    var unavailabilityMessage: String? { get }
+	var unavailabilityMessage: String? { get }
 }
-
