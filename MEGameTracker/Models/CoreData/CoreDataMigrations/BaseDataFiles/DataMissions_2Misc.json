@@ -4320,7 +4320,7 @@
 		"name": "Garrus: Eye for an Eye",
 		"isLoyaltyMission": true,
 		"description": "Garrus lost his entire squad on Omega after they were betrayed by one of their own, Sidonis. He has found out that a criminal named Fade helped Sidonis disappear. Find Fade, locate Sidonis, and help Garrus find closure.",
-		"inMapId": "G.C2.ZakeraWardL26",
+		"inMapId": "G.C2.27.CSec",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Garrus:_Eye_for_an_Eye"],
 		"relatedMissionIds": ["A2.Convo.Garrus.2"],
@@ -4332,7 +4332,7 @@
 					"type": "Renegade",
 					"value": 5,
 					"context": "*Renegade Interrupt*",
-					"trigger": ""
+					"trigger": "Shoot bodyguards."
 				}, {
 					"id": "A2.L.Garrus.R2A",
 					"type": "Renegade",
@@ -4454,7 +4454,7 @@
 					"type": "Paragon",
 					"value": 5,
 					"context": "*Paragon Interrupt*",
-					"trigger": ""
+					"trigger": "Prevent Sidonis from leaving."
 				}, {
 					"id": "A2.L.Garrus.P13",
 					"type": "Paragon",
@@ -4535,6 +4535,81 @@
 			"type": "Triggers",
 			"id": "Secured Loyalty: Garrus"
 		}]
+	}, {
+		"id": "A2.L.Garrus.1",
+		"inMissionId": "A2.L.Garrus",
+		"sortIndex": 3051,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Bailey",
+		"description": "Talk to Captain Bailey for a lead to Fade's whereabouts.",
+		"inMapId": "G.C2.27.CSec",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Garrus.2",
+		"inMissionId": "A2.L.Garrus",
+		"sortIndex": 3052,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fade's Contact",
+		"description": "Head to the Shipping Warehouse to speak to Fade's contact. A volus is there, with two bodyguards. Get rid of them (either killing them or scaring them off), and the volus will reveal that Fade is actually former C-Sec officer [megametracker://person?id=O1.Harkin], and he is currently hiding out in the Factory District, protected by Blue Suns mercenaries.",
+		"inMapId": "G.C2.26.Warehouse",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Garrus.3",
+		"inMissionId": "A2.L.Garrus",
+		"sortIndex": 3053,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Factory District",
+		"description": "Take a Rapid Transit shuttle to the Factory District. Harkin/Fade is there with two Blue Suns, but he flees when he sees you. You will have to take out the mercenaries before you can pursue.",
+		"inMapId": "G.C2.26.Warehouse",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Garrus.4",
+		"inMissionId": "A2.L.Garrus",
+		"sortIndex": 3054,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Bridge Controls",
+		"description": "Follow Harkin through the factory floor, fighting off mechs and mercenaries, until you reach the bridge. Access the bridge controls to extend it.",
+		"inMapId": "TODO"
+	}, {
+		"id": "A2.L.Garrus.5",
+		"inMissionId": "A2.L.Garrus",
+		"sortIndex": 3055,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Shutter Controls",
+		"description": "Once you cross the bridge, it's more mechs and mercenaries, and an YMIR Mech. When they are disposed of, head into the office and open the shutter controls.",
+		"inMapId": "TODO"
+	}, {
+		"id": "A2.L.Garrus.6",
+		"inMissionId": "A2.L.Garrus",
+		"sortIndex": 3056,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Final Fight",
+		"description": "This is the big battle, mechs and mercenaries through the final area, and two YMIR Mechs - at the same time - at the end. \n\nHarkin will raise the platforms to protect himself. Climb up after him, fighting off two last LOKI mechs.",
+		"inMapId": "TODO"
+	}, {
+		"id": "A2.L.Garrus.7",
+		"inMissionId": "A2.L.Garrus",
+		"sortIndex": 3057,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Harkin's Hideout",
+		"description": "Harkin is hiding in a small office. He is none too eager to reveal Sidonis' location, but Garrus plays bad cop here, convincing him to contact Sidonis for a meeting.",
+		"inMapId": "TODO"
+	}, {
+		"id": "A2.L.Garrus.8",
+		"inMissionId": "A2.L.Garrus",
+		"sortIndex": 3058,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Orbital Lounge",
+		"description": "You can try to talk Garrus out of his revenge in the cab to the Lounge, but he won't listen. Once there, Sidonis approached you. If you warn him and he leaves, he dies. If you step aside, he dies. If you use all three paragon interrupts, Garrus concedes and allows Sidonis to leave alive.",
+		"inMapId": "TODO"
 	}, {
 		"id": "A2.L.Grunt",
 		"sortIndex": 306,
@@ -4737,6 +4812,74 @@
 			"type": "Triggers",
 			"id": "Secured Loyalty: Grunt"
 		}]
+	}, {
+		"id": "A2.L.Grunt.1",
+		"inMissionId": "A2.L.Grunt",
+		"sortIndex": 3061,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Urdnot Wrex/Wreave",
+		"description": "Speak to the leader of Clan Urdnot (either [megametracker://person?id=S1.Wrex] or [megametracker://person?id=O2.Wreave]) about Grunt's instability. He immediately recognizes that Grunt is an adolescent who needs to go through the krogan rite of passage. He refers you to the shaman. [megametracker://person?id=E2.Uvenk] will protest that Grunt, a tank-bred krogan, is not worthy to take part in the rite.",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Throne",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Grunt.2",
+		"inMissionId": "A2.L.Grunt",
+		"sortIndex": 3062,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Shaman",
+		"description": "Head upstairs to talk to the shaman. He will agree that Grunt is worthy to complete the rite, but that he needs a krantt to fight with him. You volunteer. \n\nWhen you officially accept the rite from the shaman, you will be immediately transported to the site.",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1Main",
+		"mapLocationPoint": {
+			"x": 1590,
+			"y": 967,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Grunt.3",
+		"inMissionId": "A2.L.Grunt",
+		"sortIndex": 3063,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Keystone #1",
+		"description": "Activate the keystone to begin the attack. The first round is varren, and you must kill all of them to proceed.",
+		"inMapId": "G.InC.Kro.Ara.Tuc.3.Keystone",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Grunt.4",
+		"inMissionId": "A2.L.Grunt",
+		"sortIndex": 3064,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Keystone #2",
+		"description": "Activate the keystone to begin the attack. The second round is klixen (similar to rachni), and you must kill all of them to proceed.",
+		"inMapId": "G.InC.Kro.Ara.Tuc.3.Keystone",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Grunt.5",
+		"inMissionId": "A2.L.Grunt",
+		"sortIndex": 3064,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Keystone #3",
+		"description": "Loot the area before beginning, because this is your last chance. \n\nActivate the keystone to begin the attack. The third round is a thresher maw, and you must survive five minutes to proceed. It is possible to kill the thresher maw, and doing so will garner additional dialogue later.",
+		"inMapId": "G.InC.Kro.Ara.Tuc.3.Keystone",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Grunt.6",
+		"inMissionId": "A2.L.Grunt",
+		"sortIndex": 3066,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Gatatog Uvenk",
+		"description": "Uvenk has changed his mind and now wants Grunt in his clan, and he's not taking no for an answer. You will have to kill him and his krannt in order to leave.",
+		"inMapId": "G.InC.Kro.Ara.Tuc.3Ruins",
+		"mapLocationPoint": {
+			"x": 1150,
+			"y": 340,
+			"radius": 1
+		}
 	}, {
 		"id": "A2.L.Jack",
 		"sortIndex": 309,
@@ -4962,6 +5105,111 @@
 			"type": "Triggers",
 			"id": "Secured Loyalty: Jack"
 		}]
+	}, {
+		"id": "A2.L.Jack.1",
+		"inMissionId": "A2.L.Jack",
+		"sortIndex": 3091,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Land on Pragia",
+		"description": "Take a shuttle down to the abandoned facility.",
+		"inMapId": "G.Att.Nub.Dak.Pra.Start",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Jack.2",
+		"inMissionId": "A2.L.Jack",
+		"sortIndex": 3092,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Security Console 1",
+		"description": "Head down to the security console, which has some information claiming that the facility was acting outside of Cerberus orders.",
+		"inMapId": "G.Att.Nub.Dak.Pragia",
+		"mapLocationPoint": {
+			"x": 450,
+			"y": 770,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Jack.3",
+		"inMissionId": "A2.L.Jack",
+		"sortIndex": 3093,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Blood Stain",
+		"description": "Some varren attack you as you move across the room. Once disposed of, head over to the blood stain for more information from Jack.",
+		"inMapId": "G.Att.Nub.Dak.Pragia",
+		"mapLocationPoint": {
+			"x": 1195,
+			"y": 805,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Jack.4",
+		"inMissionId": "A2.L.Jack",
+		"sortIndex": 3094,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Security Console 2",
+		"description": "This console contains a video log of the riot when Jack escaped, where it was made clear that all the other children were expendable, except for Jack.",
+		"inMapId": "G.Att.Nub.Dak.Pragia",
+		"mapLocationPoint": {
+			"x": 1348,
+			"y": 722,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Jack.5",
+		"inMissionId": "A2.L.Jack",
+		"sortIndex": 3095,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Security Console 3",
+		"description": "Blood Pack mercenaries attack as you head deeper into the facility. There is another fight before the kids' rooms. Head around the catwalk where Jack points out the two-way mirror to her own room, and into the labs. There are two security consoles in the right room. They reveal more about how the other children suffered for Jack.",
+		"inMapId": "G.Att.Nub.Dak.Pragia",
+		"mapLocationPoint": {
+			"x": 1465,
+			"y": 1456,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Jack.6",
+		"inMissionId": "A2.L.Jack",
+		"sortIndex": 3096,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Security Console 4",
+		"description": "This console shows the facility doctor making plans for future experiments, until younger Jack kills him during her escape.",
+		"inMapId": "G.Att.Nub.Dak.Pragia",
+		"mapLocationPoint": {
+			"x": 1543,
+			"y": 1447,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Jack.7",
+		"inMissionId": "A2.L.Jack",
+		"sortIndex": 3097,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Cafeteria",
+		"description": "The next room is the cafeteria, with the krogan Kureck and three other krogan mercenaries. You must eliminate all of them to continue.",
+		"inMapId": "G.Att.Nub.Dak.Pragia",
+		"mapLocationPoint": {
+			"x": 1950,
+			"y": 1510,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Jack.8",
+		"inMissionId": "A2.L.Jack",
+		"sortIndex": 3098,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Jack's Cell",
+		"description": "The man who hired all the Blood Pack mercenaries you've been fighting is in Jack's cell. [megametracker://person?id=O2.Aresh] was one of the other children in the experiments, and he is even more messed up than Jack. He wants to reopen the facility. You can let Jack kill him, or convince her to let him go. \n\nWhen you are done looking around, head back and Jack will blow the whole place to hell.",
+		"inMapId": "G.Att.Nub.Dak.Pra.Cell",
+		"isShowInParentMap": true
+
 	}, {
 		"id": "A2.L.Jacob",
 		"sortIndex": 304,
@@ -6619,7 +6867,7 @@
 		"name": "Thane: Sins of the Father",
 		"isLoyaltyMission": true,
 		"description": "Thane abandoned his son Kolyat as a boy when pursuing the people who murdered Kolyat's mother Irikah. Kolyat has decided to follow in his father's footsteps and become an assassin. Thane wants to find him on the Citadel and stop him.",
-		"inMapId": "G.C2.ZakeraWardL28",
+		"inMapId": "G.C2.27.CSec",
 		"isShowInParentMap": true,
 		"experience": 1000,
 		"reward": "25,000 Credits",
@@ -6864,7 +7112,7 @@
 		"missionType": "Objective",
 		"name": "Speak to Bailey",
 		"description": "Ask Bailey for information on Kolyat. He will direct you to [megametracker://person?id=O2.Mouse], last seen talking to a drell.",
-		"inMapId": "G.C2.ZakeraWardL28",
+		"inMapId": "G.C2.27.CSec",
 		"isShowInParentMap": true
 	}, {
 		"id": "A2.L.Thane.2",
