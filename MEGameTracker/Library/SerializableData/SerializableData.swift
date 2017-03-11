@@ -164,16 +164,10 @@ extension SerializableData {
 		switch contents {
 		case .none: return nil
 		case .valueType(let value):
-//			if let tValue = v as? T {
-//				return tValue
-//			}
 			let stringValue = String(describing: value)
-			if stringValue == "<null>" {
-				return nil
-			}
+			if stringValue == "<null>" { return nil }
 			// fun times: json is often ambiguous about whether it's a string or a number
-			if Bool.self == T.self,
-				let tValue = NSString(string: stringValue).boolValue as? T {
+			if Bool.self == T.self, let tValue = NSString(string: stringValue).boolValue as? T {
 				return tValue
 			} else if Int.self == T.self,
 				let tValue = formatter.number(from: stringValue)?.intValue as? T {
@@ -188,11 +182,9 @@ extension SerializableData {
 				let doubleValue = formatter.number(from: stringValue)?.doubleValue,
 				let tValue = CGFloat(doubleValue) as? T {
 				return tValue
-			} else if Date.self == T.self,
-				let tValue = dateFromString(stringValue) as? T {
+			} else if Date.self == T.self, let tValue = dateFromString(stringValue) as? T {
 				return tValue
-			} else if URL.self == T.self,
-				let tValue = URL(string: stringValue) as? T {
+			} else if URL.self == T.self, let tValue = URL(string: stringValue) as? T {
 				return tValue
 			} else if Data.self == T.self,
 				let tValue = Data(base64Encoded: stringValue, options: .ignoreUnknownCharacters) as? T {
@@ -202,20 +194,16 @@ extension SerializableData {
 			} else if let tValue = stringValue as? T { // string requested
 				return tValue
 			}
-			return nil
 		case .dictionaryType(let list):
 			if let tValue = list as? T {
 				return tValue
-			} else {
-				return nil
 			}
 		case .arrayType(let list):
 			if let tValue = list as? T {
 				return tValue
-			} else {
-				return nil
 			}
 		}
+		return nil
 	}
 
 	/// - Returns: Optional(String) if this object can be one (most things can)

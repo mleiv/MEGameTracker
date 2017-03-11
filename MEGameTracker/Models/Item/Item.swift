@@ -96,8 +96,8 @@ public struct Item: MapLocationable, Eventsable {
 		if !blockingEvents.isEmpty {
 			if let unavailabilityInGameMessage = blockingEvents.filter({ (e: Event) -> Bool in
 					return e.type == .unavailableInGame
-				}).first?.description
-				, !unavailabilityInGameMessage.isEmpty {
+				}).first?.description,
+				!unavailabilityInGameMessage.isEmpty {
 				return generalData.unavailabilityMessages + [unavailabilityInGameMessage]
 			} else {
 				return generalData.unavailabilityMessages + blockingEvents.flatMap({ $0.description })

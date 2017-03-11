@@ -144,7 +144,7 @@ final public class MapRow: UITableViewCell {
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.origin?.view)
 			self.setCheckboxImage(isExplored: isExplored, isAvailable: self.map?.isAvailable ?? false)
-			nameLabel.attributedText = Styles.applyStyle(
+			nameLabel.attributedText = Styles.current.applyStyle(
 				nameLabel.identifier ?? "",
 				toString: self.map?.name ?? ""
 			).toggleStrikethrough(isExplored)

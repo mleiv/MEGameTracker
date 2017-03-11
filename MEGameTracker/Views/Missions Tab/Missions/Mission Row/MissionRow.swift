@@ -149,7 +149,7 @@ final class MissionRow: UITableViewCell {
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.origin?.view)
 			self.setCheckboxImage(isCompleted: isCompleted, isAvailable: self.mission?.isAvailable ?? false)
-			nameLabel.attributedText = Styles.applyStyle(nameLabel.identifier
+			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
 				?? "", toString: self.mission?.name ?? "").toggleStrikethrough(isCompleted)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
 				self.mission?.change(isCompleted: isCompleted, isSave: true)

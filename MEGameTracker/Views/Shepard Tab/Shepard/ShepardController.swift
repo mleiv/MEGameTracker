@@ -336,7 +336,7 @@ extension ShepardController: UIImagePickerControllerDelegate {
 			alert.addAction(UIAlertAction(
 				title: "Try Again",
 				style: UIAlertActionStyle.default,
-				handler: { action in
+				handler: { _ in
 					alert.dismiss(animated: true, completion: nil)
 				}
 			))

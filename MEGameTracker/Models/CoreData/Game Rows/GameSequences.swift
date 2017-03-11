@@ -162,7 +162,6 @@ extension GameSequence {
 				identifier: Decision.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-
 		deletedRows += getAllIdentifiers(ofType: Event.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
 		}.map {
@@ -171,7 +170,6 @@ extension GameSequence {
 				identifier: Event.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-
 		deletedRows += getAllIdentifiers(ofType: Item.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
 		}.map {
@@ -180,7 +178,6 @@ extension GameSequence {
 				identifier: Item.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-
 		deletedRows += getAllIdentifiers(ofType: Map.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
 		}.map {
@@ -189,7 +186,6 @@ extension GameSequence {
 				identifier: Map.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-
 		deletedRows += getAllIdentifiers(ofType: Mission.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
 		}.map {
@@ -198,7 +194,6 @@ extension GameSequence {
 				identifier: Mission.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-
 		deletedRows += getAllIdentifiers(ofType: Note.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
 		}.map {
@@ -207,7 +202,6 @@ extension GameSequence {
 				identifier: Note.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-
 		deletedRows += getAllIdentifiers(ofType: Person.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
 		}.map {
@@ -216,7 +210,6 @@ extension GameSequence {
 				identifier: Person.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-
 		deletedRows += getAllIdentifiers(ofType: Shepard.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
 		}.map {
@@ -225,7 +218,6 @@ extension GameSequence {
 				identifier: Shepard.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-
 		deletedRows += [DeletedRow(
 			source: GameSequence.entityName,
 			identifier: getIdentifyingName(id: "", gameSequenceUuid: uuid)

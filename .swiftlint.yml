@@ -1,7 +1,7 @@
 disabled_rules: # rule identifiers to exclude from running
   - todo
   - vertical_parameter_alignment
-  - legacy_constant #NSMakeRange needed
+  - legacy_constructor #NSMakeRange needed
   - cyclomatic_complexity #disable did not work
   - trailing_comma
 opt_in_rules: # some rules are only opt-in

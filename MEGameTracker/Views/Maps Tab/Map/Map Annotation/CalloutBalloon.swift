@@ -65,7 +65,7 @@ public struct CalloutBalloon {
 		innerLayer?.frame = bounds
 		outerLayer?.frame = bounds
 	}
-	
+
 	private func positionLayers() {
 		guard let sizeWrapper = self.sizeWrapper else { return }
 		// now offset for arrow (otherwise its border color gets clipped off)
@@ -154,7 +154,7 @@ public struct CalloutBalloon {
 		outerPath.close()
 		innerPath.close()
 	}
-	
+
 	private func drawTail(outerPath: UIBezierPath, innerPath: UIBezierPath) {
 		guard let sizeWrapper = self.sizeWrapper else { return }
 		let bounds = sizeWrapper.bounds

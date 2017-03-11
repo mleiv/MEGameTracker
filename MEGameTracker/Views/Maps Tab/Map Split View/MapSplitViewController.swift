@@ -57,8 +57,7 @@ final public class MapSplitViewController: UIViewController, MESplitViewControll
 	lazy var ferriedSegueForCallouts: FerriedPrepareForSegueClosure = {
 		// just return the current map, because callouts shares data with this page (and map controller)
 		let closure: FerriedPrepareForSegueClosure = { [weak self] (destinationController: UIViewController) in
-				destinationController.find(controllerType: MapCalloutsGroupsController.self) {
-				(controller: MapCalloutsGroupsController) in
+				destinationController.find(controllerType: MapCalloutsGroupsController.self) { controller in
 				controller.map = self?.map
 				controller.mapLocation = self?.mapLocation
 				controller.navigationPushController = self?.navigationController

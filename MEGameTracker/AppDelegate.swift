@@ -111,12 +111,11 @@ extension AppDelegate {
 			return
 		}
 
+		// UI stuff
+		Styles.current.initialize(fromWindow: window)
+
 		// start the chain to load core data and cloud data and init the ME App:
 		initializeData(application: application)
-
-		// UI stuff
-
-		Styles.applyGlobalStyles(window)
 
 		// set up a listener to the show-an-alert signal
 		Alert.onSignal.cancelSubscription(for: self)

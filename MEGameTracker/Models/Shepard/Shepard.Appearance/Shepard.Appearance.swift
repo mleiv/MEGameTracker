@@ -284,9 +284,7 @@ extension Shepard.Appearance {
 				}
 				if attribute == .blushColor && toGame == .game1 {
 					notices[attribute] = AppearanceError.blushColorConverted
-					if attributeValue > 5 {
-						attributeValue = 5
-					}
+					if attributeValue > 5 { attributeValue = 5 }
 				}
 				// game 3 has extra hair colors
 				if (attribute == .hairColor || attribute == .browColor || attribute == .facialHairColor)

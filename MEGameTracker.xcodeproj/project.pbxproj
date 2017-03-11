@@ -169,7 +169,7 @@
 		B136B1241E6CA4B80017F738 /* Change20170305.swift in Sources */ = {isa = PBXBuildFile; fileRef = B136B1231E6CA4B80017F738 /* Change20170305.swift */; };
 		B137FC4A1BA4C970000D312E /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137FC481BA4C970000D312E /* BorderView.swift */; };
 		B137FC4B1BA4C970000D312E /* HairlineBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137FC491BA4C970000D312E /* HairlineBorderView.swift */; };
-		B13CC9501E720C8B00E5AD64 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC94F1E720C8B00E5AD64 /* Stylesheet.swift */; };
+		B13CC9501E720C8B00E5AD64 /* IBStylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC94F1E720C8B00E5AD64 /* IBStylesheet.swift */; };
 		B1427AE51D1E1ED20038932B /* GameMapLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1427AE41D1E1ED20038932B /* GameMapLocations.swift */; };
 		B14313C21CEBE28C00B4B28B /* ConversationRewardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14313C11CEBE28C00B4B28B /* ConversationRewardsTests.swift */; };
 		B145FDC21E679AB500403A36 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = B145FDC01E679AB500403A36 /* Action.swift */; };
@@ -220,6 +220,7 @@
 		B169BB981CF4035C006BC234 /* VoiceActorLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169BB941CF4035C006BC234 /* VoiceActorLinkView.swift */; };
 		B169BB9D1CF406CB006BC234 /* VoiceActorLinkRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B169BB9A1CF406CB006BC234 /* VoiceActorLinkRow.xib */; };
 		B169BB9E1CF406CB006BC234 /* VoiceActorLinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169BB9C1CF406CB006BC234 /* VoiceActorLinkRow.swift */; };
+		B16A90B01E73581200CC81DF /* IBStyleProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A90AF1E73581200CC81DF /* IBStyleProperty.swift */; };
 		B16D72371D2B471C002296DD /* Duplet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D72361D2B471C002296DD /* Duplet.swift */; };
 		B16D72391D2B5F00002296DD /* RecentlyViewedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D72381D2B5F00002296DD /* RecentlyViewedImages.swift */; };
 		B16EBC041E5276EF00473D69 /* BaseDataFileImportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16EBC031E5276EF00473D69 /* BaseDataFileImportType.swift */; };
@@ -397,7 +398,7 @@
 		B1F466DE1DA0AE7200EBA563 /* IBStylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D61DA0AE7200EBA563 /* IBStylable.swift */; };
 		B1F466DF1DA0AE7200EBA563 /* IBStyledThings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D71DA0AE7200EBA563 /* IBStyledThings.swift */; };
 		B1F466E01DA0AE7200EBA563 /* IBStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D81DA0AE7200EBA563 /* IBStyler.swift */; };
-		B1F466E11DA0AE7200EBA563 /* IBStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D91DA0AE7200EBA563 /* IBStyles.swift */; };
+		B1F466E11DA0AE7200EBA563 /* IBStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D91DA0AE7200EBA563 /* IBStyleManager.swift */; };
 		B1FFE3341CF6AA17007B3160 /* ConversationRewardsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE3321CF6AA17007B3160 /* ConversationRewardsable.swift */; };
 		B1FFE3351CF6AA17007B3160 /* ConversationRewardsRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE3331CF6AA17007B3160 /* ConversationRewardsRowType.swift */; };
 		B1FFE3541CF6B151007B3160 /* ConversationRewardsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1FFE3491CF6B151007B3160 /* ConversationRewardsDetail.storyboard */; };
@@ -667,7 +668,7 @@
 		B136B1231E6CA4B80017F738 /* Change20170305.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Change20170305.swift; sourceTree = "<group>"; };
 		B137FC481BA4C970000D312E /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		B137FC491BA4C970000D312E /* HairlineBorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineBorderView.swift; sourceTree = "<group>"; };
-		B13CC94F1E720C8B00E5AD64 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
+		B13CC94F1E720C8B00E5AD64 /* IBStylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStylesheet.swift; sourceTree = "<group>"; };
 		B1427AE41D1E1ED20038932B /* GameMapLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMapLocations.swift; sourceTree = "<group>"; };
 		B14313C11CEBE28C00B4B28B /* ConversationRewardsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRewardsTests.swift; sourceTree = "<group>"; };
 		B145FDC01E679AB500403A36 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -718,6 +719,7 @@
 		B169BB941CF4035C006BC234 /* VoiceActorLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceActorLinkView.swift; sourceTree = "<group>"; };
 		B169BB9B1CF406CB006BC234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VoiceActorLinkRow.xib; sourceTree = "<group>"; };
 		B169BB9C1CF406CB006BC234 /* VoiceActorLinkRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceActorLinkRow.swift; sourceTree = "<group>"; };
+		B16A90AF1E73581200CC81DF /* IBStyleProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyleProperty.swift; sourceTree = "<group>"; };
 		B16D72361D2B471C002296DD /* Duplet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duplet.swift; sourceTree = "<group>"; };
 		B16D72381D2B5F00002296DD /* RecentlyViewedImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentlyViewedImages.swift; sourceTree = "<group>"; };
 		B16EBC031E5276EF00473D69 /* BaseDataFileImportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataFileImportType.swift; sourceTree = "<group>"; };
@@ -896,7 +898,7 @@
 		B1F466D61DA0AE7200EBA563 /* IBStylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStylable.swift; sourceTree = "<group>"; };
 		B1F466D71DA0AE7200EBA563 /* IBStyledThings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyledThings.swift; sourceTree = "<group>"; };
 		B1F466D81DA0AE7200EBA563 /* IBStyler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyler.swift; sourceTree = "<group>"; };
-		B1F466D91DA0AE7200EBA563 /* IBStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyles.swift; sourceTree = "<group>"; };
+		B1F466D91DA0AE7200EBA563 /* IBStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyleManager.swift; sourceTree = "<group>"; };
 		B1FFE3321CF6AA17007B3160 /* ConversationRewardsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRewardsable.swift; sourceTree = "<group>"; };
 		B1FFE3331CF6AA17007B3160 /* ConversationRewardsRowType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRewardsRowType.swift; sourceTree = "<group>"; };
 		B1FFE34A1CF6B151007B3160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ConversationRewardsDetail.storyboard; sourceTree = "<group>"; };
@@ -2276,9 +2278,10 @@
 				B1F466D51DA0AE7200EBA563 /* IBGradient.swift */,
 				B1F466D61DA0AE7200EBA563 /* IBStylable.swift */,
 				B1F466D71DA0AE7200EBA563 /* IBStyledThings.swift */,
+				B16A90AF1E73581200CC81DF /* IBStyleProperty.swift */,
 				B1F466D81DA0AE7200EBA563 /* IBStyler.swift */,
-				B1F466D91DA0AE7200EBA563 /* IBStyles.swift */,
-				B13CC94F1E720C8B00E5AD64 /* Stylesheet.swift */,
+				B1F466D91DA0AE7200EBA563 /* IBStyleManager.swift */,
+				B13CC94F1E720C8B00E5AD64 /* IBStylesheet.swift */,
 			);
 			path = IBStyles;
 			sourceTree = "<group>";
@@ -2714,6 +2717,7 @@
 				B1FFE3581CF6B151007B3160 /* ConversationRewardsDetailRow.swift in Sources */,
 				B01D8F2E1BA139500039E003 /* ShepardLoveInterestController.swift in Sources */,
 				B04FA6D31BB2231F006474CB /* MissionType.swift in Sources */,
+				B16A90B01E73581200CC81DF /* IBStyleProperty.swift in Sources */,
 				B19684841CF8F13E005608A7 /* Aliasable.swift in Sources */,
 				B145FDD61E67CAB800403A36 /* ConversationRewardType.swift in Sources */,
 				B026735F1BF6E692003E4F07 /* DataItem.swift in Sources */,
@@ -2741,7 +2745,7 @@
 				B1A882111CF29AD100603253 /* SideEffectRow.swift in Sources */,
 				B1D4D2611C8CC55A0000F150 /* PersonsGroupsController.swift in Sources */,
 				B1DE27981CFB84D10041D341 /* RadioOptionRowView.swift in Sources */,
-				B13CC9501E720C8B00E5AD64 /* Stylesheet.swift in Sources */,
+				B13CC9501E720C8B00E5AD64 /* IBStylesheet.swift in Sources */,
 				B1E1A2881E23114E00029CBE /* DataRowStorable.swift in Sources */,
 				B01D8F1D1BA139500039E003 /* METab.swift in Sources */,
 				B16D72391D2B5F00002296DD /* RecentlyViewedImages.swift in Sources */,
@@ -2893,7 +2897,7 @@
 				B169BB981CF4035C006BC234 /* VoiceActorLinkView.swift in Sources */,
 				B1666C331CC1594C00BF5F93 /* DataEventsable.swift in Sources */,
 				B16F8D841E18CD120074F66B /* CloudKitDecisions.swift in Sources */,
-				B1F466E11DA0AE7200EBA563 /* IBStyles.swift in Sources */,
+				B1F466E11DA0AE7200EBA563 /* IBStyleManager.swift in Sources */,
 				B04FA6D71BB22657006474CB /* GameMissions.swift in Sources */,
 				B11D83901C98C6CB0096FD77 /* DataEvents.swift in Sources */,
 				B01D8F1B1BA139500039E003 /* Styles.swift in Sources */,

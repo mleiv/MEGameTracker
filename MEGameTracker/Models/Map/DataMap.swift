@@ -139,22 +139,6 @@ public struct DataMap: MapLocationable {
 		} else {
 			self.referenceSize = nil
 		}
-		
-//		if let isAvailable = gameVersionData["isAvailable"]?.bool {
-//			self.isAvailable = isAvailable
-//		} else {
-//			self.isAvailable = rawGeneralData["isAvailable"]?.bool ?? true
-//		}
-
-//		
-//		_unavailabilityMessages = []
-//		(rawGeneralData["unavailabilityMessages"]?.array 
-//				?? []).forEach { if let message = $0.string { _unavailabilityMessages.append(message) } }
-
-//		if let unavailabilityMessages = gameVersionData["unavailabilityMessages"]?.array {
-//			unavailabilityMessages.forEach { if let message = $0.string { _unavailabilityMessages.append(message) } }
-
-//		}
 
 		isShowPin = gameVersionData["isShowPin"]?.bool ?? (rawGeneralData["isShowPin"]?.bool ?? isShowPin)
 
@@ -182,12 +166,6 @@ public struct DataMap: MapLocationable {
 			?? rawGeneralData["sideEffects"]?.array) ?? []).flatMap({ $0.string })
 		relatedMissionIds = ((gameVersionData["relatedMissionIds"]?.array
 			?? rawGeneralData["relatedMissionIds"]?.array) ?? []).flatMap({ $0.string })
-
-//		if isAvailable {
-//			unavailabilityMessages = _unavailabilityMessages
-//		} else {
-//			unavailabilityMessages = _unavailabilityMessages + ["Unavailable in Game \(gameVersion.stringValue)"]
-//		}
 
 		isExplorable = !isHidden
 			&& !(inMapId?.isEmpty ?? true)

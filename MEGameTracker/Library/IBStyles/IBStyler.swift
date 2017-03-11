@@ -10,14 +10,20 @@
 import UIKit
 
 /// Applies IBStyles to IBStylable elements. It does not auto-detect when and how to do this, 
-///	alas, so each IBStylable element has to call home to it in order to trigger events. 
+///	   alas, so each IBStylable element has to call home to it in order to trigger events.
 ///	Call applyStyles() inside IBStylable's prepareForInterfaceBuilder() or layoutSubviews().
 public class IBStyler: NSObject {
 
+	/// The stylable UIView in question.
 	weak var styledElement: IBStylable?
+
+	/// Tracks if styles have been applied once already.
 	var didApplyStyles = false
+
+	/// Checks if orientation has changed, because we may need to redraw.
 	var lastContentSizeCategory: UIContentSizeCategory?
 
+	/// Initialization. Start listening for window orientation changes.
 	public init?(element: IBStylable?) {
 		guard let element = element else { return nil }
 		self.styledElement = element
@@ -31,10 +37,12 @@ public class IBStyler: NSObject {
 		)
 	}
 
+	/// Stop listening for window orientation changes.
 	deinit {
 		NotificationCenter.default.removeObserver(self)
 	}
 
+	/// Returns the stylesheet id for the UIView.
 	var elementIdentifier: String {
 		if (styledElement?.identifier ?? "").isEmpty {
 			return styledElement?.defaultIdentifier ?? ""
@@ -45,7 +53,7 @@ public class IBStyler: NSObject {
 	/// Only applies IBStyles once. Apply layout stuff separately in subclassed layout subviews (sorry, no better way yet).
 	public func applyStyles() {
 		guard !elementIdentifier.isEmpty && !didApplyStyles else { return }
-		IBStyles.apply(identifier: elementIdentifier, to: styledElement as? UIView)
+		IBStyleManager.current.apply(identifier: elementIdentifier, to: styledElement as? UIView)
 		styledElement?.applyStyles()
 		didApplyStyles = true
 		styledElement?.setNeedsLayout()
@@ -57,7 +65,7 @@ public class IBStyler: NSObject {
 	public func applyState(_ state: UIControlState) {
 		//changes only styles specific to a state, also ignores didApplyFormat flag
 		guard !elementIdentifier.isEmpty  else { return }
-		IBStyles.apply(identifier: elementIdentifier, to: styledElement as? UIView, forState: state)
+		IBStyleManager.current.apply(identifier: elementIdentifier, to: styledElement as? UIView, forState: state)
 		//styledElement?.setNeedsLayout()
 		styledElement?.layoutIfNeeded()
 	}
@@ -67,7 +75,7 @@ public class IBStyler: NSObject {
 	public func changeTextSize() {
 		let contentSizeCategory = UIApplication.shared.preferredContentSizeCategory
 		if lastContentSizeCategory != contentSizeCategory {
-			IBStyles.apply(identifier: elementIdentifier, to: styledElement as? UIView)
+			IBStyleManager.current.apply(identifier: elementIdentifier, to: styledElement as? UIView)
 		}
 		lastContentSizeCategory = contentSizeCategory
 	}

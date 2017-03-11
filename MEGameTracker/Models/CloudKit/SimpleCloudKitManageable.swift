@@ -209,10 +209,7 @@ extension SimpleCloudKitManageable {
 		self.appState = appState
 		let oldQualityOfService = self.qualityOfService
 		self.qualityOfService = qualityOfService
-		guard shouldSync() else {
-			completion(false)
-			return
-		}
+		guard shouldSync() else { completion(false); return }
 		log("Starting sync() appState = \(appState) isPartialPost = \(isPartialPost) " +
 			"qualityOfService = \(qualityOfService) oldQualityOfService = \(oldQualityOfService)")
 		isSyncing = true
@@ -314,10 +311,7 @@ extension SimpleCloudKitManageable {
 	public func fetchChanges(
 		completion: @escaping ((Bool) -> Void)
 	) {
-		guard shouldFetchChanges() else {
-			completion(false)
-			return
-		}
+		guard shouldFetchChanges() else { completion(false); return }
 		log("fetchChanges changeToken = \(changeToken)")
 
 		isFetchingChanges = true
@@ -432,10 +426,7 @@ extension SimpleCloudKitManageable {
 	public func postChanges(
 		completion: @escaping ((Bool) -> Void)
 	) {
-		guard shouldPostChanges() else {
-			completion(false)
-			return
-		}
+		guard shouldPostChanges() else { completion(false); return }
 		log("postChanges changeToken =\(changeToken)")
 
 		isPostingChanges = true
@@ -621,10 +612,7 @@ extension SimpleCloudKitManageable {
 	func initializeRecordZone(
 		completion: @escaping ((Bool) -> Void) = { _ in }
 	) {
-		guard !isZoneInitialized else {
-			completion(true)
-			return
-		}
+		guard !isZoneInitialized else { completion(true); return }
 		log("initializeRecordZone zoneId = \(zoneId.zoneName)")
 		let subscriptionZone = CKRecordZone(zoneID: zoneId)
 		let operation = CKModifyRecordZonesOperation(
@@ -704,10 +692,7 @@ extension SimpleCloudKitManageable {
 		recordId: CKRecordID?,
 		completion: @escaping ((Bool) -> Void) = { _ in }
 	) {
-		guard let currentAccount = recordId?.recordName else {
-			completion(true)
-			return
-		}
+		guard let currentAccount = recordId?.recordName else { completion(true); return }
 		log("compareAccount")
 		accountStatus = .available
 		let oldAccount = accountName
@@ -866,8 +851,8 @@ extension SimpleCloudKitManageable {
 			print(message)
 		}
 	}
-
 }
+
 public protocol SimpleCloudKitManageableConforming {
 	var isPendingCloudChanges: Bool { get set }
 	func log(_ message: String)

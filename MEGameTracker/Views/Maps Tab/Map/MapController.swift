@@ -46,16 +46,8 @@ final public class MapController: UIViewController,
 	}
 	var explicitMapLocationable: MapLocationable?
 
-//	public var breadcrumbs: String? {
-//		// TODO: Complete breadcrumbs - this is now an abbreviated set for easier display
-//		if let breadcrumbs = map?.getBreadcrumbs(), breadcrumbs.count > 0, let name = map?.name {
-//			let notesBreadcrumbs = breadcrumbs.map({ $0.name }).joined(separator: " > ")
-//			return "\(notesBreadcrumbs) > \(name)"
-//		} else {
-//			return map?.name
-//		}
-
-//	}
+	/// Cache for listening to changes.
+	var shepardUuid = App.current.game?.shepard?.uuid
 
 	@IBOutlet weak var baseView: UIView?
 	@IBOutlet weak var breadcrumbsWrapper: UIView!
@@ -172,21 +164,7 @@ final public class MapController: UIViewController,
 		}
 	}
 
-	@IBAction func gameChanged(_ sender: UISegmentedControl) {
-//		startSpinner(inView: view)
-//		let newGame: GameVersion = {
-//			switch gameSegment.selectedSegmentIndex {
-//			case 0: return .game1
-//			case 1: return .game2
-//			case 2: return .game3
-//			default: return .game1
-//			}
-
-//		}()
-//		map?.gameVersion = newGame
-//		reloadDataOnChange()
-//		stopSpinner(inView: view)
-	}
+	@IBAction func gameChanged(_ sender: UISegmentedControl) {} // TODO: remove
 
 	func setup() {
 		setupValues()
@@ -512,7 +490,10 @@ final public class MapController: UIViewController,
 		super.viewWillTransition(to: size, with: coordinator)
 	}
 
-	// MARK: UITapGestureRecognizer (page-wide)
+}
+
+// MARK: UITapGestureRecognizer (page-wide)
+extension MapController {
 
 	func addGestureRecognizers() {
 		let singleTap = UITapGestureRecognizer(target: self, action: #selector(MapController.tapMap(_:)))
@@ -527,8 +508,10 @@ final public class MapController: UIViewController,
 			singleTapGesture = nil
 		}
 	}
+}
 
-	// MARK: UIScrollViewDelegate
+// MARK: UIScrollViewDelegate
+extension MapController {
 
 	public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
 		return mapImageWrapperView
@@ -540,8 +523,10 @@ final public class MapController: UIViewController,
 		}
 		moveCalloutBox()
 	}
+}
 
-	// MARK: Segues
+// MARK: Segues
+extension MapController {
 
 	func resetSegueValues() {
 		segueMap = nil
@@ -573,15 +558,16 @@ final public class MapController: UIViewController,
 //		view.userInteractionEnabled = true
 //	}
 
-	var shepardUuid = App.current.game?.shepard?.uuid
 	func reloadOnShepardChange() {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
 			reloadMap()
 		}
 	}
+}
 
-	// MARK: Listeners
+// MARK: Listeners
+extension MapController {
 
 	fileprivate func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
@@ -645,8 +631,10 @@ final public class MapController: UIViewController,
 		Mission.onChange.cancelSubscription(for: self)
 		Item.onChange.cancelSubscription(for: self)
 	}
+}
 
-	// MARK: Actions
+// MARK: Actions
+extension MapController {
 
 	func didSaveNotes(_ notes: [Note]) {
 		// nothing

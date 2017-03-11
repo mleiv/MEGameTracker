@@ -46,7 +46,7 @@ extension ValueDataRowType {
 		setup(view: view as? UIView)
 
 		hideEmptyView(view: row as? UIView)
-		
+
 		if !UIWindow.isInterfaceBuilder && !view.didSetup {
 			startListeners()
 		}

@@ -39,7 +39,7 @@ public struct IBFont {
 	/// - parameter minFontSize:	 Minimum font size, defaults to 10.0.
 	/// - returns: UIFont
 	public func getUIFont(isScalable: Bool = true, minFontSize: CGFloat = 10.0) -> UIFont? {
-		let name = IBStyles.fontsList[style]
+		let name = IBStyleManager.current.stylesheet?.fonts[style]
 		let size = isScalable ? selectedCategorySize(size: self.size, minFontSize: minFontSize) : self.size
 		switch style {
 			case .normal:

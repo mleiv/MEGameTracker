@@ -157,7 +157,7 @@ final class ItemRow: UITableViewCell {
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.origin?.view)
 			self.setCheckboxImage(isAcquired: isAcquired, isAvailable: self.item?.isAvailable ?? false)
-			nameLabel.attributedText = Styles.applyStyle(nameLabel.identifier
+			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
 				?? "", toString: self.item?.name ?? "").toggleStrikethrough(isAcquired)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
 				self.item?.change(isAcquired: isAcquired, isSave: true)

@@ -170,12 +170,12 @@ final public class CalloutsView: SimpleArrayDataRow {
 					return
 				}
 			} else if let missionId = (callout as? Mission)?.inMissionId,
-				let linkedMission = Mission.get(id: missionId)  {
+				let linkedMission = Mission.get(id: missionId) {
 				if self.openMission(linkedMission) {
 					return
 				}
 			} else if let mapId = (callout as? Map)?.linkToMapId,
-				let linkedMap = Map.get(id: mapId)  {
+				let linkedMap = Map.get(id: mapId) {
 				if self.openMap(linkedMap) {
 					return
 				}

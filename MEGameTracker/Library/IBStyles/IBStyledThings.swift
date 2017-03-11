@@ -34,6 +34,7 @@ open class IBStyledView: UIView, IBStylable {
 		didLayout = true
 	}
 }
+
 @IBDesignable
 open class IBStyledLabel: UILabel, IBStylable {
 	@IBInspectable
@@ -60,6 +61,7 @@ open class IBStyledLabel: UILabel, IBStylable {
 		didLayout = true
 	}
 }
+
 @IBDesignable
 open class IBStyledTextField: UITextField, IBStylable {
 	@IBInspectable
@@ -87,6 +89,7 @@ open class IBStyledTextField: UITextField, IBStylable {
 		didLayout = true
 	}
 }
+
 @IBDesignable
 open class IBStyledTextView: UITextView, IBStylable {
 	@IBInspectable
@@ -128,6 +131,7 @@ open class IBStyledTextView: UITextView, IBStylable {
 		didLayout = true
 	}
 }
+
 @IBDesignable
 open class IBStyledImageView: UIImageView, IBStylable {
 	@IBInspectable
@@ -154,6 +158,7 @@ open class IBStyledImageView: UIImageView, IBStylable {
 		didLayout = true
 	}
 }
+
 @IBDesignable
 open class IBStyledButton: UIButton, IBStylable {
 	@IBInspectable
@@ -245,6 +250,7 @@ open class IBStyledButton: UIButton, IBStylable {
 		}
 	}
 }
+
 @IBDesignable
 open class IBStyledSegmentedControl: UISegmentedControl, IBStylable {
 	@IBInspectable

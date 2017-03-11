@@ -8,7 +8,9 @@
 
 import UIKit
 
-extension Styles {
+public struct Styles: IBStylesheet {
+	public static var current = Styles()
+
 	public struct Colors {
 		public static let normalColor = UIColor.black
 		public static let normalOppositeColor = UIColor.white
@@ -33,7 +35,7 @@ extension Styles {
 	/// Define your fonts using general style groups.
 	/// Fonts are automatically scalable (property .hasAdjustableFontSize can remove this behavior).
 	public struct Fonts {
-		// swiftlint:disable type_name
+		// swiftlint:disable type_name nesting
 		public struct body {
 			public static let normalStyle = IBFont(style: .normal, size: .normal)
 			public static let boldStyle = IBFont(style: .medium, size: .normal)
@@ -59,10 +61,10 @@ extension Styles {
 			public static let boldStyle = IBFont(style: .medium, size: .smaller)
 			public static let italicStyle = IBFont(style: .italic, size: .smaller)
 		}
-		// swiftlint:enable type_name
+		// swiftlint:enable type_name nesting
 	}
 
-	public static var fontsList: [IBFont.Style: String] {
+	public var fonts: [IBFont.Style: String] {
 		return [
 			.normal: "Avenir-Roman", // also -Book?
 			.italic: "Avenir-Oblique",
@@ -75,7 +77,7 @@ extension Styles {
 		]
 	}
 
-	public static var stylesList: [String: IBStyles.Properties] {
+	public var styles: [String: IBStyleProperty.List] {
 		return [
 			"NormalFilledBox": [
 				.backgroundColor: Colors.normalColor,
@@ -239,12 +241,12 @@ extension Styles {
 
 	/// Applies styles to a string and returns NSAttributedString.
 	/// Doesn't recognize .Inherit (sorry)
-	public static func applyStyle(_ style: String, toString text: String) -> NSAttributedString {
+	public func applyStyle(_ style: String, toString text: String) -> NSAttributedString {
 		let attributes = getAttributesByStyleName(style)
 		return NSAttributedString(string: text, attributes: attributes)
 	}
 
-	public static func applyStyle(
+	public func applyStyle(
 		_ style: String,
 		toString text: String,
 		inAttributedString attributedText: NSMutableAttributedString
@@ -254,8 +256,8 @@ extension Styles {
 		return attributedText
 	}
 
-	public static func shiftStyleToItalic(_ style: String, text: String) -> NSAttributedString {
-		if let styles = Styles.stylesList[style] {
+	public func shiftStyleToItalic(_ style: String, text: String) -> NSAttributedString {
+		if let styles = styles[style] {
 			var attributes: [String: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
 				attributes[NSFontAttributeName] = fontStyle.italic().getUIFont()
@@ -269,8 +271,8 @@ extension Styles {
 		return NSAttributedString()
 	}
 
-	public static func shiftStyleToBold(_ style: String, text: String) -> NSAttributedString {
-		if let styles = Styles.stylesList[style] {
+	public func shiftStyleToBold(_ style: String, text: String) -> NSAttributedString {
+		if let styles = styles[style] {
 			var attributes: [String: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
 				attributes[NSFontAttributeName] = fontStyle.bold().getUIFont()
@@ -284,8 +286,8 @@ extension Styles {
 		return NSAttributedString()
 	}
 
-	public static func shiftStyleToBoldItalic(_ style: String, text: String) -> NSAttributedString {
-		if let styles = Styles.stylesList[style] {
+	public func shiftStyleToBoldItalic(_ style: String, text: String) -> NSAttributedString {
+		if let styles = styles[style] {
 			var attributes: [String: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
 				attributes[NSFontAttributeName] = fontStyle.italic().bold().getUIFont()
@@ -299,7 +301,7 @@ extension Styles {
 		return NSAttributedString()
 	}
 
-	public static func applyStyle(
+	public func applyStyle(
 		_ style: String,
 		toAttributedText attributedText: NSMutableAttributedString
 	) -> NSAttributedString {
@@ -308,8 +310,8 @@ extension Styles {
 		return attributedText
 	}
 
-	fileprivate static func getAttributesByStyleName(_ style: String) -> [String: AnyObject] {
-		if let styles = Styles.stylesList[style] {
+	fileprivate func getAttributesByStyleName(_ style: String) -> [String: AnyObject] {
+		if let styles = styles[style] {
 			var attributes: [String: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
 				attributes[NSFontAttributeName] = fontStyle.getUIFont()
@@ -323,7 +325,7 @@ extension Styles {
 		return [:]
 	}
 
-	fileprivate static func convertStyleCategory(_ newStyleCategory: StyleCategory, oldStyle: String) -> String {
+	fileprivate func convertStyleCategory(_ newStyleCategory: StyleCategory, oldStyle: String) -> String {
 		switch newStyleCategory {
 			case .link:
 				if let regex = try? NSRegularExpression(pattern: "^[^\\.]+", options: .caseInsensitive) {
@@ -339,7 +341,7 @@ extension Styles {
 		return oldStyle
 	}
 
-	public static func convertToStyleCategory(
+	public func convertToStyleCategory(
 		_ newStyleCategory: StyleCategory,
 		attributedText: NSAttributedString
 	) -> NSAttributedString {
@@ -363,7 +365,7 @@ extension Styles {
 		case plain, italic, medium, link
 	}
 
-	public static func applyGlobalStyles(_ window: UIWindow?) {
+	public func applyGlobalStyles(inWindow window: UIWindow?) {
 		window?.tintColor = Colors.tintColor
 
 		if let titleFont = Fonts.body.boldStyle.getUIFont() {
@@ -390,9 +392,9 @@ extension Styles {
 
 		let bundle = Bundle.currentAppBundle
 		let minimumTrackImage = UIImage(named: "Slider Filled", in: bundle, compatibleWith: nil)?
-									.resizableImage(withCapInsets: UIEdgeInsetsMake(0,5,0,5))
+									.resizableImage(withCapInsets: UIEdgeInsetsMake(0,5, 0,5))
 		let maximumTrackImage = UIImage(named: "Slider Empty", in: bundle, compatibleWith: nil)?
-									.resizableImage(withCapInsets: UIEdgeInsetsMake(0,5,0,5))
+									.resizableImage(withCapInsets: UIEdgeInsetsMake(0,5, 0,5))
 		let thumbImage = UIImage(named: "Slider Thumb", in: bundle, compatibleWith: nil)
 		UISlider.appearance().setMinimumTrackImage(minimumTrackImage, for: UIControlState())
 		UISlider.appearance().setMaximumTrackImage(maximumTrackImage, for: UIControlState())

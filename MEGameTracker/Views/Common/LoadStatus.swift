@@ -18,16 +18,13 @@ protocol LoadStatusComponent: Hashable {
 ///	 enum MyEnum: LoadStatusComponent {
 ///		 case test
 ///		 func list() -> [MyEnum] { return [test] }
-
 ///	 }
-
 ///	 var status = LoadStatus<MyEnum>()
 ///	 func reloadPage() {
 ///		 status.reset()
 ///		 ... start spinner, load stuff async
 ///		 status.markIsDone(.test)
 ///		 if status.isComplete == true { ... stop spinner }
-
 ///	 }
 struct LoadStatus<Component: LoadStatusComponent> {
 	private var components: [Component: Bool] = [:]

@@ -36,6 +36,7 @@ public struct BaseDataImport: CoreDataMigrationType {
 
 	// Must group these by type
 	public typealias CoreDataFileImport = (type: BaseDataFileImportType, filename: String, progress: Double)
+
 	public let progressFiles: [CoreDataFileImport] = [
 		(type: .event, filename: "DataEvents_1", progress: 1),
 		(type: .event, filename: "DataEvents_2", progress: 1),
@@ -138,96 +139,47 @@ public struct BaseDataImport: CoreDataMigrationType {
 
 		var tempProgress1 = 0.0
 		var tempProgress2 = 0.0
-
-		// transferring some data so we don't have to type it:
-		let mapsBlock: (() -> Void) = {
-			let manager = self.manager
-			let mapsCount = DataMap.getCount(with: manager)
-			var countProcessed: Int = 0
-			let chunkSize: Int = 20
-			let chunkPercentage = Double(chunkSize) / Double(mapsCount)
-			let chunkProgress = Double(self.progressProcessImportChunk) * chunkPercentage
-
-			for map in DataMap.getAll(with: manager, alterFetchRequest: { fetchRequest in
-				fetchRequest.predicate = NSPredicate(format: "(inMapId = nil)")
-			}) {
-				self.applyInheritedEvents(
-					map: map,
-					inheritableEvents: map.getInheritableEvents(),
-					runOnEachMapBlock: {
-						if countProcessed > 0 && countProcessed % chunkSize == 0 {
-							// notify chunk done
-							queue.sync {
-								tempProgress1 += chunkProgress
-								self.fireProgress(
-									progress: progress + tempProgress2 + tempProgress1,
-									progressTotal: progressTotal
-								)
-							}
-						}
-						countProcessed += 1
-					}
-				)
-			}
-			// notify all done
-			queue.sync {
+		let updateProgress1: ((Double, Bool) -> Void) = { (chunkProgress, isCompleted) in
+			if isCompleted {
 				tempProgress1 = self.progressProcessImportChunk
 				self.fireProgress(progress: progress + tempProgress2 + tempProgress1, progressTotal: progressTotal)
-			}
-		}
-
-		let missionsBlock: (() -> Void) = {
-			let manager = self.manager
-			let missionsCount = DataMission.getCount(with: manager)
-			var countProcessed: Int = 0
-			let chunkSize: Int = 20
-			let chunkPercentage = Double(chunkSize) / Double(missionsCount)
-			let chunkProgress = Double(self.progressProcessImportChunk) * chunkPercentage
-
-			for mission in DataMission.getAll(with: manager, alterFetchRequest: { fetchRequest in
-				fetchRequest.predicate = NSPredicate(format: "(inMissionId = nil)")
-			}) {
-				self.applyInheritedEvents(
-					mission: mission,
-					inheritableEvents: mission.getInheritableEvents(),
-					runOnEachMissionBlock: {
-						if countProcessed > 0 && countProcessed % chunkSize == 0 {
-							// notify chunk done
-							queue.sync {
-								tempProgress2 += chunkProgress
-								self.fireProgress(
-									progress: progress + tempProgress2 + tempProgress1,
-									progressTotal: progressTotal
-								)
-							}
-						}
-						countProcessed += 1
-					}
+			} else {
+				tempProgress1 += chunkProgress
+				self.fireProgress(
+					progress: progress + tempProgress2 + tempProgress1,
+					progressTotal: progressTotal
 				)
 			}
-			// notify all done
-			queue.sync {
+		}
+		let updateProgress2: ((Double, Bool) -> Void) = { (chunkProgress, isCompleted) in
+			if isCompleted {
 				tempProgress2 = self.progressProcessImportChunk
 				self.fireProgress(progress: progress + tempProgress2 + tempProgress1, progressTotal: progressTotal)
+			} else {
+				tempProgress2 += chunkProgress
+				self.fireProgress(
+					progress: progress + tempProgress2 + tempProgress1,
+					progressTotal: progressTotal
+				)
 			}
 		}
 
 		if isTestProject {
 			// XCTest has some multithreading issues, where the queueGroup wait blocks the Core Data wait. 
 			// So we will run it synchronously.
-			mapsBlock()
-			missionsBlock()
+			processImportedMapData(queue: queue, updateProgress: updateProgress1)
+			processImportedMissionData(queue: queue, updateProgress: updateProgress2)
 		} else {
 			// Queue #1
 			queueGroup.enter()
 			queue.async(group: queueGroup) {
-				mapsBlock()
+				self.processImportedMapData(queue: queue, updateProgress: updateProgress1)
 				queueGroup.leave()
 			}
 			// Queue #2
 			queueGroup.enter()
 			queue.async(group: queueGroup) {
-				missionsBlock()
+				self.processImportedMissionData(queue: queue, updateProgress: updateProgress2)
 				queueGroup.leave()
 			}
 			// wait for finish
@@ -237,6 +189,74 @@ public struct BaseDataImport: CoreDataMigrationType {
 		// TODO: delete orphan game data?
 
 		fireProgress(progress: progressTotal, progressTotal: progressTotal)
+	}
+
+	func processImportedMapData(
+		queue: DispatchQueue,
+		updateProgress: @escaping ((Double, Bool) -> Void)
+	) {
+		let manager = self.manager
+		let mapsCount = DataMap.getCount(with: manager)
+		var countProcessed: Int = 0
+		let chunkSize: Int = 20
+		let chunkPercentage = Double(chunkSize) / Double(mapsCount)
+		let chunkProgress = Double(self.progressProcessImportChunk) * chunkPercentage
+
+		for map in DataMap.getAll(with: manager, alterFetchRequest: { fetchRequest in
+			fetchRequest.predicate = NSPredicate(format: "(inMapId = nil)")
+		}) {
+			self.applyInheritedEvents(
+				map: map,
+				inheritableEvents: map.getInheritableEvents(),
+				runOnEachMapBlock: {
+					if countProcessed > 0 && countProcessed % chunkSize == 0 {
+						// notify chunk done
+						queue.sync {
+							updateProgress(chunkProgress, false)
+						}
+					}
+					countProcessed += 1
+				}
+			)
+		}
+		// notify all done
+		queue.sync {
+			updateProgress(0, true)
+		}
+	}
+
+	func processImportedMissionData(
+		queue: DispatchQueue,
+		updateProgress: @escaping ((Double, Bool) -> Void)
+	) {
+		let manager = self.manager
+		let missionsCount = DataMission.getCount(with: manager)
+		var countProcessed: Int = 0
+		let chunkSize: Int = 20
+		let chunkPercentage = Double(chunkSize) / Double(missionsCount)
+		let chunkProgress = Double(self.progressProcessImportChunk) * chunkPercentage
+
+		for mission in DataMission.getAll(with: manager, alterFetchRequest: { fetchRequest in
+			fetchRequest.predicate = NSPredicate(format: "(inMissionId = nil)")
+		}) {
+			self.applyInheritedEvents(
+				mission: mission,
+				inheritableEvents: mission.getInheritableEvents(),
+				runOnEachMissionBlock: {
+					if countProcessed > 0 && countProcessed % chunkSize == 0 {
+						// notify chunk done
+						queue.sync {
+							updateProgress(chunkProgress, false)
+						}
+					}
+					countProcessed += 1
+				}
+			)
+		}
+		// notify all done
+		queue.sync {
+			updateProgress(0, true)
+		}
 	}
 
 	//TODO: Protocol events and generic this function

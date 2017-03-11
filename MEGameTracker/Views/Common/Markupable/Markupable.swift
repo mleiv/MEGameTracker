@@ -39,7 +39,7 @@ extension Markupable where Self: IBStylable, Self: UIView {
 	public func markupText() {
 //		guard !UIWindow.isInterfaceBuilder else { return }
 		useAttributedText = NSMutableAttributedString(
-			attributedString: Styles.applyStyle(identifier ?? "",
+			attributedString: Styles.current.applyStyle(identifier ?? "",
 			toString: unmarkedText ?? "")
 		)
 		guard isMarkupable else { return }
@@ -66,12 +66,12 @@ extension Markupable where Self: IBStylable, Self: UIView {
 						if textString.length > 4
 								&& (textString.stringFrom(0, to: 2) == "*_" || textString.stringFrom(0, to: 2) == "_*"),
 							let identifier = self.identifier {
-							text = Styles.shiftStyleToBoldItalic(identifier, text: textString.stringFrom(2, to: -2))
+							text = Styles.current.shiftStyleToBoldItalic(identifier, text: textString.stringFrom(2, to: -2))
 						} else if textString.length > 2 {
 							if textString.characters.first == "*", let identifier = self.identifier {
-								text = Styles.shiftStyleToBold(identifier, text: textString.stringFrom(1, to: -1))
+								text = Styles.current.shiftStyleToBold(identifier, text: textString.stringFrom(1, to: -1))
 							} else if textString.characters.first == "_", let identifier = self.identifier {
-								text = Styles.shiftStyleToItalic(identifier, text: textString.stringFrom(1, to: -1))
+								text = Styles.current.shiftStyleToItalic(identifier, text: textString.stringFrom(1, to: -1))
 							}
 						}
 						offsetIndex -= (wholeMatchRange.length - text.length)
