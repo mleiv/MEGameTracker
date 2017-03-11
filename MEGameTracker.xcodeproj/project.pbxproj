@@ -212,9 +212,8 @@
 		B160EE891CF951500028910C /* ShepardReputationRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160EE811CF951500028910C /* ShepardReputationRowType.swift */; };
 		B160EE8A1CF951500028910C /* ShepardLoveInterestRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B160EE831CF951500028910C /* ShepardLoveInterestRow.xib */; };
 		B160EE8C1CF951500028910C /* ShepardLoveInterestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160EE861CF951500028910C /* ShepardLoveInterestRow.swift */; };
-		B160EE921CF95DB80028910C /* SliderRowNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = B160EE8E1CF95DB80028910C /* SliderRowNib.xib */; };
-		B160EE931CF95DB80028910C /* SliderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160EE901CF95DB80028910C /* SliderRowView.swift */; };
-		B160EE941CF95DB80028910C /* SliderRowNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160EE911CF95DB80028910C /* SliderRowNib.swift */; };
+		B160EE921CF95DB80028910C /* SliderRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B160EE8E1CF95DB80028910C /* SliderRow.xib */; };
+		B160EE931CF95DB80028910C /* SliderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160EE901CF95DB80028910C /* SliderRow.swift */; };
 		B1666C331CC1594C00BF5F93 /* DataEventsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1666C321CC1594C00BF5F93 /* DataEventsable.swift */; };
 		B169BB961CF4035C006BC234 /* VoiceActorLinkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169BB921CF4035C006BC234 /* VoiceActorLinkable.swift */; };
 		B169BB981CF4035C006BC234 /* VoiceActorLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169BB941CF4035C006BC234 /* VoiceActorLinkView.swift */; };
@@ -711,9 +710,8 @@
 		B160EE811CF951500028910C /* ShepardReputationRowType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShepardReputationRowType.swift; sourceTree = "<group>"; };
 		B160EE841CF951500028910C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShepardLoveInterestRow.xib; sourceTree = "<group>"; };
 		B160EE861CF951500028910C /* ShepardLoveInterestRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShepardLoveInterestRow.swift; sourceTree = "<group>"; };
-		B160EE8F1CF95DB80028910C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SliderRowNib.xib; sourceTree = "<group>"; };
-		B160EE901CF95DB80028910C /* SliderRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderRowView.swift; sourceTree = "<group>"; };
-		B160EE911CF95DB80028910C /* SliderRowNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderRowNib.swift; sourceTree = "<group>"; };
+		B160EE8F1CF95DB80028910C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SliderRow.xib; sourceTree = "<group>"; };
+		B160EE901CF95DB80028910C /* SliderRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderRow.swift; sourceTree = "<group>"; };
 		B1666C321CC1594C00BF5F93 /* DataEventsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEventsable.swift; sourceTree = "<group>"; };
 		B169BB921CF4035C006BC234 /* VoiceActorLinkable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceActorLinkable.swift; sourceTree = "<group>"; };
 		B169BB941CF4035C006BC234 /* VoiceActorLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceActorLinkView.swift; sourceTree = "<group>"; };
@@ -1783,9 +1781,8 @@
 		B160EE8D1CF95DB80028910C /* Slider */ = {
 			isa = PBXGroup;
 			children = (
-				B160EE8E1CF95DB80028910C /* SliderRowNib.xib */,
-				B160EE911CF95DB80028910C /* SliderRowNib.swift */,
-				B160EE901CF95DB80028910C /* SliderRowView.swift */,
+				B160EE8E1CF95DB80028910C /* SliderRow.xib */,
+				B160EE901CF95DB80028910C /* SliderRow.swift */,
 			);
 			path = Slider;
 			sourceTree = "<group>";
@@ -2543,7 +2540,7 @@
 				B1A881511CF2546800603253 /* DataEvents_1.json in Resources */,
 				B1EA40FE1DFCEE93006948B0 /* DataMissions_3Misc.json in Resources */,
 				B0C355F41BB3807D005CD0BF /* MapCallouts.storyboard in Resources */,
-				B160EE921CF95DB80028910C /* SliderRowNib.xib in Resources */,
+				B160EE921CF95DB80028910C /* SliderRow.xib in Resources */,
 				B1EA40F61DFCEE4E006948B0 /* DataItems_3.json in Resources */,
 				B0A796ED1C7D764F004F1A56 /* ShepardSplitView.storyboard in Resources */,
 				B14BFFF71CFBDCC60016965A /* DataMissions_2Misc.json in Resources */,
@@ -2736,7 +2733,6 @@
 				B0C0BD761C7BC2C800BBA4D2 /* GroupSplitViewController.swift in Sources */,
 				B02ACD2E1BA2797000B7CCB0 /* CoreAppData.swift in Sources */,
 				B00AB4991C7EA980007FC7A4 /* ShepardAppearanceSliderCell.swift in Sources */,
-				B160EE941CF95DB80028910C /* SliderRowNib.swift in Sources */,
 				B14EA93F1CF3F5D5009F2B0A /* RelatedLinkRow.swift in Sources */,
 				B1A882121CF29AD100603253 /* SideEffectsable.swift in Sources */,
 				B1E2C8021CE413120001AFC9 /* MissionsGroupRow.swift in Sources */,
@@ -2877,7 +2873,7 @@
 				B01D8F301BA139500039E003 /* ShepardOriginController.swift in Sources */,
 				B028AF251BA12B1900C73373 /* AppDelegate.swift in Sources */,
 				B169BB961CF4035C006BC234 /* VoiceActorLinkable.swift in Sources */,
-				B160EE931CF95DB80028910C /* SliderRowView.swift in Sources */,
+				B160EE931CF95DB80028910C /* SliderRow.swift in Sources */,
 				B124586E1E39B3C80043F5D1 /* UnavailabilityType.swift in Sources */,
 				B08E2A521BB23246009546F8 /* DataMap.swift in Sources */,
 				B1C388711BA4B35E0088D8A8 /* PersonsController.swift in Sources */,
@@ -3230,12 +3226,12 @@
 			name = ShepardLoveInterestRow.xib;
 			sourceTree = "<group>";
 		};
-		B160EE8E1CF95DB80028910C /* SliderRowNib.xib */ = {
+		B160EE8E1CF95DB80028910C /* SliderRow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B160EE8F1CF95DB80028910C /* Base */,
 			);
-			name = SliderRowNib.xib;
+			name = SliderRow.xib;
 			sourceTree = "<group>";
 		};
 		B169BB9A1CF406CB006BC234 /* VoiceActorLinkRow.xib */ = {

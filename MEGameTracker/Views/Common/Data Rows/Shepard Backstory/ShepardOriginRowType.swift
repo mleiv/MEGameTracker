@@ -20,7 +20,8 @@ public struct ShepardOriginRowType: ValueDataRowType {
 
 	public var heading: String? { return "Origin" }
 	public var value: String? {
-		return UIWindow.isInterfaceBuilder ? "Earthborn" : controller?.shepard?.origin.stringValue
+		return (UIWindow.isInterfaceBuilder || App.isInitializing)
+			? "Earthborn" : controller?.shepard?.origin.stringValue
 	}
 	public var originHint: String? { return controller?.originHint }
 	public var viewController: UIViewController? { return controller }

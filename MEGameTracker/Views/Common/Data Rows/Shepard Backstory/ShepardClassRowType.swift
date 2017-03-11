@@ -20,7 +20,8 @@ public struct ShepardClassRowType: ValueDataRowType {
 
 	public var heading: String? { return "Class" }
 	public var value: String? {
-		return UIWindow.isInterfaceBuilder ? "Soldier" : controller?.shepard?.classTalent.stringValue
+		return (UIWindow.isInterfaceBuilder || App.isInitializing)
+			? "Soldier" : controller?.shepard?.classTalent.stringValue
 	}
 	public var originHint: String? { return controller?.originHint }
 	public var viewController: UIViewController? { return controller }

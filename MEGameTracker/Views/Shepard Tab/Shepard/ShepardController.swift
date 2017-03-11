@@ -72,9 +72,9 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 	@IBOutlet public weak var relatedLinksView: RelatedLinksView?
 	public var relatedLinks: [String] = []
 	// Slider Rows
-	@IBOutlet weak var levelRow: SliderRowView?
-	@IBOutlet weak var paragonRow: SliderRowView?
-	@IBOutlet weak var renegadeRow: SliderRowView?
+	@IBOutlet weak var levelRow: SliderRow?
+	@IBOutlet weak var paragonRow: SliderRow?
+	@IBOutlet weak var renegadeRow: SliderRow?
 	// VoiceActorLinkable
 	@IBOutlet public weak var voiceActorLinkView: VoiceActorLinkView?
 
@@ -426,11 +426,10 @@ extension ShepardController: RelatedLinksable {
 extension ShepardController { // Slider Rows
 	func setupLevel() {
 		guard levelRow != nil else { return }
-		levelRow?.setup(
+		levelRow?.initialize(
 			value: shepard?.level ?? 1,
 			minValue: 1,
 			maxValue: shepard?.gameVersion.maxShepardLevel ?? 1,
-			labelPattern: "Level %d/%d: ",
 			onChange: { [weak self] (value: Int) in
 				guard value != self?.shepard?.level else { return }
 				// some events depend on level
@@ -447,15 +446,15 @@ extension ShepardController { // Slider Rows
 				_ = self?.shepard?.saveAnyChanges()
 			}
 		)
+		levelRow?.setupView()
 	}
 
 	func setupParagon() {
 		guard paragonRow != nil else { return }
-		paragonRow?.setup(
+		paragonRow?.initialize(
 			value: shepard?.paragon ?? 0,
 			minValue: 0,
 			maxValue: 100,
-			labelPattern: "Paragon %d%%: ",
 			onChange: { [weak self] (value: Int) in
 				guard value != self?.shepard?.paragon else { return }
 				// some events depend on paragon
@@ -473,15 +472,15 @@ extension ShepardController { // Slider Rows
 				_ = self?.shepard?.saveAnyChanges()
 			}
 		)
+		paragonRow?.setupView()
 	}
 
 	func setupRenegade() {
 		guard renegadeRow != nil else { return }
-		renegadeRow?.setup(
+		renegadeRow?.initialize(
 			value: shepard?.renegade ?? 0,
 			minValue: 0,
 			maxValue: 100,
-			labelPattern: "Renegade %d%%: ",
 			onChange: { [weak self] (value: Int) in
 				guard value != self?.shepard?.renegade, let gameVersion = self?.shepard?.gameVersion else { return }
 				// some events depend on renegade
@@ -499,6 +498,7 @@ extension ShepardController { // Slider Rows
 				_ = self?.shepard?.saveAnyChanges()
 			}
 		)
+		renegadeRow?.setupView()
 	}
 }
 

@@ -20,7 +20,8 @@ public struct ShepardReputationRowType: ValueDataRowType {
 
 	public var heading: String? { return "Reputation" }
 	public var value: String? {
-		return UIWindow.isInterfaceBuilder ? "Sole Survivor" : controller?.shepard?.reputation.stringValue
+		return (UIWindow.isInterfaceBuilder || App.isInitializing)
+			? "Sole Survivor" : controller?.shepard?.reputation.stringValue
 	}
 	public var originHint: String? { return controller?.originHint }
 	public var viewController: UIViewController? { return controller }

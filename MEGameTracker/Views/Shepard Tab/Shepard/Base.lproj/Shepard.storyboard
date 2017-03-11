@@ -40,7 +40,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="570" height="50"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="&lt;Loading&gt;" placeholder="John" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zco-9l-Ov9" userLabel="Name Field" customClass="IBStyledTextField" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="109" height="50"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="101" height="50"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -54,7 +54,7 @@
                                                                                 </connections>
                                                                             </textField>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" text="Shepard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqP-pb-4o7" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="111" y="12" width="459" height="26"/>
+                                                                                <rect key="frame" x="103" y="13" width="467" height="24"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -216,27 +216,33 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="700" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zxB-id-nwo">
                                                         <rect key="frame" x="0.0" y="338" width="600" height="579"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="nUh-7j-aNP" userLabel="Level Row" customClass="SliderRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="nUh-7j-aNP" userLabel="Level Row" customClass="SliderRow" customModule="MEGameTracker" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                        <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="headingPattern" value="Level %d/%d: "/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="Rbd-SR-v1e" userLabel="Paragon Row" customClass="SliderRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="Rbd-SR-v1e" userLabel="Paragon Row" customClass="SliderRow" customModule="MEGameTracker" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="50" width="600" height="50"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="headingPattern" value="Paragon %d%%: "/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="8X1-xD-Q9N" userLabel="Renegade Row" customClass="SliderRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="8X1-xD-Q9N" userLabel="Renegade Row" customClass="SliderRow" customModule="MEGameTracker" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="100" width="600" height="50"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showRowDivider" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="headingPattern" value="Renegade %d%%: "/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="piV-Sv-m4y" customClass="ValueDataRow" customModule="MEGameTracker" customModuleProvider="target">

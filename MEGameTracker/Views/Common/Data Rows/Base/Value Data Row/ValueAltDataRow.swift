@@ -16,7 +16,7 @@ final public class ValueAltDataRow: HairlineBorderView, ValueDataRowDisplayable 
 	}
 	@IBInspectable public var hideHeadingOnCompactView: Bool = false
 	@IBInspectable public var showRowDivider: Bool = false
-   @IBInspectable public var isHideOnEmpty: Bool = true
+	@IBInspectable public var isHideOnEmpty: Bool = true
 
 // MARK: Outlets
 	@IBOutlet weak public var headingLabel: IBStyledLabel?
@@ -57,6 +57,8 @@ final public class ValueAltDataRow: HairlineBorderView, ValueDataRowDisplayable 
 	public override func layoutSubviews() {
 		if !UIWindow.isInterfaceBuilder && !isAttachedNib && isHideOnEmpty && !didSetup {
 			isHidden = true
+		} else {
+			setDummyDataRowType()
 		}
 		configureViewForSizeClass()
 		super.layoutSubviews()
@@ -85,13 +87,12 @@ final public class ValueAltDataRow: HairlineBorderView, ValueDataRowDisplayable 
 // MARK: Customization Options
 
 	private func setDummyDataRowType() {
-		guard isInterfaceBuilder && !isAttachedNib else { return }
+		guard (isInterfaceBuilder || App.isInitializing) && !didSetup && isAttachedNibWrapper else { return }
 		var dataRowType: ValueDataRowType?
 		switch typeName {
 			case "Class": dataRowType = ShepardClassRowType()
 			case "Origin": dataRowType = ShepardOriginRowType()
 			case "Reputation": dataRowType = ShepardReputationRowType()
-			case "DecisionsListLink": dataRowType = DecisionsListLinkType()
 			default: break
 		}
 		dataRowType?.row = self

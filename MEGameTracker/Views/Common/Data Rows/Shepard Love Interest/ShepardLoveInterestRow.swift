@@ -57,6 +57,8 @@ final public class ShepardLoveInterestRow: HairlineBorderView, ValueDataRowDispl
 	open override func layoutSubviews() {
 		if !UIWindow.isInterfaceBuilder && !isAttachedNib && isHideOnEmpty && !didSetup {
 			isHidden = true
+		} else {
+			setDummyDataRowType()
 		}
 		super.layoutSubviews()
 	}
@@ -64,7 +66,7 @@ final public class ShepardLoveInterestRow: HairlineBorderView, ValueDataRowDispl
 // MARK: Customization Options 
 
 	private func setDummyDataRowType() {
-		guard isInterfaceBuilder && !isAttachedNib else { return }
+		guard (isInterfaceBuilder || App.isInitializing) && !didSetup && isAttachedNibWrapper else { return }
 		var dataRowType = ShepardLoveInterestRowType()
 		dataRowType.row = self
 		dataRowType.setupView()

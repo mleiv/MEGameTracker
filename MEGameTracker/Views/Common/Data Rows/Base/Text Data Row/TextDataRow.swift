@@ -63,6 +63,8 @@ final public class TextDataRow: HairlineBorderView, IBViewable {
 	public override func layoutSubviews() {
 		if !UIWindow.isInterfaceBuilder && !isAttachedNib && isHideOnEmpty && !didSetup {
 			isHidden = true
+		} else {
+			setDummyDataRowType()
 		}
 		super.layoutSubviews()
 	}
@@ -105,7 +107,7 @@ final public class TextDataRow: HairlineBorderView, IBViewable {
 // MARK: Customization Options
 
 	func setDummyDataRowType() {
-		guard isInterfaceBuilder && !isAttachedNib else { return }
+		guard (isInterfaceBuilder || App.isInitializing) && !didSetup && isAttachedNibWrapper else { return }
 		var dataRowType: TextDataRowType?
 		switch typeName {
 			case "Aliases": dataRowType = AliasesType()

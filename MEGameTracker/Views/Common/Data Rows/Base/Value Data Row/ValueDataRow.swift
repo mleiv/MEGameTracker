@@ -54,6 +54,8 @@ final public class ValueDataRow: HairlineBorderView, ValueDataRowDisplayable {
 	public override func layoutSubviews() {
 		if !UIWindow.isInterfaceBuilder && !isAttachedNib && isHideOnEmpty && !didSetup {
 			isHidden = true
+		} else {
+			setDummyDataRowType()
 		}
 		super.layoutSubviews()
 	}
@@ -61,12 +63,12 @@ final public class ValueDataRow: HairlineBorderView, ValueDataRowDisplayable {
 // mARK: Customization Options
 
 	private func setDummyDataRowType() {
-		guard isInterfaceBuilder && !isAttachedNib else { return }
+		guard (isInterfaceBuilder || App.isInitializing) && !didSetup && isAttachedNibWrapper else { return }
 		var dataRowType: ValueDataRowType?
 		switch typeName {
 			case "Appearance": dataRowType = AppearanceLinkType()
 			case "ConversationRewards": dataRowType = ConversationRewardsRowType()
-			case "DecisionListLink": dataRowType = DecisionsListLinkType()
+			case "DecisionsListLink": dataRowType = DecisionsListLinkType()
 			case "MapLink": dataRowType = MapLinkType()
 			default: break
 		}
