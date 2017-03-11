@@ -8,6 +8,8 @@
 
 import UIKit
 
+// swiftlint:disable file_length
+
 public struct Map: MapLocationable, Eventsable {
 // MARK: Constants
 
@@ -442,3 +444,4 @@ extension Map: Equatable {
 extension Map: Hashable {
 	public var hashValue: Int { return id.hashValue }
 }
+// swiftlint:enable file_length

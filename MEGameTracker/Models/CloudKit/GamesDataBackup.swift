@@ -120,6 +120,9 @@ final public class GamesDataBackup: SimpleCloudKitManageable {
 	var personChanges: [SerializableData] = []
 	var gameChanges: [SerializableData] = []
 	var shepardChanges: [SerializableData] = []
+}
+
+extension GamesDataBackup {
 
 	public func queueSaveFromCloud(record: CKRecord) -> Bool {
 		log("queueSaveFromCloud \(record.recordType)")
@@ -238,6 +241,7 @@ final public class GamesDataBackup: SimpleCloudKitManageable {
 		return recordIds
 	}
 
+	// swiftlint:disable function_body_length
 	public func confirmAllChangesToCloud (
 		savedRecords: [CKRecord],
 		deletedRecordIds: [CKRecordID]
@@ -321,6 +325,7 @@ final public class GamesDataBackup: SimpleCloudKitManageable {
 
 		return isConfirmed
 	}
+	// swiftlint:enable function_body_length
 
 	/// A reset for game data.
 	public func deleteAllGameData() -> Bool {

@@ -141,6 +141,7 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 		// TODO
 	}
 
+	// swiftlint:disable function_body_length
 	/// [Galaxy Map|megametracker://maplocation?id=1]
 	fileprivate func redirectMapLocationable(parameters: [String: String]) {
 		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
@@ -212,6 +213,7 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 			}
 		}
 	}
+	// swiftlint:enable function_body_length
 
 	/// [Prologue|megametracker://mission?id=M1.Prologue]
 	fileprivate func redirectMission(parameters: [String: String]) {

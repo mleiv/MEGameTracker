@@ -10,6 +10,9 @@
 
 import UIKit
 
+// swiftlint:disable file_length
+// TODO: Split out?
+
 public enum SerializableDataError: Error {
 	case parsingError
 	case fileLoadError
@@ -607,3 +610,4 @@ extension SerializableData: CustomStringConvertible {
 		}
 	}
 }
+// swiftlint:enable file_length

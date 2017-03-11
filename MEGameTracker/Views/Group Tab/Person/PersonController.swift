@@ -9,6 +9,9 @@
 import UIKit
 import SafariServices
 
+// swiftlint:disable file_length
+// TODO: Refactor
+
 final public class PersonController: UIViewController, Spinnerable, UINavigationControllerDelegate, UITextViewDelegate {
 
 	var person: Person? {
@@ -437,3 +440,4 @@ extension PersonController: VoiceActorLinkable {
 		voiceActorLinkView?.setup()
 	}
 }
+// swiftlint:enable file_length

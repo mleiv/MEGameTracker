@@ -9,6 +9,9 @@
 import UIKit
 import SafariServices
 
+// swiftlint:disable file_length
+// TODO: Refactor
+
 final public class MissionController: UIViewController,
 	UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
 
@@ -465,3 +468,5 @@ extension MissionController: SideEffectsable {
 }
 
 extension MissionController: Spinnerable {}
+
+// swiftlint:enable file_length

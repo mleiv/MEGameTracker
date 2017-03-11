@@ -92,6 +92,9 @@ public struct BaseDataImport: CoreDataMigrationType {
 			progressTotal: progressTotal
 		)
 	}
+}
+
+extension BaseDataImport {
 
 	func importDataFiles(progress: Double, progressTotal: Double) {
 		var progress = progress
@@ -190,6 +193,9 @@ public struct BaseDataImport: CoreDataMigrationType {
 
 		fireProgress(progress: progressTotal, progressTotal: progressTotal)
 	}
+}
+
+extension BaseDataImport {
 
 	func processImportedMapData(
 		queue: DispatchQueue,

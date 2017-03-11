@@ -147,6 +147,7 @@ extension GameSequence {
 		return isDeleted
 	}
 
+	// swiftlint:disable function_body_length
 	/// Stores a row before delete
 	public static func notifyDeleteToCloud(
 		uuid: String,
@@ -226,6 +227,7 @@ extension GameSequence {
 		_ = DeletedRow.saveAll(items: deletedRows, with: manager)
 		GamesDataBackup.current.isPendingCloudChanges = true
 	}
+	// swiftlint:enable function_body_length
 
 	internal static func getAllIdentifiers<T: CloudDataStorable & SimpleSerializedCoreDataStorable>(
 		ofType type: T.Type,

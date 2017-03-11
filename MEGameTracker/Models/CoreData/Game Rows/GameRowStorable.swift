@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+// swiftlint:disable file_length
+
 /// Shared properties and methods for all game entity values.
 ///
 /// Note: game get() methods are created from corresponding data rows, with game data only assigned if it exists.
@@ -539,3 +541,4 @@ extension GameRowStorable {
 		return deleteOrphans(with: nil)
 	}
 }
+// swiftlint:enable file_length

@@ -8,6 +8,9 @@
 
 import UIKit
 
+// swiftlint:disable file_length
+// TODO: Refactor
+
 final public class ShepardController: UIViewController, Spinnerable, UINavigationControllerDelegate {
 
 // MARK: Outlets 
@@ -430,20 +433,8 @@ extension ShepardController { // Slider Rows
 			value: shepard?.level ?? 1,
 			minValue: 1,
 			maxValue: shepard?.gameVersion.maxShepardLevel ?? 1,
-			onChange: { [weak self] (value: Int) in
-				guard value != self?.shepard?.level else { return }
-				// some events depend on level
-				let events = Event.getLevels(gameVersion: App.current.gameVersion)
-				for (var event) in events {
-					let level = Int(event.id.stringFrom(-2))
-					if level <= value && !event.isTriggered {
-						event.change(isTriggered: true, isSave: true)
-					} else if level > value && event.isTriggered {
-						event.change(isTriggered: false, isSave: true)
-					}
-				}
-				self?.shepard?.change(level: value)
-				_ = self?.shepard?.saveAnyChanges()
+			onChange: { [weak self] value in
+				Event.triggerLevelChange(value, for: self?.shepard)
 			}
 		)
 		levelRow?.setupView()
@@ -455,21 +446,8 @@ extension ShepardController { // Slider Rows
 			value: shepard?.paragon ?? 0,
 			minValue: 0,
 			maxValue: 100,
-			onChange: { [weak self] (value: Int) in
-				guard value != self?.shepard?.paragon else { return }
-				// some events depend on paragon
-				let events = Event.getParagons(gameVersion: App.current.gameVersion)
-				for (var event) in events {
-					let eventValue = event.id.stringFrom(-2)
-					let paragon = eventValue != "00" ? Int(eventValue) : 100
-					if paragon <= value && !event.isTriggered {
-						event.change(isTriggered: true, isSave: true)
-					} else if paragon > value && event.isTriggered {
-						event.change(isTriggered: false, isSave: true)
-					}
-				}
-				self?.shepard?.change(paragon: value)
-				_ = self?.shepard?.saveAnyChanges()
+			onChange: { [weak self] value in
+				Event.triggerRenegadeChange(value, for: self?.shepard)
 			}
 		)
 		paragonRow?.setupView()
@@ -481,21 +459,8 @@ extension ShepardController { // Slider Rows
 			value: shepard?.renegade ?? 0,
 			minValue: 0,
 			maxValue: 100,
-			onChange: { [weak self] (value: Int) in
-				guard value != self?.shepard?.renegade, let gameVersion = self?.shepard?.gameVersion else { return }
-				// some events depend on renegade
-				let events = Event.getRenegades(gameVersion: gameVersion)
-				for (var event) in events {
-					let eventValue = event.id.stringFrom(-2)
-					let renegade = eventValue != "00" ? Int(eventValue) : 100
-					if renegade <= value && !event.isTriggered {
-						event.change(isTriggered: true, isSave: true)
-					} else if renegade > value && event.isTriggered {
-						event.change(isTriggered: false, isSave: true)
-					}
-				}
-				self?.shepard?.change(renegade: value)
-				_ = self?.shepard?.saveAnyChanges()
+			onChange: { [weak self] value in
+				Event.triggerParagonChange(value, for: self?.shepard)
 			}
 		)
 		renegadeRow?.setupView()
@@ -511,3 +476,4 @@ extension ShepardController: VoiceActorLinkable {
 		voiceActorLinkView?.setup()
 	}
 }
+// swiftlint:enable file_length

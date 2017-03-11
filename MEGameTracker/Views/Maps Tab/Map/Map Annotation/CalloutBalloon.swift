@@ -92,6 +92,7 @@ public struct CalloutBalloon {
 		baseLayer?.mask = outerLayer
 	}
 
+	// swiftlint:disable function_body_length
 	private func drawBalloon(outerPath: UIBezierPath, innerPath: UIBezierPath) {
 		guard let sizeWrapper = self.sizeWrapper else { return }
 		let bounds = sizeWrapper.bounds
@@ -154,13 +155,14 @@ public struct CalloutBalloon {
 		outerPath.close()
 		innerPath.close()
 	}
+	// swiftlint:enable function_body_length
 
+	// swiftlint:disable function_body_length
 	private func drawTail(outerPath: UIBezierPath, innerPath: UIBezierPath) {
 		guard let sizeWrapper = self.sizeWrapper else { return }
 		let bounds = sizeWrapper.bounds
 
 		let tailInnerWidth = tailWidth - (borderWidth * 2)
-
 		var lineBreak = CGPoint(x: (bounds.width - tailWidth) / 2, y: (bounds.height - tailWidth) / 2)
 		var lineBreakInner = CGPoint(
 			x: (bounds.width - tailInnerWidth) / 2,
@@ -198,16 +200,16 @@ public struct CalloutBalloon {
 		innerPath.addLine(to: lineBreakInner)
 		outerPath.addLine(to: tailPoint)
 		innerPath.addLine(to: tailPointInner)
-		let directionMultiplier: CGFloat = (tailDirection == .up || tailDirection == .right) ? 1.0 : -1.0
 		if tailDirection == .up || tailDirection == .down {
-			lineBreak.x += directionMultiplier * tailWidth
-			lineBreakInner.x += directionMultiplier * tailInnerWidth
+			lineBreak.x += tailWidth * (tailDirection == .up ? 1 : -1)
+			lineBreakInner.x += tailInnerWidth * (tailDirection == .up ? 1 : -1)
 		} else {
-			lineBreak.y += directionMultiplier * tailWidth
-			lineBreakInner.y += directionMultiplier * tailInnerWidth
+			lineBreak.y += tailWidth * (tailDirection == .right ? 1 : -1)
+			lineBreakInner.y += tailInnerWidth * (tailDirection == .right ? 1 : -1)
 		}
 		outerPath.addLine(to: lineBreak)
 		innerPath.addLine(to: lineBreakInner)
 	}
+	// swiftlint:enable function_body_length
 
 }

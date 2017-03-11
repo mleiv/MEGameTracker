@@ -8,6 +8,9 @@
 
 import UIKit
 
+// swiftlint:disable file_length
+// TODO: Refactor
+
 final class MissionsGroupsController: UITableViewController, Spinnerable {
 
 	var shepardUuid: String?
@@ -624,3 +627,4 @@ extension MissionsGroupsController: DeepLinkable {
 		}
 	}
 }
+// swiftlint:disable file_length

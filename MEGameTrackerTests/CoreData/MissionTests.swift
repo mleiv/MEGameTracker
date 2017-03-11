@@ -195,6 +195,15 @@ final class MissionTests: MEGameTrackerTests {
 		// - wait for signal
 		waitForExpectations(timeout: 0.1) { _ in }
 		Mission.onChange.cancelSubscription(for: self)
+	}
+
+	/// Test completing a mission with objectives.
+	func testCompleteMission() {
+		initializeCurrentGame() // needed for saving with game uuid
+
+		var mission = create(Mission.self, from: garrusJson)
+		var objective1 = create(Mission.self, from: garrus1Json)
+		_ = create(Mission.self, from: garrus2Json)
 
 		// #3 verify objectives marked completed when mission completed
 

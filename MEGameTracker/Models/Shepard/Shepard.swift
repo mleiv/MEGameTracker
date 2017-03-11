@@ -8,6 +8,8 @@
 
 import UIKit
 
+// swiftlint:disable file_length
+
 public struct Shepard: Photographical {
 // MARK: Constants
 
@@ -570,3 +572,4 @@ extension Shepard: Equatable {
 extension Shepard: Hashable {
 	public var hashValue: Int { return uuid.hashValue }
 }
+// swiftlint:enable file_length

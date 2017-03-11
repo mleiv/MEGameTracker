@@ -9,6 +9,8 @@
 
 import UIKit
 
+// swiftlint:disable file_length
+
 /// The base functionality for applying IBStyles to an IBStylable element.
 /// Stores all styles in a static/shared struct.
 /// Call its applyGlobalStyles() in AppDelegate initialization.
@@ -19,17 +21,10 @@ import UIKit
 /// struct Styles: IBStylesheet {
 ///    public static var current = Styles()
 ///    public var fonts: [IBFont.Style: String] {
-///        return [
-///            .normal: "Avenir-Regular",
-///        ]
+///        return [:]
 ///    }
 ///    public var styles: [String: IBStyles.Properties] {
-///        return [
-///            "Label": [
-///                .font: IBFont(style: .normal, size: .normal),
-///                .textColor: UIColor.black,
-///            ],
-///        ]
+///        return [:]
 ///    }
 ///    func applyGlobalStyles(inWindow window: UIWindow?) {
 ///        // do stuff
@@ -350,21 +345,18 @@ extension IBStyleManager {
 public protocol UIContentFontSettable {
     var fontProperty: UIFont? { get set }
 }
-
 extension UILabel: UIContentFontSettable {
     public var fontProperty: UIFont? {
         get { return font }
         set { font = newValue }
     }
 }
-
 extension UITextView: UIContentFontSettable {
     public var fontProperty: UIFont? {
         get { return font }
         set { font = newValue }
     }
 }
-
 extension UITextField: UIContentFontSettable {
     public var fontProperty: UIFont? {
         get { return font }
@@ -376,21 +368,18 @@ extension UITextField: UIContentFontSettable {
 public protocol UIContentColorSettable {
     var colorProperty: UIColor? { get set }
 }
-
 extension UILabel: UIContentColorSettable {
     public var colorProperty: UIColor? {
         get { return textColor }
         set { textColor = newValue }
     }
 }
-
 extension UITextView: UIContentColorSettable {
     public var colorProperty: UIColor? {
         get { return textColor }
         set { textColor = newValue }
     }
 }
-
 extension UITextField: UIContentColorSettable {
     public var colorProperty: UIColor? {
         get { return textColor }
@@ -402,24 +391,22 @@ extension UITextField: UIContentColorSettable {
 public protocol UIContentTextAlignable {
     var textAlignmentProperty: NSTextAlignment? { get set }
 }
-
 extension UILabel: UIContentTextAlignable {
     public var textAlignmentProperty: NSTextAlignment? {
         get { return textAlignment }
         set { textAlignment = newValue ?? .natural }
     }
 }
-
 extension UITextView: UIContentTextAlignable {
     public var textAlignmentProperty: NSTextAlignment? {
         get { return textAlignment }
         set { textAlignment = newValue ?? .natural }
     }
 }
-
 extension UITextField: UIContentTextAlignable {
     public var textAlignmentProperty: NSTextAlignment? {
         get { return textAlignment }
         set { textAlignment = newValue ?? .natural }
     }
 }
+// swiftlint:enable file_length

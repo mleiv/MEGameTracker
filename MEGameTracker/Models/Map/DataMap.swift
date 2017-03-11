@@ -79,12 +79,14 @@ public struct DataMap: MapLocationable {
 		setGameVersionData()
 	}
 
+	// swiftlint:disable function_body_length
 	internal mutating func setGameVersionData() {
 		let gameVersionData = self.gameVersionData[gameVersion.stringValue] ?? SerializableData()
 
 		isHidden = gameVersionData["isHidden"]?.bool ?? (rawGeneralData["isHidden"]?.bool ?? isHidden)
 
 		name = gameVersionData["name"]?.string ?? (rawGeneralData["name"]?.string ?? name)
+
 		if let gameDescription = gameVersionData["description"] { // allow nil override
 			description = gameDescription.string
 		} else {
@@ -95,6 +97,7 @@ public struct DataMap: MapLocationable {
 			?? rawGeneralData["mapType"]?.string) ?? mapType
 
 		isMain = gameVersionData["isMain"]?.bool ?? (rawGeneralData["isMain"]?.bool ?? isMain)
+
 		isSplitMenu = gameVersionData["isSplitMenu"]?.bool ?? (rawGeneralData["isSplitMenu"]?.bool ?? isSplitMenu)
 
 		if let gameInMapId = gameVersionData["inMapId"] { // allow nil override
@@ -115,6 +118,7 @@ public struct DataMap: MapLocationable {
 
 		isShowInList = gameVersionData["isShowInList"]?.bool
 			?? (rawGeneralData["isShowInList"]?.bool ?? isShowInList)
+
 		isOpensDetail = gameVersionData["isOpensDetail"]?.bool
 			?? (rawGeneralData["isOpensDetail"]?.bool ?? isOpensDetail)
 
@@ -128,26 +132,18 @@ public struct DataMap: MapLocationable {
 		if let gameSize = gameVersionData["referenceSize"] { // allow nil override
 			referenceSize = gameSize.string
 		}
-		if let sizeString = referenceSize {
-			let referenceSizeBits = sizeString.components(separatedBy: "x")
-			if referenceSizeBits.count == 2 {
-				if let w = NumberFormatter().number(from: referenceSizeBits[0]),
-					let h = NumberFormatter().number(from: referenceSizeBits[1]) {
-					self.referenceSize = CGSize(width: CGFloat(w), height: CGFloat(h))
-				}
-			}
-		} else {
-			self.referenceSize = nil
-		}
+		setSizeData(referenceSize)
 
 		isShowPin = gameVersionData["isShowPin"]?.bool ?? (rawGeneralData["isShowPin"]?.bool ?? isShowPin)
 
 		annotationNote = gameVersionData["annotationNote"]?.string
 			?? (rawGeneralData["annotationNote"]?.string ?? annotationNote)
 
-		if let pointData = gameVersionData["mapLocationPoint"], let point = MapLocationPoint(data: pointData) {
+		if let pointData = gameVersionData["mapLocationPoint"],
+			let point = MapLocationPoint(data: pointData) {
 			self.mapLocationPoint = point
-		} else if let pointData = rawGeneralData["mapLocationPoint"], let point = MapLocationPoint(data: pointData) {
+		} else if let pointData = rawGeneralData["mapLocationPoint"],
+			let point = MapLocationPoint(data: pointData) {
 			self.mapLocationPoint = point
 		} else {
 			self.mapLocationPoint = nil
@@ -167,12 +163,23 @@ public struct DataMap: MapLocationable {
 		relatedMissionIds = ((gameVersionData["relatedMissionIds"]?.array
 			?? rawGeneralData["relatedMissionIds"]?.array) ?? []).flatMap({ $0.string })
 
-		isExplorable = !isHidden
-			&& !(inMapId?.isEmpty ?? true)
-			&& mapType.isExplorable
-			&& (gameVersionData["isExplorable"]?.bool
-				?? (rawGeneralData["isExplorable"]?.bool
-				?? true))
+		isExplorable = !isHidden && !(inMapId?.isEmpty ?? true) && mapType.isExplorable
+			&& (gameVersionData["isExplorable"]?.bool ?? (rawGeneralData["isExplorable"]?.bool ?? true))
+	}
+	// swiftlint:enable function_body_length
+
+	private mutating func setSizeData(_ sizeString: String?) {
+		if let sizeString = sizeString {
+			let referenceSizeBits = sizeString.components(separatedBy: "x")
+			if referenceSizeBits.count == 2 {
+				if let w = NumberFormatter().number(from: referenceSizeBits[0]),
+					let h = NumberFormatter().number(from: referenceSizeBits[1]) {
+					referenceSize = CGSize(width: CGFloat(w), height: CGFloat(h))
+				}
+			}
+		} else {
+			referenceSize = nil
+		}
 	}
 }
 

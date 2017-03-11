@@ -8,6 +8,8 @@
 
 import UIKit
 
+// swiftlint:disable file_length type_body_length
+
 public struct Styles: IBStylesheet {
 	public static var current = Styles()
 
@@ -239,6 +241,56 @@ public struct Styles: IBStylesheet {
 		]
 	}
 
+	public func applyGlobalStyles(inWindow window: UIWindow?) {
+		window?.tintColor = Colors.tintColor
+
+		if let titleFont = Fonts.body.boldStyle.getUIFont() {
+			UINavigationBar.appearance().titleTextAttributes = [
+				NSFontAttributeName: titleFont,
+				NSForegroundColorAttributeName: Colors.navBarTitle,
+			]
+		}
+		if let titleFont = Fonts.body.normalStyle.getUIFont() {
+			UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: titleFont], for: UIControlState())
+		}
+
+		UISegmentedControl.appearance().tintColor = Colors.tintColor
+		UISegmentedControl.appearance().backgroundColor = Colors.tintOppositeColor
+		UISegmentedControl.appearance().setTitleTextAttributes([
+			NSForegroundColorAttributeName: Colors.tintOppositeColor
+		], for: .disabled)
+		UISwitch.appearance().onTintColor = Styles.Colors.tintColor
+		UISwitch.appearance().tintColor = Styles.Colors.tintOppositeColor
+
+		if let fontNormal = Fonts.body.normalStyle.getUIFont() {
+			UISegmentedControl.appearance().setTitleTextAttributes([NSFontAttributeName: fontNormal], for: .normal)
+		}
+
+		let bundle = Bundle.currentAppBundle
+		let minimumTrackImage = UIImage(named: "Slider Filled", in: bundle, compatibleWith: nil)?
+									.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 5, 0, 5))
+		let maximumTrackImage = UIImage(named: "Slider Empty", in: bundle, compatibleWith: nil)?
+									.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 5, 0, 5))
+		let thumbImage = UIImage(named: "Slider Thumb", in: bundle, compatibleWith: nil)
+		UISlider.appearance().setMinimumTrackImage(minimumTrackImage, for: UIControlState())
+		UISlider.appearance().setMaximumTrackImage(maximumTrackImage, for: UIControlState())
+		UISlider.appearance().setThumbImage(thumbImage, for: UIControlState())
+		UISlider.appearance().setThumbImage(thumbImage, for: .highlighted)
+
+		UITextView.appearance().linkTextAttributes = [
+			NSForegroundColorAttributeName: Colors.linkOnWhiteColor
+		]
+
+		let toolbarItems = UIBarButtonItem.appearance()
+		toolbarItems.tintColor = Colors.tintColor
+		if let font = Fonts.caption.boldStyle.getUIFont() {
+			toolbarItems.setTitleTextAttributes([NSFontAttributeName: font], for: UIControlState())
+		}
+	}
+}
+
+extension IBStylesheet {
+
 	/// Applies styles to a string and returns NSAttributedString.
 	/// Doesn't recognize .Inherit (sorry)
 	public func applyStyle(_ style: String, toString text: String) -> NSAttributedString {
@@ -360,55 +412,9 @@ public struct Styles: IBStylesheet {
 		}
 		return newAttributedText
 	}
-
-	public enum StyleCategory {
-		case plain, italic, medium, link
-	}
-
-	public func applyGlobalStyles(inWindow window: UIWindow?) {
-		window?.tintColor = Colors.tintColor
-
-		if let titleFont = Fonts.body.boldStyle.getUIFont() {
-			UINavigationBar.appearance().titleTextAttributes = [
-				NSFontAttributeName: titleFont,
-				NSForegroundColorAttributeName: Colors.navBarTitle,
-			]
-		}
-		if let titleFont = Fonts.body.normalStyle.getUIFont() {
-			UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: titleFont], for: UIControlState())
-		}
-
-		UISegmentedControl.appearance().tintColor = Colors.tintColor
-		UISegmentedControl.appearance().backgroundColor = Colors.tintOppositeColor
-		UISegmentedControl.appearance().setTitleTextAttributes([
-			NSForegroundColorAttributeName: Colors.tintOppositeColor
-		], for: .disabled)
-		UISwitch.appearance().onTintColor = Styles.Colors.tintColor
-		UISwitch.appearance().tintColor = Styles.Colors.tintOppositeColor
-
-		if let fontNormal = Fonts.body.normalStyle.getUIFont() {
-			UISegmentedControl.appearance().setTitleTextAttributes([NSFontAttributeName: fontNormal], for: .normal)
-		}
-
-		let bundle = Bundle.currentAppBundle
-		let minimumTrackImage = UIImage(named: "Slider Filled", in: bundle, compatibleWith: nil)?
-									.resizableImage(withCapInsets: UIEdgeInsetsMake(0,5, 0,5))
-		let maximumTrackImage = UIImage(named: "Slider Empty", in: bundle, compatibleWith: nil)?
-									.resizableImage(withCapInsets: UIEdgeInsetsMake(0,5, 0,5))
-		let thumbImage = UIImage(named: "Slider Thumb", in: bundle, compatibleWith: nil)
-		UISlider.appearance().setMinimumTrackImage(minimumTrackImage, for: UIControlState())
-		UISlider.appearance().setMaximumTrackImage(maximumTrackImage, for: UIControlState())
-		UISlider.appearance().setThumbImage(thumbImage, for: UIControlState())
-		UISlider.appearance().setThumbImage(thumbImage, for: .highlighted)
-
-		UITextView.appearance().linkTextAttributes = [
-			NSForegroundColorAttributeName: Colors.linkOnWhiteColor
-		]
-
-		let toolbarItems = UIBarButtonItem.appearance()
-		toolbarItems.tintColor = Colors.tintColor
-		if let font = Fonts.caption.boldStyle.getUIFont() {
-			toolbarItems.setTitleTextAttributes([NSFontAttributeName: font], for: UIControlState())
-		}
-	}
 }
+
+public enum StyleCategory {
+	case plain, italic, medium, link
+}
+// swiftlint:enable file_length type_body_length

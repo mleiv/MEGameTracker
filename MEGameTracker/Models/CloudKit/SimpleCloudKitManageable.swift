@@ -9,6 +9,9 @@
 import UIKit
 import CloudKit
 
+// swiftlint:disable file_length
+// TODO: Split out to smaller size?
+
 public enum AppStateForCloud {
 	case start, stop, running
 }
@@ -308,6 +311,8 @@ extension SimpleCloudKitManageable {
 	}
 
 	public func fetchChanges() { fetchChanges { _ in } }
+
+	// swiftlint:disable function_body_length
 	public func fetchChanges(
 		completion: @escaping ((Bool) -> Void)
 	) {
@@ -328,10 +333,12 @@ extension SimpleCloudKitManageable {
 			optionsByRecordZoneID: [zoneId: options]
 		)
 		operation.fetchAllChanges = true
+		if let qos = qualityOfService {
+			operation.qualityOfService = qos
+		}
 
 		var isFinished = false
 		var isSuccess = true
-		let isFirstSync = self.isFirstSync
 
 		operation.recordChangedBlock = { (record: CKRecord) -> Void in
 			self.saveOneFromCloud(record: record) { isQueued in
@@ -340,28 +347,20 @@ extension SimpleCloudKitManageable {
 		}
 
 		operation.recordWithIDWasDeletedBlock = { (recordId: CKRecordID, recordType: String) -> Void in
-			if !isFirstSync {
-				// we don't need to delete stuff if this is our first time fetching data
+			if !self.isFirstSync {
+				// (we don't need to delete stuff if this is our first time fetching data)
 				self.deleteOneFromCloud(recordId: recordId, recordType: recordType) { isQueued in
 					isSuccess = isSuccess && isQueued
 				}
 			}
 		}
 
-		operation.recordZoneFetchCompletionBlock = {
-		(
-			recordZoneId: CKRecordZoneID,
-			changeToken: CKServerChangeToken?,
-			tokenData: Data?,
-			isMoreComing: Bool,
-			error: Error?
-		) in
+		operation.recordZoneFetchCompletionBlock = { recordZoneId, changeToken, tokenData, isMoreComing, error in
 			if let error = error {
 				isFinished = true
 				isSuccess = false
 				print("Error recordZoneFetchCompletionBlock: \(error)")
-				if (error as? CKError)?.code == CKError.changeTokenExpired
-					&& self.changeToken != nil {
+				if (error as? CKError)?.code == CKError.changeTokenExpired {
 					// start over with new token
 					self.changeToken = nil
 					self.fetchChanges(completion: completion)
@@ -373,7 +372,7 @@ extension SimpleCloudKitManageable {
 				// isFetchingChanges is still true
 				self.changesFromCloudCompletion(
 					isSuccess: isSuccess
-				) { (isSaved: Bool) in
+				) { isSaved in
 					self.log("changesFromCloudCompletion isSuccess = \(isSuccess) changeToken = \(changeToken)")
 					if isSaved {
 						self.changeToken = changeToken
@@ -394,12 +393,9 @@ extension SimpleCloudKitManageable {
 			// ignore local save from cloud failures for now - proceed to saving local changes to cloud
 		}
 
-		if let qos = qualityOfService {
-			operation.qualityOfService = qos
-		}
-
 		privateDatabase?.add(operation)
 	}
+	// swiftlint:enable function_body_length
 
 	public func shouldPostChanges() -> Bool {
 		// reasoning: don't bother posting i:
@@ -857,3 +853,4 @@ public protocol SimpleCloudKitManageableConforming {
 	var isPendingCloudChanges: Bool { get set }
 	func log(_ message: String)
 }
+// swiftlint:enable file_length

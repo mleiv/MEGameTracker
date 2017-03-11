@@ -9,6 +9,8 @@
 
 import CoreData
 
+// swiftlint:disable file_length
+
 /// Manages the storage and retrieval of CoreDataStorable/SerializableData objects.
 public protocol SimpleCoreDataManageable {
 
@@ -485,3 +487,4 @@ extension SimpleCoreDataManageable {
 		return result
 	}
 }
+// swiftlint:enable file_length

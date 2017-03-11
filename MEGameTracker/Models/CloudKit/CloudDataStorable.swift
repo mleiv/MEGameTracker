@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import CloudKit
 
+// swiftlint:disable file_length
+
 /// A protocol for describing classes or structs that can be stored in core data AND cloudkit
 public protocol CloudDataStorable {
 
@@ -497,3 +499,4 @@ extension CloudDataStorable where Self: SerializedDataStorable, Self: Serialized
 		lastRecordData = data["lastRecordData"]?.data
 	}
 }
+// swiftlint:enable file_length

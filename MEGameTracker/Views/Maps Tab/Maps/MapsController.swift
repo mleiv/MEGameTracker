@@ -8,6 +8,9 @@
 
 import UIKit
 
+// swiftlint:disable file_length
+// TODO: Refactor
+
 final public class MapsController: UITableViewController, Spinnerable {
 
 	@IBOutlet weak var tempSearchBar: UISearchBar!
@@ -540,3 +543,4 @@ extension MapsController: DeepLinkable {
 		}
 	}
 }
+// swiftlint:enable file_length

@@ -255,6 +255,7 @@ extension Shepard {
 // MARK: Basic Actions
 extension Shepard.Appearance {
 
+	// swiftlint:disable function_body_length
 	/// Converts attribute values between games.
 	public mutating func convert(toGame: GameVersion) {
 		alerts = [:]
@@ -332,6 +333,7 @@ extension Shepard.Appearance {
 		contents = newAppearance
 		gameVersion = toGame
 	}
+	// swiftlint:enable function_body_length
 
 	/// Returns a formatted code, of the typical XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X format.
 	public func format() -> String {

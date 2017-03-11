@@ -62,21 +62,10 @@ final public class ObjectivesView: SimpleArrayDataRow {
 			}
 		}()
 		startParentSpinner()
-		DispatchQueue.global(qos: .background).async {
-			if let mission = objective as? Mission, mission.isOpensDetail == true {
-				let bundle = Bundle(for: type(of: self))
-				if let flowController = UIStoryboard(name: "MissionsFlow", bundle: bundle)
-						.instantiateViewController(withIdentifier: "Mission") as? MissionsFlowController,
-					let missionController = flowController.includedController as? MissionController {
-					// configure detail
-					missionController.mission = mission
-//					missionController.referringOriginHint = self.controller?.originHint
-					DispatchQueue.main.async {
-						self.viewController?.navigationController?.pushViewController(flowController, animated: true)
-						self.stopParentSpinner()
-					}
-					return
-				}
+		DispatchQueue.global(qos: .background).async { [weak self] in
+			if let mission = objective as? Mission, mission.isOpensDetail == true,
+				self?.openMission(mission) == true {
+				return
 			} else {
 				var map: Map?
 				if objective.mapLocationPoint == nil, let objectiveMapId = objective.inMapId {
@@ -86,39 +75,49 @@ final public class ObjectivesView: SimpleArrayDataRow {
 				if mapId != map?.id, let mapId = mapId {
 					map = Map.get(id: mapId)
 				}
-				let bundle = Bundle(for: type(of: self))
-				if objective is Item, let map = map {
-					if let flowController = UIStoryboard(name: "MapsFlow", bundle: bundle)
-							.instantiateViewController(withIdentifier: "Map") as? MapsFlowController,
-						let mapController = flowController.includedController as? MapSplitViewController {
-						// configure detail
-						mapController.map = map
-						mapController.mapLocation = objective
-						mapController.referringOriginHint = self.controller?.originHint
-						DispatchQueue.main.async {
-							self.viewController?.navigationController?.pushViewController(flowController, animated: true)
-							self.stopParentSpinner()
-						}
-						return
-					}
-				} else if let mission = objective as? Mission, mission.isOpensDetail == false, let map = map {
-					if let flowController = UIStoryboard(name: "MapsFlow", bundle: bundle)
-							.instantiateViewController(withIdentifier: "Map") as? MapsFlowController,
-						let mapController = flowController.includedController as? MapSplitViewController {
-						// configure detail
-						mapController.map = map
-						mapController.mapLocation = objective
-						mapController.referringOriginHint = self.controller?.originHint
-						DispatchQueue.main.async {
-							self.viewController?.navigationController?.pushViewController(flowController, animated: true)
-							self.stopParentSpinner()
-						}
-						return
-					}
+				if objective is Item, let map = map,
+					self?.openObjective(objective, inMap: map) == true {
+					return
+				} else if let mission = objective as? Mission, mission.isOpensDetail == false, let map = map,
+					self?.openObjective(objective, inMap: map) == true {
+					return
 				}
 			}
-			self.stopParentSpinner()
+			self?.stopParentSpinner()
 		}
+	}
+
+	private func openMission(_ mission: Mission) -> Bool {
+		if let flowController = UIStoryboard(name: "MissionsFlow", bundle: Bundle(for: type(of: self)))
+				.instantiateViewController(withIdentifier: "Mission") as? MissionsFlowController,
+			let missionController = flowController.includedController as? MissionController {
+			// configure detail
+			missionController.mission = mission
+//					missionController.referringOriginHint = self.controller?.originHint
+			DispatchQueue.main.async {
+				self.viewController?.navigationController?.pushViewController(flowController, animated: true)
+				self.stopParentSpinner()
+			}
+			return true
+		}
+		return false
+	}
+
+	private func openObjective(_ objective: MapLocationable, inMap map: Map) -> Bool {
+		if let flowController = UIStoryboard(name: "MapsFlow", bundle: Bundle(for: type(of: self)))
+				.instantiateViewController(withIdentifier: "Map") as? MapsFlowController,
+			let mapController = flowController.includedController as? MapSplitViewController {
+			// configure detail
+			mapController.map = map
+			mapController.mapLocation = objective
+			mapController.referringOriginHint = self.controller?.originHint
+			DispatchQueue.main.async {
+				self.viewController?.navigationController?.pushViewController(flowController, animated: true)
+				self.stopParentSpinner()
+			}
+			return true
+		}
+		return false
 	}
 
 	override func startListeners() {

@@ -260,8 +260,10 @@ final class ShepardAppearanceController: UIViewController,
 //				"\(attributesTableViewHeight) \(attributesTableView.frame)")
 		}
 	}
+}
 
-	// MARK: Protocol - UITableViewDelegate
+// MARK: Protocol - UITableViewDelegate
+extension ShepardAppearanceController {
 
 	func getSortedGroups(_ gender: Shepard.Gender) -> [Shepard.Appearance.GroupType] {
 		return Shepard.Appearance.sortedAttributeGroups.filter {

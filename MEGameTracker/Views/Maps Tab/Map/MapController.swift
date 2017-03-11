@@ -8,6 +8,9 @@
 
 import UIKit
 
+// swiftlint:disable file_length
+// TODO: Refactor
+
 final public class MapController: UIViewController,
 	UIScrollViewDelegate, UIGestureRecognizerDelegate, MapImageSizable {
 
@@ -205,19 +208,8 @@ final public class MapController: UIViewController,
 				}
 			}
 
-			let breadcrumbs = map.getCompleteBreadcrumbs()
-			if !breadcrumbs.isEmpty {
-				let name = map.name
-				breadcrumbsWrapper.isHidden = false
-				var lastMapId = map.id
-				var mapHierarchy: [String] = []
-				breadcrumbs.reversed().forEach {
-					mapHierarchy.insert($0.deepLinkString(mapLocationId: lastMapId, alwaysDeepLink: true), at: 0)
-					lastMapId = $0.id
-				}
-				let mapHierarchyString = mapHierarchy.joined(separator: " > ")
-				breadcrumbsTextView.text = "\(mapHierarchyString) > \(name)"
-				breadcrumbsTextView.linkOriginController = self
+			if !map.isMain {
+				setupBreadcrumbs()
 
 				if map.isExplorable {
 					checkboxImageView?.superview?.isHidden = false
@@ -255,8 +247,10 @@ final public class MapController: UIViewController,
 
 		isUpdating = false
 	}
+}
 
-	// MARK: Map Image
+// MARK: Map Image
+extension MapController {
 
 	func setupMapImageSizable() {
 		if isNeedsSetupImageSizable {
@@ -276,8 +270,10 @@ final public class MapController: UIViewController,
 			isCalloutPointsNeedSetup = false
 		}
 	}
+}
 
-	// MARK: Map Details
+// MARK: Map Details
+extension MapController {
 
 	/// Only used when there is no image, and map details are visible by default
 	func setupMapDetails() {
@@ -318,9 +314,10 @@ final public class MapController: UIViewController,
 
 		mapImageWrapperView?.isHidden = map?.image == nil
 	}
+}
 
-	// MARK: Callout Box and Buttons
-
+// MARK: Callout Box and Buttons
+extension MapController {
 	func setupMapLocationsList() {
 		mapLocationsList.inMapId = map?.id
 		mapLocationsList.inView = mapImageWrapperView
@@ -439,8 +436,10 @@ final public class MapController: UIViewController,
 			removeCalloutBox()
 		}
 	}
+}
 
-	// MARK: Reload data
+// MARK: Reload data
+extension MapController {
 
 	func reloadMap() {
 		if let mapId = self.map?.id,
@@ -469,8 +468,10 @@ final public class MapController: UIViewController,
 			self.setupMapImageSizable()
 		}
 	}
+}
 
-	// MARK: Rotation Handler
+// MARK: Rotation Handler
+extension MapController {
 
 	override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 		guard mapImageWrapperView != nil
@@ -689,27 +690,49 @@ extension MapController {
 
 }
 
+// MARK: Available
 extension MapController: Available {
 	//public var availabilityMessage: String? // already declared
 
-	func setupAvailability() {
+	fileprivate func setupAvailability() {
 		availabilityMessage = map?.unavailabilityMessages.joined(separator: ", ")
 		availabilityRowType.setupView()
 	}
 }
 
+// MARK: Breadcrumbs
+extension MapController {
+	fileprivate func setupBreadcrumbs() {
+		guard let breadcrumbs = self.map?.getCompleteBreadcrumbs(),
+			let map = self.map, !breadcrumbs.isEmpty else { return }
+		let name = map.name
+		breadcrumbsWrapper.isHidden = false
+		var lastMapId = map.id
+		var mapHierarchy: [String] = []
+		breadcrumbs.reversed().forEach {
+			mapHierarchy.insert($0.deepLinkString(mapLocationId: lastMapId, alwaysDeepLink: true), at: 0)
+			lastMapId = $0.id
+		}
+		let mapHierarchyString = mapHierarchy.joined(separator: " > ")
+		breadcrumbsTextView.text = "\(mapHierarchyString) > \(name)"
+		breadcrumbsTextView.linkOriginController = self
+	}
+}
+
+// MARK: Describable
 extension MapController: Describable {
 	public var descriptionMessage: String? {
 		return map?.description
 	}
 
-	func setupDescription() {
+	fileprivate func setupDescription() {
 		descriptionType.setupView()
 	}
 }
 
+// MARK: Game Segments
 extension MapController {
-	func setupGameSegments() {
+	fileprivate func setupGameSegments() {
 		var games: [GameVersion] = []
 		for game in GameVersion.list() {
 			if map?.isAvailableInGame(game) == true {
@@ -720,12 +743,13 @@ extension MapController {
 	}
 }
 
+// MARK: Notesable
 extension MapController: Notesable {
 	//public var notesView: NotesView? // already declared
 	//public var originHint: String? // already declared
 	//public var notes: [Note] // already declared
 
-	func setupNotes() {
+	fileprivate func setupNotes() {
 		map?.getNotes { [weak self] notes in
 			DispatchQueue.main.async {
 				self?.notes = notes
@@ -740,10 +764,11 @@ extension MapController: Notesable {
 	}
 }
 
+// MARK: OriginHintable
 extension MapController: OriginHintable {
 	//public var originHint: String? // already declared
 
-	func setupOriginHint() {
+	fileprivate func setupOriginHint() {
 		if let referringOriginHint = self.referringOriginHint {
 			originHintType.overrideOriginPrefix = "From"
 			originHintType.overrideOriginHint = referringOriginHint
@@ -754,10 +779,11 @@ extension MapController: OriginHintable {
 	}
 }
 
+// MARK: RelatedLinksable
 extension MapController: RelatedLinksable {
 	//public var relatedLinks: [String] // already declared
 
-	func setupRelatedLinks() {
+	fileprivate func setupRelatedLinks() {
 		relatedLinks = map?.relatedLinks ?? []
 		relatedLinksView?.controller = self
 		relatedLinksView?.setup()
@@ -765,3 +791,5 @@ extension MapController: RelatedLinksable {
 }
 
 extension MapController: Spinnerable {}
+
+// swiftlint:enable file_length

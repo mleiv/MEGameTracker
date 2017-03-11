@@ -122,37 +122,6 @@ open class IBIncludedSubThing: UIView, IBIncludedThingLoadable {
 	/// This would be private, but the protocol needs it.
 	open weak var parentController: UIViewController?
 
-//	/// Convenience initializer for programmatic inclusion
-//	public init?(
-//		incStoryboard: String? = nil,
-//		sceneId: String? = nil,
-//		incNib: String? = nil,
-//		nibController: String? = nil,
-//		intoView parentView: UIView? = nil,
-//		intoController parentController: UIViewController? = nil
-//	) {
-//		self.incStoryboard = incStoryboard
-//		self.sceneId = sceneId
-//		self.incNib = incNib
-//		self.nibController = nibController
-//		self.parentController = parentController
-//		super.init(frame: CGRectZero)
-//		guard incStoryboard != nil || incNib != nil else {
-//			return nil
-//		}
-
-//		// then also pin this IBIncludedSubThing to a parent view if so requested:
-//		if let view = parentView ?? parentController?.view {
-//			attach(incView: self, toView: view)
-//		}
-
-//	}
-
-//
-//	public required init?(coder aDecoder: NSCoder) {
-//		fatalError("init(coder:) has not been implemented")
-//	}
-
 	/// Initializes the IBIncludedSubThing for preview inside Xcode.
 	/// Does not bother attaching view controller to hierarchy.
 	open override func prepareForInterfaceBuilder() {
@@ -385,7 +354,6 @@ extension IBIncludedThingLoadable {
 }
 
 extension UIViewController {
-
 	/// A convenient utility for quickly running some code on a view controller of a specific type 
 	///	in the current view controller hierarchy.
 	public func find<T: UIViewController>(controllerType: T.Type, apply: ((T) -> Void)) {
@@ -403,7 +371,6 @@ extension UIViewController {
 }
 
 extension UIWindow {
-
 	static var isInterfaceBuilder: Bool {
 		#if TARGET_INTERFACE_BUILDER
 			return true

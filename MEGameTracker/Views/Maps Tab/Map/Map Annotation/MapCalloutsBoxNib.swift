@@ -8,10 +8,9 @@
 
 import UIKit
 
-// TODO: click outside callout dismisses it
-// TODO: click on label calls onClick event
-// TODO: onClick event loads Map or deep links to other page
 @IBDesignable final public class MapCalloutsBoxNib: UIView {
+
+	typealias BoxType = (top: CGFloat, left: CGFloat, bottom: CGFloat, right: CGFloat)
 
 	@IBOutlet weak var outlineWrapper: UIView?
 	@IBOutlet weak var borderWrapper: UIView?
@@ -137,6 +136,9 @@ import UIKit
 		constraintX?.isActive = false
 		constraintY?.isActive = false
 	}
+}
+
+extension MapCalloutsBoxNib {
 
 	func constrainHeight() {
 		calloutsView?.nib?.tableView?.constrainTableHeight()
@@ -222,72 +224,103 @@ import UIKit
 		else {
 			return
 		}
-
-		let centerCalloutOriginX = zoomScale * (calloutOrigin.sizedMapLocationPoint?.x ?? 0.0)
-		let centerCalloutOriginY = zoomScale * (calloutOrigin.sizedMapLocationPoint?.y ?? 0.0)
-
-//		let centerCalloutOriginX = zoomScale * (calloutOrigin.frame.origin.x + (calloutOrigin.bounds.width / 2))
-//		let centerCalloutOriginY = zoomScale * (calloutOrigin.frame.origin.y + (calloutOrigin.bounds.height / 2))
-
-		let visibleFrameTop = visibleFrame.origin.y
-		let visibleFrameBottom = visibleFrame.origin.y + visibleFrame.size.height
-		let visibleFrameLeft = visibleFrame.origin.x
-		let visibleFrameRight = visibleFrame.origin.x + visibleFrame.size.width
+		// scale to center point
+		let centerCallout = CGPoint(
+			x: zoomScale * (calloutOrigin.sizedMapLocationPoint?.x ?? 0.0),
+			y: zoomScale * (calloutOrigin.sizedMapLocationPoint?.y ?? 0.0)
+		)
+		// easier-named visible area
+		var visibleBox: BoxType = (top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+		visibleBox.top = visibleFrame.origin.y
+		visibleBox.left = visibleFrame.origin.x
+		visibleBox.bottom = visibleFrame.origin.y + visibleFrame.size.height
+		visibleBox.right = visibleFrame.origin.x + visibleFrame.size.width
+		// now test each direction - order directions by order of precedent
+		var stop = false
 		for direction in preferredTailDirections {
-			var stop = false
 			switch direction {
 				case .up:
-					let boundaryBottom = centerCalloutOriginY + (calloutBounds.height + tailLength)
-					let boundaryLeft = centerCalloutOriginX - (calloutBounds.width / 2)
-					let boundaryRight = centerCalloutOriginX + (calloutBounds.width / 2)
-					if boundaryBottom < visibleFrameBottom && boundaryLeft > visibleFrameLeft && boundaryRight < visibleFrameRight {
+					if hasRoomForTailTop(visibleBox: visibleBox, centerCallout: centerCallout) {
 						tailDirection = direction
 						stop = true
 					}
 				case .down:
-					let boundaryTop = centerCalloutOriginY - (calloutBounds.height + tailLength)
-					let boundaryLeft = centerCalloutOriginX - (calloutBounds.width / 2)
-					let boundaryRight = centerCalloutOriginX + (calloutBounds.width / 2)
-					if boundaryTop > visibleFrameTop && boundaryLeft > visibleFrameLeft && boundaryRight < visibleFrameRight {
+					if hasRoomForTailBottom(visibleBox: visibleBox, centerCallout: centerCallout) {
 						tailDirection = direction
 						stop = true
 					}
 				case .left:
-					let boundaryTop = centerCalloutOriginY - (calloutBounds.height / 2)
-					let boundaryBottom = centerCalloutOriginY + (calloutBounds.height / 2)
-					let boundaryRight = centerCalloutOriginX + (calloutBounds.width) + tailLength
-					if boundaryTop > visibleFrameTop && boundaryBottom < visibleFrameBottom && boundaryRight < visibleFrameRight {
+					if hasRoomForTailLeft(visibleBox: visibleBox, centerCallout: centerCallout) {
 						tailDirection = direction
 						stop = true
 					}
 				case .right:
-					let boundaryTop = centerCalloutOriginY - (calloutBounds.height / 2)
-					let boundaryBottom = centerCalloutOriginY + (calloutBounds.height / 2)
-					let boundaryLeft = centerCalloutOriginX - (calloutBounds.width) + tailLength
-					if boundaryTop > visibleFrameTop && boundaryBottom < visibleFrameBottom && boundaryLeft > visibleFrameLeft {
+					if hasRoomForTailRight(visibleBox: visibleBox, centerCallout: centerCallout) {
 						tailDirection = direction
 						stop = true
 					}
 			}
-			if stop {
-				break
-			}
+			if stop { break }
 		}
 		// redo constraints and layout to match new arrow padding
 		paddingTopConstraint?.constant = tailDirection == .up ? tailLength : 0.0
 		paddingBottomConstraint?.constant = tailDirection == .down ? tailLength : 0.0
 		paddingLeftConstraint?.constant = tailDirection == .left ? tailLength : 0.0
 		paddingRightConstraint?.constant = tailDirection == .right ? tailLength : 0.0
-		setNeedsLayout()
 		layoutIfNeeded()
 		borderWrapper?.frame.size = calloutBounds.size
 	}
 
-	func visibleFrame() -> CGRect? {
-		guard let superview = self.superview
-		else {
-			return nil
+	private func hasRoomForTailTop(visibleBox: BoxType, centerCallout: CGPoint) -> Bool {
+		guard let calloutBounds = sizeWrapper?.bounds else { return false }
+		let boundaryBottom = centerCallout.y + (calloutBounds.height + tailLength)
+		let boundaryLeft = centerCallout.x - (calloutBounds.width / 2)
+		let boundaryRight = centerCallout.x + (calloutBounds.width / 2)
+		if boundaryBottom < visibleBox.bottom
+			&& boundaryLeft > visibleBox.left && boundaryRight < visibleBox.right {
+			return true
 		}
+		return false
+	}
+
+	private func hasRoomForTailLeft(visibleBox: BoxType, centerCallout: CGPoint) -> Bool {
+		guard let calloutBounds = sizeWrapper?.bounds else { return false }
+		let boundaryTop = centerCallout.y - (calloutBounds.height / 2)
+		let boundaryBottom = centerCallout.y + (calloutBounds.height / 2)
+		let boundaryRight = centerCallout.x + (calloutBounds.width) + tailLength
+		if boundaryTop > visibleBox.top
+			&& boundaryBottom < visibleBox.bottom && boundaryRight < visibleBox.right {
+			return true
+		}
+		return false
+	}
+
+	private func hasRoomForTailBottom(visibleBox: BoxType, centerCallout: CGPoint) -> Bool {
+		guard let calloutBounds = sizeWrapper?.bounds else { return false }
+		let boundaryTop = centerCallout.y - (calloutBounds.height + tailLength)
+		let boundaryLeft = centerCallout.x - (calloutBounds.width / 2)
+		let boundaryRight = centerCallout.x + (calloutBounds.width / 2)
+		if boundaryTop > visibleBox.top
+			&& boundaryLeft > visibleBox.left && boundaryRight < visibleBox.right {
+			return true
+		}
+		return false
+	}
+
+	private func hasRoomForTailRight(visibleBox: BoxType, centerCallout: CGPoint) -> Bool {
+		guard let calloutBounds = sizeWrapper?.bounds else { return false }
+		let boundaryTop = centerCallout.y - (calloutBounds.height / 2)
+		let boundaryBottom = centerCallout.y + (calloutBounds.height / 2)
+		let boundaryLeft = centerCallout.x - (calloutBounds.width) + tailLength
+		if boundaryTop > visibleBox.top
+			&& boundaryBottom < visibleBox.bottom && boundaryLeft > visibleBox.left {
+			return true
+		}
+		return false
+	}
+
+	func visibleFrame() -> CGRect? {
+		guard let superview = self.superview else { return nil }
 		var findScrollView: UIView? = superview
 		while findScrollView != nil && !(findScrollView is UIScrollView) {
 			findScrollView = findScrollView?.superview
@@ -308,25 +341,24 @@ import UIKit
 		var targetX = CGFloat(0.0)
 		var targetY = CGFloat(0.0)
 
-		let centerCalloutOriginX = zoomScale * (calloutOrigin.sizedMapLocationPoint?.x ?? 0.0)
-		let centerCalloutOriginY = zoomScale * (calloutOrigin.sizedMapLocationPoint?.y ?? 0.0)
-
-//		let centerCalloutOriginX = zoomScale * (calloutOrigin.frame.origin.x + (calloutOrigin.bounds.width / 2))
-//		let centerCalloutOriginY = zoomScale * (calloutOrigin.frame.origin.y + (calloutOrigin.bounds.height / 2))
+		let centerCallout = CGPoint(
+			x: zoomScale * (calloutOrigin.sizedMapLocationPoint?.x ?? 0.0),
+			y: zoomScale * (calloutOrigin.sizedMapLocationPoint?.y ?? 0.0)
+		)
 
 		switch tailDirection {
 			case .up:
-				targetX = centerCalloutOriginX - (bounds.width / 2)
-				targetY = centerCalloutOriginY
+				targetX = centerCallout.x - (bounds.width / 2)
+				targetY = centerCallout.y
 			case .down:
-				targetX = centerCalloutOriginX - (bounds.width / 2)
-				targetY = (centerCalloutOriginY - bounds.height)
+				targetX = centerCallout.x - (bounds.width / 2)
+				targetY = (centerCallout.y - bounds.height)
 			case .left:
-				targetX = centerCalloutOriginX
-				targetY = centerCalloutOriginY - (bounds.height / 2)
+				targetX = centerCallout.x
+				targetY = centerCallout.y - (bounds.height / 2)
 			case .right:
-				targetX = (centerCalloutOriginX - bounds.width)
-				targetY = centerCalloutOriginY - (bounds.height / 2)
+				targetX = (centerCallout.x - bounds.width)
+				targetY = centerCallout.y - (bounds.height / 2)
 		}
 		constraintX?.constant = targetX
 		constraintY?.constant = targetY
@@ -343,10 +375,7 @@ import UIKit
 	}
 }
 
-extension MapCalloutsBoxNib: Calloutsable {
-//	public var callouts: [MapLocationable]
-//	public var viewController: UIViewController?
-}
+extension MapCalloutsBoxNib: Calloutsable {}
 
 extension MapCalloutsBoxNib {
 	static let typeSortOrder: [MapLocationType] = [.map, .mission, .item]

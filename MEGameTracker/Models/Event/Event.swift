@@ -257,6 +257,60 @@ extension Event {
 	}
 }
 
+extension Event {
+
+	/// Trigger all the events related to new level
+	public static func triggerLevelChange(_ value: Int, for shepard: Shepard?) {
+		guard value != shepard?.level, var shepard = shepard else { return }
+		let events = Event.getLevels(gameVersion: shepard.gameVersion)
+		for (var event) in events {
+			let eventValue = event.id.stringFrom(-2)
+			let level = eventValue != "00" ? Int(eventValue) : 100
+			if level <= value && !event.isTriggered {
+				event.change(isTriggered: true, isSave: true)
+			} else if level > value && event.isTriggered {
+				event.change(isTriggered: false, isSave: true)
+			}
+		}
+		shepard.change(level: value)
+		_ = shepard.saveAnyChanges()
+	}
+
+	/// Trigger all the events related to new paragon score
+	public static func triggerParagonChange(_ value: Int, for shepard: Shepard?) {
+		guard value != shepard?.paragon, var shepard = shepard else { return }
+		let events = getParagons(gameVersion: shepard.gameVersion)
+		for (var event) in events {
+			let eventValue = event.id.stringFrom(-2)
+			let paragon = eventValue != "00" ? Int(eventValue) : 100
+			if paragon <= value && !event.isTriggered {
+				event.change(isTriggered: true, isSave: true)
+			} else if paragon > value && event.isTriggered {
+				event.change(isTriggered: false, isSave: true)
+			}
+		}
+		shepard.change(paragon: value)
+		_ = shepard.saveAnyChanges()
+	}
+
+	/// Trigger all the events related to new renegade score
+	public static func triggerRenegadeChange(_ value: Int, for shepard: Shepard?) {
+		guard value != shepard?.renegade, var shepard = shepard else { return }
+		let events = Event.getRenegades(gameVersion: shepard.gameVersion)
+		for (var event) in events {
+			let eventValue = event.id.stringFrom(-2)
+			let renegade = eventValue != "00" ? Int(eventValue) : 100
+			if renegade <= value && !event.isTriggered {
+				event.change(isTriggered: true, isSave: true)
+			} else if renegade > value && event.isTriggered {
+				event.change(isTriggered: false, isSave: true)
+			}
+		}
+		shepard.change(renegade: value)
+		_ = shepard.saveAnyChanges()
+	}
+}
+
 // MARK: Dummy data for Interface Builder
 extension Event {
 	public static func getDummy(json: String? = nil) -> Event? {
