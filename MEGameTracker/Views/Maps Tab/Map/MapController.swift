@@ -499,7 +499,7 @@ extension MapController {
 	func addGestureRecognizers() {
 		let singleTap = UITapGestureRecognizer(target: self, action: #selector(MapController.tapMap(_:)))
 		singleTap.numberOfTapsRequired = 1
-		mapImageWrapperView?.addGestureRecognizer(singleTap)
+		mapImageScrollView?.addGestureRecognizer(singleTap)
 		singleTapGesture = singleTap
 	}
 
