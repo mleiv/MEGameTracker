@@ -1110,7 +1110,7 @@
 		"mapLocationPoint": {
 			"x": 722,
 			"y": 1786,
-			"radius": 20
+			"radius": 1
 		},
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Veteran"],
@@ -1456,7 +1456,7 @@
 		"mapLocationPoint": {
 			"x": 895,
 			"y": 983,
-			"radius": 20
+			"radius": 1
 		},
 		"isShowPin": false
 	}, {
@@ -5209,7 +5209,6 @@
 		"description": "The man who hired all the Blood Pack mercenaries you've been fighting is in Jack's cell. [megametracker://person?id=O2.Aresh] was one of the other children in the experiments, and he is even more messed up than Jack. He wants to reopen the facility. You can let Jack kill him, or convince her to let him go. \n\nWhen you are done looking around, head back and Jack will blow the whole place to hell.",
 		"inMapId": "G.Att.Nub.Dak.Pra.Cell",
 		"isShowInParentMap": true
-
 	}, {
 		"id": "A2.L.Jacob",
 		"sortIndex": 304,
@@ -5593,6 +5592,116 @@
 			"type": "Triggers",
 			"id": "Secured Loyalty: Legion"
 		}]
+	}, {
+		"id": "A2.L.Legion.1",
+		"inMissionId": "A2.L.Legion",
+		"sortIndex": 3101,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Enter Heretic Station",
+		"description": "Legion reveals that the geth could use the heretic virus in reverse - to bring the heretics back into the geth Consensus. It also explains that it has distracted the heretics with junk data, so all the heretics are currently distracted at the server hubs, trying to clean things up. There are green router lines on the floor leading up to the hubs and crossing the lines will alert the heretics. As you move through the station, overload or destroy each hub and then destroy the heretics which were attached to the hub.",
+		"inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Legion.2",
+		"inMissionId": "A2.L.Legion",
+		"sortIndex": 3102,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Server Hub #1",
+		"description": "Destroy the hub and the geth attached to it. In the hallway beyond are inactive rocket drones which Legion can hack to briefly fight for you. Just past the drones, heretic geth will attack you and you can try this out.",
+		"inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Legion.3",
+		"inMissionId": "A2.L.Legion",
+		"sortIndex": 3103,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Server Hub #2",
+		"description": "Destroy the hub and the geth attached to it. This room has two hubs, so be careful or expect to be attacked by both sets of geth.",
+		"inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Legion.4",
+		"inMissionId": "A2.L.Legion",
+		"sortIndex": 3104,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Server Hub #3",
+		"description": "Destroy the hub and the geth attached to it. This room has two hubs, so be careful or expect to be attacked by both sets of geth.",
+		"inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Legion.5",
+		"inMissionId": "A2.L.Legion",
+		"sortIndex": 3105,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Upper Level",
+		"description": "In the hallway after the two hubs, more heretics will attack. Head upstairs, where there are two more inactive drones and two waves of heavier geth assault.",
+		"inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Legion.5",
+		"inMissionId": "A2.L.Legion",
+		"sortIndex": 3105,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Station Interior",
+		"description": "Head back downstairs to another room with windows to the cavernous station interior, as well as two inactive drones and a bunch of hostile geth.",
+		"inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Legion.6",
+		"inMissionId": "A2.L.Legion",
+		"sortIndex": 3106,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Server Hub #4",
+		"description": "Head down two levels, avoiding the router lines on the floor. There are two hubs in this room and you attacking one automatically alerts the other, so don't bother trying to avoid the router lines. Destroy the hub and the geth attached to it.",
+		"inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Legion.7",
+		"inMissionId": "A2.L.Legion",
+		"sortIndex": 3107,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Server Hub #5",
+		"description": "Destroy the hub and the geth attached to it.",
+		"inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Legion.8",
+		"inMissionId": "A2.L.Legion",
+		"sortIndex": 3108,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Geth Servers",
+		"description": "As you walk by the massive rows of station servers, Legion will talk more about geth collective minds.",
+		"inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Legion.9",
+		"inMissionId": "A2.L.Legion",
+		"sortIndex": 3109,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Station Core",
+		"description": "In this elevated room you will have to defend the terminal from up to four waves of heretics attacking from either of the two ramps below. There are six inactive drones on the lower level and two on the upper level.",
+		"inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Legion.10",
+		"inMissionId": "A2.L.Legion",
+		"sortIndex": 3110,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Destroy or Rewrite",
+		"description": "If you choose to rewrite the heretics, Legion will trigger an EMP to infect them with the virus. Otherwise, it will trigger a meltdown to the antimatter core. Either way, you have three minutes to eliminate the remaining enemies and/or escape.",
+		 "inMapId": "G.Ter.Pho.Sea.Station",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.L.Miranda",
 		"sortIndex": 302,
@@ -6240,6 +6349,141 @@
 			"type": "Triggers",
 			"id": "Secured Loyalty: Samara"
 		}]
+	}, {
+		"id": "A2.L.Samara.1",
+		"inMissionId": "A2.L.Samara",
+		"sortIndex": 3031,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Speak to Aria",
+		"description": "Head to Omega and speak to Aria to discern where to start your hunt for Morinth. Aria suggests you speak to a young human, Nef.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Aria",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Samara.2",
+		"inMissionId": "A2.L.Samara",
+		"sortIndex": 3032,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Nef",
+		"description": "When you reach Nef's apartment, only her mother is there. She informs you that Nef was murdered and the local police don't seem to care. She allows you to search through Nef's things. In particular, Nef's journal will give you some clues to finding Morinth, particularly what she likes and how to get into the Afterlife VIP lounge.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+		"mapLocationPoint": {
+			"x": 1545,
+			"y": 1788,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.L.Samara.3",
+		"inMissionId": "A2.L.Samara",
+		"sortIndex": 3033,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Afterlife VIP",
+		"description": "Talk your way into Afterlife's VIP lounge. You will need to namedrop Jaruut. \n\nOnce inside, you need to perform three tasks to get Aria's attention. Additionally, you can get some Renegade by telling off the kid at the door who is begging for Expel 10 tickets.",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.AfterlifeVIP",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Samara.4",
+		"inMissionId": "A2.L.Samara",
+		"sortIndex": 3034,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Attract Morinth",
+		"description": "You must complete three tasks to attract Morinth's attention. Most of these activites are one-ty-only, so if you do something wrong, you will have to move on to the next one. If you fail to complete three, Morinth will leave and you will lose Samara's loyalty.",
+		"objectivesCountToCompletion": 3,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Samara.4.1",
+		"inMissionId": "A2.L.Samara.4",
+		"sortIndex": 30341,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Undercover Reporter",
+		"description": "Horftin's companion, Moirall, is an undercover reporter spying on gang leader Florit at a table on the other side of the club. Horftin has discovered her cover is blown and her life is in danger. Go talk to Moirall, using the words \"terminal\" and \"eternity\" in that order.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Samara.4.2",
+		"inMissionId": "A2.L.Samara.4",
+		"sortIndex": 30342,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Asari Dancer",
+		"description": "The turian Meln is harassing the club dancer Hallia. Take him down.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Samara.4.3",
+		"inMissionId": "A2.L.Samara.4",
+		"sortIndex": 30343,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Dance",
+		"description": "Charm Waera into dancing with you.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Samara.4.4",
+		"inMissionId": "A2.L.Samara.4",
+		"sortIndex": 30344,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Insult Krogan",
+		"description": "Verf is mocking humans in a corner of the bar. Challenge him to a fight (it results in a staredown, which you win).",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Samara.4.5",
+		"inMissionId": "A2.L.Samara.4",
+		"sortIndex": 30345,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Intimidate Turians",
+		"description": "Vertin and Huck are in a corner of the bar talking about their plans for a mugging. If you have enough Renegade, you can intimidate them into a fight, otherwise you can bribe them into leaving (you won't be spending your own credits).",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Samara.4.6",
+		"inMissionId": "A2.L.Samara.4",
+		"sortIndex": 30346,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Buy Drinks",
+		"description": "Buy the whole club a round of drinks. If you have enough Paragon, you can talk the bartender into doing it free (but either way, you don't spend your own credits on this).",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Samara.5",
+		"inMissionId": "A2.L.Samara",
+		"sortIndex": 3035,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Impress Morinth",
+		"description": "When you join Morinth at her table, use the clues from Nef's journal to impress her. Specifically, say \"I'm conifdent.\" followed by these (in any order): travel, danger, power, the band Expel 10, the drug Hallex, the artist Forta, and the vid Vaenia. \n\nIf you mention the justicars or family, or fail to impress Morinth, she will leave and you will lose Samara's loyalty.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Samara.5",
+		"inMissionId": "A2.L.Samara",
+		"sortIndex": 3035,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Morinth's Apartment",
+		"description": "There are several items in Morinth's apartment which you can examine to learn more about her. When you are ready, speak to Morinth. You will need to charm or intimidate her in order to resist her seduction. Either way, Samara shows up to finish the battle.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.L.Samara.6",
+		"inMissionId": "A2.L.Samara",
+		"sortIndex": 3036,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Choose Samara or Morinth",
+		"description": "Samara and Morinth are evenly matched. Morinth suggests that you intervene and she will take Samara's place on the Normandy, without anyone else the wiser. There are Game 3 consequences to siding with Morinth, but so long as you don't try to romance her later, it has no consequences in Game 2.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.L.Tali",
 		"sortIndex": 308,
