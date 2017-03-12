@@ -122,6 +122,7 @@ final public class SliderRow: HairlineBorderView, IBViewable {
 				maxValue = 100
 				value = 0
 			default:
+				minValue = 1
 				maxValue = 30
 		}
 		setupView()
