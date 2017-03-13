@@ -184,14 +184,14 @@ public struct CalloutBalloon {
 			case .down:
 				lineBreak.x += tailWidth
 				lineBreak.y = bounds.height // bottom side
-				lineBreakInner.x += tailWidth
+				lineBreakInner.x += tailInnerWidth
 				lineBreakInner.y = lineBreak.y - borderWidth
 				tailPoint.y = lineBreak.y + tailLength // below bottom
 				tailPointInner.y = tailPoint.y - (borderWidth * 2)
 			case .left:
 				lineBreak.y += tailWidth
 				lineBreak.x = 0 // left side
-				lineBreakInner.y += tailWidth
+				lineBreakInner.y += tailInnerWidth
 				lineBreakInner.x = lineBreak.x + borderWidth
 				tailPoint.x = lineBreak.x - tailLength // left of left
 				tailPointInner.x = tailPoint.x + (borderWidth * 2)
