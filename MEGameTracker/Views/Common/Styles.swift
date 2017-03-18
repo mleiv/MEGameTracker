@@ -183,9 +183,17 @@ public struct Styles: IBStylesheet {
 				.font: Fonts.body.italicStyle,
 				.textColor: Colors.accentColor,
 			],
+			"Body.OppositeColor.Medium": [
+				.font: Fonts.header.boldStyle,
+				.textColor: Colors.normalOppositeColor,
+			],
 			"Header.AccentColor": [
 				.font: Fonts.header.normalStyle,
 				.textColor: Colors.accentColor,
+			],
+			"Header.TintOppositeColor.Medium": [
+				.font: Fonts.header.boldStyle,
+				.textColor: Colors.tintOppositeColor,
 			],
 			"Caption.AltAccentColor": [
 				.font: Fonts.caption.normalStyle,

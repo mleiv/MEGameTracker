@@ -25,28 +25,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sp9-xo-LVc" userLabel="Interior">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="8045"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1680.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="C6p-LM-9h5">
-                                                <rect key="frame" x="0.0" y="15" width="600" height="8010"/>
+                                                <rect key="frame" x="0.0" y="15" width="600" height="1645.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="DaH-Ir-JBe" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Rg2-FL-iwD" userLabel="ME2 Header">
-                                                                <rect key="frame" x="15" y="5" width="570" height="990"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Rg2-FL-iwD" userLabel="ME2 Header">
+                                                                <rect key="frame" x="15" y="5" width="570" height="40"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Game 2/3 Code:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wem-31-TNu" userLabel="ME2 Label" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="966.5" width="433" height="23.5"/>
+                                                                        <rect key="frame" x="0.0" y="20.5" width="447" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Header.NormalColor.Medium"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Header.NormalColor"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="THp-pr-04S" customClass="IBStyledSegmentedControl" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="433" y="962" width="137" height="29"/>
+                                                                        <rect key="frame" x="447" y="12" width="123" height="29"/>
                                                                         <segments>
                                                                             <segment title="Game 2"/>
                                                                             <segment title="Game 3"/>
@@ -56,6 +56,9 @@
                                                                         </connections>
                                                                     </segmentedControl>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" priority="100" id="7by-NC-rRe"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
@@ -72,14 +75,70 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+                                                    <view hidden="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="I9B-Rw-8ed" userLabel="Scan" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="50" width="600" height="50"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxT-Bk-6sG">
+                                                                <rect key="frame" x="248.5" y="8" width="103" height="34"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="mU8-Qh-SEX">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="34"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" text="Scan Code" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzq-p0-iXv" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                                                        <rect key="frame" x="35" y="9" width="68" height="16"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.TintColor"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="mU8-Qh-SEX" firstAttribute="top" secondItem="GxT-Bk-6sG" secondAttribute="top" id="IsS-UJ-cIh"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Hzq-p0-iXv" secondAttribute="trailing" id="KSn-aB-4zk"/>
+                                                                    <constraint firstItem="Hzq-p0-iXv" firstAttribute="leading" secondItem="mU8-Qh-SEX" secondAttribute="trailing" constant="10" id="Nf6-ta-fMv"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="mU8-Qh-SEX" secondAttribute="bottom" id="haj-MY-Y2p"/>
+                                                                    <constraint firstItem="Hzq-p0-iXv" firstAttribute="centerY" secondItem="mU8-Qh-SEX" secondAttribute="centerY" id="sqX-7d-o2O"/>
+                                                                    <constraint firstAttribute="height" priority="100" id="tW7-tX-QWR"/>
+                                                                    <constraint firstItem="mU8-Qh-SEX" firstAttribute="leading" secondItem="GxT-Bk-6sG" secondAttribute="leading" id="tp4-Ao-AaA"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-uC-N3q" customClass="IBStyledButton" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="15" y="0.0" width="570" height="50"/>
+                                                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                                                <connections>
+                                                                    <action selector="scanCodeAction:" destination="Jcz-EQ-och" eventType="touchUpInside" id="R74-fp-D5I"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GxT-Bk-6sG" secondAttribute="trailing" constant="15" id="0UU-F9-vo0"/>
+                                                            <constraint firstItem="1JD-uC-N3q" firstAttribute="leading" secondItem="I9B-Rw-8ed" secondAttribute="leading" constant="15" id="2fI-IU-KFA"/>
+                                                            <constraint firstAttribute="bottom" secondItem="1JD-uC-N3q" secondAttribute="bottom" id="Jho-sz-Hqm"/>
+                                                            <constraint firstItem="GxT-Bk-6sG" firstAttribute="top" secondItem="I9B-Rw-8ed" secondAttribute="top" constant="8" id="QEE-qw-Hbd"/>
+                                                            <constraint firstAttribute="trailing" secondItem="1JD-uC-N3q" secondAttribute="trailing" constant="15" id="Zfv-fa-ctD"/>
+                                                            <constraint firstAttribute="bottom" secondItem="GxT-Bk-6sG" secondAttribute="bottom" constant="8" id="bLy-ZL-Gy8"/>
+                                                            <constraint firstItem="1JD-uC-N3q" firstAttribute="top" secondItem="I9B-Rw-8ed" secondAttribute="top" id="j64-BT-pKq"/>
+                                                            <constraint firstItem="GxT-Bk-6sG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I9B-Rw-8ed" secondAttribute="leading" constant="15" id="run-XZ-8zB"/>
+                                                            <constraint firstItem="GxT-Bk-6sG" firstAttribute="centerX" secondItem="I9B-Rw-8ed" secondAttribute="centerX" id="vYA-NC-ynt"/>
+                                                            <constraint firstAttribute="height" priority="100" id="vxm-QK-x6o"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
                                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="Deu-4f-xwO" userLabel="2/3 Code">
-                                                        <rect key="frame" x="0.0" y="1000" width="600" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="100" width="600" height="110.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uHr-tc-ZNv">
-                                                                <rect key="frame" x="15" y="10" width="570" height="980"/>
+                                                                <rect key="frame" x="15" y="8" width="570" height="94.5"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalCompressionResistancePriority="755" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tUz-uD-7av" userLabel="Code Field" customClass="IBStyledTextField" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="570" height="911"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="570" height="34"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -91,7 +150,7 @@
                                                                         </connections>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="754" text="XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSf-rs-7pT" userLabel="Repeat Code" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="916" width="570" height="18"/>
+                                                                        <rect key="frame" x="0.0" y="39" width="570" height="13.5"/>
                                                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
                                                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -100,7 +159,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Notice! Something to know about this slider." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DZ-Zh-hOv" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="939" width="570" height="18"/>
+                                                                        <rect key="frame" x="0.0" y="57.5" width="570" height="16"/>
                                                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
                                                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -109,7 +168,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Alert! This code is problematic for some reason. " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjt-6j-Wqi" userLabel="Alert Label" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="962" width="570" height="18"/>
+                                                                        <rect key="frame" x="0.0" y="78.5" width="570" height="16"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -126,18 +185,18 @@
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="uHr-tc-ZNv" secondAttribute="trailing" constant="15" id="1Nm-G1-2CF"/>
-                                                            <constraint firstAttribute="bottom" secondItem="uHr-tc-ZNv" secondAttribute="bottom" priority="900" constant="10" id="LK3-n0-5qe"/>
+                                                            <constraint firstAttribute="bottom" secondItem="uHr-tc-ZNv" secondAttribute="bottom" priority="900" constant="8" id="LK3-n0-5qe"/>
                                                             <constraint firstItem="uHr-tc-ZNv" firstAttribute="leading" secondItem="Deu-4f-xwO" secondAttribute="leading" constant="15" id="S1R-8r-loW"/>
-                                                            <constraint firstItem="uHr-tc-ZNv" firstAttribute="top" secondItem="Deu-4f-xwO" secondAttribute="top" priority="900" constant="10" id="aYK-5d-FrU"/>
+                                                            <constraint firstItem="uHr-tc-ZNv" firstAttribute="top" secondItem="Deu-4f-xwO" secondAttribute="top" priority="900" constant="8" id="aYK-5d-FrU"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-tV-dwo" userLabel="2/3 Code Button">
-                                                        <rect key="frame" x="0.0" y="2000" width="600" height="1000"/>
+                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-tV-dwo" userLabel="2/3 Code Button" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="210.5" width="600" height="50"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZ9-t4-Pis" userLabel="Code Button" customClass="IBStyledButton" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="15" y="0.0" width="570" height="1000"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZ9-t4-Pis" customClass="IBStyledButton" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="15" y="0.0" width="570" height="50"/>
                                                                 <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                                                <state key="normal" title="Convert"/>
+                                                                <state key="normal" title="Convert to Sliders"/>
                                                                 <connections>
                                                                     <action selector="ME2CodeSubmit:" destination="Jcz-EQ-och" eventType="touchUpInside" id="PBK-Nm-CQP"/>
                                                                 </connections>
@@ -147,18 +206,24 @@
                                                         <constraints>
                                                             <constraint firstItem="SZ9-t4-Pis" firstAttribute="top" secondItem="Rog-tV-dwo" secondAttribute="top" id="C5e-Io-sKL"/>
                                                             <constraint firstAttribute="trailing" secondItem="SZ9-t4-Pis" secondAttribute="trailing" constant="15" id="lZG-Td-dKf"/>
+                                                            <constraint firstAttribute="height" priority="100" id="p97-qf-E7a"/>
                                                             <constraint firstAttribute="bottom" secondItem="SZ9-t4-Pis" secondAttribute="bottom" id="u3f-hx-cwk"/>
                                                             <constraint firstItem="SZ9-t4-Pis" firstAttribute="leading" secondItem="Rog-tV-dwo" secondAttribute="leading" constant="15" id="zqD-AL-04d"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="a4P-UN-7E9" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="3000" width="600" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="260.5" width="600" height="50"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RG6-Oh-g2d" userLabel="ME1 Header">
-                                                                <rect key="frame" x="15" y="5" width="570" height="990"/>
+                                                                <rect key="frame" x="15" y="5" width="570" height="40"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 1 Sliders:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eB1-fV-4QK" userLabel="ME1 Label" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="570" height="990"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="570" height="40"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -187,19 +252,19 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AK0-Zc-yTE">
-                                                        <rect key="frame" x="0.0" y="4000" width="600" height="10"/>
+                                                        <rect key="frame" x="0.0" y="310.5" width="600" height="10"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="10" id="JYk-dS-wc9"/>
                                                         </constraints>
                                                     </tableView>
-                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="Yd3-qP-frt" userLabel="1 Sliders Button">
-                                                        <rect key="frame" x="0.0" y="4010" width="600" height="1000"/>
+                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="Yd3-qP-frt" userLabel="1 Sliders Button" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="320.5" width="600" height="58"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9k-XG-aua" userLabel="Code Button">
-                                                                <rect key="frame" x="15" y="5" width="570" height="990"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9k-XG-aua" customClass="IBStyledButton" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="15" y="0.0" width="570" height="58"/>
                                                                 <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                                                <state key="normal" title="Generate Code"/>
+                                                                <state key="normal" title="Save Sliders"/>
                                                                 <connections>
                                                                     <action selector="ME1SlidersSubmit:" destination="Jcz-EQ-och" eventType="touchUpInside" id="2lm-tC-LPx"/>
                                                                 </connections>
@@ -207,20 +272,27 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="height" priority="100" id="97L-5v-d7o"/>
                                                             <constraint firstItem="w9k-XG-aua" firstAttribute="leading" secondItem="Yd3-qP-frt" secondAttribute="leading" constant="15" id="S9V-RC-8vs"/>
                                                             <constraint firstAttribute="trailing" secondItem="w9k-XG-aua" secondAttribute="trailing" constant="15" id="grT-Bs-uMF"/>
-                                                            <constraint firstItem="w9k-XG-aua" firstAttribute="top" secondItem="Yd3-qP-frt" secondAttribute="top" constant="5" id="lSU-Se-8Di"/>
-                                                            <constraint firstAttribute="bottom" secondItem="w9k-XG-aua" secondAttribute="bottom" constant="5" id="vvb-kr-VYP"/>
+                                                            <constraint firstItem="w9k-XG-aua" firstAttribute="top" secondItem="Yd3-qP-frt" secondAttribute="top" id="lSU-Se-8Di"/>
+                                                            <constraint firstAttribute="bottom" secondItem="w9k-XG-aua" secondAttribute="bottom" id="vvb-kr-VYP"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="coP-Rb-5Cy" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="5010" width="600" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="378.5" width="600" height="50"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gh1-B6-t5Y" userLabel="Notes Header">
-                                                                <rect key="frame" x="15" y="5" width="570" height="990"/>
+                                                                <rect key="frame" x="15" y="5" width="570" height="40"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="301" text="Notes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSd-wa-khd" userLabel="Notes Label" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="570" height="990"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="570" height="40"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -249,10 +321,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="Tho-JC-ZpJ" userLabel="Notes" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="6010" width="600" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="428.5" width="600" height="217"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="290" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="800" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xz-Sa-VAZ" userLabel="Notes Text 1" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="15" y="10" width="570" height="980"/>
+                                                                <rect key="frame" x="15" y="10" width="570" height="197"/>
                                                                 <string key="text">Due to the import process between Game 1 and Game 2, you will see a different Shepard if you import unchanged than if you customize using exactly the same values. Eye colors were more vivid in Game 1 and the Scar attribute is not available in Game 2.
 
 Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None of these values convert down to Game 1 or 2, but you may want to specially customize your Game 3 Shepard to take advantage of these.  The default Shepard faces provided by the game are wholly unique and cannot be recreated using any combination of values.</string>
@@ -268,6 +340,7 @@ Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None 
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="2Xz-Sa-VAZ" secondAttribute="bottom" constant="10" id="06D-Y1-3io"/>
                                                             <constraint firstAttribute="trailing" secondItem="2Xz-Sa-VAZ" secondAttribute="trailing" constant="15" id="OO2-xp-LhI"/>
+                                                            <constraint firstAttribute="height" priority="100" id="cvz-nI-vrO"/>
                                                             <constraint firstItem="2Xz-Sa-VAZ" firstAttribute="top" secondItem="Tho-JC-ZpJ" secondAttribute="top" constant="10" id="mdP-Zy-42W"/>
                                                             <constraint firstItem="2Xz-Sa-VAZ" firstAttribute="leading" secondItem="Tho-JC-ZpJ" secondAttribute="leading" constant="15" id="vzg-Vp-RrN"/>
                                                         </constraints>
@@ -279,7 +352,7 @@ Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None 
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="Wnq-ED-TKh" userLabel="Filler">
-                                                        <rect key="frame" x="0.0" y="7010" width="600" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="645.5" width="600" height="1000"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -329,6 +402,7 @@ Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None 
                         <outlet property="ME2NoticeLabel" destination="6DZ-Zh-hOv" id="sPB-hs-dKL"/>
                         <outlet property="attributesTableView" destination="AK0-Zc-yTE" id="7Pv-hO-EEs"/>
                         <outlet property="attributesTableViewHeightConstraint" destination="JYk-dS-wc9" id="VA9-IT-Ach"/>
+                        <outlet property="scanCodeButton" destination="1JD-uC-N3q" id="j2V-Cj-jLT"/>
                         <outlet property="scrollView" destination="YpK-v1-gmQ" id="ukx-A0-7Gk"/>
                     </connections>
                 </viewController>
@@ -337,4 +411,7 @@ Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None 
             <point key="canvasLocation" x="1145.5999999999999" y="22.488755622188908"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Camera" width="25" height="25"/>
+    </resources>
 </document>

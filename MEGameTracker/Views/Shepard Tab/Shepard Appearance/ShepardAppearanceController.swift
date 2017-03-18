@@ -28,7 +28,9 @@ final class ShepardAppearanceController: UIViewController,
 	@IBOutlet weak var attributesTableView: UITableView!
 	@IBOutlet weak var attributesTableViewHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var ME1Button: UIButton!
+	@IBOutlet weak var scanCodeButton: UIButton?
 
+	@IBAction func scanCodeAction(_ sender: UIButton) { openScanCode() }
 // MARK: Variables
 
 	var shepard: Shepard?
@@ -64,8 +66,6 @@ final class ShepardAppearanceController: UIViewController,
 		attributesTableView.delegate = self
 		attributesTableView.dataSource = self
 		setup()
-		defaultScrollOffset = scrollView.contentOffset
-		defaultScrollInset = scrollView.contentInset
 		stopSpinner(inView: view)
 		startListeners()
 	}
@@ -75,6 +75,8 @@ final class ShepardAppearanceController: UIViewController,
 		// it does not layout table/view correctly earlier than this
 		// in fact, trying to do this earlier stops it from using table height constraint at all.
 		sizeAttributesTableView(relayout: true)
+		defaultScrollOffset = scrollView.contentOffset
+		defaultScrollInset = scrollView.contentInset
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -114,8 +116,6 @@ final class ShepardAppearanceController: UIViewController,
 		setup()
 		attributesTableView.reloadData()
 		sizeAttributesTableView(relayout: true)
-		view.setNeedsLayout()
-		view.layoutIfNeeded()
 		stopSpinner(inView: view)
 	}
 
@@ -134,10 +134,9 @@ final class ShepardAppearanceController: UIViewController,
 		var newAppearance3 = newAppearance1
 		newAppearance3.convert(toGame: .game2)
 		pendingAppearanceGame3 = newAppearance3
+		save()
 		ME2CodeField.text = game23SliderChoice == .game2 ? newAppearance2.format() : newAppearance3.format()
 		ME2CodeLabel.text = ME2CodeField.text
-		view.setNeedsLayout()
-		view.layoutIfNeeded()
 		scrollView.contentOffset = defaultScrollOffset ?? scrollView.contentOffset
 		scrollView.contentInset = defaultScrollInset ?? scrollView.contentInset
 		stopSpinner(inView: view)
@@ -177,6 +176,20 @@ final class ShepardAppearanceController: UIViewController,
 			shepard?.change(appearance: newAppearance)
 		}
 		stopSpinner(inView: view)
+	}
+
+	/// Opens the camera and OCR-scans for a valid appearance code.
+	func openScanCode() {
+		// the other buttons provide feedback, so do that here too
+		UIView.animate(withDuration: 0.3, animations: { [weak self] in
+			self?.scanCodeButton?.backgroundColor = .white
+			self?.scanCodeButton?.alpha = 0.5
+		}) { [weak self] _ in
+			self?.scanCodeButton?.backgroundColor = .clear
+			self?.scanCodeButton?.alpha = 1.0
+		}
+		// modal segue to camera scanner
+		parent?.performSegue(withIdentifier: "Show ShepardFlow.AppearanceScanCode", sender: scanCodeButton)
 	}
 
 	// UITaxtFieldDelegate

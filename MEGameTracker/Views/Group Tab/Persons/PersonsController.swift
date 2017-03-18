@@ -144,8 +144,7 @@ class PersonsController: UITableViewController, Spinnerable {
 		if (indexPath as NSIndexPath).row < persons.count {
 			startSpinner(inView: view.superview)
 			if let parentController = tabsController?.parent as? GroupSplitViewController {
-				let ferriedSegue: FerriedPrepareForSegueClosure = {
-					(destinationController: UIViewController) in
+				let ferriedSegue: FerriedPrepareForSegueClosure = { destinationController in
 					destinationController.find(controllerType: PersonController.self) { controller in
 						controller.person = self.persons[(indexPath as NSIndexPath).row]
 					}
@@ -163,8 +162,7 @@ class PersonsController: UITableViewController, Spinnerable {
 		}
 		startSpinner(inView: view.superview)
 		if let parentController = tabsController?.parent as? GroupSplitViewController {
-			let ferriedSegue: FerriedPrepareForSegueClosure = {
-				(destinationController: UIViewController) in
+			let ferriedSegue: FerriedPrepareForSegueClosure = { destinationController in
 				destinationController.find(controllerType: PersonController.self) { controller in
 					controller.person = person
 				}
