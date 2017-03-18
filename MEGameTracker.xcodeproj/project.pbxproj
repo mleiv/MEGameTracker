@@ -248,8 +248,6 @@
 		B17DAF011CC87519009EBD90 /* CoreDataStructuralMigrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAF001CC87519009EBD90 /* CoreDataStructuralMigrations.swift */; };
 		B17DAF051CC879B3009EBD90 /* MainFlowTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAF041CC879B3009EBD90 /* MainFlowTabController.swift */; };
 		B1811F561E63624D007559AE /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1811F551E63624D007559AE /* AppTests.swift */; };
-		B1834A0E1E78B3520042B3AB /* SwiftOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1834A001E78B30E0042B3AB /* SwiftOCR.framework */; };
-		B1834A0F1E78B3520042B3AB /* SwiftOCR.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B1834A001E78B30E0042B3AB /* SwiftOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1834A261E78BBDE0042B3AB /* ShepardAppearanceHeadingNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1834A1F1E78BBDE0042B3AB /* ShepardAppearanceHeadingNib.xib */; };
 		B1834A271E78BBDE0042B3AB /* ShepardAppearanceHeadingNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1834A211E78BBDE0042B3AB /* ShepardAppearanceHeadingNib.swift */; };
 		B1834A281E78BBDE0042B3AB /* ShepardAppearanceSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1834A231E78BBDE0042B3AB /* ShepardAppearanceSliderCell.xib */; };
@@ -400,8 +398,6 @@
 		B1F466DF1DA0AE7200EBA563 /* IBStyledThings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D71DA0AE7200EBA563 /* IBStyledThings.swift */; };
 		B1F466E01DA0AE7200EBA563 /* IBStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D81DA0AE7200EBA563 /* IBStyler.swift */; };
 		B1F466E11DA0AE7200EBA563 /* IBStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D91DA0AE7200EBA563 /* IBStyleManager.swift */; };
-		B1FE61381E79BFE10056F4B0 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1FE61371E79BFE10056F4B0 /* GPUImage.framework */; };
-		B1FE61391E79BFE10056F4B0 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B1FE61371E79BFE10056F4B0 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1FFE3341CF6AA17007B3160 /* ConversationRewardsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE3321CF6AA17007B3160 /* ConversationRewardsable.swift */; };
 		B1FFE3351CF6AA17007B3160 /* ConversationRewardsRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE3331CF6AA17007B3160 /* ConversationRewardsRowType.swift */; };
 		B1FFE3541CF6B151007B3160 /* ConversationRewardsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1FFE3491CF6B151007B3160 /* ConversationRewardsDetail.storyboard */; };
@@ -490,41 +486,6 @@
 			remoteGlobalIDString = 0C91748F1BAE99EE004A7905;
 			remoteInfo = "Nuke iOS";
 		};
-		B18349FF1E78B30E0042B3AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B18349EE1E78B30D0042B3AB /* SwiftOCR.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 373ED0AF1CC9071C00C4758B;
-			remoteInfo = SwiftOCR;
-		};
-		B1834A011E78B30E0042B3AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B18349EE1E78B30D0042B3AB /* SwiftOCR.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 373ED0B91CC9071D00C4758B;
-			remoteInfo = SwiftOCRTests;
-		};
-		B1834A031E78B30E0042B3AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B18349EE1E78B30D0042B3AB /* SwiftOCR.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 373ED0E61CC909A500C4758B;
-			remoteInfo = "SwiftOCR Mac";
-		};
-		B1834A051E78B30E0042B3AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B18349EE1E78B30D0042B3AB /* SwiftOCR.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 373ED0EF1CC909A500C4758B;
-			remoteInfo = "SwiftOCR MacTests";
-		};
-		B1834A101E78B3520042B3AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B18349EE1E78B30D0042B3AB /* SwiftOCR.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 373ED0AE1CC9071C00C4758B;
-			remoteInfo = SwiftOCR;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -534,9 +495,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B1834A0F1E78B3520042B3AB /* SwiftOCR.framework in CopyFiles */,
 				B10332961E690B60009C8E16 /* Nuke.framework in CopyFiles */,
-				B1FE61391E79BFE10056F4B0 /* GPUImage.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,7 +746,6 @@
 		B17DAF001CC87519009EBD90 /* CoreDataStructuralMigrations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStructuralMigrations.swift; sourceTree = "<group>"; };
 		B17DAF041CC879B3009EBD90 /* MainFlowTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFlowTabController.swift; sourceTree = "<group>"; };
 		B1811F551E63624D007559AE /* AppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
-		B18349EE1E78B30D0042B3AB /* SwiftOCR.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftOCR.xcodeproj; path = SwiftOCR/framework/SwiftOCR.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B1834A201E78BBDE0042B3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShepardAppearanceHeadingNib.xib; sourceTree = "<group>"; };
 		B1834A211E78BBDE0042B3AB /* ShepardAppearanceHeadingNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShepardAppearanceHeadingNib.swift; sourceTree = "<group>"; };
 		B1834A241E78BBDE0042B3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShepardAppearanceSliderCell.xib; sourceTree = "<group>"; };
@@ -939,7 +897,6 @@
 		B1F466D71DA0AE7200EBA563 /* IBStyledThings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyledThings.swift; sourceTree = "<group>"; };
 		B1F466D81DA0AE7200EBA563 /* IBStyler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyler.swift; sourceTree = "<group>"; };
 		B1F466D91DA0AE7200EBA563 /* IBStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyleManager.swift; sourceTree = "<group>"; };
-		B1FE61371E79BFE10056F4B0 /* GPUImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GPUImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1FFE3321CF6AA17007B3160 /* ConversationRewardsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRewardsable.swift; sourceTree = "<group>"; };
 		B1FFE3331CF6AA17007B3160 /* ConversationRewardsRowType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRewardsRowType.swift; sourceTree = "<group>"; };
 		B1FFE34A1CF6B151007B3160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ConversationRewardsDetail.storyboard; sourceTree = "<group>"; };
@@ -956,9 +913,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B16F8D4D1E17320E0074F66B /* CloudKit.framework in Frameworks */,
-				B1FE61381E79BFE10056F4B0 /* GPUImage.framework in Frameworks */,
 				B10332951E690B60009C8E16 /* Nuke.framework in Frameworks */,
-				B1834A0E1E78B3520042B3AB /* SwiftOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1180,7 +1135,6 @@
 		B028AF181BA12B1900C73373 = {
 			isa = PBXGroup;
 			children = (
-				B1FE61371E79BFE10056F4B0 /* GPUImage.framework */,
 				B028AF231BA12B1900C73373 /* MEGameTracker */,
 				B028AF381BA12B1900C73373 /* MEGameTrackerTests */,
 				B028AF221BA12B1900C73373 /* Products */,
@@ -1285,7 +1239,6 @@
 				B19215501E5CB9A400594796 /* SimpleCoreDataManageable */,
 				B1BFF9D41DA4AFAB003FA9FA /* Signals */,
 				B1D1E37A1E1C251400860A42 /* SimpleUserDefaults.swift */,
-				B18349EE1E78B30D0042B3AB /* SwiftOCR.xcodeproj */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -1901,17 +1854,6 @@
 			path = "Persons Search";
 			sourceTree = "<group>";
 		};
-		B18349EF1E78B30D0042B3AB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B1834A001E78B30E0042B3AB /* SwiftOCR.framework */,
-				B1834A021E78B30E0042B3AB /* SwiftOCRTests.xctest */,
-				B1834A041E78B30E0042B3AB /* SwiftOCR.framework */,
-				B1834A061E78B30E0042B3AB /* SwiftOCR MacTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B1834A1E1E78BBDE0042B3AB /* Heading */ = {
 			isa = PBXGroup;
 			children = (
@@ -2397,7 +2339,6 @@
 			);
 			dependencies = (
 				B10332981E690B60009C8E16 /* PBXTargetDependency */,
-				B1834A111E78B3520042B3AB /* PBXTargetDependency */,
 			);
 			name = MEGameTracker;
 			productName = MEGameTracker;
@@ -2471,10 +2412,6 @@
 					ProductGroup = B10332781E690B4A009C8E16 /* Products */;
 					ProjectRef = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
 				},
-				{
-					ProductGroup = B18349EF1E78B30D0042B3AB /* Products */;
-					ProjectRef = B18349EE1E78B30D0042B3AB /* SwiftOCR.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -2546,34 +2483,6 @@
 			fileType = wrapper.cfbundle;
 			path = "Nuke iOS Performance Tests.xctest";
 			remoteRef = B10332931E690B4A009C8E16 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B1834A001E78B30E0042B3AB /* SwiftOCR.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftOCR.framework;
-			remoteRef = B18349FF1E78B30E0042B3AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B1834A021E78B30E0042B3AB /* SwiftOCRTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftOCRTests.xctest;
-			remoteRef = B1834A011E78B30E0042B3AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B1834A041E78B30E0042B3AB /* SwiftOCR.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftOCR.framework;
-			remoteRef = B1834A031E78B30E0042B3AB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B1834A061E78B30E0042B3AB /* SwiftOCR MacTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SwiftOCR MacTests.xctest";
-			remoteRef = B1834A051E78B30E0042B3AB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -3033,11 +2942,6 @@
 			isa = PBXTargetDependency;
 			name = "Nuke iOS";
 			targetProxy = B10332971E690B60009C8E16 /* PBXContainerItemProxy */;
-		};
-		B1834A111E78B3520042B3AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftOCR;
-			targetProxy = B1834A101E78B3520042B3AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
