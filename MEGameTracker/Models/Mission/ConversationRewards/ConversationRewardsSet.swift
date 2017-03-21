@@ -46,6 +46,9 @@ extension ConversationRewardSet {
 		}
 		if point?.type == .paragade && point?.paragadeValue.count == 2 {
 			return (type == .paragon ? point?.paragadeValue[0] : point?.paragadeValue[1]) ?? 0
+		} else if let points = point?.value, type == .neutral && point?.type == .paragade && points > 0 {
+			// game 3 neutral reputation points
+			return points
 		}
 		return (subset ?? []).reduce(0) { $0 + $1.sum(type: type) }
 	}
@@ -53,9 +56,12 @@ extension ConversationRewardSet {
 	/// Flattens a set of choices to rows suitable for UI display.
 	public func flatRows(level: Int = 0) -> [ConversationRewards.FlatData] {
 		if let point = self.point {
-			let points = point.type == .paragade
-				? point.paragadeValue.map({ "\($0)" }).joined(separator: "/")
-				: "\(point.value)"
+			let points: String
+			if point.type == .paragade && point.paragadeValue.count == 2 {
+				points = point.paragadeValue.map({ "\($0)" }).joined(separator: "/")
+			} else {
+				points = "\(point.value)"
+			}
 			let options: [ConversationRewards.FlatDataOption] = [(
 				id: point.id,
 				type: point.type,
@@ -64,32 +70,25 @@ extension ConversationRewardSet {
 				trigger: point.trigger,
 				isSelected: point.isSelected
 			)]
+//			print("OPTION: \(commonContext) \(options.first?.context) \(options.first?.trigger)")
 			return [(level: level, commonContext: commonContext, options: options)]
 		} else {
 			let nextLevel = level + 1
-			let recursedOptions = (subset ?? []).flatMap({ $0.flatRows(level: nextLevel) })
-			let nextLevelOptions = recursedOptions.filter({ $0.level == nextLevel })
-			var returnRows = recursedOptions.filter({ $0.level != nextLevel })
-			let hasOnlyOneLevel: Bool = (subset ?? []).reduce(true) { $0 && ($1.subset?.isEmpty != false) }
-			if isExclusiveSet && hasOnlyOneLevel {
+			let returnRows: [ConversationRewards.FlatData]
+			let subset = self.subset ?? []
+			let recursedOptions = subset.flatMap { $0.flatRows(level: nextLevel) }
+			let hasOnlyOneLevel: Bool = subset.reduce(true) { $0 && ($1.subset?.isEmpty ?? true) }
+			if hasOnlyOneLevel && (isExclusiveSet || recursedOptions.count == 1) {
 				// insert into same row
-				let nextOptions = nextLevelOptions.flatMap({ $0.options.first }).map({
-					return (
-						id: $0.id,
-						type: $0.type,
-						points: $0.points,
-						context: $0.context,
-						trigger: $0.trigger,
-						isSelected: $0.isSelected
-					) as ConversationRewards.FlatDataOption
-				})
-				returnRows.insert((level: level, commonContext: commonContext, options: nextOptions), at:0)
+				let nextOptions = recursedOptions.flatMap({ $0.options.first })
+				returnRows = [(level: level, commonContext: commonContext, options: nextOptions)]
 			} else if let context = commonContext {
 				let contextRow: [ConversationRewards.FlatData] = [(level: level, commonContext: context, options: [])]
-				returnRows = contextRow + nextLevelOptions + returnRows
+				returnRows = contextRow + recursedOptions
 			} else {
-				returnRows = nextLevelOptions + returnRows
+				returnRows = recursedOptions
 			}
+//			print("ROW: \(level) \(commonContext) totalRows: \(returnRows.count)")
 			return returnRows
 		}
 	}

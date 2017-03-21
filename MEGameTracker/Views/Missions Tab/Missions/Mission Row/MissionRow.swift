@@ -52,6 +52,9 @@ final class MissionRow: UITableViewCell {
 	}
 
 // MARK: Initialization
+	/// Sets up the row - expects to be in main/UI dispatch queue. 
+	/// Also, table layout needs to wait for this, 
+	///    so don't run it asynchronously or the layout will be wrong.
 	public func define(
 		mission: Mission?,
 		origin: UIViewController?,
@@ -65,13 +68,13 @@ final class MissionRow: UITableViewCell {
 		self.isCalloutBoxRow = isCalloutBoxRow
 		self.allowsSegue = allowsSegue
 		self.isShowParentMissionIfFound = isShowParentMissionIfFound
-		return setup()
+
+		return self.setup()
 	}
 
 // MARK: Populate Data
 	fileprivate func setup() -> Bool {
-		guard let nameLabel = self.nameLabel else { return false }
-		guard !UIWindow.isInterfaceBuilder else { return false }
+		guard !UIWindow.isInterfaceBuilder && nameLabel != nil else { return false }
 
 		parentMissionLabel?.isHidden = true
 		var referenceMission = mission
@@ -82,23 +85,16 @@ final class MissionRow: UITableViewCell {
 			referenceMission = parentMission
 		}
 
-		nameLabel.text = mission?.name // MarkupLabel relies on this to setup, so use .text first
-		nameLabel.attributedText = nameLabel.attributedText?.toggleStrikethrough(mission?.isCompleted ?? false)
-//		nameLabel.isEnabled = mission?.isAvailable ?? false
-		nameLabel.alpha = mission?.isAvailable ?? false ? 1.0 : 0.5
+		nameLabel?.text = mission?.name // MarkupLabel relies on this to setup, so use .text first
+		nameLabel?.attributedText = nameLabel?.attributedText?.toggleStrikethrough(mission?.isCompleted ?? false)
+//		nameLabel?.isEnabled = mission?.isAvailable ?? false
+		nameLabel?.alpha = mission?.isAvailable ?? false ? 1.0 : 0.5
 
 		descriptionLabel?.isHidden = true
 		locationLabel?.isHidden = true
 		availabilityLabel?.isHidden = true
 
-		if !(mission?.isAvailable ?? false) {
-			if !isCalloutBoxRow,
-				let text = mission?.unavailabilityMessages.joined(separator: ", "),
-				!text.isEmpty {
-				availabilityLabel?.text = text
-				availabilityLabel?.isHidden = false
-			}
-		} else {
+		if mission?.isAvailable == true {
 			if let annotationNote = mission?.annotationNote,
 				!annotationNote.isEmpty {
 				descriptionLabel?.text = annotationNote
@@ -110,6 +106,13 @@ final class MissionRow: UITableViewCell {
 					locationLabel?.text = breadcrumbs
 					locationLabel?.isHidden = false
 				}
+			}
+		} else {
+			if !isCalloutBoxRow,
+				let text = mission?.unavailabilityMessages.joined(separator: ", "),
+				!text.isEmpty {
+				availabilityLabel?.text = text
+				availabilityLabel?.isHidden = false
 			}
 		}
 		setCheckboxImage(isCompleted: mission?.isCompleted ?? false, isAvailable: mission?.isAvailable ?? false)

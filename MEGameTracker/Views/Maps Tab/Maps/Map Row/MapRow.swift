@@ -53,6 +53,9 @@ final public class MapRow: UITableViewCell {
 	}
 
 // MARK: Initialization
+	/// Sets up the row - expects to be in main/UI dispatch queue. 
+	/// Also, table layout needs to wait for this, 
+	///    so don't run it asynchronously or the layout will be wrong.
 	public func define(
 		map: Map?,
 		origin: UIViewController?,
@@ -66,12 +69,13 @@ final public class MapRow: UITableViewCell {
 		self.isCalloutBoxRow = isCalloutBoxRow
 		self.allowsSegue = allowsSegue
 		self.isShowParentMapIfFound = isShowParentMapIfFound
+
 		return setup()
 	}
 
 // MARK: Populate Data
-	func setup() -> Bool {
-		guard let nameLabel = self.nameLabel else { return false }
+	fileprivate func setup() -> Bool {
+		guard !UIWindow.isInterfaceBuilder && nameLabel != nil else { return false }
 
 		parentMapLabel?.isHidden = true
 		if isShowParentMapIfFound,
@@ -84,10 +88,10 @@ final public class MapRow: UITableViewCell {
 			parentMapLabel?.isHidden = false
 		}
 
-		nameLabel.text = map?.name // MarkupLabel relies on this to setup, so use .text first
-		nameLabel.attributedText = nameLabel.attributedText?.toggleStrikethrough(map?.isExplored ?? false)
-//		nameLabel.isEnabled = map?.isAvailable ?? false
-		nameLabel.alpha = map?.isAvailable ?? false ? 1.0 : 0.5
+		nameLabel?.text = map?.name // MarkupLabel relies on this to setup, so use .text first
+		nameLabel?.attributedText = nameLabel?.attributedText?.toggleStrikethrough(map?.isExplored ?? false)
+//		nameLabel?.isEnabled = map?.isAvailable ?? false
+		nameLabel?.alpha = map?.isAvailable ?? false ? 1.0 : 0.5
 
 		descriptionLabel?.isHidden = true
 		locationLabel?.isHidden = true

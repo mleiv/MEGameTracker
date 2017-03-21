@@ -11,14 +11,16 @@ import UIKit
 /// All functions and properties pre-defined except for unmarkedText: String? and didMarkup: Bool = false.
 /// call markupText() in layoutSubviews before super.layoutSubviews().
 public protocol Markupable: class {
+	var identifier: String? { get }
 	var isMarkupable: Bool { get }
 	var unmarkedText: String? { get set }
 	var useAttributedText: NSAttributedString? { get set }
-	func markupText()
-	func markupLinks() -> Int
+	func markup()
+	func markupText(_ attributedText: NSMutableAttributedString) -> NSMutableAttributedString
+	func markupLinks(_ attributedText: NSMutableAttributedString) -> NSMutableAttributedString
 }
 
-extension Markupable where Self: IBStylable, Self: UIView {
+extension Markupable where Self: UIView {
 
 	// don't bother with hassle of NSAttributedString if we don't need it
 	public var isMarkupable: Bool {
@@ -36,20 +38,22 @@ extension Markupable where Self: IBStylable, Self: UIView {
 		return unmarkedText?.isEmpty == false // err on side of parsing
 	}
 
-	public func markupText() {
-//		guard !UIWindow.isInterfaceBuilder else { return }
-		useAttributedText = NSMutableAttributedString(
-			attributedString: Styles.current.applyStyle(identifier ?? "",
-			toString: unmarkedText ?? "")
+	public func markup() {
+		let attributedText = NSMutableAttributedString(
+			attributedString: Styles.current.applyStyle(identifier ?? "", toString: unmarkedText ?? "")
 		)
-		guard isMarkupable else { return }
+		useAttributedText = attributedText.string.isEmpty ? nil : attributedText
+		guard unmarkedText?.isEmpty == false && isMarkupable else { return }
+		let markedText = markupText(attributedText)
+		let linkedText = markupLinks(markedText)
+		useAttributedText = linkedText
+	}
+
+	public func markupText(_ attributedText: NSMutableAttributedString) -> NSMutableAttributedString {
 		if let regex = try? NSRegularExpression(
 				pattern: "(?:\\*[^\\*]+\\*|\\_[^\\_]+\\_|[\\_\\*]{2}[^\\*\\_]+[\\_\\*]{2})",
 				options: .caseInsensitive
 			) {
-			let attributedText = NSMutableAttributedString(
-				attributedString: self.useAttributedText ?? NSAttributedString()
-			)
 			let sourceString = attributedText.string
 			var offsetIndex = 0
 			regex.enumerateMatches(
@@ -57,14 +61,14 @@ extension Markupable where Self: IBStylable, Self: UIView {
 				options: NSRegularExpression.MatchingOptions(rawValue: 0),
 				range: NSMakeRange(0, sourceString.characters.count),
 				using: { (result, _, _) in
-				//(NSTextCheckingResult?, NSMatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void)
+					//(NSTextCheckingResult?, NSMatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void)
 					if let match = result, match.numberOfRanges == 1 {
 						var wholeMatchRange = match.rangeAt(0)
 						wholeMatchRange.location += offsetIndex
 						var text = attributedText.attributedSubstring(from: wholeMatchRange)
 						let textString = text.string
 						if textString.length > 4
-								&& (textString.stringFrom(0, to: 2) == "*_" || textString.stringFrom(0, to: 2) == "_*"),
+							&& (textString.stringFrom(0, to: 2) == "*_" || textString.stringFrom(0, to: 2) == "_*"),
 							let identifier = self.identifier {
 							text = Styles.current.shiftStyleToBoldItalic(identifier, text: textString.stringFrom(2, to: -2))
 						} else if textString.length > 2 {
@@ -74,26 +78,20 @@ extension Markupable where Self: IBStylable, Self: UIView {
 								text = Styles.current.shiftStyleToItalic(identifier, text: textString.stringFrom(1, to: -1))
 							}
 						}
-						offsetIndex -= (wholeMatchRange.length - text.length)
+						offsetIndex -= wholeMatchRange.length - text.length
 						attributedText.replaceCharacters(in: wholeMatchRange, with: text)
 					}
 				}
 			)
-			self.useAttributedText = attributedText
 		}
+		return attributedText
 	}
 
-	public func markupLinks() -> Int {
-		var linksFound = 0
-//		guard !UIWindow.isInterfaceBuilder else { return 0 }
-		guard isMarkupable else { return 0 }
+	public func markupLinks(_ attributedText: NSMutableAttributedString) -> NSMutableAttributedString {
 		if let regex = try? NSRegularExpression(
 				pattern: "\\[([^\\]]+\\|)?([^\\]]+)\\]",
 				options: .caseInsensitive
 			) {
-			let attributedText = NSMutableAttributedString(
-				attributedString: self.useAttributedText ?? NSAttributedString()
-			)
 			let sourceString = attributedText.string
 			var offsetIndex = 0
 			regex.enumerateMatches(
@@ -103,7 +101,6 @@ extension Markupable where Self: IBStylable, Self: UIView {
 				using: { (result, _, _) in
 					//(NSTextCheckingResult?, NSMatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void)
 					if let match = result, match.numberOfRanges == 3 {
-						linksFound += 1
 						var wholeMatchRange = match.rangeAt(0)
 						wholeMatchRange.location += offsetIndex
 						var textRange = match.rangeAt(1)
@@ -134,9 +131,8 @@ extension Markupable where Self: IBStylable, Self: UIView {
 					}
 				}
 			)
-			self.useAttributedText = attributedText
 		}
-		return linksFound
+		return attributedText
 	}
 
 	fileprivate func parseLinkForObjectName(_ urlString: String) -> String? {
@@ -160,7 +156,7 @@ extension Markupable where Self: IBStylable, Self: UIView {
 		return nil
 	}
 
-	public func createLink(oldAttributedText: NSAttributedString, link: String) -> NSAttributedString {
+	fileprivate func createLink(oldAttributedText: NSAttributedString, link: String) -> NSAttributedString {
 		let attributedText = NSMutableAttributedString(attributedString: oldAttributedText)
 		let isInternalLink = NSPredicate(format:"SELF MATCHES %@", "megametracker:.*").evaluate(with: link)
 		let hideIcon = NSPredicate(format:"SELF MATCHES %@", ".*\\&hideicon=1.*").evaluate(with: link)

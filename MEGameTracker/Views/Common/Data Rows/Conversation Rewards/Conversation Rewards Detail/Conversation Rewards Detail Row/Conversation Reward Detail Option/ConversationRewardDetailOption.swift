@@ -17,6 +17,7 @@ final class ConversationRewardDetailOption: UIView {
 	fileprivate let renegadeMessage = "%@ Renegade: %@"
 	fileprivate let creditsMessage = "%@ Credits: %@"
 	fileprivate let paragadeMessage = "%@ Paragon / %@ Renegade: %@"
+	fileprivate let reputationMessage = "%@ Reputation %@"
 
 // MARK: Outlets
 	@IBOutlet fileprivate weak var button: RadioButton?
@@ -57,6 +58,9 @@ final class ConversationRewardDetailOption: UIView {
 		return nil
 	}
 
+	/// Sets up the row - expects to be in main/UI dispatch queue. 
+	/// Also, table layout needs to wait for this, 
+	///    so don't run it asynchronously or the layout will be wrong.
 	public func define(
 		option: ConversationRewards.FlatDataOption,
 		action: @escaping ActionClosure
@@ -104,6 +108,7 @@ final class ConversationRewardDetailOption: UIView {
 		switch option.type {
 			case .paragon: optionLabel?.identifier = "Caption.ParagonColor" //TODO: constants
 			case .renegade: optionLabel?.identifier = "Caption.RenegadeColor"
+			case .neutral: fallthrough
 			case .paragade: optionLabel?.identifier = "Caption.ParagadeColor"
 			case .credits: optionLabel?.identifier = "Caption.NormalColor.Medium"
 		}
@@ -114,10 +119,14 @@ final class ConversationRewardDetailOption: UIView {
 			case .paragon: return String(format: paragonMessage, option.points, option.trigger)
 			case .renegade: return String(format: renegadeMessage, option.points, option.trigger)
 			case .credits: return String(format: creditsMessage, option.points, option.trigger)
+			case .neutral: fallthrough
 			case .paragade:
 				var values = option.points.components(separatedBy: "/")
-				while values.count < 2 { values.append("0") }
-				return String(format: paragadeMessage, values[0], values[1], option.trigger)
+				if values.count == 2 {
+					return String(format: paragadeMessage, values[0], values[1], option.trigger)
+				} else {
+					return String(format: reputationMessage, option.points, option.trigger)
+				}
 		}
 	}
 

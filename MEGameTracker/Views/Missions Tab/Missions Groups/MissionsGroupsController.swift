@@ -71,7 +71,9 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 	func setupMissionGroups(isReloadData: Bool = false) {
 		setupMissionCounts()
 		if isReloadData {
-			tableView.reloadData()
+			DispatchQueue.main.async {
+				self.tableView.reloadData()
+			}
 		}
 		DispatchQueue.global(qos: .background).async { [weak self] in
 			self?.precacheMissions()
@@ -81,7 +83,9 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 	func setupRecentlyViewed(isReloadData: Bool = false) {
 		fetchRecentMissionData()
 		if isReloadData && !UIWindow.isInterfaceBuilder {
-			tableView.reloadData()
+			DispatchQueue.main.async {
+				self.tableView.reloadData()
+			}
 		}
 	}
 

@@ -39,6 +39,9 @@ final public class MissionsGroupRow: UITableViewCell {
 	}
 
 // MARK: Initialization
+	/// Sets up the row - expects to be in main/UI dispatch queue. 
+	/// Also, table layout needs to wait for this, 
+	///    so don't run it asynchronously or the layout will be wrong.
 	func define(name: String, availableCount: Int, unavailableCount: Int, completedCount: Int) {
 		isDefined = true
 		self.name = name

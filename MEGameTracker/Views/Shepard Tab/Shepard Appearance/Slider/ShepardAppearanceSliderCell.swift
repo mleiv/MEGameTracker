@@ -42,6 +42,9 @@ final public class ShepardAppearanceSliderCell: UITableViewCell {
 	}
 
 // MARK: Initialization
+	/// Sets up the row - expects to be in main/UI dispatch queue. 
+	/// Also, table layout needs to wait for this, 
+	///    so don't run it asynchronously or the layout will be wrong.
 	public func define(
 		attributeType: Shepard.Appearance.AttributeType?,
 		value: Int? = nil,

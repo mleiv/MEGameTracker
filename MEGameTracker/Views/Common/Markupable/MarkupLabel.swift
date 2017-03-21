@@ -28,11 +28,11 @@ final public class MarkupLabel: IBStyledLabel, Markupable {
 	}
 	public var unmarkedText: String?
 
+	/// I expect this to only be called on main/UI dispatch queue, otherwise bad things will happen.
+	/// I can't dispatch to main async or layout does not render properly.
 	public func applyMarkup() {
 		guard !UIWindow.isInterfaceBuilder else { return }
-		markupText()
-		_ = markupLinks() // unclickable
-		layoutIfNeeded()
+		markup()
 	}
 
 }

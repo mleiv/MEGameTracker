@@ -10,11 +10,11 @@ import Foundation
 
 /// The varying results for a conversation.
 public enum ConversationRewardType {
-	case paragon, renegade, paragade, credits
+	case paragon, renegade, paragade, neutral, credits
 
 	/// Returns a list of all possible enum variations.
 	public static func list() -> [ConversationRewardType] {
-		return [.paragon, .renegade, .paragade, .credits]
+		return [.paragon, .renegade, .paragade, .neutral, .credits]
 	}
 
 	/// Returns the string values of all the enum variations.
@@ -22,6 +22,7 @@ public enum ConversationRewardType {
 		.paragon: "Paragon",
 		.renegade: "Renegade",
 		.paragade: "Paragade",
+		.neutral: "Neutral", // game 3 only - store these as paragade - neutral is only for summing score
 		.credits: "Credits",
 	]
 

@@ -35,6 +35,9 @@ final class RelatedLinkRow: UITableViewCell {
 	}
 
 // MARK: Initialization
+	/// Sets up the row - expects to be in main/UI dispatch queue. 
+	/// Also, table layout needs to wait for this, 
+	///    so don't run it asynchronously or the layout will be wrong.
 	public func define(link: String?, parent: RelatedLinksView? = nil) {
 		isDefined = true
 		self.link = link

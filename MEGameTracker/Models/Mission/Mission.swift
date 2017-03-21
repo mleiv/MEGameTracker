@@ -12,6 +12,8 @@ import UIKit
 
 public struct Mission: MapLocationable, Eventsable {
 // MARK: Constants
+	let rewardsSummaryTemplate = "%d Paragon, %d Renegade"
+	let game3RewardsSummaryTemplate = "%d Paragon, %d Renegade, %d Reputation"
 
 // MARK: Properties
 
@@ -83,11 +85,15 @@ public struct Mission: MapLocationable, Eventsable {
 	}
 
 	public var conversationRewardsDescription: String? {
-		let conversationRewardsDescriptionTemplate = "%d Paragon, %d Renegade"
 		let paragonPoints = conversationRewards.sum(type: .paragon)
 		let renegadePoints = conversationRewards.sum(type: .renegade)
+		let neutralPoints = gameVersion == .game3 ? conversationRewards.sum(type: .neutral) : 0
 		if !conversationRewards.isEmpty {
-			return String(format: conversationRewardsDescriptionTemplate, paragonPoints, renegadePoints)
+			if neutralPoints > 0 {
+				return String(format: game3RewardsSummaryTemplate, paragonPoints, renegadePoints, neutralPoints)
+			} else {
+				return String(format: rewardsSummaryTemplate, paragonPoints, renegadePoints)
+			}
 		}
 		return nil
 	}

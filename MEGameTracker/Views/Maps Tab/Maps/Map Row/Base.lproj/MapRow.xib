@@ -15,20 +15,20 @@
             <rect key="frame" x="0.0" y="0.0" width="331" height="104"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzf-4T-iho" id="Qgq-6p-m1T">
-                <rect key="frame" x="0.0" y="0.0" width="331" height="104"/>
+                <rect key="frame" x="0.0" y="0.0" width="331" height="103"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YRo-QY-jxu">
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRo-QY-jxu">
                         <rect key="frame" x="15" y="8" width="304" height="87.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jAT-Lu-5tn" userLabel="Checkbox">
-                                <rect key="frame" x="0.0" y="0.5" width="40" height="86.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="37" height="87.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="tDU-Xb-uzj" userLabel="Checkbox">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="37" height="87.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="310" verticalHuggingPriority="310" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Map Checkbox Empty" translatesAutoresizingMaskIntoConstraints="NO" id="ezv-J3-zn4" userLabel="Checkbox">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="-3" y="0.0" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="900" constant="30" id="a7c-q1-zC5"/>
                                                     <constraint firstAttribute="width" constant="30" id="hrA-3I-gdQ"/>
@@ -38,24 +38,17 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="ezv-J3-zn4" secondAttribute="trailing" priority="900" constant="10" id="JJj-wz-bZ2"/>
                                             <constraint firstItem="ezv-J3-zn4" firstAttribute="top" secondItem="tDU-Xb-uzj" secondAttribute="top" priority="900" id="NAE-1q-Soh"/>
-                                            <constraint firstItem="ezv-J3-zn4" firstAttribute="leading" secondItem="tDU-Xb-uzj" secondAttribute="leading" id="rL4-Va-XkN"/>
-                                            <constraint firstAttribute="bottom" secondItem="ezv-J3-zn4" secondAttribute="bottom" priority="900" id="zHa-Nc-DBy"/>
+                                            <constraint firstItem="ezv-J3-zn4" firstAttribute="leading" secondItem="tDU-Xb-uzj" secondAttribute="leading" constant="-3" id="rL4-Va-XkN"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ezv-J3-zn4" secondAttribute="bottom" priority="900" id="zHa-Nc-DBy"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="fbp-Gv-Gy6" userLabel="Filler">
-                                        <rect key="frame" x="0.0" y="30" width="40" height="56.5"/>
-                                    </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="tDU-Xb-uzj" firstAttribute="width" secondItem="jAT-Lu-5tn" secondAttribute="width" id="2el-xU-Tfi"/>
-                                    <constraint firstAttribute="height" priority="100" constant="30" id="wnE-dh-j1t"/>
-                                </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UJr-Cg-AVK">
-                                <rect key="frame" x="40" y="0.0" width="167.5" height="87.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" axis="vertical" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UJr-Cg-AVK">
+                                <rect key="frame" x="37" y="0.0" width="177" height="87.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="801" text="Omega Nebula &gt; Sahrabarik" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oap-eu-pDF" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="167.5" height="18"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="16"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -64,7 +57,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="300" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="805" text="Caleston Rift" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl9-1c-CL6" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="18" width="167.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="15" width="177" height="27.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -73,7 +66,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="301" verticalHuggingPriority="301" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="804" text="Aysur, Balor, Solveig, Talava" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTW-GM-Y21" userLabel="Description" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="38.5" width="167.5" height="18"/>
+                                        <rect key="frame" x="0.0" y="41.5" width="177" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -82,7 +75,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="803" text="Omega Nebula &gt; Sahrabarik" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk5-9m-ubw" userLabel="Location" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56.5" width="167.5" height="18"/>
+                                        <rect key="frame" x="0.0" y="56.5" width="177" height="16"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -91,7 +84,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="301" verticalHuggingPriority="301" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="800" text="Not Available in Game 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEE-Mk-tWU" userLabel="Availability" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="74.5" width="167.5" height="13"/>
+                                        <rect key="frame" x="0.0" y="71.5" width="177" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -102,25 +95,27 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="za2-bv-vpU">
-                                <rect key="frame" x="207.5" y="19" width="81.5" height="50"/>
+                                <rect key="frame" x="214" y="0.0" width="75" height="87.5"/>
                             </view>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="UrA-C0-FAT">
-                                <rect key="frame" x="289" y="36.5" width="15" height="15"/>
+                                <rect key="frame" x="289" y="0.0" width="15" height="87.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="255" verticalHuggingPriority="255" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="m4o-1y-qWL">
-                                        <rect key="frame" x="6" y="0.0" width="9" height="15"/>
+                                        <rect key="frame" x="6" y="0.0" width="9" height="87.5"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="m4o-1y-qWL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UrA-C0-FAT" secondAttribute="leading" priority="900" id="8mb-Z0-vbw"/>
                                     <constraint firstItem="m4o-1y-qWL" firstAttribute="top" secondItem="UrA-C0-FAT" secondAttribute="top" id="BSS-oW-hfI"/>
-                                    <constraint firstAttribute="height" priority="900" constant="15" id="Fka-Ft-mcs"/>
                                     <constraint firstAttribute="width" constant="15" id="J41-hY-eCC"/>
                                     <constraint firstAttribute="trailing" secondItem="m4o-1y-qWL" secondAttribute="trailing" id="Rjv-sP-f3D"/>
                                     <constraint firstAttribute="bottom" secondItem="m4o-1y-qWL" secondAttribute="bottom" priority="990" id="t9Z-eS-0FI"/>
                                 </constraints>
                             </view>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="100" id="Ahz-FA-3vR"/>
+                        </constraints>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6y-kq-3kD">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="102.5"/>

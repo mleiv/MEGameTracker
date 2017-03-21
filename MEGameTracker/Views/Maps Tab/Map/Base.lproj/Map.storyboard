@@ -32,20 +32,20 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="851"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ig2-YW-Gnz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="765"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="808"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SkQ-ZN-ItO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="108"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="135"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="XR8-98-Vwu" userLabel="Availability Wrapper" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="29"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="47.5"/>
                                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Availability"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="6IP-pP-RIa" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="29" width="600" height="29"/>
+                                                                        <rect key="frame" x="0.0" y="47.5" width="600" height="47.5"/>
                                                                         <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="OriginHint"/>
@@ -56,15 +56,15 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="Jb0-xP-8e8" userLabel="Breadcrumbs Wrapper" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="58" width="600" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="95" width="600" height="40"/>
                                                                         <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="301" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sYn-Ju-i4e">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="301" translatesAutoresizingMaskIntoConstraints="NO" id="sYn-Ju-i4e">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="b46-xJ-pIU" userLabel="Checkbox">
-                                                                                        <rect key="frame" x="0.0" y="5" width="50" height="40"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
                                                                                         <subviews>
-                                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Map Checkbox Empty" translatesAutoresizingMaskIntoConstraints="NO" id="kuA-uM-HT9">
+                                                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Map Checkbox Empty" translatesAutoresizingMaskIntoConstraints="NO" id="kuA-uM-HT9">
                                                                                                 <rect key="frame" x="15" y="8" width="25" height="25"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="width" secondItem="kuA-uM-HT9" secondAttribute="height" multiplier="1:1" id="MTt-KE-bGw"/>
@@ -84,29 +84,44 @@
                                                                                             <constraint firstAttribute="bottom" secondItem="Yr4-NA-puM" secondAttribute="bottom" id="N4f-CP-BMx"/>
                                                                                             <constraint firstItem="kuA-uM-HT9" firstAttribute="leading" secondItem="b46-xJ-pIU" secondAttribute="leading" constant="15" id="OhL-aq-CVb"/>
                                                                                             <constraint firstAttribute="trailing" secondItem="Yr4-NA-puM" secondAttribute="trailing" id="TDT-9u-xj0"/>
-                                                                                            <constraint firstAttribute="height" priority="900" constant="40" id="VtP-Hq-bYZ"/>
                                                                                             <constraint firstItem="Yr4-NA-puM" firstAttribute="top" secondItem="b46-xJ-pIU" secondAttribute="top" id="dZE-C9-HwV"/>
-                                                                                            <constraint firstItem="kuA-uM-HT9" firstAttribute="top" secondItem="b46-xJ-pIU" secondAttribute="top" constant="8" id="i9e-HL-c8a"/>
+                                                                                            <constraint firstItem="kuA-uM-HT9" firstAttribute="top" secondItem="b46-xJ-pIU" secondAttribute="top" priority="950" constant="8" id="i9e-HL-c8a"/>
+                                                                                            <constraint firstAttribute="height" priority="200" constant="40" id="nm0-uo-Xbg"/>
                                                                                             <constraint firstAttribute="trailing" secondItem="kuA-uM-HT9" secondAttribute="trailing" constant="10" id="tMf-5M-ajL"/>
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <view hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="hGB-OJ-axu">
-                                                                                        <rect key="frame" x="50" y="5" width="0.0" height="40"/>
+                                                                                        <rect key="frame" x="50" y="0.0" width="0.0" height="40"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" priority="900" constant="40" id="LfW-lf-0b5"/>
                                                                                             <constraint firstAttribute="width" priority="900" constant="15" id="Mfh-dy-dPB"/>
                                                                                         </constraints>
                                                                                     </view>
-                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="751" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Galaxy Map &gt; Omega Nebula &gt; Sahrabarik &gt; " translatesAutoresizingMaskIntoConstraints="NO" id="TFH-Wb-aQT" userLabel="Breadcrumbs" customClass="MarkupTextView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                        <rect key="frame" x="50" y="16" width="268.5" height="18"/>
-                                                                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
-                                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                                        <userDefinedRuntimeAttributes>
-                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.NormalColor"/>
-                                                                                        </userDefinedRuntimeAttributes>
-                                                                                    </textView>
-                                                                                    <view contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="au2-74-AED" userLabel="Detail Disclosure">
-                                                                                        <rect key="frame" x="545" y="5" width="55" height="40"/>
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-s8-EmI">
+                                                                                        <rect key="frame" x="50" y="0.0" width="495" height="40"/>
+                                                                                        <subviews>
+                                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="751" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Galaxy Map &gt; Omega Nebula &gt; Sahrabarik &gt; " translatesAutoresizingMaskIntoConstraints="NO" id="TFH-Wb-aQT" userLabel="Breadcrumbs" customClass="MarkupTextView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                                <rect key="frame" x="0.0" y="2" width="310" height="36.5"/>
+                                                                                                <constraints>
+                                                                                                    <constraint firstAttribute="height" priority="100" id="ofS-qp-Ybj"/>
+                                                                                                </constraints>
+                                                                                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
+                                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                                                <userDefinedRuntimeAttributes>
+                                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.NormalColor"/>
+                                                                                                </userDefinedRuntimeAttributes>
+                                                                                            </textView>
+                                                                                        </subviews>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TFH-Wb-aQT" secondAttribute="bottom" priority="900" id="GO2-4W-JfS"/>
+                                                                                            <constraint firstItem="TFH-Wb-aQT" firstAttribute="centerY" secondItem="k7l-s8-EmI" secondAttribute="centerY" id="UbS-kL-WYh"/>
+                                                                                            <constraint firstItem="TFH-Wb-aQT" firstAttribute="leading" secondItem="k7l-s8-EmI" secondAttribute="leading" id="XBJ-ZU-q9Y"/>
+                                                                                            <constraint firstAttribute="trailing" secondItem="TFH-Wb-aQT" secondAttribute="trailing" id="han-1u-pnw"/>
+                                                                                            <constraint firstItem="TFH-Wb-aQT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k7l-s8-EmI" secondAttribute="top" priority="901" id="ucg-6Y-bnH"/>
+                                                                                        </constraints>
+                                                                                    </view>
+                                                                                    <view contentMode="center" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="au2-74-AED" userLabel="Detail Disclosure">
+                                                                                        <rect key="frame" x="545" y="0.0" width="55" height="40"/>
                                                                                         <subviews>
                                                                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Vertical Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="o2B-jG-3Mp">
                                                                                                 <rect key="frame" x="5" y="8" width="35" height="20"/>
@@ -128,19 +143,16 @@
                                                                                             <constraint firstAttribute="width" constant="55" id="Ucs-H3-Voj"/>
                                                                                             <constraint firstAttribute="bottom" secondItem="pN5-D0-Cr0" secondAttribute="bottom" id="dRg-IP-4ys"/>
                                                                                             <constraint firstItem="pN5-D0-Cr0" firstAttribute="top" secondItem="au2-74-AED" secondAttribute="top" id="rYw-uQ-7lL"/>
-                                                                                            <constraint firstAttribute="height" priority="900" constant="40" id="wOd-Ef-MOd"/>
                                                                                         </constraints>
                                                                                     </view>
                                                                                 </subviews>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" priority="150" constant="40" id="XEb-tL-Fbc"/>
-                                                                                </constraints>
                                                                             </stackView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstItem="sYn-Ju-i4e" firstAttribute="top" secondItem="Jb0-xP-8e8" secondAttribute="top" id="86d-vq-Zae"/>
                                                                             <constraint firstAttribute="bottom" secondItem="sYn-Ju-i4e" secondAttribute="bottom" id="9mK-Yy-1pe"/>
+                                                                            <constraint firstAttribute="height" priority="100" id="K1I-iW-l1R"/>
                                                                             <constraint firstItem="sYn-Ju-i4e" firstAttribute="leading" secondItem="Jb0-xP-8e8" secondAttribute="leading" id="ZGX-P9-Pd4"/>
                                                                             <constraint firstAttribute="trailing" secondItem="sYn-Ju-i4e" secondAttribute="trailing" id="ewl-qJ-AcU"/>
                                                                         </constraints>
@@ -160,10 +172,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="305" translatesAutoresizingMaskIntoConstraints="NO" id="Jpl-wv-bK4" userLabel="Map Details">
-                                                                <rect key="frame" x="0.0" y="108" width="600" height="607"/>
+                                                                <rect key="frame" x="0.0" y="135" width="600" height="623"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="301" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7WG-KA-rnA">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="607"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="623"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" verticalHuggingPriority="310" translatesAutoresizingMaskIntoConstraints="NO" id="CG6-dE-uwu" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
@@ -181,7 +193,7 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89c-ls-ZGD" userLabel="Description" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="1" width="600" height="74.5"/>
+                                                                                <rect key="frame" x="0.0" y="1" width="600" height="90.5"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Description"/>
                                                                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
@@ -191,10 +203,10 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" verticalHuggingPriority="270" translatesAutoresizingMaskIntoConstraints="NO" id="qMt-Io-XSh" customClass="GameSegments" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="75.5" width="600" height="316"/>
+                                                                                <rect key="frame" x="0.0" y="91.5" width="600" height="316"/>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="6cx-NZ-BGT" userLabel="Callouts" customClass="IBIncludedSubThing" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="391.5" width="600" height="100"/>
+                                                                                <rect key="frame" x="0.0" y="407.5" width="600" height="100"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" priority="950" constant="100" id="ica-st-6t3"/>
                                                                                 </constraints>
@@ -203,14 +215,14 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="CnG-IV-0FB" customClass="RelatedLinksView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="491.5" width="600" height="65.5"/>
+                                                                                <rect key="frame" x="0.0" y="507.5" width="600" height="65.5"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="bQr-Li-DPV" userLabel="Notes Row" customClass="NotesView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="557" width="600" height="50"/>
+                                                                                <rect key="frame" x="0.0" y="573" width="600" height="50"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
@@ -228,7 +240,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="200" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="ssg-oX-yqe" userLabel="Scroll Wrapper">
-                                                                <rect key="frame" x="0.0" y="715" width="600" height="50"/>
+                                                                <rect key="frame" x="0.0" y="758" width="600" height="50"/>
                                                                 <subviews>
                                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="L2o-1Z-ynq">
                                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
