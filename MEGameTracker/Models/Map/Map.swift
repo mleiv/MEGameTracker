@@ -426,7 +426,7 @@ extension Map {
 		} else if first.isExplored != second.isExplored {
 			return second.isExplored // push to end
 		} else if first.isAvailable != second.isAvailable {
-			return first.isAvailable
+			return first.isAvailable // push to start
 		} else {
 			return first.name < second.name // still unsure - all the others sort by id.
 		}

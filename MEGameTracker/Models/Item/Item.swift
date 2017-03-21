@@ -296,8 +296,10 @@ extension Item {
 	static func sort(_ first: Item, _ second: Item) -> Bool {
 		if first.gameVersion != second.gameVersion {
 			return first.gameVersion.stringValue < second.gameVersion.stringValue
+		} else if first.isAcquired != second.isAcquired {
+			return second.isAcquired // push to end
 		} else if first.isAvailable != second.isAvailable {
-			return first.isAvailable
+			return first.isAvailable // push to start
 		} else {
 			return first.id < second.id
 		}
