@@ -829,12 +829,109 @@
 		"gameVersion": "3",
 		"missionType": "Assignment",
 		"name": "Tuchanka: Turian Platoon",
-		"description": "",
+		"description": "Primarch Victus reports that a turian ship on a secret mission crashed on Tuchanka. Land on Tuchanka to rescue the platoon. \n\nThis mission triggers a countdown for [megametracker://mission?id=A3.Bomb].",
 		"inMapId": "G.InC.Kro.Ara.Tuchanka",
 		"isShowInParentMap": true,
 		"experience": 0,
-		"reward": "",
+		"reward": "12,500 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tuchanka:_Turian_Platoon"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Lieutenant (Tarquin) Victus",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.TurianPlatoon.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Bad calls happen.\""
+						}, {
+							"id": "A3.TurianPlatoon.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Get over it.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.TurianPlatoon.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Appeal to their honor.\""
+						}, {
+							"id": "A3.TurianPlatoon.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Kick their asses!\""
+						}]
+					}
+				}, {
+					"id": "A3.TurianPlatoon.PR3",
+					"type": "Paragade",
+					"value": 2,
+					"trigger": "(Completing the conversation.)"
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Mordin in the War Room afterwards (if this mission was completed before [megametracker://mission?id=A3.KroganTeam]",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.TurianPlatoon.P10",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Any ideas?\""
+						}, {
+							"id": "A3.TurianPlatoon.R10",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You've infected them before.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.TurianPlatoon.P11",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That was devious.\""
+						}, {
+							"id": "A3.TurianPlatoon.R11",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"That was clever.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Primarch (Adrien) Victus after the mission",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.TurianPlatoon.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Yes. I have to trust you.\""
+				}, {
+					"id": "A3.TurianPlatoon.R4",
+					"type": "Renegade",
+					"value": 4,
+					"trigger": "\"No. Earth comes first.\""
+				}]
+			}
+		}, {
+			"id": "A3.TurianPlatoon.PR5",
+			"type": "Paragade",
+			"value": 10,
+			"trigger": "(Completing the mission.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh"
@@ -849,12 +946,52 @@
 			"id": "Countdown to Bomb"
 		}]
 	}, {
+		"id": "A3.TurianPlatoon.1",
+		"inMissionId": "A3.TurianPlatoon",
+		"sortIndex": 11101,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Contact Victus Jr.",
+		"description": "Land on Tuchanka and contact [megametracker://person?id=O3.VictusT]. He will send up a flare directing you where to go next.",
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"isShowInParentMap": true
+	}, {
+		"id": "A3.TurianPlatoon.2",
+		"inMissionId": "A3.TurianPlatoon",
+		"sortIndex": 11102,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Escape Pod #1",
+		"description": "You will be attacked by Cannibals and then by a Harvester. When the Harvester takes 75% damage, it will flee (you get bonus experience if it leaves with the escape pod still intact). The way to the turians is blocked, so turn right instead.",
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"isShowInParentMap": true
+	}, {
+		"id": "A3.TurianPlatoon.3",
+		"inMissionId": "A3.TurianPlatoon",
+		"sortIndex": 11103,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Escape Pod #2",
+		"description": "This time you are attacked by Cannibals and Marauders, and the Harvester drops up some husks. Again your way forward is blocked, so turn right. As you continue, you will have two more smaller skirmishes with the Harvester and dropped troops (husks, Cannibals).",
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"isShowInParentMap": true
+	}, {
+		"id": "A3.TurianPlatoon.4",
+		"inMissionId": "A3.TurianPlatoon",
+		"sortIndex": 11104,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Harvester",
+		"description": "Take down the Harvester, in between waves of Reaper ground troops. When you are finished, go talk to Victus and motivate him into continuing his mission.",
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"isShowInParentMap": true
+	}, {
 		"id": "A3.Bomb",
 		"sortIndex": 1140,
 		"gameVersion": "3",
 		"missionType": "Assignment",
 		"name": "Tuchanka: Bomb",
-		"description": "\n\n*_This mission will be marked as failed if not completed within three missions after [megametracker://mission?id=A3.TurianPlatoon]._*",
+		"description": "The turian platoon led by Lieutenant Victus was sent to disarm a devastating turian bomb left on Tuchanka. Stop Cerberus from detonating the bomb and destroying turian-krogan negotiations. Failing to do so will result in a 300 point loss of krogan war assets, and [megametracker://person?id=P3.Eve], if she is on Tuchanka at the time. \n\n*_This mission will automatically fail if not completed within three missions after [megametracker://mission?id=A3.TurianPlatoon]._*",
 		"inMapId": "G.InC.Kro.Ara.Tuchanka",
 		"isShowInParentMap": true,
 		"experience": 0,
@@ -868,6 +1005,26 @@
 			"type": "Triggers",
 			"id": "Completed: Tuchanka: Bomb"
 		}]
+	}, {
+		"id": "A3.Bomb.1",
+		"inMissionId": "A3.Bomb",
+		"sortIndex": 11401,
+		"gameVersion": "3",
+		"missionType": "Assignment",
+		"name": "Find Bomb",
+		"description": "While fighting off Cerberus forces, make your way through the buildings and up to the bomb site.",
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"isShowInParentMap": true
+	}, {
+		"id": "A3.Bomb.2",
+		"inMissionId": "A3.Bomb",
+		"sortIndex": 11402,
+		"gameVersion": "3",
+		"missionType": "Assignment",
+		"name": "Defend Victus",
+		"description": "Fight off waves of Cerberus forces while Lieutenant Victus disarms the bomb.",
+		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+		"isShowInParentMap": true
 
 	}, {
 		"x-comment-x": "-----------------------Rannoch-------------------------",
@@ -993,9 +1150,9 @@
 		"gameVersion": "3",
 		"missionType": "Assignment",
 		"name": "Benning: Evidence",
-		"description": "",
+		"description": "Talk to [megametracker://person?id=O3.Osoba] at the Citadel Embassies. He is looking for some remnant of his son, presumed dead on Benning. \n\nIf you miss the dog tags during [megametracker://mission?id=A3.N7CerberusAbductions], you can purchase them afterwards at the Spectre Requisitions terminal.",
 		"experience": 90,
-		"reward": "Talk to [megametracker://person?id=O3.Osoba] at the Citadel Embassies. He is looking for some remnant of his son, presumed dead on Benning. \n\nIf you miss the dog tags during [megametracker://mission?id=A3.N7CerberusAbductions], you can purchase them afterwards at the Spectre Requisitions terminal.",
+		"reward": "",
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Benning:_Evidence"],
@@ -1130,6 +1287,96 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Attican_Traverse:_Krogan_Team"],
 		"relatedMissionIds": ["A3.KroganDying"],
 		"relatedDecisionIds": ["D1.RachniQueen", "D2.Grunt", "D2.GruntLoyalty", "D3.RachniQueen"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Grunt/Dagg",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.KroganTeam.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Good to have you here.\" or \"Good.\""
+				}, {
+					"id": "A3.KroganTeam.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Keep them in line.\" or \"Keep your krogan in line.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the Rachni Queen/Breeder",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.KroganTeam.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It's over now.\" or \"The Reapers are gone.\""
+				}, {
+					"id": "A3.KroganTeam.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You're a puppet.\" or \"You're a danger.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Wrex/Wreave",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.KroganTeam.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You did.\" or \"Excuse me?\""
+				}, {
+					"id": "A3.KroganTeam.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"It wasn't pretty.\" or \"You're a coward.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Mordin in the War Room afterwards (if this mission was completed before [megametracker://mission?id=A3.TurianPlatoon]",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.TurianPlatoon.P10",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Any ideas?\""
+						}, {
+							"id": "A3.TurianPlatoon.R10",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You've infected them before.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.TurianPlatoon.P11",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That was devious.\""
+						}, {
+							"id": "A3.TurianPlatoon.R11",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"That was clever.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "A3.KroganTeam.PR5",
+			"type": "Paragade",
+			"value": 0,
+			"paragadeValue": [5, 5],
+			"trigger": "(Completing the mission.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh"
@@ -1169,7 +1416,7 @@
 		"missionType": "Objective",
 		"name": "Rachni Queen",
 		"description": "If you did not save the [megametracker://person?id=E1.RachniQueen], the rachni queen here is called the \"Breeder\". \n\nYou must choose whether to save the queen or not. Saving her will sacrifice Aralakh Company. If this is the Breeder, she will also betray you later, so that is not smart. If you save the queen and Grunt was loyal, he will still survive after all the rest of Aralakh Company dies."
-		
+
 	}, {
 		"id": "A3.ExCerberusScientists",
 		"sortIndex": 1200,

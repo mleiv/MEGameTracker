@@ -13,6 +13,128 @@
 		"experience": 0,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Prologue:_Earth"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Anderson",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.0.Earth.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We should have prepared more.\""
+				}, {
+					"id": "M3.0.Earth.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'm certain.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the committee",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.0.Earth.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We stand together.\""
+				}, {
+					"id": "M3.0.Earth.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Survival at any cost.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the frightened child",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.0.Earth.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Let me help you.\""
+				}, {
+					"id": "M3.0.Earth.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Get out of there!\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Anderson as you go through the rubble",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.0.Earth.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I understand how you feel.\""
+				}, {
+					"id": "M3.0.Earth.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"It's war. People die.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When Anderson declares he is staying behind",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.0.Earth.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"If you stay, I'm staying.\""
+				}, {
+					"id": "M3.0.Earth.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"The hell you're not!\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to James",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"options": [{
+							"id": "M3.0.Earth.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I don't like it either.\""
+						}, {
+							"id": "M3.0.Earth.P7",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*Paragon Interrupt*",
+							"trigger": ""
+						}]
+					}
+				}, {
+					"set": {
+						"options": [{
+							"id": "M3.0.Earth.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"He just did.\""
+						}, {
+							"id": "M3.0.Earth.R7",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*Renegade Interrupt*",
+							"trigger": ""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "M3.0.Earth.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the mission.)"
+		}],
 		"events": [{
 			"type": "Triggers",
 			"id": "Completed: Prologue: Earth"
@@ -23,12 +145,213 @@
 		"gameVersion": "3",
 		"missionType": "Mission",
 		"name": "Priority: Mars",
-		"description": "Hackett diverts you to Mars. The research team there is not responding and Hackett is desperate to recover the ancient prothean archives there, before the Reapers arrive. When you land, it is immediately apparent the the facility is overrun by Cerberus. Once inside, [megametracker://person?id=S1.Liara] drops in, a part of the research team. Cerberus has killed all the other scientists, betrayed by a Cerberus mole, [megametracker://person?id=E3.Eva]. \n\nWhen you find Dr. Coré, she is downloading the data onto a disk for the Illusive Man and she wipes the mainframe. There is a chase, and when you catch up, she brutally attacks Ashley/Kaidan. With Vega's help, she is killed, and it emerges that she is not even human, but a synthetic AI. \n\nVega carries Eva's unit back to the Normandy while you carry the gravely wounded squad member.",
+		"description": "Hackett diverts you to Mars. The research team there is not responding and Hackett is desperate to recover the ancient prothean archives there, before the Reapers arrive.",
 		"inMapId": "G.Ear.Loc.Sol.Mars",
 		"isShowInParentMap": true,
 		"experience": 2000,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Mars"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Ashley/Kaidan",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.0.Mars.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We've been through a lot.\" or \"You know me better than that.\""
+				}, {
+					"id": "M3.0.Mars.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Get over it.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Liara",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.0.Mars.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You did the right thing.\" or \"I missed you too.\""
+						}, {
+							"id": "M3.0.Mars.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Don't worry about it.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.0.Mars.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Seems too good to be true.\""
+						}, {
+							"id": "M3.0.Mars.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Finally some good news.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "To Liara, after activating the environmental controls",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"options": [{
+							"id": "M3.0.Mars.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Don't blame yourself.\""
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "M3.0.Mars.P5",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"I have a lot to live for.\" or \"I remember the ones I love.\""
+								}, {
+									"id": "M3.0.Mars.R5",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"No choice.\""
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"options": [{
+							"id": "M3.0.Mars.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Forget about it, let's move.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After auto-turret is deactivated",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"context": "To Ashley \"You think I'm like him?\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.0.Mars.P6A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I haven't changed.\" or \"I'm still that guy.\""
+						}, {
+							"id": "M3.0.Mars.R6A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We're out of time.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "To Kaidan \"Yes, but it's unnecessary.\"",
+						"options": [{
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "M3.0.Mars.P6B",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"I'm still here.\""
+								}, {
+									"id": "M3.0.Mars.R6B",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"I am who I am.\""
+								}]
+							}
+						}, {
+							"context": "To Kaidan \"How can you say that?\"",
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "M3.0.Mars.P7",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"I never left.\""
+								}, {
+									"id": "M3.0.Mars.R7",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"That's all in the past.\""
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the Illusive Man",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.0.Mars.P10A",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm the Illusive Man_*",
+							"trigger": "\"Help me, then.\""
+						}, {
+							"id": "M3.0.Mars.P10B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Then I'll get help.\""
+						}, {
+							"id": "M3.0.Mars.R10A",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate the Illusive Man_*",
+							"trigger": "\"Don't count me out.\""
+						}, {
+							"id": "M3.0.Mars.R10B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Watch me.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.0.Mars.P11",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You're deluded.\""
+						}, {
+							"id": "M3.0.Mars.R11",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Over my dead body.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "M3.0.Mars.R1.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the mission.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Prologue: Earth"
@@ -37,17 +360,233 @@
 			"id": "Completed: Priority: Mars"
 		}]
 	}, {
+		"id": "M3.0.Mars.1",
+		"inMissionId": "M3.0.Mars",
+		"sortIndex": 21,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Facility",
+		"description": "Head down to the facility to see what has happened. You will run into Liara, when she falls from the ducts. Then Cerberus attacks.",
+		"inMapId": "G.Ear.Loc.Sol.Mars",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.0.Mars.2",
+		"inMissionId": "M3.0.Mars",
+		"sortIndex": 22,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Cafeteria",
+		"description": "Make your way through the facility and up the ladder. The lights are off and you will need to eliminate the Cerberus troops are in the cafeteria.",
+		"inMapId": "G.Ear.Loc.Sol.Mars",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.0.Mars.3",
+		"inMissionId": "M3.0.Mars",
+		"sortIndex": 23,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Clean Room",
+		"description": "Up another level and another batch of Cerberus in the halls. When they are dispatched, you find a lab where Cerberus activated the clean room controls and cooked everyone inside. You can use the console to shift the clean room danger areas and explore the room.",
+		"inMapId": "G.Ear.Loc.Sol.Mars",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.0.Mars.4",
+		"inMissionId": "M3.0.Mars",
+		"sortIndex": 24,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Autoturret",
+		"description": "An autoturret provides some training in ducking and sprinting. Circle around it and eliminate the Cerberus troops in the control room. Then you can use the controls to deactivate the turret.",
+		"inMapId": "G.Ear.Loc.Sol.Mars",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.0.Mars.5",
+		"inMissionId": "M3.0.Mars",
+		"sortIndex": 25,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Trams",
+		"description": "Cerberus is long gone on the tram, and you have to use the helmet of one of the fallen troops to enact the Return of the Jedi ploy, convincing them Cerberus won the battle and they should come back and pick up the victorious troops. Kill all the troops that show up and activate the tram. They will send another tram, and you have to kill everyone on that tram also, and then hop over and take the seond tram the rest of the way.",
+		"inMapId": "G.Ear.Loc.Sol.Mars",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.0.Mars.6",
+		"inMissionId": "M3.0.Mars",
+		"sortIndex": 26,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Tram Station",
+		"description": "Cerberus is waiting for you at the station with a huge force. This is the last real battle of this mission.",
+		"inMapId": "G.Ear.Loc.Sol.Mars",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.0.Mars.7",
+		"inMissionId": "M3.0.Mars",
+		"sortIndex": 27,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Prothean Archives",
+		"description": "Head up to the Prothean Archives to get the data. Unfortunately, Cerberus' mole, Dr. Eva, has already taken it. Chase her across the roof of the facility. There is a cutscene where she escapes, but James crashes his shuttle into hers. Dr. Eva emerges from the flaming wreckage - now obviously a synthetic creature - and attacks Ashley/Kaidan. You will have an opportunity to shoot her as she lunges at you in slow motion. Then you gather up your wounded and head back to the Normandy.",
+		"inMapId": "G.Ear.Loc.Sol.Mars",
+		"isShowInParentMap": true
+	}, {
 		"id": "M3.0.Citadel1",
 		"sortIndex": 3,
 		"gameVersion": "3",
 		"missionType": "Mission",
 		"name": "Priority: The Citadel I",
-		"description": "It becomes imperative to reach the Citadel now, to save Ashley/Kaidan's life. You leave the Eva unit with EDI to investigate, and Ashley or Kaidan is taken to Huerta Memorial Hospital, leaving you to explore the Citadel. There are many miscellaneous tasks you can accomplish, like recruiting [megametracker://person?id=P1.Chakwas] or [megametracker://person?id=P1.Michel], and [megametracker://person?id=P3.Allers]. When you are ready to move on, talk to Udina, where you will learn that the turians have lost contact with the Primarch and that if you want the turians help for Earth, you will have to go to Palaven and find him.",
+		"description": "It becomes imperative to reach the Citadel now, to save Ashley/Kaidan's life. You leave the Eva unit with EDI to investigate, and Ashley or Kaidan is taken to Huerta Memorial Hospital, leaving you to explore the Citadel. There are many miscellaneous tasks you can accomplish, like recruiting [megametracker://person?id=P1.Chakwas] or [megametracker://person?id=P1.Michel], and [megametracker://person?id=P3.Allers], and speaking to [megametracker://person?id=P2.Bailey]. When you are ready to move on, talk to Udina and the Citadel Council, where you will learn that the turians have lost contact with the Primarch and that if you want the turians help for Earth, you will have to go to Palaven and find him.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
 		"experience": 0,
 		"reward": "35,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_The_Citadel_I"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Bailey",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.0.Citadel1.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That's a good idea.\""
+						}, {
+							"id": "M3.0.Citadel1.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Council first.\""
+						}]
+					}
+				}, {
+					"id": "M3.0.Citadel1.PR2",
+					"type": "Paragade",
+					"value": 15,
+					"trigger": "(Automatic.)"
+				}]
+			}
+		}, {
+			"context": "Speaking to Dr. Chakwas",
+			"id": "M3.0.Citadel1.PR3",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Automatic.)"
+		}, {
+			"context": "Speaking to Dr. Michel",
+			"id": "M3.0.Citadel1.PR3",
+			"type": "Paragade",
+			"value": 2,
+			"trigger": "(Automatic.)"
+		}, {
+			"set": {
+				"context": "Recruiting Dr. Michel",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.0.Citadel1.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Save billions, not hundreds.\""
+				}, {
+					"id": "M3.0.Citadel1.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Our mission is more important.\""
+				}]
+			}
+		}, {
+			"context": "Visiting Ashley/Kaidan at the hospital",
+			"id": "M3.0.Citadel1.PR5",
+			"type": "Paragade",
+			"value": 2,
+			"trigger": "(Automatic.)"
+		}, {
+			"set": {
+				"context": "Speaking to Bailey at office",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.0.Citadel1.P6",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Bear with it.\""
+				}, {
+					"id": "M3.0.Citadel1.R6",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"It's a stupid game.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the Council",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.0.Citadel1.P7",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I believe in trying.\""
+				}, {
+					"id": "M3.0.Citadel1.R7",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Do you have a better plan?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the turian Councilor",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.0.Citadel1.P8A",
+					"type": "Paragon",
+					"value": 2,
+					"context": "(If you saved the Council in Game 1)",
+					"trigger": "\"I don't see how that helps me.\""
+				}, {
+					"id": "M3.0.Citadel1.P8B",
+					"type": "Paragon",
+					"value": 2,
+					"context": "(If you let the Council die in Game 1)",
+					"trigger": "\"So, favors for favors?\""
+				}, {
+					"id": "M3.0.Citadel1.R8A",
+					"type": "Renegade",
+					"value": 2,
+					"context": "(If you saved the Council in Game 1)",
+					"trigger": "\"I warned you.\""
+				}, {
+					"id": "M3.0.Citadel1.R8B",
+					"type": "Renegade",
+					"value": 2,
+					"context": "(If you let the Council die in Game 1)",
+					"trigger": "\"You can't be serious.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to al-Jilani",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.0.Citadel1.P9",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": ""
+				}, {
+					"id": "M3.0.Citadel1.R9",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": ""
+				}]
+			}
+		}, {
+			"context": "Speaking to James at the embassey",
+			"id": "M3.0.Citadel1.PR10",
+			"type": "Paragade",
+			"value": 2,
+			"trigger": "(Automatic.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Mars"
@@ -62,13 +601,102 @@
 		"gameVersion": "3",
 		"missionType": "Mission",
 		"name": "Priority: Palaven",
-		"description": "When you land on Palaven's moon, [megametracker://person?id=O3.Corinthus] informs you that the Primarch was killed an hour ago. He needs the comm tower repaired so he can contact Palaven and learn who is the next Primarch. There will be some fighting as you head to the tower and repair it. \n\nYou then encounter [megametracker://person?id=S1.Garrus] (if he survived Game 2) and he will join your team. Corinthus will ask you to defend the airstrip from Reaper attack, and then send you off to find the new Primarch, [megametracker://person?id=P3.VictusA]. \n\nWhen you ask Victus for help, he tells you that the only way he will agree to divert turian forces to defend Earth is if the krogan agree to come defend Palaven.",
-		"inMapId": "G.InC.Api.Tre.Palaven",
+		"description": "Retrieve the turian Primarch for a war summit where the Alliance can ask for help building the Crucible and defending Earth.",
+		"inMapId": "G.InC.Api.Tre.Menae",
 		"isShowInParentMap": true,
 		"experience": 0,
 		"reward": "12,500 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Palaven"],
 		"relatedDecisionIds": ["D2.Garrus"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Hackett",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.Palaven.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I understand their concerns.\""
+						}, {
+							"id": "M3.1.Palaven.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"They're useless.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.Palaven.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"And Earth?\""
+						}, {
+							"id": "M3.1.Palaven.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We'll get it done.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to General Corinthus",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Palaven.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'm sorry for your loss.\""
+				}, {
+					"id": "M3.1.Palaven.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Damned Reapers.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Garrus (or Corinthus if Garrus died in Game 2)",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Palaven.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Can I trust him?\""
+				}, {
+					"id": "M3.1.Palaven.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"We need him.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to General Victus",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Palaven.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You sound perfect.\""
+				}, {
+					"id": "M3.1.Palaven.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You're all I've got.\""
+				}]
+			}
+		}, {
+			"id": "M3.1.Palaven.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the mission.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel I"
@@ -77,22 +705,275 @@
 			"id": "Completed: Priority: Palaven"
 		}]
 	}, {
+		"id": "M3.1.Palaven.1",
+		"inMissionId": "M3.1.Palaven",
+		"sortIndex": 101,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Menae",
+		"description": "When you land on Palaven's moon, [megametracker://person?id=O3.Corinthus] informs you that the Primarch was killed an hour ago. He needs the comm tower repaired so he can contact Palaven and learn who is the next Primarch.",
+		"inMapId": "G.InC.Api.Tre.Menae",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.1.Palaven.2",
+		"inMissionId": "M3.1.Palaven",
+		"sortIndex": 102,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Repair Tower",
+		"description": "There will be some fighting as you head to the tower and repair it. \n\nYou then encounter [megametracker://person?id=S1.Garrus] (if he survived Game 2) and he will join your squad. One of your other teammates will head back to the Normandy.",
+		"inMapId": "G.InC.Api.Tre.Menae",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.1.Palaven.3",
+		"inMissionId": "M3.1.Palaven",
+		"sortIndex": 103,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Defend Airstrip",
+		"description": "Corinthus asks you to defend the airstrip from Reaper attack.",
+		"inMapId": "G.InC.Api.Tre.Menae",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.1.Palaven.4",
+		"inMissionId": "M3.1.Palaven",
+		"sortIndex": 104,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Victus",
+		"description": "Now you finally meet [megametracker://person?id=P3.VictusA]. He tells you that the only way he will agree to divert turian forces to defend Earth is if the krogan agree to come defend Palaven.",
+		"inMapId": "G.InC.Api.Tre.Menae",
+		"isShowInParentMap": true
+	}, {
 		"id": "M3.1.SurKesh",
 		"sortIndex": 11,
 		"gameVersion": "3",
 		"missionType": "Mission",
 		"name": "Priority: Sur'Kesh",
-		"description": "When you dock with the [megametracker://maplocation?id=G.InC.Ann.Pra.Ships&type=Map], old teammate [megametracker://person?id=S1.Wrex] (if he survived Game 1) comes aboard and you learn that the krogan condition for helping in the war effort is a cure for the Genophage. \n\nWhether or not you saved Maelon's data in Game 2, Wrex has learned that the salarians are holding several krogan female survivors of Maelon's experiments. A cure could be synthesized from them. \n\nOn Sur'Kesh, you meet up with by [megametracker://person?id=P1.Kirrahe] (if he survived Game 1) and [megametracker://person?id=S2.Mordin], if he survived Game 2, otherwise [megametracker://person?id=O3.Wiks]. Mordin (or Wiks) reveals that he was the leak to Clan Urdnot. You learn that only one female has survived, but before you can bring her aboard the Normandy, Cerberus attacks. Mordin (or Wiks) leaves with the krogan and instructs you to meet him at the next checkpoint. \n\nYou need to fight your way up two flights through wreckage and Cerberus troops to reach and activate that checkpoint. Head up another flight and activate the power terminal, then climb the ladder up one last level and activate the release for Mordin and the krogan.",
+		"description": "The krogan will not provide assistance to Palaven until they get something in return, specifically a cure for the genophage. They have information that several females who survived Maelon's experiments are being held on the salarian homeworld of Sur'Kesh. They hold the key to a cure for all krogan. Go to Sur'Kesh and retrieve them.",
 		"inMapId": "G.InC.Ann.Pra.SurKesh",
 		"isShowInParentMap": true,
 		"experience": 0,
 		"reward": "12,500 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Sur%27Kesh"],
 		"sideEffects": [
-			"On the top level at the far side opposite the elevator, don't miss the salarian at the console with the button you can press. Press that button. Press it lots. [YouTube|https://www.youtube.com/watch?v=cPIIaK4Vl20]",
 			"Your ship's doctor (Chakwas or Michel) will move to the crew quarters to make room for Mordin and Eve."
 		],
 		"relatedDecisionIds": ["D1.Wrex", "D1.MaelonsData", "D1.Kirrahe", "D2.Mordin"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to the diplomats \"What's your concern?\"",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.SurKesh.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Your people miscalculated.\""
+						}, {
+							"id": "M3.1.SurKesh.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You had to do it.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.SurKesh.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"But the krogan deserve a cure.\""
+						}, {
+							"id": "M3.1.SurKesh.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We don't have a choice.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.SurKesh.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You need allies.\""
+						}, {
+							"id": "M3.1.SurKesh.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I don't care. I need this.\""
+						}]
+					}
+				}, {
+					"id": "M3.1.SurKesh.R4",
+					"type": "Paragade",
+					"value": 15,
+					"context": "*Renegade Interrupt*",
+					"trigger": ""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "To Wrex/Wreave on the shuttle",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.SurKesh.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Be friendly.\""
+						}, {
+							"id": "M3.1.SurKesh.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"When in doubt, scare them.\" or \"Stay in line.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "If Maelon's data was destroyed",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.SurKesh.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I was wrong to destroy the data.\""
+						}, {
+							"id": "M3.1.SurKesh.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I don't regret what I did.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Padok Wiks",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.SurKesh.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We can work this out.\""
+						}, {
+							"id": "M3.1.SurKesh.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You should apologize.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.SurKesh.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Stay here, Wrex.\" or \"Stay here, Wreav.\""
+						}, {
+							"id": "M3.1.SurKesh.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Or else?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.SurKesh.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"And female krogan.\""
+						}, {
+							"id": "M3.1.SurKesh.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Good place for a cover-up.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Mordin (or Padok Wiks, if Mordin died in Game 2)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.SurKesh.P10",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You did your best.\""
+						}, {
+							"id": "M3.1.SurKesh.R10",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"But I need the cure!\" or \"Only the cure matters.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.SurKesh.P11",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"To save the krogan.\" or \"You're the krogan's last hope.\""
+						}, {
+							"id": "M3.1.SurKesh.R11",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I need a bargaining chip.\" or \"You're a bargaining chip.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.SurKesh.P12",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "(Reassure female krogan.)"
+						}, {
+							"id": "M3.1.SurKesh.R12",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Mordin, she's valuable.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Aboard Normandy",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.SurKesh.P13",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Do what you can, Mordin.\""
+				}, {
+					"id": "M3.1.SurKesh.R13",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"This better be worth it.\""
+				}]
+			}
+		}, {
+			"id": "M3.1.SurKesh.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the mission.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -100,6 +981,89 @@
 			"type": "Triggers",
 			"id": "Completed: Priority: Sur'Kesh"
 		}]
+	}, {
+		"id": "M3.1.SurKesh.1",
+		"inMissionId": "M3.1.SurKesh",
+		"sortIndex": 111,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Diplomatic Ships",
+		"description": "Dock with the Diplomatic Ships and take aboard [megametracker://person?id=S1.Wrex] (or Wreave). You learn that the krogan condition for helping in the war effort is a cure for the Genophage. \n\nWhether or not you saved Maelon's data in Game 2, Wrex has learned that the salarians are holding several krogan female survivors of Maelon's experiments. A cure could be synthesized from them.",
+		"inMapId": "G.InC.Ann.Pra.Ships",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.1.SurKesh.2",
+		"inMissionId": "M3.1.SurKesh",
+		"sortIndex": 112,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Sur'Kesh",
+		"description": "Land on Sur'Kesh. There will be a bit of a skirmish with the salarians, but [megametracker://person?id=O3.Wiks] intervenes. You can explore the upper level and speak to [megametracker://person?id=P1.Kirrahe] (or [megametracker://person?id=O3.Tolan]), as well as other salarians. When you are ready to continue, head into the elevator.",
+		"inMapId": "G.InC.Ann.Pra.SurKesh",
+		"isShowInParentMap": true,
+		"sideEffects": [
+			"On the top level at the far side opposite the elevator, don't miss the salarian at the console with the button you can press. Press that button. Press it lots. [YouTube|https://www.youtube.com/watch?v=cPIIaK4Vl20]"
+		]
+	}, {
+		"id": "M3.1.SurKesh.3",
+		"inMissionId": "M3.1.SurKesh",
+		"sortIndex": 113,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Enter Lab",
+		"description": "In the lab, you will meet with old squadmate [megametracker://person?id=S2.Mordin] (Wiks will fill his role if Mordin did not survive Game 2). Mordin reveals that he was the leak to Clan Urdnot. You learn that only one female has survived, but before you can bring her aboard the Normandy, Cerberus attacks. Mordin (or Wiks) leaves with the krogan and instructs you to meet him at the next checkpoint. \n\nYou can explore the lab, where there are some logs with more information. Use the elevator to head up, and then the emergency ladder when that fails.",
+		"inMapId": "G.InC.Ann.Pra.SurKesh",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.1.SurKesh.4",
+		"inMissionId": "M3.1.SurKesh",
+		"sortIndex": 114,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Level 1",
+		"description": "Fight through Cerberus troops and upstairs.",
+		"inMapId": "G.InC.Ann.Pra.SurKesh",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.1.SurKesh.5",
+		"inMissionId": "M3.1.SurKesh",
+		"sortIndex": 115,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Level 2 Checkpoint",
+		"description": "This level is timed. You need to reach the checkpoint before the pod with the krogan female is compromised.",
+		"inMapId": "G.InC.Ann.Pra.SurKesh",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.1.SurKesh.5",
+		"inMissionId": "M3.1.SurKesh",
+		"sortIndex": 115,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Level 3 Power Terminal",
+		"description": "Kirrahe will help out kill a few Cerberus troops here if he is present. Head into the second room and activate the power.",
+		"inMapId": "G.InC.Ann.Pra.SurKesh",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.1.SurKesh.6",
+		"inMissionId": "M3.1.SurKesh",
+		"sortIndex": 116,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Level 3 Checkpoint",
+		"description": "Head back to defend the pod with the krogan female.",
+		"inMapId": "G.InC.Ann.Pra.SurKesh",
+		"isShowInParentMap": true
+	}, {
+		"id": "M3.1.SurKesh.7",
+		"inMissionId": "M3.1.SurKesh",
+		"sortIndex": 117,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Level 4 Pod Release",
+		"description": "Head up the ladder to the final level. Fight off all the Cerberus forces to defend the pod, then activate the release. Then you will have to destroy an Atlas Mech and more troops.",
+		"inMapId": "G.InC.Ann.Pra.SurKesh",
+		"isShowInParentMap": true
 	}, {
 		"id": "M3.1.Tuchanka",
 		"sortIndex": 12,
@@ -114,9 +1078,305 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Tuchanka"],
 		"sideEffects": [
 			"Some Citadel assignments will no longer be available after this mission is completed, because [megametracker://mission?id=M3.2.Citadel2] begins the next time you return to the Citadel.",
-			"Dialogue opportunities with the following people on the Citadel will be unavailable after this mission is completed: [megametracker://person?id=P2.Kelly], [megametracker://person?id=S2.Thane], [megametracker://person?id=O2.Aethyta]."
+			"Dialogue opportunities with the following people on the Citadel will be unavailable after this mission is completed: [megametracker://person?id=P2.Chambers], [megametracker://person?id=S2.Thane], [megametracker://person?id=O2.Aethyta]."
 		],
 		"relatedDecisionIds": ["D1.Wrex", "D1.MaelonsData", "D2.Mordin", "D3.GenophageCure", "D3.Eve", "D3.Mordin"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to the Primarch in the War Room",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.Tuchanka.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"But this is for Palaven.\""
+						}, {
+							"id": "M3.1.Tuchanka.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Keep your word.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.Tuchanka.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Everyone up for this?\""
+						}, {
+							"id": "M3.1.Tuchanka.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Failure isn't an option.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking privately to the Dalatrass",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Tuchanka.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Yes, this could work.\""
+				}, {
+					"id": "M3.1.Tuchanka.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"No, krogan aren't peaceful.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Eve on the shuttle",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Tuchanka.P4",
+					"type": "Paragon",
+					"value": 2,
+					"context": "_(Note: this does not reveal sabotage)_",
+					"trigger": "(Reveal Shroud sabotage.)"
+				}, {
+					"id": "M3.1.Tuchanka.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "(Say nothing for now.)"
+				}]
+			}
+		}, {
+			"set": {
+				"context": "At the meeting of the clans, when Mordin/Wiks is challenged",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Tuchanka.P5",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"The salarian is with me.\" or \"He's saving your people.\""
+				}, {
+					"id": "M3.1.Tuchanka.R5",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Fall in line.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "At the meeting of the clans, when Eve rallies the krogan to fight",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Tuchanka.P6",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Count me in.\""
+				}, {
+					"id": "M3.1.Tuchanka.R6",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Everyone had better help.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "While travelling with the convoy, discussing krogan expansion",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Tuchanka.P7",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"The krogan have earned it.\" or \"Leave it in the past.\""
+				}, {
+					"id": "M3.1.Tuchanka.R7",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Expansion could be a problem.\" or \"I'd want revenge for that too.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Eve in the truck",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Tuchanka.P8",
+					"type": "Paragon",
+					"value": 15,
+					"trigger": "(Reveal Shroud sabotage.)"
+				}, {
+					"id": "M3.1.Tuchanka.R8",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "(Say nothing for now.)"
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When Eve suggests summoning Kalross",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.Tuchanka.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"What about the risks?\""
+						}, {
+							"id": "M3.1.Tuchanka.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We've done crazier things.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.Tuchanka.P10",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Be safe.\""
+						}, {
+							"id": "M3.1.Tuchanka.R10",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Let's get it done.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"context": "*Paragon Interrupt*",
+			"id": "M3.1.Tuchanka.P11",
+			"type": "Paragon",
+			"value": 5,
+			"trigger": "Clasp hands with Wrex."
+		}, {
+			"set": {
+				"context": "To Mordin/Wiks at the Shroud",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"options": [{
+							"id": "M3.1.Tuchanka.P15",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "(Explain sabotage.)"
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "M3.1.Tuchanka.P16",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"I was wrong.\""
+								}, {
+									"id": "M3.1.Tuchanka.R16",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"I need the salarians.\""
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"options": [{
+							"id": "M3.1.Tuchanka.R15",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "(Delay him.)"
+						}]
+					}
+				}, {
+					"set": {
+						"context": "After Paragon Interrupt (if sabotage was already revealed to Eve)",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.Tuchanka.P15A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'll miss you.\""
+						}, {
+							"id": "M3.1.Tuchanka.R15B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Good work.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"context": "Prevent Mordin/Wiks from curing the Genophage (requires one of the renegade options above)",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.1.Tuchanka.P17",
+							"type": "Paragon",
+							"value": 15,
+							"context": "*_Charm Mordin_* (only available if Wrex is dead and Maelon's data destroyed)",
+							"trigger": "\"Now isn't the time.\""
+						}, {
+							"id": "M3.1.Tuchanka.R17",
+							"type": "Renegade",
+							"value": 15,
+							"context": "*_Intimidate Mordin_* (only available if Wrex is dead and Maelon's data destroyed)",
+							"trigger": "\"Why?\""
+						}, {
+							"id": "M3.1.Tuchanka.R18",
+							"type": "Renegade",
+							"value": 15,
+							"context": "*Renegade Interrupt*",
+							"trigger": "Shoot Mordin."
+						}]
+					}
+				}, {
+					"id": "M3.1.Tuchanka.PR20",
+					"type": "Paragade",
+					"value": 15,
+					"trigger": "(Genophage cured.)"
+				}]
+			}
+		}, {
+			"set": {
+				"context": "At Eve's funeral, if she did not survive",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Tuchanka.P25",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It was my fault.\" or \"She was a hero.\""
+				}, {
+					"id": "M3.1.Tuchanka.R25",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"She's an unfortunate casualty.\" or \"She was naive.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Wrex/Wreave about Mordin's death",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Tuchanka.P25",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"He was a good friend.\""
+				}, {
+					"id": "M3.1.Tuchanka.R25",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"He insisted.\" or (if cure was sabotaged) \"Why? What did you see?\""
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh and Krogan or Turian Mission"
@@ -184,6 +1444,253 @@
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_The_Citadel_II"],
 		"relatedDecisionIds": ["D1.Kirrahe", "D1.LoveAshley", "D1.LoveKaidan", "D1.Council", "D2.Thane", "D3.AshleyKaidanParagon", "D3.AshleyKaidan"],
+		"conversationRewards": [{
+			"set": {
+				"context": "When the salarian Councilor warns you about Udina (variations depend on if Council was saved in Game 1, and if the cure was sabotaged)",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Citadel2.P0",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We'd better find out.\" or \"That's not good.\" or (re: cure) \"It's a shared sacrifice.\""
+				}, {
+					"id": "M3.2.Citadel2.R0",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"So call C-Sec.\" or \"Why come to me.\" or (re: cure) \"Capitalize on it.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Bailey",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Citadel2.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I can launch a rescue.\""
+				}, {
+					"id": "M3.2.Citadel2.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I don't believe this.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking down Ashley/Kaidan",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"context": "100% Trust",
+						"options": [{
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"set": {
+										"context": "\"You're making a mistake.\"",
+										"options": [{
+											"id": "M3.2.Citadel2.P2",
+											"type": "Paragon",
+											"value": 5,
+											"context": "*Paragon Interrupt*",
+											"trigger": "Lower guns."
+										}]
+									}
+								}, {
+									"set": {
+										"context": "\"Step aside.\" or \"I've come for Udina.\"",
+										"options": [{
+											"id": "M3.2.Citadel2.R2",
+											"type": "Renegade",
+											"value": 5,
+											"context": "*Renegade Interrupt*",
+											"trigger": "Lower guns."
+										}]
+									}
+								}]
+							}
+						}, {
+							"id": "M3.2.Citadel2.PR2",
+							"type": "Paragade",
+							"value": 15,
+							"trigger": "(Completing the conversation.)"
+						}]
+					}
+				}, {
+					"set": {
+						"context": "25-75% Trust",
+						"options": [{
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"set": {
+										"context": "\"Trust me.\" or \"You're making a mistake.\" or \"Don't get paranoid on me.\"",
+										"options": [{
+											"id": "M3.2.Citadel2.P10",
+											"type": "Paragon",
+											"value": 5,
+											"context": "*Paragon Interrupt*",
+											"trigger": "Lower guns."
+										}]
+									}
+								}, {
+									"set": {
+										"context": "\"Step aside. Now.\" or \"Sure I do.\" or \"I've come for Udina.\"",
+										"options": [{
+											"id": "M3.2.Citadel2.R10",
+											"type": "Renegade",
+											"value": 5,
+											"context": "*Renegade Interrupt*",
+											"trigger": "Lower guns."
+										}]
+									}
+								}]
+							}
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "M3.2.Citadel2.P11",
+									"type": "Paragon",
+									"value": 15,
+									"context": "*_Charm Ashley/Kaidan_* (requires 50-75% Trust or Interrupt above)",
+									"trigger": "\nAshley: \"Trust me.\" or \"You're better than this.\" \nKaidan: \"You first.\" or \"I wouldn't kill the Council.\""
+								}, {
+									"id": "M3.2.Citadel2.R11",
+									"type": "Renegade",
+									"value": 15,
+									"context": "*_Intimidate Ashley/Kaidan_* (requires 50-75% Trust or Interrupt above)",
+									"trigger": "\nAshley: \"You can't win.\" or \"You forget why we're here.\" \nKaidan: \"I won't.\" or \"This is bigger than you.\""
+								}, {
+									"set": {
+										"context": "\"Don't make me kill you.\" or \"I wish you were right.\"",
+										"options": [{
+											"id": "M3.2.Citadel2.R12",
+											"type": "Renegade",
+											"value": 5,
+											"context": "*Renegade Interrupt*",
+											"trigger": "Shoot Ashley/Kaidan."
+										}]
+									}
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"context": "0% Trust",
+						"isExclusiveSet": true,
+						"options": [{
+							"set": {
+								"context": "\"Calm down.\" or \"I don't think so.\"",
+								"options": [{
+									"id": "M3.2.Citadel2.P20",
+									"type": "Paragon",
+									"value": 5,
+									"context": "*Paragon Interrupt*",
+									"trigger": "Lower guns."
+								}, {
+									"id": "M3.2.Citadel2.R20A",
+									"type": "Renegade",
+									"value": 5,
+									"context": "*Renegade Interrupt*",
+									"trigger": "Lower guns."
+								}, {
+									"id": "M3.2.Citadel2.R20B",
+									"type": "Renegade",
+									"value": 5,
+									"context": "*Renegade Interrupt*",
+									"trigger": "Shoot Ashley/Kaidan."
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the Councilors after Bailey shows up",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Citadel2.P30",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Just doing my job.\" (If Ashley/Kaidan survived)"
+				}, {
+					"id": "M3.2.Citadel2.R30",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"And Ash.\" or \"And Kaidan.\" (If Ashley/Kaidan survived)"
+				}, {
+					"id": "M3.2.Citadel2.R30",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"About time.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Bailey in his office (if Thane survived Game 2)",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Citadel2.P31",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Thanks, Commander.\""
+				}, {
+					"id": "M3.2.Citadel2.R31",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"There will be time.\""
+				}]
+			}
+		}, {
+			"id": "M3.2.Citadel2.PR35",
+			"type": "Paragade",
+			"value": 2,
+			"trigger": "(Speaking to Ashley/Kaidan at Normandy dock.)"
+		}, {
+			"set": {
+				"context": "Speaking to Anderson and Hackett on the Normandy",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.Citadel2.P40",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Thanks for the intel.\""
+						}, {
+							"id": "M3.2.Citadel2.R40",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"He'll die like all the rest.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.Citadel2.P41",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I won't fail you.\""
+						}, {
+							"id": "M3.2.Citadel2.R41",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Nobody can stand in our way.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "M3.2.Citadel2.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the mission.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Tuchanka"
@@ -200,33 +1707,33 @@
 		"name": "C-Sec",
 		"description": "You are dropped off outside C-Sec headquarters. You will meet Bailey there and must fight your way inside. Head upstairs and take the elevator up."
 	}, {
-		"id": "M3.2.Citadel2.1",
+		"id": "M3.2.Citadel2.2",
 		"inMissionId": "M3.2.Citadel2",
-		"sortIndex": 201,
+		"sortIndex": 202,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Save The Councilor",
 		"description": "There is a cafe here where you will fight off more Cerberus troops. Then head upstairs to the Executor's office. The Executor is dead, and then the salarian councilor appears - back in the cafe. There is no time to reach him before [megametracker://person?id=E3.KaiLeng] attacks. The councilor reveals that [megametracker://person?id=P1.Udina] is spearheading the coup. If Thane or [megametracker://person?id=P1.Kirrahe] are alive in Game 3, they will save him from Kai Leng, although being mortally wounded in the process. Otherwise, the salarian councilor dies. Kai Leng then disappears to rendesvous with Udina and the Council."
 	}, {
-		"id": "M3.2.Citadel2.1",
+		"id": "M3.2.Citadel2.3",
 		"inMissionId": "M3.2.Citadel2",
-		"sortIndex": 201,
+		"sortIndex": 203,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Presidium",
 		"description": "Bailey gets you a C-Sec car to go warn the Council, but Kai Leng disables it. You must proceed on foot through the Presidium to the elevators."
 	}, {
-		"id": "M3.2.Citadel2.1",
+		"id": "M3.2.Citadel2.4",
 		"inMissionId": "M3.2.Citadel2",
-		"sortIndex": 201,
+		"sortIndex": 204,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Stop The Elevators",
 		"description": "You fail to reach the elevators before Kai Leng takes one up to the Council. So you break into the elevator shaft and hitch a ride on top of an elevator car. As you rise, shoot out the two conduits on top or below the three Cerberus elevator cars heading up. Then jump on top of the Council's elevator car. They are now guarded by Ashley or Kaidan, the second human Spectre. Ashley or Kaidan (understandably) shoot through the roof at you, and Udina evacuates the Council out to the shuttle pad."
 	}, {
-		"id": "M3.2.Citadel2.1",
+		"id": "M3.2.Citadel2.5",
 		"inMissionId": "M3.2.Citadel2",
-		"sortIndex": 201,
+		"sortIndex": 205,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Confronting Udina",
