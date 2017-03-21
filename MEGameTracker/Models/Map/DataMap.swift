@@ -83,9 +83,9 @@ public struct DataMap: MapLocationable {
 	internal mutating func setGameVersionData() {
 		let gameVersionData = self.gameVersionData[gameVersion.stringValue] ?? SerializableData()
 
-		isHidden = gameVersionData["isHidden"]?.bool ?? (rawGeneralData["isHidden"]?.bool ?? isHidden)
+		isHidden = gameVersionData["isHidden"]?.bool ?? (rawGeneralData["isHidden"]?.bool ?? false)
 
-		name = gameVersionData["name"]?.string ?? (rawGeneralData["name"]?.string ?? name)
+		name = gameVersionData["name"]?.string ?? (rawGeneralData["name"]?.string ?? "Unknown")
 
 		if let gameDescription = gameVersionData["description"] { // allow nil override
 			description = gameDescription.string
@@ -94,11 +94,11 @@ public struct DataMap: MapLocationable {
 		}
 
 		mapType = MapType(stringValue: gameVersionData["mapType"]?.string
-			?? rawGeneralData["mapType"]?.string) ?? mapType
+			?? rawGeneralData["mapType"]?.string) ?? .location
 
-		isMain = gameVersionData["isMain"]?.bool ?? (rawGeneralData["isMain"]?.bool ?? isMain)
+		isMain = gameVersionData["isMain"]?.bool ?? (rawGeneralData["isMain"]?.bool ?? false)
 
-		isSplitMenu = gameVersionData["isSplitMenu"]?.bool ?? (rawGeneralData["isSplitMenu"]?.bool ?? isSplitMenu)
+		isSplitMenu = gameVersionData["isSplitMenu"]?.bool ?? (rawGeneralData["isSplitMenu"]?.bool ?? false)
 
 		if let gameInMapId = gameVersionData["inMapId"] { // allow nil override
 			inMapId = gameInMapId.string
@@ -117,10 +117,10 @@ public struct DataMap: MapLocationable {
 		}
 
 		isShowInList = gameVersionData["isShowInList"]?.bool
-			?? (rawGeneralData["isShowInList"]?.bool ?? isShowInList)
+			?? (rawGeneralData["isShowInList"]?.bool ?? true)
 
 		isOpensDetail = gameVersionData["isOpensDetail"]?.bool
-			?? (rawGeneralData["isOpensDetail"]?.bool ?? isOpensDetail)
+			?? (rawGeneralData["isOpensDetail"]?.bool ?? true)
 
 		if let gameImage = gameVersionData["image"] { // allow nil override
 			image = gameImage.string
@@ -134,7 +134,7 @@ public struct DataMap: MapLocationable {
 		}
 		setSizeData(referenceSize)
 
-		isShowPin = gameVersionData["isShowPin"]?.bool ?? (rawGeneralData["isShowPin"]?.bool ?? isShowPin)
+		isShowPin = gameVersionData["isShowPin"]?.bool ?? (rawGeneralData["isShowPin"]?.bool ?? false)
 
 		annotationNote = gameVersionData["annotationNote"]?.string
 			?? (rawGeneralData["annotationNote"]?.string ?? annotationNote)
@@ -152,7 +152,7 @@ public struct DataMap: MapLocationable {
 		rerootBreadcrumbs = gameVersionData["rerootBreadcrumbs"]?.bool
 			?? (rawGeneralData["rerootBreadcrumbs"]?.bool ?? rerootBreadcrumbs)
 
-		sortIndex = gameVersionData["sortIndex"]?.int ?? (rawGeneralData["sortIndex"]?.int ?? sortIndex)
+		sortIndex = gameVersionData["sortIndex"]?.int ?? (rawGeneralData["sortIndex"]?.int ?? 0)
 
 		relatedLinks = ((gameVersionData["relatedLinks"]?.array
 			?? rawGeneralData["relatedLinks"]?.array) ?? []).flatMap({ $0.string })
