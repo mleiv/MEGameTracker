@@ -138,9 +138,7 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 				missionCounts[type]?.available -= unavailableCount
 //				print(missionCounts[type])
 				if let index = missionsRowByType(type) {
-					DispatchQueue.main.async { [weak self] in
-						self?.reloadRows([IndexPath(row: index, section: MissionsGroupsSection.main.rawValue)])
-					}
+					reloadRows([IndexPath(row: index, section: MissionsGroupsSection.main.rawValue)])
 				}
 			}
 		}

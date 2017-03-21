@@ -573,7 +573,9 @@ extension MapController {
 	func reloadOnShepardChange() {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
-			reloadMap()
+			DispatchQueue.main.async {
+				self.reloadMap()
+			}
 		}
 	}
 }

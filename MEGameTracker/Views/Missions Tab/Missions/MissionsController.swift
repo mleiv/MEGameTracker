@@ -206,7 +206,9 @@ extension MissionsController {
 
 	func reloadAllRows() {
 		guard !isUpdating else { return }
-		setup(isForceReloadData: true)
+		DispatchQueue.main.async {
+			self.setup(isForceReloadData: true)
+		}
 	}
 
 	func reloadOnShepardChange() {
