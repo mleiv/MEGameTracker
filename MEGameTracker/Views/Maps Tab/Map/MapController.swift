@@ -12,7 +12,7 @@ import UIKit
 // TODO: Refactor
 
 final public class MapController: UIViewController,
-	UIScrollViewDelegate, UIGestureRecognizerDelegate, MapImageSizable {
+	UIScrollViewDelegate, MapImageSizable {
 
 	enum VerticalDisclosureImage: String {
 		case Closed = "Vertical Disclosure"
@@ -278,7 +278,7 @@ extension MapController {
 	/// Only used when there is no image, and map details are visible by default
 	func setupMapDetails() {
 		let isCalloutsButtonVisible = map?.image != nil && !mapLocations.isEmpty
-		let isInlineCalloutsVisible = map?.image == nil && !mapLocations.isEmpty
+		let isInlineCalloutsVisible = map?.image == nil //&& !mapLocations.isEmpty
 		let isToggleDetailsClosed = map?.image != nil
 
 		if isCalloutsButtonVisible {
@@ -422,20 +422,6 @@ extension MapController {
 		currentCallout?.calloutOrigin = nil
 		explicitMapLocationable = nil
 	}
-
-	func tapMap(_ sender: UITapGestureRecognizer) {
-		if let button = mapLocationsList.getButtonTouched(gestureRecognizer: sender) {
-			if let location = mapLocationsList.getLocations(fromButton: button).first {
-				if map?.isSplitMenu == true, let menuItemMap = location as? Map {
-					segueToMap(menuItemMap)
-				} else {
-					MapLocation.onChangeSelection.fire((location))
-				}
-			}
-		} else {
-			removeCalloutBox()
-		}
-	}
 }
 
 // MARK: Reload data
@@ -493,20 +479,45 @@ extension MapController {
 
 }
 
-// MARK: UITapGestureRecognizer (page-wide)
-extension MapController {
+// MARK: UIGestureRecognizerDelegate
+extension MapController: UIGestureRecognizerDelegate {
 
 	func addGestureRecognizers() {
 		let singleTap = UITapGestureRecognizer(target: self, action: #selector(MapController.tapMap(_:)))
 		singleTap.numberOfTapsRequired = 1
+		singleTap.delegate = self
 		mapImageScrollView?.addGestureRecognizer(singleTap)
 		singleTapGesture = singleTap
 	}
 
 	func removeGestureRecognizers() {
 		if let singleTap = singleTapGesture {
-			mapImageWrapperView?.removeGestureRecognizer(singleTap)
+			mapImageScrollView?.removeGestureRecognizer(singleTap)
 			singleTapGesture = nil
+		}
+	}
+
+	/// Delegate method.
+	/// Ignore any callout button clicks - they are not tap gestures.
+	public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+		if let callout = currentCallout, let view = touch.view,
+			view.isDescendant(of: callout) {
+			return false
+		}
+		return true
+	}
+
+	func tapMap(_ sender: UITapGestureRecognizer) {
+		if let button = mapLocationsList.getButtonTouched(gestureRecognizer: sender) {
+			if let location = mapLocationsList.getLocations(fromButton: button).first {
+				if map?.isSplitMenu == true, let menuItemMap = location as? Map {
+					segueToMap(menuItemMap)
+				} else {
+					MapLocation.onChangeSelection.fire((location))
+				}
+			}
+		} else {
+			removeCalloutBox()
 		}
 	}
 }

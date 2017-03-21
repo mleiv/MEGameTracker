@@ -155,17 +155,17 @@ final public class MapsController: UITableViewController, Spinnerable {
 		}
 	}
 
-	func updateMapOnChange(_ map: Map) {
-		guard !isUpdating else { return }
-		for (section, maps) in self.maps {
-			if let index = maps.index(of: map) {
-				self.maps[section]?[index] = map
-			}
-		}
-		isUpdating = true
-		tableView.reloadData()
-		isUpdating = false
-	}
+//	func updateMapOnChange(_ map: Map) {
+//		guard !isUpdating else { return }
+//		for (section, maps) in self.maps {
+//			if let index = maps.index(of: map) {
+//				self.maps[section]?[index] = map
+//			}
+//		}
+//		isUpdating = true
+//		tableView.reloadData()
+//		isUpdating = false
+//	}
 
 	var shepardUuid = App.current.game?.shepard?.uuid
 	func reloadOnShepardChange() {
