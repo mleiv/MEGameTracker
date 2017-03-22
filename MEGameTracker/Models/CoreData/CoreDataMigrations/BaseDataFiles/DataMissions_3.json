@@ -109,7 +109,7 @@
 							"type": "Paragon",
 							"value": 5,
 							"context": "*Paragon Interrupt*",
-							"trigger": ""
+							"trigger": "Interrupt James."
 						}]
 					}
 				}, {
@@ -124,7 +124,7 @@
 							"type": "Renegade",
 							"value": 5,
 							"context": "*Renegade Interrupt*",
-							"trigger": ""
+							"trigger": "Override James' concerns."
 						}]
 					}
 				}]
@@ -534,7 +534,7 @@
 			}
 		}, {
 			"set": {
-				"context": "Speaking to the turian Councilor",
+				"context": "Speaking to the turian councilor",
 				"isExclusiveSet": true,
 				"options": [{
 					"id": "M3.0.Citadel1.P8A",
@@ -810,10 +810,10 @@
 					}
 				}, {
 					"id": "M3.1.SurKesh.R4",
-					"type": "Paragade",
-					"value": 15,
+					"type": "Renegade",
+					"value": 5,
 					"context": "*Renegade Interrupt*",
-					"trigger": ""
+					"trigger": "Interrupt the Dalatrass."
 				}]
 			}
 		}, {
@@ -1250,11 +1250,17 @@
 				}]
 			}
 		}, {
-			"context": "*Paragon Interrupt*",
-			"id": "M3.1.Tuchanka.P11",
-			"type": "Paragon",
-			"value": 5,
-			"trigger": "Clasp hands with Wrex."
+			"set": {
+				"context": "Speaking to Wrex before heading to the Shroud (requires either Maelon's Data or revealing the Shroud sabotage)",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.1.Tuchanka.P11",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Clasp hands with Wrex."
+				}]
+			}
 		}, {
 			"set": {
 				"context": "To Mordin/Wiks at the Shroud",
@@ -1294,18 +1300,28 @@
 					}
 				}, {
 					"set": {
-						"context": "After Paragon Interrupt (if sabotage was already revealed to Eve)",
-						"isExclusiveSet": true,
+						"context": "(If sabotage was already revealed to Eve)",
 						"options": [{
 							"id": "M3.1.Tuchanka.P15A",
 							"type": "Paragon",
-							"value": 2,
-							"trigger": "\"I'll miss you.\""
+							"value": 0,
+							"context": "*Paragon Interrupt*",
+							"trigger": "Call after Mordin as he heads inside the shroud."
 						}, {
-							"id": "M3.1.Tuchanka.R15B",
-							"type": "Renegade",
-							"value": 2,
-							"trigger": "\"Good work.\""
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "M3.1.Tuchanka.P15B",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"I'll miss you.\""
+								}, {
+									"id": "M3.1.Tuchanka.R15B",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"Good work.\""
+								}]
+							}
 						}]
 					}
 				}]
@@ -1446,7 +1462,7 @@
 		"relatedDecisionIds": ["D1.Kirrahe", "D1.LoveAshley", "D1.LoveKaidan", "D1.Council", "D2.Thane", "D3.AshleyKaidanParagon", "D3.AshleyKaidan"],
 		"conversationRewards": [{
 			"set": {
-				"context": "When the salarian Councilor warns you about Udina (variations depend on if Council was saved in Game 1, and if the cure was sabotaged)",
+				"context": "When the salarian councilor warns you about Udina (variations depend on if Council was saved in Game 1, and if the cure was sabotaged)",
 				"isExclusiveSet": true,
 				"options": [{
 					"id": "M3.2.Citadel2.P0",
@@ -1531,7 +1547,7 @@
 											"type": "Paragon",
 											"value": 5,
 											"context": "*Paragon Interrupt*",
-											"trigger": "Lower guns."
+											"trigger": "Lower weapons."
 										}]
 									}
 								}, {
@@ -1542,7 +1558,7 @@
 											"type": "Renegade",
 											"value": 5,
 											"context": "*Renegade Interrupt*",
-											"trigger": "Lower guns."
+											"trigger": "Raise weapons."
 										}]
 									}
 								}]
@@ -1589,13 +1605,13 @@
 									"type": "Paragon",
 									"value": 5,
 									"context": "*Paragon Interrupt*",
-									"trigger": "Lower guns."
+									"trigger": "Lower weapons."
 								}, {
 									"id": "M3.2.Citadel2.R20A",
 									"type": "Renegade",
 									"value": 5,
 									"context": "*Renegade Interrupt*",
-									"trigger": "Lower guns."
+									"trigger": "Raise weapons."
 								}, {
 									"id": "M3.2.Citadel2.R20B",
 									"type": "Renegade",
@@ -1609,8 +1625,14 @@
 				}]
 			}
 		}, {
+			"id": "M3.2.Citadel2.R25",
+			"type": "Renegade",
+			"value": 0,
+			"context": "*Renegade Interrupt*",
+			"trigger": "Shoot Udina yourself."
+		}, {
 			"set": {
-				"context": "Speaking to the Councilors after Bailey shows up",
+				"context": "Speaking to the councilors after Bailey shows up",
 				"isExclusiveSet": true,
 				"options": [{
 					"id": "M3.2.Citadel2.P30",
@@ -1755,6 +1777,64 @@
 			"https://masseffect.wikia.com/wiki/Priority:_Perseus_Veil"
 		],
 		"relatedDecisionIds": ["D2.Tali"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Meeting the admirals",
+				"options": [{
+					"set": {
+						"context": "(Optional) \"Tell me about your history\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.PerseusVeil.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"The quarians were wrong.\""
+						}, {
+							"id": "M3.2.PerseusVeil.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I agree.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "(Variants depend on selection above: paragon, renegade, and none)",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.PerseusVeil.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Invading was a mistake.\" or \"That was a bad idea.\" or \"That was a terrible idea.\""
+						}, {
+							"id": "M3.2.PerseusVeil.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I disagree.\" or \"Good. It's about time.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.PerseusVeil.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Letting you retreat.\""
+						}, {
+							"id": "M3.2.PerseusVeil.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"And then you counterattack.\""
+						}]
+					}
+				}, {
+					"id": "M3.2.PerseusVeil.PR100",
+					"type": "Paragade",
+					"value": 2,
+					"trigger": "(Completing the conversation)"
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -1785,6 +1865,83 @@
 			"https://masseffect.wikia.com/wiki/Priority:_Geth_Dreadnought"
 		],
 		"relatedDecisionIds": ["D2.Tali", "D2.Legion", "D3.Legion"],
+		"conversationRewards": [{
+			"set": {
+				"context": "After finding Legion/Geth VI in the drive core",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.GethDreadnought.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I trust Legion.\" or \"I'm listening for now.\""
+				}, {
+					"id": "M3.2.GethDreadnought.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You're right.\" or \"Sure you were.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Debrief with the admirals",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.GethDreadnought.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I agree.\""
+						}, {
+							"set": {
+								"options": [{
+									"id": "M3.2.GethDreadnought.R2",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"You are out of control.\""
+								}, {
+									"id": "M3.2.GethDreadnought.R3",
+									"type": "Renegade",
+									"value": 5,
+									"context": "*Renegade Interrupt*",
+									"trigger": "Punch Gerrel and kick him off the Normandy."
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.GethDreadnought.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Later.\""
+						}, {
+							"set": {
+								"options": [{
+									"id": "M3.2.GethDreadnought.P4",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"No.\""
+								}, {
+									"id": "M3.2.GethDreadnought.P5",
+									"type": "Paragon",
+									"value": 5,
+									"context": "*Paragon Interrupt*",
+									"trigger": "Interrupt Xen to defend Legion."
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "M3.2.GethDreadnought.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the mission)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Perseus Veil"
@@ -1838,9 +1995,139 @@
 		"reward": "25,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Rannoch"],
 		"relatedDecisionIds": ["D2.Tali", "D3.Legion", "D3.GethIntelligent", "D3.Quarians"],
+		"conversationRewards": [{
+			"set": {
+				"context": "On the shuttle down, when Legion confesses he has old machine upgrade code",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Rannoch.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"No, it's okay.\""
+				}, {
+					"id": "M3.2.Rannoch.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Damn right I am.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When Tali lands on Rannoch, the quarian homeworld",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Rannoch.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"And they will again.\""
+				}, {
+					"id": "M3.2.Rannoch.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Keep focused.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Legion requests to upload modified Reaper code to the geth",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Rannoch.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Upload the code.\""
+				}, {
+					"id": "M3.2.Rannoch.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"We're letting the geth die.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When Tali begs Legion to stop uploading the code",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Rannoch.P4A",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "(Allow the upload.)"
+				}, {
+					"id": "M3.2.Rannoch.R4A",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "(Stop Legion.)"
+				}, {
+					"id": "M3.2.Rannoch.P4B",
+					"type": "Paragon",
+					"value": 15,
+					"context": "*_Charm the quarian fleet_*",
+					"trigger": "(Rally the fleet.)"
+				}, {
+					"id": "M3.2.Rannoch.R4B",
+					"type": "Renegade",
+					"value": 15,
+					"context": "*_Intimidate the quarian fleet_*",
+					"trigger": "(Warn the fleet.)"
+				}]
+			}
+		}, {
+			"set": {
+				"context": "If either the quarian fleet or the geth is sacrificed",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Rannoch.P5",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Cry out after her, as Tali jumps from the cliff."
+				}, {
+					"id": "M3.2.Rannoch.R5",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Shoot Legion"
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Tali volunteers to join the Normandy (if the fleet was saved)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.Rannoch.P10",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That's not why I came.\""
+						}, {
+							"id": "M3.2.Rannoch.R10",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You sure?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.Rannoch.P11",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"If you're certain.\""
+						}, {
+							"id": "M3.2.Rannoch.R11",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Good.\""
+						}]
+					}
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: Geth Dreadnought"
+			"id": "Completed: Rannoch: Geth Fighter Squandrons or Rannoch: Admiral Koris"
 		}, {
 			"type": "Triggers",
 			"id": "Completed: Priority: Rannoch"
@@ -1883,6 +2170,41 @@
 		"reward": "The asari councilor [megametracker://person?id=P1.Valern] (or [megametracker://person?id=O2.Esheel] if Valern died in Game 1) urgently requests to speak with you on the Citadel. You can find her in the Citadel Embassies at Udina's former office. \n\nIf you betrayed Wrex during [megametracker://mission?id=M3.1.Tuchanka], you will need to avoid the Normandy dock (say, by completing assignments which terminate back in the Normandy) or you will be confronted and have to kill him.",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_The_Citadel_III"],
 		"relatedDecisionIds": ["D1.Council", "D1.Wrex", "D3.GenophageCure"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to the asari councilor on the Citadel",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Citadel3.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Thank you.\""
+				}, {
+					"id": "M3.2.Citadel3.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Now you decide to help?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "If the Genophage cure was sabotaged and Wrex survived Game 1, he will attack Shepard at the Normandy dock during this visit",
+				"options": [{
+					"id": "M3.2.Citadel3.R2",
+					"type": "Renegade",
+					"value": 0,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Shoot Wrex, wounding him."
+				}, {
+					"id": "M3.2.Citadel3.R3",
+					"type": "Renegade",
+					"value": 0,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Shoot Wrex, sending him off the balcony to his death."
+				}]
+			}
+
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Rannoch"
@@ -1905,6 +2227,190 @@
 		"sideEffects": [
 			"You may want to replay the intial temple scene a few times with different squad combinations. Javik in particular is good company here."
 		],
+		"conversationRewards": [{
+			"set": {
+				"context": "To Liara on the shuttle down",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Thessia.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We'll save them.\" or (with Javik) \"We can't forget the dead.\""
+				}, {
+					"id": "M3.2.Thessia.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Block it out.\" or (with Javik) \"Listen to him.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Once on the ground, speaking to Lieutenant Kurin",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.Thessia.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm looking for an artifact.\""
+						}, {
+							"id": "M3.2.Thessia.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Just follow your orders.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.Thessia.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"The crucible can.\" or (with Javik) \"We have the Crucible.\""
+						}, {
+							"id": "M3.2.Thessia.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I've beaten Reapers before.\" or (with Javik) \"Listen to him.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "To the last surviving asari of Outpost Tychus",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Thessia.P7",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We could use their help.\""
+				}, {
+					"id": "M3.2.Thessia.R7",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"No choice.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the prothean VI, Vendetta",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.Thessia.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"But we need your help.\""
+						}, {
+							"id": "M3.2.Thessia.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"It isn't over yet!\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.Thessia.P9",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Give us a chance.\""
+						}, {
+							"id": "M3.2.Thessia.R9",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"They weren't me.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to the hologram of the Illusive Man",
+				"options": [{
+					"set": {
+						"context": "\"Whose side are you on?\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.Thessia.P10",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm X_*",
+							"trigger": "\"We need to work together.\""
+						}, {
+							"id": "M3.2.Thessia.R10",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate X_*",
+							"trigger": "\"Listen to yourself!\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.2.Thessia.P11",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You've lost touch.\""
+						}, {
+							"id": "M3.2.Thessia.R11",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I used to trust you.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Liara in the War Room",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Thessia.P12",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"No, I should have known.\""
+				}, {
+					"id": "M3.2.Thessia.R12",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Not good enough!\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After Traynor points to Sanctuary as a lead to Cerberus headquarters",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Thessia.P13",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Good job, let's make it count.\""
+				}, {
+					"id": "M3.2.Thessia.R13",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"We've got our destination.\""
+				}]
+			}
+		}, {
+			"id": "M3.2.Thessia.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the mission.)"
+		}, {
+			"context": "Speaking to Admiral Anderson after",
+			"id": "M3.2.Thessia.P101",
+			"type": "Paragade",
+			"value": 2,
+			"trigger": "(Any conversation option.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel III"
@@ -1957,6 +2463,52 @@
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Horizon"],
 		"relatedDecisionIds": ["D2.MirandaLoyalty", "D2.Miranda", "D3.Miranda"],
+		"conversationRewards": [{
+			"set": {
+				"context": "When Henry Lawson takes Oriana hostage",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.2.Horizon.P10",
+					"type": "Paragon",
+					"value": 0,
+					"context": "*_Charm Lawson_*",
+					"trigger": "\"I can be reasonable.\""
+				}, {
+					"id": "M3.2.Horizon.R11",
+					"type": "Renegade",
+					"value": 0,
+					"context": "*_Intimidate Lawson_*",
+					"trigger": "\"I will hunt you down.\""
+				}, {
+					"set": {
+						"options": [{
+							"id": "M3.2.Horizon.R20",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*Renegade Interrupt*",
+							"trigger": "Shoot Oriana in the leg."
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "M3.2.Horizon.R21",
+									"type": "Renegade",
+									"value": 0,
+									"context": "*Renegade Interrupt*",
+									"trigger": "Shoot Lawson. (Requires first interrupt, and Miranda can't be present.)"
+								}, {
+									"id": "M3.2.Horizon.R22",
+									"type": "Renegade",
+									"value": 0,
+									"context": "*Renegade Interrupt*",
+									"trigger": "Second chance: shoot Lawson as he flees. (Requires first interrupt, and Miranda can't be present.)"
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Thessia"
@@ -2035,6 +2587,94 @@
 		"reward": "55,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Cerberus_Headquarters"],
 		"relatedDecisionIds": ["D2.LegionCerberus", "D3.GrissomAcademy"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to the Illusive Man",
+				"options": [{
+					"set": {
+						"context": "\"So what is it?\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.3.CerberusHQ.P1",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm the Illusive Man_*",
+							"trigger": "\"It's not too late to help me.\""
+						}, {
+							"id": "M3.3.CerberusHQ.R1",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate the Illusive Man_*",
+							"trigger": "\"You're in this for yourself.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.3.CerberusHQ.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You'll never change.\""
+						}, {
+							"id": "M3.3.CerberusHQ.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I can't help you anymore.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.3.CerberusHQ.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Why all the secrecy?\""
+						}, {
+							"id": "M3.3.CerberusHQ.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"It's a bit late.\" or \"This is critical information.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Defeating Kai Leng",
+				"options": [{
+					"id": "M3.3.CerberusHQ.P5",
+					"type": "Renegade",
+					"value": 0,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Smash his sword."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Vendetta",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.3.CerberusHQ.R10",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Interrupt to insist you will stop the Reapers."
+				}, {
+					"id": "M3.3.CerberusHQ.P10",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Interrupt to say the protheans did not fail."
+				}]
+			}
+		}, {
+			"id": "M3.3.CerberusHQ.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the mission.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Horizon"
@@ -2091,6 +2731,226 @@
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Earth"],
 		"relatedDecisionIds": ["D3.Cortez", "D3.Control", "D3.Synthesis", "D3.Destroy", "D3.Refusal"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Greeting Anderson on the shuttle to the London base",
+				"options": [{
+					"id": "M3.3.Earth.P1",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Hug Anderson."
+				}, {
+					"set": {
+						"context": "\"How did you last so long?\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.3.Earth.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You did more than hold on.\""
+						}, {
+							"id": "M3.3.Earth.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"We expected nothing less.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.3.Earth.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Everyone's prepared for this.\""
+						}, {
+							"id": "M3.3.Earth.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"They know it's do or die.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Major Coats",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.3.Earth.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You think so?\""
+				}, {
+					"id": "M3.3.Earth.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"They shouldn't need me.\""
+				}]
+			}
+		}, {
+			"context": "Speaking to James",
+			"id": "M3.3.Earth.P10",
+			"type": "Paragade",
+			"value": 2,
+			"trigger": "(Any conversation choice)"
+		}, {
+			"set": {
+				"context": "Speaking to Garrus",
+				"options": [{
+					"id": "M3.3.Earth.P15",
+					"type": "Paragade",
+					"value": 2,
+					"trigger": "(Any conversation choice)"
+				}, {
+					"id": "M3.3.Earth.P17",
+					"type": "Paragon",
+					"value": 0,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Leave Garrus with some kind (but grim) last words."
+				}]
+			}
+		}, {
+			"context": "Speaking to Liara",
+			"id": "M3.3.Earth.P20",
+			"type": "Paragade",
+			"value": 2,
+			"trigger": "(Any conversation choice)"
+		}, {
+			"set": {
+				"context": "Speaking to Javik",
+				"options": [{
+					"id": "M3.3.Earth.P25",
+					"type": "Paragade",
+					"value": 2,
+					"trigger": "(Any conversation choice)"
+				}, {
+					"id": "M3.3.Earth.P12",
+					"type": "Paragon",
+					"value": 0,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Shake Javik's hand."
+				}]
+			}
+		}, {
+			"context": "Speaking to Tali",
+			"id": "M3.3.Earth.P30",
+			"type": "Paragade",
+			"value": 2,
+			"trigger": "(Any conversation choice)"
+		}, {
+			"context": "Speaking to EDI",
+			"id": "M3.3.Earth.P35",
+			"type": "Paragade",
+			"value": 2,
+			"trigger": "(Any conversation choice)"
+		}, {
+			"set": {
+				"context": "Speaking to the assembled team",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.3.Earth.P40",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'm proud of all of you.\""
+				}, {
+					"id": "M3.3.Earth.R40",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"No one hold back.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Anderson over the comms on the Citadel",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "M3.3.Earth.P45",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I've been better.\""
+				}, {
+					"id": "M3.3.Earth.R45",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'm okay.\""
+				}]
+			}
+		}, {
+			"id": "M3.3.Earth.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Reaching the Citadel.)"
+		}, {
+			"set": {
+				"context": "Speaking to the Illusive Man",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.3.Earth.P101",
+							"type": "Paragon",
+							"value": 0,
+							"context": "*_Charm the Illusive Man*",
+							"trigger": "\"You didn't earn this power.\""
+						}, {
+							"id": "M3.3.Earth.R101",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*_Intimidate the Illusive Man*",
+							"trigger": "\"You're power hungry.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.3.Earth.P102",
+							"type": "Paragon",
+							"value": 0,
+							"context": "*_Charm the Illusive Man*",
+							"trigger": "\"And what if you're wrong?\""
+						}, {
+							"id": "M3.3.Earth.R102",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*_Intimidate the Illusive Man*",
+							"trigger": "\"So what are you waiting for?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "M3.3.Earth.P103",
+							"type": "Paragon",
+							"value": 0,
+							"context": "*_Charm the Illusive Man*",
+							"trigger": "\"But you already have.\""
+						}, {
+							"id": "M3.3.Earth.R103",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*_Intimidate the Illusive Man*",
+							"trigger": "\"Then you've failed humanity.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "M3.3.Earth.R105",
+			"type": "Renegade",
+			"value": 5,
+			"context": "*Renegade Interrupt*",
+			"trigger": "Shoot the Illusive Man (or he kills Anderson)."
+		}, {
+			"id": "M3.3.Earth.R106",
+			"type": "Renegade",
+			"value": 5,
+			"context": "*Renegade Interrupt*",
+			"trigger": "Shoot the Illusive Man (or he kills you)."
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Cerberus Headquarters"
@@ -2213,7 +3073,7 @@
 		"description": "Anderson is dead when Hackett wakes you on the comms, warning you that the Crucible has not been activated. The Catalyst (aka the God Child), in the form of the boy you saw die on Earth, will approach. He delivers a long speech about the Reapers purpose, which is hardly necessary after [megametracker://mission?id=DLC3.Leviathan]. He then explains your choices for how to end the war. Pick a color.",
 		"sideEffects": [
 			"Listen carefully to the God Child's voice and you will hear echoes of BroShep and FemShep under the child's voice. It's pretty cool.",
-			"If you, like most people, hate all the endings offered, you might want to read what the lead writer for Games 1 and 2 said about his original ideas for the ending and Dark Energy/Biotics [EuroGamer Interview|https://www.eurogamer.net/articles/2013-06-19-ex-bioware-writer-discusses-dropped-ideas-for-mass-effect-trilogy-ending], or the [Indoctrination Theory|https://gamerant.com/mass-effect-3-ending-indoctrination-theory-spoilers-benk-139605/].",
+			"If you, like most people, hate all the endings offered, you might want to read what the lead writer for Games 1 and 2 said about his original ideas for the ending and Dark Energy/Biotics [EuroGamer Interview|https://www.eurogamer.net/articles/2013-06-19-ex-bioware-writer-discusses-dropped-ideas-for-mass-effect-trilogy-ending], or the [Indoctrination Theory|https://gamerant.com/mass-effect-3-ending-indoctrination-theory-spoilers-benk-139605/]. Dark Energy shows up as a destructive force in Mass Effect: Andromeda, so we may still get some closure on this storyline.",
 			"You also might try the Refusal Ending: [YouTube|https://www.youtube.com/watch?v=WFwsL-bj4Mo]."
 		]
 	}, {

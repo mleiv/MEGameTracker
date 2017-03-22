@@ -644,6 +644,12 @@
 		"reward": "10,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Cerberus_Lab"],
 		"relatedMissionIds": ["A3.AlienMediGel"],
+		"conversationRewards": [{
+			"id": "A3.N7CerberusLab.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -661,6 +667,12 @@
 		"reward": "10,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Cerberus_Attack"],
 		"relatedMissionIds": ["A3.PowerGrid"],
+		"conversationRewards": [{
+			"id": "A3.N7CerberusAttack.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh"
@@ -702,6 +714,12 @@
 		"reward": "10,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Cerberus_Abductions"],
 		"relatedMissionIds": ["A3.BenningEvidence"],
+		"conversationRewards": [{
+			"id": "A3.N7CerberusAbductions.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Attican Traverse: Krogan Team or Tuchanka: Turian Platoon"
@@ -719,6 +737,12 @@
 		"reward": "10,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Cerberus_Fighter_Base"],
 		"relatedMissionIds": ["A3.HeatingUnit"],
+		"conversationRewards": [{
+			"id": "A3.N7CerberusFighterBase.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Tuchanka"
@@ -736,6 +760,12 @@
 		"reward": "10,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Fuel_Reactors"],
 		"relatedMissionIds": ["A3.ChemicalTreatment"],
+		"conversationRewards": [{
+			"id": "A3.N7FuelReactors.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Geth Dreadnought"
@@ -793,6 +823,12 @@
 		"reward": "10,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Communication_Hub"],
 		"relatedMissionIds": ["A3.CerberusCiphers"],
+		"conversationRewards": [{
+			"id": "A3.N7CommunicationHub.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Thessia"
@@ -1040,6 +1076,135 @@
 		"reward": "12,500 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Rannoch:_Geth_Fighter_Squadrons"],
 		"relatedMissionIds": ["A3.ReaperCodeFragments"],
+		"conversationRewards": [{
+			"set": {
+				"context": "On the shuttle down, to Legion/Geth VI",
+				"options": [{
+					"set": {
+						"context": "(Optional) \"How would it even work?\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.GethFighterSquadrons.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I do trust you.\""
+						}, {
+							"id": "A3.GethFighterSquadrons.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You're asking for a lot.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.GethFighterSquadrons.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Whatever it takes.\" or \"Sounds like a plan.\""
+						}, {
+							"id": "A3.GethFighterSquadrons.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"This better work.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After landing on the planet, to Legion/Geth VI",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.GethFighterSquadrons.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"That's unfortunate.\""
+				}, {
+					"id": "A3.GethFighterSquadrons.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Good.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Before leaving the planet, to Legion/Geth VI",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.GethFighterSquadrons.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'll take your word for it.\" or \"I can sympathize with that.\""
+				}, {
+					"id": "A3.GethFighterSquadrons.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I shouldn't have trusted you.\""
+				}]
+			}
+		}, {
+			"id": "A3.GethFighterSquadrons.PR100",
+			"type": "Paragade",
+			"value": 10,
+			"trigger": "(Completing the assignment.)"
+		}, {
+			"set": {
+				"context": "Speaking to Admiral Raan on the Normandy, either at the end of Rannoch: Geth Fighter Squadrons or at the end of Rannoch: Admiral Koris (depending on which is completed first)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.GethFighterSquadrons.P5A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Good. We can end this war.\""
+						}, {
+							"id": "A3.GethFighterSquadrons.R5A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Good. We can destroy the geth.\""
+						}, {
+							"id": "A3.GethFighterSquadrons.P5B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Is that a problem?\" and \"I agree.\""
+						}, {
+							"id": "A3.GethFighterSquadrons.R5B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Is that a problem?\" and \"No.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.GethFighterSquadrons.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I don't want them destroyed.\""
+						}, {
+							"set": {
+								"options": [{
+									"id": "A3.GethFighterSquadrons.R6A",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"The geth need to die.\""
+								}, {
+									"id": "A3.GethFighterSquadrons.R6B",
+									"type": "Renegade",
+									"value": 2,
+									"context": "*Renegade Interrupt*",
+									"trigger": "Tell Legion all the geth must be destroyed."
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Geth Dreadnought"
@@ -1064,6 +1229,172 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Rannoch:_Admiral_Koris"],
 		"relatedMissionIds": ["A3.TargetJammingTechnology"],
 		"relatedDecisionIds": ["D3.Koris"],
+		"conversationRewards": [{
+			"set": {
+				"context": "On the shuttle down, to Admiral Xen",
+				"options": [{
+					"set": {
+						"context": "(Optional) \"Why is Koris so vital?\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.AdmiralKoris.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I don't blame them.\""
+						}, {
+							"id": "A3.AdmiralKoris.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"That's suicide.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.AdmiralKoris.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Protect your civilians.\""
+						}, {
+							"id": "A3.AdmiralKoris.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Koris could be dead.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "On Rannoch, to wounded Dorn'Hazt",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.AdmiralKoris.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Stay still.\""
+				}, {
+					"id": "A3.AdmiralKoris.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Where's the Admiral?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Radio to Admiral Koris",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.AdmiralKoris.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We're on our way.\""
+				}, {
+					"id": "A3.AdmiralKoris.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Hold them off.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When Admiral Koris asks you to save his team instead",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"options": [{
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A3.AdmiralKoris.P5A",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"We'll save them.\""
+								}, {
+									"id": "A3.AdmiralKoris.R5A",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"Your people will be proud.\""
+								}]
+							}
+						}, {
+							"id": "A3.AdmiralKoris.PR5",
+							"type": "Paragade",
+							"value": 5,
+							"trigger": "(Completing the conversation.)"
+						}]
+					}
+				}, {
+					"id": "A3.AdmiralKoris.P5B",
+					"type": "Paragon",
+					"value": 15,
+					"context": "*_Charm Koris_*",
+					"trigger": "\"We need a peacemaker.\""
+				}, {
+					"id": "A3.AdmiralKoris.R5B",
+					"type": "Renegade",
+					"value": 15,
+					"context": "*_Intimidate Koris_*",
+					"trigger": "\"You're a coward.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Admiral Raan on the Normandy, either at the end of Rannoch: Geth Fighter Squadrons or at the end of Rannoch: Admiral Koris (depending on which is completed first)",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.GethFighterSquadrons.P5A",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Good. We can end this war.\""
+						}, {
+							"id": "A3.GethFighterSquadrons.R5A",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Good. We can destroy the geth.\""
+						}, {
+							"id": "A3.GethFighterSquadrons.P5B",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Is that a problem?\" and \"I agree.\""
+						}, {
+							"id": "A3.GethFighterSquadrons.R5B",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Is that a problem?\" and \"No.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.GethFighterSquadrons.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I don't want them destroyed.\""
+						}, {
+							"set": {
+								"options": [{
+									"id": "A3.GethFighterSquadrons.R6A",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"The geth need to die.\""
+								}, {
+									"id": "A3.GethFighterSquadrons.R6B",
+									"type": "Renegade",
+									"value": 2,
+									"context": "*Renegade Interrupt*",
+									"trigger": "Tell Legion all the geth must be destroyed."
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Geth Dreadnought"
@@ -1188,6 +1519,217 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Grissom_Academy:_Emergency_Evacuation"],
 		"relatedMissionIds": ["A3.BioticAmp"],
 		"relatedDecisionIds": ["D2.Jack", "D2.ArcherD", "D3.GrissomStudents"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Kahlee Sanders",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.GrissomAcademy.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"That's dangerous for students.\" or \"What's this about students?\""
+				}, {
+					"id": "A3.GrissomAcademy.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Good. We can use them.\" or \"Tell me about the students.\""
+				}]
+			}
+		}, {
+			"context": "Rescuing Reiley Bellarmine",
+			"id": "A3.GrissomAcademy.P5",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Send to Kahlee for help.)"
+		}, {
+			"context": "Rescuing Seanne Bellarmine",
+			"id": "A3.GrissomAcademy.P10",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Send to Kahlee for help.)"
+		}, {
+			"set": {
+				"context": "In Orion Hall",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"context": "Speaking to Jack",
+						"options": [{
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A3.GrissomAcademy.P15",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"I know.\""
+								}, {
+									"id": "A3.GrissomAcademy.R15",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"Pull yourself together.\""
+								}]
+							}
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A3.GrissomAcademy.P16",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"Good.\""
+								}, {
+									"id": "A3.GrissomAcademy.R16",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"That's crazy.\""
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"context": "If Jack died in Game 2",
+						"options": [{
+							"set": {
+								"context": "Speaking to Prangley",
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A3.GrissomAcademy.P17",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"I'm here to help.\""
+								}, {
+									"id": "A3.GrissomAcademy.R17",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"Officers don't guess.\""
+								}]
+							}
+						}, {
+							"set": {
+								"context": "Speaking to Rodriguez",
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A3.GrissomAcademy.P18",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"It has to stay with you.\""
+								}, {
+									"id": "A3.GrissomAcademy.R18",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"Don't regret what you've done.\""
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Before splitting up to attack Cerberus in the atrium",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.GrissomAcademy.P20",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Don't take any risks.\""
+						}, {
+							"id": "A3.GrissomAcademy.R20",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Do some damage.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.GrissomAcademy.P21",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You can do this.\""
+						}, {
+							"id": "A3.GrissomAcademy.R21",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"They're lying.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Rescuing Octavia",
+				"options": [{
+					"set": {
+						"context": "(If David Archer is dead)",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.GrissomAcademy.P21",
+							"type": "Paragon",
+							"value": 5,
+							"trigger": "(Contact Kahlee Sanders.)"
+						}, {
+							"id": "A3.GrissomAcademy.R21",
+							"type": "Renegade",
+							"value": 5,
+							"trigger": "(Destroy the shield.)"
+						}]
+					}
+				}, {
+					"set": {
+						"context": "(If David Archer is present)",
+						"options": [{
+							"id": "A3.GrissomAcademy.R20",
+							"type": "Paragade",
+							"value": 5,
+							"trigger": "(Send to Kahlee for help.)"
+						}, {
+							"set": {
+								"context": "To David",
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A3.GrissomAcademy.P25",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"Are you ok?\""
+								}, {
+									"id": "A3.GrissomAcademy.R25",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"We need your mind.\""
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Leaving in the shuttle",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.GrissomAcademy.P30",
+					"type": "Paragon",
+					"value": 0,
+					"trigger": "\"We'll keep them safe.\" or (with Jack) \"We'll use them as support.\""
+				}, {
+					"id": "A3.GrissomAcademy.R30",
+					"type": "Renegade",
+					"value": 0,
+					"trigger": "\"We'll need their firepower.\" or (with Jack) \"They're ready for battle.\""
+				}]
+			}
+		}, {
+			"id": "A3.GrissomAcademy.P35",
+			"type": "Paragon",
+			"value": 0,
+			"context": "*Paragon Interrupt*",
+			"trigger": "Kiss Jack."
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
