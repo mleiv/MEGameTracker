@@ -13,8 +13,8 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Ashley.png",
 		"voiceActor": "Kimberly Brooks",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Ashley_Williams"],
-		"relatedMissionIds": ["M1.Prologue", "M1.Virmire.10"],
-		"relatedDecisionIds": ["D1.Ashley", "D1.LoveAshley", "D3.LoveAshley"],
+		"relatedMissionIds": ["M1.Prologue", "M1.Virmire.10", "M2.Horizon", "M3.2.Citadel2", "A3.Convo.S.Ashley"],
+		"relatedDecisionIds": ["D1.Ashley", "D1.LoveAshley", "D3.AshleyKaidanParagon", "D3.LoveAshley", "D3.AshleyKaidan"],
 		"loveInterestDecisionId": "D1.LoveAshley",
 		"sideEffects": [
 			"If you make bad decisions in Game 3, you are forced to kill Ashley during [megametracker://mission?id=M3.2.Citadel2]: [YouTube|https://www.youtube.com/watch?v=ljXiscn5hjE]."
@@ -45,8 +45,8 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Garrus.png",
 		"voiceActor": "Brandon Keener",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Garrus_Vakarian"],
-		"relatedMissionIds": ["M1.Garrus", "A1.L.FindDrSaleon"],
-		"relatedDecisionIds": ["D2.LoveGarrus", "D2.Garrus", "D3.LoveGarrus"],
+		"relatedMissionIds": ["M1.Garrus", "A1.L.FindDrSaleon", "A2.Convo.Garrus", "A3.Convo.S.Garrus"],
+		"relatedDecisionIds": ["D2.LoveGarrus", "D2.Garrus", "D3.GarrusShooting", "D3.LoveGarrus"],
 		"gameVersionData": {
 			"1": {
 				"organization": "C-Sec"
@@ -80,8 +80,8 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Kaidan.png",
 		"voiceActor": "Raphael Sbarge",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kaidan_Alenko"],
-		"relatedMissionIds": ["M1.Prologue", "M1.Virmire.10"],
-		"relatedDecisionIds": ["D1.Kaidan", "D1.LoveKaidan", "D3.LoveKaidan"],
+		"relatedMissionIds": ["M1.Prologue", "M1.Virmire.10", "M2.Horizon", "M3.2.Citadel2", "A3.Convo.S.Kaidan"],
+		"relatedDecisionIds": ["D1.Kaidan", "D1.LoveKaidan", "D3.AshleyKaidanParagon", "D3.LoveKaidan", "D3.AshleyKaidan"],
 		"loveInterestDecisionId": "D1.LoveKaidan",
 		"sideEffects": [
 			"If you make bad decisions in Game 3, you are forced to kill Kaidan during [megametracker://mission?id=M3.2.Citadel2]: [YouTube|https://www.youtube.com/watch?v=XDnp86lUnB4]."
@@ -115,7 +115,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Liara.png",
 		"voiceActor": "Ali Hillis",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Liara_T%27Soni"],
-		"relatedMissionIds": ["M1.Therum"],
+		"relatedMissionIds": ["M1.Therum", "A2.Convo.Liara", "A3.Convo.S.Liara"],
 		"relatedDecisionIds": ["D1.LoveLiara", "D2.LoveLiara", "D3.LoveLiara"],
 		"loveInterestDecisionId": "D1.LoveLiara",
 		"gameVersionData": {
@@ -145,7 +145,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Tali.png",
 		"voiceActor": "Ash Sroka",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tali%27Zorah_nar_Rayya"],
-		"relatedMissionIds": ["M1.ExposeSaren.3", "A1.L.TaliAndTheGeth"],
+		"relatedMissionIds": ["M1.ExposeSaren.3", "A1.L.TaliAndTheGeth", "A2.Convo.Tali", "M3.2.GethDreadnought", "M3.2.Rannoch", "A3.Convo.S.Tali"],
 		"relatedDecisionIds": ["D1.TaliData", "D2.TaliLoyalty", "D2.TaliNotExiled", "D2.RaelZorahReputation", "D2.LoveTali", "D2.TaliLegion", "D2.Tali", "D3.LoveTali", "D3.Quarians"],
 		"gameVersionData": {
 			"2": {
@@ -172,7 +172,7 @@
 		"organization": null,
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Wrex.png",
 		"voiceActor": "Steven Barr",
-		"relatedLinks": ["https://masseffect.wikia.com/wiki/Urdnot_Wrex"],
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Urdnot_Wrex", "A3.Convo.A.Wrex"],
 		"relatedMissionIds": ["M1.ShadowBroker", "A1.L.WrexFamilyArmor", "A1.V.WrexAndTheGenophage", "A2.L.Grunt", "A2.L.Mordin", "M3.1.Tuchanka"],
 		"relatedDecisionIds": ["D1.WrexArmor", "D1.Wrex"],
 		"sideEffects": [
@@ -272,8 +272,8 @@
 		"organization": null,
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1RachniQueen.png",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Rachni_Queen"],
-		"relatedMissionIds": ["M1.Noveria.10RiftStation"],
-		"relatedDecisionIds": ["D1.RachniQueen"],
+		"relatedMissionIds": ["M1.Noveria.10RiftStation", "A3.KroganTeam"],
+		"relatedDecisionIds": ["D1.RachniQueen", "D3.RachniQueen"],
 		"sideEffects": ["If the Rachni Queen survived, in Game 2 she sends an asari agent to thank Shepard on Illium."],
 		"gameVersionData": {
 			"3": {
@@ -394,10 +394,11 @@
 		"voiceActor": "Jeff Page",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Conrad_Verner"],
 		"relatedDecisionIds": ["D1.Conrad", "D2.Conrad", "D3.Conrad"],
-		"relatedMissionIds": ["A1.C1.TheFan", "TODO:GAME2", "TODO:GAME3"],
+		"relatedMissionIds": ["A1.C1.TheFan", "A2.I.ATroublemaker", "A3.MediGelSabotage"],
 		"sideEffects": [
 			"If Shepard helps Conrad in all three games, but doesn't help [Jenna|megametracker://person?id=O1.Jenna] in Game 1, Conrad will die in Game 3 saving Shepard's life.",
-			"In the *Mass Effect: New Earth* ride at Great America, Conrad is now a ship's captain, taking prospective buyers on your basic timeshare sales tour of Terra Nova."
+			"In the *Mass Effect: New Earth* ride at Great America, Conrad is now a ship's captain, taking prospective buyers on your basic timeshare sales tour of Terra Nova.",
+			"You can find his sister Cassandra in Mass Effect: Andromeda at the Tartarus bar on Kadara."
 		],
 		"gameVersionData": {
 			"2": {
@@ -419,8 +420,9 @@
 		"organization": "Systems Alliance",
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Chakwas.png",
 		"voiceActor": "Carolyn Seymour",
-		"relatedMissionIds": [],
+		"relatedMissionIds": ["A2.N.SerriceIceBrandy", "A3.MedicalSupplies", "A3.Convo.A.Chakwas"],
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dr._Karin_Chakwas"],
+		"relatedDecisionIds": ["D3.Chakwas"],
 		"gameVersionData": {
 			"2": {
 				"organization": "Cerberus",
@@ -484,7 +486,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Joker.png",
 		"voiceActor": "Seth Green",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jeff_%22Joker%22_Moreau"],
-		"relatedMissionIds": ["M2.CollectorBase.1"],
+		"relatedMissionIds": ["M2.CollectorBase.1", "A3.Convo.C.Joker"],
 		"relatedDecisionIds": ["D3.EdiJoker"],
 		"gameVersionData": {
 			"2": {
@@ -508,7 +510,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Kirrahe.png",
 		"voiceActor": "George Szilagyi",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kirrahe"],
-		"relatedMissionIds": ["A1.V.AssistingKirrahesTeam"],
+		"relatedMissionIds": ["A1.V.AssistingKirrahesTeam", "A2.Convo.Mordin.1", "M3.1.SurKesh"],
 		"relatedDecisionIds": ["D1.Kirrahe"],
 		"gameVersionData": {
 			"3": {
@@ -534,7 +536,8 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Michel.png",
 		"voiceActor": "Jan Alexandra Smith",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dr._Chloe_Michel"],
-		"relatedMissionIds": ["M1.Garrus.2", "A1.C1.DoctorMichel"],
+		"relatedMissionIds": ["M1.Garrus.2", "A1.C1.DoctorMichel", "A3.MedicalSupplies", "A3.Convo.A.Michel"],
+		"relatedDecisionIds": ["D3.Michel"],
 		"sideEffects": [
 			"If Shepard completed [megametracker://mission?id=A1.C1.DoctorMichel] in Game 1, Dr. Michel sends an email in Game 2, asking for help getting in touch with Garrus (whom she seems to have a bit of a crush on).",
 			"If Shepard brings Tali and Garrus along for [megametracker://mission?id=M3.2.GethDreadnought], Garrus mentions that Dr. Michel gave him a box of turian chocolates and Tali mocks this. \n\nIf Shepard listens in to Michel's conversations with [megametracker://person?id=P1.Adams], she explains the chocolates away and insists that Garrus is just a friend."
@@ -602,7 +605,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game1/1Udina.png",
 		"voiceActor": "Bill Ratner",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Donnel_Udina"],
-		"relatedMissionIds": [],
+		"relatedMissionIds": ["A1.T.UdinaOnFeros", "M3.2.Citadel2"],
 		"relatedDecisionIds": ["D1.Udina"],
 		"gameVersionData": {
 			"2": {

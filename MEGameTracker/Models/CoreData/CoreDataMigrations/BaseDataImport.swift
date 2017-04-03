@@ -72,6 +72,7 @@ public struct BaseDataImport: CoreDataMigrationType {
 		(type: .mission, filename: "DataMissions_2Misc", progress: 5),
 		(type: .mission, filename: "DataMissions_3", progress: 2),
 		(type: .mission, filename: "DataMissions_3Assignments", progress: 5),
+		(type: .mission, filename: "DataMissions_3Convos", progress: 5),
 		(type: .mission, filename: "DataMissions_3Misc", progress: 5),
 	]
 
@@ -95,7 +96,6 @@ public struct BaseDataImport: CoreDataMigrationType {
 }
 
 extension BaseDataImport {
-
 	func importDataFiles(progress: Double, progressTotal: Double) {
 		var progress = progress
 		fireProgress(progress: progress, progressTotal: progressTotal)
@@ -196,7 +196,6 @@ extension BaseDataImport {
 }
 
 extension BaseDataImport {
-
 	func processImportedMapData(
 		queue: DispatchQueue,
 		updateProgress: @escaping ((Double, Bool) -> Void)

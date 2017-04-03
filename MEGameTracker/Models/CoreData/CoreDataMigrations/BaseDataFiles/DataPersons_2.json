@@ -11,7 +11,7 @@
 		"voiceActor": "Steven Blum",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Grunt"],
 		"relatedDecisionIds": ["D2.GruntLoyalty", "D2.Grunt"],
-		"relatedMissionIds": ["A2.D.Grunt", "A2.L.Grunt"],
+		"relatedMissionIds": ["A2.D.Grunt", "A2.L.Grunt", "A2.Convo.Grunt"],
 		"gameVersionData": {
 			"3": {
 				"name": "Urdnot Grunt",
@@ -34,7 +34,7 @@
 		"voiceActor": "Courtenay Taylor",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jack"],
 		"relatedDecisionIds": ["D2.JackLoyalty", "D2.LoveJack", "D2.MirandaJack", "D2.Jack", "D3.GrissomAcademy", "D3.LoveJack"],
-		"relatedMissionIds": ["A2.D.Jack", "A2.L.Jack", "A3.GrissomAcademy"],
+		"relatedMissionIds": ["A2.D.Jack", "A2.L.Jack", "A2.Convo.Jack", "A3.GrissomAcademy", "A3.Convo.A.Jack"],
 		"sideEffects": [
 			"If Shepard fails to save Jack at Grissom Academy, Shepard will face her as a Phantom in the attack on Cerberus Headquarters: [YouTube|https://www.youtube.com/watch?v=yPJj8efNskM]."
 		],
@@ -67,7 +67,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Jacob.png",
 		"voiceActor": "Adam Lazarre-White",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Jacob_Taylor"],
-		"relatedMissionIds": ["A2.L.Jacob", "A3.ExCerberusScientists"],
+		"relatedMissionIds": ["A2.L.Jacob", "A2.Convo.Jacob", "A3.ExCerberusScientists", "A3.Convo.A.Jacob"],
 		"relatedDecisionIds": ["D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3", "D2.JacobLoyalty", "D2.LoveJacob", "D2.Jacob"],
 		"sideEffects": [
 			"If Jacob survives Game 2, he leaves Cerberus and can be found defending the ex-Cerberus scientists hiding on Gellix.\n\n After rescuing the scientists, Jacob reveals to Shepard at Huerta Memorial Hospital that [megametracker://person?id=O3.Brynn] is pregnant with their child and she wants to name it after Shepard. Jacob does not."
@@ -120,8 +120,8 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Legion.png",
 		"voiceActor": "D. C. Douglas",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Legion"],
-		"relatedMissionIds": ["M2.ReaperIFF", "A2.L.Legion"],
-		"relatedDecisionIds": ["D2.LegionCerberus", "D2.TaliLegion", "D2.LegionLoyalty", "D2.Heretics", "D2.Legion"],
+		"relatedMissionIds": ["M2.ReaperIFF", "A2.L.Legion", "A2.Convo.Legion", "M3.2.GethDreadnought", "A3.GethFighterSquadrons", "M3.2.Rannoch", "M3.3.CerberusHQ.3"],
+		"relatedDecisionIds": ["D2.LegionCerberus", "D2.TaliLegion", "D2.LegionLoyalty", "D2.Heretics", "D2.Legion", "D3.Legion", "D3.GethIntelligent"],
 		"sideEffects": [
 			"If you give Legion to Cerberus, it will be part of the enemy forces in [megametracker://mission?id=M3.3.CerberusHQ]: [YouTube|https://www.youtube.com/watch?v=Eln_8EN6Bz0]."
 		],
@@ -145,7 +145,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Miranda.png",
 		"voiceActor": "Yvonne Strahovski",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Miranda_Lawson"],
-		"relatedMissionIds": ["A2.L.Miranda", "M3.2.Horizon"],
+		"relatedMissionIds": ["A2.L.Miranda", "A2.Convo.Miranda", "M3.2.Horizon", "A3.Convo.A.Miranda"],
 		"relatedDecisionIds": ["D2.MirandaLoyalty", "D2.LoveMiranda", "D2.MirandaJack", "D2.Miranda", "D3.LoveMiranda", "D3.Miranda"],
 		"sideEffects": [
 			"If you fail to complete the required actions for her survival, Miranda will die trying to save her sister Oriana during [megametracker://mission?id=M3.2.Horizon]: [YouTube|https://www.youtube.com/watch?v=Mn6KmahkCA0]."
@@ -179,7 +179,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Mordin.png",
 		"voiceActor": "Michael Beattie",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mordin_Solus"],
-		"relatedMissionIds": ["A2.D.Mordin", "A2.L.Mordin", "M3.1.SurKesh", "M3.1.Tuchanka"],
+		"relatedMissionIds": ["A2.D.Mordin", "A2.L.Mordin", "A2.Convo.Mordin", "M3.1.SurKesh", "M3.1.Tuchanka"],
 		"relatedDecisionIds": ["D1.Wrex", "D2.MordinLoyalty", "D2.Mordin", "D2.MaelonsData", "D3.Eve", "D3.Mordin"],
 		"sideEffects": [
 			"There are many possible outcomes for Mordin in Game 3, depending on choices throughout all the prior games. The only way to save him is to kill Wrex and Eve and the Genophage cure ([YouTube|https://www.youtube.com/watch?v=RKve3voj19A]). If you make all the right choices to save Wrex and Eve and then Renegade Mordin until the very last option, he will apologize for creating the Genophage and die a noble death releasing the cure, and we will all cry buckets of tears."
@@ -205,7 +205,7 @@
 		"voiceActor": "Maggie Baird",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Samara"],
 		"relatedDecisionIds": ["D2.SamaraMorinth", "D2.SamaraLoyalty", "D2.LoveSamara", "D2.Samara", "D3.LoveSamara"],
-		"relatedMissionIds": ["A2.D.Samara", "A2.L.Samara"],
+		"relatedMissionIds": ["A2.D.Samara", "A2.L.Samara", "A2.Convo.Samara", "A3.Convo.A.Samara"],
 		"gameVersionData": {
 			"2": {
 				"isMaleLoveInterest": true,
@@ -237,7 +237,7 @@
 		"voiceActor": "Keythe Farley",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Thane_Krios"],
 		"relatedDecisionIds": ["D2.ThaneLoyalty", "D2.LoveThane", "D2.Thane", "D3.LoveThane"],
-		"relatedMissionIds": ["A2.D.Thane", "A2.L.Thane"],
+		"relatedMissionIds": ["A2.D.Thane", "A2.L.Thane", "A2.Convo.Thane", "M3.2.Citadel2", "A3.Convo.A.Thane"],
 		"gameVersionData": {
 			"2": {
 				"isFemaleLoveInterest": true,
@@ -269,7 +269,8 @@
 		"voiceActor": "Robin Sachs",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Zaeed_Massani"],
 		"relatedDecisionIds": ["D2.ZaeedLoyalty", "D2.Zaeed"],
-		"relatedMissionIds": ["A2.L.Zaeed"],
+		"relatedMissionIds": ["A2.L.Zaeed", "A3.Convo.A.Zaeed"],
+		"sideEffects": ["You can meet Zaeed's don Bain on Eos in Mass Effect: Andromeda."],
 		"gameVersionData": {
 			"3": {
 				"personType": "Associate",
@@ -513,6 +514,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2ShadowBroker.png",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Shadow_Broker"],
 		"voiceActor": "Steve Blum",
+		"sideEffects": ["The Shadow Broker can be heard briefly in Alec Ryder's records as the suppier of his illegal AI prototype in Mass Effect: Andromeda."],
 		"gameVersionData": {
 			"3": {
 				"description": "[Liara|megametracker://person?id=S1.Liara] takes over as the Shadow Broker in Game 3."
@@ -628,7 +630,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Aria.png",
 		"voiceActor": "Carrie-Anne Moss",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Aria_T%27Loak"],
-		"relatedMissionIds": ["DLC3.Omega1", "DLC3.Omega3"],
+		"relatedMissionIds": ["DLC3.Omega1", "DLC3.Omega3", "A3.Convo.A.Aria"],
 		"gameVersionData": {
 			"2": {},
 			"3": {
@@ -650,7 +652,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game2/2Bailey.png",
 		"voiceActor": "Michael Hogan",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Armando-Owen_Bailey"],
-		"relatedMissionIds": ["A2.C.CaptainBailey"],
+		"relatedMissionIds": ["A2.C.CaptainBailey", "M3.2.Citadel2", "A3.Convo.A.Bailey"],
 		"gameVersionData": {
 			"3": {
 				"description": "Now in-charge of the C-Sec operations of the Citadel Embassies quarters, Bailey is an even more valuable friend and resource for Shepard. He is not terribly pleased with the beaurocracy involved with his new position, and he is worried about his family on Earth, whose whereabouts are unknown.",
@@ -677,6 +679,7 @@
 			"If you don't warn Chambers to discguise herself early in Game 3, Cerberus will kill her in the coup (you can hear two bystanders recounting this [YouTube|https://www.youtube.com/watch?v=iR6GzKImbRk])."
 		],
 		"relatedDecisionIds": ["D2.Fish", "D2.LoveKelly", "D3.LoveKelly"],
+		"relatedMissionIds": ["A2.Convo.Kelly", "A3.Convo.A.Kelly"],
 		"gameVersionData": {
 			"2": {
 				"isMaleLoveInterest": true,
@@ -710,7 +713,8 @@
 		"voiceActor": "Dannah Feinglass",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Gabriella_Daniels"],
 		"sideEffects": ["Daniels is one of the crew that is lost if Shepard delays the pursuit through the Omega 4 Relay."],
-		"relatedDecisionIds": ["D2.NormandyCrew"],
+		"relatedDecisionIds": ["D2.NormandyCrew", "D3.DanielsDonnelly"],
+		"relatedMissionIds": ["A3.Convo.C.DanielsDonnelly"],
 		"gameVersionData": {
 			"3": {
 				"description": "Taken into custody when the Alliance siezed the Normandy after Game 2, Daniels and [Donnelly|megametracker://person?id=P2.Donnelly] can be released using Shepard's Spectre privileges, and they rejoin the Normandy crew."
@@ -732,7 +736,8 @@
 		"voiceActor": "John Ullyatt",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kenneth_Donnelly"],
 		"sideEffects": ["Donnelly is one of the crew that is lost if Shepard delays the pursuit through the Omega 4 Relay."],
-		"relatedDecisionIds": ["D2.NormandyCrew"],
+		"relatedDecisionIds": ["D2.NormandyCrew", "D3.DanielsDonnelly"],
+		"relatedMissionIds": ["A3.Convo.C.DanielsDonnelly"],
 		"gameVersionData": {
 			"3": {
 				"description": "Taken into custody when the Alliance siezed the Normandy after Game 2, Donnelly and [Daniels|megametracker://person?id=P2.Daniels] can be released using Shepard's Spectre privileges, and they rejoin the Normandy crew."

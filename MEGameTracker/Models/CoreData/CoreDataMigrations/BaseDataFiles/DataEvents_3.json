@@ -70,8 +70,12 @@
 				"id": "D3.GethFighterSquadrons"
 			},
 			"changes": {
-				"On": { "isSelected": true },
-				"Off": { "isSelected": false }
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
 			}
 		}]
 	}, {
@@ -84,8 +88,12 @@
 				"id": "D3.JammingTower"
 			},
 			"changes": {
-				"On": { "isSelected": true },
-				"Off": { "isSelected": false }
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
 			}
 		}]
 	}, {
@@ -129,7 +137,7 @@
 		"id": "Countdown to Bomb",
 		"gameVersion": "3",
 		"description": "The assignment Tuchanka: Bomb must be completed in the next three missions or it will expire.",
-		"isAlert": true,
+		"isAlert": true
 	}, {
 		"id": "Completed: Tuchanka: Bomb",
 		"gameVersion": "3",
@@ -156,8 +164,13 @@
 				"Completed: Tuchanka: Bomb"
 			]
 		}
+
 	}, {
-		"id": "Completed: Rannoch: Geth Fighter Squandrons or Rannoch: Admiral Koris",
+		"id": "Completed: Medical Supplies",
+		"gameVersion": "3",
+		"description": "[megametracker://mission?id=A3.MedicalSupplies]"
+	}, {
+		"id": "Completed: Rannoch: Geth Fighter Squadrons or Rannoch: Admiral Koris",
 		"gameVersion": "3",
 		"description": "[megametracker://mission?id=A3.GethFighterSquadrons] or [megametracker://mission?id=A3.AdmiralKoris]",
 		"dependentOn": {
@@ -165,6 +178,18 @@
 			"events": [
 				"Completed: Rannoch: Geth Fighter Squandrons",
 				"Completed: Rannoch: Admiral Koris"
+			]
+		}
+	}, {
+		"id": "Completed: Rannoch: Geth Fighter Squadrons and Rannoch: Admiral Koris or Priority: Rannoch",
+		"gameVersion": "3",
+		"description": "[megametracker://mission?id=A3.GethFighterSquadrons] and [megametracker://mission?id=A3.AdmiralKoris] or [megametracker://mission?id=M3.2.Rannoch]",
+		"dependentOn": {
+			"countTo": 2,
+			"events": [
+				"Completed: Rannoch: Geth Fighter Squandrons",
+				"Completed: Rannoch: Admiral Koris",
+				"Completed: Priority: Rannoch"
 			]
 		}
 
@@ -178,10 +203,35 @@
 				"id": "D3.GrissomAcademy"
 			},
 			"changes": {
-				"On": { "isSelected": true },
-				"Off": { "isSelected": false }
+				"On": {
+					"isSelected": true
+				},
+				"Off": {
+					"isSelected": false
+				}
 			}
 		}]
+	}, {
+		"id": "Completed: Ardat-Yakshi Monastery",
+		"gameVersion": "3",
+		"description": "[megametracker://mission?id=A3.ArdatYakshiMonastery]"
+	}, {
+		"id": "Completed: Ex-Cerberus Scientists",
+		"gameVersion": "3",
+		"description": "[megametracker://mission?id=A3.ExCerberusScientists]"
+	}, {
+		"id": "Completed: Citadel DLC 1",
+		"gameVersion": "3",
+		"description": "[megametracker://mission?id=DLC3.Citadel1]"
+	}, {
+		"id": "Completed: Citadel DLC Party",
+		"gameVersion": "3",
+		"description": "[megametracker://mission?id=DLC3.Citadel2.50]"
+	}, {
+		"id": "Completed: Citadel DLC",
+		"gameVersion": "3",
+		"description": "[megametracker://mission?id=DLC3.Citadel1] and [megametracker://mission?id=DLC3.Citadel2]"
+
 
 	}]
 }

@@ -12,7 +12,7 @@ import CloudKit
 final public class GamesDataBackup: SimpleCloudKitManageable {
 	public static var current: SimpleCloudKitManageable = GamesDataBackup()
 	// MARK: customizable
-	public var isLog: Bool = true
+	public var isLog: Bool = false
 	public var postChangeWaitIntervalSeconds: TimeInterval = 60.0 * 5.0 // 5 minute save interval
 	public var subscriptionId: String = "GameData"
 	public var zoneName: String = "GameData"

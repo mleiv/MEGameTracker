@@ -149,7 +149,7 @@
 		"inMapId": "G.Ear.Loc.Sol.Mars",
 		"isShowInParentMap": true,
 		"experience": 2000,
-		"reward": "",
+		"reward": "10,000 Credits (Awarded at Citadel)",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Mars"],
 		"conversationRewards": [{
 			"set": {
@@ -439,11 +439,11 @@
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
 		"experience": 0,
-		"reward": "35,000 Credits",
+		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_The_Citadel_I"],
 		"conversationRewards": [{
 			"set": {
-				"context": "Speaking to Bailey",
+				"context": "Speaking to Bailey when he greets you upon docking",
 				"options": [{
 					"set": {
 						"isExclusiveSet": true,
@@ -463,57 +463,7 @@
 					"id": "M3.0.Citadel1.PR2",
 					"type": "Paragade",
 					"value": 15,
-					"trigger": "(Automatic.)"
-				}]
-			}
-		}, {
-			"context": "Speaking to Dr. Chakwas",
-			"id": "M3.0.Citadel1.PR3",
-			"type": "Paragade",
-			"value": 5,
-			"trigger": "(Automatic.)"
-		}, {
-			"context": "Speaking to Dr. Michel",
-			"id": "M3.0.Citadel1.PR3",
-			"type": "Paragade",
-			"value": 2,
-			"trigger": "(Automatic.)"
-		}, {
-			"set": {
-				"context": "Recruiting Dr. Michel",
-				"isExclusiveSet": true,
-				"options": [{
-					"id": "M3.0.Citadel1.P4",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"Save billions, not hundreds.\""
-				}, {
-					"id": "M3.0.Citadel1.R4",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"Our mission is more important.\""
-				}]
-			}
-		}, {
-			"context": "Visiting Ashley/Kaidan at the hospital",
-			"id": "M3.0.Citadel1.PR5",
-			"type": "Paragade",
-			"value": 2,
-			"trigger": "(Automatic.)"
-		}, {
-			"set": {
-				"context": "Speaking to Bailey at office",
-				"isExclusiveSet": true,
-				"options": [{
-					"id": "M3.0.Citadel1.P6",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"Bear with it.\""
-				}, {
-					"id": "M3.0.Citadel1.R6",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"It's a stupid game.\""
+					"trigger": "(Automatic)"
 				}]
 			}
 		}, {
@@ -562,30 +512,6 @@
 					"trigger": "\"You can't be serious.\""
 				}]
 			}
-		}, {
-			"set": {
-				"context": "Speaking to al-Jilani",
-				"isExclusiveSet": true,
-				"options": [{
-					"id": "M3.0.Citadel1.P9",
-					"type": "Paragon",
-					"value": 5,
-					"context": "*Paragon Interrupt*",
-					"trigger": ""
-				}, {
-					"id": "M3.0.Citadel1.R9",
-					"type": "Renegade",
-					"value": 5,
-					"context": "*Renegade Interrupt*",
-					"trigger": ""
-				}]
-			}
-		}, {
-			"context": "Speaking to James at the embassey",
-			"id": "M3.0.Citadel1.PR10",
-			"type": "Paragade",
-			"value": 2,
-			"trigger": "(Automatic.)"
 		}],
 		"events": [{
 			"type": "BlockedUntil",
@@ -1002,7 +928,8 @@
 		"inMapId": "G.InC.Ann.Pra.SurKesh",
 		"isShowInParentMap": true,
 		"sideEffects": [
-			"On the top level at the far side opposite the elevator, don't miss the salarian at the console with the button you can press. Press that button. Press it lots. [YouTube|https://www.youtube.com/watch?v=cPIIaK4Vl20]"
+			"On the top level at the far side opposite the elevator, don't miss the salarian at the console with the button you can press. Press that button. Press it lots. ([YouTube|https://www.youtube.com/watch?v=cPIIaK4Vl20])",
+			"The salarian button gag reappears in Mass Effect: Andromeda on the planet Kadara. ([YouTube|https://www.youtube.com/watch?v=PnMGiiU-1J4])"
 		]
 	}, {
 		"id": "M3.1.SurKesh.3",
@@ -1025,9 +952,9 @@
 		"inMapId": "G.InC.Ann.Pra.SurKesh",
 		"isShowInParentMap": true
 	}, {
-		"id": "M3.1.SurKesh.5",
+		"id": "M3.1.SurKesh.6",
 		"inMissionId": "M3.1.SurKesh",
-		"sortIndex": 115,
+		"sortIndex": 116,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Level 2 Checkpoint",
@@ -1035,9 +962,9 @@
 		"inMapId": "G.InC.Ann.Pra.SurKesh",
 		"isShowInParentMap": true
 	}, {
-		"id": "M3.1.SurKesh.5",
+		"id": "M3.1.SurKesh.7",
 		"inMissionId": "M3.1.SurKesh",
-		"sortIndex": 115,
+		"sortIndex": 117,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Level 3 Power Terminal",
@@ -1045,9 +972,9 @@
 		"inMapId": "G.InC.Ann.Pra.SurKesh",
 		"isShowInParentMap": true
 	}, {
-		"id": "M3.1.SurKesh.6",
+		"id": "M3.1.SurKesh.8",
 		"inMissionId": "M3.1.SurKesh",
-		"sortIndex": 116,
+		"sortIndex": 118,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Level 3 Checkpoint",
@@ -1055,9 +982,9 @@
 		"inMapId": "G.InC.Ann.Pra.SurKesh",
 		"isShowInParentMap": true
 	}, {
-		"id": "M3.1.SurKesh.7",
+		"id": "M3.1.SurKesh.9",
 		"inMissionId": "M3.1.SurKesh",
-		"sortIndex": 117,
+		"sortIndex": 119,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Level 4 Pod Release",
@@ -2114,7 +2041,7 @@
 							"id": "M3.2.Rannoch.P11",
 							"type": "Paragon",
 							"value": 2,
-							"trigger": "\"If you're certain.\""
+							"trigger": "\"If you're certain.\" or (romance) \"Sweet-talker.\""
 						}, {
 							"id": "M3.2.Rannoch.R11",
 							"type": "Renegade",
@@ -2127,7 +2054,7 @@
 		}],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Rannoch: Geth Fighter Squandrons or Rannoch: Admiral Koris"
+			"id": "Completed: Rannoch: Geth Fighter Squadrons or Rannoch: Admiral Koris"
 		}, {
 			"type": "Triggers",
 			"id": "Completed: Priority: Rannoch"
@@ -2155,7 +2082,7 @@
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Modified Reaper Code",
-		"description": "The disabled geth are currently being destroyed by the quarian fleet. Legion (or Geth VI) has modified the Reaper code which was controlling the geth and it believes uploading it to the geth fleet will give them all true intelligence. \n\nIf you permit it to upload the code, the geth will rejoin the battle and potentially eliminate the quarians. This leads to Tali (or Raan) throwing themselves off the cliff. Despite the teasing Paragon Interrupt, you can't stop this. \n\nLegion (or Geth VI) will attack you and die if you stop it, and will die during the upload if you permit it.",
+		"description": "The disabled geth are currently being destroyed by the quarian fleet. Legion (or Geth VI) has modified the Reaper code which was controlling the geth and it believes uploading it to the geth fleet will give them all true intelligence. \n\nIf you permit it to upload the code, the geth will rejoin the battle and potentially eliminate the quarians. This leads to Tali (or Raan) throwing themselves off the cliff. Despite the teasing Paragon Interrupt, you can't stop this. \n\nLegion (or Geth VI) will attack you and die if you stop it, and will die during the upload if you permit it. \n\nAfter this mission is over, you may wish to speak to all the crew of the Normandy, as they all have opinions about the outcome, particularly if one side or the other was destroyed.",
 		"relatedDecisionIds": ["D3.GethIntelligent", "D3.Quarians"]
 	}, {
 		"id": "M3.2.Citadel3",
@@ -2163,11 +2090,11 @@
 		"gameVersion": "3",
 		"missionType": "Mission",
 		"name": "Priority: The Citadel III",
-		"description": "",
+		"description": "The asari councilor [megametracker://person?id=P1.Valern] (or [megametracker://person?id=O2.Esheel] if Valern died in Game 1) urgently requests to speak with you on the Citadel. You can find her in the Citadel Embassies at Udina's former office. \n\nIf you betrayed Wrex during [megametracker://mission?id=M3.1.Tuchanka], you will need to avoid the Normandy dock (say, by completing assignments which terminate back in the Normandy) or you will be confronted and have to kill him.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
 		"experience": 0,
-		"reward": "The asari councilor [megametracker://person?id=P1.Valern] (or [megametracker://person?id=O2.Esheel] if Valern died in Game 1) urgently requests to speak with you on the Citadel. You can find her in the Citadel Embassies at Udina's former office. \n\nIf you betrayed Wrex during [megametracker://mission?id=M3.1.Tuchanka], you will need to avoid the Normandy dock (say, by completing assignments which terminate back in the Normandy) or you will be confronted and have to kill him.",
+		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_The_Citadel_III"],
 		"relatedDecisionIds": ["D1.Council", "D1.Wrex", "D3.GenophageCure"],
 		"conversationRewards": [{
@@ -2186,24 +2113,6 @@
 					"trigger": "\"Now you decide to help?\""
 				}]
 			}
-		}, {
-			"set": {
-				"context": "If the Genophage cure was sabotaged and Wrex survived Game 1, he will attack Shepard at the Normandy dock during this visit",
-				"options": [{
-					"id": "M3.2.Citadel3.R2",
-					"type": "Renegade",
-					"value": 0,
-					"context": "*Renegade Interrupt*",
-					"trigger": "Shoot Wrex, wounding him."
-				}, {
-					"id": "M3.2.Citadel3.R3",
-					"type": "Renegade",
-					"value": 0,
-					"context": "*Renegade Interrupt*",
-					"trigger": "Shoot Wrex, sending him off the balcony to his death."
-				}]
-			}
-
 		}],
 		"events": [{
 			"type": "BlockedUntil",
@@ -2443,9 +2352,9 @@
 		"name": "Temple",
 		"description": "When you reach the temple, the scientific team is already dead, murdered and not by Reapers. Then you realize the temple holds a prothean beacon, touch the artifacts around the temple until you locate all the required keys to activate the beacon. [megametracker://person?id=O3.Vendetta]. Before Vendetta can explain what the Catalyst is, [megametracker://person?id=E3.KaiLeng] shows up with a message from the Illusive Man."
 	}, {
-		"id": "M3.2.Thessia.1",
+		"id": "M3.2.Thessia.4",
 		"inMissionId": "M3.2.Thessia",
-		"sortIndex": 251,
+		"sortIndex": 254,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Kai Leng",
@@ -2790,62 +2699,6 @@
 				}]
 			}
 		}, {
-			"context": "Speaking to James",
-			"id": "M3.3.Earth.P10",
-			"type": "Paragade",
-			"value": 2,
-			"trigger": "(Any conversation choice)"
-		}, {
-			"set": {
-				"context": "Speaking to Garrus",
-				"options": [{
-					"id": "M3.3.Earth.P15",
-					"type": "Paragade",
-					"value": 2,
-					"trigger": "(Any conversation choice)"
-				}, {
-					"id": "M3.3.Earth.P17",
-					"type": "Paragon",
-					"value": 0,
-					"context": "*Paragon Interrupt*",
-					"trigger": "Leave Garrus with some kind (but grim) last words."
-				}]
-			}
-		}, {
-			"context": "Speaking to Liara",
-			"id": "M3.3.Earth.P20",
-			"type": "Paragade",
-			"value": 2,
-			"trigger": "(Any conversation choice)"
-		}, {
-			"set": {
-				"context": "Speaking to Javik",
-				"options": [{
-					"id": "M3.3.Earth.P25",
-					"type": "Paragade",
-					"value": 2,
-					"trigger": "(Any conversation choice)"
-				}, {
-					"id": "M3.3.Earth.P12",
-					"type": "Paragon",
-					"value": 0,
-					"context": "*Paragon Interrupt*",
-					"trigger": "Shake Javik's hand."
-				}]
-			}
-		}, {
-			"context": "Speaking to Tali",
-			"id": "M3.3.Earth.P30",
-			"type": "Paragade",
-			"value": 2,
-			"trigger": "(Any conversation choice)"
-		}, {
-			"context": "Speaking to EDI",
-			"id": "M3.3.Earth.P35",
-			"type": "Paragade",
-			"value": 2,
-			"trigger": "(Any conversation choice)"
-		}, {
 			"set": {
 				"context": "Speaking to the assembled team",
 				"isExclusiveSet": true,
@@ -2990,7 +2843,7 @@
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Forward Operations Base 1",
-		"description": "You have an opportunity to speak to some of your teammates for the last time. You can use the Communications Tech Officer to speak to others via the vidcomm. You won't see Liara, Wrex, EDI, Tali, and Anderson - they are in the next area. When you reach [megametracker://person?id=P3.VictusA], be careful heading out the door and up the ramp, as it begins the next stage and you will not be able to return to this area."
+		"description": "You have an opportunity to speak to some of your teammates for the last time. You can use the Communications Tech Officer to speak to others via the vidcomm. You won't see Liara, Wrex, EDI, Tali, and Anderson - they are in the next area. I have not included the conversations for squad and former squad here: \n - [megametracker://mission?id=A3.Convo.S.Vega.8] \n - [megametracker://mission?id=A3.Convo.S.Ashley.9] \n - [megametracker://mission?id=A3.Convo.S.Kaidan.9] \n - [megametracker://mission?id=A3.Convo.C.Cortez.9] \n - [megametracker://mission?id=A3.Convo.A.Grunt.5] \n - [megametracker://mission?id=A3.Convo.A.Jacob.5] \n - [megametracker://mission?id=A3.Convo.A.Jack.5] \n - [megametracker://mission?id=A3.Convo.A.Kasumi.5] \n - [megametracker://mission?id=A3.Convo.A.Miranda.5] \n - [megametracker://mission?id=A3.Convo.A.Samara.5] \n - [megametracker://mission?id=A3.Convo.A.Zaeed.5] \n - [megametracker://mission?id=A3.Convo.A.Victus.5] \n - [megametracker://mission?id=A3.Convo.S.Garrus.10] \n\nWhen you reach [megametracker://person?id=P3.VictusA], be careful heading out the door and up the ramp, as it begins the next stage and you will not be able to return to this area."
 	}, {
 		"id": "M3.3.Earth.5",
 		"inMissionId": "M3.3.Earth",
@@ -2998,7 +2851,7 @@
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Forward Operations Base 2",
-		"description": "Take control of the turret gun to fend off the Reaper troops attacking the base. When you are done, you can continue to the other side of the base and talk to the rest of your teammates. Speak to Anderson to move on to the next step."
+		"description": "Take control of the turret gun to fend off the Reaper troops attacking the base. When you are done, you can continue to the other side of the base and talk to the rest of your teammates.  I have not included the conversations for squad and former squad here: \n - [megametracker://mission?id=A3.Convo.S.Liara.9] \n - [megametracker://mission?id=A3.Convo.S.Javik.9] \n - [megametracker://mission?id=A3.Convo.A.Wrex.5] \n - [megametracker://mission?id=A3.Convo.S.Tali.10] \n - [megametracker://mission?id=A3.Convo.S.EDI.10] \n\nSpeak to Anderson to move on to the next step."
 	}, {
 		"id": "M3.3.Earth.6",
 		"inMissionId": "M3.3.Earth",

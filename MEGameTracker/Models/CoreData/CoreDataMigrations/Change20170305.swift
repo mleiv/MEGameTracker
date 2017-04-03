@@ -13,25 +13,25 @@ import CoreData
 
 public struct Change20170305: CoreDataMigrationType {
 	typealias MoralityIdMap = (fromId: String, toId: String)
-	typealias MoralityMissionMap = (fromMission: String, toMission: String, ids: [MoralityIdMap])
+	typealias MoralityMissionMap = (fromMissionId: String, toMissionId: String, ids: [MoralityIdMap])
 	let mapMoralities: [MoralityMissionMap] = [(
-		fromMission: "A2.L.Miranda",
-		toMission: "A2.Convo.Miranda",
+		fromMissionId: "A2.L.Miranda",
+		toMissionId: "A2.Convo.Miranda",
 		ids: [
 			(fromId: "A2.L.Miranda.P1", toId: "A2.Convo.Miranda.P30"),
 			(fromId: "A2.L.Miranda.P14", toId: "A2.Convo.Miranda.P40"),
 			(fromId: "A2.L.Miranda.P15", toId: "A2.Convo.Miranda.P41"),
 		]
 	), (
-		fromMission: "A2.L.Mordin",
-		toMission: "A2.Convo.Mordin",
+		fromMissionId: "A2.L.Mordin",
+		toMissionId: "A2.Convo.Mordin",
 		ids: [
 			(fromId: "A2.L.Mordin.P1", toId: "A2.Convo.Mordin.P30"),
 			(fromId: "A2.L.Mordin.R1", toId: "A2.Convo.Mordin.R30"),
 		]
 	), (
-		fromMission: "A2.L.Jacob",
-		toMission: "A2.Convo.Jacob",
+		fromMissionId: "A2.L.Jacob",
+		toMissionId: "A2.Convo.Jacob",
 		ids: [
 			(fromId: "A2.L.Jacob.P1A", toId: "A2.Convo.Jacob.P30A"),
 			(fromId: "A2.L.Jacob.P1B", toId: "A2.Convo.Jacob.P30A"),
@@ -45,6 +45,39 @@ public struct Change20170305: CoreDataMigrationType {
 			(fromId: "A2.L.Jacob.P17", toId: "A2.Convo.Jacob.P43"),
 			(fromId: "A2.L.Jacob.R17", toId: "A2.Convo.Jacob.R43"),
 		]
+	), (
+		fromMissionId: "M3.0.Citadel1",
+		toMissionId: "A3.Convo.C.Chakwas",
+		ids: [
+			(fromId: "M3.0.Citadel1.PR3", toId: "A3.Convo.C.Chakwas.P1"),
+		]
+	), (
+		fromMissionId: "M3.0.Citadel1",
+		toMissionId: "A3.Convo.C.Michel",
+		ids: [
+			(fromId: "M3.0.Citadel1.P4", toId: "A3.Convo.C.Michel.P2"),
+			(fromId: "M3.0.Citadel1.R4", toId: "A3.Convo.C.Michel.R2"),
+		]
+	), (
+		fromMissionId: "M3.0.Citadel1",
+		toMissionId: "A3.Convo.A.Bailey",
+		ids: [
+			(fromId: "M3.0.Citadel1.P6", toId: "A3.Convo.A.Bailey.P1"),
+			(fromId: "M3.0.Citadel1.R6", toId: "A3.Convo.A.Bailey.R1"),
+		]
+	), (
+		fromMissionId: "M3.0.Citadel1",
+		toMissionId: "A3.Convo.A.AlJilani",
+		ids: [
+			(fromId: "M3.0.Citadel1.P9", toId: "A3.Convo.A.AlJilani.P1"),
+			(fromId: "M3.0.Citadel1.R9", toId: "A3.Convo.A.AlJilani.R1"),
+		]
+	), (
+		fromMissionId: "M3.0.Citadel1",
+		toMissionId: "A3.Convo.S.Vega",
+		ids: [
+			(fromId: "M3.0.Citadel1.PR10", toId: "A3.Convo.S.Vega.PR0"),
+		]
 	)]
 	/// Correct some changes ids
 	public func run() {
@@ -52,15 +85,43 @@ public struct Change20170305: CoreDataMigrationType {
 		guard App.current.lastBuild > 0 else { return }
 
 		for mapData in mapMoralities {
-			if var fromMission = Mission.getExisting(id: mapData.fromMission, gameSequenceUuid: nil),
-				var toMission = Mission.get(id: mapData.toMission) {
+			for var fromMission in Mission.getAllExisting(ids: [mapData.fromMissionId], gameSequenceUuid: nil) {
+				if var toMission = Mission.get(id: mapData.toMissionId) {
+					let fromIds = fromMission.selectedConversationRewards
+					guard !fromIds.isEmpty else { continue }
+					for idMapData in mapData.ids {
+						if fromIds.contains(idMapData.fromId) {
+							fromMission.generalData.conversationRewards.unsetSelectedId(idMapData.fromId)
+							toMission.generalData.conversationRewards.setSelectedId(idMapData.toId)
+						}
+					}
+					_ = fromMission.save()
+					_ = toMission.save()
+				}
+			}
+		}
+
+		specialCaseAshleyKaidan()
+	}
+
+	private func specialCaseAshleyKaidan() {
+		let fromMissionId = "M3.0.Citadel1"
+		let toMissionIdAshley = "A3.Convo.S.Ashley"
+		let toMissionIdKaidan = "A3.Convo.S.Kaidan"
+		let fromId = "M3.0.Citadel1.PR5"
+		let toIdAshley = "A3.Convo.S.Ashley.P1"
+		let toIdKaidan = "A3.Convo.S.Kaidan.P1"
+
+		for var fromMission in Mission.getAllExisting(ids: [fromMissionId], gameSequenceUuid: nil) {
+			let decision = Decision.get(id: "D1.Ashley", gameSequenceUuid: fromMission.gameSequenceUuid)
+			let toMissionId = decision?.isSelected == true ? toMissionIdAshley : toMissionIdKaidan
+			let toId = decision?.isSelected == true ? toIdAshley : toIdKaidan
+			if var toMission = Mission.get(id: toMissionId) {
 				let fromIds = fromMission.selectedConversationRewards
 				guard !fromIds.isEmpty else { continue }
-				for idMapData in mapData.ids {
-					if fromIds.contains(idMapData.fromId) {
-						fromMission.generalData.conversationRewards.unsetSelectedId(idMapData.fromId)
-						toMission.generalData.conversationRewards.setSelectedId(idMapData.toId)
-					}
+				if fromIds.contains(fromId) {
+					fromMission.generalData.conversationRewards.unsetSelectedId(fromId)
+					toMission.generalData.conversationRewards.setSelectedId(toId)
 				}
 				_ = fromMission.save()
 				_ = toMission.save()

@@ -5700,7 +5700,7 @@
 		"missionType": "Objective",
 		"name": "Destroy or Rewrite",
 		"description": "If you choose to rewrite the heretics, Legion will trigger an EMP to infect them with the virus. Otherwise, it will trigger a meltdown to the antimatter core. Either way, you have three minutes to eliminate the remaining enemies and/or escape.",
-		 "inMapId": "G.Ter.Pho.Sea.Station",
+		"inMapId": "G.Ter.Pho.Sea.Station",
 		"isShowInParentMap": true
 	}, {
 		"id": "A2.L.Miranda",
@@ -7650,8 +7650,8 @@
 		"gameVersion": "2",
 		"missionType": "Collection",
 		"name": "Pets",
-		"description": "",
-		"sideEffects": "Keeping the Prejek Paddlefish alive throughout Game 3 and New Game+ results in an Intel Bonus from Liara after the Mars Mission (10% Weapon or Power Damage). It also becomes a War Asset.",
+		"description": "A list of all the pets you can collect in Game 2. Note: the fish die if you don't feed them after every single mission.",
+		"relatedDecisionIds": ["D2.Fish", "D2.PrejekPaddlefish"],
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Fish", "https://masseffect.wikia.com/wiki/Space_Hamster"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -7663,7 +7663,7 @@
 		"gameVersion": "2",
 		"missionType": "Collection",
 		"name": "Model Ships",
-		"description": "The Normandy SR2 is already included in your collection.",
+		"description": "A list of all the model ships you can collect in Game 2. The Normandy SR2 is already included in your collection.",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Model_Ships"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -7675,7 +7675,7 @@
 		"gameVersion": "2",
 		"missionType": "Collection",
 		"name": "Souvenirs",
-		"description": "",
+		"description": "A list of miscellaneous other souvenir purchases you can make in Game 2.",
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
@@ -7686,7 +7686,7 @@
 		"gameVersion": "2",
 		"missionType": "Collection",
 		"name": "Star Charts",
-		"description": "",
+		"description": "A list of all the star charts you can buy in Game 2.",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Baria_Frontiers_(shop)"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -7702,7 +7702,7 @@
 		"gameVersion": "2",
 		"missionType": "Conversation",
 		"name": "Kelly Chambers",
-		"description": "Conversations with Kelly Chambers aboard the Normandy.",
+		"description": "Conversations with [megametracker://person?id=P2.Chambers] aboard the Normandy.",
 		"inMapId": "G.N2.2.Map",
 		"isShowInParentMap": true,
 		"relatedDecisionIds": ["D2.LoveKelly"],
@@ -7715,37 +7715,127 @@
 					"type": "Paragon",
 					"value": 0,
 					"trigger": "You can now address her as \"Kelly.\""
+				}, {
+					"set": {
+						"context": "Investigate: \"What do you think of Cerberus?\" and \"Does Cerberus hate aliens?\"",
+						"options": [{
+							"id": "A2.Convo.Kelly.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You are very loving.\""
+						}, {
+							"id": "A2.Convo.Kelly.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You're naive.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "Investigate: \"Are you happy here?\" and \"We won't.\"",
+						"options": [{
+							"id": "A2.Convo.Kelly.P3A",
+							"type": "Paragon",
+							"value": 0,
+							"context": "\"I'd catch you.\"",
+							"trigger": "Friendship track."
+						}, {
+							"id": "A2.Convo.Kelly.P3B",
+							"type": "Paragon",
+							"value": 0,
+							"context": "\"I'd embrace you.\"",
+							"trigger": "Romance track."
+						}]
+					}
 				}]
 			}
 		}, {
 			"set": {
-				"context": "\"What do you think of Cerberus?\" and \"Does Cerberus hate aliens?\"",
+				"context": "When Kelly worries that she was too flirty previously",
 				"options": [{
-					"id": "A2.Convo.Kelly.P2",
+					"id": "A2.Convo.Kelly.P5A",
 					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"You are very loving.\""
+					"value": 0,
+					"context": "\"Informal is fine.\"",
+					"trigger": "Friendship track."
 				}, {
-					"id": "A2.Convo.Kelly.R2",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"You're naive.\""
+					"id": "A2.Convo.Kelly.P5B",
+					"type": "Paragon",
+					"value": 0,
+					"context": "\"I liked it.\"",
+					"trigger": "Romance track."
 				}]
 			}
 		}, {
-			"id": "A2.Convo.Kelly.P3",
+			"set": {
+				"context": "When Kelly talks about Tali or Thane",
+				"options": [{
+					"id": "A2.Convo.Kelly.P8B",
+					"type": "Paragon",
+					"value": 0,
+					"context": "\"How so?\" and \"Are you into aliens?\"",
+					"trigger": "Romance track."
+				}]
+			}
+		}, {
+			"context": "One of the above exchanges will lead to: \"Let's have dinner.\"",
+			"id": "A2.Convo.Kelly.P15",
 			"type": "Paragade",
 			"value": 0,
 			"paragadeValue": [5, 5],
-			"trigger": "\"Let's have dinner\" (She will also feed your fish)"
+			"trigger": "Invite Kelly up to your cabin for dinner. She will offer to feed your fish."
+		}, {
+			"context": "After the collector ship: \"Worried? You do care.\" and \"What about me?\"",
+			"id": "A2.Convo.Kelly.P20",
+			"type": "Paragon",
+			"value": 0,
+			"trigger": "Romance track."
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Unlocked Galaxy Map 2"
+		}]
+	}, {
+		"id": "A2.Convo.Kelly.1",
+		"inMissionId": "A2.Convo.Kelly",
+		"sortIndex": 90101,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "1st Normandy Convo",
+		"description": "Kelly introduces herself. You have several Paragon options if you explore all the Investigate options. If you want a relationship, talk with Kelly after every mission, and be nice. There are many more flirting options than the ones I've specifically called out in the conversation rewards, but they are not necessary to trigger the romance.",
+		"inMapId": "G.N2.2.Map",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.Convo.Kelly.5",
+		"inMissionId": "A2.Convo.Kelly",
+		"sortIndex": 90105,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "1st Normandy Cabin Visit",
+		"description": "Once you have completed enough of the interactions, invite Kelly up to your cabin for dinner. She will offer to feed your fish.",
+		"inMapId": "G.N2.1.Terminal",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.Convo.Kelly.9",
+		"inMissionId": "A2.Convo.Kelly",
+		"sortIndex": 90109,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "2nd Normandy Cabin Visit",
+		"description": "This requires (in addition to the dinner conversation): \n - Ask Kelly about aliens when discussing Tali or Thane. \n - Have no other active love interest. \n - Save Kelly from the Collector Base, and ask her how she is doing afterwards. \n - Leave the Normandy, and come back. \n\nYou will receive a private message from Kelly. head up to your cabin and invite her up. \n\n([Source|https://www.gamefaqs.com/boards/944907-mass-effect-2/53455594])",
+		"inMapId": "G.N2.1.Terminal",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Collector Base"
 		}]
 	}, {
 		"id": "A2.Convo.Garrus",
 		"sortIndex": 9000,
 		"gameVersion": "2",
 		"missionType": "Conversation",
-		"name": "Garrus",
-		"description": "Conversations with Garrus after his recruitment aboard the Normandy.",
+		"name": "Garrus Vakarian",
+		"description": "Conversations with [megametracker://person?id=S2.Garrus] after his recruitment aboard the Normandy.",
 		"inMapId": "G.N2.3.Battery",
 		"isShowInParentMap": true,
 		"relatedDecisionIds": ["D2.LoveGarrus"],
@@ -7844,7 +7934,7 @@
 		"gameVersion": "2",
 		"missionType": "Conversation",
 		"name": "Grunt",
-		"description": "Conversations with Grunt after his recruitment aboard the Normandy.",
+		"description": "Conversations with [megametracker://person?id=S2.Grunt] after his recruitment aboard the Normandy.",
 		"inMapId": "G.N2.4.Port",
 		"isShowInParentMap": true,
 		"relatedMissionIds": ["A2.L.Grunt"],
@@ -8019,7 +8109,7 @@
 		"gameVersion": "2",
 		"missionType": "Conversation",
 		"name": "Jack",
-		"description": "Conversations with Jack after her recruitment aboard the Normandy.",
+		"description": "Conversations with [megametracker://person?id=S2.Jack] after her recruitment aboard the Normandy.",
 		"inMapId": "G.N2.4.SubDeck",
 		"isShowInParentMap": true,
 		"relatedDecisionIds": ["D2.LoveJack"],
@@ -8389,8 +8479,8 @@
 		"sortIndex": 9000,
 		"gameVersion": "2",
 		"missionType": "Conversation",
-		"name": "Jacob",
-		"description": "Conversations with Jacob aboard the Normandy.",
+		"name": "Jacob Taylor",
+		"description": "Conversations with [megametracker://person?id=S2.Jacob] aboard the Normandy.",
 		"inMapId": "G.N2.2.Armory",
 		"isShowInParentMap": true,
 		"relatedDecisionIds": ["D2.LoveJacob"],
@@ -8851,7 +8941,7 @@
 		"gameVersion": "2",
 		"missionType": "Conversation",
 		"name": "Legion",
-		"description": "Conversations with Legion after its recruitment aboard the Normandy.",
+		"description": "Conversations with [megametracker://person?id=S2.Legion] after its recruitment aboard the Normandy.",
 		"inMapId": "G.N2.3.Core",
 		"isShowInParentMap": true,
 		"relatedMissionIds": ["A2.L.Legion"],
@@ -9029,8 +9119,8 @@
 		"sortIndex": 9000,
 		"gameVersion": "2",
 		"missionType": "Conversation",
-		"name": "Miranda",
-		"description": "Conversations with Miranda aboard the Normandy.",
+		"name": "Miranda Lawson",
+		"description": "Conversations with [megametracker://person?id=S2.Miranda] aboard the Normandy.",
 		"inMapId": "G.N2.3.Cabin",
 		"isShowInParentMap": true,
 		"relatedDecisionIds": ["D2.LoveMiranda"],
@@ -9247,8 +9337,8 @@
 		"sortIndex": 9000,
 		"gameVersion": "2",
 		"missionType": "Conversation",
-		"name": "Mordin",
-		"description": "Conversations with Mordin after his recruitment aboard the Normandy.",
+		"name": "Mordin Solus",
+		"description": "Conversations with [megametracker://person?id=S2.Mordin] after his recruitment aboard the Normandy.",
 		"inMapId": "G.N2.2.Lab",
 		"isShowInParentMap": true,
 		"relatedMissionIds": ["A2.L.Mordin"],
@@ -9491,7 +9581,7 @@
 		"gameVersion": "2",
 		"missionType": "Conversation",
 		"name": "Samara/Morinth",
-		"description": "Conversations with Samara (or Morinth) after her recruitment aboard the Normandy.",
+		"description": "Conversations with [megametracker://person?id=S2.Samara] (or Morinth) after her recruitment aboard the Normandy.",
 		"inMapId": "G.N2.3.Starboard",
 		"isShowInParentMap": true,
 		"relatedDecisionIds": ["D2.LoveSamara"],
@@ -9697,8 +9787,8 @@
 		"sortIndex": 9000,
 		"gameVersion": "2",
 		"missionType": "Conversation",
-		"name": "Tali",
-		"description": "Conversations with Tali after her recruitment aboard the Normandy.",
+		"name": "Tali'Zorah",
+		"description": "Conversations with [megametracker://person?id=S2.Tali] after her recruitment aboard the Normandy.",
 		"inMapId": "G.N2.4.Station",
 		"isShowInParentMap": true,
 		"relatedDecisionIds": ["D2.LoveTali", "D2.RaelZorahReputation"],
@@ -9883,8 +9973,8 @@
 		"sortIndex": 9000,
 		"gameVersion": "2",
 		"missionType": "Conversation",
-		"name": "Thane",
-		"description": "Conversations with Thane after his recruitment aboard the Normandy.",
+		"name": "Thane Krios",
+		"description": "Conversations with [megametracker://person?id=S2.Thane] after his recruitment aboard the Normandy.",
 		"inMapId": "G.N2.3.Support",
 		"isShowInParentMap": true,
 		"relatedDecisionIds": ["D2.LoveThane"],
@@ -10175,7 +10265,7 @@
 		"sortIndex": 9050,
 		"gameVersion": "2",
 		"missionType": "Conversation",
-		"name": "Disputes",
+		"name": "Normandy Arguments",
 		"description": "Disputes between squad members.",
 		"events": [{
 			"type": "BlockedUntil",
@@ -10187,7 +10277,8 @@
 		"sortIndex": 9050,
 		"gameVersion": "2",
 		"missionType": "Objective",
-		"name": "Jack and Miranda",
+		"titlePrefix": "Argument: ",
+		"name": "Jack vs Miranda",
 		"description": "",
 		"inMapId": "G.N2.2.Briefing",
 		"isShowInParentMap": true,
@@ -10250,7 +10341,8 @@
 		"sortIndex": 9050,
 		"gameVersion": "2",
 		"missionType": "Objective",
-		"name": "Tali and Legion",
+		"titlePrefix": "Argument: ",
+		"name": "Tali vs Legion",
 		"description": "",
 		"inMapId": "G.N2.2.Briefing",
 		"isShowInParentMap": true,
@@ -10313,7 +10405,7 @@
 		"sortIndex": 9090,
 		"gameVersion": "2",
 		"missionType": "Conversation",
-		"name": "Shops",
+		"name": "Shop Discounts",
 		"description": "Conversations with shopowners.",
 		"events": [{
 			"type": "BlockedUntil",
@@ -10539,6 +10631,7 @@
 		"sortIndex": 9090,
 		"gameVersion": "2",
 		"missionType": "Objective",
+		"titlePrefix": "Conversation: ",
 		"name": "Rachni Agent",
 		"description": "If the Rachni Queen was spared in Game 1, her asari agent approaches you on Illium.",
 		"x-inMapId": "TODO: Illium Spaceport",
@@ -10566,6 +10659,7 @@
 		"sortIndex": 9090,
 		"gameVersion": "2",
 		"missionType": "Objective",
+		"titlePrefix": "Conversation: ",
 		"name": "Fist",
 		"description": "If Fist was spared in Game 1, you will encounter him again in the lower level of Afterlife on Omega.",
 		"x-inMapId": "TODO: Lower Afterlife",
@@ -10593,6 +10687,7 @@
 		"sortIndex": 9090,
 		"gameVersion": "2",
 		"missionType": "Objective",
+		"titlePrefix": "Conversation: ",
 		"name": "Kylan",
 		"description": "A bravo and his men threaten you outside Afterlife on Omega.",
 		"x-inMapId": "TODO: Outside Afterlife",
@@ -10621,6 +10716,7 @@
 		"sortIndex": 9090,
 		"gameVersion": "2",
 		"missionType": "Objective",
+		"titlePrefix": "Conversation: ",
 		"name": "Khalisah Al-Jilani",
 		"description": "Khalisah Al-Jilani again tries to interview and humiliate you on the Citadel.",
 		"x-inMapId": "TODO: Dark Star Lounge",

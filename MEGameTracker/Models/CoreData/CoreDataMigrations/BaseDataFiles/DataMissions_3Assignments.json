@@ -8,13 +8,19 @@
 		"gameVersion": "3",
 		"missionType": "Assignment",
 		"name": "Citadel: Alien Medi-Gel Formula",
-		"description": "A doctor on the Citadel needs a new medi-gel formula created specifically for aliens. Find a new formula and deliver it to her at the Huerta Memorial Hospital. \n\nIf you miss the terminal with this upgrade during [megametracker://mission?id=A3.N7CerberusLab], you can purchase it afterwards at the Spectre Requisitions terminal.",
+		"description": "Dr. Ravin on the Citadel needs a new medi-gel formula created specifically for aliens. Find a new formula and deliver it to her at the Huerta Memorial Hospital. \n\nIf you miss the terminal with this upgrade during [megametracker://mission?id=A3.N7CerberusLab], you can purchase it afterwards at the Spectre Requisitions terminal.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
 		"experience": 30,
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Alien_Medi-Gel_Formula"],
 		"relatedMissionIds": ["A3.N7CerberusLab"],
+		"conversationRewards": [{
+			"id": "A3.AlienMediGel.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -28,12 +34,58 @@
 		"gameVersion": "3",
 		"missionType": "Assignment",
 		"name": "Citadel: Barla Von",
-		"description": "Barla Von reveals that there are Shadow Broker forces trapped in the Dranek system. Go rescue them and you can recruit them to the war effort. Return to Barla Von when the team is found.",
+		"description": "Liara sends you to speak to one of her Shadow Broker Agents - Barla Von. He reveals that there are Shadow Broker forces trapped in the Dranek system. Go rescue them and you can recruit them to the war effort. Return to Barla Von when the team is found.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
 		"experience": 120,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Barla_Von"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Barla Von",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.BarlaVon.C1",
+							"type": "Paragade",
+							"value": 0,
+							"trigger": "\"I remember you.\""
+						}, {
+							"id": "A3.BarlaVon.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"He's a brave man.\""
+						}, {
+							"id": "A3.BarlaVon.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Keeping tabs on me?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.BarlaVon.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Thanks.\""
+						}, {
+							"id": "A3.BarlaVon.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"What do you get out of this?\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "A3.BarlaVon.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh"
@@ -54,6 +106,12 @@
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Biotic_Amp_Interfaces"],
 		"relatedMissionIds": ["A3.GrissomAcademy"],
+		"conversationRewards": [{
+			"id": "A3.BioticAmp.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -72,6 +130,62 @@
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Hanar_Diplomat"],
 		"relatedDecisionIds": ["D3.Bau", "D3.Kahje"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Talk to Jondum Bau",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.HanarDiplomat.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'd like to help.\""
+				}, {
+					"id": "A3.HanarDiplomat.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"How bad could this be?\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talk to Indoctrinated hanar",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.HanarDiplomat.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You're under arrest.\""
+				}, {
+					"id": "A3.HanarDiplomat.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Watch me.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "(If Kasumi is not present)",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.HanarDiplomat.P3",
+					"type": "Paragon",
+					"value": 5,
+					"context": "No Interrupt",
+					"trigger": "Stop the upload."
+				}, {
+					"id": "A3.HanarDiplomat.R3",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Save Bau."
+				}]
+			}
+		}, {
+			"id": "A3.HanarDiplomat.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -124,6 +238,12 @@
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Heating_Unit_Stabilizers"],
 		"relatedMissionIds": ["A3.N7CerberusFighterBase"],
+		"conversationRewards": [{
+			"id": "A3.HeatingUnit.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Tuchanka"
@@ -141,6 +261,12 @@
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Improved_Power_Grid"],
 		"relatedMissionIds": ["A3.N7CerberusAttack"],
+		"conversationRewards": [{
+			"id": "A3.PowerGrid.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh"
@@ -161,6 +287,12 @@
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Krogan_Dying_Message"],
 		"relatedMissionIds": ["A3.KroganTeam"],
+		"conversationRewards": [{
+			"id": "A3.KroganDying.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh"
@@ -194,6 +326,12 @@
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_GX12_Thermal_Pipe"],
 		"relatedMissionIds": ["A3.KroganTeam"],
+		"conversationRewards": [{
+			"id": "A3.GX12ThermalPipe.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -211,6 +349,12 @@
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Cerberus_Automated_Turret_Schematics"],
 		"relatedMissionIds": ["A3.Bomb"],
+		"conversationRewards": [{
+			"id": "A3.TurretSchematics.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -228,6 +372,49 @@
 		"reward": "5,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Batarian_Codes"],
 		"relatedDecisionIds": ["D1.X57Hostages", "D3.Balak"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Accusing Balak",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.BatarianCodes.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Blame the Reapers.\""
+						}, {
+							"id": "A3.BatarianCodes.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Blame yourselves.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.BatarianCodes.P2",
+							"type": "Paragon",
+							"value": 5,
+							"context": "*_Charm Balak_*",
+							"trigger": "\"Join us!\""
+						}, {
+							"id": "A3.BatarianCodes.R2A",
+							"type": "Renegade",
+							"value": 5,
+							"context": "*_Intimidate Balak_*",
+							"trigger": "\"You need me.\""
+						}, {
+							"id": "A3.BatarianCodes.R2B",
+							"type": "Renegade",
+							"value": 5,
+							"trigger": "(Kill him.)"
+						}]
+					}
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -278,6 +465,12 @@
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Cerberus_Ciphers"],
 		"relatedMissionIds": ["A3.N7CommunicationHub"],
+		"conversationRewards": [{
+			"id": "A3.CerberusCiphers.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -294,6 +487,23 @@
 		"experience": 210,
 		"reward": "5,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Cerberus_Retribution"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Talk to Captain Aaron Sommers after speaking to the arguing citizens",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.CerberusRetribution.P1",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "\"You're better than this.\" or \"Walk away.\""
+				}, {
+					"id": "A3.CerberusRetribution.R1",
+					"type": "Renegade",
+					"value": 5,
+					"trigger": "\"Let me do it legally.\" or \"Go ahead.\""
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -311,6 +521,12 @@
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Cerberus_Turian_Poison"],
 		"relatedMissionIds": ["A3.ExCerberusScientists"],
+		"conversationRewards": [{
+			"id": "A3.CerberusTurianPoison.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -328,6 +544,12 @@
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Chemical_Treatment"],
 		"relatedMissionIds": ["A3.N7FuelReactors"],
+		"conversationRewards": [{
+			"id": "A3.ChemicalTreatment.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Geth Dreadnought"
@@ -344,6 +566,28 @@
 		"experience": 210,
 		"reward": "5,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Inspirational_Stories"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Solik",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.InspirationalStories.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'll help you.\""
+				}, {
+					"id": "A3.InspirationalStories.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'm not interested.\""
+				}]
+			}
+		}, {
+			"id": "A3.InspirationalStories.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -392,9 +636,41 @@
 		"experience": 375,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Medical_Supplies"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Tactus",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.MedicalSupplies.P1A",
+					"type": "Paragon",
+					"value": 15,
+					"trigger": "\"Take ours as a gift.\""
+				}, {
+					"id": "A3.MedicalSupplies.P1B",
+					"type": "Paragon",
+					"value": 5,
+					"context": "*_Charm Tactus_*",
+					"trigger": "\"Do the right thing.\""
+				}, {
+					"id": "A3.MedicalSupplies.R1",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*_Intimidate Tactus_*",
+					"trigger": "\"Don't be a fool.\""
+				}]
+			}
+		}, {
+			"id": "A3.MedicalSupplies.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Medical Supplies"
 		}]
 	}, {
 		"id": "A3.MedicalSupplies.1",
@@ -417,6 +693,28 @@
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Medi-Gel_Sabotage"],
 		"relatedDecisionIds": ["D1.Conrad", "D2.Conrad", "D3.Conrad", "D1.ElkossLicense", "D1.Hossle", "D1.AsariWritings", "D1.Rita"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Conrad Verner",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.MediGelSabotage.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Can you help me now?\""
+				}, {
+					"id": "A3.MediGelSabotage.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Did you poison the medi-gel?\""
+				}]
+			}
+		}, {
+			"id": "A3.MediGelSabotage.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -458,6 +756,12 @@
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Reaper_Code_Fragments"],
 		"relatedMissionIds": ["A3.GethFighterSquadrons"],
+		"conversationRewards": [{
+			"id": "A3.ReaperCodeFragments.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Geth Dreadnought"
@@ -475,6 +779,12 @@
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Target_Jamming_Technology"],
 		"relatedMissionIds": ["A3.AdmiralKoris"],
+		"conversationRewards": [{
+			"id": "A3.TargetJammingTechnology.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Geth Dreadnought"
@@ -492,6 +802,51 @@
 		"reward": "5,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Volus_Ambassador"],
 		"relatedDecisionIds": ["D2.Zaeed"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Din Korlack",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.VolusAmbassador.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Are you injured?\""
+				}, {
+					"id": "A3.VolusAmbassador.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"You could've avoided this.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Choosing between the turian colony and the volus fleet",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.VolusAmbassador.P2A",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "\"I want the colony safe.\""
+				}, {
+					"id": "A3.VolusAmbassador.R2A",
+					"type": "Renegade",
+					"value": 5,
+					"trigger": "\"I'll take the bombers.\""
+				}, {
+					"id": "A3.VolusAmbassador.P2B",
+					"type": "Paragon",
+					"value": 15,
+					"context": "*_Charm Din Korlack_* (Requires Zaeed)",
+					"trigger": "\"You're better than this.\""
+				}, {
+					"id": "A3.VolusAmbassador.R2B",
+					"type": "Renegade",
+					"value": 15,
+					"context": "*_Intimidate Din Korlack_* (Requires Zaeed)",
+					"trigger": "\"Beat him, Zaeed.\""
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -540,6 +895,12 @@
 		"experience": 210,
 		"reward": "5,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Wounded_Batarian"],
+		"conversationRewards": [{
+			"id": "A3.WoundedBatarian.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -557,6 +918,12 @@
 		"reward": "1,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Asari_Widow"],
 		"relatedMissionIds": ["A3.ArdatYakshiMonastery"],
+		"conversationRewards": [{
+			"id": "A3.AsariWidow.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -584,6 +951,28 @@
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Aria:_Blood_Pack"],
 		"relatedMissionIds": ["A3.Aria2", "A3.Aria3", "DLC3.Omega1"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Gryll",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.Aria1.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'm going to trust you.\""
+				}, {
+					"id": "A3.Aria1.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'll kill you if you're lying.\""
+				}]
+			}
+		}, {
+			"id": "A3.Aria1.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -603,6 +992,79 @@
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Aria:_Blue_Suns"],
 		"relatedMissionIds": ["A3.Aria1", "A3.Aria3", "DLC3.Omega1"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Darner Vosque",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.Aria2.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I won't kill for you.\""
+						}, {
+							"id": "A3.Aria2.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I'll take care of it.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.Aria2.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Same damn thing.\""
+						}, {
+							"id": "A3.Aria2.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Save the soft sell.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Kannik",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.Aria2.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"What will you take?\""
+				}, {
+					"id": "A3.Aria2.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'm not asking.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to General Oraka",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.Aria2.P4",
+					"type": "Paragon",
+					"value": 5,
+					"trigger": "(Get artifact for Kannik and notify Oraka.)"
+				}, {
+					"id": "A3.Aria2.R4",
+					"type": "Renegade",
+					"value": 5,
+					"trigger": "\"Walk away from this.\" and (Place a kill order on Oraka.)"
+				}]
+			}
+		}, {
+			"id": "A3.Aria2.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -622,6 +1084,69 @@
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Aria:_Eclipse"],
 		"relatedMissionIds": ["A3.Aria1", "A3.Aria2", "DLC3.Omega1"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Bailey",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.Aria3.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Let me see her.\""
+				}, {
+					"id": "A3.Aria3.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Release her immediately.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to Sederis on vidcomm",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.Aria3.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Leave it in the past.\""
+						}, {
+							"id": "A3.Aria3.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Don't threaten me.\""
+						}]
+					}
+				}, {
+					"id": "A3.Aria3.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"It doesn't matter.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Negotiating with Seyn instead of Sederis",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.Aria3.P4",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You don't need Sederis.\""
+				}, {
+					"id": "A3.Aria3.R4",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Then you kill her.\""
+				}]
+			}
+		}, {
+			"id": "A3.Aria3.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -1034,6 +1559,79 @@
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tuchanka:_Bomb"],
 		"relatedMissionIds": ["A3.TurretSchematics"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Lieutenant Victus",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.Bomb.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We have your back.\""
+				}, {
+					"id": "A3.Bomb.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Don't screw this up.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "On the shuttle (without Garrus)",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.Bomb.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I hate losing people.\""
+				}, {
+					"id": "A3.Bomb.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"War requires sacrifice.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "In the War Room afterwards",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.Bomb.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We need to move on.\""
+						}, {
+							"id": "A3.Bomb.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You're both wrong.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "A3.Bomb.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You paid a high price.\" or \"We're all lucky.\""
+						}, {
+							"id": "A3.Bomb.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Your son fixed this.\" or \"This was a mess.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "A3.Bomb.PR100",
+			"type": "Paragade",
+			"value": 10,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Tuchanka: Turian Platoon"
@@ -1468,6 +2066,28 @@
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dekuuna:_Elcor_Extraction"],
 		"relatedMissionIds": ["A3.CodeOfTheAncients"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to the elcor ambassador",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.ElcorExtraction.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I'll do what I can.\""
+				}, {
+					"id": "A3.ElcorExtraction.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I may be too late.\""
+				}]
+			}
+		}, {
+			"id": "A3.ElcorExtraction.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Rannoch"
@@ -1488,6 +2108,12 @@
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Benning:_Evidence"],
 		"relatedMissionIds": ["A3.N7CerberusAbductions"],
+		"conversationRewards": [{
+			"id": "A3.BenningEvidence.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh"
@@ -1973,9 +2599,72 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Arrae:_Ex-Cerberus_Scientists"],
 		"relatedDecisionIds": ["D2.Jacob", "D3.ArcherG", "D3.ArcherD"],
 		"relatedMissionIds": ["A3.CerberusTurianPoison"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Dr. Cole",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.ExCerberusScientists.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Running was smart.\""
+				}, {
+					"id": "A3.ExCerberusScientists.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Running took guts.\""
+				}]
+			}
+		}, {
+			"context": "Speaking to Dr. Brown",
+			"id": "A3.ExCerberusScientists.PR2",
+			"type": "Paragade",
+			"value": 2,
+			"trigger": "(Automatic)"
+		}, {
+			"set": {
+				"context": "Speaking to Dr. Cole at the stairs",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.ExCerberusScientists.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"There's a lot on the line.\""
+				}, {
+					"id": "A3.ExCerberusScientists.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"We can't let that distract us.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Trying to recruit Jacob on the shuttle out",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.ExCerberusScientists.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I understand.\""
+				}, {
+					"id": "A3.ExCerberusScientists.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'm disappointed.\""
+				}]
+			}
+		}, {
+			"id": "A3.ExCerberusScientists.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Ex-Cerberus Scientists"
 		}]
 	}, {
 		"id": "A3.ExCerberusScientists.1",
@@ -1984,7 +2673,7 @@
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Speak to Scientists",
-		"description": "[megametracker://person?id=O3.Brynn] is leading the group. If [megametracker://person?id=S2.Jacob] survived Game2, he will be here also, as Dr. Cole's romantic partner. If not, Cole will be very suspicious of you. You can also talk to [megametracker://person?id=O2.ArcherG] - if you saved David at Grissom Academy, he will want to hear about it. \n\nHead outside when you want to start the battle."
+		"description": "[megametracker://person?id=O3.Brynn] is leading the group. If [megametracker://person?id=S2.Jacob] survived Game2, he will be here also, as Dr. Cole's romantic partner. If not, Cole will be very suspicious of you. You can also talk to [megametracker://person?id=O2.ArcherG] - if you saved David at Grissom Academy, he will want to hear about it. \n\nHead outside when you want to start the battle. \n\nIf you romanced Jacob in Game 2, you can have a messy, toxic conversation where you try to win him back ([YouTube|https://www.youtube.com/watch?v=O8GqKunyspA])."
 	}, {
 		"id": "A3.ExCerberusScientists.2",
 		"inMissiond": "A3.ExCerberusScientists",
@@ -2021,9 +2710,222 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kallini:_Ardat-Yakshi_Monastery"],
 		"relatedMissionIds": ["A3.AsariWidow"],
 		"relatedDecisionIds": ["D2.Samara", "D2.Morinth", "D3.Morinth", "D3.Falere"],
+		"conversationRewards": [{
+			"set": {
+				"context": "On the shuttle down",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.ArdatYakshiMonastery.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Bombs are a last resort.\" or \"We don't know that.\""
+				}, {
+					"id": "A3.ArdatYakshiMonastery.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Then neither do we.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Finding the asari captain's body",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.ArdatYakshiMonastery.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It seems drastic.\""
+				}, {
+					"id": "A3.ArdatYakshiMonastery.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I can't blame them.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Encountering Samara (if she survived Game 2)",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "A3.ArdatYakshiMonastery.P3",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We'll help search.\""
+				}, {
+					"id": "A3.ArdatYakshiMonastery.R3",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'm blowing this place up.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Encountering Falere",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"context": "(If Samara survived Game 2)",
+						"options": [{
+							"id": "A3.ArdatYakshiMonastery.P4",
+							"type": "Paragon",
+							"value": 2,
+							"context": "\"The Ardat-Yakshi are innocent?\"",
+							"trigger": "\"Doesn't change why we're here.\""
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A3.ArdatYakshiMonastery.P5",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"We won't.\""
+								}, {
+									"id": "A3.ArdatYakshiMonastery.R5",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"It's not a rescue mission.\""
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"context": "(If Samara is not there)",
+						"options": [{
+							"set": {
+								"context": "\"Can you prove you're harmless?\"",
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A3.ArdatYakshiMonastery.P6",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"We'll help find her.\""
+								}, {
+									"id": "A3.ArdatYakshiMonastery.R6",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"I don't have time.\""
+								}]
+							}
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A3.ArdatYakshiMonastery.P7",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"We can try.\""
+								}, {
+									"id": "A3.ArdatYakshiMonastery.R7",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"I don't have time.\""
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After the bomb",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"context": "(If Samara survived Game 2)",
+						"isExclusiveSet": true,
+						"options": [{
+							"set": {
+								"context": "*Paragon Interrupt*",
+								"options": [{
+									"id": "A3.ArdatYakshiMonastery.P10",
+									"type": "Paragon",
+									"value": 15,
+									"trigger": "Prevent Samara from shooting herself."
+								}, {
+									"set": {
+										"isExclusiveSet": true,
+										"options": [{
+											"id": "A3.ArdatYakshiMonastery.P11",
+											"type": "Paragon",
+											"value": 2,
+											"trigger": "\"You could stay, Samara.\""
+										}, {
+											"id": "A3.ArdatYakshiMonastery.R11",
+											"type": "Renegade",
+											"value": 2,
+											"trigger": "\"It's time to fight, Samara.\""
+										}]
+									}
+								}]
+							}
+						}, {
+							"set": {
+								"context": "(No Interrupt)",
+								"options": [{
+									"id": "A3.ArdatYakshiMonastery.R10",
+									"type": "Renegade",
+									"value": 5,
+									"trigger": "\"You're too dangerous.\""
+								}, {
+									"id": "A3.ArdatYakshiMonastery.R12",
+									"type": "Renegade",
+									"value": 10,
+									"context": "*Renegade Interrupt*",
+									"trigger": "Shoot Falere."
+								}]
+							}
+						}]
+					}
+				}, {
+					"set": {
+						"context": "(If Samara is not there)",
+						"options": [{
+							"set": {
+								"options": [{
+									"id": "A3.ArdatYakshiMonastery.P20",
+									"type": "Paragon",
+									"value": 2,
+									"trigger": "\"She chose to save you.\""
+								}, {
+									"id": "A3.ArdatYakshiMonastery.R20",
+									"type": "Renegade",
+									"value": 2,
+									"trigger": "\"She was beyond help.\""
+								}]
+							}
+						}, {
+							"set": {
+								"isExclusiveSet": true,
+								"options": [{
+									"id": "A3.ArdatYakshiMonastery.P21",
+									"type": "Paragon",
+									"value": 15,
+									"trigger": "\"Are you sure?\""
+								}, {
+									"id": "A3.ArdatYakshiMonastery.R10",
+									"type": "Renegade",
+									"value": 5,
+									"trigger": "\"I can't let you live.\""
+								}, {
+									"id": "A3.ArdatYakshiMonastery.R12",
+									"type": "Renegade",
+									"value": 10,
+									"context": "*Renegade Interrupt*",
+									"trigger": "Shoot Falere."
+								}]
+							}
+						}]
+					}
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Ardat-Yakshi Monastery"
 		}]
 	}, {
 		"id": "A3.ArdatYakshiMonastery.1",

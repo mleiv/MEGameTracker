@@ -12,6 +12,7 @@
 		"voiceActor": "Tricia Helfer",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/EDI"],
 		"relatedDecisionIds": ["D3.EdiJoker"],
+		"relatedMissionIds": ["A3.Convo.S.EDI"],
 		"gameVersionData": {
 			"1": {
 				"personType": "Associate"
@@ -31,8 +32,8 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Javik.png",
 		"voiceActor": "Ike Amadi",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Javik"],
-		"relatedMissionIds": ["DLC3.FromAshes1"],
-		"relatedDecisionIds": ["D3.LoveJavik"],
+		"relatedDecisionIds": ["D3.LoveJavik", "D3.JavikLiara", "D3.JavikMemoryShard"],
+		"relatedMissionIds": ["DLC3.FromAshes1", "A3.Convo.S.Javik"],
 		"gameVersionData": {
 			"3": {
 				"isFemaleLoveInterest": true,
@@ -60,6 +61,7 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/James_Vega"],
 		"sideEffects": ["Vega's backstory is told in the comics *Mass Effect: Paragon Lost* and *Mass Effect: Conviction*"],
 		"relatedDecisionIds": ["D3.LoveVega"],
+		"relatedMissionIds": ["A3.Convo.S.James"],
 		"gameVersionData": {
 			"3": {
 				"isFemaleLoveInterest": true,
@@ -86,7 +88,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Brooks.png",
 		"voiceActor": "Siobhan Hewlett",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Maya_Brooks"],
-		"relatedMissionIds": ["DLC3.Citadel"],
+		"relatedMissionIds": ["DLC3.Citadel.1"],
 		"relatedDecisionIds": ["D3.Brooks"],
 		"sideEffects": [
 			"Brooks says she named her hacking program after her cat, Mr. Biscuits, which is an awesome cat name (although myself, I named my cat Kasumi).",
@@ -187,6 +189,7 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Diana_Allers"],
 		"sideEffects": ["If Shepard refuses Allers' request to travel with the Normandy, she will choose the SSV Shasta instead. She then dies with the rest of the crew when the ship is destroyed."],
 		"relatedDecisionIds": ["D3.LoveAllers"],
+		"relatedMissionIds": ["A3.Convo.C.Allers"],
 		"gameVersionData": {
 			"3": {
 				"isMaleLoveInterest": true,
@@ -214,6 +217,7 @@
 		"voiceActor": "Matthew Del Negro",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Steve_Cortez"],
 		"relatedDecisionIds": ["D3.LoveSteve"],
+		"relatedMissionIds": ["A3.Convo.C.Cortez"],
 		"sideEffects": [
 			"If Shepard does not speak to Cortez and help him deal with his grief, he dies during [megametracker://mission?id=M3.3.Earth], when his shuttle is shot and crashes: [YouTube|https://www.youtube.com/watch?v=7k2U9KgnOTs]."
 		],
@@ -298,6 +302,7 @@
 		"voiceActor": "Sumalee Montano",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Nyreen_Kandros"],
 		"relatedMissionIds": ["DLC3.Omega3"],
+		"sideEffects": ["Nyreen's cousin, Tiran heads the Nexus miltia in Mass Effect: Andromeda."],
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game1"
@@ -316,7 +321,7 @@
 		"photo": "http://urdnot.com/megametracker/app/images/Game3/3Traynor.png",
 		"voiceActor": "Alix Wilton Regan",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Samantha_Traynor"],
-		"relatedMissionIds": ["DLC3.Citadel"],
+		"relatedMissionIds": ["DLC3.Citadel1", "A3.Convo.C.Traynor"],
 		"sideEffects": [
 			"If Shepard romances Traynor, there is a conversationg where she says, sweet talk all she wants, but \"I still won't feed your fish\", a nod to Kelly Chambers in Game 2",
 			"If Shepard romances Traynor, during the Citadel DLC party, Joker suggests Traynor check to see if Shepard's back glows red during sex, a reference to Battlestar Galactica."

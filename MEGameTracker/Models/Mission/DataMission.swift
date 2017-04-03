@@ -19,6 +19,7 @@ public struct DataMission: MapLocationable {
 	public fileprivate(set) var gameVersion: GameVersion
 	fileprivate var _name: String = "Unknown"
 	public var pageTitle: String?
+	public var titlePrefix: String?
 	public var aliases: [String] = []
 	public var missionType: MissionType = .mission
 	public var description: String?
@@ -42,7 +43,7 @@ public struct DataMission: MapLocationable {
 		if missionType == .mission || missionType == .assignment {
 			return _name
 		} else {
-			return "\(missionType.titlePrefix)\(_name)"
+			return "\(titlePrefix ?? missionType.titlePrefix)\(_name)"
 		}
 	}
 
@@ -131,6 +132,7 @@ extension DataMission: SerializedDataRetrievable {
 
 		missionType = MissionType(stringValue: data["missionType"]?.string) ?? missionType
 		pageTitle = data["pageTitle"]?.string
+		titlePrefix = data["titlePrefix"]?.string
 		inMissionId = data["inMissionId"]?.string
 		identicalMissionId = data["identicalMissionId"]?.string
 		isOpensDetail = data["isOpensDetail"]?.bool ?? isOpensDetail

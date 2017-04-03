@@ -122,9 +122,10 @@ public enum MissionType: Int {
 	/// Provides a title prefix for a mission of the specified enum type.
 	public var titlePrefix: String {
 		switch self {
-		case .mission: return ""
-		case .assignment: return ""
-		case .collection: return ""
+		case .conversation: return "\(headingValue): " // use plural - makes more sense as they are collections
+		case .mission: fallthrough
+		case .assignment: fallthrough
+		case .collection: fallthrough
 		case .subset: return ""
 		default: return "\(stringValue): "
 		}

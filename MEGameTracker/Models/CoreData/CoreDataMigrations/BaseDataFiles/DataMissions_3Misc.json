@@ -14,6 +14,100 @@
 		"reward": "5,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Eden_Prime"],
 		"relatedMissionIds": ["DLC3.FromAshes2"],
+		"conversationRewards": [{
+			"set": {
+				"context": "On the shuttle down",
+				"options": [{
+					"set": {
+						"context": "\"I remember Eden Prime.\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.FromAshes1.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "Ashley: \"You've improved.\" \nKaidan: \"Damn right we do.\" or \"You're still with me.\" \nGarrus: \"You and bureaucracy.\" \nTali: \"You made a difference.\" \nJames: \"He tried. He failed.\" \nEDI: \"I'm fine.\" \n(No import) \"This is why you're here.\""
+						}, {
+							"id": "DLC3.FromAshes1.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "Ashley: \"We both lost people.\" \nKaidan: \"It wasn't just geth back then.\" \nGarrus: \"It got better.\" \nTali: \"And Saren was finished.\" \nJames: \"He wanted the beacon.\" \nEDI: \"It gets me angry.\" \n(No import) \"We're here to stop Cerberus.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.FromAshes1.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"These people have it rough.\""
+						}, {
+							"id": "DLC3.FromAshes1.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Focus on the artifact.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "On the elevator to the dig site",
+				"options": [{
+					"set": {
+						"context": "\"I'm curious about them.\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.FromAshes1.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Impressive.\""
+						}, {
+							"id": "DLC3.FromAshes1.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"That sounds too friendly.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.FromAshes1.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Then I'm glad you're here,\" or \"This is a great chance.\""
+						}, {
+							"id": "DLC3.FromAshes1.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"First we open it.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Opening stasis pod",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.FromAshes1.P10",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"It wasn't a failure.\""
+				}, {
+					"id": "DLC3.FromAshes1.R10",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I need your help.\""
+				}]
+			}
+		}, {
+			"id": "DLC3.FromAshes1.PR100",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel I"
@@ -88,7 +182,7 @@
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Processing Update",
-		"description": ""
+		"isOpensDetail": false
 	}, {
 		"inMissionId": "DLC3.FromAshes2.2",
 		"id": "DLC3.FromAshes2",
@@ -96,7 +190,7 @@
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Troop Deployment Update",
-		"description": ""
+		"isOpensDetail": false
 	}, {
 		"inMissionId": "DLC3.FromAshes2.3",
 		"id": "DLC3.FromAshes2",
@@ -104,7 +198,7 @@
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Resistance Information Update",
-		"description": ""
+		"isOpensDetail": false
 
 	}, {
 		"id": "DLC3.Leviathan",
@@ -119,7 +213,49 @@
 		"experience": 0,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mass_Effect_3:_Leviathan"],
-		"relatedDecisionIds": ["D3.AnnBryson"]
+		"relatedDecisionIds": ["D3.AnnBryson"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Dealing with Hadley after Dr. Bryson is shot",
+				"options": [{
+					"id": "DLC3.Leviathan.P1",
+					"type": "Paragon",
+					"value": 0,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Disarm Hadley."
+				}, {
+					"id": "DLC3.Leviathan.R2",
+					"type": "Renegade",
+					"value": 0,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Force Hadley to look at Dr. Bryson's body."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Using Ann Bryson to locate Leviathan",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Leviathan.P10",
+					"type": "Paragon",
+					"value": 2,
+					"context": "No Interrupt",
+					"trigger": "Allow James to lower artifact shield."
+				}, {
+					"id": "DLC3.Leviathan.R11",
+					"type": "Renegade",
+					"value": 2,
+					"context": "*1 Renegade Interrupt*",
+					"trigger": "Prevent James from lowering artifact shield."
+				}, {
+					"id": "DLC3.Leviathan.R12",
+					"type": "Renegade",
+					"value": 7,
+					"context": "*2 Renegade Interrupts*",
+					"trigger": "Prevent James from lowering artifact shield, causing brain damage to Ann Bryson."
+				}]
+			}
+		}]
 	}, {
 		"id": "DLC3.Leviathan.1",
 		"inMissionId": "DLC3.Leviathan",
@@ -218,6 +354,42 @@
 		"experience": 0,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Aria_T%27Loak"],
+		"conversationRewards": [{
+			"set": {
+				"context": "Speaking to Aria in Purgatory",
+				"options": [{
+					"set": {
+						"isExclusive": true,
+						"options": [{
+							"id": "A3.Convo.A.Aria.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"But you're alive.\""
+						}, {
+							"id": "A3.Convo.A.Aria.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Payback is hell.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusive": true,
+						"options": [{
+							"id": "A3.Convo.A.Aria.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Those gangs are scum.\""
+						}, {
+							"id": "A3.Convo.A.Aria.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Whatever it takes.\""
+						}]
+					}
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -237,6 +409,327 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Aria_T%27Loak"],
+		"relatedDecisionIds": ["D3.OmegaReactor", "D3.OmegaKiss"],
+		"conversationRewards": [{
+			"set": {
+				"context": "After the initial battle",
+				"options": [{
+					"id": "DLC3.Omega3.P0",
+					"type": "Renegade",
+					"value": 0,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Shoot the surveillance camera."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting Nyreen",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Omega2.P1",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You two must be close.\""
+						}, {
+							"id": "DLC3.Omega2.R1",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You're getting sloppy, Aria.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Omega2.P2",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You look capable.\""
+						}, {
+							"id": "DLC3.Omega2.R2",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Just try to keep up.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "At the bunker",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Omega2.P3",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I'm concerned, too.\""
+						}, {
+							"id": "DLC3.Omega2.R3",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Do you have another plan?\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Omega2.P4",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We could use Nyreen's help.\""
+						}, {
+							"id": "DLC3.Omega2.R4",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"She could be a spy.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Omega2.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You better control yourself.\""
+						}, {
+							"id": "DLC3.Omega2.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I won't stand in your way.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"id": "DLC3.Omega3.PR10",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Reaching the bunker.)"
+		}, {
+			"set": {
+				"context": "Talking to Aria at the bunker",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Omega2.P15",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We'll negotiate an alliance.\""
+				}, {
+					"id": "DLC3.Omega2.R15",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Mercs only respect strength.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Climbing the ladder",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Omega2.P16",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"I don't use people.\""
+				}, {
+					"id": "DLC3.Omega2.R16",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"That's war.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Discovering Nyreen is leading the Talons",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Omega2.P17",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Let us help.\""
+				}, {
+					"id": "DLC3.Omega2.R17",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Not a chance.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Nyreen about the adjutants",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Omega2.P18",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You overcame a lot.\""
+				}, {
+					"id": "DLC3.Omega2.R18",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Shake it off.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Nyreen",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Omega2.P19",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"That's enough, Aria.\""
+				}, {
+					"id": "DLC3.Omega2.R19",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Don't be blind, Nyreen.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "At the bunker again",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Omega2.P20",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"That's manipulative.\""
+				}, {
+					"id": "DLC3.Omega2.R20",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'm impressed.\""
+				}]
+			}
+		}, {
+			"id": "DLC3.Omega3.PR30",
+			"type": "Paragade",
+			"value": 15,
+			"trigger": "(Returning to the bunker.)"
+		}, {
+			"set": {
+				"context": "Speaking to Petrovsky hologram",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Omega2.P35",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"You're a smart man.\""
+				}, {
+					"id": "DLC3.Omega2.R35",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Stop stroking your ego.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Deactivating the reactor",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"options": [{
+							"id": "DLC3.Omega3.R40",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*First Renegade Interrupt*",
+							"trigger": "Let the civilians die."
+						}, {
+							"id": "DLC3.Omega3.R41",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*Second Renegade Interrupt*",
+							"trigger": "Let the civilians die."
+						}, {
+							"id": "DLC3.Omega3.R42",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*Third Renegade Interrupt*",
+							"trigger": "Let the civilians die."
+						}]
+					}
+				}, {
+					"id": "DLC3.Omega3.R43",
+					"type": "Paragon",
+					"value": 0,
+					"context": "*Paragon Interrupt* (Engineer only)",
+					"trigger": "Reroute power to civilians."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After the reactor",
+				"options": [{
+					"id": "DLC3.Omega3.R44",
+					"type": "Paragon",
+					"value": 0,
+					"context": "*Paragon Interrupt*",
+					"trigger": "Defend Nyreen."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Aria and Nyreen in the elevator",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Omega2.P45",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Keep civilians safe.\""
+				}, {
+					"id": "DLC3.Omega2.R45",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Focus on the enemy.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Dealing with Petrovsky",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"context": "(Prior Paragon - Aria hands over Petrovsky)",
+						"options": [{
+							"id": "DLC3.Omega3.R55",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*First Renegade Interrupt*",
+							"trigger": "Point gun at Petrovsky."
+						}, {
+							"id": "DLC3.Omega3.R56",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*Second Renegade Interrupt*",
+							"trigger": "Shoot Petrovsky."
+						}]
+					}
+				}, {
+					"set": {
+						"context": "(Prior Renegade - Aria chokes Petrovsky)",
+						"options": [{
+							"id": "DLC3.Omega3.P55",
+							"type": "Paragon",
+							"value": 0,
+							"context": "*First Paragon Interrupt*",
+							"trigger": "Tell Aria to stop (she ignores you)."
+						}, {
+							"id": "DLC3.Omega3.P56",
+							"type": "Paragon",
+							"value": 0,
+							"context": "*Second Paragon Interrupt*",
+							"trigger": "Tell Aria to stop (she stops)."
+						}]
+					}
+				}]
+			}
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -244,6 +737,480 @@
 			"type": "BlockedAfter",
 			"id": "Completed: Priority: Cerberus Headquarters"
 		}]
+	}, {
+		"id": "DLC3.Omega2.1",
+		"inMissionId": "DLC3.Omega2",
+		"sortIndex": 10801,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Dock 42",
+		"description": "Meet [megametracker://person?id=O3.Bray] at the Citadel's Dock 42 (only available for this assignment). He will take you to a cab where Aria is waiting. She explains that you will be taking no other squad members to Omega - it's just Aria. \n\nAria has stolen a Cerberus ship to infiltrate the fleet defending Omega, getting close enough to take out the command ship and then using the rest of her forces to distract Cerberus while she rams her armored ship past Omega's defenses, and then retakes it from inside. The first part goes right, but then [megametracker://person?id=E3.Petrovsky] contacts Aria to inform her that he's improved Omega's shields and she won't be able to penetrate them. When Aria tries ramming the station, the ship is destroyed, and you are forced to the escape pods. Your pod escapes the cannons and crashes into hangar bay 28.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.2",
+		"inMissionId": "DLC3.Omega2",
+		"sortIndex": 10802,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Disable Defense System",
+		"description": "Disable Omega's defenses so the other ships can land.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.2.2",
+		"inMissionId": "DLC3.Omega2.2",
+		"sortIndex": 108022,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Blast Door Controls",
+		"description": "Find the controls and lower the blast doors to continue. There is another batch of Cerberus soldiers in the next room.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.2.3",
+		"inMissionId": "DLC3.Omega2.2",
+		"sortIndex": 108023,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Pressure Door",
+		"description": "Head up the elevator and across to the door. Open it to a long market/ventillation room, where more Cerberus forces are waiting. Take them down and then try to open the door at the end. This will start the repressurization, and you will face another wave of Cerberus.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.2.4",
+		"inMissionId": "DLC3.Omega2.2",
+		"sortIndex": 108024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Defense System Controls",
+		"description": "Head down the hall to the control room, where there is another fight with Cerberus. When clear, deactivate the defense system.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.3",
+		"inMissionId": "DLC3.Omega2",
+		"sortIndex": 10803,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Rendezvous Point",
+		"description": "Head to the rendezvous with the rest of Aria's forces.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.3.1",
+		"inMissionId": "DLC3.Omega2.3",
+		"sortIndex": 108031,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Garage Door Controls",
+		"description": "Exit the control room and head up the elevator. Kill another team of Cerberus and then activate the garage door controls to continue to the streets of Omega, where Aria will comment on the Cerberus force fields.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.3.2",
+		"inMissionId": "DLC3.Omega2.3",
+		"sortIndex": 108032,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Door Controls",
+		"description": "Head across and down a hallway, fighting off a few Cerberus troops. Take the Talon-tagged elevator down, then across and out the door onto the broken catwalk. Drop down to the street when you see the the force field and Aria points out one of her soldiers beside it. He is killed by a Rampart mech, several of which now attack you and Aria. When the area is cleared, use the door controls to continue.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.3.3",
+		"inMissionId": "DLC3.Omega2.3",
+		"sortIndex": 108033,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Nyreen",
+		"description": "Aria will lead you down to her secret tunnels, where you meet Nyreen, an old friend of Aria's.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.3.4",
+		"inMissionId": "DLC3.Omega2.3",
+		"sortIndex": 108034,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Canon Controls",
+		"description": "Bypass the door to continue on through the tunnels. When you emerge into open space, you will have to take down an Atlas as well as Cerberus troops and Rampart mechs, then target the engineer at the canon controls. Another Atlas will show up, but activating the canon controls will take care of it.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.4",
+		"inMissionId": "DLC3.Omega2",
+		"sortIndex": 10804,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Bunker, Part 1",
+		"description": "You can pick up some side missions here, and prep for the rest of the assignment. Aria will reveal that she needs two things: to increase her numbers against Cerberus, and to shut down the force fields blocking off sections of Omega. She proposes an alliance with the one mercenary gang still active on Omega: the Talons. Bray will then report that Nyreen has turned up missing. When you are ready to move on, tell Aria.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.5",
+		"inMissionId": "DLC3.Omega2",
+		"sortIndex": 10805,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Reach Talon Territory",
+		"description": "Aria wants to strike an alliance with the Talons, a mercenary group still active on Omega.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.5.1",
+		"inMissionId": "DLC3.Omega2.5",
+		"sortIndex": 108051,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Lift",
+		"description": "Once the cutscene of climbing the ladder with Aria is finished, head down the hall and up the ladder, then around the corner and up to the controls. Activate them. The lift is jammed, so shoot out the crates underneath it. Then take the ladder down to the lift and activate it to rise up on the other side.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.5.2",
+		"inMissionId": "DLC3.Omega2.5",
+		"sortIndex": 108052,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Generator",
+		"description": "Head up the ladder and around the corner. Open the door to the tunnels. Keep going until you reach the generator controls. Reactivate the generator, then activate the air seal to gain access to the vents.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.5.3",
+		"inMissionId": "DLC3.Omega2.5",
+		"sortIndex": 108053,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Cargo Elevator",
+		"description": "Drop down the ladder and take several batches of stairs down to another fight with Cerberus. When they are dispatched, take the cargo elevator down.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.5.4",
+		"inMissionId": "DLC3.Omega2.5",
+		"sortIndex": 108054,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Cerberus Lockdown",
+		"description": "Head down more stairs, to more Cerberus forces. Head into the room and clear it out, then open the door to the next room and the next fight. In a small side room is a terminal where you can deactivate the Cerberus lockdown. This will open the elevator at the end of the hall, with a few mechs and a Cerberus Guardian inside it.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.5.5",
+		"inMissionId": "DLC3.Omega2.5",
+		"sortIndex": 108055,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Talon Leader",
+		"description": "Go down the elevator to the warehouse. It opens up to two landing pads, where Cerberus continues to drop off more troops. When the fight is over, head down the ramp beyond the lower landing pad and bypass the door to reach the Talon Outpost. \n\nInside, Cerberus has several Talons with guns to their heads. Nyreen takes them down, where you learn that she is leading the Talons.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.5.6",
+		"inMissionId": "DLC3.Omega2.5",
+		"sortIndex": 108056,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Hold Position",
+		"x-comment-x": "Tie location to locked door.",
+		"description": "When you head out the door, more Rampart mechs will attack and an Atlas. Try to take the elevator, which Cerberus will disable. Shoot the latch and descend the ladder into the elevator shaft. Fight through more Cerberus forces on the catwalks until you reach the locked door. You will have to fight off more troops while Nyreen bypasses it. Just before finishing the bypass, Nyreen will shut down the bridge controls, preventing two Atlases from reaching you. Clean up whoever is left and then head out.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.5.7",
+		"inMissionId": "DLC3.Omega2.5",
+		"sortIndex": 108057,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Talon Outpost",
+		"description": "Head up the elevator to the outpost. When you are ready, talk to Nyreen. Aria will give a rousing speech to Omega. Then head out the exit for another fight with Cerberus. When done, you will all return to Aria's bunker.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.6",
+		"inMissionId": "DLC3.Omega2",
+		"sortIndex": 10806,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Bunker, Part 2",
+		"description": "You can turn in some side quests and talk to Harrot about Aria's couch. You can also talk to Nyreen privately. Use the exit when you are ready to continue.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.7",
+		"inMissionId": "DLC3.Omega2",
+		"sortIndex": 10807,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Reach Mines",
+		"description": "You and Aria and Nyreen break into an abandoned processing plant. The elevator to the mines is deactivated, so you will need to find the power module and turn the power back on.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.7.1",
+		"inMissionId": "DLC3.Omega2.7",
+		"sortIndex": 108071,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Restore Power",
+		"description": "Past the elevator, head up the ladder to the pipes, and then up the stairs, down the ladder to the power control room. You will immediately be attacked by an Adjutant. Once it is down, bypass the door to exit the room.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.7.2",
+		"inMissionId": "DLC3.Omega2.7",
+		"sortIndex": 108072,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Access Elevator Control",
+		"description": "Head back to the now-active elevator. More Adjutants will attack. When you are clear, take the elevator up to the mines.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.8",
+		"inMissionId": "DLC3.Omega2",
+		"sortIndex": 10808,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Reach Reactor",
+		"description": "Get to the reactor inside the mines and disable it to bring down the force fields.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.8.1",
+		"inMissionId": "DLC3.Omega2.8",
+		"sortIndex": 108081,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Reach Upper Level",
+		"x-comment-x": "Tie map to reactor-level elevator drop-off.",
+		"description": "The reactor is on the top level of the mines. Get to the lift on the far side of the catwalks.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.8.1.1",
+		"inMissionId": "DLC3.Omega2.8.1",
+		"sortIndex": 1080811,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Find Alternate Route",
+		"description": "Before you can reach the lift, Cerberus will blow up the bridge. Drop down to the lower level. More Cerberus troops attack there. Head to the Maintenance Area and down the ladder. Rampart mechs and more Cerberus will attack. Continue out of the Maintenance Area and up the ladder. Take the ladder up another level, then down some more stairs to the Authorized Personnel Only area and attack more Cerberus and mechs. Then take the lift up to the next platform.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.8.1.2",
+		"inMissionId": "DLC3.Omega2.8.1",
+		"sortIndex": 1080812,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Mining Complex Lift",
+		"description": "There's one engineer on the this platform to kill, then head past the blocked Pedway Access and take the catwalk below to get across. Use the Mining Complex elevator to go up to the reactor level.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.8.2",
+		"inMissionId": "DLC3.Omega2.8",
+		"sortIndex": 108082,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Trap",
+		"description": "When you cross over the circular platform, Petrovsky springs his force field trap. You and Nyreen will need to fight off several waves of Rampart mechs, while Aria takes on the force field.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.8.3",
+		"inMissionId": "DLC3.Omega2.8",
+		"sortIndex": 108083,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Reactor Controls",
+		"description": "Aria and Nyreen open up a big enough hole in the force field to get you through. Head to the reactor controls, killing any mechs that get in your way. When you get to the Authorized Personnel Only, you will be timed. After the fourth conversation between Aria and Nyreen, they will die and the mission fails.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.8.4",
+		"inMissionId": "DLC3.Omega2.8",
+		"sortIndex": 108084,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Choice",
+		"description": "You have a choice here - to save the civilians or reroute power immediately (one of the Interrupts). There is no real consequence to waiting, apart from it will disqualify you from the kiss Aria bestows at the end if you Renegade the whole mission.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9",
+		"inMissionId": "DLC3.Omega2",
+		"sortIndex": 10809,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Retake Afterlife",
+		"description": "Petrovsky is holed up in Afterlife. Head up and take back Aria's home.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.1",
+		"inMissionId": "DLC3.Omega2.9",
+		"sortIndex": 108091,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Support Columns",
+		"description": "Cerberus has placed bombs against the central support columns of Omega. If detonated, the damage would block any access to Afterlife. Find and deactivate the bombs.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.1.1",
+		"inMissionId": "DLC3.Omega2.9.1",
+		"sortIndex": 1080911,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Dam Control",
+		"description": "There is a fight with Cerberus underway when you emerge. Continue along the catwalks toward the fan. The bridge explodes before you can cross, so divert to the control room on the right and activate the dam control to get across. Open the door on the other side to continue.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.1.2",
+		"inMissionId": "DLC3.Omega2.9.1",
+		"sortIndex": 1080912,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Fan Control",
+		"description": "There are four Cerberus Guardians to fight. When dispatched, bypass the door to Central Support. Drop down the shaft beside primary Ventillation Support and deactivate the fan control.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.1.3",
+		"inMissionId": "DLC3.Omega2.9.1",
+		"sortIndex": 1080913,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Access Panel Controls",
+		"description": "Go between the deactivated fan blades and jump the gap to attack the Cerberus troops with the bombs. Then open the access panels to reveal the bombs.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.1.4",
+		"inMissionId": "DLC3.Omega2.9.1",
+		"sortIndex": 1080914,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Disable Explosives",
+		"description": "Disable the bombs while fighting off more Cerberus forces. This task is timed (5 minutes).",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.1.4.1",
+		"inMissionId": "DLC3.Omega2.9.1.4",
+		"sortIndex": 10809141,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Bomb 1",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.1.4.2",
+		"inMissionId": "DLC3.Omega2.9.1.4",
+		"sortIndex": 10809141,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Bomb 2",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.1.4.3",
+		"inMissionId": "DLC3.Omega2.9.1.4",
+		"sortIndex": 10809143,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Bomb 3",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.1.4.4",
+		"inMissionId": "DLC3.Omega2.9.1.4",
+		"sortIndex": 10809144,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Bomb 4",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.2",
+		"inMissionId": "DLC3.Omega2.9",
+		"sortIndex": 108092,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Talon Checkpoint",
+		"description": "After Aria destroys the big fan, jump back across the gap and go up three ladders to the Gozu District. Go across the catwalks and past the Adjutant labs to a large room with Cerberus troops and an Atlas. After the fight, bypass the door and up another ladder and past the crashed shuttle. There are a handful of Cerberus troops here to fight, then bypass the door beyond them to the Talon checkpoint. You can take a break and talk to people here. Take the elevator up when you are ready to continue.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.3",
+		"inMissionId": "DLC3.Omega2.9",
+		"sortIndex": 108093,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Afterlife",
+		"description": "Nyreen dies just outside Afterlife, taking three Adjutants with her. Enraged, Aria storms into Afterlife by herself. You follow. Inside, Petrovsky catches Aria in a statis net. You must deactivate the statis generators, while fighting Adjutants, before Aria dies.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.3.1",
+		"inMissionId": "DLC3.Omega2.9.3",
+		"sortIndex": 1080931,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Statis Generator",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.3.2",
+		"inMissionId": "DLC3.Omega2.9.3",
+		"sortIndex": 1080932,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Statis Generator",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.3.3",
+		"inMissionId": "DLC3.Omega2.9.3",
+		"sortIndex": 1080933,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Statis Generator",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.9.3.4",
+		"inMissionId": "DLC3.Omega2.9.3",
+		"sortIndex": 1080934,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Statis Generator",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega2.10",
+		"inMissionId": "DLC3.Omega2",
+		"sortIndex": 10810,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Petrovsky",
+		"description": "Petrovsky orders the remaining Cerberus forces to surrender. Aria will attack him and strangle him. If you Paragon'd the assignment, she will let you decide his fate. Otherwise it will take a couple Interrupts to convince her to let him go. He will become a War Asset if you let him live. If you let him die (a long, brutal, noisy death) - and Renegade'd the whole assignment - Aria will kiss you ([YouTube|https://www.youtube.com/watch?v=_dz6GrqCMcE]). Aria gives another rousing speech to Omega. If you rescued Aria's couch, Harrot can be seen heading into Afterlife as you are leaving.",
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true,
+		"sideEffects": ["It's dumb that Aria is still available on the Citadel after this. Seriously, couldn't they have made her a hologram there instead? She said she wouldn't leave Omega again."]
+
 	}, {
 		"id": "DLC3.Omega3.Hacker",
 		"sortIndex": 1081,
@@ -256,6 +1223,12 @@
 		"experience": 0,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Assist_the_Hacker"],
+		"conversationRewards": [{
+			"id": "DLC3.Omega3.Hacker.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -263,6 +1236,36 @@
 			"type": "BlockedAfter",
 			"id": "Completed: Priority: Cerberus Headquarters"
 		}]
+	}, {
+		"id": "DLC3.Omega3.Hacker.1",
+		"inMissionId": "DLC3.Omega3.Mechanic",
+		"sortIndex": 10819,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Console",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega3.Hacker.2",
+		"inMissionId": "DLC3.Omega3.Mechanic",
+		"sortIndex": 10820,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Console",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Omega3.Hacker.3",
+		"inMissionId": "DLC3.Omega3.Mechanic",
+		"sortIndex": 10821,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Console",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
 	}, {
 		"id": "DLC3.Omega3.Mechanic",
 		"sortIndex": 1082,
@@ -275,6 +1278,12 @@
 		"experience": 0,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Assist_Harrot"],
+		"conversationRewards": [{
+			"id": "DLC3.Omega3.Mechanic.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -282,6 +1291,17 @@
 			"type": "BlockedAfter",
 			"id": "Completed: Priority: Cerberus Headquarters"
 		}]
+	}, {
+		"id": "DLC3.Omega3.Mechanic.1",
+		"inMissionId": "DLC3.Omega3.Mechanic",
+		"sortIndex": 10822,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Power Inverters",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
+
 	}, {
 		"id": "DLC3.Omega3.Harrot",
 		"sortIndex": 1083,
@@ -301,14 +1321,25 @@
 			"type": "BlockedAfter",
 			"id": "Completed: Priority: Cerberus Headquarters"
 		}]
+	}, {
+		"id": "DLC3.Omega3.Harrot.1",
+		"inMissionId": "DLC3.Omega3.Harrot",
+		"sortIndex": 10831,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Aria's Couch",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Omega",
+		"isShowInParentMap": true
 
 	}, {
-		"id": "DLC3.Citadel",
+		"id": "DLC3.Citadel1",
 		"sortIndex": 1500,
 		"gameVersion": "3",
 		"missionType": "DLC",
-		"name": "Citadel: Shore Leave",
-		"description": "The Normandy is due for repairs. Admiral Anderson has given you his apartment on the Citadel to relax during the retrofit. \n\nWhen you meet Joker for dinner, it begins a long, funny mission where you join up with all your past teammates and end up fighting your clone. When you win, you have a party with everyone and play games at the arcade. Like [megametracker://mission?id=DLC1.PS.CombatMissions] and [megametracker://mission?id=DLC2.LairShadowBroker], this DLC provides some extra currency (by winning the Armax Arsenal Arena). \n\n*_This assignment was released as part of the Citadel DLC pack._*",
+		"name": "Citadel",
+		"aliases": ["Citadel: Shore Leave", "Citadel Wards: Ambush", "Citadel: Identity Theft I", "Silver Coast Casino: Infiltration", "Citadel: Identity Theft II", "Citadel Archives: Escape", "Citadel Docks: Retake the Normandy"],
+		"description": "The Normandy is due for repairs. Admiral Anderson has given you his apartment on the Citadel to relax during the retrofit. \n\nThis begins a long, funny story where you join up with all your past teammates and end up fighting your clone. When you win, you have a party with everyone and play games at the arcade. Like [megametracker://mission?id=DLC1.PS.CombatMissions] and [megametracker://mission?id=DLC2.LairShadowBroker], this DLC provides some extra currency (by winning in the Armax Arsenal Arena). \n\n*_This assignment was released as part of the Citadel DLC pack._*",
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
 		"experience": 0,
@@ -317,8 +1348,1523 @@
 		"relatedDecisionIds": ["D3.Brooks"],
 		"sideEffects": [
 			"I recommend saving the game at the point where you bring a team to board the Normandy, so you can experiment with various squad conversations on the ride there. EDI is particularly hilarious."
-		]
+		],
+		"conversationRewards": [{
+			"set": {
+				"context": "Meeting Joker for sushi",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Citadel.P1",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"This is a vacation.\""
+				}, {
+					"id": "DLC3.Citadel.R1",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I don't like it either.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When approached by Brooks at the restaurant",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Citadel.P2",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Why?\""
+				}, {
+					"id": "DLC3.Citadel.R2",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Damn it.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Back at the apartment, talking to Brooks",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P5",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You're doing fine.\""
+						}, {
+							"id": "DLC3.Citadel.R5",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You need to focus.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P6",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"This is critical.\""
+						}, {
+							"id": "DLC3.Citadel.R6",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Shore leave canceled. Again.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After talking to crew, before going to the Casino",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P7",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Khan could be an ally.\""
+						}, {
+							"id": "DLC3.Citadel.R7",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I can lean on Khan.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P8",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"You're not alone.\""
+						}, {
+							"id": "DLC3.Citadel.R8",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Yes.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"context": "Hack Casino ATM terminal (can be repeated)",
+			"id": "DLC3.Citadel.R10",
+			"type": "Renegade",
+			"value": 2
+		}, {
+			"set": {
+				"context": "Speaking to the Mysterious Stranger in the panic room",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P15",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"That all you've got?\""
+						}, {
+							"id": "DLC3.Citadel.R15",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"Come out and fight.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P16",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"What do you want?\""
+						}, {
+							"id": "DLC3.Citadel.R16",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You'll need more than that.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting your clone in the Archives",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P20",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"We don't have to fight.\""
+						}, {
+							"id": "DLC3.Citadel.R20",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"There's only one Shepard.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P21",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Nobody takes my ship.\""
+						}, {
+							"id": "DLC3.Citadel.R22",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You're going to die.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Speaking to your clone in the Archives",
+				"options": [{
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P25",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I will end you.\""
+						}, {
+							"id": "DLC3.Citadel.R25",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"I will end you painfully.\""
+						}]
+					}
+				}, {
+					"set": {
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P26",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"They all matter.\""
+						}, {
+							"id": "DLC3.Citadel.R26",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"You've saved no one.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "After the Normandy codes are stolen",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Citadel.P30",
+					"type": "Renegade",
+					"value": 0,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Shoot the Citadel model."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Finding out Brooks and the clone are partners",
+				"options": [{
+					"set": {
+						"context": "\"I'll end you.\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P35",
+							"type": "Paragon",
+							"value": 0,
+							"context": "*Paragon Interrupt*",
+							"trigger": "\"Clever doesn't beat a bullet.\""
+						}, {
+							"id": "DLC3.Citadel.P36",
+							"type": "Paragon",
+							"value": 0,
+							"context": "*Paragon Interrupt*",
+							"trigger": "\"... that bullseye on your back is getting bigger by the second.\""
+						}]
+					}
+				}, {
+					"set": {
+						"context": "\"I'll end you painfully.\"",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.R35",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*Renegade Interrupt*",
+							"trigger": "Threaten to decapitate them."
+						}, {
+							"id": "DLC3.Citadel.R36",
+							"type": "Renegade",
+							"value": 0,
+							"context": "*Renegade Interrupt*",
+							"trigger": "Threaten to throw their heads out the airlock."
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "In the shuttle with Joker",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Citadel.P40",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"We'll be okay.\""
+				}, {
+					"id": "DLC3.Citadel.R40",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"We'll stop him/her.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Meeting Traynor outside the Normandy",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Citadel.P45",
+					"type": "Paragon",
+					"value": 0,
+					"context": "*Paragon Interrupt* (If romanced.)",
+					"trigger": "Kiss her (to prove you're not the clone)."
+				}, {
+					"set": {
+						"context": "Asking Traynor for help getting back on the Normandy",
+						"isExclusiveSet": true,
+						"options": [{
+							"id": "DLC3.Citadel.P46",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I know you, Traynor.\""
+						}, {
+							"id": "DLC3.Citadel.R46",
+							"type": "Renegade",
+							"value": 2,
+							"trigger": "\"That wasn't me.\""
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Asking Traynor for help getting back on the Normandy",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Citadel.P47",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Traynor, you can help me.\""
+				}, {
+					"id": "DLC3.Citadel.R47",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'm not giving up now.\""
+				}]
+			}
+		}, {
+			"set": {
+				"context": "When the clone ambushes you in the Shuttle Bay",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Citadel.P50",
+					"type": "Renegade",
+					"value": 5,
+					"context": "*Renegade Interrupt*",
+					"trigger": "Melee with clone."
+				}]
+			}
+		}, {
+			"set": {
+				"context": "At the Shuttle Bay doors, with the clone hanging off the edge",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Citadel.P51",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "(Save the clone)"
+				}, {
+					"id": "DLC3.Citadel.R51",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "(Kill the clone)"
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to handcuffed Brooks",
+				"isExclusiveSet": true,
+				"options": [{
+					"set": {
+						"options": [{
+							"id": "DLC3.Citadel.P55",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"Don't make me kill you.\""
+						}, {
+							"id": "DLC3.Citadel.P56",
+							"type": "Paragon",
+							"value": 2,
+							"context": "*Paragon Interrupt*",
+							"trigger": "Convince Brooks not to escape."
+						}]
+					}
+				}, {
+					"set": {
+						"options": [{
+							"id": "DLC3.Citadel.R55",
+							"type": "Paragon",
+							"value": 2,
+							"trigger": "\"I want to kill you.\""
+						}, {
+							"id": "DLC3.Citadel.R56",
+							"type": "Renegade",
+							"value": 2,
+							"context": "*Renegade Interrupt*",
+							"trigger": "Shoot Brooks."
+						}]
+					}
+				}]
+			}
+		}, {
+			"set": {
+				"context": "Talking to Joker back at the apartment",
+				"isExclusiveSet": true,
+				"options": [{
+					"id": "DLC3.Citadel.P60",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"Start party preparations.\""
+				}, {
+					"id": "DLC3.Citadel.R60",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"I'll think on it.\""
+				}]
+			}
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Priority: The Citadel II"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Citadel DLC 1"
+		}]
+	}, {
+		"id": "DLC3.Citadel1.1",
+		"inMissionId": "DLC3.Citadel1",
+		"sortIndex": 15001,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Shore Leave",
+		"description": "Visit Anderson's personal apartment on the Citadel to begin this assignment. You'll receive a message there from Joker, asking you to meet him at a restaurant.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.2",
+		"inMissionId": "DLC3.Citadel1",
+		"sortIndex": 15002,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Wards Ambush",
+		"description": "This is the first mission - to escape from the mercenaries and reunite with the Normandy crew.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.2.1",
+		"inMissionId": "DLC3.Citadel1.2",
+		"sortIndex": 150021,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Sushi",
+		"description": "Leave the apartment and take the elevator to meet Joker for sushi. When you both realize that you were brought there by a ruse, you are interrupted by a very flustered [Brooks (Spoilers!)|megametracker://person?id=E3.Brooks]. She explains that she has uncovered a threat to Shepard. Before she can explain more, you are attacked and Brooks is taken hostage.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.2.2",
+		"inMissionId": "DLC3.Citadel1.2",
+		"sortIndex": 150022,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Find Brooks",
+		"description": "Kill the mercs and rescue Brooks. A remaining merc will shoot out the glass beneath you and you will fall through the aquarium floor.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.2.3",
+		"inMissionId": "DLC3.Citadel1.2",
+		"sortIndex": 150023,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Market",
+		"description": "Descend through the lower Wards. You will spot a landing pad across the way, at the Cision Motors SkyCar lot. You tell Brooks to get a shuttle there to meet you. She says C-Sec has the area locked down. Go through the frozen fish storage building, and then across the rooves of the buildings until you reach a market with more mercs, where a crewmember finally gets a hold of you (your current squad love interest, or Liara by default) and says she is headed your way on foot. When you have cleared out the second batch of mercs in this area, another crewmember will contact you (your most-frequently-used squadmate) and tell you the crew is on the way.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.2.4",
+		"inMissionId": "DLC3.Citadel1.2",
+		"sortIndex": 150024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Bridge Controls",
+		"description": "The bridge is locked down. Bypass the bridge controls to get across. An alarm will sound, and more mercs will drop onto the bridge. Fight your way along the bridge and the various stores which line it. Turn when you see the Service sign and head through the door to find the glass Cision Motors entrance.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.2.4",
+		"inMissionId": "DLC3.Citadel1.2",
+		"sortIndex": 150024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Gate Controls",
+		"description": "Your squad love interest (or Liara) is waiting here. She says the landing pad is behind a locked gate. Before you can shoot this, the crewmember intervenes and convinces the volus lot owner to open the gate for you.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.2.5",
+		"inMissionId": "DLC3.Citadel1.2",
+		"sortIndex": 150025,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Extraction Zone",
+		"description": "The shuttle that meets you at the extraction point is full of more mercs. Wrex (or James) will jump onto the shuttle and take them out. More mercs will drop down from the roof behind you. He'll give you a better gun. In the ensuing battle, if you shoot at the cars, you will hear the volus owner wailing from behind the gate. Just hold them off until the real rescue shuttle arrives, then head back out to the landing pad and escape.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.3",
+		"inMissionId": "DLC3.Citadel1",
+		"sortIndex": 15003,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Identity Theft I",
+		"description": "Brooks will explain who is behind this attack and you will decide on your next move.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.3.1",
+		"inMissionId": "DLC3.Citadel1.3",
+		"sortIndex": 150031,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Personal Apartment",
+		"description": "Meet back at your apartment. Brooks talks you out of contacting Bailey. She explains that someone is trying to steal Shepard's identity, and with all his privileged access, this could be disastrous. Then Joker shows up with the rest of the squad.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.3.2",
+		"inMissionId": "DLC3.Citadel1.3",
+		"sortIndex": 150032,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Speak to Squadmates",
+		"description": "You can talk to everyone about the preceding events. It is amusing, albeit unnecessary. Talk to Liara when you are ready to proceed.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.3.3",
+		"inMissionId": "DLC3.Citadel1.3",
+		"sortIndex": 150033,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "The Plan",
+		"description": "Liara will reveal that [megametracker://person?id=O3.Khan] sold the pistol you took from the mercs, and that the merc team is known as CAT6 - a term for dishonorably discharged Alliance soldiers. \n\nTo learn who Khan's customer is, you will need to infiltrate his casino and get past security into his panic room. You determine that Brooks is the best candidate to sneak in through a ventilation shaft, and open the room for the rest of you. And Glyph finds a casino event you can use for cover - a Black Tie charity gala that night.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.4",
+		"inMissionId": "DLC3.Citadel1",
+		"sortIndex": 15003,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Silver Coast Casino",
+		"description": "Infiltrate the casino and break into Kahn's panic room.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.4.1",
+		"inMissionId": "DLC3.Citadel1.4",
+		"sortIndex": 150041,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Mingle",
+		"description": "Pick a crewmember to accompany you to the gala. There is no fighting, so this choice is purely about who you want to talk to and/or dress up in formal wear. \n\nIn-between mission tasks, there are lots of people to talk to (including [megametracker://person?id=O1.Shaira]) and some games you can play. I suggest talking to [megametracker://person?id=O3.Quarn], lurking by the hallway to the panic room. You can see a full transcript here: [Wikia|http://masseffect.wikia.com/wiki/Silver_Coast_Casino:_Infiltration#Mingle_Dialogue]",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.4.2",
+		"inMissionId": "DLC3.Citadel1.4",
+		"sortIndex": 150042,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Shaft Access Grate",
+		"description": "Meet Brooks at the ventilation shaft access grate. She explains that it is wired with an alarm. Brooks gives you contact lenses which highlight the subfloor circuits in the casino. This is your tutorial on the rest of the casino mission: follow the circuits and beware of security cameras and guards.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.4.3",
+		"inMissionId": "DLC3.Citadel1.4",
+		"sortIndex": 150043,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Disable Vent Alarm",
+		"description": "Disable the camera pointed at the grate alarm, and then disable the alarm.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.4.4",
+		"inMissionId": "DLC3.Citadel1.4",
+		"sortIndex": 1500414,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Distract Guard",
+		"description": "Find the guard below Brooks and distract him.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.4.5",
+		"inMissionId": "DLC3.Citadel1.4",
+		"sortIndex": 1500415,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Disable Sensors",
+		"description": "Follow the circuits to find each sensor and use your crewmember to distract the guard. Bypass the camera if necessary, then disable the sensor.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.4.6",
+		"inMissionId": "DLC3.Citadel1.4",
+		"sortIndex": 1500416,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Stall Guard",
+		"description": "Find the guard and stall him before he reaches Brooks' location.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.4.7",
+		"inMissionId": "DLC3.Citadel1.4",
+		"sortIndex": 1500417,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Disable Door Sensor",
+		"description": "The last sensor is the hardest. You can use a crewmember to distract one guard, but then you have to bypass the first camera while the other guard is turned away, and the repeat for the second camera before you can disable the door sensor. If you get caught, go mingle to reduce any suspicion and try again. If there are people you want to talk to but haven't had time yet, fail on purpose and go chat with them to mingle.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.4.8",
+		"inMissionId": "DLC3.Citadel1.4",
+		"sortIndex": 1500418,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Panic Room",
+		"description": "You enter the panic room to find Khan dead and his terminal wiped. Your identify thief appears on the vidcomm and threatens you. You take the terminal disk as you leave, to see if EDI can recover anything.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.5",
+		"inMissionId": "DLC3.Citadel1",
+		"sortIndex": 15005,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Identity Theft II",
+		"description": "EDI and Brooks decrypt the disk and Glyph learns the whereabouts of your identity thief.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.5.1",
+		"inMissionId": "DLC3.Citadel1.5",
+		"sortIndex": 150051,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Personal Apartment",
+		"description": "Meet back at your apartment. Brooks talks you out of contacting Bailey. She explains that someone is trying to steal Shepard's identity, and with all his privileged access, this could be disastrous. Then Joker shows up with the rest of the squad.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.5.2",
+		"inMissionId": "DLC3.Citadel1.5",
+		"sortIndex": 150052,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Speak to Squadmates",
+		"description": "You can talk to everyone about the preceding events. It is amusing, albeit unnecessary. Talk to Brooks when you are ready to proceed.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.5.3",
+		"inMissionId": "DLC3.Citadel1.5",
+		"sortIndex": 150053,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Recovered Disk",
+		"description": "EDI and Brooks have cracked the purchase order on the drive. Glyph interrupts to inform you that SHepard's Spectre access code was used to gain entrance to the Citadel Archives. Also, a volus shows up with pizza.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.6",
+		"inMissionId": "DLC3.Citadel1",
+		"sortIndex": 15006,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Citadel Archives",
+		"description": "Confront your enemy at the Archives.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.6.1",
+		"inMissionId": "DLC3.Citadel1.6",
+		"sortIndex": 150061,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Archive Entrance",
+		"description": "Select your squadmates for the battle. The rest will come along in two support teams - Mako and Hammerhead. When you reach the Archives, James blows up an entrance for you. CAT6 attacks almost immediately. You only have the opportunity to attack a few mercs before the Mysterious Stranger orders you to surrender, with Brooks as a hostage. \n\nThe stranger is revealed as your own clone, from when Cerberus rebuilt you in Game 2. Clone Shepard tricks you into revealing the Normandy command codes and prepares to kill you and steal your ship. If you take the Interrupt, you will shoot out the Citadel model above, taking out several mercs, otherwise a squadmate will do it for you.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.6.2",
+		"inMissionId": "DLC3.Citadel1.6",
+		"sortIndex": 150062,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Vault Platform",
+		"description": "Clear the room of enemies, then go through the door and up the ramp, past reception area 2 to the door beyond and into the cavernous vault. Follow the catwalks. Before you reach the other side, a couple CAT6 mercs will block you. Kill them and take the platform down. Cross to the other platform and it will transport deeper into the vault.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.6.3",
+		"inMissionId": "DLC3.Citadel1.6",
+		"sortIndex": 150062,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Teams Rendezvous",
+		"description": "Follow the catwalk up, then drop down onto the storage tubes and continue across that way. More CAT6 mercs attack. Kill them and continue across to the catwalk on the other side. You'll see a big sign indicating area 3. Head down the ramp, where you are reunited with Team Mako and Hammerhead. However, you split up again to pursue the clone.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.6.4",
+		"inMissionId": "DLC3.Citadel1.6",
+		"sortIndex": 150062,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Atlas",
+		"description": "You are now travelling through the Archive records. There are artifacts and videos of important events from history. After the first two, you will encounter more CAT6 mercs, and an open office space. Make a u-shaped circuit around the office to find the exit. Go down the ramp through a similar office space with mercs, down another ramp and back out into the open vault again. Here is the Atlas you have to defeat. The rest of CAT6 will wait until you are finished to attack.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.6.5",
+		"inMissionId": "DLC3.Citadel1.6",
+		"sortIndex": 150065,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "The Clone",
+		"description": "Head across to the opposite side of the vault area, fighting CAT6 mercs. Through two doors is yet another u-shaped office space with video archives. You won't be attacked until you reach the far side and cross over to the other half of the office space. There will be an area 5 sign by the exit door. In the next office space, there is a video log of your promotion to Spectre. Brooks contacts you begging for help. Head through the next two doors and a force field will block your way.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.6.6",
+		"inMissionId": "DLC3.Citadel1.6",
+		"sortIndex": 150066,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Betrayed",
+		"description": "Your clone appears, with Brooks, who reveals she is not Alliance at all, but partners with the clone. Brooks explains that all she wanted was your Spectre codes from the restaurant, and everything else is just because you kept failing to die. Your clone changes Shepard's fingerprints to match his/her own in the Archive records. The clone seals you in a storage tube and departs for the Normandy.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.7",
+		"inMissionId": "DLC3.Citadel1",
+		"sortIndex": 15007,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Escape the Archives",
+		"description": "Your team is somewhat alarmed by being locked in the vault, but Glyph is outside the tube and promptly lets you out again. Joker is waiting with a SkyCar and demands you pick a squad quickly to pursue the clone. I recommend EDI, solely for the dialogue.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.8",
+		"inMissionId": "DLC3.Citadel1",
+		"sortIndex": 15008,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Retake The Normandy",
+		"description": "Retake the Normandy before it leaves the Citadel.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.8.1",
+		"inMissionId": "DLC3.Citadel1.8",
+		"sortIndex": 150081,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Saved By Toothbrush",
+		"description": "Fight your way across the docking area to the Normandy. Once inside the boarding ramp, you will find Traynor, kicked off and furious about it. Explain the evil clone. Traynor uncovers the Normandy's emergency exit, but it's locked from the inside and you need a mass effect device to get past the lock. Good thing Traynor brought her toothbrush! \n\nThe Normandy takes off as you sneak inside and the mercs reveal your presence to the clone.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.8.2",
+		"inMissionId": "DLC3.Citadel1.8",
+		"sortIndex": 150082,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "CIC",
+		"description": "Crawl under the subfloor to the Stair Access Control. You can hear the mercs complaining about being left behind to be cannon-fodder. When you activate the control, they immediately attack. Clear CAT6 out of the CIC. Loot this floor and check out the dumpster from your cabin, left by the elevator. If you have the hamster, you can click on it multiple times for additional dialogue.",
+		"inMapId": "G.N",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel1.8.3",
+		"inMissionId": "DLC3.Citadel1.8",
+		"sortIndex": 150083,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Defeat Clone",
+		"description": "Go down the elevator to the Shuttle Bay. If you are confused by the cutscenes, focus on the armor: your clone is wearing the classic N7 armor with a red or blue stripe. You will see a banner with Clone Medi-Gel: 5. You have to weaken the clone enough that he is forced to use all five of his medi-gel packs. The mercs are infinite, so focus on the clone. Halfway through, Joker and Cortez bring in their SkyCar to block the Normandy from escaping to FTL. Your clone opens the doors and launches the shuttle to attack them. The Shuttle Bay is open for the rest of the battle. When your clone uses the last medi-gel, the fight devolves to wrestling and punching at the edge of the open bay doors. You are both knocked off, dangling from the ship. Your crew comes and pulls you up, but Brooks leaves the clone to die. You can try to save the clone, but either you kick it off or it lets go and falls to its death.",
+		"inMapId": "G.N",
+		"isShowInParentMap": true,
+		"sideEffects": ["\"Conrad Verner is better at being me than you are!\""]
+	}, {
+		"id": "DLC3.Citadel1.8.4",
+		"inMissionId": "DLC3.Citadel1.8",
+		"sortIndex": 150084,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Aftermath",
+		"description": "Cortez and Joker are assessing the ship for damage. EDI is back in control (and harassing a merc on the bridge). Cortez brings out Brooks in handcuffs. You can Paragon her into staying in them, or she escapes and is shot dead. Either way, there's great dialogue. Afterwards, back at your apartment Joker will suggest having a party.",
+		"inMapId": "G.N",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2",
+		"sortIndex": 1501,
+		"gameVersion": "3",
+		"missionType": "DLC",
+		"name": "Citadel: Party",
+		"description": "Throw a party for your crew and former crew. You can also socialize and play games at the Silversun Strip. \n\n*_This assignment was released as part of the Citadel DLC pack._*",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"experience": 0,
+		"reward": "",
+		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Party"],
+		"conversationRewards": [{
+			"id": "DLC3.Citadel2.PR10",
+			"type": "Renegade",
+			"value": 2,
+			"trigger": "Citadel Arena: Spin Zone Elite Challenge"
+		}, {
+			"id": "DLC3.Citadel2.PR10",
+			"type": "Renegade",
+			"value": 2,
+			"trigger": "Citadel Arena: Geth Challenge"
+		}, {
+			"id": "DLC3.Citadel2.PR10",
+			"type": "Renegade",
+			"value": 5,
+			"trigger": "Citadel Arena: Medi-Gel Challenge"
+		}, {
+			"id": "DLC3.Citadel2.PR10",
+			"type": "Renegade",
+			"value": 2,
+			"trigger": "Citadel Arena: Thermal Clip Challenge"
+		}, {
+			"id": "DLC3.Citadel2.PR10",
+			"type": "Renegade",
+			"value": 2,
+			"trigger": "Citadel Arena: Reaper Solo Challenge"
+		}, {
+			"id": "DLC3.Citadel2.PR10",
+			"type": "Renegade",
+			"value": 15,
+			"trigger": "Citadel Arena: Charity Reaper Challenge"
+		}, {
+			"id": "DLC3.Citadel2.PR10",
+			"type": "Renegade",
+			"value": 2,
+			"trigger": "Citadel Arena: Prothean Challenge"
+		}, {
+			"id": "DLC3.Citadel2.PR10",
+			"type": "Renegade",
+			"value": 5,
+			"trigger": "Citadel Arena: Cerberus Challenge"
+		}],
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Citadel DLC 1"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Citadel DLC"
+		}]
 
+
+
+	}, {
+		"id": "DLC3.Citadel2.1",
+		"inMissionId": "DLC3.Citadel2",
+		"sortIndex": 15021,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Invitations",
+		"description": "Joker, EDI, Liara, Vega, Cortez, and Traynor are all invited by default. The remaining invitations depend on whether the friend is available, and if you want them at the party. Invite All to just gather everyone.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.2",
+		"inMissionId": "DLC3.Citadel2",
+		"sortIndex": 15022,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Redecorate",
+		"description": "You can redecorate your apartment by heading down the hall to the catalog kiosk. Buy some furnishings and then go back to the office in the apartment and use the console to the right on the messages console to redecorate.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.3",
+		"inMissionId": "DLC3.Citadel2",
+		"sortIndex": 15023,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Party Supplies",
+		"description": "You can buy party supplies at the upstairs kiosk in the Silver Coast Casino.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+
+
+
+	}, {
+		"id": "DLC3.Citadel2.4",
+		"inMissionId": "DLC3.Citadel2",
+		"sortIndex": 15024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Socialize Round 1",
+		"description": "Many of your friends want some one-on-one before the party. Check your messages to confirm who is available and where to meet them.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.4.EDI",
+		"inMissionId": "DLC3.Citadel2.4",
+		"sortIndex": 15024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "EDI",
+		"description": "Invite EDI up to the apartment. See [megametracker://mission?id=A3.Convo.S.EDI.9] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.4.Garrus",
+		"inMissionId": "DLC3.Citadel2.4",
+		"sortIndex": 15024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Garrus",
+		"description": "Meet Garrus at the upstairs dance floor. See [megametracker://mission?id=A3.Convo.S.Garrus.8] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.4.Javik",
+		"inMissionId": "DLC3.Citadel2.4",
+		"sortIndex": 15024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Javik",
+		"description": "Meet Javik outside the casino. See [megametracker://mission?id=A3.Convo.S.Javik.7] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.4.Kasumi",
+		"inMissionId": "DLC3.Citadel2.4",
+		"sortIndex": 15024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Kasumi",
+		"description": "Encounter Kasumi at the casino (no prior message). See [megametracker://mission?id=A3.Convo.A.Kasumi.2] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.4.Miranda",
+		"inMissionId": "DLC3.Citadel2.4",
+		"sortIndex": 15024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Miranda",
+		"description": "Invite Miranda up to the apartment. See [megametracker://mission?id=A3.Convo.A.Miranda.4] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.4.Traynor",
+		"inMissionId": "DLC3.Citadel2.4",
+		"sortIndex": 15024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Traynor",
+		"description": "Meet Traynor for lunch at the arcade. See [megametracker://mission?id=A3.Convo.C.Traynor.5] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.4.Vega",
+		"inMissionId": "DLC3.Citadel2.4",
+		"sortIndex": 15024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Vega",
+		"description": "Invite Vega up to the apartment. See [megametracker://mission?id=A3.Convo.S.Vega.7] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.4.Zaeed",
+		"inMissionId": "DLC3.Citadel2.4",
+		"sortIndex": 15024,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Zaeed",
+		"description": "Meet Zaeed at the arcade Claw game (no prior message). See [megametracker://mission?id=A3.Convo.S.Zaeed.2] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+
+
+
+	}, {
+		"id": "DLC3.Citadel2.5",
+		"inMissionId": "DLC3.Citadel2",
+		"sortIndex": 15025,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Socialize Round 2",
+		"description": "Many of your friends want some one-on-one before the party. Check your messages to confirm who is available and where to meet them.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.5.Ashley",
+		"inMissionId": "DLC3.Citadel2.5",
+		"sortIndex": 15025,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Ashley",
+		"description": "Meet Ashley at the upstairs casino bar. See [megametracker://mission?id=A3.Convo.S.Ashley.8] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.5.Cortez",
+		"inMissionId": "DLC3.Citadel2.5",
+		"sortIndex": 15025,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Cortez",
+		"description": "Meet Cortez on the Strip. See [megametracker://mission?id=A3.Convo.C.Cortez.7] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.5.Jack",
+		"inMissionId": "DLC3.Citadel2.5",
+		"sortIndex": 15025,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Jack",
+		"description": "Jack wants to play a game at the arena. See [megametracker://mission?id=A3.Convo.A.Jack.2] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.5.Liara",
+		"inMissionId": "DLC3.Citadel2.5",
+		"sortIndex": 15025,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Liara",
+		"description": "Invite Liara up to the apartment. See [megametracker://mission?id=A3.Convo.S.Liara.8] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.5.Kaidan",
+		"inMissionId": "DLC3.Citadel2.5",
+		"sortIndex": 15025,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Kaidan",
+		"description": "Invite Kaidan up to the apartment. See [megametracker://mission?id=A3.Convo.S.Kaidan.8] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.5.Tali",
+		"inMissionId": "DLC3.Citadel2.5",
+		"sortIndex": 15025,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Tali",
+		"description": "Invite Tali up to the apartment. See [megametracker://mission?id=A3.Convo.S.Tali.9] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+
+
+	}, {
+		"id": "DLC3.Citadel2.6",
+		"inMissionId": "DLC3.Citadel2",
+		"sortIndex": 15026,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Socialize Round 3",
+		"description": "Many of your friends want some one-on-one before the party. Check your messages to confirm who is available and where to meet them.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.6.Grunt",
+		"inMissionId": "DLC3.Citadel2.6",
+		"sortIndex": 15026,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Grunt",
+		"description": "Talk to the Officer across from the Rapid Transit cars. See [megametracker://mission?id=A3.Convo.A.Grunt.2] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.6.Jacob",
+		"inMissionId": "DLC3.Citadel2.6",
+		"sortIndex": 15026,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Jacob",
+		"description": "Meet Jacob outside the arcade. See [megametracker://mission?id=A3.Convo.A.Jacob.2] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.6.Joker",
+		"inMissionId": "DLC3.Citadel2.6",
+		"sortIndex": 15026,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Joker",
+		"description": "Meet Joker at the upstairs casino bar (no prior message). See [megametracker://mission?id=A3.Convo.C.Joker.12] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.6.Thane",
+		"inMissionId": "DLC3.Citadel2.6",
+		"sortIndex": 15026,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Kolyat",
+		"description": "Hold a memorial for Thane. See [megametracker://mission?id=A3.Convo.A.Thane.3] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.6.Traynor",
+		"inMissionId": "DLC3.Citadel2.6",
+		"sortIndex": 15026,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Traynor",
+		"description": "Invite Traynor up to the apartment. See [megametracker://mission?id=A3.Convo.C.Traynor.6] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.6.V2",
+		"inMissionId": "DLC3.Citadel2.6",
+		"sortIndex": 15026,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Cortez & Vega",
+		"description": "Invite Cortez and James over to watch the game. See [megametracker://mission?id=A3.Convo.C.Cortez.8] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+
+
+	}, {
+		"id": "DLC3.Citadel2.7",
+		"inMissionId": "DLC3.Citadel2",
+		"sortIndex": 15027,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Socialize Round 4",
+		"description": "Many of your friends want some one-on-one before the party. Check your messages to confirm who is available and where to meet them.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.7.Jack",
+		"inMissionId": "DLC3.Citadel2.7",
+		"sortIndex": 15027,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Jack",
+		"description": "Invite Jack up to the apartment. See [megametracker://mission?id=A3.Convo.A.Jack.3] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.7.Mom",
+		"inMissionId": "DLC3.Citadel2.7",
+		"sortIndex": 15027,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Hannah Shepard",
+		"description": "If you are Spacer, you can call your Mom. She reminisces about your childhood daydreams, and says she is proud of you.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.7.Miranda",
+		"inMissionId": "DLC3.Citadel2.7",
+		"sortIndex": 15027,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Miranda",
+		"description": "Meet Miranda at the casino. See [megametracker://mission?id=A3.Convo.A.Miranda.5] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.7.Samara",
+		"inMissionId": "DLC3.Citadel2.7",
+		"sortIndex": 15027,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Samara",
+		"description": "Invite Samara up to the apartment. See [megametracker://mission?id=A3.Convo.A.Samara.2] for more.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.7.Wrex",
+		"inMissionId": "DLC3.Citadel2.7",
+		"sortIndex": 15027,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Wrex",
+		"description": "Encounter Wrex at the upstairs casino bar (no prior message). He is trying to recover from all the krogan females who want him to father their children.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+
+
+
+	}, {
+		"id": "DLC3.Citadel2.10",
+		"inMissionId": "DLC3.Citadel2",
+		"sortIndex": 15030,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Citadel Arena",
+		"description": "You will be issued a series of challenges in the Armax Arsenal Arena. Apart from being financially lucrative, you can earn reputation by completing them.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.10.1",
+		"inMissionId": "DLC3.Citadel2.10",
+		"sortIndex": 150301,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Spin Zone Elite Challenge",
+		"description": "Elkoss Combine Citadel Sports Division wants to be your corporate sponsor. But first they want you to complete the Spin Zone Challenge with Elite enemies. \n\nNote: this is very challenging, so although you are given it first, put it off until much later.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.10.2",
+		"inMissionId": "DLC3.Citadel2.10",
+		"sortIndex": 150302,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Geth Challenge",
+		"description": "The Citadel University Engineering Club wants you to complete the geth arena challenge on the Blasteroid map. They reward you later with a special mod: SMG Power Magnifier.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"x-note-x": "TODO: Loot here - add it later http://masseffect.wikia.com/wiki/Citadel_Arena:_Geth_Challenge"
+	}, {
+		"id": "DLC3.Citadel2.10.3",
+		"inMissionId": "DLC3.Citadel2.10",
+		"sortIndex": 150303,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Medi-Gel Challenge",
+		"description": "BlastoFan17485 thinks you are cheating. He dares you to compete using the modifier for No Medi-Gel.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.10.4",
+		"inMissionId": "DLC3.Citadel2.10",
+		"sortIndex": 150304,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Thermal Clip Challenge",
+		"description": "A fan from the asteroid belts suggests a match using the modifier for No Thermal Clips with Collector enemies, to highlight material scarcity.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.10.5",
+		"inMissionId": "DLC3.Citadel2.10",
+		"sortIndex": 150305,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Reaper Solo Challenge",
+		"description": "The \"Hour 20\" News Team wants you to try a solo challenge with Reaper enemies, so they can use the footage in place of real video for their war coverage.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.10.6",
+		"inMissionId": "DLC3.Citadel2.10",
+		"sortIndex": 150306,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Charity Reaper Challenge",
+		"description": "Lati, an asari child with a cerebral tumor, has come to see you compete and her dream is to see you fight Elite Reaper enemies.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.10.7",
+		"inMissionId": "DLC3.Citadel2.10",
+		"sortIndex": 150307,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Prothean Challenge",
+		"description": "The \"Hour 20\" News Team wants you to compete with Javik in the arena, with Reaper enemies.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.10.8",
+		"inMissionId": "DLC3.Citadel2.10",
+		"sortIndex": 150308,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Cerberus Challenge",
+		"description": "A fan asks you to fight with an all-Alliance squad against Cerberus enemies, to prove that you no longer work for Cerberus.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
+	}, {
+		"id": "DLC3.Citadel2.10.9",
+		"inMissionId": "DLC3.Citadel2.10",
+		"sortIndex": 150309,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Unusual Scores",
+		"description": "Armax Arsenal Arena is trying to isolate a bug in the arena code. They ask you to complete in three specific configurations to trip the error, each providing a reward for your time.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"x-note-x": "TODO: Loot here - add it later http://masseffect.wikia.com/wiki/Citadel_Arena:_Unusual_Scores"
+	}, {
+		"id": "DLC3.Citadel2.10.9.1",
+		"inMissionId": "DLC3.Citadel2.10.9",
+		"sortIndex": 150309,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Super-Elite Enemies",
+		"description": "Reward: Sniper Rifle High-Velocity Barrel"
+	}, {
+		"id": "DLC3.Citadel2.10.9.2",
+		"inMissionId": "DLC3.Citadel2.10.9",
+		"sortIndex": 150309,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "All Positive Bonus Modifiers",
+		"description": "Reward: Pistol Power Magnifier"
+	}, {
+		"id": "DLC3.Citadel2.10.9.3",
+		"inMissionId": "DLC3.Citadel2.10.9",
+		"sortIndex": 150309,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Spin Zone/Geth/Elite/Shields",
+		"description": "Use \"Spin Zone\" map, \"geth\" enemies, \"Elite\" difficulty, and \"enhanced enemy shields\" bonus modifier. Reward: Assault Rifle Thermal Scope"
+	}, {
+		"id": "DLC3.Citadel2.10.10",
+		"inMissionId": "DLC3.Citadel2.10",
+		"sortIndex": 150310,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Break The Scoreboard",
+		"description": "After you score more than 9,999 points in a match, Armax Arsenal Arena offers you some elite armor - Cerberus Phantom.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"x-note-x": "TODO: Loot here - add it later http://masseffect.wikia.com/wiki/Armax_Arsenal_Arena"
+
+
+
+
+	}, {
+		"id": "DLC3.Citadel2.15",
+		"inMissionId": "DLC3.Citadel2",
+		"sortIndex": 15031,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Throw Party",
+		"description": "Invite your friends up for the party. You can have a rowdy party, or a more reserved one.",
+		"inMapId": "G.C",
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Completed: Citadel DLC Party"
+		}]
+	}, {
+		"id": "DLC3.Citadel2.15.1",
+		"inMissionId": "DLC3.Citadel2.15",
+		"sortIndex": 150311,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Party Tone 1",
+		"description": "Select the tone for the first stage of the party - quiet or energetic.",
+		"objectivesCountToCompletion": 1
+	}, {
+		"id": "DLC3.Citadel2.15.1A",
+		"inMissionId": "DLC3.Citadel2.15.1",
+		"sortIndex": 150311,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Quiet",
+		"isOpensDetail": false
+	}, {
+		"id": "DLC3.Citadel2.15.1B",
+		"inMissionId": "DLC3.Citadel2.15.1",
+		"sortIndex": 150311,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Energetic",
+		"isOpensDetail": false
+	}, {
+		"id": "DLC3.Citadel2.15.2",
+		"inMissionId": "DLC3.Citadel2.15",
+		"sortIndex": 150312,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Hang Out With Guests 1",
+		"description": "Walk around to the various groups and talk to them. You can interact multiple times for additional dialogue, and if you leave an come back it often spawns new spontaneous dialogue. Some interactions will include you into the group and at that point you may be able to talk to individuals. Remember to visit both floors. If you are trying to hook up with James, talk to him.",
+		"sideEffects": [
+			"If it's a quiet party at this stage, there is an exchange between Wrex, Grunt, and Shepard where they just keep repeating each others' names indefinitely."
+		]
+	}, {
+		"id": "DLC3.Citadel2.15.2.JamesShepard",
+		"inMissionId": "DLC3.Citadel2.15.2",
+		"sortIndex": 150312,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "James and Shepard",
+		"description": "If it's a rowdy party, FemShep can seduce James (if she flirted with him in the pre-party socializing). You can Support Hook Up, or Support Cool It."
+	}, {
+		"id": "DLC3.Citadel2.15.5",
+		"inMissionId": "DLC3.Citadel2.15",
+		"sortIndex": 150315,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Party Tone 2",
+		"description": "Select the tone for the second stage of the party - quiet or energetic.",
+		"objectivesCountToCompletion": 1
+	}, {
+		"id": "DLC3.Citadel2.15.5A",
+		"inMissionId": "DLC3.Citadel2.15.5",
+		"sortIndex": 150315,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Quiet",
+		"isOpensDetail": false
+	}, {
+		"id": "DLC3.Citadel2.15.5B",
+		"inMissionId": "DLC3.Citadel2.15.5",
+		"sortIndex": 150315,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Energetic",
+		"isOpensDetail": false
+	}, {
+		"id": "DLC3.Citadel2.15.6",
+		"inMissionId": "DLC3.Citadel2.15",
+		"sortIndex": 150316,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Hang Out With Guests 2",
+		"description": "Walk around to the various groups and talk to them. Remember to visit both floors. The groups have split up, but the same rules apply for interaction. Additionally, you have some conflicts to mediate."
+	}, {
+		"id": "DLC3.Citadel2.15.6.MirandaJack",
+		"inMissionId": "DLC3.Citadel2.15.6",
+		"sortIndex": 150316,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "EDI vs Cortez",
+		"description": "If it's a quiet party, EDI and Cortez are arguing about whether to make some food. You can Support Mixing Drinks or Support Making Food."
+	}, {
+		"id": "DLC3.Citadel2.15.6.LiaraJames",
+		"inMissionId": "DLC3.Citadel2.15.6",
+		"sortIndex": 150316,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Liara vs James",
+		"description": "If it's a quiet party, Liara and James are arguing about which is better: the Normandy SR1 or SR2. You can Support Normandy SR1, or Support Normandy SR2."
+	}, {
+		"id": "DLC3.Citadel2.15.6.MirandaJack",
+		"inMissionId": "DLC3.Citadel2.15.6",
+		"sortIndex": 150316,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Miranda vs Jack",
+		"description": "If it's a rowdy party, Miranda and Jack will be arguing at the private bar. You can Support Friendship or Support Conflict to keep the conversation going."
+	}, {
+		"id": "DLC3.Citadel2.15.6.JokerCortez",
+		"inMissionId": "DLC3.Citadel2.15.6",
+		"sortIndex": 150316,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Joker vs Cortez",
+		"description": "If it's a rowdy party, Cortez and Joker are arguing in the rec room about whether Joker's hobbies are manly enough. You can Support Cortez or Support Joker."
+	}, {
+		"id": "DLC3.Citadel2.15.6.JamesLiara",
+		"inMissionId": "DLC3.Citadel2.15.6",
+		"sortIndex": 150316,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "James vs Liara",
+		"description": "If it's a rowdy party, Liara and James are arguing upstairs about which is more powerful: physical or biotic powers. You can Support Biotics, or Support Physical."
+	}, {
+		"id": "DLC3.Citadel2.15.7",
+		"inMissionId": "DLC3.Citadel2.15",
+		"sortIndex": 150317,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Talk To Glyph",
+		"description": "Select the activity for the third stage of the party - for the rowdy party: dancing or more conversation; for the quiet party: make snacks or deal cards. The resulting interactions depend on the prior stage Quiet/Energetic choice, so what you pick is completely irrelevant.",
+		"objectivesCountToCompletion": 1
+		]
+	}, {
+		"id": "DLC3.Citadel2.15.8",
+		"inMissionId": "DLC3.Citadel2.15",
+		"sortIndex": 150318,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Hang Out With Guests 3",
+		"description": "Walk around to the various groups and talk to them. Remember to visit both floors. The groups have split up, but the same rules apply for interaction. Additionally, you have some conflicts to mediate.",
+		"sideEffects": [
+			"If it's a quiet party at this stage, Tali's fantastic tattoo is revealed: \"It's a pretty bird made of rainbows. It's flying out the eyehole of a skull being held in the mouth of a thresher maw with a naked woman holding a sword on its back.\""
+	}, {
+		"id": "DLC3.Citadel2.15.8.JamesAshley",
+		"inMissionId": "DLC3.Citadel2.15.8",
+		"sortIndex": 150318,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "James and Ashley",
+		"description": "If it's a rowdy party, after Liara levitates James you can find James and Ashley flirting by the back bedrooms (provided YOU are not seducing James). You can Support Hook Up, or Support Cool It."
+	}, {
+		"id": "DLC3.Citadel2.15.9",
+		"inMissionId": "DLC3.Citadel2.15",
+		"sortIndex": 150319,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Take Photo",
+		"description": "This ends the festivities - so save it until you are done."
+	}, {
+		"id": "DLC3.Citadel2.15.10",
+		"inMissionId": "DLC3.Citadel2.15",
+		"sortIndex": 150320,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Investigate The Aftermath",
+		"description": "You wake up with a partner. Hopefully your love interest. If you don't have one, you may wake up with Javik instead (eek!). \n\nCheck in on your guests. Most of them are wretchedly hungover, particularly Tali."
+	}, {
+		"id": "DLC3.Citadel2.16",
+		"inMissionId": "DLC3.Citadel2",
+		"sortIndex": 15033,
+		"gameVersion": "3",
+		"missionType": "Objective",
+		"name": "Return to The Normandy",
+		"description": "Head back to the Normandy. Your crew will meet you there. \n\n_Note: You can still complete any Silversun Strip activities after leaving the Citadel._",
+		"inMapId": "G.C",
+		"isShowInParentMap": true
 	}, {
 		"id": "DLC3.ExtendedCut",
 		"sortIndex": 2000,
@@ -342,13 +2888,23 @@
 		"sortIndex": 995,
 		"gameVersion": "3",
 		"missionType": "Collection",
-		"name": "Artifacts"
+		"name": "Artifacts",
+		"description": "A list of all artifacts which can be gathered during galaxy exploration and turned in for various quests."
 	}, {
 		"id": "A3.Souvenirs",
 		"sortIndex": 997,
 		"gameVersion": "3",
 		"missionType": "Collection",
-		"name": "Souvenirs"
+		"name": "Souvenirs",
+		"description": "Some souvenirs you can collect during Game 3."
+	}, {
+		"id": "A3.LostProperty",
+		"sortIndex": 998,
+		"gameVersion": "3",
+		"missionType": "Collection",
+		"name": "Lost Property",
+		"description": "It is possible to recover most of your lost pets and model ships from Game 2.",
+		"relatedDecisionIds": ["D2.Fish", "D2.PrejekPaddlefish", "D3.PrejekPaddlefish"]
 
 	}, {
 		"x-comment-x": "-----------------------Artifacts-------------------------",
@@ -364,6 +2920,12 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Hades_Nexus:_Prothean_Sphere"],
+		"conversationRewards": [{
+			"id": "A3.ProtheanSphere.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Rannoch"
@@ -381,6 +2943,12 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Hades_Nexus:_Obelisk_of_Karza"],
+		"conversationRewards": [{
+			"id": "A3.ObeliskofKarza.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Rannoch"
@@ -392,12 +2960,18 @@
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Citadel: Kakliosaur Fossil",
-		"description": "A salarian scientist near the Citadel apartments thinks he might be able to improve krogan endurance in toxic environments if he had a preserved kakliosaur specimin. When you find the fossil, turn it over for this project.",
+		"description": "A salarian scientist near the Selkish Arms apartments thinks he might be able to improve krogan endurance in toxic environments if he had a preserved kakliosaur specimin. When you find the fossil, turn it over for this project.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Kakliosaur_Fossil"],
+		"conversationRewards": [{
+			"id": "A3.KakliosaurFossil.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Geth Dreadnought"
@@ -416,6 +2990,12 @@
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dekuuna:_Code_of_the_Ancients"],
 		"relatedMissionIds": ["A3.ElcorExtraction"],
+		"conversationRewards": [{
+			"id": "A3.CodeOfTheAncients.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Rannoch"
@@ -433,6 +3013,12 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Apien_Crest:_Banner_of_the_First_Regiment"],
+		"conversationRewards": [{
+			"id": "A3.ApienCrest.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel I"
@@ -450,6 +3036,12 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Shrike_Abyssal:_Prothean_Obelisk"],
+		"conversationRewards": [{
+			"id": "A3.ProtheanObelisk.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -467,6 +3059,12 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Irune:_Book_of_Plenix"],
+		"conversationRewards": [{
+			"id": "A3.BookOfPlenix.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -487,6 +3085,12 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kite%27s_Nest:_Pillars_of_Strength"],
+		"conversationRewards": [{
+			"id": "A3.PillarsOfStrength.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -504,6 +3108,12 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Athena_Nebula:_Hesperia-Period_Statue"],
+		"conversationRewards": [{
+			"id": "A3.HesperiaPeriodStatue.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -521,6 +3131,12 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Nimbus_Cluster:_Library_of_Asha"],
+		"conversationRewards": [{
+			"id": "A3.LibraryofAsha.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
@@ -538,6 +3154,12 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Silean_Nebula:_Rings_of_Alune"],
+		"conversationRewards": [{
+			"id": "A3.RingsofAlune.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Rannoch"
@@ -555,6 +3177,12 @@
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Valhallan_Threshold:_Prothean_Data_Drives"],
+		"conversationRewards": [{
+			"id": "A3.ProtheanDataDrives.PR100",
+			"type": "Paragade",
+			"value": 5,
+			"trigger": "(Completing the assignment.)"
+		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: The Citadel II"
