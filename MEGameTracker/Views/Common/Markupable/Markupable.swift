@@ -42,8 +42,10 @@ extension Markupable where Self: UIView {
 		let attributedText = NSMutableAttributedString(
 			attributedString: Styles.current.applyStyle(identifier ?? "", toString: unmarkedText ?? "")
 		)
-		useAttributedText = attributedText.string.isEmpty ? nil : attributedText
-		guard unmarkedText?.isEmpty == false && isMarkupable else { return }
+		guard unmarkedText?.isEmpty == false && isMarkupable else {
+			useAttributedText = attributedText.string.isEmpty ? nil : attributedText
+			return
+		}
 		let markedText = markupText(attributedText)
 		let linkedText = markupLinks(markedText)
 		useAttributedText = linkedText
@@ -179,5 +181,4 @@ extension Markupable where Self: UIView {
 		// this changes the styles (color, font, etc), provided you have turned off default styling inside Styles.swift:
 		// Styles.convertToStyleCategory(.Link, attributedText: attributedText)
 	}
-
 }

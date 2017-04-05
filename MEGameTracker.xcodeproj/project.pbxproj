@@ -322,6 +322,7 @@
 		B1B11FE21E4E9D2F00D97CA1 /* CoreDataMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B11FE11E4E9D2F00D97CA1 /* CoreDataMigration.swift */; };
 		B1B11FE61E4E9E8B00D97CA1 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1B11FE31E4E9E8B00D97CA1 /* CoreData.xcdatamodeld */; };
 		B1B1C56C1CCCAAB100CB2996 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B1C56B1CCCAAB100CB2996 /* UIApplication.swift */; };
+		B1B2ED6E1E94395C000CDBCA /* SwiftyMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2ED6D1E94395C000CDBCA /* SwiftyMarkdown.swift */; };
 		B1B43AD81E7272C200746CB0 /* CalloutBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B43AD71E7272C200746CB0 /* CalloutBalloon.swift */; };
 		B1B55C481E70317E0095A526 /* ValueAltDataRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1B55C401E70317E0095A526 /* ValueAltDataRow.xib */; };
 		B1B55C491E70317E0095A526 /* ValueDataRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1B55C421E70317E0095A526 /* ValueDataRow.xib */; };
@@ -356,6 +357,7 @@
 		B1D4D2671C8CC5720000F150 /* MissionsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4D2651C8CC5720000F150 /* MissionsSplitViewController.swift */; };
 		B1D4D26C1C8CCB240000F150 /* Mission.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D4D2691C8CCB240000F150 /* Mission.storyboard */; };
 		B1D4D26D1C8CCB240000F150 /* MissionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4D26B1C8CCB240000F150 /* MissionController.swift */; };
+		B1D958111E945328000E4006 /* MarkupableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D958101E945328000E4006 /* MarkupableTests.swift */; };
 		B1DE27961CFB84D10041D341 /* RadioOptionRowNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1DE27921CFB84D10041D341 /* RadioOptionRowNib.xib */; };
 		B1DE27971CFB84D10041D341 /* RadioOptionRowNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DE27941CFB84D10041D341 /* RadioOptionRowNib.swift */; };
 		B1DE27981CFB84D10041D341 /* RadioOptionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DE27951CFB84D10041D341 /* RadioOptionRowView.swift */; };
@@ -823,6 +825,7 @@
 		B1B11FE41E4E9E8B00D97CA1 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		B1B11FE51E4E9E8B00D97CA1 /* CoreData20170208.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData20170208.xcdatamodel; sourceTree = "<group>"; };
 		B1B1C56B1CCCAAB100CB2996 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		B1B2ED6D1E94395C000CDBCA /* SwiftyMarkdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyMarkdown.swift; sourceTree = "<group>"; };
 		B1B43AD71E7272C200746CB0 /* CalloutBalloon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutBalloon.swift; sourceTree = "<group>"; };
 		B1B55C411E70317E0095A526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ValueAltDataRow.xib; sourceTree = "<group>"; };
 		B1B55C431E70317E0095A526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ValueDataRow.xib; sourceTree = "<group>"; };
@@ -857,6 +860,7 @@
 		B1D4D2651C8CC5720000F150 /* MissionsSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionsSplitViewController.swift; sourceTree = "<group>"; };
 		B1D4D26A1C8CCB240000F150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Mission.storyboard; sourceTree = "<group>"; };
 		B1D4D26B1C8CCB240000F150 /* MissionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionController.swift; sourceTree = "<group>"; };
+		B1D958101E945328000E4006 /* MarkupableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupableTests.swift; sourceTree = "<group>"; };
 		B1DE27931CFB84D10041D341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RadioOptionRowNib.xib; sourceTree = "<group>"; };
 		B1DE27941CFB84D10041D341 /* RadioOptionRowNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioOptionRowNib.swift; sourceTree = "<group>"; };
 		B1DE27951CFB84D10041D341 /* RadioOptionRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioOptionRowView.swift; sourceTree = "<group>"; };
@@ -1179,6 +1183,7 @@
 				B11911191E57958000BF7E06 /* CoreData */,
 				B1F306681CE96C2B00A830C9 /* MapLocations */,
 				B15B6E941E556B7B000FBE57 /* Maps */,
+				B1D958071E94530B000E4006 /* Markupable */,
 				B19191851CE3A98400CF367E /* Missions */,
 				B028AF3B1BA12B1900C73373 /* Info.plist */,
 			);
@@ -1243,6 +1248,7 @@
 				B19215501E5CB9A400594796 /* SimpleCoreDataManageable */,
 				B1BFF9D41DA4AFAB003FA9FA /* Signals */,
 				B1D1E37A1E1C251400860A42 /* SimpleUserDefaults.swift */,
+				B1B2ED6D1E94395C000CDBCA /* SwiftyMarkdown.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -2206,6 +2212,14 @@
 			path = Mission;
 			sourceTree = "<group>";
 		};
+		B1D958071E94530B000E4006 /* Markupable */ = {
+			isa = PBXGroup;
+			children = (
+				B1D958101E945328000E4006 /* MarkupableTests.swift */,
+			);
+			path = Markupable;
+			sourceTree = "<group>";
+		};
 		B1DE27911CFB84D10041D341 /* Radio Option */ = {
 			isa = PBXGroup;
 			children = (
@@ -2676,6 +2690,7 @@
 				B1F466DF1DA0AE7200EBA563 /* IBStyledThings.swift in Sources */,
 				B14EA9281CF3E1B0009F2B0A /* DecisionDetailController.swift in Sources */,
 				B18566971E6FA27A00E19FC5 /* DecisionsListLinkable.swift in Sources */,
+				B1B2ED6E1E94395C000CDBCA /* SwiftyMarkdown.swift in Sources */,
 				B04BF16A1BA12C2E00072DA2 /* UIImage.swift in Sources */,
 				B1B04D1A1E1DAF7D0001A27B /* GameModifying.swift in Sources */,
 				B160EE891CF951500028910C /* ShepardReputationRowType.swift in Sources */,
@@ -2927,6 +2942,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1C66C801E8EE87000BDAF9A /* Change20170305Tests.swift in Sources */,
+				B1D958111E945328000E4006 /* MarkupableTests.swift in Sources */,
 				B119111B1E57959000BF7E06 /* BaseDataImportTest.swift in Sources */,
 				B028AF3A1BA12B1900C73373 /* MEGameTrackerTests.swift in Sources */,
 				B16FBC8F1E5FAD4E00E151C7 /* MapTests.swift in Sources */,

@@ -29,16 +29,6 @@ final public class ConversationRewardsDetailController: UITableViewController {
 		setup()
 	}
 
-	override public func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-//		tableView.beginUpdates()
-//		tableView.endUpdates()
-	}
-
-	deinit {
-		removeListeners()
-	}
-
 	func setup() {
 		rewards = mission?.conversationRewards.flatRows() ?? []
 
@@ -69,12 +59,6 @@ final public class ConversationRewardsDetailController: UITableViewController {
 			UINib(nibName: "ConversationRewardsDetailRow", bundle: bundle),
 			forCellReuseIdentifier: "ConversationRewardsDetailRow"
 		)
-//		if originHintLabel?.superview?.hidden != false {
-//			tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
-//		} else {
-//			headerView?.removeFromSuperview()
-//			tableView.tableHeaderView = headerView
-//		}
 	}
 
 	func saveConversationRewardsChoice(id: String, isOn: Bool) {
