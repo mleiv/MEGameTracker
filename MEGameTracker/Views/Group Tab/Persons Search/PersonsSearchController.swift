@@ -75,7 +75,7 @@ class PersonsSearchController: UITableViewController, Spinnerable {
 		)
 	}
 
-	func reloadDataOnChange() {
+	func reloadDataOnChange(_ x: Bool = false) {
 		if let searchController = searchController {
 			updateSearchResults(for: searchController)
 		}
@@ -173,7 +173,7 @@ extension PersonsSearchController: UISearchBarDelegate, UISearchControllerDelega
 
 		// create search controller (no IB equivalent)
 		let controller = UISearchController(searchResultsController: nil)
-		controller.hidesNavigationBarDuringPresentation = false
+//        controller.hidesNavigationBarDuringPresentation = false
 		controller.dimsBackgroundDuringPresentation = false
 		controller.delegate = self
 		controller.searchResultsUpdater = self
@@ -213,7 +213,7 @@ extension PersonsSearchController: UISearchBarDelegate, UISearchControllerDelega
 
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		if searchController?.isActive == true {
-			searchController?.dismiss(animated: true) { _ in }
+			searchController?.dismiss(animated: true) { () -> Void in }
 			tableView.reloadData()
 		}
 	}
@@ -222,7 +222,7 @@ extension PersonsSearchController: UISearchBarDelegate, UISearchControllerDelega
 
 	func updateSearchResults(for searchController: UISearchController) {
 		let search = searchController.searchBar.text?.trim() ?? ""
-		if search.isEmpty && !(lastSearch?.isEmpty)! {
+		if search.isEmpty && !(lastSearch.isEmpty) {
 			lastSearch = search
 			searchPersons()
 		} else if !search.isEmpty && search != lastSearch {

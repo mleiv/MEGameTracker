@@ -86,7 +86,7 @@ extension String {
 		let j = end < 0 ? self.endIndex : self.startIndex
 		let joffset = min(maximum, max(-1 * maximum, end ?? 0))
 		let endIndex = end != nil && end! < self.characters.count ? self.index(j, offsetBy: joffset) : self.endIndex
-		return self.substring(with: (startIndex ..< endIndex))
+		return String(self[startIndex..<endIndex])
 	}
 	/**
 		Returns substring composed of only the allowed characters.

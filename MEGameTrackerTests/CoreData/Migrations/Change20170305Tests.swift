@@ -43,6 +43,7 @@ final class Change20170305Tests: MEGameTrackerTests {
 		_ = create(Mission.self, from: michelConvo)
 		fromMission?.change(conversationRewardId: "M3.0.Citadel1.R4", isSelected: true)
 
+        App.current.lastBuild = 1 // required to run
 		Change20170305().run()
 
 		fromMission = Mission.get(id: "M3.0.Citadel1")
@@ -69,6 +70,7 @@ final class Change20170305Tests: MEGameTrackerTests {
 		_ = create(Mission.self, from: kaidanConvo)
 		fromMission?.change(conversationRewardId: "M3.0.Citadel1.PR5", isSelected: true)
 
+        App.current.lastBuild = 1 // required to run
 		Change20170305().run()
 
 		fromMission = Mission.get(id: "M3.0.Citadel1")

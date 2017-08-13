@@ -110,9 +110,9 @@ extension Person {
 	) -> [Person] {
 		let manager = manager ?? defaultManager
 		let dataItems = DataPerson.getAll(gameVersion: gameVersion, with: manager, alterFetchRequest: alterFetchRequest)
-		let some: [Person] = dataItems.flatMap { (dataItem: DataRowType) -> Person? in
+		let some: [Person] = dataItems.map { (dataItem: DataRowType) -> Person? in
 			Person.getOrCreate(using: dataItem, with: manager)
-		}
+		}.filter({ $0 != nil }).map({ $0! })
 		return some
 	}
 

@@ -65,7 +65,7 @@ extension Markupable where Self: UIView {
 				using: { (result, _, _) in
 					//(NSTextCheckingResult?, NSMatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void)
 					if let match = result, match.numberOfRanges == 1 {
-						var wholeMatchRange = match.rangeAt(0)
+						var wholeMatchRange = match.range(at: 0)
 						wholeMatchRange.location += offsetIndex
 						var text = attributedText.attributedSubstring(from: wholeMatchRange)
 						let textString = text.string
@@ -103,11 +103,11 @@ extension Markupable where Self: UIView {
 				using: { (result, _, _) in
 					//(NSTextCheckingResult?, NSMatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void)
 					if let match = result, match.numberOfRanges == 3 {
-						var wholeMatchRange = match.rangeAt(0)
+						var wholeMatchRange = match.range(at: 0)
 						wholeMatchRange.location += offsetIndex
-						var textRange = match.rangeAt(1)
+						var textRange = match.range(at: 1)
 						// don't do offset yet, may be invalid match (length == 0)
-						var linkRange = match.rangeAt(2)
+						var linkRange = match.range(at: 2)
 						linkRange.location += offsetIndex
 						let link = attributedText.attributedSubstring(from: linkRange).string
 						let text: NSAttributedString = {
@@ -173,7 +173,7 @@ extension Markupable where Self: UIView {
 			let attributedLinkImage = NSAttributedString(attachment: linkImage)
 			attributedText.replaceCharacters(in: NSMakeRange(0, 0), with: attributedLinkImage)
 		}
-		attributedText.addAttribute(NSLinkAttributeName,
+		attributedText.addAttribute(NSAttributedStringKey.link,
 			value: link,
 			range: NSMakeRange(0, attributedText.length)
 		)

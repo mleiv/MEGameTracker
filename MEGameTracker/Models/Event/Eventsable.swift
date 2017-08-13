@@ -17,7 +17,7 @@ public protocol Eventsable {
 extension Eventsable {
 
 	public func getEvents(with manager: SimpleSerializedCoreDataManageable?) -> [Event] {
-		let events: [Event] = (rawEventData?.array ?? []).flatMap({
+		let events: [Event] = (rawEventData?.array ?? []).map({
 			guard let id = $0["id"]?.string,
 				let type = EventType(stringValue: $0["type"]?.string),
 				var e = Event.get(id: id, type: type, with: manager)
@@ -33,7 +33,7 @@ extension Eventsable {
 				e.inItemId = item.id
 			}
 			return e
-		})
+		}).filter({ $0 != nil }).map({ $0! })
 		return events
 	}
 

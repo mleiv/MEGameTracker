@@ -128,7 +128,8 @@ public struct Map: MapLocationable, Eventsable {
 				!unavailabilityInGameMessage.isEmpty {
 				return generalData.unavailabilityMessages + [unavailabilityInGameMessage]
 			} else {
-				return generalData.unavailabilityMessages + blockingEvents.flatMap({ $0.description })
+				return generalData.unavailabilityMessages
+                    + blockingEvents.map({ $0.description }).filter({ $0 != nil }).map({ $0! })
 			}
 		}
 		return generalData.unavailabilityMessages
@@ -223,7 +224,8 @@ extension Map {
 //	
 
 	public func getChildMaps(isExplored: Bool? = nil) -> [Map] {
-		let maps = MapLocation.getAllMaps(inMapId: id, gameVersion: gameVersion).flatMap { $0 as? Map }
+		let maps = MapLocation.getAllMaps(inMapId: id, gameVersion: gameVersion)
+            .map({ $0 as? Map }).filter({ $0 != nil }).map({ $0! })
 		if let isExplored = isExplored {
 			return maps.filter { $0.isExplored == isExplored }.sorted(by: Map.sort)
 		}

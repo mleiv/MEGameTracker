@@ -407,11 +407,12 @@ extension CloudDataStorable where Self: GameRowStorable {
 		identifiers: [String],
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> [Self] {
-		return identifiers.flatMap { (identifier: String) in
-			if let (id, uuid) = parseIdentifyingName(name: identifier) {
-				return getExisting(id: id, gameSequenceUuid: uuid, with: manager)
+		return identifiers.reduce([]) { (list: [Self], identifier: String) -> [Self] in
+			if let (id, uuid) = parseIdentifyingName(name: identifier),
+                let found = getExisting(id: id, gameSequenceUuid: uuid, with: manager) {
+				return list + [found]
 			}
-			return nil
+			return list
 		}
 	}
 

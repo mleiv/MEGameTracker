@@ -44,7 +44,7 @@ public struct UnavailabilityRowType: TextDataRowType {
 			view.backgroundColor = UIColor.darkGray
 			view.textView?.identifier = "Caption.DisabledOppositeColor.MediumItalic"
 			view.textView?.linkTextAttributes = [
-				NSForegroundColorAttributeName: Styles.Colors.linkOnBlackColor
+				NSAttributedStringKey.foregroundColor.rawValue: Styles.Colors.linkOnBlackColor
 			]
 			view.textView?.textAlignment = .center
 		}

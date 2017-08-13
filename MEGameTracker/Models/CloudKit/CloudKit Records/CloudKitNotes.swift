@@ -107,11 +107,11 @@ extension Note: CloudDataStorable {
 		identifiers: [String],
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> [Note] {
-		return identifiers.flatMap { (identifier: String) in
+		return identifiers.map { (identifier: String) in
 			if let (id, _) = parseIdentifyingName(name: identifier) {
-				return get(uuid: id, with: manager)
+                return get(uuid: id, with: manager)
 			}
 			return nil
-		}
+		}.filter({ $0 != nil }).map({ $0! })
 	}
 }

@@ -188,7 +188,7 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 	}
 
 	var shepardUuid = App.current.game?.shepard?.uuid
-	func reloadOnShepardChange() {
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
 			person?.change(gameVersion: App.current.gameVersion, isSave: false, isNotify: false)

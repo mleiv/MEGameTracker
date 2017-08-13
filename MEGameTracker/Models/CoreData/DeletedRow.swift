@@ -50,6 +50,8 @@ extension DeletedRow: SerializedDataRetrievable {
 
 		self.init(source: source, identifier: identifier)
 	}
+
+    public mutating func setData(_ data: SerializableData) {}
 }
 
 // MARK: SimpleSerializedCoreDataStorable

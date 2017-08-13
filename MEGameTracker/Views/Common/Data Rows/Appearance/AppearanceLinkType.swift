@@ -32,7 +32,7 @@ public struct AppearanceLinkType: ValueDataRowType {
 	public init() {}
 	public init(controller: ShepardController, view: ValueDataRow?, onClick: @escaping ((UIButton) -> Void)) {
 		self.controller = controller
-		self.row = view as? ValueDataRowDisplayable
+		self.row = view
 		self.onClick = onClick
 	}
 

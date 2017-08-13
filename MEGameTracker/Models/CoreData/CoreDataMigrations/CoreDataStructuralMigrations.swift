@@ -38,9 +38,9 @@ public struct CoreDataStructuralMigrations {
 			return
 		}
 		let storeDirectory = Bundle.main.url(forResource: storeName, withExtension: "momd")?.lastPathComponent
-		var migrationMoms = try migrationNames.flatMap {
+		var migrationMoms = try migrationNames.map {
 			return try managedObjectModel(forName: $0, bundle: Bundle.main, directory: storeDirectory)
-		}
+		}.filter({ $0 != nil }).map({ $0! })
 		migrationMoms = try reduceMomsToPendingChanges(moms: migrationMoms)
 		if migrationMoms.count > 1, let startMom = migrationMoms.first {
 			_ = try migrationMoms[1..<migrationMoms.count].reduce(startMom) { (sourceMom, destinationMom) in

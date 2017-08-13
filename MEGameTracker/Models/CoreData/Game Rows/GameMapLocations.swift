@@ -20,11 +20,11 @@ extension MapLocation {
 	) -> MapLocationable? {
 		switch type {
 		case .map:
-			return Map.get(id: id, with: manager) as? MapLocationable
+			return Map.get(id: id, with: manager)
 		case .mission:
-			return Mission.get(id: id, with: manager) as? MapLocationable
+			return Mission.get(id: id, with: manager)
 		case .item:
-			return Item.get(id: id, with: manager) as? MapLocationable
+			return Item.get(id: id, with: manager)
 		}
 	}
 

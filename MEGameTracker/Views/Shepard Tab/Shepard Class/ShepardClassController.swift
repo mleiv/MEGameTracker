@@ -45,60 +45,64 @@ final public class ShepardClassController: UIViewController, SideEffectsable {
 			vanguardSideEffectsView?.controller = self
 
 			soldierRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(class: .soldier)
-				self?.setupRadios()
+				self?.handleChange(class: .soldier)
 			}
 			engineerRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(class: .engineer)
-				self?.setupRadios()
+				self?.handleChange(class: .engineer)
 			}
 			adeptRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(class: .adept)
-				self?.setupRadios()
+				self?.handleChange(class: .adept)
 			}
 			infiltratorRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(class: .infiltrator)
-				self?.setupRadios()
+				self?.handleChange(class: .infiltrator)
 			}
 			sentinelRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(class: .sentinel)
-				self?.setupRadios()
+				self?.handleChange(class: .sentinel)
 			}
 			vanguardRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(class: .vanguard)
-				self?.setupRadios()
+				self?.handleChange(class: .vanguard)
 			}
 		}
 
-		setupRadios()
+		if let shepard = self.shepard {
+			setupRadios(shepard: shepard)
+		}
 	}
 
 	func fetchData() {
-		guard !UIWindow.isInterfaceBuilder else { return fetchDummyData() }
-		shepard = App.current.game?.shepard
+		if UIWindow.isInterfaceBuilder {
+            shepard = Shepard.getDummy()
+        } else {
+            shepard = App.current.game?.shepard
+        }
 	}
 
-	func fetchDummyData() {
-		shepard = Shepard.getDummy()
+	func setupRadios(shepard: Shepard) {
+		soldierRadio?.isOn = shepard.classTalent == .soldier
+		engineerRadio?.isOn = shepard.classTalent == .engineer
+		adeptRadio?.isOn = shepard.classTalent == .adept
+		infiltratorRadio?.isOn = shepard.classTalent == .infiltrator
+		sentinelRadio?.isOn = shepard.classTalent == .sentinel
+		vanguardRadio?.isOn = shepard.classTalent == .vanguard
 	}
 
-	func setupRadios() {
-		soldierRadio?.isOn = shepard?.classTalent == .soldier
-		engineerRadio?.isOn = shepard?.classTalent == .engineer
-		adeptRadio?.isOn = shepard?.classTalent == .adept
-		infiltratorRadio?.isOn = shepard?.classTalent == .infiltrator
-		sentinelRadio?.isOn = shepard?.classTalent == .sentinel
-		vanguardRadio?.isOn = shepard?.classTalent == .vanguard
-	}
+    func handleChange(class classTalent: Shepard.ClassTalent) {
+        if var shepard = self.shepard {
+            shepard.change(class: classTalent)
+            setupRadios(shepard: shepard)
+        }
+    }
 
 	func reloadDataOnChange() {
-		DispatchQueue.main.async {
-			self.fetchData()
-			self.setupRadios()
+		DispatchQueue.main.async { [weak self] in
+			self?.fetchData()
+            if let shepard = self?.shepard {
+                self?.setupRadios(shepard: shepard)
+            }
 		}
 	}
 
-	func reloadOnShepardChange() {
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepard?.uuid != App.current.game?.shepard?.uuid {
 			shepard = App.current.game?.shepard
 			reloadDataOnChange()

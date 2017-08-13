@@ -49,10 +49,11 @@ extension ConversationReward: SerializedDataRetrievable {
 		}
 		self.id = id
 		self.value = value
-		self.paragadeValue = (data["paragadeValue"]?.array ?? []).flatMap({ $0.int })
+		self.paragadeValue = (data["paragadeValue"]?.array ?? []).map({ $0.int }).filter({ $0 != nil }).map({ $0! })
 		self.type = type
 		self.context = data["context"]?.string
 		self.trigger = trigger
 	}
 
+    public mutating func setData(_ data: SerializableData) {}
 }

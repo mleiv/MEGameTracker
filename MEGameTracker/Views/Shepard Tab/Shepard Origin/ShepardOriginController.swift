@@ -36,51 +36,56 @@ final public class ShepardOriginController: UIViewController, SideEffectsable {
 			colonistSideEffectsView?.controller = self
 
 			earthbornRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(origin: .earthborn)
-				DispatchQueue.main.async {
-				self?.setupRadios()
-				}
+                self?.handleChange(origin: .earthborn)
 			}
 			spacerRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(origin: .spacer)
-				self?.setupRadios()
+                self?.handleChange(origin: .spacer)
 			}
 			colonistRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(origin: .colonist)
-				self?.setupRadios()
+                self?.handleChange(origin: .colonist)
 			}
 		}
 
-		setupRadios()
+        if let shepard = self.shepard {
+            setupRadios(shepard: shepard)
+        }
 	}
 
 	func fetchData() {
-		guard !UIWindow.isInterfaceBuilder else { return fetchDummyData() }
-		shepard = App.current.game?.shepard
+		if UIWindow.isInterfaceBuilder {
+            shepard = Shepard.getDummy()
+        } else {
+            shepard = App.current.game?.shepard
+        }
+    }
+
+	func setupRadios(shepard: Shepard) {
+		earthbornRadio?.isOn = shepard.origin == .earthborn
+		spacerRadio?.isOn = shepard.origin == .spacer
+		colonistRadio?.isOn = shepard.origin == .colonist
 	}
 
-	func fetchDummyData() {
-		shepard = Shepard.getDummy()
-	}
-
-	func setupRadios() {
-		earthbornRadio?.isOn = shepard?.origin == .earthborn
-		spacerRadio?.isOn = shepard?.origin == .spacer
-		colonistRadio?.isOn = shepard?.origin == .colonist
-	}
+    func handleChange(origin: Shepard.Origin) {
+        if var shepard = self.shepard {
+            shepard.change(origin: origin)
+            setupRadios(shepard: shepard)
+        }
+    }
 
 	func reloadDataOnChange() {
-		DispatchQueue.main.async {
-			self.fetchData()
-			self.setupRadios()
+		DispatchQueue.main.async { [weak self] in
+			self?.fetchData()
+            if let shepard = self?.shepard {
+                self?.setupRadios(shepard: shepard)
+            }
 		}
 	}
 
-	func reloadOnShepardChange() {
-		if shepard?.uuid != App.current.game?.shepard?.uuid {
-			shepard = App.current.game?.shepard
+    func reloadOnShepardChange(_ x: Bool = false) {
+        if shepard?.uuid != App.current.game?.shepard?.uuid {
+            shepard = App.current.game?.shepard
 			reloadDataOnChange()
-		}
+        }
 	}
 
 	func startListeners() {

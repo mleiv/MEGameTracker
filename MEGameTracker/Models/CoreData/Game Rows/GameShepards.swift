@@ -80,15 +80,15 @@ extension Shepard {
 		let manager = manager ?? defaultManager
 		if isCascadeChanges != .none && isCascadeChanges != .down {
 			if !GamesDataBackup.current.isSyncing {
-				saveCommonDataToAllShepardsInSequence(with: manager)
-				if isCascadeChanges == .up {
-					if var game = App.current.game?.uuid == gameSequenceUuid
-									? App.current.game
-									: GameSequence.get(uuid: gameSequenceUuid) {
-						game.markChanged()
-						_ = game.save(isCascadeChanges: .up, isAllowDelay: false, with: manager)
-					}
-				}
+                saveCommonDataToAllShepardsInSequence(with: manager)
+                if isCascadeChanges == .up {
+                    if var game = App.current.game?.uuid == gameSequenceUuid
+                                    ? App.current.game
+                                    : GameSequence.get(uuid: gameSequenceUuid) {
+                        game.markChanged()
+                        _ = game.save(isCascadeChanges: .up, isAllowDelay: false, with: manager)
+                    }
+                }
 			}
 		}
 		let isSaved = manager.saveValue(item: self)
@@ -126,26 +126,26 @@ extension Shepard {
 	public mutating func saveCommonDataToAllShepardsInSequence(
 		with manager: SimpleSerializedCoreDataManageable? = nil
 	) {
-		let gameSequenceUuid = self.gameSequenceUuid
-		let uuid = self.uuid
-		let manager = manager ?? defaultManager
-		let shepards = Shepard.getAll(with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(
-				format: "(%K == %@ and %K != %@)",
-				#keyPath(GameShepards.gameSequenceUuid), gameSequenceUuid,
-				#keyPath(GameShepards.uuid), uuid
-			)
-		}
-		let commonData = getData()
-		var isSaved = true
-		for var sequenceShepard in shepards {
-			if sequenceShepard.uuid != uuid {
-				sequenceShepard.setCommonData(commonData)
-				isSaved = isSaved
-					&& sequenceShepard.saveAnyChanges(isCascadeChanges: .none, isAllowDelay: false, with: manager)
-			}
-		}
-		hasUnsavedChanges = !isSaved // sequence save
+        let gameSequenceUuid = self.gameSequenceUuid
+        let uuid = self.uuid
+        let manager = manager ?? defaultManager
+        let shepards = Shepard.getAll(with: manager) { fetchRequest in
+            fetchRequest.predicate = NSPredicate(
+                format: "(%K == %@ and %K != %@)",
+                #keyPath(GameShepards.gameSequenceUuid), gameSequenceUuid,
+                #keyPath(GameShepards.uuid), uuid
+            )
+        }
+        let commonData = getData()
+        var isSaved = true
+        for var sequenceShepard in shepards {
+            if sequenceShepard.uuid != uuid {
+                sequenceShepard.setCommonData(commonData)
+                isSaved = isSaved
+                    && sequenceShepard.saveAnyChanges(isCascadeChanges: .none, isAllowDelay: false, with: manager)
+            }
+        }
+        hasUnsavedChanges = !isSaved // sequence save
 	}
 
 // MARK: Delete

@@ -87,11 +87,11 @@ extension GameSequence: CloudDataStorable {
 		identifiers: [String],
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> [GameSequence] {
-		return identifiers.flatMap { (identifier: String) in
-			if let (_, uuid) = parseIdentifyingName(name: identifier) {
-				return get(uuid: uuid, with: manager)
-			}
-			return nil
-		}
+        return identifiers.map { (identifier: String) in
+            if let (id, _) = parseIdentifyingName(name: identifier) {
+                return get(uuid: id, with: manager)
+            }
+            return nil
+        }.filter({ $0 != nil }).map({ $0! })
 	}
 }

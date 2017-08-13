@@ -65,7 +65,7 @@ public struct DataPerson: Photographical {
 
 	internal mutating func setGameVersionData() {
 		let gameVersionData = self.gameVersionData[gameVersion.stringValue] ?? SerializableData()
-		let knownGameVersionKeys: [String] = gameVersionData.dictionary?.keys.flatMap({ $0 }) ?? []
+		let knownGameVersionKeys: [String] = gameVersionData.dictionary?.keys.map({ $0 }) ?? []
 
 		name = gameVersionData["name"]?.string ?? (rawGeneralData["name"]?.string ?? name)
 		personType = PersonType(stringValue: gameVersionData["personType"]?.string)
@@ -85,15 +85,15 @@ public struct DataPerson: Photographical {
 		voiceActor = gameVersionData["voiceActor"]?.string ?? rawGeneralData["voiceActor"]?.string
 
 		relatedLinks = ((gameVersionData["relatedLinks"]?.array
-			?? rawGeneralData["relatedLinks"]?.array) ?? []).flatMap({ $0.string })
+			?? rawGeneralData["relatedLinks"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 		relatedDecisionIds = ((gameVersionData["relatedDecisionIds"]?.array
-			?? rawGeneralData["relatedDecisionIds"]?.array) ?? []).flatMap({ $0.string })
+			?? rawGeneralData["relatedDecisionIds"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 		loveInterestDecisionId = knownGameVersionKeys.contains("loveInterestDecisionId") ?
 			gameVersionData["loveInterestDecisionId"]?.string : rawGeneralData["loveInterestDecisionId"]?.string
 		sideEffects = ((gameVersionData["sideEffects"]?.array
-			?? rawGeneralData["sideEffects"]?.array) ?? []).flatMap({ $0.string })
+			?? rawGeneralData["sideEffects"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 		relatedMissionIds = ((gameVersionData["relatedMissionIds"]?.array
-			?? rawGeneralData["relatedMissionIds"]?.array) ?? []).flatMap({ $0.string })
+			?? rawGeneralData["relatedMissionIds"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 
 		if let photo = Photo(filePath: gameVersionData["photo"]?.string)
 			?? Photo(filePath: rawGeneralData["photo"]?.string) {
@@ -111,7 +111,7 @@ extension DataPerson {
 				return $0
 			}
 			return nil
-		}).flatMap({ $0 })
+		}).filter({ $0 != nil }).map({ $0! })
 		return inheritableEvents
 	}
 

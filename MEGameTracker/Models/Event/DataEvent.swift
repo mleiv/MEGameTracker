@@ -69,7 +69,7 @@ extension DataEvent: SerializedDataRetrievable {
 		description = data["description"]?.string
 		eraseParentValue = data["eraseParentValue"]?.bool ?? eraseParentValue
 		isAlert = data["isAlert"]?.bool ?? isAlert
-		actions = (data["actions"]?.array ?? []).flatMap({ Action(data: $0) })
+		actions = (data["actions"]?.array ?? []).map({ Action(data: $0) }).filter({ $0 != nil }).map({ $0! })
 		dependentOn = DependentOnType(data: data["dependentOn"])
 	}
 

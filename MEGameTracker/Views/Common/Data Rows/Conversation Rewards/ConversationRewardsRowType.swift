@@ -30,7 +30,7 @@ public struct ConversationRewardsRowType: ValueDataRowType {
 	public init() {}
 	public init(controller: ConversationRewardsable, view: ValueDataRow?) {
 		self.controller = controller
-		self.row = view as? ValueDataRowDisplayable
+		self.row = view
 		let selfCopy = self
 		self.onClick = { sender in
 			selfCopy.openRow(sender: sender)

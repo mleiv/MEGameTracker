@@ -201,4 +201,6 @@ extension ConversationRewardSet: SerializedDataRetrievable {
 		}
 	}
 
+	public mutating func setData(_ data: SerializableData) {}
+
 }

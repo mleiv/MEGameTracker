@@ -14,10 +14,6 @@ public protocol DataRowStorable: SimpleSerializedCoreDataStorable {
 
 // MARK: Required
 
-	/// Type of the core data entity.
-	/// (Duplicate these per file or use Whole Module Optimization, which is slow in dev)
-	associatedtype EntityType: NSManagedObject
-
 	/// Identifier property.
 	var id: String { get }
 

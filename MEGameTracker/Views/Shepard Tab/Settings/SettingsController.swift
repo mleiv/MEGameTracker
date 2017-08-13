@@ -68,8 +68,9 @@ class SettingsController: UITableViewController, Spinnerable {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		if (indexPath as NSIndexPath).row < games.count {
 			startSpinner(inView: view.superview)
-			let game = games[(indexPath as NSIndexPath).row]
-			App.current.change(game: game)
+            var game = games[(indexPath as NSIndexPath).row]
+            _ = game.saveAnyChanges(isAllowDelay: false)
+			App.current.changeGame { _ in game }
 			parent?.dismiss(animated: true, completion: nil)
 			stopSpinner(inView: view.superview)
 		}
@@ -136,7 +137,7 @@ class SettingsController: UITableViewController, Spinnerable {
 		isUpdating = false
 	}
 
-	func reloadDataOnChange() {
+	func reloadDataOnChange(_ x: Bool = false) {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		guard !isUpdating else { return }
 		isUpdating = true

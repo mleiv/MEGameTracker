@@ -36,45 +36,52 @@ final public class ShepardReputationController: UIViewController, SideEffectsabl
 			soleSurvivorSideEffectsView?.controller = self
 
 			ruthlessRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(reputation: .ruthless)
-				self?.setupRadios()
+				self?.handleChange(reputation: .ruthless)
 			}
 			warHeroRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(reputation: .warHero)
-				self?.setupRadios()
+				self?.handleChange(reputation: .warHero)
 			}
 			soleSurvivorRadio?.onChange = { [weak self] _ in
-				self?.shepard?.change(reputation: .soleSurvivor)
-				self?.setupRadios()
+				self?.handleChange(reputation: .soleSurvivor)
 			}
 		}
 
-		setupRadios()
+		if let shepard = self.shepard {
+			setupRadios(shepard: shepard)
+		}
 	}
 
 	func fetchData() {
-		guard !UIWindow.isInterfaceBuilder else { return fetchDummyData() }
-		shepard = App.current.game?.shepard
-	}
-
-	func fetchDummyData() {
-		shepard = Shepard.getDummy()
-	}
-
-	func setupRadios() {
-		ruthlessRadio?.isOn = shepard?.reputation == .ruthless
-		warHeroRadio?.isOn = shepard?.reputation == .warHero
-		soleSurvivorRadio?.isOn = shepard?.reputation == .soleSurvivor
-	}
-
-	func reloadDataOnChange() {
-		DispatchQueue.main.async {
-			self.fetchData()
-			self.setupRadios()
+		if UIWindow.isInterfaceBuilder {
+			shepard = Shepard.getDummy()
+		} else {
+			shepard = App.current.game?.shepard
 		}
 	}
 
-	func reloadOnShepardChange() {
+	func setupRadios(shepard: Shepard) {
+		ruthlessRadio?.isOn = shepard.reputation == .ruthless
+		warHeroRadio?.isOn = shepard.reputation == .warHero
+		soleSurvivorRadio?.isOn = shepard.reputation == .soleSurvivor
+	}
+
+	func handleChange(reputation: Shepard.Reputation) {
+		if var shepard = self.shepard {
+			shepard.change(reputation: reputation)
+			setupRadios(shepard: shepard)
+		}
+	}
+
+	func reloadDataOnChange() {
+		DispatchQueue.main.async { [weak self] in
+			self?.fetchData()
+			if let shepard = self?.shepard {
+				self?.setupRadios(shepard: shepard)
+			}
+		}
+	}
+
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepard?.uuid != App.current.game?.shepard?.uuid {
 			shepard = App.current.game?.shepard
 			reloadDataOnChange()

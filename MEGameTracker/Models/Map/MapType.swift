@@ -70,7 +70,7 @@ public enum MapType: Int {
 	/// Creates an enum from a string value, if possible.
 	public init?(stringValue: String?) {
 		guard let type = MapType.stringValues
-			.filter({ $0.1 == stringValue }).flatMap({ $0.0 }).first
+			.filter({ $0.1 == stringValue }).map({ $0.0 }).filter({ $0 != nil }).map({ $0! }).first
 		else {
 			return nil
 		}
@@ -85,7 +85,7 @@ public enum MapType: Int {
 	/// Creates an enum from a heading string value, if possible.
 	public init?(headingValue: String?) {
 		guard let type = MapType.headingValues
-			.filter({ $0.1 == headingValue }).flatMap({ $0.0 }).first
+			.filter({ $0.1 == headingValue }).map({ $0.0 }).filter({ $0 != nil }).map({ $0! }).first
 		else {
 			return nil
 		}

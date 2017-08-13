@@ -92,7 +92,7 @@ extension CoreDataMigrationType {
 struct CoreDataMigrationImportSet<T: DataRowStorable> {
 	var items: [T]
 	init(_ dataRows: [SerializableData]) {
-		items = dataRows.flatMap { T(data: $0) }
+		items = dataRows.map({ T(data: $0) }).filter({ $0 != nil }).map({ $0! })
 	}
 	func save(
 		with manager: SimpleSerializedCoreDataManageable? = nil

@@ -31,7 +31,7 @@ extension Note {
 				case .map(_): return "Map"
 				case .mission(_): return "Mission"
 				case .person(_): return "Person"
-				case .shepard(_): return "Shepard"
+				case .shepard: return "Shepard"
 			}
 		}
 

@@ -123,7 +123,7 @@ public struct Event {
 
 	public var isGameVersionEvent: Bool {
 		// Game1, Game2, Game3
-		return id.substring(to: id.index(before: id.endIndex)) == "Game"
+		return id[..<id.index(before: id.endIndex)] == "Game"
 	}
 
 // MARK: Change Listeners And Change Status Flags

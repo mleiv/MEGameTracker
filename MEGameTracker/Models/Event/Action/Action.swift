@@ -56,4 +56,5 @@ extension Action: SerializedDataRetrievable {
 		self.changes = changes
 	}
 
+    public mutating func setData(_ data: SerializableData) {}
 }

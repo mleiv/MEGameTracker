@@ -38,7 +38,9 @@ public enum EventType {
 	public init?(stringValue: String?) {
 		guard let type = EventType.stringValues
 			.filter({ $0.1 == stringValue })
-			.flatMap({ $0.0 }).first
+			.map({ $0.0 })
+            .filter({ $0 != nil }).map({ $0! })
+            .first
 		else {
 			return nil
 		}

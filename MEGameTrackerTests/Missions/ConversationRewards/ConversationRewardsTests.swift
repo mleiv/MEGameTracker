@@ -62,7 +62,7 @@ final class ConversationRewardsTests: MEGameTrackerTests {
 		XCTAssert(flattenedRewards[0].options.first?.id == "M1.1Prologue.P1", "Flatten incorrect")
 		XCTAssert(flattenedRewards[14].commonContext == "Talking to Ashley after the mission", "Flatten incorrect")
 		XCTAssert(flattenedRewards[14].options.count == 2, "Flatten incorrect")
-		XCTAssert(flattenedRewards[14].options.first?.id == "M1.1Prologue.R12", "Flatten incorrect")
+		XCTAssert(flattenedRewards[14].options.first?.id == "M1.1Prologue.P12", "Flatten incorrect")
 //		print(flattenedRewards.flatMap({ "- \((0..<$0.level)
 //			.reduce(""){ s,_ in s + "- " }) \($0.commonContext) \($0.options.count)" }).joined(separator: "\n"))
 	}

@@ -136,14 +136,15 @@ public struct Mission: MapLocationable, Eventsable {
 				!unavailabilityInGameMessage.isEmpty {
 				return generalData.unavailabilityMessages + [unavailabilityInGameMessage]
 			} else {
-				return generalData.unavailabilityMessages + blockingEvents.flatMap({ $0.description })
+				return generalData.unavailabilityMessages
+                    + blockingEvents.map({ $0.description }).filter({ $0 != nil }).map({ $0! })
 			}
 		}
 		return generalData.unavailabilityMessages
 	}
 	public var unavailabilityAfterMessages: [String] {
 		let blockingEvents = events.filter({ (e: Event) in return e.isBlockingAfterInGame(App.current.gameVersion) })
-		return blockingEvents.flatMap({ $0.description })
+		return blockingEvents.map({ $0.description }).filter({ $0 != nil }).map({ $0! })
 	}
 
 //	public var searchableName: String // optional
@@ -321,12 +322,14 @@ extension Mission {
 		let objectives = getObjectives()
 		if isCascadeChanges != .up && isCompleted && objectivesCountToCompletion == nil {
 			// don't chain uncompleted events down, and don't complete for X/Y collection missions
-			for subMission in objectives.flatMap({ $0 as? Mission }) where subMission.isCompleted != isCompleted {
+			for subMission in objectives.map({ $0 as? Mission }).filter({ $0 != nil }).map({ $0! })
+                where subMission.isCompleted != isCompleted {
 				// complete/uncomplete all submissions if parent was just completed/uncompleted
 				var subMission = subMission
 				subMission.change(isCompleted: isCompleted, isSave: isSave, isCascadeChanges: .down)
 			}
-			for subItem in objectives.flatMap({ $0 as? Item }) where subItem.isAcquired != isCompleted {
+			for subItem in objectives.map({ $0 as? Item }).filter({ $0 != nil }).map({ $0! })
+                where subItem.isAcquired != isCompleted {
 				// complete/uncomplete all items if parent was just completed/uncompleted
 				var subItem = subItem
 				subItem.change(isAcquired: isCompleted, isSave: isSave, isCascadeChanges: .down)
@@ -410,7 +413,8 @@ extension Mission: SerializedDataRetrievable {
 
 		overrideName = data["name"]?.string
 
-		let _selectedConversationRewards = (data["selectedConversationRewards"]?.array ?? []).flatMap({ $0.string })
+		let _selectedConversationRewards = (data["selectedConversationRewards"]?.array ?? [])
+            .map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 		generalData.conversationRewards.setSelectedIds(_selectedConversationRewards)
 
 		unserializeDateModifiableData(data: data)

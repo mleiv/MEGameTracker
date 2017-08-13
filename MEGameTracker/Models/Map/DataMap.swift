@@ -155,13 +155,13 @@ public struct DataMap: MapLocationable {
 		sortIndex = gameVersionData["sortIndex"]?.int ?? (rawGeneralData["sortIndex"]?.int ?? 0)
 
 		relatedLinks = ((gameVersionData["relatedLinks"]?.array
-			?? rawGeneralData["relatedLinks"]?.array) ?? []).flatMap({ $0.string })
+			?? rawGeneralData["relatedLinks"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 		relatedDecisionIds = ((gameVersionData["relatedDecisionIds"]?.array
-			?? rawGeneralData["relatedDecisionIds"]?.array) ?? []).flatMap({ $0.string })
+			?? rawGeneralData["relatedDecisionIds"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 		sideEffects = ((gameVersionData["sideEffects"]?.array
-			?? rawGeneralData["sideEffects"]?.array) ?? []).flatMap({ $0.string })
+			?? rawGeneralData["sideEffects"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 		relatedMissionIds = ((gameVersionData["relatedMissionIds"]?.array
-			?? rawGeneralData["relatedMissionIds"]?.array) ?? []).flatMap({ $0.string })
+			?? rawGeneralData["relatedMissionIds"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 
 		isExplorable = !isHidden && !(inMapId?.isEmpty ?? true) && mapType.isExplorable
 			&& (gameVersionData["isExplorable"]?.bool ?? (rawGeneralData["isExplorable"]?.bool ?? true))
@@ -174,7 +174,7 @@ public struct DataMap: MapLocationable {
 			if referenceSizeBits.count == 2 {
 				if let w = NumberFormatter().number(from: referenceSizeBits[0]),
 					let h = NumberFormatter().number(from: referenceSizeBits[1]) {
-					referenceSize = CGSize(width: CGFloat(w), height: CGFloat(h))
+                    referenceSize = CGSize(width: CGFloat(w), height: CGFloat(h))
 				}
 			}
 		} else {
@@ -214,13 +214,13 @@ extension DataMap {
 	}
 
 	public func getInheritableEvents() -> [SerializableData] {
-		let inheritableEvents: [SerializableData] = (rawEventData?.array ?? []).flatMap({
+		let inheritableEvents: [SerializableData] = (rawEventData?.array ?? []).map({
 			if let eventType = EventType(stringValue: $0["type"]?.string),
 				eventType.isAppliesToChildren {
 				return $0
 			}
 			return nil
-		})
+		}).filter({ $0 != nil }).map({ $0! })
 		return inheritableEvents
 	}
 }

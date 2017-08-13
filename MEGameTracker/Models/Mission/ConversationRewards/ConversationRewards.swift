@@ -109,4 +109,5 @@ extension ConversationRewards: SerializedDataRetrievable {
 		}
 	}
 
+    public mutating func setData(_ data: SerializableData) {}
 }

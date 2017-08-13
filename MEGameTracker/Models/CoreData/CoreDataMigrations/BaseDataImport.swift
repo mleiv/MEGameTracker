@@ -13,8 +13,8 @@ public struct BaseDataImport: CoreDataMigrationType {
 
 	let progressProcessImportChunk = 40.0
 	let progressFinalPadding = 5.0
-	let onProcessMapDataRow = Signal<(Void)>()
-	let onProcessMissionDataRow = Signal<(Void)>()
+	let onProcessMapDataRow = Signal<Bool>()
+	let onProcessMissionDataRow = Signal<Bool>()
 
 	var isTestProject: Bool {
 		return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil

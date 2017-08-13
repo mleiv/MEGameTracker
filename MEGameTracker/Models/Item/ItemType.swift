@@ -98,7 +98,9 @@ public enum ItemType {
 	public init?(stringValue: String?) {
 		guard let type = ItemType.stringValues
 			.filter({ $0.1 == stringValue })
-			.flatMap({ $0.0 }).first
+			.map({ $0.0 })
+            .filter({ $0 != nil }).map({ $0! })
+            .first
 		else {
 			return nil
 		}
@@ -114,7 +116,9 @@ public enum ItemType {
 	public init?(headingValue: String?) {
 		guard let type = ItemType.headingValues
 			.filter({ $0.1 == headingValue })
-			.flatMap({ $0.0 }).first
+			.map({ $0.0 })
+            .filter({ $0 != nil }).map({ $0! })
+            .first
 		else {
 			return nil
 		}

@@ -212,7 +212,7 @@ final public class MissionController: UIViewController,
 		}
 	}
 
-	func reloadOnShepardChange() {
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
 			reloadDataOnChange()

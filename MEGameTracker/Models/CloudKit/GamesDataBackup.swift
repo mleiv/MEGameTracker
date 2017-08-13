@@ -250,6 +250,12 @@ extension GamesDataBackup {
 			return deleteAllPendingCloudData()
 		}
 
+        func savedRecordNames<T: CloudDataStorable>(type: T.Type) -> [String] {
+            return savedRecords.filter {
+                $0.recordType == T.cloudRecordType
+            }.map { $0.recordID.recordName }
+        }
+
 		let manager = CoreDataManager.current
 
 		// There is a small risk that we will delete changes made between the time of the post and the response. 
@@ -259,57 +265,40 @@ extension GamesDataBackup {
 
 		let isConfirmed = true // we really don't need to halt anything if this breaks - it will just resend later.
 
-		let decisionIdentifiers = savedRecords.filter {
-			$0.recordType == Decision.cloudRecordType
-		}.flatMap { $0.recordID.recordName }
+        let decisionIdentifiers = savedRecordNames(type: Decision.self)
 		Decision.getAll(identifiers: decisionIdentifiers, with: manager).forEach {
 			var d = $0; d.pendingCloudChanges = nil; _ = d.save(with: manager)
 		}
-		let eventIdentifiers = savedRecords.filter {
-			$0.recordType == Event.cloudRecordType
-		}.flatMap { $0.recordID.recordName }
+        let eventIdentifiers = savedRecordNames(type: Event.self)
 		Event.getAll(identifiers: eventIdentifiers, with: manager).forEach {
 			var e = $0; e.pendingCloudChanges = nil; _ = e.save(with: manager)
 		}
-		let itemIdentifiers = savedRecords.filter {
-			$0.recordType == Item.cloudRecordType
-		}.flatMap { $0.recordID.recordName }
+        let itemIdentifiers = savedRecordNames(type: Item.self)
 		Item.getAll(identifiers: itemIdentifiers, with: manager).forEach {
 			var i = $0; i.pendingCloudChanges = nil; _ = i.save(with: manager)
 		}
-		let mapIdentifiers = savedRecords.filter {
-			$0.recordType == Map.cloudRecordType
-		}.flatMap { $0.recordID.recordName }
+        let mapIdentifiers = savedRecordNames(type: Map.self)
 		Map.getAll(identifiers: mapIdentifiers, with: manager).forEach {
 			var m = $0; m.pendingCloudChanges = nil; _ = m.save(with: manager)
 		}
-		let missionIdentifiers = savedRecords.filter {
-			$0.recordType == Mission.cloudRecordType
-		}.flatMap { $0.recordID.recordName }
+        let missionIdentifiers = savedRecordNames(type: Mission.self)
 		Mission.getAll(identifiers: missionIdentifiers, with: manager).forEach {
 			var m = $0; m.pendingCloudChanges = nil; _ = m.save(with: manager)
 		}
-		let noteIdentifiers = savedRecords.filter {
-			$0.recordType == Note.cloudRecordType
-		}.flatMap { $0.recordID.recordName }
-		Note.getAll(identifiers: noteIdentifiers, with: manager).forEach {
-			var n = $0; n.pendingCloudChanges = nil; _ = n.save(with: manager)
-		}
-		let personIdentifiers = savedRecords.filter {
-			$0.recordType == Person.cloudRecordType
-		}.flatMap { $0.recordID.recordName }
+        let personIdentifiers = savedRecordNames(type: Person.self)
 		Person.getAll(identifiers: personIdentifiers, with: manager).forEach {
 			var p = $0; p.pendingCloudChanges = nil; _ = p.save(with: manager)
 		}
-		let gameIdentifiers = savedRecords.filter {
-			$0.recordType == GameSequence.cloudRecordType
-		}.flatMap { $0.recordID.recordName }
+        // not GameRowStorable:
+        let noteIdentifiers = savedRecordNames(type: Note.self)
+        Note.getAll(identifiers: noteIdentifiers, with: manager).forEach {
+            var n = $0; n.pendingCloudChanges = nil; _ = n.save(with: manager)
+        }
+        let gameIdentifiers = savedRecordNames(type: GameSequence.self)
 		GameSequence.getAll(identifiers: gameIdentifiers, with: manager).forEach {
 			var g = $0; g.pendingCloudChanges = nil; _ = g.save(with: manager)
 		}
-		let shepardIdentifiers = savedRecords.filter {
-			$0.recordType == Shepard.cloudRecordType
-		}.flatMap { $0.recordID.recordName }
+        let shepardIdentifiers = savedRecordNames(type: Shepard.self)
 		Shepard.getAll(identifiers: shepardIdentifiers, with: manager).forEach {
 			var s = $0; s.pendingCloudChanges = nil; _ = s.save(with: manager)
 		}

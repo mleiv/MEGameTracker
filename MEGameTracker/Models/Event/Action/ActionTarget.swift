@@ -87,4 +87,5 @@ extension ActionTarget: SerializedDataRetrievable {
 		self.id = id
 	}
 
+    public mutating func setData(_ data: SerializableData) {}
 }

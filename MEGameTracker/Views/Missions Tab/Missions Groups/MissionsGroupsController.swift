@@ -299,7 +299,7 @@ extension MissionsGroupsController {
 		}
 	}
 
-	func reloadRecentRows() {
+	func reloadRecentRows(_ x: Bool = false) {
 		guard !isUpdating else { return }
 		isUpdating = true
 		DispatchQueue.main.async {
@@ -314,7 +314,7 @@ extension MissionsGroupsController {
 		}
 	}
 
-	func reloadOnShepardChange() {
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
 			reloadAllRows()

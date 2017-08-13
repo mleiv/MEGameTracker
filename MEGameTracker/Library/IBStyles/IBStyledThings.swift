@@ -122,7 +122,7 @@ open class IBStyledTextView: UITextView, IBStylable {
 			if heightConstraint == nil {
 				isScrollEnabled = false
 				heightConstraint = heightAnchor.constraint(equalToConstant: contentSize.height)
-				heightConstraint?.priority = 950 // when hidden, height = 0 and this errors out.
+				heightConstraint?.priority = UILayoutPriority(rawValue: 950) // when hidden, height = 0 and this errors out.
 			}
 			heightConstraint?.constant = contentSize.height
 			heightConstraint?.isActive = true

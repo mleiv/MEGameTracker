@@ -93,26 +93,26 @@ final class AppTests: MEGameTrackerTests {
 
 	/// Test App event signals.
 	func testAppEvents() {
-		// #1 Test app open calls onchange once
+        // #1 Test app open calls onchange once
 
-		// - verify signal is fired
-		let expectationShepardChanged1 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) {
-			expectationShepardChanged1.fulfill()
-		}
+        // - verify signal is fired
+        let expectationShepardChanged1 = expectation(description: "Shepard on change triggered")
+        App.onCurrentShepardChange.subscribe(on: self) { _ in
+            expectationShepardChanged1.fulfill()
+        }
 
-		_ = create(App.self, from: "{}") // reset
-		App.retrieve()
+        _ = create(App.self, from: "{}") // reset
+        App.retrieve()
 
-		// - wait for signal
-		waitForExpectations(timeout: 0.1) { _ in }
-		App.onCurrentShepardChange.cancelSubscription(for: self)
+        // - wait for signal
+        waitForExpectations(timeout: 0.1) { _ in }
+        App.onCurrentShepardChange.cancelSubscription(for: self)
 
 		// #2 Test app open with saved data calls onchange once
 
 		// - verify signal is fired
 		let expectationShepardChanged2 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) {
+		App.onCurrentShepardChange.subscribe(on: self) { _ in
 			expectationShepardChanged2.fulfill()
 		}
 
@@ -127,29 +127,37 @@ final class AppTests: MEGameTrackerTests {
 		waitForExpectations(timeout: 0.1) { _ in }
 		App.onCurrentShepardChange.cancelSubscription(for: self)
 
-		// #3 Test change game version calls onchange once
+        // #3 Test change game version calls onchange once
 
-		// - verify signal is fired
-		let expectationShepardChanged3 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) {
-			expectationShepardChanged3.fulfill()
-		}
+        // - verify signal is fired
+        let expectationShepardChanged3 = expectation(description: "Shepard on change triggered")
+        App.onCurrentShepardChange.subscribe(on: self) { _ in
+            expectationShepardChanged3.fulfill()
+        }
 
-		App.current.changeGameVersion(.game2)
+        App.current.changeGame(isSave: false) { game in
+            var game = game
+            game?.change(gameVersion: .game2)
+            return game
+        }
 
-		// - wait for signal
-		waitForExpectations(timeout: 0.1) { _ in }
-		App.onCurrentShepardChange.cancelSubscription(for: self)
+        // - wait for signal
+        waitForExpectations(timeout: 0.1) { _ in }
+        App.onCurrentShepardChange.cancelSubscription(for: self)
 
 		// #4 Test change shepard calls onchange once
 
 		// - verify signal is fired
 		let expectationShepardChanged4 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) {
+		App.onCurrentShepardChange.subscribe(on: self) { _ in
 			expectationShepardChanged4.fulfill()
 		}
 
-		App.current.game?.shepard?.change(name: "Javier")
+        App.current.changeGame(isSave: false, isNotify: false) { game in
+            var game = game
+            game?.shepard?.change(name: "Javier") // let shepard manage its own isNotify
+            return game
+        }
 
 		// - wait for signal
 		waitForExpectations(timeout: 0.1) { _ in }
@@ -159,15 +167,16 @@ final class AppTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationShepardChanged5 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) {
+		App.onCurrentShepardChange.subscribe(on: self) { _ in
 			expectationShepardChanged5.fulfill()
 		}
 
-		guard let game = create(GameSequence.self, from: game2Json) else {
+		guard var game = create(GameSequence.self, from: game2Json) else {
 			XCTAssert(false, "Failed to load game from json")
 			return
 		}
-		App.current.change(game: game)
+        _ = game.saveAnyChanges(isAllowDelay: false)
+        App.current.changeGame(isSave: false) { _ in game }
 
 		// - wait for signal
 		waitForExpectations(timeout: 0.1) { _ in }

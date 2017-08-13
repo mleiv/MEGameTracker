@@ -11,19 +11,19 @@ import UIKit
 final public class MESearchManager: NSObject {
 
 	// passed in
-	fileprivate var controller: UIViewController
-	fileprivate var tempSearchBar: UISearchBar?
+	private var controller: UIViewController
+	private var tempSearchBar: UISearchBar?
 	// - (optional)
-	fileprivate var resultsController: UITableViewController?
-	fileprivate var searchData: ((_ needle: String?) -> Void) = { _ in }
-	fileprivate var closeSearch: (() -> Void) = { }
+	private var resultsController: UITableViewController?
+	private var searchData: ((_ needle: String?) -> Void) = { _ in }
+	private var closeSearch: (() -> Void) = { }
 
 	// revealed
 	public var searchController: UISearchController?
 	public var showSearchData: Bool = false
 
 	// interal use only
-	fileprivate var lastSearch: String = ""
+	private var lastSearch: String = ""
 
 	public init(
 		controller: UIViewController,
@@ -49,11 +49,11 @@ final public class MESearchManager: NSObject {
 		closure((searchController?.searchResultsController as? UITableViewController)?.tableView)
 	}
 
-	fileprivate func setupSearchController() {
+	private func setupSearchController() {
 		controller.definesPresentationContext = true // hold search to our current bounds
 		// create search controller (no IB equivalent)
 		let searchController = UISearchController(searchResultsController: resultsController)
-		searchController.hidesNavigationBarDuringPresentation = false
+//        searchController.hidesNavigationBarDuringPresentation = false
 		searchController.dimsBackgroundDuringPresentation = false
 		searchController.searchResultsUpdater = self
 		searchController.searchBar.delegate = self
@@ -96,7 +96,7 @@ extension MESearchManager: UISearchBarDelegate {
 		if searchController?.isActive == true {
 			lastSearch = ""
 			showSearchData = false
-			searchController?.dismiss(animated: true) { _ in }
+			searchController?.dismiss(animated: true) { () -> Void in }
 			closeSearch()
 		}
 	}

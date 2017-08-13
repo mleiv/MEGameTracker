@@ -20,10 +20,6 @@ public protocol GameRowStorable: SimpleSerializedCoreDataStorable {
 
 // MARK: Required
 
-	/// Type of the core data entity.
-	/// (Duplicate these per file or use Whole Module Optimization, which is slow in dev)
-	associatedtype EntityType: NSManagedObject
-
 	/// Corresponding data entity for this game entity.
 	associatedtype DataRowType: DataRowStorable
 
@@ -233,7 +229,7 @@ extension GameRowStorable {
 		with manager: SimpleSerializedCoreDataManageable?,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType>
 	) -> Self? {
-		let ids: [String] = [id].flatMap { $0 }
+		let ids: [String] = id != nil ? [id!] : []
 		return getAllExisting(
 			ids: ids,
 			gameSequenceUuid: gameSequenceUuid,
@@ -428,9 +424,9 @@ extension GameRowStorable {
 	) -> [Self] {
 		let manager = manager ?? defaultManager
 		let dataItems = DataRowType.getAll(with: manager, alterFetchRequest: alterFetchRequest)
-		let some: [Self] = dataItems.flatMap { (dataItem: DataRowType) -> Self? in
+		let some: [Self] = dataItems.map { (dataItem: DataRowType) -> Self? in
 			Self.getOrCreate(using: dataItem, gameSequenceUuid: gameSequenceUuid, with: manager)
-		}
+		}.filter({ $0 != nil }).map({ $0! })
 		return some
 	}
 

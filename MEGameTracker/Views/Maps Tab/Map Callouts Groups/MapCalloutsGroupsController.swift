@@ -218,7 +218,7 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 	}
 
 	var shepardUuid = App.current.game?.shepard?.uuid
-	func reloadOnShepardChange() {
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
 			reloadDataOnChange()

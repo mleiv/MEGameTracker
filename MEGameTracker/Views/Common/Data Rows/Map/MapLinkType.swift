@@ -37,7 +37,7 @@ public struct MapLinkType: ValueDataRowType {
 	public init() {}
 	public init(controller: MapLinkable, view: ValueDataRow?) {
 		self.controller = controller
-		self.row = view as? ValueDataRowDisplayable
+		self.row = view
 	}
 
 	public mutating func initMapAndClick() {

@@ -98,9 +98,9 @@ extension Map {
 	) -> [Map] {
 		let manager = manager ?? defaultManager
 		let dataItems = DataMap.getAll(gameVersion: gameVersion, with: manager, alterFetchRequest: alterFetchRequest)
-		let some: [Map] = dataItems.flatMap { (dataItem: DataRowType) -> Map? in
+		let some: [Map] = dataItems.map { (dataItem: DataRowType) -> Map? in
 			Map.getOrCreate(using: dataItem, with: manager)
-		}
+		}.filter({ $0 != nil }).map({ $0! })
 		return some
 	}
 

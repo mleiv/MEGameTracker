@@ -109,6 +109,7 @@ extension MapLocationPoint: SerializedDataRetrievable {
 		}
 	}
 
+    public mutating func setData(_ data: SerializableData) {}
 }
 
 // MARK: Equatable

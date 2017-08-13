@@ -31,7 +31,7 @@ final public class ShepardAppearanceSliderCell: UITableViewCell {
 	var onChange: OnAppearanceSliderChange?
 
 // MARK: Change Listeners And Change Status Flags
-	fileprivate var isDefined = false
+	private var isDefined = false
 
 // MARK: Lifecycle Events
 	public override func layoutSubviews() {
@@ -66,7 +66,7 @@ final public class ShepardAppearanceSliderCell: UITableViewCell {
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() {
+	private func setup() {
 		guard titleLabel != nil else { return }
 		titleLabel?.text = "\(title ?? "?"):"
 		let valueString = value != nil ? "\(value!)" : "?"
@@ -88,7 +88,7 @@ final public class ShepardAppearanceSliderCell: UITableViewCell {
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		titleLabel?.text = ""
 		sliderValueLabel?.text = ""
 		slider?.minimumValue = 0.0
@@ -99,7 +99,7 @@ final public class ShepardAppearanceSliderCell: UITableViewCell {
 	}
 
 // MARK: Supporting Functions
-	func sliderChanged(_ sender: UISlider) {
+	@objc func sliderChanged(_ sender: UISlider) {
 		value = Int(sender.value)
 		sender.value = Float(value ?? 0)
 		let valueString = value != nil ? "\(value!)" : "?"

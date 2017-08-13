@@ -66,4 +66,6 @@ extension RecentlyViewedList: SerializedDataRetrievable {
 		}
 		wasChanged = true
 	}
+
+    public mutating func setData(_ data: SerializableData) {}
 }

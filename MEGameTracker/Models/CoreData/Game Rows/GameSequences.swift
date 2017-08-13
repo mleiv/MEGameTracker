@@ -322,7 +322,10 @@ extension GameSequence {
 					]
 				}),
 				let uuid = row.value(forKeyPath:  #keyPath(GameSequences.uuid)) as? String {
-				print("Last Played Game: \(uuid) \(row.value(forKeyPath:  #keyPath(GameSequences.modifiedDate)))")
+				print("""
+                    Last Played Game: \(uuid)
+                    \(String(describing: row.value(forKeyPath: #keyPath(GameSequences.modifiedDate))))
+                """)
 				result = get(uuid: uuid, with: manager)
 			}
 		}

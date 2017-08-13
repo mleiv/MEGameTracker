@@ -47,7 +47,11 @@ class MEGameTrackerTests: XCTestCase {
 		// require a new app (don't use retrieve)
 		App.current = App()
 		App.current.initGame(uuid: gameSequenceUuid, isSave: true, isNotify: false)
-		App.current.game?.shepard?.change(gender: gender, isNotify: false)
+        App.current.changeGame(isSave: false, isNotify: false) { game in
+            var game = game
+            game?.shepard?.change(gender: gender, isNotify: false)
+            return game
+        }
 	}
 
 	/// Create the game version events.

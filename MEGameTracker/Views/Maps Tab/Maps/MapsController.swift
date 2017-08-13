@@ -139,7 +139,7 @@ final public class MapsController: UITableViewController, Spinnerable {
 		}
 	}
 
-	func reloadDataOnChange() {
+	func reloadDataOnChange(_ x: Bool = false) {
 		guard !isUpdating else { return }
 		isUpdating = true
 		DispatchQueue.main.async {
@@ -168,7 +168,7 @@ final public class MapsController: UITableViewController, Spinnerable {
 //	}
 
 	var shepardUuid = App.current.game?.shepard?.uuid
-	func reloadOnShepardChange() {
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
 			reloadDataOnChange()

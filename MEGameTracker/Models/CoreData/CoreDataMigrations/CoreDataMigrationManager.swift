@@ -24,7 +24,7 @@ public struct CoreDataMigrationManager {
 		// reload base data on every new build
 		if lastBuild < App.current.build {
 			CoreDataMigrations.isRunning = true
-			CoreDataMigrations.onStart.fire()
+			CoreDataMigrations.onStart.fire(true)
 		}
 
 //		let lastBuild = 30 // DEBUG
@@ -37,7 +37,7 @@ public struct CoreDataMigrationManager {
 		App.current.lastBuild = App.current.build
 		if CoreDataMigrations.isRunning {
 			CoreDataMigrations.isRunning = false
-			CoreDataMigrations.onFinish.fire()
+			CoreDataMigrations.onFinish.fire(true)
 		}
 
 		DispatchQueue.main.async {

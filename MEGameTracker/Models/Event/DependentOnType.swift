@@ -64,11 +64,12 @@ extension DependentOnType: SerializedDataRetrievable {
 		guard let data = data else { return nil }
 		self.countTo = data["countTo"]?.int ?? 1
 		self.limitTo = data["limitTo"]?.int
-		self.events = (data["events"]?.array ?? []).flatMap({ $0.string })
-		self.decisions = (data["decisions"]?.array ?? []).flatMap({ $0.string })
+		self.events = (data["events"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
+		self.decisions = (data["decisions"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 		if self.events.isEmpty && self.decisions.isEmpty { // bad data
 			return nil
 		}
 	}
 
+    public mutating func setData(_ data: SerializableData) {}
 }

@@ -101,7 +101,7 @@ extension DataItem {
 				return $0
 			}
 			return nil
-		}).flatMap({ $0 })
+		}).filter({ $0 != nil }).map({ $0! })
 		return inheritableEvents
 	}
 }
@@ -150,10 +150,10 @@ extension DataItem: SerializedDataRetrievable {
 
 		price = data["price"]?.string
 
-		relatedLinks = (data["relatedLinks"]?.array ?? []).flatMap({ $0.string })
-		relatedDecisionIds = (data["relatedDecisionIds"]?.array ?? []).flatMap({ $0.string })
-		sideEffects = (data["sideEffects"]?.array ?? []).flatMap({ $0.string })
-		relatedMissionIds = (data["relatedMissionIds"]?.array ?? []).flatMap({ $0.string })
+		relatedLinks = (data["relatedLinks"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
+		relatedDecisionIds = (data["relatedDecisionIds"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
+		sideEffects = (data["sideEffects"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
+		relatedMissionIds = (data["relatedMissionIds"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 
 		rawEventData = data["events"]
 	}

@@ -91,7 +91,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 		}
 	}
 
-	func reloadDataOnChange() {
+	func reloadDataOnChange(_ x: Bool = false) {
 		// we care about gender changes as well as game changes
 		guard !UIWindow.isInterfaceBuilder else { return }
 		DispatchQueue.main.async {

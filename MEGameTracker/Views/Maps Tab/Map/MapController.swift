@@ -507,7 +507,7 @@ extension MapController: UIGestureRecognizerDelegate {
 		return true
 	}
 
-	func tapMap(_ sender: UITapGestureRecognizer) {
+	@objc func tapMap(_ sender: UITapGestureRecognizer) {
 		if let button = mapLocationsList.getButtonTouched(gestureRecognizer: sender) {
 			if let location = mapLocationsList.getLocations(fromButton: button).first {
 				if map?.isSplitMenu == true, let menuItemMap = location as? Map {
@@ -570,7 +570,7 @@ extension MapController {
 //		view.userInteractionEnabled = true
 //	}
 
-	func reloadOnShepardChange() {
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
 			DispatchQueue.main.async {

@@ -70,13 +70,13 @@ extension DataDecision: SerializedDataRetrievable {
 		loveInterestId = data["loveInterestId"]?.string
 		sortIndex = data["sortIndex"]?.int ?? 0
 
-		blocksDecisionIds = (data["blocksDecisionIds"]?.array ?? []).flatMap({ $0.string })
-		dependsOnDecisions = (data["dependsOnDecisions"]?.array ?? []).flatMap {
+		blocksDecisionIds = (data["blocksDecisionIds"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
+		dependsOnDecisions = (data["dependsOnDecisions"]?.array ?? []).map {
 			if let id = $0["id"]?.string, let value = $0["value"]?.bool {
 				return (id: id, value: value)
 			}
 			return nil
-		}
+		}.filter({ $0 != nil }).map({ $0! })
 	}
 }
 

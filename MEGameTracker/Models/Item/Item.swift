@@ -100,7 +100,8 @@ public struct Item: MapLocationable, Eventsable {
 				!unavailabilityInGameMessage.isEmpty {
 				return generalData.unavailabilityMessages + [unavailabilityInGameMessage]
 			} else {
-				return generalData.unavailabilityMessages + blockingEvents.flatMap({ $0.description })
+				return generalData.unavailabilityMessages
+                    + blockingEvents.map({ $0.description }).filter({ $0 != nil }).map({ $0! })
 			}
 		}
 		return generalData.unavailabilityMessages

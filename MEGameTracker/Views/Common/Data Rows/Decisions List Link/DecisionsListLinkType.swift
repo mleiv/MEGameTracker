@@ -30,7 +30,7 @@ public struct DecisionsListLinkType: ValueDataRowType {
 		onClick: @escaping ((_ sender: UIView?) -> Void)
 	) {
 		self.controller = controller
-		self.row = view as? ValueDataRowDisplayable
+		self.row = view
 		self.onClick = onClick
 	}
 

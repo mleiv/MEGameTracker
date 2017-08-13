@@ -36,14 +36,13 @@ class ShepardLoveInterestController: UITableViewController, Spinnerable {
 	}
 
 	func fetchData() {
-		guard !UIWindow.isInterfaceBuilder else { return fetchDummyData() }
-		let shepard = App.current.game?.shepard
-		let gameVersion = shepard?.gameVersion ?? .game1
-		persons = Person.getAllLoveOptions(gameVersion: gameVersion, isMale: shepard?.gender == .male).sorted(by: Person.sort)
-	}
-
-	func fetchDummyData() {
-		persons = [Person.getDummy(), Person.getDummy()].flatMap { $0 }
+		if UIWindow.isInterfaceBuilder {
+            persons = [Person.getDummy(), Person.getDummy()].flatMap { $0 }
+        } else {
+            let shepard = App.current.game?.shepard
+            let gameVersion = shepard?.gameVersion ?? .game1
+            persons = Person.getAllLoveOptions(gameVersion: gameVersion, isMale: shepard?.gender == .male).sorted(by: Person.sort)
+        }
 	}
 
 	func setupRow(_ row: Int, cell: PersonRow) {
@@ -62,7 +61,7 @@ class ShepardLoveInterestController: UITableViewController, Spinnerable {
 		)
 	}
 
-	func reloadDataOnChange() {
+	func reloadDataOnChange(_ x: Bool = false) {
 		guard !isUpdating else { return }
 		isUpdating = true
 		DispatchQueue.main.async {

@@ -42,7 +42,7 @@ extension IBStyleManager {
 	///
 	/// - parameter identifier:	  the key of the element's styles
 	/// - parameter to (element):	the element to be styled
-	public mutating func apply(
+	public func apply(
 		identifier: String,
 		to element: UIView?
 	) {
@@ -254,7 +254,7 @@ extension IBStyleManager {
 		view.layer.backgroundColor = color.cgColor
 		if let colorElement = view as? UISegmentedControl {
 			colorElement.setTitleTextAttributes([
-				NSForegroundColorAttributeName: color
+				NSAttributedStringKey.foregroundColor: color
 			], for: .disabled)
 		}
 	}

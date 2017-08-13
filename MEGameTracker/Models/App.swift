@@ -55,7 +55,7 @@ final public class App {
 			recentlyViewedMaps.wasChanged = false
 			// low priority:
 			DispatchQueue.global(qos: .background).asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
-				App.onRecentlyViewedMapsChange.fire()
+				App.onRecentlyViewedMapsChange.fire(true)
 			}
 		}
 	}
@@ -72,7 +72,7 @@ final public class App {
 			recentlyViewedMissions[gameVersion]?.wasChanged = false
 			// low priority:
 			DispatchQueue.global(qos: .background).asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
-				App.onRecentlyViewedMissionsChange.fire()
+				App.onRecentlyViewedMissionsChange.fire(true)
 			}
 		}
 	}
@@ -126,38 +126,30 @@ final public class App {
 		}
 	}
 
-	public func change(game newGame: GameSequence, isSave: Bool = true) {
-		if isSave {
-			_ = game?.saveAnyChanges(isAllowDelay: false)
-		}
-		game = newGame
-		fireListenerIfCurrent()
-		if isSave {
-			_ = save(isAllowDelay: false)
-		}
-	}
-
-	public func changeGameVersion(_ gameVersion: GameVersion, isSave: Bool = true) {
-		game?.change(gameVersion: gameVersion)
-		fireListenerIfCurrent()
-		if isSave {
-			_ = save(isAllowDelay: false)
-		}
+    // Thanks to new ownership rules, it is crashing on previously-harmless change/access of game. :/
+	public func changeGame(isSave: Bool = true, isNotify: Bool = true, handler: ((GameSequence?) -> GameSequence?)) {
+        game = handler(game)
+        if isNotify {
+            fireListenerIfCurrent()
+        }
+        if isSave {
+            _ = save(isAllowDelay: false)
+        }
 	}
 
 	public func delete(uuid: String) -> Bool {
 		let isDeleted = GameSequence.delete(uuid: uuid)
 		if uuid == game?.uuid {
 			if let newGame = GameSequence.lastPlayed() {
-				change(game: newGame, isSave: false)
+				changeGame(isSave: false) { _ in newGame }
 			}
 		}
 		return isDeleted
 	}
 
-	fileprivate func fireListenerIfCurrent() {
+	private func fireListenerIfCurrent() {
 		if self == App.current {
-			App.onCurrentShepardChange.fire()
+			App.onCurrentShepardChange.fire(true)
 		}
 	}
 
@@ -165,8 +157,11 @@ final public class App {
 		Shepard.onChange.cancelSubscription(for: self)
 		_ = Shepard.onChange.subscribe(on: self) { [weak self] (id, shepard) in
 			if id == self?.game?.shepard?.uuid {
-				App.onCurrentShepardChange.fire()
-				self?.game?.shepard = shepard
+				self?.changeGame(isSave: false) { game in
+                    var game = game
+                    game?.shepard = shepard
+                    return game
+                }
 			}
 		}
 	}
@@ -177,10 +172,10 @@ final public class App {
 extension App {
 	public static var isInitializing: Bool = true
 	public static var isDidInitialize: Bool = false
-	public static let onDidInitialize = Signal<(Void)>()
-	public static let onCurrentShepardChange = Signal<(Void)>()
-	public static let onRecentlyViewedMapsChange = Signal<(Void)>()
-	public static let onRecentlyViewedMissionsChange = Signal<(Void)>()
+	public static let onDidInitialize = Signal<Bool>()
+	public static let onCurrentShepardChange = Signal<Bool>()
+	public static let onRecentlyViewedMapsChange = Signal<Bool>()
+	public static let onRecentlyViewedMissionsChange = Signal<Bool>()
 }
 
 // MARK: App Open/Close
@@ -199,7 +194,7 @@ extension App {
 			App.current = app
 			if uuid != App.current.game?.uuid,
 				let uuid = uuid, let game = GameSequence.get(uuid: uuid) {
-				App.current.change(game: game, isSave: false)
+				App.current.changeGame(isSave: false) { _ in game }
 			}
 		} else {
 			// first time opening app
@@ -207,10 +202,10 @@ extension App {
 			App.current.initGame(uuid: uuid, isSave: false, isNotify: false)
 		}
 		_ = App.current.save(isAllowDelay: false)
-		App.onCurrentShepardChange.fire()
+		App.onCurrentShepardChange.fire(true)
 		App.current.startListeners()
 		App.isInitializing = false
-		App.onDidInitialize.fire()
+		App.onDidInitialize.fire(true)
 		App.isDidInitialize = true
 		completion()
 	}
@@ -240,6 +235,7 @@ extension App: SerializedDataRetrievable {
 
 	public func setData(_ data: SerializableData) {
 
+        print("# App setData")
 		initGame(uuid: data["currentGameUuid"]?.string)
 
 		if let mapsData = data["recentlyViewedMaps"],

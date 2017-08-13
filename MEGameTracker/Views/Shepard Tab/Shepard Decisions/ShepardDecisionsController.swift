@@ -96,7 +96,7 @@ final public class ShepardDecisionsController: UIViewController, Spinnerable {
 		stopSpinner(inView: view)
 	}
 
-	func reloadDataOnChange() {
+	func reloadDataOnChange(_ x: Bool = false) {
 		guard !isUpdating else { return }
 		isUpdating = true
 		DispatchQueue.main.async {

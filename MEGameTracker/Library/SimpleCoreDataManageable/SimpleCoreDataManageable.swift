@@ -158,7 +158,10 @@ extension SimpleCoreDataManageable {
 
 	/// Configure the primary context.
 	public func initContext() {
-		print("Using persistent store: \(persistentContainer.persistentStoreCoordinator.persistentStores.first?.url)")
+        print("""
+            Using persistent store:
+            \(String(describing: persistentContainer.persistentStoreCoordinator.persistentStores.first?.url))
+        """)
 		let context = self.persistentContainer.viewContext
 		context.automaticallyMergesChangesFromParent = true // not triggered w/o autoreleasepool
 		context.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
