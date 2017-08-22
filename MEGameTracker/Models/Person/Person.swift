@@ -21,7 +21,7 @@ public struct Person: Photographical, Eventsable {
 
 	/// (GameModifying, GameRowStorable Protocol) 
 	/// This value's game identifier.
-	public var gameSequenceUuid: String?
+	public var gameSequenceUuid: UUID?
 	/// (DateModifiable Protocol)  
 	/// Date when value was created.
 	public var createdDate = Date()
@@ -33,7 +33,7 @@ public struct Person: Photographical, Eventsable {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+    public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
@@ -103,7 +103,7 @@ public struct Person: Photographical, Eventsable {
 
 	public init(
 		id: String,
-		gameSequenceUuid: String? = App.current.game?.uuid,
+		gameSequenceUuid: UUID? = App.current.game?.uuid,
 		gameVersion: GameVersion? = nil,
 		generalData: DataPerson,
 		events: [Event] = [],
@@ -224,7 +224,7 @@ extension Person {
 extension Person {
 	public static func getDummy(json: String? = nil) -> Person? {
 		// swiftlint:disable line_length
-		let json = json ?? "{\"id\": \"S1.Liara\",\"name\": \"Liara T\'soni\",\"description\": \"An archeologist specializing in the ancient prothean culture, Liara is the \\\"pureblood\\\" daughter of [megametracker:\\/\\/person?id=E1.Benezia]. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued her research.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": 1,\"isFemaleLoveInterest\": 1,\"race\": \"Asari\",\"profession\": \"Scientist\",\"organization\": null,\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game1\\/1Liara.png\",\"voiceActor\": \"Ali Hillis\",\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Liara_T%27Soni\"],\"relatedMissionIds\": [\"M1.Therum\"],\"relatedDecisionIds\": [\"D1.LoveLiara\", \"D2.LoveLiara\", \"D3.LoveLiara\"],\"loveInterestDecisionId\": \"D1.LoveLiara\",\"gameVersionData\": {\"2\": {\"personType\": \"Associate\",\"profession\": \"Information Broker\",\"description\": \"Liara was a close friend, but now she has her own agenda on Illium, turning her research skills to hunting valuable secrets, and she only briefly allies with Shepard for the Lair of the Shadow Broker (DLC) missions.\\n\\nPursuing her as a love interest in Game 2 is difficult but not impossible [Romancing Liara in Game 2|https:\\/\\/masseffect.wikia.com\\/wiki\\/Romance#Lair_of_the_Shadow_Broker].\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game2\\/2Liara.png\",\"loveInterestDecisionId\": \"D2.LoveLiara\"},\"3\": {\"profession\": \"Pure Biotic\",\"description\": \"After a Cerberus raid destroyed the Shadow Broker\'s lair, Liara fled with all the resources she could take with her. She is using all her Shadow Broker assets to search for a way to fight the Reapers, and she may have found it in the Mars Archives.\",\"loveInterestDecisionId\": \"D3.LoveLiara\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game3\\/3Liara.png\"}}}"
+		let json = json ?? "{\"id\": \"S1.Liara\",\"name\": \"Liara T\'soni\",\"description\": \"An archeologist specializing in the ancient prothean culture, Liara is the \\\"pureblood\\\" daughter of [megametracker:\\/\\/person?id=E1.Benezia]. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued her research.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": true,\"isFemaleLoveInterest\": true,\"race\": \"Asari\",\"profession\": \"Scientist\",\"organization\": null,\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game1\\/1Liara.png\",\"voiceActor\": \"Ali Hillis\",\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Liara_T%27Soni\"],\"relatedMissionIds\": [\"M1.Therum\"],\"relatedDecisionIds\": [\"D1.LoveLiara\", \"D2.LoveLiara\", \"D3.LoveLiara\"],\"loveInterestDecisionId\": \"D1.LoveLiara\",\"gameVersionData\": {\"2\": {\"personType\": \"Associate\",\"profession\": \"Information Broker\",\"description\": \"Liara was a close friend, but now she has her own agenda on Illium, turning her research skills to hunting valuable secrets, and she only briefly allies with Shepard for the Lair of the Shadow Broker (DLC) missions.\\n\\nPursuing her as a love interest in Game 2 is difficult but not impossible [Romancing Liara in Game 2|https:\\/\\/masseffect.wikia.com\\/wiki\\/Romance#Lair_of_the_Shadow_Broker].\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game2\\/2Liara.png\",\"loveInterestDecisionId\": \"D2.LoveLiara\"},\"3\": {\"profession\": \"Pure Biotic\",\"description\": \"After a Cerberus raid destroyed the Shadow Broker\'s lair, Liara fled with all the resources she could take with her. She is using all her Shadow Broker assets to search for a way to fight the Reapers, and she may have found it in the Mars Archives.\",\"loveInterestDecisionId\": \"D3.LoveLiara\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game3\\/3Liara.png\"}}}"
 		if var basePerson = DataPerson(serializedString: json) {
 			basePerson.isDummyData = true
 			let person = Person(id: "1", generalData: basePerson)
@@ -242,12 +242,11 @@ extension Person: SerializedDataStorable {
 		var list: [String: SerializedDataStorable?] = [:]
 		list["id"] = id
 		list["photo"] = _photo?.stringValue
-		list = serializeDateModifiableData(list: list)
-		list = serializeGameModifyingData(list: list)
-		list = serializeLocalCloudData(list: list)
+//        list = serializeDateModifiableData(list: list)
+//        list = serializeGameModifyingData(list: list)
+//        list = serializeLocalCloudData(list: list)
 		return SerializableData.safeInit(list)
 	}
-
 }
 
 // MARK: SerializedDataRetrievable
@@ -257,7 +256,8 @@ extension Person: SerializedDataRetrievable {
 		let gameVersion = GameVersion(rawValue: data?["gameVersion"]?.string ?? "0") ?? .game1
 		guard let data = data, let id = data["id"]?.string,
 			  let dataPerson = DataPerson.get(id: id, gameVersion: gameVersion),
-			  let gameSequenceUuid = data["gameSequenceUuid"]?.string
+			  let uuidString = data["gameSequenceUuid"]?.string,
+              let gameSequenceUuid = UUID(uuidString: uuidString)
 		else {
 			return nil
 		}
@@ -280,11 +280,10 @@ extension Person: SerializedDataRetrievable {
 			_events = nil
 		}
 
-		unserializeDateModifiableData(data: data)
-		unserializeGameModifyingData(data: data)
-		unserializeLocalCloudData(data: data)
+//        unserializeDateModifiableData(data: data)
+//        unserializeGameModifyingData(data: data)
+//        unserializeLocalCloudData(data: data)
 	}
-
 }
 
 // MARK: DateModifiable

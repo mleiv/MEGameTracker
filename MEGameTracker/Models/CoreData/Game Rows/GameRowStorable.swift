@@ -32,7 +32,7 @@ public protocol GameRowStorable: SimpleSerializedCoreDataStorable {
 	/// returns a game-specific object for the data object, if it exists, otherwise it creates one.
 	static func getOrCreate(
 		using data: DataRowType,
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> Self?
 
@@ -43,7 +43,7 @@ public protocol GameRowStorable: SimpleSerializedCoreDataStorable {
 	var hasUnsavedChanges: Bool { get set }
 
 	/// This value's game identifier.
-	var gameSequenceUuid: String? { get set }
+	var gameSequenceUuid: UUID? { get set }
 
 // MARK: Optional
 
@@ -56,12 +56,12 @@ public protocol GameRowStorable: SimpleSerializedCoreDataStorable {
 	/// Parses a cloud identifier into the parts needed to retrieve it from core data.
 	static func parseIdentifyingName(
 		name: String
-	) -> ((id: String, gameSequenceUuid: String)?)
+	) -> ((id: String, gameSequenceUuid: UUID)?)
 
 	/// Returns game-specific rows that exist.
 	static func getExisting(
 		id: String?,
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType>
 	) -> Self?
@@ -69,7 +69,7 @@ public protocol GameRowStorable: SimpleSerializedCoreDataStorable {
 	/// Returns game-specific rows that exist.
 	static func getAllExisting(
 		ids: [String],
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType>
 	) -> [Self]
@@ -77,13 +77,13 @@ public protocol GameRowStorable: SimpleSerializedCoreDataStorable {
 	/// Return a game value made from the data value.
 	static func get(
 		id: String,
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> Self?
 
 	/// Return a game value made from the data value.
 	static func getFromData(
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?,
 		alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
 	) -> Self?
@@ -91,13 +91,13 @@ public protocol GameRowStorable: SimpleSerializedCoreDataStorable {
 	/// Return all matching game values made from the data values.
 	static func getAll(
 		ids: [String],
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> [Self]
 
 	/// Return all matching game values made from the data values.
 	static func getAllFromData(
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?,
 		alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
 	) -> [Self]
@@ -115,13 +115,13 @@ public protocol GameRowStorable: SimpleSerializedCoreDataStorable {
 	/// Delete the game value.
 	static func delete(
 		id: String,
-		gameSequenceUuid uuid: String,
+		gameSequenceUuid uuid: UUID,
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> Bool
 
 	/// Delete all the matching game values.
 	static func deleteAll(
-		gameSequenceUuid uuid: String,
+		gameSequenceUuid uuid: UUID,
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> Bool
 
@@ -145,7 +145,7 @@ extension GameRowStorable {
 		fetchRequest.predicate = NSPredicate(
 			format: "(id = %@ AND gameSequenceUuid = %@)",
 			id,
-			gameSequenceUuid ?? (App.current.game?.uuid ?? "")
+			gameSequenceUuid?.uuidString ?? (App.current.game?.uuid.uuidString ?? "")
 		)
 	}
 
@@ -153,7 +153,7 @@ extension GameRowStorable {
 	/// Initializes value type from core data object with serialized data.
 	public static func getOrCreate(
 		using data: DataRowType,
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> Self? {
 		var one: Self = create(using: data, with: manager)
@@ -225,7 +225,7 @@ extension GameRowStorable {
 	/// Returns game-specific rows that exist.
 	public static func getExisting(
 		id: String?,
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType>
 	) -> Self? {
@@ -241,7 +241,7 @@ extension GameRowStorable {
 	/// Convenience version of getExisting:id:gameSequenceUuid:manager:alterFetchRequest 
 	///	(no id, manager, alterFetchRequest required).
 	public static func getExisting(
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType> = { _ in }
 	) -> Self? {
@@ -257,7 +257,7 @@ extension GameRowStorable {
 	///	(no manager, alterFetchRequest required).
 	public static func getExisting(
 		id: String?,
-		gameSequenceUuid: String? = nil,
+		gameSequenceUuid: UUID? = nil,
 		with manager: SimpleSerializedCoreDataManageable? = nil
 	) -> Self? {
 		return getExisting(id: id, gameSequenceUuid: gameSequenceUuid, with: manager) { _ in }
@@ -267,7 +267,7 @@ extension GameRowStorable {
 	/// Returns game-specific rows that exist.
 	public static func getAllExisting(
 		ids: [String],
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType>
 	) -> [Self] {
@@ -279,16 +279,16 @@ extension GameRowStorable {
 					guard let id = coreItem.value(forKey: "id") as? String,
 						let generalData = DataRowType.get(id: id, with: manager)
 					else { return nil }
-					var one: Self = create(using: generalData, with: manager)
-					if let jsonData = coreItem.value(forKey: serializedDataKey) as? Data,
-						let data = try? SerializableData(jsonData: jsonData) {
+                    var one: Self = create(using: generalData, with: manager)
+                    if let jsonData = coreItem.value(forKey: serializedDataKey) as? Data,
+                        let data = try? SerializableData(jsonData: jsonData) {
 						one.setData(data)
 					}
 					return one
 				},
 				alterFetchRequest: { fetchRequest in
 					if let gameSequenceUuid = gameSequenceUuid {
-						fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid == %@)", gameSequenceUuid)
+						fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid == %@)", gameSequenceUuid.uuidString)
 					}
 					if !ids.isEmpty {
 						fetchRequest.predicate = NSPredicate(format: "(id in %@)", ids)
@@ -303,7 +303,7 @@ extension GameRowStorable {
 	/// Convenience version of getAllExisting:ids:gameSequenceUuid:manager:alterFetchRequest 
 	///	(no id, manager, alterFetchRequest required).
 	public static func getAllExisting(
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType> = { _ in }
 	) -> [Self] {
@@ -319,7 +319,7 @@ extension GameRowStorable {
 	///	(no manager, alterFetchRequest required).
 	public static func getAllExisting(
 		ids: [String],
-		gameSequenceUuid: String? = nil,
+		gameSequenceUuid: UUID? = nil,
 		with manager: SimpleSerializedCoreDataManageable? = nil
 	) -> [Self] {
 		return getAllExisting(ids: ids, gameSequenceUuid: gameSequenceUuid, with: manager) { _ in }
@@ -340,7 +340,7 @@ extension GameRowStorable {
 	/// Return a game value made from the data value.
 	public static func get(
 		id: String,
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> Self? {
 		return getFromData(gameSequenceUuid: gameSequenceUuid, with: manager) { fetchRequest in
@@ -359,7 +359,7 @@ extension GameRowStorable {
 	/// Convenience version of get:id:gameSequenceUuid:manager (no manager required).
 	public static func get(
 		id: String,
-		gameSequenceUuid: String? = nil
+		gameSequenceUuid: UUID? = nil
 	) -> Self? {
 		return get(id: id, gameSequenceUuid: gameSequenceUuid, with: nil)
 	}
@@ -367,7 +367,7 @@ extension GameRowStorable {
 	/// (Protocol default)
 	/// Return a game value made from the data value.
 	public static func getFromData(
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?,
 		alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
 	) -> Self? {
@@ -380,7 +380,7 @@ extension GameRowStorable {
 
 	/// Convenience version of getFromData:gameSequenceUuid:manager:alterFetchRequest (no manager required).
 	public static func getFromData(
-		gameSequenceUuid: String? = nil,
+		gameSequenceUuid: UUID? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
 	) -> Self? {
 		return getFromData(gameSequenceUuid: gameSequenceUuid, with: nil, alterFetchRequest: alterFetchRequest)
@@ -390,7 +390,7 @@ extension GameRowStorable {
 	/// Return all matching game values made from the data values.
 	public static func getAll(
 		ids: [String],
-		gameSequenceUuid: String? = nil,
+		gameSequenceUuid: UUID? = nil,
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> [Self] {
 		let all: [Self] = getAllFromData(gameSequenceUuid: gameSequenceUuid, with: manager) { fetchRequest in
@@ -402,7 +402,7 @@ extension GameRowStorable {
 	/// Convenience version of getAll:ids:gameSequenceUuid:manager (no manager required).
 	public static func getAll(
 		ids: [String],
-		gameSequenceUuid: String? = nil
+		gameSequenceUuid: UUID? = nil
 	) -> [Self] {
 		return getAll(ids: ids, gameSequenceUuid: gameSequenceUuid, with: nil)
 	}
@@ -418,7 +418,7 @@ extension GameRowStorable {
 	/// (Protocol default)
 	/// Return all matching game values made from the data values.
 	public static func getAllFromData(
-		gameSequenceUuid: String?,
+		gameSequenceUuid: UUID?,
 		with manager: SimpleSerializedCoreDataManageable?,
 		alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
 	) -> [Self] {
@@ -440,7 +440,7 @@ extension GameRowStorable {
 
 	/// Convenience version of getAllFromData:gameSequenceUuid:manager:alterFetchRequest (no manager required).
 	public static func getAllFromData(
-		gameSequenceUuid: String? = nil,
+		gameSequenceUuid: UUID? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType> = { _ in }
 	) -> [Self] {
 		return getAllFromData(gameSequenceUuid: gameSequenceUuid, with: nil, alterFetchRequest: alterFetchRequest)
@@ -470,7 +470,7 @@ extension GameRowStorable {
 	public mutating func save( // override to mark game sequence changed also
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> Bool {
-		guard gameSequenceUuid?.isEmpty == false else { return false }
+		guard gameSequenceUuid != nil else { return false }
 		let manager = manager ?? defaultManager
 		let isSaved = manager.saveValue(item: self)
 		if isSaved {
@@ -488,18 +488,18 @@ extension GameRowStorable {
 	/// Delete the game value.
 	public static func delete(
 		id: String,
-		gameSequenceUuid uuid: String,
+		gameSequenceUuid uuid: UUID,
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> Bool {
 		return deleteAll(with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(id == %@ AND gameSequenceUuid == %@)", id, uuid)
+			fetchRequest.predicate = NSPredicate(format: "(id == %@ AND gameSequenceUuid == %@)", id, uuid.uuidString)
 		}
 	}
 
 	/// Convenience version of delete:id:gameSequenceUuid:manager (no manager required).
 	public static func delete(
 		id: String,
-		gameSequenceUuid uuid: String
+		gameSequenceUuid uuid: UUID
 	) -> Bool {
 		return delete(id: id, gameSequenceUuid: uuid, with: nil)
 	}
@@ -507,17 +507,17 @@ extension GameRowStorable {
 	/// (Protocol default)
 	/// Delete all the matching game values.
 	public static func deleteAll(
-		gameSequenceUuid uuid: String,
+		gameSequenceUuid uuid: UUID,
 		with manager: SimpleSerializedCoreDataManageable?
 	) -> Bool {
 		return deleteAll(with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid == %@)", uuid)
+			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid == %@)", uuid.uuidString)
 		}
 	}
 
 	/// Convenience version of deleteAll:gameSequenceUuid:manager (no manager required).
 	public static func deleteAll(
-		gameSequenceUuid uuid: String
+		gameSequenceUuid uuid: UUID
 	) -> Bool {
 		return deleteAll(gameSequenceUuid: uuid, with: nil)
 	}

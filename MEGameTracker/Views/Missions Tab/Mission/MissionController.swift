@@ -49,7 +49,7 @@ final public class MissionController: UIViewController,
 		}
 	}
 
-	var shepardUuid: String?
+	var shepardUuid: UUID?
 
 	public var mission: Mission? {
 		didSet {

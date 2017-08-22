@@ -12,106 +12,123 @@ import CloudKit
 
 extension Note: CloudDataStorable {
 
-	/// (CloudDataStorable Protocol)
-	/// Set any additional fields, specific to the object in question, for a cloud kit object.
-	public func setAdditionalCloudFields(
-		record: CKRecord
-	) {
-		record.setValue(uuid as NSString, forKey: "id")
-		record.setValue((gameSequenceUuid ?? "") as NSString, forKey: "gameSequenceUuid")
-		record.setValue(gameVersion.stringValue as NSString, forKey: "gameVersion")
-		record.setValue(shepardUuid as NSString, forKey: "shepardUuid")
-		record.setValue(identifyingObject.serializedString, forKey: "identifyingObject")
-		record.setValue(text, forKey: "text")
-	}
+    /// (CloudDataStorable Protocol)
+    /// Set any additional fields, specific to the object in question, for a cloud kit object.
+    public func setAdditionalCloudFields(
+        record: CKRecord
+    ) {
+        record.setValue(uuid.uuidString as NSString, forKey: "id")
+        record.setValue((gameSequenceUuid?.uuidString ?? "") as NSString, forKey: "gameSequenceUuid")
+        record.setValue(gameVersion.stringValue as NSString, forKey: "gameVersion")
+        record.setValue((shepardUuid?.uuidString ?? "") as NSString, forKey: "shepardUuid")
+        record.setValue(identifyingObject.serializedString, forKey: "identifyingObject")
+        record.setValue(text, forKey: "text")
+    }
 
-	/// (CloudDataStorable Protocol)
-	/// Takes one serialized cloud change and saves it.
-	public static func saveOneFromCloud(
-		changeSet: SerializableData,
-		with manager: SimpleSerializedCoreDataManageable?
-	) -> Bool {
-		if let recordId = changeSet["recordId"]?.string,
-			let (id, uuid) = parseIdentifyingName(name: recordId),
-			let shepardUuid = changeSet["shepardUuid"]?.string {
-			// if identifyingObject fails, throw this note away - it can't be recovered :(
-			guard let identifyingObject = IdentifyingObject(
-				serializedString: changeSet["identifyingObject"]?.string ?? ""
-			) else {
-				return true
-			}
+    /// (CloudDataStorable Protocol)
+    /// Takes one serialized cloud change and saves it.
+    public static func saveOneFromCloud(
+        changeRecord: CloudDataRecordChange,
+        with manager: CodableCoreDataManageable?
+    ) -> Bool {
+let manager = CoreDataManager.current
+        let recordId = changeRecord.recordId
+        if let (id, gameUuid) = parseIdentifyingName(name: recordId),
+            let noteUuid = UUID(uuidString: id),
+            let shepardUuidString = changeRecord.changeSet["shepardUuid"] as? String,
+            let shepardUuid = UUID(uuidString: shepardUuidString) {
+            // if identifyingObject fails, throw this note away - it can't be recovered :(
+            guard let identifyingObject = IdentifyingObject(
+                serializedString: changeRecord.changeSet["identifyingObject"] as? String ?? ""
+            ) else {
+                return true
+            }
 
-			var changeSet = changeSet
-			changeSet["gameSequenceUuid"] = uuid.getData()
-			var note = Note.get(uuid: id) ?? Note(
-												uuid: id,
-												identifyingObject: identifyingObject,
-												shepardUuid: shepardUuid,
-												gameSequenceUuid: uuid, data: nil
-											)
-			let pendingData = note.pendingCloudChanges
-			// apply cloud changes
-			note.setData(changeSet)
-			note.isSavedToCloud = true
-			// reapply local changes
-			if let pendingData = pendingData {
-				note.setData(pendingData)
-				note.isSavedToCloud = false
-				// re-store pending changes until object is saved to cloud
-				note.pendingCloudChanges = pendingData
-			}
-			note.isSavedToCloud = true
-			if note.save(with: manager) {
-				print("Saved from cloud \(recordId)")
-				return true
-			} else {
-				print("Save from cloud failed \(recordId)")
-			}
-		}
-		return false
-	}
+            var changeSet = changeRecord.changeSet
+            changeSet["gameSequenceUuid"] = gameUuid
+            var note = Note.get(uuid: noteUuid) ?? Note(
+                                                uuid: noteUuid,
+                                                identifyingObject: identifyingObject,
+                                                shepardUuid: shepardUuid,
+                                                gameSequenceUuid: gameUuid,
+                                                data: nil
+                                            )
+            let pendingData = note.pendingCloudChanges
+            // apply cloud changes
+//            note.setData(changeSet) //TODO
+            note.isSavedToCloud = true
+            // reapply local changes
+            if !pendingData.isEmpty {
+//                note.setData(pendingData) //TODO
+                note.isSavedToCloud = false
+                // re-store pending changes until object is saved to cloud
+                note.pendingCloudChanges = pendingData
+            }
+            note.isSavedToCloud = true
+//            if note.save(with: manager) {
+//                print("Saved from cloud \(recordId)")
+//                return true
+//            } else {
+//                print("Save from cloud failed \(recordId)")
+//            }
+        }
+        return false
+    }
 
-	/// (CloudDataStorable Protocol)
-	/// Delete a local object after directed by the cloud to do so.
-	public static func deleteOneFromCloud(recordId: String) -> Bool {
-		guard let (id, uuid) = parseIdentifyingName(name: recordId) else { return false }
-		return delete(uuid: id, gameSequenceUuid: uuid)
-	}
+    /// (CloudDataStorable Protocol)
+    /// Delete a local object after directed by the cloud to do so.
+    public static func deleteOneFromCloud(recordId: String) -> Bool {
+        guard let (noteUuid, gameUuid) = parseIdentifyingName(name: recordId) else { return false }
+        if let noteUuid = UUID(uuidString: noteUuid) {
+            return delete(uuid: noteUuid, gameSequenceUuid: gameUuid)
+        } else {
+            defaultManager.log("Failed to parse note uuid: \(recordId)")
+            return false
+        }
+    }
 
-	/// (CloudDataStorable Protocol)
-	/// Create a recordName for any cloud kit object.
-	public static func getIdentifyingName(
-		id: String,
-		gameSequenceUuid: String?
-	) -> String {
-		return "\(gameSequenceUuid ?? "")||\(id)"
-	}
+    /// (CloudDataStorable Protocol)
+    /// Create a recordName for any cloud kit object.
+    public static func getIdentifyingName(
+        id: String,
+        gameSequenceUuid: UUID?
+    ) -> String {
+        return "\(gameSequenceUuid?.uuidString ?? "")||\(id)"
+    }
 
-	/// Convenience version - get the static getIdentifyingName for easy instance reference.
-	public func getIdentifyingName() -> String {
-		return Note.getIdentifyingName(id: uuid, gameSequenceUuid: gameSequenceUuid)
-	}
+    /// Convenience version - get the static getIdentifyingName for easy instance reference.
+    public func getIdentifyingName() -> String {
+        return Note.getIdentifyingName(id: uuid.uuidString, gameSequenceUuid: gameSequenceUuid)
+    }
 
-	/// (CloudDataStorable Protocol)
-	/// Parses a cloud identifier into the parts needed to retrieve it from core data.
-	public static func parseIdentifyingName(
-		name: String
-	) -> (id: String, gameSequenceUuid: String)? {
-		let pieces = name.components(separatedBy: "||")
-		guard pieces.count == 2 else { return nil }
-		return (id: pieces[1], gameSequenceUuid: pieces[0])
-	}
+    /// (CloudDataStorable Protocol)
+    /// Parses a cloud identifier into the parts needed to retrieve it from core data.
+    public static func parseIdentifyingName(
+        name: String
+    ) -> (id: String, gameSequenceUuid: UUID)? {
+        let pieces = name.components(separatedBy: "||")
+        guard pieces.count == 2 else { return nil }
+        if let gameSequenceUuid = UUID(uuidString: pieces[0]) {
+            return (id: pieces[1], gameSequenceUuid: gameSequenceUuid)
+        } else {
+            defaultManager.log("No Game UUID found for: \(name)")
+            return nil
+        }
+    }
 
-	/// Used for parsing from records
-	public static func getAll(
-		identifiers: [String],
-		with manager: SimpleSerializedCoreDataManageable?
-	) -> [Note] {
-		return identifiers.map { (identifier: String) in
-			if let (id, _) = parseIdentifyingName(name: identifier) {
-                return get(uuid: id, with: manager)
-			}
-			return nil
-		}.filter({ $0 != nil }).map({ $0! })
-	}
+    /// Used for parsing from records
+    public static func getAll(
+        identifiers: [String],
+        with manager: CodableCoreDataManageable?
+    ) -> [Note] {
+let manager = CoreDataManager.current
+        return identifiers.map { (identifier: String) in
+            if let (id, _) = parseIdentifyingName(name: identifier),
+                let uuid = UUID(uuidString: id) {
+                return get(uuid: uuid, with: manager)
+            }
+            return nil
+        }.filter({ $0 != nil }).map({ $0! })
+    }
 }
+

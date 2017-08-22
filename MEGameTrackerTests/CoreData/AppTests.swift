@@ -24,7 +24,7 @@ final class AppTests: MEGameTrackerTests {
 	let game2Json = "{\"createdDate\" : \"2017-02-27 08:13:28\",\"modifiedDate\" : \"2017-02-27 08:17:50\",\"uuid\" : \"7BF05BF6-386A-4429-BC18-2A60F2D29520\"}"
 
 	/// The uuid of the two identical games above.
-	let femShepGameUuid = "7BF05BF6-386A-4429-BC18-2A60F2D29519"
+	let femShepGameUuid = UUID(uuidString: "7BF05BF6-386A-4429-BC18-2A60F2D29519")
 
 	/// Game 1 Shepard attached to game sequence above.
 	let femShep1Json = "{\"uuid\" : \"BC0D3009-3385-4132-851A-DF472CBF9EFD\",\"gameVersion\" : \"1\",\"paragon\" : 0,\"createdDate\" : \"2017-02-15 07:40:32\",\"level\" : 1,\"gameSequenceUuid\" : \"7BF05BF6-386A-4429-BC18-2A60F2D29519\",\"reputation\" : \"Sole Survivor\",\"renegade\" : 0,\"modifiedDate\" : \"2017-02-23 07:13:39\",\"origin\" : \"Earthborn\",\"appearance\" : \"XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X\",\"class\" : \"Soldier\",\"gender\" : \"F\",\"name\" : \"Xoe\"}"
@@ -32,7 +32,7 @@ final class AppTests: MEGameTrackerTests {
 	/// Game 2 Shepard attached to game sequence above.
 	let femShep2Json = "{\"uuid\" : \"BC0D3009-3385-4132-851A-DF472CBF9EFE\",\"gameVersion\" : \"2\",\"paragon\" : 0,\"createdDate\" : \"2017-02-25 09:10:15\",\"level\" : 1,\"gameSequenceUuid\" : \"7BF05BF6-386A-4429-BC18-2A60F2D29519\",\"reputation\" : \"Sole Survivor\",\"renegade\" : 0,\"modifiedDate\" : \"2017-02-25 09:10:15\",\"origin\" : \"Earthborn\",\"isSavedToCloud\" : false,\"appearance\" : \"XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X\",\"class\" : \"Soldier\",\"gender\" : \"F\",\"name\" : \"Xoe\"}"
 
-	let garrusJson = "{\"id\": \"M1.Garrus\",\"sortIndex\": 3,\"gameVersion\": \"1\",\"missionType\": \"Mission\",\"name\": \"Citadel: Garrus\",\"isOptional\": true,\"inMapId\": \"G.C1.Tower\",\"mapLocationPoint\": {\"x\": 1049,\"y\": 571,\"radius\": 1},\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Citadel:_Expose_Saren#Report_to_the_Council\"],\"relatedMissionIds\": [\"M1.ExposeSaren\", \"M1.ShadowBroker\"]}"
+	let garrusJson = "{\"id\": \"M1.Garrus\",\"sortIndex\": 3,\"gameVersion\": \"1\",\"missionType\": \"Mission\",\"name\": \"Citadel: Garrus\",\"isOptional\": true,\"inMapId\": \"G.C1.Tower\",\"mapLocationPoint\": {\"x\": 1049,\"y\": 571,\"radius\": true},\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Citadel:_Expose_Saren#Report_to_the_Council\"],\"relatedMissionIds\": [\"M1.ExposeSaren\", \"M1.ShadowBroker\"]}"
 
 	let insigniasJson = "{\"id\": \"A1.UC.TurianInsignias\",\"sortIndex\": 45,\"gameVersion\": \"1\",\"missionType\": \"Collection\",\"name\": \"UNC: Turian Insignias\",\"aliases\": [\"UNC: Turian Insignias\", \"UNC: Collection Complete\"],\"objectivesCountToCompletion\": 2,\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/UNC:_Turian_Insignias\"]}"
 
@@ -61,7 +61,7 @@ final class AppTests: MEGameTrackerTests {
 		_ = create(App.self, from: "{}") // reset
 		App.retrieve()
 
-		guard let uuid = App.current.game?.uuid,
+		guard let uuid = App.current.currentGameUuid,
 			let game = GameSequence.get(uuid: uuid),
 			game.uuid == uuid else {
 			XCTAssert(false, "Newly created game not saved")
@@ -69,7 +69,7 @@ final class AppTests: MEGameTrackerTests {
 		}
 		XCTAssert(App.current.recentlyViewedMaps.contents.isEmpty,
 			"Initialized recently viewed maps not empty")
-		XCTAssert(App.current.recentlyViewedMissions.isEmpty == true,
+		XCTAssert(App.current.recentlyViewedMissions[.game1]?.contents.count == 0,
 			"Initialized recently viewed missions not empty")
 	}
 
@@ -116,10 +116,10 @@ final class AppTests: MEGameTrackerTests {
 			expectationShepardChanged2.fulfill()
 		}
 
-		_ = create(Map.self, from: exodusJson)
-		_ = create(Mission.self, from: garrusJson)
-		_ = create(Mission.self, from: insigniasJson)
-		_ = create(GameSequence.self, from: gameWithShepardJson)
+        _ = create(Map.self, from: exodusJson)
+        _ = create(Mission.self, from: garrusJson)
+        _ = create(Mission.self, from: insigniasJson)
+        _ = create(GameSequence.self, from: gameWithShepardJson)
 		_ = create(App.self, from: appWithRecentJson)
 		App.retrieve()
 

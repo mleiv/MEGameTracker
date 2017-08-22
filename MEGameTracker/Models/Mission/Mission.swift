@@ -25,7 +25,7 @@ public struct Mission: MapLocationable, Eventsable {
 
 	/// (GameModifying, GameRowStorable Protocol) 
 	/// This value's game identifier.
-	public var gameSequenceUuid: String?
+	public var gameSequenceUuid: UUID?
 	/// (DateModifiable Protocol)  
 	/// Date when value was created.
 	public var createdDate = Date()
@@ -37,7 +37,7 @@ public struct Mission: MapLocationable, Eventsable {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+    public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
@@ -165,7 +165,7 @@ public struct Mission: MapLocationable, Eventsable {
 
 	public init(
 		id: String,
-		gameSequenceUuid: String? = App.current.game?.uuid,
+		gameSequenceUuid: UUID? = App.current.game?.uuid,
 		generalData: DataMission,
 		events: [Event] = [],
 		data: SerializableData? = nil
@@ -226,15 +226,13 @@ extension Mission {
 // MARK: Data Change Actions
 extension Mission {
 
-	/// Applies a set of changes to this object
-	public mutating func change(data: SerializableData) {
-		if let name = data["name"]?.string {
-			change(name: name)
-		}
-		if let isCompleted = data["isCompleted"]?.bool {
-			change(isCompleted: isCompleted)
-		}
-	}
+    public mutating func change(data: [String: Any?]) {
+        if let name = data["name"] as? String {
+            change(name: name)
+        } else if let isCompleted = data["isCompleted"] as? Bool {
+            change(isCompleted: isCompleted)
+        }
+    }
 
 	public mutating func change(
 		name: String?,
@@ -382,9 +380,9 @@ extension Mission: SerializedDataStorable {
 		list["selectedConversationRewards"] = SerializableData.safeInit(
 			selectedConversationRewards as [SerializedDataStorable]
 		)
-		list = serializeDateModifiableData(list: list)
-		list = serializeGameModifyingData(list: list)
-		list = serializeLocalCloudData(list: list)
+//        list = serializeDateModifiableData(list: list)
+//        list = serializeGameModifyingData(list: list)
+//        list = serializeLocalCloudData(list: list)
 		return SerializableData.safeInit(list)
 	}
 
@@ -396,7 +394,8 @@ extension Mission: SerializedDataRetrievable {
 	public init?(data: SerializableData?) {
 		guard let data = data, let id = data["id"]?.string,
 			  let dataMission = DataMission.get(id: id),
-			  let gameSequenceUuid = data["gameSequenceUuid"]?.string
+              let uuidString = data["gameSequenceUuid"]?.string,
+			  let gameSequenceUuid = UUID(uuidString: uuidString)
 		else {
 			return nil
 		}
@@ -417,9 +416,9 @@ extension Mission: SerializedDataRetrievable {
             .map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 		generalData.conversationRewards.setSelectedIds(_selectedConversationRewards)
 
-		unserializeDateModifiableData(data: data)
-		unserializeGameModifyingData(data: data)
-		unserializeLocalCloudData(data: data)
+//        unserializeDateModifiableData(data: data)
+//        unserializeGameModifyingData(data: data)
+//        unserializeLocalCloudData(data: data)
 
 		isCompleted = data["isCompleted"]?.bool ?? isCompleted
 	}

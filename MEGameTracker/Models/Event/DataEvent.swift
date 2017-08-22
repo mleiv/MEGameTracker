@@ -8,15 +8,23 @@
 
 import UIKit
 
-public struct DataEvent {
+public struct DataEvent: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case gameVersion
+        case description
+        case isAlert
+        case eraseParentValue
+        case dependentOn
+        case actions
+    }
+
 // MARK: Constants
 
 // MARK: Properties
-
-	internal var rawGeneralData = SerializableData() // we almost never change data row content, so just save raw data
-
-	public fileprivate(set) var id: String
-	public fileprivate(set) var gameVersion: GameVersion?
+	public private(set) var id: String
+	public private(set) var gameVersion: GameVersion?
 	public var description: String?
 
 	public var isAlert = false
@@ -28,52 +36,68 @@ public struct DataEvent {
 	public var isDummyData = false
 
 // MARK: Initialization
-
-	public init(id: String, gameVersion: GameVersion?, data: SerializableData) {
-		self.id = id
-		self.gameVersion = gameVersion
-		self.rawGeneralData = data
-
-		setData(data)
-	}
+//    public init(id: String, gameVersion: GameVersion?, data: SerializableData) {
+//        self.id = id
+//        self.gameVersion = gameVersion
+//        self.rawGeneralData = data
+//
+//        setData(data)
+//    }
 
 	public init(id: String) {
 		self.id = id
 		isDummyData = true
 	}
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        gameVersion = try container.decodeIfPresent(GameVersion.self, forKey: .gameVersion)
+        description = try container.decodeIfPresent(String.self, forKey: .description)
+        isAlert = try container.decodeIfPresent(Bool.self, forKey: .isAlert) ?? isAlert
+        eraseParentValue = try container.decodeIfPresent(Bool.self, forKey: .eraseParentValue) ?? eraseParentValue
+        dependentOn = try container.decodeIfPresent(DependentOnType.self, forKey: .dependentOn)
+        actions = try container.decodeIfPresent([Action].self, forKey: .actions) ?? actions
+    }
+
+//    public func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(id, forKey: .id)
+//        try container.encode(changes, forKey: .changes)
+//    }
 }
 
-// MARK: SerializedDataStorable
-extension DataEvent: SerializedDataStorable {
+//// MARK: SerializedDataStorable
+//extension DataEvent: SerializedDataStorable {
+//
+//    public func getData() -> SerializableData {
+//        return rawGeneralData
+//    }
+//
+//}
 
-	public func getData() -> SerializableData {
-		return rawGeneralData
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension DataEvent: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data, let id = data["id"]?.string else { return nil }
-		let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0")
-
-		self.init(id: id, gameVersion: gameVersion, data: data)
-	}
-
-	public mutating func setData(_ data: SerializableData) {
-		id = data["id"]?.string ?? id
-		gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0")
-
-		description = data["description"]?.string
-		eraseParentValue = data["eraseParentValue"]?.bool ?? eraseParentValue
-		isAlert = data["isAlert"]?.bool ?? isAlert
-		actions = (data["actions"]?.array ?? []).map({ Action(data: $0) }).filter({ $0 != nil }).map({ $0! })
-		dependentOn = DependentOnType(data: data["dependentOn"])
-	}
-
-}
+//// MARK: SerializedDataRetrievable
+//extension DataEvent: SerializedDataRetrievable {
+//
+//    public init?(data: SerializableData?) {
+//        guard let data = data, let id = data["id"]?.string else { return nil }
+//        let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0")
+//
+//        self.init(id: id, gameVersion: gameVersion, data: data)
+//    }
+//
+//    public mutating func setData(_ data: SerializableData) {
+//        id = data["id"]?.string ?? id
+//        gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0")
+//
+//        description = data["description"]?.string
+//        eraseParentValue = data["eraseParentValue"]?.bool ?? eraseParentValue
+//        isAlert = data["isAlert"]?.bool ?? isAlert
+//        actions = (data["actions"]?.array ?? []).map({ Action(data: $0) }).filter({ $0 != nil }).map({ $0! })
+//        dependentOn = DependentOnType(data: data["dependentOn"])
+//    }
+//
+//}
 
 // MARK: Equatable
 extension DataEvent: Equatable {

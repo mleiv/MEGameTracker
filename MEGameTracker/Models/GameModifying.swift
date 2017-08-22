@@ -12,7 +12,7 @@ import Foundation
 public protocol GameModifying {
 
 	/// This value's game identifier.
-	var gameSequenceUuid: String? { get set }
+	var gameSequenceUuid: UUID? { get set }
 
 	/// Flag the game as having changed when this value changes.
 	func markGameChanged(with manager: SimpleSerializedCoreDataManageable?)
@@ -24,6 +24,7 @@ extension GameModifying {
 	/// Flag the game as having changed when this value changes.
 	public func markGameChanged(with manager: SimpleSerializedCoreDataManageable?) {
 		guard !App.isInitializing else { return }
+let manager = CoreDataManager2.current
 		// don't trigger onChange event
 		App.current.game?.shepard?.touch()
 		_ = App.current.game?.shepard?.save(with: manager)
@@ -43,12 +44,13 @@ extension GameModifying where Self: SerializedDataStorable, Self: SerializedData
 		list: [String: SerializedDataStorable?]
 	) -> [String: SerializedDataStorable?] {
 		var list = list
-		list["gameSequenceUuid"] = gameSequenceUuid
+		list["gameSequenceUuid"] = gameSequenceUuid?.uuidString
 		return list
 	}
 
 	/// Fetch GameModifying values from a SerializedData dictionary.
 	public mutating func unserializeGameModifyingData(data: SerializableData) {
-		gameSequenceUuid = data["gameSequenceUuid"]?.string ?? gameSequenceUuid
+		let uuidString = data["gameSequenceUuid"]?.string ?? ""
+        gameSequenceUuid = UUID(uuidString: uuidString) ?? gameSequenceUuid
 	}
 }

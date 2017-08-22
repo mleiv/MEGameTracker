@@ -13,7 +13,7 @@ final class MissionTests: MEGameTrackerTests {
 
 	// swiftlint:disable line_length
 
-	let garrusJson = "{\"id\": \"M1.Garrus\",\"sortIndex\": 3,\"gameVersion\": \"1\",\"missionType\": \"Mission\",\"name\": \"Citadel: Garrus\",\"isOptional\": true,\"inMapId\": \"G.C1.Tower\",\"mapLocationPoint\": {\"x\": 1049,\"y\": 571,\"radius\": 1},\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Citadel:_Expose_Saren#Report_to_the_Council\"],\"relatedMissionIds\": [\"M1.ExposeSaren\", \"M1.ShadowBroker\"]}"
+	let garrusJson = "{\"id\": \"M1.Garrus\",\"sortIndex\": 3,\"gameVersion\": \"1\",\"missionType\": \"Mission\",\"name\": \"Citadel: Garrus\",\"isOptional\": true,\"inMapId\": \"G.C1.Tower\",\"mapLocationPoint\": {\"x\": 1049,\"y\": 571,\"radius\": true},\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Citadel:_Expose_Saren#Report_to_the_Council\"],\"relatedMissionIds\": [\"M1.ExposeSaren\", \"M1.ShadowBroker\"]}"
 
 	let garrus1Json = "{\"id\": \"M1.Garrus.1\",\"gameVersion\": \"1\",\"missionType\": \"Objective\",\"name\": \"Speak to Harkin\",\"inMissionId\": \"M1.Garrus\"}"
 

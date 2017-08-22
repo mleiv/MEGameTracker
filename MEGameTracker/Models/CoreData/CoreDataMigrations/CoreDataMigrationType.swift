@@ -23,7 +23,8 @@ extension CoreDataMigrationType {
 			case .decision:
 				_ = DataDecision.deleteAll(with: manager)
 			case .event:
-				_ = DataEvent.deleteAll(with: manager)
+                break
+//                _ = DataEvent.deleteAll(with: manager)
 			case .item:
 				_ = DataItem.deleteAll(with: manager)
 			case .map:
@@ -42,7 +43,9 @@ extension CoreDataMigrationType {
 	) -> [String] {
 		switch type {
 		case .decision: return DataDecision.getAllIds(with: manager)
-		case .event: return DataEvent.getAllIds(with: manager)
+        case .event:
+            return []
+//            return DataEvent.getAllIds(with: manager)
 		case .item: return DataItem.getAllIds(with: manager)
 		case .map: return DataMap.getAllIds(with: manager)
 		case .mission: return DataMission.getAllIds(with: manager)
@@ -58,7 +61,8 @@ extension CoreDataMigrationType {
 		case .decision:
 			return DataDecision.deleteAll(ids: ids, with: manager) && Decision.deleteOrphans(with: manager)
 		case .event:
-			return DataEvent.deleteAll(ids: ids, with: manager) && Event.deleteOrphans(with: manager)
+            return false
+//            return DataEvent.deleteAll(ids: ids, with: manager) && Event.deleteOrphans(with: manager)
 		case .item:
 			return DataItem.deleteAll(ids: ids, with: manager) && Item.deleteOrphans(with: manager)
 		case .map:
@@ -78,7 +82,9 @@ extension CoreDataMigrationType {
 			guard let type = BaseDataFileImportType(jsonValue: key) else { continue }
 			switch type {
 				case .decision: return CoreDataMigrationImportSet<DataDecision>(values.array ?? []).save(with: manager)
-				case .event: return CoreDataMigrationImportSet<DataEvent>(values.array ?? []).save(with: manager)
+                case .event:
+                    return []
+//                    return CoreDataMigrationImportSet<DataEvent>(values.array ?? []).save(with: manager2)
 				case .item: return CoreDataMigrationImportSet<DataItem>(values.array ?? []).save(with: manager)
 				case .map: return CoreDataMigrationImportSet<DataMap>(values.array ?? []).save(with: manager)
 				case .mission: return CoreDataMigrationImportSet<DataMission>(values.array ?? []).save(with: manager)

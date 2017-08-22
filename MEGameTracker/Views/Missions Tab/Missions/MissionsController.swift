@@ -45,7 +45,7 @@ final class MissionsController: UITableViewController, Spinnerable {
 		return missionsSplitViewController?.isLoadedSignal
 	}
 
-	var shepardUuid: String?
+	var shepardUuid: UUID?
 	var isUpdating = false
 	var didSetup = false
 

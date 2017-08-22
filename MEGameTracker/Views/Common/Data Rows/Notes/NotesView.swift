@@ -101,8 +101,9 @@ final public class NotesView: SimpleArrayDataRow {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		Note.onChange.cancelSubscription(for: self)
 		_ = Note.onChange.subscribe(on: self) { [weak self] changed in
-			if let index = self?.notes.index(where: { $0.uuid == changed.id }) ,
-				   let newRow = changed.object ?? Note.get(uuid: changed.id) {
+			if let uuid = UUID(uuidString: changed.id),
+                let index = self?.notes.index(where: { $0.uuid == uuid }) ,
+				   let newRow = changed.object ?? Note.get(uuid: uuid) {
 				self?.controller?.notes[index] = newRow
 				let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
 				self?.reloadRows(rows)

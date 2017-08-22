@@ -11,10 +11,11 @@ import CloudKit
 
 extension Mission: CloudDataStorable {
 
-	/// (CloudDataStorable) Set any additional fields, specific to the object in question, for a cloud kit object.
-	public func setAdditionalCloudFields(record: CKRecord) {
-		record.setValue(isCompleted as NSNumber, forKey: "isCompleted")
-		record.setValue(name as NSString, forKey: "name")
-		record.setValue(selectedConversationRewards, forKey: "selectedConversationRewards")
-	}
+    /// (CloudDataStorable) Set any additional fields, specific to the object in question, for a cloud kit object.
+    public func setAdditionalCloudFields(record: CKRecord) {
+        record.setValue(isCompleted as NSNumber, forKey: "isCompleted")
+        record.setValue(name as NSString, forKey: "name")
+        record.setValue(selectedConversationRewards, forKey: "selectedConversationRewards")
+    }
 }
+

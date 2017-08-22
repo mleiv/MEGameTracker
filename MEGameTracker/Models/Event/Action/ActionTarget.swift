@@ -9,20 +9,30 @@
 import CoreData
 
 /// Defines the target object of an event and the actions available against it.
-public struct ActionTarget {
+public struct ActionTarget: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case type
+    }
 
 // MARK: Properties
-
+    public var id: String
 	public var type: ActionTargetObject
-	public var id: String
+
+// MARK: Initialization
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        type = try container.decode(ActionTargetObject.self, forKey: .type)
+    }
 }
 
 // MARK: Basic Actions
 extension ActionTarget {
 
 	/// Given a set of simple change commands in key-value format, executes a change against the specified object.
-	public func change(data: SerializableData?) {
-		guard let data = data else { return }
+	public func change(data: [String: Any?]) {
 		switch type {
 		case .decision:
 			var object: Decision? = getObject()
@@ -59,33 +69,4 @@ extension ActionTarget {
 		}
 		return false
 	}
-}
-
-// MARK: SerializedDataStorable
-extension ActionTarget: SerializedDataStorable {
-
-	public func getData() -> SerializableData {
-		var list: [String: SerializedDataStorable?] = [:]
-		list["type"] = type.stringValue
-		list["id"] = id
-		return SerializableData.safeInit(list)
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension ActionTarget: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data,
-			  let type = ActionTargetObject(stringValue: data["type"]?.string),
-			  let id = data["id"]?.string
-		else {
-			return nil
-		}
-		self.type = type
-		self.id = id
-	}
-
-    public mutating func setData(_ data: SerializableData) {}
 }

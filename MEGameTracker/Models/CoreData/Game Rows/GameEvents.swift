@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-extension Event: GameRowStorable {
+extension Event: GameRowStorable2 {
 
 	/// (SimpleSerializedCoreDataStorable Protocol)
 	/// Type of the core data entity.
@@ -25,9 +25,9 @@ extension Event: GameRowStorable {
 		coreItem: EntityType
 	) {
 		// only save searchable columns
-		setDateModifiableColumnsOnSave(coreItem: coreItem)
+        setDateModifiableColumnsOnSave(coreItem: coreItem)
 		coreItem.id = id
-		coreItem.gameSequenceUuid = gameSequenceUuid
+		coreItem.gameSequenceUuid = gameSequenceUuid?.uuidString
 		coreItem.isTriggered = isTriggered ? 1 : 0
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 		coreItem.dataParent = generalData.entity(context: coreItem.managedObjectContext)
@@ -37,7 +37,7 @@ extension Event: GameRowStorable {
 	/// Create a new game entity value for the game uuid given using the data value given.
 	public static func create(
 		using data: DataRowType,
-		with manager: SimpleSerializedCoreDataManageable?
+		with manager: CodableCoreDataManageable?
 	) -> Event {
 		return Event(id: data.id, generalData: data)
 	}
@@ -50,7 +50,7 @@ extension Event {
 	/// Get all events from the specified game version.
 	public static func getAll(
 		gameVersion: GameVersion,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Event] {
 		return getAllFromData(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -65,7 +65,7 @@ extension Event {
 	public static func get(
 		id: String?,
 		type: EventType,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> Event? {
 		guard let id = id, !id.isEmpty else { return nil }
 		var one = get(id: id, with: manager)
@@ -76,7 +76,7 @@ extension Event {
 	/// Return all events dependent on level score. This depends on the event being properly named.
 	public static func getLevels(
 		gameVersion: GameVersion,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Event] {
 		return getAllFromData(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -90,7 +90,7 @@ extension Event {
 	/// Return all events dependent on paragon score. This depends on the event being properly named.
 	public static func getParagons(
 		gameVersion: GameVersion,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Event] {
 		return getAllFromData(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -104,7 +104,7 @@ extension Event {
 	/// Return all events dependent on renegade score. This depends on the event being properly named.
 	public static func getRenegades(
 		gameVersion: GameVersion,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Event] {
 		return getAllFromData(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -119,7 +119,7 @@ extension Event {
 	public static func getAffectedIds<T: SimpleSerializedCoreDataStorable>(
 		ofType type: T.Type,
 		relatedToEvent event: Event,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [String] {
 		let manager = manager ?? defaultManager
 		var result: [String] = []

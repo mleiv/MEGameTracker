@@ -50,7 +50,7 @@ extension DataRowStorable {
 	/// (Duplicate these per file or use Whole Module Optimization, which is slow in dev)
 	public typealias AlterFetchRequest<T: NSManagedObject> = ((NSFetchRequest<T>) -> Void)
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Alters the predicate to retrieve only the row equal to this object.
 	public func setIdentifyingPredicate(
 		fetchRequest: NSFetchRequest<EntityType>

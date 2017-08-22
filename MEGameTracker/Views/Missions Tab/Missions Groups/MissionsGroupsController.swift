@@ -13,7 +13,7 @@ import UIKit
 
 final class MissionsGroupsController: UITableViewController, Spinnerable {
 
-	var shepardUuid: String?
+	var shepardUuid: UUID?
 	var didSetup = false
 	var isUpdating = false
 

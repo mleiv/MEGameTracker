@@ -13,8 +13,8 @@ public struct Note {
 
 // MARK: Properties
 
-	public internal(set) var uuid: String
-	public internal(set) var shepardUuid: String
+	public internal(set) var uuid: UUID
+	public internal(set) var shepardUuid: UUID?
 	public internal(set) var identifyingObject: IdentifyingObject
 
 	public fileprivate(set) var text: String?
@@ -23,7 +23,7 @@ public struct Note {
 
 	/// (GameModifying Protocol) 
 	/// This value's game identifier.
-	public var gameSequenceUuid: String?
+	public var gameSequenceUuid: UUID?
 	/// (DateModifiable Protocol)  
 	/// Date when value was created.
 	public var createdDate = Date()
@@ -35,7 +35,7 @@ public struct Note {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+    public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
@@ -50,21 +50,21 @@ public struct Note {
 
 	public init(
 		identifyingObject: IdentifyingObject,
-		shepardUuid: String? = nil,
-		gameSequenceUuid: String? = nil
+		shepardUuid: UUID? = nil,
+		gameSequenceUuid: UUID? = nil
 	) {
-		uuid = "\(UUID().uuidString)"
+		uuid = UUID()
 		self.identifyingObject = identifyingObject
 		self.gameVersion = App.current.gameVersion
-		self.shepardUuid = shepardUuid ?? (App.current.game?.shepard?.uuid ?? "")
+		self.shepardUuid = shepardUuid ?? App.current.game?.shepard?.uuid
 		self.gameSequenceUuid = gameSequenceUuid ?? App.current.game?.uuid
 	}
 
 	public init(
-		uuid: String,
+		uuid: UUID,
 		identifyingObject: IdentifyingObject,
-		shepardUuid: String? = nil,
-		gameSequenceUuid: String? = nil,
+		shepardUuid: UUID? = nil,
+		gameSequenceUuid: UUID? = nil,
 		gameVersion: GameVersion? = nil,
 		data: SerializableData?
 	) {
@@ -102,7 +102,7 @@ extension Note {
 				_ = saveAnyChanges()
 			}
 			if isNotify {
-				Note.onChange.fire((id: self.uuid, object: self))
+				Note.onChange.fire((id: self.uuid.uuidString, object: self))
 			}
 		}
 	}
@@ -113,15 +113,15 @@ extension Note: SerializedDataStorable {
 
 	public func getData() -> SerializableData {
 		var list: [String: SerializedDataStorable?] = [:]
-		list["uuid"] = uuid
+		list["uuid"] = uuid.uuidString
 //		list["gameSequenceUuid"] = gameSequenceUuid // GameModifying
-		list["shepardUuid"] = shepardUuid
+		list["shepardUuid"] = shepardUuid?.uuidString
 		list["text"] = text
 		list["identifyingObject"] = identifyingObject.getData()
 		list["gameVersion"] = gameVersion.stringValue
-		list = serializeDateModifiableData(list: list)
-		list = serializeGameModifyingData(list: list)
-		list = serializeLocalCloudData(list: list)
+//        list = serializeDateModifiableData(list: list)
+//        list = serializeGameModifyingData(list: list)
+//        list = serializeLocalCloudData(list: list)
 		return SerializableData.safeInit(list)
 	}
 
@@ -132,9 +132,12 @@ extension Note: SerializedDataRetrievable {
 
 	public init?(data: SerializableData?) {
 		guard let data = data,
-			  let uuid = data["uuid"]?.string,
-			  let gameSequenceUuid = data["gameSequenceUuid"]?.string,
-			  let shepardUuid = data["shepardUuid"]?.string,
+			  let uuidString = data["uuid"]?.string,
+              let uuid = UUID(uuidString: uuidString),
+			  let gameSequenceUuidString = data["gameSequenceUuid"]?.string,
+              let gameSequenceUuid = UUID(uuidString: gameSequenceUuidString),
+			  let shepardUuidString = data["shepardUuid"]?.string,
+              let shepardUuid = UUID(uuidString: shepardUuidString),
 			  let identifyingObject = IdentifyingObject(data: data["identifyingObject"])
 		else { return nil }
 
@@ -148,17 +151,17 @@ extension Note: SerializedDataRetrievable {
 	}
 
 	public mutating func setData(_ data: SerializableData) {
-		self.uuid = data["uuid"]?.string ?? uuid
-		self.gameSequenceUuid = data["gameSequenceUuid"]?.string ?? gameSequenceUuid
-		self.shepardUuid = data["shepardUuid"]?.string ?? shepardUuid
+		self.uuid = UUID(uuidString: data["uuid"]?.string ?? "") ?? uuid
+		self.gameSequenceUuid = UUID(uuidString: data["gameSequenceUuid"]?.string ?? "") ?? gameSequenceUuid
+		self.shepardUuid = UUID(uuidString: data["shepardUuid"]?.string ?? "") ?? shepardUuid
 		self.identifyingObject = IdentifyingObject(data: data["identifyingObject"]) ?? identifyingObject
 		self.gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") ?? gameVersion
 
 		text = data["text"]?.string
 
-		unserializeDateModifiableData(data: data)
-		unserializeGameModifyingData(data: data)
-		unserializeLocalCloudData(data: data)
+//        unserializeDateModifiableData(data: data)
+//        unserializeGameModifyingData(data: data)
+//        unserializeLocalCloudData(data: data)
 	}
 
 }

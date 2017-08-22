@@ -74,10 +74,10 @@ final class MapTests: MEGameTrackerTests {
 		// Utopia is blocked in Game 2
 		exodus?.change(gameVersion: .game2)
 		XCTAssert(exodus?.isAvailable == false, "Failed to make map unavailable in game version")
-		exodus = Map.get(id: "G.Ear.Exodus", gameVersion: .game2)
-		XCTAssert(exodus?.isAvailable == false, "Failed to load map as unavailable in game version")
-		let matches = Map.getAll(gameVersion: .game2)
-		XCTAssert(matches.first?.isAvailable == false, "Failed to load map as unavailable in game version")
+        exodus = Map.get(id: "G.Ear.Exodus", gameVersion: .game2)
+        XCTAssert(exodus?.isAvailable == false, "Failed to load map as unavailable in game version")
+        let matches = Map.getAll(gameVersion: .game2)
+        XCTAssert(matches.first?.isAvailable == false, "Failed to load map as unavailable in game version")
 	}
 
 	/// Test Map change action.

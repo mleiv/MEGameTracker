@@ -11,7 +11,7 @@ import Foundation
 extension Shepard {
 
 	/// Game options for Shepard's reputation.
-	public enum Reputation: String {
+	public enum Reputation: String, Codable {
 		case soleSurvivor = "Sole Survivor"
 		case warHero = "War Hero"
 		case ruthless = "Ruthless"

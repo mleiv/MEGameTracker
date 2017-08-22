@@ -18,7 +18,7 @@ public struct Decision {
 
 	/// (GameModifying, GameRowStorable Protocol) 
 	/// This value's game identifier.
-	public var gameSequenceUuid: String?
+	public var gameSequenceUuid: UUID?
 	/// (DateModifiable Protocol)  
 	/// Date when value was created.
 	public var createdDate = Date()
@@ -30,7 +30,7 @@ public struct Decision {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+	public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
@@ -70,7 +70,7 @@ public struct Decision {
 
 	public init(
 		id: String,
-		gameSequenceUuid: String? = App.current.game?.uuid,
+		gameSequenceUuid: UUID? = App.current.game?.uuid,
 		generalData: DataDecision,
 		data: SerializableData? = nil
 	) {
@@ -99,8 +99,8 @@ public struct Decision {
 extension Decision {
 
 	/// Applies a set of changes to this object
-	public mutating func change(data: SerializableData) {
-		if let isSelected = data["isSelected"]?.bool {
+	public mutating func change(data: [String: Any?]) {
+		if let isSelected = data["isSelected"] as? Bool { 
 			change(isSelected: isSelected)
 		}
 	}
@@ -177,11 +177,11 @@ extension Decision: SerializedDataStorable {
 	public func getData() -> SerializableData {
 		var list: [String: SerializedDataStorable?] = [:]
 		// from db:
-		list["id"] = id
-		list["isSelected"] = isSelected
-		list = serializeDateModifiableData(list: list)
-		list = serializeGameModifyingData(list: list)
-		list = serializeLocalCloudData(list: list)
+        list["id"] = id
+        list["isSelected"] = isSelected
+//        list = serializeDateModifiableData(list: list)
+//        list = serializeGameModifyingData(list: list)
+//        list = serializeLocalCloudData(list: list)
 		return SerializableData.safeInit(list)
 	}
 
@@ -193,7 +193,8 @@ extension Decision: SerializedDataRetrievable {
 	public init?(data: SerializableData?) {
 		guard let data = data, let id = data["id"]?.string,
 			  let dataDecision = DataDecision.get(id: id),
-			  let gameSequenceUuid = data["gameSequenceUuid"]?.string
+              let uuidString = data["gameSequenceUuid"]?.string,
+			  let gameSequenceUuid = UUID(uuidString: uuidString)
 		else {
 			return nil
 		}
@@ -207,9 +208,9 @@ extension Decision: SerializedDataRetrievable {
 			generalData = DataDecision.get(id: id) ?? generalData
 		}
 
-		unserializeDateModifiableData(data: data)
-		unserializeGameModifyingData(data: data)
-		unserializeLocalCloudData(data: data)
+//        unserializeDateModifiableData(data: data)
+//        unserializeGameModifyingData(data: data)
+//        unserializeLocalCloudData(data: data)
 
 		isSelected = data["isSelected"]?.bool ?? isSelected
 	}

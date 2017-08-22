@@ -27,6 +27,13 @@ struct CoreDataManager: SimpleSerializedCoreDataManageable {
 		self.init(storeName: CoreDataManager.defaultStoreName)
 	}
 
+    public init(duplicate: CoreDataManager2) {
+        self.isConfinedToMemoryStore = duplicate.isConfinedToMemoryStore
+        self.storeName = duplicate.storeName
+        self.specificContext = duplicate.specificContext
+        self.persistentContainer = duplicate.persistentContainer
+    }
+
 	public init(storeName: String?, context: NSManagedObjectContext?, isConfineToMemoryStore: Bool) {
 		self.isConfinedToMemoryStore = isConfineToMemoryStore
 		self.storeName = storeName ?? CoreDataManager.defaultStoreName

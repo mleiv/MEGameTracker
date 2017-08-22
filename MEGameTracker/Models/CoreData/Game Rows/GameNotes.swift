@@ -20,11 +20,11 @@ extension Note: SimpleSerializedCoreDataStorable {
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType
 	) {
-		setDateModifiableColumnsOnSave(coreItem: coreItem)
-		coreItem.uuid = uuid
-		coreItem.gameSequenceUuid = gameSequenceUuid
+//        setDateModifiableColumnsOnSave(coreItem: coreItem) //TODO
+		coreItem.uuid = uuid.uuidString
+		coreItem.gameSequenceUuid = gameSequenceUuid?.uuidString
 		coreItem.gameVersion = gameVersion.stringValue
-		coreItem.shepardUuid = shepardUuid
+		coreItem.shepardUuid = shepardUuid?.uuidString
 		coreItem.identifyingObject = identifyingObject.flattenedString
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 	}
@@ -36,7 +36,7 @@ extension Note: SimpleSerializedCoreDataStorable {
 	) {
 		fetchRequest.predicate = NSPredicate(
 			format: "(%K == %@)",
-			#keyPath(GameNotes.uuid), uuid
+			#keyPath(GameNotes.uuid), uuid.uuidString
 		)
 	}
 }
@@ -76,8 +76,8 @@ extension Note {
 // MARK: Delete
 
 	public static func delete(
-		uuid: String,
-		gameSequenceUuid: String,
+		uuid: UUID,
+		gameSequenceUuid: UUID,
 		with manager: SimpleSerializedCoreDataManageable? = nil
 	) -> Bool {
 		if !GamesDataBackup.current.isSyncing {
@@ -87,20 +87,21 @@ extension Note {
 		return deleteAll(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K == %@)",
-				#keyPath(GameNotes.uuid), uuid
+				#keyPath(GameNotes.uuid), uuid.uuidString
 			)
 		}
 	}
 
 	/// Stores a row before delete
 	public static func notifyDeleteToCloud(
-		uuid: String,
-		gameSequenceUuid: String,
+		uuid: UUID,
+		gameSequenceUuid: UUID,
 		with manager: SimpleSerializedCoreDataManageable? = nil
 	) {
+let manager = CoreDataManager2.current
 		let deletedRows: [DeletedRow] = [DeletedRow(
 			source: Note.entityName,
-			identifier: getIdentifyingName(id: uuid, gameSequenceUuid: gameSequenceUuid)
+			identifier: getIdentifyingName(id: uuid.uuidString, gameSequenceUuid: gameSequenceUuid)
 		)]
 		_ = DeletedRow.saveAll(items: deletedRows, with: manager)
 		GamesDataBackup.current.isPendingCloudChanges = true
@@ -108,14 +109,14 @@ extension Note {
 
 	/// Only called by GameSequence. This does not notify cloud or cascade delete, so do not call it in other places.
 	public static func deleteAll(
-		gameSequenceUuid: String,
+		gameSequenceUuid: UUID,
 		with manager: SimpleSerializedCoreDataManageable? = nil
 	) -> Bool {
 		// don't have to notify: GameSequence did that for you
 		return deleteAll(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K == %@)",
-				#keyPath(GameNotes.gameSequenceUuid), gameSequenceUuid
+				#keyPath(GameNotes.gameSequenceUuid), gameSequenceUuid.uuidString
 			)
 		}
 	}
@@ -123,25 +124,25 @@ extension Note {
 // MARK: Additional Convenience Gets
 
 	public static func get(
-		uuid: String,
+		uuid: UUID,
 		with manager: SimpleSerializedCoreDataManageable? = nil
 	) -> Note? {
 		return get(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K == %@)",
-				#keyPath(GameNotes.uuid), uuid
+				#keyPath(GameNotes.uuid), uuid.uuidString
 			)
 		}
 	}
 
 	public static func getAll(
-		uuids: [String],
+		uuids: [UUID],
 		with manager: SimpleSerializedCoreDataManageable? = nil
 	) -> [Note] {
 		return getAll(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K in %@)",
-				#keyPath(GameNotes.uuid), uuids
+				#keyPath(GameNotes.uuid), uuids.map{ $0.uuidString }
 			)
 		}
 	}

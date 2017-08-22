@@ -10,7 +10,7 @@ import Foundation
 
 /// Event types are defined in the target object using the event rather than in an event object itself.
 /// Example: the event of "Unlocked Galaxy Map" is flagged in blockedUntil in the mission A1.C1.AsariConsort.
-public enum EventType {
+public enum EventType: String, Codable {
 
 	case unknown
 	case unavailableInGame
@@ -21,11 +21,18 @@ public enum EventType {
 
 	/// Returns a list of all possible enum variations.
 	public static func list() -> [EventType] {
-		return [.unknown, .unavailableInGame, .requiresConfig, .blockedUntil, .blockedAfter, .triggers]
+		return [
+            .unknown,
+            .unavailableInGame,
+            .requiresConfig,
+            .blockedUntil,
+            .blockedAfter,
+            .triggers,
+        ]
 	}
 
 	/// Returns the string values of all the enum variations.
-	fileprivate static let stringValues: [EventType: String] = [
+	private static let stringValues: [EventType: String] = [
 		.unknown: "Unknown",
 		.unavailableInGame: "UnavailableInGame",
 		.requiresConfig: "RequiresConfig",
@@ -65,7 +72,7 @@ public enum EventType {
 
 	/// Returns a subset of events which have cascading effects.
 	/// This is useful during core data import, so we can cascade the values and save ourselves lookup work later.   
-	fileprivate static let inheritableEvents: [EventType] = [
+	private static let inheritableEvents: [EventType] = [
 		.blockedUntil,
 		.blockedAfter,
 		.unavailableInGame,

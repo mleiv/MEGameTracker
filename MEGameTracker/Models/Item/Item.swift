@@ -19,7 +19,7 @@ public struct Item: MapLocationable, Eventsable {
 
 	/// (GameModifying, GameRowStorable Protocol) 
 	/// This value's game identifier.
-	public var gameSequenceUuid: String?
+	public var gameSequenceUuid: UUID?
 	/// (DateModifiable Protocol)  
 	/// Date when value was created.
 	public var createdDate = Date()
@@ -31,7 +31,7 @@ public struct Item: MapLocationable, Eventsable {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+    public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
@@ -125,7 +125,7 @@ public struct Item: MapLocationable, Eventsable {
 
 	public init(
 		id: String,
-		gameSequenceUuid: String? = App.current.game?.uuid,
+		gameSequenceUuid: UUID? = App.current.game?.uuid,
 		generalData: DataItem,
 		events: [Event] = [],
 		data: SerializableData? = nil
@@ -175,11 +175,11 @@ extension Item {
 // MARK: Data Change Actions
 extension Item {
 
-	public mutating func change(data: SerializableData) {
-		if let isAcquired = data["isAcquired"]?.bool {
-			change(isAcquired: isAcquired)
-		}
-	}
+    public mutating func change(data: [String: Any?]) {
+        if let isAcquired = data["isAcquired"] as? Bool {
+            change(isAcquired: isAcquired)
+        }
+    }
 
 	public mutating func change(
 		isAcquired: Bool,
@@ -246,9 +246,9 @@ extension Item: SerializedDataStorable {
 		var list: [String: SerializedDataStorable?] = [:]
 		list["id"] = id
 		list["isAcquired"] = isAcquired
-		list = serializeDateModifiableData(list: list)
-		list = serializeGameModifyingData(list: list)
-		list = serializeLocalCloudData(list: list)
+//        list = serializeDateModifiableData(list: list)
+//        list = serializeGameModifyingData(list: list)
+//        list = serializeLocalCloudData(list: list)
 //		list["photo"] = photo?.getData()
 		return SerializableData.safeInit(list)
 	}
@@ -261,7 +261,8 @@ extension Item: SerializedDataRetrievable {
 	public init?(data: SerializableData?) {
 		guard let data = data, let id = data["id"]?.string,
 			  let dataItem = DataItem.get(id: id),
-			  let gameSequenceUuid = data["gameSequenceUuid"]?.string
+              let uuidString = data["gameSequenceUuid"]?.string,
+              let gameSequenceUuid = UUID(uuidString: uuidString)
 		else {
 			return nil
 		}
@@ -276,9 +277,9 @@ extension Item: SerializedDataRetrievable {
 			_events = nil
 		}
 
-		unserializeDateModifiableData(data: data)
-		unserializeGameModifyingData(data: data)
-		unserializeLocalCloudData(data: data)
+//        unserializeDateModifiableData(data: data)
+//        unserializeGameModifyingData(data: data)
+//        unserializeLocalCloudData(data: data)
 
 		isAcquired = data["isAcquired"]?.bool ?? isAcquired
 	}

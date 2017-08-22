@@ -90,7 +90,7 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 
 	func dummyData() {
 		// swiftlint:disable line_length
-		person = Person.getDummy(json: "{\"id\": 2,\"name\": \"Liara T'soni\",\"description\": \"An archeologist specializing in the ancient prothean culture, Liara is the \\\"pureblood\\\" daughter of Matriarch Benezia, and doesn't know her father. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued a life of scholarly solitude.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": 1,\"isFemaleLoveInterest\": 1,\"race\": \"Asari\",\"profession\": \"Scientist\",\"organization\": null,\"photo\": \"Default Liara\",\"gameVersion\": 1,\"relatedLinks\": \"[\\\"https://masseffect.wikia.com/wiki/Liara_T%27Soni\\\"]\",\"voiceActor\": \"Ali Hillis\"}")
+		person = Person.getDummy(json: "{\"id\": 2,\"name\": \"Liara T'soni\",\"description\": \"An archeologist specializing in the ancient prothean culture, Liara is the \\\"pureblood\\\" daughter of Matriarch Benezia, and doesn't know her father. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued a life of scholarly solitude.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": true,\"isFemaleLoveInterest\": true,\"race\": \"Asari\",\"profession\": \"Scientist\",\"organization\": null,\"photo\": \"Default Liara\",\"gameVersion\": true,\"relatedLinks\": \"[\\\"https://masseffect.wikia.com/wiki/Liara_T%27Soni\\\"]\",\"voiceActor\": \"Ali Hillis\"}")
 		// swiftlint:enable line_length
 	}
 

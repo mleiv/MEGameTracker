@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-extension DataEvent: DataRowStorable {
+extension DataEvent: DataRowStorable2 {
 
 	/// (SimpleSerializedCoreDataStorable Protocol)
 	/// Type of the core data entity.

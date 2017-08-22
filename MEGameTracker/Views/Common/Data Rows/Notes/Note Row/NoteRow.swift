@@ -61,7 +61,7 @@ import UIKit
 		layoutIfNeeded()
 	}
 
-	private func getShepard(uuid: String?) -> Shepard? {
+	private func getShepard(uuid: UUID?) -> Shepard? {
 		if App.current.game?.shepard?.uuid == uuid {
 			return App.current.game?.shepard
 		}

@@ -11,7 +11,7 @@ import Foundation
 extension Shepard {
 
 	/// Game options for Shepard's origin.
-	public enum Origin: String {
+	public enum Origin: String, Codable {
 		case earthborn = "Earthborn"
 		case spacer = "Spacer"
 		case colonist = "Colonist"

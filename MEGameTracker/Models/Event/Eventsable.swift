@@ -17,10 +17,11 @@ public protocol Eventsable {
 extension Eventsable {
 
 	public func getEvents(with manager: SimpleSerializedCoreDataManageable?) -> [Event] {
+let manager2 = CoreDataManager2.current
 		let events: [Event] = (rawEventData?.array ?? []).map({
 			guard let id = $0["id"]?.string,
 				let type = EventType(stringValue: $0["type"]?.string),
-				var e = Event.get(id: id, type: type, with: manager)
+				var e = Event.get(id: id, type: type, with: manager2)
 			else { return nil }
 			// store what object is holding this at present:
 			if let mission = self as? Mission {

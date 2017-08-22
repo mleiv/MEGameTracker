@@ -10,17 +10,40 @@ import UIKit
 
 /// A top-level manager of game data.
 /// Must be a reference/class object so it can listen to signals.
-final public class App {
+final public class App: Codable {
 
-	/// The shared app object used by everything.
-	/// Warning: do not initialize any data until retrieve() is called.
-	/// (Saving games before retrieve() will result in lots of dummy data filling up store)
-	public static var current: App = App()
+    /// The shared app object used by everything.
+    /// Warning: do not initialize any data until retrieve() is called.
+    /// (Saving games before retrieve() will result in lots of dummy data filling up store)
+    public static var current: App = App()
 
-	public var hasUnsavedChanges: Bool = false
-	public var postChangeWaitIntervalSeconds: TimeInterval = 60.0 * 2.0 // 2 minutes
-	public let searchMaxResults = 50
+    enum CodingKeys: String, CodingKey {
+        case currentGameUuid
+        case recentlyViewedMaps
+        case recentlyViewedMissions
+    }
 
+// MARK: Constants
+    public var postChangeWaitIntervalSeconds: TimeInterval = 60.0 * 2.0 // 2 minutes
+
+    public let searchMaxResults = 50
+
+    static let defaultRecentlyViewedListSize = 20
+
+// MARK: Properties
+    public var currentGameUuid: UUID?
+
+    public var recentlyViewedMaps: RecentlyViewedList
+
+    public var recentlyViewedMissions: [GameVersion : RecentlyViewedList]
+
+    public var game: GameSequence?
+
+    public var recentlyViewedImages = RecentlyViewedImages(maxElements: 50) // not saved
+
+// MARK: Computed Properties
+    public var gameVersion: GameVersion { return game?.gameVersion ?? .game1 }
+    
 	public var lastBuild: Int {
 		get { return _lastBuild.get() ?? 0 }
 		set { return _lastBuild.set(newValue) }
@@ -35,17 +58,77 @@ final public class App {
 		return 0
 	}
 
-	public var game: GameSequence?
-	public var gameVersion: GameVersion { return game?.gameVersion ?? .game1 }
+// MARK: Change Listeners And Change Status Flags
 
-	/// Don't cache.
+    public var hasUnsavedChanges = false
+    public static var onChange = Signal<(id: String, object: Decision?)>()
+
+// MARK: Initialization
+
+    public required init() {
+        currentGameUuid = UUID()
+        recentlyViewedMaps = RecentlyViewedList(maxElements: App.defaultRecentlyViewedListSize)
+        recentlyViewedMissions = [:]
+    }
+
+    // Decoder Protocol
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        currentGameUuid = try container.decodeIfPresent(UUID.self, forKey: .currentGameUuid)
+        recentlyViewedMaps = try container.decodeIfPresent(RecentlyViewedList.self, forKey: .recentlyViewedMaps) ?? RecentlyViewedList(maxElements: App.defaultRecentlyViewedListSize)
+        recentlyViewedMissions = [:]
+        let missionsContainer = try? container.nestedContainer(
+            keyedBy: GameVersion.self,
+            forKey: .recentlyViewedMissions)
+        for gameVersion in GameVersion.list() {
+            recentlyViewedMissions[gameVersion] = try missionsContainer?.decodeIfPresent(
+                    RecentlyViewedList.self,
+                    forKey: gameVersion
+                ) ?? RecentlyViewedList(maxElements: App.defaultRecentlyViewedListSize)
+        }
+    }
+
+    public func initGame(uuid: UUID? = nil, isSave: Bool = true, isNotify: Bool = true) {
+        if let uuid = uuid,
+           let newGame = GameSequence.get(uuid: uuid) {
+           // prior save
+            game = newGame
+        } else if let newGame = GameSequence.lastPlayed() {
+            // see if there's a game we just haven't saved to this app record
+            game = newGame
+        } else {
+            // brand new!
+            game = GameSequence()
+        }
+        currentGameUuid = game?.uuid
+        if isSave {
+            _ = save(isAllowDelay: false)
+        }
+        if isNotify {
+            fireListenerIfCurrent()
+        }
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(currentGameUuid, forKey: .currentGameUuid)
+        try container.encode(recentlyViewedMaps, forKey: .recentlyViewedMaps)
+        var missionsContainer = container.nestedContainer(
+            keyedBy: GameVersion.self,
+            forKey: .recentlyViewedMissions)
+        for (gameVersion, list) in recentlyViewedMissions {
+            try missionsContainer.encode(list, forKey: gameVersion)
+        }
+    }
+}
+
+// MARK: Data Change Actions
+extension App {
+
 	public func getAllGames() -> [GameSequence] {
 		return GameSequence.getAll(with: nil) { _ in }
 	}
-
-	public var recentlyViewedImages = RecentlyViewedImages(maxElements: 50)
-
-	public var recentlyViewedMaps = RecentlyViewedList(maxElements: 20)
 
 	public func addRecentlyViewedMap(mapId: String?) {
 		guard let mapId = mapId else { return }
@@ -60,8 +143,6 @@ final public class App {
 		}
 	}
 
-	public var recentlyViewedMissions: [GameVersion : RecentlyViewedList] = [:]
-
 	public func addRecentlyViewedMission(missionId: String, gameVersion: GameVersion) {
 		guard gameVersion == gameVersion else { return }
 		var missions: RecentlyViewedList = recentlyViewedMissions[gameVersion] ?? RecentlyViewedList(maxElements: 20)
@@ -74,43 +155,6 @@ final public class App {
 			DispatchQueue.global(qos: .background).asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
 				App.onRecentlyViewedMissionsChange.fire(true)
 			}
-		}
-	}
-
-	public required init() {}
-
-	/// SerializedDataRetrievable Protocol
-	public required init?(data: SerializableData?) {
-		setData(data ?? SerializableData())
-	}
-
-	/// SerializedDataRetrievable Protocol
-	public required convenience init?(serializedString json: String) {
-		self.init(data: try? SerializableData(jsonString: json))
-	}
-
-	/// SerializedDataRetrievable Protocol
-	public required convenience init?(serializedData jsonData: Data) {
-		self.init(data: try? SerializableData(jsonData: jsonData))
-	}
-
-	public func initGame(uuid: String? = nil, isSave: Bool = true, isNotify: Bool = true) {
-		if let uuid = uuid,
-		   let newGame = GameSequence.get(uuid: uuid) {
-		   // prior save
-			game = newGame
-		} else if let newGame = GameSequence.lastPlayed() {
-			// see if there's a game we just haven't saved to this app record
-			game = newGame
-		} else {
-			// brand new!
-			game = GameSequence()
-		}
-		if isSave {
-			_ = save(isAllowDelay: false)
-		}
-		if isNotify {
-			fireListenerIfCurrent()
 		}
 	}
 
@@ -129,6 +173,7 @@ final public class App {
     // Thanks to new ownership rules, it is crashing on previously-harmless change/access of game. :/
 	public func changeGame(isSave: Bool = true, isNotify: Bool = true, handler: ((GameSequence?) -> GameSequence?)) {
         game = handler(game)
+        currentGameUuid = game?.uuid
         if isNotify {
             fireListenerIfCurrent()
         }
@@ -137,7 +182,7 @@ final public class App {
         }
 	}
 
-	public func delete(uuid: String) -> Bool {
+	public func delete(uuid: UUID) -> Bool {
 		let isDeleted = GameSequence.delete(uuid: uuid)
 		if uuid == game?.uuid {
 			if let newGame = GameSequence.lastPlayed() {
@@ -156,7 +201,7 @@ final public class App {
 	public func startListeners() {
 		Shepard.onChange.cancelSubscription(for: self)
 		_ = Shepard.onChange.subscribe(on: self) { [weak self] (id, shepard) in
-			if id == self?.game?.shepard?.uuid {
+            if let id = UUID(uuidString: id), id == self?.game?.shepard?.uuid {
 				self?.changeGame(isSave: false) { game in
                     var game = game
                     game?.shepard = shepard
@@ -188,14 +233,18 @@ extension App {
 		_ = save(isAllowDelay: false)
 	}
 
-	public class func retrieve(uuid: String? = nil, completion: (() -> Void) = {}) {
+	public class func retrieve(uuid: UUID? = nil, completion: (() -> Void) = {}) {
 		App.isInitializing = true
 		if let app = App.get() {
-			App.current = app
-			if uuid != App.current.game?.uuid,
-				let uuid = uuid, let game = GameSequence.get(uuid: uuid) {
-				App.current.changeGame(isSave: false) { _ in game }
-			}
+            if let uuid = uuid,
+                uuid != app.currentGameUuid,
+                let game = GameSequence.get(uuid: uuid) {
+				app.changeGame(isSave: false, isNotify: false) { _ in game }
+			} else {
+                // not specified, load prior game
+                app.initGame(uuid: app.currentGameUuid, isSave: false, isNotify: false)
+            }
+            App.current = app
 		} else {
 			// first time opening app
 			App.current = App()
@@ -210,50 +259,6 @@ extension App {
 		completion()
 	}
 
-}
-
-// MARK: Saving/Retrieving Data
-
-extension App: SerializedDataStorable {
-
-	public func getData() -> SerializableData {
-		var list: [String: SerializedDataStorable?] = [:]
-		list["currentGameUuid"] = game?.uuid
-		list["recentlyViewedMaps"] = recentlyViewedMaps
-		var missionsGameVersionData: [String: SerializedDataStorable?] = [:]
-		for (gameVersion, list2) in recentlyViewedMissions {
-			missionsGameVersionData[gameVersion.stringValue] = list2
-		}
-		list["recentlyViewedMissions"] = SerializableData.safeInit(missionsGameVersionData)
-		return SerializableData.safeInit(list)
-	}
-}
-
-extension App: SerializedDataRetrievable {
-
-	/// init?(data: SerializableData?) included above
-
-	public func setData(_ data: SerializableData) {
-
-        print("# App setData")
-		initGame(uuid: data["currentGameUuid"]?.string)
-
-		if let mapsData = data["recentlyViewedMaps"],
-			let data = RecentlyViewedList(data: mapsData) {
-			recentlyViewedMaps = data
-		}
-
-		recentlyViewedMissions = [:]
-		if let missionsData = data["recentlyViewedMissions"]?.dictionary
-								?? data["_recentlyViewedMissions"]?.dictionary {
-			for (key, missionsGameVersionData) in missionsData {
-				if let gameVersion = GameVersion(rawValue: key),
-					let data = RecentlyViewedList(data: missionsGameVersionData) {
-					recentlyViewedMissions[gameVersion] = data
-				}
-			}
-		}
-	}
 }
 
 // MARK: Equatable

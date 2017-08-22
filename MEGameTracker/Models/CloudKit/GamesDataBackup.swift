@@ -111,130 +111,131 @@ final public class GamesDataBackup: SimpleCloudKitManageable {
 	var internalAccountName = SimpleUserDefaults<String>(name: "GameDataAccountName")
 	var internalChangeToken = SimpleUserDefaults<CKServerChangeToken>(name: "GameDataChangeToken")
 
-	var decisionChanges: [SerializableData] = []
-	var eventChanges: [SerializableData] = []
-	var itemChanges: [SerializableData] = []
-	var mapChanges: [SerializableData] = []
-	var missionChanges: [SerializableData] = []
-	var noteChanges: [SerializableData] = []
-	var personChanges: [SerializableData] = []
-	var gameChanges: [SerializableData] = []
-	var shepardChanges: [SerializableData] = []
+    var decisionChanges: [CloudDataRecordChange] = []
+    var eventChanges: [CloudDataRecordChange] = []
+    var itemChanges: [CloudDataRecordChange] = []
+    var mapChanges: [CloudDataRecordChange] = []
+    var missionChanges: [CloudDataRecordChange] = []
+    var noteChanges: [CloudDataRecordChange] = []
+    var personChanges: [CloudDataRecordChange] = []
+    var gameChanges: [CloudDataRecordChange] = []
+    var shepardChanges: [CloudDataRecordChange] = []
 }
 
 extension GamesDataBackup {
 
 	public func queueSaveFromCloud(record: CKRecord) -> Bool {
-		log("queueSaveFromCloud \(record.recordType)")
-		switch record.recordType {
-			case Decision.entityName:
-				decisionChanges.append(Decision.serializeRecordSave(record: record))
-			case Event.entityName:
-				eventChanges.append(Event.serializeRecordSave(record: record))
-			case Item.entityName:
-				itemChanges.append(Item.serializeRecordSave(record: record))
-			case Map.entityName:
-				mapChanges.append(Map.serializeRecordSave(record: record))
-			case Mission.entityName:
-				missionChanges.append(Mission.serializeRecordSave(record: record))
-			case Note.entityName:
-				noteChanges.append(Note.serializeRecordSave(record: record))
-			case Person.entityName:
-				personChanges.append(Person.serializeRecordSave(record: record))
-			case GameSequence.entityName:
-				gameChanges.append(GameSequence.serializeRecordSave(record: record))
-			case Shepard.entityName:
-				shepardChanges.append(Shepard.serializeRecordSave(record: record))
-			default: return false
-		}
-		return true
+        log("queueSaveFromCloud \(record.recordType)")
+        switch record.recordType {
+            case Decision.entityName:
+                decisionChanges.append(Decision.serializeRecordSave(record: record))
+            case Event.entityName:
+                eventChanges.append(Event.serializeRecordSave(record: record))
+            case Item.entityName:
+                itemChanges.append(Item.serializeRecordSave(record: record))
+            case Map.entityName:
+                mapChanges.append(Map.serializeRecordSave(record: record))
+            case Mission.entityName:
+                missionChanges.append(Mission.serializeRecordSave(record: record))
+            case Note.entityName:
+                noteChanges.append(Note.serializeRecordSave(record: record))
+            case Person.entityName:
+                personChanges.append(Person.serializeRecordSave(record: record))
+            case GameSequence.entityName:
+                gameChanges.append(GameSequence.serializeRecordSave(record: record))
+            case Shepard.entityName:
+                shepardChanges.append(Shepard.serializeRecordSave(record: record))
+            default: return false
+        }
+        return true
 	}
 
 	public func queueDeleteFromCloud(recordId: CKRecordID, recordType: String) -> Bool {
-		log("queueDeleteFromCloud \(recordType)")
-		switch recordType {
-			case Decision.entityName:
-				decisionChanges.append(Decision.serializeRecordDelete(recordId: recordId))
-			case Event.entityName:
-				eventChanges.append(Event.serializeRecordDelete(recordId: recordId))
-			case Item.entityName:
-				itemChanges.append(Item.serializeRecordDelete(recordId: recordId))
-			case Map.entityName:
-				mapChanges.append(Map.serializeRecordDelete(recordId: recordId))
-			case Mission.entityName:
-				missionChanges.append(Mission.serializeRecordDelete(recordId: recordId))
-			case Note.entityName:
-				noteChanges.append(Note.serializeRecordDelete(recordId: recordId))
-			case Person.entityName:
-				personChanges.append(Person.serializeRecordDelete(recordId: recordId))
-			case GameSequence.entityName:
-				gameChanges.append(GameSequence.serializeRecordDelete(recordId: recordId))
-			case Shepard.entityName:
-				shepardChanges.append(Shepard.serializeRecordDelete(recordId: recordId))
-			default: return false
-		}
-		return true
+        log("queueDeleteFromCloud \(recordType)")
+        switch recordType {
+            case Decision.entityName:
+                decisionChanges.append(Decision.serializeRecordDelete(recordId: recordId))
+            case Event.entityName:
+                eventChanges.append(Event.serializeRecordDelete(recordId: recordId))
+            case Item.entityName:
+                itemChanges.append(Item.serializeRecordDelete(recordId: recordId))
+            case Map.entityName:
+                mapChanges.append(Map.serializeRecordDelete(recordId: recordId))
+            case Mission.entityName:
+                missionChanges.append(Mission.serializeRecordDelete(recordId: recordId))
+            case Note.entityName:
+                noteChanges.append(Note.serializeRecordDelete(recordId: recordId))
+            case Person.entityName:
+                personChanges.append(Person.serializeRecordDelete(recordId: recordId))
+            case GameSequence.entityName:
+                gameChanges.append(GameSequence.serializeRecordDelete(recordId: recordId))
+            case Shepard.entityName:
+                shepardChanges.append(Shepard.serializeRecordDelete(recordId: recordId))
+            default: return false
+        }
+        return true
 	}
 
 	public func saveAllChangesFromCloud() -> Bool {
-		log("saveAllChangesFromCloud gameChanges = \(gameChanges.count) " +
-			"shepardChanges = \(shepardChanges.count) mapChanges = \(mapChanges.count) " +
-			"missionChanges = \(missionChanges.count) personChanges = \(personChanges.count) " +
-			"decisionChanges = \(decisionChanges.count) itemChanges = \(itemChanges.count) " +
-			"noteChanges = \(noteChanges.count) eventChanges = \(eventChanges.count)")
-		let manager = CoreDataManager.current
+        log("saveAllChangesFromCloud gameChanges = \(gameChanges.count) " +
+            "shepardChanges = \(shepardChanges.count) mapChanges = \(mapChanges.count) " +
+            "missionChanges = \(missionChanges.count) personChanges = \(personChanges.count) " +
+            "decisionChanges = \(decisionChanges.count) itemChanges = \(itemChanges.count) " +
+            "noteChanges = \(noteChanges.count) eventChanges = \(eventChanges.count)")
+let manager = CoreDataManager2.current
 
-		var isSaved = true
+        var isSaved = true
 
-		isSaved = isSaved && GameSequence.saveAllFromCloud(changes: gameChanges, with: manager)
-		isSaved = isSaved && Shepard.saveAllFromCloud(changes: shepardChanges, with: manager)
-		isSaved = isSaved && Map.saveAllFromCloud(changes: mapChanges, with: manager)
-		isSaved = isSaved && Mission.saveAllFromCloud(changes: missionChanges, with: manager)
-		isSaved = isSaved && Person.saveAllFromCloud(changes: personChanges, with: manager)
-		isSaved = isSaved && Decision.saveAllFromCloud(changes: decisionChanges, with: manager)
-		isSaved = isSaved && Item.saveAllFromCloud(changes: itemChanges, with: manager)
-		isSaved = isSaved && Note.saveAllFromCloud(changes: noteChanges, with: manager)
-		isSaved = isSaved && Event.saveAllFromCloud(changes: eventChanges, with: manager)
+        isSaved = isSaved && GameSequence.saveAllFromCloud(changes: gameChanges, with: manager)
+        isSaved = isSaved && Shepard.saveAllFromCloud(changes: shepardChanges, with: manager)
+        isSaved = isSaved && Map.saveAllFromCloud(changes: mapChanges, with: manager)
+        isSaved = isSaved && Mission.saveAllFromCloud(changes: missionChanges, with: manager)
+        isSaved = isSaved && Person.saveAllFromCloud(changes: personChanges, with: manager)
+        isSaved = isSaved && Decision.saveAllFromCloud(changes: decisionChanges, with: manager)
+        isSaved = isSaved && Item.saveAllFromCloud(changes: itemChanges, with: manager)
+        isSaved = isSaved && Note.saveAllFromCloud(changes: noteChanges, with: manager)
+        isSaved = isSaved && Event.saveAllFromCloud(changes: eventChanges, with: manager)
 
-		decisionChanges = []
-		eventChanges = []
-		itemChanges = []
-		mapChanges = []
-		missionChanges = []
-		noteChanges = []
-		personChanges = []
-		gameChanges = []
-		shepardChanges = []
+        decisionChanges = []
+        eventChanges = []
+        itemChanges = []
+        mapChanges = []
+        missionChanges = []
+        noteChanges = []
+        personChanges = []
+        gameChanges = []
+        shepardChanges = []
 
 		return isSaved
 	}
 
 	public func gatherAllSavesToCloud() -> [CKRecord] {
 		let manager = CoreDataManager.current
+let manager2 = CoreDataManager2.current
 		let isFullDatabaseCopy: Bool = isFirstSync
 		var records: [CKRecord] = []
 
-		records += Decision.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
-		records += Event.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
-		records += Item.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
-		records += Map.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
-		records += Mission.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
-		records += Note.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
-		records += Person.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
-		records += GameSequence.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
-		records += Shepard.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
+        records += Decision.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
+        records += Event.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager2)
+        records += Item.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
+        records += Map.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
+        records += Mission.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
+        records += Note.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager2)
+        records += Person.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
+        records += GameSequence.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager2)
+        records += Shepard.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager2)
 
-		log("gatherAllSavesToCloud records = \(records.count)")
+        log("gatherAllSavesToCloud records = \(records.count)")
 
 		return records
 	}
 
 	public func gatherAllDeletesToCloud() -> [CKRecordID] {
 		guard !isFirstSync else { return [] }
-		let manager = CoreDataManager.current
+let manager = CoreDataManager2.current
 		var recordIds: [CKRecordID] = []
 
-		recordIds += DeletedRow.getAllDeletesToCloud(isFullDatabaseCopy: false, with: manager)
+        recordIds += DeletedRow.getAllDeletesToCloud(isFullDatabaseCopy: false, with: manager)
 
 		log("gatherAllDeletesToCloud records = \(recordIds.count)")
 
@@ -257,6 +258,7 @@ extension GamesDataBackup {
         }
 
 		let manager = CoreDataManager.current
+  let manager2 = CoreDataManager2.current
 
 		// There is a small risk that we will delete changes made between the time of the post and the response. 
 		// I am not dealing with that yet.
@@ -265,52 +267,54 @@ extension GamesDataBackup {
 
 		let isConfirmed = true // we really don't need to halt anything if this breaks - it will just resend later.
 
+        let emptyChanges = CodableDictionary()
+
         let decisionIdentifiers = savedRecordNames(type: Decision.self)
-		Decision.getAll(identifiers: decisionIdentifiers, with: manager).forEach {
-			var d = $0; d.pendingCloudChanges = nil; _ = d.save(with: manager)
-		}
+        Decision.getAll(identifiers: decisionIdentifiers, with: manager).forEach {
+            var d = $0; d.pendingCloudChanges = emptyChanges; _ = d.save(with: manager)
+        }
         let eventIdentifiers = savedRecordNames(type: Event.self)
-		Event.getAll(identifiers: eventIdentifiers, with: manager).forEach {
-			var e = $0; e.pendingCloudChanges = nil; _ = e.save(with: manager)
-		}
+        Event.getAll(identifiers: eventIdentifiers, with: manager2).forEach {
+            var e = $0; e.pendingCloudChanges = emptyChanges; _ = e.save(with: manager2)
+        }
         let itemIdentifiers = savedRecordNames(type: Item.self)
-		Item.getAll(identifiers: itemIdentifiers, with: manager).forEach {
-			var i = $0; i.pendingCloudChanges = nil; _ = i.save(with: manager)
-		}
+        Item.getAll(identifiers: itemIdentifiers, with: manager).forEach {
+            var i = $0; i.pendingCloudChanges = emptyChanges; _ = i.save(with: manager)
+        }
         let mapIdentifiers = savedRecordNames(type: Map.self)
-		Map.getAll(identifiers: mapIdentifiers, with: manager).forEach {
-			var m = $0; m.pendingCloudChanges = nil; _ = m.save(with: manager)
-		}
+        Map.getAll(identifiers: mapIdentifiers, with: manager).forEach {
+            var m = $0; m.pendingCloudChanges = emptyChanges; _ = m.save(with: manager)
+        }
         let missionIdentifiers = savedRecordNames(type: Mission.self)
-		Mission.getAll(identifiers: missionIdentifiers, with: manager).forEach {
-			var m = $0; m.pendingCloudChanges = nil; _ = m.save(with: manager)
-		}
+        Mission.getAll(identifiers: missionIdentifiers, with: manager).forEach {
+            var m = $0; m.pendingCloudChanges = emptyChanges; _ = m.save(with: manager)
+        }
         let personIdentifiers = savedRecordNames(type: Person.self)
-		Person.getAll(identifiers: personIdentifiers, with: manager).forEach {
-			var p = $0; p.pendingCloudChanges = nil; _ = p.save(with: manager)
-		}
+        Person.getAll(identifiers: personIdentifiers, with: manager).forEach {
+            var p = $0; p.pendingCloudChanges = emptyChanges; _ = p.save(with: manager)
+        }
         // not GameRowStorable:
         let noteIdentifiers = savedRecordNames(type: Note.self)
-        Note.getAll(identifiers: noteIdentifiers, with: manager).forEach {
-            var n = $0; n.pendingCloudChanges = nil; _ = n.save(with: manager)
+        Note.getAll(identifiers: noteIdentifiers, with: manager2).forEach {
+            var n = $0; n.pendingCloudChanges = emptyChanges; _ = n.save(with: manager)
         }
         let gameIdentifiers = savedRecordNames(type: GameSequence.self)
-		GameSequence.getAll(identifiers: gameIdentifiers, with: manager).forEach {
-			var g = $0; g.pendingCloudChanges = nil; _ = g.save(with: manager)
-		}
+        GameSequence.getAll(identifiers: gameIdentifiers, with: manager2).forEach {
+            var g = $0; g.pendingCloudChanges = emptyChanges; _ = g.save(with: manager2)
+        }
         let shepardIdentifiers = savedRecordNames(type: Shepard.self)
-		Shepard.getAll(identifiers: shepardIdentifiers, with: manager).forEach {
-			var s = $0; s.pendingCloudChanges = nil; _ = s.save(with: manager)
-		}
+        Shepard.getAll(identifiers: shepardIdentifiers, with: manager2).forEach {
+            var s = $0; s.pendingCloudChanges = emptyChanges; _ = s.save(with: manager2)
+        }
 
-		log("confirmAllChangesToCloud decisionIdentifiers = \(decisionIdentifiers.count) " +
-			"eventIdentifiers = \(eventIdentifiers.count) itemIdentifiers = \(itemIdentifiers.count) " +
-			"mapIdentifiers = \(mapIdentifiers.count) missionIdentifiers = \(missionIdentifiers.count) " +
-			"noteIdentifiers = \(noteIdentifiers.count) personIdentifiers = \(personIdentifiers.count) " +
-			"gameIdentifiers = \(gameIdentifiers.count) shepardIdentifiers = \(shepardIdentifiers.count) " +
-			"deletedRecordIds = \(deletedRecordIds.count)")
+        log("confirmAllChangesToCloud decisionIdentifiers = \(decisionIdentifiers.count) " +
+            "eventIdentifiers = \(eventIdentifiers.count) itemIdentifiers = \(itemIdentifiers.count) " +
+            "mapIdentifiers = \(mapIdentifiers.count) missionIdentifiers = \(missionIdentifiers.count) " +
+            "noteIdentifiers = \(noteIdentifiers.count) personIdentifiers = \(personIdentifiers.count) " +
+            "gameIdentifiers = \(gameIdentifiers.count) shepardIdentifiers = \(shepardIdentifiers.count) " +
+            "deletedRecordIds = \(deletedRecordIds.count)")
 
-		_ = DeletedRow.deleteAll(identifiers: deletedRecordIds.map { $0.recordName }, with: manager)
+        _ = DeletedRow.deleteAll(identifiers: deletedRecordIds.map { $0.recordName }, with: manager2)
 
 		return isConfirmed
 	}
@@ -322,16 +326,17 @@ extension GamesDataBackup {
 
 		var isDeleted = true
 		let manager = CoreDataManager.current
+let manager2 = CoreDataManager2.current
 
-		isDeleted = isDeleted && Decision.deleteAll(with: manager)
-		isDeleted = isDeleted && Event.deleteAll(with: manager)
-		isDeleted = isDeleted && Item.deleteAll(with: manager)
-		isDeleted = isDeleted && Map.deleteAll(with: manager)
-		isDeleted = isDeleted && Mission.deleteAll(with: manager)
-		isDeleted = isDeleted && Note.deleteAll(with: manager)
-		isDeleted = isDeleted && Person.deleteAll(with: manager)
-		isDeleted = isDeleted && GameSequence.deleteAll(with: manager)
-		isDeleted = isDeleted && Shepard.deleteAll(with: manager)
+        isDeleted = isDeleted && Decision.deleteAll(with: manager)
+        isDeleted = isDeleted && Event.deleteAll(with: manager2)
+        isDeleted = isDeleted && Item.deleteAll(with: manager)
+        isDeleted = isDeleted && Map.deleteAll(with: manager)
+        isDeleted = isDeleted && Mission.deleteAll(with: manager)
+        isDeleted = isDeleted && Note.deleteAll(with: manager)
+        isDeleted = isDeleted && Person.deleteAll(with: manager)
+        isDeleted = isDeleted && GameSequence.deleteAll(with: manager2)
+        isDeleted = isDeleted && Shepard.deleteAll(with: manager2)
 
 		return isDeleted
 	}
@@ -341,9 +346,10 @@ extension GamesDataBackup {
 		log("deleteAllPendingCloudData")
 		// we are ignoring the extra pendingData for now. It isn't THAT much extra overhead
 
-		let manager = CoreDataManager.current
+//        let manager = CoreDataManager.current
+let gameManager = CoreDataManager2.current
 
-		return DeletedRow.deleteAll(with: manager)
+		return DeletedRow.deleteAll(with: gameManager)
 	}
 }
 

@@ -27,7 +27,7 @@ final class GameSequenceTests: MEGameTrackerTests {
 	let gameWithShepardJson = "{\"createdDate\" : \"2017-02-26 08:13:28\",\"lastPlayedShepard\" : \"BC0D3009-3385-4132-851A-DF472CBF9EFD\",\"modifiedDate\" : \"2017-02-26 08:17:50\",\"uuid\" : \"7BF05BF6-386A-4429-BC18-2A60F2D29519\"}"
 
 	/// The uuid of the two identical games above.
-	let femShepGameUuid = "7BF05BF6-386A-4429-BC18-2A60F2D29519"
+	let femShepGameUuid = UUID(uuidString: "7BF05BF6-386A-4429-BC18-2A60F2D29519")!
 
 	/// Game 1 Shepard attached to game sequence above.
 	let femShep1Json = "{\"uuid\" : \"BC0D3009-3385-4132-851A-DF472CBF9EFD\",\"gameVersion\" : \"1\",\"paragon\" : 0,\"createdDate\" : \"2017-02-15 07:40:32\",\"level\" : 1,\"gameSequenceUuid\" : \"7BF05BF6-386A-4429-BC18-2A60F2D29519\",\"reputation\" : \"Sole Survivor\",\"renegade\" : 0,\"modifiedDate\" : \"2017-02-23 07:13:39\",\"origin\" : \"Earthborn\",\"appearance\" : \"XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X\",\"class\" : \"Soldier\",\"gender\" : \"F\",\"name\" : \"Xoe\"}"
@@ -64,23 +64,24 @@ final class GameSequenceTests: MEGameTrackerTests {
 		}
 
 		// Test loading a game sequence with no shepard saved
-		let game1 = GameSequence.get(uuid: "7BF05BF6-386A-4429-BC18-2A60F2D29518")
-		XCTAssert(game1?.uuid == "7BF05BF6-386A-4429-BC18-2A60F2D29518", "Failed to load by id")
+        let uuid = UUID(uuidString: "7BF05BF6-386A-4429-BC18-2A60F2D29518")!
+		let game1 = GameSequence.get(uuid: uuid)
+		XCTAssert(game1?.uuid == uuid, "Failed to load by id")
 		XCTAssert(game1?.getAllShepards().count == 1, "Incorrect initial game shepard count")
-		XCTAssert(game1?.shepard?.gameVersion == .game1, "Incorrect initial game shepard version")
-		XCTAssert(game1?.shepard?.gender == .male, "Incorrect initial game shepard gender")
+        XCTAssert(game1?.shepard?.gameVersion == .game1, "Incorrect initial game shepard version")
+        XCTAssert(game1?.shepard?.gender == .male, "Incorrect initial game shepard gender")
 
-		// more setup
-		_ = create(Shepard.self, from: femShep1Json)
-		_ = create(Shepard.self, from: femShep2Json)
-		_ = create(Shepard.self, from: broShep3Json)
+        // more setup
+        _ = create(Shepard.self, from: femShep1Json)
+        _ = create(Shepard.self, from: femShep2Json)
+        _ = create(Shepard.self, from: broShep3Json)
 
-		// Test loading a game sequence with shepards
-		_ = create(GameSequence.self, from: gameWithShepardJson)
-		let game2 = GameSequence.get(uuid: femShepGameUuid)
-		XCTAssert(game2?.uuid == femShepGameUuid, "Failed to load by id")
-		XCTAssert(game2?.getAllShepards().count == 2, "Incorrect game shepard count")
-		XCTAssert(game2?.shepard?.fullName == "Xoe Shepard", "Incorrect game shepard")
+        // Test loading a game sequence with shepards
+        _ = create(GameSequence.self, from: gameWithShepardJson)
+        let game2 = GameSequence.get(uuid: femShepGameUuid)
+        XCTAssert(game2?.uuid == femShepGameUuid, "Failed to load by id")
+        XCTAssert(game2?.getAllShepards().count == 2, "Incorrect game shepard count")
+        XCTAssert(game2?.shepard?.fullName == "Xoe Shepard", "Incorrect game shepard")
 	}
 
 	/// Test GameSequence get last played shepard
@@ -107,7 +108,8 @@ final class GameSequenceTests: MEGameTrackerTests {
 		_ = create(GameSequence.self, from: gameNoShepardJson)
 		_ = create(GameSequence.self, from: gameNoShepardLaterDateJson)
 		let game = GameSequence.lastPlayed()
-		XCTAssert(game?.uuid == "7BF05BF6-386A-4429-BC18-2A60F2D29517", "Incorrect last played game")
+        let uuid = UUID(uuidString: "7BF05BF6-386A-4429-BC18-2A60F2D29517")!
+		XCTAssert(game?.uuid == uuid, "Incorrect last played game")
 	}
 
 	/// Test GameSequence getAll methods.
@@ -142,6 +144,7 @@ final class GameSequenceTests: MEGameTrackerTests {
 		XCTAssert(game?.shepard?.gameVersion == .game1, "Incorrect initial game shepard")
 		game?.change(gameVersion: .game2)
 		XCTAssert(game?.shepard?.gameVersion == .game2, "Failed to change game version")
-		XCTAssert(game?.shepard?.uuid == "BC0D3009-3385-4132-851A-DF472CBF9EFE", "Incorrect game shepard")
+        let uuid = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFE")!
+		XCTAssert(game?.shepard?.uuid == uuid, "Incorrect game shepard")
 	}
 }

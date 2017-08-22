@@ -8,21 +8,29 @@
 
 import Foundation
 
-public struct Event {
+public struct Event: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case gameSequenceUuid
+        case type
+        case isTriggered
+    }
+
 // MARK: Constants
 
 // MARK: Properties
 	public var generalData: DataEvent
 
-	public fileprivate(set) var id: String
+	public private(set) var id: String
 	public var type = EventType.unknown
 
 	/// Not yet loaded from database.
-	public var isFaulted: Bool
+	public var isFaulted: Bool = false
 
 	/// (GameModifying, GameRowStorable Protocol) 
 	/// This value's game identifier.
-	public var gameSequenceUuid: String?
+	public var gameSequenceUuid: UUID?
 	/// (DateModifiable Protocol)  
 	/// Date when value was created.
 	public var createdDate = Date()
@@ -34,7 +42,7 @@ public struct Event {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+    public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
@@ -48,7 +56,7 @@ public struct Event {
 	/// transient property used for tracking purposes
 	public var inItemId: String?
 
-	public internal(set) var isTriggered = false
+	public private(set) var isTriggered = false
 
 // MARK: Computed Properties
 
@@ -97,7 +105,7 @@ public struct Event {
 		}
 	}
 
-	fileprivate var isUnavailableInCurrentConfig: Bool {
+	private var isUnavailableInCurrentConfig: Bool {
 		if type == .requiresConfig {
 			switch id {
 				case "Origin Earthborn": return App.current.game?.shepard?.origin != .earthborn
@@ -109,7 +117,7 @@ public struct Event {
 		return false
 	}
 
-	fileprivate func isUnavailableInGame(_ gameVersion: GameVersion) -> Bool {
+	private func isUnavailableInGame(_ gameVersion: GameVersion) -> Bool {
 		if type == .unavailableInGame {
 			switch id {
 				case "Game1": return gameVersion == .game1
@@ -136,19 +144,13 @@ public struct Event {
 
 	public init(
 		id: String,
-		gameSequenceUuid: String? = App.current.game?.uuid,
-		generalData: DataEvent,
-		data: SerializableData? = nil
+		gameSequenceUuid: UUID? = App.current.game?.uuid,
+		generalData: DataEvent
 	) {
 		self.id = id
-		self.generalData = generalData
 		self.gameSequenceUuid = gameSequenceUuid
-		self.isFaulted = false
-		if let data = data {
-			setData(data)
-		} else {
-			setGeneralData()
-		}
+        self.generalData = generalData  // required property, must be set here
+		setGeneralData()
 	}
 
 	public mutating func setGeneralData() {
@@ -156,7 +158,33 @@ public struct Event {
 			isTriggered = dependentOn.isTriggered
 		}
 	}
+    public mutating func setGeneralData(_ generalData: DataEvent) {
+        self.generalData = generalData
+        setGeneralData()
+    }
 
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        type = (try container.decode(EventType.self, forKey: .type))
+        gameSequenceUuid = try container.decode(UUID.self, forKey: .gameSequenceUuid)
+        generalData = DataEvent(id: id) // faulted for now
+        isTriggered = try container.decodeIfPresent(Bool.self, forKey: .isTriggered) ?? isTriggered
+        try unserializeDateModifiableData(decoder: decoder)
+        try unserializeGameModifyingData(decoder: decoder)
+        try unserializeLocalCloudData(decoder: decoder)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(gameSequenceUuid, forKey: .gameSequenceUuid)
+        try container.encode(type, forKey: .type)
+        try container.encode(isTriggered, forKey: .isTriggered)
+        try serializeDateModifiableData(encoder: encoder)
+        try serializeGameModifyingData(encoder: encoder)
+        try serializeLocalCloudData(encoder: encoder)
+    }
 }
 
 // MARK: Convenience Initialization
@@ -166,8 +194,8 @@ extension Event {
 	private init(id: String, type: EventType) {
 		self.id = id
 		self.type = type
-		self.generalData = DataEvent(id: id)
 		self.isFaulted = true
+        self.generalData = DataEvent(id: id) // faulted for now
 		setGeneralData()
 	}
 
@@ -175,7 +203,6 @@ extension Event {
 	public static func faulted(id: String, type: EventType) -> Event {
 		return Event(id: id, type: type)
 	}
-
 }
 
 // MARK: Data Change Actions
@@ -316,7 +343,7 @@ extension Event {
 	public static func getDummy(json: String? = nil) -> Event? {
 		// swiftlint:disable line_length
 		let json = json ?? "{\"id\":\"1.1\",\"gameVersion\":\"1\",\"name\":\"Unlocked Normandy\",\"description\":\"Dummy Event Description.\"}"
-		if var baseEvent = DataEvent(serializedString: json) {
+        if var baseEvent = try? CoreDataManager2.current.decoder.decode(DataEvent.self, from: json.data(using: .utf8)!) {
 			baseEvent.isDummyData = true
 			let event = Event(id: "1", generalData: baseEvent)
 			return event
@@ -326,57 +353,58 @@ extension Event {
 	}
 }
 
-// MARK: SerializedDataStorable
-extension Event: SerializedDataStorable {
-
-	public func getData() -> SerializableData {
-		var list: [String: SerializedDataStorable?] = [:]
-		list["id"] = id
-		list["isTriggered"] = isTriggered
-		list = serializeDateModifiableData(list: list)
-		list = serializeGameModifyingData(list: list)
-		list = serializeLocalCloudData(list: list)
-		return SerializableData.safeInit(list)
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension Event: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data, let id = data["id"]?.string,
-			  let dataEvent = DataEvent.get(id: id),
-			  let gameSequenceUuid = data["gameSequenceUuid"]?.string
-		else {
-			return nil
-		}
-
-		self.init(id: id, gameSequenceUuid: gameSequenceUuid, generalData: dataEvent, data: data)
-	}
-
-	public mutating func setData(_ data: SerializableData) {
-		id = data["id"]?.string ?? id
-		if generalData.id != id {
-			generalData = DataEvent.get(id: id) ?? generalData
-		}
-
-		unserializeDateModifiableData(data: data)
-		unserializeGameModifyingData(data: data)
-		unserializeLocalCloudData(data: data)
-
-		isTriggered = data["isTriggered"]?.bool ?? isTriggered
-
-		setGeneralData() // overrides isTriggered in this instance
-	}
-
-}
+//// MARK: SerializedDataStorable
+//extension Event: SerializedDataStorable {
+//
+//    public func getData() -> SerializableData {
+//        var list: [String: SerializedDataStorable?] = [:]
+//        list["id"] = id
+//        list["isTriggered"] = isTriggered
+////        list = serializeDateModifiableData(list: list)
+////        list = serializeGameModifyingData(list: list)
+////        list = serializeLocalCloudData(list: list)
+//        return SerializableData.safeInit(list)
+//    }
+//
+//}
+//
+//// MARK: SerializedDataRetrievable
+//extension Event: SerializedDataRetrievable {
+//
+//    public init?(data: SerializableData?) {
+//        guard let data = data, let id = data["id"]?.string,
+//              let dataEvent = DataEvent.get(id: id),
+//              let uuidString = data["gameSequenceUuid"]?.string,
+//              let gameSequenceUuid = UUID(uuidString: uuidString)
+//        else {
+//            return nil
+//        }
+//
+//        self.init(id: id, gameSequenceUuid: gameSequenceUuid, generalData: dataEvent, data: data)
+//    }
+//
+//    public mutating func setData(_ data: SerializableData) {
+//        id = data["id"]?.string ?? id
+//        if generalData.id != id {
+//            generalData = DataEvent.get(id: id) ?? generalData
+//        }
+//
+////        unserializeDateModifiableData(data: data)
+////        unserializeGameModifyingData(data: data)
+////        unserializeLocalCloudData(data: data)
+//
+//        isTriggered = data["isTriggered"]?.bool ?? isTriggered
+//
+//        setGeneralData() // overrides isTriggered in this instance
+//    }
+//
+//}
 
 // MARK: DateModifiable
 extension Event: DateModifiable {}
 
 // MARK: GameModifying
-extension Event: GameModifying {}
+extension Event: GameModifying2 {}
 
 // MARK: Equatable
 extension Event: Equatable {

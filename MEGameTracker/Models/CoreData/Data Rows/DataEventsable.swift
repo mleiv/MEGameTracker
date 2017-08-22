@@ -26,14 +26,13 @@ extension DataEventsable {
 	) -> NSSet {
 		let ids: [String] = (rawEventData?.array ?? []).map({ $0["id"]?.string }).filter({ $0 != nil }).map({ $0! })
 		guard !ids.isEmpty else { return NSSet() }
-		let manager = type(of: defaultManager).init(context: context)
-		let directEvents = DataEvent.getAll(with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(%K in %@)", #keyPath(DataEvents.id), ids)
-		}
+//        let manager = type(of: defaultManager).init(context: context) // must run in same context
+        let manager = CoreDataManager2.init(context: context) // must run in same context
+		let directEvents = DataEvent.getAll(ids: ids, with: manager)
 		let relatedEventIds = ids + directEvents.flatMap({ $0.dependentOn?.events ?? [] }) // yes Flat Map
-		let allEvents: [DataEvents] = manager.getAll { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(%K in %@)", #keyPath(DataEvents.id), relatedEventIds)
-		}
+        let allEvents: [DataEvents] = manager.getAll { fetchRequest in
+            fetchRequest.predicate = NSPredicate(format: "(%K in %@)", #keyPath(DataEvents.id), relatedEventIds)
+        }
 		return NSSet(array: allEvents)
 	}
 }

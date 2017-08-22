@@ -15,32 +15,31 @@ extension GameSequence: CloudDataStorable {
 	/// (CloudDataStorable Protocol)
 	/// Set any additional fields, specific to the object in question, for a cloud kit object.
 	public func setAdditionalCloudFields(record: CKRecord) {
-		record.setValue(uuid as NSString, forKey: "id")
+		record.setValue(uuid.uuidString as NSString, forKey: "id")
 		if let shepard = self.shepard {
-			record.setValue(shepard.uuid as NSString, forKey: "lastPlayedShepard")
+			record.setValue(shepard.uuid.uuidString as NSString, forKey: "lastPlayedShepard")
 		}
 	}
 
 	/// (CloudDataStorable Protocol)
 	/// Takes one serialized cloud change and saves it.
 	public static func saveOneFromCloud(
-		changeSet: SerializableData,
-		with manager: SimpleSerializedCoreDataManageable?
+        changeRecord: CloudDataRecordChange,
+		with manager: CodableCoreDataManageable?
 	) -> Bool {
-		if let recordId = changeSet["recordId"]?.string,
-			let (_, uuid) = parseIdentifyingName(name: recordId) {
+        let recordId = changeRecord.recordId
+        if let (_, uuid) = parseIdentifyingName(name: recordId) {
 			var game = GameSequence.get(uuid: uuid) ?? GameSequence(uuid: uuid)
 			let pendingData = game.pendingCloudChanges
 			// apply cloud changes
-			game.setData(changeSet, isSkipLoadingShepard: true)
-			game.isSavedToCloud = true
-			if let lastPlayedShepardUuid = pendingData?["lastPlayedShepard"]?.string
-											?? changeSet["lastPlayedShepard"]?.string {
-				game.shepard = Shepard(uuid: lastPlayedShepardUuid, gameSequenceUuid: uuid)
-				// dummy copy, just to keep ref to shepardUuid
-			}
-			// don't reapply local changes
-			game.isSavedToCloud = true
+            game.applyRemoteChanges(changeRecord.changeSet)
+            game.isSavedToCloud = true
+            // reapply local changes
+            if !game.pendingCloudChanges.isEmpty {
+                game.applyRemoteChanges(pendingData)
+                game.isSavedToCloud = false
+            }
+            // save locally
 			if game.save(isCascadeChanges: .none, isAllowDelay: false, with: manager) {
 				print("Saved from cloud \(recordId)")
 				return true
@@ -62,9 +61,9 @@ extension GameSequence: CloudDataStorable {
 	/// Create a recordName for any cloud kit object.
 	public static func getIdentifyingName(
 		id: String,
-		gameSequenceUuid: String?
+		gameSequenceUuid: UUID?
 	) -> String {
-		return "\(gameSequenceUuid ?? "")||\(id)"
+		return "\(gameSequenceUuid?.uuidString ?? "")||\(id)"
 	}
 
 	/// Convenience version - get the static getIdentifyingName for easy instance reference.
@@ -76,20 +75,26 @@ extension GameSequence: CloudDataStorable {
 	/// Parses a cloud identifier into the parts needed to retrieve it from core data.
 	public static func parseIdentifyingName(
 		name: String
-	) -> ((id: String, gameSequenceUuid: String)?) {
+	) -> ((id: String, gameSequenceUuid: UUID)?) {
 		let pieces = name.components(separatedBy: "||")
 		guard pieces.count == 2 else { return nil }
-		return (id: pieces[1], gameSequenceUuid: pieces[0])
+        if let gameSequenceUuid = UUID(uuidString: pieces[0]) {
+            return (id: pieces[1], gameSequenceUuid: gameSequenceUuid)
+        } else {
+            defaultManager.log("No Game UUID found for: \(name)")
+            return nil
+        }
 	}
 
 	/// Used for parsing from records
 	public static func getAll(
 		identifiers: [String],
-		with manager: SimpleSerializedCoreDataManageable?
+		with manager: CodableCoreDataManageable?
 	) -> [GameSequence] {
         return identifiers.map { (identifier: String) in
-            if let (id, _) = parseIdentifyingName(name: identifier) {
-                return get(uuid: id, with: manager)
+            if let (id, _) = parseIdentifyingName(name: identifier),
+                let uuid = UUID(uuidString: id) {
+                return get(uuid: uuid, with: manager)
             }
             return nil
         }.filter({ $0 != nil }).map({ $0! })

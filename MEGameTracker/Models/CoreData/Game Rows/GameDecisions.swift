@@ -25,9 +25,9 @@ extension Decision: GameRowStorable {
 		coreItem: EntityType
 	) {
 		// only save searchable columns
-		setDateModifiableColumnsOnSave(coreItem: coreItem)
+//        setDateModifiableColumnsOnSave(coreItem: coreItem) //TODO
 		coreItem.id = id
-		coreItem.gameSequenceUuid = gameSequenceUuid
+		coreItem.gameSequenceUuid = gameSequenceUuid?.uuidString
 		coreItem.isSelected = isSelected ? 1 : 0
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 		coreItem.dataParent = generalData.entity(context: coreItem.managedObjectContext)

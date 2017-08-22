@@ -22,7 +22,7 @@ public struct Map: MapLocationable, Eventsable {
 
 	/// (GameModifying, GameRowStorable Protocol) 
 	/// This value's game identifier.
-	public var gameSequenceUuid: String?
+	public var gameSequenceUuid: UUID?
 	/// (DateModifiable Protocol)  
 	/// Date when value was created.
 	public var createdDate = Date()
@@ -34,7 +34,7 @@ public struct Map: MapLocationable, Eventsable {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+    public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
@@ -152,7 +152,7 @@ public struct Map: MapLocationable, Eventsable {
 
 	public init(
 		id: String,
-		gameSequenceUuid: String? = App.current.game?.uuid,
+		gameSequenceUuid: UUID? = App.current.game?.uuid,
 		gameVersion: GameVersion? = nil,
 		generalData: DataMap,
 		events: [Event] = [],
@@ -343,9 +343,9 @@ extension Map: SerializedDataStorable {
 		var list: [String: SerializedDataStorable?] = [:]
 		list["id"] = id
 		list["isExplored"] = gameValuesForIsExplored()
-		list = serializeDateModifiableData(list: list)
-		list = serializeGameModifyingData(list: list)
-		list = serializeLocalCloudData(list: list)
+//        list = serializeDateModifiableData(list: list)
+//        list = serializeGameModifyingData(list: list)
+//        list = serializeLocalCloudData(list: list)
 		return SerializableData.safeInit(list)
 	}
 
@@ -366,7 +366,8 @@ extension Map: SerializedDataRetrievable {
 		let gameVersion = GameVersion(rawValue: data?["gameVersion"]?.string ?? "0") ?? .game1
 		guard let data = data, let id = data["id"]?.string,
 			  let dataMap = DataMap.get(id: id, gameVersion: gameVersion),
-			  let gameSequenceUuid = data["gameSequenceUuid"]?.string
+			  let uuidString = data["gameSequenceUuid"]?.string,
+              let gameSequenceUuid = UUID(uuidString: uuidString)
 		else {
 			return nil
 		}
@@ -392,9 +393,9 @@ extension Map: SerializedDataRetrievable {
 			_events = nil
 		}
 
-		unserializeDateModifiableData(data: data)
-		unserializeGameModifyingData(data: data)
-		unserializeLocalCloudData(data: data)
+//        unserializeDateModifiableData(data: data)
+//        unserializeGameModifyingData(data: data)
+//        unserializeLocalCloudData(data: data)
 
 		isExploredPerGameVersion = gameValuesFromIsExplored(data: data["isExplored"]?.string ?? "")
 	}

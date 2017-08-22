@@ -11,7 +11,7 @@ import Foundation
 extension Shepard {
 
 	/// Game options for Shepard's gender.
-	public enum Gender: String {
+	public enum Gender: String, Codable {
 		case male = "M"
 		case female = "F"
 
