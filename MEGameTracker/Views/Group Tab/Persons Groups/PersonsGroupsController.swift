@@ -30,7 +30,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 		fetchData()
 		if !isLoaded {
 			setupTabs()
-			setTabTitles(PersonType.list().map { $0.headingValue })
+			setTabTitles(PersonType.categories().map { $0.headingValue })
 		} else {
 			setAllControllerData()
 		}
@@ -63,7 +63,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 	func setControllerData(controller: UIViewController?, forTab tabName: String) {
 		guard let controller = controller as? PersonsController else { return }
 		if let tabIndex = tabNames.index(of: tabName) {
-			let type = PersonType.list()[tabIndex]
+			let type = PersonType.categories()[tabIndex]
 			controller.persons = persons[type] ?? []
 		} else {
 			controller.persons = []
@@ -83,7 +83,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 		if count != personsCounts[type] {
 			personsCounts[type] = count
 			tabTitles = []
-			for type in PersonType.list() {
+			for type in PersonType.categories() {
 				let name = type.headingValue
 				tabTitles.append("\(name) (\(personsCounts[type] ?? 0))")
 			}
@@ -142,7 +142,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 	@IBOutlet weak public var tabs: UIHeaderTabs!
 	@IBOutlet weak public var tabsContentWrapper: UIView!
 
-	public var tabNames: [String] = PersonType.list().map { $0.headingValue }
+	public var tabNames: [String] = PersonType.categories().map { $0.headingValue }
 	public func tabControllersInitializer(tabName: String) -> UIViewController? {
 		let bundle = Bundle(for: type(of: self))
 		let controller = UIStoryboard(name: "Persons", bundle: bundle)

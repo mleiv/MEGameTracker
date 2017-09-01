@@ -10,14 +10,14 @@ import Foundation
 
 /// Make your components enum adhere to this protocol
 protocol LoadStatusComponent: Hashable {
-	static func list() -> [Self]
+	static func all() -> [Self]
 }
 
 /// Example:
 ///
 ///	 enum MyEnum: LoadStatusComponent {
 ///		 case test
-///		 func list() -> [MyEnum] { return [test] }
+///		 func all() -> [MyEnum] { return [test] }
 ///	 }
 ///	 var status = LoadStatus<MyEnum>()
 ///	 func reloadPage() {
@@ -39,7 +39,7 @@ struct LoadStatus<Component: LoadStatusComponent> {
 	}
 	mutating func reset() {
 		components = [:]
-		for key in Component.list() {
+		for key in Component.all() {
 			components[key] = false
 		}
 	}

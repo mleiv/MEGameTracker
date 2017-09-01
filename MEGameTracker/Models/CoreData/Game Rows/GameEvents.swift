@@ -9,9 +9,9 @@
 import Foundation
 import CoreData
 
-extension Event: GameRowStorable2 {
+extension Event: GameRowStorable {
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = GameEvents
 
@@ -116,24 +116,24 @@ extension Event {
 	}
 
 	/// Get all ids of a given type related to the event specified.
-	public static func getAffectedIds<T: SimpleSerializedCoreDataStorable>(
+	public static func getAffectedIds<T: CodableCoreDataStorable>(
 		ofType type: T.Type,
 		relatedToEvent event: Event,
 		with manager: CodableCoreDataManageable? = nil
 	) -> [String] {
-		let manager = manager ?? defaultManager
-		var result: [String] = []
-		autoreleasepool {
-			result = manager.getAllTransformed(
-				transformEntity: { $0.value(forKey: "id") as? String },
-				alterFetchRequest: { (fetchRequest: NSFetchRequest<T.EntityType>) in
-					fetchRequest.predicate = NSPredicate(
-						format: "(ANY relatedEvents.id == %@)",
-						event.id
-					)
-				}
-			)
-		}
-		return result
-	}
+        let manager = manager ?? defaultManager
+        var result: [String] = []
+        autoreleasepool {
+            result = manager.getAllTransformed(
+                transformEntity: { $0.value(forKey: "id") as? String },
+                alterFetchRequest: { (fetchRequest: NSFetchRequest<T.EntityType>) in
+                    fetchRequest.predicate = NSPredicate(
+                        format: "(ANY relatedEvents.id == %@)",
+                        event.id
+                    )
+                }
+            )
+        }
+        return result
+    }
 }

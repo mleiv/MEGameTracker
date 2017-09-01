@@ -25,7 +25,7 @@ public protocol SimpleCoreDataManageable {
 	/// This is managed for you - just declare it.
 	var persistentContainer: NSPersistentContainer { get }
 	/// Override the default context - useful when doing save/fetch in background.
-	var specificContext: NSManagedObjectContext? { get }
+	var specificContext: NSManagedObjectContext? { get set }
 	/// Implement this using the sample below, because protocols can't do this.
 	init(storeName: String?, context: NSManagedObjectContext?, isConfineToMemoryStore: Bool)
 
@@ -99,6 +99,12 @@ extension SimpleCoreDataManageable {
 	}
 	public init(context: NSManagedObjectContext?) {
 		self.init(storeName: nil, context: context, isConfineToMemoryStore: false)
+	}
+
+	public func copyWithContext(_ context: NSManagedObjectContext?) -> Self {
+        var copy = self
+        copy.specificContext = context
+        return copy
 	}
 
 //	// implement the following:

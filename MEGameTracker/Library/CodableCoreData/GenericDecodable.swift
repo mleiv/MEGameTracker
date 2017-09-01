@@ -19,4 +19,3 @@ struct GenericDecodable: Decodable {
         self.decoder = decoder
     }
 }
-

@@ -8,18 +8,25 @@
 
 import UIKit
 
-public struct DataDecision {
+public struct DataDecision: Codable {
 
-	public typealias DependsOnDecisionValueType = (id: String, value: Bool)
+    enum CodingKeys: String, CodingKey {
+        case id
+        case gameVersion
+        case name
+        case description
+        case loveInterestId
+        case sortIndex
+        case blocksDecisionIds
+        case dependsOnDecisions
+    }
 
 // MARK: Constants
 
 // MARK: Properties
-
-	internal var rawGeneralData = SerializableData() // we almost never change data row content, so just save raw data
-
-	public fileprivate(set) var id: String
-	public fileprivate(set) var gameVersion: GameVersion
+    public var rawData: Data?
+	public private(set) var id: String
+	public private(set) var gameVersion: GameVersion
 	public var name: String = "Unknown"
 	public var description: String?
 
@@ -32,53 +39,63 @@ public struct DataDecision {
 	public var isDummyData = false
 
 // MARK: Initialization
-	public init(id: String, gameVersion: GameVersion, data: SerializableData) {
-		self.id = id
-		self.gameVersion = gameVersion
-		self.rawGeneralData = data
+    public init(id: String) {
+        self.id = id
+        self.gameVersion = .game1
+        isDummyData = true
+    }
 
-		setData(data)
-	}
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        gameVersion = try container.decode(GameVersion.self, forKey: .gameVersion)
+        name = try container.decode(String.self, forKey: .name)
+        description = try container.decodeIfPresent(String.self, forKey: .description)
+        loveInterestId = try container.decodeIfPresent(String.self, forKey: .loveInterestId)
+        sortIndex = try container.decodeIfPresent(Int.self, forKey: .sortIndex) ?? sortIndex
+        blocksDecisionIds = try container.decodeIfPresent([String].self, forKey: .blocksDecisionIds) ?? blocksDecisionIds
+        dependsOnDecisions = try container.decodeIfPresent([DependsOnDecisionValueType].self, forKey: .dependsOnDecisions) ?? dependsOnDecisions
+    }
 }
 
-// MARK: SerializedDataStorable
-extension DataDecision: SerializedDataStorable {
-
-	public func getData() -> SerializableData {
-		return rawGeneralData
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension DataDecision: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data, let id = data["id"]?.string,
-			  let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0")
-		else { return nil }
-
-		self.init(id: id, gameVersion: gameVersion, data: data)
-	}
-
-	public mutating func setData(_ data: SerializableData) {
-		id = data["id"]?.string ?? id
-		gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") ?? gameVersion
-		name = data["name"]?.string ?? name
-
-		description = data["description"]?.string
-		loveInterestId = data["loveInterestId"]?.string
-		sortIndex = data["sortIndex"]?.int ?? 0
-
-		blocksDecisionIds = (data["blocksDecisionIds"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
-		dependsOnDecisions = (data["dependsOnDecisions"]?.array ?? []).map {
-			if let id = $0["id"]?.string, let value = $0["value"]?.bool {
-				return (id: id, value: value)
-			}
-			return nil
-		}.filter({ $0 != nil }).map({ $0! })
-	}
-}
+//// MARK: SerializedDataStorable
+//extension DataDecision: SerializedDataStorable {
+//
+//    public func getData() -> SerializableData {
+//        return rawGeneralData
+//    }
+//
+//}
+//
+//// MARK: SerializedDataRetrievable
+//extension DataDecision: SerializedDataRetrievable {
+//
+//    public init?(data: SerializableData?) {
+//        guard let data = data, let id = data["id"]?.string,
+//              let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0")
+//        else { return nil }
+//
+//        self.init(id: id, gameVersion: gameVersion, data: data)
+//    }
+//
+//    public mutating func setData(_ data: SerializableData) {
+//        id = data["id"]?.string ?? id
+//        gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") ?? gameVersion
+//        name = data["name"]?.string ?? name
+//
+//        description = data["description"]?.string
+//        loveInterestId = data["loveInterestId"]?.string
+//        sortIndex = data["sortIndex"]?.int ?? 0
+//
+//        blocksDecisionIds = (data["blocksDecisionIds"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
+//        dependsOnDecisions = (data["dependsOnDecisions"]?.array ?? []).map {
+//            if let id = $0["id"]?.string, let value = $0["value"]?.bool {
+//                return (id: id, value: value)
+//            }
+//            return nil
+//        }.filter({ $0 != nil }).map({ $0! })
+//    }
+//}
 
 // MARK: Equatable
 extension DataDecision: Equatable {

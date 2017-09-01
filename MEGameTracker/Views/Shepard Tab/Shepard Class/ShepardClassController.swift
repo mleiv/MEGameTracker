@@ -24,7 +24,7 @@ final public class ShepardClassController: UIViewController, SideEffectsable {
 	@IBOutlet weak var vanguardSideEffectsView: SideEffectsView?
 
 	public var sideEffects: [String]?
-	fileprivate var shepard: Shepard?
+	private var shepard: Shepard?
 
 	override public func viewDidLoad() {
 		super.viewDidLoad()

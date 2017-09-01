@@ -16,7 +16,7 @@ extension MapLocation {
 		id: String,
 		type: MapLocationType,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> MapLocationable? {
 		switch type {
 		case .map:
@@ -32,7 +32,7 @@ extension MapLocation {
 	public static func getAll(
 		inMapId: String,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
 		return getAllMaps(inMapId: inMapId, gameVersion: gameVersion, with: manager)
 			+ getAllMissions(inMapId: inMapId, gameVersion: gameVersion, with: manager)
@@ -43,7 +43,7 @@ extension MapLocation {
 	public static func getAll(
 		inMissionId: String,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
 		return getAllMaps(inMissionId: inMissionId, gameVersion: gameVersion, with: manager)
 			+ getAllMissions(inMissionId: inMissionId, with: manager)
@@ -54,7 +54,7 @@ extension MapLocation {
 	public static func getAllMaps(
 		inMapId: String,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
 		return Map.getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(inMapId = %@)", inMapId)
@@ -65,7 +65,7 @@ extension MapLocation {
 	public static func getAllMaps(
 		inMissionId: String,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
 		return Map.getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(inMissionId = %@)", inMissionId)
@@ -76,7 +76,7 @@ extension MapLocation {
 	public static func getAllMissions(
 		inMapId: String,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
 		return Mission.getAllFromData(with: manager) { fetchRequest in
 			if let gameVersion = gameVersion {
@@ -96,7 +96,7 @@ extension MapLocation {
 	/// Get all missions under a given mission.
 	public static func getAllMissions(
 		inMissionId: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
 		return Mission.getAllFromData(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(inMissionId = %@)", inMissionId)
@@ -107,28 +107,28 @@ extension MapLocation {
 	public static func getAllItems(
 		inMapId: String,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
-		return Item.getAllFromData(with: manager) { fetchRequest in
-			if let gameVersion = gameVersion {
-				fetchRequest.predicate = NSPredicate(
-					format: "(inMapId = %@ AND gameVersion = %@)",
-					inMapId, gameVersion.stringValue
-				)
-			} else {
-				fetchRequest.predicate = NSPredicate(format: "(inMapId = %@)", inMapId)
-			}
-		}.filter({ !$0.isHidden }).map { $0 as MapLocationable }
+        return Item.getAllFromData(with: manager) { fetchRequest in
+            if let gameVersion = gameVersion {
+                fetchRequest.predicate = NSPredicate(
+                    format: "(inMapId = %@ AND gameVersion = %@)",
+                    inMapId, gameVersion.stringValue
+                )
+            } else {
+                fetchRequest.predicate = NSPredicate(format: "(inMapId = %@)", inMapId)
+            }
+        }.filter({ !$0.isHidden }).map { $0 as MapLocationable }
 	}
 
 	/// Get all items in a given mission.
 	public static func getAllItems(
 		inMissionId: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
-		return Item.getAllFromData(with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(inMissionId = %@)", inMissionId)
-		}.filter({ !$0.isHidden }).map { $0 as MapLocationable }
+        return Item.getAllFromData(with: manager) { fetchRequest in
+            fetchRequest.predicate = NSPredicate(format: "(inMissionId = %@)", inMissionId)
+        }.filter({ !$0.isHidden }).map { $0 as MapLocationable }
 	}
 
 	/// Get all maps matching a name in a specified game version limited by amount specified.
@@ -136,7 +136,7 @@ extension MapLocation {
 		likeName name: String,
 		limit: Int = App.current.searchMaxResults,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
 		return Map.getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -152,7 +152,7 @@ extension MapLocation {
 		likeName name: String,
 		limit: Int = App.current.searchMaxResults,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
 		return Mission.getAllFromData(with: manager) { fetchRequest in
 			if let gameVersion = gameVersion {
@@ -175,22 +175,22 @@ extension MapLocation {
 		likeName name: String,
 		limit: Int = App.current.searchMaxResults,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
-		return Item.getAllFromData(with: manager) { fetchRequest in
-			if let gameVersion = gameVersion {
-				fetchRequest.predicate = NSPredicate(
-					format: "(name CONTAINS[cd] %@ AND gameVersion = %@ AND isShowInList = true)",
-					name, gameVersion.stringValue
-				)
-			} else {
-				fetchRequest.predicate = NSPredicate(
-					format: "(name CONTAINS[cd] %@ AND isShowInList = true)",
-					name
-				)
-			}
-			fetchRequest.fetchLimit = limit
-		}.filter({ !$0.isHidden }).map { $0 as MapLocationable }
+        return Item.getAllFromData(with: manager) { fetchRequest in
+            if let gameVersion = gameVersion {
+                fetchRequest.predicate = NSPredicate(
+                    format: "(name CONTAINS[cd] %@ AND gameVersion = %@ AND isShowInList = true)",
+                    name, gameVersion.stringValue
+                )
+            } else {
+                fetchRequest.predicate = NSPredicate(
+                    format: "(name CONTAINS[cd] %@ AND isShowInList = true)",
+                    name
+                )
+            }
+            fetchRequest.fetchLimit = limit
+        }.filter({ !$0.isHidden }).map { $0 as MapLocationable }
 	}
 
 	/// Assemble all child locations of a set of locations.

@@ -39,7 +39,7 @@ extension DataPerson {
 	public static func get(
 		id: String,
 		gameVersion: GameVersion?,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> DataPerson? {
 		let one: DataPerson? = get(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -52,28 +52,26 @@ extension DataPerson {
 
 	public static func get(
 		gameVersion: GameVersion?,
-		with manager: SimpleSerializedCoreDataManageable? = nil,
+		with manager: CodableCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType>
 	) -> DataPerson? {
 		let preferredGameVersion = gameVersion ?? (App.current.game?.gameVersion ?? .game1)
-		var one: DataPerson? = get(with: manager, alterFetchRequest: alterFetchRequest)
-		one?.change(gameVersion: preferredGameVersion)
-		return one
+		let one: DataPerson? = get(with: manager, alterFetchRequest: alterFetchRequest)
+		return one?.changed(gameVersion: preferredGameVersion)
 	}
 
 	public static func getAll(
 		gameVersion: GameVersion?,
-		with manager: SimpleSerializedCoreDataManageable? = nil,
+		with manager: CodableCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType>
 	) -> [DataPerson] {
 		let preferredGameVersion = gameVersion ?? (App.current.game?.gameVersion ?? .game1)
-		var all: [DataPerson] = getAll(with: manager, alterFetchRequest: alterFetchRequest)
-		for i in 0..<all.count { all[i].change(gameVersion: preferredGameVersion) }
-		return all
+		let all: [DataPerson] = getAll(with: manager, alterFetchRequest: alterFetchRequest)
+		return all.map { $0.changed(gameVersion: preferredGameVersion) }
 	}
 
 	public mutating func delete(
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		let manager = manager ?? defaultManager
 		var isDeleted = true

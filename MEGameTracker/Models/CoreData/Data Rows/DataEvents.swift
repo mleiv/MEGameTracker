@@ -9,13 +9,13 @@
 import Foundation
 import CoreData
 
-extension DataEvent: DataRowStorable2 {
+extension DataEvent: DataRowStorable {
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = DataEvents
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Sets core data values to match struct values (specific).
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType

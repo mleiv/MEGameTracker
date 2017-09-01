@@ -18,7 +18,7 @@ final public class ShepardReputationController: UIViewController, SideEffectsabl
 	@IBOutlet weak var soleSurvivorSideEffectsView: SideEffectsView?
 
 	public var sideEffects: [String]?
-	fileprivate var shepard: Shepard?
+	private var shepard: Shepard?
 
 	override public func viewDidLoad() {
 		super.viewDidLoad()

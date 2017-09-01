@@ -11,46 +11,43 @@ import Foundation
 /// Describes game properties for conforming objects.
 public protocol GameModifying {
 
-	/// This value's game identifier.
-	var gameSequenceUuid: UUID? { get set }
+    /// This value's game identifier.
+    var gameSequenceUuid: UUID? { get set }
 
-	/// Flag the game as having changed when this value changes.
-	func markGameChanged(with manager: SimpleSerializedCoreDataManageable?)
+    /// Flag the game as having changed when this value changes.
+    func markGameChanged(with manager: CodableCoreDataManageable?)
 }
-
 extension GameModifying {
+    /// (Protocol default)
+    /// Flag the game as having changed when this value changes.
+    public func markGameChanged(with manager: CodableCoreDataManageable?) {
+        guard !App.isInitializing else { return }
+        // don't trigger onChange event
+        App.current.game?.shepard?.touch()
+        _ = App.current.game?.shepard?.save(with: manager)
+    }
 
-	/// (Protocol default)
-	/// Flag the game as having changed when this value changes.
-	public func markGameChanged(with manager: SimpleSerializedCoreDataManageable?) {
-		guard !App.isInitializing else { return }
-let manager = CoreDataManager2.current
-		// don't trigger onChange event
-		App.current.game?.shepard?.touch()
-		_ = App.current.game?.shepard?.save(with: manager)
-	}
-
-	/// Convenience version of markGameChanged:manager (no parameters required).
-	public func markGameChanged() {
-		markGameChanged(with: nil)
-	}
+    /// Convenience version of markGameChanged:manager (no parameters required).
+    public func markGameChanged() {
+        markGameChanged(with: nil)
+    }
 }
 
 // MARK: Serializable Utilities
-extension GameModifying where Self: SerializedDataStorable, Self: SerializedDataRetrievable {
+extension GameModifying where Self: Codable {
+    /// Fetch GameSequence value from a Codable dictionary.
+    public mutating func unserializeGameModifyingData(decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: GameModifyingCodingKeys.self)
+        gameSequenceUuid = try container.decodeIfPresent(UUID.self, forKey: .gameSequenceUuid)
+    }
+    /// Store GameSequence value to a Codable dictionary.
+    public func serializeGameModifyingData(encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: GameModifyingCodingKeys.self)
+        try container.encode(gameSequenceUuid, forKey: .gameSequenceUuid)
+    }
+}
 
-	/// Save GameModifying values to a SerializedData dictionary.
-	public func serializeGameModifyingData(
-		list: [String: SerializedDataStorable?]
-	) -> [String: SerializedDataStorable?] {
-		var list = list
-		list["gameSequenceUuid"] = gameSequenceUuid?.uuidString
-		return list
-	}
-
-	/// Fetch GameModifying values from a SerializedData dictionary.
-	public mutating func unserializeGameModifyingData(data: SerializableData) {
-		let uuidString = data["gameSequenceUuid"]?.string ?? ""
-        gameSequenceUuid = UUID(uuidString: uuidString) ?? gameSequenceUuid
-	}
+/// Codable keys for objects adhering to DateModifiable
+public enum GameModifyingCodingKeys: String, CodingKey {
+    case gameSequenceUuid
 }

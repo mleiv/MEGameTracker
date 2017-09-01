@@ -62,11 +62,11 @@ final public class ConversationRewardsDetailController: UITableViewController {
 	}
 
 	func saveConversationRewardsChoice(id: String, isOn: Bool) {
-		guard var mission = mission else { return }
+		guard let mission = mission else { return }
 		if isOn {
-			mission.change(conversationRewardId: id, isSelected: true, isSave: true)
+			_ = mission.changed(conversationRewardId: id, isSelected: true, isSave: true)
 		} else {
-			mission.change(conversationRewardId: id, isSelected: false, isSave: true)
+			_ = mission.changed(conversationRewardId: id, isSelected: false, isSave: true)
 		}
 	}
 

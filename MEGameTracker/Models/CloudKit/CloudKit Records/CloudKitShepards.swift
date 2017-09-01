@@ -127,4 +127,3 @@ extension Shepard: CloudDataStorable {
         }.filter({ $0 != nil }).map({ $0! })
     }
 }
-

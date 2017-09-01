@@ -18,7 +18,7 @@ final public class ShepardOriginController: UIViewController, SideEffectsable {
 	@IBOutlet weak var colonistSideEffectsView: SideEffectsView?
 
 	public var sideEffects: [String]?
-	fileprivate var shepard: Shepard?
+	private var shepard: Shepard?
 
 	override public func viewDidLoad() {
 		super.viewDidLoad()

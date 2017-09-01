@@ -30,7 +30,7 @@ final public class MissionController: UIViewController,
 		case relatedLinks
 		case relatedMissions
 		case sideEffects
-		static func list() -> [MissionPageComponent] {
+		static func all() -> [MissionPageComponent] {
 			return [
 				.aliases,
 				.availability,
@@ -53,7 +53,7 @@ final public class MissionController: UIViewController,
 
 	public var mission: Mission? {
 		didSet {
-			// TODO: fix this, bad didSet
+			// TODO: fix this, I hate didSet
 			if oldValue != nil && oldValue != mission {
 				reloadDataOnChange()
 			}
@@ -250,7 +250,7 @@ extension MissionController {
 			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
 				?? "", toString: self.mission?.name ?? "").toggleStrikethrough(isCompleted)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
-				self.mission?.change(isCompleted: isCompleted, isSave: true)
+				_ = self.mission?.changed(isCompleted: isCompleted, isSave: true)
 				spinnerController?.stopSpinner(inView: self.view)
 			}
 		}

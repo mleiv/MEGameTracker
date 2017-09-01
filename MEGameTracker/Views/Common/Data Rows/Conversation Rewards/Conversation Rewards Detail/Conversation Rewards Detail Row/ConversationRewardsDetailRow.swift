@@ -14,16 +14,16 @@ final class ConversationRewardsDetailRow: UITableViewCell {
 // MARK: Constants
 
 // MARK: Outlets
-	@IBOutlet fileprivate weak var indentConstraint1: NSLayoutConstraint?
-	@IBOutlet fileprivate weak var commonContextLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var optionsStack: UIStackView?
+	@IBOutlet private weak var indentConstraint1: NSLayoutConstraint?
+	@IBOutlet private weak var commonContextLabel: MarkupLabel?
+	@IBOutlet private weak var optionsStack: UIStackView?
 
 // MARK: Properties
 	internal fileprivate(set) var conversationRewardsFlatData: ConversationRewards.FlatData?
-	fileprivate var parent: ConversationRewardsDetailController?
+	private var parent: ConversationRewardsDetailController?
 
 // MARK: Change Listeners And Change Status Flags
-	fileprivate var isDefined = false
+	private var isDefined = false
 
 // MARK: Lifecycle Events
 	public override func layoutSubviews() {
@@ -48,7 +48,7 @@ final class ConversationRewardsDetailRow: UITableViewCell {
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() {
+	private func setup() {
 		guard indentConstraint1 != nil else { return }
 
 		indentConstraint1?.constant = 0
@@ -75,12 +75,12 @@ final class ConversationRewardsDetailRow: UITableViewCell {
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		commonContextLabel?.text = ""
 	}
 
 // MARK: Supporting Functions
-	fileprivate func optionSelected(onButton: RadioButton?, id: String?) {
+	private func optionSelected(onButton: RadioButton?, id: String?) {
 		if let id = id {
 			for option in (conversationRewardsFlatData?.options ?? []) where id == option.id {
 				parent?.saveConversationRewardsChoice(id: id, isOn: onButton != nil)

@@ -223,7 +223,7 @@ extension MissionsController {
 // MARK: Listeners
 extension MissionsController {
 
-	fileprivate func startListeners() {
+	private func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		registerPreCacheListener()
 		// listen for gameVersion changes

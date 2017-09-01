@@ -97,7 +97,7 @@ final class DecisionTests: MEGameTrackerTests {
 
 		var decision = create(Decision.self, from: fistJson)
 		XCTAssert(decision?.isSelected == false, "Reported incorrect decision state (selected)")
-		decision?.change(isSelected: true, isSave: true)
+		decision = decision?.changed(isSelected: true, isSave: true)
 		let decision2 = Decision.get(id: "D1.Fist")
 		XCTAssert(decision2?.isSelected == true, "Reported incorrect decision state (unselected)")
 
@@ -118,7 +118,7 @@ final class DecisionTests: MEGameTrackerTests {
 		XCTAssert(decision2?.isSelected == false, "Reported incorrect decision state (selected)")
 
 		// #2 Save Ashley
-		decision1?.change(isSelected: true, isSave: true)
+		decision1 = decision1?.changed(isSelected: true, isSave: true)
 		decision1 = Decision.get(id: "D1.Ashley")
 		XCTAssert(decision1?.isSelected == true, "Reported incorrect decision state (unselected)")
 
@@ -134,7 +134,7 @@ final class DecisionTests: MEGameTrackerTests {
 			}
 		}
 
-		decision2?.change(isSelected: true, isSave: true)
+		decision2 = decision2?.changed(isSelected: true, isSave: true)
 		decision2 = Decision.get(id: "D1.Kaidan")
 		XCTAssert(decision2?.isSelected == true, "Reported incorrect decision state (unselected)")
 

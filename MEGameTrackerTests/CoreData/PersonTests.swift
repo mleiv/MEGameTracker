@@ -98,7 +98,7 @@ final class PersonTests: MEGameTrackerTests {
 			"Reported incorrect love interest availability (no interest)")
 		XCTAssert(liara1?.isLoveInterest == false,
 			"Reported incorrect love interest (not selected)")
-		decision?.change(isSelected: true, isSave: true)
+		decision = decision?.changed(isSelected: true, isSave: true)
 		let liara2 = Person.get(id: "S1.Liara")
 		XCTAssert(liara2?.isLoveInterest == true,
 			"Reported incorrect love interest (selected)")

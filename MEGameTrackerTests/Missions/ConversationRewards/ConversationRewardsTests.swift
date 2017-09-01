@@ -28,8 +28,9 @@ final class ConversationRewardsTests: MEGameTrackerTests {
 	}
 
 	func testHierarchy1() {
-		guard let rewards = ConversationRewards(serializedString: json1)
-		else {
+        guard let data = json1.data(using: .utf8),
+            let rewards = try? CoreDataManager.current.decoder.decode(ConversationRewards.self, from: data)
+        else {
 			XCTAssert(false, "Could not initialize ConversationRewards base")
 			return
 		}
@@ -39,7 +40,8 @@ final class ConversationRewardsTests: MEGameTrackerTests {
 	}
 
 	func testHierarchy2() {
-		guard let rewards = ConversationRewards(serializedString: json2)
+        guard let data = json2.data(using: .utf8),
+            let rewards = try? CoreDataManager.current.decoder.decode(ConversationRewards.self, from: data)
 		else {
 			XCTAssert(false, "Could not initialize ConversationRewards base")
 			return
@@ -50,7 +52,8 @@ final class ConversationRewardsTests: MEGameTrackerTests {
 	}
 
 	func testFlatten1() {
-		guard let rewards = ConversationRewards(serializedString: json1)
+		guard let data = json1.data(using: .utf8),
+            let rewards = try? CoreDataManager.current.decoder.decode(ConversationRewards.self, from: data)
 		else {
 			XCTAssert(false, "Could not initialize ConversationRewards base")
 			return
@@ -68,7 +71,8 @@ final class ConversationRewardsTests: MEGameTrackerTests {
 	}
 
 	func testFlatten2() {
-		guard let rewards = ConversationRewards(serializedString: json2)
+        guard let data = json2.data(using: .utf8),
+            let rewards = try? CoreDataManager.current.decoder.decode(ConversationRewards.self, from: data)
 		else {
 			XCTAssert(false, "Could not initialize ConversationRewards base")
 			return

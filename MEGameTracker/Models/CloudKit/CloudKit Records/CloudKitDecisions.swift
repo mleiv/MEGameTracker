@@ -16,4 +16,3 @@ extension Decision: CloudDataStorable {
         record.setValue(isSelected as NSNumber, forKey: "isSelected")
     }
 }
-

@@ -10,20 +10,20 @@ import UIKit
 
 /// Distinguishes item variants so they can be displayed with UI differences. 
 /// Consider this a subset of ItemType.
-public enum ItemDisplayType {
+public enum ItemDisplayType: String, Codable {
 
-	case goal
-	case loot
-	case medkit
-	case novelty
+	case goal = "Goal"
+	case loot = "Loot"
+	case medkit = "MedKit"
+	case novelty = "Novelty"
 
 	/// Returns a list of all possible enum variations.
-	public static func list() -> [ItemDisplayType] {
+	public static func all() -> [ItemDisplayType] {
 		return [.goal, .loot, .medkit, .novelty]
 	}
 
 	/// Returns the string values of all the enum variations.
-	fileprivate static let stringValues: [ItemDisplayType: String] = [
+	private static let stringValues: [ItemDisplayType: String] = [
 		.goal: "Goal",
 		.loot: "Loot",
 		.medkit: "MedKit",
@@ -32,15 +32,7 @@ public enum ItemDisplayType {
 
 	/// Creates an enum from a string value, if possible.
 	public init?(stringValue: String?) {
-		guard let type = ItemDisplayType.stringValues
-			.filter({ $0.1 == stringValue })
-			.map({ $0.0 })
-            .filter({ $0 != nil }).map({ $0! })
-            .first
-		else {
-			return nil
-		}
-		self = type
+        self.init(rawValue: stringValue ?? "")
 	}
 
 	/// Returns the string value of an enum.

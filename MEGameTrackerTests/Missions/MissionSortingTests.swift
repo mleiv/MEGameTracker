@@ -28,7 +28,7 @@ final class MissionSortingTests: MEGameTrackerTests {
 	}
 
 	func testIdSort() {
-		guard let baseMission = create(DataMission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":1,\"name\":\"Some Mission\",\"missionType\":\"Mission\"}")
+		guard let baseMission = create(DataMission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":\"1\",\"name\":\"Some Mission\",\"missionType\":\"Mission\"}")
 		else {
 			XCTAssert(false, "Could not initialize DataMission base")
 			return
@@ -48,11 +48,11 @@ final class MissionSortingTests: MEGameTrackerTests {
 	}
 
 	func testMissionTypeSort() {
-		guard let mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":1,\"name\":\"Some Mission 1\",\"missionType\":\"Mission\"}"),
-			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":1,\"name\":\"Some Mission 2\",\"missionType\":\"Assignment\"}"),
-			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":1,\"name\":\"Some Mission 3\",\"missionType\":\"Objective\"}")//,
-//			let mission4 = create(Mission.self, from: "{\"id\":\"M1.4\",\"gameVersion\":1,\"name\":\"Some Mission 4\",\"missionType\":\"Objective\"}"), // Collection
-//			let mission5 = create(Mission.self, from: "{\"id\":\"M1.5\",\"gameVersion\":1,\"name\":\"Some Mission 5\",\"missionType\":\"Objective\"}") //DLC
+		guard let mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":\"1\",\"name\":\"Some Mission 1\",\"missionType\":\"Mission\"}"),
+			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":\"1\",\"name\":\"Some Mission 2\",\"missionType\":\"Assignment\"}"),
+			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":\"1\",\"name\":\"Some Mission 3\",\"missionType\":\"Objective\"}")//,
+//			let mission4 = create(Mission.self, from: "{\"id\":\"M1.4\",\"gameVersion\":\"1\",\"name\":\"Some Mission 4\",\"missionType\":\"Objective\"}"), // Collection
+//			let mission5 = create(Mission.self, from: "{\"id\":\"M1.5\",\"gameVersion\":\"1\",\"name\":\"Some Mission 5\",\"missionType\":\"Objective\"}") //DLC
 		else {
 			XCTAssert(false, "Could not initialize DataMission base")
 			return
@@ -68,11 +68,11 @@ final class MissionSortingTests: MEGameTrackerTests {
 	}
 
 	func testSortIndexSort() {
-		guard let mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":1,\"name\":\"Some Mission 1\",\"missionType\":\"Mission\",\"sortIndex\":5}"),
-			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":1,\"name\":\"Some Mission 2\",\"missionType\":\"Mission\",\"sortIndex\":4}"),
-			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":1,\"name\":\"Some Mission 3\",\"missionType\":\"Mission\",\"sortIndex\":3}"),
-			let mission4 = create(Mission.self, from: "{\"id\":\"M1.4\",\"gameVersion\":1,\"name\":\"Some Mission 4\",\"missionType\":\"Mission\",\"sortIndex\":2}"),
-			let mission5 = create(Mission.self, from: "{\"id\":\"M1.5\",\"gameVersion\":1,\"name\":\"Some Mission 5\",\"missionType\":\"Mission\",\"sortIndex\":1}")
+		guard let mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":\"1\",\"name\":\"Some Mission 1\",\"missionType\":\"Mission\",\"sortIndex\":5}"),
+			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":\"1\",\"name\":\"Some Mission 2\",\"missionType\":\"Mission\",\"sortIndex\":4}"),
+			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":\"1\",\"name\":\"Some Mission 3\",\"missionType\":\"Mission\",\"sortIndex\":3}"),
+			let mission4 = create(Mission.self, from: "{\"id\":\"M1.4\",\"gameVersion\":\"1\",\"name\":\"Some Mission 4\",\"missionType\":\"Mission\",\"sortIndex\":2}"),
+			let mission5 = create(Mission.self, from: "{\"id\":\"M1.5\",\"gameVersion\":\"1\",\"name\":\"Some Mission 5\",\"missionType\":\"Mission\",\"sortIndex\":1}")
 		else {
 			XCTAssert(false, "Could not initialize DataMission base")
 			return
@@ -87,9 +87,9 @@ final class MissionSortingTests: MEGameTrackerTests {
 	}
 
 	func testGameVersionSort() {
-		guard let mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":1,\"name\":\"Some Mission 1\",\"missionType\":\"Mission\"}"),
-			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":3,\"name\":\"Some Mission 2\",\"missionType\":\"Mission\"}"),
-			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":2,\"name\":\"Some Mission 3\",\"missionType\":\"Mission\"}")
+		guard let mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":\"1\",\"name\":\"Some Mission 1\",\"missionType\":\"Mission\"}"),
+			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":\"3\",\"name\":\"Some Mission 2\",\"missionType\":\"Mission\"}"),
+			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":\"2\",\"name\":\"Some Mission 3\",\"missionType\":\"Mission\"}")
 		else {
 			XCTAssert(false, "Could not initialize DataMission base")
 			return
@@ -103,9 +103,9 @@ final class MissionSortingTests: MEGameTrackerTests {
 
 	func testAvailabilitySort() {
 		createDependentEvent()
-		guard let mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":1,\"name\":\"Some Mission 1\",\"missionType\":\"Mission\",\"events\":[{\"type\":\"BlockedUntil\",\"id\":\"\(blockingEventId)\"}]}"),
-			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":1,\"name\":\"Some Mission 2\",\"missionType\":\"Mission\"}"),
-			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":1,\"name\":\"Some Mission 3\",\"missionType\":\"Mission\"}")
+		guard let mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":\"1\",\"name\":\"Some Mission 1\",\"missionType\":\"Mission\",\"events\":[{\"type\":\"BlockedUntil\",\"id\":\"\(blockingEventId)\"}]}"),
+			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":\"1\",\"name\":\"Some Mission 2\",\"missionType\":\"Mission\"}"),
+			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":\"1\",\"name\":\"Some Mission 3\",\"missionType\":\"Mission\"}")
 		else {
 			XCTAssert(false, "Could not initialize DataMission base")
 			return
@@ -118,9 +118,9 @@ final class MissionSortingTests: MEGameTrackerTests {
 	}
 
 	func testCompletedSort() {
-		guard var mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":1,\"name\":\"Some Mission 1\",\"missionType\":\"Mission\"}"),
-			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":1,\"name\":\"Some Mission 2\",\"missionType\":\"Mission\"}"),
-			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":1,\"name\":\"Some Mission 3\",\"missionType\":\"Mission\"}")
+		guard var mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":\"1\",\"name\":\"Some Mission 1\",\"missionType\":\"Mission\"}"),
+			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":\"1\",\"name\":\"Some Mission 2\",\"missionType\":\"Mission\"}"),
+			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":\"1\",\"name\":\"Some Mission 3\",\"missionType\":\"Mission\"}")
 		else {
 			XCTAssert(false, "Could not initialize DataMission base")
 			return
@@ -135,14 +135,14 @@ final class MissionSortingTests: MEGameTrackerTests {
 
 	func testCombinationSort() {
 		createDependentEvent()
-		guard let mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":1,\"name\":\"Some Mission 1\",\"missionType\":\"Mission\",\"sortIndex\":3,\"events\":[{\"type\":\"BlockedUntil\",\"id\":\"\(blockingEventId)\"}]}"),
-			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":2,\"name\":\"Some Mission 2\",\"missionType\":\"Mission\",\"sortIndex\":3}"),
-			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":3,\"name\":\"Some Mission 3\",\"missionType\":\"Mission\",\"sortIndex\":3}"),
-			let mission4 = create(Mission.self, from: "{\"id\":\"M1.4\",\"gameVersion\":1,\"name\":\"Some Mission 4\",\"missionType\":\"Assignment\",\"sortIndex\":3}"),
-			let mission5 = create(Mission.self, from: "{\"id\":\"M1.5\",\"gameVersion\":1,\"name\":\"Some Mission 5\",\"missionType\":\"Objective\",\"sortIndex\":3}"),
-			var mission6 = create(Mission.self, from: "{\"id\":\"M1.6\",\"gameVersion\":1,\"name\":\"Some Mission 6\",\"missionType\":\"Mission\",\"sortIndex\":1}"),
-			let mission7 = create(Mission.self, from: "{\"id\":\"M1.7\",\"gameVersion\":1,\"name\":\"Some Mission 7\",\"missionType\":\"Assignment\",\"sortIndex\":1}"),
-			let mission8 = create(Mission.self, from: "{\"id\":\"M1.8\",\"gameVersion\":1,\"name\":\"Some Mission 8\",\"missionType\":\"Mission\",\"sortIndex\":3}")
+		guard let mission1 = create(Mission.self, from: "{\"id\":\"M1.1\",\"gameVersion\":\"1\",\"name\":\"Some Mission 1\",\"missionType\":\"Mission\",\"sortIndex\":3,\"events\":[{\"type\":\"BlockedUntil\",\"id\":\"\(blockingEventId)\"}]}"),
+			let mission2 = create(Mission.self, from: "{\"id\":\"M1.2\",\"gameVersion\":\"2\",\"name\":\"Some Mission 2\",\"missionType\":\"Mission\",\"sortIndex\":3}"),
+			let mission3 = create(Mission.self, from: "{\"id\":\"M1.3\",\"gameVersion\":\"3\",\"name\":\"Some Mission 3\",\"missionType\":\"Mission\",\"sortIndex\":3}"),
+			let mission4 = create(Mission.self, from: "{\"id\":\"M1.4\",\"gameVersion\":\"1\",\"name\":\"Some Mission 4\",\"missionType\":\"Assignment\",\"sortIndex\":3}"),
+			let mission5 = create(Mission.self, from: "{\"id\":\"M1.5\",\"gameVersion\":\"1\",\"name\":\"Some Mission 5\",\"missionType\":\"Objective\",\"sortIndex\":3}"),
+			var mission6 = create(Mission.self, from: "{\"id\":\"M1.6\",\"gameVersion\":\"1\",\"name\":\"Some Mission 6\",\"missionType\":\"Mission\",\"sortIndex\":1}"),
+			let mission7 = create(Mission.self, from: "{\"id\":\"M1.7\",\"gameVersion\":\"1\",\"name\":\"Some Mission 7\",\"missionType\":\"Assignment\",\"sortIndex\":1}"),
+			let mission8 = create(Mission.self, from: "{\"id\":\"M1.8\",\"gameVersion\":\"1\",\"name\":\"Some Mission 8\",\"missionType\":\"Mission\",\"sortIndex\":3}")
 		else {
 			XCTAssert(false, "Could not initialize DataMission base")
 			return

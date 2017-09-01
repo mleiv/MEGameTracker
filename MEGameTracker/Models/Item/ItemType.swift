@@ -9,28 +9,28 @@
 import UIKit
 
 /// Defines various item types. Some are only available in one game.
-public enum ItemType {
+public enum ItemType: String, Codable {
 
-	case unknown
-	case souvenir
-	case request
-	case pet
-	case weapon
-	case ammo
-	case armor
-	case medkit
-	case loot
-	case scan // game 3
-	case artifact
-	case collection
-	case salvage
-	case wreckage
-	case warAsset
-	case intel
-	case upgrade
+	case unknown = "Unknown"
+	case souvenir = "Souvenir"
+	case request = "Request"
+	case pet = "Pet"
+	case weapon = "Weapon"
+	case ammo = "Ammo"
+	case armor = "Armor"
+	case medkit = "MedKit"
+	case loot = "Loot"
+	case scan = "Scan"// game 3
+	case artifact = "Artifact"
+	case collection = "Collection"
+	case salvage = "Salvage"
+	case wreckage = "Wreckage"
+	case warAsset = "War Asset"
+	case intel = "Intel"
+	case upgrade = "Upgrade"
 
 	/// Returns a list of all possible enum variations.
-	public static func list() -> [ItemType] {
+	public static func all() -> [ItemType] {
 		return [
 			.weapon,
 			.armor,
@@ -53,28 +53,12 @@ public enum ItemType {
 	}
 
 	/// Returns the string values of all the enum variations.
-	fileprivate static let stringValues: [ItemType: String] = [
-		.unknown: "Unknown",
-		.souvenir: "Souvenir",
-		.request: "Request",
-		.pet: "Pet",
-		.weapon: "Weapon",
-		.ammo: "Ammo",
-		.armor: "Armor",
-		.medkit: "MedKit",
-		.loot: "Loot",
-		.scan: "Scan",
-		.artifact: "Artifact",
-		.collection: "Collection",
-		.salvage: "Salvage",
-		.wreckage: "Wreckage",
-		.warAsset: "War Asset",
-		.intel: "Intel",
-		.upgrade: "Upgrade",
-	]
+	private static let stringValues: [ItemType: String] = {
+        return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
+    }()
 
 	/// Returns the heading string values of all the enum variations.
-	fileprivate static let headingValues: [ItemType: String] = [
+	private static let headingValues: [ItemType: String] = [
 		.unknown: "Unknown",
 		.souvenir: "Souvenirs",
 		.request: "Requests",
@@ -96,20 +80,12 @@ public enum ItemType {
 
 	/// Creates an enum from a string value, if possible.
 	public init?(stringValue: String?) {
-		guard let type = ItemType.stringValues
-			.filter({ $0.1 == stringValue })
-			.map({ $0.0 })
-            .filter({ $0 != nil }).map({ $0! })
-            .first
-		else {
-			return nil
-		}
-		self = type
+        self.init(rawValue: stringValue ?? "")
 	}
 
 	/// Returns the string value of an enum.
 	public var stringValue: String {
-		return ItemType.stringValues[self] ?? "Unknown"
+		return rawValue
 	}
 
 	/// Creates an enum from a heading string value, if possible.

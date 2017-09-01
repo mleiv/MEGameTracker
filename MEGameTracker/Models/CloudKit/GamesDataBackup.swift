@@ -182,7 +182,7 @@ extension GamesDataBackup {
             "missionChanges = \(missionChanges.count) personChanges = \(personChanges.count) " +
             "decisionChanges = \(decisionChanges.count) itemChanges = \(itemChanges.count) " +
             "noteChanges = \(noteChanges.count) eventChanges = \(eventChanges.count)")
-let manager = CoreDataManager2.current
+let manager = CoreDataManager.current
 
         var isSaved = true
 
@@ -211,19 +211,18 @@ let manager = CoreDataManager2.current
 
 	public func gatherAllSavesToCloud() -> [CKRecord] {
 		let manager = CoreDataManager.current
-let manager2 = CoreDataManager2.current
 		let isFullDatabaseCopy: Bool = isFirstSync
 		var records: [CKRecord] = []
 
         records += Decision.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
-        records += Event.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager2)
+        records += Event.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
         records += Item.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
         records += Map.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
         records += Mission.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
-        records += Note.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager2)
+        records += Note.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
         records += Person.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
-        records += GameSequence.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager2)
-        records += Shepard.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager2)
+        records += GameSequence.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
+        records += Shepard.getAllSavesToCloud(isFullDatabaseCopy: isFullDatabaseCopy, with: manager)
 
         log("gatherAllSavesToCloud records = \(records.count)")
 
@@ -232,7 +231,7 @@ let manager2 = CoreDataManager2.current
 
 	public func gatherAllDeletesToCloud() -> [CKRecordID] {
 		guard !isFirstSync else { return [] }
-let manager = CoreDataManager2.current
+let manager = CoreDataManager.current
 		var recordIds: [CKRecordID] = []
 
         recordIds += DeletedRow.getAllDeletesToCloud(isFullDatabaseCopy: false, with: manager)
@@ -258,7 +257,6 @@ let manager = CoreDataManager2.current
         }
 
 		let manager = CoreDataManager.current
-  let manager2 = CoreDataManager2.current
 
 		// There is a small risk that we will delete changes made between the time of the post and the response. 
 		// I am not dealing with that yet.
@@ -274,8 +272,8 @@ let manager = CoreDataManager2.current
             var d = $0; d.pendingCloudChanges = emptyChanges; _ = d.save(with: manager)
         }
         let eventIdentifiers = savedRecordNames(type: Event.self)
-        Event.getAll(identifiers: eventIdentifiers, with: manager2).forEach {
-            var e = $0; e.pendingCloudChanges = emptyChanges; _ = e.save(with: manager2)
+        Event.getAll(identifiers: eventIdentifiers, with: manager).forEach {
+            var e = $0; e.pendingCloudChanges = emptyChanges; _ = e.save(with: manager)
         }
         let itemIdentifiers = savedRecordNames(type: Item.self)
         Item.getAll(identifiers: itemIdentifiers, with: manager).forEach {
@@ -295,16 +293,16 @@ let manager = CoreDataManager2.current
         }
         // not GameRowStorable:
         let noteIdentifiers = savedRecordNames(type: Note.self)
-        Note.getAll(identifiers: noteIdentifiers, with: manager2).forEach {
+        Note.getAll(identifiers: noteIdentifiers, with: manager).forEach {
             var n = $0; n.pendingCloudChanges = emptyChanges; _ = n.save(with: manager)
         }
         let gameIdentifiers = savedRecordNames(type: GameSequence.self)
-        GameSequence.getAll(identifiers: gameIdentifiers, with: manager2).forEach {
-            var g = $0; g.pendingCloudChanges = emptyChanges; _ = g.save(with: manager2)
+        GameSequence.getAll(identifiers: gameIdentifiers, with: manager).forEach {
+            var g = $0; g.pendingCloudChanges = emptyChanges; _ = g.save(with: manager)
         }
         let shepardIdentifiers = savedRecordNames(type: Shepard.self)
-        Shepard.getAll(identifiers: shepardIdentifiers, with: manager2).forEach {
-            var s = $0; s.pendingCloudChanges = emptyChanges; _ = s.save(with: manager2)
+        Shepard.getAll(identifiers: shepardIdentifiers, with: manager).forEach {
+            var s = $0; s.pendingCloudChanges = emptyChanges; _ = s.save(with: manager)
         }
 
         log("confirmAllChangesToCloud decisionIdentifiers = \(decisionIdentifiers.count) " +
@@ -314,7 +312,7 @@ let manager = CoreDataManager2.current
             "gameIdentifiers = \(gameIdentifiers.count) shepardIdentifiers = \(shepardIdentifiers.count) " +
             "deletedRecordIds = \(deletedRecordIds.count)")
 
-        _ = DeletedRow.deleteAll(identifiers: deletedRecordIds.map { $0.recordName }, with: manager2)
+        _ = DeletedRow.deleteAll(identifiers: deletedRecordIds.map { $0.recordName }, with: manager)
 
 		return isConfirmed
 	}
@@ -326,17 +324,16 @@ let manager = CoreDataManager2.current
 
 		var isDeleted = true
 		let manager = CoreDataManager.current
-let manager2 = CoreDataManager2.current
 
         isDeleted = isDeleted && Decision.deleteAll(with: manager)
-        isDeleted = isDeleted && Event.deleteAll(with: manager2)
+        isDeleted = isDeleted && Event.deleteAll(with: manager)
         isDeleted = isDeleted && Item.deleteAll(with: manager)
         isDeleted = isDeleted && Map.deleteAll(with: manager)
         isDeleted = isDeleted && Mission.deleteAll(with: manager)
         isDeleted = isDeleted && Note.deleteAll(with: manager)
         isDeleted = isDeleted && Person.deleteAll(with: manager)
-        isDeleted = isDeleted && GameSequence.deleteAll(with: manager2)
-        isDeleted = isDeleted && Shepard.deleteAll(with: manager2)
+        isDeleted = isDeleted && GameSequence.deleteAll(with: manager)
+        isDeleted = isDeleted && Shepard.deleteAll(with: manager)
 
 		return isDeleted
 	}
@@ -347,7 +344,7 @@ let manager2 = CoreDataManager2.current
 		// we are ignoring the extra pendingData for now. It isn't THAT much extra overhead
 
 //        let manager = CoreDataManager.current
-let gameManager = CoreDataManager2.current
+let gameManager = CoreDataManager.current
 
 		return DeletedRow.deleteAll(with: gameManager)
 	}

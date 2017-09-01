@@ -18,4 +18,3 @@ extension Mission: CloudDataStorable {
         record.setValue(selectedConversationRewards, forKey: "selectedConversationRewards")
     }
 }
-

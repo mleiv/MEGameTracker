@@ -53,7 +53,7 @@ final class ShepardAppearanceController: UIViewController,
 	var defaultScrollInset: UIEdgeInsets?
 	var oldAttributesTableViewHeight: CGFloat?
 
-	fileprivate var lastCode: String?
+	private var lastCode: String?
 	var didSetup = false
 
 	// MARK: Page Events

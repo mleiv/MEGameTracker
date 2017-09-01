@@ -343,7 +343,7 @@ extension Event {
 	public static func getDummy(json: String? = nil) -> Event? {
 		// swiftlint:disable line_length
 		let json = json ?? "{\"id\":\"1.1\",\"gameVersion\":\"1\",\"name\":\"Unlocked Normandy\",\"description\":\"Dummy Event Description.\"}"
-        if var baseEvent = try? CoreDataManager2.current.decoder.decode(DataEvent.self, from: json.data(using: .utf8)!) {
+        if var baseEvent = try? defaultManager.decoder.decode(DataEvent.self, from: json.data(using: .utf8)!) {
 			baseEvent.isDummyData = true
 			let event = Event(id: "1", generalData: baseEvent)
 			return event
@@ -353,58 +353,11 @@ extension Event {
 	}
 }
 
-//// MARK: SerializedDataStorable
-//extension Event: SerializedDataStorable {
-//
-//    public func getData() -> SerializableData {
-//        var list: [String: SerializedDataStorable?] = [:]
-//        list["id"] = id
-//        list["isTriggered"] = isTriggered
-////        list = serializeDateModifiableData(list: list)
-////        list = serializeGameModifyingData(list: list)
-////        list = serializeLocalCloudData(list: list)
-//        return SerializableData.safeInit(list)
-//    }
-//
-//}
-//
-//// MARK: SerializedDataRetrievable
-//extension Event: SerializedDataRetrievable {
-//
-//    public init?(data: SerializableData?) {
-//        guard let data = data, let id = data["id"]?.string,
-//              let dataEvent = DataEvent.get(id: id),
-//              let uuidString = data["gameSequenceUuid"]?.string,
-//              let gameSequenceUuid = UUID(uuidString: uuidString)
-//        else {
-//            return nil
-//        }
-//
-//        self.init(id: id, gameSequenceUuid: gameSequenceUuid, generalData: dataEvent, data: data)
-//    }
-//
-//    public mutating func setData(_ data: SerializableData) {
-//        id = data["id"]?.string ?? id
-//        if generalData.id != id {
-//            generalData = DataEvent.get(id: id) ?? generalData
-//        }
-//
-////        unserializeDateModifiableData(data: data)
-////        unserializeGameModifyingData(data: data)
-////        unserializeLocalCloudData(data: data)
-//
-//        isTriggered = data["isTriggered"]?.bool ?? isTriggered
-//
-//        setGeneralData() // overrides isTriggered in this instance
-//    }
-//
-//}
-
 // MARK: DateModifiable
 extension Event: DateModifiable {}
 
 // MARK: GameModifying
-extension Event: GameModifying2 {}
+extension Event: GameModifying {}
 
 // MARK: Equatable
 extension Event: Equatable {

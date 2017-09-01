@@ -242,7 +242,7 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 		let isOn = heartButton.isOn
 		DispatchQueue.global(qos: .background).async {
 			if let id = self.person?.loveInterestDecisionId, var decision = Decision.get(id: id) {
-				decision.change(isSelected: isOn, isSave: true)
+				_ = decision.changed(isSelected: isOn, isSave: true)
 			}
 		}
 	}
@@ -354,7 +354,7 @@ extension PersonController: Describable {
 extension PersonController {
 	func setupGameSegments() {
 		var games: [GameVersion] = []
-		for game in GameVersion.list() {
+		for game in GameVersion.all() {
 			if person?.isAvailableInGame(game) == true {
 				games.append(game)
 			}

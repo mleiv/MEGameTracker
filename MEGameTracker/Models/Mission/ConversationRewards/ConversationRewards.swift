@@ -10,7 +10,7 @@ import Foundation
 
 /// Defines a set of dialogue choices or actions which result in morality rewards (or alternatively, currency).
 /// It is a very complicated tree with elements that block each other.
-public struct ConversationRewards {
+public struct ConversationRewards: Codable {
 
 // MARK: Types
 
@@ -39,6 +39,15 @@ public struct ConversationRewards {
 		return points.reduce(true) { $0 && $1.isEmpty }
 	}
 
+// MARK: Initialization
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        points = try container.decode([ConversationRewardSet].self)
+    }
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(points)
+    }
 }
 
 // MARK: Basic Actions
@@ -84,30 +93,31 @@ extension ConversationRewards {
 	}
 }
 
-// MARK: SerializedDataStorable
-extension ConversationRewards: SerializedDataStorable {
+//// MARK: SerializedDataStorable
+//extension ConversationRewards: SerializedDataStorable {
+//
+//    public func getData() -> SerializableData {
+//        return SerializableData.safeInit(points as [SerializedDataStorable])
+//    }
+//
+//}
+//
+//// MARK: SerializedDataRetrievable
+//extension ConversationRewards: SerializedDataRetrievable {
+//
+//    public init?(data: SerializableData?) {
+//        guard let data = data, (data.array ?? []).count > 0
+//        else {
+//            return nil
+//        }
+//        points = []
+//        for setData in (data.array ?? []) {
+//            if let set = ConversationRewardSet(data: setData) {
+//                points.append(set)
+//            }
+//        }
+//    }
+//
+//    public mutating func setData(_ data: SerializableData) {}
+//}
 
-	public func getData() -> SerializableData {
-		return SerializableData.safeInit(points as [SerializedDataStorable])
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension ConversationRewards: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data, (data.array ?? []).count > 0
-		else {
-			return nil
-		}
-		points = []
-		for setData in (data.array ?? []) {
-			if let set = ConversationRewardSet(data: setData) {
-				points.append(set)
-			}
-		}
-	}
-
-    public mutating func setData(_ data: SerializableData) {}
-}

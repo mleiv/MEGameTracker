@@ -14,17 +14,17 @@ final class VoiceActorLinkRow: UITableViewCell {
 // MARK: Constants
 
 // MARK: Outlets
-	@IBOutlet fileprivate weak var linkTitle: MarkupLabel?
-	@IBOutlet fileprivate weak var linkUrl: IBStyledLabel?
+	@IBOutlet private weak var linkTitle: MarkupLabel?
+	@IBOutlet private weak var linkUrl: IBStyledLabel?
 
 // MARK: Properties
 	internal fileprivate(set) var voiceActor: VoiceActorType?
-	fileprivate var parent: VoiceActorLinkView?
+	private var parent: VoiceActorLinkView?
 	// Linkable
 	public var linkOriginController: UIViewController?
 
 // MARK: Change Listeners And Change Status Flags
-	fileprivate var isDefined = false
+	private var isDefined = false
 
 // MARK: Lifecycle Events
 	public override func layoutSubviews() {
@@ -47,7 +47,7 @@ final class VoiceActorLinkRow: UITableViewCell {
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() {
+	private func setup() {
 		guard linkTitle != nil else { return }
 
 //		let linkParts = parseDomainFromLink(voiceActor?.url ?? "")
@@ -57,7 +57,7 @@ final class VoiceActorLinkRow: UITableViewCell {
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		linkTitle?.text = ""
 		linkUrl?.text = ""
 	}

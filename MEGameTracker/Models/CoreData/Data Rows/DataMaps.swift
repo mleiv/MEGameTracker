@@ -11,11 +11,11 @@ import CoreData
 
 extension DataMap: DataRowStorable, DataEventsable {
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = DataMaps
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Sets core data values to match struct values (specific).
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType
@@ -39,7 +39,7 @@ extension DataMap {
 	public static func get(
 		id: String,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> DataMap? {
 		let one: DataMap? = get(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -52,24 +52,24 @@ extension DataMap {
 
 	public static func get(
 		gameVersion: GameVersion?,
-		with manager: SimpleSerializedCoreDataManageable? = nil,
+		with manager: CodableCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType>
 	) -> DataMap? {
-		var one: DataMap? = get(with: manager, alterFetchRequest: alterFetchRequest)
-		if let gameVersion = gameVersion {
-			one?.change(gameVersion: gameVersion)
-		}
-		return one
+		let one: DataMap? = get(with: manager, alterFetchRequest: alterFetchRequest)
+        if let gameVersion = gameVersion {
+            return one?.changed(gameVersion: gameVersion)
+        }
+        return one
 	}
 
 	public static func getAll(
 		gameVersion: GameVersion?,
-		with manager: SimpleSerializedCoreDataManageable? = nil,
+		with manager: CodableCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType>
 	) -> [DataMap] {
-		var all: [DataMap] = getAll(with: manager, alterFetchRequest: alterFetchRequest)
+		let all: [DataMap] = getAll(with: manager, alterFetchRequest: alterFetchRequest)
 		if let gameVersion = gameVersion {
-			all = all.map { var m = $0; m.change(gameVersion: gameVersion); return m }
+			return all.map { $0.changed(gameVersion: gameVersion) }
 		}
 		return all
 	}

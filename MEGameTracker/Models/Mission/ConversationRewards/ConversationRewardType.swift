@@ -9,36 +9,37 @@
 import Foundation
 
 /// The varying results for a conversation.
-public enum ConversationRewardType {
-	case paragon, renegade, paragade, neutral, credits
+public enum ConversationRewardType: String, Codable {
+	case paragon = "Paragon"
+	case renegade = "Renegade"
+	case paragade = "Paragade"
+	case neutral = "Neutral"
+	case credits = "Credits"
 
 	/// Returns a list of all possible enum variations.
-	public static func list() -> [ConversationRewardType] {
-		return [.paragon, .renegade, .paragade, .neutral, .credits]
+	public static func all() -> [ConversationRewardType] {
+		return [
+            .paragon,
+            .renegade,
+            .paragade,
+            .neutral,
+            .credits
+        ]
 	}
 
 	/// Returns the string values of all the enum variations.
-	fileprivate static let stringValues: [ConversationRewardType: String] = [
-		.paragon: "Paragon",
-		.renegade: "Renegade",
-		.paragade: "Paragade",
-		.neutral: "Neutral", // game 3 only - store these as paragade - neutral is only for summing score
-		.credits: "Credits",
-	]
+	private static let stringValues: [ConversationRewardType: String] = {
+        return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
+    }()
 
 	/// Creates an enum from a string value, if possible.
 	public init?(stringValue: String?) {
-		guard let type = ConversationRewardType.stringValues
-			.filter({ $0.1 == stringValue }).map({ $0.0 }).filter({ $0 != nil }).map({ $0! }).first
-		else {
-			return nil
-		}
-		self = type
+		self.init(rawValue: stringValue ?? "")
 	}
 
 	/// Returns the string value of an enum.
 	public var stringValue: String {
-		return ConversationRewardType.stringValues[self] ?? "Unknown"
+		return rawValue
 	}
 
 }

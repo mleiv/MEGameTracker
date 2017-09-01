@@ -583,7 +583,7 @@ extension MapController {
 // MARK: Listeners
 extension MapController {
 
-	fileprivate func startListeners() {
+	private func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
@@ -637,7 +637,7 @@ extension MapController {
 		}
 	}
 
-	fileprivate func removeListeners() {
+	private func removeListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		App.onCurrentShepardChange.cancelSubscription(for: self)
 		MapLocation.onChangeSelection.cancelSubscription(for: self)
@@ -707,7 +707,7 @@ extension MapController {
 extension MapController: Available {
 	//public var availabilityMessage: String? // already declared
 
-	fileprivate func setupAvailability() {
+	private func setupAvailability() {
 		availabilityMessage = map?.unavailabilityMessages.joined(separator: ", ")
 		availabilityRowType.setupView()
 	}
@@ -715,7 +715,7 @@ extension MapController: Available {
 
 // MARK: Breadcrumbs
 extension MapController {
-	fileprivate func setupBreadcrumbs() {
+	private func setupBreadcrumbs() {
 		guard let breadcrumbs = self.map?.getCompleteBreadcrumbs(),
 			let map = self.map, !breadcrumbs.isEmpty else { return }
 		let name = map.name
@@ -738,16 +738,16 @@ extension MapController: Describable {
 		return map?.description
 	}
 
-	fileprivate func setupDescription() {
+	private func setupDescription() {
 		descriptionType.setupView()
 	}
 }
 
 // MARK: Game Segments
 extension MapController {
-	fileprivate func setupGameSegments() {
+	private func setupGameSegments() {
 		var games: [GameVersion] = []
-		for game in GameVersion.list() {
+		for game in GameVersion.all() {
 			if map?.isAvailableInGame(game) == true {
 				games.append(game)
 			}
@@ -762,7 +762,7 @@ extension MapController: Notesable {
 	//public var originHint: String? // already declared
 	//public var notes: [Note] // already declared
 
-	fileprivate func setupNotes() {
+	private func setupNotes() {
 		map?.getNotes { [weak self] notes in
 			DispatchQueue.main.async {
 				self?.notes = notes
@@ -781,7 +781,7 @@ extension MapController: Notesable {
 extension MapController: OriginHintable {
 	//public var originHint: String? // already declared
 
-	fileprivate func setupOriginHint() {
+	private func setupOriginHint() {
 		if let referringOriginHint = self.referringOriginHint {
 			originHintType.overrideOriginPrefix = "From"
 			originHintType.overrideOriginHint = referringOriginHint
@@ -796,7 +796,7 @@ extension MapController: OriginHintable {
 extension MapController: RelatedLinksable {
 	//public var relatedLinks: [String] // already declared
 
-	fileprivate func setupRelatedLinks() {
+	private func setupRelatedLinks() {
 		relatedLinks = map?.relatedLinks ?? []
 		relatedLinksView?.controller = self
 		relatedLinksView?.setup()

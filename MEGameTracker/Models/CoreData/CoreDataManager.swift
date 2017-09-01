@@ -10,53 +10,50 @@ import CoreData
 /// Manages the storage and retrieval of CoreDataStorable/SerializableData objects.
 import CoreData
 
-struct CoreDataManager: SimpleSerializedCoreDataManageable {
+struct CoreDataManager: CodableCoreDataManageable {
 
-	public static let defaultStoreName = "CoreData"
+    public static let defaultStoreName = "CoreData"
 
-	public static var current: SimpleSerializedCoreDataManageable = CoreDataManager(storeName: defaultStoreName)
+    public static var current: CodableCoreDataManageable = CoreDataManager(storeName: defaultStoreName)
 
-	public static var isManageMigrations: Bool = true // we manage migrations
+    private var coder = JsonCoder()
+    public var decoder: CodableDecoder { return self.coder }
+    public var encoder: CodableEncoder { return self.coder }
 
-	public var isConfinedToMemoryStore: Bool
-	public let storeName: String
-	public let persistentContainer: NSPersistentContainer
-	public let specificContext: NSManagedObjectContext?
+    public static var isManageMigrations: Bool = true // we manage migrations
 
-	public init() {
-		self.init(storeName: CoreDataManager.defaultStoreName)
-	}
+    public var isConfinedToMemoryStore: Bool
+    public let storeName: String
+    public let persistentContainer: NSPersistentContainer
+    public var specificContext: NSManagedObjectContext?
 
-    public init(duplicate: CoreDataManager2) {
-        self.isConfinedToMemoryStore = duplicate.isConfinedToMemoryStore
-        self.storeName = duplicate.storeName
-        self.specificContext = duplicate.specificContext
-        self.persistentContainer = duplicate.persistentContainer
+    public init() {
+        self.init(storeName: CoreDataManager.defaultStoreName)
     }
 
-	public init(storeName: String?, context: NSManagedObjectContext?, isConfineToMemoryStore: Bool) {
-		self.isConfinedToMemoryStore = isConfineToMemoryStore
-		self.storeName = storeName ?? CoreDataManager.defaultStoreName
-		self.specificContext = context
-		if let storeName = storeName {
-			self.persistentContainer = NSPersistentContainer(name: storeName)
-			initContainer(isConfineToMemoryStore: isConfineToMemoryStore)
-		} else {
-			persistentContainer = CoreDataManager.current.persistentContainer
-		}
-	}
+    public init(storeName: String?, context: NSManagedObjectContext?, isConfineToMemoryStore: Bool) {
+        self.isConfinedToMemoryStore = isConfineToMemoryStore
+        self.storeName = storeName ?? CoreDataManager.defaultStoreName
+        self.specificContext = context
+        if let storeName = storeName {
+            self.persistentContainer = NSPersistentContainer(name: storeName)
+            initContainer(isConfineToMemoryStore: isConfineToMemoryStore)
+        } else {
+            persistentContainer = CoreDataManager.current.persistentContainer
+        }
+    }
 
-	public func runMigrations(storeUrl: URL) {
-		do {
-			try CoreDataStructuralMigrations(storeName: storeName, storeUrl: storeUrl).run()
-		} catch {
-			fatalError("Could not run migrations \(error)")
-		}
-	}
+    public func runMigrations(storeUrl: URL) {
+        do {
+            try CoreDataStructuralMigrations(storeName: storeName, storeUrl: storeUrl).run()
+        } catch {
+            fatalError("Could not run migrations \(error)")
+        }
+    }
 }
 
-extension SimpleSerializedCoreDataStorable {
-	public static var defaultManager: SimpleSerializedCoreDataManageable {
-		return CoreDataManager.current
-	}
+extension CodableCoreDataStorable {
+    public static var defaultManager: CodableCoreDataManageable {
+        return CoreDataManager.current
+    }
 }

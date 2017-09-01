@@ -28,7 +28,7 @@ final public class MissionsGroupRow: UITableViewCell {
 	var completedCount = 0
 
 // MARK: Change Listeners And Change Status Flags
-	fileprivate var isDefined = false
+	private var isDefined = false
 
 // MARK: Lifecycle Events
 	public override func layoutSubviews() {
@@ -52,7 +52,7 @@ final public class MissionsGroupRow: UITableViewCell {
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() {
+	private func setup() {
 		nameLabel?.text = String(format: namePattern, name ?? "", availableCount)
 		nameLabel?.isEnabled = availableCount > 0
 		descriptionLabel?.text = String(format: descriptionPattern, completedCount, unavailableCount)
@@ -63,7 +63,7 @@ final public class MissionsGroupRow: UITableViewCell {
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		nameLabel?.text = ""
 		descriptionLabel?.text = ""
 		disclosureImageView?.isHidden = true

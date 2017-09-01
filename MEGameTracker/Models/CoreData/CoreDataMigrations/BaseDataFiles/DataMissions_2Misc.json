@@ -1198,7 +1198,7 @@
 					"id": "A2.L.Zaeed.R1",
 					"type": "Renegade",
 					"value": 2,
-					"context": "\"Vido sounds dangerous.\""
+                    "trigger": "\"Vido sounds dangerous.\""
 				}]
 			}
 		}, {
@@ -1884,7 +1884,7 @@
 							"id": "A2.D.Garrus.R2",
 							"type": "Credits",
 							"value": 2000,
-							"context": "\"Yes.\""
+							"trigger": "\"Yes.\""
 						}]
 					}
 				}, {
@@ -2001,7 +2001,7 @@
 					"id": "A2.D.Garrus.P11",
 					"type": "Paragon",
 					"value": 2,
-					"context": "\"No worse than usual, buddy.\""
+					"trigger": "\"No worse than usual, buddy.\""
 				}, {
 					"set": {
 						"isExclusiveSet": true,
@@ -2590,7 +2590,7 @@
 					"id": "A2.D.Jack.R2",
 					"type": "Renegade",
 					"value": 2,
-					"context": "\"It's not going to happen.\""
+					"trigger": "\"It's not going to happen.\""
 				}]
 			}
 		}, {
@@ -2971,7 +2971,7 @@
 									"id": "A2.D.Samara.R3",
 									"type": "Renegade",
 									"value": 2,
-									"context": "\"No, not really.\""
+									"trigger": "\"No, not really.\""
 								}]
 							}
 						}, {
@@ -3032,7 +3032,7 @@
 							"id": "A2.D.Samara.R8",
 							"type": "Renegade",
 							"value": 2,
-							"context": "\"You're high.\""
+							"trigger": "\"You're high.\""
 						}]
 					}
 				}, {
@@ -3076,7 +3076,7 @@
 					"id": "A2.D.Samara.R14",
 					"type": "Renegade",
 					"value": 2,
-					"context": "\"You'll do anything I say?\""
+					"trigger": "\"You'll do anything I say?\""
 				}]
 			}
 		}, {
@@ -3262,7 +3262,7 @@
 							"id": "A2.D.Mordin.R2",
 							"type": "Credits",
 							"value": 2000,
-							"context": "(Let the angry batarian die.)"
+							"trigger": "(Let the angry batarian die.)"
 						}]
 					}
 				}, {
@@ -7161,7 +7161,7 @@
 							"trigger": "\"I'm a Spectre. Start talking.\""
 						}, {
 							"id": "A2.L.Thane.R5",
-							"type": "Renegard",
+							"type": "Renegade",
 							"value": 5,
 							"context": "3rd *Renegade interrupt*",
 							"trigger": ""
@@ -7178,7 +7178,7 @@
 							"trigger": "\"We'll sweeten the pot.\""
 						}, {
 							"id": "A2.L.Thane.R6",
-							"type": "Renegard",
+							"type": "Renegade",
 							"value": 5,
 							"context": "*_Intimidate Kellum_*",
 							"trigger": "\"You should talk to us.\""
@@ -7194,7 +7194,7 @@
 							"trigger": "\"That's democracy for you.\""
 						}, {
 							"id": "A2.L.Thane.R7",
-							"type": "Renegard",
+							"type": "Renegade",
 							"value": 2,
 							"trigger": "\"Not my problem.\""
 						}]
@@ -7215,7 +7215,7 @@
 							"trigger": "\"I'm a health inspector.\""
 						}, {
 							"id": "A2.L.Thane.R10",
-							"type": "Renegard",
+							"type": "Renegade",
 							"value": 5,
 							"context": "*_Intimidate Reynolds_*",
 							"trigger": "\"There's a bomb.\""
@@ -7227,7 +7227,7 @@
 						"isExclusiveSet": true,
 						"options": [{
 							"id": "A2.L.Thane.R11A",
-							"type": "Renegard",
+							"type": "Renegade",
 							"value": 5,
 							"context": "*Renegade interrupt*",
 							"trigger": ""
@@ -7239,7 +7239,7 @@
 							"trigger": "\"I'm lost.\""
 						}, {
 							"id": "A2.L.Thane.R11B",
-							"type": "Renegard",
+							"type": "Renegade",
 							"value": 5,
 							"context": "*_Intimidate Reynolds_*",
 							"trigger": "\"You can't stop me.\""
@@ -7251,7 +7251,7 @@
 						"isExclusiveSet": true,
 						"options": [{
 							"id": "A2.L.Thane.R11A",
-							"type": "Renegard",
+							"type": "Renegade",
 							"value": 5,
 							"context": "*Renegade interrupt*",
 							"trigger": ""
@@ -7263,7 +7263,7 @@
 							"trigger": "\"Here's the truth.\""
 						}, {
 							"id": "A2.L.Thane.R11B",
-							"type": "Renegard",
+							"type": "Renegade",
 							"value": 5,
 							"context": "*_Intimidate Reynolds_*",
 							"trigger": "\"A life is at stake.\""
@@ -7285,7 +7285,7 @@
 							"trigger": ""
 						}, {
 							"id": "A2.L.Thane.R20",
-							"type": "Renegard",
+							"type": "Renegade",
 							"value": 15,
 							"trigger": "(Kill the Hostage)"
 						}, {
@@ -7306,7 +7306,7 @@
 							"trigger": "\"Thane's dying.\""
 						}, {
 							"id": "A2.L.Thane.R21",
-							"type": "Renegard",
+							"type": "Renegade",
 							"value": 2,
 							"trigger": "\"He did this for you.\""
 						}]
@@ -7331,7 +7331,7 @@
 					"trigger": "\"Those guys were criminals.\""
 				}, {
 					"id": "A2.L.Thane.R30",
-					"type": "Renegard",
+					"type": "Renegade",
 					"value": 5,
 					"context": "*_Intimidate Bailey_*",
 					"trigger": "\"Who cares about them?\""

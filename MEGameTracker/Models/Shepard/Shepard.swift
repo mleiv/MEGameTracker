@@ -95,7 +95,12 @@ public struct Shepard: Codable, Photographical {
 
 // MARK: Initialization
 	/// Created by App
-	public init(gameSequenceUuid: UUID, uuid: UUID = UUID(), gender: Shepard.Gender = .male, gameVersion: GameVersion = .game1) {
+	public init(
+        gameSequenceUuid: UUID,
+        uuid: UUID = UUID(),
+        gender: Shepard.Gender = .male,
+        gameVersion: GameVersion = .game1
+    ) {
         self.uuid = uuid
 		self.gameSequenceUuid = gameSequenceUuid
 		self.gender = gender
@@ -368,10 +373,9 @@ extension Shepard {
 		if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
 			if let loveInterestId = loveInterestId,
 				let person = Person.get(id: loveInterestId),
-				let decisionId = person.loveInterestDecisionId,
-				var decision = Decision.get(id: decisionId) {
-				// switch selected love interest
-				decision.change(
+				let decisionId = person.loveInterestDecisionId {
+                // switch selected love interest
+				_ = Decision.get(id: decisionId)?.changed(
 					isSelected: true,
 					isSave: isSave,
 					isNotify: isNotify,
@@ -380,10 +384,9 @@ extension Shepard {
 			} else if loveInterestId == nil,
 				let loveInterestId = self.loveInterestId,
 				let person = Person.get(id: loveInterestId),
-				let decisionId = person.loveInterestDecisionId,
-				var decision = Decision.get(id: decisionId) {
-				// erase unselected love interest
-				decision.change(
+				let decisionId = person.loveInterestDecisionId {
+                // erase unselected love interest
+				_ = Decision.get(id: decisionId)?.changed(
 					isSelected: false,
 					isSave: isSave,
 					isNotify: isNotify,
@@ -461,7 +464,7 @@ extension Shepard {
 		// swiftlint:disable line_length
 		let json = json ?? "{\"uuid\" : \"BC0D3009-3385-4132-851A-DF472CBF9EFD\",\"gameVersion\" : \"1\",\"paragon\" : 0,\"createdDate\" : \"2017-02-15 07:40:32\",\"level\" : 1,\"gameSequenceUuid\" : \"7BF05BF6-386A-4429-BC18-2A60F2D29519\",\"reputation\" : \"Sole Survivor\",\"renegade\" : 0,\"modifiedDate\" : \"2017-02-23 07:13:39\",\"origin\" : \"Earthborn\",\"isSavedToCloud\" : false,\"appearance\" : \"XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X\",\"class\" : \"Soldier\",\"gender\" : \"F\",\"name\" : \"Xoe\"}"
 		// swiftlint:enable line_length
-		return try? CoreDataManager2.current.decoder.decode(Shepard.self, from: json.data(using: .utf8)!)
+		return try? defaultManager.decoder.decode(Shepard.self, from: json.data(using: .utf8)!)
 	}
 }
 
@@ -545,61 +548,6 @@ extension Shepard {
         applyRemoteChanges(data.dictionary)
     }
 }
-//
-//// MARK: SerializedDataRetrievable
-//extension Shepard: SerializedDataRetrievable {
-//
-//    public init?(data: SerializableData?) {
-//        guard let uuid = UUID(uuidString: data?["uuid"]?.string ?? ""),
-//            let gameSequenceUuid = UUID(uuidString: data?["gameSequenceUuid"]?.string ?? (data?["sequenceUuid"]?.string ?? ""))
-//        else {
-//            return nil
-//        }
-//        let gameVersion = GameVersion(stringValue: data?["gameVersion"]?.string ?? "0") ?? .game1
-//
-//        self.init(
-//            uuid: uuid,
-//            gameSequenceUuid: gameSequenceUuid,
-//            gameVersion: gameVersion,
-//            data: data ?? SerializableData()
-//        )
-//    }
-//
-//    /// Values general to all shepards should be assigned in setCommonData instead.
-//    public mutating func setData(_ data: SerializableData, isInternal: Bool) {
-//        // values unique to this GameVersion
-//        uuid = UUID(uuidString: data["uuid"]?.string ?? "") ?? uuid
-//        gameVersion = GameVersion(stringValue: data["gameVersion"]?.string ?? "0") ?? gameVersion
-//        gender = Gender(stringValue: data["gender"]?.string) ?? gender
-//        classTalent = ClassTalent(stringValue: data["class"]?.string ?? "") ?? classTalent
-//        level = data["level"]?.int ?? level
-//        paragon = data["paragon"]?.int ?? paragon
-//        renegade = data["renegade"]?.int ?? renegade
-//        if let appearanceData = data["appearance"]?.string {
-//            appearance = Appearance(appearanceData, fromGame: gameVersion, withGender: gender)
-//        }
-//        if data["loveInterestId"] != nil {
-//            loveInterestId = data["loveInterestId"]?.string // NULLABLE
-//        }
-//        if let photo = Photo(filePath: data["photo"]?.string) {
-//            self.photo = photo
-//        } else {
-//            photo = Photo(filePath: Shepard.PhotoPath.defaultPath(forGender: gender, forGameVersion: gameVersion))
-//        }
-//
-////        unserializeDateModifiableData(data: data)
-//        gameSequenceUuid = UUID(uuidString: data["gameSequenceUuid"]?.string ?? "") ?? gameSequenceUuid // not GameModifying
-////        unserializeLocalCloudData(data: data)
-//
-//        // commmon values to all shepards in this game sequence:
-//        setCommonData(data, isInternal: isInternal)
-//    }
-//
-//    // Protocol adherence - no extra parameters.
-//    public mutating func setData(_ data: SerializableData) {
-//        setData(data, isInternal: false)
-//    }
-//}
 
 // MARK: DateModifiable
 extension Shepard: DateModifiable {}

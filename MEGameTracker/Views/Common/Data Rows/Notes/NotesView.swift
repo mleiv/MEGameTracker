@@ -10,7 +10,7 @@ import UIKit
 
 final public class NotesView: SimpleArrayDataRow {
 
-	fileprivate lazy var dummyNotes: [Note] = {
+	private lazy var dummyNotes: [Note] = {
 		if let note = Note.getDummyNote() {
 			return [note]
 		}

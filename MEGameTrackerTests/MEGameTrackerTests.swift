@@ -29,16 +29,11 @@ class MEGameTrackerTests: XCTestCase {
 	internal func getSandboxedManager() -> CoreDataManager {
 		return CoreDataManager(storeName: CoreDataManager.defaultStoreName, isConfineToMemoryStore: true)
 	}
-    internal func getSandboxedManager2() -> CoreDataManager2 {
-        return CoreDataManager2(storeName: CoreDataManager2.defaultStoreName, isConfineToMemoryStore: true)
-    }
 
 	/// Create an app game.
 	internal func initializeSandboxedStore() {
 		if !hasSandboxedManager {
-            let manager = getSandboxedManager2()
-            CoreDataManager2.current = manager
-            CoreDataManager.current = CoreDataManager(duplicate: manager)
+            CoreDataManager.current = getSandboxedManager()
 			hasSandboxedManager = true
 		}
 	}
@@ -73,26 +68,14 @@ class MEGameTrackerTests: XCTestCase {
 		_ = create(Event.self, from: event3)
 	}
 
-	/// Create an object from the json given.
-	internal func create<T: DataRowStorable>(
-		_ type: T.Type,
-		from json: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
-	) -> T? {
-		initializeSandboxedStore()
-		var item = T(serializedString: json)
-		_ = item?.save(with: manager)
-		return item
-	}
-
     /// Create an object from the json given.
-    internal func create<T: DataRowStorable2>(
+    internal func create<T: DataRowStorable>(
         _ type: T.Type,
         from json: String,
         with manager: CodableCoreDataManageable? = nil
     ) -> T? {
         initializeSandboxedStore()
-        let manager = manager ?? CoreDataManager2.current
+        let manager = manager ?? CoreDataManager.current
         var item = try? manager.decoder.decode(T.self, from: json.data(using: .utf8)!)
         print("\(String(describing: item))")
         print("\(String(describing: String(data: (try? manager.encoder.encode(item)) ?? Data(), encoding: .utf8)))")
@@ -100,29 +83,14 @@ class MEGameTrackerTests: XCTestCase {
         return item
     }
 
-	/// Create an object from the json given.
-	internal func create<T: GameRowStorable>(
-		_ type: T.Type,
-		from json: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
-	) -> T? {
-		initializeSandboxedStore()
-		var data = T.DataRowType(serializedString: json)
-		_ = data?.save(with: manager)
-		if let data = data {
-			return T.create(using: data, with: manager)
-		}
-		return nil
-	}
-
     /// Create an object from the json given.
-    internal func create<T: GameRowStorable2>(
+    internal func create<T: GameRowStorable>(
         _ type: T.Type,
         from json: String,
         with manager: CodableCoreDataManageable? = nil
     ) -> T? {
         initializeSandboxedStore()
-        let manager = manager ?? CoreDataManager2.current
+        let manager = manager ?? CoreDataManager.current
         if let data = create(T.DataRowType.self, from: json, with: manager) {
             return T.create(using: data, with: manager)
         }
@@ -136,7 +104,7 @@ class MEGameTrackerTests: XCTestCase {
         with manager: CodableCoreDataManageable? = nil
     ) -> T? {
         initializeSandboxedStore()
-        let manager = manager ?? CoreDataManager2.current
+        let manager = manager ?? CoreDataManager.current
         var item = try? manager.decoder.decode(T.self, from: json.data(using: .utf8)!)
         _ = item?.save(isCascadeChanges: .none, isAllowDelay: false, with: manager)
         return item
@@ -149,7 +117,7 @@ class MEGameTrackerTests: XCTestCase {
 		with manager: CodableCoreDataManageable? = nil
 	) -> T? {
 		initializeSandboxedStore()
-        let manager = manager ?? CoreDataManager2.current
+        let manager = manager ?? CoreDataManager.current
 		var item = try? manager.decoder.decode(T.self, from: json.data(using: .utf8)!)
         _ = item?.save(isCascadeChanges: .none, isAllowDelay: false, with: manager)
         return item

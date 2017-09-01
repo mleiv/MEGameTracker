@@ -57,35 +57,3 @@ extension DependentOnType {
 		}
 	}
 }
-
-//// MARK: SerializedDataStorable
-//extension DependentOnType: SerializedDataStorable {
-//
-//    public func getData() -> SerializableData {
-//        var list: [String: SerializedDataStorable?] = [:]
-//        list["countTo"] = countTo
-//        list["limitTo"] = limitTo
-//        list["events"] = SerializableData.safeInit(events as [SerializedDataStorable])
-//        list["decisions"] = SerializableData.safeInit(decisions as [SerializedDataStorable])
-//        return SerializableData.safeInit(list)
-//    }
-//
-//}
-//
-//// MARK: SerializedDataRetrievable
-//extension DependentOnType: SerializedDataRetrievable {
-//
-//    public init?(data: SerializableData?) {
-//        guard let data = data else { return nil }
-//        self.countTo = data["countTo"]?.int ?? 1
-//        self.limitTo = data["limitTo"]?.int
-//        self.events = (data["events"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
-//        self.decisions = (data["decisions"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
-//        if self.events.isEmpty && self.decisions.isEmpty { // bad data
-//            return nil
-//        }
-//    }
-//
-//    public mutating func setData(_ data: SerializableData) {}
-//}
-

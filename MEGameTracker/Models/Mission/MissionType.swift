@@ -9,22 +9,22 @@
 import Foundation
 
 /// Defines various mission types.
-public enum MissionType: Int {
+public enum MissionType: String, Codable {
 
-	case mission = 0
-	case assignment
-	case dossier
-	case loyalty
-	case dlc
-	case collection
-	case upgrade
-	case task
-	case conversation
-	case objective
-	case subset
+	case mission = "Mission"
+	case assignment = "Assignment"
+	case dossier = "Dossier"
+	case loyalty = "Loyalty"
+	case dlc = "DLC"
+	case collection = "Collection"
+	case upgrade = "Upgrade"
+	case task = "Task"
+	case conversation = "Conversation"
+	case objective = "Objective"
+	case subset = "Set"
 
 	/// Returns a list of all possible enum variations.
-	public static func list() -> [MissionType] {
+	public static func all() -> [MissionType] {
 		return [
 			.mission,
 			.assignment,
@@ -56,22 +56,12 @@ public enum MissionType: Int {
 	}
 
 	/// Returns the string values of all the enum variations.
-	fileprivate static let stringValues: [MissionType: String] = [
-		.mission: "Mission",
-		.assignment: "Assignment",
-		.dossier: "Dossier",
-		.loyalty: "Loyalty",
-		.dlc: "DLC",
-		.collection: "Collection",
-		.upgrade: "Upgrade",
-		.task: "Task",
-		.conversation: "Conversation",
-		.objective: "Objective",
-		.subset: "Set",
-	]
+	private static let stringValues: [MissionType: String] = {
+        return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
+    }()
 
 	/// Returns the heading string values of all the enum variations.
-	fileprivate static let headingValues: [MissionType: String] = [
+	private static let headingValues: [MissionType: String] = [
 		.mission: "Missions",
 		.assignment: "Assignments",
 		.dossier: "Dossiers",
@@ -86,17 +76,12 @@ public enum MissionType: Int {
 
 	/// Creates an enum from a string value, if possible.
 	public init?(stringValue: String?) {
-		guard let type = MissionType.stringValues
-			.filter({ $0.1 == stringValue }).map({ $0.0 }).filter({ $0 != nil }).map({ $0! }).first
-		else {
-			return nil
-		}
-		self = type
+        self.init(rawValue: stringValue ?? "")
 	}
 
 	/// Returns the string value of an enum.
 	public var stringValue: String {
-		return MissionType.stringValues[self] ?? "Unknown"
+		return rawValue
 	}
 
 	/// Creates an enum from a heading string value, if possible.
@@ -115,8 +100,8 @@ public enum MissionType: Int {
 	}
 
 	/// Returns the int value of an enum.
-	public var intValue: Int {
-		return self.rawValue
+	public var intValue: Int? {
+        return MissionType.all().index(of: self)
 	}
 
 	/// Provides a title prefix for a mission of the specified enum type.

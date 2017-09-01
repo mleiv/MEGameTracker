@@ -10,10 +10,14 @@ import Foundation
 
 public struct JsonCoder: CodableDecoder, CodableEncoder {
     public func encode<T>(_ value: T) throws -> Data where T : Encodable {
-        return try encoder.encode(value)
+        return try autoreleasepool { () -> Data in // https://bugs.swift.org/browse/SR-5501
+            return try encoder.encode(value)
+        }
     }
     public func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
-        return try decoder.decode(type, from: data)
+        return try autoreleasepool { () -> T in
+            return try decoder.decode(type, from: data)
+        }
     }
     public var decoder: JSONDecoder = {
         let dateFormatter = DateFormatter()
@@ -34,4 +38,3 @@ public struct JsonCoder: CodableDecoder, CodableEncoder {
         return encoder
     }()
 }
-

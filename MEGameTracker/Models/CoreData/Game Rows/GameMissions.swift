@@ -13,7 +13,7 @@ public typealias MissionStatusCounts = (available: Int, unavailable: Int, comple
 
 extension Mission: GameRowStorable {
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = GameMissions
 
@@ -21,13 +21,13 @@ extension Mission: GameRowStorable {
 	/// Corresponding data entity for this game entity.
 	public typealias DataRowType = DataMission
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Sets core data values to match struct values (specific).
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType
 	) {
 		// only save searchable columns
-//        setDateModifiableColumnsOnSave(coreItem: coreItem) //TODO
+        setDateModifiableColumnsOnSave(coreItem: coreItem) //TODO
 		coreItem.id = id
 		coreItem.gameSequenceUuid = gameSequenceUuid?.uuidString
 		coreItem.isCompleted = isCompleted ? 1 : 0
@@ -39,7 +39,7 @@ extension Mission: GameRowStorable {
 	/// Create a new game entity value for the game uuid given using the data value given.
 	public static func create(
 		using data: DataRowType,
-		with manager: SimpleSerializedCoreDataManageable?
+		with manager: CodableCoreDataManageable?
 	) -> Mission {
 		var item = Mission(id: data.id, generalData: data)
 		item.events = item.getEvents(with: manager)
@@ -54,7 +54,7 @@ extension Mission {
 	/// Get all missions from the specified game version.
 	public static func getAll(
 		gameVersion: GameVersion,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Mission] {
 		return getAllFromData(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -68,7 +68,7 @@ extension Mission {
 	public static func getAllType(
 		_ type: MissionType,
 		gameVersion: GameVersion,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Mission] {
 		return getAllFromData(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -82,7 +82,7 @@ extension Mission {
 	/// Get all recently viewed missions from the specified game version.
 	public static func getAllRecent(
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Mission] {
 		var missions: [Mission] = []
 		let gameVersion = gameVersion ?? GameVersion.game1
@@ -100,7 +100,7 @@ extension Mission {
 		likeName name: String,
 		limit: Int = App.current.searchMaxResults,
 		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Mission] {
 		return getAllFromData(with: manager) { fetchRequest in
 			if let gameVersion = gameVersion {
@@ -124,7 +124,7 @@ extension Mission {
 	/// Get all mission-type missions with the specified ids.
 	public static func getAllMissions(
 		ids: [String],
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Mission] {
 		guard !ids.isEmpty else { return [] }
 		return getAllFromData(with: manager) { fetchRequest in
@@ -138,7 +138,7 @@ extension Mission {
 	/// Get all mission-type missions from the specified game version.
 	public static func getAllMissions(
 		gameVersion: GameVersion,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Mission] {
 		return getAllType(.mission, gameVersion: gameVersion, with: manager)
 	}
@@ -146,7 +146,7 @@ extension Mission {
 	/// Get all assignment-type missions from the specified game version.
 	public static func getAllAssignments(
 		gameVersion: GameVersion,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Mission] {
 		return getAllType(.assignment, gameVersion: gameVersion, with: manager)
 	}
@@ -154,7 +154,7 @@ extension Mission {
 	/// Get all task-type missions from the specified game version.
 	public static func getAllTasks(
 		gameVersion: GameVersion,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Mission] {
 		return getAllType(.task, gameVersion: gameVersion, with: manager)
 	}
@@ -162,7 +162,7 @@ extension Mission {
 	/// Get all objectives from the specified mission.
 	public static func getAllObjectives(
 		underId id: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [MapLocationable] {
 		return MapLocation.getAll(inMissionId: id, with: manager)
 	}
@@ -171,7 +171,7 @@ extension Mission {
 	public static func getCountedMissionStatus(
 		missionType: MissionType,
 		gameVersion: GameVersion,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> MissionStatusCounts {
 		let availableCount = DataMission.getCount(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(

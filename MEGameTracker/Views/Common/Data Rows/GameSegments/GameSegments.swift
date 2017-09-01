@@ -17,9 +17,9 @@ final public class GameSegments: UIView {
 		}
 	}
 
-	fileprivate var nib: GameSegmentsNib?
+	private var nib: GameSegmentsNib?
 
-	fileprivate var didSetup = false
+	private var didSetup = false
 
 	public override func layoutSubviews() {
 //		if !didSetup {
@@ -28,7 +28,7 @@ final public class GameSegments: UIView {
 		super.layoutSubviews()
 	}
 
-	fileprivate func setup() {
+	private func setup() {
 		guard let nib = getNib() else { return }
 		nib.game1?.text = games.contains(.game1) ? "Game 1" : "X"
 		nib.game2?.text = games.contains(.game2) ? "Game 2" : "X"
@@ -36,7 +36,7 @@ final public class GameSegments: UIView {
 		didSetup = true
 	}
 
-	fileprivate func getNib() -> GameSegmentsNib? {
+	private func getNib() -> GameSegmentsNib? {
 		if self.nib == nil, let nib = GameSegmentsNib.loadNib() {
 			insertSubview(nib, at: 0)
 			nib.fillView(self)

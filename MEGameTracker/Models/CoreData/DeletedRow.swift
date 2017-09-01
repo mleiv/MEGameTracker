@@ -107,4 +107,3 @@ extension DeletedRow: Equatable {
         return lhs.source == rhs.source && lhs.identifier == rhs.identifier
     }
 }
-

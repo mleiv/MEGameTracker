@@ -23,9 +23,27 @@ final class ItemTests: MEGameTrackerTests {
 
 	let prologueLoot3 = "{\"id\": \"M1.Prologue.Loot.I.4\",\"gameVersion\": \"1\",\"itemType\": \"Loot\",\"itemDisplayType\": \"Loot\",\"name\": \"Crate 4\",\"inMapId\": \"G.Ear.Exo.Uto.Ede.A\",\"mapLocationPoint\": {\"x\": 680,\"y\": 950,\"radius\": 1}}"
 
-	let petsMissionJson = "{\"id\": \"A2.UC.Pets\",\"sortIndex\": 1000,\"gameVersion\": \"2\",\"missionType\": \"Collection\",\"name\": \"Pets\",\"description\": \"\",\"sideEffects\": \"Keeping the Prejek Paddlefish alive throughout Game 3 and New Game+ results in an Intel Bonus from Liara after the Mars Mission (10% Weapon or Power Damage). It also becomes a War Asset.\",\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Fish\", \"https:\\/\\/masseffect.wikia.com\\/wiki\\/Space_Hamster\"],\"events\": [{\"type\": \"BlockedUntil\",\"id\": \"Completed: Freedom\'s Progress\"}]}"
+	let petsMissionJson = "{\"id\": \"A2.UC.Pets\",\"sortIndex\": 1000,\"gameVersion\": \"2\",\"missionType\": \"Collection\",\"name\": \"Pets\",\"description\": \"\",\"sideEffects\": [\"Keeping the Prejek Paddlefish alive throughout Game 3 and New Game+ results in an Intel Bonus from Liara after the Mars Mission (10% Weapon or Power Damage). It also becomes a War Asset.\"],\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Fish\", \"https:\\/\\/masseffect.wikia.com\\/wiki\\/Space_Hamster\"],\"events\": [{\"type\": \"BlockedUntil\",\"id\": \"Completed: Freedom\'s Progress\"}]}"
 
 	let petsLootJson = "{\"id\": \"A2.UC.Pets.I.1SkaldFish\",\"gameVersion\": \"2\",\"itemType\": \"Pet\",\"itemDisplayType\": \"Novelty\",\"name\": \"Illium Skald Fish\",\"price\": \"-500 Credits\",\"inMapId\": \"G.C2.27.Souvenirs\",\"isShowInParentMap\": true,\"inMissionId\": \"A2.UC.Pets\"}"
+
+	let problemRow = """
+{
+    "id": "A2.UC.WeaponUpgrades.HW.I.5W",
+    "inMissionId": "A2.UC.WeaponUpgrades.HW",
+    "gameVersion": "2",
+    "itemType": "Weapon",
+    "itemDisplayType": "Goal",
+    "name": "Collector Particle Beam",
+    "relatedLinks": ["https://masseffect.wikia.com/wiki/Collector_Particle_Beam"],
+    "inMapId": "G.Att.Sha.Ier.Horizon",
+    "mapLocationPoint": {
+        "x": 977,
+        "y": 1017,
+        "radius": 1
+    }
+}
+"""
 
 	// swiftlint:enable line_length
 
@@ -132,4 +150,11 @@ final class ItemTests: MEGameTrackerTests {
 		waitForExpectations(timeout: 0.1) { _ in }
 		Item.onChange.cancelSubscription(for: self)
 	}
+
+    /// Test Item get methods.
+//    func testProblemRow() {
+//        _ = create(Item.self, from: problemRow)
+//        let item = Item.get(id: "A2.UC.WeaponUpgrades.HW.I.5W")
+//        XCTAssert(item?.name == "Weapon: Collector Particle Beam", "Failed to load by id")
+//    }
 }

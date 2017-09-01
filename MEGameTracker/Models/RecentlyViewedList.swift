@@ -22,7 +22,7 @@ public struct RecentlyViewedList: Codable {
         case maxElements
         case contents = "list"
     }
-    
+
 // MARK: Properties
 
     public static let noMaxLimit = -1

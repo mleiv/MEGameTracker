@@ -31,27 +31,29 @@ extension Note: CloudDataStorable {
         changeRecord: CloudDataRecordChange,
         with manager: CodableCoreDataManageable?
     ) -> Bool {
-let manager = CoreDataManager.current
         let recordId = changeRecord.recordId
         if let (id, gameUuid) = parseIdentifyingName(name: recordId),
             let noteUuid = UUID(uuidString: id),
             let shepardUuidString = changeRecord.changeSet["shepardUuid"] as? String,
             let shepardUuid = UUID(uuidString: shepardUuidString) {
             // if identifyingObject fails, throw this note away - it can't be recovered :(
-            guard let identifyingObject = IdentifyingObject(
-                serializedString: changeRecord.changeSet["identifyingObject"] as? String ?? ""
-            ) else {
+            guard let json = changeRecord.changeSet["identifyingObject"] as? String,
+                let decoder = manager?.decoder,
+                let identifyingObject = try? decoder.decode(
+                        IdentifyingObject.self,
+                        from: json.data(using: .utf8) ?? Data()
+                )
+            else {
                 return true
             }
 
             var changeSet = changeRecord.changeSet
             changeSet["gameSequenceUuid"] = gameUuid
             var note = Note.get(uuid: noteUuid) ?? Note(
-                                                uuid: noteUuid,
                                                 identifyingObject: identifyingObject,
+                                                uuid: noteUuid,
                                                 shepardUuid: shepardUuid,
-                                                gameSequenceUuid: gameUuid,
-                                                data: nil
+                                                gameSequenceUuid: gameUuid
                                             )
             let pendingData = note.pendingCloudChanges
             // apply cloud changes
@@ -121,7 +123,6 @@ let manager = CoreDataManager.current
         identifiers: [String],
         with manager: CodableCoreDataManageable?
     ) -> [Note] {
-let manager = CoreDataManager.current
         return identifiers.map { (identifier: String) in
             if let (id, _) = parseIdentifyingName(name: identifier),
                 let uuid = UUID(uuidString: id) {
@@ -131,4 +132,3 @@ let manager = CoreDataManager.current
         }.filter({ $0 != nil }).map({ $0! })
     }
 }
-

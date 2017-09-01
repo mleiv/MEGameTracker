@@ -11,28 +11,41 @@ import CoreData
 
 public protocol DataEventsable {
 
-	/// The serialized event data stored (can be edited, like during base import, but this is not recommended)
-	var rawEventData: SerializableData? { get }
+    /// The serialized event data stored (can be edited, like during base import, but this is not recommended)
+    var rawEventData: [CodableDictionary] { get }
 
-	/// A reference to the current core data manager.
-	/// (Default provided for SimpleSerializedCoreDataStorable objects.)
-	var defaultManager: SimpleSerializedCoreDataManageable { get }
+    /// A reference to the current core data manager.
+    /// (Default provided for SimpleSerializedCoreDataStorable objects.)
+    var defaultManager: CodableCoreDataManageable { get }
 }
 
 extension DataEventsable {
+    typealias DataEventsableType = DataEvent
 
-	public func getRelatedDataEvents(
-		context: NSManagedObjectContext?
-	) -> NSSet {
-		let ids: [String] = (rawEventData?.array ?? []).map({ $0["id"]?.string }).filter({ $0 != nil }).map({ $0! })
-		guard !ids.isEmpty else { return NSSet() }
-//        let manager = type(of: defaultManager).init(context: context) // must run in same context
-        let manager = CoreDataManager2.init(context: context) // must run in same context
-		let directEvents = DataEvent.getAll(ids: ids, with: manager)
-		let relatedEventIds = ids + directEvents.flatMap({ $0.dependentOn?.events ?? [] }) // yes Flat Map
+//    public func getDataEvents(with manager: CodableCoreDataManageable?) -> [DataEvent] {
+//        let manager = manager ?? CoreDataManager.current
+//        return (try? manager.decoder.decode([DataEvent].self, from: rawEventData)) ?? []
+//    }
+
+    public func getRelatedDataEvents(
+        context: NSManagedObjectContext?
+    ) -> NSSet {
+        let ids = getIdsFromRawEventData()
+        guard !ids.isEmpty else { return NSSet() }
+        let manager = type(of: defaultManager).init(context: context)
+        let directEvents = DataEvent.getAll(ids: ids, with: manager)
+        let relatedEventIds = ids + directEvents.flatMap({ $0.dependentOn?.events ?? [] }) // yes Flat Map
         let allEvents: [DataEvents] = manager.getAll { fetchRequest in
             fetchRequest.predicate = NSPredicate(format: "(%K in %@)", #keyPath(DataEvents.id), relatedEventIds)
         }
-		return NSSet(array: allEvents)
-	}
+        return NSSet(array: allEvents)
+    }
+
+    private func getIdsFromRawEventData() -> [String] {
+        return rawEventData.map { $0["id"] as? String }.filter({ $0 != nil }).map({ $0! })
+    }
+}
+
+private struct DataEventsableDecodedEventId: Codable {
+    let id: String
 }

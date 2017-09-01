@@ -28,6 +28,6 @@ extension DataItem: DataRowStorable, DataEventsable {
 		coreItem.inMissionId = inMissionId
 		coreItem.gameVersion = gameVersion.stringValue
 		coreItem.relatedEvents = getRelatedDataEvents(context: coreItem.managedObjectContext)
-//		coreItem.setValue(itemType.stringValue, forKey: "itemType")
+//        coreItem.setValue(itemType.stringValue, forKey: "itemType")
 	}
 }

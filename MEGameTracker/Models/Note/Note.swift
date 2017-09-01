@@ -8,16 +8,24 @@
 
 import Foundation
 
-public struct Note {
+public struct Note: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case uuid
+        case shepardUuid
+        case gameSequenceUuid
+        case identifyingObject
+        case text
+    }
+
 // MARK: Constants
 
 // MARK: Properties
-
 	public internal(set) var uuid: UUID
 	public internal(set) var shepardUuid: UUID?
 	public internal(set) var identifyingObject: IdentifyingObject
 
-	public fileprivate(set) var text: String?
+	public private(set) var text: String?
 
 	public var gameVersion: GameVersion
 
@@ -47,36 +55,35 @@ public struct Note {
 	public static var onChange = Signal<(id: String, object: Note?)>()
 
 // MARK: Initialization
-
 	public init(
-		identifyingObject: IdentifyingObject,
-		shepardUuid: UUID? = nil,
-		gameSequenceUuid: UUID? = nil
+        identifyingObject: IdentifyingObject,
+        uuid: UUID? = nil,
+        shepardUuid: UUID? = nil,
+        gameSequenceUuid: UUID? = nil
 	) {
-		uuid = UUID()
-		self.identifyingObject = identifyingObject
-		self.gameVersion = App.current.gameVersion
+		self.uuid = uuid ?? UUID()
 		self.shepardUuid = shepardUuid ?? App.current.game?.shepard?.uuid
 		self.gameSequenceUuid = gameSequenceUuid ?? App.current.game?.uuid
+        self.identifyingObject = identifyingObject
+        self.gameVersion = App.current.gameVersion // TODO: set to gameSequence version when missing
 	}
 
-	public init(
-		uuid: UUID,
-		identifyingObject: IdentifyingObject,
-		shepardUuid: UUID? = nil,
-		gameSequenceUuid: UUID? = nil,
-		gameVersion: GameVersion? = nil,
-		data: SerializableData?
-	) {
-		self.init(identifyingObject: identifyingObject, shepardUuid: shepardUuid, gameSequenceUuid: gameSequenceUuid)
-		self.uuid = uuid
-		if let data = data {
-			setData(data)
-		} else if let gameVersion = gameVersion {
-			self.gameVersion = gameVersion
-		}
-	}
+    public init(from decoder: Decoder) throws {
+        gameVersion = App.current.gameVersion // default
+        shepardUuid = App.current.game?.shepard?.uuid // default
+        gameSequenceUuid = App.current.game?.uuid // default
 
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        uuid = try container.decode(UUID.self, forKey: .uuid)
+        shepardUuid = try container.decodeIfPresent(UUID.self, forKey: .shepardUuid)
+        gameSequenceUuid = try container.decodeIfPresent(UUID.self, forKey: .gameSequenceUuid)
+        identifyingObject = try container.decode(IdentifyingObject.self, forKey: .identifyingObject)
+        text = try container.decodeIfPresent(String.self, forKey: .text)
+
+        try unserializeDateModifiableData(decoder: decoder)
+        try unserializeGameModifyingData(decoder: decoder)
+        try unserializeLocalCloudData(decoder: decoder)
+    }
 }
 
 // MARK: Retrieval Functions of Related Data
@@ -85,8 +92,8 @@ extension Note {
 	public static func getDummyNote(json: String? = nil) -> Note? {
 		// swiftlint:disable line_length
 		let json = json ?? "{\"uuid\":1,\"shepardUuid\":1,\"identifyingObject\":{\"type\":\"Map\",\"id\":1},\"text\":\"A note.\"}"
+        return try? defaultManager.decoder.decode(Note.self, from: json.data(using: .utf8)!)
 		// swiftlint:enable line_length
-		return Note(serializedString: json)
 	}
 }
 
@@ -106,64 +113,6 @@ extension Note {
 			}
 		}
 	}
-}
-
-// MARK: SerializedDataStorable
-extension Note: SerializedDataStorable {
-
-	public func getData() -> SerializableData {
-		var list: [String: SerializedDataStorable?] = [:]
-		list["uuid"] = uuid.uuidString
-//		list["gameSequenceUuid"] = gameSequenceUuid // GameModifying
-		list["shepardUuid"] = shepardUuid?.uuidString
-		list["text"] = text
-		list["identifyingObject"] = identifyingObject.getData()
-		list["gameVersion"] = gameVersion.stringValue
-//        list = serializeDateModifiableData(list: list)
-//        list = serializeGameModifyingData(list: list)
-//        list = serializeLocalCloudData(list: list)
-		return SerializableData.safeInit(list)
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension Note: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data,
-			  let uuidString = data["uuid"]?.string,
-              let uuid = UUID(uuidString: uuidString),
-			  let gameSequenceUuidString = data["gameSequenceUuid"]?.string,
-              let gameSequenceUuid = UUID(uuidString: gameSequenceUuidString),
-			  let shepardUuidString = data["shepardUuid"]?.string,
-              let shepardUuid = UUID(uuidString: shepardUuidString),
-			  let identifyingObject = IdentifyingObject(data: data["identifyingObject"])
-		else { return nil }
-
-		self.init(
-			uuid: uuid,
-			identifyingObject: identifyingObject,
-			shepardUuid: shepardUuid,
-			gameSequenceUuid: gameSequenceUuid,
-			data: data
-		)
-	}
-
-	public mutating func setData(_ data: SerializableData) {
-		self.uuid = UUID(uuidString: data["uuid"]?.string ?? "") ?? uuid
-		self.gameSequenceUuid = UUID(uuidString: data["gameSequenceUuid"]?.string ?? "") ?? gameSequenceUuid
-		self.shepardUuid = UUID(uuidString: data["shepardUuid"]?.string ?? "") ?? shepardUuid
-		self.identifyingObject = IdentifyingObject(data: data["identifyingObject"]) ?? identifyingObject
-		self.gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") ?? gameVersion
-
-		text = data["text"]?.string
-
-//        unserializeDateModifiableData(data: data)
-//        unserializeGameModifyingData(data: data)
-//        unserializeLocalCloudData(data: data)
-	}
-
 }
 
 // MARK: DateModifiable

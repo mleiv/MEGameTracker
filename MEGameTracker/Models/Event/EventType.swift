@@ -12,15 +12,15 @@ import Foundation
 /// Example: the event of "Unlocked Galaxy Map" is flagged in blockedUntil in the mission A1.C1.AsariConsort.
 public enum EventType: String, Codable {
 
-	case unknown
-	case unavailableInGame
-	case requiresConfig
-	case blockedUntil
-	case blockedAfter
-	case triggers
+	case unknown = "Unknown"
+	case unavailableInGame = "UnavailableInGame"
+	case requiresConfig = "RequiresConfig"
+	case blockedUntil = "BlockedUntil"
+	case blockedAfter = "BlockedAfter"
+	case triggers = "Triggers"
 
 	/// Returns a list of all possible enum variations.
-	public static func list() -> [EventType] {
+	public static func all() -> [EventType] {
 		return [
             .unknown,
             .unavailableInGame,
@@ -32,26 +32,13 @@ public enum EventType: String, Codable {
 	}
 
 	/// Returns the string values of all the enum variations.
-	private static let stringValues: [EventType: String] = [
-		.unknown: "Unknown",
-		.unavailableInGame: "UnavailableInGame",
-		.requiresConfig: "RequiresConfig",
-		.blockedUntil: "BlockedUntil",
-		.blockedAfter: "BlockedAfter",
-		.triggers: "Triggers",
-	]
+	private static let stringValues: [EventType: String] = {
+        return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
+    }()
 
 	/// Creates an enum from a string value, if possible.
 	public init?(stringValue: String?) {
-		guard let type = EventType.stringValues
-			.filter({ $0.1 == stringValue })
-			.map({ $0.0 })
-            .filter({ $0 != nil }).map({ $0! })
-            .first
-		else {
-			return nil
-		}
-		self = type
+		self.init(rawValue: stringValue ?? "")
 	}
 
 	/// Returns the string value of an enum.

@@ -72,12 +72,14 @@ final class MissionTests: MEGameTrackerTests {
 		_ = create(Mission.self, from: digJson)
 		// sorts by sort index, availability
 		let matches1 = Mission.getAll().sorted(by: Mission.sort)
-		XCTAssert(matches1[0].id == "M1.Garrus",
-			"Failed to sort mission 1 correctly")
-		XCTAssert(matches1[1].id == "A1.UC.TurianInsignias",
-			"Failed to sort mission 2 correctly")
-		XCTAssert(matches1[2].id == "A2.N7.ArcheologicalDig",
-			"Failed to sort mission 3 correctly")
+        if matches1.count == 3 {
+            XCTAssert(matches1[0].id == "M1.Garrus",
+                "Failed to sort mission 1 correctly")
+            XCTAssert(matches1[1].id == "A1.UC.TurianInsignias",
+                "Failed to sort mission 2 correctly")
+            XCTAssert(matches1[2].id == "A2.N7.ArcheologicalDig",
+                "Failed to sort mission 3 correctly")
+        }
 	}
 
 	/// Test Mission game version variations.

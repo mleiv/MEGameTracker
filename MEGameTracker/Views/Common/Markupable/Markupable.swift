@@ -137,7 +137,7 @@ extension Markupable where Self: UIView {
 		return attributedText
 	}
 
-	fileprivate func parseLinkForObjectName(_ urlString: String) -> String? {
+	private func parseLinkForObjectName(_ urlString: String) -> String? {
 		if let url = URL(string: urlString),
 			let page = url.host,
 			let id = url.queryDictionary["id"] {
@@ -146,7 +146,7 @@ extension Markupable where Self: UIView {
 			case "item": return Item.get(id: id)?.name
 			case "map": return Map.get(id: id)?.name
 			case "maplocation":
-				if let type = MapLocationType(stringValue: url.queryDictionary["type"] ?? "") {
+				if let type = MapLocationType(stringValue: url.queryDictionary["type"]) {
 					return MapLocation.get(id: id, type: type)?.name
 				} else {
 					return nil
@@ -158,7 +158,7 @@ extension Markupable where Self: UIView {
 		return nil
 	}
 
-	fileprivate func createLink(oldAttributedText: NSAttributedString, link: String) -> NSAttributedString {
+	private func createLink(oldAttributedText: NSAttributedString, link: String) -> NSAttributedString {
 		let attributedText = NSMutableAttributedString(attributedString: oldAttributedText)
 		let isInternalLink = NSPredicate(format:"SELF MATCHES %@", "megametracker:.*").evaluate(with: link)
 		let hideIcon = NSPredicate(format:"SELF MATCHES %@", ".*\\&hideicon=1.*").evaluate(with: link)

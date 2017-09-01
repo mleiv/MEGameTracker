@@ -11,11 +11,11 @@ import CoreData
 
 extension GameSequence: CodableCoreDataStorable {
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = GameSequences
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Sets core data values to match struct values (specific).
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType
@@ -25,7 +25,7 @@ extension GameSequence: CodableCoreDataStorable {
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 	}
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Alters the predicate to retrieve only the row equal to this object.
 	public func setIdentifyingPredicate(
 		fetchRequest: NSFetchRequest<EntityType>
@@ -126,16 +126,15 @@ extension GameSequence {
 			// save record for CloudKit
 			notifyDeleteToCloud(uuid: uuid, with: manager)
 		}
-let otherManager = CoreDataManager.current
 
 		// mass delete all related objects
 		// these may be redeleted individually, but I want to clean up everything. 
-		isDeleted = isDeleted && Decision.deleteAll(gameSequenceUuid: uuid, with: otherManager)
-		isDeleted = isDeleted && Item.deleteAll(gameSequenceUuid: uuid, with: otherManager)
-		isDeleted = isDeleted && Map.deleteAll(gameSequenceUuid: uuid, with: otherManager)
-		isDeleted = isDeleted && Mission.deleteAll(gameSequenceUuid: uuid, with: otherManager)
-		isDeleted = isDeleted && Note.deleteAll(gameSequenceUuid: uuid, with: otherManager)
-		isDeleted = isDeleted && Person.deleteAll(gameSequenceUuid: uuid, with: otherManager)
+		isDeleted = isDeleted && Decision.deleteAll(gameSequenceUuid: uuid, with: manager)
+		isDeleted = isDeleted && Item.deleteAll(gameSequenceUuid: uuid, with: manager)
+		isDeleted = isDeleted && Map.deleteAll(gameSequenceUuid: uuid, with: manager)
+		isDeleted = isDeleted && Mission.deleteAll(gameSequenceUuid: uuid, with: manager)
+		isDeleted = isDeleted && Note.deleteAll(gameSequenceUuid: uuid, with: manager)
+		isDeleted = isDeleted && Person.deleteAll(gameSequenceUuid: uuid, with: manager)
 		isDeleted = isDeleted && Shepard.deleteAll(gameSequenceUuid: uuid, with: manager)
 
 		isDeleted = true // ignore the above stuff for now - we may have duplicate calls due to changes
@@ -156,8 +155,7 @@ let otherManager = CoreDataManager.current
 	) {
 		var deletedRows: [DeletedRow] = []
 
-let otherManager = CoreDataManager.current
-		deletedRows += getAllIdentifiers(ofType: Decision.self, with: otherManager) { fetchRequest in
+		deletedRows += getAllIdentifiers(ofType: Decision.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
@@ -165,7 +163,7 @@ let otherManager = CoreDataManager.current
 				identifier: Decision.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-		deletedRows += getAllIdentifiers2(ofType: Event.self, with: manager) { fetchRequest in
+		deletedRows += getAllIdentifiers(ofType: Event.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
@@ -173,7 +171,7 @@ let otherManager = CoreDataManager.current
 				identifier: Event.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-		deletedRows += getAllIdentifiers(ofType: Item.self, with: otherManager) { fetchRequest in
+		deletedRows += getAllIdentifiers(ofType: Item.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
@@ -181,7 +179,7 @@ let otherManager = CoreDataManager.current
 				identifier: Item.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-		deletedRows += getAllIdentifiers(ofType: Map.self, with: otherManager) { fetchRequest in
+		deletedRows += getAllIdentifiers(ofType: Map.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
@@ -189,7 +187,7 @@ let otherManager = CoreDataManager.current
 				identifier: Map.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-		deletedRows += getAllIdentifiers(ofType: Mission.self, with: otherManager) { fetchRequest in
+		deletedRows += getAllIdentifiers(ofType: Mission.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
@@ -197,7 +195,7 @@ let otherManager = CoreDataManager.current
 				identifier: Mission.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-		deletedRows += getAllIdentifiers(ofType: Note.self, with: otherManager) { fetchRequest in
+		deletedRows += getAllIdentifiers(ofType: Note.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
@@ -205,7 +203,7 @@ let otherManager = CoreDataManager.current
 				identifier: Note.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-		deletedRows += getAllIdentifiers(ofType: Person.self, with: otherManager) { fetchRequest in
+		deletedRows += getAllIdentifiers(ofType: Person.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
@@ -213,7 +211,7 @@ let otherManager = CoreDataManager.current
 				identifier: Person.getIdentifyingName(id: $0.id, gameSequenceUuid: $0.gameSequenceUuid)
 			)
 		}
-		deletedRows += getAllIdentifiers2(ofType: Shepard.self, with: manager) { fetchRequest in
+		deletedRows += getAllIdentifiers(ofType: Shepard.self, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
@@ -231,50 +229,12 @@ let otherManager = CoreDataManager.current
 	}
 	// swiftlint:enable function_body_length
 
-	internal static func getAllIdentifiers<T: CloudDataStorable & SimpleSerializedCoreDataStorable>(
-		ofType type: T.Type,
-		with manager: SimpleSerializedCoreDataManageable?,
-		alterFetchRequest: @escaping ((NSFetchRequest<T.EntityType>) -> Void) = { _ in }
-	) -> [(id: String, gameSequenceUuid: UUID)] {
-	// TODO: remvoe
-        let manager = manager ?? CoreDataManager.current
-		var result: [(id: String, gameSequenceUuid: UUID)] = []
-		autoreleasepool {
-			result = manager.getAllTransformed(
-				transformEntity: {
-					if $0 is GameDecisions
-						|| $0 is GameEvents
-						|| $0 is GameItems
-						|| $0 is GameMaps
-						|| $0 is GameMissions
-						|| $0 is GamePersons {
-						if let id = $0.value(forKey: "id") as? String,
-							let uuidString = $0.value(forKey: "gameSequenceUuid") as? String,
-                            let uuid = UUID(uuidString: uuidString) {
-							return (id: id, gameSequenceUuid: uuid)
-						}
-					} else if $0 is GameShepards
-						|| $0 is GameNotes {
-						if let id = $0.value(forKey: "uuid") as? String,
-                            let uuidString = $0.value(forKey: "gameSequenceUuid") as? String,
-                            let uuid = UUID(uuidString: uuidString) {
-							return (id: id, gameSequenceUuid: uuid)
-						}
-					}
-					return nil
-				},
-				alterFetchRequest: alterFetchRequest
-			)
-		}
-		return result
-	}
-
-    internal static func getAllIdentifiers2<T: CloudDataStorable & CodableCoreDataStorable>(
+    internal static func getAllIdentifiers<T: CloudDataStorable & CodableCoreDataStorable>(
         ofType type: T.Type,
         with manager: CodableCoreDataManageable?,
         alterFetchRequest: @escaping ((NSFetchRequest<T.EntityType>) -> Void) = { _ in }
     ) -> [(id: String, gameSequenceUuid: UUID)] {
-        let manager = manager ?? CoreDataManager2.current
+        let manager = manager ?? CoreDataManager.current
         var result: [(id: String, gameSequenceUuid: UUID)] = []
         autoreleasepool {
             result = manager.getAllTransformed(
@@ -329,7 +289,7 @@ let otherManager = CoreDataManager.current
 		return getAll(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K in %@)",
-				#keyPath(GameSequences.uuid), uuids.map{ $0.uuidString }
+				#keyPath(GameSequences.uuid), uuids.map { $0.uuidString }
 			)
 		}
 	}

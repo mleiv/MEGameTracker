@@ -17,4 +17,3 @@ extension Item: CloudDataStorable {
     }
 
 }
-

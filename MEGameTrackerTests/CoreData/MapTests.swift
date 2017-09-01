@@ -60,9 +60,11 @@ final class MapTests: MEGameTrackerTests {
 		_ = create(Map.self, from: edenPrimeJson)
 		// sorts by name
 		let matches1 = Map.getAll().sorted(by: Map.sort)
-		XCTAssert(matches1[0].id == "G.Ear.Exo.Uto.Eden", "Failed to sort map 1 correctly")
-		XCTAssert(matches1[1].id == "G.Ear.Exo.Uto.Ede.A", "Failed to sort map 2 correctly")
-		XCTAssert(matches1[2].id == "G.Ear.Exo.Utopia", "Failed to sort map 3 correctly")
+        if matches1.count == 3 {
+            XCTAssert(matches1[0].id == "G.Ear.Exo.Uto.Eden", "Failed to sort map 1 correctly")
+            XCTAssert(matches1[1].id == "G.Ear.Exo.Uto.Ede.A", "Failed to sort map 2 correctly")
+            XCTAssert(matches1[2].id == "G.Ear.Exo.Utopia", "Failed to sort map 3 correctly")
+        }
 	}
 
 	/// Test Map game version variations.

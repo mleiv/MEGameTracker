@@ -35,19 +35,16 @@ extension ActionTarget {
 	public func change(data: [String: Any?]) {
 		switch type {
 		case .decision:
-			var object: Decision? = getObject()
-			object?.change(data: data)
+			_ = getObject(type: Decision.self)?.changed(data: data)
 		case .item:
-			var object: Item? = getObject()
-			object?.change(data: data)
+            _ = getObject(type: Item.self)?.changed(data: data)
 		case .mission:
-			var object: Mission? = getObject()
-			object?.change(data: data)
+            _ = getObject(type: Mission.self)?.changed(data: data)
 		}
 	}
 
 	/// Fetches an object of the specified type and id
-	private func getObject<T: GameRowStorable>() -> T? {
+	private func getObject<T: GameRowStorable>(type: T.Type) -> T? {
 		return T.getFromData { fetchRequest in
 				fetchRequest.predicate = NSPredicate(
 					format: "(id = %@)",

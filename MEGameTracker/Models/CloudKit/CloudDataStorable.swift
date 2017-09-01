@@ -284,13 +284,13 @@ extension CloudDataStorable {
         ]
         changes.merge(record.allKeys().map { key -> (String, Any?) in
             let value: Any? = {
-                switch (record[key]) {
-                case (let v) where v is NSNumber: return v as? Double
-                case (let v) where v is NSString: return v as? String
-                case (let v) where v is NSDate: return v as? Date
-                case (let v) where v is NSArray:
+                switch record[key] {
+                case let v where v is NSNumber: return v as? Double
+                case let v where v is NSString: return v as? String
+                case let v where v is NSDate: return v as? Date
+                case let v where v is NSArray:
                     return (v as? NSArray) as? [String]
-                case (let v) where v is CKAsset:
+                case let v where v is CKAsset:
                     if let v = v as? CKAsset,
                         let image = UIImage(contentsOfFile: v.fileURL.path) {
                         return GamesDataBackup.current.cacheImage(image, recordId: record.recordID.recordName, key: key)
@@ -301,7 +301,12 @@ extension CloudDataStorable {
             }()
             return (key, value)
         }) { (_, new) in return new }
-        return CloudDataRecordChange(recordId: record.recordID.recordName, isDeleted: false, changeSet: changes, lastRecordData: Data())
+        return CloudDataRecordChange(
+            recordId: record.recordID.recordName,
+            isDeleted: false,
+            changeSet: changes,
+            lastRecordData: Data()
+        )
 	}
 
 	/// (Protocol default)
@@ -309,7 +314,12 @@ extension CloudDataStorable {
 	public static func serializeRecordDelete(
 		recordId: CKRecordID
 	) -> CloudDataRecordChange {
-        return CloudDataRecordChange(recordId: recordId.recordName, isDeleted: true, changeSet: [:], lastRecordData: Data())
+        return CloudDataRecordChange(
+            recordId: recordId.recordName,
+            isDeleted: true,
+            changeSet: [:],
+            lastRecordData: Data()
+        )
 	}
 
 	/// Translate a record object into a local serialized value, to be stored for later use.
@@ -351,7 +361,6 @@ extension CloudDataStorable where Self: CodableCoreDataStorable {
 	}
 }
 
-
 // TODO: Remove
 // (Note: these protocols can't use Self or associatedType)
 extension CloudDataStorable where Self: SimpleSerializedCoreDataStorable {
@@ -378,122 +387,6 @@ extension CloudDataStorable where Self: SimpleSerializedCoreDataStorable {
 }
 
 extension CloudDataStorable where Self: GameRowStorable {
-
-	/// (CloudDataStorable x CodableCoreDataStorable Protocol)
-	/// Get all objects to be saved to cloud.
-	public static func getAllSavesToCloud(
-		isFullDatabaseCopy: Bool,
-		with manager: SimpleSerializedCoreDataManageable?
-	) -> [CKRecord] {
-		let elements: [Self] = Self.getAllExisting(with: manager) { fetchRequest in
-			if !isFullDatabaseCopy {
-				fetchRequest.predicate = NSPredicate(format: "(isSavedToCloud == false)")
-			}
-		}
-		elements.forEach { defaultManager.log("\(type(of: $0)) \($0.getIdentifyingName())") }
-		return elements.map { $0.createSaveRecord() }
-	}
-
-	/// (CloudDataStorable x GameRowStorable Protocol)
-	/// Create a recordName for any cloud kit object.
-	public static func getIdentifyingName(
-		id: String,
-		gameSequenceUuid: UUID?
-	) -> String {
-		return "\(gameSequenceUuid?.uuidString ?? "")||\(id)"
-	}
-
-	/// Convenience version - get the static getIdentifyingName for easy instance reference.
-	public func getIdentifyingName() -> String {
-		return Self.getIdentifyingName(id: id, gameSequenceUuid: gameSequenceUuid)
-	}
-
-	/// (CloudDataStorable x GameRowStorable Protocol)
-	/// Parses a cloud identifier into the parts needed to retrieve it from core data.
-	public static func parseIdentifyingName(
-		name: String
-	) -> ((id: String, gameSequenceUuid: UUID)?) {
-		let pieces = name.components(separatedBy: "||")
-		guard pieces.count == 2 else { return nil }
-        if let gameSequenceUuid = UUID(uuidString: pieces[0]) {
-            return (id: pieces[1], gameSequenceUuid: gameSequenceUuid)
-        } else {
-            defaultManager.log("No Game UUID found for: \(name)")
-            return nil
-        }
-	}
-
-	/// (CloudDataStorable x GameRowStorable Protocol)
-	/// Get all the values matching the list of cloud identifiers.
-	public static func getAll(
-		identifiers: [String],
-		with manager: SimpleSerializedCoreDataManageable?
-	) -> [Self] {
-		return identifiers.reduce([]) { (list: [Self], identifier: String) -> [Self] in
-			if let (id, uuid) = parseIdentifyingName(name: identifier),
-                let found = getExisting(id: id, gameSequenceUuid: uuid, with: manager) {
-				return list + [found]
-			}
-			return list
-		}
-	}
-
-	/// (CloudDataStorable x GameRowStorable Protocol)
-	/// Set identifying fields for a cloud kit object.
-	public func setIdentifyingCloudFields(record: CKRecord) {
-		record.setValue(
-            id as NSString,
-            forKey: "id"
-        )
-		record.setValue(
-            (gameSequenceUuid?.uuidString ?? "") as NSString,
-            forKey: "gameSequenceUuid"
-        )
-	}
-
-	public static func saveOneFromCloud(
-        changeRecord: CloudDataRecordChange,
-        with manager: CodableCoreDataManageable?
-    ) -> Bool {
-        let manager = CoreDataManager.current
-        let recordId = changeRecord.recordId
-        if let (id, uuid) = parseIdentifyingName(name: recordId),
-            var element = Self.getExisting(id: id, gameSequenceUuid: uuid, with: manager)
-                            ?? Self.get(id: id, with: manager) {
-//            let pendingData = element.pendingCloudChanges
-            // apply cloud changes
-//            element.setData(changeRecord.changeSet) //TODO
-            element.gameSequenceUuid = uuid
-            // reapply local changes
-//            if let pendingData = pendingData {
-//                element.setData(pendingData)
-//                element.isSavedToCloud = false
-//                // re-store pending changes until object is saved to cloud
-//                element.pendingCloudChanges = pendingData
-//            }
-            element.isSavedToCloud = true
-            if element.save(with: manager) {
-                print("Saved from cloud \(recordId)")
-                return true
-            } else {
-                print("Save from cloud failed \(recordId)")
-            }
-        }
-        return false
-	}
-
-	/// (Protocol default)
-	/// Delete a local object after directed by the cloud to do so.
-	public static func deleteOneFromCloud(
-		recordId: String
-	) -> Bool {
-		guard let (id, uuid) = parseIdentifyingName(name: recordId) else { return false }
-		return delete(id: id, gameSequenceUuid: uuid)
-	}
-
-}
-
-extension CloudDataStorable where Self: GameRowStorable2 {
 
     /// (CloudDataStorable x CodableCoreDataStorable Protocol)
     /// Get all objects to be saved to cloud.
@@ -610,7 +503,6 @@ extension CloudDataStorable where Self: GameRowStorable2 {
 
 }
 
-
 extension CloudDataStorable where Self: DateModifiable {
 	/// (Protocol default)
 	/// Set date fields for a cloud kit object.
@@ -625,7 +517,8 @@ extension CloudDataStorable {
     public mutating func unserializeLocalCloudData(_ data: [String: Any?]) {
         isSavedToCloud = (data["isSavedToCloud"] as? Bool) ?? isSavedToCloud
         lastRecordData = (data["lastRecordData"] as? Data) ?? lastRecordData
-        pendingCloudChanges = (data["pendingCloudChanges"] as? CodableDictionary) ?? pendingCloudChanges
+        pendingCloudChanges = (data["pendingCloudChanges"] as? CodableDictionary)
+            ?? pendingCloudChanges
     }
 }
 extension CloudDataStorable where Self: Codable {

@@ -43,7 +43,7 @@ final public class App: Codable {
 
 // MARK: Computed Properties
     public var gameVersion: GameVersion { return game?.gameVersion ?? .game1 }
-    
+
 	public var lastBuild: Int {
 		get { return _lastBuild.get() ?? 0 }
 		set { return _lastBuild.set(newValue) }
@@ -76,12 +76,15 @@ final public class App: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         currentGameUuid = try container.decodeIfPresent(UUID.self, forKey: .currentGameUuid)
-        recentlyViewedMaps = try container.decodeIfPresent(RecentlyViewedList.self, forKey: .recentlyViewedMaps) ?? RecentlyViewedList(maxElements: App.defaultRecentlyViewedListSize)
+        recentlyViewedMaps = try container.decodeIfPresent(
+                RecentlyViewedList.self,
+                forKey: .recentlyViewedMaps
+            ) ?? RecentlyViewedList(maxElements: App.defaultRecentlyViewedListSize)
         recentlyViewedMissions = [:]
         let missionsContainer = try? container.nestedContainer(
             keyedBy: GameVersion.self,
             forKey: .recentlyViewedMissions)
-        for gameVersion in GameVersion.list() {
+        for gameVersion in GameVersion.all() {
             recentlyViewedMissions[gameVersion] = try missionsContainer?.decodeIfPresent(
                     RecentlyViewedList.self,
                     forKey: gameVersion

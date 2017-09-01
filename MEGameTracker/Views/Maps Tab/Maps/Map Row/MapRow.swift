@@ -16,33 +16,33 @@ final public class MapRow: UITableViewCell {
 // MARK: Constants
 
 // MARK: Outlets
-	@IBOutlet fileprivate weak var widthStack: UIStackView?
+	@IBOutlet private weak var widthStack: UIStackView?
 
-	@IBOutlet fileprivate weak var checkboxStack: UIStackView?
-	@IBOutlet fileprivate weak var checkboxImageView: UIImageView?
-	@IBOutlet fileprivate weak var checkboxButton: UIButton?
+	@IBOutlet private weak var checkboxStack: UIStackView?
+	@IBOutlet private weak var checkboxImageView: UIImageView?
+	@IBOutlet private weak var checkboxButton: UIButton?
 
-	@IBOutlet fileprivate weak var parentMapLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var nameLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var descriptionLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var locationLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var availabilityLabel: MarkupLabel?
+	@IBOutlet private weak var parentMapLabel: MarkupLabel?
+	@IBOutlet private weak var nameLabel: MarkupLabel?
+	@IBOutlet private weak var descriptionLabel: MarkupLabel?
+	@IBOutlet private weak var locationLabel: MarkupLabel?
+	@IBOutlet private weak var availabilityLabel: MarkupLabel?
 
-	@IBOutlet fileprivate weak var fillerView: UIView?
-	@IBOutlet fileprivate weak var disclosureImageWrapper: UIView?
-	@IBOutlet fileprivate weak var disclosureImageView: UIImageView?
+	@IBOutlet private weak var fillerView: UIView?
+	@IBOutlet private weak var disclosureImageWrapper: UIView?
+	@IBOutlet private weak var disclosureImageView: UIImageView?
 
-	@IBAction fileprivate func onClickCheckbox(_ sender: UIButton) { toggleMap() }
+	@IBAction private func onClickCheckbox(_ sender: UIButton) { toggleMap() }
 
 // MARK: Properties
-	fileprivate var map: Map?
-	fileprivate weak var origin: UIViewController?
-	fileprivate var isCalloutBoxRow: Bool = false
-	fileprivate var allowsSegue: Bool = false
-	fileprivate var isShowParentMapIfFound: Bool = false
+	private var map: Map?
+	private weak var origin: UIViewController?
+	private var isCalloutBoxRow: Bool = false
+	private var allowsSegue: Bool = false
+	private var isShowParentMapIfFound: Bool = false
 
 // MARK: Change Listeners And Change Status Flags
-	fileprivate var isDefined = false
+	private var isDefined = false
 
 // MARK: Lifecycle Events
 	public override func layoutSubviews() {
@@ -74,7 +74,7 @@ final public class MapRow: UITableViewCell {
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() -> Bool {
+	private func setup() -> Bool {
 		guard !UIWindow.isInterfaceBuilder && nameLabel != nil else { return false }
 
 		parentMapLabel?.isHidden = true
@@ -124,7 +124,7 @@ final public class MapRow: UITableViewCell {
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		parentMapLabel?.text = ""
 		nameLabel?.text = ""
 		descriptionLabel?.text = ""
@@ -133,7 +133,7 @@ final public class MapRow: UITableViewCell {
 	}
 
 // MARK: Supporting Functions
-	fileprivate func setCheckboxImage(isExplored: Bool, isAvailable: Bool) {
+	private func setCheckboxImage(isExplored: Bool, isAvailable: Bool) {
 		if !isAvailable {
 			checkboxImageView?.image = isExplored ? Checkbox.disabledFilled.getImage() : Checkbox.disabledEmpty.getImage()
 		} else {
@@ -141,7 +141,7 @@ final public class MapRow: UITableViewCell {
 		}
 	}
 
-	fileprivate func toggleMap() {
+	private func toggleMap() {
 		guard map?.isExplorable == true, let nameLabel = self.nameLabel else { return }
 		let isExplored = !(self.map?.isExplored ?? false)
 		let spinnerController = origin as? Spinnerable

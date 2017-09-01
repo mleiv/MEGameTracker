@@ -16,4 +16,3 @@ extension Event: CloudDataStorable {
         record.setValue(isTriggered as NSNumber, forKey: "isTriggered")
     }
 }
-

@@ -616,70 +616,70 @@
 		"missionType": "Objective",
 		"name": "Operating Table",
 		"description": "There is a sick woman being treated near the refugee camp doctor."
-	}, {
-		"id": "A3.InspirationalStories.4",
-		"inMissionId": "A3.InspirationalStories",
-		"sortIndex": 12174,
-		"gameVersion": "4",
-		"missionType": "Objective",
-		"name": "Talking",
-		"description": "A woman and a man are talking in the seated area."
-	}, {
-		"id": "A3.MedicalSupplies",
-		"sortIndex": 1218,
-		"gameVersion": "3",
-		"missionType": "Assignment",
-		"name": "Citadel: Medical Supplies",
-		"description": "Speak to Dr. Chakwas (or Dr. Michel) on the Normandy. She explains that the refugees on the docks have a large store of military grade medical supplies while the Normandy is equipped with an excess of supplies for treating contagion, exposure, and malnutrition - all things that refugees might suffer from. She suggests you negotiate a trade with the refugee leader, [megametracker://person?id=O3.Tactus]. \n\nWhen you have, return to the doctor on the Normandy. If it is Chakwas, you will get a +5 Health bonus; if Michel, you will get a +2 MediGel Capacity bonus. Glyph will also have a technology upgrade for healing any Renegade scars (if you didn't get that in Game 2).",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
-		"experience": 375,
-		"reward": "",
-		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Medical_Supplies"],
-		"conversationRewards": [{
-			"set": {
-				"context": "Speaking to Tactus",
-				"isExclusiveSet": true,
-				"options": [{
-					"id": "A3.MedicalSupplies.P1A",
-					"type": "Paragon",
-					"value": 15,
-					"trigger": "\"Take ours as a gift.\""
-				}, {
-					"id": "A3.MedicalSupplies.P1B",
-					"type": "Paragon",
-					"value": 5,
-					"context": "*_Charm Tactus_*",
-					"trigger": "\"Do the right thing.\""
-				}, {
-					"id": "A3.MedicalSupplies.R1",
-					"type": "Renegade",
-					"value": 5,
-					"context": "*_Intimidate Tactus_*",
-					"trigger": "\"Don't be a fool.\""
-				}]
-			}
-		}, {
-			"id": "A3.MedicalSupplies.PR100",
-			"type": "Paragade",
-			"value": 5,
-			"trigger": "(Completing the assignment.)"
-		}],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Completed: Priority: The Citadel II"
-		}, {
-			"type": "Triggers",
-			"id": "Completed: Medical Supplies"
-		}]
-	}, {
-		"id": "A3.MedicalSupplies.1",
-		"inMIssionId": "A3.MedicalSupplies",
-		"sortIndex": 12181,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Speak to Tactus",
-		"description": "Ask Tactus to swap medical supplies with the Normandy."
+    }, {
+        "id": "A3.InspirationalStories.4",
+        "inMissionId": "A3.InspirationalStories",
+        "sortIndex": 12174,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Talking",
+        "description": "A woman and a man are talking in the seated area."
+    }, {
+        "id": "A3.MedicalSupplies",
+        "sortIndex": 1218,
+        "gameVersion": "3",
+        "missionType": "Assignment",
+        "name": "Citadel: Medical Supplies",
+        "description": "Speak to Dr. Chakwas (or Dr. Michel) on the Normandy. She explains that the refugees on the docks have a large store of military grade medical supplies while the Normandy is equipped with an excess of supplies for treating contagion, exposure, and malnutrition - all things that refugees might suffer from. She suggests you negotiate a trade with the refugee leader, [megametracker://person?id=O3.Tactus]. \n\nWhen you have, return to the doctor on the Normandy. If it is Chakwas, you will get a +5 Health bonus; if Michel, you will get a +2 MediGel Capacity bonus. Glyph will also have a technology upgrade for healing any Renegade scars (if you didn't get that in Game 2).",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "experience": 375,
+        "reward": "",
+        "relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Medical_Supplies"],
+        "conversationRewards": [{
+            "set": {
+                "context": "Speaking to Tactus",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A3.MedicalSupplies.P1A",
+                    "type": "Paragon",
+                    "value": 15,
+                    "trigger": "\"Take ours as a gift.\""
+                }, {
+                    "id": "A3.MedicalSupplies.P1B",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm Tactus_*",
+                    "trigger": "\"Do the right thing.\""
+                }, {
+                    "id": "A3.MedicalSupplies.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate Tactus_*",
+                    "trigger": "\"Don't be a fool.\""
+                }]
+            }
+        }, {
+            "id": "A3.MedicalSupplies.PR100",
+            "type": "Paragade",
+            "value": 5,
+            "trigger": "(Completing the assignment.)"
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel II"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Medical Supplies"
+        }]
+    }, {
+        "id": "A3.MedicalSupplies.1",
+        "inMissionId": "A3.MedicalSupplies",
+        "sortIndex": 12181,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Tactus",
+        "description": "Ask Tactus to swap medical supplies with the Normandy."
 	}, {
 		"id": "A3.MediGelSabotage",
 		"sortIndex": 1219,
@@ -2580,11 +2580,10 @@
 		"id": "A3.KroganTeam.4",
 		"inMissionId": "A3.KroganTeam",
 		"sortIndex": 11001,
-		"gameVersion": "4",
+		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Rachni Queen",
 		"description": "If you did not save the [megametracker://person?id=E1.RachniQueen], the rachni queen here is called the \"Breeder\". \n\nYou must choose whether to save the queen or not. Saving her will sacrifice Aralakh Company. If this is the Breeder, she will also betray you later, so that is not smart. If you save the queen and Grunt was loyal, he will still survive after all the rest of Aralakh Company dies."
-
 	}, {
 		"id": "A3.ExCerberusScientists",
 		"sortIndex": 1200,

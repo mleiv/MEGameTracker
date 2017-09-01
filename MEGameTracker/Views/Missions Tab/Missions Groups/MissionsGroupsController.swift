@@ -412,42 +412,44 @@ extension MissionsGroupsController {
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var cell: UITableViewCell?
 		DispatchQueue.main.async {
+            cell = tableView.cellForRow(at: indexPath)
 			self.startSpinner(inView: self.view.superview)
-		}
-		DispatchQueue.global(qos: .background).async { // strong self (don't want to give up page until spinner is turned off)
-			let cell = tableView.cellForRow(at: indexPath)
-			if tableView != self.tableView { // search
-				if let missionRow = cell as? MissionRow {
-					var mission = missionRow.mission
-					// can't link to objectives directly
-					while let inMissionId = mission?.inMissionId,
-						let mission2 = Mission.get(id: inMissionId) {
-						mission = mission2
-					}
-					self.segueToMission(mission, sender: cell)
-					return
-				}
-			} else {
-				if let missionRow = cell as? MissionRow {
-					self.segueToMission(missionRow.mission, sender: cell)
-					return
-				} else if let type = self.missionsTypeByRow((indexPath as NSIndexPath).row) {
-					self.segueToMissionsGroup(type, sender: cell)
-					return
-				}
-			}
-			DispatchQueue.main.async { // strong self (don't want to give up page until spinner is turned off)
-				self.stopSpinner(inView: self.view.superview)
-			}
-		}
-	}
+            DispatchQueue.global(qos: .background).async {
+                // strong self (don't want to give up page until spinner is turned off)
+                if tableView != self.tableView { // search
+                    if let missionRow = cell as? MissionRow {
+                        var mission = missionRow.mission
+                        // can't link to objectives directly
+                        while let inMissionId = mission?.inMissionId,
+                            let mission2 = Mission.get(id: inMissionId) {
+                            mission = mission2
+                        }
+                        self.segueToMission(mission, sender: cell)
+                        return
+                    }
+                } else {
+                    if let missionRow = cell as? MissionRow {
+                        self.segueToMission(missionRow.mission, sender: cell)
+                        return
+                    } else if let type = self.missionsTypeByRow((indexPath as NSIndexPath).row) {
+                        self.segueToMissionsGroup(type, sender: cell)
+                        return
+                    }
+                }
+                DispatchQueue.main.async { // strong self (don't want to give up page until spinner is turned off)
+                    self.stopSpinner(inView: self.view.superview)
+                }
+            }
+        }
+    }
 }
 
 // MARK: Listeners
 extension MissionsGroupsController {
 
-	fileprivate func startListeners() {
+	private func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)

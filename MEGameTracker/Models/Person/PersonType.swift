@@ -9,25 +9,34 @@
 import Foundation
 
 /// Defines various person types.
-public enum PersonType: String {
+public enum PersonType: String, Codable {
 
-	case squad, enemy, associate, other
+	case squad = "Squad"
+	case enemy = "Enemy"
+    case associate = "Associate"
+    case other = "Other"
 
 	/// Returns a list of all possible enum variations.
-	public static func list() -> [PersonType] {
-		return [.squad, .enemy, .associate] // no .other
+	public static func all() -> [PersonType] {
+		return [
+            .squad,
+            .enemy,
+            .associate,
+            .other
+        ]
 	}
 
-	/// Returns the string values of all the enum variations.
-	fileprivate static let stringValues: [PersonType: String] = [
-		.squad: "Squad",
-		.enemy: "Enemy",
-		.associate: "Associate",
-		.other: "Other",
-	]
+    /// Returns a list of enum variations used in PersonType categories.
+    public static func categories() -> [PersonType] {
+        return [
+            .squad,
+            .enemy,
+            .associate
+        ] // no .other
+    }
 
 	/// Returns the heading string values of all the enum variations.
-	fileprivate static let headingValues: [PersonType: String] = [
+	private static let headingValues: [PersonType: String] = [
 		.squad: "Squad",
 		.enemy: "Enemies",
 		.associate: "Associates",
@@ -36,17 +45,12 @@ public enum PersonType: String {
 
 	/// Creates an enum from a string value, if possible.
 	public init?(stringValue: String?) {
-		guard let type = PersonType.stringValues
-			.filter({ $0.1 == stringValue }).map({ $0.0 }).filter({ $0 != nil }).map({ $0! }).first
-		else {
-			return nil
-		}
-		self = type
+        self.init(rawValue: stringValue ?? "")
 	}
 
 	/// Returns the string value of an enum.
 	public var stringValue: String {
-		return PersonType.stringValues[self] ?? "Unknown"
+		return rawValue
 	}
 
 	/// Creates an enum from a heading string value, if possible.

@@ -370,7 +370,7 @@ extension IBStylesheet {
 		return attributedText
 	}
 
-	fileprivate func getAttributesByStyleName(_ style: String) -> [NSAttributedStringKey: AnyObject] {
+	private func getAttributesByStyleName(_ style: String) -> [NSAttributedStringKey: AnyObject] {
 		if let styles = styles[style] {
 			var attributes: [NSAttributedStringKey: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
@@ -385,7 +385,7 @@ extension IBStylesheet {
 		return [:]
 	}
 
-	fileprivate func convertStyleCategory(_ newStyleCategory: StyleCategory, oldStyle: String) -> String {
+	private func convertStyleCategory(_ newStyleCategory: StyleCategory, oldStyle: String) -> String {
 		switch newStyleCategory {
 			case .link:
 				if let regex = try? NSRegularExpression(pattern: "^[^\\.]+", options: .caseInsensitive) {

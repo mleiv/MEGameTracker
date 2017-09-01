@@ -11,11 +11,11 @@ import CoreData
 
 extension Shepard: CodableCoreDataStorable {
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = GameShepards
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Sets core data values to match struct values (specific).
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType
@@ -27,7 +27,7 @@ extension Shepard: CodableCoreDataStorable {
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 	}
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Alters the predicate to retrieve only the row equal to this object.
 	public func setIdentifyingPredicate(
 		fetchRequest: NSFetchRequest<EntityType>

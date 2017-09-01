@@ -23,6 +23,7 @@ public struct DataEvent: Codable {
 // MARK: Constants
 
 // MARK: Properties
+    public var rawData: Data?
 	public private(set) var id: String
 	public private(set) var gameVersion: GameVersion?
 	public var description: String?
@@ -36,14 +37,6 @@ public struct DataEvent: Codable {
 	public var isDummyData = false
 
 // MARK: Initialization
-//    public init(id: String, gameVersion: GameVersion?, data: SerializableData) {
-//        self.id = id
-//        self.gameVersion = gameVersion
-//        self.rawGeneralData = data
-//
-//        setData(data)
-//    }
-
 	public init(id: String) {
 		self.id = id
 		isDummyData = true
@@ -60,11 +53,16 @@ public struct DataEvent: Codable {
         actions = try container.decodeIfPresent([Action].self, forKey: .actions) ?? actions
     }
 
-//    public func encode(to encoder: Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(id, forKey: .id)
-//        try container.encode(changes, forKey: .changes)
-//    }
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(gameVersion, forKey: .gameVersion)
+        try container.encode(description, forKey: .description)
+        try container.encode(isAlert, forKey: .isAlert)
+        try container.encode(eraseParentValue, forKey: .eraseParentValue)
+        try container.encode(dependentOn, forKey: .dependentOn)
+        try container.encode(actions, forKey: .actions)
+    }
 }
 
 //// MARK: SerializedDataStorable

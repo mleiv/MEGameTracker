@@ -9,18 +9,18 @@
 import Foundation
 import CoreData
 
-extension Note: SimpleSerializedCoreDataStorable {
+extension Note: CodableCoreDataStorable {
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = GameNotes
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Sets core data values to match struct values (specific).
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType
 	) {
-//        setDateModifiableColumnsOnSave(coreItem: coreItem) //TODO
+        setDateModifiableColumnsOnSave(coreItem: coreItem) //TODO
 		coreItem.uuid = uuid.uuidString
 		coreItem.gameSequenceUuid = gameSequenceUuid?.uuidString
 		coreItem.gameVersion = gameVersion.stringValue
@@ -29,7 +29,7 @@ extension Note: SimpleSerializedCoreDataStorable {
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 	}
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Alters the predicate to retrieve only the row equal to this object.
 	public func setIdentifyingPredicate(
 		fetchRequest: NSFetchRequest<EntityType>
@@ -46,7 +46,7 @@ extension Note {
 // MARK: Save
 
 	public mutating func saveAnyChanges(
-		with manager: SimpleSerializedCoreDataManageable?
+		with manager: CodableCoreDataManageable?
 	) -> Bool {
 		if hasUnsavedChanges {
 			let isSaved = save(with: manager)
@@ -60,7 +60,7 @@ extension Note {
 	}
 
 	public mutating func save( // override to mark game sequence changed also
-		with manager: SimpleSerializedCoreDataManageable?
+		with manager: CodableCoreDataManageable?
 	) -> Bool {
 		let manager = manager ?? defaultManager
 		let isSaved = manager.saveValue(item: self)
@@ -78,7 +78,7 @@ extension Note {
 	public static func delete(
 		uuid: UUID,
 		gameSequenceUuid: UUID,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		if !GamesDataBackup.current.isSyncing {
 			// save record for CloudKit
@@ -96,9 +96,8 @@ extension Note {
 	public static func notifyDeleteToCloud(
 		uuid: UUID,
 		gameSequenceUuid: UUID,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) {
-let manager = CoreDataManager2.current
 		let deletedRows: [DeletedRow] = [DeletedRow(
 			source: Note.entityName,
 			identifier: getIdentifyingName(id: uuid.uuidString, gameSequenceUuid: gameSequenceUuid)
@@ -110,7 +109,7 @@ let manager = CoreDataManager2.current
 	/// Only called by GameSequence. This does not notify cloud or cascade delete, so do not call it in other places.
 	public static func deleteAll(
 		gameSequenceUuid: UUID,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		// don't have to notify: GameSequence did that for you
 		return deleteAll(with: manager) { fetchRequest in
@@ -125,7 +124,7 @@ let manager = CoreDataManager2.current
 
 	public static func get(
 		uuid: UUID,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> Note? {
 		return get(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -137,19 +136,19 @@ let manager = CoreDataManager2.current
 
 	public static func getAll(
 		uuids: [UUID],
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Note] {
 		return getAll(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K in %@)",
-				#keyPath(GameNotes.uuid), uuids.map{ $0.uuidString }
+				#keyPath(GameNotes.uuid), uuids.map { $0.uuidString }
 			)
 		}
 	}
 
 	public static func getAll(
 		identifyingObject: IdentifyingObject,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Note] {
 		return getAll(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(

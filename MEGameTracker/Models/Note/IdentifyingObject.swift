@@ -10,7 +10,12 @@ import Foundation
 
 extension Note {
 
-	public enum IdentifyingObject {
+	public enum IdentifyingObject: Codable {
+
+        enum CodingKeys: String, CodingKey {
+            case type
+            case id
+        }
 
 		case decision(id: String)
 		case item(id: String)
@@ -21,7 +26,6 @@ extension Note {
 		case shepard
 
 // MARK: Computed Properties
-
 		/// Object type.
 		public var type: String {
 			switch self {
@@ -48,13 +52,18 @@ extension Note {
 			}
 		}
 
-		/// Persistent store value for lookup.
+		/// Persistent store value for lookup in CoreData.
 		public var flattenedString: String {
 			return "\(type)\(id)"
 		}
 
-// MARK: Initialization
+        /// Persistent store value for storage in cloud.
+        public var serializedString: String {
+            let data = (try? CoreDataManager.current.encoder.encode(self)) ?? Data()
+            return String(data: data, encoding: .utf8) ?? ""
+        }
 
+// MARK: Initialization
 		public init?(objectType: String, objectId: String = "") {
 			switch objectType {
 				case "Decision": self = .decision(id: objectId)
@@ -68,30 +77,18 @@ extension Note {
 			}
 		}
 
-// MARK: Faux SerializedDataStorable
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            let type = try container.decode(String.self, forKey: .type)
+            let id = try container.decodeIfPresent(String.self, forKey: .id)
+            self.init(objectType: type, objectId: id ?? "")!
+        }
 
-		public init?(data: SerializableData?) {
-			if let type = data?["type"]?.string, let id = data?["id"]?.string {
-				self.init(objectType: type, objectId: id)
-			} else {
-				return nil
-			}
-		}
-
-// MARK: Faux SerializedDataRetrievable
-
-		public var serializedString: String { return self.getData().jsonString }
-
-		public init?(serializedString json: String) {
-			self.init(data: try? SerializableData(serializedString: json))
-		}
-
-		public func getData() -> SerializableData {
-			var list: [String: SerializedDataStorable?] = [:]
-			list["type"] = type
-			list["id"] = id
-			return SerializableData.safeInit(list)
-		}
+        public func encode(to encoder: Encoder) throws {
+            var container = encoder.singleValueContainer()
+            try container.encode(type)
+            try container.encode(id)
+        }
 	}
 }
 

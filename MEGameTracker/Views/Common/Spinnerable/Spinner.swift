@@ -10,7 +10,7 @@ import UIKit
 
 struct Spinner {
 
-	fileprivate var nib: SpinnerNib?
+	private var nib: SpinnerNib?
 
 	/// - Parameter title: The message for the spinner
 	/// - Parameter isShowProgress: Whether it should also display a progress bar

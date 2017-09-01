@@ -31,6 +31,9 @@ public protocol CodableCoreDataStorable: Codable {
 
 // MARK: Optional/Default
 
+    /// Source Data
+    var rawData: Data? { get set }
+
     /// A reference to the current core data manager.
     static var defaultManager: CodableCoreDataManageable { get }
 
@@ -96,6 +99,10 @@ extension CodableCoreDataStorable {
     /// The closure type for editing fetch requests.
     public typealias AlterFetchRequest<T: NSManagedObject> = ((NSFetchRequest<T>) -> Void)
 
+    /// (Protocol default)
+    /// A copy of the unaltered source data, for faster db write
+    public var rawData: Data? { get { return nil } set {} }
+
     /// Convenience - get the static version for easy instance reference.
     public var defaultManager: CodableCoreDataManageable {
         return Self.defaultManager
@@ -104,8 +111,7 @@ extension CodableCoreDataStorable {
     /// (Protocol default)
     /// Returns the CoreData row that is equal to this object.
     public func entity(context: NSManagedObjectContext?) -> EntityType? {
-        let manager = type(of: defaultManager).init(context: context)
-        return manager.getObject(item: self)
+        return type(of: defaultManager).init(context: context).getObject(item: self)
     }
 
     /// (Protocol default)
@@ -124,6 +130,7 @@ extension CodableCoreDataStorable {
             do {
                 let decodable = try Self.defaultManager.decoder.decode(GenericDecodable.self, from: data)
                 try self.init(from: decodable.decoder)
+                self.rawData = data
                 return
             } catch let decodeError {
                 print("Error: decoding failed for \(Self.self): \(decodeError)")
@@ -139,7 +146,14 @@ extension CodableCoreDataStorable {
         coreItem: EntityType
     ) {
         do {
-            coreItem.setValue(try defaultManager.encoder.encode(self), forKey: Self.serializedDataKey)
+            let data: Data = try {
+                if let data = rawData {
+                    return data
+                } else {
+                    return try defaultManager.encoder.encode(self)
+                }
+            }()
+            coreItem.setValue(data, forKey: Self.serializedDataKey)
         } catch let encodeError {
             print("Error: decoding failed for \(type(of: self)): \(encodeError)")
             coreItem.setValue(nil, forKey: Self.serializedDataKey)
@@ -338,5 +352,3 @@ extension CodableCoreDataStorable {
         return deleteAll(with: nil) { _ in }
     }
 }
-
-

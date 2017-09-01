@@ -64,7 +64,7 @@ final class Change20170305Tests: MEGameTrackerTests {
 
 		var decision1 = create(Decision.self, from: saveAshleyJson)
 		_ = create(Decision.self, from: saveKaidanJson)
-		decision1?.change(isSelected: true)
+		decision1 = decision1?.changed(isSelected: true)
 		var fromMission = create(Mission.self, from: missionFrom)
 		_ = create(Mission.self, from: ashleyConvo)
 		_ = create(Mission.self, from: kaidanConvo)

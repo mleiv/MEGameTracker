@@ -23,7 +23,7 @@ final public class ShepardDecisionsController: UIViewController, Spinnerable {
 	public var decisions: [Decision] = []
 
 	public var originHint: String? { return shepard?.fullName }
-	fileprivate var shepard: Shepard?
+	private var shepard: Shepard?
 
 	var gameVersion = GameVersion.game1
 	var allDecisions: [GameVersion: [Decision]] = [:]

@@ -17,4 +17,3 @@ extension Map: CloudDataStorable {
     }
 
 }
-

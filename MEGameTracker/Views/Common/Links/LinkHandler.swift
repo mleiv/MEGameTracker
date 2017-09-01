@@ -48,11 +48,11 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 		}
 	}
 
-	fileprivate func isInternalUrl(_ url: URL) -> Bool {
+	private func isInternalUrl(_ url: URL) -> Bool {
 		return url.scheme == "megametracker"
 	}
 
-	fileprivate func redirectInternalUrl(_ url: URL) {
+	private func redirectInternalUrl(_ url: URL) {
 		let page = url.host ?? ""
 		let parameters = url.queryDictionary
 		switch page {
@@ -67,7 +67,7 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 	}
 
 	/// [Matriarch Benezia|megametracker://person?name=Matriarch%20Benezia]
-	fileprivate func redirectPerson(parameters: [String: String]) {
+	private func redirectPerson(parameters: [String: String]) {
 		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
 		guard let person = parameters["id"] != nil ?
 					Person.get(id: parameters["id"] ?? "0", gameVersion: App.current.gameVersion) :
@@ -107,7 +107,7 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 	}
 
 	/// [Galaxy Map|megametracker://map?id=1]
-	fileprivate func redirectMap(parameters: [String: String]) {
+	private func redirectMap(parameters: [String: String]) {
 		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
 		if let mapId = parameters["id"], let map = Map.get(id: mapId) {
 			if !alwaysDeepLink && originController?.tabBarController?.selectedIndex == MEMainTab.maps.rawValue {
@@ -136,14 +136,14 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 		}
 	}
 	/// [Sovereign|megametracker://item?id=I1.X]
-	fileprivate func redirectItem(parameters: [String: String]) {
+	private func redirectItem(parameters: [String: String]) {
 		guard Item.get(id: parameters["id"] ?? "0") != nil else { return }
 		// TODO
 	}
 
 	// swiftlint:disable function_body_length
 	/// [Galaxy Map|megametracker://maplocation?id=1]
-	fileprivate func redirectMapLocationable(parameters: [String: String]) {
+	private func redirectMapLocationable(parameters: [String: String]) {
 		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
 		let gameVersion = GameVersion(rawValue: parameters["gameVersion"] ?? "") ?? App.current.gameVersion
 		guard let id = parameters["id"],
@@ -151,7 +151,7 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 				var list: [String: SerializedDataStorable?] = [:]
 				parameters.forEach { (k, v) in list[k] = v }
 				let data = SerializableData.safeInit(list)
-				if let type = MapLocationType(stringValue: parameters["type"] ?? ""),
+				if let type = MapLocationType(stringValue: parameters["type"]),
 				   let mapLocation = MapLocation.get(id: id, type: type, gameVersion: gameVersion) {
 					if var map = mapLocation as? Map {
 						map.generalData.isHidden = false // force  to be visible
@@ -164,19 +164,16 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 					let mapLocationX = Double(mapLocationCoords[0]),
 					let mapLocationY = Double(mapLocationCoords[1]) {
 					let mapLocationRadius = data["radius"]?.double ?? 1.0
-					list = [:]
-					list["id"] = "\(id).detail"
-					list["name"] = name
-					if var dataMap = DataMap(data: SerializableData.safeInit(list)) {
-						dataMap.mapLocationPoint = MapLocationPoint(
-							x: CGFloat(mapLocationX),
-							y: CGFloat(mapLocationY),
-							radius: CGFloat(mapLocationRadius)
-						)
-						dataMap.inMapId = id
-						dataMap.isOpensDetail = false
-						return Map(id: dataMap.id, gameVersion: App.current.gameVersion, generalData: dataMap)
-					}
+                    var dataMap = DataMap(id: "\(id).detail")
+                    dataMap.name = name
+                    dataMap.mapLocationPoint = MapLocationPoint(
+                        x: CGFloat(mapLocationX),
+                        y: CGFloat(mapLocationY),
+                        radius: CGFloat(mapLocationRadius)
+                    )
+                    dataMap.inMapId = id
+                    dataMap.isOpensDetail = false
+                    return Map(id: dataMap.id, gameVersion: App.current.gameVersion, generalData: dataMap)
 				}
 				return nil
 			}()
@@ -216,7 +213,7 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 	// swiftlint:enable function_body_length
 
 	/// [Prologue|megametracker://mission?id=M1.Prologue]
-	fileprivate func redirectMission(parameters: [String: String]) {
+	private func redirectMission(parameters: [String: String]) {
 		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
 		guard let id = parameters["id"],
 				  let mission = Mission.get(id: id)

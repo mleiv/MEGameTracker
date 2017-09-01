@@ -9,7 +9,16 @@
 import Foundation
 
 // MARK: ConversationRewardSet
-public struct ConversationRewardSet {
+public struct ConversationRewardSet: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case set
+    }
+    enum SetCodingKeys: String, CodingKey {
+        case context
+        case isExclusiveSet
+        case options
+    }
 
 // MARK: Properties
 
@@ -33,6 +42,32 @@ public struct ConversationRewardSet {
 		return point == nil && subset?.isEmpty != false
 	}
 
+// MARK: Initialization
+    public init(from decoder: Decoder) throws {
+        if let extractedPoint = try? ConversationReward(from: decoder) {
+            subset = nil
+            point = extractedPoint
+        } else {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            let setContainer = try container.nestedContainer(keyedBy: SetCodingKeys.self, forKey: .set)
+            point = nil
+            commonContext = try setContainer.decodeIfPresent(String.self, forKey: .context)
+            subset = try setContainer.decodeIfPresent([ConversationRewardSet].self, forKey: .options) ?? []
+            isExclusiveSet = try setContainer.decodeIfPresent(Bool.self, forKey: .isExclusiveSet) ?? isExclusiveSet
+        }
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        if let subset = subset {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            var setContainer = container.nestedContainer(keyedBy: SetCodingKeys.self, forKey: .set)
+            try setContainer.encode(commonContext, forKey: .context)
+            try setContainer.encode(subset, forKey: .options)
+            try setContainer.encode(isExclusiveSet, forKey: .isExclusiveSet)
+        } else {
+            try point?.encode(to: encoder)
+        }
+    }
 }
 
 // MARK: Basic Actions
@@ -154,53 +189,54 @@ extension ConversationRewardSet {
 	}
 }
 
-// MARK: SerializedDataStorable
-extension ConversationRewardSet: SerializedDataStorable {
+//// MARK: SerializedDataStorable
+//extension ConversationRewardSet: SerializedDataStorable {
+//
+//    public func getData() -> SerializableData {
+//        if let exclusiveSet = self.subset {
+//            let exclusiveSetList: [String: SerializedDataStorable?] = [
+//                "context": commonContext,
+//                "options": SerializableData.safeInit(exclusiveSet),
+//                "isExclusiveSet": isExclusiveSet,
+//            ]
+//            var list: [String: SerializedDataStorable?] = [:]
+//            list["set"] = SerializableData.safeInit(exclusiveSetList)
+//            return SerializableData.safeInit(list)
+//        } else {
+//            return point?.getData() ?? SerializableData()
+//        }
+//    }
+//
+//}
+//
+//// MARK: SerializedDataRetrievable
+//extension ConversationRewardSet: SerializedDataRetrievable {
+//
+//    public init?(data: SerializableData?) {
+//        guard let data = data
+//        else {
+//            return nil
+//        }
+//        if let exclusiveSetList = data["set"]?["options"]?.array {
+//            subset = []
+//            point = nil
+//            commonContext = data["set"]?["context"]?.string
+//            for setData in exclusiveSetList {
+//                if let set = ConversationRewardSet(data: setData) {
+//                    subset?.append(set)
+//                }
+//            }
+//            isExclusiveSet = data["set"]?["isExclusiveSet"]?.bool ?? isExclusiveSet
+//        } else {
+//            subset = nil
+//            point = ConversationReward(data: data)
+//        }
+//        if subset == nil && point == nil {
+//            return nil
+//        }
+//    }
+//
+//    public mutating func setData(_ data: SerializableData) {}
+//
+//}
 
-	public func getData() -> SerializableData {
-		if let exclusiveSet = self.subset {
-			let exclusiveSetList: [String: SerializedDataStorable?] = [
-				"context": commonContext,
-				"options": SerializableData.safeInit(exclusiveSet),
-				"isExclusiveSet": isExclusiveSet,
-			]
-			var list: [String: SerializedDataStorable?] = [:]
-			list["set"] = SerializableData.safeInit(exclusiveSetList)
-			return SerializableData.safeInit(list)
-		} else {
-			return point?.getData() ?? SerializableData()
-		}
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension ConversationRewardSet: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data
-		else {
-			return nil
-		}
-		if let exclusiveSetList = data["set"]?["options"]?.array {
-			subset = []
-			point = nil
-			commonContext = data["set"]?["context"]?.string
-			for setData in exclusiveSetList {
-				if let set = ConversationRewardSet(data: setData) {
-					subset?.append(set)
-				}
-			}
-			isExclusiveSet = data["set"]?["isExclusiveSet"]?.bool ?? isExclusiveSet
-		} else {
-			subset = nil
-			point = ConversationReward(data: data)
-		}
-		if subset == nil && point == nil {
-			return nil
-		}
-	}
-
-	public mutating func setData(_ data: SerializableData) {}
-
-}

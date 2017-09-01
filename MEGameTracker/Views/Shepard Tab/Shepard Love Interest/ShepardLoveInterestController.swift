@@ -41,7 +41,10 @@ class ShepardLoveInterestController: UITableViewController, Spinnerable {
         } else {
             let shepard = App.current.game?.shepard
             let gameVersion = shepard?.gameVersion ?? .game1
-            persons = Person.getAllLoveOptions(gameVersion: gameVersion, isMale: shepard?.gender == .male).sorted(by: Person.sort)
+            persons = Person.getAllLoveOptions(
+                    gameVersion: gameVersion,
+                    isMale: shepard?.gender == .male
+                ).sorted(by: Person.sort)
         }
 	}
 
@@ -54,7 +57,7 @@ class ShepardLoveInterestController: UITableViewController, Spinnerable {
 			onChangeLoveSetting: { _ in
 				DispatchQueue.global(qos: .background).async {
 					if let id = self.persons[row].loveInterestDecisionId, var decision = Decision.get(id: id) {
-						decision.change(isSelected: cell.isLoveInterest, isSave: true)
+						_ = decision.changed(isSelected: cell.isLoveInterest, isSave: true)
 					}
 				}
 			}

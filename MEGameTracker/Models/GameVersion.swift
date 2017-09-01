@@ -15,7 +15,7 @@ public enum GameVersion: String, CodingKey, Codable {
     case game3 = "3"
 
     /// Returns a list of all possible enum variations.
-    public static func list() -> [GameVersion] {
+    public static func all() -> [GameVersion] {
         return [.game1, .game2, .game3]
     }
 
@@ -40,7 +40,7 @@ public enum GameVersion: String, CodingKey, Codable {
 
     /// The index of this game version 0 - 2
     public var index: Int {
-        return GameVersion.list().index(of: self) ?? 0
+        return GameVersion.all().index(of: self) ?? 0
     }
 
     /// The int of this game version 1 - 3
