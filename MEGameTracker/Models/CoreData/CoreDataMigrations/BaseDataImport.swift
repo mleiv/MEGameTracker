@@ -277,7 +277,7 @@ extension BaseDataImport {
         for (var childMap) in DataMap.getAll(with: manager, alterFetchRequest: { fetchRequest in
             fetchRequest.predicate = NSPredicate(format: "(inMapId = %@)", map.id)
         }) {
-            var eventData = childMap.rawEventData.map { $0.dictionary }
+            var eventData = childMap.rawEventDictionary.map { $0.dictionary }
             var isChanged = false
             for event in inheritableEvents where !eventData.contains(where: {
                 $0["id"] as? String == event["id"] as? String && $0["type"] as? String == event["type"] as? String
@@ -294,7 +294,7 @@ extension BaseDataImport {
                 isChanged = true
             }
             if isChanged {
-                childMap.rawEventData = eventData.map { CodableDictionary($0) }
+                childMap.rawEventDictionary = eventData.map { CodableDictionary($0) }
                 maps.append(childMap)
             }
             runOnEachMapBlock()
@@ -311,7 +311,7 @@ extension BaseDataImport {
         for (var childItem) in DataItem.getAll(with: manager, alterFetchRequest: { fetchRequest in
             fetchRequest.predicate = NSPredicate(format: "(inMapId = %@)", map.id)
         }) {
-            var eventData = childItem.rawEventData.map { $0.dictionary }
+            var eventData = childItem.rawEventDictionary.map { $0.dictionary }
             var isChanged = false
             for event in inheritableEvents where !eventData.contains(where: {
                 $0["id"] as? String == event["id"] as? String && $0["type"] as? String == event["type"] as? String
@@ -324,7 +324,7 @@ extension BaseDataImport {
                 isChanged = true
             }
             if isChanged {
-                childItem.rawEventData = eventData.map { CodableDictionary($0) }
+                childItem.rawEventDictionary = eventData.map { CodableDictionary($0) }
                 items.append(childItem)
             }
             // no child item inheritance
@@ -342,7 +342,7 @@ extension BaseDataImport {
         for (var childMission) in DataMission.getAll(with: manager, alterFetchRequest: { fetchRequest in
             fetchRequest.predicate = NSPredicate(format: "(inMissionId = %@)", mission.id)
         }) {
-            var eventData = childMission.rawEventData.map { $0.dictionary }
+            var eventData = childMission.rawEventDictionary.map { $0.dictionary }
             var isChanged = false
             for event in inheritableEvents where !eventData.contains(where: {
                 $0["id"] as? String == event["id"] as? String && $0["type"] as? String == event["type"] as? String
@@ -359,7 +359,7 @@ extension BaseDataImport {
                 isChanged = true
             }
             if isChanged {
-                childMission.rawEventData = eventData.map { CodableDictionary($0) }
+                childMission.rawEventDictionary = eventData.map { CodableDictionary($0) }
                 missions.append(childMission)
             }
             runOnEachMissionBlock()
@@ -376,7 +376,7 @@ extension BaseDataImport {
         for (var childItem) in DataItem.getAll(with: manager, alterFetchRequest: { fetchRequest in
             fetchRequest.predicate = NSPredicate(format: "(inMissionId = %@)", mission.id)
         }) {
-            var eventData = childItem.rawEventData.map { $0.dictionary }
+            var eventData = childItem.rawEventDictionary.map { $0.dictionary }
             var isChanged = false
             for event in inheritableEvents where !eventData.contains(where: {
                 $0["id"] as? String == event["id"] as? String && $0["type"] as? String == event["type"] as? String
@@ -393,7 +393,7 @@ extension BaseDataImport {
                 isChanged = true
             }
             if isChanged {
-                childItem.rawEventData = eventData.map { CodableDictionary($0) }
+                childItem.rawEventDictionary = eventData.map { CodableDictionary($0) }
                 items.append(childItem)
             }
             // no child item inheritance

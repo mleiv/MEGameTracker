@@ -41,7 +41,7 @@ final class Change20170305Tests: MEGameTrackerTests {
 
 		var fromMission = create(Mission.self, from: missionFrom)
 		_ = create(Mission.self, from: michelConvo)
-		fromMission?.change(conversationRewardId: "M3.0.Citadel1.R4", isSelected: true)
+		_ = fromMission?.changed(conversationRewardId: "M3.0.Citadel1.R4", isSelected: true)
 
         App.current.lastBuild = 1 // required to run
 		Change20170305().run()
@@ -68,7 +68,7 @@ final class Change20170305Tests: MEGameTrackerTests {
 		var fromMission = create(Mission.self, from: missionFrom)
 		_ = create(Mission.self, from: ashleyConvo)
 		_ = create(Mission.self, from: kaidanConvo)
-		fromMission?.change(conversationRewardId: "M3.0.Citadel1.PR5", isSelected: true)
+		_ = fromMission?.changed(conversationRewardId: "M3.0.Citadel1.PR5", isSelected: true)
 
         App.current.lastBuild = 1 // required to run
 		Change20170305().run()

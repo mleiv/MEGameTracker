@@ -57,9 +57,9 @@ public struct DataMap: Codable, DataMapLocationable {
 	public private(set) var relatedMissionIds: [String] = []
 
     public private(set) var gameVersionDictionaries: [GameVersion: CodableDictionary] = [:]
+    private var lastGameVersion: GameVersion?
     public private(set) var rawGameVersionData: [String: CodableDictionary] = [:]
-    public private(set) var rawEventDictionary: [CodableDictionary]  = []
-    public var rawEventData: [CodableDictionary]  = []
+    public var rawEventDictionary: [CodableDictionary]  = [] // leave editable for import events inheritance
 
 	// Interface Builder
 	public var isDummyData = false
@@ -117,8 +117,14 @@ public struct DataMap: Codable, DataMapLocationable {
         ) ?? relatedMissionIds
         image = try container.decodeIfPresent(String.self, forKey: .image)
         _mapSize = try container.decodeIfPresent(MapSize.self, forKey: .referenceSize) ?? _mapSize
-        unavailabilityMessages = try container.decodeIfPresent([String].self, forKey: .unavailabilityMessages) ?? unavailabilityMessages
-        rawEventDictionary = try container.decodeIfPresent([CodableDictionary].self, forKey: .events) ?? rawEventDictionary
+        unavailabilityMessages = try container.decodeIfPresent(
+            [String].self,
+            forKey: .unavailabilityMessages
+        ) ?? unavailabilityMessages
+        rawEventDictionary = try container.decodeIfPresent(
+            [CodableDictionary].self,
+            forKey: .events
+        ) ?? rawEventDictionary
         try unserializeMapLocationableData(decoder: decoder)
         // parse and store the game version data
         let dataContainer = try decoder.singleValueContainer()
@@ -134,7 +140,10 @@ public struct DataMap: Codable, DataMapLocationable {
                 rawGeneralDictionary.dictionary.merging(gameVersionDictionary) { (_, new) in new }
             )
         }
-        rawGameVersionData = try container.decodeIfPresent([String: CodableDictionary].self, forKey: .gameVersionData) ?? rawGameVersionData
+        rawGameVersionData = try container.decodeIfPresent(
+            [String: CodableDictionary].self,
+            forKey: .gameVersionData
+        ) ?? rawGameVersionData
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -157,7 +166,7 @@ public struct DataMap: Codable, DataMapLocationable {
         try container.encode(_mapSize, forKey: .referenceSize)
         try container.encode(unavailabilityMessages, forKey: .unavailabilityMessages)
         try container.encode(rawGameVersionData, forKey: .gameVersionData)
-        try container.encode(rawEventData, forKey: .events)
+        try container.encode(rawEventDictionary, forKey: .events)
         try serializeMapLocationableData(encoder: encoder)
     }
 
@@ -276,7 +285,7 @@ extension DataMap {
 		}
 		if !rerootBreadcrumbs,
 			let parentMapId = self.inMapId,
-			let parent = DataMap.get(id: parentMapId, gameVersion: gameVersion) {
+			let parent = DataMap.get(id: parentMapId) {
 			return parent.getBreadcrumbs() + [AbbreviatedMapData(id: parent.id, name: parent.name)]
 		}
 		return []
@@ -289,16 +298,16 @@ extension DataMap {
 			]
 		}
 		if let parentMapId = self.inMapId,
-			let parent = DataMap.get(id: parentMapId, gameVersion: gameVersion) {
+			let parent = DataMap.get(id: parentMapId) {
 			return parent.getCompleteBreadcrumbs() + [AbbreviatedMapData(id: parent.id, name: parent.name)]
 		}
 		return []
 	}
 
     public func getInheritableEvents() -> [CodableDictionary] {
-//        let events = (try? defaultManager.decoder.decode([Event].self, from: rawEventData)) ?? []
+//        let events = (try? defaultManager.decoder.decode([Event].self, from: rawEventDictionary)) ?? []
 //        return events.filter { $0.type.isAppliesToChildren }
-        let inheritableEvents: [CodableDictionary] = rawEventData.map({
+        let inheritableEvents: [CodableDictionary] = rawEventDictionary.map({
             if let eventType = EventType(stringValue: $0["type"] as? String),
                 eventType.isAppliesToChildren {
                 return $0
@@ -317,9 +326,10 @@ extension DataMap {
 //    }
 
     public func changed(gameVersion: GameVersion) -> DataMap {
-//        guard gameVersion != self.gameVersion else { return self }
+        guard isDifferentGameVersion(gameVersion) else { return self }
         var map = self
         map.gameVersion = gameVersion
+        map.lastGameVersion = gameVersion // store separately, as we need it to be null originally
         if let data = try? defaultManager.encoder.encode(gameVersionDictionaries[gameVersion] ?? [:]),
             let map = try? defaultManager.decoder.decode(DataMap.self, from: data) {
             return map
@@ -327,6 +337,9 @@ extension DataMap {
         return map
     }
 
+    public func isDifferentGameVersion(_ gameVersion: GameVersion) -> Bool {
+        return gameVersion != lastGameVersion // track separately, as we need it to be null originally
+    }
 }
 
 //// MARK: SerializedDataStorable
@@ -354,7 +367,7 @@ extension DataMap {
 //
 //    public mutating func setData(_ data: SerializableData) {
 //        id = data["id"]?.string ?? id
-//        rawEventData = data["events"] ?? rawEventData
+//        rawEventDictionary = data["events"] ?? rawEventDictionary
 //        if let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") {
 //            self.gameVersion = gameVersion
 //        }

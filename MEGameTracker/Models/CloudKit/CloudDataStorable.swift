@@ -154,6 +154,7 @@ extension CloudDataStorable {
 	public mutating func notifySaveToCloud(
 		fields: [String: Any?]
 	) {
+        guard !fields.isEmpty else { return }
 		for (key, value) in fields {
 			pendingCloudChanges[key] = value
 		}

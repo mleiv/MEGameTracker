@@ -51,6 +51,21 @@ extension Map {
 	/// (Duplicate these per file or use Whole Module Optimization, which is slow in dev)
 	public typealias AlterFetchRequest<T: NSManagedObject> = ((NSFetchRequest<T>) -> Void)
 
+    /// (OVERRIDE)
+    /// Return all matching game values made from the data values.
+    public static func getAllFromData(
+        gameSequenceUuid: UUID?,
+        with manager: CodableCoreDataManageable?,
+        alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
+    ) -> [Map] {
+        let manager = manager ?? defaultManager
+        let dataItems = DataRowType.getAll(gameVersion: nil, with: manager, alterFetchRequest: alterFetchRequest)
+        let some: [Map] = dataItems.map { (dataItem: DataRowType) -> Map? in
+            Map.getOrCreate(using: dataItem, gameSequenceUuid: gameSequenceUuid, with: manager)
+        }.filter({ $0 != nil }).map({ $0! })
+        return some
+    }
+
 // MARK: Methods customized with GameVersion
 
 	/// Get a map by id and set it to specified game version.
@@ -97,7 +112,7 @@ extension Map {
 		alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
 	) -> [Map] {
 		let manager = manager ?? defaultManager
-		let dataItems = DataMap.getAll(gameVersion: gameVersion, with: manager, alterFetchRequest: alterFetchRequest)
+		let dataItems = DataRowType.getAll(gameVersion: gameVersion, with: manager, alterFetchRequest: alterFetchRequest)
 		let some: [Map] = dataItems.map { (dataItem: DataRowType) -> Map? in
 			Map.getOrCreate(using: dataItem, with: manager)
 		}.filter({ $0 != nil }).map({ $0! })
@@ -143,7 +158,7 @@ extension Map {
 
 	/// Get all recently viewed maps.
 	public static func getAllRecent(
-		gameVersion: GameVersion? = nil,
+        gameVersion: GameVersion? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> [Map] {
 		var maps: [Map] = []

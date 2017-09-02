@@ -163,7 +163,7 @@ extension Decision {
         isSave: Bool = true,
         isNotify: Bool = true,
         isCascadeChanges: EventDirection = .all,
-        cloudChanges: [String: Any?]
+        cloudChanges: [String: Any?] = [:]
     ) {
         markChanged()
         notifySaveToCloud(fields: cloudChanges)

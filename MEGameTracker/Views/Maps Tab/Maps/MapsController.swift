@@ -90,8 +90,8 @@ final public class MapsController: UITableViewController, Spinnerable {
 		if UIWindow.isInterfaceBuilder {
 			dummyData()
 		} else {
-			maps[.main] = Map.getAllMain(gameVersion: App.current.gameVersion).sorted(by: MapLocation.sort)
-			maps[.recent] = Map.getAllRecent(gameVersion: App.current.gameVersion)
+			maps[.main] = Map.getAllMain().sorted(by: MapLocation.sort)
+			maps[.recent] = Map.getAllRecent()
 		}
 	}
 
@@ -327,38 +327,38 @@ extension MapsController {
 	override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		DispatchQueue.main.async {
 			self.startSpinner(inView: self.view.superview)
-		}
-		DispatchQueue.global(qos: .background).async { // strong self (don't want to give up page until spinner is turned off)
-			let cell = tableView.cellForRow(at: indexPath)
-			if tableView != self.tableView {
-			let section = self.searchedMapLocationsTypeBySection((indexPath as NSIndexPath).section) ?? .map
-				if self.searchedMapLocations[section]?.indices.contains((indexPath as NSIndexPath).row) == true,
-				   let mapLocation = self.searchedMapLocations[section]?[(indexPath as NSIndexPath).row],
-				   let map = Map.get(id: mapLocation.inMapId ?? "") {
-					self.segueToMap(map, mapLocation: mapLocation, sender: cell)
-					return
-				}
-			} else {
-				switch (indexPath as NSIndexPath).section {
-				case MapsSection.main.rawValue:
-					if self.maps[.main]?.indices.contains((indexPath as NSIndexPath).row) == true,
-					   let map = self.maps[.main]?[(indexPath as NSIndexPath).row] {
-						self.segueToMap(map, sender: cell)
-						return
-					}
-				case MapsSection.recent.rawValue:
-					if self.maps[.recent]?.indices.contains((indexPath as NSIndexPath).row) == true,
-					   let map = self.maps[.recent]?[(indexPath as NSIndexPath).row] {
-						self.segueToMap(map, sender: cell)
-						return
-					}
-				default: break
-				}
-			}
-			DispatchQueue.main.async { // strong self (don't want to give up page until spinner is turned off)
-				self.stopSpinner(inView: self.view.superview)
-			}
-		}
+            let cell = tableView.cellForRow(at: indexPath)
+            DispatchQueue.global(qos: .background).async { // strong self (don't want to give up page until spinner is turned off)
+                if tableView != self.tableView {
+                let section = self.searchedMapLocationsTypeBySection((indexPath as NSIndexPath).section) ?? .map
+                    if self.searchedMapLocations[section]?.indices.contains((indexPath as NSIndexPath).row) == true,
+                       let mapLocation = self.searchedMapLocations[section]?[(indexPath as NSIndexPath).row],
+                       let map = Map.get(id: mapLocation.inMapId ?? "") {
+                        self.segueToMap(map, mapLocation: mapLocation, sender: cell)
+                        return
+                    }
+                } else {
+                    switch (indexPath as NSIndexPath).section {
+                    case MapsSection.main.rawValue:
+                        if self.maps[.main]?.indices.contains((indexPath as NSIndexPath).row) == true,
+                           let map = self.maps[.main]?[(indexPath as NSIndexPath).row] {
+                            self.segueToMap(map, sender: cell)
+                            return
+                        }
+                    case MapsSection.recent.rawValue:
+                        if self.maps[.recent]?.indices.contains((indexPath as NSIndexPath).row) == true,
+                           let map = self.maps[.recent]?[(indexPath as NSIndexPath).row] {
+                            self.segueToMap(map, sender: cell)
+                            return
+                        }
+                    default: break
+                    }
+                }
+                DispatchQueue.main.async { // strong self (don't want to give up page until spinner is turned off)
+                    self.stopSpinner(inView: self.view.superview)
+                }
+            }
+        }
 	}
 
 	// MARK: Segues
@@ -530,7 +530,7 @@ extension MapsController: DeepLinkable {
 				}
 			} else if let mapLocation = object as? MapLocationable,
 			   let mapId = mapLocation.inMapId,
-			   let map = Map.get(id: mapId, gameVersion: mapLocation.gameVersion) {
+			   let map = Map.get(id: mapId) {
 				// second, make sure page is done loading:
 				if self?.selectMap(map, mapLocation: mapLocation) == true {
 					self?.deepLinkedMap = nil

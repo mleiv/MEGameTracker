@@ -10,14 +10,14 @@ import UIKit
 
 public protocol Eventsable {
     var events: [Event] { get set }
-    var rawEventData: [CodableDictionary] { get }
+    var rawEventDictionary: [CodableDictionary] { get }
     func getEvents(with manager: CodableCoreDataManageable?) -> [Event]
 }
 
 extension Eventsable {
 
     public func getEvents(with manager: CodableCoreDataManageable?) -> [Event] {
-        let events: [Event] = rawEventData.map({
+        let events: [Event] = rawEventDictionary.map({
             $0.dictionary
         }).map({
             guard let id = $0["id"] as? String,

@@ -48,7 +48,7 @@ public struct Item: MapLocationable, Eventsable {
 		get { return _events ?? filterEvents(getEvents()) } // cache?
 		set { _events = filterEvents(newValue) }
 	}
-	public var rawEventData: [CodableDictionary] { return generalData.rawEventData }
+	public var rawEventDictionary: [CodableDictionary] { return generalData.rawEventDictionary }
 
 	public internal(set) var isAcquired = false
 
@@ -250,7 +250,7 @@ extension Item {
         isSave: Bool = true,
         isNotify: Bool = true,
         isCascadeChanges: EventDirection = .all,
-        cloudChanges: [String: Any?]
+        cloudChanges: [String: Any?] = [:]
     ) {
         markChanged()
         notifySaveToCloud(fields: cloudChanges)

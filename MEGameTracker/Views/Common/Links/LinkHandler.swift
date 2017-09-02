@@ -70,8 +70,8 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 	private func redirectPerson(parameters: [String: String]) {
 		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
 		guard let person = parameters["id"] != nil ?
-					Person.get(id: parameters["id"] ?? "0", gameVersion: App.current.gameVersion) :
-					Person.get(name: parameters["name"] ?? "N/A", gameVersion: App.current.gameVersion)
+					Person.get(id: parameters["id"] ?? "0") :
+					Person.get(name: parameters["name"] ?? "N/A")
 		else {
 			// error
 			return
@@ -145,14 +145,13 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 	/// [Galaxy Map|megametracker://maplocation?id=1]
 	private func redirectMapLocationable(parameters: [String: String]) {
 		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
-		let gameVersion = GameVersion(rawValue: parameters["gameVersion"] ?? "") ?? App.current.gameVersion
 		guard let id = parameters["id"],
 			let mapLocation: MapLocationable = {
 				var list: [String: SerializedDataStorable?] = [:]
 				parameters.forEach { (k, v) in list[k] = v }
 				let data = SerializableData.safeInit(list)
 				if let type = MapLocationType(stringValue: parameters["type"]),
-				   let mapLocation = MapLocation.get(id: id, type: type, gameVersion: gameVersion) {
+				   let mapLocation = MapLocation.get(id: id, type: type) {
 					if var map = mapLocation as? Map {
 						map.generalData.isHidden = false // force  to be visible
 						return map
@@ -184,7 +183,7 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 
 		if !alwaysDeepLink && originController?.tabBarController?.selectedIndex == MEMainTab.maps.rawValue,
 		   let mapId = mapLocation.inMapId,
-		   let map = Map.get(id: mapId, gameVersion: gameVersion) {
+		   let map = Map.get(id: mapId) {
 
 			DispatchQueue.main.async {
 				// pop controllers to top level

@@ -61,8 +61,8 @@ class PersonsController: UITableViewController, Spinnerable {
 				isLoveInterest: persons[row].isLoveInterest,
 				onChangeLoveSetting: { _ in
 					DispatchQueue.global(qos: .background).async {
-						if let id = self.persons[row].loveInterestDecisionId, var decision = Decision.get(id: id) {
-							_ = decision.changed(isSelected: cell.isLoveInterest, isSave: true)
+						if let id = self.persons[row].loveInterestDecisionId {
+							_ = Decision.get(id: id)?.changed(isSelected: cell.isLoveInterest, isSave: true)
 						}
 					}
 				}

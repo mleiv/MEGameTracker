@@ -45,7 +45,7 @@ public struct DataItem: Codable, DataMapLocationable {
 	public private(set) var relatedMissionIds: [String] = []
 	public private(set) var photo: Photo?
 
-    public var rawEventData: [CodableDictionary] = []
+    public var rawEventDictionary: [CodableDictionary] = []
 
 	public var objectivesCountToCompletion: Int?
 	public var conversationRewards = ConversationRewards()
@@ -117,7 +117,7 @@ public struct DataItem: Codable, DataMapLocationable {
             forKey: .relatedMissionIds
         ) ?? relatedMissionIds
 //        case photo
-        rawEventData = try container.decodeIfPresent([CodableDictionary].self, forKey: .events) ?? rawEventData
+        rawEventDictionary = try container.decodeIfPresent([CodableDictionary].self, forKey: .events) ?? rawEventDictionary
         try unserializeMapLocationableData(decoder: decoder)
     }
 
@@ -135,7 +135,7 @@ public struct DataItem: Codable, DataMapLocationable {
         try container.encode(sideEffects, forKey: .sideEffects)
         try container.encode(relatedMissionIds, forKey: .relatedMissionIds)
 //        case photo
-        try container.encode(rawEventData, forKey: .events)
+        try container.encode(rawEventDictionary, forKey: .events)
         try serializeMapLocationableData(encoder: encoder)
     }
 }
@@ -144,9 +144,9 @@ public struct DataItem: Codable, DataMapLocationable {
 extension DataItem {
 
 	public func getInheritableEvents() -> [CodableDictionary] {
-//        let events = (try? defaultManager.decoder.decode([Event].self, from: rawEventData)) ?? []
+//        let events = (try? defaultManager.decoder.decode([Event].self, from: rawEventDictionary)) ?? []
 //        return events.filter { $0.type.isAppliesToChildren }
-        let inheritableEvents: [CodableDictionary] = rawEventData.map({
+        let inheritableEvents: [CodableDictionary] = rawEventDictionary.map({
             if let eventType = EventType(stringValue: $0["type"] as? String),
                 eventType.isAppliesToChildren {
                 return $0
@@ -206,7 +206,7 @@ extension DataItem {
 //        sideEffects = (data["sideEffects"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 //        relatedMissionIds = (data["relatedMissionIds"]?.array ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
 //
-//        rawEventData = data["events"]
+//        rawEventDictionary = data["events"]
 //    }
 //
 //}

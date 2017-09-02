@@ -180,8 +180,8 @@ final public class MapController: UIViewController,
 
 		mapLocation?.shownInMapId = map?.id
 
-		map?.change(gameVersion: App.current.gameVersion) // should not be necessary, but... it is
-		if var map = self.map {
+		// changed should not be necessary, but... it is
+		if var map = self.map?.changed(gameVersion: App.current.gameVersion) {
 
 			if !UIWindow.isInterfaceBuilder {
 				// load map locations
@@ -323,16 +323,16 @@ extension MapController {
 		mapLocationsList.inView = mapImageWrapperView
 		let isSplitMenu = map?.isSplitMenu ?? false
 		mapLocationsList.isSplitMenu = isSplitMenu
-//		mapLocationsList.onClick = { [weak self] (button: MapLocationButtonNib) in
-//			guard let location = self?.mapLocationsList.getLocations(fromButton: button).first else { return }
-
-//			if isSplitMenu, let menuItemMap = location as? Map {
-//				self?.segueToMap(menuItemMap)
-//			} else {
-//				MapLocation.onChangeSelection.fire((location))
-//			}
-
-//		}
+//        mapLocationsList.onClick = { [weak self] (button: MapLocationButtonNib) in
+//            guard let location = self?.mapLocationsList.getLocations(fromButton: button).first else { return }
+//
+//            if isSplitMenu, let menuItemMap = location as? Map {
+//                self?.segueToMap(menuItemMap)
+//            } else {
+//                MapLocation.onChangeSelection.fire((location))
+//            }
+//
+//        }
 		mapLocationsList.removeAll()
 		_ = mapLocationsList.add(locations: mapLocations)
 	}
@@ -429,7 +429,7 @@ extension MapController {
 
 	func reloadMap() {
 		if let mapId = self.map?.id,
-		   let map = Map.get(id: mapId, gameVersion: App.current.gameVersion) {
+		   let map = Map.get(id: mapId) {
 			self.map = map
 			isNeedsSetupImageSizable = true
 			reloadDataOnChange()
@@ -665,7 +665,7 @@ extension MapController {
 			spinnerController?.startSpinner(inView: self.view)
 			self.setCheckboxImage(isExplored: isExplored, isAvailable: self.map?.isAvailable ?? false)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
-				self.map?.change(isExplored: isExplored, isSave: true)
+				_ = self.map?.changed(isExplored: isExplored, isSave: true)
 				spinnerController?.stopSpinner(inView: self.view)
 			}
 		}

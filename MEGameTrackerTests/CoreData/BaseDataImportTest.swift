@@ -49,20 +49,20 @@ final class BaseDataImportTest: MEGameTrackerTests {
         }
     }
 
-//    func testOneImport() {
-//        let filename = "DataPersons_1"
-//        do {
-//            if let file = Bundle.main.path(forResource: filename, ofType: "json") {
-//                let data = try Data(contentsOf: URL(fileURLWithPath: file))
-//                let ids = TestImport().importData(data, with: nil)
-//                // print id in Codable init to find failure row
-//                print(ids)
-//            }
-//        } catch {
-//            // failure
-//            print("Failed to load file \(filename)")
-//        }
-//    }
+    func testOneImport() {
+        let filename = "DataMaps_Primary"
+        do {
+            if let file = Bundle.main.path(forResource: filename, ofType: "json") {
+                let data = try Data(contentsOf: URL(fileURLWithPath: file))
+                let ids = TestImport().importData(data, with: nil)
+                // print id in Codable init to find failure row
+                print(ids)
+            }
+        } catch {
+            // failure
+            print("Failed to load file \(filename)")
+        }
+    }
 
     /// Clock the full import.
     func testBaseDataImportPerformance() {

@@ -11,11 +11,10 @@ import CoreData
 
 extension MapLocation {
 
-	/// Get location from id of a specified type in a specified game version.
+	/// Get location from id of a specified type.
 	public static func get(
 		id: String,
 		type: MapLocationType,
-		gameVersion: GameVersion? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> MapLocationable? {
 		switch type {

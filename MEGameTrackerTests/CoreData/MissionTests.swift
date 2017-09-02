@@ -117,7 +117,7 @@ final class MissionTests: MEGameTrackerTests {
 			}
 		}
 
-		mission?.change(isCompleted: true)
+		_ = mission?.changed(isCompleted: true)
 		mission = Mission.get(id: "M1.Garrus")
 		XCTAssert(mission?.isCompleted == true,
 			"Reported incorrect completed mission state")
@@ -149,8 +149,8 @@ final class MissionTests: MEGameTrackerTests {
 		initializeCurrentGame() // needed for saving with game uuid
 
 		var mission = create(Mission.self, from: garrusJson)
-		var objective1 = create(Mission.self, from: garrus1Json)
-		var objective2 = create(Mission.self, from: garrus2Json)
+		let objective1 = create(Mission.self, from: garrus1Json)
+		let objective2 = create(Mission.self, from: garrus2Json)
 
 		// #1 verify mission marked completed when all objectives completed
 
@@ -166,8 +166,8 @@ final class MissionTests: MEGameTrackerTests {
 			}
 		}
 
-		objective1?.change(isCompleted: true)
-		objective2?.change(isCompleted: true)
+		_ = objective1?.changed(isCompleted: true)
+		_ = objective2?.changed(isCompleted: true)
 		mission = Mission.get(id: "M1.Garrus")
 		XCTAssert(mission?.isCompleted == true,
 			"Failed to complete mission when all mission objectives completed")
@@ -189,7 +189,7 @@ final class MissionTests: MEGameTrackerTests {
 			}
 		}
 
-		objective1?.change(isCompleted: false)
+		_ = objective1?.changed(isCompleted: false)
 		mission = Mission.get(id: "M1.Garrus")
 		XCTAssert(mission?.isCompleted == false,
 			"Failed to uncomplete mission when a mission objective uncompleted")
@@ -203,7 +203,7 @@ final class MissionTests: MEGameTrackerTests {
 	func testCompleteMission() {
 		initializeCurrentGame() // needed for saving with game uuid
 
-		var mission = create(Mission.self, from: garrusJson)
+		let mission = create(Mission.self, from: garrusJson)
 		var objective1 = create(Mission.self, from: garrus1Json)
 		_ = create(Mission.self, from: garrus2Json)
 
@@ -221,7 +221,7 @@ final class MissionTests: MEGameTrackerTests {
 			}
 		}
 
-		mission?.change(isCompleted: true)
+		_ = mission?.changed(isCompleted: true)
 		objective1 = Mission.get(id: "M1.Garrus.1")
 		XCTAssert(objective1?.isCompleted == true,
 			"Failed to complete objective when mission completed")
@@ -232,7 +232,7 @@ final class MissionTests: MEGameTrackerTests {
 
 		// #4 verify objectives NOT marked uncompleted when mission uncompleted
 
-		mission?.change(isCompleted: false)
+		_ = mission?.changed(isCompleted: false)
 		objective1 = Mission.get(id: "M1.Garrus.1")
 		XCTAssert(objective1?.isCompleted == true,
 			"Incorrectly uncompleted objective when mission uncompleted")
@@ -245,7 +245,7 @@ final class MissionTests: MEGameTrackerTests {
 
 		var mission = create(Mission.self, from: insigniasJson)
 		var objective1 = create(Item.self, from: insignias1Json)
-		var objective2 = create(Item.self, from: insignias2Json)
+		let objective2 = create(Item.self, from: insignias2Json)
 		var objective3 = create(Item.self, from: insignias3Json)
 
 		// #1 verify mission marked completed with max limit of objectives
@@ -263,8 +263,8 @@ final class MissionTests: MEGameTrackerTests {
 		}
 
 		// (only requires two of three)
-		objective1?.change(isAcquired: true)
-		objective2?.change(isAcquired: true)
+		_ = objective1?.changed(isAcquired: true)
+		_ = objective2?.changed(isAcquired: true)
 		mission = Mission.get(id: "A1.UC.TurianInsignias")
 		XCTAssert(mission?.isCompleted == true,
 			"Failed to complete mission when max necessary mission objectives completed")
@@ -287,7 +287,7 @@ final class MissionTests: MEGameTrackerTests {
 			}
 		}
 
-		objective2?.change(isAcquired: false)
+		_ = objective2?.changed(isAcquired: false)
 		mission = Mission.get(id: "A1.UC.TurianInsignias")
 		XCTAssert(mission?.isCompleted == false,
 			"Failed to uncomplete mission when a max necessary mission objective uncompleted")
@@ -298,14 +298,14 @@ final class MissionTests: MEGameTrackerTests {
 
 		// #3 verify objectives with max limit NOT marked completed when mission completed
 
-		mission?.change(isCompleted: true)
+		_ = mission?.changed(isCompleted: true)
 		objective3 = Item.get(id: "A1.UC.TurianInsignias.I.3")
 		XCTAssert(objective3?.isAcquired == false,
 			"Incorrectly completed objective when mission completed")
 
 		// #4 verify objectives with max limit NOT marked uncompleted when mission uncompleted
 
-		mission?.change(isCompleted: false)
+		_ = mission?.changed(isCompleted: false)
 		objective1 = Item.get(id: "A1.UC.TurianInsignias.I.1")
 		XCTAssert(objective1?.isAcquired == true,
 			"Incorrectly uncompleted objective when mission uncompleted")
@@ -318,8 +318,8 @@ final class MissionTests: MEGameTrackerTests {
 		// complete a mission with a trigger event
 
 		_ = create(Event.self, from: pyramidJson)
-		var mission = create(Mission.self, from: digJson)
-		mission?.change(isCompleted: true)
+		let mission = create(Mission.self, from: digJson)
+		_ = mission?.changed(isCompleted: true)
 		let event = Event.get(id: "Completed: Joab Prothean Pyramid")
 		XCTAssert(event?.isTriggered == true, "Reported incorrect triggered event state")
 	}

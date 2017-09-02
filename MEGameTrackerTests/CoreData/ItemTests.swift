@@ -140,9 +140,9 @@ final class ItemTests: MEGameTrackerTests {
 			}
 		}
 
-		var item = create(Item.self, from: prologueLoot1)
+		let item = create(Item.self, from: prologueLoot1)
 		XCTAssert(item?.isAcquired == false, "Reported incorrect initial item state")
-		item?.change(isAcquired: true, isSave: true)
+		_ = item?.changed(isAcquired: true, isSave: true)
 		let item2 = Item.get(id: "M1.Prologue.Loot.I.1")
 		XCTAssert(item2?.isAcquired == true, "Reported incorrect acquired item state")
 

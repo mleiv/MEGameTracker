@@ -153,7 +153,7 @@ final public class MapRow: UITableViewCell {
 				toString: self.map?.name ?? ""
 			).toggleStrikethrough(isExplored)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
-				self.map?.change(isExplored: isExplored, isSave: true)
+				_ = self.map?.changed(isExplored: isExplored, isSave: true)
 				spinnerController?.stopSpinner(inView: self.origin?.view)
 			}
 		}

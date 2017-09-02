@@ -60,9 +60,9 @@ public struct DataPerson: Codable, Photographical {
 	public let isAvailable: Bool = true
 
     public private(set) var gameVersionDictionaries: [GameVersion: CodableDictionary] = [:]
+    private var lastGameVersion: GameVersion?
     public private(set) var rawGameVersionData: [String: CodableDictionary] = [:]
     public private(set) var rawEventDictionary: [CodableDictionary]  = []
-    public var rawEventData: [CodableDictionary] { return rawEventDictionary } // TODO
 
 	// Interface Builder
 	public var isDummyData = false
@@ -81,7 +81,7 @@ public struct DataPerson: Codable, Photographical {
         isDummyData = true
 //        self.rawGeneralDictionary = data
 //
-//        rawEventData = data["events"]
+//        rawEventDictionary = data["events"]
 //        gameVersionData = data["gameVersionData"] ?? SerializableData()
 //        setGameVersionData()
     }
@@ -172,7 +172,7 @@ public struct DataPerson: Codable, Photographical {
 extension DataPerson {
 
     public func getInheritableEvents() -> [CodableDictionary] {
-//        let events = (try? defaultManager.decoder.decode([Event].self, from: rawEventData)) ?? []
+//        let events = (try? defaultManager.decoder.decode([Event].self, from: rawEventDictionary)) ?? []
 //        return events.filter { $0.type.isAppliesToChildren }
         let inheritableEvents: [CodableDictionary] = rawEventDictionary.map({
             if let eventType = EventType(stringValue: $0["type"] as? String),
@@ -218,14 +218,19 @@ extension DataPerson {
 //    }
 
     public func changed(gameVersion: GameVersion) -> DataPerson {
-//        guard gameVersion != self.gameVersion else { return self }
+        guard isDifferentGameVersion(gameVersion) else { return self }
         var person = self
         person.gameVersion = gameVersion
+        person.lastGameVersion = gameVersion
         if let data = try? defaultManager.encoder.encode(gameVersionDictionaries[gameVersion] ?? [:]),
             let person = try? defaultManager.decoder.decode(DataPerson.self, from: data) {
             return person
         }
         return person
+    }
+
+    public func isDifferentGameVersion(_ gameVersion: GameVersion) -> Bool {
+        return gameVersion != lastGameVersion // track separately, as we need it to be null originally
     }
 
 //    private func mergedGameVersionDictionary(gameVersion: GameVersion) -> CodableDictionary {
@@ -260,7 +265,7 @@ extension DataPerson {
 //
 //    public mutating func setData(_ data: SerializableData) {
 ////        id = data["id"]?.string ?? id
-////        rawEventData = data["events"] ?? rawEventData
+////        rawEventDictionary = data["events"] ?? rawEventDictionary
 ////        if let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") {
 ////            self.gameVersion = gameVersion
 ////        }

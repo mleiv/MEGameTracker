@@ -12,7 +12,7 @@ import CoreData
 public protocol DataEventsable {
 
     /// The serialized event data stored (can be edited, like during base import, but this is not recommended)
-    var rawEventData: [CodableDictionary] { get }
+    var rawEventDictionary: [CodableDictionary] { get }
 
     /// A reference to the current core data manager.
     /// (Default provided for SimpleSerializedCoreDataStorable objects.)
@@ -24,13 +24,13 @@ extension DataEventsable {
 
 //    public func getDataEvents(with manager: CodableCoreDataManageable?) -> [DataEvent] {
 //        let manager = manager ?? CoreDataManager.current
-//        return (try? manager.decoder.decode([DataEvent].self, from: rawEventData)) ?? []
+//        return (try? manager.decoder.decode([DataEvent].self, from: rawEventDictionary)) ?? []
 //    }
 
     public func getRelatedDataEvents(
         context: NSManagedObjectContext?
     ) -> NSSet {
-        let ids = getIdsFromRawEventData()
+        let ids = getIdsFromrawEventDictionary()
         guard !ids.isEmpty else { return NSSet() }
         let manager = type(of: defaultManager).init(context: context)
         let directEvents = DataEvent.getAll(ids: ids, with: manager)
@@ -41,8 +41,8 @@ extension DataEventsable {
         return NSSet(array: allEvents)
     }
 
-    private func getIdsFromRawEventData() -> [String] {
-        return rawEventData.map { $0["id"] as? String }.filter({ $0 != nil }).map({ $0! })
+    private func getIdsFromrawEventDictionary() -> [String] {
+        return rawEventDictionary.map { $0["id"] as? String }.filter({ $0 != nil }).map({ $0! })
     }
 }
 

@@ -66,7 +66,7 @@ public struct DataMission: Codable, DataMapLocationable {
 		}
 	}
 
-    public var rawEventData: [CodableDictionary] = []
+    public var rawEventDictionary: [CodableDictionary] = []
 
 // MARK: MapLocationable
 
@@ -130,7 +130,7 @@ public struct DataMission: Codable, DataMapLocationable {
             forKey: .relatedMissionIds
         ) ?? relatedMissionIds
         objectivesCountToCompletion = try container.decodeIfPresent(Int.self, forKey: .objectivesCountToCompletion)
-        rawEventData = try container.decodeIfPresent([CodableDictionary].self, forKey: .events) ?? rawEventData
+        rawEventDictionary = try container.decodeIfPresent([CodableDictionary].self, forKey: .events) ?? rawEventDictionary
         try unserializeMapLocationableData(decoder: decoder)
     }
 
@@ -151,7 +151,7 @@ public struct DataMission: Codable, DataMapLocationable {
         try container.encode(sideEffects, forKey: .sideEffects)
         try container.encode(relatedMissionIds, forKey: .relatedMissionIds)
         try container.encode(objectivesCountToCompletion, forKey: .objectivesCountToCompletion)
-        try container.encode(rawEventData, forKey: .events)
+        try container.encode(rawEventDictionary, forKey: .events)
         try serializeMapLocationableData(encoder: encoder)
     }
 }
@@ -160,9 +160,9 @@ public struct DataMission: Codable, DataMapLocationable {
 extension DataMission {
 
     public func getInheritableEvents() -> [CodableDictionary] {
-//        let events = (try? defaultManager.decoder.decode([Event].self, from: rawEventData)) ?? []
+//        let events = (try? defaultManager.decoder.decode([Event].self, from: rawEventDictionary)) ?? []
 //        return events.filter { $0.type.isAppliesToChildren }
-        let inheritableEvents: [CodableDictionary] = rawEventData.map({
+        let inheritableEvents: [CodableDictionary] = rawEventDictionary.map({
             if let eventType = EventType(stringValue: $0["type"] as? String),
                 eventType.isAppliesToChildren {
                 return $0
@@ -224,7 +224,7 @@ extension DataMission {
 //
 //        objectivesCountToCompletion = data["objectivesCountToCompletion"]?.int
 //
-//        rawEventData = data["events"]
+//        rawEventDictionary = data["events"]
 //    }
 //
 //}

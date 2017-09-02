@@ -67,25 +67,25 @@ extension DataMapLocationable where Self: Codable {
     /// Fetch MapLocationable values from a Codable dictionary.
     public mutating func unserializeMapLocationableData(decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DataMapLocationableCodingKeys.self)
-        mapLocationPoint = (try container.decodeIfPresent(MapLocationPoint.self, forKey: .mapLocationPoint))
-        inMapId = (try container.decodeIfPresent(String.self, forKey: .inMapId))
-        inMissionId = (try container.decodeIfPresent(String.self, forKey: .inMissionId))
-        sortIndex = (try container.decodeIfPresent(Int.self, forKey: .sortIndex)) ?? sortIndex
-        annotationNote = (try container.decodeIfPresent(String.self, forKey: .annotationNote))
-        unavailabilityMessages = (try container.decodeIfPresent(
+        mapLocationPoint = try container.decodeIfPresent(MapLocationPoint.self, forKey: .mapLocationPoint)
+        inMapId = try container.decodeIfPresent(String.self, forKey: .inMapId)
+        inMissionId = try container.decodeIfPresent(String.self, forKey: .inMissionId)
+        sortIndex = try container.decodeIfPresent(Int.self, forKey: .sortIndex) ?? sortIndex
+        annotationNote = try container.decodeIfPresent(String.self, forKey: .annotationNote)
+        unavailabilityMessages = try container.decodeIfPresent(
             [String].self,
             forKey: .unavailabilityMessages
-        )) ?? unavailabilityMessages
-        isHidden = (try container.decodeIfPresent(Bool.self, forKey: .isHidden)) ?? isHidden
-        isAvailable = (try container.decodeIfPresent(Bool.self, forKey: .isAvailable)) ?? isAvailable
+        ) ?? unavailabilityMessages
+        isHidden = try container.decodeIfPresent(Bool.self, forKey: .isHidden) ?? isHidden
+        isAvailable = try container.decodeIfPresent(Bool.self, forKey: .isAvailable) ?? isAvailable
 
         searchableName = try container.decodeIfPresent(String.self, forKey: .searchableName) ?? searchableName
         linkToMapId = try container.decodeIfPresent(String.self, forKey: .linkToMapId)
         shownInMapId = try container.decodeIfPresent(String.self, forKey: .shownInMapId)
         isShowInParentMap = (try container.decodeIfPresent(Bool.self, forKey: .isShowInParentMap)) ?? isShowInParentMap
-        isShowInList = (try container.decodeIfPresent(Bool.self, forKey: .isShowInList)) ?? isShowInList
-        isShowPin = (try container.decodeIfPresent(Bool.self, forKey: .isShowPin)) ?? isShowPin
-        isOpensDetail = (try container.decodeIfPresent(Bool.self, forKey: .isOpensDetail)) ?? isOpensDetail
+        isShowInList = try container.decodeIfPresent(Bool.self, forKey: .isShowInList) ?? isShowInList
+        isShowPin = try container.decodeIfPresent(Bool.self, forKey: .isShowPin) ?? isShowPin
+        isOpensDetail = try container.decodeIfPresent(Bool.self, forKey: .isOpensDetail) ?? isOpensDetail
     }
     /// Store MapLocationable values to a Codable dictionary.
     public func serializeMapLocationableData(encoder: Encoder) throws {

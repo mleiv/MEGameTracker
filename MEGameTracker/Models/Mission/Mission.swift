@@ -55,7 +55,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
 		get { return _events ?? filterEvents(getEvents()) } // cache?
 		set { _events = filterEvents(newValue) }
 	}
-    public var rawEventData: [CodableDictionary] { return generalData.rawEventData }
+    public var rawEventDictionary: [CodableDictionary] { return generalData.rawEventDictionary }
 
 	public internal(set) var isCompleted = false
 
@@ -318,6 +318,7 @@ extension Mission {
         mission.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
+            isCascadeChanges: .none,
             cloudChanges: ["name": name]
         )
         return mission
@@ -339,6 +340,7 @@ extension Mission {
         mission.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
+            isCascadeChanges: .none,
             cloudChanges: [:]
                 // TODO
                 //"selectedConversationRewards": SerializableData.safeInit(selectedConversationRewards as [SerializedDataStorable])
@@ -352,7 +354,7 @@ extension Mission {
         isSave: Bool = true,
         isNotify: Bool = true,
         isCascadeChanges: EventDirection = .all,
-        cloudChanges: [String: Any?]
+        cloudChanges: [String: Any?] = [:]
     ) {
         markChanged()
         notifySaveToCloud(fields: cloudChanges)

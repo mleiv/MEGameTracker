@@ -101,7 +101,7 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 		let gameVersion = App.current.gameVersion
 		let oldGameVersion = person?.gameVersion
 		if gameVersion != oldGameVersion {
-			person?.change(gameVersion: gameVersion, isNotify: false)
+			_ = person?.changed(gameVersion: gameVersion) // isNotify: false
 			return
 		}
 
@@ -191,7 +191,7 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
-			person?.change(gameVersion: App.current.gameVersion, isSave: false, isNotify: false)
+			person = person?.changed(gameVersion: App.current.gameVersion) //isNotify: false
 			reloadDataOnChange()
 		}
 	}
@@ -241,8 +241,8 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 	func changeLoveSetting(_ sender: AnyObject?) {
 		let isOn = heartButton.isOn
 		DispatchQueue.global(qos: .background).async {
-			if let id = self.person?.loveInterestDecisionId, var decision = Decision.get(id: id) {
-				_ = decision.changed(isSelected: isOn, isSave: true)
+			if let id = self.person?.loveInterestDecisionId {
+				_ = Decision.get(id: id)?.changed(isSelected: isOn, isSave: true)
 			}
 		}
 	}
@@ -299,7 +299,7 @@ extension PersonController: UIImagePickerControllerDelegate {
 		editingInfo: [String : AnyObject]?
 	) {
 		picker.dismiss(animated: true, completion: nil)
-		if person?.savePhoto(image: image) == true {
+		if let _ = person?.changed(image: image) {
 			setupPhotoValue()
 		} else {
 			let alert = UIAlertController(

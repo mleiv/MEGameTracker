@@ -51,7 +51,7 @@ public struct Map: Codable, MapLocationable, Eventsable {
 		get { return _events ?? getEvents() } // cache?
 		set { _events = newValue }
 	}
-    public var rawEventData: [CodableDictionary] { return generalData.rawEventData }
+    public var rawEventDictionary: [CodableDictionary] { return generalData.rawEventDictionary }
 
 	public internal(set) var isExplored: Bool {
         get {
@@ -79,9 +79,7 @@ public struct Map: Codable, MapLocationable, Eventsable {
 
 	public var parentMap: Map? {
 		if let id = inMapId {
-			var parentMap = Map.get(id: id)
-			parentMap?.change(gameVersion: gameVersion, isSave: false, isNotify: false)
-			return parentMap
+			return Map.get(id: id) // isNotify: false
 		}
 		return nil
 	}
@@ -302,40 +300,72 @@ extension Map {
 // MARK: Data Change Actions
 extension Map {
 
-	public mutating func change(
-		gameVersion: GameVersion,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		guard self.gameVersion != gameVersion else { return }
-		self.gameVersion = gameVersion
-		generalData = generalData.changed(gameVersion: gameVersion)
-		// no save
-		if isNotify {
-			Map.onChange.fire((id: self.id, object: self))
-		}
-	}
+    /// Returns a copy of this Map with a set of changes applies
+    public func changed(data: [String: Any?]) -> Map {
+        if let isExplored = data["isExplored"] as? Bool {
+            return changed(isExplored: isExplored)
+        }
+        return self
+    }
 
-	public mutating func change(
-		isExplored: Bool,
-		isSave: Bool = true,
-		isNotify: Bool = true,
-		isCascadeChanges: EventDirection = .all
-	) {
-		guard self.isExplored != isExplored else { return }
-		self.isExplored = isExplored
-		markChanged()
-		notifySaveToCloud(fields: ["isExplored": isExplored])
-		if isSave {
-			_ = saveAnyChanges()
-		}
-		if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
-			applyToHierarchy(isExplored: isExplored, isSave: isSave, isCascadeChanges: isCascadeChanges)
-		}
-		if isNotify {
-			Map.onChange.fire((id: self.id, object: self))
-		}
-	}
+    /// Return a copy of this Map with gameVersion changed
+    public func changed(
+        gameVersion: GameVersion
+    ) -> Map {
+        guard isDifferentGameVersion(gameVersion) else { return self }
+        var map = self
+        map.gameVersion = gameVersion
+        map.generalData = generalData.changed(gameVersion: gameVersion)
+        map.changeEffects(
+            isSave: false,
+            isNotify: false,
+            isCascadeChanges: .none
+        )
+        return map
+    }
+
+    /// Return a copy of this Map with isExplored changed
+    public func changed(
+        isExplored: Bool,
+        isSave: Bool = true,
+        isNotify: Bool = true,
+        isCascadeChanges: EventDirection = .all
+    ) -> Map {
+        guard self.isExplored != isExplored else { return self }
+        var map = self
+        map.isExplored = isExplored
+        map.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            isCascadeChanges: isCascadeChanges,
+            cloudChanges: ["isExplored": isExplored]
+        )
+        return map
+    }
+
+    private func isDifferentGameVersion(_ gameVersion: GameVersion) -> Bool {
+        return generalData.isDifferentGameVersion(gameVersion)
+    }
+
+    /// Performs common behaviors after an object change
+    private mutating func changeEffects(
+        isSave: Bool = true,
+        isNotify: Bool = true,
+        isCascadeChanges: EventDirection = .all,
+        cloudChanges: [String: Any?] = [:]
+    ) {
+        markChanged()
+        notifySaveToCloud(fields: cloudChanges)
+        if isSave {
+            _ = saveAnyChanges()
+        }
+        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
+            applyToHierarchy(isExplored: isExplored, isSave: isSave, isCascadeChanges: isCascadeChanges)
+        }
+        if isNotify {
+            Map.onChange.fire((id: self.id, object: self))
+        }
+    }
 
 	private mutating func applyToHierarchy(
 		isExplored: Bool,
@@ -346,22 +376,21 @@ extension Map {
 		if isCascadeChanges != .up {
 			for childMap in maps where childMap.isExplorable && childMap.isExplored != isExplored {
 				// complete/uncomplete all submaps if parent was just completed/uncompleted
-				var childMap = childMap
-				childMap.change(isExplored: isExplored, isSave: isSave, isCascadeChanges: .down)
+				_ = childMap.changed(isExplored: isExplored, isSave: isSave, isCascadeChanges: .down)
 			}
 		}
-		if isCascadeChanges != .down, var parentMap = self.parentMap, parentMap.isExplorable {
+		if isCascadeChanges != .down, let parentMap = self.parentMap, parentMap.isExplorable {
 			let siblingMaps = parentMap.getChildMaps()
 			if !isExplored && parentMap.isExplored {
 				// uncomplete parent
 				// don't uncomplete other children
-				parentMap.change(isExplored: false, isSave: isSave, isCascadeChanges: .up)
+				_ = parentMap.changed(isExplored: false, isSave: isSave, isCascadeChanges: .up)
 			} else if isExplored && !parentMap.isExplored && !siblingMaps.isEmpty {
 				let exploredCount = siblingMaps.filter({ $0 == self })
 					.filter({ $0.isExplorable && $0.isExplored }).count + 1
 				if exploredCount == siblingMaps.count {
 					// complete parent
-					parentMap.change(isExplored: true, isSave: isSave, isCascadeChanges: .up)
+					_ = parentMap.changed(isExplored: true, isSave: isSave, isCascadeChanges: .up)
 				}
 			}
 		}
@@ -412,7 +441,7 @@ extension Map {
 //    public init?(data: SerializableData?) {
 //        let gameVersion = GameVersion(rawValue: data?["gameVersion"]?.string ?? "0") ?? .game1
 //        guard let data = data, let id = data["id"]?.string,
-//              let dataMap = DataMap.get(id: id, gameVersion: gameVersion),
+//              let dataMap = DataMap.get(id: id),
 //              let uuidString = data["gameSequenceUuid"]?.string,
 //              let gameSequenceUuid = UUID(uuidString: uuidString)
 //        else {
@@ -436,7 +465,7 @@ extension Map {
 ////            _events = nil
 //        }
 //        if generalData.id != id {
-//            generalData = DataMap.get(id: id, gameVersion: gameVersion) ?? generalData
+//            generalData = DataMap.get(id: id) ?? generalData
 //            _events = nil
 //        }
 //

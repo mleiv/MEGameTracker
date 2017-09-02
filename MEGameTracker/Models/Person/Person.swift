@@ -50,7 +50,7 @@ public struct Person: Codable, Photographical, Eventsable {
 		get { return _events ?? getEvents() } // cache?
 		set { _events = newValue }
 	}
-    public var rawEventData: [CodableDictionary] { return generalData.rawEventData }
+    public var rawEventDictionary: [CodableDictionary] { return generalData.rawEventDictionary }
 
 // MARK: Computed Properties
 
@@ -200,15 +200,6 @@ extension Person {
 		return generalData.unavailabilityMessages
 	}
 
-	/// A special setter for saving a UIImage
-	public mutating func savePhoto(image: UIImage, isSave: Bool = true) -> Bool {
-		if let photo = Photo.create(image, object: self) {
-			change(photo: photo, isSave: isSave)
-			return true
-		}
-		return false
-	}
-
 //	public func value<T>(key: String, forGame gameVersion: GameVersion) -> T? {
 //		if isAvailableInGame(gameVersion) {
 //			return generalData.value(key: key, forGame: gameVersion)
@@ -221,32 +212,77 @@ extension Person {
 
 // MARK: Data Change Actions
 extension Person {
-	public mutating func change(gameVersion: GameVersion, isSave: Bool = true, isNotify: Bool = true) {
-		if gameVersion != self.gameVersion {
-			self.gameVersion = gameVersion
-            generalData = generalData.changed(gameVersion: gameVersion)
-			// nothing to save
-			if isNotify {
-				Person.onChange.fire((id: self.id, object: self))
-			}
-		}
-	}
-	public mutating func change(photo: Photo, isSave: Bool = true, isNotify: Bool = true) {
-		if photo != self._photo {
-			if let _photo = self._photo {
-				_ = _photo.delete()
-			}
-			self._photo = photo
-			markChanged()
-			notifySaveToCloud(fields: ["photo": self.photo?.stringValue])
-			if isSave {
-				_ = saveAnyChanges()
-			}
-			if isNotify {
-				Person.onChange.fire((id: self.id, object: self))
-			}
-		}
-	}
+
+    /// Return a copy of this Person with gameVersion changed
+    public func changed(
+        gameVersion: GameVersion
+    ) -> Person {
+        guard isDifferentGameVersion(gameVersion) else { return self }
+        var person = self
+        person.gameVersion = gameVersion
+        person.generalData = generalData.changed(gameVersion: gameVersion)
+        person.changeEffects(
+            isSave: false,
+            isNotify: false
+//            isCascadeChanges: .none
+        )
+        return person
+    }
+
+    /// Return a copy of this Person with photo changed
+    public func changed(
+        photo: Photo,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Person {
+        guard photo != self._photo else { return self }
+        var person = self
+        // delete any prior custom photo
+        if let _photo = person._photo {
+            _ = _photo.delete()
+        }
+        person._photo = photo
+        person.generalData = generalData.changed(gameVersion: gameVersion)
+        person.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+//            isCascadeChanges: .none
+            cloudChanges: ["photo": photo]
+        )
+        return person
+    }
+
+    /// Convenience UIImage version
+    public func changed(image: UIImage, isSave: Bool = true) -> Person? {
+        if let photo = Photo.create(image, object: self) {
+            return changed(photo: photo, isSave: isSave)
+        }
+        return nil
+    }
+
+    private func isDifferentGameVersion(_ gameVersion: GameVersion) -> Bool {
+        return generalData.isDifferentGameVersion(gameVersion)
+    }
+
+    /// Performs common behaviors after an object change
+    private mutating func changeEffects(
+        isSave: Bool = true,
+        isNotify: Bool = true,
+//        isCascadeChanges: EventDirection = .all,
+        cloudChanges: [String: Any?] = [:]
+    ) {
+        markChanged()
+        notifySaveToCloud(fields: cloudChanges)
+        if isSave {
+            _ = saveAnyChanges()
+        }
+//        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
+//            applyToHierarchy(isExplored: isExplored, isSave: isSave, isCascadeChanges: isCascadeChanges)
+//        }
+        if isNotify {
+            Person.onChange.fire((id: self.id, object: self))
+        }
+    }
 }
 
 // MARK: Dummy data for Interface Builder

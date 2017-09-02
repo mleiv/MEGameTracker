@@ -63,12 +63,27 @@ extension Person {
 		return "*|\(value)|*"
 	}
 
+    /// (OVERRIDE)
+    /// Return all matching game values made from the data values.
+    public static func getAllFromData(
+        gameSequenceUuid: UUID?,
+        with manager: CodableCoreDataManageable?,
+        alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
+    ) -> [Person] {
+        let manager = manager ?? defaultManager
+        let dataItems = DataRowType.getAll(gameVersion: nil, with: manager, alterFetchRequest: alterFetchRequest)
+        let some: [Person] = dataItems.map { (dataItem: DataRowType) -> Person? in
+            Person.getOrCreate(using: dataItem, gameSequenceUuid: gameSequenceUuid, with: manager)
+        }.filter({ $0 != nil }).map({ $0! })
+        return some
+    }
+
 // MARK: Methods customized with GameVersion
 
 	/// Get a person by id and set it to specified game version.
 	public static func get(
 		id: String,
-		gameVersion: GameVersion?,
+		gameVersion: GameVersion? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> Person? {
 		return getFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
@@ -104,12 +119,12 @@ extension Person {
 
 	/// Get a set of persons and set them to specified game version.
 	public static func getAllFromData(
-		gameVersion: GameVersion?,
+        gameVersion: GameVersion?,
 		with manager: CodableCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<DataRowType.EntityType>
 	) -> [Person] {
 		let manager = manager ?? defaultManager
-		let dataItems = DataPerson.getAll(gameVersion: gameVersion, with: manager, alterFetchRequest: alterFetchRequest)
+		let dataItems = DataRowType.getAll(gameVersion: gameVersion, with: manager, alterFetchRequest: alterFetchRequest)
 		let some: [Person] = dataItems.map { (dataItem: DataRowType) -> Person? in
 			Person.getOrCreate(using: dataItem, with: manager)
 		}.filter({ $0 != nil }).map({ $0! })
@@ -121,7 +136,7 @@ extension Person {
 	/// Get a person matching the name specified, and set it to specified game version.
 	public static func get(
 		name: String,
-		gameVersion: GameVersion? = nil,
+        gameVersion: GameVersion? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> Person? {
 		return getFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
@@ -136,9 +151,10 @@ extension Person {
 	public static func getAll(
 		likeName name: String,
 		limit: Int = App.current.searchMaxResults,
+        gameVersion: GameVersion? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> [Person] {
-		return getAllFromData(with: manager) { fetchRequest in
+		return getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K CONTAINS[cd] %@)",
 				#keyPath(DataPersons.name), name
@@ -152,6 +168,7 @@ extension Person {
 		gameVersion: GameVersion? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> [Person] {
+        let gameVersion = gameVersion ?? App.current.gameVersion
 		return getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K LIKE %@)",

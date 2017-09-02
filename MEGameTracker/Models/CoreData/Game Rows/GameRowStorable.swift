@@ -189,7 +189,7 @@ extension GameRowStorable {
 
 // MARK: Remove Default Get
 
-    /// (SimpleSerializedCoreDataStorable Protocol override)
+    /// (CodableCoreDataStorable Protocol override)
     /// Gets the struct to match the core data request.
     public static func get(
         with manager: CodableCoreDataManageable?,
@@ -198,7 +198,7 @@ extension GameRowStorable {
         fatalError("You can't run this in GameRowStorable - use getFromData or getExisting")
     }
 
-    /// (SimpleSerializedCoreDataStorable Protocol override)
+    /// (CodableCoreDataStorable Protocol override)
     /// Convenience version of get:manager:alterFetchRequest (no alterFetchRequest required).
     public static func get(
         with manager: CodableCoreDataManageable? = nil
@@ -207,7 +207,7 @@ extension GameRowStorable {
         return getFromData(gameSequenceUuid: nil, with: manager) { _ in }
     }
 
-    /// (SimpleSerializedCoreDataStorable Protocol override)
+    /// (CodableCoreDataStorable Protocol override)
     /// Gets all structs that match the core data request.
     public static func getAll(
         with manager: CodableCoreDataManageable?,
@@ -216,7 +216,7 @@ extension GameRowStorable {
         fatalError("You can't run this in GameRowStorable - use getAllFromData or getAllExisting")
     }
 
-    /// (SimpleSerializedCoreDataStorable Protocol override)
+    /// (CodableCoreDataStorable Protocol override)
     /// Convenience version of getAll:manager:alterFetchRequest (no alterFetchRequest required).
     public static func getAll(
         with manager: CodableCoreDataManageable? = nil
