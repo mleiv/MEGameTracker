@@ -66,10 +66,9 @@ final public class ShepardReputationController: UIViewController, SideEffectsabl
 	}
 
 	func handleChange(reputation: Shepard.Reputation) {
-		if var shepard = self.shepard {
-			shepard.change(reputation: reputation)
-			setupRadios(shepard: shepard)
-		}
+        if let shepard = self.shepard?.changed(reputation: reputation) {
+            setupRadios(shepard: shepard)
+        }
 	}
 
 	func reloadDataOnChange() {

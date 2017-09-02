@@ -329,12 +329,7 @@ extension DataMap {
         guard isDifferentGameVersion(gameVersion) else { return self }
         var map = self
         map.gameVersion = gameVersion
-        map.lastGameVersion = gameVersion // store separately, as we need it to be null originally
-        if let data = try? defaultManager.encoder.encode(gameVersionDictionaries[gameVersion] ?? [:]),
-            let map = try? defaultManager.decoder.decode(DataMap.self, from: data) {
-            return map
-        }
-        return map
+        return map.changed(gameVersionDictionaries[gameVersion]?.dictionary ?? [:])
     }
 
     public func isDifferentGameVersion(_ gameVersion: GameVersion) -> Bool {

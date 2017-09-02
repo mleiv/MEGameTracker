@@ -29,18 +29,17 @@ extension GameSequence: CloudDataStorable {
 	) -> Bool {
         let recordId = changeRecord.recordId
         if let (_, uuid) = parseIdentifyingName(name: recordId) {
-			var game = GameSequence.get(uuid: uuid) ?? GameSequence(uuid: uuid)
-			let pendingData = game.pendingCloudChanges
-			// apply cloud changes
-            game.applyRemoteChanges(changeRecord.changeSet)
-            game.isSavedToCloud = true
-            // reapply local changes
-            if !game.pendingCloudChanges.isEmpty {
-                game.applyRemoteChanges(pendingData)
-                game.isSavedToCloud = false
+			var element = GameSequence.get(uuid: uuid) ?? GameSequence(uuid: uuid)
+            // apply cloud changes
+            element = element.changed(changeRecord.changeSet)
+            element.isSavedToCloud = true
+            // reapply any local changes
+            if !element.pendingCloudChanges.isEmpty {
+                element = element.changed(element.pendingCloudChanges.dictionary)
+                element.isSavedToCloud = false
             }
             // save locally
-			if game.save(isCascadeChanges: .none, isAllowDelay: false, with: manager) {
+			if element.save(isCascadeChanges: .none, isAllowDelay: false, with: manager) {
 				print("Saved from cloud \(recordId)")
 				return true
 			} else {

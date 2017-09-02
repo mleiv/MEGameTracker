@@ -49,30 +49,27 @@ extension Note: CloudDataStorable {
 
             var changeSet = changeRecord.changeSet
             changeSet["gameSequenceUuid"] = gameUuid
-            var note = Note.get(uuid: noteUuid) ?? Note(
+            var element = Note.get(uuid: noteUuid) ?? Note(
                                                 identifyingObject: identifyingObject,
                                                 uuid: noteUuid,
                                                 shepardUuid: shepardUuid,
                                                 gameSequenceUuid: gameUuid
                                             )
-            let pendingData = note.pendingCloudChanges
             // apply cloud changes
-//            note.setData(changeSet) //TODO
-            note.isSavedToCloud = true
-            // reapply local changes
-            if !pendingData.isEmpty {
-//                note.setData(pendingData) //TODO
-                note.isSavedToCloud = false
-                // re-store pending changes until object is saved to cloud
-                note.pendingCloudChanges = pendingData
+            element = element.changed(changeRecord.changeSet)
+            element.isSavedToCloud = true
+            // reapply any local changes
+            if !element.pendingCloudChanges.isEmpty {
+                element = element.changed(element.pendingCloudChanges.dictionary)
+                element.isSavedToCloud = false
             }
-            note.isSavedToCloud = true
-//            if note.save(with: manager) {
-//                print("Saved from cloud \(recordId)")
-//                return true
-//            } else {
-//                print("Save from cloud failed \(recordId)")
-//            }
+            // save locally
+            if element.save(with: manager) {
+                print("Saved from cloud \(recordId)")
+                return true
+            } else {
+                print("Save from cloud failed \(recordId)")
+            }
         }
         return false
     }

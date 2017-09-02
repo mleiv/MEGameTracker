@@ -160,21 +160,21 @@ final class ShepardAppearanceController: UIViewController,
 	}
 
 	func save() {
-        guard var shepard = self.shepard else { return }
+        guard shepard != nil else { return }
 		startSpinner(inView: view)
 		if currentGame == .game1 {
 			var newAppearance = Shepard.Appearance("", fromGame: .game1, withGender: currentGender)
 			for (attribute, value) in currentGame1Attributes {
 				newAppearance.contents[attribute] = value > 0 ? value : 1
 			}
-			shepard.change(appearance: newAppearance)
+			_ = shepard?.changed(appearance: newAppearance)
 		} else if let appearanceCode = ME2CodeField.text {
 			let newAppearance = Shepard.Appearance(
 				appearanceCode,
 				fromGame: game23SliderChoice,
 				withGender: currentGender
 			)
-			shepard.change(appearance: newAppearance)
+            _ = shepard?.changed(appearance: newAppearance)
 		}
 		stopSpinner(inView: view)
 	}

@@ -158,9 +158,6 @@ extension CloudDataStorable {
 		for (key, value) in fields {
 			pendingCloudChanges[key] = value
 		}
-//		if let datedSelf = self as? DateModifiable {
-//			pendingCloudChanges["modifiedDate"] = datedSelf.modifiedDate.getData()
-//		}
 		isSavedToCloud = false
 		Self.defaultManager.isPendingCloudChanges = true
 	}
@@ -362,31 +359,6 @@ extension CloudDataStorable where Self: CodableCoreDataStorable {
 	}
 }
 
-// TODO: Remove
-// (Note: these protocols can't use Self or associatedType)
-extension CloudDataStorable where Self: SimpleSerializedCoreDataStorable {
-
-    /// (CloudDataStorable x CodableCoreDataStorable Protocol)
-    /// The cloudkit entity name for this object.
-    public static var cloudRecordType: String { return entityName }
-
-    /// (CloudDataStorable x CodableCoreDataStorable Protocol)
-    /// Get all objects to be saved to cloud.
-    public static func getAllSavesToCloud(
-        isFullDatabaseCopy: Bool,
-        with manager: CodableCoreDataManageable?
-    ) -> [CKRecord] {
-    // TODO
-//        let elements: [Self] = Self.getAll(with: manager) { fetchRequest in
-//            if !isFullDatabaseCopy {
-//                fetchRequest.predicate = NSPredicate(format: "(isSavedToCloud == false)")
-//            }
-//        }
-//        elements.forEach { defaultManager.log("\(type(of: $0)) \($0.getIdentifyingName())") }
-        return []//elements.map { $0.createSaveRecord() }
-    }
-}
-
 extension CloudDataStorable where Self: GameRowStorable {
 
     /// (CloudDataStorable x CodableCoreDataStorable Protocol)
@@ -472,14 +444,12 @@ extension CloudDataStorable where Self: GameRowStorable {
             var element = Self.getExisting(id: id, gameSequenceUuid: uuid, with: manager)
                             ?? Self.get(id: id, with: manager) {
             // apply cloud changes
-//            element.setData(changeRecord.changeSet) //TODO
-//            element.applyRemoteChanges(changeRecord.changeSet)
             element.gameSequenceUuid = uuid
+            element = element.changed(changeRecord.changeSet)
             element.isSavedToCloud = true
-            // reapply local changes
+            // reapply any local changes
             if !element.pendingCloudChanges.isEmpty {
-//                element.setData(pendingData) // TODO
-//                element.applyRemoteChanges(element.pendingCloudChanges)
+                element = element.changed(element.pendingCloudChanges.dictionary)
                 element.isSavedToCloud = false
             }
             // save locally
@@ -526,9 +496,12 @@ extension CloudDataStorable where Self: Codable {
     /// Fetch Cloud Data from a Codable dictionary.
     public mutating func unserializeLocalCloudData(decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CloudDataStorableCodingKeys.self)
-        isSavedToCloud = (try container.decodeIfPresent(Bool.self, forKey: .isSavedToCloud)) ?? isSavedToCloud
-        lastRecordData = (try container.decodeIfPresent(Data.self, forKey: .lastRecordData)) ?? lastRecordData
-        pendingCloudChanges = (try container.decodeIfPresent(CodableDictionary.self, forKey: .pendingCloudChanges)) ?? pendingCloudChanges
+        isSavedToCloud = try container.decodeIfPresent(Bool.self, forKey: .isSavedToCloud) ?? isSavedToCloud
+        lastRecordData = try container.decodeIfPresent(Data.self, forKey: .lastRecordData) ?? lastRecordData
+        pendingCloudChanges = try container.decodeIfPresent(
+            CodableDictionary.self,
+            forKey: .pendingCloudChanges
+        ) ?? pendingCloudChanges
     }
     /// Store Cloud Data value to a Codable dictionary.
     public func serializeLocalCloudData(encoder: Encoder) throws {

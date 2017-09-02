@@ -48,31 +48,30 @@ extension Shepard: CloudDataStorable {
         if let (uuidString, gameSequenceUuid) = parseIdentifyingName(name: recordId),
             let uuid = UUID(uuidString: uuidString),
             let gameVersion = GameVersion(rawValue: changeRecord.changeSet["gameVersion"] as? String ?? "0") {
-            var shepard = Shepard.get(uuid: uuid)
+            var element = Shepard.get(uuid: uuid)
                             ?? Shepard(
                                 gameSequenceUuid: gameSequenceUuid,
                                 uuid: uuid,
                                 gameVersion: gameVersion
                             )
             // apply cloud changes
-            shepard.applyRemoteChanges(changeRecord.changeSet)
+            element = element.changed(changeRecord.changeSet)
             // special case
             if let image = GamesDataBackup.current.getCachedImage(recordId: recordId, key: "photoFile") {
-                _ = shepard.savePhoto(image: image, isSave: false)
+                _ = element.savePhoto(image: image, isSave: false)
             }
-            shepard.isSavedToCloud = true
-            // reapply local changes
-            let pendingData = shepard.pendingCloudChanges
-            if !pendingData.isEmpty {
-                shepard.applyRemoteChanges(pendingData)
-                shepard.isSavedToCloud = false
+            element.isSavedToCloud = true
+            // reapply any local changes
+            if !element.pendingCloudChanges.isEmpty {
+                element = element.changed(element.pendingCloudChanges.dictionary)
+                element.isSavedToCloud = false
             }
             // save locally
-            if shepard.save(isCascadeChanges: .none, isAllowDelay: false, with: manager) {
-                print("Saved from cloud \(recordId) \(shepard.fullName)")
+            if element.save(isCascadeChanges: .none, isAllowDelay: false, with: manager) {
+                print("Saved from cloud \(recordId) \(element.fullName)")
                 return true
             } else {
-                print("Save from cloud failed \(recordId) \(shepard.fullName)")
+                print("Save from cloud failed \(recordId) \(element.fullName)")
             }
         }
         return false

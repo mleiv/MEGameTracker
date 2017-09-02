@@ -95,7 +95,7 @@ extension GameSequence {
 		return save(isCascadeChanges: isCascadeChanges, isAllowDelay: isAllowDelay, with: nil)
 	}
 
-	/// (SimpleSerializedCoreDataStorable Protocol override)
+	/// (CodableCoreDataStorable Protocol override)
 	public mutating func save(
 		with manager: CodableCoreDataManageable?
 	) -> Bool {

@@ -160,23 +160,6 @@ extension GameSequence {
 	}
 }
 
-// MARK: Shared Data
-extension GameSequence {
-    public mutating func applyRemoteChanges(_ data: [String: Any?]) {
-        // not changing: uuid
-        if let shepardUuidString = data["lastPlayedShepard"] as? String,
-           let shepardUuid = UUID(uuidString: shepardUuidString) {
-            shepard = Shepard(gameSequenceUuid: uuid, uuid: shepardUuid)
-            // dummy copy, just to keep ref to shepardUuid
-            // TODO: maybe extract behavior to parameter - too specific to cloud sync?
-        }
-        unserializeDateModifiableData(data)
-    }
-    public mutating func applyRemoteChanges(_ data: CodableDictionary) {
-        applyRemoteChanges(data.dictionary)
-    }
-}
-
 // MARK: DateModifiable
 extension GameSequence: DateModifiable {
 

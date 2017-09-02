@@ -69,7 +69,7 @@ class PersonsSearchController: UITableViewController, Spinnerable {
 			isLoveInterest: persons[row].isLoveInterest,
 			onChangeLoveSetting: { [weak self] (sender) in
 				DispatchQueue.global(qos: .background).async {
-					self?.shepard?.change(loveInterestId: sender.isOn ? id : nil)
+					_ = self?.shepard?.changed(loveInterestId: sender.isOn ? id : nil)
 				}
 			}
 		)

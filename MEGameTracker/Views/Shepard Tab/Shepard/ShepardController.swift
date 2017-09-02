@@ -218,11 +218,8 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 			nameField.text = shepard?.name.stringValue
 			sizeName()
 		} else {
-            if var shepard = self.shepard {
-                shepard.change(name: nameField.text)
-//                _ = shepard.saveAnyChanges() //??
-                self.shepard = shepard
-            }
+            // discard, wait for listener
+            _ = shepard?.changed(name: nameField.text)
 		}
 		nameField.superview?.setNeedsLayout()
 		nameField.superview?.layoutIfNeeded()
@@ -231,9 +228,8 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 
 	func changeGender(index: Int) {
 		startSpinner(inView: view)
-        if var shepard = self.shepard {
-            shepard.change(gender: index == 0 ? .male : .female)
-        }
+        // discard, wait for listener
+        _ = shepard?.changed(gender: index == 0 ? .male : .female)
 		stopSpinner(inView: view)
 	}
 

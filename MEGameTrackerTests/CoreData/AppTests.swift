@@ -155,7 +155,7 @@ final class AppTests: MEGameTrackerTests {
 
         App.current.changeGame(isSave: false, isNotify: false) { game in
             var game = game
-            game?.shepard?.change(name: "Javier") // let shepard manage its own isNotify
+            game?.shepard = game?.shepard?.changed(name: "Javier") // let shepard manage its own isNotify
             return game
         }
 

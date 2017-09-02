@@ -194,8 +194,11 @@ extension DataPerson {
             return prior || (e.type == .unavailableInGame ? e.isBlockingInGame(gameVersion) : false)
 		}
 		if !isUnavailableInGame {
-			if let value = gameVersionDictionaries[gameVersion]?[key] as? T {
-				return value
+            let value = gameVersionDictionaries[gameVersion]?[key]
+            if T.self == String.self, let boolValue = value as? Bool {
+                return (boolValue ? "1" : "0") as? T
+            } else if let tValue = gameVersionDictionaries[gameVersion]?[key] as? T {
+				return tValue
 			}
 		}
 		return nil
@@ -222,11 +225,7 @@ extension DataPerson {
         var person = self
         person.gameVersion = gameVersion
         person.lastGameVersion = gameVersion
-        if let data = try? defaultManager.encoder.encode(gameVersionDictionaries[gameVersion] ?? [:]),
-            let person = try? defaultManager.decoder.decode(DataPerson.self, from: data) {
-            return person
-        }
-        return person
+        return person.changed(gameVersionDictionaries[gameVersion]?.dictionary ?? [:])
     }
 
     public func isDifferentGameVersion(_ gameVersion: GameVersion) -> Bool {

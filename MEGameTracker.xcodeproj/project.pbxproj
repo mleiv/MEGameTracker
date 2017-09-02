@@ -80,7 +80,7 @@
 		B04BF1ED1BA12C7900072DA2 /* Shepard.Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BF1D11BA12C7900072DA2 /* Shepard.Gender.swift */; };
 		B04BF1EE1BA12C7900072DA2 /* Shepard.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BF1D21BA12C7900072DA2 /* Shepard.Name.swift */; };
 		B04BF1EF1BA12C7900072DA2 /* Shepard.Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BF1D31BA12C7900072DA2 /* Shepard.Origin.swift */; };
-		B04BF1F01BA12C7900072DA2 /* Shepard.PhotoPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BF1D41BA12C7900072DA2 /* Shepard.PhotoPath.swift */; };
+		B04BF1F01BA12C7900072DA2 /* Shepard.DefaultPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BF1D41BA12C7900072DA2 /* Shepard.DefaultPhoto.swift */; };
 		B04BF1F11BA12C7900072DA2 /* Shepard.Reputation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BF1D51BA12C7900072DA2 /* Shepard.Reputation.swift */; };
 		B04BF1F21BA12C7900072DA2 /* Shepard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04BF1D61BA12C7900072DA2 /* Shepard.swift */; };
 		B04FA6D01BB2231F006474CB /* DataMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FA6CC1BB2231F006474CB /* DataMission.swift */; };
@@ -159,6 +159,7 @@
 		B12458831E39D35A0043F5D1 /* TextDataRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B124587F1E39D35A0043F5D1 /* TextDataRowType.swift */; };
 		B129D0CB1C94E52D00CFDD84 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B129D0CA1C94E52D00CFDD84 /* NSAttributedString.swift */; };
 		B12B82DB1D012F4F006C83AA /* EventDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B82DA1D012F4F006C83AA /* EventDirection.swift */; };
+		B12B9EF41F5A56E3001DB5FB /* CodableCoreDataStorable+CodableDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B9EF31F5A56E3001DB5FB /* CodableCoreDataStorable+CodableDictionary.swift */; };
 		B12BCCDC1E626A3600C8F7B5 /* NoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12BCCDB1E626A3600C8F7B5 /* NoteTests.swift */; };
 		B12C09F01D20672600B3FFA2 /* MapType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12C09EF1D20672600B3FFA2 /* MapType.swift */; };
 		B133A2EB1F44C66400524A28 /* CloudDataChangeValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133A2EA1F44C66400524A28 /* CloudDataChangeValue.swift */; };
@@ -593,7 +594,7 @@
 		B04BF1D11BA12C7900072DA2 /* Shepard.Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shepard.Gender.swift; sourceTree = "<group>"; };
 		B04BF1D21BA12C7900072DA2 /* Shepard.Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shepard.Name.swift; sourceTree = "<group>"; };
 		B04BF1D31BA12C7900072DA2 /* Shepard.Origin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shepard.Origin.swift; sourceTree = "<group>"; };
-		B04BF1D41BA12C7900072DA2 /* Shepard.PhotoPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shepard.PhotoPath.swift; sourceTree = "<group>"; };
+		B04BF1D41BA12C7900072DA2 /* Shepard.DefaultPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shepard.DefaultPhoto.swift; sourceTree = "<group>"; };
 		B04BF1D51BA12C7900072DA2 /* Shepard.Reputation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shepard.Reputation.swift; sourceTree = "<group>"; };
 		B04BF1D61BA12C7900072DA2 /* Shepard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shepard.swift; sourceTree = "<group>"; };
 		B04FA6CC1BB2231F006474CB /* DataMission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMission.swift; sourceTree = "<group>"; };
@@ -671,6 +672,7 @@
 		B124587F1E39D35A0043F5D1 /* TextDataRowType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDataRowType.swift; sourceTree = "<group>"; };
 		B129D0CA1C94E52D00CFDD84 /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		B12B82DA1D012F4F006C83AA /* EventDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDirection.swift; sourceTree = "<group>"; };
+		B12B9EF31F5A56E3001DB5FB /* CodableCoreDataStorable+CodableDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodableCoreDataStorable+CodableDictionary.swift"; sourceTree = "<group>"; };
 		B12BCCDB1E626A3600C8F7B5 /* NoteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTests.swift; sourceTree = "<group>"; };
 		B12C09EF1D20672600B3FFA2 /* MapType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapType.swift; sourceTree = "<group>"; };
 		B133A2EA1F44C66400524A28 /* CloudDataChangeValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDataChangeValue.swift; sourceTree = "<group>"; };
@@ -1351,7 +1353,7 @@
 				B04BF1D11BA12C7900072DA2 /* Shepard.Gender.swift */,
 				B04BF1D21BA12C7900072DA2 /* Shepard.Name.swift */,
 				B04BF1D31BA12C7900072DA2 /* Shepard.Origin.swift */,
-				B04BF1D41BA12C7900072DA2 /* Shepard.PhotoPath.swift */,
+				B04BF1D41BA12C7900072DA2 /* Shepard.DefaultPhoto.swift */,
 				B04BF1D51BA12C7900072DA2 /* Shepard.Reputation.swift */,
 			);
 			path = Shepard;
@@ -1809,6 +1811,7 @@
 			children = (
 				B16197311F4537C20039BF26 /* CodableDictionary.swift */,
 				B16197331F4537D00039BF26 /* CodableDictionaryValueType.swift */,
+				B12B9EF31F5A56E3001DB5FB /* CodableCoreDataStorable+CodableDictionary.swift */,
 			);
 			path = CodableDictionary;
 			sourceTree = "<group>";
@@ -2814,6 +2817,7 @@
 				B1A882121CF29AD100603253 /* SideEffectsable.swift in Sources */,
 				B1E2C8021CE413120001AFC9 /* MissionsGroupRow.swift in Sources */,
 				B160EE8C1CF951500028910C /* ShepardLoveInterestRow.swift in Sources */,
+				B12B9EF41F5A56E3001DB5FB /* CodableCoreDataStorable+CodableDictionary.swift in Sources */,
 				B08E2A571BB232EF009546F8 /* GameMaps.swift in Sources */,
 				B1A882111CF29AD100603253 /* SideEffectRow.swift in Sources */,
 				B1D4D2611C8CC55A0000F150 /* PersonsGroupsController.swift in Sources */,
@@ -2885,7 +2889,7 @@
 				B03E38501BBF48D400A36D0F /* RecentlyViewedList.swift in Sources */,
 				B02673691BF6FD80003E4F07 /* GameItems.swift in Sources */,
 				B0C355F51BB3807D005CD0BF /* MapCalloutsController.swift in Sources */,
-				B04BF1F01BA12C7900072DA2 /* Shepard.PhotoPath.swift in Sources */,
+				B04BF1F01BA12C7900072DA2 /* Shepard.DefaultPhoto.swift in Sources */,
 				B06575081BA8F99C0025F6E7 /* Markupable.swift in Sources */,
 				B1188E1A1CF2B00D009235E9 /* ObjectivesView.swift in Sources */,
 				B1B11FD41E4E99E200D97CA1 /* 20160210.xcmappingmodel in Sources */,

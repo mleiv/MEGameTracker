@@ -85,15 +85,14 @@ extension Note {
         }
 
         public func encode(to encoder: Encoder) throws {
-            var container = encoder.singleValueContainer()
-            try container.encode(type)
-            try container.encode(id)
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(type, forKey: .type)
+            try container.encode(id, forKey: .id)
         }
 	}
 }
 
 // MARK: Equatable
-
 extension Note.IdentifyingObject: Equatable {}
 
 public func == (lhs: Note.IdentifyingObject, rhs: Note.IdentifyingObject) -> Bool {

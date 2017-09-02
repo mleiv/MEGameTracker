@@ -288,7 +288,7 @@ extension Event {
 
 	/// Trigger all the events related to new level
 	public static func triggerLevelChange(_ value: Int, for shepard: Shepard?) {
-		guard value != shepard?.level, var shepard = shepard else { return }
+		guard value != shepard?.level, let shepard = shepard else { return }
 		let events = Event.getLevels(gameVersion: shepard.gameVersion)
 		for (var event) in events {
 			let eventValue = event.id.stringFrom(-2)
@@ -299,13 +299,12 @@ extension Event {
 				event.change(isTriggered: false, isSave: true)
 			}
 		}
-		shepard.change(level: value)
-		_ = shepard.saveAnyChanges()
+		_ = shepard.changed(level: value)
 	}
 
 	/// Trigger all the events related to new paragon score
 	public static func triggerParagonChange(_ value: Int, for shepard: Shepard?) {
-		guard value != shepard?.paragon, var shepard = shepard else { return }
+		guard value != shepard?.paragon, let shepard = shepard else { return }
 		let events = getParagons(gameVersion: shepard.gameVersion)
 		for (var event) in events {
 			let eventValue = event.id.stringFrom(-2)
@@ -316,13 +315,12 @@ extension Event {
 				event.change(isTriggered: false, isSave: true)
 			}
 		}
-		shepard.change(paragon: value)
-		_ = shepard.saveAnyChanges()
+		_ = shepard.changed(paragon: value)
 	}
 
 	/// Trigger all the events related to new renegade score
 	public static func triggerRenegadeChange(_ value: Int, for shepard: Shepard?) {
-		guard value != shepard?.renegade, var shepard = shepard else { return }
+		guard value != shepard?.renegade, let shepard = shepard else { return }
 		let events = Event.getRenegades(gameVersion: shepard.gameVersion)
 		for (var event) in events {
 			let eventValue = event.id.stringFrom(-2)
@@ -333,8 +331,7 @@ extension Event {
 				event.change(isTriggered: false, isSave: true)
 			}
 		}
-		shepard.change(renegade: value)
-		_ = shepard.saveAnyChanges()
+		_ = shepard.changed(renegade: value)
 	}
 }
 

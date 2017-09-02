@@ -141,7 +141,7 @@ final public class NotesView: SimpleArrayDataRow {
 
 	override func hideEmptyView() {
 		if isBorderBottom == nil {
-			isBorderBottom = borderBottom
+            isBorderBottom = borderBottom
 		}
 		borderBottom = isBorderBottom == true && !notes.isEmpty
 	}

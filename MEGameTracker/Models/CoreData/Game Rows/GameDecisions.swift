@@ -19,7 +19,7 @@ extension Decision: GameRowStorable {
 	/// Corresponding data entity for this game entity.
 	public typealias DataRowType = DataDecision
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Sets core data values to match struct values (specific).
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType

@@ -106,7 +106,7 @@ public struct Shepard: Codable, Photographical {
 		self.gender = gender
 		self.gameVersion = gameVersion
 		appearance = Appearance(gameVersion: gameVersion)
-		photo = Photo(filePath: Shepard.PhotoPath.defaultPath(forGender: gender, forGameVersion: gameVersion))
+		photo = DefaultPhoto(gender: .male, gameVersion: gameVersion).photo
 		markChanged()
 	}
 
@@ -133,7 +133,7 @@ public struct Shepard: Codable, Photographical {
             let photo = Photo(filePath: photoPath) {
             self.photo = photo
         } else {
-            photo = Photo(filePath: Shepard.PhotoPath.defaultPath(forGender: gender, forGameVersion: gameVersion))
+            photo = DefaultPhoto(gender: gender, gameVersion: gameVersion).photo
         }
         loveInterestId = try container.decodeIfPresent(String.self, forKey: .loveInterestId)
         try unserializeDateModifiableData(decoder: decoder)
@@ -188,274 +188,289 @@ extension Shepard {
 		return Note(identifyingObject: .shepard)
 	}
 
-	/// A special setter for saving a UIImage
-	public mutating func savePhoto(image: UIImage, isSave: Bool = true) -> Bool {
-		if let photo = Photo.create(image, object: self) {
-			change(photo: photo, isSave: isSave)
-			return true
-		}
-		return false
-	}
+    /// A special setter for saving a UIImage
+    public mutating func savePhoto(image: UIImage, isSave: Bool = true) -> Bool {
+        if let photo = Photo.create(image, object: self) {
+            self = changed(photo: photo, isSave: isSave)
+            return true
+        }
+        return false
+    }
 }
 
 // MARK: Data Change Actions
 extension Shepard {
 
 	/// **Warning**: this changes a lot of data and takes a long time
-	public mutating func change(
-		gender: Gender,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		guard gender != self.gender else { return }
-		let loveInterest: Person? = getLoveInterest()
-		var changedFields: [String: SerializedDataStorable?] = [:]
-		changedFields["gender"] = gender == .male ? "M" : "F"
-		self.gender = gender
-		switch gender {
-		case .male:
-			if name == .defaultFemaleName {
-				name = .defaultMaleName
-				changedFields["name"] = name.stringValue
-			}
-			if photo?.isCustomSavedPhoto != true {
-				let path = Shepard.PhotoPath.defaultPath(forGender: .male, forGameVersion: gameVersion)
-				photo = Photo(filePath: path)
-				changedFields["photo"] = photo?.stringValue
-			}
-			appearance.gender = gender
-			changedFields["appearance"] = appearance.format()
-			if loveInterest?.isMaleLoveInterest != true {
-				change(loveInterestId: nil, isSave: isSave, isNotify: false)
-				changedFields["loveInterestId"] = nil
-			}
-		case .female:
-			if name == .defaultMaleName {
-				name = .defaultFemaleName
-				changedFields["name"] = name.stringValue
-			}
-			if photo?.isCustomSavedPhoto != true {
-				let path = Shepard.PhotoPath.defaultPath(forGender: .female, forGameVersion: gameVersion)
-				photo = Photo(filePath: path)
-				changedFields["photo"] = photo?.stringValue
-			}
-			appearance.gender = gender
-			changedFields["appearance"] = appearance.format()
-			if loveInterest?.isFemaleLoveInterest != true {
-				change(loveInterestId: nil, isSave: isSave, isNotify: false)
-				changedFields["loveInterestId"] = nil
-			}
-		}
-		markChanged()
-		notifySaveToCloud(fields: changedFields)
-		if isSave {
-			_ = saveAnyChanges(isAllowDelay: false)
-		}
-		if isNotify {
-			Shepard.onChange.fire((id: uuid.uuidString, object: self))
-		}
-	}
+    /// Return a copy of this Shepard with gender changed
+    public func changed(
+        gender: Gender,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        guard gender != self.gender else { return self }
+        var shepard = self
+        shepard.gender = gender
+        var cloudChanges: [String: Any?] = ["gender": gender == .male ? "M" : "F"]
+        let gameVersion: GameVersion = shepard.gameVersion
+        let loveInterest: Person? = shepard.getLoveInterest()
+        switch gender {
+        case .male:
+            if shepard.name == .defaultFemaleName {
+                shepard.name = .defaultMaleName
+                cloudChanges["name"] = name.stringValue
+            }
+            if shepard.photo?.isCustomSavedPhoto != true {
+                shepard.photo = DefaultPhoto(gender: gender, gameVersion: gameVersion).photo
+                cloudChanges["photo"] = photo?.stringValue
+            }
+            shepard.appearance.gender = gender
+            cloudChanges["appearance"] = shepard.appearance.format()
+            if loveInterest?.isMaleLoveInterest != true {
+                // pass to love interest method to handle other side effects
+                shepard = shepard.changed(loveInterestId: nil, isSave: false, isNotify: false)
+                cloudChanges["loveInterestId"] = nil
+            }
+        case .female:
+            if shepard.name == .defaultMaleName {
+                shepard.name = .defaultFemaleName
+                cloudChanges["name"] = name.stringValue
+            }
+            if shepard.photo?.isCustomSavedPhoto != true {
+                shepard.photo = DefaultPhoto(gender: gender, gameVersion: gameVersion).photo
+                cloudChanges["photo"] = photo?.stringValue
+            }
+            shepard.appearance.gender = gender
+            cloudChanges["appearance"] = shepard.appearance.format()
+            if loveInterest?.isFemaleLoveInterest != true {
+                // pass to love interest method to handle other side effects
+                shepard = shepard.changed(loveInterestId: nil, isSave: false, isNotify: false)
+                cloudChanges["loveInterestId"] = nil
+            }
+        }
 
-	public mutating func change(
-		name: String?,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		guard name != self.name.stringValue else { return }
-		self.name = Name(name: name, gender: gender) ?? self.name
-		markChanged()
-		notifySaveToCloud(fields: ["name": self.name.stringValue])
-		if isSave {
-			_ = saveAnyChanges(isAllowDelay: false)
-		}
-		if isNotify {
-			Shepard.onChange.fire((id: uuid.uuidString, object: self))
-		}
-	}
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: cloudChanges
+        )
+        return shepard
+    }
 
-	public mutating func change(
-		photo: Photo,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		guard photo != self.photo else { return }
-		if let photo = self.photo {
-			_ = photo.delete()
-		}
-		self.photo = photo
-		markChanged()
-		notifySaveToCloud(fields: ["photo": photo.stringValue])
-		if isSave {
-			_ = saveAnyChanges(isAllowDelay: false)
-		}
-		if isNotify {
-			Shepard.onChange.fire((id: uuid.uuidString, object: self))
-		}
-	}
+    /// Return a copy of this Shepard with name changed
+    public func changed(
+        name: String?,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        guard name != self.name.stringValue else { return self }
+        var shepard = self
+        shepard.name = Name(name: name, gender: gender) ?? self.name
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["name": name]
+        )
+        return shepard
+    }
 
-	public mutating func change(
-		appearance: Appearance,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		guard appearance != self.appearance else { return }
-		self.appearance = appearance
-		markChanged()
-		notifySaveToCloud(fields: ["appearance": appearance.format()])
-		if isSave {
-			_ = saveAnyChanges(isAllowDelay: false)
-		}
-		if isNotify {
-			Shepard.onChange.fire((id: uuid.uuidString, object: self))
-		}
-	}
+    /// Return a copy of this Shepard with photo changed
+    public func changed(
+        photo: Photo,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        guard photo != self.photo else { return self }
+        var shepard = self
+        if let photo = shepard.photo {
+            _ = photo.delete()
+        }
+        shepard.photo = photo
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["photo": photo.stringValue]
+        )
+        return shepard
+    }
 
-	public mutating func change(
-		origin: Origin,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		guard origin != self.origin else { return }
-		self.origin = origin
-		markChanged()
-		notifySaveToCloud(fields: ["origin": origin.stringValue])
-		if isSave {
-			_ = saveAnyChanges(isAllowDelay: false)
-		}
-		if isNotify {
-			Shepard.onChange.fire((id: uuid.uuidString, object: self))
-		}
-	}
+    /// Return a copy of this Shepard with appearance changed
+    public func changed(
+        appearance: Appearance,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        guard appearance != self.appearance else { return self }
+        var shepard = self
+        shepard.appearance = appearance
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["appearance": appearance.format()]
+        )
+        return shepard
+    }
 
-	public mutating func change(
-		reputation: Reputation,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		guard reputation != self.reputation else { return }
-		self.reputation = reputation
-		markChanged()
-		notifySaveToCloud(fields: ["reputation": reputation.stringValue])
-		if isSave {
-			_ = saveAnyChanges(isAllowDelay: false)
-		}
-		if isNotify {
-			Shepard.onChange.fire((id: uuid.uuidString, object: self))
-		}
-	}
+    /// Return a copy of this Shepard with origin changed
+    public func changed(
+        origin: Origin,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        guard origin != self.origin else { return self }
+        var shepard = self
+        shepard.origin = origin
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["origin": origin.stringValue]
+        )
+        return shepard
+    }
 
-	public mutating func change(
-		class classTalent: ClassTalent,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		if classTalent != self.classTalent {
-			self.classTalent = classTalent
-			markChanged()
-			notifySaveToCloud(fields: ["class": classTalent.stringValue])
-			if isSave {
-				_ = saveAnyChanges(isAllowDelay: false)
-			}
-			if isNotify {
-				Shepard.onChange.fire((id: uuid.uuidString, object: self))
-			}
-		}
-	}
+    /// Return a copy of this Shepard with reputation changed
+    public func changed(
+        reputation: Reputation,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        guard reputation != self.reputation else { return self }
+        var shepard = self
+        shepard.reputation = reputation
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["reputation": reputation.stringValue]
+        )
+        return shepard
+    }
 
-	public mutating func change(
-		loveInterestId: String?,
-		isSave: Bool = true,
-		isNotify: Bool = true,
-		isCascadeChanges: EventDirection = .all
-	) {
-		guard loveInterestId != self.loveInterestId else { return }
-		// cascade change to decision
-		if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
-			if let loveInterestId = loveInterestId,
-				let person = Person.get(id: loveInterestId),
-				let decisionId = person.loveInterestDecisionId {
+    /// Return a copy of this Shepard with classTalent changed
+    public func changed(
+        class classTalent: ClassTalent,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        guard classTalent != self.classTalent else { return self }
+        var shepard = self
+        shepard.classTalent = classTalent
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["class": classTalent.stringValue]
+        )
+        return shepard
+    }
+
+    /// Return a copy of this Shepard with loveInterestId changed
+    public func changed(
+        loveInterestId: String?,
+        isSave: Bool = true,
+        isNotify: Bool = true,
+        isCascadeChanges: EventDirection = .all
+    ) -> Shepard {
+        guard loveInterestId != self.loveInterestId else { return self }
+        var shepard = self
+        // cascade change to decision
+        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
+            if let loveInterestId = loveInterestId,
+                let person = Person.get(id: loveInterestId),
+                let decisionId = person.loveInterestDecisionId {
                 // switch selected love interest
-				_ = Decision.get(id: decisionId)?.changed(
-					isSelected: true,
-					isSave: isSave,
-					isNotify: isNotify,
-					isCascadeChanges: .none
-				)
-			} else if loveInterestId == nil,
-				let loveInterestId = self.loveInterestId,
-				let person = Person.get(id: loveInterestId),
-				let decisionId = person.loveInterestDecisionId {
+                _ = Decision.get(id: decisionId)?.changed(
+                    isSelected: true,
+                    isSave: isSave,
+                    isNotify: isNotify,
+                    isCascadeChanges: .none
+                )
+            } else if loveInterestId == nil,
+                let loveInterestId = self.loveInterestId,
+                let person = Person.get(id: loveInterestId),
+                let decisionId = person.loveInterestDecisionId {
                 // erase unselected love interest
-				_ = Decision.get(id: decisionId)?.changed(
-					isSelected: false,
-					isSave: isSave,
-					isNotify: isNotify,
-					isCascadeChanges: .none
-				)
-			}
-		}
-		self.loveInterestId = loveInterestId
-		markChanged()
-		notifySaveToCloud(fields: ["loveInterestId": loveInterestId])
-		if isSave {
-			_ = saveAnyChanges(isAllowDelay: false)
-		}
-		if isNotify {
-			Shepard.onChange.fire((id: uuid.uuidString, object: self))
-		}
-	}
+                _ = Decision.get(id: decisionId)?.changed(
+                    isSelected: false,
+                    isSave: isSave,
+                    isNotify: isNotify,
+                    isCascadeChanges: .none
+                )
+            }
+        }
+        shepard.loveInterestId = loveInterestId
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["loveInterestId": loveInterestId]
+        )
+        return shepard
+    }
 
-	public mutating func change(
-		level: Int,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		guard level != self.level else { return }
-		self.level = level
-		markChanged()
-		notifySaveToCloud(fields: ["level": level])
-		if isSave {
-			_ = saveAnyChanges(isAllowDelay: false)
-		}
-		if isNotify {
-			Shepard.onChange.fire((id: uuid.uuidString, object: self))
-		}
-	}
+    /// Return a copy of this Shepard with level changed
+    public func changed(
+        level: Int,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        guard level != self.level else { return self }
+        var shepard = self
+        shepard.level = level
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["level": level]
+        )
+        return shepard
+    }
 
-	public mutating func change(
-		paragon: Int,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		guard paragon != self.paragon else { return }
-		self.paragon = paragon
-		markChanged()
-		notifySaveToCloud(fields: ["paragon": paragon])
-		if isSave {
-			_ = saveAnyChanges(isAllowDelay: false)
-		}
-		if isNotify {
-			Shepard.onChange.fire((id: uuid.uuidString, object: self))
-		}
-	}
+    /// Return a copy of this Shepard with paragon changed
+    public func changed(
+        paragon: Int,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        guard paragon != self.paragon else { return self }
+        var shepard = self
+        shepard.paragon = paragon
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["paragon": paragon]
+        )
+        return shepard
+    }
 
-	public mutating func change(
-		renegade: Int,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		guard renegade != self.renegade else { return }
-		self.renegade = renegade
-		markChanged()
-		notifySaveToCloud(fields: ["renegade": renegade])
-		if isSave {
-			_ = saveAnyChanges(isAllowDelay: false)
-		}
-		if isNotify {
-			Shepard.onChange.fire((id: uuid.uuidString, object: self))
-		}
-	}
+    /// Return a copy of this Shepard with renegade changed
+    public func changed(
+        renegade: Int,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        guard renegade != self.renegade else { return self }
+        var shepard = self
+        shepard.renegade = renegade
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["renegade": renegade]
+        )
+        return shepard
+    }
 
+    /// Performs common behaviors after an object change
+    private mutating func changeEffects(
+        isSave: Bool = true,
+        isNotify: Bool = true,
+        cloudChanges: [String: Any?] = [:]
+    ) {
+        markChanged()
+        notifySaveToCloud(fields: cloudChanges)
+        if isSave {
+            _ = saveAnyChanges(isAllowDelay: false)
+        }
+        if isNotify {
+            Shepard.onChange.fire((id: uuid.uuidString, object: self))
+        }
+    }
 }
 
 // MARK: Dummy data for Interface Builder
@@ -525,27 +540,6 @@ extension Shepard {
             hasUnsavedChanges = true
             notifySaveToCloud(fields: changed)
         }
-    }
-
-    public mutating func applyRemoteChanges(_ data: [String: Any?]) {
-        // not changing: uuid
-        // not changing: gameSequenceUuid
-        // not changing: gameVersion
-        setCommonData(data, isInternal: true)
-        // gender
-        // appearance?
-        // name
-        // origin
-        // reputation
-        classTalent = (data["class"] as? ClassTalent) ?? classTalent
-        level = (data["level"] as? Int) ?? level
-        paragon = (data["paragon"] as? Int) ?? paragon
-        renegade = (data["renegade"] as? Int) ?? renegade
-        // photo
-        loveInterestId = (data["loveInterestId"] as? String) ?? loveInterestId
-    }
-    public mutating func applyRemoteChanges(_ data: CodableDictionary) {
-        applyRemoteChanges(data.dictionary)
     }
 }
 

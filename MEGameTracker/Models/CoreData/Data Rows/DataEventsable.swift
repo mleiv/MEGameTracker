@@ -15,7 +15,7 @@ public protocol DataEventsable {
     var rawEventDictionary: [CodableDictionary] { get }
 
     /// A reference to the current core data manager.
-    /// (Default provided for SimpleSerializedCoreDataStorable objects.)
+    /// (Default provided for CodableCoreDataStorable objects.)
     var defaultManager: CodableCoreDataManageable { get }
 }
 

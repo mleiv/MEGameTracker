@@ -92,6 +92,11 @@ public protocol CodableCoreDataStorable: Codable {
         with manager: CodableCoreDataManageable?,
         alterFetchRequest: @escaping AlterFetchRequest<EntityType>
     ) -> Bool
+
+    /// Applies a dictionary data set of changes, and returns an updated copy of the object
+    func changed(
+        _ changes: [String: Any?]
+    ) -> Self
 }
 
 extension CodableCoreDataStorable {
@@ -351,4 +356,12 @@ extension CodableCoreDataStorable {
     public static func deleteAll() -> Bool {
         return deleteAll(with: nil) { _ in }
     }
+
+//    /// (Protocol default)
+//    /// Applies a dictionary data set of changes, and returns an updated copy of the object
+//    func changed(
+//        _ changes: [String: Any?]
+//    ) -> Self {
+//        return self
+//    }
 }

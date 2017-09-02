@@ -66,8 +66,7 @@ final public class ShepardOriginController: UIViewController, SideEffectsable {
 	}
 
     func handleChange(origin: Shepard.Origin) {
-        if var shepard = self.shepard {
-            shepard.change(origin: origin)
+        if let shepard = self.shepard?.changed(origin: origin) {
             setupRadios(shepard: shepard)
         }
     }

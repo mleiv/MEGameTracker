@@ -87,8 +87,7 @@ final public class ShepardClassController: UIViewController, SideEffectsable {
 	}
 
     func handleChange(class classTalent: Shepard.ClassTalent) {
-        if var shepard = self.shepard {
-            shepard.change(class: classTalent)
+        if let shepard = self.shepard?.changed(class: classTalent) {
             setupRadios(shepard: shepard)
         }
     }

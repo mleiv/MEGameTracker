@@ -116,7 +116,7 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 		isUpdating = true
 
 //		if person?.isAvailable != true {
-//			person?.change(gameVersion: oldGameVersion)
+//			person?.changed(gameVersion: oldGameVersion)
 //			return
 //		}
 

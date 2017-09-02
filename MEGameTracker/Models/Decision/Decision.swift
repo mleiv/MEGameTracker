@@ -115,7 +115,7 @@ public struct Decision: Codable {
         try serializeLocalCloudData(encoder: encoder)
     }
 
-//    func unsetBlockedDecisionIds(with manager: SimpleSerializedCoreDataManageable? = nil) {
+//    func unsetBlockedDecisionIds(with manager: CodableCoreDataStorable? = nil) {
 //        let manager = manager ?? defaultManager
 //        guard isSelected else { return }
 //        for decisionId in blocksDecisionIds {
@@ -195,14 +195,14 @@ extension Decision {
 		guard let loveInterestId = self.loveInterestId,
 			let loveInterest = Person.get(id: loveInterestId, gameVersion: gameVersion),
 			loveInterest.isParamour, // require exclusive love interest to change shepard
-			var shepard = App.current.game?.getShepardFromVersion(gameVersion) ?? App.current.game?.shepard
+			let shepard = App.current.game?.getShepardFromVersion(gameVersion) ?? App.current.game?.shepard
 		else {
 			return
 		}
 		if isSelected && shepard.loveInterestId != loveInterestId {
-			shepard.change(loveInterestId: loveInterestId, isSave: isSave, isNotify: isNotify, isCascadeChanges: .none)
+			_ = shepard.changed(loveInterestId: loveInterestId, isSave: isSave, isNotify: isNotify, isCascadeChanges: .none)
 		} else if !isSelected && shepard.loveInterestId == loveInterestId {
-			shepard.change(loveInterestId: nil, isSave: isSave, isNotify: isNotify, isCascadeChanges: .none)
+			_ = shepard.changed(loveInterestId: nil, isSave: isSave, isNotify: isNotify, isCascadeChanges: .none)
 		}
 	}
 
