@@ -49,6 +49,7 @@ extension CodableCoreDataManageable {
         ) {
             do {
                 result = try decoder.decode(T.self, from: data)
+                result?.rawData = data // save raw data for reference/faster saves
             } catch let decodeError {
                 print("Error: decoding failed for \(T.self): \(decodeError)")
             }
@@ -76,7 +77,8 @@ extension CodableCoreDataManageable {
         )
         result = data.map({ row -> T? in
             do {
-                let x = try decoder.decode(T.self, from: row)
+                var x = try decoder.decode(T.self, from: row)
+                x.rawData = row // save raw data for reference/faster saves
                 return x
             } catch let decodeError {
                 print("Error: decoding failed for \(T.self): \(decodeError)")

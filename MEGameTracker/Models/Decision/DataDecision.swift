@@ -53,8 +53,14 @@ public struct DataDecision: Codable {
         description = try container.decodeIfPresent(String.self, forKey: .description)
         loveInterestId = try container.decodeIfPresent(String.self, forKey: .loveInterestId)
         sortIndex = try container.decodeIfPresent(Int.self, forKey: .sortIndex) ?? sortIndex
-        blocksDecisionIds = try container.decodeIfPresent([String].self, forKey: .blocksDecisionIds) ?? blocksDecisionIds
-        dependsOnDecisions = try container.decodeIfPresent([DependsOnDecisionValueType].self, forKey: .dependsOnDecisions) ?? dependsOnDecisions
+        blocksDecisionIds = try container.decodeIfPresent(
+            [String].self,
+            forKey: .blocksDecisionIds
+        ) ?? blocksDecisionIds
+        dependsOnDecisions = try container.decodeIfPresent(
+            [DependsOnDecisionValueType].self,
+            forKey: .dependsOnDecisions
+        ) ?? dependsOnDecisions
     }
 }
 

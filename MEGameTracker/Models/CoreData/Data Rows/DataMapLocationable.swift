@@ -135,4 +135,3 @@ public enum DataMapLocationableCodingKeys: String, CodingKey {
     case isShowPin
     case isOpensDetail
 }
-

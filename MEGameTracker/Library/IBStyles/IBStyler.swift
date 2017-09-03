@@ -52,13 +52,19 @@ public class IBStyler: NSObject {
 
     /// Only applies IBStyles once.
     /// Apply layout stuff separately in subclassed layout subviews (sorry, no better way yet).
-    public func applyStyles() {
-        guard !elementIdentifier.isEmpty && !didApplyStyles else { return }
+    public func applyStyles() -> Bool {
+        guard IBStyleManager.current.stylesheet?.isInitialized == true
+            && !elementIdentifier.isEmpty
+            && !didApplyStyles else { return false }
         IBStyleManager.current.apply(identifier: elementIdentifier, to: styledElement as? UIView)
         styledElement?.applyStyles()
+if let label = styledElement as? UILabel {
+    print("\(elementIdentifier) \(label.text) \(label.font)")
+}
         didApplyStyles = true
         styledElement?.setNeedsLayout()
         styledElement?.layoutIfNeeded()
+        return true
     }
 
     /// A special function for IBStyledButton elements to change state-specific styles on state-changing events

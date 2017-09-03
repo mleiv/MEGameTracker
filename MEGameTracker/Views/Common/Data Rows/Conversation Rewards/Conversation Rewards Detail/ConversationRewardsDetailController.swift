@@ -30,6 +30,9 @@ final public class ConversationRewardsDetailController: UITableViewController {
 	}
 
 	func setup() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+
 		rewards = mission?.conversationRewards.flatRows() ?? []
 
 		if isPopover {
@@ -107,10 +110,6 @@ extension ConversationRewardsDetailController { //: UITableViewDataSource {
 	) -> Int {
 		return rewards.count
 	}
-
-//	override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//		return 1
-//	}
 
 	override public func tableView(
 		_ tableView: UITableView,

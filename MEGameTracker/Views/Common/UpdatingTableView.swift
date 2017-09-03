@@ -20,7 +20,9 @@ extension UpdatingTableView {
 	private func allRowsStillExist(_ rows: [IndexPath]) -> Bool {
         var result: Bool = true
         for indexPath in rows {
-            if (self.tableView?.numberOfRows(inSection: (indexPath as NSIndexPath).section) ?? 0) < (indexPath as NSIndexPath).row {
+            let section = (indexPath as NSIndexPath).section
+            let row = (indexPath as NSIndexPath).row
+            if (self.tableView?.numberOfRows(inSection: section) ?? 0) < row {
                 result = false
                 break
             }

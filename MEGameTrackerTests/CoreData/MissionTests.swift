@@ -149,7 +149,7 @@ final class MissionTests: MEGameTrackerTests {
 		initializeCurrentGame() // needed for saving with game uuid
 
 		var mission = create(Mission.self, from: garrusJson)
-		let objective1 = create(Mission.self, from: garrus1Json)
+		var objective1 = create(Mission.self, from: garrus1Json)
 		let objective2 = create(Mission.self, from: garrus2Json)
 
 		// #1 verify mission marked completed when all objectives completed
@@ -166,7 +166,7 @@ final class MissionTests: MEGameTrackerTests {
 			}
 		}
 
-		_ = objective1?.changed(isCompleted: true)
+		objective1 = objective1?.changed(isCompleted: true)
 		_ = objective2?.changed(isCompleted: true)
 		mission = Mission.get(id: "M1.Garrus")
 		XCTAssert(mission?.isCompleted == true,
@@ -245,7 +245,7 @@ final class MissionTests: MEGameTrackerTests {
 
 		var mission = create(Mission.self, from: insigniasJson)
 		var objective1 = create(Item.self, from: insignias1Json)
-		let objective2 = create(Item.self, from: insignias2Json)
+		var objective2 = create(Item.self, from: insignias2Json)
 		var objective3 = create(Item.self, from: insignias3Json)
 
 		// #1 verify mission marked completed with max limit of objectives
@@ -264,7 +264,7 @@ final class MissionTests: MEGameTrackerTests {
 
 		// (only requires two of three)
 		_ = objective1?.changed(isAcquired: true)
-		_ = objective2?.changed(isAcquired: true)
+		objective2 = objective2?.changed(isAcquired: true)
 		mission = Mission.get(id: "A1.UC.TurianInsignias")
 		XCTAssert(mission?.isCompleted == true,
 			"Failed to complete mission when max necessary mission objectives completed")

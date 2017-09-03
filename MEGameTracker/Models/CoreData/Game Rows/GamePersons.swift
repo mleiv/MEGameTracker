@@ -139,6 +139,7 @@ extension Person {
         gameVersion: GameVersion? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> Person? {
+        // not like the others, fetches all from all games
 		return getFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K LIKE[cd] %@)",
@@ -154,6 +155,7 @@ extension Person {
         gameVersion: GameVersion? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> [Person] {
+        // not like the others, fetches all from all games
 		return getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K CONTAINS[cd] %@)",
@@ -172,7 +174,7 @@ extension Person {
 		return getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K LIKE %@)",
-				#keyPath(DataPersons.personType), valueForGame("Squad", gameVersion)
+				#keyPath(DataPersons.personType), valueForGame("squad", gameVersion)
 			)
 		}
 	}
@@ -182,10 +184,11 @@ extension Person {
 		gameVersion: GameVersion? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> [Person] {
+        let gameVersion = gameVersion ?? App.current.gameVersion
 		return getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K LIKE %@)",
-				#keyPath(DataPersons.personType), valueForGame("Associate", gameVersion)
+				#keyPath(DataPersons.personType), valueForGame("associate", gameVersion)
 			)
 		}
 	}
@@ -195,10 +198,11 @@ extension Person {
 		gameVersion: GameVersion? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> [Person] {
+        let gameVersion = gameVersion ?? App.current.gameVersion
 		return getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K LIKE %@)",
-				#keyPath(DataPersons.personType), valueForGame("Enemy", gameVersion)
+				#keyPath(DataPersons.personType), valueForGame("enemy", gameVersion)
 			)
 		}
 	}
@@ -209,6 +213,7 @@ extension Person {
 		isMale: Bool = true,
 		with manager: CodableCoreDataManageable? = nil
 	) -> [Person] {
+        let gameVersion = gameVersion ?? App.current.gameVersion
 		return getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K LIKE %@)",

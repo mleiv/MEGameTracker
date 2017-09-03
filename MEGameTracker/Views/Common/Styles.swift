@@ -249,6 +249,8 @@ public struct Styles: IBStylesheet {
 		]
 	}
 
+    public var isInitialized: Bool = false
+
 	public func applyGlobalStyles(inWindow window: UIWindow?) {
 		window?.tintColor = Colors.tintColor
 

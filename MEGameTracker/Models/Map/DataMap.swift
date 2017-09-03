@@ -37,7 +37,7 @@ public struct DataMap: Codable, DataMapLocationable {
 // MARK: Properties
     public var rawData: Data?
 	public private(set) var id: String
-	public private(set) var gameVersion: GameVersion
+	public private(set) var gameVersion: GameVersion = .game1
 	public var name: String = "Unknown"
 	public var mapType: MapType = .location
 	public var description: String?
@@ -56,9 +56,9 @@ public struct DataMap: Codable, DataMapLocationable {
 	public private(set) var sideEffects: [String] = []
 	public private(set) var relatedMissionIds: [String] = []
 
-    public private(set) var gameVersionDictionaries: [GameVersion: CodableDictionary] = [:]
+    public private(set) var gameVersionDictionaries: [String: CodableDictionary] = [:]
     private var lastGameVersion: GameVersion?
-    public private(set) var rawGameVersionData: [String: CodableDictionary] = [:]
+
     public var rawEventDictionary: [CodableDictionary]  = [] // leave editable for import events inheritance
 
 	// Interface Builder
@@ -96,7 +96,7 @@ public struct DataMap: Codable, DataMapLocationable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
-        gameVersion = .game1
+        gameVersion = try container.decodeIfPresent(GameVersion.self, forKey: .gameVersion) ?? gameVersion
         name = try container.decode(String.self, forKey: .name)
         mapType = try container.decodeIfPresent(MapType.self, forKey: .mapType) ?? mapType
         description = try container.decodeIfPresent(String.self, forKey: .description)
@@ -121,29 +121,15 @@ public struct DataMap: Codable, DataMapLocationable {
             [String].self,
             forKey: .unavailabilityMessages
         ) ?? unavailabilityMessages
+        gameVersionDictionaries = try container.decodeIfPresent(
+            [String: CodableDictionary].self,
+            forKey: .gameVersionData
+        ) ?? gameVersionDictionaries
         rawEventDictionary = try container.decodeIfPresent(
             [CodableDictionary].self,
             forKey: .events
         ) ?? rawEventDictionary
         try unserializeMapLocationableData(decoder: decoder)
-        // parse and store the game version data
-        let dataContainer = try decoder.singleValueContainer()
-        let rawGeneralDictionary = try dataContainer.decode(CodableDictionary.self)
-        let gameVersionDictionaries = try container.decodeIfPresent(
-            [String: CodableDictionary].self,
-            forKey: .gameVersionData
-        ) ?? [:]
-        for gameVersion in GameVersion.all() {
-            var gameVersionDictionary = gameVersionDictionaries[gameVersion.stringValue]?.dictionary ?? [:]
-            gameVersionDictionary["gameVersion"] = gameVersion.stringValue
-            self.gameVersionDictionaries[gameVersion] =  CodableDictionary(
-                rawGeneralDictionary.dictionary.merging(gameVersionDictionary) { (_, new) in new }
-            )
-        }
-        rawGameVersionData = try container.decodeIfPresent(
-            [String: CodableDictionary].self,
-            forKey: .gameVersionData
-        ) ?? rawGameVersionData
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -165,7 +151,7 @@ public struct DataMap: Codable, DataMapLocationable {
         try container.encode(image, forKey: .image)
         try container.encode(_mapSize, forKey: .referenceSize)
         try container.encode(unavailabilityMessages, forKey: .unavailabilityMessages)
-        try container.encode(rawGameVersionData, forKey: .gameVersionData)
+        try container.encode(gameVersionDictionaries, forKey: .gameVersionData)
         try container.encode(rawEventDictionary, forKey: .events)
         try serializeMapLocationableData(encoder: encoder)
     }
@@ -327,9 +313,10 @@ extension DataMap {
 
     public func changed(gameVersion: GameVersion) -> DataMap {
         guard isDifferentGameVersion(gameVersion) else { return self }
-        var map = self
+        var map = self.changed(gameVersionDictionaries[gameVersion.stringValue]?.dictionary ?? [:])
         map.gameVersion = gameVersion
-        return map.changed(gameVersionDictionaries[gameVersion]?.dictionary ?? [:])
+        map.lastGameVersion = gameVersion
+        return map
     }
 
     public func isDifferentGameVersion(_ gameVersion: GameVersion) -> Bool {

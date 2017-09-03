@@ -53,8 +53,8 @@ class MEGameTrackerTests: XCTestCase {
             isNotify: false
         )
         App.current.changeGame(isSave: false, isNotify: false) { game in
-            var game = game
-            game?.shepard = game?.shepard?.changed(gender: gender, isSave: true, isNotify: false)
+            var game = game; let shepard = game?.shepard
+            game?.shepard = shepard?.changed(gender: gender, isSave: true, isNotify: false)
             return game
         }
 	}

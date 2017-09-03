@@ -125,12 +125,12 @@ final class MapLocationsSortingTests: MEGameTrackerTests {
 			XCTAssert(false, "Could not initialize DataMission base")
 			return
 		}
-		_ = mission1.changed(isCompleted: true, isSave: false)
+		let mission1Completed = mission1.changed(isCompleted: true, isSave: false)
 
-		let missions: [Mission] = [mission2, mission1, mission3].sorted(by: Mission.sort)
+		let missions: [Mission] = [mission2, mission1Completed, mission3].sorted(by: Mission.sort)
 		XCTAssert(missions[0] == mission2, "Invalid sort index 1")
 		XCTAssert(missions[1] == mission3, "Invalid sort index 2")
-		XCTAssert(missions[2] == mission1, "Invalid sort index 3")
+		XCTAssert(missions[2] == mission1Completed, "Invalid sort index 3")
 	}
 
 	func testCombinationSort() {
@@ -147,15 +147,15 @@ final class MapLocationsSortingTests: MEGameTrackerTests {
 			XCTAssert(false, "Could not initialize DataMission base")
 			return
 		}
-		_ = mission6.changed(isCompleted: true, isSave: false)
+		let mission6Completed = mission6.changed(isCompleted: true, isSave: false)
 
-		let missions: [Mission] = [mission5, mission2, mission1, mission4, mission3, mission8, mission6, mission7].sorted(by: Mission.sort)
+		let missions: [Mission] = [mission5, mission2, mission1, mission4, mission3, mission8, mission6Completed, mission7].sorted(by: Mission.sort)
 		XCTAssert(missions[0] == mission8, "Invalid sort index 1") // mission type
 		XCTAssert(missions[1] == mission7, "Invalid sort index 2") // assignment + sortIndex
 		XCTAssert(missions[2] == mission4, "Invalid sort index 3") // assignment
 		XCTAssert(missions[3] == mission5, "Invalid sort index 4") // objective
 		XCTAssert(missions[4] == mission1, "Invalid sort index 5") // unavailable
-		XCTAssert(missions[5] == mission6, "Invalid sort index 6") // completed
+		XCTAssert(missions[5] == mission6Completed, "Invalid sort index 6") // completed
 		XCTAssert(missions[6] == mission2, "Invalid sort index 7") // game 2
 		XCTAssert(missions[7] == mission3, "Invalid sort index 8") // game 3
 	}

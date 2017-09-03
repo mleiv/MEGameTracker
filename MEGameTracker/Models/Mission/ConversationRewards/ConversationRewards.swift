@@ -120,4 +120,3 @@ extension ConversationRewards {
 //
 //    public mutating func setData(_ data: SerializableData) {}
 //}
-

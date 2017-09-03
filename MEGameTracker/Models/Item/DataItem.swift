@@ -47,10 +47,6 @@ public struct DataItem: Codable, DataMapLocationable {
 
     public var rawEventDictionary: [CodableDictionary] = []
 
-	public var objectivesCountToCompletion: Int?
-	public var conversationRewards = ConversationRewards()
-	public var identicalMissionId: String?
-
 	// Interface Builder
 	public var isDummyData = false
 
@@ -117,7 +113,10 @@ public struct DataItem: Codable, DataMapLocationable {
             forKey: .relatedMissionIds
         ) ?? relatedMissionIds
 //        case photo
-        rawEventDictionary = try container.decodeIfPresent([CodableDictionary].self, forKey: .events) ?? rawEventDictionary
+        rawEventDictionary = try container.decodeIfPresent(
+            [CodableDictionary].self,
+            forKey: .events
+        ) ?? rawEventDictionary
         try unserializeMapLocationableData(decoder: decoder)
     }
 

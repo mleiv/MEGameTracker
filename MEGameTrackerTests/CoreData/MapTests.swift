@@ -72,12 +72,12 @@ final class MapTests: MEGameTrackerTests {
 		initializeCurrentGame() // needed for game version
 		initializeGameVersionEvents()
 
-		var exodus = create(Map.self, from: exodusJson)
+		let exodus = create(Map.self, from: exodusJson)
 		// Utopia is blocked in Game 2
-		_ = exodus?.changed(gameVersion: .game2)
-		XCTAssert(exodus?.isAvailable == false, "Failed to make map unavailable in game version")
-        exodus = Map.get(id: "G.Ear.Exodus", gameVersion: .game2)
-        XCTAssert(exodus?.isAvailable == false, "Failed to load map as unavailable in game version")
+		let changedExodus = exodus?.changed(gameVersion: .game2)
+		XCTAssert(changedExodus?.isAvailable == false, "Failed to make map unavailable in game version")
+        let loadedExodus = Map.get(id: "G.Ear.Exodus", gameVersion: .game2)
+        XCTAssert(loadedExodus?.isAvailable == false, "Failed to load map as unavailable in game version")
         let matches = Map.getAll(gameVersion: .game2)
         XCTAssert(matches.first?.isAvailable == false, "Failed to load map as unavailable in game version")
 	}

@@ -130,7 +130,10 @@ public struct DataMission: Codable, DataMapLocationable {
             forKey: .relatedMissionIds
         ) ?? relatedMissionIds
         objectivesCountToCompletion = try container.decodeIfPresent(Int.self, forKey: .objectivesCountToCompletion)
-        rawEventDictionary = try container.decodeIfPresent([CodableDictionary].self, forKey: .events) ?? rawEventDictionary
+        rawEventDictionary = try container.decodeIfPresent(
+            [CodableDictionary].self,
+            forKey: .events
+        ) ?? rawEventDictionary
         try unserializeMapLocationableData(decoder: decoder)
     }
 
@@ -145,6 +148,7 @@ public struct DataMission: Codable, DataMapLocationable {
         try container.encode(titlePrefix, forKey: .titlePrefix)
         try container.encode(description, forKey: .description)
         try container.encode(identicalMissionId, forKey: .identicalMissionId)
+        try container.encode(conversationRewards, forKey: .conversationRewards)
         try container.encode(sortIndex, forKey: .sortIndex)
         try container.encode(relatedLinks, forKey: .relatedLinks)
         try container.encode(relatedDecisionIds, forKey: .relatedDecisionIds)

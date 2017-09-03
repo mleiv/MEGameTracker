@@ -31,6 +31,7 @@ import UIKit
 ///    }
 /// }
 public struct IBStyleManager {
+    public static let stylesInitialized = Notification.Name(rawValue: "stylesInitialized")
 	public static var current = IBStyleManager()
 	public var stylesheet: IBStylesheet?
 	public var deviceKind = UIDevice.current.userInterfaceIdiom
@@ -285,15 +286,9 @@ extension IBStyleManager {
 		forState state: UIControlState = UIControlState()
 	) {
 		guard let fontClass = fontClass, let view = view else { return }
-		var isScalable = true
-		if let adjustableAwareElement = view as? UIContentSizeCategoryAdjusting {
-			isScalable = adjustableAwareElement.adjustsFontForContentSizeCategory
-		}
-		if let minSize = stylesheet?.minFontSize,
-			let font = fontClass.getUIFont(isScalable: isScalable, minFontSize: minSize) {
-			if var fontElement = view as? UIContentFontSettable {
-				fontElement.fontProperty = font
-			}
+		if let font = fontClass.getUIFont(),
+            var fontElement = view as? UIContentFontSettable {
+            fontElement.fontProperty = font
 		}
 	}
 

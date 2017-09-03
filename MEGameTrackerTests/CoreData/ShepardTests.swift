@@ -97,7 +97,7 @@ final class ShepardTests: MEGameTrackerTests {
 		var shepard = create(Shepard.self, from: femShep1Json)
 		_ = create(Shepard.self, from: femShep2Json)
 
-		shepard?.change(name: "Xena")
+		_ = shepard?.changed(name: "Xena")
         let uuid = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFD")!
 		shepard = Shepard.get(uuid: uuid)
 		XCTAssert(shepard?.fullName == "Xena Shepard", "Failed to change name")
@@ -108,7 +108,7 @@ final class ShepardTests: MEGameTrackerTests {
 		XCTAssert(shepard?.fullName == "Xena Shepard", "Failed to change name on other version")
 
 		// make sure custom names aren't changed when gender changes:
-		shepard?.change(gender: .male)
+		_ = shepard?.changed(gender: .male)
 		shepard = Shepard.get(uuid: uuid)
 		XCTAssert(shepard?.fullName == "Xena Shepard", "Incorrectly gender-changed name")
 	}
@@ -120,7 +120,7 @@ final class ShepardTests: MEGameTrackerTests {
 		var shepard = create(Shepard.self, from: femShep1Json)
 		_ = create(Shepard.self, from: femShep2Json)
 
-		shepard?.change(class: .adept)
+		_ = shepard?.changed(class: .adept)
         let uuid = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFD")!
         shepard = Shepard.get(uuid: uuid)
 		XCTAssert(shepard?.classTalent == .adept, "Failed to change class")
@@ -138,7 +138,7 @@ final class ShepardTests: MEGameTrackerTests {
 		var shepard = create(Shepard.self, from: femShep1Json)
 		_ = create(Shepard.self, from: femShep2Json)
 
-		shepard?.change(origin: .colonist)
+		_ = shepard?.changed(origin: .colonist)
         let uuid = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFD")!
         shepard = Shepard.get(uuid: uuid)
 		XCTAssert(shepard?.origin == .colonist, "Failed to change origin")
@@ -156,7 +156,7 @@ final class ShepardTests: MEGameTrackerTests {
 		var shepard = create(Shepard.self, from: femShep1Json)
 		_ = create(Shepard.self, from: femShep2Json)
 
-		shepard?.change(reputation: .ruthless)
+		_ = shepard?.changed(reputation: .ruthless)
         let uuid = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFD")!
         shepard = Shepard.get(uuid: uuid)
 		XCTAssert(shepard?.reputation == .ruthless, "Failed to change reputation")
@@ -212,7 +212,7 @@ final class ShepardTests: MEGameTrackerTests {
 		_ = create(Shepard.self, from: femShep2Json)
 
 		let appearance = Shepard.Appearance("432.4FL.CJC.IF6.FJH.II7.IJH.K4K.EFJ.8HH.671.XXX.X")
-		shepard?.change(appearance: appearance)
+		_ = shepard?.changed(appearance: appearance)
         let uuid = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFD")!
         shepard = Shepard.get(uuid: uuid)
 		XCTAssert(shepard?.appearance.format() == "432.4FL.CJC.IF6.FJH.II7.IJH.K4K.EFJ.8HH.671.XXX.X", "Failed to change appearance")
@@ -230,7 +230,7 @@ final class ShepardTests: MEGameTrackerTests {
 		var shepard = create(Shepard.self, from: femShep1Json)
 		_ = create(Shepard.self, from: femShep2Json)
 
-		shepard?.change(level: 10)
+		_ = shepard?.changed(level: 10)
         let uuid = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFD")!
         shepard = Shepard.get(uuid: uuid)
 		XCTAssert(shepard?.level == 10, "Failed to change level")
@@ -248,7 +248,7 @@ final class ShepardTests: MEGameTrackerTests {
 		var shepard = create(Shepard.self, from: femShep1Json)
 		_ = create(Shepard.self, from: femShep2Json)
 
-		shepard?.change(paragon: 80)
+		_ = shepard?.changed(paragon: 80)
         let uuid = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFD")!
         shepard = Shepard.get(uuid: uuid)
 		XCTAssert(shepard?.paragon == 80, "Failed to change paragon")
@@ -266,7 +266,7 @@ final class ShepardTests: MEGameTrackerTests {
 		var shepard = create(Shepard.self, from: femShep1Json)
 		_ = create(Shepard.self, from: femShep2Json)
 
-		shepard?.change(renegade: 80)
+		_ = shepard?.changed(renegade: 80)
         let uuid = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFD")!
         shepard = Shepard.get(uuid: uuid)
 		XCTAssert(shepard?.renegade == 80, "Failed to change renegade")
@@ -286,7 +286,7 @@ final class ShepardTests: MEGameTrackerTests {
 		var shepard = create(Shepard.self, from: femShep1Json)
 		_ = create(Shepard.self, from: femShep2Json)
 
-		shepard?.change(loveInterestId: "D1.LoveAshley")
+		_ = shepard?.changed(loveInterestId: "D1.LoveAshley")
         let uuid = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFD")!
         shepard = Shepard.get(uuid: uuid)
 		XCTAssert(shepard?.loveInterestId ==  "D1.LoveAshley", "Failed to change love interest")
@@ -322,7 +322,7 @@ final class ShepardTests: MEGameTrackerTests {
 		XCTAssert(shepard?.appearance.format() == "432.4FL.CJC.IF6.FJH.II7.IJH.K4K.EFJ.8HH.217.65", "Incorrect initial appearance")
 
 		// change
-		shepard?.change(gender: .female)
+		_ = shepard?.changed(gender: .female)
         let uuid2 = UUID(uuidString: "B6D0BD56-9CA9-4060-8F2E-E4DFE4EEE8A2")!
         shepard = Shepard.get(uuid: uuid2)
 
@@ -334,8 +334,7 @@ final class ShepardTests: MEGameTrackerTests {
 		XCTAssert(shepard?.appearance.format() == "432.4FL.CJC.IF6.FJH.II7.IJH.K4K.EFJ.8HH.671.XXX.X", "Failed to gender-change appearance")
 
 		// verify love interest is not changed when love interest is bisexual
-		shepard?.change(loveInterestId: "S1.Liara")
-		shepard?.change(gender: .male)
+		_ = shepard?.changed(loveInterestId: "S1.Liara").changed(gender: .male)
         shepard = Shepard.get(uuid: uuid2)
 		XCTAssert(shepard?.loveInterestId == "S1.Liara", "Incorrect gender-change love interest")
 	}

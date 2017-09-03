@@ -39,7 +39,7 @@ public struct DataPerson: Codable, Photographical {
 // MARK: Properties
     public var rawData: Data?
 	public private(set) var id: String
-	public private(set) var gameVersion: GameVersion
+	public private(set) var gameVersion: GameVersion = .game1
 	public private(set) var name: String = "Unknown"
 	public private(set) var personType: PersonType = .other
 	public private(set) var description: String?
@@ -59,9 +59,9 @@ public struct DataPerson: Codable, Photographical {
 	public private(set) var unavailabilityMessages: [String]  = []
 	public let isAvailable: Bool = true
 
-    public private(set) var gameVersionDictionaries: [GameVersion: CodableDictionary] = [:]
+    public private(set) var gameVersionDictionaries: [String: CodableDictionary] = [:]
     private var lastGameVersion: GameVersion?
-    public private(set) var rawGameVersionData: [String: CodableDictionary] = [:]
+
     public private(set) var rawEventDictionary: [CodableDictionary]  = []
 
 	// Interface Builder
@@ -89,7 +89,7 @@ public struct DataPerson: Codable, Photographical {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
-        gameVersion = .game1
+        gameVersion = try container.decodeIfPresent(GameVersion.self, forKey: .gameVersion) ?? gameVersion
         name = try container.decode(String.self, forKey: .name)
         personType = try container.decode(PersonType.self, forKey: .personType)
         description = try container.decodeIfPresent(String.self, forKey: .description)
@@ -124,23 +124,18 @@ public struct DataPerson: Codable, Photographical {
             [String].self,
             forKey: .relatedMissionIds
         ) ?? relatedMissionIds
-        unavailabilityMessages = try container.decodeIfPresent([String].self, forKey: .unavailabilityMessages) ?? unavailabilityMessages
-        rawEventDictionary = try container.decodeIfPresent([CodableDictionary].self, forKey: .events) ?? rawEventDictionary
-        // parse and store the game version data
-        let dataContainer = try decoder.singleValueContainer()
-        let rawGeneralDictionary = try dataContainer.decode(CodableDictionary.self)
-        let gameVersionDictionaries = try container.decodeIfPresent(
+        unavailabilityMessages = try container.decodeIfPresent(
+            [String].self,
+            forKey: .unavailabilityMessages
+        ) ?? unavailabilityMessages
+        gameVersionDictionaries = try container.decodeIfPresent(
             [String: CodableDictionary].self,
             forKey: .gameVersionData
-        ) ?? [:]
-        for gameVersion in GameVersion.all() {
-            var gameVersionDictionary = gameVersionDictionaries[gameVersion.stringValue]?.dictionary ?? [:]
-            gameVersionDictionary["gameVersion"] = gameVersion.stringValue
-            self.gameVersionDictionaries[gameVersion] =  CodableDictionary(
-                rawGeneralDictionary.dictionary.merging(gameVersionDictionary) { (_, new) in new }
-            )
-        }
-        rawGameVersionData = try container.decodeIfPresent([String: CodableDictionary].self, forKey: .gameVersionData) ?? rawGameVersionData
+        ) ?? gameVersionDictionaries
+        rawEventDictionary = try container.decodeIfPresent(
+            [CodableDictionary].self,
+            forKey: .events
+        ) ?? rawEventDictionary
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -163,7 +158,7 @@ public struct DataPerson: Codable, Photographical {
         try container.encode(sideEffects, forKey: .sideEffects)
         try container.encode(relatedMissionIds, forKey: .relatedMissionIds)
         try container.encode(unavailabilityMessages, forKey: .unavailabilityMessages)
-        try container.encode(rawGameVersionData, forKey: .gameVersionData)
+        try container.encode(gameVersionDictionaries, forKey: .gameVersionData)
         try container.encode(rawEventDictionary, forKey: .events)
     }
 }
@@ -185,7 +180,7 @@ extension DataPerson {
     }
 
 	/// Only called on data import: can be pretty data intensive
-	public func value<T>(key: String, forGame gameVersion: GameVersion) -> T? {
+	public func value(key: String, forGame gameVersion: GameVersion) -> String? {
 		let isUnavailableInGame = rawEventDictionary.reduce(false) { (prior, data) in
             guard let id = data["id"] as? String,
                 let type = EventType(stringValue: data["type"] as? String)
@@ -194,11 +189,22 @@ extension DataPerson {
             return prior || (e.type == .unavailableInGame ? e.isBlockingInGame(gameVersion) : false)
 		}
 		if !isUnavailableInGame {
-            let value = gameVersionDictionaries[gameVersion]?[key]
-            if T.self == String.self, let boolValue = value as? Bool {
-                return (boolValue ? "1" : "0") as? T
-            } else if let tValue = gameVersionDictionaries[gameVersion]?[key] as? T {
-				return tValue
+            guard let values = gameVersionDictionaries[gameVersion.stringValue],
+                values.dictionary.keys.contains(key)
+            else {
+                if let value = valueForKey(key) {
+                    if let boolValue = value as? Bool {
+                        return (boolValue ? "1" : "0")
+                    } else {
+                        return "\(value)"
+                    }
+                }
+                return nil
+            }
+            if let boolValue = values[key] as? Bool {
+                return (boolValue ? "1" : "0")
+            } else if let value = values[key] {
+                return "\(value)"
 			}
 		}
 		return nil
@@ -209,36 +215,32 @@ extension DataPerson {
         for game in GameVersion.all() {
             data.append(value(key: key, forGame: game) ?? defaultValue)
         }
-        return "|\(data.joined(separator: "|"))|"
+print("\(id) \(key) |\(data.joined(separator: "|"))|")
+        return "|\(data.joined(separator: "|"))|".lowercased()
+    }
+
+    private func valueForKey(_ key: String) -> Any? {
+        let m = Mirror(reflecting: self)
+        for child in m.children {
+            if child.label == key { return child.value }
+        }
+        return nil
     }
 }
 
 // MARK: Data Change Actions
 extension DataPerson {
-//    public mutating func change(gameVersion: GameVersion) {
-//        self.gameVersion = gameVersion
-//        setGameVersionData()
-//    }
-
     public func changed(gameVersion: GameVersion) -> DataPerson {
         guard isDifferentGameVersion(gameVersion) else { return self }
-        var person = self
+        var person = self.changed(gameVersionDictionaries[gameVersion.stringValue]?.dictionary ?? [:])
         person.gameVersion = gameVersion
         person.lastGameVersion = gameVersion
-        return person.changed(gameVersionDictionaries[gameVersion]?.dictionary ?? [:])
+        return person
     }
 
     public func isDifferentGameVersion(_ gameVersion: GameVersion) -> Bool {
         return gameVersion != lastGameVersion // track separately, as we need it to be null originally
     }
-
-//    private func mergedGameVersionDictionary(gameVersion: GameVersion) -> CodableDictionary {
-//        var gameVersionDictionary = self.gameVersionDictionaries[gameVersion.stringValue]?.dictionary ?? [:]
-//        gameVersionDictionary["gameVersion"] = gameVersion.stringValue
-//        return CodableDictionary(
-//            rawGeneralDictionary.dictionary.merging(gameVersionDictionary) { (_, new) in new }
-//        )
-//    }
 }
 
 //// MARK: SerializedDataStorable

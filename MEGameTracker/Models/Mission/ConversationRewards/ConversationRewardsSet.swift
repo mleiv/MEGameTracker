@@ -56,7 +56,7 @@ public struct ConversationRewardSet: Codable {
             isExclusiveSet = try setContainer.decodeIfPresent(Bool.self, forKey: .isExclusiveSet) ?? isExclusiveSet
         }
     }
-    
+
     public func encode(to encoder: Encoder) throws {
         if let subset = subset {
             var container = encoder.container(keyedBy: CodingKeys.self)
@@ -239,4 +239,3 @@ extension ConversationRewardSet {
 //    public mutating func setData(_ data: SerializableData) {}
 //
 //}
-

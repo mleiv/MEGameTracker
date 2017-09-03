@@ -89,4 +89,3 @@ public struct ConversationReward: Codable {
 //
 //    public mutating func setData(_ data: SerializableData) {}
 //}
-

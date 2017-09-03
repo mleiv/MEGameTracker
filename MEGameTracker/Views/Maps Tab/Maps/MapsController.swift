@@ -328,7 +328,8 @@ extension MapsController {
 		DispatchQueue.main.async {
 			self.startSpinner(inView: self.view.superview)
             let cell = tableView.cellForRow(at: indexPath)
-            DispatchQueue.global(qos: .background).async { // strong self (don't want to give up page until spinner is turned off)
+            DispatchQueue.global(qos: .background).async {
+                // use strong self (don't want to give up page until spinner is turned off)
                 if tableView != self.tableView {
                 let section = self.searchedMapLocationsTypeBySection((indexPath as NSIndexPath).section) ?? .map
                     if self.searchedMapLocations[section]?.indices.contains((indexPath as NSIndexPath).row) == true,

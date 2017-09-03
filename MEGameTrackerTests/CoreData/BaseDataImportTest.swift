@@ -15,7 +15,7 @@ final class BaseDataImportTest: MEGameTrackerTests {
     struct TestImport: CoreDataMigrationType {
         func run() {}
     }
-    
+
     let isRun = true // this takes a long time, only run it when you want to
 
     override func setUp() {

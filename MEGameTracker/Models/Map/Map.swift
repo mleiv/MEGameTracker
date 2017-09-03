@@ -130,11 +130,7 @@ public struct Map: Codable, MapLocationable, Eventsable {
         set {}
     }
 	public var isAvailable: Bool {
-        get {
-            return generalData.isAvailable && events.filter({ (e: Event) in
-                return e.isBlockingInGame(gameVersion)
-            }).isEmpty
-        }
+        get { return isAvailableInGame(gameVersion) }
         set {}
     }
 	public var unavailabilityMessages: [String] {

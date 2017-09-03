@@ -20,8 +20,10 @@ public protocol IBStylesheet {
 	/// A list of stylesheet identifiers and styles.
 	var styles: [String: IBStyleProperty.List] { get }
 
+	var isInitialized: Bool { get set }
+
 	/// Any global style changes, like tintColor.
-	func applyGlobalStyles(inWindow window: UIWindow?)
+    func applyGlobalStyles(inWindow window: UIWindow?)
 }
 
 extension IBStylesheet {
@@ -40,8 +42,14 @@ extension IBStylesheet {
 
 	/// (Protocol default)
 	/// Initialize the style library.
-	public func initialize(fromWindow window: UIWindow?) {
+	public mutating func initialize(fromWindow window: UIWindow?) {
 		IBStyleManager.current.stylesheet = self
 		applyGlobalStyles(inWindow: window)
+        IBStyleManager.current.stylesheet?.isInitialized = true
+        NotificationCenter.default.post(
+            name: IBStyleManager.stylesInitialized,
+            object: nil,
+            userInfo: nil
+        )
 	}
 }

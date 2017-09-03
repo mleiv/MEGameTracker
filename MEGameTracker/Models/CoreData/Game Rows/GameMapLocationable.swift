@@ -42,7 +42,7 @@ public protocol MapLocationable {
 extension MapLocationable {
 	public var searchableName: String { return name }
 	public var linkToMapId: String? { return nil }
-	public var shownInMapId: String? { get{ return nil } set{} }
+	public var shownInMapId: String? { get { return nil } set {} }
 	public var isShowInParentMap: Bool { return false }
 	public var isShowInList: Bool { return true }
 	public var isShowPin: Bool { return false }
