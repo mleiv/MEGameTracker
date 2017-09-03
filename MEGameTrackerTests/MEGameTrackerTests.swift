@@ -77,8 +77,8 @@ class MEGameTrackerTests: XCTestCase {
         initializeSandboxedStore()
         let manager = manager ?? CoreDataManager.current
         var item = try? manager.decoder.decode(T.self, from: json.data(using: .utf8)!)
-//        print("\(String(describing: item))")
-//        print("\(String(describing: String(data: (try? manager.encoder.encode(item)) ?? Data(), encoding: .utf8)))")
+        print("\(String(describing: item))")
+        print("\(String(describing: String(data: (try? manager.encoder.encode(item)) ?? Data(), encoding: .utf8)))")
         _ = item?.save(with: manager)
         return item
     }

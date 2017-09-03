@@ -58,9 +58,6 @@ public class IBStyler: NSObject {
             && !didApplyStyles else { return false }
         IBStyleManager.current.apply(identifier: elementIdentifier, to: styledElement as? UIView)
         styledElement?.applyStyles()
-if let label = styledElement as? UILabel {
-    print("\(elementIdentifier) \(label.text) \(label.font)")
-}
         didApplyStyles = true
         styledElement?.setNeedsLayout()
         styledElement?.layoutIfNeeded()

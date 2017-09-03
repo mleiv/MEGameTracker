@@ -16,6 +16,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
         case id
         case name
         case isCompleted
+        case selectedConversationRewards
     }
 
 // MARK: Constants
@@ -108,6 +109,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
 	public var selectedConversationRewards: [String] {
 		return conversationRewards.selectedIds()
 	}
+	private var tempSelectedConversationRewards: [String]?
 
 	public var objectivesCountToCompletion: Int? { return generalData.objectivesCountToCompletion }
 
@@ -195,7 +197,10 @@ public struct Mission: Codable, MapLocationable, Eventsable {
     }
 
     public mutating func setGeneralData() {
-        // nothing for now
+        if let list = tempSelectedConversationRewards {
+            generalData.conversationRewards.setSelectedIds(list)
+            tempSelectedConversationRewards = []
+        }
     }
     public mutating func setGeneralData(_ generalData: DataMission) {
         self.generalData = generalData
@@ -209,6 +214,10 @@ public struct Mission: Codable, MapLocationable, Eventsable {
         generalData = DataMission(id: id) // faulted for now
         overrideName = try container.decodeIfPresent(String.self, forKey: .name)
         isCompleted = try container.decodeIfPresent(Bool.self, forKey: .isCompleted) ?? isCompleted
+        tempSelectedConversationRewards = try container.decodeIfPresent(
+            [String].self,
+            forKey: .selectedConversationRewards
+        )
         try unserializeDateModifiableData(decoder: decoder)
         try unserializeGameModifyingData(decoder: decoder)
         try unserializeLocalCloudData(decoder: decoder)
@@ -219,6 +228,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
         try container.encode(id, forKey: .id)
         try container.encode(overrideName, forKey: .name)
         try container.encode(isCompleted, forKey: .isCompleted)
+        try container.encode(selectedConversationRewards, forKey: .selectedConversationRewards)
         try serializeDateModifiableData(encoder: encoder)
         try serializeGameModifyingData(encoder: encoder)
         try serializeLocalCloudData(encoder: encoder)
@@ -341,10 +351,9 @@ extension Mission {
             isSave: isSave,
             isNotify: isNotify,
             isCascadeChanges: .none,
-            cloudChanges: [:]
-                // TODO
-                //"selectedConversationRewards": SerializableData.safeInit(selectedConversationRewards as [SerializedDataStorable])
-            //]
+            cloudChanges: [
+                "selectedConversationRewards": selectedConversationRewards
+            ]
         )
         return mission
     }

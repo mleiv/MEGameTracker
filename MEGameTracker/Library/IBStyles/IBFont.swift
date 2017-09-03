@@ -91,24 +91,4 @@ public struct IBFont {
 				return IBFont(style: .boldItalic, size: size)
 		}
 	}
-
-//    /// Internal function to scale a given size to its equivalent size under the user's selected preferred font sizing.
-//    func selectedCategorySize(size: CGFloat, minFontSize: CGFloat) -> CGFloat {
-//        let preferredContentSize = UIWindow.isInterfaceBuilder
-//            ? UIContentSizeCategory.large
-//            : UIApplication.shared.preferredContentSizeCategory
-//        let fontSize: CGFloat = {
-//            switch preferredContentSize {
-//                case UIContentSizeCategory.extraExtraExtraLarge: return size + 3.0
-//                case UIContentSizeCategory.extraExtraLarge: return size + 2.0
-//                case UIContentSizeCategory.extraLarge: return size + 1.0
-//                case UIContentSizeCategory.large: return size
-//                case UIContentSizeCategory.medium: return size - 1.0
-//                case UIContentSizeCategory.small: return size - 2.0
-//                case UIContentSizeCategory.extraSmall: return size - 3.0
-//                default: return size
-//            }
-//        }()
-//        return max(minFontSize, fontSize)
-//    }
 }
