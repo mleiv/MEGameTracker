@@ -16,6 +16,7 @@ public enum CodableDictionaryValueType: Codable {
     case uuid(UUID)
     case bool(Bool)
     case int(Int)
+    case double(Double)
     case float(Float)
     case date(Date)
     case string(String)
@@ -40,6 +41,9 @@ public enum CodableDictionaryValueType: Codable {
                 return .bool(value)
             } else if let value = value as? Int {
                 return .int(value)
+            } else if let value = value as? Double {
+                // FYI, Int values are currently encoded to double in CK :(
+                return .double(value)
             } else if let value = value as? Float {
                 return .float(value)
             } else if let value = value as? Date {
@@ -69,6 +73,8 @@ public enum CodableDictionaryValueType: Codable {
                 return .bool(value)
             } else if let value = try? container.decode(Int.self) {
                 return .int(value)
+            } else if let value = try? container.decode(Double.self) {
+                return .double(value)
             } else if let value = try? container.decode(Float.self) {
                 return .float(value)
             } else if let value = try? container.decode(Date.self) {
@@ -87,6 +93,7 @@ public enum CodableDictionaryValueType: Codable {
             case .uuid(let value): try container.encode(value)
             case .bool(let value): try container.encode(value)
             case .int(let value): try container.encode(value)
+            case .double(let value): try container.encode(value)
             case .float(let value): try container.encode(value)
             case .date(let value): try container.encode(value)
             case .string(let value): try container.encode(value)
@@ -101,6 +108,7 @@ public enum CodableDictionaryValueType: Codable {
             case .uuid(let value): return value
             case .bool(let value): return value
             case .int(let value): return value
+            case .double(let value): return value
             case .float(let value): return value
             case .date(let value): return value
             case .string(let value): return value

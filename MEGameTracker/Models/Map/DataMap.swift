@@ -35,7 +35,7 @@ public struct DataMap: Codable, DataMapLocationable {
 // MARK: Constants
 
 // MARK: Properties
-    public var rawData: Data?
+    public var rawData: Data? // transient
 	public private(set) var id: String
 	public private(set) var gameVersion: GameVersion = .game1
 	public var name: String = "Unknown"

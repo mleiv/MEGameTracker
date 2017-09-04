@@ -33,7 +33,7 @@ public struct DataMission: Codable, DataMapLocationable {
 // MARK: Constants
 
 // MARK: Properties
-    public var rawData: Data?
+    public var rawData: Data? // transient
 	public private(set) var id: String
 	public private(set) var gameVersion: GameVersion
 	private var _name: String = "Unknown"
@@ -98,6 +98,7 @@ public struct DataMission: Codable, DataMapLocationable {
 	public init(id: String) {
 		self.id = id
 		self.gameVersion = .game1
+        isDummyData = true
 	}
 
     public init(from decoder: Decoder) throws {

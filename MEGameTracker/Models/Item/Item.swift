@@ -18,6 +18,7 @@ public struct Item: MapLocationable, Eventsable {
 // MARK: Constants
 
 // MARK: Properties
+    public var rawData: Data? // transient
 	public var generalData: DataItem
 
 	public private(set) var id: String
@@ -149,9 +150,9 @@ public struct Item: MapLocationable, Eventsable {
 		events: [Event] = []
 	) {
 		self.id = id
-		self.generalData = generalData
 		self.gameSequenceUuid = gameSequenceUuid
-		self.events = events
+        self.generalData = generalData
+        self.events = events
         setGeneralData()
     }
 
@@ -219,7 +220,7 @@ extension Item {
 extension Item {
 
     /// Returns a copy of this Item with a set of changes applies
-    public func changed(data: [String: Any?]) -> Item {
+    public func changed(fromActionData data: [String: Any?]) -> Item {
         if let isAcquired = data["isAcquired"] as? Bool {
             return changed(isAcquired: isAcquired)
         }
@@ -239,9 +240,15 @@ extension Item {
         item.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
-            isCascadeChanges: isCascadeChanges,
             cloudChanges: ["isAcquired": isAcquired]
         )
+        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
+            item.applyToHierarchy(
+                isAcquired: isAcquired,
+                isSave: isSave,
+                isCascadeChanges: isCascadeChanges
+            )
+        }
         return item
     }
 
@@ -249,16 +256,12 @@ extension Item {
     private mutating func changeEffects(
         isSave: Bool = true,
         isNotify: Bool = true,
-        isCascadeChanges: EventDirection = .all,
         cloudChanges: [String: Any?] = [:]
     ) {
         markChanged()
         notifySaveToCloud(fields: cloudChanges)
         if isSave {
             _ = saveAnyChanges()
-        }
-        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
-            applyToHierarchy(isAcquired: isAcquired, isSave: isSave, isCascadeChanges: isCascadeChanges)
         }
         if isNotify {
             Item.onChange.fire((id: self.id, object: self))
@@ -267,9 +270,11 @@ extension Item {
 
 	mutating func applyToHierarchy(isAcquired isCompleted: Bool, isSave: Bool, isCascadeChanges: EventDirection = .all) {
 		if isCascadeChanges != .down,
-			let missionId = inMissionId, let parentMission = Mission.get(id: missionId) {
+			let missionId = inMissionId,
+            let parentMission = Mission.get(id: missionId) {
 			let parentObjectives = parentMission.getObjectives()
-			let parentObjectivesCountToCompletion = parentMission.objectivesCountToCompletion ?? parentObjectives.count
+			let parentObjectivesCountToCompletion = parentMission.objectivesCountToCompletion
+                ?? parentObjectives.count
 			let otherObjectivesCompletedCount = parentObjectives.filter({ $0.id != id }).filter({
 				($0 as? Mission)?.isCompleted == true || ($0 as? Item)?.isAcquired == true
 			}).count // don't count self

@@ -40,8 +40,8 @@ public enum MissionType: String, Codable {
 		]
 	}
 
-	/// Returns a list of all enums to be shown in headings (objective, subset excluded).
-	public static func listHeadings() -> [MissionType] {
+    /// Returns a list of enum variations used in MissionType categories.
+	public static func categories() -> [MissionType] {
 		return [
 			.mission,
 			.assignment,

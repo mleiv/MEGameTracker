@@ -20,6 +20,7 @@ public struct Event: Codable {
 // MARK: Constants
 
 // MARK: Properties
+    public var rawData: Data? // transient
 	public var generalData: DataEvent
 
 	public private(set) var id: String
@@ -194,8 +195,8 @@ extension Event {
 	private init(id: String, type: EventType) {
 		self.id = id
 		self.type = type
-		self.isFaulted = true
-        self.generalData = DataEvent(id: id) // faulted for now
+		isFaulted = true
+        generalData = DataEvent(id: id) // faulted for now
 		setGeneralData()
 	}
 
@@ -207,50 +208,64 @@ extension Event {
 
 // MARK: Data Change Actions
 extension Event {
-
-	public mutating func change(
+    /// Returns a copy of this Event with isTriggered changed
+	public func changed(
 		isTriggered: Bool,
 		isSave: Bool = true,
 		isNotify: Bool = true,
 		isCascadeChanges: EventDirection = .all
-	) {
-		guard !isFaulted else {
-			// load real copy and act on that
-			var event = Event.get(id: id)
-			event?.change(
-				isTriggered: isTriggered,
-				isSave: isSave,
-				isNotify: isNotify,
-				isCascadeChanges: isCascadeChanges)
-			return
-		}
-		guard isTriggered != self.isTriggered else { return }
-		self.isTriggered = isTriggered
-		markChanged()
-		notifySaveToCloud(fields: ["isTriggered": isTriggered])
-		if isSave {
-			_ = saveAnyChanges()
-		}
-		if isCascadeChanges != .none  && !GamesDataBackup.current.isSyncing {
-			if !generalData.isAlert {
-				for action in generalData.actions {
-					action.change(isTriggered: isTriggered)
-				}
-			}
-		}
-		if isNotify {
-			let copySelf = self
-			DispatchQueue.global(qos: .background).sync { // blocking - signals firing at same time == problems
-				copySelf.notifyDataOwnersOfChange()
-			}
-		}
-		if generalData.isAlert && isTriggered && generalData.dependentOn?.isTriggered != false { // nil or true
-			let alert = Alert(title: nil, description: generalData.description ?? "")
-			DispatchQueue.global(qos: .userInitiated).async {
-				Alert.onSignal.fire(alert)
-			}
-		}
-	}
+	) -> Event? {
+        guard !isFaulted else {
+            // load real copy and act on that
+            return Event.get(id: id)?.changed(
+                isTriggered: isTriggered,
+                isSave: isSave,
+                isNotify: isNotify,
+                isCascadeChanges: isCascadeChanges
+            )
+        }
+        guard isTriggered != self.isTriggered else { return self }
+        var event = self
+        event.isTriggered = isTriggered
+        event.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["isTriggered": isTriggered]
+        )
+        if isCascadeChanges != .none  && !GamesDataBackup.current.isSyncing {
+            if !event.generalData.isAlert {
+                for action in event.generalData.actions {
+                    action.change(isTriggered: isTriggered)
+                }
+            }
+        }
+        return event
+    }
+
+    /// Performs common behaviors after an object change
+    private mutating func changeEffects(
+        isSave: Bool = true,
+        isNotify: Bool = true,
+        cloudChanges: [String: Any?] = [:]
+    ) {
+        markChanged()
+        notifySaveToCloud(fields: cloudChanges)
+        if isSave {
+            _ = saveAnyChanges()
+        }
+        if isNotify {
+            let copySelf = self
+            DispatchQueue.global(qos: .background).sync { // blocking - signals firing at same time == problems
+                copySelf.notifyDataOwnersOfChange()
+            }
+        }
+        if generalData.isAlert && isTriggered && generalData.dependentOn?.isTriggered != false { // nil or true
+            let alert = Alert(title: nil, description: generalData.description ?? "")
+            DispatchQueue.global(qos: .userInitiated).async {
+                Alert.onSignal.fire(alert)
+            }
+        }
+    }
 
 	public func notifyDataOwnersOfChange() {
 		// reload any changed missions not the current one
@@ -290,13 +305,13 @@ extension Event {
 	public static func triggerLevelChange(_ value: Int, for shepard: Shepard?) {
 		guard value != shepard?.level, let shepard = shepard else { return }
 		let events = Event.getLevels(gameVersion: shepard.gameVersion)
-		for (var event) in events {
+		for (event) in events {
 			let eventValue = event.id.stringFrom(-2)
 			let level = eventValue != "00" ? Int(eventValue) : 100
 			if level <= value && !event.isTriggered {
-				event.change(isTriggered: true, isSave: true)
+				_ = event.changed(isTriggered: true, isSave: true)
 			} else if level > value && event.isTriggered {
-				event.change(isTriggered: false, isSave: true)
+				_ = event.changed(isTriggered: false, isSave: true)
 			}
 		}
 		_ = shepard.changed(level: value)
@@ -306,13 +321,13 @@ extension Event {
 	public static func triggerParagonChange(_ value: Int, for shepard: Shepard?) {
 		guard value != shepard?.paragon, let shepard = shepard else { return }
 		let events = getParagons(gameVersion: shepard.gameVersion)
-		for (var event) in events {
+		for (event) in events {
 			let eventValue = event.id.stringFrom(-2)
 			let paragon = eventValue != "00" ? Int(eventValue) : 100
 			if paragon <= value && !event.isTriggered {
-				event.change(isTriggered: true, isSave: true)
+				_ = event.changed(isTriggered: true, isSave: true)
 			} else if paragon > value && event.isTriggered {
-				event.change(isTriggered: false, isSave: true)
+				_ = event.changed(isTriggered: false, isSave: true)
 			}
 		}
 		_ = shepard.changed(paragon: value)
@@ -322,13 +337,13 @@ extension Event {
 	public static func triggerRenegadeChange(_ value: Int, for shepard: Shepard?) {
 		guard value != shepard?.renegade, let shepard = shepard else { return }
 		let events = Event.getRenegades(gameVersion: shepard.gameVersion)
-		for (var event) in events {
+		for (event) in events {
 			let eventValue = event.id.stringFrom(-2)
 			let renegade = eventValue != "00" ? Int(eventValue) : 100
 			if renegade <= value && !event.isTriggered {
-				event.change(isTriggered: true, isSave: true)
+				_ = event.changed(isTriggered: true, isSave: true)
 			} else if renegade > value && event.isTriggered {
-				event.change(isTriggered: false, isSave: true)
+				_ = event.changed(isTriggered: false, isSave: true)
 			}
 		}
 		_ = shepard.changed(renegade: value)

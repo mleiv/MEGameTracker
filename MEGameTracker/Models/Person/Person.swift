@@ -19,6 +19,7 @@ public struct Person: Codable, Photographical, Eventsable {
 // MARK: Constants
 
 // MARK: Properties
+    public var rawData: Data? // transient
 	public var generalData: DataPerson
 
 	public private(set) var id: String
@@ -224,7 +225,6 @@ extension Person {
         person.changeEffects(
             isSave: false,
             isNotify: false
-//            isCascadeChanges: .none
         )
         return person
     }
@@ -246,7 +246,6 @@ extension Person {
         person.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
-//            isCascadeChanges: .none
             cloudChanges: ["photo": photo]
         )
         return person
@@ -268,7 +267,6 @@ extension Person {
     private mutating func changeEffects(
         isSave: Bool = true,
         isNotify: Bool = true,
-//        isCascadeChanges: EventDirection = .all,
         cloudChanges: [String: Any?] = [:]
     ) {
         markChanged()
@@ -276,9 +274,6 @@ extension Person {
         if isSave {
             _ = saveAnyChanges()
         }
-//        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
-//            applyToHierarchy(isExplored: isExplored, isSave: isSave, isCascadeChanges: isCascadeChanges)
-//        }
         if isNotify {
             Person.onChange.fire((id: self.id, object: self))
         }

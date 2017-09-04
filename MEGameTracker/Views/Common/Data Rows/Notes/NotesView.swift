@@ -19,7 +19,11 @@ final public class NotesView: SimpleArrayDataRow {
 	public var notes: [Note] {
 		return UIWindow.isInterfaceBuilder ? dummyNotes : (controller?.notes ?? [])
 	}
-	public var controller: Notesable?
+	public var controller: Notesable?{
+        didSet {
+            reloadData()
+        }
+    }
 	var isBorderBottom: Bool?
 	var notesNib: NotesNib?
 

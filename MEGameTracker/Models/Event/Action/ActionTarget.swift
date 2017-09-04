@@ -32,14 +32,14 @@ public struct ActionTarget: Codable {
 extension ActionTarget {
 
 	/// Given a set of simple change commands in key-value format, executes a change against the specified object.
-	public func change(data: [String: Any?]) {
+	public func change(fromActionData data: [String: Any?]) {
 		switch type {
 		case .decision:
-			_ = getObject(type: Decision.self)?.changed(data: data)
+			_ = getObject(type: Decision.self)?.changed(fromActionData: data)
 		case .item:
-            _ = getObject(type: Item.self)?.changed(data: data)
+            _ = getObject(type: Item.self)?.changed(fromActionData: data)
 		case .mission:
-            _ = getObject(type: Mission.self)?.changed(data: data)
+            _ = getObject(type: Mission.self)?.changed(fromActionData: data)
 		}
 	}
 

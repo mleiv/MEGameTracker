@@ -39,6 +39,14 @@ extension Shepard: CloudDataStorable {
     }
 
     /// (CloudDataStorable Protocol)
+    /// Alter any CK items before handing to codable to modify/create object
+    public func getAdditionalCloudFields(changeRecord: CloudDataRecordChange) -> [String: Any?] {
+        var changes = changeRecord.changeSet
+        changes.removeValue(forKey: "lastRecordData")
+        return changes
+    }
+
+    /// (CloudDataStorable Protocol)
     /// Takes one serialized cloud change and saves it.
     public static func saveOneFromCloud(
         changeRecord: CloudDataRecordChange,
@@ -47,7 +55,9 @@ extension Shepard: CloudDataStorable {
         let recordId = changeRecord.recordId
         if let (uuidString, gameSequenceUuid) = parseIdentifyingName(name: recordId),
             let uuid = UUID(uuidString: uuidString),
-            let gameVersion = GameVersion(rawValue: changeRecord.changeSet["gameVersion"] as? String ?? "0") {
+            let gameVersion = GameVersion(
+                rawValue: changeRecord.changeSet["gameVersion"] as? String ?? "0"
+            ) {
             var element = Shepard.get(uuid: uuid)
                             ?? Shepard(
                                 gameSequenceUuid: gameSequenceUuid,
@@ -55,7 +65,9 @@ extension Shepard: CloudDataStorable {
                                 gameVersion: gameVersion
                             )
             // apply cloud changes
-            element = element.changed(changeRecord.changeSet)
+            element.rawData = nil
+            let changes = element.getAdditionalCloudFields(changeRecord: changeRecord)
+            element = element.changed(changes)
             // special case
             if let image = GamesDataBackup.current.getCachedImage(recordId: recordId, key: "photoFile") {
                 _ = element.savePhoto(image: image, isSave: false)

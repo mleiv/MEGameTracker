@@ -406,8 +406,8 @@ extension ShepardController: Notesable {
 
 	func setupNotes() {
 		shepard?.getNotes { [weak self] notes in
+            self?.notes = notes
 			DispatchQueue.main.async {
-				self?.notes = notes
 				self?.notesView?.controller = self
 				self?.notesView?.setup()
 			}

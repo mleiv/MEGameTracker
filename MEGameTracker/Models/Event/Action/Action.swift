@@ -42,7 +42,7 @@ extension Action {
 
 	/// Executes or reverts the change.
 	public func change(isTriggered: Bool) {
-		target.change(data: isTriggered ? onChanges : offChanges)
+		target.change(fromActionData: isTriggered ? onChanges : offChanges)
 	}
 
 	public var onChanges: [String: Any?] {

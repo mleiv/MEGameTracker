@@ -94,7 +94,7 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 		missionCounts = [:]
 		guard !UIWindow.isInterfaceBuilder else { return fetchDummyData() }
 		let gameVersion = App.current.gameVersion
-		for type in MissionType.listHeadings() {
+		for type in MissionType.categories() {
 			let counts = Mission.getCountedMissionStatus(missionType: type, gameVersion: gameVersion)
 			guard gameVersion == App.current.gameVersion else { return }
 			if sumMissionStatusCounts(counts) > 0 {
@@ -146,19 +146,19 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 
 	func missionsTypeByRow(_ row: Int) -> MissionType? {
 		let sections = Array(missionCounts.keys)
-		let sortedSections = sections.sorted { $0.rawValue < $1.rawValue }
+		let sortedSections = sections.sorted { $0.intValue < $1.intValue }
 		return sortedSections.indices.contains(row) ? sortedSections[row] : nil
 	}
 
 	func missionsRowByType(_ type: MissionType) -> Int? {
 		let sections = Array(missionCounts.keys)
-		let sortedSections = sections.sorted { $0.rawValue < $1.rawValue }
+		let sortedSections = sections.sorted { $0.intValue < $1.intValue }
 		return sortedSections.index(of: type)
 	}
 
 	func searchedMissionsTypeBySection(_ section: Int) -> MissionType? {
 		let sections = Array(searchedMissions.keys)
-		let sortedSections = sections.sorted { $0.rawValue < $1.rawValue }
+		let sortedSections = sections.sorted { $0.intValue < $1.intValue }
 		return sortedSections.indices.contains(section) ? sortedSections[section] : nil
 	}
 

@@ -19,6 +19,7 @@ public struct Decision: Codable {
 // MARK: Constants
 
 // MARK: Properties
+    public var rawData: Data? // transient
 	public var generalData: DataDecision
 
 	public private(set) var id: String
@@ -81,8 +82,8 @@ public struct Decision: Codable {
 		generalData: DataDecision
 	) {
 		self.id = id
-		self.generalData = generalData
 		self.gameSequenceUuid = gameSequenceUuid
+        self.generalData = generalData
         setGeneralData()
 	}
 
@@ -132,7 +133,7 @@ public struct Decision: Codable {
 extension Decision {
 
     /// Returns a copy of this Decision with a set of changes applies
-	public func changed(data: [String: Any?]) -> Decision {
+	public func changed(fromActionData data: [String: Any?]) -> Decision {
         if let isSelected = data["isSelected"] as? Bool {
             return changed(isSelected: isSelected)
         }
@@ -152,9 +153,20 @@ extension Decision {
 		decision.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
-            isCascadeChanges: isCascadeChanges,
             cloudChanges: ["isSelected": isSelected]
         )
+        if isCascadeChanges != .none  && !GamesDataBackup.current.isSyncing {
+            if decision.loveInterestId != nil {
+                decision.cascadeChangeLoveInterest(isSave: isSave, isNotify: isNotify)
+            }
+            if isSelected {
+                for decisionId in decision.blocksDecisionIds {
+                    // new thread?
+                    _ = Decision.get(id: decisionId)?
+                        .changed(isSelected: false, isSave: true, isCascadeChanges: .none)
+                }
+            }
+        }
         return decision
 	}
 
@@ -162,25 +174,12 @@ extension Decision {
     private mutating func changeEffects(
         isSave: Bool = true,
         isNotify: Bool = true,
-        isCascadeChanges: EventDirection = .all,
         cloudChanges: [String: Any?] = [:]
     ) {
         markChanged()
         notifySaveToCloud(fields: cloudChanges)
         if isSave {
             _ = saveAnyChanges()
-        }
-        if isCascadeChanges != .none  && !GamesDataBackup.current.isSyncing {
-            if self.loveInterestId != nil {
-                cascadeChangeLoveInterest(isSave: isSave, isNotify: isNotify)
-            }
-            if isSelected {
-                for decisionId in blocksDecisionIds {
-                    // new thread?
-                    _ = Decision.get(id: decisionId)?
-                        .changed(isSelected: false, isSave: true, isCascadeChanges: .none)
-                }
-            }
         }
         if isNotify {
             Decision.onChange.fire((id: id, object: self))

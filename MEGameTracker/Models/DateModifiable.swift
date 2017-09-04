@@ -19,6 +19,10 @@ public protocol DateModifiable {
 
 	/// Date when value was last changed.
 	var modifiedDate: Date { get set }
+
+    /// A copy of the unchanged data from the database, for faster saving.
+    /// Reset to nil on any changes.
+	var rawData: Data? { get set }
 }
 extension DateModifiable {
     /// Update modifiedDate to now.
@@ -29,6 +33,7 @@ extension DateModifiable {
 
     /// Mark hasUnsavedChanges true and update modifiedDate to now.
     public mutating func markChanged() {
+        rawData = nil
         touch()
         hasUnsavedChanges = true
     }

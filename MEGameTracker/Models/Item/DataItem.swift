@@ -30,7 +30,7 @@ public struct DataItem: Codable, DataMapLocationable {
 // MARK: Constants
 
 // MARK: Properties
-    public var rawData: Data?
+    public var rawData: Data? // transient
 	public private(set) var id: String
 	public private(set) var gameVersion: GameVersion
 	private var _name: String = "Unknown"

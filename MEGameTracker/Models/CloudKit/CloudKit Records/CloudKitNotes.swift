@@ -26,6 +26,16 @@ extension Note: CloudDataStorable {
     }
 
     /// (CloudDataStorable Protocol)
+    /// Alter any CK items before handing to codable to modify/create object
+    public func getAdditionalCloudFields(changeRecord: CloudDataRecordChange) -> [String: Any?] {
+        var changes = changeRecord.changeSet
+        changes["gameSequenceUuid"] = self.gameSequenceUuid //?
+        changes.removeValue(forKey: "identifyingObject") // fallback to element's value
+        changes.removeValue(forKey: "lastRecordData")
+        return changes
+    }
+
+    /// (CloudDataStorable Protocol)
     /// Takes one serialized cloud change and saves it.
     public static func saveOneFromCloud(
         changeRecord: CloudDataRecordChange,
@@ -47,8 +57,6 @@ extension Note: CloudDataStorable {
                 return true
             }
 
-            var changeSet = changeRecord.changeSet
-            changeSet["gameSequenceUuid"] = gameUuid
             var element = Note.get(uuid: noteUuid) ?? Note(
                                                 identifyingObject: identifyingObject,
                                                 uuid: noteUuid,
@@ -56,7 +64,9 @@ extension Note: CloudDataStorable {
                                                 gameSequenceUuid: gameUuid
                                             )
             // apply cloud changes
-            element = element.changed(changeRecord.changeSet)
+            element.rawData = nil
+            let changes = element.getAdditionalCloudFields(changeRecord: changeRecord)
+            element = element.changed(changes)
             element.isSavedToCloud = true
             // reapply any local changes
             if !element.pendingCloudChanges.isEmpty {

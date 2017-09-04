@@ -69,7 +69,7 @@ public struct MapLinkType: ValueDataRowType {
 				mapLocation?.mapLocationPoint = map?.mapLocationPoint
 			}
 			if controller.isShowInParentMap == true, let inMapId = map?.inMapId {
-                let gameVersion = map?.gameVersion ?? App.current.gameVersion
+//              let gameVersion = map?.gameVersion ?? App.current.gameVersion
 //				mapLocation = map // mission/item should show now in map
 				map = Map.get(id: inMapId)
 			}

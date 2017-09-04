@@ -40,6 +40,9 @@ public protocol CloudDataStorable {
 	/// Set any additional fields, specific to the object in question, for a cloud kit object.
 	func setAdditionalCloudFields(record: CKRecord)
 
+	/// Alter any CK items before handing to codable to modify/create object
+    func getAdditionalCloudFields(changeRecord: CloudDataRecordChange) -> [String: Any?]
+
 	/// Set identifying fields for a cloud kit object. 
 	/// (Default provided for GameRowStorable objects.)
 	func setIdentifyingCloudFields(record: CKRecord)
@@ -445,7 +448,9 @@ extension CloudDataStorable where Self: GameRowStorable {
                             ?? Self.get(id: id, with: manager) {
             // apply cloud changes
             element.gameSequenceUuid = uuid
-            element = element.changed(changeRecord.changeSet)
+            element.rawData = nil
+            let changes = element.getAdditionalCloudFields(changeRecord: changeRecord)
+            element = element.changed(changes)
             element.isSavedToCloud = true
             // reapply any local changes
             if !element.pendingCloudChanges.isEmpty {

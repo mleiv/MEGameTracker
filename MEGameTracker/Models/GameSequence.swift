@@ -19,6 +19,7 @@ public struct GameSequence: Codable {
 	public typealias ShepardVersionIdentifier = (uuid: String, gameVersion: GameVersion)
 
 // MARK: Properties
+    public var rawData: Data? { get { return nil } set {} } // block this behavior
 	public var id: UUID { return uuid }
 	public var uuid: UUID
 	public var shepard: Shepard?
@@ -163,7 +164,9 @@ extension GameSequence {
 // MARK: DateModifiable
 extension GameSequence: DateModifiable {
 
+    /// (Override)
 	public mutating func markChanged() {
+        rawData = nil
 		touch()
 		notifySaveToCloud(fields: ["lastPlayedShepard": shepard?.uuid ?? ""])
 		hasUnsavedChanges = true

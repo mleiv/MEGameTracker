@@ -33,6 +33,7 @@ public struct Shepard: Codable, Photographical {
 	public static let DefaultSurname = "Shepard"
 
 // MARK: Properties
+    public var rawData: Data? // transient
 	public var id: UUID { return uuid }
 	public internal(set) var uuid: UUID
 

@@ -24,7 +24,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
 	let game3RewardsSummaryTemplate = "%d Paragon, %d Renegade, %d Reputation"
 
 // MARK: Properties
-
+    public var rawData: Data? // transient
 	public var generalData: DataMission
 
 	public private(set) var id: String
@@ -191,8 +191,9 @@ public struct Mission: Codable, MapLocationable, Eventsable {
 		events: [Event] = []
 	) {
 		self.id = id
-		self.generalData = generalData
 		self.gameSequenceUuid = gameSequenceUuid
+        self.generalData = generalData
+        self.events = events
         setGeneralData()
     }
 
@@ -210,7 +211,6 @@ public struct Mission: Codable, MapLocationable, Eventsable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
-//        gameVersion = .game1
         generalData = DataMission(id: id) // faulted for now
         overrideName = try container.decodeIfPresent(String.self, forKey: .name)
         isCompleted = try container.decodeIfPresent(Bool.self, forKey: .isCompleted) ?? isCompleted
@@ -282,7 +282,7 @@ extension Mission {
 extension Mission {
 
     /// Returns a copy of this Mission with a set of changes applies
-    public func changed(data: [String: Any?]) -> Mission {
+    public func changed(fromActionData data: [String: Any?]) -> Mission {
         if let name = data["name"] as? String {
             return changed(name: name)
         } else if let isCompleted = data["isCompleted"] as? Bool {
@@ -305,9 +305,15 @@ extension Mission {
         mission.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
-            isCascadeChanges: isCascadeChanges,
             cloudChanges: ["isCompleted": isCompleted]
         )
+        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
+            mission.applyToHierarchy(
+                isCompleted: isCompleted,
+                isSave: isSave,
+                isCascadeChanges: isCascadeChanges
+            )
+        }
         // copy changes to any identical missions
         if !GamesDataBackup.current.isSyncing,
             let missionId = identicalMissionId {
@@ -328,7 +334,6 @@ extension Mission {
         mission.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
-            isCascadeChanges: .none,
             cloudChanges: ["name": name]
         )
         return mission
@@ -350,7 +355,6 @@ extension Mission {
         mission.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
-            isCascadeChanges: .none,
             cloudChanges: [
                 "selectedConversationRewards": selectedConversationRewards
             ]
@@ -362,16 +366,12 @@ extension Mission {
     private mutating func changeEffects(
         isSave: Bool = true,
         isNotify: Bool = true,
-        isCascadeChanges: EventDirection = .all,
         cloudChanges: [String: Any?] = [:]
     ) {
         markChanged()
         notifySaveToCloud(fields: cloudChanges)
         if isSave {
              _ = saveAnyChanges()
-        }
-        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
-            applyToHierarchy(isCompleted: isCompleted, isSave: isSave, isCascadeChanges: isCascadeChanges)
         }
         if isNotify {
             Mission.onChange.fire((id: self.id, object: self))
@@ -381,11 +381,9 @@ extension Mission {
 	private mutating func applyEventChanges(isCompleted: Bool) {
 		guard !GamesDataBackup.current.isSyncing else { return }
 		events = events.map {
-			var event = $0
-			if event.type == .triggers {
-				event.change(isTriggered: isCompleted, isSave: true)
-			}
-			return event
+			return $0.type == .triggers
+                ? $0.changed(isTriggered: isCompleted, isSave: true) ?? $0
+                : $0
 		}
 	}
 

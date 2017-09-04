@@ -20,6 +20,7 @@ public struct Map: Codable, MapLocationable, Eventsable {
 // MARK: Constants
 
 // MARK: Properties
+    public var rawData: Data? // transient
 	public var generalData: DataMap
 
 	public private(set) var id: String
@@ -172,8 +173,7 @@ public struct Map: Codable, MapLocationable, Eventsable {
 		gameSequenceUuid: UUID? = App.current.game?.uuid,
 		gameVersion: GameVersion? = nil,
 		generalData: DataMap,
-		events: [Event] = [],
-		data: SerializableData? = nil
+		events: [Event] = []
 	) {
 		self.id = id
 		self.gameSequenceUuid = gameSequenceUuid
@@ -297,7 +297,7 @@ extension Map {
 extension Map {
 
     /// Returns a copy of this Map with a set of changes applies
-    public func changed(data: [String: Any?]) -> Map {
+    public func changed(fromActionData data: [String: Any?]) -> Map {
         if let isExplored = data["isExplored"] as? Bool {
             return changed(isExplored: isExplored)
         }
@@ -314,8 +314,7 @@ extension Map {
         map.generalData = generalData.changed(gameVersion: gameVersion)
         map.changeEffects(
             isSave: false,
-            isNotify: false,
-            isCascadeChanges: .none
+            isNotify: false
         )
         return map
     }
@@ -333,9 +332,15 @@ extension Map {
         map.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
-            isCascadeChanges: isCascadeChanges,
             cloudChanges: ["isExplored": isExplored]
         )
+        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
+            map.applyToHierarchy(
+                isExplored: isExplored,
+                isSave: isSave,
+                isCascadeChanges: isCascadeChanges
+            )
+        }
         return map
     }
 
@@ -347,16 +352,12 @@ extension Map {
     private mutating func changeEffects(
         isSave: Bool = true,
         isNotify: Bool = true,
-        isCascadeChanges: EventDirection = .all,
         cloudChanges: [String: Any?] = [:]
     ) {
         markChanged()
         notifySaveToCloud(fields: cloudChanges)
         if isSave {
             _ = saveAnyChanges()
-        }
-        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
-            applyToHierarchy(isExplored: isExplored, isSave: isSave, isCascadeChanges: isCascadeChanges)
         }
         if isNotify {
             Map.onChange.fire((id: self.id, object: self))

@@ -21,6 +21,14 @@ extension GameSequence: CloudDataStorable {
 		}
 	}
 
+    /// (CloudDataStorable Protocol)
+    /// Alter any CK items before handing to codable to modify/create object
+    public func getAdditionalCloudFields(changeRecord: CloudDataRecordChange) -> [String: Any?] {
+        var changes = changeRecord.changeSet
+        changes.removeValue(forKey: "lastRecordData")
+        return changes
+    }
+
 	/// (CloudDataStorable Protocol)
 	/// Takes one serialized cloud change and saves it.
 	public static func saveOneFromCloud(
@@ -31,7 +39,9 @@ extension GameSequence: CloudDataStorable {
         if let (_, uuid) = parseIdentifyingName(name: recordId) {
 			var element = GameSequence.get(uuid: uuid) ?? GameSequence(uuid: uuid)
             // apply cloud changes
-            element = element.changed(changeRecord.changeSet)
+            element.rawData = nil
+            let changes = element.getAdditionalCloudFields(changeRecord: changeRecord)
+            element = element.changed(changes)
             element.isSavedToCloud = true
             // reapply any local changes
             if !element.pendingCloudChanges.isEmpty {

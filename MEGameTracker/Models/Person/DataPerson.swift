@@ -37,7 +37,7 @@ public struct DataPerson: Codable, Photographical {
 // MARK: Constants
 
 // MARK: Properties
-    public var rawData: Data?
+    public var rawData: Data? // transient
 	public private(set) var id: String
 	public private(set) var gameVersion: GameVersion = .game1
 	public private(set) var name: String = "Unknown"
@@ -79,11 +79,6 @@ public struct DataPerson: Codable, Photographical {
         self.id = id
         self.gameVersion = .game1
         isDummyData = true
-//        self.rawGeneralDictionary = data
-//
-//        rawEventDictionary = data["events"]
-//        gameVersionData = data["gameVersionData"] ?? SerializableData()
-//        setGameVersionData()
     }
 
     public init(from decoder: Decoder) throws {
@@ -215,7 +210,6 @@ extension DataPerson {
         for game in GameVersion.all() {
             data.append(value(key: key, forGame: game) ?? defaultValue)
         }
-print("\(id) \(key) |\(data.joined(separator: "|"))|")
         return "|\(data.joined(separator: "|"))|".lowercased()
     }
 

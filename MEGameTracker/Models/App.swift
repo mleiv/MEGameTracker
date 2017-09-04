@@ -31,6 +31,8 @@ final public class App: Codable {
     static let defaultRecentlyViewedListSize = 20
 
 // MARK: Properties
+    public var rawData: Data? { get { return nil } set {} } // block this behavior
+    
     public var currentGameUuid: UUID?
 
     public var recentlyViewedMaps: RecentlyViewedList

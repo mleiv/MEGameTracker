@@ -17,16 +17,29 @@ extension CodableCoreDataStorable {
         _ changes: [String: Any?]
     ) -> Self {
         guard !changes.isEmpty else { return self }
-        if let rawData = rawData,
-            let source = try? defaultManager.decoder.decode(CodableDictionary.self, from: rawData) {
-            let combined = CodableDictionary(
-                source.dictionary.merging(changes) { (_, new) in new }
-            )
-            if let data = try? defaultManager.encoder.encode(combined),
-                let changed = try? defaultManager.decoder.decode(Self.self, from: data) {
-                return changed
-            }
+        let combined = CodableDictionary(
+            getBaseData().merging(changes) { (_, new) in new }
+        )
+        if let data = try? defaultManager.encoder.encode(combined),
+            let changed = try? defaultManager.decoder.decode(Self.self, from: data) {
+            // rawData should now be nil
+            return changed
         }
         return self
+    }
+
+    /// Either fetch the rawData cache or create Data from current object.
+    /// Return as a dictionary.
+    private func getBaseData() -> [String: Any?] {
+        let data: Data = {
+            if let rawData = self.rawData {
+                return rawData
+            } else if let data = try? defaultManager.encoder.encode(self) {
+                return data
+            }
+            return Data()
+        }()
+        let codableDictionary = try? defaultManager.decoder.decode(CodableDictionary.self, from: data)
+        return codableDictionary?.dictionary ?? [:]
     }
 }

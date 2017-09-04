@@ -12,6 +12,7 @@ public struct Note: Codable {
 
     enum CodingKeys: String, CodingKey {
         case uuid
+        case gameVersion
         case shepardUuid
         case gameSequenceUuid
         case identifyingObject
@@ -21,6 +22,7 @@ public struct Note: Codable {
 // MARK: Constants
 
 // MARK: Properties
+    public var rawData: Data? // transient
 	public internal(set) var uuid: UUID
 	public internal(set) var shepardUuid: UUID?
 	public internal(set) var identifyingObject: IdentifyingObject
@@ -65,24 +67,39 @@ public struct Note: Codable {
 		self.shepardUuid = shepardUuid ?? App.current.game?.shepard?.uuid
 		self.gameSequenceUuid = gameSequenceUuid ?? App.current.game?.uuid
         self.identifyingObject = identifyingObject
-        self.gameVersion = App.current.gameVersion // TODO: set to gameSequence version when missing
+        gameVersion = App.current.gameVersion // TODO: set to gameSequence version when missing
 	}
 
     public init(from decoder: Decoder) throws {
-        gameVersion = App.current.gameVersion // default
-        shepardUuid = App.current.game?.shepard?.uuid // default
-        gameSequenceUuid = App.current.game?.uuid // default
-
         let container = try decoder.container(keyedBy: CodingKeys.self)
         uuid = try container.decode(UUID.self, forKey: .uuid)
+        gameVersion = try container.decodeIfPresent(GameVersion.self, forKey: .gameVersion)
+            ?? App.current.gameVersion // default
         shepardUuid = try container.decodeIfPresent(UUID.self, forKey: .shepardUuid)
+            ?? App.current.game?.shepard?.uuid // default
         gameSequenceUuid = try container.decodeIfPresent(UUID.self, forKey: .gameSequenceUuid)
-        identifyingObject = try container.decode(IdentifyingObject.self, forKey: .identifyingObject)
+            ?? App.current.game?.uuid // default
+        identifyingObject = try container.decode(
+            IdentifyingObject.self,
+            forKey: .identifyingObject
+        )
         text = try container.decodeIfPresent(String.self, forKey: .text)
-
         try unserializeDateModifiableData(decoder: decoder)
         try unserializeGameModifyingData(decoder: decoder)
         try unserializeLocalCloudData(decoder: decoder)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(uuid, forKey: .uuid)
+        try container.encode(gameVersion, forKey: .gameVersion)
+        try container.encode(shepardUuid, forKey: .shepardUuid)
+        try container.encode(gameSequenceUuid, forKey: .gameSequenceUuid)
+        try container.encode(text, forKey: .text)
+        try container.encode(identifyingObject, forKey: .identifyingObject)
+        try serializeDateModifiableData(encoder: encoder)
+        try serializeGameModifyingData(encoder: encoder)
+        try serializeLocalCloudData(encoder: encoder)
     }
 }
 

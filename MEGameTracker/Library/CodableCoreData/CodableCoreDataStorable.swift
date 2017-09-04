@@ -104,10 +104,6 @@ extension CodableCoreDataStorable {
     /// The closure type for editing fetch requests.
     public typealias AlterFetchRequest<T: NSManagedObject> = ((NSFetchRequest<T>) -> Void)
 
-    /// (Protocol default)
-    /// A copy of the unaltered source data, for faster db write
-    public var rawData: Data? { get { return nil } set {} }
-
     /// Convenience - get the static version for easy instance reference.
     public var defaultManager: CodableCoreDataManageable {
         return Self.defaultManager

@@ -13,12 +13,11 @@ import CloudKit
 public struct DeletedRow: Codable {
 
 // MARK: Properties
-
+    public var rawData: Data? { get { return nil } set {} } // block this behavior
     public var source: String
     public var identifier: String
 
 // MARK: Initialization
-
     public init(source: String, identifier: String) {
         self.source = source
         self.identifier = identifier
