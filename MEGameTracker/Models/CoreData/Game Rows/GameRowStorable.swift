@@ -45,8 +45,14 @@ public protocol GameRowStorable: CodableCoreDataStorable {
     /// This value's game identifier.
     var gameSequenceUuid: UUID? { get set }
 
+    /// This value's game identifier.
+    var generalData: DataRowType { get set }
+
     /// Assigns the general data object to the game-specific
     mutating func setGeneralData(_ generalData: DataRowType)
+
+    /// Combines with changed([String: Any?]) to keep copy of generalData
+    func resetChangedDataFromSource(source: Self) -> Self
 
 // MARK: Optional
 
@@ -185,6 +191,13 @@ extension GameRowStorable {
         with manager: CodableCoreDataManageable? = nil
     ) -> Self? {
         return getOrCreate(using: data, gameSequenceUuid: nil, with: manager)
+    }
+
+    /// Combines with changed([String: Any?]) to keep copy of generalData
+    public func resetChangedDataFromSource(source: Self) -> Self {
+        var changed = self
+        changed.setGeneralData(source.generalData)
+        return changed
     }
 
 // MARK: Remove Default Get

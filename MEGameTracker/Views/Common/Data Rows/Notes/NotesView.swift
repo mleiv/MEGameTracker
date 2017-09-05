@@ -153,7 +153,7 @@ final public class NotesView: SimpleArrayDataRow {
 
 extension NotesView { // :UITableViewDelegate
 
-	public func tableView(
+	@objc public func tableView(
 		_ tableView: UITableView,
 		commitEditingStyle editingStyle: UITableViewCellEditingStyle,
 		forRowAtIndexPath indexPath: IndexPath

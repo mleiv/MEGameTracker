@@ -79,9 +79,9 @@ final class EventTests: MEGameTrackerTests {
 	func testChange() {
 		initializeCurrentGame() // needed for saving event with game uuid
 
-		var event = create(Event.self, from: noveria1Json)
+		let event = create(Event.self, from: noveria1Json)
 		XCTAssert(event?.isTriggered == false, "Reported incorrect initial event state")
-		event?.change(isTriggered: true, isSave: true)
+		_ = event?.changed(isTriggered: true, isSave: true)
 		let event2 = Event.get(id: "Noveria Landlines Repaired")
 		XCTAssert(event2?.isTriggered == true, "Reported incorrect triggered event state")
 
@@ -104,13 +104,13 @@ final class EventTests: MEGameTrackerTests {
             }
         }
 
-		var event1 = create(Event.self, from: prologueEventJson)
+		let event1 = create(Event.self, from: prologueEventJson)
         var mission = create(Mission.self, from: prologueMissionJson)
         XCTAssert(mission?.name == "Prologue: On The Normandy", "Reported incorrect initial mission name")
-        event1?.change(isTriggered: true)
+        _ = event1?.changed(isTriggered: true)
         mission = Mission.get(id: "M1.Prologue")
         XCTAssert(mission?.name == "Prologue: Find The Beacon", "Reported incorrect changed mission name")
-        event1?.change(isTriggered: false)
+        _ = event1?.changed(isTriggered: false)
         mission = Mission.get(id: "M1.Prologue")
         XCTAssert(mission?.name == "Prologue: On The Normandy", "Reported incorrect changed back mission name")
 
@@ -128,10 +128,10 @@ final class EventTests: MEGameTrackerTests {
             }
         }
 
-        var event2 = create(Event.self, from: wrexEventJson)
+        let event2 = create(Event.self, from: wrexEventJson)
         var decision = create(Decision.self, from: wrexDecisionJson)
         XCTAssert(decision?.isSelected == false, "Reported incorrect initial decision")
-        event2?.change(isTriggered: true)
+        _ = event2?.changed(isTriggered: true)
         decision = Decision.get(id: "D1.WrexArmor")
         XCTAssert(decision?.isSelected == true, "Reported incorrect selected decision")
 
@@ -143,8 +143,8 @@ final class EventTests: MEGameTrackerTests {
 	/// Test Event dependent on others
 	func testCombinedEvents() {
 		initializeCurrentGame() // needed for saving event with game uuid
-		var noveria1 = create(Event.self, from: noveria1Json)
-		var noveria2 = create(Event.self, from: noveria2Json)
+		let noveria1 = create(Event.self, from: noveria1Json)
+		let noveria2 = create(Event.self, from: noveria2Json)
 		var noveriaCombined = create(Event.self, from: noveriaCombinedJson)
 		_ = create(Mission.self, from: noveriaCombinedMissionJson)
 
@@ -158,10 +158,10 @@ final class EventTests: MEGameTrackerTests {
 		}
 
 		XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
-		noveria1?.change(isTriggered: true)
+		_ = noveria1?.changed(isTriggered: true)
 		noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
 		XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
-		noveria2?.change(isTriggered: true)
+		_ = noveria2?.changed(isTriggered: true)
 		noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
 		XCTAssert(noveriaCombined?.isTriggered == true, "Reported incorrect triggered event state")
 

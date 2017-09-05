@@ -58,6 +58,10 @@ public struct CodableDictionary {
     }
     private var internalDictionary: DictionaryType
     public init(_ dictionary: [String: Any?] = [:]) {
+        guard !dictionary.isEmpty else {
+            self.internalDictionary = [:]
+            return
+        }
         self.internalDictionary = Dictionary(uniqueKeysWithValues: dictionary.map {
             if let d = $0.1 as? [String: Any?] {
                 return ($0.0, CodableDictionaryValueType(CodableDictionary(d)))

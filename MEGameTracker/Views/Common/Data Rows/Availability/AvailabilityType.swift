@@ -25,6 +25,7 @@ public struct AvailabilityRowType: TextDataRowType {
 	let defaultPaddingSides: CGFloat = 15.0
 	var didSetup = false
 
+    public var linkOriginController: UIViewController? { return controller as? UIViewController }
 	var viewController: UIViewController? { return controller as? UIViewController }
 
 	public init() {}

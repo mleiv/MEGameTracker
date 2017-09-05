@@ -83,7 +83,11 @@ final public class MapRow: UITableViewCell {
 			mapId != "G.Base",
 			let parentMap = Map.get(id: mapId) {
 			// usually we don't want location data on items:
-			let breadcrumbs = (parentMap.getBreadcrumbs().map { $0.name } + [parentMap.name]).joined(separator: " > ")
+			let breadcrumbs = (
+                    parentMap.getBreadcrumbs()
+                    .map { $0.name }
+                    + [parentMap.name]
+                ).joined(separator: " > ")
 			parentMapLabel?.text = breadcrumbs
 			parentMapLabel?.isHidden = false
 		}

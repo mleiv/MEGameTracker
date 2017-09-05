@@ -50,6 +50,7 @@ public struct DataMap: Codable, DataMapLocationable {
 	public var rerootBreadcrumbs: Bool = false
 
 	public internal(set) var isExplorable: Bool = false
+	private var isExplorableOverride: Bool?
 
 	public private(set) var relatedLinks: [String] = []
 	public internal(set) var relatedDecisionIds: [String] = [] // transient changes in Map
@@ -103,7 +104,7 @@ public struct DataMap: Codable, DataMapLocationable {
         isMain = try container.decodeIfPresent(Bool.self, forKey: .isMain) ?? isMain
         isSplitMenu = try container.decodeIfPresent(Bool.self, forKey: .isSplitMenu) ?? isSplitMenu
         rerootBreadcrumbs = try container.decodeIfPresent(Bool.self, forKey: .rerootBreadcrumbs) ?? rerootBreadcrumbs
-        isExplorable = try container.decodeIfPresent(Bool.self, forKey: .isExplorable) ?? isExplorable
+        isExplorableOverride = try container.decodeIfPresent(Bool.self, forKey: .isExplorable)
         sortIndex = try container.decodeIfPresent(Int.self, forKey: .sortIndex) ?? sortIndex
         relatedLinks = try container.decodeIfPresent([String].self, forKey: .relatedLinks) ?? relatedLinks
         relatedDecisionIds = try container.decodeIfPresent(
@@ -129,7 +130,9 @@ public struct DataMap: Codable, DataMapLocationable {
             [CodableDictionary].self,
             forKey: .events
         ) ?? rawEventDictionary
+
         try unserializeMapLocationableData(decoder: decoder)
+        isExplorable = isExplorableOverride ?? (!isHidden && !(inMapId?.isEmpty ?? true) && mapType.isExplorable)
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -142,7 +145,7 @@ public struct DataMap: Codable, DataMapLocationable {
         try container.encode(isMain, forKey: .isMain)
         try container.encode(isSplitMenu, forKey: .isSplitMenu)
         try container.encode(rerootBreadcrumbs, forKey: .rerootBreadcrumbs)
-        try container.encode(isExplorable, forKey: .isExplorable)
+        try container.encode(isExplorableOverride, forKey: .isExplorable)
         try container.encode(sortIndex, forKey: .sortIndex)
         try container.encode(relatedLinks, forKey: .relatedLinks)
         try container.encode(relatedDecisionIds, forKey: .relatedDecisionIds)
@@ -155,109 +158,6 @@ public struct DataMap: Codable, DataMapLocationable {
         try container.encode(rawEventDictionary, forKey: .events)
         try serializeMapLocationableData(encoder: encoder)
     }
-
-//    // swiftlint:disable function_body_length
-//    internal mutating func setGameVersionData() {
-//        let gameVersionData = self.gameVersionData[gameVersion.stringValue] ?? SerializableData()
-//
-//        isHidden = gameVersionData["isHidden"]?.bool ?? (rawGeneralData["isHidden"]?.bool ?? false)
-//
-//        name = gameVersionData["name"]?.string ?? (rawGeneralData["name"]?.string ?? "Unknown")
-//
-//        if let gameDescription = gameVersionData["description"] { // allow nil override
-//            description = gameDescription.string
-//        } else {
-//            description = rawGeneralData["description"]?.string
-//        }
-//
-//        mapType = MapType(stringValue: gameVersionData["mapType"]?.string
-//            ?? rawGeneralData["mapType"]?.string) ?? .location
-//
-//        isMain = gameVersionData["isMain"]?.bool ?? (rawGeneralData["isMain"]?.bool ?? false)
-//
-//        isSplitMenu = gameVersionData["isSplitMenu"]?.bool ?? (rawGeneralData["isSplitMenu"]?.bool ?? false)
-//
-//        if let gameInMapId = gameVersionData["inMapId"] { // allow nil override
-//            inMapId = gameInMapId.string
-//        } else {
-//            inMapId = rawGeneralData["inMapId"]?.string
-//        }
-//        if let gameInMissionId = gameVersionData["inMissionId"] { // allow nil override
-//            inMissionId = gameInMissionId.string
-//        } else {
-//            inMissionId = rawGeneralData["inMissionId"]?.string
-//        }
-//        if let gameLinkToMapId = gameVersionData["linkToMapId"] { // allow nil override
-//            linkToMapId = gameLinkToMapId.string
-//        } else {
-//            linkToMapId = rawGeneralData["linkToMapId"]?.string
-//        }
-//
-//        isShowInList = gameVersionData["isShowInList"]?.bool
-//            ?? (rawGeneralData["isShowInList"]?.bool ?? true)
-//
-//        isOpensDetail = gameVersionData["isOpensDetail"]?.bool
-//            ?? (rawGeneralData["isOpensDetail"]?.bool ?? true)
-//
-//        if let gameImage = gameVersionData["image"] { // allow nil override
-//            image = gameImage.string
-//        } else {
-//            image = rawGeneralData["image"]?.string
-//        }
-//
-//        var referenceSize = rawGeneralData["referenceSize"]?.string
-//        if let gameSize = gameVersionData["referenceSize"] { // allow nil override
-//            referenceSize = gameSize.string
-//        }
-//        setSizeData(referenceSize)
-//
-//        isShowPin = gameVersionData["isShowPin"]?.bool ?? (rawGeneralData["isShowPin"]?.bool ?? false)
-//
-//        annotationNote = gameVersionData["annotationNote"]?.string
-//            ?? (rawGeneralData["annotationNote"]?.string ?? annotationNote)
-//
-//        if let pointData = gameVersionData["mapLocationPoint"],
-//            let point = MapLocationPoint(data: pointData) {
-//            self.mapLocationPoint = point
-//        } else if let pointData = rawGeneralData["mapLocationPoint"],
-//            let point = MapLocationPoint(data: pointData) {
-//            self.mapLocationPoint = point
-//        } else {
-//            self.mapLocationPoint = nil
-//        }
-//
-//        rerootBreadcrumbs = gameVersionData["rerootBreadcrumbs"]?.bool
-//            ?? (rawGeneralData["rerootBreadcrumbs"]?.bool ?? rerootBreadcrumbs)
-//
-//        sortIndex = gameVersionData["sortIndex"]?.int ?? (rawGeneralData["sortIndex"]?.int ?? 0)
-//
-//        relatedLinks = ((gameVersionData["relatedLinks"]?.array
-//            ?? rawGeneralData["relatedLinks"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
-//        relatedDecisionIds = ((gameVersionData["relatedDecisionIds"]?.array
-//            ?? rawGeneralData["relatedDecisionIds"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
-//        sideEffects = ((gameVersionData["sideEffects"]?.array
-//            ?? rawGeneralData["sideEffects"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
-//        relatedMissionIds = ((gameVersionData["relatedMissionIds"]?.array
-//            ?? rawGeneralData["relatedMissionIds"]?.array) ?? []).map({ $0.string }).filter({ $0 != nil }).map({ $0! })
-//
-//        isExplorable = !isHidden && !(inMapId?.isEmpty ?? true) && mapType.isExplorable
-//            && (gameVersionData["isExplorable"]?.bool ?? (rawGeneralData["isExplorable"]?.bool ?? true))
-//    }
-//    // swiftlint:enable function_body_length
-//
-//    private mutating func setSizeData(_ sizeString: String?) {
-//        if let sizeString = sizeString {
-//            let referenceSizeBits = sizeString.components(separatedBy: "x")
-//            if referenceSizeBits.count == 2 {
-//                if let w = NumberFormatter().number(from: referenceSizeBits[0]),
-//                    let h = NumberFormatter().number(from: referenceSizeBits[1]) {
-//                    referenceSize = CGSize(width: CGFloat(w), height: CGFloat(h))
-//                }
-//            }
-//        } else {
-//            referenceSize = nil
-//        }
-//    }
 }
 
 // MARK: Retrieval Functions of Related Data
@@ -323,44 +223,6 @@ extension DataMap {
         return gameVersion != lastGameVersion // track separately, as we need it to be null originally
     }
 }
-
-//// MARK: SerializedDataStorable
-//extension DataMap: SerializedDataStorable {
-//
-//    public func getData() -> SerializableData {
-//        return rawGeneralData
-//        // note: ^ this means all in-app changes must be made to Event instead, or also change this value
-//    }
-//
-//}
-//
-//// MARK: SerializedDataRetrievable
-//extension DataMap: SerializedDataRetrievable {
-//
-//    public init?(data: SerializableData?) {
-//        guard let data = data,
-//            let id = data["id"]?.string
-//        else { return nil }
-//
-//        let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") ?? .game1
-//
-//        self.init(id: id, gameVersion: gameVersion, data: data)
-//    }
-//
-//    public mutating func setData(_ data: SerializableData) {
-//        id = data["id"]?.string ?? id
-//        rawEventDictionary = data["events"] ?? rawEventDictionary
-//        if let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") {
-//            self.gameVersion = gameVersion
-//        }
-//        for (key, value) in data.dictionary ?? [:] {
-//            // does not change rawGeneralData - will not persist to database
-//            gameVersionData[key] = value
-//        }
-//        setGameVersionData()
-//    }
-//
-//}
 
 // MARK: Equatable
 extension DataMap: Equatable {

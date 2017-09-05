@@ -196,7 +196,9 @@ public struct Map: Codable, MapLocationable, Eventsable {
         id = try container.decode(String.self, forKey: .id)
         gameVersion = .game1
         generalData = DataMap(id: id) // faulted for now
-        isExplored = try container.decodeIfPresent(Bool.self, forKey: .isExplored) ?? isExplored
+        let isExploredString = try container.decodeIfPresent(String.self, forKey: .isExplored) ?? ""
+
+        isExploredPerGameVersion = gameValuesFromIsExplored(gameValues: isExploredString)
         try unserializeDateModifiableData(decoder: decoder)
         try unserializeGameModifyingData(decoder: decoder)
         try unserializeLocalCloudData(decoder: decoder)
@@ -205,7 +207,8 @@ public struct Map: Codable, MapLocationable, Eventsable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
-        try container.encode(isExplored, forKey: .isExplored)
+
+        try container.encode(gameValuesForIsExplored(), forKey: .isExplored)
         try serializeDateModifiableData(encoder: encoder)
         try serializeGameModifyingData(encoder: encoder)
         try serializeLocalCloudData(encoder: encoder)
@@ -281,6 +284,25 @@ extension Map {
 		}
 	}
 
+    private func gameValuesForIsExplored() -> String {
+        var gameValues: [String] = []
+        for game in GameVersion.all() {
+            gameValues.append(isExploredPerGameVersion[game] == true ? "1" : "0")
+        }
+        return "|\(gameValues.joined(separator: "|"))|"
+    }
+
+    private func gameValuesFromIsExplored(gameValues: String) -> [GameVersion: Bool] {
+        let pieces = gameValues.components(separatedBy: "|")
+        if pieces.count == 5 {
+            var values: [GameVersion: Bool] = [:]
+            values[.game1] = pieces[1] == "1"
+            values[.game2] = pieces[2] == "1"
+            values[.game3] = pieces[3] == "1"
+            return values
+        }
+        return [.game1: false, .game2: false, .game3: false]
+    }
 }
 
 // MARK: Basic Actions

@@ -218,6 +218,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
             [String].self,
             forKey: .selectedConversationRewards
         )
+
         try unserializeDateModifiableData(decoder: decoder)
         try unserializeGameModifyingData(decoder: decoder)
         try unserializeLocalCloudData(decoder: decoder)
@@ -508,21 +509,34 @@ extension Mission: GameModifying {}
 extension Mission {
 
 	/// Sorts by availability, then by sortIndex, then by name
-	static func sort(_ first: Mission, _ second: Mission) -> Bool {
-		if first.gameVersion != second.gameVersion {
-			return first.gameVersion.intValue < second.gameVersion.intValue
-		} else if first.isCompleted != second.isCompleted {
-			return second.isCompleted // push to end
-		} else if first.isAvailable != second.isAvailable {
-			return first.isAvailable // push to start
-		} else if first.missionType != second.missionType {
-			return first.missionType.intValue < second.missionType.intValue
-		} else if first.sortIndex != second.sortIndex {
-			return first.sortIndex < second.sortIndex
-		} else {
-			return first.id < second.id
-		}
-	}
+    static func sort(_ first: Mission, _ second: Mission) -> Bool {
+        if first.missionType != second.missionType {
+            return first.missionType.intValue < second.missionType.intValue
+        }
+        switch (first.missionType) {
+        case .objective: fallthrough
+        case .subset:
+            if first.sortIndex != second.sortIndex {
+                return first.sortIndex < second.sortIndex
+            } else {
+                return first.id < second.id
+            }
+        default:
+            if first.gameVersion != second.gameVersion {
+                return first.gameVersion.intValue < second.gameVersion.intValue
+            } else if first.isCompleted != second.isCompleted {
+                return second.isCompleted // push to end
+            } else if first.isAvailable != second.isAvailable {
+                return first.isAvailable // push to start
+            } else if first.missionType != second.missionType {
+                return first.missionType.intValue < second.missionType.intValue
+            } else if first.sortIndex != second.sortIndex {
+                return first.sortIndex < second.sortIndex
+            } else {
+                return first.id < second.id
+            }
+        }
+    }
 }
 
 // MARK: Equatable

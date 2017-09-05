@@ -281,6 +281,8 @@
 		B199ECE81D09B2EE007BE489 /* Calloutsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199ECE41D09B2EE007BE489 /* Calloutsable.swift */; };
 		B199ECE91D09B2EE007BE489 /* CalloutsNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199ECE51D09B2EE007BE489 /* CalloutsNib.swift */; };
 		B199ECEA1D09B2EE007BE489 /* CalloutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199ECE61D09B2EE007BE489 /* CalloutsView.swift */; };
+		B19BECB71F5E6576007B3FE6 /* Change20170905Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECB61F5E6576007B3FE6 /* Change20170905Tests.swift */; };
+		B19BECB91F5E668C007B3FE6 /* Change20170905.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECB81F5E668C007B3FE6 /* Change20170905.swift */; };
 		B1A1B0651E137CBD009A5688 /* GameSegmentsNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1B0641E137CBD009A5688 /* GameSegmentsNib.swift */; };
 		B1A1B06C1E137DB0009A5688 /* GameSegmentsNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1A1B06A1E137DB0009A5688 /* GameSegmentsNib.xib */; };
 		B1A1B06E1E137F5B009A5688 /* GameSegments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1B06D1E137F5B009A5688 /* GameSegments.swift */; };
@@ -794,6 +796,8 @@
 		B199ECE41D09B2EE007BE489 /* Calloutsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calloutsable.swift; sourceTree = "<group>"; };
 		B199ECE51D09B2EE007BE489 /* CalloutsNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutsNib.swift; sourceTree = "<group>"; };
 		B199ECE61D09B2EE007BE489 /* CalloutsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutsView.swift; sourceTree = "<group>"; };
+		B19BECB61F5E6576007B3FE6 /* Change20170905Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change20170905Tests.swift; sourceTree = "<group>"; };
+		B19BECB81F5E668C007B3FE6 /* Change20170905.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change20170905.swift; sourceTree = "<group>"; };
 		B1A1B0641E137CBD009A5688 /* GameSegmentsNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSegmentsNib.swift; sourceTree = "<group>"; };
 		B1A1B06B1E137DB0009A5688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GameSegmentsNib.xib; sourceTree = "<group>"; };
 		B1A1B06D1E137F5B009A5688 /* GameSegments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSegments.swift; sourceTree = "<group>"; };
@@ -1532,6 +1536,7 @@
 				B1B11FD31E4E99E200D97CA1 /* 20160210.xcmappingmodel */,
 				B1B9D72B1E66A56E00AE94D9 /* Change20170228.swift */,
 				B136B1231E6CA4B80017F738 /* Change20170305.swift */,
+				B19BECB81F5E668C007B3FE6 /* Change20170905.swift */,
 			);
 			path = CoreDataMigrations;
 			sourceTree = "<group>";
@@ -2220,6 +2225,7 @@
 			isa = PBXGroup;
 			children = (
 				B1C66C7F1E8EE87000BDAF9A /* Change20170305Tests.swift */,
+				B19BECB61F5E6576007B3FE6 /* Change20170905Tests.swift */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -2788,6 +2794,7 @@
 				B152FEF41D8CD0D600060DD1 /* Comparison.swift in Sources */,
 				B145FDC31E679AB500403A36 /* ActionTargetObject.swift in Sources */,
 				B16F8D521E188F820074F66B /* CloudDataStorable.swift in Sources */,
+				B19BECB91F5E668C007B3FE6 /* Change20170905.swift in Sources */,
 				B1F346871CF1899400D2B28A /* IdentifyingObject.swift in Sources */,
 				B14EA92D1CF3E1B0009F2B0A /* DecisionsView.swift in Sources */,
 				B02739C11BBF885F0096F6AC /* MapCalloutsBoxNib.swift in Sources */,
@@ -3008,6 +3015,7 @@
 				B16FBC8F1E5FAD4E00E151C7 /* MapTests.swift in Sources */,
 				B12BCCDC1E626A3600C8F7B5 /* NoteTests.swift in Sources */,
 				B16FBC8D1E5FAD4000E151C7 /* MissionTests.swift in Sources */,
+				B19BECB71F5E6576007B3FE6 /* Change20170905Tests.swift in Sources */,
 				B16FBC8B1E5F72EC00E151C7 /* EventTests.swift in Sources */,
 				B16FBC891E5F646700E151C7 /* DecisionTests.swift in Sources */,
 				B16FBC951E5FAD8100E151C7 /* GameSequenceTests.swift in Sources */,

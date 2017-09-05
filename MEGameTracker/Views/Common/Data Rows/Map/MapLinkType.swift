@@ -42,12 +42,13 @@ public struct MapLinkType: ValueDataRowType {
 
 	public mutating func initMapAndClick() {
 		guard !UIWindow.isInterfaceBuilder  else { return }
-		if map?.id != controller?.inMapId, let inMapId = controller?.inMapId {
+		if map?.id != controller?.inMapId,
+            let inMapId = controller?.inMapId {
 			map = Map.get(id: inMapId)
 		} else if controller?.inMapId == nil {
 			map = nil
 		}
-		let selfCopy = self
+        let selfCopy = self // struct
 		let mapCopy = self.map
 		self.onClick = { sender in
 			selfCopy.openRow(sender: sender, map: mapCopy)

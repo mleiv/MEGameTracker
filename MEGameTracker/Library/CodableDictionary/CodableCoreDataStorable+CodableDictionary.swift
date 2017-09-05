@@ -23,23 +23,27 @@ extension CodableCoreDataStorable {
         if let data = try? defaultManager.encoder.encode(combined),
             let changed = try? defaultManager.decoder.decode(Self.self, from: data) {
             // rawData should now be nil
-            return changed
+            return changed.resetChangedDataFromSource(source: self)
         }
         return self
     }
 
+    public func resetChangedDataFromSource(source: Self) -> Self { return self }
+
     /// Either fetch the rawData cache or create Data from current object.
     /// Return as a dictionary.
     private func getBaseData() -> [String: Any?] {
-        let data: Data = {
+        if let data: Data = {
             if let rawData = self.rawData {
                 return rawData
             } else if let data = try? defaultManager.encoder.encode(self) {
                 return data
             }
-            return Data()
-        }()
-        let codableDictionary = try? defaultManager.decoder.decode(CodableDictionary.self, from: data)
-        return codableDictionary?.dictionary ?? [:]
+            return nil
+        }() {
+            let codableDictionary = try? defaultManager.decoder.decode(CodableDictionary.self, from: data)
+            return codableDictionary?.dictionary ?? [:]
+        }
+        return [:]
     }
 }

@@ -71,7 +71,7 @@ extension Map {
 	/// Get a map by id and set it to specified game version.
 	public static func get(
 		id: String,
-		gameVersion: GameVersion?,
+        gameVersion: GameVersion? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> Map? {
 		return getFromData(gameVersion: gameVersion, with: manager) { fetchRequest in

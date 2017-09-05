@@ -380,17 +380,17 @@
 		],
 		"relatedMissionIds": ["M1.Garrus", "M1.ShadowBroker"],
 		"conversationRewards": [{
+            "id": "M1.ExposeSaren.R1",
+            "type": "Renegade",
+            "value": 2,
+            "context": "Talking to Udina on the Citadel",
+            "trigger": "\"They're blind.\""
+        }, {
 			"id": "M1.ExposeSaren.P1",
 			"type": "Paragon",
 			"value": 2,
 			"context": "Talking to the Council",
 			"trigger": "\"Quit protecting him!\""
-		}, {
-			"id": "M1.ExposeSaren.R1",
-			"type": "Renegade",
-			"value": 2,
-			"context": "Talking to Udina on the Citadel",
-			"trigger": "\"They're blind.\""
 		}, {
 			"set": {
 				"isExclusiveSet": true,

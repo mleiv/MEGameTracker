@@ -68,7 +68,9 @@ final public class MissionController: UIViewController,
 
 	// Aliasable
 	@IBOutlet weak var aliasesView: TextDataRow?
-	lazy var aliasesType: AliasesType = { return AliasesType(controller: self, view: self.aliasesView) }()
+	lazy var aliasesType: AliasesType = {
+        return AliasesType(controller: self, view: self.aliasesView)
+    }()
 	// Available
 	@IBOutlet weak var availabilityView: TextDataRow?
 	public var availabilityMessage: String?
@@ -95,7 +97,9 @@ final public class MissionController: UIViewController,
 	}
 	// Describable
 	@IBOutlet public weak var descriptionView: TextDataRow?
-	lazy var descriptionType: DescriptionType = { return DescriptionType(controller: self, view: self.descriptionView) }()
+	lazy var descriptionType: DescriptionType = {
+        return DescriptionType(controller: self, view: self.descriptionView)
+    }()
 	// MapLinkable
 	@IBOutlet public weak var mapLinkView: ValueDataRow?
 	lazy var mapLinkType: MapLinkType = {

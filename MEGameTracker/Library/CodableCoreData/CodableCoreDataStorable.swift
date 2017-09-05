@@ -97,6 +97,10 @@ public protocol CodableCoreDataStorable: Codable {
     func changed(
         _ changes: [String: Any?]
     ) -> Self
+
+    /// Required for CodableDictionary/GameRowStorable stuff, so we can override it correctly.
+    /// (override doesn't work w/o protocol declaration here)
+    func resetChangedDataFromSource(source: Self) -> Self
 }
 
 extension CodableCoreDataStorable {

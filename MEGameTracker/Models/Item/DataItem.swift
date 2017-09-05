@@ -81,7 +81,7 @@ public struct DataItem: Codable, DataMapLocationable {
 //	public var searchableName: String // optional
 //	public var linkToMapId: String? // optional
 //	public var shownInMapId: String? // optional
-	public var isShowInParentMap: Bool = true
+	public var isShowInParentMap: Bool = false
 //	public var isShowInList: Bool // optional
 	public var isShowPin: Bool = true
 	public var isOpensDetail: Bool = false

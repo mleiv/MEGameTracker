@@ -52,8 +52,15 @@ public enum CodableDictionaryValueType: Codable {
                 return .string(value)
             } else if let value = value as? CodableDictionary {
                 return .dictionary(value)
-            } else if let value = value as? [CodableDictionaryValueType] {
-                return .array(value)
+            } else if let value = value as? [Any?] {
+                return .array(value.map {
+                    guard let row = $0 else { return .empty }
+                    if let d = row as? [String: Any?] {
+                        return CodableDictionaryValueType(CodableDictionary(d))
+                    } else {
+                        return CodableDictionaryValueType(row)
+                    }
+                })
             } else {
                 return .empty
             }
@@ -113,7 +120,7 @@ public enum CodableDictionaryValueType: Codable {
             case .date(let value): return value
             case .string(let value): return value
             case .dictionary(let value): return value
-            case .array(let value): return value
+            case .array(let value): return value.map { $0.value }
             default: return nil
         }
     }
