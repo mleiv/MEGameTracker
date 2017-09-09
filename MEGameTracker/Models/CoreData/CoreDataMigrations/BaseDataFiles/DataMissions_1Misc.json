@@ -27,7 +27,7 @@
 					"id": "DLC1.R1",
 					"type": "Renegade",
 					"value": 2,
-					"trigger": "\"Why would they?\""
+					"trigger": "\"Why wouldn't they?\""
 				}]
 			}
 		}, {
@@ -323,6 +323,16 @@
 		"description": "You can find the body of G. Mendel at Survey Station 3.",
 		"inMapId": "G.Ear.Exo.Asg.X57.13",
 		"isShowInParentMap": true
+   }, {
+      "id": "DLC1.X57.MissingEngineers.3B",
+      "sortIndex": 9603,
+      "inMissionId": "DLC1.X57.MissingEngineers",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Find Slajs (Optional)",
+      "description": "You can find the body of T. Slajs by his vehicle at the top of a ridge.",
+      "inMapId": "G.Ear.Exo.Asg.X57.9",
+      "isShowInParentMap": true
 	}, {
 		"id": "DLC1.X57.MissingEngineers.4",
 		"sortIndex": 9604,
@@ -1187,7 +1197,6 @@
 		}, {
 			"set": {
 				"isExclusiveSet": true,
-				"context": "Departing Speech",
 				"options": [{
 					"id": "A1.T.LeaveCitadel.P2",
 					"type": "Paragon",

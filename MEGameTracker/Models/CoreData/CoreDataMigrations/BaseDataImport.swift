@@ -167,7 +167,7 @@ extension BaseDataImport {
 			}
 		}
 
-		if true || isTestProject {
+		if isTestProject {
 			// XCTest has some multithreading issues, where the queueGroup wait blocks the Core Data wait. 
 			// So we will run it synchronously.
 			processImportedMapData(queue: queue, updateProgress: updateProgress1)
