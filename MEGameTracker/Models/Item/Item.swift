@@ -272,19 +272,19 @@ extension Item {
 		if isCascadeChanges != .down,
 			let missionId = inMissionId,
             let parentMission = Mission.get(id: missionId) {
-			let parentObjectives = parentMission.getObjectives()
-			let parentObjectivesCountToCompletion = parentMission.objectivesCountToCompletion
-                ?? parentObjectives.count
-			let otherObjectivesCompletedCount = parentObjectives.filter({ $0.id != id }).filter({
+			let siblingObjectives = parentMission.getObjectives()
+			let siblingObjectivesCountToCompletion = parentMission.objectivesCountToCompletion
+                ?? siblingObjectives.count
+			let otherObjectivesCompletedCount = siblingObjectives.filter({ $0 as? Item != self }).filter({
 				($0 as? Mission)?.isCompleted == true || ($0 as? Item)?.isAcquired == true
 			}).count // don't count self
 			if !isCompleted && parentMission.isCompleted
-				&& parentObjectivesCountToCompletion > otherObjectivesCompletedCount {
+				&& siblingObjectivesCountToCompletion > otherObjectivesCompletedCount {
 				// uncomplete parent if any submissions are marked uncompleted
 				// don't uncomplete other children
 				_ = parentMission.changed(isCompleted: false, isSave: isSave, isCascadeChanges: .up)
 			} else if isCompleted && !parentMission.isCompleted
-				&& otherObjectivesCompletedCount + 1 >= parentObjectivesCountToCompletion {
+				&& otherObjectivesCompletedCount + 1 >= siblingObjectivesCountToCompletion {
 				// complete parent if this is the last submission
 				_ = parentMission.changed(isCompleted: true, isSave: isSave, isCascadeChanges: .up)
 			}

@@ -98,7 +98,7 @@
 					"context": "*_Charm_* Simon (Requires 4 Charm)",
 					"trigger": "\"How about your omni-tool?\""
 				}, {
-					"id": "DLC1.R3",
+					"id": "DLC1.R4",
 					"type": "Renegade",
 					"value": 0,
 					"context": "*_Intimidate_* Simon (Requires 4 Intimidate)",
@@ -265,7 +265,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Aftermath",
-		"description": "Simon offers you a reward of armor for saving the human colony. You also have the option of persuading him to give you his omni-tool. If you saved the hostages, you can let them out.\n\nThe next time you access the galaxy map, asteroid X57 will have been moved back where it belongs.",
+		"description": "Simon offers you a reward of armor for saving the human colony. You also have the option of persuading him to give you his omni-tool. If you saved the hostages, you can let them out (in a cell by the stairs up to Medical).\n\nThe next time you access the galaxy map, asteroid X57 will have been moved back where it belongs.",
 		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
 		"mapLocationPoint": {
 			"x": 557,
@@ -310,8 +310,8 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Find Montoya",
-		"description": "R. Montoya left Survey Station 2 to investigate signs of fighting. His body can be found in a [crater nearby|megametracker://maplocation?id=G.Ear.Exo.Asg.X57&title=R.%20Montoya&location=702x399].",
-		"inMapId": "G.Ear.Exo.Asg.X57.11",
+		"description": "R. Montoya left Survey Station 2 to investigate signs of fighting.",
+		"inMapId": "G.Ear.Exo.Asg.X57.12",
 		"isShowInParentMap": true
 	}, {
 		"id": "DLC1.X57.MissingEngineers.3",
@@ -375,7 +375,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Proceed On Foot",
-		"description": "The blasting caps are equipped with proximity detectors. The closer you get, the more liekly they'll go off.",
+		"description": "The blasting caps are equipped with proximity detectors. The closer you get, the more likely they'll go off. Look for the blasting that are further apart than the rest.",
 		"inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
 		"isShowInParentMap": true
 

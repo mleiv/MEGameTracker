@@ -392,20 +392,20 @@ extension Map {
 		isCascadeChanges: EventDirection = .all
 	) {
 		let maps = getChildMaps()
-		if isCascadeChanges != .up {
-			for childMap in maps where childMap.isExplorable && childMap.isExplored != isExplored {
-				// complete/uncomplete all submaps if parent was just completed/uncompleted
-				_ = childMap.changed(isExplored: isExplored, isSave: isSave, isCascadeChanges: .down)
-			}
-		}
+//        if isCascadeChanges != .up {
+//            for childMap in maps where childMap.isExplorable && childMap.isExplored != isExplored {
+//                // complete/uncomplete all submaps if parent was just completed/uncompleted
+//                _ = childMap.changed(isExplored: isExplored, isSave: isSave, isCascadeChanges: .down)
+//            }
+//        }
 		if isCascadeChanges != .down, let parentMap = self.parentMap, parentMap.isExplorable {
 			let siblingMaps = parentMap.getChildMaps()
 			if !isExplored && parentMap.isExplored {
 				// uncomplete parent
 				// don't uncomplete other children
 				_ = parentMap.changed(isExplored: false, isSave: isSave, isCascadeChanges: .up)
-			} else if isExplored && !parentMap.isExplored && !siblingMaps.isEmpty {
-				let exploredCount = siblingMaps.filter({ $0 == self })
+			} else if isExplored && !parentMap.isExplored {
+				let exploredCount = siblingMaps.filter({ $0 != self })
 					.filter({ $0.isExplorable && $0.isExplored }).count + 1
 				if exploredCount == siblingMaps.count {
 					// complete parent
