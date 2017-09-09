@@ -53,7 +53,7 @@ final public class MESearchManager: NSObject {
 		controller.definesPresentationContext = true // hold search to our current bounds
 		// create search controller (no IB equivalent)
 		let searchController = UISearchController(searchResultsController: resultsController)
-//        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
 		searchController.dimsBackgroundDuringPresentation = false
 		searchController.searchResultsUpdater = self
 		searchController.searchBar.delegate = self
