@@ -583,6 +583,24 @@ extension MapController {
 // MARK: Listeners
 extension MapController {
 
+    private func reloadOnLocationChange<T: GameRowStorable & DateModifiable>(
+        type: T.Type,
+        changed: (id: String, object: T?)
+    ) {
+        var mapLocations = self.mapLocations
+        if let index = mapLocations.index(where: { $0.id == changed.id }),
+            var newLocation = Mission.get(id: changed.id),
+            let oldLocation = mapLocations[index] as? T,
+            newLocation.modifiedDate > oldLocation.modifiedDate {
+            newLocation.shownInMapId = map?.id // set this or callout may not appear in map
+            mapLocations[index] = newLocation
+            self.mapLocations = mapLocations
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) { [weak self] in
+                self?.reloadMapLocationable(newLocation)
+            }
+        }
+    }
+
 	private func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
@@ -594,46 +612,23 @@ extension MapController {
 		// listen for changes to maps data 
 		Map.onChange.cancelSubscription(for: self)
 		_ = Map.onChange.subscribe(on: self) { [weak self] changed in
-			if self?.map?.id == changed.id, let newMap = changed.object ?? Map.get(id: changed.id) {
+			if self?.map?.id == changed.id,
+                let newMap = changed.object ?? Map.get(id: changed.id) {
 				self?.map = newMap
 				self?.reloadDataOnChange()
 			}
-			// catch event changes
-			guard changed.object == nil else { return }
-			if let index = self?.mapLocations.index(where: { $0.id == changed.id }),
-				var newMap = Map.get(id: changed.id) {
-				newMap.shownInMapId = self?.map?.id
-				self?.mapLocations[index] = newMap
-				DispatchQueue.main.async {
-					self?.reloadMapLocationable(newMap)
-				}
-			}
+//            guard changed.object == nil else { return } // filters to only events
+            self?.reloadOnLocationChange(type: Map.self, changed: changed)
 		}
 		Mission.onChange.cancelSubscription(for: self)
 		_ = Mission.onChange.subscribe(on: self) { [weak self] changed in
-			// catch event changes
-			guard changed.object == nil else { return }
-			if let index = self?.mapLocations.index(where: { $0.id == changed.id }),
-				var newMission = Mission.get(id: changed.id) {
-				newMission.shownInMapId = self?.map?.id
-				self?.mapLocations[index] = newMission
-				DispatchQueue.main.async {
-					self?.reloadMapLocationable(newMission)
-				}
-			}
+//            guard changed.object == nil else { return } // filters to only events
+            self?.reloadOnLocationChange(type: Mission.self, changed: changed)
 		}
 		Item.onChange.cancelSubscription(for: self)
 		_ = Item.onChange.subscribe(on: self) { [weak self] changed in
-			// catch event changes
-			guard changed.object == nil else { return }
-			if let index = self?.mapLocations.index(where: { $0.id == changed.id }),
-				var newItem = Item.get(id: changed.id) {
-				newItem.shownInMapId = self?.map?.id
-				self?.mapLocations[index] = newItem
-				DispatchQueue.main.async {
-					self?.reloadMapLocationable(newItem)
-				}
-			}
+//            guard changed.object == nil else { return } // filters to only events
+            self?.reloadOnLocationChange(type: Item.self, changed: changed)
 		}
 	}
 

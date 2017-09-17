@@ -375,7 +375,11 @@ extension MapCalloutsBoxNib {
 	}
 }
 
-extension MapCalloutsBoxNib: Calloutsable {}
+extension MapCalloutsBoxNib: Calloutsable {
+    public func updateCallouts(_ callouts: [MapLocationable]) {
+        self.callouts = callouts
+    }
+}
 
 extension MapCalloutsBoxNib {
 	static let typeSortOrder: [MapLocationType] = [.map, .mission, .item]

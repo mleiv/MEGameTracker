@@ -56,7 +56,8 @@ final public class MapCalloutsController: UIViewController {
 extension MapCalloutsController: Calloutsable {
 //	public var callouts: [MapLocationable]
 //	public var viewController: UIViewController?
-	func setupCallouts(isForceReloadData: Bool = false) {
+
+	public func setupCallouts(isForceReloadData: Bool = false) {
 		DispatchQueue.main.async {
 			self.calloutsView?.shouldSegueToCallout = self.shouldSegueToCallout
 			self.calloutsView?.controller = self
@@ -70,6 +71,10 @@ extension MapCalloutsController: Calloutsable {
 				self.calloutsView?.nib?.tableView?.reloadData()
 			}
 		}
+	}
+
+	public func updateCallouts(_ callouts: [MapLocationable]) {
+        self.callouts = callouts
 	}
 }
 

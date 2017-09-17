@@ -1534,6 +1534,20 @@
 			"type": "BlockedAfter",
 			"id": "Citadel Lockdown: Exile"
 		}]
+    }, {
+        "id": "A1.C2.FourthEstate.0",
+        "sortIndex": 5300,
+        "inMissionId": "A1.C2.FourthEstate",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Al-Jilani",
+        "description": "To please Hackett, talk to her as long as possible and don't discuss Saren. Alternatively, you can punch her smug little face in all three games.",
+        "inMapId": "G.C1.CSecAcademy",
+        "mapLocationPoint": {
+            "x": 1540,
+            "y": 990,
+            "radius": 1
+        },
 	}, {
 		"id": "A1.C2.FourthEstate.1",
 		"sortIndex": 5301,
@@ -3641,7 +3655,7 @@
 					"id": "A1.U.LostModule.P1",
 					"type": "Paragon",
 					"value": 6,
-					"trigger": "Locate the data without killing any space monkeys. (*Infinite Paragon Glitch*: If you save right after this choice, you can reload the game and recover the data again, for an unlimited number of times.)"
+					"trigger": "Locate the data without killing any space monkeys. (*Infinite Paragon Glitch*: If you save right after this choice, you can reload the game and recover the data again repeatedly, for an unlimited number of times (no additional saves/reloads necessary).)"
 				}, {
 					"id": "A1.U.LostModule.R1",
 					"type": "Renegade",
