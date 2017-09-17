@@ -411,7 +411,8 @@
 		"missionType": "Objective",
 		"name": "Combat Simulations",
 		"description": "Beat all twelve scenarios. There are only eight scenarios initially - the final four are revealed only after the first eight are bested. You will be completing this challange simultaneously with [megametracker://mission?id=DLC1.PS.Vidinos].",
-		"relatedMissionIds": ["DLC1.PS.Vidinos.1"]
+		"relatedMissionIds": ["DLC1.PS.Vidinos.1"],
+        "sideEffects": "Tip: use the sprint modifier (\"A\" in XBox and \"X\" in PlayStation - see [https://strategywiki.org/wiki/Mass_Effect/Controls] for more) to run faster in the Time Trial challenges."
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.1",
 		"sortIndex": 9802,
@@ -458,7 +459,11 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed 8 Pinnacle Station Combat Missions"
+        }]
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.4",
 		"sortIndex": 9805,
@@ -505,7 +510,11 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed 8 Pinnacle Station Combat Missions"
+        }]
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.7",
 		"sortIndex": 9808,
@@ -552,7 +561,11 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed 8 Pinnacle Station Combat Missions"
+        }]
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.10",
 		"sortIndex": 9811,
@@ -599,7 +612,11 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed 8 Pinnacle Station Combat Missions"
+        }]
 	}, {
 		"id": "DLC1.PS.CombatMissions.2",
 		"sortIndex": 9814,
@@ -642,7 +659,11 @@
 		"missionType": "Objective",
 		"name": "Beat all 8 Base Scenarios",
 		"description": " You will be completing this challange simultaneously with [megametracker://mission?id=DLC1.PS.CombatMissions.1].",
-		"relatedMissionIds": ["DLC1.PS.CombatMissions.1"]
+		"relatedMissionIds": ["DLC1.PS.CombatMissions.1"],
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed 8 Pinnacle Station Combat Missions"
+        }]
 	}, {
 		"id": "DLC1.PS.Vidinos.1.1",
 		"sortIndex": 9902,
