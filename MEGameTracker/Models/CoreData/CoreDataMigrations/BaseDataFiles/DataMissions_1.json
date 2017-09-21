@@ -380,17 +380,17 @@
 		],
 		"relatedMissionIds": ["M1.Garrus", "M1.ShadowBroker"],
 		"conversationRewards": [{
+            "id": "M1.ExposeSaren.R1",
+            "type": "Renegade",
+            "value": 2,
+            "context": "Talking to Udina on the Citadel",
+            "trigger": "\"They're blind.\""
+        }, {
 			"id": "M1.ExposeSaren.P1",
 			"type": "Paragon",
 			"value": 2,
 			"context": "Talking to the Council",
 			"trigger": "\"Quit protecting him!\""
-		}, {
-			"id": "M1.ExposeSaren.R1",
-			"type": "Renegade",
-			"value": 2,
-			"context": "Talking to Udina on the Citadel",
-			"trigger": "\"They're blind.\""
 		}, {
 			"set": {
 				"isExclusiveSet": true,
@@ -490,7 +490,7 @@
 		"missionType": "Mission",
 		"name": "Citadel: Garrus",
 		"isOptional": true,
-		"description": "Find the turian investigating Saren, [Garrus|megametracker://person?id=S1.Garrus].",
+		"description": "Find the turian investigating Saren, [Garrus|megametracker://person?id=S1.Garrus]. \n\n*Note: if you take down Fist before recruiting Garrus, you can find him in C-Sec by the elevator to the docks.*",
 		"inMapId": "G.C1.Tower",
 		"mapLocationPoint": {
 			"x": 1049,
@@ -521,6 +521,9 @@
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Unlocked Citadel: Lower Levels"
+        }, {
+            "type": "Triggers",
+            "id": "Garrus Joined Team"
 		}]
 	}, {
 		"id": "M1.Garrus.1",
@@ -537,7 +540,11 @@
 		},
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Going_to_Harkin"
-		]
+		],
+        "events": [{
+            "type": "BlockedAfter",
+            "id": "Wrex Joined Team",
+        }]
 	}, {
 		"id": "M1.Garrus.2",
 		"gameVersion": "1",
@@ -554,7 +561,11 @@
 		"relatedMissionIds": ["A1.C4"],
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Going_to_Harkin"
-		]
+		],
+        "events": [{
+            "type": "BlockedAfter",
+            "id": "Confronted Fist"
+        }]
 	}, {
 		"id": "M1.ShadowBroker",
 		"sortIndex": 4,
@@ -564,7 +575,7 @@
 		"inMapId": "G.C1.Presidium",
 		"aliases": ["Citadel: Shadow Broker", "Citadel: Wrex"],
 		"isOptional": true,
-		"description": "[The Shadow Broker|megametracker://person?id=E2.ShadowBroker] trades in information. If anyone might know some dirty secrets on Saren, it's him.",
+		"description": "[The Shadow Broker|megametracker://person?id=E2.ShadowBroker] trades in information. If anyone might know some dirty secrets on Saren, it's him. \n\n*Note: if you take down Fist before recruiting Wrex, you can find him in C-Sec by the elevator to the docks.*",
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Going_to_Barla_Von"
 		],
@@ -572,6 +583,9 @@
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Unlocked Citadel: Lower Levels"
+        }, {
+            "type": "Triggers",
+            "id": "Wrex Joined Team"
 		}]
 	}, {
 		"id": "M1.ShadowBroker.1",
@@ -602,17 +616,13 @@
 		"inMissionId": "M1.ShadowBroker",
 		"inMapId": "G.C1.CSecAcademy",
 		"mapLocationPoint": {
-			"x": 1475,
-			"y": 971,
+			"x": 1300,
+            "y": 1134,
 			"radius": 1
 		},
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Citadel:_Expose_Saren#Going_to_Barla_Von"
-		],
-		"events": [{
-			"type": "Triggers",
-			"id": "Wrex Joined Team"
-		}]
+		]
 	}, {
 		"id": "M1.ExposeSaren.2",
 		"gameVersion": "1",
@@ -680,7 +690,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Speak to the Ambassador",
-		"description": "Talk to [Captain Anderson|megametracker://person?id=P1.Anderson] and [Ambassador Udina|megametracker://person?id=P1.Udina] for leads on Saren's current whereabouts.",
+		"description": "head down to the Normandy dock to talk to [Captain Anderson|megametracker://person?id=P1.Anderson] and [Ambassador Udina|megametracker://person?id=P1.Udina] for leads on Saren's current whereabouts. If you are leaving the Citadel, see [megametracker://mission?id=A1.T.LeaveCitadel] for important dialogue choices when addressing the Normandy.",
 		"inMissionId": "M1.ExposeSaren",
 		"inMapId": "G.C1.DockingBay",
 		"mapLocationPoint": {
@@ -718,21 +728,21 @@
 			"id": "Alert Citadel Lockdown Pending"
 		}]
 	}, {
-		"id": "M1.Therum.1",
+		"id": "M1.Therum.0",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Go To Artemis Tau",
-		"description": "Explore the uncharted worlds of the Artemis Tau cluster to find [Liara T'Soni[megametracker://person?id=S1.Liara].",
+		"description": "Explore the uncharted worlds of the Artemis Tau cluster to find [Liara T'Soni|megametracker://person?id=S1.Liara].",
 		"inMissionId": "M1.Therum",
 		"inMapId": "G.Ear.Art.Kno.Therum",
 		"isShowInParentMap": true
 	}, {
-		"id": "M1.Therum.1.1",
+		"id": "M1.Therum.1",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "The Refinery",
 		"description": "Take the Mako north between the cliffs and the lava. Stop at the refinery and fight off the geth drop ship. You will need to locate the north gate controls to open the gate to continue on.",
-		"inMissionId": "M1.Therum.1",
+        "inMissionId": "M1.Therum",
 		"inMapId": "G.Ear.Art.Kno.The.Grounds",
 		"mapLocationPoint": {
 			"x": 1240,
@@ -740,12 +750,12 @@
 			"radius": 1
 		}
 	}, {
-		"id": "M1.Therum.1.2",
+		"id": "M1.Therum.2",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "The Canyon",
 		"description": "Take the Mako further north, through two tunnels guarded by geth. Then the path narrows and you must continue on foot.",
-		"inMissionId": "M1.Therum.1",
+        "inMissionId": "M1.Therum",
 		"inMapId": "G.Ear.Art.Kno.The.Grounds",
 		"mapLocationPoint": {
 			"x": 83,
@@ -753,12 +763,12 @@
 			"radius": 1
 		}
 	}, {
-		"id": "M1.Therum.1.3",
+		"id": "M1.Therum.3",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "The Mining Camp",
 		"description": "Attack the geth guarding the mining camp and make your way inside.",
-		"inMissionId": "M1.Therum.1",
+        "inMissionId": "M1.Therum",
 		"inMapId": "G.Ear.Art.Kno.The.Grounds",
 		"mapLocationPoint": {
 			"x": 237,
@@ -766,12 +776,12 @@
 			"radius": 1
 		}
 	}, {
-		"id": "M1.Therum.1.4",
+		"id": "M1.Therum.4",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Find Dr. T'Soni",
 		"description": "Descend into the mine until you find Dr. T'Soni.",
-		"inMissionId": "M1.Therum.1",
+        "inMissionId": "M1.Therum",
 		"inMapId": "G.Ear.Art.Kno.The.Mine",
 		"mapLocationPoint": {
 			"x": 1547,
@@ -779,12 +789,12 @@
 			"radius": 1
 		}
 	}, {
-		"id": "M1.Therum.1.5",
+		"id": "M1.Therum.5",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Free Dr. T'Soni",
-		"description": "Descend further into the mine, searching for a way to free [Liara[megametracker://person?id=S1.Liara] from the prothean force field she is caught inside. There is a mining laser at the bottom level with the code *A-X-B-Y*.",
-		"inMissionId": "M1.Therum.1",
+		"description": "Descend further into the mine, searching for a way to free [Liara|megametracker://person?id=S1.Liara] from the prothean force field she is caught inside. There is a mining laser at the bottom level with the code *A-X-B-Y*.",
+        "inMissionId": "M1.Therum",
 		"inMapId": "G.Ear.Art.Kno.The.Mine",
 		"mapLocationPoint": {
 			"x": 1187,
@@ -792,12 +802,12 @@
 			"radius": 1
 		}
 	}, {
-		"id": "M1.Therum.1.6",
+		"id": "M1.Therum.6",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Escape The Mine",
 		"description": "The laser has triggered seismic activity and the mine is going to collapse. Take the elevator to the top level. Defeat the geth and the krogan there before you can escape.",
-		"inMissionId": "M1.Therum.1",
+        "inMissionId": "M1.Therum",
 		"inMapId": "G.Ear.Art.Kno.The.Mine",
 		"mapLocationPoint": {
 			"x": 1801,
@@ -805,12 +815,12 @@
 			"radius": 1
 		}
 	}, {
-		"id": "M1.Therum.1.7",
+		"id": "M1.Therum.7",
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Complete",
-		"description": "After returning to the Normandy, find out what [Liara[megametracker://person?id=S1.Liara] knows about the protheans.",
-		"inMissionId": "M1.Therum.1",
+		"name": "Debrief",
+		"description": "After returning to the Normandy, find out what [Liara|megametracker://person?id=S1.Liara] knows about the protheans.",
+        "inMissionId": "M1.Therum",
 		"inMapId": "G.N1.1"
 	}, {
 		"id": "M1.Feros",
@@ -820,7 +830,7 @@
 		"name": "Feros: Geth Attack",
 		"aliases": ["Feros: Geth Attack", "Feros: The Thorian", "Feros: Colony Lost", "Feros: Colony Saved"],
 		"description": "[Saren|megametracker://person?id=E1.Saren] has sent the geth to attack the small colony of Zhu's Hope on Feros. Find out what is so valuable there. Shepard will need 12 Charm/10 Intimidate for all dialogue opportunities during the later events of this mission.",
-		"inMapId": "G.Ear.Art.Kno.Feros",
+		"inMapId": "G.Ear.Att.The.Feros",
 		"isShowInParentMap": true,
 		"relatedMissionIds": ["A1.F.DataRecovery", "A1.U.GethIncursions", "A1.U.ColonyOfTheDead"],
 		"conversationRewards": [{
@@ -992,7 +1002,7 @@
 		"name": "Go to Feros",
 		"description": "Investigate Feros to see why the Zhu's Hope colony was attacked by geth.",
 		"inMissionId": "M1.Feros",
-		"inMapId": "G.Ear.Art.Kno.Feros",
+        "inMapId": "G.Ear.Att.The.Feros",
 		"isShowInParentMap": true
 	}, {
 		"id": "M1.Feros.1",
@@ -1262,8 +1272,8 @@
 		"id": "M1.Feros.14",
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Complete",
-		"description": "With [Liara's[megametracker://person?id=S1.Liara] help, use the cypher to make sense of the Prothean Beacon's visions.",
+		"name": "Debrief",
+		"description": "With [Liara's|megametracker://person?id=S1.Liara] help, use the cypher to make sense of the Prothean Beacon's visions.",
 		"inMissionId": "M1.Feros",
 		"inMapId": "G.N1.1",
 		"relatedMissionIds": ["A1.T.UdinaOnFeros"]
@@ -1792,7 +1802,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Mission Complete",
-		"description": "Debrief on the Normandy, as usual. Speak to [Liara[megametracker://person?id=S1.Liara] about her mother, and talk to the Council.",
+		"description": "Debrief on the Normandy, as usual. Speak to [Liara|megametracker://person?id=S1.Liara] about her mother, and talk to the Council.",
 		"inMapId": "G.N1.1",
 		"events": [{
 			"type": "BlockedUntil",
@@ -2054,7 +2064,7 @@
 		"inMissionId": "M1.Virmire",
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Complete",
+		"name": "Debrief",
 		"description": "The Council is waiting to talk to you, and most of the crew will want to express their condolences at the lost team member. Any surviving members of [Kirrahe's|megametracker://person?id=P1.Kirrahe] team are down in the Vehicle Bay (although they will leave as soon as a new mission is started).",
 		"inMapId": "G.N1.1"
 	}, {
@@ -2223,7 +2233,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Vigil",
-		"description": "Drive the Mako through the underground passage. Before you reach the end, an energy barrier will barr your path, and then another forms behind you. At this point, exit the Mako and take the elevator to the right and continue until you find [megametracker://person?id=O1.Vigil], an ancient prothean VI \n\nVigil will answer many of your questions about the protheans, the Reapers, the Citadel, and the Conduit (and delight [Liara[megametracker://person?id=S1.Liara] if she was brought along).",
+		"description": "Drive the Mako through the underground passage. Before you reach the end, an energy barrier will barr your path, and then another forms behind you. At this point, exit the Mako and take the elevator to the right and continue until you find [megametracker://person?id=O1.Vigil], an ancient prothean VI \n\nVigil will answer many of your questions about the protheans, the Reapers, the Citadel, and the Conduit (and delight [Liara|megametracker://person?id=S1.Liara] if she was brought along).",
 		"inMapId": "G.Att.Pan.Ref.Ilo.Arc.2",
 		"isShowInParentMap": true,
 		"relatedMissionIds": ["M1.Ilos"]

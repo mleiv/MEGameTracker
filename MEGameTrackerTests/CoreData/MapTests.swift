@@ -60,9 +60,11 @@ final class MapTests: MEGameTrackerTests {
 		_ = create(Map.self, from: edenPrimeJson)
 		// sorts by name
 		let matches1 = Map.getAll().sorted(by: Map.sort)
-		XCTAssert(matches1[0].id == "G.Ear.Exo.Uto.Eden", "Failed to sort map 1 correctly")
-		XCTAssert(matches1[1].id == "G.Ear.Exo.Uto.Ede.A", "Failed to sort map 2 correctly")
-		XCTAssert(matches1[2].id == "G.Ear.Exo.Utopia", "Failed to sort map 3 correctly")
+        if matches1.count == 3 {
+            XCTAssert(matches1[0].id == "G.Ear.Exo.Uto.Eden", "Failed to sort map 1 correctly")
+            XCTAssert(matches1[1].id == "G.Ear.Exo.Uto.Ede.A", "Failed to sort map 2 correctly")
+            XCTAssert(matches1[2].id == "G.Ear.Exo.Utopia", "Failed to sort map 3 correctly")
+        }
 	}
 
 	/// Test Map game version variations.
@@ -70,14 +72,14 @@ final class MapTests: MEGameTrackerTests {
 		initializeCurrentGame() // needed for game version
 		initializeGameVersionEvents()
 
-		var exodus = create(Map.self, from: exodusJson)
+		let exodus = create(Map.self, from: exodusJson)
 		// Utopia is blocked in Game 2
-		exodus?.change(gameVersion: .game2)
-		XCTAssert(exodus?.isAvailable == false, "Failed to make map unavailable in game version")
-		exodus = Map.get(id: "G.Ear.Exodus", gameVersion: .game2)
-		XCTAssert(exodus?.isAvailable == false, "Failed to load map as unavailable in game version")
-		let matches = Map.getAll(gameVersion: .game2)
-		XCTAssert(matches.first?.isAvailable == false, "Failed to load map as unavailable in game version")
+		let changedExodus = exodus?.changed(gameVersion: .game2)
+		XCTAssert(changedExodus?.isAvailable == false, "Failed to make map unavailable in game version")
+        let loadedExodus = Map.get(id: "G.Ear.Exodus", gameVersion: .game2)
+        XCTAssert(loadedExodus?.isAvailable == false, "Failed to load map as unavailable in game version")
+        let matches = Map.getAll(gameVersion: .game2)
+        XCTAssert(matches.first?.isAvailable == false, "Failed to load map as unavailable in game version")
 	}
 
 	/// Test Map change action.
@@ -94,9 +96,9 @@ final class MapTests: MEGameTrackerTests {
 			}
 		}
 
-		var map = create(Map.self, from: utopiaJson)
+		let map = create(Map.self, from: utopiaJson)
 		XCTAssert(map?.isExplored == false, "Reported incorrect initial map state")
-		map?.change(isExplored: true, isSave: true)
+		_ = map?.changed(isExplored: true, isSave: true)
 		let map2 = Map.get(id: "G.Ear.Exo.Utopia")
 		XCTAssert(map2?.isExplored == true, "Reported incorrect acquired map state")
 
@@ -114,4 +116,16 @@ final class MapTests: MEGameTrackerTests {
 		let breadcrumbs1 = map?.getBreadcrumbs().map({ $0.name }).joined(separator: ">")
 		XCTAssert(breadcrumbs1 == "Exodus Cluster>Utopia>Eden Prime", "Reported incorrect breadcrumbs")
 	}
+
+    /// Test Map location point type.
+    func testMapLocationPoint() {
+        _ = create(Map.self, from: exodusJson)
+        _ = create(Map.self, from: edenPrimeGroundsJson)
+        // circle
+        let map = Map.get(id: "G.Ear.Exodus")
+        XCTAssert(map?.mapLocationPoint?.x == 2417, "Reported incorrect mapLocationPoint")
+        // square
+        let map2 = Map.get(id: "G.Ear.Exo.Uto.Ede.A")
+        XCTAssert(map2?.mapLocationPoint?.width == 1800, "Reported incorrect mapLocationPoint")
+    }
 }

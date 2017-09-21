@@ -12,19 +12,19 @@ final class GameRow: UITableViewCell {
 
 // MARK: Types
 // MARK: Constants
-	fileprivate let dateMessage = "Last Played: %@"
+	private let dateMessage = "Last Played: %@"
 
 // MARK: Outlets
-	@IBOutlet fileprivate weak var photoImageView: UIImageView?
-	@IBOutlet fileprivate weak var nameLabel: UILabel?
-	@IBOutlet fileprivate weak var titleLabel: UILabel?
-	@IBOutlet fileprivate weak var dateLabel: UILabel?
+	@IBOutlet private weak var photoImageView: UIImageView?
+	@IBOutlet private weak var nameLabel: UILabel?
+	@IBOutlet private weak var titleLabel: UILabel?
+	@IBOutlet private weak var dateLabel: UILabel?
 
 // MARK: Properties
 	internal fileprivate(set) var shepard: Shepard?
 
 // MARK: Change Listeners And Change Status Flags
-	fileprivate var isDefined = false
+	private var isDefined = false
 
 // MARK: Lifecycle Events
 	public override func layoutSubviews() {
@@ -45,7 +45,7 @@ final class GameRow: UITableViewCell {
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() {
+	private func setup() {
 		guard photoImageView != nil else { return }
 		if !UIWindow.isInterfaceBuilder {
 			Photo.addPhoto(from: shepard, toView: photoImageView, placeholder: UIImage.placeholder())
@@ -59,7 +59,7 @@ final class GameRow: UITableViewCell {
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		photoImageView?.image = nil
 		nameLabel?.text = ""
 		titleLabel?.text = ""

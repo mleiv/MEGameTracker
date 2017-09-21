@@ -273,7 +273,7 @@ extension AppDelegate {
 			// data is fully loaded as of now
 			GamesDataBackup.current.subscribeAccountChanges()
 			GamesDataBackup.current.subscribeDataChanges()
-			application.registerForRemoteNotifications()
+            DispatchQueue.main.async { application.registerForRemoteNotifications() }
 			// schedule periodic cloudkit sync
 			self?.setupCloudKitTimer()
 			completion()

@@ -70,6 +70,10 @@
 		"gameVersion": "1",
 		"description": "[megametracker://mission?id=M1.ShadowBroker.2]"
 	}, {
+        "id": "Garrus Joined Team",
+        "gameVersion": "1",
+        "description": "[megametracker://mission?id=M1.Garrus.2]"
+    }, {
 		"id": "Confronted Fist",
 		"gameVersion": "1",
 		"description": "[megametracker://mission?id=M1.ExposeSaren.2]"
@@ -120,6 +124,10 @@
 				}
 			}
 		}]
+    }, {
+        "id": "Spoke to Rita",
+        "gameVersion": "1",
+        "description": "[megametracker://mission?id=A1.C1.RitasSister.1]"
 	}, {
 		"id": "Helped Rita",
 		"gameVersion": "1",
@@ -151,7 +159,7 @@
 		"gameVersion": "1",
 		"description": "[megametracker://mission?id=A1.C1.ReportersRequest], [megametracker://mission?id=M1.Therum], [megametracker://mission?id=M1.Feros], or [megametracker://mission?id=M1.Noveria]",
 		"dependentOn": {
-			"countTo": 1,
+			"countTo": 2,
 			"events": [
 				"Helped Emily Wong",
 				"Therum, Feros, or Noveria"
@@ -434,7 +442,7 @@
 	}, {
 		"id": "Ilos Started",
 		"gameVersion": "1",
-		"description": "[megametracker://mission?id=M1.Ilos.1]"
+		"description": "[megametracker://mission?id=M1.RaceAgainstTime.5]"
 	}, {
 		"id": "Spoke to Vigil",
 		"gameVersion": "1",
@@ -540,6 +548,11 @@
 				"Completed Listening Post Theta"
 			]
 		}
+
+    }, {
+        "id": "Completed 8 Pinnacle Station Combat Missions",
+        "gameVersion": "1",
+        "description": "[megametracker://mission?id=DLC1.PS.Vidinos.1]"
 	}, {
 		"id": "Completed Ahern's Challenge",
 		"gameVersion": "1",

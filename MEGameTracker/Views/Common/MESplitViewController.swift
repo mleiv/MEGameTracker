@@ -84,14 +84,14 @@ extension MESplitViewController where Self: UIViewController {
 }
 final public class MESplitViewControllerBarButtonItem: UIBarButtonItem {
 	// https://www.reddit.com/r/swift/comments/3fjzap/creating_button_action_programatically_using/
-	var actionHandler: ((Void) -> Void)?
+	var actionHandler: (() -> Void)?
 	public convenience init(title: String?, style: UIBarButtonItemStyle, actionHandler: (() -> Void)?) {
 		self.init(title: title, style: style, target: nil, action: nil)
 		self.target = self
 		self.action = #selector(MESplitViewControllerBarButtonItem.triggerClosureAction(_:))
 		self.actionHandler = actionHandler
 	}
-	public func triggerClosureAction(_ sender: UIBarButtonItem) {
+	@objc public func triggerClosureAction(_ sender: UIBarButtonItem) {
 		if let actionHandler = self.actionHandler {
 			actionHandler()
 		}

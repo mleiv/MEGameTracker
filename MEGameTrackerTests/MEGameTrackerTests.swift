@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CoreData
 @testable import MEGameTracker
 
 class MEGameTrackerTests: XCTestCase {
@@ -25,29 +26,37 @@ class MEGameTrackerTests: XCTestCase {
 		super.tearDown()
 	}
 
-	internal func getSandboxedManager() -> SimpleSerializedCoreDataManageable {
+	internal func getSandboxedManager() -> CoreDataManager {
 		return CoreDataManager(storeName: CoreDataManager.defaultStoreName, isConfineToMemoryStore: true)
 	}
 
 	/// Create an app game.
 	internal func initializeSandboxedStore() {
 		if !hasSandboxedManager {
-			CoreDataManager.current = getSandboxedManager()
+            CoreDataManager.current = getSandboxedManager()
 			hasSandboxedManager = true
 		}
 	}
 
 	/// Create an app game.
 	internal func initializeCurrentGame(
-		_ gameSequenceUuid: String? = nil,
+		_ gameSequenceUuid: UUID? = nil,
 		gender: Shepard.Gender = .male,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) {
 		initializeSandboxedStore()
 		// require a new app (don't use retrieve)
 		App.current = App()
-		App.current.initGame(uuid: gameSequenceUuid, isSave: true, isNotify: false)
-		App.current.game?.shepard?.change(gender: gender, isNotify: false)
+		App.current.initGame(
+            uuid: gameSequenceUuid,
+            isSave: true,
+            isNotify: false
+        )
+        App.current.changeGame(isSave: false, isNotify: false) { game in
+            var game = game; let shepard = game?.shepard
+            game?.shepard = shepard?.changed(gender: gender, isSave: true, isNotify: false)
+            return game
+        }
 	}
 
 	/// Create the game version events.
@@ -59,65 +68,68 @@ class MEGameTrackerTests: XCTestCase {
 		_ = create(Event.self, from: event3)
 	}
 
-	/// Create an object from the json given.
-	internal func create<T: DataRowStorable>(
-		_ type: T.Type,
-		from json: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
-	) -> T? {
-		initializeSandboxedStore()
-		var item = T(serializedString: json)
-		_ = item?.save(with: manager)
-		return item
-	}
+    /// Create an object from the json given.
+    internal func create<T: DataRowStorable>(
+        _ type: T.Type,
+        from json: String,
+        with manager: CodableCoreDataManageable? = nil
+    ) -> T? {
+        initializeSandboxedStore()
+        let manager = manager ?? CoreDataManager.current
+        var item = try? manager.decoder.decode(T.self, from: json.data(using: .utf8)!)
+        print("\(String(describing: item))")
+        print("\(String(describing: String(data: (try? manager.encoder.encode(item)) ?? Data(), encoding: .utf8)))")
+        _ = item?.save(with: manager)
+        return item
+    }
 
-	/// Create an object from the json given.
-	internal func create<T: GameRowStorable>(
-		_ type: T.Type,
-		from json: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
-	) -> T? {
-		initializeSandboxedStore()
-		var data = T.DataRowType(serializedString: json)
-		_ = data?.save(with: manager)
-		if let data = data {
-			return T.create(using: data, with: manager)
-		}
-		return nil
-	}
+    /// Create an object from the json given.
+    internal func create<T: GameRowStorable>(
+        _ type: T.Type,
+        from json: String,
+        with manager: CodableCoreDataManageable? = nil
+    ) -> T? {
+        initializeSandboxedStore()
+        let manager = manager ?? CoreDataManager.current
+        if let data = create(T.DataRowType.self, from: json, with: manager) {
+            return T.create(using: data, with: manager)
+        }
+        return nil
+    }
 
-	/// Create an object from the json given.
-	internal func create<T: DelayedSaveRowStorable>(
-		_ type: T.Type,
-		from json: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
-	) -> T? {
-		initializeSandboxedStore()
-		var item = T(serializedString: json)
-		_ = item?.save(isCascadeChanges: .none, isAllowDelay: false, with: manager)
-		return item
-	}
+    /// Create an object from the json given.
+    internal func create<T: DelayedSaveRowStorable>(
+        _ type: T.Type,
+        from json: String,
+        with manager: CodableCoreDataManageable? = nil
+    ) -> T? {
+        initializeSandboxedStore()
+        let manager = manager ?? CoreDataManager.current
+        var item = try? manager.decoder.decode(T.self, from: json.data(using: .utf8)!)
+        _ = item?.save(isCascadeChanges: .none, isAllowDelay: false, with: manager)
+        return item
+    }
 
 	/// Create an object from the json given.
 	internal func create<T: App>(
 		_ type: T.Type,
 		from json: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> T? {
 		initializeSandboxedStore()
-		let item = T(serializedString: json) // reference class
-		_ = item?.save(isCascadeChanges: .none, isAllowDelay: false, with: manager)
-		return item
+        let manager = manager ?? CoreDataManager.current
+		let item = try? manager.decoder.decode(T.self, from: json.data(using: .utf8)!)
+        _ = item?.save(isCascadeChanges: .none, isAllowDelay: false, with: manager)
+        return item
 	}
 }
-public protocol DelayedSaveRowStorable: SimpleSerializedCoreDataStorable {
-	mutating func save(
-		isCascadeChanges: EventDirection,
-		isAllowDelay: Bool,
-		with manager: SimpleSerializedCoreDataManageable?
-	) -> Bool
+
+public protocol DelayedSaveRowStorable: CodableCoreDataStorable {
+    mutating func save(
+        isCascadeChanges: EventDirection,
+        isAllowDelay: Bool,
+        with manager: CodableCoreDataManageable?
+    ) -> Bool
 }
-
 extension Shepard: DelayedSaveRowStorable {}
-
 extension GameSequence: DelayedSaveRowStorable {}

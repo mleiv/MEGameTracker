@@ -9,13 +9,13 @@
 import Foundation
 import CoreData
 
-extension App: SimpleSerializedCoreDataStorable {
+extension App: CodableCoreDataStorable {
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = AppData
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Sets core data values to match struct values (specific).
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType
@@ -29,7 +29,7 @@ extension App: SimpleSerializedCoreDataStorable {
 	public func saveAnyChanges(
 		isCascadeChanges: EventDirection = .down,
 		isAllowDelay: Bool = true,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		if hasUnsavedChanges {
 			if isAllowDelay {
@@ -47,7 +47,7 @@ extension App: SimpleSerializedCoreDataStorable {
 	public func save(
 		isCascadeChanges: EventDirection,
 		isAllowDelay: Bool,
-		with manager: SimpleSerializedCoreDataManageable?
+		with manager: CodableCoreDataManageable?
 	) -> Bool {
 		hasUnsavedChanges = true // force this
 		if isAllowDelay {
@@ -78,9 +78,9 @@ extension App: SimpleSerializedCoreDataStorable {
 		return save(isCascadeChanges: isCascadeChanges, isAllowDelay: isAllowDelay, with: nil)
 	}
 
-	/// (SimpleSerializedCoreDataStorable Protocol override)
+	/// (CodableCoreDataStorable Protocol override)
 	public func save(
-		with manager: SimpleSerializedCoreDataManageable?
+		with manager: CodableCoreDataManageable?
 	) -> Bool {
 		return save(isCascadeChanges: .down, isAllowDelay: true, with: manager)
 	}
@@ -88,7 +88,7 @@ extension App: SimpleSerializedCoreDataStorable {
 	/// Convenience - no isAllowDelay required
 	public func save(
 		isCascadeChanges: EventDirection,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		return save(isCascadeChanges: isCascadeChanges, isAllowDelay: true, with: manager)
 	}

@@ -299,13 +299,12 @@
 		}, {
 			"set": {
 				"isExclusiveSet": true,
-				"context": "(Points granted after reporting back to Chellick)",
 				"options": [{
 					"id": "A1.C1.RitasSister.3.P",
 					"type": "Paragon",
 					"value": 8,
-					"context": "Give Jax his money",
-					"trigger": "\"Keeping tabs on me?\" and \"Of course.\""
+					"context": "Reporting to Chellick, after giving Jax his money",
+					"trigger": "\"Keeping tabs on me?\" or \"Of course.\""
 				}, {
 					"id": "A1.C1.RitasSister.3.R",
 					"type": "Renegade",
@@ -356,7 +355,11 @@
 			"x": 435,
 			"y": 523,
 			"radius": 1
-		}
+		},
+        "events": [{
+            "type": "Triggers",
+            "id": "Spoke to Rita"
+        }]
 	}, {
 		"id": "A1.C1.RitasSister.2",
 		"sortIndex": 1902,
@@ -424,11 +427,11 @@
 		"missionType": "Assignment",
 		"name": "Citadel: Doctor Michel",
 		"aliases": ["Citadel: Doctor Michel", "Citadel: Doctor Michel is Safe"],
-		"description": "The doctor is being blackmailed. Speak to her at the Med Clinic in the Upper Wards if you want to help.",
+		"description": "The doctor is being blackmailed. Speak to her at the Med Clinic in the Upper Wards if you want to help.\n\n*Note: if you have did not rescue Dr. Michel from Fist, you may have trouble getting this quest. Go back to Fist's office and then return to the Med Clinic.*",
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
-				"context": "After confronting Morlan",
+                "context": "To the krogan, after confronting Morlan",
 				"options": [{
 					"id": "A1.C1.DoctorMichel.2.P1",
 					"type": "Paragon",
@@ -441,13 +444,7 @@
 					"value": 9,
 					"context": "*_Intimidate_* the krogan (Requires 3 Intimidate)",
 					"trigger": "\"Talk and you're dead!\""
-				}]
-			}
-		}, {
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Decide what to do about the krogan",
-				"options": [{
+				}, {
 					"id": "A1.C1.DoctorMichel.2.P2",
 					"type": "Paragon",
 					"value": 2,
@@ -826,7 +823,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Second Encounter",
-		"description": "[Conrad|megametracker://person?id=P1.Conrad] wants a photograph.",
+		"description": "[Conrad|megametracker://person?id=P1.Conrad] wants a photograph.\n\n*Note: This is available after leaving the Citadel for the first time (and is relying on a signal of Therum/Feros/Noveria to indicate that).*",
 		"inMapId": "G.C1.UpperWards",
 		"mapLocationPoint": {
 			"x": 371,
@@ -835,7 +832,7 @@
 		},
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Spectre Status"
+            "id": "Therum, Feros, or Noveria"
 		}, {
 			"type": "BlockedAfter",
 			"id": "Citadel Lockdown: Exile"
@@ -972,7 +969,7 @@
 		"sideEffects": ["Return to Flux after finishing this assignment and approach Doran on the dance floor and press A to show him Shepard's moves."],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Helped Rita"
+			"id": "Spoke to Rita"
 		}, {
 			"type": "BlockedAfter",
 			"id": "Citadel Lockdown: Exile"
@@ -1413,7 +1410,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "Citadel: Planting a Bug",
-		"description": "[megametracker://person?id=O1.Wong] in the Citadel Tower is gathering information on dangerously overworked traffic control operators. She wants Shepard to plant a bug in the control room so she can monitor them.",
+		"description": "[megametracker://person?id=O1.Wong] in the Citadel Tower is gathering information on dangerously overworked traffic control operators. She wants Shepard to plant a bug in the control room so she can monitor them.\n\n*Note: This is available after leaving the Citadel for the first time (and is relying on a signal of Therum/Feros/Noveria to indicate that).*",
 		"inMapId": "G.C1.Tower",
 		"mapLocationPoint": {
 			"x": 1043,
@@ -1455,6 +1452,20 @@
 			"type": "BlockedAfter",
 			"id": "Citadel Lockdown: Exile"
 		}]
+    }, {
+        "id": "A1.C2.PlantingABug.0",
+        "sortIndex": 5600,
+        "inMissionId": "A1.C2.PlantingABug",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Emily",
+        "description": "Go to the Citadel Tower and speak to Emily Wong.",
+        "inMapId": "G.C1.Tower",
+        "mapLocationPoint": {
+            "x": 1043,
+            "y": 1447,
+            "radius": 1
+        },
 	}, {
 		"id": "A1.C2.PlantingABug.1",
 		"sortIndex": 5601,
@@ -1537,6 +1548,20 @@
 			"type": "BlockedAfter",
 			"id": "Citadel Lockdown: Exile"
 		}]
+    }, {
+        "id": "A1.C2.FourthEstate.0",
+        "sortIndex": 5300,
+        "inMissionId": "A1.C2.FourthEstate",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Al-Jilani",
+        "description": "To please Hackett, talk to her as long as possible and don't discuss Saren. Alternatively, you can punch her smug little face in all three games.",
+        "inMapId": "G.C1.CSecAcademy",
+        "mapLocationPoint": {
+            "x": 1540,
+            "y": 990,
+            "radius": 1
+        },
 	}, {
 		"id": "A1.C2.FourthEstate.1",
 		"sortIndex": 5301,
@@ -3408,13 +3433,7 @@
 					"value": 9,
 					"context": "(Selecting this option results in a fight and eliminates any further dialog choices)",
 					"trigger": "\"Take them down!\""
-				}]
-			}
-		}, {
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Persuading the L2 biotic leader",
-				"options": [{
+				}, {
 					"id": "A1.U.Hostage.P2",
 					"type": "Paragon",
 					"value": 8,
@@ -3650,7 +3669,7 @@
 					"id": "A1.U.LostModule.P1",
 					"type": "Paragon",
 					"value": 6,
-					"trigger": "Locate the data without killing any space monkeys. (*Infinite Paragon Glitch*: If you save right after this choice, you can reload the game and recover the data again, for an unlimited number of times.)"
+					"trigger": "Locate the data without killing any space monkeys. (*Infinite Paragon Glitch*: If you save right after this choice, you can reload the game and recover the data again repeatedly, for an unlimited number of times (no additional saves/reloads necessary).)"
 				}, {
 					"id": "A1.U.LostModule.R1",
 					"type": "Renegade",
@@ -3720,7 +3739,7 @@
 		"inMapId": "G.Ear.Gem.Min.MSVWorthington",
 		"mapLocationPoint": {
 			"x": 1387,
-			"y": 504,
+			"y": 534,
 			"radius": 1
 		},
 		"isOpensDetail": false
@@ -3886,7 +3905,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Go to Xawin",
-		"description": "Go to Xawin in the Strenuus System of the Horse Head Nebula and locate the privateers responsible for destroying the ship.",
+		"description": "Go to Xawin in the Strenuus System of the Horse Head Nebula and locate the privateers responsible for destroying the ship. Take the datapad from the body found upstairs.",
 		"inMapId": "G.Ear.Hor.Str.Xaw.Base",
 		"mapLocationPoint": {
 			"x": 1291,
@@ -4116,7 +4135,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Major Kyle",
-		"description": "A [computer console|megametracker://maplocation?id=G.C1.Presidium&title=Console&location=1307x719] in C-Sec Headquarters reveals the deaths of two Alliance officials sent to investigate [Major Kyle|megametracker://person?id=O1.Kyle] at his compound in [megametracker://map?id=G.Att.Hawking].",
+		"description": "A [computer console|megametracker://maplocation?id=G.C1.Presidium&title=Console&location=1148x642] in Executor Palin's office reveals the deaths of two Alliance officials sent to investigate [Major Kyle|megametracker://person?id=O1.Kyle] at his compound in [megametracker://map?id=G.Att.Hawking].",
 		"inMapId": "G.Att.Haw.Cen.Presrop",
 		"isShowInParentMap": true,
 		"relatedLinks": [

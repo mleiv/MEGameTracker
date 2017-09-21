@@ -31,6 +31,7 @@ import UIKit
 ///    }
 /// }
 public struct IBStyleManager {
+    public static let stylesInitialized = Notification.Name(rawValue: "stylesInitialized")
 	public static var current = IBStyleManager()
 	public var stylesheet: IBStylesheet?
 	public var deviceKind = UIDevice.current.userInterfaceIdiom
@@ -42,7 +43,7 @@ extension IBStyleManager {
 	///
 	/// - parameter identifier:	  the key of the element's styles
 	/// - parameter to (element):	the element to be styled
-	public mutating func apply(
+	public func apply(
 		identifier: String,
 		to element: UIView?
 	) {
@@ -254,7 +255,7 @@ extension IBStyleManager {
 		view.layer.backgroundColor = color.cgColor
 		if let colorElement = view as? UISegmentedControl {
 			colorElement.setTitleTextAttributes([
-				NSForegroundColorAttributeName: color
+				NSAttributedStringKey.foregroundColor: color
 			], for: .disabled)
 		}
 	}
@@ -285,15 +286,9 @@ extension IBStyleManager {
 		forState state: UIControlState = UIControlState()
 	) {
 		guard let fontClass = fontClass, let view = view else { return }
-		var isScalable = true
-		if let adjustableAwareElement = view as? UIContentSizeCategoryAdjusting {
-			isScalable = adjustableAwareElement.adjustsFontForContentSizeCategory
-		}
-		if let minSize = stylesheet?.minFontSize,
-			let font = fontClass.getUIFont(isScalable: isScalable, minFontSize: minSize) {
-			if var fontElement = view as? UIContentFontSettable {
-				fontElement.fontProperty = font
-			}
+		if let font = fontClass.getUIFont(),
+            var fontElement = view as? UIContentFontSettable {
+            fontElement.fontProperty = font
 		}
 	}
 

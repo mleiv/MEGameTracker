@@ -28,8 +28,9 @@ final class ConversationRewardsTests: MEGameTrackerTests {
 	}
 
 	func testHierarchy1() {
-		guard let rewards = ConversationRewards(serializedString: json1)
-		else {
+        guard let data = json1.data(using: .utf8),
+            let rewards = try? CoreDataManager.current.decoder.decode(ConversationRewards.self, from: data)
+        else {
 			XCTAssert(false, "Could not initialize ConversationRewards base")
 			return
 		}
@@ -39,7 +40,8 @@ final class ConversationRewardsTests: MEGameTrackerTests {
 	}
 
 	func testHierarchy2() {
-		guard let rewards = ConversationRewards(serializedString: json2)
+        guard let data = json2.data(using: .utf8),
+            let rewards = try? CoreDataManager.current.decoder.decode(ConversationRewards.self, from: data)
 		else {
 			XCTAssert(false, "Could not initialize ConversationRewards base")
 			return
@@ -50,7 +52,8 @@ final class ConversationRewardsTests: MEGameTrackerTests {
 	}
 
 	func testFlatten1() {
-		guard let rewards = ConversationRewards(serializedString: json1)
+		guard let data = json1.data(using: .utf8),
+            let rewards = try? CoreDataManager.current.decoder.decode(ConversationRewards.self, from: data)
 		else {
 			XCTAssert(false, "Could not initialize ConversationRewards base")
 			return
@@ -62,13 +65,14 @@ final class ConversationRewardsTests: MEGameTrackerTests {
 		XCTAssert(flattenedRewards[0].options.first?.id == "M1.1Prologue.P1", "Flatten incorrect")
 		XCTAssert(flattenedRewards[14].commonContext == "Talking to Ashley after the mission", "Flatten incorrect")
 		XCTAssert(flattenedRewards[14].options.count == 2, "Flatten incorrect")
-		XCTAssert(flattenedRewards[14].options.first?.id == "M1.1Prologue.R12", "Flatten incorrect")
+		XCTAssert(flattenedRewards[14].options.first?.id == "M1.1Prologue.P12", "Flatten incorrect")
 //		print(flattenedRewards.flatMap({ "- \((0..<$0.level)
 //			.reduce(""){ s,_ in s + "- " }) \($0.commonContext) \($0.options.count)" }).joined(separator: "\n"))
 	}
 
 	func testFlatten2() {
-		guard let rewards = ConversationRewards(serializedString: json2)
+        guard let data = json2.data(using: .utf8),
+            let rewards = try? CoreDataManager.current.decoder.decode(ConversationRewards.self, from: data)
 		else {
 			XCTAssert(false, "Could not initialize ConversationRewards base")
 			return

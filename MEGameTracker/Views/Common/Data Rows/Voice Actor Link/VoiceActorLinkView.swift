@@ -12,7 +12,7 @@ public typealias VoiceActorType = (name: String, url: String)
 
 final public class VoiceActorLinkView: SimpleArrayDataRow {
 
-	fileprivate var dummyLinks: [VoiceActorType] = [(name: "Mark Meer", url: "https://google.com")]
+	private var dummyLinks: [VoiceActorType] = [(name: "Mark Meer", url: "https://google.com")]
 	public var links: [VoiceActorType] {
 		if UIWindow.isInterfaceBuilder {
 			return dummyLinks

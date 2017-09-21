@@ -10,7 +10,7 @@ import UIKit
 
 final public class NotesView: SimpleArrayDataRow {
 
-	fileprivate lazy var dummyNotes: [Note] = {
+	private lazy var dummyNotes: [Note] = {
 		if let note = Note.getDummyNote() {
 			return [note]
 		}
@@ -19,7 +19,11 @@ final public class NotesView: SimpleArrayDataRow {
 	public var notes: [Note] {
 		return UIWindow.isInterfaceBuilder ? dummyNotes : (controller?.notes ?? [])
 	}
-	public var controller: Notesable?
+	public var controller: Notesable?{
+        didSet {
+            reloadData()
+        }
+    }
 	var isBorderBottom: Bool?
 	var notesNib: NotesNib?
 
@@ -101,8 +105,9 @@ final public class NotesView: SimpleArrayDataRow {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		Note.onChange.cancelSubscription(for: self)
 		_ = Note.onChange.subscribe(on: self) { [weak self] changed in
-			if let index = self?.notes.index(where: { $0.uuid == changed.id }) ,
-				   let newRow = changed.object ?? Note.get(uuid: changed.id) {
+			if let uuid = UUID(uuidString: changed.id),
+                let index = self?.notes.index(where: { $0.uuid == uuid }) ,
+				   let newRow = changed.object ?? Note.get(uuid: uuid) {
 				self?.controller?.notes[index] = newRow
 				let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
 				self?.reloadRows(rows)
@@ -140,7 +145,7 @@ final public class NotesView: SimpleArrayDataRow {
 
 	override func hideEmptyView() {
 		if isBorderBottom == nil {
-			isBorderBottom = borderBottom
+            isBorderBottom = borderBottom
 		}
 		borderBottom = isBorderBottom == true && !notes.isEmpty
 	}
@@ -148,7 +153,7 @@ final public class NotesView: SimpleArrayDataRow {
 
 extension NotesView { // :UITableViewDelegate
 
-	public func tableView(
+	@objc public func tableView(
 		_ tableView: UITableView,
 		commitEditingStyle editingStyle: UITableViewCellEditingStyle,
 		forRowAtIndexPath indexPath: IndexPath

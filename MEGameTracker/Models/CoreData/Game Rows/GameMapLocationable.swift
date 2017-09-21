@@ -14,23 +14,25 @@ public protocol MapLocationable {
 	var id: String { get }
 	var name: String { get }
 	var description: String? { get }
-	var annotationNote: String? { get }
 	var gameVersion: GameVersion { get }
-
 	var mapLocationType: MapLocationType { get }
+
 	var mapLocationPoint: MapLocationPoint? { get set }
 	var inMapId: String? { get set }
 	var inMissionId: String? { get }
 	var sortIndex: Int { get }
 
-	var isHidden: Bool { get }
-	var isAvailable: Bool { get }
+    var annotationNote: String? { get }
+
 	var unavailabilityMessages: [String] { get }
+
+    var isHidden: Bool { get }
+    var isAvailable: Bool { get }
 
 // MARK: Optional
 	var searchableName: String { get }
 	var linkToMapId: String? { get }
-	var shownInMapId: String? { get set } // only set by view controllers
+	var shownInMapId: String? { get set }
 	var isShowInParentMap: Bool { get }
 	var isShowInList: Bool { get }
 	var isShowPin: Bool { get }

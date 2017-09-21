@@ -90,7 +90,7 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 
 	func dummyData() {
 		// swiftlint:disable line_length
-		person = Person.getDummy(json: "{\"id\": 2,\"name\": \"Liara T'soni\",\"description\": \"An archeologist specializing in the ancient prothean culture, Liara is the \\\"pureblood\\\" daughter of Matriarch Benezia, and doesn't know her father. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued a life of scholarly solitude.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": 1,\"isFemaleLoveInterest\": 1,\"race\": \"Asari\",\"profession\": \"Scientist\",\"organization\": null,\"photo\": \"Default Liara\",\"gameVersion\": 1,\"relatedLinks\": \"[\\\"https://masseffect.wikia.com/wiki/Liara_T%27Soni\\\"]\",\"voiceActor\": \"Ali Hillis\"}")
+		person = Person.getDummy(json: "{\"id\": 2,\"name\": \"Liara T'soni\",\"description\": \"An archeologist specializing in the ancient prothean culture, Liara is the \\\"pureblood\\\" daughter of Matriarch Benezia, and doesn't know her father. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued a life of scholarly solitude.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": true,\"isFemaleLoveInterest\": true,\"race\": \"Asari\",\"profession\": \"Scientist\",\"organization\": null,\"photo\": \"Default Liara\",\"gameVersion\": true,\"relatedLinks\": \"[\\\"https://masseffect.wikia.com/wiki/Liara_T%27Soni\\\"]\",\"voiceActor\": \"Ali Hillis\"}")
 		// swiftlint:enable line_length
 	}
 
@@ -101,7 +101,7 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 		let gameVersion = App.current.gameVersion
 		let oldGameVersion = person?.gameVersion
 		if gameVersion != oldGameVersion {
-			person?.change(gameVersion: gameVersion, isNotify: false)
+			_ = person?.changed(gameVersion: gameVersion) // isNotify: false
 			return
 		}
 
@@ -116,7 +116,7 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 		isUpdating = true
 
 //		if person?.isAvailable != true {
-//			person?.change(gameVersion: oldGameVersion)
+//			person?.changed(gameVersion: oldGameVersion)
 //			return
 //		}
 
@@ -188,10 +188,10 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 	}
 
 	var shepardUuid = App.current.game?.shepard?.uuid
-	func reloadOnShepardChange() {
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
-			person?.change(gameVersion: App.current.gameVersion, isSave: false, isNotify: false)
+			person = person?.changed(gameVersion: App.current.gameVersion) //isNotify: false
 			reloadDataOnChange()
 		}
 	}
@@ -241,8 +241,8 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 	func changeLoveSetting(_ sender: AnyObject?) {
 		let isOn = heartButton.isOn
 		DispatchQueue.global(qos: .background).async {
-			if let id = self.person?.loveInterestDecisionId, var decision = Decision.get(id: id) {
-				decision.change(isSelected: isOn, isSave: true)
+			if let id = self.person?.loveInterestDecisionId {
+				_ = Decision.get(id: id)?.changed(isSelected: isOn, isSave: true)
 			}
 		}
 	}
@@ -299,7 +299,7 @@ extension PersonController: UIImagePickerControllerDelegate {
 		editingInfo: [String : AnyObject]?
 	) {
 		picker.dismiss(animated: true, completion: nil)
-		if person?.savePhoto(image: image) == true {
+		if let _ = person?.changed(image: image) {
 			setupPhotoValue()
 		} else {
 			let alert = UIAlertController(
@@ -354,7 +354,7 @@ extension PersonController: Describable {
 extension PersonController {
 	func setupGameSegments() {
 		var games: [GameVersion] = []
-		for game in GameVersion.list() {
+		for game in GameVersion.all() {
 			if person?.isAvailableInGame(game) == true {
 				games.append(game)
 			}

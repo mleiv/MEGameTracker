@@ -222,38 +222,38 @@ final public class CalloutsView: SimpleArrayDataRow {
 		return false
 	}
 
+	private func reloadOnCalloutChange<T: GameRowStorable & DateModifiable>(
+        type: T.Type,
+        changed: (id: String, object: T?)
+    ) {
+        var callouts = controller?.callouts ?? []
+        if let index = callouts.index(where: { $0.id == changed.id }),
+           let callout = changed.object ?? T.get(id: changed.id),
+           callout.modifiedDate > (callouts[index] as? T)?.modifiedDate ?? Date.distantPast {
+            if let newRow = callout as? MapLocationable {
+                callouts[index] = newRow
+                controller?.updateCallouts(callouts)
+            }
+            DispatchQueue.main.async { [weak self] in
+                self?.reloadRows([IndexPath(row: index, section: 0)])
+            }
+        }
+	}
+
 	override func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
-		Map.onChange.cancelSubscription(for: self)
-		_ = Map.onChange.subscribe(on: self) { [weak self] (changed: (id: String, object: Map?)) in
-			if let index = self?.callouts.index(where: { $0.id == changed.id }),
-				   let newRow = changed.object ?? Map.get(id: changed.id) {
-				self?.controller?.callouts[index] = newRow
-				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(reloadRows)
-				// make sure controller listens here and updates its own object's decisions list
-			}
-		}
-		Mission.onChange.cancelSubscription(for: self)
-		_ = Mission.onChange.subscribe(on: self) { [weak self] (changed: (id: String, object: Mission?)) in
-			if let index = self?.callouts.index(where: { $0.id == changed.id }),
-				   let newRow = changed.object ?? Mission.get(id: changed.id) {
-				self?.controller?.callouts[index] = newRow
-				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(reloadRows)
-				// make sure controller listens here and updates its own object's decisions list
-			}
-		}
-		Item.onChange.cancelSubscription(for: self)
-		_ = Item.onChange.subscribe(on: self) { [weak self] (changed: (id: String, object: Item?)) in
-			if let index = self?.callouts.index(where: { $0.id == changed.id }),
-				   let newRow = changed.object ?? Item.get(id: changed.id) {
-				self?.controller?.callouts[index] = newRow
-				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(reloadRows)
-				// make sure controller listens here and updates its own object's missions list
-			}
-		}
+        Map.onChange.cancelSubscription(for: self)
+        _ = Map.onChange.subscribe(on: self) { [weak self] changed in
+            self?.reloadOnCalloutChange(type: Map.self, changed: changed)
+        }
+        Mission.onChange.cancelSubscription(for: self)
+        _ = Mission.onChange.subscribe(on: self) { [weak self] changed in
+            self?.reloadOnCalloutChange(type: Mission.self, changed: changed)
+        }
+        Item.onChange.cancelSubscription(for: self)
+        _ = Item.onChange.subscribe(on: self) { [weak self] changed in
+            self?.reloadOnCalloutChange(type: Item.self, changed: changed)
+        }
 		MapLocation.onChangeSelection.cancelSubscription(for: self)
 		_ = MapLocation.onChangeSelection.subscribe(on: self) { [weak self] (mapLocation: MapLocationable) in
 			guard mapLocation.shownInMapId == self?.callouts.first?.shownInMapId else { return }
@@ -263,9 +263,9 @@ final public class CalloutsView: SimpleArrayDataRow {
 
 	override func removeListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
-		Map.onChange.cancelSubscription(for: self)
-		Mission.onChange.cancelSubscription(for: self)
-		Item.onChange.cancelSubscription(for: self)
+//        Map.onChange.cancelSubscription(for: self)
+//        Mission.onChange.cancelSubscription(for: self)
+//        Item.onChange.cancelSubscription(for: self)
 		MapLocation.onChangeSelection.cancelSubscription(for: self)
 	}
 

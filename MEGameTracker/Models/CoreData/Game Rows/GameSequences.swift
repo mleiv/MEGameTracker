@@ -9,30 +9,30 @@
 import Foundation
 import CoreData
 
-extension GameSequence: SimpleSerializedCoreDataStorable {
+extension GameSequence: CodableCoreDataStorable {
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = GameSequences
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Sets core data values to match struct values (specific).
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType
 	) {
-		setDateModifiableColumnsOnSave(coreItem: coreItem)
-		coreItem.uuid = uuid
+        setDateModifiableColumnsOnSave(coreItem: coreItem)
+		coreItem.uuid = uuid.uuidString
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 	}
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Alters the predicate to retrieve only the row equal to this object.
 	public func setIdentifyingPredicate(
 		fetchRequest: NSFetchRequest<EntityType>
 	) {
 		fetchRequest.predicate = NSPredicate(
 			format: "(%K == %@)",
-			#keyPath(GameSequences.uuid), uuid
+			#keyPath(GameSequences.uuid), uuid.uuidString
 		)
 	}
 }
@@ -49,7 +49,7 @@ extension GameSequence {
 	public mutating func saveAnyChanges(
 		isCascadeChanges: EventDirection = .down,
 		isAllowDelay: Bool = true,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		if hasUnsavedChanges {
 			if isAllowDelay {
@@ -67,7 +67,7 @@ extension GameSequence {
 	public mutating func save(
 		isCascadeChanges: EventDirection,
 		isAllowDelay: Bool,
-		with manager: SimpleSerializedCoreDataManageable?
+		with manager: CodableCoreDataManageable?
 	) -> Bool {
 		hasUnsavedChanges = true // force this
 		if isAllowDelay {
@@ -95,9 +95,9 @@ extension GameSequence {
 		return save(isCascadeChanges: isCascadeChanges, isAllowDelay: isAllowDelay, with: nil)
 	}
 
-	/// (SimpleSerializedCoreDataStorable Protocol override)
+	/// (CodableCoreDataStorable Protocol override)
 	public mutating func save(
-		with manager: SimpleSerializedCoreDataManageable?
+		with manager: CodableCoreDataManageable?
 	) -> Bool {
 		return save(isCascadeChanges: .down, isAllowDelay: true, with: manager)
 	}
@@ -105,7 +105,7 @@ extension GameSequence {
 	/// Convenience - no isAllowDelay required
 	public mutating func save(
 		isCascadeChanges: EventDirection,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		return save(isCascadeChanges: isCascadeChanges, isAllowDelay: true, with: manager)
 	}
@@ -115,8 +115,8 @@ extension GameSequence {
 	/// Delete the value matching the ids specified, and cascades the delete to all game-specific data.
 	/// (Only ever called by cloudkit when syncing.)
 	public static func delete(
-		uuid: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		uuid: UUID,
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		let manager = manager ?? defaultManager
 
@@ -141,7 +141,7 @@ extension GameSequence {
 
 		// delete self (X3)
 		isDeleted = isDeleted && GameSequence.deleteAll { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(uuid = %@)", uuid)
+			fetchRequest.predicate = NSPredicate(format: "(uuid = %@)", uuid.uuidString)
 		}
 
 		return isDeleted
@@ -150,13 +150,13 @@ extension GameSequence {
 	// swiftlint:disable function_body_length
 	/// Stores a row before delete
 	public static func notifyDeleteToCloud(
-		uuid: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		uuid: UUID,
+		with manager: CodableCoreDataManageable? = nil
 	) {
 		var deletedRows: [DeletedRow] = []
 
 		deletedRows += getAllIdentifiers(ofType: Decision.self, with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
+			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
 				source: Decision.entityName,
@@ -164,7 +164,7 @@ extension GameSequence {
 			)
 		}
 		deletedRows += getAllIdentifiers(ofType: Event.self, with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
+			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
 				source: Event.entityName,
@@ -172,7 +172,7 @@ extension GameSequence {
 			)
 		}
 		deletedRows += getAllIdentifiers(ofType: Item.self, with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
+			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
 				source: Item.entityName,
@@ -180,7 +180,7 @@ extension GameSequence {
 			)
 		}
 		deletedRows += getAllIdentifiers(ofType: Map.self, with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
+			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
 				source: Map.entityName,
@@ -188,7 +188,7 @@ extension GameSequence {
 			)
 		}
 		deletedRows += getAllIdentifiers(ofType: Mission.self, with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
+			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
 				source: Mission.entityName,
@@ -196,7 +196,7 @@ extension GameSequence {
 			)
 		}
 		deletedRows += getAllIdentifiers(ofType: Note.self, with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
+			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
 				source: Note.entityName,
@@ -204,7 +204,7 @@ extension GameSequence {
 			)
 		}
 		deletedRows += getAllIdentifiers(ofType: Person.self, with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
+			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
 				source: Person.entityName,
@@ -212,7 +212,7 @@ extension GameSequence {
 			)
 		}
 		deletedRows += getAllIdentifiers(ofType: Shepard.self, with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid)
+			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid = %@)", uuid.uuidString)
 		}.map {
 			return DeletedRow(
 				source: Shepard.entityName,
@@ -224,77 +224,79 @@ extension GameSequence {
 			identifier: getIdentifyingName(id: "", gameSequenceUuid: uuid)
 		)]
 
-		_ = DeletedRow.saveAll(items: deletedRows, with: manager)
+//        _ = DeletedRow.saveAll(items: deletedRows, with: manager) //TODO
 		GamesDataBackup.current.isPendingCloudChanges = true
 	}
 	// swiftlint:enable function_body_length
 
-	internal static func getAllIdentifiers<T: CloudDataStorable & SimpleSerializedCoreDataStorable>(
-		ofType type: T.Type,
-		with manager: SimpleSerializedCoreDataManageable? = nil,
-		alterFetchRequest: @escaping ((NSFetchRequest<T.EntityType>) -> Void) = { _ in }
-	) -> [(id: String, gameSequenceUuid: String)] {
-		let manager = manager ?? defaultManager
-		var result: [(id: String, gameSequenceUuid: String)] = []
-		autoreleasepool {
-			result = manager.getAllTransformed(
-				transformEntity: {
-					if $0 is GameDecisions
-						|| $0 is GameEvents
-						|| $0 is GameItems
-						|| $0 is GameMaps
-						|| $0 is GameMissions
-						|| $0 is GamePersons {
-						if let id = $0.value(forKey: "id") as? String,
-							let uuid = $0.value(forKey: "gameSequenceUuid") as? String {
-							return (id: id, gameSequenceUuid: uuid)
-						}
-					} else if $0 is GameShepards
-						|| $0 is GameNotes {
-						if let id = $0.value(forKey: "uuid") as? String,
-							let uuid = $0.value(forKey: "gameSequenceUuid") as? String {
-							return (id: id, gameSequenceUuid: uuid)
-						}
-					}
-					return nil
-				},
-				alterFetchRequest: alterFetchRequest
-			)
-		}
-		return result
-	}
+    internal static func getAllIdentifiers<T: CloudDataStorable & CodableCoreDataStorable>(
+        ofType type: T.Type,
+        with manager: CodableCoreDataManageable?,
+        alterFetchRequest: @escaping ((NSFetchRequest<T.EntityType>) -> Void) = { _ in }
+    ) -> [(id: String, gameSequenceUuid: UUID)] {
+        let manager = manager ?? CoreDataManager.current
+        var result: [(id: String, gameSequenceUuid: UUID)] = []
+        autoreleasepool {
+            result = manager.getAllTransformed(
+                transformEntity: {
+                    if $0 is GameDecisions
+                        || $0 is GameEvents
+                        || $0 is GameItems
+                        || $0 is GameMaps
+                        || $0 is GameMissions
+                        || $0 is GamePersons {
+                        if let id = $0.value(forKey: "id") as? String,
+                            let uuidString = $0.value(forKey: "gameSequenceUuid") as? String,
+                            let uuid = UUID(uuidString: uuidString) {
+                            return (id: id, gameSequenceUuid: uuid)
+                        }
+                    } else if $0 is GameShepards
+                        || $0 is GameNotes {
+                        if let id = $0.value(forKey: "uuid") as? String,
+                            let uuidString = $0.value(forKey: "gameSequenceUuid") as? String,
+                            let uuid = UUID(uuidString: uuidString) {
+                            return (id: id, gameSequenceUuid: uuid)
+                        }
+                    }
+                    return nil
+                },
+                alterFetchRequest: alterFetchRequest
+            )
+        }
+        return result
+    }
 
 // MARK: Additional Convenience Methods
 
 	/// Get game with id.
 	public static func get(
-		uuid: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		uuid: UUID,
+		with manager: CodableCoreDataManageable? = nil
 	) -> GameSequence? {
 		return get(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K == %@)",
-				#keyPath(GameSequences.uuid), uuid
+				#keyPath(GameSequences.uuid), uuid.uuidString
 			)
 		}
 	}
 
 	/// Get all games with ids.
 	public static func getAll(
-		uuids: [String],
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		uuids: [UUID],
+		with manager: CodableCoreDataManageable? = nil
 	) -> [GameSequence] {
 		return getAll(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K in %@)",
-				#keyPath(GameSequences.uuid), uuids
+				#keyPath(GameSequences.uuid), uuids.map { $0.uuidString }
 			)
 		}
 	}
 
 	/// Get all matching shepard ids.
 	public static func getAllIds(
-		with manager: SimpleSerializedCoreDataManageable? = nil,
+		with manager: CodableCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType> = { _ in }
 	) -> [String] {
 		let manager = manager ?? defaultManager
@@ -311,7 +313,7 @@ extension GameSequence {
 	/// Get game with most recent modifiedDate.
 	/// This is only called if App fails to save/load the current game (like, first time cloud sync).
 	public static func lastPlayed(
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> GameSequence? {
 		let manager = manager ?? defaultManager
 		var result: GameSequence?
@@ -321,8 +323,12 @@ extension GameSequence {
 						NSSortDescriptor(key: #keyPath(GameSequences.modifiedDate), ascending: false)
 					]
 				}),
-				let uuid = row.value(forKeyPath:  #keyPath(GameSequences.uuid)) as? String {
-				print("Last Played Game: \(uuid) \(row.value(forKeyPath:  #keyPath(GameSequences.modifiedDate)))")
+				let uuidString = row.value(forKeyPath:  #keyPath(GameSequences.uuid)) as? String,
+                let uuid = UUID(uuidString: uuidString) {
+				print("""
+                    Last Played Game: \(uuid)
+                    \(String(describing: row.value(forKeyPath: #keyPath(GameSequences.modifiedDate))))
+                """)
 				result = get(uuid: uuid, with: manager)
 			}
 		}

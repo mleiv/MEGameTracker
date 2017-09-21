@@ -9,49 +9,50 @@
 import Foundation
 
 /// Defines various map types. Allows for some general logic on sets of maps.
-public enum MapType: Int {
+public enum MapType: String, Codable {
 
-	case galaxy = 0
+	case galaxy = "Galaxy"
 	// regional clusters have no map
-	case cluster
-	case system
-	case planet
-	case moon
-	case asteroid
-	case city
-	case ship
-	case fleet
-	case wreckage
-	case area
-	case level
-	case building
-	case location
+	case cluster = "Cluster"
+	case system = "System"
+	case planet = "Planet"
+	case moon = "Moon"
+	case asteroid = "Asteroid"
+	case city = "City"
+	case ship = "Ship"
+	case fleet = "Fleet"
+	case wreckage = "Wreckage"
+	case area = "Area"
+	case level = "Level"
+	case building = "Structure"
+	case location = "Location"
 
 	/// Returns a list of all possible enum variations.
-	public static func list() -> [MapType] {
-		return [.galaxy, .cluster, .system, .planet, .asteroid, .city, .ship, .area, .level, .building, .location]
+	public static func all() -> [MapType] {
+		return [
+            .galaxy,
+            .cluster,
+            .system,
+            .planet,
+            .moon,
+            .asteroid,
+            .city,
+            .ship,
+            .fleet,
+            .area,
+            .level,
+            .building,
+            .location
+        ]
 	}
 
 	/// Returns the string values of all the enum variations.
-	fileprivate static let stringValues: [MapType: String] = [
-		.galaxy: "Galaxy",
-		.cluster: "Cluster",
-		.system: "System",
-		.planet: "Planet",
-		.moon: "Moon",
-		.asteroid: "Asteroid",
-		.city: "City",
-		.ship: "Ship",
-		.fleet: "Fleet",
-		.wreckage: "Wreckage",
-		.area: "Area",
-		.level: "Level",
-		.building: "Structure",
-		.location: "Location",
-	]
+	private static let stringValues: [MapType: String] = {
+        return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
+    }()
 
 	/// Returns the heading string values of all the enum variations.
-	fileprivate static let headingValues: [MapType: String] = [
+	private static let headingValues: [MapType: String] = [
 		.galaxy: "Galaxies",
 		.cluster: "Clusters",
 		.system: "Systems",
@@ -69,23 +70,18 @@ public enum MapType: Int {
 
 	/// Creates an enum from a string value, if possible.
 	public init?(stringValue: String?) {
-		guard let type = MapType.stringValues
-			.filter({ $0.1 == stringValue }).flatMap({ $0.0 }).first
-		else {
-			return nil
-		}
-		self = type
+        self.init(rawValue: stringValue ?? "")
 	}
 
 	/// Returns the string value of an enum.
 	public var stringValue: String {
-		return MapType.stringValues[self] ?? "Unknown"
+		return rawValue
 	}
 
 	/// Creates an enum from a heading string value, if possible.
 	public init?(headingValue: String?) {
 		guard let type = MapType.headingValues
-			.filter({ $0.1 == headingValue }).flatMap({ $0.0 }).first
+			.filter({ $0.1 == headingValue }).map({ $0.0 }).filter({ $0 != nil }).map({ $0! }).first
 		else {
 			return nil
 		}
@@ -98,8 +94,8 @@ public enum MapType: Int {
 	}
 
 	/// Returns the int value of an enum.
-	public var intValue: Int {
-		return self.rawValue
+	public var intValue: Int? {
+		return MapType.all().index(of: self)
 	}
 
 	/// Provides a window title for a map of the specified enum type.

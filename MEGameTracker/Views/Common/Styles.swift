@@ -249,29 +249,31 @@ public struct Styles: IBStylesheet {
 		]
 	}
 
+    public var isInitialized: Bool = false
+
 	public func applyGlobalStyles(inWindow window: UIWindow?) {
 		window?.tintColor = Colors.tintColor
 
 		if let titleFont = Fonts.body.boldStyle.getUIFont() {
 			UINavigationBar.appearance().titleTextAttributes = [
-				NSFontAttributeName: titleFont,
-				NSForegroundColorAttributeName: Colors.navBarTitle,
+				NSAttributedStringKey.font: titleFont,
+				NSAttributedStringKey.foregroundColor: Colors.navBarTitle,
 			]
 		}
 		if let titleFont = Fonts.body.normalStyle.getUIFont() {
-			UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: titleFont], for: UIControlState())
+			UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: titleFont], for: UIControlState())
 		}
 
 		UISegmentedControl.appearance().tintColor = Colors.tintColor
 		UISegmentedControl.appearance().backgroundColor = Colors.tintOppositeColor
 		UISegmentedControl.appearance().setTitleTextAttributes([
-			NSForegroundColorAttributeName: Colors.tintOppositeColor
+			NSAttributedStringKey.foregroundColor: Colors.tintOppositeColor
 		], for: .disabled)
 		UISwitch.appearance().onTintColor = Styles.Colors.tintColor
 		UISwitch.appearance().tintColor = Styles.Colors.tintOppositeColor
 
 		if let fontNormal = Fonts.body.normalStyle.getUIFont() {
-			UISegmentedControl.appearance().setTitleTextAttributes([NSFontAttributeName: fontNormal], for: .normal)
+			UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedStringKey.font: fontNormal], for: .normal)
 		}
 
 		let bundle = Bundle.currentAppBundle
@@ -286,13 +288,13 @@ public struct Styles: IBStylesheet {
 		UISlider.appearance().setThumbImage(thumbImage, for: .highlighted)
 
 		UITextView.appearance().linkTextAttributes = [
-			NSForegroundColorAttributeName: Colors.linkOnWhiteColor
+			NSAttributedStringKey.foregroundColor.rawValue: Colors.linkOnWhiteColor
 		]
 
 		let toolbarItems = UIBarButtonItem.appearance()
 		toolbarItems.tintColor = Colors.tintColor
 		if let font = Fonts.caption.boldStyle.getUIFont() {
-			toolbarItems.setTitleTextAttributes([NSFontAttributeName: font], for: UIControlState())
+			toolbarItems.setTitleTextAttributes([NSAttributedStringKey.font: font], for: UIControlState())
 		}
 	}
 }
@@ -318,14 +320,14 @@ extension IBStylesheet {
 
 	public func shiftStyleToItalic(_ style: String, text: String) -> NSAttributedString {
 		if let styles = styles[style] {
-			var attributes: [String: AnyObject] = [:]
+			var attributes: [NSAttributedStringKey: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
-				attributes[NSFontAttributeName] = fontStyle.italic().getUIFont()
+				attributes[NSAttributedStringKey.font] = fontStyle.italic().getUIFont()
 			}
 			if let color = styles[.textColor] as? UIColor {
-				attributes[NSForegroundColorAttributeName] = color
+				attributes[NSAttributedStringKey.foregroundColor] = color
 			}
-			attributes["identifier"] = style as AnyObject?
+			attributes[NSAttributedStringKey(rawValue: "identifier")] = style as AnyObject?
 			return NSAttributedString(string: text, attributes: attributes)
 		}
 		return NSAttributedString()
@@ -333,14 +335,14 @@ extension IBStylesheet {
 
 	public func shiftStyleToBold(_ style: String, text: String) -> NSAttributedString {
 		if let styles = styles[style] {
-			var attributes: [String: AnyObject] = [:]
+			var attributes: [NSAttributedStringKey: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
-				attributes[NSFontAttributeName] = fontStyle.bold().getUIFont()
+				attributes[NSAttributedStringKey.font] = fontStyle.bold().getUIFont()
 			}
 			if let color = styles[.textColor] as? UIColor {
-				attributes[NSForegroundColorAttributeName] = color
+				attributes[NSAttributedStringKey.foregroundColor] = color
 			}
-			attributes["identifier"] = style as AnyObject?
+			attributes[NSAttributedStringKey(rawValue: "identifier")] = style as AnyObject?
 			return NSAttributedString(string: text, attributes: attributes)
 		}
 		return NSAttributedString()
@@ -348,14 +350,14 @@ extension IBStylesheet {
 
 	public func shiftStyleToBoldItalic(_ style: String, text: String) -> NSAttributedString {
 		if let styles = styles[style] {
-			var attributes: [String: AnyObject] = [:]
+			var attributes: [NSAttributedStringKey: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
-				attributes[NSFontAttributeName] = fontStyle.italic().bold().getUIFont()
+				attributes[NSAttributedStringKey.font] = fontStyle.italic().bold().getUIFont()
 			}
 			if let color = styles[.textColor] as? UIColor {
-				attributes[NSForegroundColorAttributeName] = color
+				attributes[NSAttributedStringKey.foregroundColor] = color
 			}
-			attributes["identifier"] = style as AnyObject?
+			attributes[NSAttributedStringKey(rawValue: "identifier")] = style as AnyObject?
 			return NSAttributedString(string: text, attributes: attributes)
 		}
 		return NSAttributedString()
@@ -370,22 +372,22 @@ extension IBStylesheet {
 		return attributedText
 	}
 
-	fileprivate func getAttributesByStyleName(_ style: String) -> [String: AnyObject] {
+	private func getAttributesByStyleName(_ style: String) -> [NSAttributedStringKey: AnyObject] {
 		if let styles = styles[style] {
-			var attributes: [String: AnyObject] = [:]
+			var attributes: [NSAttributedStringKey: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
-				attributes[NSFontAttributeName] = fontStyle.getUIFont()
+				attributes[NSAttributedStringKey.font] = fontStyle.getUIFont()
 			}
 			if let color = styles[.textColor] as? UIColor {
-				attributes[NSForegroundColorAttributeName] = color
+				attributes[NSAttributedStringKey.foregroundColor] = color
 			}
-			attributes["identifier"] = style as AnyObject?
+			attributes[NSAttributedStringKey(rawValue: "identifier")] = style as AnyObject?
 			return attributes
 		}
 		return [:]
 	}
 
-	fileprivate func convertStyleCategory(_ newStyleCategory: StyleCategory, oldStyle: String) -> String {
+	private func convertStyleCategory(_ newStyleCategory: StyleCategory, oldStyle: String) -> String {
 		switch newStyleCategory {
 			case .link:
 				if let regex = try? NSRegularExpression(pattern: "^[^\\.]+", options: .caseInsensitive) {
@@ -407,7 +409,7 @@ extension IBStylesheet {
 	) -> NSAttributedString {
 		var newAttributedText = NSMutableAttributedString(attributedString: attributedText)
 		attributedText.enumerateAttribute(
-			"identifier",
+			NSAttributedStringKey(rawValue: "identifier"),
 			in: NSMakeRange(0, attributedText.length),
 			options: NSAttributedString.EnumerationOptions(rawValue: 0)
 		) { (value, _, _) -> Void in

@@ -8,17 +8,25 @@
 
 import UIKit
 
-public struct Decision {
+public struct Decision: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case gameSequenceUuid
+        case isSelected
+    }
+
 // MARK: Constants
 
 // MARK: Properties
+    public var rawData: Data? // transient
 	public var generalData: DataDecision
 
-	public fileprivate(set) var id: String
+	public private(set) var id: String
 
 	/// (GameModifying, GameRowStorable Protocol) 
 	/// This value's game identifier.
-	public var gameSequenceUuid: String?
+	public var gameSequenceUuid: UUID?
 	/// (DateModifiable Protocol)  
 	/// Date when value was created.
 	public var createdDate = Date()
@@ -30,12 +38,12 @@ public struct Decision {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+	public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
 
-	public fileprivate(set) var isSelected = false
+	public private(set) var isSelected = false
 
 // MARK: Computed Properties
 
@@ -70,72 +78,115 @@ public struct Decision {
 
 	public init(
 		id: String,
-		gameSequenceUuid: String? = App.current.game?.uuid,
-		generalData: DataDecision,
-		data: SerializableData? = nil
+		gameSequenceUuid: UUID? = App.current.game?.uuid,
+		generalData: DataDecision
 	) {
 		self.id = id
-		self.generalData = generalData
 		self.gameSequenceUuid = gameSequenceUuid
-		if let data = data {
-			setData(data)
-		}
+        self.generalData = generalData
+        setGeneralData()
 	}
 
-	func unsetBlockedDecisionIds(with manager: SimpleSerializedCoreDataManageable? = nil) {
-		let manager = manager ?? defaultManager
-		guard isSelected else { return }
-		for decisionId in blocksDecisionIds {
-			if var decision = Decision.get(id: decisionId, with: manager), decision.isSelected {
-				decision.isSelected = false
-				_ = decision.saveAnyChanges(with: manager)
-			}
-		}
-	}
+    public mutating func setGeneralData() {
+        // nothing for now
+    }
+    public mutating func setGeneralData(_ generalData: DataDecision) {
+        self.generalData = generalData
+        setGeneralData()
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        gameSequenceUuid = try container.decode(UUID.self, forKey: .gameSequenceUuid)
+        generalData = DataDecision(id: id) // faulted for now
+        isSelected = try container.decodeIfPresent(Bool.self, forKey: .isSelected) ?? isSelected
+        try unserializeDateModifiableData(decoder: decoder)
+        try unserializeGameModifyingData(decoder: decoder)
+        try unserializeLocalCloudData(decoder: decoder)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(gameSequenceUuid, forKey: .gameSequenceUuid)
+        try container.encode(isSelected, forKey: .isSelected)
+        try serializeDateModifiableData(encoder: encoder)
+        try serializeGameModifyingData(encoder: encoder)
+        try serializeLocalCloudData(encoder: encoder)
+    }
+
+//    func unsetBlockedDecisionIds(with manager: CodableCoreDataStorable? = nil) {
+//        let manager = manager ?? defaultManager
+//        guard isSelected else { return }
+//        for decisionId in blocksDecisionIds {
+//            if var decision = Decision.get(id: decisionId, with: manager), decision.isSelected {
+//                decision.isSelected = false
+//                _ = decision.saveAnyChanges(with: manager)
+//            }
+//        }
+//    }
 
 }
 
 // MARK: Data Change Actions
 extension Decision {
 
-	/// Applies a set of changes to this object
-	public mutating func change(data: SerializableData) {
-		if let isSelected = data["isSelected"]?.bool {
-			change(isSelected: isSelected)
-		}
+    /// Returns a copy of this Decision with a set of changes applies
+	public func changed(fromActionData data: [String: Any?]) -> Decision {
+        if let isSelected = data["isSelected"] as? Bool {
+            return changed(isSelected: isSelected)
+        }
+        return self
 	}
 
-	public mutating func change(
+    /// Return a copy of this Decision with isSelected changed
+	public func changed(
 		isSelected: Bool,
 		isSave: Bool = true,
 		isNotify: Bool = true,
 		isCascadeChanges: EventDirection = .all
-	) {
-		guard isSelected != self.isSelected else { return }
-		self.isSelected = isSelected
-		markChanged()
-		notifySaveToCloud(fields: ["isSelected": isSelected])
-		if isSave {
-			_ = saveAnyChanges()
-		}
-		if isCascadeChanges != .none  && !GamesDataBackup.current.isSyncing {
-			if self.loveInterestId != nil {
-				cascadeChangeLoveInterest(isSave: isSave, isNotify: isNotify)
-			}
-			if isSelected {
-				for decisionId in blocksDecisionIds {
-					// new thread?
-					var decision = Decision.get(id: decisionId)
-					decision?.change(isSelected: false, isSave: true, isCascadeChanges: .none)
-				}
-			}
-		}
-		if isNotify {
-			Decision.onChange.fire((id: id, object: self))
-		}
+	) -> Decision {
+		guard isSelected != self.isSelected else { return self }
+        var decision = self
+		decision.isSelected = isSelected
+		decision.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["isSelected": isSelected]
+        )
+        if isCascadeChanges != .none  && !GamesDataBackup.current.isSyncing {
+            if decision.loveInterestId != nil {
+                decision.cascadeChangeLoveInterest(isSave: isSave, isNotify: isNotify)
+            }
+            if isSelected {
+                for decisionId in decision.blocksDecisionIds {
+                    // new thread?
+                    _ = Decision.get(id: decisionId)?
+                        .changed(isSelected: false, isSave: true, isCascadeChanges: .none)
+                }
+            }
+        }
+        return decision
 	}
 
-	fileprivate func cascadeChangeLoveInterest(
+    /// Performs common behaviors after an object change
+    private mutating func changeEffects(
+        isSave: Bool = true,
+        isNotify: Bool = true,
+        cloudChanges: [String: Any?] = [:]
+    ) {
+        markChanged()
+        notifySaveToCloud(fields: cloudChanges)
+        if isSave {
+            _ = saveAnyChanges()
+        }
+        if isNotify {
+            Decision.onChange.fire((id: id, object: self))
+        }
+    }
+
+	private func cascadeChangeLoveInterest(
 		isSave: Bool = true,
 		isNotify: Bool = true
 	) {
@@ -143,14 +194,14 @@ extension Decision {
 		guard let loveInterestId = self.loveInterestId,
 			let loveInterest = Person.get(id: loveInterestId, gameVersion: gameVersion),
 			loveInterest.isParamour, // require exclusive love interest to change shepard
-			var shepard = App.current.game?.getShepardFromVersion(gameVersion) ?? App.current.game?.shepard
+			let shepard = App.current.game?.getShepardFromVersion(gameVersion) ?? App.current.game?.shepard
 		else {
 			return
 		}
 		if isSelected && shepard.loveInterestId != loveInterestId {
-			shepard.change(loveInterestId: loveInterestId, isSave: isSave, isNotify: isNotify, isCascadeChanges: .none)
+			_ = shepard.changed(loveInterestId: loveInterestId, isSave: isSave, isNotify: isNotify, isCascadeChanges: .none)
 		} else if !isSelected && shepard.loveInterestId == loveInterestId {
-			shepard.change(loveInterestId: nil, isSave: isSave, isNotify: isNotify, isCascadeChanges: .none)
+			_ = shepard.changed(loveInterestId: nil, isSave: isSave, isNotify: isNotify, isCascadeChanges: .none)
 		}
 	}
 
@@ -161,60 +212,61 @@ extension Decision {
 	public static func getDummy(json: String? = nil) -> Decision? {
 		// swiftlint:disable line_length
 		let json = json ?? "{\"id\":\"1.1\",\"gameVersion\":\"1\",\"name\":\"Helped Jenna in Chora's Den\",\"description\":\"If you help Jenna in Citadel: Rita's Sister, she can save Conrad Verner's life in Game 3.\"}"
-		if var baseDecision = DataDecision(serializedString: json) {
-			baseDecision.isDummyData = true
-			let decision = Decision(id: "1", generalData: baseDecision)
-			return decision
-		}
+        if var baseDecision = try? defaultManager.decoder.decode(DataDecision.self, from: json.data(using: .utf8)!) {
+            baseDecision.isDummyData = true
+            let decision = Decision(id: "1", generalData: baseDecision)
+            return decision
+        }
 		// swiftlint:enable line_length
 		return nil
 	}
 }
 
-// MARK: SerializedDataStorable
-extension Decision: SerializedDataStorable {
-
-	public func getData() -> SerializableData {
-		var list: [String: SerializedDataStorable?] = [:]
-		// from db:
-		list["id"] = id
-		list["isSelected"] = isSelected
-		list = serializeDateModifiableData(list: list)
-		list = serializeGameModifyingData(list: list)
-		list = serializeLocalCloudData(list: list)
-		return SerializableData.safeInit(list)
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension Decision: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data, let id = data["id"]?.string,
-			  let dataDecision = DataDecision.get(id: id),
-			  let gameSequenceUuid = data["gameSequenceUuid"]?.string
-		else {
-			return nil
-		}
-
-		self.init(id: id, gameSequenceUuid: gameSequenceUuid, generalData: dataDecision, data: data)
-	}
-
-	public mutating func setData(_ data: SerializableData) {
-		id = data["id"]?.string ?? id
-		if generalData.id != id {
-			generalData = DataDecision.get(id: id) ?? generalData
-		}
-
-		unserializeDateModifiableData(data: data)
-		unserializeGameModifyingData(data: data)
-		unserializeLocalCloudData(data: data)
-
-		isSelected = data["isSelected"]?.bool ?? isSelected
-	}
-
-}
+//// MARK: SerializedDataStorable
+//extension Decision: SerializedDataStorable {
+//
+//    public func getData() -> SerializableData {
+//        var list: [String: SerializedDataStorable?] = [:]
+//        // from db:
+//        list["id"] = id
+//        list["isSelected"] = isSelected
+////        list = serializeDateModifiableData(list: list)
+////        list = serializeGameModifyingData(list: list)
+////        list = serializeLocalCloudData(list: list)
+//        return SerializableData.safeInit(list)
+//    }
+//
+//}
+//
+//// MARK: SerializedDataRetrievable
+//extension Decision: SerializedDataRetrievable {
+//
+//    public init?(data: SerializableData?) {
+//        guard let data = data, let id = data["id"]?.string,
+//              let dataDecision = DataDecision.get(id: id),
+//              let uuidString = data["gameSequenceUuid"]?.string,
+//              let gameSequenceUuid = UUID(uuidString: uuidString)
+//        else {
+//            return nil
+//        }
+//
+//        self.init(id: id, gameSequenceUuid: gameSequenceUuid, generalData: dataDecision, data: data)
+//    }
+//
+//    public mutating func setData(_ data: SerializableData) {
+//        id = data["id"]?.string ?? id
+//        if generalData.id != id {
+//            generalData = DataDecision.get(id: id) ?? generalData
+//        }
+//
+////        unserializeDateModifiableData(data: data)
+////        unserializeGameModifyingData(data: data)
+////        unserializeLocalCloudData(data: data)
+//
+//        isSelected = data["isSelected"]?.bool ?? isSelected
+//    }
+//
+//}
 
 // MARK: DateModifiable
 extension Decision: DateModifiable {}

@@ -53,7 +53,7 @@ final class ShepardAppearanceController: UIViewController,
 	var defaultScrollInset: UIEdgeInsets?
 	var oldAttributesTableViewHeight: CGFloat?
 
-	fileprivate var lastCode: String?
+	private var lastCode: String?
 	var didSetup = false
 
 	// MARK: Page Events
@@ -160,20 +160,21 @@ final class ShepardAppearanceController: UIViewController,
 	}
 
 	func save() {
+        guard shepard != nil else { return }
 		startSpinner(inView: view)
 		if currentGame == .game1 {
 			var newAppearance = Shepard.Appearance("", fromGame: .game1, withGender: currentGender)
 			for (attribute, value) in currentGame1Attributes {
 				newAppearance.contents[attribute] = value > 0 ? value : 1
 			}
-			shepard?.change(appearance: newAppearance)
+			_ = shepard?.changed(appearance: newAppearance)
 		} else if let appearanceCode = ME2CodeField.text {
 			let newAppearance = Shepard.Appearance(
 				appearanceCode,
 				fromGame: game23SliderChoice,
 				withGender: currentGender
 			)
-			shepard?.change(appearance: newAppearance)
+            _ = shepard?.changed(appearance: newAppearance)
 		}
 		stopSpinner(inView: view)
 	}
@@ -263,9 +264,9 @@ final class ShepardAppearanceController: UIViewController,
 //			print("laying out \(oldAttributesTableViewHeight) " +
 //				"\(attributesTableViewHeight) \(attributesTableView.frame)")
 			oldAttributesTableViewHeight = attributesTableViewHeight
-			if relayout && attributesTableViewHeight != attributesTableView.bounds.height {
+//            if relayout && attributesTableViewHeight != attributesTableView.bounds.height {
 //				view.setNeedsLayout()
-			}
+//            }
 			view.layoutIfNeeded()
 //			print("final frame \(attributesTableView.frame)")
 		} else {
@@ -328,6 +329,8 @@ extension ShepardAppearanceController {
 
 	func setupTableCustomCells() {
 		let bundle =  Bundle(for: type(of: self))
+        attributesTableView?.rowHeight = UITableViewAutomaticDimension
+        attributesTableView?.estimatedRowHeight = 88
 		attributesTableView?.register(
 			UINib(nibName: "ShepardAppearanceSliderCell", bundle: bundle),
 			forCellReuseIdentifier: "Appearance Slider"
@@ -359,7 +362,7 @@ extension ShepardAppearanceController {
 		return false
 	}
 
-	func reloadDataOnChange() {
+	func reloadDataOnChange(_ x: Bool = false) {
 		DispatchQueue.main.async {
 			self.setup()
 		}

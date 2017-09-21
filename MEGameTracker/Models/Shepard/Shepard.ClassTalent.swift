@@ -13,7 +13,7 @@ extension Shepard {
 	// Dumb reserved words, uhg.
 
 	/// Game options for Shepard's class.
-	public enum ClassTalent: String {
+	public enum ClassTalent: String, Codable {
 		case soldier = "Soldier"
 		case engineer = "Engineer"
 		case adept = "Adept"

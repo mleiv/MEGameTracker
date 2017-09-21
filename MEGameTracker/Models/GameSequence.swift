@@ -8,15 +8,20 @@
 
 import Foundation
 
-public struct GameSequence {
+public struct GameSequence: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case uuid
+        case lastPlayedShepard
+    }
 
 // MARK: Constants
-
 	public typealias ShepardVersionIdentifier = (uuid: String, gameVersion: GameVersion)
 
 // MARK: Properties
-	public var id: String { return uuid }
-	public var uuid: String
+    public var rawData: Data? { get { return nil } set {} } // block this behavior
+	public var id: UUID { return uuid }
+	public var uuid: UUID
 	public var shepard: Shepard?
 
 	/// (DateModifiable Protocol)  
@@ -30,12 +35,12 @@ public struct GameSequence {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+	public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
 
-	// Interface Builder
+	/// (Interface Builder) (Transient)
 	public var isDummyData = false
 
 // MARK: Computed Properties
@@ -46,17 +51,45 @@ public struct GameSequence {
 
 // MARK: Change Listeners And Change Status Flags
 
-	/// (DateModifiable) Flag to indicate that there are changes pending a core data sync.
+	/// (DateModifiable Protocol) (Transient)
+	/// Flag to indicate that there are changes pending a core data sync.
 	public var hasUnsavedChanges = false
 
 // MARK: Initialization
 
-	public init(uuid: String? = nil) {
-		self.uuid = uuid ?? UUID().uuidString
+	public init(uuid: UUID? = nil) {
+		self.uuid = uuid ?? UUID()
 		let shepard = Shepard(gameSequenceUuid: self.uuid, gameVersion: .game1)
 		self.shepard = shepard
 		markChanged()
 	}
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        uuid = try container.decode(UUID.self, forKey: .uuid)
+
+        if let lastPlayedShepard = try container.decodeIfPresent(UUID.self, forKey: .lastPlayedShepard),
+            lastPlayedShepard != self.shepard?.uuid,
+            let shepard = Shepard.get(uuid: lastPlayedShepard) {
+            self.shepard = shepard
+        } else {
+            // you only reach this if there was an error saving shepard last game save.
+            self.shepard = Shepard.lastPlayed(gameSequenceUuid: uuid)
+                  ?? Shepard(gameSequenceUuid: self.uuid, gameVersion: .game1)
+            markChanged()
+        }
+
+        try unserializeDateModifiableData(decoder: decoder)
+        try unserializeLocalCloudData(decoder: decoder)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(uuid, forKey: .uuid)
+        try container.encode(shepard?.uuid, forKey: .lastPlayedShepard)
+        try serializeDateModifiableData(encoder: encoder)
+        try serializeLocalCloudData(encoder: encoder)
+    }
 }
 
 // MARK: Retrieval Functions of Related Data
@@ -101,14 +134,14 @@ extension GameSequence {
 			var newShepard = Shepard(gameSequenceUuid: uuid, gender: gender, gameVersion: newGameVersion)
 			// share all data from other game version:
 			if let shepard = self.shepard {
-				newShepard.setNewData(oldData: shepard.getData(), oldGame: shepard.gameVersion)
+				newShepard.setNewData(oldData: shepard.getSharedData())
 			}
 			newShepard.isNew = true
 			return newShepard
 		}
 	}
 
-	fileprivate mutating func addNewShepardVersion(_ shepard: Shepard) {
+	private mutating func addNewShepardVersion(_ shepard: Shepard) {
 		var shepard = shepard
 		shepard.gameSequenceUuid = uuid
 		_ = shepard.saveAnyChanges(isCascadeChanges: .down) //isAllowDelay = true
@@ -128,65 +161,12 @@ extension GameSequence {
 	}
 }
 
-// MARK: SerializedDataStorable
-extension GameSequence: SerializedDataStorable {
-
-	public func getData() -> SerializableData {
-		var list: [String: SerializedDataStorable?] = [:]
-		list["uuid"] = uuid
-		list["lastPlayedShepard"] = shepard?.uuid
-		list = serializeDateModifiableData(list: list)
-		list = serializeLocalCloudData(list: list)
-		return SerializableData.safeInit(list)
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension GameSequence: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data, let uuid = data["uuid"]?.string
-		else {
-			return nil
-		}
-		self.uuid = uuid
-
-		setData(data)
-	}
-
-	public mutating func setData(_ data: SerializableData, isSkipLoadingShepard: Bool) {
-		self.uuid = data["uuid"]?.string ?? uuid
-		if !isSkipLoadingShepard {
-			if let lastPlayedShepardUuid = data["lastPlayedShepard"]?.string,
-				lastPlayedShepardUuid != self.shepard?.uuid,
-				let shepard = Shepard.get(uuid: lastPlayedShepardUuid) {
-				self.shepard = shepard
-			} else {
-				// you only reach this if there was an error saving shepard last game save.
-				self.shepard = Shepard.lastPlayed(gameSequenceUuid: uuid)
-						  ?? self.shepard
-						  ?? Shepard(gameSequenceUuid: self.uuid, gameVersion: .game1)
-				markChanged()
-			}
-		}
-
-		//optional values
-		unserializeDateModifiableData(data: data)
-		unserializeLocalCloudData(data: data)
-	}
-
-	// Protocol adherence - no extra parameters.
-	public mutating func setData(_ data: SerializableData) {
-		setData(data, isSkipLoadingShepard: false)
-	}
-
-}
-
 // MARK: DateModifiable
 extension GameSequence: DateModifiable {
 
+    /// (Override)
 	public mutating func markChanged() {
+        rawData = nil
 		touch()
 		notifySaveToCloud(fields: ["lastPlayedShepard": shepard?.uuid ?? ""])
 		hasUnsavedChanges = true

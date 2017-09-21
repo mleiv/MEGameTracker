@@ -17,7 +17,7 @@ final public class DecisionsView: SimpleArrayDataRow {
 	}
 	public var isShowGameVersion: Bool = true
 
-	fileprivate lazy var dummyDecisions: [Decision] = {
+	private lazy var dummyDecisions: [Decision] = {
 		if let decision = Decision.getDummy() {
 			return [decision]
 		}

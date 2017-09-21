@@ -21,7 +21,7 @@ import UIKit
 	var onClick: ((Int) -> Void)?
 
 	var didSetup = false
-	fileprivate var nib: UIHeaderTabsNib?
+	private var nib: UIHeaderTabsNib?
 
 //	public override func layoutSubviews() {
 //		if !didSetup {
@@ -75,7 +75,7 @@ import UIKit
 		}
 	}
 
-	fileprivate func dataFromText() -> [String] {
+	private func dataFromText() -> [String] {
 		if text?.range(of: ",") != nil {
 			return (text ?? "").components(separatedBy: ",").map { String($0) }
 		}

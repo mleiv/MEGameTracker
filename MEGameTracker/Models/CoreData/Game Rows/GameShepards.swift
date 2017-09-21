@@ -9,32 +9,32 @@
 import Foundation
 import CoreData
 
-extension Shepard: SimpleSerializedCoreDataStorable {
+extension Shepard: CodableCoreDataStorable {
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = GameShepards
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Sets core data values to match struct values (specific).
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType
 	) {
-		setDateModifiableColumnsOnSave(coreItem: coreItem)
-		coreItem.uuid = uuid
-		coreItem.gameSequenceUuid = gameSequenceUuid
+        setDateModifiableColumnsOnSave(coreItem: coreItem) //TODO
+		coreItem.uuid = uuid.uuidString
+		coreItem.gameSequenceUuid = gameSequenceUuid.uuidString
 		coreItem.gameVersion = gameVersion.stringValue
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 	}
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Alters the predicate to retrieve only the row equal to this object.
 	public func setIdentifyingPredicate(
 		fetchRequest: NSFetchRequest<EntityType>
 	) {
 		fetchRequest.predicate = NSPredicate(
 			format: "(%K == %@)",
-			#keyPath(GameShepards.uuid), uuid
+			#keyPath(GameShepards.uuid), uuid.uuidString
 		)
 	}
 }
@@ -52,7 +52,7 @@ extension Shepard {
 	public mutating func saveAnyChanges(
 		isCascadeChanges: EventDirection = .up,
 		isAllowDelay: Bool = true,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		if hasUnsavedChanges {
 			if isAllowDelay {
@@ -70,9 +70,9 @@ extension Shepard {
 	public mutating func save(
 		isCascadeChanges: EventDirection,
 		isAllowDelay: Bool,
-		with manager: SimpleSerializedCoreDataManageable?
+		with manager: CodableCoreDataManageable?
 	) -> Bool {
-		hasUnsavedChanges = true // force this
+		rawData = nil; hasUnsavedChanges = true // force this
 		if isAllowDelay {
 			App.current.hasUnsavedChanges = true
 			return true // not an error
@@ -80,15 +80,15 @@ extension Shepard {
 		let manager = manager ?? defaultManager
 		if isCascadeChanges != .none && isCascadeChanges != .down {
 			if !GamesDataBackup.current.isSyncing {
-				saveCommonDataToAllShepardsInSequence(with: manager)
-				if isCascadeChanges == .up {
-					if var game = App.current.game?.uuid == gameSequenceUuid
-									? App.current.game
-									: GameSequence.get(uuid: gameSequenceUuid) {
-						game.markChanged()
-						_ = game.save(isCascadeChanges: .up, isAllowDelay: false, with: manager)
-					}
-				}
+                saveCommonDataToAllShepardsInSequence(with: manager)
+                if isCascadeChanges == .up {
+                    if var game = App.current.game?.uuid == gameSequenceUuid
+                                    ? App.current.game
+                                    : GameSequence.get(uuid: gameSequenceUuid) {
+                        game.markChanged()
+                        _ = game.save(isCascadeChanges: .up, isAllowDelay: false, with: manager)
+                    }
+                }
 			}
 		}
 		let isSaved = manager.saveValue(item: self)
@@ -106,9 +106,9 @@ extension Shepard {
 		return save(isCascadeChanges: isCascadeChanges, isAllowDelay: isAllowDelay, with: nil)
 	}
 
-	/// (SimpleSerializedCoreDataStorable Protocol override)
+	/// (CodableCoreDataStorable Protocol override)
 	public mutating func save(
-		with manager: SimpleSerializedCoreDataManageable?
+		with manager: CodableCoreDataManageable?
 	) -> Bool {
 		return save(isCascadeChanges: .up, isAllowDelay: true, with: manager)
 	}
@@ -116,7 +116,7 @@ extension Shepard {
 	/// Convenience - no isAllowDelay required
 	public mutating func save(
 		isCascadeChanges: EventDirection,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		return save(isCascadeChanges: isCascadeChanges, isAllowDelay: true, with: manager)
 	}
@@ -124,28 +124,31 @@ extension Shepard {
 	/// Certain properties are constant to all shepards within a given game, 
 	///   so when one is changed, change the other game version shepards to match.
 	public mutating func saveCommonDataToAllShepardsInSequence(
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		with manager: CodableCoreDataManageable? = nil
 	) {
-		let gameSequenceUuid = self.gameSequenceUuid
-		let uuid = self.uuid
-		let manager = manager ?? defaultManager
-		let shepards = Shepard.getAll(with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(
-				format: "(%K == %@ and %K != %@)",
-				#keyPath(GameShepards.gameSequenceUuid), gameSequenceUuid,
-				#keyPath(GameShepards.uuid), uuid
-			)
-		}
-		let commonData = getData()
-		var isSaved = true
-		for var sequenceShepard in shepards {
-			if sequenceShepard.uuid != uuid {
-				sequenceShepard.setCommonData(commonData)
-				isSaved = isSaved
-					&& sequenceShepard.saveAnyChanges(isCascadeChanges: .none, isAllowDelay: false, with: manager)
-			}
-		}
-		hasUnsavedChanges = !isSaved // sequence save
+        let gameSequenceUuid = self.gameSequenceUuid
+        let uuid = self.uuid
+        let manager = manager ?? defaultManager
+        let shepards = Shepard.getAll(with: manager) { fetchRequest in
+            fetchRequest.predicate = NSPredicate(
+                format: "(%K == %@ and %K != %@)",
+                #keyPath(GameShepards.gameSequenceUuid), gameSequenceUuid.uuidString,
+                #keyPath(GameShepards.uuid), uuid.uuidString
+            )
+        }
+        let commonData = getSharedData()
+        var isSaved = true
+        for var sequenceShepard in shepards {
+            if sequenceShepard.uuid != uuid {
+                sequenceShepard.setCommonData(commonData)
+                isSaved = isSaved && sequenceShepard.saveAnyChanges(
+                    isCascadeChanges: .none,
+                    isAllowDelay: false,
+                    with: manager
+                )
+            }
+        }
+        hasUnsavedChanges = !isSaved // sequence save
 	}
 
 // MARK: Delete
@@ -154,8 +157,8 @@ extension Shepard {
 	/// (Only ever called by cloudkit when syncing - deleting via GameSequence uses deleteAll().)
 	public static func delete(
 		uuid: String,
-		gameSequenceUuid: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		gameSequenceUuid: UUID,
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		return deleteAll(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -168,20 +171,22 @@ extension Shepard {
 	/// Delete the game values for the specified game.
 	/// (Only ever called by GameSequence, so does not bother notifying cloud for sync)
 	public static func deleteAll(
-		gameSequenceUuid: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		gameSequenceUuid: UUID,
+		with manager: CodableCoreDataManageable? = nil
 	) -> Bool {
 		let alterFetchRequest: AlterFetchRequest<EntityType> = { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K == %@)",
-				#keyPath(GameShepards.gameSequenceUuid), gameSequenceUuid
+				#keyPath(GameShepards.gameSequenceUuid), gameSequenceUuid.uuidString
 			)
 		}
-		Shepard.getAllIds(with: manager, alterFetchRequest: alterFetchRequest).forEach { (shepardUuid: String) in
+		Shepard.getAllIds(with: manager, alterFetchRequest: alterFetchRequest).forEach { (shepardUuidString: String) in
 			// delete any dependent photos
-			DispatchQueue.global(qos: .background).async {
-				_ = Shepard.deletePhoto(uuid: shepardUuid)
-			}
+            if let shepardUuid = UUID(uuidString: shepardUuidString) {
+                DispatchQueue.global(qos: .background).async {
+                    _ = Shepard.deletePhoto(uuid: shepardUuid)
+                }
+            }
 		}
 		// don't have to notify or cascade: GameSequence did that for you
 		return deleteAll(with: manager, alterFetchRequest: alterFetchRequest)
@@ -193,13 +198,13 @@ extension Shepard {
 
 	/// Get a shepard by id.
 	public static func get(
-		uuid: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		uuid: UUID,
+		with manager: CodableCoreDataManageable? = nil
 	) -> Shepard? {
 		return get(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K == %@)",
-				#keyPath(GameShepards.uuid), uuid
+				#keyPath(GameShepards.uuid), uuid.uuidString
 			)
 		}
 	}
@@ -207,47 +212,47 @@ extension Shepard {
 	/// Get the shepard for a specified game version for a given game.
 	public static func get(
 		gameVersion: GameVersion,
-		gameSequenceUuid: String?,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		gameSequenceUuid: UUID?,
+		with manager: CodableCoreDataManageable? = nil
 	) -> Shepard? {
 		return get(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(gameVersion == %@ AND gameSequenceUuid == %@)",
 				gameVersion.stringValue,
-				gameSequenceUuid ?? ""
+				gameSequenceUuid?.uuidString ?? ""
 			)
 		}
 	}
 
 	/// Get all shepards with ids.
 	public static func getAll(
-		uuids: [String],
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		uuids: [UUID],
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Shepard] {
 		return getAll(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K in %@)",
-				#keyPath(GameShepards.uuid), uuids
+				#keyPath(GameShepards.uuid), uuids.map { $0.uuidString }
 			)
 		}
 	}
 
 	/// Get all the shepards for a given game.
 	public static func getAll(
-		gameSequenceUuid: String?,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		gameSequenceUuid: UUID?,
+		with manager: CodableCoreDataManageable? = nil
 	) -> [Shepard] {
 		return getAll(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K == %@)",
-				#keyPath(GameShepards.gameSequenceUuid), gameSequenceUuid ?? ""
+				#keyPath(GameShepards.gameSequenceUuid), gameSequenceUuid?.uuidString ?? ""
 			)
 		}
 	}
 
 	/// Get all matching shepard ids.
 	public static func getAllIds(
-		with manager: SimpleSerializedCoreDataManageable? = nil,
+		with manager: CodableCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType> = { _ in }
 	) -> [String] {
 		let manager = manager ?? defaultManager
@@ -265,11 +270,11 @@ extension Shepard {
 	/// This is only called if game fails to save/load the current game 
 	///	(which is an error, but... during development, it happens).
 	public static func lastPlayed(
-		gameSequenceUuid: String,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		gameSequenceUuid: UUID,
+		with manager: CodableCoreDataManageable? = nil
 	) -> Shepard? {
 		return get(with: manager) { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid == %@)", gameSequenceUuid)
+			fetchRequest.predicate = NSPredicate(format: "(gameSequenceUuid == %@)", gameSequenceUuid.uuidString)
 			fetchRequest.sortDescriptors = [
 				NSSortDescriptor(key: "modifiedDate", ascending: false),
 				NSSortDescriptor(key: "gameVersion", ascending: false),
@@ -279,7 +284,7 @@ extension Shepard {
 
 	/// Delete the photo for the specified shepard.
 	public static func deletePhoto(
-		uuid: String
+		uuid: UUID
 	) -> Bool {
 		let filename = Shepard.getPhotoFileNameIdentifier(uuid: uuid)
 		if let photo = Photo(filePath: filename) {

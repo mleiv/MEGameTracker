@@ -30,7 +30,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 		fetchData()
 		if !isLoaded {
 			setupTabs()
-			setTabTitles(PersonType.list().map { $0.headingValue })
+			setTabTitles(PersonType.categories().map { $0.headingValue })
 		} else {
 			setAllControllerData()
 		}
@@ -41,10 +41,9 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 	func fetchData() {
 		persons = [:]
 		guard !UIWindow.isInterfaceBuilder else { return fetchDummyData() }
-		let gameVersion = App.current.gameVersion
-		persons[.squad] = Person.getAllTeam(gameVersion: gameVersion).sorted(by: Person.sort)
-		persons[.associate] = Person.getAllAssociates(gameVersion: gameVersion).sorted(by: Person.sort)
-		persons[.enemy] = Person.getAllEnemies(gameVersion: gameVersion).sorted(by: Person.sort)
+		persons[.squad] = Person.getAllTeam().sorted(by: Person.sort)
+		persons[.associate] = Person.getAllAssociates().sorted(by: Person.sort)
+		persons[.enemy] = Person.getAllEnemies().sorted(by: Person.sort)
 	}
 
 	func fetchDummyData() {
@@ -63,7 +62,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 	func setControllerData(controller: UIViewController?, forTab tabName: String) {
 		guard let controller = controller as? PersonsController else { return }
 		if let tabIndex = tabNames.index(of: tabName) {
-			let type = PersonType.list()[tabIndex]
+			let type = PersonType.categories()[tabIndex]
 			controller.persons = persons[type] ?? []
 		} else {
 			controller.persons = []
@@ -83,7 +82,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 		if count != personsCounts[type] {
 			personsCounts[type] = count
 			tabTitles = []
-			for type in PersonType.list() {
+			for type in PersonType.categories() {
 				let name = type.headingValue
 				tabTitles.append("\(name) (\(personsCounts[type] ?? 0))")
 			}
@@ -91,7 +90,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 		}
 	}
 
-	func reloadDataOnChange() {
+	func reloadDataOnChange(_ x: Bool = false) {
 		// we care about gender changes as well as game changes
 		guard !UIWindow.isInterfaceBuilder else { return }
 		DispatchQueue.main.async {
@@ -109,7 +108,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 		_ = Person.onChange.subscribe(on: self) { [weak self] changed in
 			for type in (self?.persons ?? [:]).keys {
 				if let index = self?.persons[type]?.index(where: { $0.id == changed.id }),
-					let newPerson = changed.object ?? Person.get(id: changed.id, gameVersion: App.current.gameVersion) {
+					let newPerson = changed.object ?? Person.get(id: changed.id) {
 					self?.persons[type]?[index] = newPerson
 					let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
 					self?.reloadPersonRows(reloadRows, inTabType: type)
@@ -125,7 +124,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 			for type in (self?.persons ?? [:]).keys {
 				if let index = self?.persons[type]?.index(where: { $0.loveInterestDecisionId == changed.id }) {
 					if let personId = self?.persons[type]?[index].id,
-						let newPerson = Person.get(id: personId, gameVersion: App.current.gameVersion) {
+						let newPerson = Person.get(id: personId) {
 						self?.persons[type]?[index] = newPerson
 						let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
 						self?.reloadPersonRows(reloadRows, inTabType: type)
@@ -142,7 +141,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 	@IBOutlet weak public var tabs: UIHeaderTabs!
 	@IBOutlet weak public var tabsContentWrapper: UIView!
 
-	public var tabNames: [String] = PersonType.list().map { $0.headingValue }
+	public var tabNames: [String] = PersonType.categories().map { $0.headingValue }
 	public func tabControllersInitializer(tabName: String) -> UIViewController? {
 		let bundle = Bundle(for: type(of: self))
 		let controller = UIStoryboard(name: "Persons", bundle: bundle)

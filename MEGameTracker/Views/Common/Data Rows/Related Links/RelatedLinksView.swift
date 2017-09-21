@@ -53,7 +53,7 @@ import UIKit
 		}
 	}
 
-	fileprivate func dataFromText() -> [String] {
+	private func dataFromText() -> [String] {
 		if text?.isEmpty == false {
 			if text?.range(of: "\u{2028}\u{2028}") != nil {
 				return (text ?? "").components(separatedBy: "\u{2028}\u{2028}").map { String($0) }

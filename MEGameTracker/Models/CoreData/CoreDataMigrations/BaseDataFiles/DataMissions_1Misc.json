@@ -27,7 +27,7 @@
 					"id": "DLC1.R1",
 					"type": "Renegade",
 					"value": 2,
-					"trigger": "\"Why would they?\""
+					"trigger": "\"Why wouldn't they?\""
 				}]
 			}
 		}, {
@@ -98,7 +98,7 @@
 					"context": "*_Charm_* Simon (Requires 4 Charm)",
 					"trigger": "\"How about your omni-tool?\""
 				}, {
-					"id": "DLC1.R3",
+					"id": "DLC1.R4",
 					"type": "Renegade",
 					"value": 0,
 					"context": "*_Intimidate_* Simon (Requires 4 Intimidate)",
@@ -265,7 +265,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Aftermath",
-		"description": "Simon offers you a reward of armor for saving the human colony. You also have the option of persuading him to give you his omni-tool. If you saved the hostages, you can let them out.\n\nThe next time you access the galaxy map, asteroid X57 will have been moved back where it belongs.",
+		"description": "Simon offers you a reward of armor for saving the human colony. You also have the option of persuading him to give you his omni-tool. If you saved the hostages, you can let them out (in a cell by the stairs up to Medical).\n\nThe next time you access the galaxy map, asteroid X57 will have been moved back where it belongs.",
 		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
 		"mapLocationPoint": {
 			"x": 557,
@@ -310,8 +310,8 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Find Montoya",
-		"description": "R. Montoya left Survey Station 2 to investigate signs of fighting. His body can be found in a [crater nearby|megametracker://maplocation?id=G.Ear.Exo.Asg.X57&title=R.%20Montoya&location=702x399].",
-		"inMapId": "G.Ear.Exo.Asg.X57.11",
+		"description": "R. Montoya left Survey Station 2 to investigate signs of fighting.",
+		"inMapId": "G.Ear.Exo.Asg.X57.12",
 		"isShowInParentMap": true
 	}, {
 		"id": "DLC1.X57.MissingEngineers.3",
@@ -323,6 +323,16 @@
 		"description": "You can find the body of G. Mendel at Survey Station 3.",
 		"inMapId": "G.Ear.Exo.Asg.X57.13",
 		"isShowInParentMap": true
+   }, {
+      "id": "DLC1.X57.MissingEngineers.3B",
+      "sortIndex": 9603,
+      "inMissionId": "DLC1.X57.MissingEngineers",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Find Slajs (Optional)",
+      "description": "You can find the body of T. Slajs by his vehicle at the top of a ridge.",
+      "inMapId": "G.Ear.Exo.Asg.X57.9",
+      "isShowInParentMap": true
 	}, {
 		"id": "DLC1.X57.MissingEngineers.4",
 		"sortIndex": 9604,
@@ -365,7 +375,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Proceed On Foot",
-		"description": "The blasting caps are equipped with proximity detectors. The closer you get, the more liekly they'll go off.",
+		"description": "The blasting caps are equipped with proximity detectors. The closer you get, the more likely they'll go off. Look for the blasting that are further apart than the rest.",
 		"inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
 		"isShowInParentMap": true
 
@@ -401,7 +411,8 @@
 		"missionType": "Objective",
 		"name": "Combat Simulations",
 		"description": "Beat all twelve scenarios. There are only eight scenarios initially - the final four are revealed only after the first eight are bested. You will be completing this challange simultaneously with [megametracker://mission?id=DLC1.PS.Vidinos].",
-		"relatedMissionIds": ["DLC1.PS.Vidinos.1"]
+		"relatedMissionIds": ["DLC1.PS.Vidinos.1"],
+        "sideEffects": ["Tip: use the sprint modifier (\"A\" in XBox and \"X\" in PlayStation - see [https://strategywiki.org/wiki/Mass_Effect/Controls] for more) to run faster."]
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.1",
 		"sortIndex": 9802,
@@ -417,7 +428,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.2",
 		"sortIndex": 9803,
@@ -433,7 +445,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.3",
 		"sortIndex": 9804,
@@ -448,7 +461,12 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed 8 Pinnacle Station Combat Missions"
+        }]
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.4",
 		"sortIndex": 9805,
@@ -464,7 +482,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.5",
 		"sortIndex": 9806,
@@ -480,7 +499,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.6",
 		"sortIndex": 9807,
@@ -495,7 +515,12 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed 8 Pinnacle Station Combat Missions"
+        }]
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.7",
 		"sortIndex": 9808,
@@ -511,7 +536,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.8",
 		"sortIndex": 9809,
@@ -527,7 +553,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.9",
 		"sortIndex": 9810,
@@ -542,7 +569,12 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed 8 Pinnacle Station Combat Missions"
+        }]
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.10",
 		"sortIndex": 9811,
@@ -558,7 +590,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.11",
 		"sortIndex": 9812,
@@ -574,7 +607,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.12",
 		"sortIndex": 9813,
@@ -589,7 +623,12 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed 8 Pinnacle Station Combat Missions"
+        }]
 	}, {
 		"id": "DLC1.PS.CombatMissions.2",
 		"sortIndex": 9814,
@@ -603,7 +642,8 @@
 			"x": 1040,
 			"y": 1040,
 			"radius": 1
-		}
+		},
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.Vidinos",
 		"sortIndex": 99,
@@ -632,7 +672,11 @@
 		"missionType": "Objective",
 		"name": "Beat all 8 Base Scenarios",
 		"description": " You will be completing this challange simultaneously with [megametracker://mission?id=DLC1.PS.CombatMissions.1].",
-		"relatedMissionIds": ["DLC1.PS.CombatMissions.1"]
+		"relatedMissionIds": ["DLC1.PS.CombatMissions.1"],
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed 8 Pinnacle Station Combat Missions"
+        }]
 	}, {
 		"id": "DLC1.PS.Vidinos.1.1",
 		"sortIndex": 9902,
@@ -784,7 +828,7 @@
 	}, {
 		"id": "DLC1.PS.Convoy.1",
 		"sortIndex": 10001,
-		"inMissionId": "DLC1.PS.Vidinos",
+		"inMissionId": "DLC1.PS.Convoy",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Purchase a Random Item",
@@ -1187,7 +1231,6 @@
 		}, {
 			"set": {
 				"isExclusiveSet": true,
-				"context": "Departing Speech",
 				"options": [{
 					"id": "A1.T.LeaveCitadel.P2",
 					"type": "Paragon",

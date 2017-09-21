@@ -9,7 +9,14 @@
 import Foundation
 
 /// Defines a compound set of events or conditions.
-public struct DependentOnType {
+public struct DependentOnType: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case countTo
+        case limitTo
+        case events
+        case decisions
+    }
 
 // MARK: Properties
 	public var countTo = 1
@@ -17,6 +24,14 @@ public struct DependentOnType {
 	public var events: [String] = []
 	public var decisions: [String] = []
 
+// MARK: Initialization
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        countTo = try container.decode(Int.self, forKey: .countTo)
+        limitTo = try container.decodeIfPresent(Int.self, forKey: .limitTo)
+        events = (try container.decodeIfPresent([String].self, forKey: .events)) ?? events
+        decisions = (try container.decodeIfPresent([String].self, forKey: .decisions)) ?? decisions
+    }
 }
 
 // MARK: Basic Actions
@@ -41,34 +56,4 @@ extension DependentOnType {
 			return count >= countTo
 		}
 	}
-}
-
-// MARK: SerializedDataStorable
-extension DependentOnType: SerializedDataStorable {
-
-	public func getData() -> SerializableData {
-		var list: [String: SerializedDataStorable?] = [:]
-		list["countTo"] = countTo
-		list["limitTo"] = limitTo
-		list["events"] = SerializableData.safeInit(events as [SerializedDataStorable])
-		list["decisions"] = SerializableData.safeInit(decisions as [SerializedDataStorable])
-		return SerializableData.safeInit(list)
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension DependentOnType: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data else { return nil }
-		self.countTo = data["countTo"]?.int ?? 1
-		self.limitTo = data["limitTo"]?.int
-		self.events = (data["events"]?.array ?? []).flatMap({ $0.string })
-		self.decisions = (data["decisions"]?.array ?? []).flatMap({ $0.string })
-		if self.events.isEmpty && self.decisions.isEmpty { // bad data
-			return nil
-		}
-	}
-
 }

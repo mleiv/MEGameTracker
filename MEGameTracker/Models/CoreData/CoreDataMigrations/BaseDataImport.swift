@@ -13,17 +13,17 @@ public struct BaseDataImport: CoreDataMigrationType {
 
 	let progressProcessImportChunk = 40.0
 	let progressFinalPadding = 5.0
-	let onProcessMapDataRow = Signal<(Void)>()
-	let onProcessMissionDataRow = Signal<(Void)>()
+	let onProcessMapDataRow = Signal<Bool>()
+	let onProcessMissionDataRow = Signal<Bool>()
 
 	var isTestProject: Bool {
 		return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
 	}
 
-	let manager: SimpleSerializedCoreDataManageable?
+	let manager: CodableCoreDataManageable?
 
-	public init(manager: SimpleSerializedCoreDataManageable? = nil) {
-		self.manager = manager
+	public init(manager: CodableCoreDataManageable? = nil) {
+		self.manager = manager ?? CoreDataManager.current
 	}
 
 	public func run() {
@@ -112,7 +112,7 @@ extension BaseDataImport {
 			let batchProgress = row.progress
 			do {
 				if let file = Bundle.main.path(forResource: filename, ofType: "json") {
-					let data = try SerializableData(jsonString: try String(contentsOfFile: file))
+                    let data = try Data(contentsOf: URL(fileURLWithPath: file))
 					let ids = importData(data, with: manager)
 					deleteOldIds[type] = Array(Set(deleteOldIds[type] ?? []).subtracting(ids))
 				}
@@ -200,68 +200,68 @@ extension BaseDataImport {
 		queue: DispatchQueue,
 		updateProgress: @escaping ((Double, Bool) -> Void)
 	) {
-		let manager = self.manager
+        let manager = self.manager
 		let mapsCount = DataMap.getCount(with: manager)
 		var countProcessed: Int = 0
 		let chunkSize: Int = 20
 		let chunkPercentage = Double(chunkSize) / Double(mapsCount)
 		let chunkProgress = Double(self.progressProcessImportChunk) * chunkPercentage
 
-		for map in DataMap.getAll(with: manager, alterFetchRequest: { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(inMapId = nil)")
-		}) {
-			self.applyInheritedEvents(
-				map: map,
-				inheritableEvents: map.getInheritableEvents(),
-				runOnEachMapBlock: {
-					if countProcessed > 0 && countProcessed % chunkSize == 0 {
-						// notify chunk done
-						queue.sync {
-							updateProgress(chunkProgress, false)
-						}
-					}
-					countProcessed += 1
-				}
-			)
-		}
-		// notify all done
-		queue.sync {
-			updateProgress(0, true)
-		}
+        for map in DataMap.getAll(with: manager, alterFetchRequest: { fetchRequest in
+            fetchRequest.predicate = NSPredicate(format: "(inMapId = nil)")
+        }) {
+            self.applyInheritedEvents(
+                map: map,
+                inheritableEvents: map.getInheritableEvents(),
+                runOnEachMapBlock: {
+                    if countProcessed > 0 && countProcessed % chunkSize == 0 {
+                        // notify chunk done
+                        queue.sync {
+                            updateProgress(chunkProgress, false)
+                        }
+                    }
+                    countProcessed += 1
+                }
+            )
+        }
+        // notify all done
+        queue.sync {
+            updateProgress(0, true)
+        }
 	}
 
 	func processImportedMissionData(
 		queue: DispatchQueue,
 		updateProgress: @escaping ((Double, Bool) -> Void)
 	) {
-		let manager = self.manager
+        let manager = self.manager
 		let missionsCount = DataMission.getCount(with: manager)
 		var countProcessed: Int = 0
 		let chunkSize: Int = 20
 		let chunkPercentage = Double(chunkSize) / Double(missionsCount)
 		let chunkProgress = Double(self.progressProcessImportChunk) * chunkPercentage
 
-		for mission in DataMission.getAll(with: manager, alterFetchRequest: { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(inMissionId = nil)")
-		}) {
-			self.applyInheritedEvents(
-				mission: mission,
-				inheritableEvents: mission.getInheritableEvents(),
-				runOnEachMissionBlock: {
-					if countProcessed > 0 && countProcessed % chunkSize == 0 {
-						// notify chunk done
-						queue.sync {
-							updateProgress(chunkProgress, false)
-						}
-					}
-					countProcessed += 1
-				}
-			)
-		}
-		// notify all done
-		queue.sync {
-			updateProgress(0, true)
-		}
+        for mission in DataMission.getAll(with: manager, alterFetchRequest: { fetchRequest in
+            fetchRequest.predicate = NSPredicate(format: "(inMissionId = nil)")
+        }) {
+            self.applyInheritedEvents(
+                mission: mission,
+                inheritableEvents: mission.getInheritableEvents(),
+                runOnEachMissionBlock: {
+                    if countProcessed > 0 && countProcessed % chunkSize == 0 {
+                        // notify chunk done
+                        queue.sync {
+                            updateProgress(chunkProgress, false)
+                        }
+                    }
+                    countProcessed += 1
+                }
+            )
+        }
+        // notify all done
+        queue.sync {
+            updateProgress(0, true)
+        }
 	}
 
 	//TODO: Protocol events and generic this function
@@ -269,131 +269,135 @@ extension BaseDataImport {
 
 	func applyInheritedEvents(
 		map: DataMap,
-		inheritableEvents: [SerializableData],
+		inheritableEvents: [CodableDictionary],
 		level: Int = 0,
 		runOnEachMapBlock: @escaping (() -> Void)
 	) {
-		var maps: [DataMap] = []
-		for (var childMap) in DataMap.getAll(with: manager, alterFetchRequest: { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(inMapId = %@)", map.id)
-		}) {
-			var eventData = childMap.rawEventData?.array ?? []
-			var isChanged = false
-			for event in inheritableEvents where !eventData.contains(where: {
-				$0["id"]?.string == event["id"]?.string && $0["type"]?.string == event["type"]?.string
-			}) {
-				eventData.append(event)
-				isChanged = true
-			}
-			var childInheritableEvents = inheritableEvents + childMap.getInheritableEvents()
-			while let index = eventData.index(where: { $0["eraseParentValue"]?.bool == true }) {
-				let event = eventData.remove(at: index)
-				if let index2 = childInheritableEvents.index(where: { event["id"]?.string == $0["id"]?.string }) {
-					childInheritableEvents.remove(at: index2)
-				}
-				isChanged = true
-			}
-			if isChanged {
-				childMap.rawGeneralData["events"] = SerializableData.safeInit(eventData)
-				maps.append(childMap)
-			}
-			runOnEachMapBlock()
-			self.applyInheritedEvents(
-				map: childMap,
-				inheritableEvents: childInheritableEvents,
-				level: level + 1,
-				runOnEachMapBlock: runOnEachMapBlock
-			)
-		}
-		_ = DataMap.saveAll(items: maps, with: manager)
+        var maps: [DataMap] = []
+        for (var childMap) in DataMap.getAll(with: manager, alterFetchRequest: { fetchRequest in
+            fetchRequest.predicate = NSPredicate(format: "(inMapId = %@)", map.id)
+        }) {
+            var eventData = childMap.rawEventDictionary.map { $0.dictionary }
+            var isChanged = false
+            for event in inheritableEvents where !eventData.contains(where: {
+                $0["id"] as? String == event["id"] as? String && $0["type"] as? String == event["type"] as? String
+            }) {
+                eventData.append(event.dictionary)
+                isChanged = true
+            }
+            var childInheritableEvents = inheritableEvents + childMap.getInheritableEvents()
+            while let index = eventData.index(where: { $0["eraseParentValue"] as? Bool == true }) {
+                let event = eventData.remove(at: index)
+                if let index2 = childInheritableEvents.index(where: { event["id"] as? String == $0["id"] as? String }) {
+                    childInheritableEvents.remove(at: index2)
+                }
+                isChanged = true
+            }
+            if isChanged {
+                childMap.rawEventDictionary = eventData.map { CodableDictionary($0) }
+                maps.append(childMap)
+            }
+            runOnEachMapBlock()
+            self.applyInheritedEvents(
+                map: childMap,
+                inheritableEvents: childInheritableEvents,
+                level: level + 1,
+                runOnEachMapBlock: runOnEachMapBlock
+            )
+        }
+        _ = DataMap.saveAll(items: maps, with: manager)
 
-		var items: [DataItem] = []
-		for (var childItem) in DataItem.getAll(with: manager, alterFetchRequest: { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(inMapId = %@)", map.id)
-		}) {
-			var eventData = childItem.rawEventData?.array ?? []
-			var isChanged = false
-			for event in inheritableEvents where !eventData.contains(where: {
-				$0["id"]?.string == event["id"]?.string && $0["type"]?.string == event["type"]?.string
-			}) {
-				eventData.append(event)
-				isChanged = true
-			}
-			while let index = eventData.index(where: { $0["eraseParentValue"]?.bool == true }) {
-				eventData.remove(at: index)
-				isChanged = true
-			}
-			if isChanged {
-				childItem.rawGeneralData["events"] = SerializableData.safeInit(eventData)
-				items.append(childItem)
-			}
-			// no child item inheritance
-		}
-		_ = DataItem.saveAll(items: items, with: manager)
+        var items: [DataItem] = []
+        for (var childItem) in DataItem.getAll(with: manager, alterFetchRequest: { fetchRequest in
+            fetchRequest.predicate = NSPredicate(format: "(inMapId = %@)", map.id)
+        }) {
+            var eventData = childItem.rawEventDictionary.map { $0.dictionary }
+            var isChanged = false
+            for event in inheritableEvents where !eventData.contains(where: {
+                $0["id"] as? String == event["id"] as? String && $0["type"] as? String == event["type"] as? String
+            }) {
+                eventData.append(event.dictionary)
+                isChanged = true
+            }
+            while let index = eventData.index(where: { $0["eraseParentValue"] as? Bool == true }) {
+                eventData.remove(at: index)
+                isChanged = true
+            }
+            if isChanged {
+                childItem.rawEventDictionary = eventData.map { CodableDictionary($0) }
+                items.append(childItem)
+            }
+            // no child item inheritance
+        }
+        _ = DataItem.saveAll(items: items, with: manager)
 	}
 
 	func applyInheritedEvents(
 		mission: DataMission,
-		inheritableEvents: [SerializableData],
+		inheritableEvents: [CodableDictionary],
 		level: Int = 0,
 		runOnEachMissionBlock: @escaping (() -> Void)
 	) {
-		var missions: [DataMission] = []
-		for (var childMission) in DataMission.getAll(with: manager, alterFetchRequest: { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(inMissionId = %@)", mission.id)
-		}) {
-			var eventData = childMission.rawEventData?.array ?? []
-			var isChanged = false
-			for event in inheritableEvents where !eventData.contains(where: {
-				$0["id"]?.string == event["id"]?.string && $0["type"]?.string == event["type"]?.string
-			}) {
-				eventData.append(event)
-				isChanged = true
-			}
-			var childInheritableEvents = inheritableEvents + childMission.getInheritableEvents()
-			while let index = eventData.index(where: { $0["eraseParentValue"]?.bool == true }) {
-				let event = eventData.remove(at: index)
-				if let index2 = childInheritableEvents.index(where: { event["id"]?.string == $0["id"]?.string }) {
-					childInheritableEvents.remove(at: index2)
-				}
-				isChanged = true
-			}
-			if isChanged {
-				childMission.rawGeneralData["events"] = SerializableData.safeInit(eventData)
-				missions.append(childMission)
-			}
-			runOnEachMissionBlock()
-			self.applyInheritedEvents(
-				mission: childMission,
-				inheritableEvents: childInheritableEvents,
-				level: level + 1,
-				runOnEachMissionBlock: runOnEachMissionBlock
-			)
-		}
-		_ = DataMission.saveAll(items: missions, with: manager)
+        var missions: [DataMission] = []
+        for (var childMission) in DataMission.getAll(with: manager, alterFetchRequest: { fetchRequest in
+            fetchRequest.predicate = NSPredicate(format: "(inMissionId = %@)", mission.id)
+        }) {
+            var eventData = childMission.rawEventDictionary.map { $0.dictionary }
+            var isChanged = false
+            for event in inheritableEvents where !eventData.contains(where: {
+                $0["id"] as? String == event["id"] as? String && $0["type"] as? String == event["type"] as? String
+            }) {
+                eventData.append(event.dictionary)
+                isChanged = true
+            }
+            var childInheritableEvents = inheritableEvents + childMission.getInheritableEvents()
+            while let index = eventData.index(where: { $0["eraseParentValue"] as? Bool == true }) {
+                let event = eventData.remove(at: index)
+                if let index2 = childInheritableEvents.index(where: { event["id"] as? String == $0["id"] as? String }) {
+                    childInheritableEvents.remove(at: index2)
+                }
+                isChanged = true
+            }
+            if isChanged {
+                childMission.rawEventDictionary = eventData.map { CodableDictionary($0) }
+                missions.append(childMission)
+            }
+            runOnEachMissionBlock()
+            self.applyInheritedEvents(
+                mission: childMission,
+                inheritableEvents: childInheritableEvents,
+                level: level + 1,
+                runOnEachMissionBlock: runOnEachMissionBlock
+            )
+        }
+        _ = DataMission.saveAll(items: missions, with: manager)
 
-		var items: [DataItem] = []
-		for (var childItem) in DataItem.getAll(with: manager, alterFetchRequest: { fetchRequest in
-			fetchRequest.predicate = NSPredicate(format: "(inMissionId = %@)", mission.id)
-		}) {
-			var eventData = childItem.rawEventData?.array ?? []
-			var isChanged = false
-			for event in inheritableEvents where !eventData.contains(where: {
-				$0["id"]?.string == event["id"]?.string && $0["type"]?.string == event["type"]?.string
-			}) {
-				eventData.append(event)
-				isChanged = true
-			}
-			while let index = eventData.index(where: { $0["eraseParentValue"]?.bool == true }) {
-				eventData.remove(at: index)
-				isChanged = true
-			}
-			if isChanged {
-				childItem.rawGeneralData["events"] = SerializableData.safeInit(eventData)
-				items.append(childItem)
-			}
-			// no child item inheritance
-		}
-		_ = DataItem.saveAll(items: items, with: manager)
-	}
+        var items: [DataItem] = []
+        for (var childItem) in DataItem.getAll(with: manager, alterFetchRequest: { fetchRequest in
+            fetchRequest.predicate = NSPredicate(format: "(inMissionId = %@)", mission.id)
+        }) {
+            var eventData = childItem.rawEventDictionary.map { $0.dictionary }
+            var isChanged = false
+            for event in inheritableEvents where !eventData.contains(where: {
+                $0["id"] as? String == event["id"] as? String && $0["type"] as? String == event["type"] as? String
+            }) {
+                eventData.append([
+                    "id": event["id"] as? String,
+                    "type": event["type"] as? String,
+                    "eraseParentValue": event["eraseParentValue"] as? Bool ?? false,
+                ])
+                isChanged = true
+            }
+            while let index = eventData.index(where: { $0["eraseParentValue"] as? Bool == true }) {
+                eventData.remove(at: index)
+                isChanged = true
+            }
+            if isChanged {
+                childItem.rawEventDictionary = eventData.map { CodableDictionary($0) }
+                items.append(childItem)
+            }
+            // no child item inheritance
+        }
+        _ = DataItem.saveAll(items: items, with: manager)
+    }
 }

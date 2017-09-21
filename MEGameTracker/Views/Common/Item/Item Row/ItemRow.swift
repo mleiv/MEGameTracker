@@ -14,35 +14,35 @@ final class ItemRow: UITableViewCell {
 	typealias Checkbox = ItemCheckbox
 
 // MARK: Constants
-	fileprivate let priceMessage = "Price: %@"
+	private let priceMessage = "Price: %@"
 
 // MARK: Outlets
-	@IBOutlet fileprivate weak var widthStack: UIStackView?
+	@IBOutlet private weak var widthStack: UIStackView?
 
-	@IBOutlet fileprivate weak var checkboxImageView: UIImageView?
+	@IBOutlet private weak var checkboxImageView: UIImageView?
 
-	@IBOutlet fileprivate weak var parentMissionLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var nameLabel: IBStyledLabel?
-	@IBOutlet fileprivate weak var descriptionLabel: UILabel?
-	@IBOutlet fileprivate weak var locationLabel: UILabel?
-	@IBOutlet fileprivate weak var costLabel: UILabel?
-	@IBOutlet fileprivate weak var availabilityLabel: UILabel?
+	@IBOutlet private weak var parentMissionLabel: MarkupLabel?
+	@IBOutlet private weak var nameLabel: IBStyledLabel?
+	@IBOutlet private weak var descriptionLabel: UILabel?
+	@IBOutlet private weak var locationLabel: UILabel?
+	@IBOutlet private weak var costLabel: UILabel?
+	@IBOutlet private weak var availabilityLabel: UILabel?
 
-	@IBOutlet fileprivate weak var fillerView: UIView?
-	@IBOutlet fileprivate weak var disclosureImageWrapper: UIView?
-	@IBOutlet fileprivate weak var disclosureImageView: UIImageView?
+	@IBOutlet private weak var fillerView: UIView?
+	@IBOutlet private weak var disclosureImageWrapper: UIView?
+	@IBOutlet private weak var disclosureImageView: UIImageView?
 
-	@IBAction fileprivate func onClickCheckbox(_ sender: UIButton) { toggleItem() }
+	@IBAction private func onClickCheckbox(_ sender: UIButton) { toggleItem() }
 
 // MARK: Properties
 	internal fileprivate(set) var item: Item?
-	fileprivate weak var origin: UIViewController?
-	fileprivate var isCalloutBoxRow: Bool = false
-	fileprivate var allowsSegue: Bool = false
-	fileprivate var isShowParentMissionIfFound = false
+	private weak var origin: UIViewController?
+	private var isCalloutBoxRow: Bool = false
+	private var allowsSegue: Bool = false
+	private var isShowParentMissionIfFound = false
 
 // MARK: Change Listeners And Change Status Flags
-	fileprivate var isDefined = false
+	private var isDefined = false
 
 // MARK: Lifecycle Events
 	public override func layoutSubviews() {
@@ -73,7 +73,7 @@ final class ItemRow: UITableViewCell {
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() -> Bool {
+	private func setup() -> Bool {
 		guard let nameLabel = self.nameLabel else { return false }
 
 		parentMissionLabel?.isHidden = true
@@ -133,7 +133,7 @@ final class ItemRow: UITableViewCell {
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		parentMissionLabel?.text = ""
 		nameLabel?.text = ""
 		descriptionLabel?.text = ""
@@ -143,7 +143,7 @@ final class ItemRow: UITableViewCell {
 	}
 
 // MARK: Supporting Functions
-	fileprivate func setCheckboxImage(isAcquired: Bool, isAvailable: Bool) {
+	private func setCheckboxImage(isAcquired: Bool, isAvailable: Bool) {
 		if !isAvailable {
 			checkboxImageView?.image = isAcquired
 				? Checkbox.disabledFilled.getImage()
@@ -153,7 +153,7 @@ final class ItemRow: UITableViewCell {
 		}
 	}
 
-	fileprivate func toggleItem() {
+	private func toggleItem() {
 		guard let nameLabel = self.nameLabel else { return }
 		let isAcquired = !(self.item?.isAcquired ?? false)
 		let spinnerController = origin as? Spinnerable
@@ -163,7 +163,7 @@ final class ItemRow: UITableViewCell {
 			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
 				?? "", toString: self.item?.name ?? "").toggleStrikethrough(isAcquired)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
-				self.item?.change(isAcquired: isAcquired, isSave: true)
+				_ = self.item?.changed(isAcquired: isAcquired, isSave: true)
 				spinnerController?.stopSpinner(inView: self.origin?.view)
 			}
 		}

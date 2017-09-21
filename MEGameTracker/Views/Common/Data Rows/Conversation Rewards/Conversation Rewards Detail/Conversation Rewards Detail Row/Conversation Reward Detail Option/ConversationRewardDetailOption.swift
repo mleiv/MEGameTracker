@@ -13,25 +13,25 @@ final class ConversationRewardDetailOption: UIView {
 // MARK: Types
 	typealias ActionClosure = ((_ onButton: RadioButton?, _ id: String?) -> Void)
 // MARK: Constants
-	fileprivate let paragonMessage = "%@ Paragon: %@"
-	fileprivate let renegadeMessage = "%@ Renegade: %@"
-	fileprivate let creditsMessage = "%@ Credits: %@"
-	fileprivate let paragadeMessage = "%@ Paragon / %@ Renegade: %@"
-	fileprivate let reputationMessage = "%@ Reputation %@"
+	private let paragonMessage = "%@ Paragon: %@"
+	private let renegadeMessage = "%@ Renegade: %@"
+	private let creditsMessage = "%@ Credits: %@"
+	private let paragadeMessage = "%@ Paragon / %@ Renegade: %@"
+	private let reputationMessage = "%@ Reputation %@"
 
 // MARK: Outlets
-	@IBOutlet fileprivate weak var button: RadioButton?
-	@IBOutlet fileprivate weak var contextLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var optionLabel: MarkupLabel?
-	@IBAction fileprivate func selectOption(_ sender: AnyObject?) { toggleOption() }
+	@IBOutlet private weak var button: RadioButton?
+	@IBOutlet private weak var contextLabel: MarkupLabel?
+	@IBOutlet private weak var optionLabel: MarkupLabel?
+	@IBAction private func selectOption(_ sender: AnyObject?) { toggleOption() }
 
 // MARK: Properties
 	internal fileprivate(set) var id: String?
 	internal fileprivate(set) var option: ConversationRewards.FlatDataOption?
-	fileprivate var action: ActionClosure?
+	private var action: ActionClosure?
 
 // MARK: Change Listeners And Change Status Flags
-	fileprivate var isDefined = false
+	private var isDefined = false
 
 // MARK: Lifecycle Events
 	public override func layoutSubviews() {
@@ -73,7 +73,7 @@ final class ConversationRewardDetailOption: UIView {
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() {
+	private func setup() {
 		guard let option = self.option else { return }
 		setStyle()
 		contextLabel?.text = "\(option.context ?? ""): "
@@ -86,7 +86,7 @@ final class ConversationRewardDetailOption: UIView {
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		button?.isOn = false
 		contextLabel?.text = ""
 		optionLabel?.text = ""
@@ -102,7 +102,7 @@ final class ConversationRewardDetailOption: UIView {
 
 // MARK: Supporting Functions
 
-	fileprivate func setStyle() {
+	private func setStyle() {
 		guard let option = self.option else { return }
 		// only works if we set style before setting content text
 		switch option.type {
@@ -114,7 +114,7 @@ final class ConversationRewardDetailOption: UIView {
 		}
 	}
 
-	fileprivate func setLabelText(option: ConversationRewards.FlatDataOption) -> String {
+	private func setLabelText(option: ConversationRewards.FlatDataOption) -> String {
 		switch option.type {
 			case .paragon: return String(format: paragonMessage, option.points, option.trigger)
 			case .renegade: return String(format: renegadeMessage, option.points, option.trigger)

@@ -25,7 +25,7 @@ public protocol SimpleCoreDataManageable {
 	/// This is managed for you - just declare it.
 	var persistentContainer: NSPersistentContainer { get }
 	/// Override the default context - useful when doing save/fetch in background.
-	var specificContext: NSManagedObjectContext? { get }
+	var specificContext: NSManagedObjectContext? { get set }
 	/// Implement this using the sample below, because protocols can't do this.
 	init(storeName: String?, context: NSManagedObjectContext?, isConfineToMemoryStore: Bool)
 
@@ -101,6 +101,12 @@ extension SimpleCoreDataManageable {
 		self.init(storeName: nil, context: context, isConfineToMemoryStore: false)
 	}
 
+	public func copyWithContext(_ context: NSManagedObjectContext?) -> Self {
+        var copy = self
+        copy.specificContext = context
+        return copy
+	}
+
 //	// implement the following:
 //	public init(storeName: String?, context: NSManagedObjectContext?, isConfineToMemoryStore: Bool) {
 //		self.isConfinedToMemoryStore = isConfineToMemoryStore
@@ -158,7 +164,10 @@ extension SimpleCoreDataManageable {
 
 	/// Configure the primary context.
 	public func initContext() {
-		print("Using persistent store: \(persistentContainer.persistentStoreCoordinator.persistentStores.first?.url)")
+        print("""
+            Using persistent store:
+            \(String(describing: persistentContainer.persistentStoreCoordinator.persistentStores.first?.url))
+        """)
 		let context = self.persistentContainer.viewContext
 		context.automaticallyMergesChangesFromParent = true // not triggered w/o autoreleasepool
 		context.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump

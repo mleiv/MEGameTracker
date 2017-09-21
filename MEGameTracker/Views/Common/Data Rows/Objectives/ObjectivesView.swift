@@ -55,7 +55,9 @@ final public class ObjectivesView: SimpleArrayDataRow {
 		guard objectives.indices.contains((indexPath as NSIndexPath).row) else { return }
 		var objective = objectives[(indexPath as NSIndexPath).row]
 		let mapId: String? = {
-			if objective.isShowInParentMap, let mapId = objective.inMapId, let map = Map.get(id: mapId) {
+			if objective.isShowInParentMap,
+                let mapId = objective.inMapId,
+                let map = Map.get(id: mapId) {
 				return map.inMapId
 			} else {
 				return objective.inMapId

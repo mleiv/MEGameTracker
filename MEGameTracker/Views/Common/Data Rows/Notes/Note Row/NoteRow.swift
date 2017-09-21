@@ -12,18 +12,18 @@ import UIKit
 
 // MARK: Types
 // MARK: Constants
-	fileprivate let gameLabelMessage = " - %@ (Game %@)"
+	private let gameLabelMessage = " - %@ (Game %@)"
 
 // MARK: Outlets
-	@IBOutlet fileprivate weak var noteTextView: IBStyledTextView?
-	@IBOutlet fileprivate weak var dateLabel: IBStyledLabel?
-	@IBOutlet fileprivate weak var gameLabel: IBStyledLabel?
+	@IBOutlet private weak var noteTextView: IBStyledTextView?
+	@IBOutlet private weak var dateLabel: IBStyledLabel?
+	@IBOutlet private weak var gameLabel: IBStyledLabel?
 
 // MARK: Properties
 	internal fileprivate(set) var note: Note?
 
 // MARK: Change Listeners And Change Status Flags
-	fileprivate var isDefined = false
+	private var isDefined = false
 
 // MARK: Lifecycle Events
 	public override func layoutSubviews() {
@@ -44,7 +44,7 @@ import UIKit
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() {
+	private func setup() {
 		guard noteTextView != nil else { return }
 		noteTextView?.text = note?.text
 		noteTextView?.sizeToFit()
@@ -61,7 +61,7 @@ import UIKit
 		layoutIfNeeded()
 	}
 
-	private func getShepard(uuid: String?) -> Shepard? {
+	private func getShepard(uuid: UUID?) -> Shepard? {
 		if App.current.game?.shepard?.uuid == uuid {
 			return App.current.game?.shepard
 		}
@@ -73,7 +73,7 @@ import UIKit
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		noteTextView?.text = ""
 		dateLabel?.text = ""
 		gameLabel?.text = ""

@@ -213,8 +213,11 @@ extension SimpleCloudKitManageable {
 		let oldQualityOfService = self.qualityOfService
 		self.qualityOfService = qualityOfService
 		guard shouldSync() else { completion(false); return }
-		log("Starting sync() appState = \(appState) isPartialPost = \(isPartialPost) " +
-			"qualityOfService = \(qualityOfService) oldQualityOfService = \(oldQualityOfService)")
+		log("""
+            Starting sync() appState = \(appState) isPartialPost = \(isPartialPost)
+            qualityOfService = \(String(describing: qualityOfService))
+            oldQualityOfService = \(String(describing: oldQualityOfService))
+        """)
 		isSyncing = true
 		cachedCloudImages = [:]
 		let partCompletion: ((Bool) -> Void) = { (isSynced: Bool) in
@@ -232,8 +235,7 @@ extension SimpleCloudKitManageable {
 		}
 		checkAvailability { isAvailable in
 			self.log("checkAvailability isAvailable = \(isAvailable)")
-			// isAvailable here checks more than account status
-			if isAvailable {
+			if isAvailable { // checks more than account status
 				self.initializeRecordZone { hasInitializedZone in
 					self.log("initializeRecordZone hasInitializedZone = \(hasInitializedZone)")
 					self.notifyStartSyncing()
@@ -249,7 +251,7 @@ extension SimpleCloudKitManageable {
 							self.subsequentSync(completion: successCompletion)
 						}
 					} else {
-						// Don't ever run partial post before .start state:
+						// Don't ever run partial post before .start state
 						if self.appState == .running {
 							self.postChanges(completion: successCompletion)
 						} else {
@@ -317,7 +319,7 @@ extension SimpleCloudKitManageable {
 		completion: @escaping ((Bool) -> Void)
 	) {
 		guard shouldFetchChanges() else { completion(false); return }
-		log("fetchChanges changeToken = \(changeToken)")
+		log("fetchChanges changeToken = \(String(describing: changeToken))")
 
 		isFetchingChanges = true
 		var resetIsSyncingProperty: Bool = false
@@ -373,7 +375,7 @@ extension SimpleCloudKitManageable {
 				self.changesFromCloudCompletion(
 					isSuccess: isSuccess
 				) { isSaved in
-					self.log("changesFromCloudCompletion isSuccess = \(isSuccess) changeToken = \(changeToken)")
+					self.log("changesFromCloudCompletion isSuccess = \(isSuccess) changeToken = \(String(describing: changeToken))")
 					if isSaved {
 						self.changeToken = changeToken
 					} else {
@@ -423,7 +425,7 @@ extension SimpleCloudKitManageable {
 		completion: @escaping ((Bool) -> Void)
 	) {
 		guard shouldPostChanges() else { completion(false); return }
-		log("postChanges changeToken =\(changeToken)")
+		log("postChanges changeToken =\(String(describing: changeToken))")
 
 		isPostingChanges = true
 		lastPostedDate = Date()

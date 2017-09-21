@@ -79,9 +79,9 @@ final class EventTests: MEGameTrackerTests {
 	func testChange() {
 		initializeCurrentGame() // needed for saving event with game uuid
 
-		var event = create(Event.self, from: noveria1Json)
+		let event = create(Event.self, from: noveria1Json)
 		XCTAssert(event?.isTriggered == false, "Reported incorrect initial event state")
-		event?.change(isTriggered: true, isSave: true)
+		_ = event?.changed(isTriggered: true, isSave: true)
 		let event2 = Event.get(id: "Noveria Landlines Repaired")
 		XCTAssert(event2?.isTriggered == true, "Reported incorrect triggered event state")
 
@@ -95,56 +95,56 @@ final class EventTests: MEGameTrackerTests {
 		// #1 Event changes mission title
 
 		// - verify signal is fired
-		let expectationMissionOnChange = expectation(description: "Mission on change triggered")
-		Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
-			if changed.id == "M1.Prologue",
-				let mission = changed.object ?? Mission.get(id: changed.id),
-				mission.name == "Prologue: On The Normandy" {
-				expectationMissionOnChange.fulfill()
-			}
-		}
+        let expectationMissionOnChange = expectation(description: "Mission on change triggered")
+        Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+            if changed.id == "M1.Prologue",
+                let mission = changed.object ?? Mission.get(id: changed.id),
+                mission.name == "Prologue: On The Normandy" {
+                expectationMissionOnChange.fulfill()
+            }
+        }
 
 		var event1 = create(Event.self, from: prologueEventJson)
-		var mission = create(Mission.self, from: prologueMissionJson)
-		XCTAssert(mission?.name == "Prologue: On The Normandy", "Reported incorrect initial mission name")
-		event1?.change(isTriggered: true)
-		mission = Mission.get(id: "M1.Prologue")
-		XCTAssert(mission?.name == "Prologue: Find The Beacon", "Reported incorrect changed mission name")
-		event1?.change(isTriggered: false)
-		mission = Mission.get(id: "M1.Prologue")
-		XCTAssert(mission?.name == "Prologue: On The Normandy", "Reported incorrect changed back mission name")
+        var mission = create(Mission.self, from: prologueMissionJson)
+        XCTAssert(mission?.name == "Prologue: On The Normandy", "Reported incorrect initial mission name")
+        event1 = event1?.changed(isTriggered: true)
+        mission = Mission.get(id: "M1.Prologue")
+        XCTAssert(mission?.name == "Prologue: Find The Beacon", "Reported incorrect changed mission name")
+        _ = event1?.changed(isTriggered: false)
+        mission = Mission.get(id: "M1.Prologue")
+        XCTAssert(mission?.name == "Prologue: On The Normandy", "Reported incorrect changed back mission name")
 
-		// - wait for signal
-		waitForExpectations(timeout: 0.1) { _ in }
-		Mission.onChange.cancelSubscription(for: self)
+        // - wait for signal
+        waitForExpectations(timeout: 0.1) { _ in }
+        Mission.onChange.cancelSubscription(for: self)
 
-		// #2 Event changes decision selection
+        // #2 Event changes decision selection
 
-		// - verify signal is fired
-		let expectationDecisionOnChange = expectation(description: "Decision on change triggered")
-		Decision.onChange.subscribe(on: self) { (changed: (id: String, object: Decision?)) in
-			if changed.id == "D1.WrexArmor" {
-				expectationDecisionOnChange.fulfill()
-			}
-		}
+        // - verify signal is fired
+        let expectationDecisionOnChange = expectation(description: "Decision on change triggered")
+        Decision.onChange.subscribe(on: self) { (changed: (id: String, object: Decision?)) in
+            if changed.id == "D1.WrexArmor" {
+                expectationDecisionOnChange.fulfill()
+            }
+        }
 
-		var event2 = create(Event.self, from: wrexEventJson)
-		var decision = create(Decision.self, from: wrexDecisionJson)
-		XCTAssert(decision?.isSelected == false, "Reported incorrect initial decision")
-		event2?.change(isTriggered: true)
-		decision = Decision.get(id: "D1.WrexArmor")
-		XCTAssert(decision?.isSelected == true, "Reported incorrect selected decision")
+        let event2 = create(Event.self, from: wrexEventJson)
+        var decision = create(Decision.self, from: wrexDecisionJson)
+        XCTAssert(decision?.isSelected == false, "Reported incorrect initial decision")
+        _ = event2?.changed(isTriggered: true)
+        decision = Decision.get(id: "D1.WrexArmor")
+        XCTAssert(decision?.isSelected == true, "Reported incorrect selected decision")
 
-		// - wait for signal
-		waitForExpectations(timeout: 0.1) { _ in }
-		Decision.onChange.cancelSubscription(for: self)
+        // - wait for signal
+        waitForExpectations(timeout: 0.1) { _ in }
+        Decision.onChange.cancelSubscription(for: self)
 	}
 
 	/// Test Event dependent on others
 	func testCombinedEvents() {
 		initializeCurrentGame() // needed for saving event with game uuid
-		var noveria1 = create(Event.self, from: noveria1Json)
-		var noveria2 = create(Event.self, from: noveria2Json)
+		let noveria1 = create(Event.self, from: noveria1Json)
+		let noveria2 = create(Event.self, from: noveria2Json)
 		var noveriaCombined = create(Event.self, from: noveriaCombinedJson)
 		_ = create(Mission.self, from: noveriaCombinedMissionJson)
 
@@ -158,10 +158,10 @@ final class EventTests: MEGameTrackerTests {
 		}
 
 		XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
-		noveria1?.change(isTriggered: true)
+		_ = noveria1?.changed(isTriggered: true)
 		noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
 		XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
-		noveria2?.change(isTriggered: true)
+		_ = noveria2?.changed(isTriggered: true)
 		noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
 		XCTAssert(noveriaCombined?.isTriggered == true, "Reported incorrect triggered event state")
 

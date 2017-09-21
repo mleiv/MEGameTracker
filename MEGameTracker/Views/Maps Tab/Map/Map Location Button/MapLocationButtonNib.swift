@@ -10,8 +10,8 @@ import UIKit
 
 final public class MapLocationButtonNib: UIView {
 
-	fileprivate let minSize = CGSize(width: 25.0, height: 25.0)
-	fileprivate let minVisibleSize = CGSize(width: 7.0, height: 7.0)
+	private let minSize = CGSize(width: 25.0, height: 25.0)
+	private let minVisibleSize = CGSize(width: 7.0, height: 7.0)
 
 	@IBOutlet public weak var title: UILabel?
 	@IBOutlet public weak var titleWidthConstraint: NSLayoutConstraint?
@@ -23,11 +23,11 @@ final public class MapLocationButtonNib: UIView {
 //		onClick?(self)
 //	}
 
-	fileprivate var centerXConstraint: NSLayoutConstraint?
-	fileprivate var centerYConstraint: NSLayoutConstraint?
-	fileprivate var visibleView: UIView?
-	fileprivate var visibleWidthConstraint: NSLayoutConstraint?
-	fileprivate var visibleHeightConstraint: NSLayoutConstraint?
+	private var centerXConstraint: NSLayoutConstraint?
+	private var centerYConstraint: NSLayoutConstraint?
+	private var visibleView: UIView?
+	private var visibleWidthConstraint: NSLayoutConstraint?
+	private var visibleHeightConstraint: NSLayoutConstraint?
 
 	public var mapLocationPoint: MapLocationPoint?
 	public var sizedMapLocationPoint: MapLocationPoint?
@@ -107,7 +107,7 @@ final public class MapLocationButtonNib: UIView {
 		layoutIfNeeded()
 	}
 
-	fileprivate func addVisibleView() {
+	private func addVisibleView() {
 		if visibleView == nil, let button = self.button {
 			let visibleView = UIView()
 			button.addSubview(visibleView)
@@ -127,7 +127,7 @@ final public class MapLocationButtonNib: UIView {
 	}
 
 	/// Some buttons have a marker on the map already - others need an explicit bg color to show them.
-	fileprivate func setVisible() {
+	private func setVisible() {
 		if isShowPin && visibleView == nil {
 			addVisibleView()
 		} else if !isShowPin && visibleView != nil {

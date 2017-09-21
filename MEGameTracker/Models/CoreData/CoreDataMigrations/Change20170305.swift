@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-import Foundation
 import CoreData
 
 public struct Change20170305: CoreDataMigrationType {
@@ -91,7 +89,7 @@ public struct Change20170305: CoreDataMigrationType {
 					guard !fromIds.isEmpty else { continue }
 					for idMapData in mapData.ids {
 						if fromIds.contains(idMapData.fromId) {
-							fromMission.generalData.conversationRewards.unsetSelectedId(idMapData.fromId)
+                            fromMission.generalData.conversationRewards.unsetSelectedId(idMapData.fromId)
 							toMission.generalData.conversationRewards.setSelectedId(idMapData.toId)
 						}
 					}

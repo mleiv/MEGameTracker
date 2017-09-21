@@ -14,17 +14,17 @@ final class DecisionRow: UITableViewCell {
 // MARK: Constants
 
 // MARK: Outlets
-	@IBOutlet fileprivate weak var stack: UIStackView?
+	@IBOutlet private weak var stack: UIStackView?
 
-	@IBOutlet fileprivate weak var radioButton: RadioButton?
-	@IBOutlet fileprivate weak var titleLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var gameLabel: IBStyledLabel?
+	@IBOutlet private weak var radioButton: RadioButton?
+	@IBOutlet private weak var titleLabel: MarkupLabel?
+	@IBOutlet private weak var gameLabel: IBStyledLabel?
 
-	@IBAction fileprivate func onChange(_ sender: AnyObject?) { toggleDecision() }
+	@IBAction private func onChange(_ sender: AnyObject?) { toggleDecision() }
 
 // MARK: Properties
 	internal fileprivate(set) var decision: Decision?
-	fileprivate var isShowGameVersion: Bool = false
+	private var isShowGameVersion: Bool = false
 
 // MARK: Change Listeners And Change Status Flags
 	internal var isDefined = false
@@ -52,7 +52,7 @@ final class DecisionRow: UITableViewCell {
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() {
+	private func setup() {
 		guard radioButton != nil else { return }
 		radioButton?.toggle(isOn: decision?.isSelected ?? false)
 		titleLabel?.text = decision?.name
@@ -65,18 +65,18 @@ final class DecisionRow: UITableViewCell {
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		radioButton?.isOn = false
 		titleLabel?.text = ""
 		gameLabel?.text = ""
 	}
 
 // MARK: Supporting Functions
-	fileprivate func toggleDecision() {
+	private func toggleDecision() {
 		let isSelected = !(radioButton?.isOn == true)
 		radioButton?.toggle(isOn: isSelected)
 		DispatchQueue.global(qos: .background).async {
-			self.decision?.change(isSelected: isSelected, isSave: true)
+			_ = self.decision?.changed(isSelected: isSelected, isSave: true)
 		}
 	}
 

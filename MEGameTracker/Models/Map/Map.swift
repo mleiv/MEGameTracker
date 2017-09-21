@@ -10,19 +10,26 @@ import UIKit
 
 // swiftlint:disable file_length
 
-public struct Map: MapLocationable, Eventsable {
+public struct Map: Codable, MapLocationable, Eventsable {
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case isExplored
+    }
+
 // MARK: Constants
 
 // MARK: Properties
+    public var rawData: Data? // transient
 	public var generalData: DataMap
 
-	public fileprivate(set) var id: String
-	public fileprivate(set) var gameVersion: GameVersion
-	fileprivate var _annotationNote: String?
+	public private(set) var id: String
+	public private(set) var gameVersion: GameVersion
+	private var _annotationNote: String?
 
 	/// (GameModifying, GameRowStorable Protocol) 
 	/// This value's game identifier.
-	public var gameSequenceUuid: String?
+	public var gameSequenceUuid: UUID?
 	/// (DateModifiable Protocol)  
 	/// Date when value was created.
 	public var createdDate = Date()
@@ -34,26 +41,26 @@ public struct Map: MapLocationable, Eventsable {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+    public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
 
 	// Eventsable
-	fileprivate var _events: [Event]?
+	private var _events: [Event]?
 	public var events: [Event] {
 		get { return _events ?? getEvents() } // cache?
 		set { _events = newValue }
 	}
-	public var rawEventData: SerializableData? { return generalData.rawEventData }
+    public var rawEventDictionary: [CodableDictionary] { return generalData.rawEventDictionary }
 
 	public internal(set) var isExplored: Bool {
-		get {
-			return isExploredPerGameVersion[gameVersion] ?? false
-		}
-		set {
-			isExploredPerGameVersion[gameVersion] = newValue
-		}
+        get {
+            return isExploredPerGameVersion[gameVersion] ?? false
+        }
+        set {
+            isExploredPerGameVersion[gameVersion] = newValue
+        }
 	}
 	public internal(set) var isExploredPerGameVersion: [GameVersion: Bool] = [:]
 
@@ -73,9 +80,7 @@ public struct Map: MapLocationable, Eventsable {
 
 	public var parentMap: Map? {
 		if let id = inMapId {
-			var parentMap = Map.get(id: id)
-			parentMap?.change(gameVersion: gameVersion, isSave: false, isNotify: false)
-			return parentMap
+			return Map.get(id: id) // isNotify: false
 		}
 		return nil
 	}
@@ -101,7 +106,9 @@ public struct Map: MapLocationable, Eventsable {
 		set { _annotationNote = newValue }
 	}
 
-	public var mapLocationType: MapLocationType { return generalData.mapLocationType }
+	public var mapLocationType: MapLocationType {
+        return generalData.mapLocationType
+    }
 	public var mapLocationPoint: MapLocationPoint? {
 		get { return generalData.mapLocationPoint }
 		set { generalData.mapLocationPoint = newValue }
@@ -110,28 +117,40 @@ public struct Map: MapLocationable, Eventsable {
 		get { return generalData.inMapId }
 		set { generalData.inMapId = newValue }
 	}
-	public var inMissionId: String? { return generalData.inMissionId }
-	public var sortIndex: Int { return generalData.sortIndex }
+	public var inMissionId: String? {
+        get { return generalData.inMissionId }
+        set { generalData.inMissionId = newValue }
+    }
+	public var sortIndex: Int {
+        get { return generalData.sortIndex }
+        set {}
+    }
 
-	public var isHidden: Bool { return generalData.isHidden }
+	public var isHidden: Bool {
+        get { return generalData.isHidden }
+        set {}
+    }
 	public var isAvailable: Bool {
-		return generalData.isAvailable && events.filter({ (e: Event) in
-			return e.isBlockingInGame(gameVersion)
-		}).isEmpty
-	}
+        get { return isAvailableInGame(gameVersion) }
+        set {}
+    }
 	public var unavailabilityMessages: [String] {
-		let blockingEvents = events.filter({ (e: Event) in return e.isBlockingInGame(App.current.gameVersion) })
-		if !blockingEvents.isEmpty {
-			if let unavailabilityInGameMessage = blockingEvents.filter({ (e: Event) -> Bool in
-					return e.type == .unavailableInGame
-				}).first?.description,
-				!unavailabilityInGameMessage.isEmpty {
-				return generalData.unavailabilityMessages + [unavailabilityInGameMessage]
-			} else {
-				return generalData.unavailabilityMessages + blockingEvents.flatMap({ $0.description })
-			}
-		}
-		return generalData.unavailabilityMessages
+        get {
+            let blockingEvents = events.filter({ (e: Event) in return e.isBlockingInGame(App.current.gameVersion) })
+            if !blockingEvents.isEmpty {
+                if let unavailabilityInGameMessage = blockingEvents.filter({ (e: Event) -> Bool in
+                        return e.type == .unavailableInGame
+                    }).first?.description,
+                    !unavailabilityInGameMessage.isEmpty {
+                    return generalData.unavailabilityMessages + [unavailabilityInGameMessage]
+                } else {
+                    return generalData.unavailabilityMessages
+                        + blockingEvents.map({ $0.description }).filter({ $0 != nil }).map({ $0! })
+                }
+            }
+            return generalData.unavailabilityMessages
+        }
+        set {}
 	}
 
 	public var linkToMapId: String? { return generalData.linkToMapId }
@@ -151,23 +170,49 @@ public struct Map: MapLocationable, Eventsable {
 
 	public init(
 		id: String,
-		gameSequenceUuid: String? = App.current.game?.uuid,
+		gameSequenceUuid: UUID? = App.current.game?.uuid,
 		gameVersion: GameVersion? = nil,
 		generalData: DataMap,
-		events: [Event] = [],
-		data: SerializableData? = nil
+		events: [Event] = []
 	) {
 		self.id = id
 		self.gameSequenceUuid = gameSequenceUuid
 		self.gameVersion = gameVersion ?? generalData.gameVersion
 		self.generalData = generalData
-		self.generalData.change(gameVersion: self.gameVersion)
 		self.events = events
-		if let data = data {
-			setData(data)
-		}
-	}
+        setGeneralData()
+    }
 
+    public mutating func setGeneralData() {
+        // nothing for now
+    }
+    public mutating func setGeneralData(_ generalData: DataMap) {
+        self.generalData = generalData
+        setGeneralData()
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        gameVersion = .game1
+        generalData = DataMap(id: id) // faulted for now
+        let isExploredString = try container.decodeIfPresent(String.self, forKey: .isExplored) ?? ""
+
+        isExploredPerGameVersion = gameValuesFromIsExplored(gameValues: isExploredString)
+        try unserializeDateModifiableData(decoder: decoder)
+        try unserializeGameModifyingData(decoder: decoder)
+        try unserializeLocalCloudData(decoder: decoder)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+
+        try container.encode(gameValuesForIsExplored(), forKey: .isExplored)
+        try serializeDateModifiableData(encoder: encoder)
+        try serializeGameModifyingData(encoder: encoder)
+        try serializeLocalCloudData(encoder: encoder)
+    }
 }
 
 // MARK: Retrieval Functions of Related Data
@@ -223,7 +268,8 @@ extension Map {
 //	
 
 	public func getChildMaps(isExplored: Bool? = nil) -> [Map] {
-		let maps = MapLocation.getAllMaps(inMapId: id, gameVersion: gameVersion).flatMap { $0 as? Map }
+		let maps = MapLocation.getAllMaps(inMapId: id, gameVersion: gameVersion)
+            .map({ $0 as? Map }).filter({ $0 != nil }).map({ $0! })
 		if let isExplored = isExplored {
 			return maps.filter { $0.isExplored == isExplored }.sorted(by: Map.sort)
 		}
@@ -238,6 +284,25 @@ extension Map {
 		}
 	}
 
+    private func gameValuesForIsExplored() -> String {
+        var gameValues: [String] = []
+        for game in GameVersion.all() {
+            gameValues.append(isExploredPerGameVersion[game] == true ? "1" : "0")
+        }
+        return "|\(gameValues.joined(separator: "|"))|"
+    }
+
+    private func gameValuesFromIsExplored(gameValues: String) -> [GameVersion: Bool] {
+        let pieces = gameValues.components(separatedBy: "|")
+        if pieces.count == 5 {
+            var values: [GameVersion: Bool] = [:]
+            values[.game1] = pieces[1] == "1"
+            values[.game2] = pieces[2] == "1"
+            values[.game3] = pieces[3] == "1"
+            return values
+        }
+        return [.game1: false, .game2: false, .game3: false]
+    }
 }
 
 // MARK: Basic Actions
@@ -253,66 +318,98 @@ extension Map {
 // MARK: Data Change Actions
 extension Map {
 
-	public mutating func change(
-		gameVersion: GameVersion,
-		isSave: Bool = true,
-		isNotify: Bool = true
-	) {
-		guard self.gameVersion != gameVersion else { return }
-		self.gameVersion = gameVersion
-		generalData.change(gameVersion: gameVersion)
-		// no save
-		if isNotify {
-			Map.onChange.fire((id: self.id, object: self))
-		}
-	}
+    /// Returns a copy of this Map with a set of changes applies
+    public func changed(fromActionData data: [String: Any?]) -> Map {
+        if let isExplored = data["isExplored"] as? Bool {
+            return changed(isExplored: isExplored)
+        }
+        return self
+    }
 
-	public mutating func change(
-		isExplored: Bool,
-		isSave: Bool = true,
-		isNotify: Bool = true,
-		isCascadeChanges: EventDirection = .all
-	) {
-		guard self.isExplored != isExplored else { return }
-		self.isExplored = isExplored
-		markChanged()
-		notifySaveToCloud(fields: ["isExplored": isExplored])
-		if isSave {
-			_ = saveAnyChanges()
-		}
-		if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
-			applyToHierarchy(isExplored: isExplored, isSave: isSave, isCascadeChanges: isCascadeChanges)
-		}
-		if isNotify {
-			Map.onChange.fire((id: self.id, object: self))
-		}
-	}
+    /// Return a copy of this Map with gameVersion changed
+    public func changed(
+        gameVersion: GameVersion
+    ) -> Map {
+        guard isDifferentGameVersion(gameVersion) else { return self }
+        var map = self
+        map.gameVersion = gameVersion
+        map.generalData = generalData.changed(gameVersion: gameVersion)
+        map.changeEffects(
+            isSave: false,
+            isNotify: false
+        )
+        return map
+    }
 
-	fileprivate mutating func applyToHierarchy(
+    /// Return a copy of this Map with isExplored changed
+    public func changed(
+        isExplored: Bool,
+        isSave: Bool = true,
+        isNotify: Bool = true,
+        isCascadeChanges: EventDirection = .all
+    ) -> Map {
+        guard self.isExplored != isExplored else { return self }
+        var map = self
+        map.isExplored = isExplored
+        map.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["isExplored": isExplored]
+        )
+        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
+            map.applyToHierarchy(
+                isExplored: isExplored,
+                isSave: isSave,
+                isCascadeChanges: isCascadeChanges
+            )
+        }
+        return map
+    }
+
+    private func isDifferentGameVersion(_ gameVersion: GameVersion) -> Bool {
+        return generalData.isDifferentGameVersion(gameVersion)
+    }
+
+    /// Performs common behaviors after an object change
+    private mutating func changeEffects(
+        isSave: Bool = true,
+        isNotify: Bool = true,
+        cloudChanges: [String: Any?] = [:]
+    ) {
+        markChanged()
+        notifySaveToCloud(fields: cloudChanges)
+        if isSave {
+            _ = saveAnyChanges()
+        }
+        if isNotify {
+            Map.onChange.fire((id: self.id, object: self))
+        }
+    }
+
+	private mutating func applyToHierarchy(
 		isExplored: Bool,
 		isSave: Bool,
 		isCascadeChanges: EventDirection = .all
 	) {
 		let maps = getChildMaps()
-		if isCascadeChanges != .up {
-			for childMap in maps where childMap.isExplorable && childMap.isExplored != isExplored {
-				// complete/uncomplete all submaps if parent was just completed/uncompleted
-				var childMap = childMap
-				childMap.change(isExplored: isExplored, isSave: isSave, isCascadeChanges: .down)
-			}
-		}
-		if isCascadeChanges != .down, var parentMap = self.parentMap, parentMap.isExplorable {
+//        if isCascadeChanges != .up {
+//            for childMap in maps where childMap.isExplorable && childMap.isExplored != isExplored {
+//                // complete/uncomplete all submaps if parent was just completed/uncompleted
+//                _ = childMap.changed(isExplored: isExplored, isSave: isSave, isCascadeChanges: .down)
+//            }
+//        }
+		if isCascadeChanges != .down, let parentMap = self.parentMap, parentMap.isExplorable {
 			let siblingMaps = parentMap.getChildMaps()
 			if !isExplored && parentMap.isExplored {
 				// uncomplete parent
 				// don't uncomplete other children
-				parentMap.change(isExplored: false, isSave: isSave, isCascadeChanges: .up)
-			} else if isExplored && !parentMap.isExplored && !siblingMaps.isEmpty {
-				let exploredCount = siblingMaps.filter({ $0 == self })
+				_ = parentMap.changed(isExplored: false, isSave: isSave, isCascadeChanges: .up)
+			} else if isExplored && !parentMap.isExplored {
+				let exploredCount = siblingMaps.filter({ $0 != self })
 					.filter({ $0.isExplorable && $0.isExplored }).count + 1
 				if exploredCount == siblingMaps.count {
 					// complete parent
-					parentMap.change(isExplored: true, isSave: isSave, isCascadeChanges: .up)
+					_ = parentMap.changed(isExplored: true, isSave: isSave, isCascadeChanges: .up)
 				}
 			}
 		}
@@ -323,93 +420,94 @@ extension Map {
 extension Map {
 	public static func getDummy(json: String? = nil) -> Map? {
 		// swiftlint:disable line_length
-		let json = json ?? "{\"id\":\"1\",\"gameVersion\":1,\"name\":\"Sahrabarik\"}"
-		if var baseMap = DataMap(serializedString: json) {
-			baseMap.isDummyData = true
-			let map = Map(id: "1", generalData: baseMap)
-			return map
-		}
+		let json = json ?? "{\"id\":\"1\",\"gameVersion\":\"1\",\"name\":\"Sahrabarik\"}"
+        if var baseMap = try? defaultManager.decoder.decode(DataMap.self, from: json.data(using: .utf8)!) {
+            baseMap.isDummyData = true
+            let map = Map(id: "1", generalData: baseMap)
+            return map
+        }
 		// swiftlint:enable line_length
 		return nil
 	}
 }
 
-// MARK: SerializedDataStorable
-extension Map: SerializedDataStorable {
-
-	public func getData() -> SerializableData {
-		var list: [String: SerializedDataStorable?] = [:]
-		list["id"] = id
-		list["isExplored"] = gameValuesForIsExplored()
-		list = serializeDateModifiableData(list: list)
-		list = serializeGameModifyingData(list: list)
-		list = serializeLocalCloudData(list: list)
-		return SerializableData.safeInit(list)
-	}
-
-	public func gameValuesForIsExplored() -> String {
-		var data: [String] = []
-		for game in GameVersion.list() {
-			data.append(isExploredPerGameVersion[game] == true ? "1" : "0")
-		}
-		return "|\(data.joined(separator: "|"))|"
-	}
-
-}
+//// MARK: SerializedDataStorable
+//extension Map: SerializedDataStorable {
+//
+//    public func getData() -> SerializableData {
+//        var list: [String: SerializedDataStorable?] = [:]
+//        list["id"] = id
+//        list["isExplored"] = gameValuesForIsExplored()
+////        list = serializeDateModifiableData(list: list)
+////        list = serializeGameModifyingData(list: list)
+////        list = serializeLocalCloudData(list: list)
+//        return SerializableData.safeInit(list)
+//    }
+//
+//    public func gameValuesForIsExplored() -> String {
+//        var data: [String] = []
+//        for game in GameVersion.all() {
+//            data.append(isExploredPerGameVersion[game] == true ? "1" : "0")
+//        }
+//        return "|\(data.joined(separator: "|"))|"
+//    }
+//
+//}
 
 // MARK: SerializedDataRetrievable
-extension Map: SerializedDataRetrievable {
+//extension Map: SerializedDataRetrievable {
 
-	public init?(data: SerializableData?) {
-		let gameVersion = GameVersion(rawValue: data?["gameVersion"]?.string ?? "0") ?? .game1
-		guard let data = data, let id = data["id"]?.string,
-			  let dataMap = DataMap.get(id: id, gameVersion: gameVersion),
-			  let gameSequenceUuid = data["gameSequenceUuid"]?.string
-		else {
-			return nil
-		}
-
-		self.init(
-			id: id,
-			gameSequenceUuid: gameSequenceUuid,
-			gameVersion: gameVersion,
-			generalData: dataMap,
-			data: data
-		)
-	}
-
-	public mutating func setData(_ data: SerializableData) {
-		id = data["id"]?.string ?? id
-		if let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") {
-			self.gameVersion = gameVersion
-			generalData.change(gameVersion: gameVersion)
-//			_events = nil
-		}
-		if generalData.id != id {
-			generalData = DataMap.get(id: id, gameVersion: gameVersion) ?? generalData
-			_events = nil
-		}
-
-		unserializeDateModifiableData(data: data)
-		unserializeGameModifyingData(data: data)
-		unserializeLocalCloudData(data: data)
-
-		isExploredPerGameVersion = gameValuesFromIsExplored(data: data["isExplored"]?.string ?? "")
-	}
-
-	public func gameValuesFromIsExplored(data: String) -> [GameVersion: Bool] {
-		let pieces = data.components(separatedBy: "|")
-		if pieces.count == 5 {
-			var values: [GameVersion: Bool] = [:]
-			values[.game1] = pieces[1] == "1"
-			values[.game2] = pieces[2] == "1"
-			values[.game3] = pieces[3] == "1"
-			return values
-		}
-		return [.game1: false, .game2: false, .game3: false]
-	}
-
-}
+//    public init?(data: SerializableData?) {
+//        let gameVersion = GameVersion(rawValue: data?["gameVersion"]?.string ?? "0") ?? .game1
+//        guard let data = data, let id = data["id"]?.string,
+//              let dataMap = DataMap.get(id: id),
+//              let uuidString = data["gameSequenceUuid"]?.string,
+//              let gameSequenceUuid = UUID(uuidString: uuidString)
+//        else {
+//            return nil
+//        }
+//
+//        self.init(
+//            id: id,
+//            gameSequenceUuid: gameSequenceUuid,
+//            gameVersion: gameVersion,
+//            generalData: dataMap,
+//            data: data
+//        )
+//    }
+//
+//    public mutating func setData(_ data: SerializableData) {
+//        id = data["id"]?.string ?? id
+//        if let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") {
+//            self.gameVersion = gameVersion
+//            generalData.change(gameVersion: gameVersion)
+////            _events = nil
+//        }
+//        if generalData.id != id {
+//            generalData = DataMap.get(id: id) ?? generalData
+//            _events = nil
+//        }
+//
+////        unserializeDateModifiableData(data: data)
+////        unserializeGameModifyingData(data: data)
+////        unserializeLocalCloudData(data: data)
+//
+//        isExploredPerGameVersion = gameValuesFromIsExplored(data: data["isExplored"]?.string ?? "")
+//    }
+//
+//    public func gameValuesFromIsExplored(data: String) -> [GameVersion: Bool] {
+//        let pieces = data.components(separatedBy: "|")
+//        if pieces.count == 5 {
+//            var values: [GameVersion: Bool] = [:]
+//            values[.game1] = pieces[1] == "1"
+//            values[.game2] = pieces[2] == "1"
+//            values[.game3] = pieces[3] == "1"
+//            return values
+//        }
+//        return [.game1: false, .game2: false, .game3: false]
+//    }
+//
+//}
 
 // MARK: DateModifiable
 extension Map: DateModifiable {}

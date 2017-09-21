@@ -9,15 +9,32 @@
 import Foundation
 
 /// Stores the properties necessary to execute automatic changes to objects based on events.
-public struct Action {
+public struct Action: Codable {
+
+    enum CodingKeys: String, CodingKey {
+        case target
+        case changes
+    }
 
 // MARK: Properties
-
 	/// An identifier for the type of target to be changed.
 	public var target: ActionTarget
 
 	/// A set of change instructions in basic key-value form.
-	public var changes: [String: SerializableData]
+	public var changes: CodableDictionary
+
+// MARK: Initialization
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        target = try container.decode(ActionTarget.self, forKey: .target)
+        changes = try container.decode(CodableDictionary.self, forKey: .changes)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(target, forKey: .target)
+        try container.encode(changes, forKey: .changes)
+    }
 }
 
 // MARK: Basic Actions
@@ -25,35 +42,15 @@ extension Action {
 
 	/// Executes or reverts the change.
 	public func change(isTriggered: Bool) {
-		target.change(data: isTriggered ? changes["On"] : changes["Off"])
+		target.change(fromActionData: isTriggered ? onChanges : offChanges)
 	}
 
-}
-
-// MARK: SerializedDataStorable
-extension Action: SerializedDataStorable {
-
-	public func getData() -> SerializableData {
-		var list: [String: SerializedDataStorable?] = [:]
-		list["target"] = target
-		list["changes"] = SerializableData.safeInit(changes)
-		return SerializableData.safeInit(list)
+	public var onChanges: [String: Any?] {
+        return (changes["On"] as? CodableDictionary)?.dictionary ?? [:]
 	}
 
-}
-
-// MARK: SerializedDataRetrievable
-extension Action: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data,
-			  let target = ActionTarget(data: data["target"]),
-			  let changes = data["changes"]?.dictionary
-		else {
-			return nil
-		}
-		self.target = target
-		self.changes = changes
-	}
+    public var offChanges: [String: Any?] {
+        return (changes["Off"] as? CodableDictionary)?.dictionary ?? [:]
+    }
 
 }

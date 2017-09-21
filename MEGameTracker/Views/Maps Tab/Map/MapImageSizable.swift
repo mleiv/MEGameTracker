@@ -43,7 +43,7 @@ extension MapImageSizable {
 		shiftMapImage(baseView: baseView, competingView: competingView)
 	}
 
-	fileprivate func sizeMapImage(baseView: UIView?, competingView: UIView?) {
+	private func sizeMapImage(baseView: UIView?, competingView: UIView?) {
 		if mapImageScrollHeightConstraint == nil {
 			mapImageScrollHeightConstraint = mapImageScrollView?.superview?.heightAnchor
 				.constraint(equalToConstant: 10000)
@@ -71,7 +71,7 @@ extension MapImageSizable {
 		mapImageScrollView.zoomScale = mapImageScrollView.minimumZoomScale
 	}
 
-	fileprivate func mapImageWrapper() -> UIView? {
+	private func mapImageWrapper() -> UIView? {
 		if lastMapImageName == map?.image && self.mapImageWrapperView != nil {
 			return self.mapImageWrapperView
 		} else {
@@ -91,7 +91,7 @@ extension MapImageSizable {
 		return mapImageWrapperView
 	}
 
-	fileprivate func shiftMapImage(baseView: UIView?, competingView: UIView?) {
+	private func shiftMapImage(baseView: UIView?, competingView: UIView?) {
 		guard let mapImageScrollView = mapImageScrollView,
 			let mapImageWrapperView = mapImageWrapperView,
 			let currentImageRatio = currentImageRatio(baseView: baseView, competingView: competingView) else { return }
@@ -110,7 +110,7 @@ extension MapImageSizable {
 		mapImageScrollView.contentInset.bottom = mapImageScrollView.contentInset.top
 	}
 
-	fileprivate func currentImageRatio(baseView: UIView?, competingView: UIView?) -> CGFloat? {
+	private func currentImageRatio(baseView: UIView?, competingView: UIView?) -> CGFloat? {
 		guard
 			let mapImageWrapperView = self.mapImageWrapperView,
 			mapImageWrapperView.bounds.height > 0

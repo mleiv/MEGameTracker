@@ -114,11 +114,11 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 	override public func viewDidLoad() {
 		super.viewDidLoad()
 		if !UIWindow.isInterfaceBuilder && App.isInitializing {
-			App.onDidInitialize.subscribe(on: self) { [weak self] in
-				DispatchQueue.main.async { [weak self] in
-					self?.setup()
-					self?.view.layoutIfNeeded()
-				}
+			App.onDidInitialize.subscribe(on: self) { [weak self] (_) -> Void in
+                DispatchQueue.main.async { () -> Void in
+                    self?.setup()
+                    self?.view.layoutIfNeeded()
+                }
 			}
 		} else {
 			setup()
@@ -180,7 +180,7 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 		shepard = Shepard.getDummy()
 	}
 
-	func reloadDataOnChange() {
+	func reloadDataOnChange(_ x: Bool = false) {
 		guard !UIWindow.isInterfaceBuilder && !App.isInitializing else { return }
 		DispatchQueue.main.async {
 			self.setup()
@@ -218,9 +218,9 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 			nameField.text = shepard?.name.stringValue
 			sizeName()
 		} else {
-			shepard?.change(name: nameField.text)
+            // discard, wait for listener
+            _ = shepard?.changed(name: nameField.text)
 		}
-		_ = shepard?.saveAnyChanges()
 		nameField.superview?.setNeedsLayout()
 		nameField.superview?.layoutIfNeeded()
 		stopSpinner(inView: view)
@@ -228,7 +228,8 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 
 	func changeGender(index: Int) {
 		startSpinner(inView: view)
-		shepard?.change(gender: index == 0 ? .male : .female)
+        // discard, wait for listener
+        _ = shepard?.changed(gender: index == 0 ? .male : .female)
 		stopSpinner(inView: view)
 	}
 
@@ -242,7 +243,11 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 			default: return .game1
 			}
 		}()
-		App.current.changeGameVersion(newGame)
+        App.current.changeGame { game in
+            var game = game
+            game?.change(gameVersion: newGame)
+            return game
+        }
 		// reload shepard:
 		fetchData()
 		stopSpinner(inView: view)
@@ -328,8 +333,10 @@ extension ShepardController: UIImagePickerControllerDelegate {
 		editingInfo: [String : AnyObject]?
 	) {
 		picker.dismiss(animated: true, completion: nil)
-		if App.current.game?.shepard?.savePhoto(image: image) == true {
-			setupPhotoValue()
+        if var game = App.current.game,
+            game.shepard?.savePhoto(image: image) == true {
+            setupPhotoValue()
+            App.current.changeGame(isSave: false, isNotify: false) { _ in game }
 		} else {
 			let alert = UIAlertController(
 				title: nil,
@@ -399,8 +406,8 @@ extension ShepardController: Notesable {
 
 	func setupNotes() {
 		shepard?.getNotes { [weak self] notes in
+            self?.notes = notes
 			DispatchQueue.main.async {
-				self?.notes = notes
 				self?.notesView?.controller = self
 				self?.notesView?.setup()
 			}
@@ -447,7 +454,7 @@ extension ShepardController { // Slider Rows
 			minValue: 0,
 			maxValue: 100,
 			onChange: { [weak self] value in
-				Event.triggerRenegadeChange(value, for: self?.shepard)
+				Event.triggerParagonChange(value, for: self?.shepard)
 			}
 		)
 		paragonRow?.setupView()
@@ -460,7 +467,7 @@ extension ShepardController { // Slider Rows
 			minValue: 0,
 			maxValue: 100,
 			onChange: { [weak self] value in
-				Event.triggerParagonChange(value, for: self?.shepard)
+				Event.triggerRenegadeChange(value, for: self?.shepard)
 			}
 		)
 		renegadeRow?.setupView()

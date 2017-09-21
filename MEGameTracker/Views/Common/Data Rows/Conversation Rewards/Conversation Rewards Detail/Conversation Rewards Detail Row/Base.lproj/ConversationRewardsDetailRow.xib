@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="49" id="6xB-z7-0g1" customClass="ConversationRewardsDetailRow" customModule="MEGameTracker" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="6xB-z7-0g1" customClass="ConversationRewardsDetailRow" customModule="MEGameTracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6xB-z7-0g1" id="i20-Wu-1tQ">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvD-gO-gq2">
-                        <rect key="frame" x="15" y="8" width="290" height="31.5"/>
+                        <rect key="frame" x="0.0" y="8" width="0.0" height="70.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a6t-oG-xhR">
-                                <rect key="frame" x="0.0" y="0.0" width="290" height="31.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="70.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="755" text="Common Context:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeH-rK-lzD" userLabel="Common Context" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="290" height="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="16"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -33,24 +33,21 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.NormalColor"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QWv-t2-kix">
-                                        <rect key="frame" x="0.0" y="16" width="290" height="15.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="100" id="KVO-KX-aft"/>
-                                        </constraints>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QWv-t2-kix">
+                                        <rect key="frame" x="0.0" y="16" width="0.0" height="54.5"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="a6t-oG-xhR" secondAttribute="bottom" priority="900" id="1j4-No-Zmd"/>
+                            <constraint firstAttribute="bottom" secondItem="a6t-oG-xhR" secondAttribute="bottom" id="1j4-No-Zmd"/>
                             <constraint firstItem="a6t-oG-xhR" firstAttribute="top" secondItem="cvD-gO-gq2" secondAttribute="top" priority="901" id="fTC-Y0-frQ"/>
                             <constraint firstItem="a6t-oG-xhR" firstAttribute="leading" secondItem="cvD-gO-gq2" secondAttribute="leading" id="lUa-ay-QoC"/>
                             <constraint firstAttribute="trailing" secondItem="a6t-oG-xhR" secondAttribute="trailing" id="lgG-SS-393"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue4-Kh-HHA" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="15" y="47.5" width="305" height="1"/>
+                        <rect key="frame" x="0.0" y="86.5" width="0.0" height="1"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="iZ3-z7-IAv"/>
                         </constraints>
@@ -81,7 +78,7 @@
                 <outlet property="indentConstraint1" destination="lUa-ay-QoC" id="RmV-SQ-gwX"/>
                 <outlet property="optionsStack" destination="QWv-t2-kix" id="BQO-2z-SLI"/>
             </connections>
-            <point key="canvasLocation" x="79" y="163.5"/>
+            <point key="canvasLocation" x="79" y="183"/>
         </tableViewCell>
     </objects>
 </document>

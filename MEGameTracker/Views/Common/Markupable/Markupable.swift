@@ -65,7 +65,7 @@ extension Markupable where Self: UIView {
 				using: { (result, _, _) in
 					//(NSTextCheckingResult?, NSMatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void)
 					if let match = result, match.numberOfRanges == 1 {
-						var wholeMatchRange = match.rangeAt(0)
+						var wholeMatchRange = match.range(at: 0)
 						wholeMatchRange.location += offsetIndex
 						var text = attributedText.attributedSubstring(from: wholeMatchRange)
 						let textString = text.string
@@ -103,11 +103,11 @@ extension Markupable where Self: UIView {
 				using: { (result, _, _) in
 					//(NSTextCheckingResult?, NSMatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void)
 					if let match = result, match.numberOfRanges == 3 {
-						var wholeMatchRange = match.rangeAt(0)
+						var wholeMatchRange = match.range(at: 0)
 						wholeMatchRange.location += offsetIndex
-						var textRange = match.rangeAt(1)
+						var textRange = match.range(at: 1)
 						// don't do offset yet, may be invalid match (length == 0)
-						var linkRange = match.rangeAt(2)
+						var linkRange = match.range(at: 2)
 						linkRange.location += offsetIndex
 						let link = attributedText.attributedSubstring(from: linkRange).string
 						let text: NSAttributedString = {
@@ -137,7 +137,7 @@ extension Markupable where Self: UIView {
 		return attributedText
 	}
 
-	fileprivate func parseLinkForObjectName(_ urlString: String) -> String? {
+	private func parseLinkForObjectName(_ urlString: String) -> String? {
 		if let url = URL(string: urlString),
 			let page = url.host,
 			let id = url.queryDictionary["id"] {
@@ -146,7 +146,7 @@ extension Markupable where Self: UIView {
 			case "item": return Item.get(id: id)?.name
 			case "map": return Map.get(id: id)?.name
 			case "maplocation":
-				if let type = MapLocationType(stringValue: url.queryDictionary["type"] ?? "") {
+				if let type = MapLocationType(stringValue: url.queryDictionary["type"]) {
 					return MapLocation.get(id: id, type: type)?.name
 				} else {
 					return nil
@@ -158,7 +158,7 @@ extension Markupable where Self: UIView {
 		return nil
 	}
 
-	fileprivate func createLink(oldAttributedText: NSAttributedString, link: String) -> NSAttributedString {
+	private func createLink(oldAttributedText: NSAttributedString, link: String) -> NSAttributedString {
 		let attributedText = NSMutableAttributedString(attributedString: oldAttributedText)
 		let isInternalLink = NSPredicate(format:"SELF MATCHES %@", "megametracker:.*").evaluate(with: link)
 		let hideIcon = NSPredicate(format:"SELF MATCHES %@", ".*\\&hideicon=1.*").evaluate(with: link)
@@ -173,7 +173,7 @@ extension Markupable where Self: UIView {
 			let attributedLinkImage = NSAttributedString(attachment: linkImage)
 			attributedText.replaceCharacters(in: NSMakeRange(0, 0), with: attributedLinkImage)
 		}
-		attributedText.addAttribute(NSLinkAttributeName,
+		attributedText.addAttribute(NSAttributedStringKey.link,
 			value: link,
 			range: NSMakeRange(0, attributedText.length)
 		)

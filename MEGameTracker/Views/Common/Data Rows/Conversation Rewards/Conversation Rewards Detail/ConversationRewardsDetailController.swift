@@ -30,6 +30,9 @@ final public class ConversationRewardsDetailController: UITableViewController {
 	}
 
 	func setup() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+
 		rewards = mission?.conversationRewards.flatRows() ?? []
 
 		if isPopover {
@@ -62,11 +65,11 @@ final public class ConversationRewardsDetailController: UITableViewController {
 	}
 
 	func saveConversationRewardsChoice(id: String, isOn: Bool) {
-		guard var mission = mission else { return }
+		guard let mission = mission else { return }
 		if isOn {
-			mission.change(conversationRewardId: id, isSelected: true, isSave: true)
+			_ = mission.changed(conversationRewardId: id, isSelected: true, isSave: true)
 		} else {
-			mission.change(conversationRewardId: id, isSelected: false, isSave: true)
+			_ = mission.changed(conversationRewardId: id, isSelected: false, isSave: true)
 		}
 	}
 
@@ -107,10 +110,6 @@ extension ConversationRewardsDetailController { //: UITableViewDataSource {
 	) -> Int {
 		return rewards.count
 	}
-
-//	override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//		return 1
-//	}
 
 	override public func tableView(
 		_ tableView: UITableView,

@@ -115,7 +115,7 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 		if let map = self.map {
 			// load all map locations on this map
 			mapLocations = [:]
-			for type in MapLocationType.list() {
+			for type in MapLocationType.all() {
 				mapLocations[type] = []
 			}
 			if !UIWindow.isInterfaceBuilder {
@@ -132,7 +132,7 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 						allMapLocations = MapLocation.addChildMapLocations(mapLocations: allMapLocations)
 					}
 				}
-				for type in MapLocationType.list() {
+				for type in MapLocationType.all() {
 					mapLocations[type] = allMapLocations.filter({
 						$0.mapLocationType == type
 					}).sorted(by: MapLocation.sort).map({
@@ -143,8 +143,8 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 				}
 			}
 		}
-		for type in MapLocationType.list() where !(mapLocations[type] ?? []).isEmpty {
-			tabCurrentIndex = type.rawValue
+		for type in MapLocationType.all() where !(mapLocations[type] ?? []).isEmpty {
+			tabCurrentIndex = type.intValue ?? 0
 			break
 		}
 	}
@@ -162,7 +162,7 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 	func setupMapLocationsCounts() {
 		// add count to each visible tab
 		tabTitles = []
-		for type in MapLocationType.list() {
+		for type in MapLocationType.all() {
 			let name = type.headingValue
 			let count = (mapLocations[type] ?? []).reduce(0) { $0 + (self.isFinishedCallout($1) ? 0 : 1) }
 			mapLocationsCounts[type] = count
@@ -180,7 +180,7 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 	func setControllerData(controller: UIViewController?, forTab tabName: String) {
 		guard let controller = controller as? MapCalloutsController else { return }
 		if let tabIndex = tabNames.index(of: tabName) {
-			let type = MapLocationType.list()[tabIndex]
+			let type = MapLocationType.all()[tabIndex]
 			controller.callouts = mapLocations[type] ?? []
 		} else {
 			controller.callouts = []
@@ -209,7 +209,7 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 		if count != mapLocationsCounts[type] {
 			mapLocationsCounts[type] = count
 			tabTitles = []
-			for type in MapLocationType.list() {
+			for type in MapLocationType.all() {
 				let name = type.headingValue
 				tabTitles.append("\(name) (\(mapLocationsCounts[type] ?? 0))")
 			}
@@ -218,7 +218,7 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 	}
 
 	var shepardUuid = App.current.game?.shepard?.uuid
-	func reloadOnShepardChange() {
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
 			reloadDataOnChange()
@@ -258,7 +258,7 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 	@IBOutlet weak public var tabs: UIHeaderTabs!
 	@IBOutlet weak public var tabsContentWrapper: UIView!
 
-	public var tabNames: [String] = MapLocationType.list().map { $0.headingValue }
+	public var tabNames: [String] = MapLocationType.all().map { $0.headingValue }
 
 	public func tabControllersInitializer(tabName: String) -> UIViewController? {
 		let bundle = Bundle(for: type(of: self))

@@ -24,7 +24,7 @@ final class AppTests: MEGameTrackerTests {
 	let game2Json = "{\"createdDate\" : \"2017-02-27 08:13:28\",\"modifiedDate\" : \"2017-02-27 08:17:50\",\"uuid\" : \"7BF05BF6-386A-4429-BC18-2A60F2D29520\"}"
 
 	/// The uuid of the two identical games above.
-	let femShepGameUuid = "7BF05BF6-386A-4429-BC18-2A60F2D29519"
+	let femShepGameUuid = UUID(uuidString: "7BF05BF6-386A-4429-BC18-2A60F2D29519")
 
 	/// Game 1 Shepard attached to game sequence above.
 	let femShep1Json = "{\"uuid\" : \"BC0D3009-3385-4132-851A-DF472CBF9EFD\",\"gameVersion\" : \"1\",\"paragon\" : 0,\"createdDate\" : \"2017-02-15 07:40:32\",\"level\" : 1,\"gameSequenceUuid\" : \"7BF05BF6-386A-4429-BC18-2A60F2D29519\",\"reputation\" : \"Sole Survivor\",\"renegade\" : 0,\"modifiedDate\" : \"2017-02-23 07:13:39\",\"origin\" : \"Earthborn\",\"appearance\" : \"XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X\",\"class\" : \"Soldier\",\"gender\" : \"F\",\"name\" : \"Xoe\"}"
@@ -32,7 +32,7 @@ final class AppTests: MEGameTrackerTests {
 	/// Game 2 Shepard attached to game sequence above.
 	let femShep2Json = "{\"uuid\" : \"BC0D3009-3385-4132-851A-DF472CBF9EFE\",\"gameVersion\" : \"2\",\"paragon\" : 0,\"createdDate\" : \"2017-02-25 09:10:15\",\"level\" : 1,\"gameSequenceUuid\" : \"7BF05BF6-386A-4429-BC18-2A60F2D29519\",\"reputation\" : \"Sole Survivor\",\"renegade\" : 0,\"modifiedDate\" : \"2017-02-25 09:10:15\",\"origin\" : \"Earthborn\",\"isSavedToCloud\" : false,\"appearance\" : \"XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X\",\"class\" : \"Soldier\",\"gender\" : \"F\",\"name\" : \"Xoe\"}"
 
-	let garrusJson = "{\"id\": \"M1.Garrus\",\"sortIndex\": 3,\"gameVersion\": \"1\",\"missionType\": \"Mission\",\"name\": \"Citadel: Garrus\",\"isOptional\": true,\"inMapId\": \"G.C1.Tower\",\"mapLocationPoint\": {\"x\": 1049,\"y\": 571,\"radius\": 1},\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Citadel:_Expose_Saren#Report_to_the_Council\"],\"relatedMissionIds\": [\"M1.ExposeSaren\", \"M1.ShadowBroker\"]}"
+	let garrusJson = "{\"id\": \"M1.Garrus\",\"sortIndex\": 3,\"gameVersion\": \"1\",\"missionType\": \"Mission\",\"name\": \"Citadel: Garrus\",\"isOptional\": true,\"inMapId\": \"G.C1.Tower\",\"mapLocationPoint\": {\"x\": 1049,\"y\": 571,\"radius\": true},\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Citadel:_Expose_Saren#Report_to_the_Council\"],\"relatedMissionIds\": [\"M1.ExposeSaren\", \"M1.ShadowBroker\"]}"
 
 	let insigniasJson = "{\"id\": \"A1.UC.TurianInsignias\",\"sortIndex\": 45,\"gameVersion\": \"1\",\"missionType\": \"Collection\",\"name\": \"UNC: Turian Insignias\",\"aliases\": [\"UNC: Turian Insignias\", \"UNC: Collection Complete\"],\"objectivesCountToCompletion\": 2,\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/UNC:_Turian_Insignias\"]}"
 
@@ -61,7 +61,7 @@ final class AppTests: MEGameTrackerTests {
 		_ = create(App.self, from: "{}") // reset
 		App.retrieve()
 
-		guard let uuid = App.current.game?.uuid,
+		guard let uuid = App.current.currentGameUuid,
 			let game = GameSequence.get(uuid: uuid),
 			game.uuid == uuid else {
 			XCTAssert(false, "Newly created game not saved")
@@ -69,7 +69,7 @@ final class AppTests: MEGameTrackerTests {
 		}
 		XCTAssert(App.current.recentlyViewedMaps.contents.isEmpty,
 			"Initialized recently viewed maps not empty")
-		XCTAssert(App.current.recentlyViewedMissions.isEmpty == true,
+		XCTAssert(App.current.recentlyViewedMissions[.game1]?.contents.count == 0,
 			"Initialized recently viewed missions not empty")
 	}
 
@@ -93,33 +93,33 @@ final class AppTests: MEGameTrackerTests {
 
 	/// Test App event signals.
 	func testAppEvents() {
-		// #1 Test app open calls onchange once
+        // #1 Test app open calls onchange once
 
-		// - verify signal is fired
-		let expectationShepardChanged1 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) {
-			expectationShepardChanged1.fulfill()
-		}
+        // - verify signal is fired
+        let expectationShepardChanged1 = expectation(description: "Shepard on change triggered")
+        App.onCurrentShepardChange.subscribe(on: self) { _ in
+            expectationShepardChanged1.fulfill()
+        }
 
-		_ = create(App.self, from: "{}") // reset
-		App.retrieve()
+        _ = create(App.self, from: "{}") // reset
+        App.retrieve()
 
-		// - wait for signal
-		waitForExpectations(timeout: 0.1) { _ in }
-		App.onCurrentShepardChange.cancelSubscription(for: self)
+        // - wait for signal
+        waitForExpectations(timeout: 0.1) { _ in }
+        App.onCurrentShepardChange.cancelSubscription(for: self)
 
 		// #2 Test app open with saved data calls onchange once
 
 		// - verify signal is fired
 		let expectationShepardChanged2 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) {
+		App.onCurrentShepardChange.subscribe(on: self) { _ in
 			expectationShepardChanged2.fulfill()
 		}
 
-		_ = create(Map.self, from: exodusJson)
-		_ = create(Mission.self, from: garrusJson)
-		_ = create(Mission.self, from: insigniasJson)
-		_ = create(GameSequence.self, from: gameWithShepardJson)
+        _ = create(Map.self, from: exodusJson)
+        _ = create(Mission.self, from: garrusJson)
+        _ = create(Mission.self, from: insigniasJson)
+        _ = create(GameSequence.self, from: gameWithShepardJson)
 		_ = create(App.self, from: appWithRecentJson)
 		App.retrieve()
 
@@ -127,29 +127,37 @@ final class AppTests: MEGameTrackerTests {
 		waitForExpectations(timeout: 0.1) { _ in }
 		App.onCurrentShepardChange.cancelSubscription(for: self)
 
-		// #3 Test change game version calls onchange once
+        // #3 Test change game version calls onchange once
 
-		// - verify signal is fired
-		let expectationShepardChanged3 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) {
-			expectationShepardChanged3.fulfill()
-		}
+        // - verify signal is fired
+        let expectationShepardChanged3 = expectation(description: "Shepard on change triggered")
+        App.onCurrentShepardChange.subscribe(on: self) { _ in
+            expectationShepardChanged3.fulfill()
+        }
 
-		App.current.changeGameVersion(.game2)
+        App.current.changeGame(isSave: false) { game in
+            var game = game
+            game?.change(gameVersion: .game2)
+            return game
+        }
 
-		// - wait for signal
-		waitForExpectations(timeout: 0.1) { _ in }
-		App.onCurrentShepardChange.cancelSubscription(for: self)
+        // - wait for signal
+        waitForExpectations(timeout: 0.1) { _ in }
+        App.onCurrentShepardChange.cancelSubscription(for: self)
 
 		// #4 Test change shepard calls onchange once
 
 		// - verify signal is fired
 		let expectationShepardChanged4 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) {
+		App.onCurrentShepardChange.subscribe(on: self) { _ in
 			expectationShepardChanged4.fulfill()
 		}
 
-		App.current.game?.shepard?.change(name: "Javier")
+        App.current.changeGame(isSave: false, isNotify: false) { game in
+            var game = game; let shepard = game?.shepard
+            game?.shepard = shepard?.changed(name: "Javier") // let shepard manage its own isNotify
+            return game
+        }
 
 		// - wait for signal
 		waitForExpectations(timeout: 0.1) { _ in }
@@ -159,15 +167,16 @@ final class AppTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationShepardChanged5 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) {
+		App.onCurrentShepardChange.subscribe(on: self) { _ in
 			expectationShepardChanged5.fulfill()
 		}
 
-		guard let game = create(GameSequence.self, from: game2Json) else {
+		guard var game = create(GameSequence.self, from: game2Json) else {
 			XCTAssert(false, "Failed to load game from json")
 			return
 		}
-		App.current.change(game: game)
+        _ = game.saveAnyChanges(isAllowDelay: false)
+        App.current.changeGame(isSave: false) { _ in game }
 
 		// - wait for signal
 		waitForExpectations(timeout: 0.1) { _ in }

@@ -180,8 +180,8 @@ final public class MapController: UIViewController,
 
 		mapLocation?.shownInMapId = map?.id
 
-		map?.change(gameVersion: App.current.gameVersion) // should not be necessary, but... it is
-		if var map = self.map {
+		// changed should not be necessary, but... it is
+		if var map = self.map?.changed(gameVersion: App.current.gameVersion) {
 
 			if !UIWindow.isInterfaceBuilder {
 				// load map locations
@@ -323,16 +323,16 @@ extension MapController {
 		mapLocationsList.inView = mapImageWrapperView
 		let isSplitMenu = map?.isSplitMenu ?? false
 		mapLocationsList.isSplitMenu = isSplitMenu
-//		mapLocationsList.onClick = { [weak self] (button: MapLocationButtonNib) in
-//			guard let location = self?.mapLocationsList.getLocations(fromButton: button).first else { return }
-
-//			if isSplitMenu, let menuItemMap = location as? Map {
-//				self?.segueToMap(menuItemMap)
-//			} else {
-//				MapLocation.onChangeSelection.fire((location))
-//			}
-
-//		}
+//        mapLocationsList.onClick = { [weak self] (button: MapLocationButtonNib) in
+//            guard let location = self?.mapLocationsList.getLocations(fromButton: button).first else { return }
+//
+//            if isSplitMenu, let menuItemMap = location as? Map {
+//                self?.segueToMap(menuItemMap)
+//            } else {
+//                MapLocation.onChangeSelection.fire((location))
+//            }
+//
+//        }
 		mapLocationsList.removeAll()
 		_ = mapLocationsList.add(locations: mapLocations)
 	}
@@ -429,7 +429,7 @@ extension MapController {
 
 	func reloadMap() {
 		if let mapId = self.map?.id,
-		   let map = Map.get(id: mapId, gameVersion: App.current.gameVersion) {
+		   let map = Map.get(id: mapId) {
 			self.map = map
 			isNeedsSetupImageSizable = true
 			reloadDataOnChange()
@@ -507,7 +507,7 @@ extension MapController: UIGestureRecognizerDelegate {
 		return true
 	}
 
-	func tapMap(_ sender: UITapGestureRecognizer) {
+	@objc func tapMap(_ sender: UITapGestureRecognizer) {
 		if let button = mapLocationsList.getButtonTouched(gestureRecognizer: sender) {
 			if let location = mapLocationsList.getLocations(fromButton: button).first {
 				if map?.isSplitMenu == true, let menuItemMap = location as? Map {
@@ -570,7 +570,7 @@ extension MapController {
 //		view.userInteractionEnabled = true
 //	}
 
-	func reloadOnShepardChange() {
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
 			DispatchQueue.main.async {
@@ -583,7 +583,25 @@ extension MapController {
 // MARK: Listeners
 extension MapController {
 
-	fileprivate func startListeners() {
+    private func reloadOnLocationChange<T: GameRowStorable & DateModifiable>(
+        type: T.Type,
+        changed: (id: String, object: T?)
+    ) {
+        var mapLocations = self.mapLocations
+        if let index = mapLocations.index(where: { $0.id == changed.id }),
+            var newLocation = Mission.get(id: changed.id),
+            let oldLocation = mapLocations[index] as? T,
+            newLocation.modifiedDate > oldLocation.modifiedDate {
+            newLocation.shownInMapId = map?.id // set this or callout may not appear in map
+            mapLocations[index] = newLocation
+            self.mapLocations = mapLocations
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) { [weak self] in
+                self?.reloadMapLocationable(newLocation)
+            }
+        }
+    }
+
+	private func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
@@ -594,50 +612,27 @@ extension MapController {
 		// listen for changes to maps data 
 		Map.onChange.cancelSubscription(for: self)
 		_ = Map.onChange.subscribe(on: self) { [weak self] changed in
-			if self?.map?.id == changed.id, let newMap = changed.object ?? Map.get(id: changed.id) {
+			if self?.map?.id == changed.id,
+                let newMap = changed.object ?? Map.get(id: changed.id) {
 				self?.map = newMap
 				self?.reloadDataOnChange()
 			}
-			// catch event changes
-			guard changed.object == nil else { return }
-			if let index = self?.mapLocations.index(where: { $0.id == changed.id }),
-				var newMap = Map.get(id: changed.id) {
-				newMap.shownInMapId = self?.map?.id
-				self?.mapLocations[index] = newMap
-				DispatchQueue.main.async {
-					self?.reloadMapLocationable(newMap)
-				}
-			}
+//            guard changed.object == nil else { return } // filters to only events
+            self?.reloadOnLocationChange(type: Map.self, changed: changed)
 		}
 		Mission.onChange.cancelSubscription(for: self)
 		_ = Mission.onChange.subscribe(on: self) { [weak self] changed in
-			// catch event changes
-			guard changed.object == nil else { return }
-			if let index = self?.mapLocations.index(where: { $0.id == changed.id }),
-				var newMission = Mission.get(id: changed.id) {
-				newMission.shownInMapId = self?.map?.id
-				self?.mapLocations[index] = newMission
-				DispatchQueue.main.async {
-					self?.reloadMapLocationable(newMission)
-				}
-			}
+//            guard changed.object == nil else { return } // filters to only events
+            self?.reloadOnLocationChange(type: Mission.self, changed: changed)
 		}
 		Item.onChange.cancelSubscription(for: self)
 		_ = Item.onChange.subscribe(on: self) { [weak self] changed in
-			// catch event changes
-			guard changed.object == nil else { return }
-			if let index = self?.mapLocations.index(where: { $0.id == changed.id }),
-				var newItem = Item.get(id: changed.id) {
-				newItem.shownInMapId = self?.map?.id
-				self?.mapLocations[index] = newItem
-				DispatchQueue.main.async {
-					self?.reloadMapLocationable(newItem)
-				}
-			}
+//            guard changed.object == nil else { return } // filters to only events
+            self?.reloadOnLocationChange(type: Item.self, changed: changed)
 		}
 	}
 
-	fileprivate func removeListeners() {
+	private func removeListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		App.onCurrentShepardChange.cancelSubscription(for: self)
 		MapLocation.onChangeSelection.cancelSubscription(for: self)
@@ -665,7 +660,7 @@ extension MapController {
 			spinnerController?.startSpinner(inView: self.view)
 			self.setCheckboxImage(isExplored: isExplored, isAvailable: self.map?.isAvailable ?? false)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
-				self.map?.change(isExplored: isExplored, isSave: true)
+				_ = self.map?.changed(isExplored: isExplored, isSave: true)
 				spinnerController?.stopSpinner(inView: self.view)
 			}
 		}
@@ -707,7 +702,7 @@ extension MapController {
 extension MapController: Available {
 	//public var availabilityMessage: String? // already declared
 
-	fileprivate func setupAvailability() {
+	private func setupAvailability() {
 		availabilityMessage = map?.unavailabilityMessages.joined(separator: ", ")
 		availabilityRowType.setupView()
 	}
@@ -715,7 +710,7 @@ extension MapController: Available {
 
 // MARK: Breadcrumbs
 extension MapController {
-	fileprivate func setupBreadcrumbs() {
+	private func setupBreadcrumbs() {
 		guard let breadcrumbs = self.map?.getCompleteBreadcrumbs(),
 			let map = self.map, !breadcrumbs.isEmpty else { return }
 		let name = map.name
@@ -738,16 +733,16 @@ extension MapController: Describable {
 		return map?.description
 	}
 
-	fileprivate func setupDescription() {
+	private func setupDescription() {
 		descriptionType.setupView()
 	}
 }
 
 // MARK: Game Segments
 extension MapController {
-	fileprivate func setupGameSegments() {
+	private func setupGameSegments() {
 		var games: [GameVersion] = []
-		for game in GameVersion.list() {
+		for game in GameVersion.all() {
 			if map?.isAvailableInGame(game) == true {
 				games.append(game)
 			}
@@ -762,7 +757,7 @@ extension MapController: Notesable {
 	//public var originHint: String? // already declared
 	//public var notes: [Note] // already declared
 
-	fileprivate func setupNotes() {
+	private func setupNotes() {
 		map?.getNotes { [weak self] notes in
 			DispatchQueue.main.async {
 				self?.notes = notes
@@ -781,7 +776,7 @@ extension MapController: Notesable {
 extension MapController: OriginHintable {
 	//public var originHint: String? // already declared
 
-	fileprivate func setupOriginHint() {
+	private func setupOriginHint() {
 		if let referringOriginHint = self.referringOriginHint {
 			originHintType.overrideOriginPrefix = "From"
 			originHintType.overrideOriginHint = referringOriginHint
@@ -796,7 +791,7 @@ extension MapController: OriginHintable {
 extension MapController: RelatedLinksable {
 	//public var relatedLinks: [String] // already declared
 
-	fileprivate func setupRelatedLinks() {
+	private func setupRelatedLinks() {
 		relatedLinks = map?.relatedLinks ?? []
 		relatedLinksView?.controller = self
 		relatedLinksView?.setup()

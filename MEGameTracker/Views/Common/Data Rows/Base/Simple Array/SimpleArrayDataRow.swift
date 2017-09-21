@@ -65,7 +65,10 @@ import UIKit
 
 	internal func setup() {
 		isSettingUp = true
-		if nib == nil, let view = SimpleArrayDataRowNib.loadNib(heading: heading, cellNibs: cellNibs) {
+		if nib == nil, let view = SimpleArrayDataRowNib.loadNib(
+            heading: heading,
+            cellNibs: cellNibs
+        ) {
 			insertSubview(view, at: 0)
 			view.fillView(self)
 			nib = view
@@ -113,12 +116,20 @@ extension SimpleArrayDataRow: UITableViewDataSource {
 		return 1
 	}
 
-	public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	public func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
 		return rowCount
 	}
 
-	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if let cell = tableView.dequeueReusableCell(withIdentifier: identifierForIndexPath(indexPath)) {
+	public func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+		if let cell = tableView.dequeueReusableCell(
+            withIdentifier: identifierForIndexPath(indexPath)
+        ) {
 			setupRow(cell: cell, indexPath: indexPath)
 			return cell
 		}
@@ -128,15 +139,24 @@ extension SimpleArrayDataRow: UITableViewDataSource {
 
 extension SimpleArrayDataRow: UITableViewDelegate {
 
-	public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+	public func tableView(
+        _ tableView: UITableView,
+        estimatedHeightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
 		return UITableViewAutomaticDimension
 	}
 
-	public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+	public func tableView(
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
 		return UITableViewAutomaticDimension
 	}
 
-	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+	public func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
 		if rowCount > (indexPath as NSIndexPath).row {
 			tableView.isUserInteractionEnabled = false
 			let cell = tableView.cellForRow(at: indexPath)
@@ -166,14 +186,16 @@ extension SimpleArrayDataRow: Bordered {
 extension SimpleArrayDataRow: Spinnerable {
 	func startParentSpinner() {
 		guard !UIWindow.isInterfaceBuilder else { return }
-		let parentView = (viewController?.view is UITableView) ? viewController?.view.superview : viewController?.view
+		let parentView = (viewController?.view is UITableView)
+            ? viewController?.view.superview : viewController?.view
 		DispatchQueue.main.async {
 			self.startSpinner(inView: parentView)
 		}
 	}
 	func stopParentSpinner() {
 		guard !UIWindow.isInterfaceBuilder else { return }
-		let parentView = (viewController?.view is UITableView) ? viewController?.view.superview : viewController?.view
+		let parentView = (viewController?.view is UITableView)
+            ? viewController?.view.superview : viewController?.view
 		DispatchQueue.main.async {
 			self.stopSpinner(inView: parentView)
 		}

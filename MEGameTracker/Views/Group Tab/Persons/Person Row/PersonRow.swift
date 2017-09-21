@@ -14,24 +14,24 @@ final class PersonRow: UITableViewCell {
 // MARK: Constants
 
 // MARK: Outlets
-	@IBOutlet fileprivate weak var photoImageView: UIImageView?
+	@IBOutlet private weak var photoImageView: UIImageView?
 
-	@IBOutlet fileprivate weak var nameLabel: UILabel?
-	@IBOutlet fileprivate weak var titleLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var statusLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var availabilityLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var heartButton: HeartButton?
+	@IBOutlet private weak var nameLabel: UILabel?
+	@IBOutlet private weak var titleLabel: MarkupLabel?
+	@IBOutlet private weak var statusLabel: MarkupLabel?
+	@IBOutlet private weak var availabilityLabel: MarkupLabel?
+	@IBOutlet private weak var heartButton: HeartButton?
 
-	@IBOutlet fileprivate weak var disclosureImageView: UIImageView?
+	@IBOutlet private weak var disclosureImageView: UIImageView?
 
 // MARK: Properties
 	internal fileprivate(set) var person: Person?
 	internal fileprivate(set) var isLoveInterest: Bool = false
-	fileprivate var hideDisclosure: Bool = false
-	fileprivate var onChangeLoveSetting: ((_ sender: HeartButton) -> Void)?
+	private var hideDisclosure: Bool = false
+	private var onChangeLoveSetting: ((_ sender: HeartButton) -> Void)?
 
 // MARK: Change Listeners And Change Status Flags
-	fileprivate var isDefined = false
+	private var isDefined = false
 
 // MARK: Lifecycle Events
 	public override func layoutSubviews() {
@@ -57,7 +57,7 @@ final class PersonRow: UITableViewCell {
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() {
+	private func setup() {
 		guard photoImageView != nil else { return }
 
 		nameLabel?.text = person?.name
@@ -88,7 +88,7 @@ final class PersonRow: UITableViewCell {
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		photoImageView?.image = nil
 		nameLabel?.text = " "
 		titleLabel?.text = " "
@@ -98,7 +98,7 @@ final class PersonRow: UITableViewCell {
 	}
 
 // MARK: Supporting Functions
-	fileprivate func changeLoveSetting(_ sender: AnyObject?) {
+	private func changeLoveSetting(_ sender: AnyObject?) {
 		isLoveInterest = heartButton?.isOn ?? false
 		heartButton?.toggle(isOn: isLoveInterest)
 		if let heartButton = heartButton {

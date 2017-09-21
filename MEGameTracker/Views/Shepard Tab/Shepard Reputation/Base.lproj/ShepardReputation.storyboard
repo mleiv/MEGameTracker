@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AYb-qF-HAv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AYb-qF-HAv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,17 +18,17 @@
                         <viewControllerLayoutGuide type="bottom" id="qQi-8n-dRX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PdT-Y2-Dyb">
-                        <rect key="frame" x="0.0" y="44" width="600" height="956"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="936"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih0-1N-XSq">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="956"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="936"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X34-3a-0dA">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="4129"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="4135"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qpA-9h-eyQ" userLabel="Values">
-                                                <rect key="frame" x="0.0" y="10" width="600" height="4099"/>
+                                                <rect key="frame" x="0.0" y="10" width="600" height="4105"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6W-g4-GbM" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
@@ -40,13 +40,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHL-pb-5CD" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1000" width="600" height="33"/>
+                                                        <rect key="frame" x="0.0" y="1000" width="600" height="35"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Sole Survivor grants a part-Renegade/part-Paragon bonus."/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZe-uE-R6m" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1033" width="600" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="1035" width="600" height="1000"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="War Hero"/>
@@ -55,13 +55,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgV-qO-8Ef" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="2033" width="600" height="33"/>
+                                                        <rect key="frame" x="0.0" y="2035" width="600" height="35"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="War Hero grants a Paragon bonus."/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vl6-sZ-qWN" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="2066" width="600" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="2070" width="600" height="1000"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Ruthless"/>
@@ -70,13 +70,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOd-Td-JLP" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="3066" width="600" height="33"/>
+                                                        <rect key="frame" x="0.0" y="3070" width="600" height="35"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Ruthless grants a Renegade point bonus."/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="la1-SY-czi" userLabel="Filler">
-                                                        <rect key="frame" x="0.0" y="3099" width="600" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="3105" width="600" height="1000"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>

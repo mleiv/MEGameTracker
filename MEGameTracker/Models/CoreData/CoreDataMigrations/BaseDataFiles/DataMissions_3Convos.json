@@ -3128,7 +3128,6 @@
 		"titlePrefix": "Conversations: ",
 		"name": "Eve (Urdnot Bakara)",
 		"description": "Conversations with [megametracker://person?id=P3.Eve].",
-		"conversationRewards": [{}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Sur'Kesh"
@@ -3587,7 +3586,6 @@
 		"name": "Legion",
 		"description": "Conversations with [megametracker://person?id=S2.Legion].",
 		"relatedDecisionIds": ["D2.LegionCerberus", "D2.Legion", "D2.Heretics"],
-		"conversationRewards": [{}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Geth Dreadnought"
@@ -3725,7 +3723,7 @@
 		"id": "A3.Convo.A.Miranda.4",
 		"inMissionId": "A3.Convo.A.Miranda",
 		"sortIndex": 90024,
-		"gameVersion": "4",
+		"gameVersion": "3",
 		"missionType": "Objective",
 		"titlePrefix": "Miranda: ",
 		"name": "1st Citadel DLC",
@@ -3741,7 +3739,7 @@
 		"id": "A3.Convo.A.Miranda.5",
 		"inMissionId": "A3.Convo.A.Miranda",
 		"sortIndex": 90025,
-		"gameVersion": "4",
+		"gameVersion": "3",
 		"missionType": "Objective",
 		"titlePrefix": "Miranda: ",
 		"name": "2nd Citadel DLC",
@@ -4075,7 +4073,6 @@
 		"titlePrefix": "Conversations: ",
 		"name": "Primarch Victus",
 		"description": "Conversations with [megametracker://person?id=P3.VictusA].",
-		"conversationRewards": [{}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
@@ -4221,7 +4218,7 @@
 		"titlePrefix": "Argument: ",
 		"name": "Allers vs Copeland",
 		"description": "Allers is arguing with Yeoman Copeland over her opinion that Terra Nova should be sacrificed to save other colonies. Pick a side.",
-		"conversationRewards": [{}, {
+		"conversationRewards": [{
 			"context": "Resolving the argument between Allers and Copeland",
 			"id": "A3.Convo.N.1AllersCopeland.PR1",
 			"type": "Paragade",

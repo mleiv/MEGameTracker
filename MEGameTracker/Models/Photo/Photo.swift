@@ -10,7 +10,7 @@ import UIKit
 import Nuke
 
 /// Stores details about photo for an object, whether it is default url or custom local image.
-public struct Photo {
+public struct Photo: Codable {
 
 // MARK: Properties
 
@@ -33,6 +33,12 @@ public struct Photo {
 			return nil
 		}
 	}
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let filePath = try container.decode(String.self)
+        self.init(filePath: filePath)!
+    }
 }
 
 // MARK: Basic Actions

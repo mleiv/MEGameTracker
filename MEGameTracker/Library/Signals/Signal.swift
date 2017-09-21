@@ -117,15 +117,15 @@ final public class Signal<T> {
 	///
 	/// - parameter data: The data to fire the `Signal` with.
 	public func fire(_ data: T) {
-		fireCount += 1
-		lastDataFired = retainLastData ? data : nil
-		flushCancelledListeners()
+        fireCount += 1
+        lastDataFired = retainLastData ? data : nil
+        flushCancelledListeners()
 
-		for signalListener in signalListeners {
-			if signalListener.filter == nil || signalListener.filter!(data) == true {
-				_ = signalListener.dispatch(data: data)
-			}
-		}
+        for signalListener in signalListeners {
+            if signalListener.filter == nil || signalListener.filter!(data) == true {
+                _ = signalListener.dispatch(data: data)
+            }
+        }
 	}
 
 	/// Cancels all subscriptions for an observer.

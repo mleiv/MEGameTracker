@@ -20,7 +20,7 @@ extension NSAttributedString {
 	func toggleStrikethrough(_ isOn: Bool) -> NSAttributedString {
 		let attributedString = NSMutableAttributedString(attributedString: self)
 		let value = NSNumber(value: (isOn ? NSUnderlineStyle.styleSingle : NSUnderlineStyle.styleNone).rawValue as Int)
-		attributedString.addAttribute(NSStrikethroughStyleAttributeName,
+		attributedString.addAttribute(NSAttributedStringKey.strikethroughStyle,
 			value: value,
 			range: NSRange(location: 0, length: self.length)
 		)

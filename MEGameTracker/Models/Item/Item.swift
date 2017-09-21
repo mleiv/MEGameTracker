@@ -9,17 +9,24 @@
 import UIKit
 
 public struct Item: MapLocationable, Eventsable {
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case isAcquired
+    }
+
 // MARK: Constants
 
 // MARK: Properties
+    public var rawData: Data? // transient
 	public var generalData: DataItem
 
-	public fileprivate(set) var id: String
-	fileprivate var _annotationNote: String?
+	public private(set) var id: String
+	private var _annotationNote: String?
 
 	/// (GameModifying, GameRowStorable Protocol) 
 	/// This value's game identifier.
-	public var gameSequenceUuid: String?
+	public var gameSequenceUuid: UUID?
 	/// (DateModifiable Protocol)  
 	/// Date when value was created.
 	public var createdDate = Date()
@@ -31,18 +38,18 @@ public struct Item: MapLocationable, Eventsable {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+    public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
 
 	// Eventsable
-	fileprivate var _events: [Event]?
+	private var _events: [Event]?
 	public var events: [Event] {
 		get { return _events ?? filterEvents(getEvents()) } // cache?
 		set { _events = filterEvents(newValue) }
 	}
-	public var rawEventData: SerializableData? { return generalData.rawEventData }
+	public var rawEventDictionary: [CodableDictionary] { return generalData.rawEventDictionary }
 
 	public internal(set) var isAcquired = false
 
@@ -82,28 +89,42 @@ public struct Item: MapLocationable, Eventsable {
 	}
 	public var inMapId: String? {
 		get { return generalData.inMapId }
-		set { generalData.inMapId = newValue }
+		set {}
 	}
-	public var inMissionId: String? { return generalData.inMissionId }
-	public var sortIndex: Int { return generalData.sortIndex }
+	public var inMissionId: String? {
+        get { return generalData.inMissionId }
+        set {}
+    }
+	public var sortIndex: Int {
+        get { return generalData.sortIndex }
+        set {}
+    }
 
 	public var isHidden: Bool = false
 	public var isAvailable: Bool {
-		return generalData.isAvailable && events.filter({ (e: Event) in return e.isBlocking }).isEmpty
+        get {
+            return generalData.isAvailable
+                && events.filter({ (e: Event) in return e.isBlocking }).isEmpty
+        }
+        set {}
 	}
 	public var unavailabilityMessages: [String] {
-		let blockingEvents = events.filter({ (e: Event) in return e.isBlockingInGame(App.current.gameVersion) })
-		if !blockingEvents.isEmpty {
-			if let unavailabilityInGameMessage = blockingEvents.filter({ (e: Event) -> Bool in
-					return e.type == .unavailableInGame
-				}).first?.description,
-				!unavailabilityInGameMessage.isEmpty {
-				return generalData.unavailabilityMessages + [unavailabilityInGameMessage]
-			} else {
-				return generalData.unavailabilityMessages + blockingEvents.flatMap({ $0.description })
-			}
-		}
-		return generalData.unavailabilityMessages
+        get {
+            let blockingEvents = events.filter({ (e: Event) in return e.isBlockingInGame(App.current.gameVersion) })
+            if !blockingEvents.isEmpty {
+                if let unavailabilityInGameMessage = blockingEvents.filter({ (e: Event) -> Bool in
+                        return e.type == .unavailableInGame
+                    }).first?.description,
+                    !unavailabilityInGameMessage.isEmpty {
+                    return generalData.unavailabilityMessages + [unavailabilityInGameMessage]
+                } else {
+                    return generalData.unavailabilityMessages
+                        + blockingEvents.map({ $0.description }).filter({ $0 != nil }).map({ $0! })
+                }
+            }
+            return generalData.unavailabilityMessages
+        }
+        set {}
 	}
 
 	public var linkToMapId: String? { return generalData.linkToMapId }
@@ -124,19 +145,43 @@ public struct Item: MapLocationable, Eventsable {
 
 	public init(
 		id: String,
-		gameSequenceUuid: String? = App.current.game?.uuid,
+		gameSequenceUuid: UUID? = App.current.game?.uuid,
 		generalData: DataItem,
-		events: [Event] = [],
-		data: SerializableData? = nil
+		events: [Event] = []
 	) {
 		self.id = id
-		self.generalData = generalData
 		self.gameSequenceUuid = gameSequenceUuid
-		self.events = events
-		if let data = data {
-			setData(data)
-		}
-	}
+        self.generalData = generalData
+        self.events = events
+        setGeneralData()
+    }
+
+    public mutating func setGeneralData() {
+        // nothing for now
+    }
+    public mutating func setGeneralData(_ generalData: DataItem) {
+        self.generalData = generalData
+        setGeneralData()
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        generalData = DataItem(id: id) // faulted for now
+        isAcquired = try container.decodeIfPresent(Bool.self, forKey: .isAcquired) ?? isAcquired
+        try unserializeDateModifiableData(decoder: decoder)
+        try unserializeGameModifyingData(decoder: decoder)
+        try unserializeLocalCloudData(decoder: decoder)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(isAcquired, forKey: .isAcquired)
+        try serializeDateModifiableData(encoder: encoder)
+        try serializeGameModifyingData(encoder: encoder)
+        try serializeLocalCloudData(encoder: encoder)
+    }
 }
 
 // MARK: Retrieval Functions of Related Data
@@ -145,7 +190,7 @@ extension Item {
 	/// Add game version restrictions to events.
 	public func filterEvents(_ events: [Event]) -> [Event] {
 		var filteredEvents: [Event] = []
-		for otherGameVersion in GameVersion.list() where otherGameVersion != gameVersion {
+		for otherGameVersion in GameVersion.all() where otherGameVersion != gameVersion {
 			filteredEvents.append(Event.faulted(id: "Game\(otherGameVersion.stringValue)", type: .unavailableInGame))
 		}
 		filteredEvents += events.filter({ $0.gameVersion == self.gameVersion || $0.gameVersion == nil })
@@ -174,50 +219,74 @@ extension Item {
 // MARK: Data Change Actions
 extension Item {
 
-	public mutating func change(data: SerializableData) {
-		if let isAcquired = data["isAcquired"]?.bool {
-			change(isAcquired: isAcquired)
-		}
-	}
+    /// Returns a copy of this Item with a set of changes applies
+    public func changed(fromActionData data: [String: Any?]) -> Item {
+        if let isAcquired = data["isAcquired"] as? Bool {
+            return changed(isAcquired: isAcquired)
+        }
+        return self
+    }
 
-	public mutating func change(
-		isAcquired: Bool,
-		isSave: Bool = true,
-		isNotify: Bool = true,
-		isCascadeChanges: EventDirection = .all
-	) {
-		guard self.isAcquired != isAcquired else { return }
-		self.isAcquired = isAcquired
-		markChanged()
-		notifySaveToCloud(fields: ["isAcquired": isAcquired])
-		if isSave {
-			_ = saveAnyChanges()
-		}
-		if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
-			applyToHierarchy(isAcquired: isAcquired, isSave: isSave, isCascadeChanges: isCascadeChanges)
-		}
-		if isNotify {
-			Item.onChange.fire((id: self.id, object: self))
-		}
-	}
+    /// Return a copy of this Item with isSelected changed
+    public func changed(
+        isAcquired: Bool,
+        isSave: Bool = true,
+        isNotify: Bool = true,
+        isCascadeChanges: EventDirection = .all
+    ) -> Item {
+        guard isAcquired != self.isAcquired else { return self }
+        var item = self
+        item.isAcquired = isAcquired
+        item.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["isAcquired": isAcquired]
+        )
+        if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
+            item.applyToHierarchy(
+                isAcquired: isAcquired,
+                isSave: isSave,
+                isCascadeChanges: isCascadeChanges
+            )
+        }
+        return item
+    }
+
+    /// Performs common behaviors after an object change
+    private mutating func changeEffects(
+        isSave: Bool = true,
+        isNotify: Bool = true,
+        cloudChanges: [String: Any?] = [:]
+    ) {
+        markChanged()
+        notifySaveToCloud(fields: cloudChanges)
+        if isSave {
+            _ = saveAnyChanges()
+        }
+        if isNotify {
+            Item.onChange.fire((id: self.id, object: self))
+        }
+    }
 
 	mutating func applyToHierarchy(isAcquired isCompleted: Bool, isSave: Bool, isCascadeChanges: EventDirection = .all) {
 		if isCascadeChanges != .down,
-			let missionId = inMissionId, var parentMission = Mission.get(id: missionId) {
-			let parentObjectives = parentMission.getObjectives()
-			let parentObjectivesCountToCompletion = parentMission.objectivesCountToCompletion ?? parentObjectives.count
-			let otherObjectivesCompletedCount = parentObjectives.filter({ $0.id != id }).filter({
+			let missionId = inMissionId,
+            let parentMission = Mission.get(id: missionId) {
+			let siblingObjectives = parentMission.getObjectives()
+			let siblingObjectivesCountToCompletion = parentMission.objectivesCountToCompletion
+                ?? siblingObjectives.count
+			let otherObjectivesCompletedCount = siblingObjectives.filter({ $0 as? Item != self }).filter({
 				($0 as? Mission)?.isCompleted == true || ($0 as? Item)?.isAcquired == true
 			}).count // don't count self
 			if !isCompleted && parentMission.isCompleted
-				&& parentObjectivesCountToCompletion > otherObjectivesCompletedCount {
+				&& siblingObjectivesCountToCompletion > otherObjectivesCompletedCount {
 				// uncomplete parent if any submissions are marked uncompleted
 				// don't uncomplete other children
-				parentMission.change(isCompleted: false, isSave: isSave, isCascadeChanges: .up)
+				_ = parentMission.changed(isCompleted: false, isSave: isSave, isCascadeChanges: .up)
 			} else if isCompleted && !parentMission.isCompleted
-				&& otherObjectivesCompletedCount + 1 >= parentObjectivesCountToCompletion {
+				&& otherObjectivesCompletedCount + 1 >= siblingObjectivesCountToCompletion {
 				// complete parent if this is the last submission
-				parentMission.change(isCompleted: true, isSave: isSave, isCascadeChanges: .up)
+				_ = parentMission.changed(isCompleted: true, isSave: isSave, isCascadeChanges: .up)
 			}
 		}
 	}
@@ -227,62 +296,63 @@ extension Item {
 extension Item {
 	public static func getDummy(json: String? = nil) -> Item? {
 		// swiftlint:disable line_length
-		let json = json ?? "{\"id\":\"1\",\"gameVersion\":1,\"itemType\":\"Collection\",\"itemDisplayType\":\"Loot\",\"name\":\"Salvage\",\"price\":\"100 Credits\",\"inMapId\":\"G.C1.Presidium\",}"
-		if var baseItem = DataItem(serializedString: json) {
-			baseItem.isDummyData = true
-			let item = Item(id: "1", generalData: baseItem)
-			return item
-		}
+		let json = json ?? "{\"id\":\"1\",\"gameVersion\":\"1\",\"itemType\":\"Collection\",\"itemDisplayType\":\"Loot\",\"name\":\"Salvage\",\"price\":\"100 Credits\",\"inMapId\":\"G.C1.Presidium\",}"
+        if var baseItem = try? defaultManager.decoder.decode(DataItem.self, from: json.data(using: .utf8)!) {
+            baseItem.isDummyData = true
+            let item = Item(id: "1", generalData: baseItem)
+            return item
+        }
 		// swiftlint:enable line_length
 		return nil
 	}
 }
 
-// MARK: SerializedDataStorable
-extension Item: SerializedDataStorable {
-
-	public func getData() -> SerializableData {
-		var list: [String: SerializedDataStorable?] = [:]
-		list["id"] = id
-		list["isAcquired"] = isAcquired
-		list = serializeDateModifiableData(list: list)
-		list = serializeGameModifyingData(list: list)
-		list = serializeLocalCloudData(list: list)
-//		list["photo"] = photo?.getData()
-		return SerializableData.safeInit(list)
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension Item: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		guard let data = data, let id = data["id"]?.string,
-			  let dataItem = DataItem.get(id: id),
-			  let gameSequenceUuid = data["gameSequenceUuid"]?.string
-		else {
-			return nil
-		}
-
-		self.init(id: id, gameSequenceUuid: gameSequenceUuid, generalData: dataItem, data: data)
-	}
-
-	public mutating func setData(_ data: SerializableData) {
-		id = data["id"]?.string ?? id
-		if generalData.id != id {
-			generalData = DataItem.get(id: id) ?? generalData
-			_events = nil
-		}
-
-		unserializeDateModifiableData(data: data)
-		unserializeGameModifyingData(data: data)
-		unserializeLocalCloudData(data: data)
-
-		isAcquired = data["isAcquired"]?.bool ?? isAcquired
-	}
-
-}
+//// MARK: SerializedDataStorable
+//extension Item: SerializedDataStorable {
+//
+//    public func getData() -> SerializableData {
+//        var list: [String: SerializedDataStorable?] = [:]
+//        list["id"] = id
+//        list["isAcquired"] = isAcquired
+////        list = serializeDateModifiableData(list: list)
+////        list = serializeGameModifyingData(list: list)
+////        list = serializeLocalCloudData(list: list)
+////        list["photo"] = photo?.getData()
+//        return SerializableData.safeInit(list)
+//    }
+//
+//}
+//
+//// MARK: SerializedDataRetrievable
+//extension Item: SerializedDataRetrievable {
+//
+//    public init?(data: SerializableData?) {
+//        guard let data = data, let id = data["id"]?.string,
+//              let dataItem = DataItem.get(id: id),
+//              let uuidString = data["gameSequenceUuid"]?.string,
+//              let gameSequenceUuid = UUID(uuidString: uuidString)
+//        else {
+//            return nil
+//        }
+//
+//        self.init(id: id, gameSequenceUuid: gameSequenceUuid, generalData: dataItem, data: data)
+//    }
+//
+//    public mutating func setData(_ data: SerializableData) {
+//        id = data["id"]?.string ?? id
+//        if generalData.id != id {
+//            generalData = DataItem.get(id: id) ?? generalData
+//            _events = nil
+//        }
+//
+////        unserializeDateModifiableData(data: data)
+////        unserializeGameModifyingData(data: data)
+////        unserializeLocalCloudData(data: data)
+//
+//        isAcquired = data["isAcquired"]?.bool ?? isAcquired
+//    }
+//
+//}
 
 // MARK: DateModifiable
 extension Item: DateModifiable {}

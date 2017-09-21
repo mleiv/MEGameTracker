@@ -11,7 +11,7 @@ import UIKit
 
 /// Protocol for stylable UIKit elements. 
 /// See IBStyledThings for examples.
-public protocol IBStylable: class {
+public protocol IBStylable: class where Self: UIView {
 	var styler: IBStyler? { get }
 	var identifier: String? { get }
 	func layoutIfNeeded()

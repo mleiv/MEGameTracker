@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable final public class SideEffectsView: SimpleArrayDataRow {
 
 	@IBInspectable public var text: String?
-	fileprivate var dummySideEffects: [String] = ["This is a side effect in Game 3."]
+	private var dummySideEffects: [String] = ["This is a side effect in Game 3."]
 	var sideEffects: [String] {
 		return UIWindow.isInterfaceBuilder ? dummySideEffects : (controller?.sideEffects ?? inspectableData)
 	}
@@ -44,7 +44,7 @@ import UIKit
 		tableView?.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 10))
 	}
 
-	fileprivate func dataFromText() -> [String] {
+	private func dataFromText() -> [String] {
 		if text?.isEmpty == false {
 			if text?.range(of: "\u{2028}\u{2028}") != nil {
 				return (text ?? "").components(separatedBy: "\u{2028}\u{2028}").map { String($0) }

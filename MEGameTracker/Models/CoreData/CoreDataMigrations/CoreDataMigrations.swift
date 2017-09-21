@@ -13,7 +13,7 @@ public struct CoreDataMigrations {
 	// post-load migrations
 
 	public static var isRunning = false
-	public static var onStart = Signal<Void>()
+	public static var onStart = Signal<Bool>()
 	public static var onPercentProgress = Signal<Int>()
-	public static var onFinish = Signal<Void>()
+	public static var onFinish = Signal<Bool>()
 }

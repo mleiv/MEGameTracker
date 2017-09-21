@@ -8,20 +8,27 @@
 
 import UIKit
 
-public struct Person: Photographical, Eventsable {
+public struct Person: Codable, Photographical, Eventsable {
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case gameSequenceUuid
+        case photo
+    }
+
 // MARK: Constants
 
 // MARK: Properties
-
+    public var rawData: Data? // transient
 	public var generalData: DataPerson
 
-	public fileprivate(set) var id: String
-	public fileprivate(set) var gameVersion: GameVersion
-	fileprivate var _photo: Photo?
+	public private(set) var id: String
+	public private(set) var gameVersion: GameVersion
+	private var _photo: Photo?
 
 	/// (GameModifying, GameRowStorable Protocol) 
 	/// This value's game identifier.
-	public var gameSequenceUuid: String?
+	public var gameSequenceUuid: UUID?
 	/// (DateModifiable Protocol)  
 	/// Date when value was created.
 	public var createdDate = Date()
@@ -33,18 +40,18 @@ public struct Person: Photographical, Eventsable {
 	public var isSavedToCloud = false
 	/// (CloudDataStorable Protocol)  
 	/// A set of any changes to the local object since the last cloud sync.
-	public var pendingCloudChanges: SerializableData?
+    public var pendingCloudChanges = CodableDictionary()
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
 
 	// Eventsable
-	fileprivate var _events: [Event]?
+	private var _events: [Event]?
 	public var events: [Event] {
 		get { return _events ?? getEvents() } // cache?
 		set { _events = newValue }
 	}
-	public var rawEventData: SerializableData? { return generalData.rawEventData }
+    public var rawEventDictionary: [CodableDictionary] { return generalData.rawEventDictionary }
 
 // MARK: Computed Properties
 
@@ -90,7 +97,7 @@ public struct Person: Photographical, Eventsable {
 	}
 
 	public var isAvailable: Bool {
-		return generalData.isAvailable && events.filter({ (e: Event) in return e.isBlockingInGame(gameVersion) }).isEmpty
+		return isAvailableInGame(gameVersion)
 	}
 
 // MARK: Change Listeners And Change Status Flags
@@ -103,22 +110,46 @@ public struct Person: Photographical, Eventsable {
 
 	public init(
 		id: String,
-		gameSequenceUuid: String? = App.current.game?.uuid,
+		gameSequenceUuid: UUID? = App.current.game?.uuid,
 		gameVersion: GameVersion? = nil,
 		generalData: DataPerson,
-		events: [Event] = [],
-		data: SerializableData? = nil
+		events: [Event] = []
 	) {
 		self.id = id
 		self.gameSequenceUuid = gameSequenceUuid
 		self.gameVersion = gameVersion ?? generalData.gameVersion
-		self.generalData = generalData
-		self.generalData.change(gameVersion: self.gameVersion)
+		self.generalData = generalData.changed(gameVersion: self.gameVersion)
 		self.events = events
-		if let data = data {
-			setData(data)
-		}
+		setGeneralData()
 	}
+
+    public mutating func setGeneralData() {
+        // nothing for now
+    }
+    public mutating func setGeneralData(_ generalData: DataPerson) {
+        self.generalData = generalData
+        setGeneralData()
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        gameVersion = .game1
+        _photo = try container.decode(Photo.self, forKey: .photo)
+        generalData = DataPerson(id: id) // faulted for now
+        try unserializeDateModifiableData(decoder: decoder)
+        try unserializeGameModifyingData(decoder: decoder)
+        try unserializeLocalCloudData(decoder: decoder)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(_photo, forKey: .photo)
+        try serializeDateModifiableData(encoder: encoder)
+        try serializeGameModifyingData(encoder: encoder)
+        try serializeLocalCloudData(encoder: encoder)
+    }
 }
 
 // MARK: Retrieval Functions of Related Data
@@ -163,19 +194,11 @@ extension Person {
 				!unavailabilityInGameMessage.isEmpty {
 				return generalData.unavailabilityMessages + [unavailabilityInGameMessage]
 			} else {
-				return generalData.unavailabilityMessages + blockingEvents.flatMap({ $0.description })
+				return generalData.unavailabilityMessages
+                    + blockingEvents.map({ $0.description }).filter({ $0 != nil }).map({ $0! })
 			}
 		}
 		return generalData.unavailabilityMessages
-	}
-
-	/// A special setter for saving a UIImage
-	public mutating func savePhoto(image: UIImage, isSave: Bool = true) -> Bool {
-		if let photo = Photo.create(image, object: self) {
-			change(photo: photo, isSave: isSave)
-			return true
-		}
-		return false
 	}
 
 //	public func value<T>(key: String, forGame gameVersion: GameVersion) -> T? {
@@ -190,32 +213,71 @@ extension Person {
 
 // MARK: Data Change Actions
 extension Person {
-	public mutating func change(gameVersion: GameVersion, isSave: Bool = true, isNotify: Bool = true) {
-		if gameVersion != self.gameVersion {
-			self.gameVersion = gameVersion
-			generalData.change(gameVersion: gameVersion)
-			// nothing to save
-			if isNotify {
-				Person.onChange.fire((id: self.id, object: self))
-			}
-		}
-	}
-	public mutating func change(photo: Photo, isSave: Bool = true, isNotify: Bool = true) {
-		if photo != self._photo {
-			if let _photo = self._photo {
-				_ = _photo.delete()
-			}
-			self._photo = photo
-			markChanged()
-			notifySaveToCloud(fields: ["photo": self.photo?.stringValue])
-			if isSave {
-				_ = saveAnyChanges()
-			}
-			if isNotify {
-				Person.onChange.fire((id: self.id, object: self))
-			}
-		}
-	}
+
+    /// Return a copy of this Person with gameVersion changed
+    public func changed(
+        gameVersion: GameVersion
+    ) -> Person {
+        guard isDifferentGameVersion(gameVersion) else { return self }
+        var person = self
+        person.gameVersion = gameVersion
+        person.generalData = generalData.changed(gameVersion: gameVersion)
+        person.changeEffects(
+            isSave: false,
+            isNotify: false
+        )
+        return person
+    }
+
+    /// Return a copy of this Person with photo changed
+    public func changed(
+        photo: Photo,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Person {
+        guard photo != self._photo else { return self }
+        var person = self
+        // delete any prior custom photo
+        if let _photo = person._photo {
+            _ = _photo.delete()
+        }
+        person._photo = photo
+        person.generalData = generalData.changed(gameVersion: gameVersion)
+        person.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["photo": photo]
+        )
+        return person
+    }
+
+    /// Convenience UIImage version
+    public func changed(image: UIImage, isSave: Bool = true) -> Person? {
+        if let photo = Photo.create(image, object: self) {
+            return changed(photo: photo, isSave: isSave)
+        }
+        return nil
+    }
+
+    private func isDifferentGameVersion(_ gameVersion: GameVersion) -> Bool {
+        return generalData.isDifferentGameVersion(gameVersion)
+    }
+
+    /// Performs common behaviors after an object change
+    private mutating func changeEffects(
+        isSave: Bool = true,
+        isNotify: Bool = true,
+        cloudChanges: [String: Any?] = [:]
+    ) {
+        markChanged()
+        notifySaveToCloud(fields: cloudChanges)
+        if isSave {
+            _ = saveAnyChanges()
+        }
+        if isNotify {
+            Person.onChange.fire((id: self.id, object: self))
+        }
+    }
 }
 
 // MARK: Dummy data for Interface Builder
@@ -223,68 +285,67 @@ extension Person {
 extension Person {
 	public static func getDummy(json: String? = nil) -> Person? {
 		// swiftlint:disable line_length
-		let json = json ?? "{\"id\": \"S1.Liara\",\"name\": \"Liara T\'soni\",\"description\": \"An archeologist specializing in the ancient prothean culture, Liara is the \\\"pureblood\\\" daughter of [megametracker:\\/\\/person?id=E1.Benezia]. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued her research.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": 1,\"isFemaleLoveInterest\": 1,\"race\": \"Asari\",\"profession\": \"Scientist\",\"organization\": null,\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game1\\/1Liara.png\",\"voiceActor\": \"Ali Hillis\",\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Liara_T%27Soni\"],\"relatedMissionIds\": [\"M1.Therum\"],\"relatedDecisionIds\": [\"D1.LoveLiara\", \"D2.LoveLiara\", \"D3.LoveLiara\"],\"loveInterestDecisionId\": \"D1.LoveLiara\",\"gameVersionData\": {\"2\": {\"personType\": \"Associate\",\"profession\": \"Information Broker\",\"description\": \"Liara was a close friend, but now she has her own agenda on Illium, turning her research skills to hunting valuable secrets, and she only briefly allies with Shepard for the Lair of the Shadow Broker (DLC) missions.\\n\\nPursuing her as a love interest in Game 2 is difficult but not impossible [Romancing Liara in Game 2|https:\\/\\/masseffect.wikia.com\\/wiki\\/Romance#Lair_of_the_Shadow_Broker].\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game2\\/2Liara.png\",\"loveInterestDecisionId\": \"D2.LoveLiara\"},\"3\": {\"profession\": \"Pure Biotic\",\"description\": \"After a Cerberus raid destroyed the Shadow Broker\'s lair, Liara fled with all the resources she could take with her. She is using all her Shadow Broker assets to search for a way to fight the Reapers, and she may have found it in the Mars Archives.\",\"loveInterestDecisionId\": \"D3.LoveLiara\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game3\\/3Liara.png\"}}}"
-		if var basePerson = DataPerson(serializedString: json) {
-			basePerson.isDummyData = true
-			let person = Person(id: "1", generalData: basePerson)
-			return person
-		}
+		let json = json ?? "{\"id\": \"S1.Liara\",\"name\": \"Liara T\'soni\",\"description\": \"An archeologist specializing in the ancient prothean culture, Liara is the \\\"pureblood\\\" daughter of [megametracker:\\/\\/person?id=E1.Benezia]. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued her research.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": true,\"isFemaleLoveInterest\": true,\"race\": \"Asari\",\"profession\": \"Scientist\",\"organization\": null,\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game1\\/1Liara.png\",\"voiceActor\": \"Ali Hillis\",\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Liara_T%27Soni\"],\"relatedMissionIds\": [\"M1.Therum\"],\"relatedDecisionIds\": [\"D1.LoveLiara\", \"D2.LoveLiara\", \"D3.LoveLiara\"],\"loveInterestDecisionId\": \"D1.LoveLiara\",\"gameVersionData\": {\"2\": {\"personType\": \"Associate\",\"profession\": \"Information Broker\",\"description\": \"Liara was a close friend, but now she has her own agenda on Illium, turning her research skills to hunting valuable secrets, and she only briefly allies with Shepard for the Lair of the Shadow Broker (DLC) missions.\\n\\nPursuing her as a love interest in Game 2 is difficult but not impossible [Romancing Liara in Game 2|https:\\/\\/masseffect.wikia.com\\/wiki\\/Romance#Lair_of_the_Shadow_Broker].\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game2\\/2Liara.png\",\"loveInterestDecisionId\": \"D2.LoveLiara\"},\"3\": {\"profession\": \"Pure Biotic\",\"description\": \"After a Cerberus raid destroyed the Shadow Broker\'s lair, Liara fled with all the resources she could take with her. She is using all her Shadow Broker assets to search for a way to fight the Reapers, and she may have found it in the Mars Archives.\",\"loveInterestDecisionId\": \"D3.LoveLiara\",\"photo\": \"http:\\/\\/urdnot.com\\/megametracker\\/app\\/images\\/Game3\\/3Liara.png\"}}}"
+        if var basePerson = try? defaultManager.decoder.decode(DataPerson.self, from: json.data(using: .utf8)!) {
+            basePerson.isDummyData = true
+            let person = Person(id: "1", generalData: basePerson)
+            return person
+        }
 		// swiftlint:enable line_length
 		return nil
 	}
 }
 
-// MARK: SerializedDataStorable
-extension Person: SerializedDataStorable {
+//// MARK: SerializedDataStorable
+//extension Person: SerializedDataStorable {
+//
+//    public func getData() -> SerializableData {
+//        var list: [String: SerializedDataStorable?] = [:]
+//        list["id"] = id
+//        list["photo"] = _photo?.stringValue
+////        list = serializeDateModifiableData(list: list)
+////        list = serializeGameModifyingData(list: list)
+////        list = serializeLocalCloudData(list: list)
+//        return SerializableData.safeInit(list)
+//    }
+//}
 
-	public func getData() -> SerializableData {
-		var list: [String: SerializedDataStorable?] = [:]
-		list["id"] = id
-		list["photo"] = _photo?.stringValue
-		list = serializeDateModifiableData(list: list)
-		list = serializeGameModifyingData(list: list)
-		list = serializeLocalCloudData(list: list)
-		return SerializableData.safeInit(list)
-	}
-
-}
-
-// MARK: SerializedDataRetrievable
-extension Person: SerializedDataRetrievable {
-
-	public init?(data: SerializableData?) {
-		let gameVersion = GameVersion(rawValue: data?["gameVersion"]?.string ?? "0") ?? .game1
-		guard let data = data, let id = data["id"]?.string,
-			  let dataPerson = DataPerson.get(id: id, gameVersion: gameVersion),
-			  let gameSequenceUuid = data["gameSequenceUuid"]?.string
-		else {
-			return nil
-		}
-
-		self.init(id: id, gameSequenceUuid: gameSequenceUuid, gameVersion: gameVersion, generalData: dataPerson, data: data)
-	}
-
-	public mutating func setData(_ data: SerializableData) {
-		id = data["id"]?.string ?? id
-		if let photo = Photo(filePath: data["photo"]?.string) {
-			self._photo = photo
-		}
-		if let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") {
-			self.gameVersion = gameVersion
-			generalData.change(gameVersion: gameVersion)
-//			_events = nil
-		}
-		if generalData.id != id {
-			generalData = DataPerson.get(id: id, gameVersion: gameVersion) ?? generalData
-			_events = nil
-		}
-
-		unserializeDateModifiableData(data: data)
-		unserializeGameModifyingData(data: data)
-		unserializeLocalCloudData(data: data)
-	}
-
-}
+//// MARK: SerializedDataRetrievable
+//extension Person: SerializedDataRetrievable {
+//
+//    public init?(data: SerializableData?) {
+//        let gameVersion = GameVersion(rawValue: data?["gameVersion"]?.string ?? "0") ?? .game1
+//        guard let data = data, let id = data["id"]?.string,
+//              let dataPerson = DataPerson.get(id: id, gameVersion: gameVersion),
+//              let uuidString = data["gameSequenceUuid"]?.string,
+//              let gameSequenceUuid = UUID(uuidString: uuidString)
+//        else {
+//            return nil
+//        }
+//
+//        self.init(id: id, gameSequenceUuid: gameSequenceUuid, gameVersion: gameVersion, generalData: dataPerson, data: data)
+//    }
+//
+//    public mutating func setData(_ data: SerializableData) {
+//        id = data["id"]?.string ?? id
+//        if let photo = Photo(filePath: data["photo"]?.string) {
+//            self._photo = photo
+//        }
+//        if let gameVersion = GameVersion(rawValue: data["gameVersion"]?.string ?? "0") {
+//            self.gameVersion = gameVersion
+//            generalData = generalData.changed(gameVersion: gameVersion)
+////            _events = nil
+//        }
+//        if generalData.id != id {
+//            generalData = DataPerson.get(id: id, gameVersion: gameVersion) ?? generalData
+//            _events = nil
+//        }
+//
+////        unserializeDateModifiableData(data: data)
+////        unserializeGameModifyingData(data: data)
+////        unserializeLocalCloudData(data: data)
+//    }
+//}
 
 // MARK: DateModifiable
 extension Person: DateModifiable {}

@@ -25,6 +25,7 @@ public struct AvailabilityRowType: TextDataRowType {
 	let defaultPaddingSides: CGFloat = 15.0
 	var didSetup = false
 
+    public var linkOriginController: UIViewController? { return controller as? UIViewController }
 	var viewController: UIViewController? { return controller as? UIViewController }
 
 	public init() {}
@@ -44,7 +45,7 @@ public struct AvailabilityRowType: TextDataRowType {
 			view.backgroundColor = UIColor.black
 			view.textView?.identifier = "Caption.DisabledOppositeColor.MediumItalic"
 			view.textView?.linkTextAttributes = [
-				NSForegroundColorAttributeName: Styles.Colors.linkOnBlackColor
+				NSAttributedStringKey.foregroundColor.rawValue: Styles.Colors.linkOnBlackColor
 			]
 			view.textView?.textAlignment = .center
 		}

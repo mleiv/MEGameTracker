@@ -11,11 +11,11 @@ import CoreData
 
 extension DataMap: DataRowStorable, DataEventsable {
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = DataMaps
 
-	/// (SimpleSerializedCoreDataStorable Protocol)
+	/// (CodableCoreDataStorable Protocol)
 	/// Sets core data values to match struct values (specific).
 	public func setAdditionalColumnsOnSave(
 		coreItem: EntityType
@@ -36,10 +36,14 @@ extension DataMap {
 	/// (Duplicate these per file or use Whole Module Optimization, which is slow in dev)
 	public typealias AlterFetchRequest<T: NSManagedObject> = ((NSFetchRequest<T>) -> Void)
 
+// MARK: Methods customized with GameVersion
+
+    /// Retrieves a DataMap matching an id, set to gameVersion.
+    /// Leave gameVersion nil to get current gameVersion (recommended use).
 	public static func get(
 		id: String,
-		gameVersion: GameVersion? = nil,
-		with manager: SimpleSerializedCoreDataManageable? = nil
+		gameVersion: GameVersion?,
+		with manager: CodableCoreDataManageable? = nil
 	) -> DataMap? {
 		let one: DataMap? = get(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -50,27 +54,27 @@ extension DataMap {
 		return one
 	}
 
+    /// Retrieves a DataMap matching some criteria, set to gameVersion.
+    /// Leave gameVersion nil to get current gameVersion (recommended use).
 	public static func get(
 		gameVersion: GameVersion?,
-		with manager: SimpleSerializedCoreDataManageable? = nil,
+		with manager: CodableCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType>
 	) -> DataMap? {
-		var one: DataMap? = get(with: manager, alterFetchRequest: alterFetchRequest)
-		if let gameVersion = gameVersion {
-			one?.change(gameVersion: gameVersion)
-		}
-		return one
+        let preferredGameVersion = gameVersion ?? (App.current.game?.gameVersion ?? .game1)
+		let one: DataMap? = get(with: manager, alterFetchRequest: alterFetchRequest)
+        return one?.changed(gameVersion: preferredGameVersion)
 	}
 
+    /// Retrieves multiple DataMaps matching some criteria, set to gameVersion.
+    /// Leave gameVersion nil to get current gameVersion (recommended use).
 	public static func getAll(
 		gameVersion: GameVersion?,
-		with manager: SimpleSerializedCoreDataManageable? = nil,
+		with manager: CodableCoreDataManageable? = nil,
 		alterFetchRequest: @escaping AlterFetchRequest<EntityType>
 	) -> [DataMap] {
-		var all: [DataMap] = getAll(with: manager, alterFetchRequest: alterFetchRequest)
-		if let gameVersion = gameVersion {
-			all = all.map { var m = $0; m.change(gameVersion: gameVersion); return m }
-		}
-		return all
+        let preferredGameVersion = gameVersion ?? (App.current.game?.gameVersion ?? .game1)
+		let all: [DataMap] = getAll(with: manager, alterFetchRequest: alterFetchRequest)
+        return all.map { $0.changed(gameVersion: preferredGameVersion) }
 	}
 }

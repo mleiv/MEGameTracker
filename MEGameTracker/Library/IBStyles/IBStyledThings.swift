@@ -9,13 +9,38 @@
 
 import UIKit
 
+public protocol StylesInitializationListenable {
+    func startListeningForStylesInitialization()
+    func stopListeningForStylesInitialization()
+}
+extension StylesInitializationListenable where Self: UIView {
+    public func startListeningForStylesInitialization() {
+        NotificationCenter.default.addObserver(
+            forName: IBStyleManager.stylesInitialized,
+            object: nil,
+            queue: nil,
+            using: { [weak self] _ in
+                self?.layoutSubviews()
+            }
+        )
+    }
+    public func stopListeningForStylesInitialization() {
+        NotificationCenter.default.removeObserver(
+            self,
+            name: IBStyleManager.stylesInitialized,
+            object: nil
+        )
+    }
+}
+
 @IBDesignable
-open class IBStyledView: UIView, IBStylable {
+open class IBStyledView: UIView, IBStylable, StylesInitializationListenable {
 	@IBInspectable
 	open var identifier: String? {
 		didSet {
 			if didLayout && oldValue != identifier {
-				styler?.didApplyStyles = false; styler?.applyStyles()
+				styler?.didApplyStyles = false
+                _ = styler?.applyStyles()
 			}
 		}
 	}
@@ -29,20 +54,27 @@ open class IBStyledView: UIView, IBStylable {
 	}
 
 	override open func layoutSubviews() {
-		styler?.applyStyles()
+        if styler?.applyStyles() != true {
+            if !didLayout {
+                startListeningForStylesInitialization()
+                return
+            }
+        } else {
+            stopListeningForStylesInitialization()
+        }
 		super.layoutSubviews()
 		didLayout = true
 	}
 }
 
 @IBDesignable
-open class IBStyledLabel: UILabel, IBStylable {
+open class IBStyledLabel: UILabel, IBStylable, StylesInitializationListenable {
 	@IBInspectable
 	open var identifier: String? {
 		didSet {
 			if didLayout && oldValue != identifier {
 				styler?.didApplyStyles = false
-				styler?.applyStyles()
+				_ = styler?.applyStyles()
 			}
 		}
 	}
@@ -56,20 +88,27 @@ open class IBStyledLabel: UILabel, IBStylable {
 	}
 
 	override open func layoutSubviews() {
-		styler?.applyStyles()
+		if styler?.applyStyles() != true {
+            if !didLayout {
+                startListeningForStylesInitialization()
+                return
+            }
+        } else {
+            stopListeningForStylesInitialization()
+        }
 		super.layoutSubviews()
 		didLayout = true
 	}
 }
 
 @IBDesignable
-open class IBStyledTextField: UITextField, IBStylable {
+open class IBStyledTextField: UITextField, IBStylable, StylesInitializationListenable {
 	@IBInspectable
 	open var identifier: String? {
 		didSet {
 			if didLayout && oldValue != identifier {
 				styler?.didApplyStyles = false
-				styler?.applyStyles()
+				_ = styler?.applyStyles()
 			}
 		}
 	}
@@ -84,20 +123,27 @@ open class IBStyledTextField: UITextField, IBStylable {
 
 	override open func layoutSubviews() {
 		contentVerticalAlignment = .center
-		styler?.applyStyles()
+        if styler?.applyStyles() != true {
+            if !didLayout {
+                startListeningForStylesInitialization()
+                return
+            }
+        } else {
+            stopListeningForStylesInitialization()
+        }
 		super.layoutSubviews()
 		didLayout = true
 	}
 }
 
 @IBDesignable
-open class IBStyledTextView: UITextView, IBStylable {
+open class IBStyledTextView: UITextView, IBStylable, StylesInitializationListenable {
 	@IBInspectable
 	open var identifier: String? {
 		didSet {
 			if didLayout && oldValue != identifier {
 				styler?.didApplyStyles = false
-				styler?.applyStyles()
+				_ = styler?.applyStyles()
 			}
 		}
 	}
@@ -114,7 +160,14 @@ open class IBStyledTextView: UITextView, IBStylable {
 	}
 
 	override open func layoutSubviews() {
-		styler?.applyStyles()
+        if styler?.applyStyles() != true {
+            if !didLayout {
+                startListeningForStylesInitialization()
+                return
+            }
+        } else {
+            stopListeningForStylesInitialization()
+        }
 		textContainer.lineFragmentPadding = 0
 		if !isScrollable && (heightConstraint == nil || heightConstraint?.isActive == true) {
 			heightConstraint?.isActive = false
@@ -122,7 +175,7 @@ open class IBStyledTextView: UITextView, IBStylable {
 			if heightConstraint == nil {
 				isScrollEnabled = false
 				heightConstraint = heightAnchor.constraint(equalToConstant: contentSize.height)
-				heightConstraint?.priority = 950 // when hidden, height = 0 and this errors out.
+				heightConstraint?.priority = UILayoutPriority(rawValue: 950) // when hidden, height = 0 and this errors out.
 			}
 			heightConstraint?.constant = contentSize.height
 			heightConstraint?.isActive = true
@@ -133,13 +186,13 @@ open class IBStyledTextView: UITextView, IBStylable {
 }
 
 @IBDesignable
-open class IBStyledImageView: UIImageView, IBStylable {
+open class IBStyledImageView: UIImageView, IBStylable, StylesInitializationListenable {
 	@IBInspectable
 	open var identifier: String? {
 		didSet {
 			if didLayout && oldValue != identifier {
 				styler?.didApplyStyles = false
-				styler?.applyStyles()
+				_ = styler?.applyStyles()
 			}
 		}
 	}
@@ -153,20 +206,27 @@ open class IBStyledImageView: UIImageView, IBStylable {
 	}
 
 	override open func layoutSubviews() {
-		styler?.applyStyles()
+        if styler?.applyStyles() != true {
+            if !didLayout {
+                startListeningForStylesInitialization()
+                return
+            }
+        } else {
+            stopListeningForStylesInitialization()
+        }
 		super.layoutSubviews()
 		didLayout = true
 	}
 }
 
 @IBDesignable
-open class IBStyledButton: UIButton, IBStylable {
+open class IBStyledButton: UIButton, IBStylable, StylesInitializationListenable {
 	@IBInspectable
 	open var identifier: String? {
 		didSet {
 			if didLayout && oldValue != identifier {
 				styler?.didApplyStyles = false
-				styler?.applyStyles()
+				_ = styler?.applyStyles()
 			}
 		}
 	}
@@ -185,7 +245,14 @@ open class IBStyledButton: UIButton, IBStylable {
 	}
 
 	override open func layoutSubviews() {
-		styler?.applyStyles()
+        if styler?.applyStyles() != true {
+            if !didLayout {
+                startListeningForStylesInitialization()
+                return
+            }
+        } else {
+            stopListeningForStylesInitialization()
+        }
 		let state = getState()
 		if lastState != state {
 			lastState = state
@@ -252,13 +319,13 @@ open class IBStyledButton: UIButton, IBStylable {
 }
 
 @IBDesignable
-open class IBStyledSegmentedControl: UISegmentedControl, IBStylable {
+open class IBStyledSegmentedControl: UISegmentedControl, IBStylable, StylesInitializationListenable {
 	@IBInspectable
 	open var identifier: String? {
 		didSet {
 			if didLayout && oldValue != identifier {
 				styler?.didApplyStyles = false
-				styler?.applyStyles()
+				_ = styler?.applyStyles()
 			}
 		}
 	}
@@ -272,7 +339,14 @@ open class IBStyledSegmentedControl: UISegmentedControl, IBStylable {
 	}
 
 	override open func layoutSubviews() {
-		styler?.applyStyles()
+        if styler?.applyStyles() != true {
+            if !didLayout {
+                startListeningForStylesInitialization()
+                return
+            }
+        } else {
+            stopListeningForStylesInitialization()
+        }
 		super.layoutSubviews()
 		didLayout = true
 	}

@@ -14,34 +14,34 @@ final class MissionRow: UITableViewCell {
 	typealias Checkbox = MissionCheckbox
 
 // MARK: Constants
-	fileprivate let pendingMissionsMessage = "(%@/%@)"
+	private let pendingMissionsMessage = "(%@/%@)"
 
 // MARK: Outlets
-	@IBOutlet fileprivate weak var widthStack: UIStackView?
+	@IBOutlet private weak var widthStack: UIStackView?
 
-	@IBOutlet fileprivate weak var checkboxImageView: UIImageView?
+	@IBOutlet private weak var checkboxImageView: UIImageView?
 
-	@IBOutlet fileprivate weak var parentMissionLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var nameLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var descriptionLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var locationLabel: MarkupLabel?
-	@IBOutlet fileprivate weak var availabilityLabel: MarkupLabel?
+	@IBOutlet private weak var parentMissionLabel: MarkupLabel?
+	@IBOutlet private weak var nameLabel: MarkupLabel?
+	@IBOutlet private weak var descriptionLabel: MarkupLabel?
+	@IBOutlet private weak var locationLabel: MarkupLabel?
+	@IBOutlet private weak var availabilityLabel: MarkupLabel?
 
-	@IBOutlet fileprivate weak var fillerView: UIView?
-	@IBOutlet fileprivate weak var disclosureImageWrapper: UIView?
-	@IBOutlet fileprivate weak var disclosureImageView: UIImageView?
+	@IBOutlet private weak var fillerView: UIView?
+	@IBOutlet private weak var disclosureImageWrapper: UIView?
+	@IBOutlet private weak var disclosureImageView: UIImageView?
 
-	@IBAction fileprivate func onClickCheckbox(_ sender: UIButton) { toggleMission() }
+	@IBAction private func onClickCheckbox(_ sender: UIButton) { toggleMission() }
 
 // MARK: Properties
 	internal fileprivate(set) var mission: Mission?
-	fileprivate weak var origin: UIViewController?
-	fileprivate var isCalloutBoxRow: Bool = false
-	fileprivate var allowsSegue: Bool = false
-	fileprivate var isShowParentMissionIfFound = false
+	private weak var origin: UIViewController?
+	private var isCalloutBoxRow: Bool = false
+	private var allowsSegue: Bool = false
+	private var isShowParentMissionIfFound = false
 
 // MARK: Change Listeners And Change Status Flags
-	fileprivate var isDefined = false
+	private var isDefined = false
 
 // MARK: Lifecycle Events
 	public override func layoutSubviews() {
@@ -73,7 +73,7 @@ final class MissionRow: UITableViewCell {
 	}
 
 // MARK: Populate Data
-	fileprivate func setup() -> Bool {
+	private func setup() -> Bool {
 		guard !UIWindow.isInterfaceBuilder && nameLabel != nil else { return false }
 
 		parentMissionLabel?.isHidden = true
@@ -127,7 +127,7 @@ final class MissionRow: UITableViewCell {
 
 	/// Resets all text in the cases where row UI loads before data/setup.
 	/// (I prefer to use sample UI data in nib, so I need it to disappear before UI displays.)
-	fileprivate func clearRow() {
+	private func clearRow() {
 		parentMissionLabel?.text = ""
 		nameLabel?.text = "Loading ..."
 		descriptionLabel?.text = ""
@@ -136,7 +136,7 @@ final class MissionRow: UITableViewCell {
 	}
 
 // MARK: Supporting Functions
-	fileprivate func setCheckboxImage(isCompleted: Bool, isAvailable: Bool) {
+	private func setCheckboxImage(isCompleted: Bool, isAvailable: Bool) {
 		// TODO: make into protocol
 		if !isAvailable {
 			checkboxImageView?.image = isCompleted ? Checkbox.disabledFilled.getImage() : Checkbox.disabledEmpty.getImage()
@@ -145,7 +145,7 @@ final class MissionRow: UITableViewCell {
 		}
 	}
 
-	fileprivate func toggleMission() {
+	private func toggleMission() {
 		guard let nameLabel = self.nameLabel else { return }
 		let isCompleted = !(self.mission?.isCompleted ?? false)
 		let spinnerController = origin as? Spinnerable
@@ -154,10 +154,12 @@ final class MissionRow: UITableViewCell {
 			self.setCheckboxImage(isCompleted: isCompleted, isAvailable: self.mission?.isAvailable ?? false)
 			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
 				?? "", toString: self.mission?.name ?? "").toggleStrikethrough(isCompleted)
-			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
-				self.mission?.change(isCompleted: isCompleted, isSave: true)
-				spinnerController?.stopSpinner(inView: self.origin?.view)
-			}
+            DispatchQueue.global(qos: .background).async {
+                _ = self.mission?.changed(isCompleted: isCompleted, isSave: true)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
+                    spinnerController?.stopSpinner(inView: self.origin?.view)
+                }
+            }
 		}
 	}
 

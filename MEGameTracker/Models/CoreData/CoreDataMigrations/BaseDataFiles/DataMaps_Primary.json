@@ -288,7 +288,7 @@
 		"name": "To Level 3",
 		"isShowInList": false,
 		"inMapId": "G.N1.2",
-		"linkToMapId": "N1.3",
+		"linkToMapId": "G.N1.3",
 		"mapLocationPoint": {
 			"x": 1554,
 			"y": 1049,
@@ -1229,38 +1229,38 @@
 			"y": 1232,
 			"radius": 20
 		}
+    }, {
+        "id": "G.C1.UpperWards",
+        "name": "Citadel: Upper Wards",
+        "inMapId": "G.C",
+        "rerootBreadcrumbs": true,
+        "isHidden": true,
+        "mapType":"Level",
+        "gameVersionData": {
+            "1": {
+                "image": "Detail_Maps/Game1/Citadel/Citadel1_Upper_Wards.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 1248,
+                    "width": 1800,
+                    "height": 158
+                },
+                "isHidden": false
+            }
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Lower Levels"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game2"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game3"
+        }]
 	}, {
-		"id": "G.C1.UpperWards",
-		"name": "Citadel: Upper Wards",
-		"inMapId": "G.C",
-		"rerootBreadcrumbs": true,
-		"isHidden": true,
-		"mapType":"Level",
-		"gameVersionData": {
-			"1": {
-				"image": "Detail_Maps/Game1/Citadel/Citadel1_Upper_Wards.pdf",
-				"referenceSize": "2083x2083",
-				"mapLocationPoint": {
-					"x": 146,
-					"y": 1248,
-					"width": 1800,
-					"height": 158
-				},
-				"isHidden": false
-			}
-		},
-			"type": "BlockedUntil",
-			"id": "Unlocked Citadel: Lower Levels"
-		}, {
-		"events": [{
-			"type": "UnavailableInGame",
-			"id": "Game2"
-		}, {
-			"type": "UnavailableInGame",
-			"id": "Game3"
-		}]
-	}, {
-		"id": "G.C1.UpperWards.1",
+        "id": "G.C1.UpperWards.1",
 		"name": "To Presidium (B)",
 		"isShowInList": false,
 		"inMapId": "G.C1.UpperWards",
@@ -1660,10 +1660,10 @@
 				"isHidden": false
 			}
 		},
-			"type": "BlockedUntil",
-			"id": "Unlocked Citadel: Zakera Ward"
-		}, {
 		"events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Zakera Ward"
+        }, {
 			"type": "UnavailableInGame",
 			"id": "Game1"
 		}, {
@@ -1739,10 +1739,10 @@
 				"isHidden": false
 			}
 		},
-			"type": "BlockedUntil",
-			"id": "Unlocked Citadel: Zakera Ward"
-		}, {
 		"events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Zakera Ward"
+        }, {
 			"type": "UnavailableInGame",
 			"id": "Game1"
 		}, {
@@ -1830,10 +1830,10 @@
 				"isHidden": false
 			}
 		},
-			"type": "BlockedUntil",
-			"id": "Unlocked Citadel: Zakera Ward"
-		}, {
 		"events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Zakera Ward"
+        }, {
 			"type": "UnavailableInGame",
 			"id": "Game1"
 		}, {

@@ -17,18 +17,22 @@ public protocol UpdatingTableView {
 
 extension UpdatingTableView {
 
-	fileprivate func allRowsStillExist(_ rows: [IndexPath]) -> Bool {
-		for indexPath in rows {
-			if (tableView?.numberOfRows(inSection: (indexPath as NSIndexPath).section) ?? 0) < (indexPath as NSIndexPath).row {
-				return false
-			}
-		}
-		return true
+	private func allRowsStillExist(_ rows: [IndexPath]) -> Bool {
+        var result: Bool = true
+        for indexPath in rows {
+            let section = (indexPath as NSIndexPath).section
+            let row = (indexPath as NSIndexPath).row
+            if (self.tableView?.numberOfRows(inSection: section) ?? 0) < row {
+                result = false
+                break
+            }
+        }
+		return result
 	}
 
 	public func reloadRows(_ rows: [IndexPath]) {
-		if !rows.isEmpty && allRowsStillExist(rows) {
-			DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            if !rows.isEmpty && self.allRowsStillExist(rows) {
 				self.tableView?.isUserInteractionEnabled = false
 				self.tableView?.beginUpdates()
 				self.tableView?.reloadRows(at: rows, with: .automatic)
@@ -39,8 +43,8 @@ extension UpdatingTableView {
 	}
 
 	public func insertRows(_ rows: [IndexPath]) {
-		if !rows.isEmpty && allRowsStillExist(rows) {
-			DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            if !rows.isEmpty && self.allRowsStillExist(rows) {
 				self.tableView?.isUserInteractionEnabled = false
 				self.tableView?.beginUpdates()
 				self.tableView?.insertRows(at: rows, with: .automatic)
@@ -51,8 +55,8 @@ extension UpdatingTableView {
 	}
 
 	public func removeRows(_ rows: [IndexPath]) {
-		if !rows.isEmpty && allRowsStillExist(rows) {
-			DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            if !rows.isEmpty && self.allRowsStillExist(rows) {
 				self.tableView?.isUserInteractionEnabled = false
 				self.tableView?.beginUpdates()
 				self.tableView?.deleteRows(at: rows, with: .automatic)

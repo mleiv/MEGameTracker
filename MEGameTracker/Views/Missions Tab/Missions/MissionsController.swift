@@ -45,7 +45,7 @@ final class MissionsController: UITableViewController, Spinnerable {
 		return missionsSplitViewController?.isLoadedSignal
 	}
 
-	var shepardUuid: String?
+	var shepardUuid: UUID?
 	var isUpdating = false
 	var didSetup = false
 
@@ -211,7 +211,7 @@ extension MissionsController {
 		}
 	}
 
-	func reloadOnShepardChange() {
+	func reloadOnShepardChange(_ x: Bool = false) {
 		if shepardUuid != App.current.game?.shepard?.uuid {
 			shepardUuid = App.current.game?.shepard?.uuid
 			reloadAllRows()
@@ -223,7 +223,7 @@ extension MissionsController {
 // MARK: Listeners
 extension MissionsController {
 
-	fileprivate func startListeners() {
+	private func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		registerPreCacheListener()
 		// listen for gameVersion changes
