@@ -510,12 +510,11 @@ extension Mission {
 
 	/// Sorts by availability, then by sortIndex, then by name
     static func sort(_ first: Mission, _ second: Mission) -> Bool {
-        if first.missionType != second.missionType {
-            return first.missionType.intValue < second.missionType.intValue
-        }
-        switch (first.missionType) {
-        case .objective: fallthrough
-        case .subset:
+//        if first.missionType != second.missionType {
+//            return first.missionType.intValue < second.missionType.intValue
+//        }
+        switch first.missionType {
+        case .objective:
             if first.sortIndex != second.sortIndex {
                 return first.sortIndex < second.sortIndex
             } else {

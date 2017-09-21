@@ -57,7 +57,7 @@ final class Change20170905Tests: MEGameTrackerTests {
         initializeCurrentGame() // needed for saving with game uuid
 
         let fromItem = create(Item.self, from: itemFrom)
-        let toItem = create(Item.self, from: itemTo)
+        _ = create(Item.self, from: itemTo)
         _ = fromItem?.changed(isAcquired: true)
 
         App.current.lastBuild = 1 // required to run

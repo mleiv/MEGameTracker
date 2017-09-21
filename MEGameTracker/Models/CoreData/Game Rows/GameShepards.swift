@@ -72,7 +72,7 @@ extension Shepard {
 		isAllowDelay: Bool,
 		with manager: CodableCoreDataManageable?
 	) -> Bool {
-		hasUnsavedChanges = true // force this
+		rawData = nil; hasUnsavedChanges = true // force this
 		if isAllowDelay {
 			App.current.hasUnsavedChanges = true
 			return true // not an error
@@ -141,8 +141,11 @@ extension Shepard {
         for var sequenceShepard in shepards {
             if sequenceShepard.uuid != uuid {
                 sequenceShepard.setCommonData(commonData)
-                isSaved = isSaved
-                    && sequenceShepard.saveAnyChanges(isCascadeChanges: .none, isAllowDelay: false, with: manager)
+                isSaved = isSaved && sequenceShepard.saveAnyChanges(
+                    isCascadeChanges: .none,
+                    isAllowDelay: false,
+                    with: manager
+                )
             }
         }
         hasUnsavedChanges = !isSaved // sequence save

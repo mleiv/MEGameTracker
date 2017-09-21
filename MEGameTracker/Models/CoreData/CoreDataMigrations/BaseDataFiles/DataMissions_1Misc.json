@@ -412,7 +412,7 @@
 		"name": "Combat Simulations",
 		"description": "Beat all twelve scenarios. There are only eight scenarios initially - the final four are revealed only after the first eight are bested. You will be completing this challange simultaneously with [megametracker://mission?id=DLC1.PS.Vidinos].",
 		"relatedMissionIds": ["DLC1.PS.Vidinos.1"],
-        "sideEffects": "Tip: use the sprint modifier (\"A\" in XBox and \"X\" in PlayStation - see [https://strategywiki.org/wiki/Mass_Effect/Controls] for more) to run faster in the Time Trial challenges."
+        "sideEffects": ["Tip: use the sprint modifier (\"A\" in XBox and \"X\" in PlayStation - see [https://strategywiki.org/wiki/Mass_Effect/Controls] for more) to run faster."]
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.1",
 		"sortIndex": 9802,
@@ -428,7 +428,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.2",
 		"sortIndex": 9803,
@@ -444,7 +445,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.3",
 		"sortIndex": 9804,
@@ -460,6 +462,7 @@
 			"radius": 1
 		},
 		"isOpensDetail": false,
+        "isShowPin": false,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed 8 Pinnacle Station Combat Missions"
@@ -479,7 +482,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.5",
 		"sortIndex": 9806,
@@ -495,7 +499,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.6",
 		"sortIndex": 9807,
@@ -511,6 +516,7 @@
 			"radius": 1
 		},
 		"isOpensDetail": false,
+        "isShowPin": false,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed 8 Pinnacle Station Combat Missions"
@@ -530,7 +536,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.8",
 		"sortIndex": 9809,
@@ -546,7 +553,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.9",
 		"sortIndex": 9810,
@@ -562,6 +570,7 @@
 			"radius": 1
 		},
 		"isOpensDetail": false,
+        "isShowPin": false,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed 8 Pinnacle Station Combat Missions"
@@ -581,7 +590,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.11",
 		"sortIndex": 9812,
@@ -597,7 +607,8 @@
 			"y": 1040,
 			"radius": 1
 		},
-		"isOpensDetail": false
+		"isOpensDetail": false,
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.CombatMissions.1.12",
 		"sortIndex": 9813,
@@ -613,6 +624,7 @@
 			"radius": 1
 		},
 		"isOpensDetail": false,
+        "isShowPin": false,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed 8 Pinnacle Station Combat Missions"
@@ -630,7 +642,8 @@
 			"x": 1040,
 			"y": 1040,
 			"radius": 1
-		}
+		},
+        "isShowPin": false
 	}, {
 		"id": "DLC1.PS.Vidinos",
 		"sortIndex": 99,
@@ -815,7 +828,7 @@
 	}, {
 		"id": "DLC1.PS.Convoy.1",
 		"sortIndex": 10001,
-		"inMissionId": "DLC1.PS.Vidinos",
+		"inMissionId": "DLC1.PS.Convoy",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Purchase a Random Item",

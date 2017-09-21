@@ -538,7 +538,7 @@ extension Shepard {
             changed["photo"] = photo.stringValue
         }
         if !isInternal && !changed.isEmpty {
-            hasUnsavedChanges = true
+            markChanged()
             notifySaveToCloud(fields: changed)
         }
     }

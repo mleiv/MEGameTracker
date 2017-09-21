@@ -104,10 +104,10 @@ final class EventTests: MEGameTrackerTests {
             }
         }
 
-		let event1 = create(Event.self, from: prologueEventJson)
+		var event1 = create(Event.self, from: prologueEventJson)
         var mission = create(Mission.self, from: prologueMissionJson)
         XCTAssert(mission?.name == "Prologue: On The Normandy", "Reported incorrect initial mission name")
-        _ = event1?.changed(isTriggered: true)
+        event1 = event1?.changed(isTriggered: true)
         mission = Mission.get(id: "M1.Prologue")
         XCTAssert(mission?.name == "Prologue: Find The Beacon", "Reported incorrect changed mission name")
         _ = event1?.changed(isTriggered: false)
