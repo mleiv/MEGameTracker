@@ -362,15 +362,16 @@
 
     }, {
         "x-comment-x": "-------- Feros  -------",
-        "id": "M1.Feros.Loot.I.1",
+        "id": "M1.Feros.Loot.I.0",
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
-        "name": "Medical Station 29",
+        "name": "Medical Station",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Ear.Att.The.Fer.ZhusHope",
         "mapLocationPoint": {
-            "x": 83,
-            "y": 887,
+            "x": 80,
+            "y": 907,
             "radius": 1
         }
     }, {
@@ -378,7 +379,7 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Upgrade Kit 30",
+        "name": "Upgrade Kit",
         "inMapId": "G.Ear.Att.The.Fer.ZhusHope",
         "mapLocationPoint": {
             "x": 107,
@@ -390,13 +391,17 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Crate 31",
+        "name": "Upgrade Kit",
         "inMapId": "G.Ear.Att.The.Fer.ZhusHope",
         "mapLocationPoint": {
             "x": 747,
             "y": 1143,
             "radius": 1
-        }
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Talked to the ExoGeni VI"
+        }]
     }, {
         "id": "M1.Feros.Loot.I.3",
         "gameVersion": "1",
@@ -451,6 +456,7 @@
         "itemType": "Loot",
         "itemDisplayType": "Loot",
         "name": "Locked Crate",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Ear.Att.The.Fer.Skyway",
         "mapLocationPoint": {
             "x": 507,
@@ -470,7 +476,7 @@
             "radius": 1
         }
     }, {
-        "id": "M1.Feros.Loot.I.3",
+        "id": "M1.Feros.Loot.I.8B",
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
@@ -523,6 +529,7 @@
         "itemType": "Loot",
         "itemDisplayType": "Loot",
         "name": "Locked Crate",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Ear.Att.The.Fer.ExoGeni",
         "mapLocationPoint": {
             "x": 1087,
@@ -535,6 +542,7 @@
         "itemType": "Loot",
         "itemDisplayType": "Loot",
         "name": "Secure Crate",
+        "annotationNote": "Average Decryption",
         "inMapId": "G.Ear.Att.The.Fer.ExoGeni",
         "mapLocationPoint": {
             "x": 791,
@@ -547,6 +555,7 @@
         "itemType": "Loot",
         "itemDisplayType": "Loot",
         "name": "Secure Crate",
+        "annotationNote": "Average Decryption",
         "inMapId": "G.Ear.Att.The.Fer.ExoGeni",
         "mapLocationPoint": {
             "x": 1031,
@@ -559,6 +568,7 @@
         "itemType": "Loot",
         "itemDisplayType": "Loot",
         "name": "Secure Crate",
+        "annotationNote": "Average Decryption",
         "inMapId": "G.Ear.Att.The.Fer.ExoGeni",
         "mapLocationPoint": {
             "x": 1339,
@@ -571,6 +581,7 @@
         "itemType": "Loot",
         "itemDisplayType": "Loot",
         "name": "Storage Locker",
+        "annotationNote": "Average Decryption",
         "inMapId": "G.Ear.Att.The.Fer.ExoGeni",
         "mapLocationPoint": {
             "x": 1943,
@@ -582,7 +593,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Weapons Locker 47",
+        "name": "Weapons Locker",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Ear.Att.The.Fer.ThorianLair",
         "mapLocationPoint": {
             "x": 1059,
@@ -590,12 +602,12 @@
             "radius": 1
         }
     }, {
-        "id": "M1.Feros.Loot.I.4",
+        "id": "M1.Feros.Loot.I.18",
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
-        "name": "Medical Station 48",
-        "annotationNote": "Decryption",
+        "name": "Medical Station",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Ear.Att.The.Fer.ThorianLair",
         "mapLocationPoint": {
             "x": 1319,
@@ -1737,7 +1749,7 @@
         "gameVersion": "1",
         "itemType": "Salvage",
         "itemDisplayType": "Loot",
-        "name": "Crashed Probe 128",
+        "name": "Crashed Probe",
         "inMapId": "G.Att.Voy.Ama.Agebinium",
         "mapLocationPoint": {
             "x": 1045,
@@ -1749,11 +1761,11 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Upgrade Kit 129",
+        "name": "Upgrade Kit",
         "inMapId": "G.Att.Voy.Ama.Age.Mine",
         "mapLocationPoint": {
             "x": 1558,
-            "y": 972,
+            "y": 1032,
             "radius": 1
         }
     }, {
@@ -2315,7 +2327,7 @@
         "gameVersion": "1",
         "itemType": "Salvage",
         "itemDisplayType": "Loot",
-        "name": "Crashed Probe 183",
+        "name": "Crashed Probe",
         "inMapId": "G.Att.Voy.Yan.Binthu",
         "mapLocationPoint": {
             "x": 469,
@@ -2327,7 +2339,8 @@
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
-        "name": "Medical Station 194",
+        "name": "Medical Station",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Voy.Yan.Bin.2Research",
         "mapLocationPoint": {
             "x": 821,
@@ -2339,7 +2352,8 @@
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
-        "name": "Medical Station 195",
+        "name": "Medical Station",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Voy.Yan.Bin.2Research",
         "mapLocationPoint": {
             "x": 821,
@@ -2351,7 +2365,8 @@
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
-        "name": "Medical Station 196",
+        "name": "Medical Station",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Voy.Yan.Bin.2Research",
         "mapLocationPoint": {
             "x": 1237,
@@ -2363,7 +2378,8 @@
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
-        "name": "Medical Station 197",
+        "name": "Medical Station",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Voy.Yan.Bin.2Research",
         "mapLocationPoint": {
             "x": 1237,
@@ -2375,7 +2391,7 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Technician Kit 198",
+        "name": "Technician Kit",
         "inMapId": "G.Att.Voy.Yan.Bin.2Research",
         "mapLocationPoint": {
             "x": 1215,
@@ -2387,7 +2403,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Locker 200",
+        "name": "Storage Locker",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Voy.Yan.Bin.3Research",
         "mapLocationPoint": {
             "x": 1104,
@@ -2395,11 +2412,11 @@
             "radius": 1
         }
     }, {
-        "id": "A1.U.Cerberus.Loot.I.11",
+        "id": "A1.U.Cerberus.Loot.I.13",
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Technician Kit 198",
+        "name": "Technician Kit",
         "inMapId": "G.Att.Voy.Yan.Bin.3Research",
         "mapLocationPoint": {
             "x": 1215,
@@ -3196,7 +3213,7 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Crate 305",
+        "name": "Malfunctioning Object",
         "inMapId": "G.Att.Mar.Cas.MSVCornucopia",
         "mapLocationPoint": {
             "x": 1500,
@@ -3208,7 +3225,7 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Crate 306",
+        "name": "Malfunctioning Object",
         "inMapId": "G.Att.Mar.Cas.MSVCornucopia",
         "mapLocationPoint": {
             "x": 1500,
@@ -3220,7 +3237,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Crate 307",
+        "name": "Storage Locker",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Mar.Cas.MSVCornucopia",
         "mapLocationPoint": {
             "x": 1500,
@@ -3445,7 +3463,44 @@
         "gameVersion": "1",
         "itemType": "Salvage",
         "itemDisplayType": "Loot",
-        "name": "Crate 341",
+        "name": "Hardened Crate",
+        "annotationNote": "Hard Decryption",
+        "inMapId": "G.Att.Voy.Col.Nepheron",
+        "mapLocationPoint": {
+            "x": 668,
+            "y": 1251,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.U.HadesDogs.Loot.I.2B",
+        "gameVersion": "1",
+        "itemType": "MedKit",
+        "itemDisplayType": "MedKit",
+        "name": "Medical Kit",
+        "inMapId": "G.Att.Voy.Col.Nepheron",
+        "mapLocationPoint": {
+            "x": 668,
+            "y": 1251,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.U.HadesDogs.Loot.I.2C",
+        "gameVersion": "1",
+        "itemType": "MedKit",
+        "itemDisplayType": "MedKit",
+        "name": "Medical Kit",
+        "inMapId": "G.Att.Voy.Col.Nepheron",
+        "mapLocationPoint": {
+            "x": 668,
+            "y": 1251,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.U.HadesDogs.Loot.I.2D",
+        "gameVersion": "1",
+        "itemType": "Loot",
+        "itemDisplayType": "Loot",
+        "name": "Upgrade Kit",
         "inMapId": "G.Att.Voy.Col.Nepheron",
         "mapLocationPoint": {
             "x": 668,
@@ -3457,7 +3512,7 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Upgrade Kit 342",
+        "name": "Technician Kit",
         "inMapId": "G.Att.Voy.Col.Nep.Underground",
         "mapLocationPoint": {
             "x": 1275,
@@ -3469,7 +3524,7 @@
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
-        "name": "Medical Station 343",
+        "name": "Aid Station",
         "inMapId": "G.Att.Voy.Col.Nep.Underground",
         "mapLocationPoint": {
             "x": 1083,
@@ -3481,7 +3536,7 @@
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
-        "name": "Medical Kit -? 344-A",
+        "name": "Medical Kit",
         "inMapId": "G.Att.Voy.Col.Nep.Underground",
         "mapLocationPoint": {
             "x": 496,
@@ -3493,7 +3548,8 @@
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
-        "name": "Medical Station 344-B",
+        "name": "Medical Station",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Voy.Col.Nep.Underground",
         "mapLocationPoint": {
             "x": 496,
@@ -3505,10 +3561,10 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Upgrade Kit -? 343",
+        "name": "Upgrade Kit",
         "inMapId": "G.Att.Voy.Col.Nep.Underground",
         "mapLocationPoint": {
-            "x": 633,
+            "x": 653,
             "y": 1516,
             "radius": 1
         }
@@ -3517,7 +3573,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Storage Locker 346",
+        "name": "Storage Locker",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Voy.Col.Nep.Underground",
         "mapLocationPoint": {
             "x": 694,
@@ -3529,7 +3586,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Storage Locker 347",
+        "name": "Storage Locker",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Voy.Col.Nep.Underground",
         "mapLocationPoint": {
             "x": 694,
@@ -3541,7 +3599,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Storage Locker 348",
+        "name": "Storage Locker",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Voy.Col.Nep.Underground",
         "mapLocationPoint": {
             "x": 671,
@@ -3553,7 +3612,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Storage Locker 349",
+        "name": "Storage Locker",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Voy.Col.Nep.Underground",
         "mapLocationPoint": {
             "x": 671,
@@ -3676,7 +3736,7 @@
         "gameVersion": "1",
         "itemType": "Salvage",
         "itemDisplayType": "Loot",
-        "name": "Crashed Probe 380",
+        "name": "Crashed Probe",
         "inMapId": "G.Att.Mar.Vos.Nodacrux",
         "mapLocationPoint": {
             "x": 1407,
@@ -3686,9 +3746,36 @@
     }, {
         "id": "A1.U.ExoGeniFacility.Loot.I.2",
         "gameVersion": "1",
-        "itemType": "Salvage",
+        "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Locker 381",
+        "name": "Hardened Crate",
+        "annotationNote": "Hard Decryption",
+        "inMapId": "G.Att.Mar.Vos.Nodacrux",
+        "mapLocationPoint": {
+            "x": 650,
+            "y": 635,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.U.ExoGeniFacility.Loot.I.2B",
+        "gameVersion": "1",
+        "itemType": "Loot",
+        "itemDisplayType": "Loot",
+        "name": "Locked Crate",
+        "annotationNote": "Easy Decryption",
+        "inMapId": "G.Att.Mar.Vos.Nodacrux",
+        "mapLocationPoint": {
+            "x": 650,
+            "y": 635,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.U.ExoGeniFacility.Loot.I.2C",
+        "gameVersion": "1",
+        "itemType": "Loot",
+        "itemDisplayType": "Loot",
+        "name": "Locked Crate",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Mar.Vos.Nodacrux",
         "mapLocationPoint": {
             "x": 650,
@@ -3700,7 +3787,7 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Upgrade Kit 382",
+        "name": "Upgrade Kit",
         "inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
         "mapLocationPoint": {
             "x": 1137,
@@ -3712,7 +3799,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Crate -? 383",
+        "name": "Locked Crate",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
         "mapLocationPoint": {
             "x": 704,
@@ -3724,7 +3812,7 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Sludge Canister -? 384",
+        "name": "Sludge Canister",
         "inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
         "mapLocationPoint": {
             "x": 575,
@@ -3736,7 +3824,7 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Storage Locker 385",
+        "name": "Storage Locker",
         "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
         "mapLocationPoint": {
@@ -3749,7 +3837,7 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Storage Locker 386",
+        "name": "Storage Locker",
         "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
         "mapLocationPoint": {
@@ -3760,13 +3848,13 @@
     }, {
         "id": "A1.U.ExoGeniFacility.Loot.I.8",
         "gameVersion": "1",
-        "itemType": "Loot",
-        "itemDisplayType": "Loot",
-        "name": "Aid Station -? 387",
+        "itemType": "MedKit",
+        "itemDisplayType": "MedKit",
+        "name": "Aid Station",
         "inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
         "mapLocationPoint": {
-            "x": 1241,
-            "y": 1704,
+            "x": 1146,
+            "y": 1608,
             "radius": 1
         }
     }, {
@@ -3774,7 +3862,7 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Technician Kit -? 388",
+        "name": "Technician Kit",
         "inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
         "mapLocationPoint": {
             "x": 1212,
@@ -3786,11 +3874,11 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Wetware Kit -? 389",
+        "name": "Wetware Kit",
         "inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
         "mapLocationPoint": {
-            "x": 1312,
-            "y": 1521,
+            "x": 1241,
+            "y": 1704,
             "radius": 1
         }
     }, {
@@ -3798,11 +3886,11 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Malfunctioning Object -? 390",
+        "name": "Malfunctioning Object",
         "inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
         "mapLocationPoint": {
-            "x": 1146,
-            "y": 1608,
+            "x": 1312,
+            "y": 1521,
             "radius": 1
         }
     }, {

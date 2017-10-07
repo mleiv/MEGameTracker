@@ -543,7 +543,7 @@
 		],
         "events": [{
             "type": "BlockedAfter",
-            "id": "Wrex Joined Team",
+            "id": "Wrex Joined Team"
         }]
 	}, {
 		"id": "M1.Garrus.2",
@@ -985,6 +985,7 @@
 			"https://masseffect.wikia.com/wiki/Feros:_Geth_Attack",
 			"https://masseffect.wikia.com/wiki/Feros:_The_Thorian"
 		],
+        "relatedDecisionIds": ["D1.ZhusHope", "D1.Shiala"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Unlocked Galaxy Map"
@@ -997,6 +998,7 @@
 		}]
 	}, {
 		"id": "M1.Feros.0",
+        "sortIndex": 60,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Go to Feros",
@@ -1006,25 +1008,27 @@
 		"isShowInParentMap": true
 	}, {
 		"id": "M1.Feros.1",
+        "sortIndex": 61,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Speak with Fai Dan",
 		"description": "[megametracker://person?id=O1.FaiDan], the leader of the colonists, may have the information you need. Go up the stairs and through the downed freighter to speak with him.",
 		"inMissionId": "M1.Feros",
-		"inMapId": "G.Ear.Art.Kno.Fer.ZhusHope",
-		"mapLocationPoint": {
-			"x": 752,
-			"y": 1134,
-			"radius": 1
-		}
+        "inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+        "mapLocationPoint": {
+            "x": 752,
+            "y": 1134,
+            "radius": 1
+        }
 	}, {
 		"id": "M1.Feros.2",
+        "sortIndex": 62,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Stop Geth in Tower",
 		"description": "The geth have taken control of a tower. Go up the stairs and make your way to the tower to stope their advance.",
 		"inMissionId": "M1.Feros",
-		"inMapId": "G.Ear.Art.Kno.Fer.Zhu.5",
+        "inMapId": "G.Ear.Att.The.Fer.Zhu.5",
 		"isShowInParentMap": true,
 		"relatedMissionIds": ["A1.F.GethInTunnels", "A1.F.PowerCells", "A1.F.VarrenMeat", "A1.F.WaterRestoration", "A1.U.EspionageProbe"],
 		"events": [{
@@ -1033,20 +1037,22 @@
 		}]
 	}, {
 		"id": "M1.Feros.3",
+        "sortIndex": 63,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Inform Fai Dan",
 		"description": "Tell [megametracker://person?id=O1.FaiDan] that the geth have been cleared from the tower. He will alert you to additional optional assignments in Zhu's Hope.",
 		"inMissionId": "M1.Feros",
-		"inMapId": "G.Ear.Art.Kno.Fer.ZhusHope",
-		"mapLocationPoint": {
-			"x": 752,
-			"y": 1134,
-			"radius": 1
-		},
+        "inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+        "mapLocationPoint": {
+            "x": 752,
+            "y": 1134,
+            "radius": 1
+        },
 		"relatedMissionIds": ["A1.F.GethInTunnels", "A1.F.PowerCells", "A1.F.VarrenMeat", "A1.F.WaterRestoration", "A1.U.EspionageProbe", "A1.T.StrangeBehavior"]
 	}, {
 		"id": "M1.Feros.4",
+        "sortIndex": 64,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Get to ExoGeni Headquarters",
@@ -1057,6 +1063,7 @@
 		"relatedMissionIds": ["A1.F.DataRecovery"]
 	}, {
 		"id": "M1.Feros.5",
+        "sortIndex": 65,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Investigate Mysterious Signal",
@@ -1066,6 +1073,7 @@
 		"isShowInParentMap": true
 	}, {
 		"id": "M1.Feros.6",
+        "sortIndex": 66,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Investigate ExoGeni Headquarters",
@@ -1074,6 +1082,7 @@
 		"inMapId": "G.Ear.Att.The.Fer.ExoGeni"
 	}, {
 		"id": "M1.Feros.6.1",
+        "sortIndex": 661,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Lizbeth Baynham",
@@ -1087,10 +1096,11 @@
 		}
 	}, {
 		"id": "M1.Feros.6.2",
+        "sortIndex": 662,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "The ExoGeni VI",
-		"description": "Talk to the [megametracker://person?id=O2.ExoGeniVI] and find out what they were researching on Feros.",
+		"description": "Talk to the [megametracker://person?id=O1.ExoGeniVI] and find out what they were researching on Feros.",
 		"inMissionId": "M1.Feros.6",
 		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
 		"mapLocationPoint": {
@@ -1104,6 +1114,7 @@
 		}]
 	}, {
 		"id": "M1.Feros.7",
+        "sortIndex": 67,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Remove Force Field",
@@ -1113,6 +1124,7 @@
 		"relatedMissionIds": ["M1.Feros.8"]
 	}, {
 		"id": "M1.Feros.8",
+        "sortIndex": 68,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Destroy Geth Ship Claws",
@@ -1126,10 +1138,11 @@
 		}
 	}, {
 		"id": "M1.Feros.9",
+        "sortIndex": 69,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Exit ExoGeni",
-		"description": "You have destroyed the geth ship. Now get Lizbeth Baynham and leave ExoGeni.\n\nIn order to return to the Mako, you will need to release the Shuttle Bay door controls. Set the internal pressure to 31 and 34 pounds per inch and activate the first, third, and fourth switch.",
+		"description": "You have destroyed the geth ship. Now get Lizbeth Baynham and leave ExoGeni.\n\nIn order to return to the Mako, you will need to release the Shuttle Bay door controls. Set the internal pressure to 31 and 34 pounds per inch and activate the first, third, and fourth switch. (Hint: the prior two tasks are completed by this task.)",
 		"inMissionId": "M1.Feros",
 		"inMapId": "G.Ear.Att.The.Fer.ExoGeni",
 		"mapLocationPoint": {
@@ -1139,6 +1152,7 @@
 		}
 	}, {
 		"id": "M1.Feros.10",
+        "sortIndex": 70,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Speak with Refugees",
@@ -1148,6 +1162,7 @@
 		"isShowInParentMap": true
 	}, {
 		"id": "M1.Feros.11",
+        "sortIndex": 71,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Return to Zhu's Hope",
@@ -1157,14 +1172,18 @@
 		"isShowInParentMap": true
 	}, {
 		"id": "M1.Feros.12",
+        "sortIndex": 72,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Minimize Casualties",
 		"description": "Fight your way to the freighter and down into the Throians's lair. Kill Thorian creepers at will, but avoid slaying the colonists. You can safely knock them out using melee attacks or grenades equipped with the anti-Thorian upgrade. \n\nTell your squad, \"Don’t shoot the colonists,\" to keep them attacking Creepers only. You have very few anti-Thorian grenades, so use them sparingly.",
-		"inMissionId": "M1.Feros",
+        "inMissionId": "M1.Feros",
+        "inMapId": "G.Ear.Att.The.Fer.Zhu.3",
+        "isShowInParentMap": true,
 		"relatedDecisionIds": ["D1.ZhusHope"]
 	}, {
 		"id": "M1.Feros.13",
+        "sortIndex": 73,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Destroy the Thorian",
@@ -1178,9 +1197,10 @@
 		}
 	}, {
 		"id": "M1.Feros.13.1",
+        "sortIndex": 731,
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Destroy Neural Node",
+		"name": "Destroy Neural Node 1",
 		"inMissionId": "M1.Feros.13",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
@@ -1191,9 +1211,10 @@
 		}
 	}, {
 		"id": "M1.Feros.13.2",
+        "sortIndex": 732,
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Destroy Neural Node",
+		"name": "Destroy Neural Node 2",
 		"inMissionId": "M1.Feros.13",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
@@ -1204,9 +1225,10 @@
 		}
 	}, {
 		"id": "M1.Feros.13.3",
+        "sortIndex": 733,
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Destroy Neural Node",
+		"name": "Destroy Neural Node 3",
 		"inMissionId": "M1.Feros.13",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
@@ -1217,9 +1239,10 @@
 		}
 	}, {
 		"id": "M1.Feros.13.4",
+        "sortIndex": 734,
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Destroy Neural Node",
+		"name": "Destroy Neural Node 4",
 		"inMissionId": "M1.Feros.13",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
@@ -1230,9 +1253,10 @@
 		}
 	}, {
 		"id": "M1.Feros.13.5",
+        "sortIndex": 735,
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Destroy Neural Node",
+		"name": "Destroy Neural Node 5",
 		"inMissionId": "M1.Feros.13",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
@@ -1243,9 +1267,10 @@
 		}
 	}, {
 		"id": "M1.Feros.13.6",
+        "sortIndex": 736,
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Destroy Neural Node",
+		"name": "Destroy Neural Node 6",
 		"inMissionId": "M1.Feros.13",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Att.The.Fer.ThorianLair",
@@ -1256,6 +1281,7 @@
 		}
 	}, {
 		"id": "M1.Feros.13.7",
+        "sortIndex": 737,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "The Cypher",
@@ -1270,6 +1296,7 @@
 		"relatedDecisionIds": ["D1.Shiala"]
 	}, {
 		"id": "M1.Feros.14",
+        "sortIndex": 74,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Debrief",

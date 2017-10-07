@@ -165,6 +165,20 @@
 			"type": "BlockedAfter",
 			"id": "Citadel Lockdown: Exile"
 		}]
+    }, {
+        "id": "A1.C1.AsariConsort.0",
+        "sortIndex": 1200,
+        "inMissionId": "A1.C1.AsariConsort",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak with Sha'ira",
+        "inMapId": "G.C1.Presidium",
+        "mapLocationPoint": {
+            "x": 1468,
+            "y": 1468,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.C1.AsariConsort.1",
 		"sortIndex": 1201,
@@ -551,55 +565,69 @@
 			"type": "BlockedAfter",
 			"id": "Citadel Lockdown: Exile"
 		}]
+    }, {
+        "id": "A1.C1.SignalTracking.0",
+        "sortIndex": 1700,
+        "inMissionId": "A1.C1.SignalTracking",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Suspicious Gambling Machine",
+        "inMapId": "G.C1.Flux",
+        "mapLocationPoint": {
+            "x": 376,
+            "y": 1137,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.C1.SignalTracking.1",
 		"sortIndex": 1701,
 		"inMissionId": "A1.C1.SignalTracking",
+        "gameVersion": "1",
+        "missionType": "Objective",
 		"name": "Track The Signal 1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"isOpensDetail": false,
 		"inMapId": "G.C1.UpperWards",
 		"mapLocationPoint": {
 			"x": 460,
 			"y": 360,
 			"radius": 1
-		}
+		},
+        "isOpensDetail": false
 	}, {
 		"id": "A1.C1.SignalTracking.2",
 		"sortIndex": 1702,
 		"inMissionId": "A1.C1.SignalTracking",
+        "gameVersion": "1",
+        "missionType": "Objective",
 		"name": "Track The Signal 2",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"isOpensDetail": false,
 		"inMapId": "G.C1.Presidium",
 		"mapLocationPoint": {
 			"x": 611,
 			"y": 1292,
 			"radius": 1
-		}
+		},
+        "isOpensDetail": false
 	}, {
 		"id": "A1.C1.SignalTracking.3",
 		"sortIndex": 1703,
 		"inMissionId": "A1.C1.SignalTracking",
+        "gameVersion": "1",
+        "missionType": "Objective",
 		"name": "Track The Signal 3",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"isOpensDetail": false,
 		"inMapId": "G.C1.Presidium",
 		"mapLocationPoint": {
 			"x": 687,
 			"y": 1483,
 			"radius": 1
-		}
+		},
+        "isOpensDetail": false
 	}, {
 		"id": "A1.C1.SignalTracking.4",
 		"sortIndex": 1704,
 		"inMissionId": "A1.C1.SignalTracking",
+        "gameVersion": "1",
+        "missionType": "Objective",
 		"name": "The Source",
-		"gameVersion": "1",
-		"missionType": "Objective",
 		"description": "Abort the AI self-destruct. You can shoot the power junction or solve a puzzle. If you choose the puzzle, you will be rewarded with credits (the amount of which decreases the longer you take to solve it). On XBox: Y-X-Y-A-X-A-A. On Playstation: triangle, square, triangle, cross, square, cross, cross."
 	}, {
 		"id": "A1.C1.PresidiumProphet",
@@ -738,6 +766,20 @@
 			"type": "Triggers",
 			"id": "Helped Emily Wong"
 		}]
+    }, {
+        "id": "A1.C1.ReportersRequest.0",
+        "sortIndex": 1600,
+        "inMissionId": "A1.C1.ReportersRequest",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Emily Wong",
+        "inMapId": "G.C1.UpperWards",
+        "mapLocationPoint": {
+            "x": 930,
+            "y": 1455,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.C1.ReportersRequest.1",
 		"sortIndex": 1601,
@@ -920,6 +962,20 @@
 			"type": "BlockedAfter",
 			"id": "Citadel Lockdown: Exile"
 		}]
+    }, {
+        "id": "A1.C1.Homecoming.0",
+        "sortIndex": 1400,
+        "inMissionId": "A1.C1.Homecoming",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Samesh Bhatia",
+        "inMapId": "G.C1.Presidium",
+        "mapLocationPoint": {
+            "x": 1151,
+            "y": 597,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.C1.Homecoming.1",
 		"sortIndex": 1401,
@@ -928,7 +984,6 @@
 		"missionType": "Objective",
 		"name": "Talk with Diplomat",
 		"description": "Speak to [megametracker://person?id=O1.Bosker], the diplomat handling [Mr. Bhatia's|megametracker://person?id=O1.Bhatia] situation and find out why his wife's body has not been returned. He is in the Embassy Lounge on the Presidium.",
-		"inMissionId": "A1.C1.Homecoming",
 		"inMapId": "G.C1.Presidium",
 		"mapLocationPoint": {
 			"x": 1595,
@@ -1625,6 +1680,20 @@
 			"type": "BlockedAfter",
 			"id": "Citadel Lockdown: Exile"
 		}]
+    }, {
+        "id": "A1.C3.NegotiatorsRequest.0",
+        "sortIndex": 10200,
+        "inMissionId": "A1.C3.NegotiatorsRequest",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Keeler",
+        "inMapId": "G.C1.Flux",
+        "mapLocationPoint": {
+            "x": 1391,
+            "y": 931,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.C3.NegotiatorsRequest.1",
 		"sortIndex": 10201,
@@ -1715,13 +1784,13 @@
 		"inMissionId": "A1.F.GethInTunnels",
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Find the Geth",
+		"name": "Find the Geth Transmitter",
 		"description": "Hunt in the tunnels beneath Zhu's Hope for the remaining geth forces and their transmitter.",
 		"inMapId": "G.Ear.Att.The.Fer.Tunnels",
 		"mapLocationPoint": {
-			"x": 1930,
-			"y": 790,
-			"radius": 1
+            "x": 2003,
+            "y": 783,
+            "radius": 1
 		}
 	}, {
 		"id": "A1.F.GethInTunnels.2",
@@ -1768,6 +1837,20 @@
 			"type": "BlockedAfter",
 			"id": "Talked to the ExoGeni VI"
 		}]
+    }, {
+        "id": "A1.F.PowerCells.0",
+        "sortIndex": 6200,
+        "inMissionId": "A1.F.PowerCells",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to May O'Connell",
+        "description": "Speak to [megametracker://person?id=O1.OConnell] about the power shortages in Zhu's Hope.",
+        "inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+        "mapLocationPoint": {
+            "x": 1149,
+            "y": 1168,
+            "radius": 1
+        }
 	}, {
 		"id": "A1.F.PowerCells.1",
 		"sortIndex": 6201,
@@ -1836,6 +1919,20 @@
 			"type": "BlockedAfter",
 			"id": "Talked to the ExoGeni VI"
 		}]
+    }, {
+        "id": "A1.F.VarrenMeat.0",
+        "sortIndex": 6100,
+        "inMissionId": "A1.F.VarrenMeat",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Davin Reynolds",
+        "description": "Speak to [megametracker://person?id=O1.Reynolds] about the food shortage in Zhu's Hope.",
+        "inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+        "mapLocationPoint": {
+            "x": 1001,
+            "y": 1193,
+            "radius": 1
+        }
 	}, {
 		"id": "A1.F.VarrenMeat.1",
 		"sortIndex": 6101,
@@ -1894,6 +1991,20 @@
 			"type": "BlockedAfter",
 			"id": "Talked to the ExoGeni VI"
 		}]
+    }, {
+        "id": "A1.F.WaterRestoration.0",
+        "sortIndex": 6300,
+        "inMissionId": "A1.F.WaterRestoration",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Macha Doyle",
+        "description": "Speak to [megametracker://person?id=O1.Doyle] about the water shortage in Zhu's Hope.",
+        "inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+        "mapLocationPoint": {
+            "x": 1243,
+            "y": 1142,
+            "radius": 1
+        },
 	}, {
 		"id": "A1.F.WaterRestoration.1",
 		"sortIndex": 6301,
@@ -1974,10 +2085,24 @@
 			"type": "BlockedAfter",
 			"id": "Completed Feros Mission"
 		}]
+    }, {
+        "id": "A1.F.DataRecovery.0",
+        "sortIndex": 6400,
+        "inMissionId": "A1.F.DataRecovery",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Gavin Hossle",
+        "description": "Talk to [megametracker://person?id=O1.Hossle] at the refugee camp about the data he left behind during the evacuation of the ExoGeni facility.",
+        "inMapId": "G.Ear.Att.The.Fer.Skyway",
+        "mapLocationPoint": {
+            "x": 1005,
+            "y": 1200,
+            "radius": 1
+        }
 	}, {
 		"id": "A1.F.DataRecovery.1",
 		"sortIndex": 6401,
-		"inMission": "A1.F.DataRecovery",
+        "inMissionId": "A1.F.DataRecovery",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Find the Console",
@@ -1991,11 +2116,11 @@
 	}, {
 		"id": "A1.F.DataRecovery.2",
 		"sortIndex": 6402,
-		"inMission": "A1.F.DataRecovery",
+		"inMissionId": "A1.F.DataRecovery",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Deliver OSD to Hossle",
-		"description": "return to Gavin Hossle at the refugee camp and give him the OSD that contains his data.",
+		"description": "Return to Gavin Hossle at the refugee camp and give him the OSD that contains his data.",
 		"inMapId": "G.Ear.Att.The.Fer.Skyway",
 		"mapLocationPoint": {
 			"x": 1005,
@@ -2166,6 +2291,20 @@
 			"type": "BlockedAfter",
 			"id": "Ilos Started"
 		}]
+    }, {
+        "id": "A1.N.Espionage.0",
+        "sortIndex": 7100,
+        "inMissionId": "A1.N.Espionage",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Mallene Calis",
+        "inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+        "mapLocationPoint": {
+            "x": 1509,
+            "y": 1865,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.N.Espionage.1",
 		"sortIndex": 7101,
@@ -2186,7 +2325,7 @@
 		"inMissionId": "A1.N.Espionage",
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Return to Mallene",
+		"name": "Report to Mallene",
 		"description": "You can be honest with Mallene about your conversation with Vargas, or lie and say it worked when it didn't.",
 		"inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
 		"mapLocationPoint": {
@@ -2328,6 +2467,20 @@
 			"type": "BlockedAfter",
 			"id": "Unlocked Noveria: Garage"
 		}]
+    }, {
+        "id": "A1.N.Smuggling.0",
+        "sortIndex": 7000,
+        "inMissionId": "A1.N.Smuggling",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Opold",
+        "inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+        "mapLocationPoint": {
+            "x": 1375,
+            "y": 946,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.N.Smuggling.1",
 		"sortIndex": 7001,
@@ -2523,6 +2676,21 @@
 			"type": "Triggers",
 			"id": "Garage Pass via A1.N.LorikQuiin"
 		}]
+    }, {
+        "id": "A1.N.LorikQuiin.0",
+        "sortIndex": 7200,
+        "inMissionId": "A1.N.LorikQuiin",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Lorik Qui'in",
+        "description": "TODO: fix location && again below",
+        "inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+        "mapLocationPoint": {
+            "x": 340,
+            "y": 1965,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.N.LorikQuiin.1",
 		"sortIndex": 7201,
@@ -2544,14 +2712,20 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Select Reward",
-		"description": "You have several options: return the evidence to [megametracker://person?id=O1.Quiin] for credits and a garage passs, talk Qui'in into testifying and return the evidence to [Gianna Parasini|megametracker://person?id=O1.Gianna] for a garage pass, or return the evidence to Anoleis for a garage pass. There are also variants on these choices (like letting Anoleis and Parasini kill each other and taking the garage pass from Anoleis' body)."
+		"description": "You have several options: return the evidence to [megametracker://person?id=O1.Quiin] for credits and a garage passs, talk Qui'in into testifying and return the evidence to [Gianna Parasini|megametracker://person?id=O1.Gianna] for a garage pass, or return the evidence to Anoleis for a garage pass. There are also variants on these choices (like letting Anoleis and Parasini kill each other and taking the garage pass from Anoleis' body).",
+        "inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+        "mapLocationPoint": {
+            "x": 340,
+            "y": 1965,
+            "radius": 1
+        }
 	}, {
 		"id": "A1.N.Quarantine",
 		"sortIndex": 73,
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "Noveria: Quarantine",
-		"description": "Speak to [Dr. Cohen|megametracker://person?id=O1.Cohen] in the lower Medical Lab. He and his team were exposed to a toxin and if you get them a cure, he will give you access to the maintenance tunnels to the Secure Lab.",
+		"description": "[Dr. Cohen|megametracker://person?id=O1.Cohen] and his team were exposed to a toxin. If you get them a cure, he will give you access to the maintenance tunnels to the Secure Lab.",
 		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.13",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -2568,6 +2742,16 @@
 			"type": "BlockedUntil",
 			"id": "Unlocked Noveria: Rift Station"
 		}]
+    }, {
+        "id": "A1.N.Quarantine.0",
+        "sortIndex": 7300,
+        "inMissionId": "A1.N.Quarantine",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Dr. Cohen",
+        "inMapId": "G.Ear.Hor.Pax.Nov.Rif.13",
+        "isShowInParentMap": true,
+        "isOpensDetail": false
 	}, {
 		"id": "A1.N.Quarantine.1",
 		"sortIndex": 7301,
@@ -3073,7 +3257,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Dead Scientists",
-		"description": "A [terminal|megametracker://maplocation?id=G.Ear.Hor.Pax.Noveria&title=Terminal&location=1310x1963] in the Port Hanshen hotel on Noveria reveals a doctor in the [megametracker://map?id=G.Att.Kep.Newton] who is in danger.",
+		"description": "A terminal in the Port Hanshen hotel on Noveria reveals a doctor in the [megametracker://map?id=G.Att.Kep.Newton] who is in danger. You can also acquire this mission by going to [megametracker://map?id=G.Att.Kep.New.Ontarom].",
 		"inMapId": "G.Att.Kep.New.Ontarom",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3109,6 +3293,20 @@
 			"type": "BlockedAfter",
 			"id": "Ilos Started"
 		}]
+    }, {
+        "id": "A1.U.DeadScientists.0",
+        "sortIndex": 5100,
+        "inMissionId": "A1.U.DeadScientists",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Terminal (Optional)",
+        "inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+        "mapLocationPoint": {
+            "x": 1310,
+            "y": 1963,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.U.DeadScientists.1",
 		"sortIndex": 5101,
@@ -3151,6 +3349,20 @@
 			"type": "BlockedAfter",
 			"id": "Ilos Started"
 		}]
+    }, {
+        "id": "A1.U.DepotSigma23.0",
+        "sortIndex": 9200,
+        "inMissionId": "A1.U.DepotSigma23",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Terminal (Optional)",
+        "inMapId": "G.Att.Sty.Ach.Altahe",
+        "mapLocationPoint": {
+            "x": 469,
+            "y": 1597,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.U.DepotSigma23.1",
 		"sortIndex": 9201,
@@ -3180,7 +3392,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Derelict Freighter",
-		"description": "You encounter the MSV Cornucopia drifting in [megametracker://map?id=G.Att.Mar.Caspian]. It ventured into the Perseus Veil and returned with the crew tranformed into husks.",
+		"description": "You encounter the MSV Cornucopia drifting in [megametracker://map?id=G.Att.Mar.Caspian]. It ventured into the Perseus Veil and returned with the crew tranformed into electrified husks.",
 		"inMapId": "G.Att.Mar.Cas.MSVCornucopia",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3200,7 +3412,13 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Geth Incursions",
-		"description": "Reports suggest the geth are setting up outposts in the [megametracker://map?id=G.Att.Armstrong].  These reports can be found on Feros ([megametracker://map?id=G.Ear.Att.The.Fer.Exo.17]) or Virmire ([TODO]). (You can also acquire the assignment by traveling to the [megametracker://map?id=G.Att.Armstrong].)",
+		"description": "Reports suggest the geth are setting up outposts in the [megametracker://map?id=G.Att.Armstrong].  These reports can be found on a terminal in teh ExoGeni facility on Feros, or on Virmire ([TODO]). (You can also acquire the assignment by traveling to the [megametracker://map?id=G.Att.Armstrong].)",
+        "inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+        "mapLocationPoint": {
+            "x": 1031,
+            "y": 1731,
+            "radius": 1
+        },
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
@@ -3228,6 +3446,26 @@
 			"type": "Triggers",
 			"id": "Investigated Geth Outposts"
 		}]
+    }, {
+        "id": "A1.U.GethIncursions.0A",
+        "sortIndex": 8900,
+        "inMissionId": "A1.U.GethIncursions",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Geth Terminal (Optional)",
+        "annotationNote": "Hard Decryption",
+        "inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+        "mapLocationPoint": {
+            "x": 1031,
+            "y": 1731,
+            "radius": 1
+        },
+        "mapLocationPointOld": {
+            "x": 1222,
+            "y": 1731,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.U.GethIncursions.1",
 		"sortIndex": 8901,
@@ -3285,7 +3523,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: ExoGeni Facility",
-		"description": "Hacking a [terminal|megametracker://maplocation?id=G.Att.Mar.Vos.Nod.ExoGeni&title=Terminal&location=1697x2404] on the upper level of the ExoGeni headquarters on Feros reveals some suspicious ExoGeni activity in [megametracker://map?id=G.Att.Mar.Vostok].",
+		"description": "Hacking a terminal on the upper level of the ExoGeni headquarters on Feros reveals some suspicious ExoGeni activity in [megametracker://map?id=G.Att.Mar.Vostok].",
 		"inMapId": "G.Att.Mar.Vos.Nodacrux",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3310,11 +3548,25 @@
 		}],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed Feros Mission"
+            "id": "Drove The Geth Dropship From Zhu's Hope"
 		}, {
 			"type": "BlockedAfter",
 			"id": "Ilos Started"
 		}]
+    }, {
+        "id": "A1.U.ExoGeniFacility.0",
+        "sortIndex": 6500,
+        "inMissionId": "A1.U.ExoGeniFacility",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "ExoGeni Terminal (Optional)",
+        "inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+        "mapLocationPoint": {
+            "x": 1222,
+            "y": 1731,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.U.ExoGeniFacility.1",
 		"sortIndex": 6501,
@@ -3332,9 +3584,13 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Explore Colony",
-		"description": "Investigate the facilities on the planet Nodacrux in the Vostok System of the Maroon Sea cluster for clues.",
-		"inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
-		"isShowInParentMap": true
+		"description": "Investigate the ExoGeni facility.",
+        "inMapId": "G.Att.Mar.Vos.Nod.ExoGeni",
+        "mapLocationPoint": {
+            "x": 1146,
+            "y": 1608,
+            "radius": 1
+        }
 	}, {
 		"id": "A1.U.HadesDogs",
 		"sortIndex": 87,
@@ -3392,7 +3648,7 @@
 		"name": "Encrypted Files",
 		"inMapId": "G.Att.Voy.Col.Nep.Underground",
 		"mapLocationPoint": {
-			"x": 508,
+			"x": 1300,
 			"y": 1608,
 			"radius": 1
 		},
@@ -3404,7 +3660,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "The Shadow Broker",
-		"description": "When you return to the Normandy, [the Shadow Broker|megametracker://person?id=E2.ShadowBroker] offers to buy the Cerberus files obtained on Nepheron."
+		"description": "When you return to the Normandy, an agent of the [the Shadow Broker|megametracker://person?id=E2.ShadowBroker] offers to buy the Cerberus files obtained on Nepheron."
 	}, {
 		"id": "A1.U.Hostage",
 		"sortIndex": 34,
@@ -3487,7 +3743,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Colony of the Dead",
-		"description": "A [server node|megametracker://maplocation?id=G.Ear.Att.The.Fer.ExoGeni&title=Server%20Node&location=869x1823] in the ExoGeni Facility on Feros reveals doctor's notes regarding some troubling samples he received from a mysterious group called Cerberus. (You may also start this assignment by just heading out and finding the research station which supplied the samples.)",
+		"description": "A server node in the ExoGeni Facility on Feros reveals doctor's notes regarding some troubling samples he received from a mysterious group called Cerberus. (You may also start this assignment by just heading out and finding the research station which supplied the samples.)",
 		"inMapId": "G.Att.Mar.Mat.Chasca",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3503,6 +3759,21 @@
 			"type": "Triggers",
 			"id": "ExoGeni Samples Source Found"
 		}]
+    }, {
+        "id": "A1.U.ColonyOfTheDead.0",
+        "sortIndex": 6700,
+        "inMissionId": "A1.U.ColonyOfTheDead",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Server Node (Optional)",
+        "annotationNote": "Average Decryption",
+        "inMapId": "G.Ear.Att.The.Fer.ExoGeni",
+        "mapLocationPoint": {
+            "x": 869,
+            "y": 1823,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.U.ColonyOfTheDead.1",
 		"sortIndex": 6701,
@@ -3534,7 +3805,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Espionage Probe",
-		"description": "Hacking a [terminal|megametracker://maplocation?id=G.Ear.Att.The.Fer.ZhusHope&title=Terminal&location=991x1300] aboard the downed Borealis on Feros will reveal an Alliance secret: they put a nuclear payload inside an old espionage probe. They need you to recover the probe before this is discovered. \n\nYou may also start this assignment by just heading out and finding the probe.",
+		"description": "Hacking a terminal aboard the downed Borealis on Feros will reveal an Alliance secret: they put a nuclear payload inside an old espionage probe. They need you to recover the probe before this is discovered. \n\nYou may also start this assignment by just heading out and finding the probe.",
 		"inMapId": "G.Att.Voy.Ama.Agebinium",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3547,6 +3818,21 @@
 			"type": "BlockedAfter",
 			"id": "Ilos Started"
 		}]
+    }, {
+        "id": "A1.U.EspionageProbe.0",
+        "sortIndex": 6600,
+        "inMissionId": "A1.U.EspionageProbe",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Terminal (Optional)",
+        "annotationNote": "Easy Decryption",
+        "inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+        "mapLocationPoint": {
+            "x": 991,
+            "y": 1300,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.U.EspionageProbe.1",
 		"sortIndex": 6601,
@@ -3581,7 +3867,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Listening Post Alpha ",
-		"description": "A group of Alliance soldiers are pinned down by rachni on [megametracker://map?id=G.Att.Sty.Ere.Nepmos]. \n\nThis assignment is obtained from either a [terminal|megametracker://maplocation?id=G.Att.Sty.Ach.Altahe&title=Terminal&location=469x1597] on Altahe or by heading to [megametracker://map?id=G.Att.Sty.Erebus].",
+		"description": "A group of Alliance soldiers are pinned down by rachni on [megametracker://map?id=G.Att.Sty.Ere.Nepmos]. \n\nThis assignment is acquired by travelling to [megametracker://map?id=G.Att.Sty.Erebus].",
 		"inMapId": "G.Att.Sty.Ere.Nepmos",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3623,7 +3909,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Listening Post Theta",
-		"description": "An Alliance listening post on [megametracker://map?id=G.Att.Sty.Ach.Altahe] has gone silent.\n\nYou can obtain this assignment by either heading to [megametracker://map?id=G.Att.Sty.Acheron], or by completing [megametracker://mission?id=A1.U.ListeningPostAlpha] first.\n\nIf you have not yet completed [megametracker://mission?id=A1.U.ListeningPostAlpha] or [megametracker://mission?id=A1.U.DepotSigma23], there is a [terminal|megametracker://maplocation?id=G.Att.Sty.Ach.Altahe&title=Terminal&location=469x1597] at the end of this assignment that alerts you to the other location(s).",
+		"description": "An Alliance listening post on [megametracker://map?id=G.Att.Sty.Ach.Altahe] has gone silent.\n\nYou can obtain this assignment by either heading to [megametracker://map?id=G.Att.Sty.Ach.Altahe], or by completing [megametracker://mission?id=A1.U.ListeningPostAlpha] first.",
 		"inMapId": "G.Att.Sty.Ach.Altahe",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3841,7 +4127,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Privateers",
-		"description": "The MSV Majesty was attacked by pirates travelling through [megametracker://map?id=G.Ear.Hor.Strenuus]. Find those responsible and inform [Garoth|megametracker://person?id=O1.Garoth] on the Citadel.\n\nYou can obtain this mission by speaking to Garoth in [the Citadel Tower|megametracker://maplocation?id=G.C1.Tower&title=Garoth&location=1027x1047], from a [terminal|megametracker://maplocation?id=G.Ear.Hor.Pax.Noveria&title=Terminal%20(Lower%20Level)&location=355x1975] on Noveria, or by scanning the [megametracker://maplocation?id=G.Ear.Hor.Str.MSVMajesty&type=Map].",
+		"description": "The MSV Majesty was attacked by pirates travelling through [megametracker://map?id=G.Ear.Hor.Strenuus]. Find those responsible and inform [Garoth|megametracker://person?id=O1.Garoth] on the Citadel.\n\nYou can obtain this mission by speaking to Garoth in the Citadel Tower, from a terminal on Noveria, or by scanning the MSV Majesty itself.",
 		"inMapId": "G.Ear.Hor.Str.MSVMajesty",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3888,6 +4174,48 @@
 			"type": "BlockedAfter",
 			"id": "Ilos Started"
 		}]
+    }, {
+        "id": "A1.U.Privateers.0A",
+        "sortIndex": 3700,
+        "inMissionId": "A1.U.Privateers",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Garoth (Optional)",
+        "description": "Talk to Garoth in the Citadel Tower about his missing brother.",
+        "inMapId": "G.C1.Tower",
+        "mapLocationPoint": {
+            "x": 1027,
+            "y": 1047,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.U.Privateers.0A",
+        "sortIndex": 3700,
+        "inMissionId": "A1.U.Privateers",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speak to Garoth (Optional)",
+        "description": "Talk to Garoth in the Citadel Tower about his missing brother.",
+        "inMapId": "G.C1.Tower",
+        "mapLocationPoint": {
+            "x": 1027,
+            "y": 1047,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.U.Privateers.0B",
+        "sortIndex": 3700,
+        "inMissionId": "A1.U.Privateers",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Lower-Level Terminal (Optional)",
+        "inMapId": "G.Ear.Hor.Pax.Noveria",
+        "mapLocationPoint": {
+            "x": 355,
+            "y": 1975,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.U.Privateers.1",
 		"sortIndex": 3701,
@@ -3919,7 +4247,7 @@
 		"inMissionId": "A1.U.Privateers",
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Talk to Garoth",
+		"name": "Inform Garoth",
 		"description": "You've discovered what happened to Willem, Garoth's brother. Return to the Citadel Tower and tell Garoth of his brother's fate.",
 		"inMapId": "G.C1.Tower",
 		"mapLocationPoint": {
@@ -3935,7 +4263,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Hostile Takeover",
-		"description": "A [computer console|megametracker://maplocation?id=G.C1.CSecAcademy&title=Console&location=923x1139] in the C-Sec Academy offices reveals that C-Sec is suspicious of Helena Blake, currently at [the Emporium|megametracker://maplocation?id=G.C1.Presidium&title=Helena%20Blake&location=711x1207]. You can also acquire this assigment by speaking to [megametracker://person?id=O1.Helena] directly.",
+		"description": "A computer console in the C-Sec Academy offices reveals that C-Sec is suspicious of Helena Blake, currently at [the Emporium|megametracker://maplocation?id=G.C1.Presidium&title=Helena%20Blake&location=711x1207]. You can also acquire this assigment by speaking to [megametracker://person?id=O1.Helena] directly.",
 		"inMapId": "G.C1.Presidium",
 		"mapLocationPoint": {
 			"x": 711,
@@ -4005,6 +4333,20 @@
 			"type": "BlockedAfter",
 			"id": "Ilos Started"
 		}]
+    }, {
+        "id": "A1.U.HostileTakeover.0",
+        "sortIndex": 3900,
+        "inMissionId": "A1.U.HostileTakeover",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Computer Console (Optional)",
+        "inMapId": "G.C1.CSecAcademy",
+        "mapLocationPoint": {
+            "x": 923,
+            "y": 1139,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.U.HostileTakeover.1",
 		"sortIndex": 3901,
@@ -4053,7 +4395,7 @@
 		"inMissionId": "A1.U.HostileTakeover",
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "Meet Helena Blake",
+		"name": "Inform Helena Blake",
 		"description": "Go to the Fortuna system in the Horse Head Nebula and meet Helena Blake to claim your reward.",
 		"inMapId": "G.Ear.Hor.For.Ama.Outpost",
 		"mapLocationPoint": {
@@ -4135,7 +4477,7 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Major Kyle",
-		"description": "A [computer console|megametracker://maplocation?id=G.C1.Presidium&title=Console&location=1148x642] in Executor Palin's office reveals the deaths of two Alliance officials sent to investigate [Major Kyle|megametracker://person?id=O1.Kyle] at his compound in [megametracker://map?id=G.Att.Hawking].",
+		"description": "A computer console in Executor Palin's office reveals the deaths of two Alliance officials sent to investigate [Major Kyle|megametracker://person?id=O1.Kyle] at his compound in [megametracker://map?id=G.Att.Hawking].",
 		"inMapId": "G.Att.Haw.Cen.Presrop",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -4213,6 +4555,20 @@
 			"type": "BlockedAfter",
 			"id": "Ilos Started"
 		}]
+    }, {
+        "id": "A1.U.MajorKyle.0",
+        "sortIndex": 3600,
+        "inMissionId": "A1.U.MajorKyle",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Computer Console (Optional)",
+        "inMapId": "G.C1.Presidium",
+        "mapLocationPoint": {
+            "x": 1148,
+            "y": 642,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A1.U.MajorKyle.1",
 		"sortIndex": 3601,
