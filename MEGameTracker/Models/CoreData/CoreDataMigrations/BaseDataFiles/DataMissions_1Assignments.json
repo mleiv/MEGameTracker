@@ -2353,7 +2353,7 @@
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
-				"context": "Persuard Opold to tell you whom the package is for",
+				"context": "Persuade Opold to tell you whom the package is for",
 				"options": [{
 					"id": "A1.N.Smuggling.P1",
 					"type": "Paragon",
@@ -2376,20 +2376,15 @@
 					"set": {
 						"context": "Return the package to Opold",
 						"options": [{
-							"id": "A1.N.Smuggling.2.R1",
-							"type": "Renegade",
-							"value": 2,
-							"trigger": "\"I'm in.\" / \"Agreed.\""
-						}, {
+                            "id": "A1.N.Smuggling.2.C1",
+                            "type": "Credits",
+                            "value": 250,
+                            "trigger": "\"It is.\" / \"Deal.\" / \"Cheap bastard.\""
+                        }, {
 							"set": {
 								"context": "Bargain for a better deal",
 								"isExclusiveSet": true,
 								"options": [{
-									"id": "A1.N.Smuggling.2.C1",
-									"type": "Credits",
-									"value": 250,
-									"trigger": "\"It is.\" / \"Deal.\" / \"Cheap bastard.\""
-								}, {
 									"id": "A1.N.Smuggling.2.C2",
 									"type": "Credits",
 									"value": 500,
@@ -2427,10 +2422,10 @@
 					"set": {
 						"context": "Sell the package directly to Inamorda",
 						"options": [{
-							"id": "A1.N.Smuggling.2.R2",
-							"type": "Credits",
-							"value": 500,
-							"trigger": "\"I'm in.\""
+                            "id": "A1.N.Smuggling.2.R1",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Give me a figure.\" / \"Agreed.\""
 						}, {
 							"set": {
 								"context": "Bargain for a better deal",
@@ -2511,8 +2506,12 @@
 		"missionType": "Assignment",
 		"name": "Noveria: Lorik Qui'in",
 		"description": "[megametracker://person?id=O1.Quiin] offers a garage pass in return for recovering his evidence against Adminstrator Anoleis, in his office at Synthetic Insights. [Gianna Parasini|megametracker://person?id=O1.Gianna] will mention Lorik after you have finished speaking with Anoleis in his office, or you can just talk to Qui'in directly to acquire the mission.",
-		"inMapId": null,
-		"isShowInParentMap": false,
+        "inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+        "mapLocationPoint": {
+            "x": 1408,
+            "y": 1850,
+            "radius": 1
+        },
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Noveria:_Lorik_Qui'in"
 		],
@@ -2587,7 +2586,7 @@
 						"options": [{
 							"set": {
 								"isExclusiveSet": true,
-								"context": "After speaking with Parasini, convince Qui'in to testify against Anoleis. (*Infinite Paragon/Renegade Exploit*: You can conclude the conversation and then speak to Qui'in again, selecting the same choices, and be rewarded the morality points again.)",
+								"context": "After speaking with Parasini, convince Qui'in to testify against Anoleis. (*Infinite Paragon/Renegade Exploit*: You can conclude the conversation, then speak to Qui'in again about Matriarch Benezia, and the same Charm/Intimidate conversation is available again.)",
 								"options": [{
 									"id": "A1.N.LorikQuiin.2.P1",
 									"type": "Paragon",
@@ -2683,11 +2682,10 @@
         "gameVersion": "1",
         "missionType": "Objective",
         "name": "Speak to Lorik Qui'in",
-        "description": "TODO: fix location && again below",
         "inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
         "mapLocationPoint": {
-            "x": 340,
-            "y": 1965,
+            "x": 1408,
+            "y": 1850,
             "radius": 1
         },
         "isOpensDetail": false
@@ -2705,8 +2703,22 @@
 			"radius": 1
 		},
 		"isOpensDetail": false
+    }, {
+        "id": "A1.N.LorikQuiin.2",
+        "sortIndex": 7200,
+        "inMissionId": "A1.N.LorikQuiin",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Gianna (Optional)",
+        "description": "Gianna asks you to speak to her in the hotel before delivering Qui'in's data. She reveals she is working for Internal Affairs and wants Qui'in to testify against Anoleis on corruption charges.",
+        "inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
+        "mapLocationPoint": {
+            "x": 1491,
+            "y": 1705,
+            "radius": 1
+        }
 	}, {
-		"id": "A1.N.LorikQuiin.2",
+		"id": "A1.N.LorikQuiin.3",
 		"sortIndex": 7202,
 		"inMissionId": "A1.N.LorikQuiin",
 		"gameVersion": "1",
@@ -2715,8 +2727,8 @@
 		"description": "You have several options: return the evidence to [megametracker://person?id=O1.Quiin] for credits and a garage passs, talk Qui'in into testifying and return the evidence to [Gianna Parasini|megametracker://person?id=O1.Gianna] for a garage pass, or return the evidence to Anoleis for a garage pass. There are also variants on these choices (like letting Anoleis and Parasini kill each other and taking the garage pass from Anoleis' body).",
         "inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
         "mapLocationPoint": {
-            "x": 340,
-            "y": 1965,
+            "x": 1408,
+            "y": 1850,
             "radius": 1
         }
 	}, {
@@ -2773,7 +2785,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Make a Cure",
-		"description": "Head to the quarantine lab, which is downstairs near the science team quarters. There should be equipment and notes that will allow you to replicate the scientists' work and create a cure. \n\n_(Note: [megametracker://person?id=O1.Iallis], a servant of [Matriarch Benezia|megametracker://person?id=E1.Benezia], will ambush you after creating the cure.)_",
+		"description": "Head to the quarantine lab, which is downstairs near the science team quarters. There should be equipment and notes that will allow you to replicate the scientists' work and create a cure. \n\nTo create the cure, press one of the valid keys when the timer is between the two arrows. \n\n_(Note: [megametracker://person?id=O1.Iallis], a servant of [Matriarch Benezia|megametracker://person?id=E1.Benezia], will ambush you after creating the cure.)_",
 		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.5",
 		"isShowInParentMap": true
 	}, {
@@ -2804,8 +2816,12 @@
 		"missionType": "Objective",
 		"name": "_The Back Door_",
 		"description": "_(This objective is listed in the game under [megametracker://mission?id=M1.Noveria.10RiftStation])_\n\nYou persuaded [Dr. Cohen|megametracker://person?id=O1.Cohen] to give you his pass. You can now sneak into the sealed maintenance area near the science team quarters and the quarantine lab.",
-		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.1",
-		"isShowInParentMap": true
+        "inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+        "mapLocationPoint": {
+            "x": 445,
+            "y": 855,
+            "radius": 1
+        }
 
 
 
@@ -3184,7 +3200,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Get to Medical Base",
-		"description": "get to the medical base on Chohe, located in the Cacus System of the hAdes Gamma cluster, and eliminate the biotics while avoiding civilian casualties.",
+		"description": "Get to the medical base on Chohe, located in the Cacus System of the Hades Gamma cluster, and eliminate the biotics while avoiding civilian casualties.",
 		"inMapId": "G.Ear.Had.Cac.Chohe",
 		"isShowInParentMap": true
 	}, {
@@ -3314,7 +3330,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Find the Doctor",
-		"description": "Head to the Newton System in the Kepler Verge and find the one remaining scientist assigned to the secret project.",
+		"description": "Head to the Newton System in the Kepler Verge and find the one remaining scientist assigned to the secret project. \n\nIf Shepard is a Sole Survivor, [megametracker://person?id=O1.Toombs] will recognize you, although you both thought the other died on Akuze. Also, the option to shoot Toombs will not be available in that case.",
 		"inMapId": "G.Att.Kep.New.Ont.Science",
 		"mapLocationPoint": {
 			"x": 643,
@@ -3412,13 +3428,9 @@
 		"gameVersion": "1",
 		"missionType": "Assignment",
 		"name": "UNC: Geth Incursions",
-		"description": "Reports suggest the geth are setting up outposts in the [megametracker://map?id=G.Att.Armstrong].  These reports can be found on a terminal in teh ExoGeni facility on Feros, or on Virmire ([TODO]). (You can also acquire the assignment by traveling to the [megametracker://map?id=G.Att.Armstrong].)",
-        "inMapId": "G.Ear.Att.The.Fer.ExoGeni",
-        "mapLocationPoint": {
-            "x": 1031,
-            "y": 1731,
-            "radius": 1
-        },
+		"description": "Reports suggest the geth are setting up outposts in the [megametracker://map?id=G.Att.Armstrong].  These reports can be found on a terminal in the ExoGeni facility on Feros, or on Virmire ([TODO]). (You can also acquire the assignment by traveling to the [megametracker://map?id=G.Att.Armstrong].)",
+        "inMapId": "G.Att.Armstrong",
+        "isShowInParentMap": true,
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
@@ -4189,20 +4201,6 @@
             "radius": 1
         }
     }, {
-        "id": "A1.U.Privateers.0A",
-        "sortIndex": 3700,
-        "inMissionId": "A1.U.Privateers",
-        "gameVersion": "1",
-        "missionType": "Objective",
-        "name": "Speak to Garoth (Optional)",
-        "description": "Talk to Garoth in the Citadel Tower about his missing brother.",
-        "inMapId": "G.C1.Tower",
-        "mapLocationPoint": {
-            "x": 1027,
-            "y": 1047,
-            "radius": 1
-        }
-    }, {
         "id": "A1.U.Privateers.0B",
         "sortIndex": 3700,
         "inMissionId": "A1.U.Privateers",
@@ -4305,14 +4303,8 @@
 					"type": "Renegade",
 					"value": 9,
 					"context": "*_Intimidate_* Helena Blake (Requires 7 Intimidate)",
-					"trigger": "\"Don't be stupid.\""
-				}]
-			}
-		}, {
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Speaking to Helena Blake at her mercenary base on Amaranthine",
-				"options": [{
+					"trigger": "\"Don't be stupid.\" or \"Disband the group.\""
+				}, {
 					"id": "A1.U.HostileTakeover.P3",
 					"type": "Paragon",
 					"value": 2,
@@ -4622,12 +4614,12 @@
 					"id": "A1.U.TheNegotiation.P1",
 					"type": "Paragon",
 					"value": 8,
-					"trigger": "\"I would appreciate it.\""
+					"trigger": "\"You're right.\" and \"Fine.\" and \"I'm sorry.\" and \"I'm listening.\" and \"Agreed.\" and \"I would appreciate it.\""
 				}, {
 					"id": "A1.U.TheNegotiation.R1",
 					"type": "Renegade",
 					"value": 25,
-					"trigger": "Kill Darius."
+					"trigger": "Any answers other than the paragon responses above, and then kill Darius."
 				}]
 			}
 		}],
@@ -4648,17 +4640,31 @@
 		"description": "Meet Darius at the rendezvous point on the planet Nonuel in the Plutus System of the Hades Gamma cluster.",
 		"inMapId": "G.Ear.Had.Plu.Non.Outpost",
 		"mapLocationPoint": {
-			"x": 971,
+            "x": 858,
 			"y": 996,
 			"radius": 1
 		}
+    }, {
+        "id": "A1.U.TheNegotiation.1B",
+        "sortIndex": 8401,
+        "inMissionId": "A1.U.TheNegotiation",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Open Exit Door",
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Had.Plu.Non.Outpost",
+        "mapLocationPoint": {
+            "x": 1333,
+            "y": 1605,
+            "radius": 1
+        }
 	}, {
 		"id": "A1.U.TheNegotiation.2",
 		"sortIndex": 8402,
 		"inMissionId": "A1.U.TheNegotiation",
 		"gameVersion": "1",
 		"missionType": "Objective",
-		"name": "report to Hackett",
+		"name": "Report to Hackett",
 		"description": "Return to the Normandy and use the galaxy map to report the outcome to Admiral Hackett.",
 		"inMapId": "G.N1.1"
 	}, {

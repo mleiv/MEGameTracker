@@ -108,7 +108,7 @@
 		}
 	}, {
 		"id": "G.Att.Arm.Gag.Ray.2",
-		"name": "Crashed Probe",
+		"name": "Engine Debris",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Arm.Gag.Rayingri",
 		"mapLocationPoint": {
@@ -138,7 +138,7 @@
 		}
 	}, {
 		"id": "G.Att.Arm.Gag.Ray.5",
-		"name": "Abandoned Camp",
+		"name": "Abandoned Scavenger Camp",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Arm.Gag.Rayingri",
 		"mapLocationPoint": {
@@ -148,7 +148,7 @@
 		}
 	}, {
 		"id": "G.Att.Arm.Gag.Ray.Outpost",
-		"name": "Geth Outpost",
+		"name": "Overrun Research Outpost",
 		"isHidden": true,
 		"inMapId": "G.Att.Arm.Gag.Rayingri",
 		"mapType": "Structure",
@@ -446,7 +446,7 @@
 		}
 	}, {
 		"id": "G.Att.Arm.Hon.Cas.3",
-		"name": "Crashed Probe",
+		"name": "Engine Debris",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Arm.Hon.Casbin",
 		"mapLocationPoint": {
@@ -456,7 +456,7 @@
 		}
 	}, {
 		"id": "G.Att.Arm.Hon.Cas.4",
-		"name": "Geth Outpost",
+        "name": "Geth Outpost",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Arm.Hon.Casbin",
 		"mapLocationPoint": {
@@ -466,7 +466,8 @@
 		}
 	}, {
 		"id": "G.Att.Arm.Hon.Cas.5",
-		"name": "Geth Encampment",
+		"name": "Anomalous Signal",
+        "annotationNote": "Geth Encampment",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Arm.Hon.Casbin",
 		"mapLocationPoint": {
@@ -596,7 +597,8 @@
 		}
 	}, {
 		"id": "G.Att.Arm.Ter.Ant.4",
-		"name": "Thresher Maw",
+		"name": "Wreckage",
+        "annotationNote": "Thresher Maw",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Arm.Ter.Antibaar",
 		"mapLocationPoint": {
@@ -3240,7 +3242,7 @@
 	}, {
 		"id": "G.Att.Kep.New.Ont.3",
 		"inMapId": "G.Att.Kep.New.Ontarom",
-		"name": "Turian Corpse",
+		"name": "Turian Wreckage",
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 1111,
@@ -3250,7 +3252,7 @@
 	}, {
 		"id": "G.Att.Kep.New.Ont.Science",
 		"inMapId": "G.Att.Kep.New.Ontarom",
-		"name": "Science Facility",
+		"name": "Underground Facility",
 		"isHidden": true,
 		"mapType": "Structure",
 		"mapLocationPoint": {
@@ -3542,7 +3544,7 @@
 		}
 	}, {
 		"id": "G.Att.Mar.Mat.Cha.3",
-		"name": "Crashed Probe",
+		"name": "Escape Pod",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Mar.Mat.Chasca",
 		"mapLocationPoint": {
@@ -3552,7 +3554,7 @@
 		}
 	}, {
 		"id": "G.Att.Mar.Mat.Cha.1Civilian",
-		"name": "Civilian Facility",
+		"name": "Civilian Structure",
 		"isHidden": true,
 		"inMapId": "G.Att.Mar.Mat.Chasca",
 		"mapType": "Structure",
@@ -3570,7 +3572,7 @@
 		}
 	}, {
 		"id": "G.Att.Mar.Mat.Cha.2Civilian",
-		"name": "Civilian Facility",
+		"name": "Civilian Structure",
 		"isHidden": true,
 		"inMapId": "G.Att.Mar.Mat.Chasca",
 		"mapType": "Structure",
@@ -3806,7 +3808,7 @@
 		}
 	}, {
 		"id": "G.Att.Mar.Vos.Nod.2",
-		"name": "Ancient Debris",
+		"name": "Turian Wreckage",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Mar.Vos.Nodacrux",
 		"mapLocationPoint": {
@@ -3826,7 +3828,7 @@
 		}
 	}, {
 		"id": "G.Att.Mar.Vos.Nod.4",
-		"name": "Crashed Probe",
+		"name": "Engine Debris",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Mar.Vos.Nodacrux",
 		"mapLocationPoint": {
@@ -3836,7 +3838,7 @@
 		}
 	}, {
 		"id": "G.Att.Mar.Vos.Nod.ExoGeni",
-		"name": "ExoGeni Facility",
+		"name": "Science Facility",
 		"isHidden": true,
 		"inMapId": "G.Att.Mar.Vos.Nodacrux",
 		"mapType": "Structure",
@@ -6015,9 +6017,19 @@
 			"y": 1283,
 			"radius": 20
 		}
+    }, {
+        "id": "G.Att.Voy.Ama.Age.1B",
+        "name": "Mercenary Camp",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Voy.Ama.Agebinium",
+        "mapLocationPoint": {
+            "x": 1160,
+            "y": 532,
+            "radius": 20
+        }
 	}, {
 		"id": "G.Att.Voy.Ama.Age.2",
-		"name": "Scavenger Corpse",
+		"name": "Turian Wreckage",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Voy.Ama.Agebinium",
 		"mapLocationPoint": {
@@ -6037,7 +6049,7 @@
 		}
 	}, {
 		"id": "G.Att.Voy.Ama.Age.4",
-		"name": "Crashed Probe",
+		"name": "Engine Debris",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Voy.Ama.Agebinium",
 		"mapLocationPoint": {
@@ -6047,7 +6059,7 @@
 		}
 	}, {
 		"id": "G.Att.Voy.Ama.Age.Mine",
-		"name": "Mine",
+		"name": "Alliance Homing Beacon",
 		"isHidden": true,
 		"inMapId": "G.Att.Voy.Ama.Agebinium",
 		"mapType": "Structure",
@@ -6222,7 +6234,7 @@
 		} 
 	}, {
 		"id": "G.Att.Voy.Col.Nep.4",
-		"name": "Crashed Probe",
+		"name": "Engine Debris",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Voy.Col.Nepheron",
 		"mapLocationPoint": {

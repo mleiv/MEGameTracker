@@ -439,6 +439,42 @@
 				}
 			}
 		}]
+    }, {
+        "id": "Ashley Saved on Virmire",
+        "gameVersion": "1",
+        "description": "[megametracker://mission?id=M1.Virmire.10]",
+        "actions": [{
+            "target": {
+                "type": "Person",
+                "id": "S1.Kaidan"
+            },
+            "changes": {
+                "On": {
+                    "isAvailable": false
+                },
+                "Off": {
+                    "isAvailable": true
+                }
+            }
+        }]
+    }, {
+        "id": "Kaidan Saved on Virmire",
+        "gameVersion": "1",
+        "description": "[megametracker://mission?id=M1.Virmire.10]",
+        "actions": [{
+            "target": {
+                "type": "Person",
+                "id": "S1.Ashley"
+            },
+            "changes": {
+                "On": {
+                    "isAvailable": false
+                },
+                "Off": {
+                    "isAvailable": true
+                }
+            }
+        }]
 	}, {
 		"id": "Ilos Started",
 		"gameVersion": "1",

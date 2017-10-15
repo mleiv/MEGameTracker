@@ -18,6 +18,7 @@ public struct DataDecision: Codable {
         case loveInterestId
         case sortIndex
         case blocksDecisionIds
+        case linkedEventIds
         case dependsOnDecisions
     }
 
@@ -33,6 +34,7 @@ public struct DataDecision: Codable {
 	public var loveInterestId: String?
 	public var sortIndex: Int = 0
 	public var blocksDecisionIds: [String] = []
+    public var linkedEventIds: [String] = []
 	public var dependsOnDecisions: [DependsOnDecisionValueType] = []
 
 	// Interface Builder
@@ -57,10 +59,27 @@ public struct DataDecision: Codable {
             [String].self,
             forKey: .blocksDecisionIds
         ) ?? blocksDecisionIds
+        linkedEventIds = try container.decodeIfPresent(
+            [String].self,
+            forKey: .linkedEventIds
+        ) ?? linkedEventIds
         dependsOnDecisions = try container.decodeIfPresent(
             [DependsOnDecisionValueType].self,
             forKey: .dependsOnDecisions
         ) ?? dependsOnDecisions
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(name, forKey: .name)
+        try container.encode(gameVersion, forKey: .gameVersion)
+        try container.encode(description, forKey: .description)
+        try container.encode(loveInterestId, forKey: .loveInterestId)
+        try container.encode(sortIndex, forKey: .sortIndex)
+        try container.encode(blocksDecisionIds, forKey: .blocksDecisionIds)
+        try container.encode(linkedEventIds, forKey: .linkedEventIds)
+        try container.encode(dependsOnDecisions, forKey: .dependsOnDecisions)
     }
 }
 

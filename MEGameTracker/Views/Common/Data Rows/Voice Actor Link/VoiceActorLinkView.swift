@@ -17,7 +17,12 @@ final public class VoiceActorLinkView: SimpleArrayDataRow {
 		if UIWindow.isInterfaceBuilder {
 			return dummyLinks
 		} else if let actor = controller?.voiceActorName {
-			let url = String(format: googleSearchActorTemplate, SerializableData.urlEncode(actor))
+            var allowedCharacters = NSMutableCharacterSet.alphanumerics
+            allowedCharacters.insert(charactersIn: "-._~")
+			let url = String(
+                format: googleSearchActorTemplate,
+                actor.addingPercentEncoding(withAllowedCharacters: allowedCharacters) ?? "unknown"
+            )
 			return [(name: actor, url: url)]
 		}
 		return []

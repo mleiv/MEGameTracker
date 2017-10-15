@@ -75,9 +75,7 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 				self.tableView.reloadData()
 			}
 		}
-		DispatchQueue.global(qos: .background).async { [weak self] in
-			self?.precacheMissions()
-		}
+		precacheMissions()
 	}
 
 	func setupRecentlyViewed(isReloadData: Bool = false) {
@@ -97,7 +95,7 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 		for type in MissionType.categories() {
 			let counts = Mission.getCountedMissionStatus(missionType: type, gameVersion: gameVersion)
 			guard gameVersion == App.current.gameVersion else { return }
-			if sumMissionStatusCounts(counts) > 0 {
+			if counts.total > 0 {
 				missionCounts[type] = counts
 			}
 		}
@@ -112,36 +110,47 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 	}
 
 	func fetchDummyData() {
-		missionCounts[.mission] = (available: 15, unavailable: 10, completed: 2)
-		missionCounts[.assignment] = (available: 32, unavailable: 25, completed: 0)
-		missionCounts[.dlc] = (available: 8, unavailable: 2, completed: 1)
+		missionCounts[.mission] = (total: 27, available: 15, unavailable: 10, completed: 2)
+		missionCounts[.assignment] = (total: 57, available: 32, unavailable: 25, completed: 0)
+		missionCounts[.dlc] = (total: 11, available: 8, unavailable: 2, completed: 1)
 		recentMissions = [Mission.getDummy()].flatMap { $0 }
 	}
 
-	func sumMissionStatusCounts(_ counts: MissionStatusCounts?) -> Int {
-		guard let counts = counts else { return 0 }
-		return counts.available + counts.unavailable + counts.completed
+	func precacheMissions() {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            let gameVersion = App.current.gameVersion
+            guard let missionCounts = self?.missionCounts else { return }
+            for type in missionCounts.keys {
+                let missions = Mission.getAllType(type, gameVersion: gameVersion).sorted(by: Mission.sort)
+                self?.onPreCacheFinished.fire((type: type, values: missions))
+                // cancel if we switched missions mid-query:
+                guard gameVersion == App.current.gameVersion else { return }
+                self?.precachedMissions[type] = missions
+                if missionCounts[type]?.unavailable == 0 {
+                    self?.recountMissions(type: type)
+                    // update rows
+                    if let index = self?.missionsRowByType(type) {
+                        self?.reloadRows([IndexPath(row: index, section: MissionsGroupsSection.main.rawValue)])
+                    }
+                }
+            }
+        }
 	}
 
-	/// BACKGROUND THREAD.
-	func precacheMissions() {
-		let gameVersion = App.current.gameVersion
-		for type in missionCounts.keys {
-			let missions = Mission.getAllType(type, gameVersion: gameVersion).sorted(by: Mission.sort)
-			onPreCacheFinished.fire((type: type, values: missions))
-			// cancel if we switched missions mid-query:
-			guard gameVersion == App.current.gameVersion else { return }
-			precachedMissions[type] = missions
-			if missionCounts[type]?.unavailable == 0 {
-				let unavailableCount = missions.reduce(0, { return $0 + (!$1.isAvailable ? 1: 0) })
-				missionCounts[type]?.unavailable = unavailableCount
-				missionCounts[type]?.available -= unavailableCount
-//				print(missionCounts[type])
-				if let index = missionsRowByType(type) {
-					reloadRows([IndexPath(row: index, section: MissionsGroupsSection.main.rawValue)])
-				}
-			}
-		}
+	func recountMissions(type: MissionType) {
+        let missions = precachedMissions[type] ?? []
+        let totalCount = missionCounts[type]?.total ?? 0
+        let completedCount = missions.reduce(0, {
+            // note: completed missions can also be unavailable, so exclude them for count
+            $0 + ($1.isCompleted ? 1: 0)
+        })
+        let unavailableCount = missions.reduce(0, {
+            // note: completed missions can also be unavailable, so exclude them for count
+            $0 + (!$1.isAvailable && !$1.isCompleted ? 1: 0)
+        })
+        missionCounts[type]?.completed = completedCount
+        missionCounts[type]?.unavailable = unavailableCount
+        missionCounts[type]?.available = totalCount - (unavailableCount + completedCount)
 	}
 
 	func missionsTypeByRow(_ row: Int) -> MissionType? {
@@ -209,7 +218,7 @@ extension MissionsGroupsController {
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		let type = lastSelectedMissionsGroup ?? .mission
-		let totalCount = sumMissionStatusCounts(missionCounts[type])
+		let totalCount = missionCounts[type]?.total ?? 0
 		let missions = precachedMissions[type]
 		if type == .objective {
 			// TODO: deep link to parent mission instead
@@ -264,12 +273,11 @@ extension MissionsGroupsController {
 
 	func setupMissionGroupRow(_ indexPath: IndexPath, cell: MissionsGroupRow) -> MissionsGroupRow {
 		if let type = missionsTypeByRow((indexPath as NSIndexPath).row) {
-			let completed = missionCounts[type]?.completed ?? 0
 			cell.define(
 				name: type.headingValue,
-				availableCount: (missionCounts[type]?.available ?? 0) - completed,
+				availableCount: missionCounts[type]?.available ?? 0,
 				unavailableCount: missionCounts[type]?.unavailable ?? 0,
-				completedCount: completed
+				completedCount: missionCounts[type]?.completed ?? 0
 			)
 		}
 		return cell
@@ -496,38 +504,18 @@ extension MissionsGroupsController {
 
 	/// Changes any local data and UI to reflect updated missions groups counts.
 	private func processChangedMissionCounts(_ newMission: Mission) {
-		guard let index = precachedMissions[newMission.missionType]?.index(where: { $0.id == newMission.id })
+		guard let index = precachedMissions[newMission.missionType]?.index(where: { $0.id == newMission.id }),
+            let oldMission = precachedMissions[newMission.missionType]?[index]
 		else {
 			return
 		}
 
-		let oldMission = precachedMissions[newMission.missionType]?[index]
-
 		// check for changes
-		let isCompletedCountChange = oldMission?.isCompleted != newMission.isCompleted
-		let isAvailableCountChange = oldMission?.isAvailable != newMission.isAvailable
+		let isCompletedCountChange = oldMission.isCompleted != newMission.isCompleted
+		let isAvailableCountChange = oldMission.isAvailable != newMission.isAvailable
+        precachedMissions[newMission.missionType]?[index] = newMission
 		if isCompletedCountChange || isAvailableCountChange {
-
-			var currentCounts: MissionsGroupCounts = missionCounts[newMission.missionType]
-				?? (available: 0, unavailable: 0, completed: 0)
-
-			if isCompletedCountChange {
-				// change completed counts
-				currentCounts.completed += newMission.isCompleted ? 1 : -1
-			} else if isAvailableCountChange {
-				// change availability counts
-				currentCounts.available += newMission.isAvailable ? 1 : -1
-				currentCounts.unavailable += newMission.isAvailable ? -1 : 1
-			}
-
-			// make sure none are below zero
-			currentCounts.available = max(0, currentCounts.available)
-			currentCounts.unavailable = max(0, currentCounts.unavailable)
-			currentCounts.completed = max(0, currentCounts.completed)
-
-			// save changes
-			missionCounts[newMission.missionType] = currentCounts
-
+            recountMissions(type: newMission.missionType)
 			// update rows
 			if let rowIndex = missionsRowByType(newMission.missionType) {
 				reloadRows([IndexPath(row: rowIndex, section: MissionsGroupsSection.main.rawValue)])

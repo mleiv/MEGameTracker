@@ -40,6 +40,8 @@ extension ActionTarget {
             _ = getObject(type: Item.self)?.changed(fromActionData: data)
 		case .mission:
             _ = getObject(type: Mission.self)?.changed(fromActionData: data)
+        case .person:
+            _ = getObject(type: Person.self)?.changed(fromActionData: data)
 		}
 	}
 

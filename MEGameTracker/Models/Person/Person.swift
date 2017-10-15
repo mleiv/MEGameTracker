@@ -14,6 +14,7 @@ public struct Person: Codable, Photographical, Eventsable {
         case id
         case gameSequenceUuid
         case photo
+        case isAvailable
     }
 
 // MARK: Constants
@@ -96,8 +97,9 @@ public struct Person: Codable, Photographical, Eventsable {
 		set { generalData.relatedDecisionIds = newValue }
 	}
 
+    private var _isAvailable: Bool = true // allow override for decision-dependent availability
 	public var isAvailable: Bool {
-		return isAvailableInGame(gameVersion)
+		return _isAvailable && isAvailableInGame(gameVersion)
 	}
 
 // MARK: Change Listeners And Change Status Flags
@@ -136,6 +138,7 @@ public struct Person: Codable, Photographical, Eventsable {
         id = try container.decode(String.self, forKey: .id)
         gameVersion = .game1
         _photo = try container.decode(Photo.self, forKey: .photo)
+        _isAvailable = try container.decode(Bool.self, forKey: .isAvailable)
         generalData = DataPerson(id: id) // faulted for now
         try unserializeDateModifiableData(decoder: decoder)
         try unserializeGameModifyingData(decoder: decoder)
@@ -146,6 +149,7 @@ public struct Person: Codable, Photographical, Eventsable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
         try container.encode(_photo, forKey: .photo)
+        try container.encode(_isAvailable, forKey: .isAvailable)
         try serializeDateModifiableData(encoder: encoder)
         try serializeGameModifyingData(encoder: encoder)
         try serializeLocalCloudData(encoder: encoder)
@@ -214,6 +218,14 @@ extension Person {
 // MARK: Data Change Actions
 extension Person {
 
+    /// Returns a copy of this Person with a set of changes applies
+    public func changed(fromActionData data: [String: Any?]) -> Person {
+        if let isAvailable = data["isAvailable"] as? Bool {
+            return changed(isAvailable: isAvailable)
+        }
+        return self
+    }
+
     /// Return a copy of this Person with gameVersion changed
     public func changed(
         gameVersion: GameVersion
@@ -257,6 +269,22 @@ extension Person {
             return changed(photo: photo, isSave: isSave)
         }
         return nil
+    }
+
+    /// Return a copy of this Person with isAvailable changed
+    public func changed(
+        isAvailable: Bool,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Person {
+        guard isAvailable != _isAvailable else { return self }
+        var person = self
+        person._isAvailable = isAvailable
+        person.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify
+        )
+        return person
     }
 
     private func isDifferentGameVersion(_ gameVersion: GameVersion) -> Bool {

@@ -391,7 +391,7 @@ extension Map {
 		isSave: Bool,
 		isCascadeChanges: EventDirection = .all
 	) {
-		let maps = getChildMaps()
+//        let maps = getChildMaps()
 //        if isCascadeChanges != .up {
 //            for childMap in maps where childMap.isExplorable && childMap.isExplored != isExplored {
 //                // complete/uncomplete all submaps if parent was just completed/uncompleted

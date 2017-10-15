@@ -121,12 +121,3 @@ extension Photo: Equatable {
 	}
 }
 
-// MARK: Save/Retrieve Data
-
-extension Photo {
-
-	public func getData() -> SerializableData {
-		return filePath.getData()
-	}
-
-}

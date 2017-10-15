@@ -147,9 +147,6 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
 		guard let id = parameters["id"],
 			let mapLocation: MapLocationable = {
-				var list: [String: SerializedDataStorable?] = [:]
-				parameters.forEach { (k, v) in list[k] = v }
-				let data = SerializableData.safeInit(list)
 				if let type = MapLocationType(stringValue: parameters["type"]),
 				   let mapLocation = MapLocation.get(id: id, type: type) {
 					if var map = mapLocation as? Map {
@@ -158,11 +155,11 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 					}
 					return mapLocation
 				} else if
-					let name = data["title"]?.string,
-					let mapLocationCoords = data["location"]?.string?.characters.split(separator: "x").map(String.init),
+					let name = parameters["title"],
+					let mapLocationCoords = parameters["location"]?.characters.split(separator: "x").map(String.init),
 					let mapLocationX = Double(mapLocationCoords[0]),
 					let mapLocationY = Double(mapLocationCoords[1]) {
-					let mapLocationRadius = data["radius"]?.double ?? 1.0
+					let mapLocationRadius = Double(parameters["radius"] ?? "") ?? 1.0
                     var dataMap = DataMap(id: "\(id).detail")
                     dataMap.name = name
                     dataMap.mapLocationPoint = MapLocationPoint(

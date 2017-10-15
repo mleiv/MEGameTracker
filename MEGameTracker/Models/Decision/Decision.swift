@@ -53,6 +53,7 @@ public struct Decision: Codable {
 	public var loveInterestId: String? { return generalData.loveInterestId }
 	public var sortIndex: Int { return generalData.sortIndex }
 	public var blocksDecisionIds: [String] { return generalData.blocksDecisionIds }
+    public var linkedEventIds: [String] { return generalData.linkedEventIds }
 
 	public var isAvailable: Bool {
 		if generalData.dependsOnDecisions.isEmpty {
@@ -166,6 +167,9 @@ extension Decision {
                         .changed(isSelected: false, isSave: true, isCascadeChanges: .none)
                 }
             }
+            for event in linkedEventIds.map({ Event.get(id: $0) }).filter({ $0 != nil }).map({ $0! }) {
+                _ = event.changed(isTriggered: isSelected, isSave: isSave, isNotify: isNotify)
+            }
         }
         return decision
 	}
@@ -221,52 +225,6 @@ extension Decision {
 		return nil
 	}
 }
-
-//// MARK: SerializedDataStorable
-//extension Decision: SerializedDataStorable {
-//
-//    public func getData() -> SerializableData {
-//        var list: [String: SerializedDataStorable?] = [:]
-//        // from db:
-//        list["id"] = id
-//        list["isSelected"] = isSelected
-////        list = serializeDateModifiableData(list: list)
-////        list = serializeGameModifyingData(list: list)
-////        list = serializeLocalCloudData(list: list)
-//        return SerializableData.safeInit(list)
-//    }
-//
-//}
-//
-//// MARK: SerializedDataRetrievable
-//extension Decision: SerializedDataRetrievable {
-//
-//    public init?(data: SerializableData?) {
-//        guard let data = data, let id = data["id"]?.string,
-//              let dataDecision = DataDecision.get(id: id),
-//              let uuidString = data["gameSequenceUuid"]?.string,
-//              let gameSequenceUuid = UUID(uuidString: uuidString)
-//        else {
-//            return nil
-//        }
-//
-//        self.init(id: id, gameSequenceUuid: gameSequenceUuid, generalData: dataDecision, data: data)
-//    }
-//
-//    public mutating func setData(_ data: SerializableData) {
-//        id = data["id"]?.string ?? id
-//        if generalData.id != id {
-//            generalData = DataDecision.get(id: id) ?? generalData
-//        }
-//
-////        unserializeDateModifiableData(data: data)
-////        unserializeGameModifyingData(data: data)
-////        unserializeLocalCloudData(data: data)
-//
-//        isSelected = data["isSelected"]?.bool ?? isSelected
-//    }
-//
-//}
 
 // MARK: DateModifiable
 extension Decision: DateModifiable {}

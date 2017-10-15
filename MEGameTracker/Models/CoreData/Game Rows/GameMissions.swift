@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-public typealias MissionStatusCounts = (available: Int, unavailable: Int, completed: Int)
+public typealias MissionStatusCounts = (total: Int, available: Int, unavailable: Int, completed: Int)
 
 extension Mission: GameRowStorable {
 
@@ -180,6 +180,7 @@ extension Mission {
 				#keyPath(DataMissions.gameVersion), gameVersion.stringValue
 			)
 		}
+        let totalCount = availableCount
 		let unavailableCount = 0
 		let completedCount = Mission.getCount(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
@@ -189,6 +190,11 @@ extension Mission {
 				#keyPath(GameMissions.isCompleted)
 			)
 		}
-		return (available: availableCount, unavailable: unavailableCount, completed: completedCount)
+		return (
+            total: totalCount,
+            available: totalCount - completedCount,
+            unavailable: unavailableCount,
+            completed: completedCount
+        )
 	}
 }

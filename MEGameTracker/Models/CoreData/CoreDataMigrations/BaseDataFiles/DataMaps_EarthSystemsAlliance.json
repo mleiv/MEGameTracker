@@ -1530,7 +1530,7 @@
 		}
 	}, {
 		"id": "G.Ear.Art.Mac.Sha.2",
-		"name": "Crashed Probe",
+		"name": "Escape Pod",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Art.Mac.Sharjila",
 		"mapLocationPoint": {
@@ -1540,7 +1540,7 @@
 		}
 	}, {
 		"id": "G.Ear.Art.Mac.Sha.3",
-		"name": "Abandoned Camp",
+		"name": "Asari Capsule",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Art.Mac.Sharjila",
 		"mapLocationPoint": {
@@ -1733,7 +1733,7 @@
 		}
 	}, {
 		"id": "G.Ear.Art.Spa.Edo.3",
-		"name": "Distress Beacon",
+		"name": "Distress Signal",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Art.Spa.Edolus",
 		"mapLocationPoint": {
@@ -1959,7 +1959,7 @@
 		}
 	}, {
 		"id": "G.Ear.Att.Her.Ele.5",
-		"name": "Crashed Probe",
+		"name": "Engine Debris",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Att.Her.Eletania",
 		"mapLocationPoint": {
@@ -4546,7 +4546,7 @@
 		}
 	}, {
 		"id": "G.Ear.Had.Dis.Kle.4",
-		"name": "Crashed Pod",
+		"name": "Crashed Escape Pod",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Had.Dis.Klensal",
 		"mapLocationPoint": {
@@ -4568,6 +4568,7 @@
 		"gameVersionData": {
 			"1": {
 				"isHidden": false,
+                "note": "TODO: Change msp to not have upper right chamber (just hall to chamber - it deadends).",
 				"image": "Detail_Maps/Game1/UNC/Generic_Mine.pdf",
 				"referenceSize": "2083x2083"
 			}
@@ -5132,7 +5133,7 @@
 		}
 	}, {
 		"id": "G.Ear.Hor.For.Ama.2",
-		"name": "Crashed Probe",
+		"name": "Escape Pod",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Hor.For.Amaranthine",
 		"mapLocationPoint": {
@@ -5816,17 +5817,6 @@
 			"radius": 20
 		}
 	}, {
-		"id": "G.Ear.Hor.Pax.Nov.Rif.2",
-		"name": "To Main Level (A)",
-		"isOpensDetail": false,
-		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
-		"isShowInList": false,
-		"mapLocationPoint": {
-			"x": 1223,
-			"y": 129,
-			"radius": 20
-		}
-	}, {
 		"id": "G.Ear.Hor.Pax.Nov.Rif.3",
 		"name": "Scientist Barracks",
 		"isOpensDetail": false,
@@ -5834,17 +5824,6 @@
 		"mapLocationPoint": {
 			"x": 573,
 			"y": 1049,
-			"radius": 20
-		}
-	}, {
-		"id": "G.Ear.Hor.Pax.Nov.Rif.4",
-		"name": "To Main Level (B)",
-		"isOpensDetail": false,
-		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
-		"isShowInList": false,
-		"mapLocationPoint": {
-			"x": 753,
-			"y": 1183,
 			"radius": 20
 		}
 	}, {
@@ -5881,19 +5860,19 @@
 			"radius": 20
 		}
 	}, {
-		"id": "G.Ear.Hor.Pax.Nov.Rif.8",
-		"name": "To Main Level (C)",
-		"isOpensDetail": false,
-		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
-		"isShowInList": false,
-		"mapLocationPoint": {
-			"x": 831,
-			"y": 1691,
-			"radius": 20
-		}
-	}, {
+        "id": "G.Ear.Hor.Pax.Nov.Rif.8",
+        "name": "To Main Level",
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 831,
+            "y": 1691,
+            "radius": 20
+        }
+    }, {
 		"id": "G.Ear.Hor.Pax.Nov.Rif.9",
-		"name": "Med Bay",
+		"name": "Mess Hall",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
 		"mapLocationPoint": {
@@ -5902,57 +5881,13 @@
 			"radius": 20
 		}
 	}, {
-		"id": "G.Ear.Hor.Pax.Nov.Rif.10",
-		"name": "To Lower Level (A)",
-		"isOpensDetail": false,
-		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
-		"isShowInList": false,
-		"mapLocationPoint": {
-			"x": 1755,
-			"y": 131,
-			"radius": 20
-		}
-	}, {
-		"id": "G.Ear.Hor.Pax.Nov.Rif.11",
-		"name": "To Med Bay",
-		"isOpensDetail": false,
-		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
-		"isShowInList": false,
-		"mapLocationPoint": {
-			"x": 1273,
-			"y": 1047,
-			"radius": 20
-		}
-	}, {
-		"id": "G.Ear.Hor.Pax.Nov.Rif.12",
-		"name": "To Lower Med Bay",
-		"isOpensDetail": false,
-		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
-		"isShowInList": false,
-		"mapLocationPoint": {
-			"x": 1657,
-			"y": 1103,
-			"radius": 20
-		}
-	}, {
 		"id": "G.Ear.Hor.Pax.Nov.Rif.13",
-		"name": "Lower Med Bay",
+		"name": "Medical Bay",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
 		"mapLocationPoint": {
 			"x": 1415,
 			"y": 991,
-			"radius": 20
-		}
-	}, {
-		"id": "G.Ear.Hor.Pax.Nov.Rif.14",
-		"name": "To Lower Level (B)",
-		"isOpensDetail": false,
-		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
-		"isShowInList": false,
-		"mapLocationPoint": {
-			"x": 1281,
-			"y": 1183,
 			"radius": 20
 		}
 	}, {
@@ -5986,17 +5921,6 @@
 			"radius": 20
 		}
 	}, {
-		"id": "G.Ear.Hor.Pax.Nov.Rif.18",
-		"name": "To Lower Level (C)",
-		"isOpensDetail": false,
-		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
-		"isShowInList": false,
-		"mapLocationPoint": {
-			"x": 1351,
-			"y": 1693,
-			"radius": 20
-		}
-	}, {
 		"id": "G.Ear.Hor.Pax.Nov.Rif.19",
 		"name": "Hot Labs",
 		"isOpensDetail": false,
@@ -6004,17 +5928,6 @@
 		"mapLocationPoint": {
 			"x": 157,
 			"y": 1346,
-			"radius": 20
-		}
-	}, {
-		"id": "G.Ear.Hor.Pax.Nov.Rif.20",
-		"name": "To Lower Level",
-		"isOpensDetail": false,
-		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
-		"isShowInList": false,
-		"mapLocationPoint": {
-			"x": 157,
-			"y": 1697,
 			"radius": 20
 		}
 	}, {
@@ -6160,7 +6073,7 @@
 		}
 	}, {
 		"id": "G.Ear.Hor.Str.Xaw.2",
-		"name": "Debris",
+		"name": "Crashed Probe",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Hor.Str.Xawin",
 		"mapLocationPoint": {
@@ -6839,7 +6752,7 @@
 		}
 	}, {
 		"id": "G.Ear.Loc.Sol.Lun.5",
-		"name": "Rachni Song",
+		"name": "Rachni Song (Unconfirmed)",
 		"isOpensDetail": false,
 		"inMapId": "G.Ear.Loc.Sol.Luna",
 		"mapLocationPoint": {
@@ -7277,9 +7190,15 @@
 			"radius": 30
 		},
 		"events": [{
+            "type": "UnavailableInGame",
+            "id": "Game1"
+        }, {
 			"type": "BlockedUntil",
 			"id": "Unlocked Galaxy Map 2",
 			"eraseParentValue": true
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game3"
 		}]
 	}, {
 		"id": "G.Ear.Laz.Start",

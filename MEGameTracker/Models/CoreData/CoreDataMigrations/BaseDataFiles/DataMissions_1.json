@@ -1419,6 +1419,7 @@
 	}, {
 		"id": "M1.Noveria.1",
 		"inMissionId": "M1.Noveria",
+        "sortIndex": 1,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Go to Noveria",
@@ -1484,7 +1485,7 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Administrator Anoleis",
-		"description": "[Gianna|megametracker://person?id=O1.Gianna] said to speak with [Administrator Anoleis|megametracker://person?id=O1.Anoleis] to leave Port Hanshan. His office is upstairs.",
+		"description": "[Gianna|megametracker://person?id=O1.Gianna] said to speak with [Administrator Anoleis|megametracker://person?id=O1.Anoleis] to leave Port Hanshan. His office is just off the Plaza.",
 		"inMapId": "G.Ear.Hor.Pax.Nov.Por.11",
 		"isShowInParentMap": true
 	}, {
@@ -1502,7 +1503,7 @@
 		"sortIndex": 9,
 		"missionType": "Mission",
 		"name": "Noveria: Peak 15",
-		"description": "Contact has been lost with the Peak 15 facility. Reestablish contact by reactivating [megametracker://person?id=O1.Mira]. \n\n*This mission can be acquired in several ways A) from an NPC in Port Hanshan Plaza (first objective below), B) from Lilihierax, C) from [Gianna Parasini|megametracker://person?id=O1.Gianna] after she reveals she is working for Internal Affairs (second objective below), or D) by just reactivating Mira (which also completes the mission).",
+		"description": "Contact has been lost with the Peak 15 facility. Reestablish contact by reactivating [megametracker://person?id=O1.Mira]. \n\n*This mission can be acquired in several ways A) from an NPC in Port Hanshan Plaza (first objective below), B) from [megametracker://person?id=O1.Lilihierax], C) from [Gianna Parasini|megametracker://person?id=O1.Gianna] at the conclusion of [megametracker://mission?id=A1.N.LorikQuiin], or D) by just reactivating Mira (which also completes the mission).*",
 		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Noveria:_Peak_15"
@@ -1530,13 +1531,14 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Computer's Damaged",
-		"description": "Peak 15's Virtual Intelligence computer program has suffered some kind of failure, and requires a manual reboot. \n\nThe puzzle to accomplish this is a classic Towers of Hanoi game ([https://en.wikipedia.org/wiki/Tower_of_Hanoi#Iterative_solution]).",
+		"description": "Peak 15's Virtual Intelligence computer program has suffered some kind of failure, and requires a manual reboot. \n\nThe puzzle to accomplish this is a classic Towers of Hanoi game ([Wikipedia|https://en.wikipedia.org/wiki/Tower_of_Hanoi#Iterative_solution]).",
 		"inMapId": "G.Ear.Hor.Pax.Nov.Pea.8",
 		"isShowInParentMap": true,
 		"sideEffects": ["In Game 3 at the Castle Arcade, there is a Towers of Hanoi game, but when trying to play it, Shepard refuses, saying: \"Towers of Hanoi? I don't think so.\""]
 	}, {
 		"id": "M1.Noveria.4",
 		"inMissionId": "M1.Noveria",
+        "sortIndex": 4,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "To Peak 15",
@@ -1603,7 +1605,7 @@
 		"inMapId": "G.Ear.Hor.Pax.Nov.Peak15",
 		"mapLocationPoint": {
 			"x": 105,
-			"y": 207,
+			"y": 1207,
 			"radius": 1
 		},
 		"relatedLinks": [
@@ -1664,6 +1666,7 @@
 	}, {
 		"id": "M1.Noveria.8",
 		"inMissionId": "M1.Noveria",
+        "sortIndex": 8,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "To Rift Station",
@@ -1674,12 +1677,14 @@
 	}, {
 		"id": "M1.Noveria.9",
 		"inMissionId": "M1.Noveria",
+        "sortIndex": 9,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "To the Hot Labs",
 		"description": "You are tracking down [Matriarch Benezia|megametracker://person?id=E1.Benezia]. She left Rift Station to battle the creatures in the infested Hot Labs. The labs can be accessed via an emergency elevator between Ventralis' barricade and the tram station.\n\n_(Note: The real mission here is to find Benezia. Also, you do not have to stay and help Ventralis fight off rachni if you don't want to.)_",
-		"sideEffects": ["Ventralis is an agent of Benezia. If you go to the Hot Labs as Ventralis suggests, when you return he will be waiting in the Barracks and attack you there. If you confront Benezia first, you can return and kill him at his station."],
+		"sideEffects": ["Ventralis is an agent of Benezia. If you go to the Hot Labs as Ventralis suggests, when you return he will be waiting in the Barracks and attack you there."],
 		"relatedMissionIds": ["M1.Noveria.10RiftStation"],
+        "relatedDecisionIds": ["D1.RachniQueen"],
 		"inMapId": "G.Ear.Hor.Pax.Nov.RiftStation",
 		"mapLocationPoint": {
 			"x": 1369,
@@ -1696,14 +1701,14 @@
 		"sortIndex": 13,
 		"missionType": "Mission",
 		"name": "Noveria: Rift Station",
-		"description": "You've discovered a sealed section of the Rift Station labs. It would be possible to blast your way in, but there may be a more subtle way. \n\nYou can acquire this mission in three ways: A) approaching the [Security|megametracker://maplocation?id=G.Ear.Hor.Pax.Nov.Rif.16&type=Map] section of Rift Station's main level, B) from [megametracker://person?id=O1.HanOlar] after [Alestia Iallis'|megametracker://person?id=O1.Iallis] attack in [megametracker://mission?id=A1.N.Quarantine], C) complete [megametracker://mission?id=M1.Noveria.11HotLabs].",
+		"description": "*Note: this mission is the same as [megametracker://mission?id=M1.Noveria.11HotLabs]. When you complete one, you complete the other. *\n\nYou've discovered a sealed section of the Rift Station labs. It would be possible to blast your way in, but there may be a more subtle way. \n\nYou can acquire this mission in three ways: A) approaching the [Security|megametracker://maplocation?id=G.Ear.Hor.Pax.Nov.Rif.16&type=Map] section of Rift Station's main level, B) from [megametracker://person?id=O1.HanOlar] after [Alestia Iallis'|megametracker://person?id=O1.Iallis] attack in [megametracker://mission?id=A1.N.Quarantine], C) complete [megametracker://mission?id=M1.Noveria.11HotLabs].",
 		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.1",
 		"isShowInParentMap": true,
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Noveria:_Rift_Station"
 		],
+        "identicalMissionId": "M1.Noveria.11HotLabs",
 		"relatedMissionIds": ["M1.Noveria.9", "M1.Noveria.11HotLabs", "A1.N.Quarantine"],
-		"relatedDecisionIds": ["D1.RachniQueen"],
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
@@ -1743,6 +1748,7 @@
 			"https://masseffect.wikia.com/wiki/Noveria:_The_Hot_Labs"
 		],
 		"relatedMissionIds": ["M1.Noveria.10RiftStation"],
+        "identicalMissionId": "M1.Noveria.10RiftStation",
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Unlocked Noveria: Rift Station"
@@ -1777,14 +1783,14 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Acquired Codes",
-		"description": "You hvae the codes needed to activate the purge controls. All that's left is to order [megametracker://person?id=O1.Mira] to being the countdown."
+		"description": "You have the codes needed to activate the purge controls. All that's left is to order [megametracker://person?id=O1.Mira] to being the countdown."
 	}, {
 		"id": "M1.Noveria.11HotLabs.5",
 		"inMissionId": "M1.Noveria.11HotLabs",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Code Omega",
-		"description": "The neutron purge is armed and counting down. Run up to the elevator!"
+		"description": "The neutron purge is armed and counting down. Run to the elevator!"
 	}, {
 		"id": "M1.Noveria.9.1",
 		"inMissionId": "M1.Noveria.9",
@@ -1794,11 +1800,7 @@
 		"description": "You have three options to locate [Matriarch Benezia|megametracker://person?id=E1.Benezia]. \n\nFirst: Help [Dr. Cohen|megametracker://person?id=O1.Cohen] in [megametracker://mission?id=A1.N.Quarantine], and use the maintenance tunnels access in the science barracks (don't take the elevator or you will find yourself in scenario #3). \n\nSecond: Follow Ventralis' suggestion and take the elevator down to the Hot Labs. Benezia is not there, but you will then have access to both the maintenance tunnels in scenario #1 and the security entrance in scenario #3. \n\nThird: Decrypt the security entrance on the north side of the mess hall on the main level, fight all the soldiers and drones in the complex, and take the elevator down to the lower level.",
 		"relatedMissionIds": ["M1.Noveria.10RiftStation", "M1.Noveria.11HotLabs", "A1.N.Quarantine"],
 		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.1",
-		"isShowInParentMap": true,
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Noveria: Rift Station"
-		}]
+		"isShowInParentMap": true
 	}, {
 		"id": "M1.Noveria.9.2",
 		"inMissionId": "M1.Noveria.9",
@@ -1809,23 +1811,26 @@
 		"inMapId": "G.Ear.Hor.Pax.Nov.Rif.1",
 		"isShowInParentMap": true,
 		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Noveria: Rift Station"
-		}, {
 			"type": "Triggers",
 			"id": "Noveria Benezia Dead"
 		}]
 	}, {
 		"id": "M1.Noveria.12",
 		"inMissionId": "M1.Noveria",
+        "sortIndex": 12,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Deal With Hot Labs",
 		"description": "If you have not already destroyed the rachni in the Hot Labs ([megametracker://mission?id=M1.Noveria.11HotLabs]), complete it now.",
-		"relatedMissionIds": ["M1.Noveria.11HotLabs"]
+		"relatedMissionIds": ["M1.Noveria.11HotLabs"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Noveria: Rift Station"
+        }]
 	}, {
 		"id": "M1.Noveria.13",
 		"inMissionId": "M1.Noveria",
+        "sortIndex": 13,
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Mission Complete",

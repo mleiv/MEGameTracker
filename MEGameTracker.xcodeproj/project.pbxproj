@@ -123,9 +123,6 @@
 		B0C355F41BB3807D005CD0BF /* MapCallouts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C355F11BB3807D005CD0BF /* MapCallouts.storyboard */; };
 		B0C355F51BB3807D005CD0BF /* MapCalloutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C355F31BB3807D005CD0BF /* MapCalloutsController.swift */; };
 		B0C7D5E41BC36141000E9A9B /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7D5E31BC36141000E9A9B /* MapLocation.swift */; };
-		B0CD98061BD2086600AF391B /* SerializableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD98031BD2086600AF391B /* SerializableData.swift */; };
-		B0CD98071BD2086600AF391B /* SerializedDataRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD98041BD2086600AF391B /* SerializedDataRetrievable.swift */; };
-		B0CD98081BD2086600AF391B /* SerializedDataStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD98051BD2086600AF391B /* SerializedDataStorable.swift */; };
 		B0DD4DEF1BBE0AD500EF4A54 /* CoreDataMigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD4DEB1BBE0AD500EF4A54 /* CoreDataMigrationManager.swift */; };
 		B0DD4DF01BBE0AD500EF4A54 /* CoreDataMigrationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD4DEC1BBE0AD500EF4A54 /* CoreDataMigrationType.swift */; };
 		B0DD4DF21BBE0AD500EF4A54 /* BaseDataImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD4DEE1BBE0AD500EF4A54 /* BaseDataImport.swift */; };
@@ -265,8 +262,6 @@
 		B18566971E6FA27A00E19FC5 /* DecisionsListLinkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18566961E6FA27A00E19FC5 /* DecisionsListLinkable.swift */; };
 		B19191871CE3A98400CF367E /* MissionSortingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19191861CE3A98400CF367E /* MissionSortingTests.swift */; };
 		B19215541E5CB9A400594796 /* SimpleCoreDataManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19215511E5CB9A400594796 /* SimpleCoreDataManageable.swift */; };
-		B19215551E5CB9A400594796 /* SimpleSerializedCoreDataManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19215521E5CB9A400594796 /* SimpleSerializedCoreDataManageable.swift */; };
-		B19215561E5CB9A400594796 /* SimpleSerializedCoreDataStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19215531E5CB9A400594796 /* SimpleSerializedCoreDataStorable.swift */; };
 		B19215601E5CC69B00594796 /* DeletedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B192155F1E5CC69B00594796 /* DeletedRow.swift */; };
 		B19684751CF8D76C005608A7 /* OriginHintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19684731CF8D76C005608A7 /* OriginHintable.swift */; };
 		B19684761CF8D76C005608A7 /* OriginHintType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19684741CF8D76C005608A7 /* OriginHintType.swift */; };
@@ -639,9 +634,6 @@
 		B0C355F21BB3807D005CD0BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapCallouts.storyboard; sourceTree = "<group>"; };
 		B0C355F31BB3807D005CD0BF /* MapCalloutsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCalloutsController.swift; sourceTree = "<group>"; };
 		B0C7D5E31BC36141000E9A9B /* MapLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
-		B0CD98031BD2086600AF391B /* SerializableData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializableData.swift; sourceTree = "<group>"; };
-		B0CD98041BD2086600AF391B /* SerializedDataRetrievable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializedDataRetrievable.swift; sourceTree = "<group>"; };
-		B0CD98051BD2086600AF391B /* SerializedDataStorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializedDataStorable.swift; sourceTree = "<group>"; };
 		B0DD4DEB1BBE0AD500EF4A54 /* CoreDataMigrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationManager.swift; sourceTree = "<group>"; };
 		B0DD4DEC1BBE0AD500EF4A54 /* CoreDataMigrationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationType.swift; sourceTree = "<group>"; };
 		B0DD4DEE1BBE0AD500EF4A54 /* BaseDataImport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataImport.swift; sourceTree = "<group>"; };
@@ -780,8 +772,6 @@
 		B18566961E6FA27A00E19FC5 /* DecisionsListLinkable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionsListLinkable.swift; sourceTree = "<group>"; };
 		B19191861CE3A98400CF367E /* MissionSortingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionSortingTests.swift; sourceTree = "<group>"; };
 		B19215511E5CB9A400594796 /* SimpleCoreDataManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCoreDataManageable.swift; sourceTree = "<group>"; };
-		B19215521E5CB9A400594796 /* SimpleSerializedCoreDataManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSerializedCoreDataManageable.swift; sourceTree = "<group>"; };
-		B19215531E5CB9A400594796 /* SimpleSerializedCoreDataStorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSerializedCoreDataStorable.swift; sourceTree = "<group>"; };
 		B192155F1E5CC69B00594796 /* DeletedRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletedRow.swift; sourceTree = "<group>"; };
 		B19684731CF8D76C005608A7 /* OriginHintable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginHintable.swift; sourceTree = "<group>"; };
 		B19684741CF8D76C005608A7 /* OriginHintType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginHintType.swift; sourceTree = "<group>"; };
@@ -1275,7 +1265,6 @@
 				B1F466D01DA0AE7200EBA563 /* IBStyles */,
 				B1E196991F43BD7A00991A2C /* JsonCoder.swift */,
 				B10332771E690B4A009C8E16 /* Nuke.xcodeproj */,
-				B0CD98021BD2086600AF391B /* SerializableData */,
 				B19215501E5CB9A400594796 /* SimpleCoreDataManageable */,
 				B1BFF9D41DA4AFAB003FA9FA /* Signals */,
 				B1D1E37A1E1C251400860A42 /* SimpleUserDefaults.swift */,
@@ -1511,16 +1500,6 @@
 			name = "Map Callouts";
 			path = "MEGameTracker/Views/Maps Tab/Map Callouts";
 			sourceTree = SOURCE_ROOT;
-		};
-		B0CD98021BD2086600AF391B /* SerializableData */ = {
-			isa = PBXGroup;
-			children = (
-				B0CD98031BD2086600AF391B /* SerializableData.swift */,
-				B0CD98041BD2086600AF391B /* SerializedDataRetrievable.swift */,
-				B0CD98051BD2086600AF391B /* SerializedDataStorable.swift */,
-			);
-			path = SerializableData;
-			sourceTree = "<group>";
 		};
 		B0DD4DEA1BBE0AD500EF4A54 /* CoreDataMigrations */ = {
 			isa = PBXGroup;
@@ -1939,8 +1918,6 @@
 			isa = PBXGroup;
 			children = (
 				B19215511E5CB9A400594796 /* SimpleCoreDataManageable.swift */,
-				B19215521E5CB9A400594796 /* SimpleSerializedCoreDataManageable.swift */,
-				B19215531E5CB9A400594796 /* SimpleSerializedCoreDataStorable.swift */,
 			);
 			path = SimpleCoreDataManageable;
 			sourceTree = "<group>";
@@ -2724,7 +2701,6 @@
 				B01D8F231BA139500039E003 /* SettingsController.swift in Sources */,
 				B185668B1E6F7E2A00E19FC5 /* IBViewable.swift in Sources */,
 				B1DF1AE11D67DF23008EBAAC /* DecisionsListLinkType.swift in Sources */,
-				B19215561E5CB9A400594796 /* SimpleSerializedCoreDataStorable.swift in Sources */,
 				B0E6E3181C7E3AFD00C6DB0C /* MapSplitViewController.swift in Sources */,
 				B1B55C4A1E70317E0095A526 /* ValueAltDataRow.swift in Sources */,
 				B099985B1BAB490100ADAA5D /* LineCenteredTextImage.swift in Sources */,
@@ -2871,7 +2847,6 @@
 				B145FDDE1E67E1BC00403A36 /* Shepard.AppearanceGroupType.swift in Sources */,
 				B199ECE81D09B2EE007BE489 /* Calloutsable.swift in Sources */,
 				B16CF4891F573D4600651D3E /* BaseDataFileImportType.swift in Sources */,
-				B0CD98071BD2086600AF391B /* SerializedDataRetrievable.swift in Sources */,
 				B0A9682D1C7D6AB300D3E335 /* MESplitViewController.swift in Sources */,
 				B1DE27971CFB84D10041D341 /* RadioOptionRowNib.swift in Sources */,
 				B1B9D72C1E66A56E00AE94D9 /* Change20170228.swift in Sources */,
@@ -2921,7 +2896,6 @@
 				B065750A1BA8F9AC0025F6E7 /* MarkupTextView.swift in Sources */,
 				B0C355EF1BB37534005CD0BF /* MapController.swift in Sources */,
 				B04BF1671BA12C2E00072DA2 /* NSBundle.swift in Sources */,
-				B0CD98061BD2086600AF391B /* SerializableData.swift in Sources */,
 				B07A2C721C792B43007B6418 /* UIHeaderTab.swift in Sources */,
 				B1E1A27E1E22E5EE00029CBE /* UIAlertController.swift in Sources */,
 				B04BF1681BA12C2E00072DA2 /* NSDate.swift in Sources */,
@@ -2954,10 +2928,8 @@
 				B02ACD351BA2797000B7CCB0 /* DataPersons.swift in Sources */,
 				B1A882041CF29AD100603253 /* NoteRow.swift in Sources */,
 				B1E1969A1F43BD7B00991A2C /* JsonCoder.swift in Sources */,
-				B19215551E5CB9A400594796 /* SimpleSerializedCoreDataManageable.swift in Sources */,
 				B19684751CF8D76C005608A7 /* OriginHintable.swift in Sources */,
 				B160EE881CF951500028910C /* ShepardOriginRowType.swift in Sources */,
-				B0CD98081BD2086600AF391B /* SerializedDataStorable.swift in Sources */,
 				B04BF1EE1BA12C7900072DA2 /* Shepard.Name.swift in Sources */,
 				B1BCEF821E3FBEA6009ED18E /* LoadStatus.swift in Sources */,
 				B1C2A74C1E2C968E00809653 /* MapLocationsList.swift in Sources */,

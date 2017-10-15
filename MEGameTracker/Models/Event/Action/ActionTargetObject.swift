@@ -14,6 +14,7 @@ public enum ActionTargetObject: String, Codable {
 	case decision = "Decision"
 	case item = "Item"
 	case mission = "Mission"
+    case person = "Person"
 
 	/// Returns a list of all possible enum variations.
 	public static func all() -> [ActionTargetObject] {

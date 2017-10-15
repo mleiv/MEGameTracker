@@ -145,18 +145,18 @@
 		"gameVersion": "1",
 		"name": "Saved Ashley Williams on Virmire",
 		"description": "If you save Ashley, she will play a key role in Games 2 and 3.",
-		"blocksDecisionIds": [
-			"D1.Kaidan"
-		],
+		"blocksDecisionIds": ["D1.Kaidan"],
+        "linkedEventIds": ["Ashley Saved on Virmire"],
+        "note": "Make sure linked events have an off state which matches no decision selected (ie, game init state)",
 		"sortIndex": 203
 	}, {
 		"id": "D1.Kaidan",
 		"gameVersion": "1",
 		"name": "Saved Kaidan Alenko on Virmire",
 		"description": "If you save Kaidan, he will play a key role in Games 2 and 3.",
-		"blocksDecisionIds": [
-			"D1.Ashley"
-		],
+		"blocksDecisionIds": ["D1.Ashley"],
+        "linkedEventIds": ["Kaidan Saved on Virmire"],
+        "note": "Make sure linked events have an off state which matches no decision selected (ie, game init state)",
 		"sortIndex": 203
 	}, {
 		"id": "D1.Council",
