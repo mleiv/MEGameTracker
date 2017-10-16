@@ -2255,7 +2255,7 @@
 		}
 	}, {
 		"id": "G.Att.Haw.Cen.Pre.2",
-		"name": "Crashed Probe",
+		"name": "Engine Debris",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Haw.Cen.Presrop",
 		"mapLocationPoint": {
@@ -2265,7 +2265,7 @@
 		}
 	}, {
 		"id": "G.Att.Haw.Cen.Pre.3",
-		"name": "Ancient Debris",
+		"name": "Turian Wreckage",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Haw.Cen.Presrop",
 		"mapLocationPoint": {
@@ -2273,6 +2273,16 @@
 			"y": 889,
 			"radius": 20
 		}
+    }, {
+        "id": "G.Att.Haw.Cen.Pre.3B",
+        "name": "Crashed Mining Vehicle",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Haw.Cen.Presrop",
+        "mapLocationPoint": {
+            "x": 792,
+            "y": 889,
+            "radius": 20
+        }
 	}, {
 		"id": "G.Att.Haw.Cen.Pre.4",
 		"name": "Abandoned Camp",
@@ -5183,9 +5193,9 @@
 		}
 	}, {
 		"id": "G.Att.Sen.Hoc.Vir.Lab.1",
-		"name": "To Base Entry",
+		"name": "To Breeding Grounds",
 		"isShowInList": false,
-		"linkToMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+		"linkToMapId": "G.Att.Sen.Hoc.Vir.MainLevel",
 		"inMapId": "G.Att.Sen.Hoc.Vir.Labs",
 		"mapLocationPoint": {
 			"x": 1396,
@@ -5674,7 +5684,7 @@
 		}
 	}, {
 		"id": "G.Att.Sty.Ach.Alt.3",
-		"name": "Crashed Pod",
+		"name": "Escape Pod",
 		"isOpensDetail": false,
 		"inMapId": "G.Att.Sty.Ach.Altahe",
 		"mapLocationPoint": {
@@ -5871,7 +5881,7 @@
 	}, {
 		"id": "G.Att.Sty.Ere.Nep.Mine",
 		"inMapId": "G.Att.Sty.Ere.Nepmos",
-		"name": "Mine",
+		"name": "Rachni Infested Mine",
 		"isHidden": true,
 		"mapType": "Structure",
 		"mapLocationPoint": {

@@ -2957,7 +2957,7 @@
 							"type": "Paragon",
 							"value": 28,
 							"context": "*_Charm_* Wrex (Requires [megametracker://mission?id=A1.L.WrexFamilyArmor] and 8 Charm)",
-							"trigger": "\"I wouldn't do this otherwise.\" and \"We are.\""
+							"trigger": "\"I wouldn't do this otherwise.\""
 						}, {
 							"id": "A1.V2.1.R1",
 							"type": "Renegade",
@@ -3372,13 +3372,21 @@
         "gameVersion": "1",
         "missionType": "Objective",
         "name": "Terminal (Optional)",
-        "inMapId": "G.Att.Sty.Ach.Altahe",
+        "inMapId": "G.Att.Sty.Ach.Alt.ListeningPost",
         "mapLocationPoint": {
-            "x": 469,
-            "y": 1597,
+            "x": 475,
+            "y": 1609,
             "radius": 1
         },
-        "isOpensDetail": false
+        "isOpensDetail": false,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed Noveria Mission",
+            "eraseParentValue": true
+        }, {
+            "type": "Triggers",
+            "id": "Completed Listening Post Theta"
+        }]
 	}, {
 		"id": "A1.U.DepotSigma23.1",
 		"sortIndex": 9201,
@@ -3388,14 +3396,28 @@
 		"name": "Go to the Gorgon System",
 		"description": "Go to the Gorgon System in the Argos Rho cluster and locate Depot Sigma-23.",
 		"inMapId": "G.Ear.Arg.Gor.USF"
+    }, {
+        "id": "A1.U.DepotSigma23.2",
+        "sortIndex": 9202,
+        "inMissionId": "A1.U.DepotSigma23",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Ship's Log",
+        "description": "Listen to the ship's logs to discover what happened.",
+        "inMapId": "G.Ear.Arg.Gor.USF",
+        "mapLocationPoint": {
+            "x": 1491,
+            "y": 375,
+            "radius": 1
+        }
 	}, {
-		"id": "A1.U.DepotSigma23.2",
-		"sortIndex": 9202,
+		"id": "A1.U.DepotSigma23.3",
+		"sortIndex": 9203,
 		"inMissionId": "A1.U.DepotSigma23",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Set Off Demo Charge",
-		"description": "An organization called Cerberus is responsible for the rachni infestations. In order to prevent further problems, activate the station's scuttle system and evacuate to the Normandy. \n\nYou will have 70 seconds to evacuate.",
+		"description": "Activate the station's scuttle system and evacuate to the Normandy. \n\nYou will have 70 seconds to evacuate, while under attack (ie, loot the ship before activating the charge).",
 		"inMapId": "G.Ear.Arg.Gor.USF",
 		"mapLocationPoint": {
 			"x": 1491,
@@ -4519,13 +4541,7 @@
 					"type": "Renegade",
 					"value": 2,
 					"trigger": "\"Enough crazy talk.\""
-				}]
-			}
-		}, {
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Persuade Major Kyle to surrender",
-				"options": [{
+				}, {
 					"id": "A1.U.MajorKyle.P4",
 					"type": "Paragon",
 					"value": 8,
