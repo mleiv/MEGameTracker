@@ -1696,7 +1696,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Crate 121",
+        "name": "Hardened Crate",
+        "annotationNote": "Hard Decryption",
         "inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
         "mapLocationPoint": {
             "x": 863,
@@ -1708,11 +1709,11 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Crate 122",
+        "name": "Crate",
         "inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
         "mapLocationPoint": {
             "x": 951,
-            "y": 927,
+            "y": 907,
             "radius": 1
         }
     }, {
@@ -1720,7 +1721,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Crate 123",
+        "name": "Secure Crate",
+        "annotationNote": "Average Decryption",
         "inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
         "mapLocationPoint": {
             "x": 903,
@@ -1732,10 +1734,11 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Crate 124",
+        "name": "Secure Crate (Upstairs)",
+        "annotationNote": "Average Decryption",
         "inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
         "mapLocationPoint": {
-            "x": 1199,
+            "x": 1219,
             "y": 1770,
             "radius": 1
         }
@@ -1744,7 +1747,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Crate 125",
+        "name": "Locked Crate",
+        "annotationNote": "Easy Decryption",
         "inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
         "mapLocationPoint": {
             "x": 1503,
@@ -1756,7 +1760,8 @@
         "gameVersion": "1",
         "itemType": "Loot",
         "itemDisplayType": "Loot",
-        "name": "Crate 126",
+        "name": "Hardened Crate",
+        "annotationNote": "Hard Decryption",
         "inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
         "mapLocationPoint": {
             "x": 495,
@@ -1770,23 +1775,19 @@
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
-        "name": "Medical Kit 127",
+        "name": "Medical Kit",
         "inMapId": "G.C1.Exhaust",
         "mapLocationPoint": {
             "x": 1955,
             "y": 335,
             "radius": 1
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Accessed Conduit to Citadel"
-        }]
+        }
     }, {
         "id": "M1.RaceAgainstTime.Loot.I.2",
         "gameVersion": "1",
         "itemType": "MedKit",
         "itemDisplayType": "MedKit",
-        "name": "Medical Kit 128",
+        "name": "Medical Kit",
         "inMapId": "G.C1.Tower",
         "mapLocationPoint": {
             "x": 1031,

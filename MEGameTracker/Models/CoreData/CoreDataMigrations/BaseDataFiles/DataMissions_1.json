@@ -2246,11 +2246,8 @@
 			"type": "BlockedUntil",
 			"id": "Citadel Lockdown"
 		}, {
-			"type": "Triggers",
-			"id": "Ilos Started"
-		}, {
-			"type": "Triggers",
-			"id": "Spoke to Vigil"
+            "type": "Triggers",
+            "id": "Accessed Conduit to Citadel"
 		}]
 	}, {
 		"id": "M1.RaceAgainstTime.5.1",
@@ -2258,17 +2255,14 @@
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Prothean Archives",
-		"description": "You will need to find a way into the Prothean Archives below Ilos, to pursue [Saren|megametracker://person?id=E1.Saren] and beat him to the Conduit. See [megametracker://mission?id=M1.Ilos] for more."
-	}, {
-		"id": "M1.RaceAgainstTime.5.2",
-		"inMissionId": "M1.RaceAgainstTime.5",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Vigil",
-		"description": "Drive the Mako through the underground passage. Before you reach the end, an energy barrier will barr your path, and then another forms behind you. At this point, exit the Mako and take the elevator to the right and continue until you find [megametracker://person?id=O1.Vigil], an ancient prothean VI \n\nVigil will answer many of your questions about the protheans, the Reapers, the Citadel, and the Conduit (and delight [Liara|megametracker://person?id=S1.Liara] if she was brought along).",
-		"inMapId": "G.Att.Pan.Ref.Ilo.Arc.2",
-		"isShowInParentMap": true,
-		"relatedMissionIds": ["M1.Ilos"]
+		"description": "You will need to find a way into the Prothean Archives below Ilos, to pursue [Saren|megametracker://person?id=E1.Saren] and beat him to the Conduit. See [megametracker://mission?id=M1.Ilos] for more.",
+        "inMapId": "G.Att.Pan.Ref.Ilo.Rui.1",
+        "isShowInParentMap": true,
+        "identicalMissionId": "M1.Ilos",
+        "events": [{
+            "type": "Triggers",
+            "id": "Ilos Started"
+        }]
 	}, {
 		"id": "M1.Ilos",
 		"sortIndex": 16,
@@ -2280,10 +2274,11 @@
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Ilos:_Find_the_Conduit"
 		],
-		"relatedMissionIds": ["M1.RaceAgainstTime.5"],
+		"relatedMissionIds": ["M1.RaceAgainstTime.5.1"],
+        "identicalMissionId": "M1.RaceAgainstTime.5.1",
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Ilos Started"
+            "id": "Citadel Lockdown: Exile"
 		}]
 	}, {
 		"id": "M1.Ilos.1",
@@ -2303,6 +2298,20 @@
 		"description": "The security system is disabled. Return to your vehicle and follow [Saren|megametracker://person?id=E1.Saren] into the underground archives.",
 		"inMapId": "G.Att.Pan.Ref.Ilo.Rui.1",
 		"isShowInParentMap": true
+    }, {
+        "id": "M1.RaceAgainstTime.5.2",
+        "inMissionId": "M1.RaceAgainstTime.5",
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Vigil",
+        "description": "Drive the Mako through the underground passage. Before you reach the end, an energy barrier will barr your path, and then another forms behind you. At this point, exit the Mako and take the elevator to the right and continue until you find [megametracker://person?id=O1.Vigil], an ancient prothean VI \n\nVigil will answer many of your questions about the protheans, the Reapers, the Citadel, and the Conduit (and delight [Liara|megametracker://person?id=S1.Liara] if she was brought along).",
+        "inMapId": "G.Att.Pan.Ref.Ilo.Arc.2",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["M1.Ilos"],
+        "events": [{
+            "type": "Triggers",
+            "id": "Spoke to Vigil"
+        }]
 	}, {
 		"id": "M1.RaceAgainstTime.5.3",
 		"inMissionId": "M1.RaceAgainstTime.5",
@@ -2312,20 +2321,21 @@
 		"description": "Vigil has given you a special data file to take control of the Citadel. But you must reach the Conduit in time. Return to the Mako and race through the aqueduct trenches after [Saren|megametracker://person?id=E1.Saren]. Do not waste time fighting the geth along the route, just try to keep damage to a minimum.",
 		"inMapId": "G.Att.Pan.Ref.Ilo.Tre.2",
 		"isShowInParentMap": true,
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Spoke to Vigil"
-		}, {
-			"type": "Triggers",
-			"id": "Accessed Conduit to Citadel"
-		}]
+        "events": [{
+            "type": "Triggers",
+            "id": "Accessed Conduit to Citadel"
+        }]
 	}, {
 		"id": "M1.RaceAgainstTime.6",
 		"inMissionId": "M1.RaceAgainstTime",
 		"gameVersion": "1",
 		"missionType": "Objective",
 		"name": "Save the Citadel",
-		"description": "[Saren|megametracker://person?id=E1.Saren] has used the Conduit to get onto the Citadel. You have to stop him from transferring control of the Citadel to [Sovereign|megametracker://person?id=E1.Sovereign]."
+		"description": "[Saren|megametracker://person?id=E1.Saren] has used the Conduit to get onto the Citadel. You have to stop him from transferring control of the Citadel to [Sovereign|megametracker://person?id=E1.Sovereign].",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Accessed Conduit to Citadel"
+        }]
 	}, {
 		"id": "M1.RaceAgainstTime.6.1",
 		"inMissionId": "M1.RaceAgainstTime.6",
@@ -2334,11 +2344,7 @@
 		"name": "Presidium",
 		"description": "The Mako travels through the Conduit and crashes in the Presidium. You can talk to [megametracker://person?id=O1.Avina] there for more information about the status of the Citadel and where [Saren|megametracker://person?id=E1.Saren] went. Head to the elevator to pursue him.",
 		"inMapId": "G.C1.Exhaust.1",
-		"isShowInParentMap": true,
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Accessed Conduit to Citadel"
-		}]
+		"isShowInParentMap": true
 	}, {
 		"id": "M1.RaceAgainstTime.6.2",
 		"inMissionId": "M1.RaceAgainstTime.6",
@@ -2346,12 +2352,13 @@
 		"missionType": "Objective",
 		"name": "Citadel Exterior",
 		"description": "The elevator is destroyed by [Sovereign's|megametracker://person?id=E1.Sovereign] landing on the Citadel. Make your way outside and across the Maintenance Shaft. You will be attacked by geth, and by a krogan as you round the corner between the Maintenance Shaft and the Exhaust Plain. A geth dropship will approach the Exhaust Plain and begin dropping troops. You can activate the turrets to drive the dropship off. Continue on to the Exterior Defense Grid. There you will be attacked by krogans, geth destroyers, then a juggernaut, and geth turrets. When you have finished them all off, head to the Citadel Tower.",
-		"inMapId": "G.C1.Exhaust.12",
-		"isShowInParentMap": true,
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Accessed Conduit to Citadel"
-		}]
+		"inMapId": "G.C1.Exhaust",
+        "mapLocationPoint": {
+            "x": 1345,
+            "y": 1062,
+            "radius": 1
+        },
+		"isShowInParentMap": true
 	}, {
 		"id": "M1.RaceAgainstTime.6.3",
 		"inMissionId": "M1.RaceAgainstTime.6",
@@ -2360,11 +2367,7 @@
 		"name": "Defeat Saren",
 		"description": "There is a small force of geth in the Council Chambers, but the real fight will be against [Saren|megametracker://person?id=E1.Saren], whom [Sovereign|megametracker://person?id=E1.Sovereign] has further altered to be a superior synthetic version of himself. You can try persuading him to acknowledge he is indoctrinated, but eventually he will fight you anyway.",
 		"inMapId": "G.C1.Tower.Council",
-		"isShowInParentMap": true,
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Accessed Conduit to Citadel"
-		}]
+		"isShowInParentMap": true
 	}, {
 		"id": "M1.RaceAgainstTime.6.4",
 		"inMissionId": "M1.RaceAgainstTime.6",
@@ -2374,11 +2377,7 @@
 		"description": "Make your way to the Control Terminal and use Vigil's data file to take control of the Citadel. You can open the arms of the Citadel, but now you must decide what to do about the Council's flagship, the Destiny Ascension, which is under heavy fire. The entire Council is onboard. [Joker|megametracker://person?id=P1.Joker] is waiting with an Alliance fleet and they can save the Ascension, but there will be heavy losses to the human forces.\n\nThis is also your last chance to save the game.",
 		"inMapId": "G.C1.Tower.Council",
 		"isShowInParentMap": true,
-		"relatedDecisionIds": ["D1.Council"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Accessed Conduit to Citadel"
-		}]
+		"relatedDecisionIds": ["D1.Council"]
 	}, {
 		"id": "M1.RaceAgainstTime.6.5",
 		"inMissionId": "M1.RaceAgainstTime.6",
@@ -2387,11 +2386,7 @@
 		"name": "Defeat Synthetic Saren",
 		"description": "[Sovereign|megametracker://person?id=E1.Sovereign] revives [Saren|megametracker://person?id=E1.Saren] as a fully synthetic creature and you must defeat him again. Keep moving until Saren is down to 25% health. At that point, the fleet entering the Citadel will begin firing on Sovereign. When your battle resumes, Saren has full shields again, but not full health. Keep fighting until the Saren husk dies, at which point Sovereign's shields will also drop and it will detach from the Citadel.",
 		"inMapId": "G.C1.Tower.Council",
-		"isShowInParentMap": true,
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Accessed Conduit to Citadel"
-		}]
+		"isShowInParentMap": true
 	}, {
 		"id": "M1.RaceAgainstTime.6.6",
 		"inMissionId": "M1.RaceAgainstTime.6",
@@ -2401,10 +2396,6 @@
 		"description": "The fleet destroys [Sovereign|megametracker://person?id=E1.Sovereign], but some of the wreckage slams into the Citadel Tower and buries Shepard. It is uncertain for a moment if you survived, but at the last minute you emerge from the wreckage, wounded but alive. If you saved the Council, they will be waiting to thank you, and to finally grant humanity a seat on the Council. If you let the Council die, [Udina|megametracker://person?id=P1.Udina] will propose establishing an all-human Council to take their place.",
 		"inMapId": "G.C1.Tower.Council",
 		"isShowInParentMap": true,
-		"relatedDecisionIds": ["D1.Udina", "D1.Anderson", "D1.HumanCouncil"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Accessed Conduit to Citadel"
-		}]
+		"relatedDecisionIds": ["D1.Udina", "D1.Anderson", "D1.HumanCouncil"]
 	}]
 }
