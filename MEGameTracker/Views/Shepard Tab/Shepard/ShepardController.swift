@@ -326,14 +326,13 @@ extension ShepardController: UIImagePickerControllerDelegate {
 
 		present(imageController, animated: true, completion: nil)
 	}
-
-	public func imagePickerController(
-		_ picker: UIImagePickerController,
-		didFinishPickingImage image: UIImage,
-		editingInfo: [String : AnyObject]?
-	) {
+    public func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [String : Any]
+    ) {
 		picker.dismiss(animated: true, completion: nil)
-        if var game = App.current.game,
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage,
+            var game = App.current.game,
             game.shepard?.savePhoto(image: image) == true {
             setupPhotoValue()
             App.current.changeGame(isSave: false, isNotify: false) { _ in game }

@@ -1,0 +1,802 @@
+{
+    "missions": [{
+
+        "id": "A1.Convo.Ashley",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Ashley Williams",
+        "description": "Conversations with [megametracker://person?id=S1.Ashley] aboard the Normandy.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 240,
+            "y": 1299,
+            "radius": 1
+        },
+        "relatedDecisionIds": ["D1.LoveAshley"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Ashley_Williams/Unique_Dialogue"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Normandy"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Ilos Started"
+        }]
+    }, {
+        "id": "A1.Convo.Ashley.1",
+        "inMissionId": "A1.Convo.Ashley",
+        "sortIndex": 90101,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo (BroShep)",
+        "description": "Ashley is anxious about how you are doing after Eden Prime. You can welcome her to the Normandy. \n\nIn this and future conversations, be careful in your responses if you want to romance her. Some Renegade answers are fine, but any which cut the conversation short will be held against you, so you may want to save the game first and rewind if you push too far.",
+        "inMapId": "G.N1.2",
+        "mapLocationPoint": {
+            "x": 1424,
+            "y": 840,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedAfter",
+            "id": "Unlocked Citadel: Presidium"
+        }]
+    }, {
+        "id": "A1.Convo.Ashley.2",
+        "inMissionId": "A1.Convo.Ashley",
+        "sortIndex": 90102,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "2nd Normandy Convo",
+        "description": "Talk to Ashley about losing her team on Eden Prime. If you were mean to her during the mission, you can apologize.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 240,
+            "y": 1299,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map"
+        }]
+    }, {
+        "id": "A1.Convo.Ashley.3",
+        "inMissionId": "A1.Convo.Ashley",
+        "sortIndex": 90103,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "3rd Normandy Convo",
+        "annotationNote": "Romance Option",
+        "description": "Ashley gets super racist about the aliens on the Normandy. You can take her side or correct her. But if you opt for the \"You're out of line!\" response, she'll stop talking to you (and end any romance). You can then inquire about her past service and her family. The conversation ends with you pointing out that she has to serve with aliens, and she affirms that she can follow orders, even if it were to kiss a turian's ass. BroShep can then flirtingly inquire if she would kiss him if so ordered (spoiler: she won't).",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 240,
+            "y": 1299,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Therum, Feros, or Noveria"
+        }]
+    }, {
+        "id": "A1.Convo.Ashley.4",
+        "inMissionId": "A1.Convo.Ashley",
+        "sortIndex": 90104,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "4th Normandy Convo",
+        "description": "You interrupt Ashley speaking to her sister. If BroShep, her sister will say that Shepard's cute (otherwise she refers to Kaidan). Ashley will talk about her family life. She quotes poetry and talks about how religious she is.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 240,
+            "y": 1299,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Ashley.5",
+        "inMissionId": "A1.Convo.Ashley",
+        "sortIndex": 90105,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Exclusivity Check (BroShep)",
+        "annotationNote": "Romance Lock",
+        "description": "If you are romancing Ashley and Liara simultaneously, they will now confront you and demand you pick one or the other. \"Can't I have you both?\" effectively selects Liara.",
+        "inMapId": "G.N1.1.3",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Ashley.6",
+        "inMissionId": "A1.Convo.Ashley",
+        "sortIndex": 90106,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "5th Normandy Convo",
+        "annotationNote": "Romance Lock",
+        "description": "Ashley invites Shepard to share a drink for Armistice Day. She talks about her grandfather, who has been maligned for his role in the Shanxi surrender. \n\nRomance path: When Ashley says you are exactly where you need to be, you can add that you need her beside you. She will respond that the mission comes first, but she is interested after that.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 240,
+            "y": 1299,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Ashley.7",
+        "inMissionId": "A1.Convo.Ashley",
+        "sortIndex": 90107,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Normandy Almost-Kiss (BroShep)",
+        "description": "This conversation is automatic once you have locked into a romance. Your potential partner tries to console you following the lockdown. When you two almost kiss - Joker interrupts to inform you that Anderson is waiting to speak to Shepard at Flux.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 240,
+            "y": 1299,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedAfter",
+            "id": "Kaidan Saved on Virmire",
+        }, {
+            "type": "BlockedUntil",
+            "id": "Citadel Lockdown"
+        }]
+
+    }, {
+        "id": "A1.Convo.Chakwas",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Dr. Chakwas",
+        "description": "Conversations with [megametracker://person?id=P1.Chakwas] aboard the Normandy.",
+        "inMapId": "G.N1.2.1",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Normandy"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Ilos Started"
+        }]
+    }, {
+        "id": "A1.Convo.Chakwas.1",
+        "inMissionId": "A1.Convo.Chakwas",
+        "sortIndex": 90101,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "You can ask Dr. Chakwas about her long career in the Alliance, and about [megametracker://person?id=P1.Anderson] and [megametracker://person?id=S1.Kaidan].",
+        "inMapId": "G.N1.2.1",
+        "isShowInParentMap": true
+    }, {
+        "id": "A1.Convo.Chakwas.2",
+        "inMissionId": "A1.Convo.Chakwas",
+        "sortIndex": 90102,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "2nd Normandy Convo",
+        "description": "Chakwas comments on how strange it is to be a fugitive and asks Shepard not to let the crew down.",
+        "inMapId": "G.N1.2.1",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Citadel Lockdown"
+        }]
+
+    }, {
+        "id": "A1.Convo.Garrus",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Garrus Vakarian",
+        "description": "Conversations with [megametracker://person?id=S1.Garrus] aboard the Normandy.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 511,
+            "y": 895,
+            "radius": 1
+        },
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Garrus_Vakarian/Unique_dialogue"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Ilos Started"
+        }]
+    }, {
+        "id": "A1.Convo.Garrus.1",
+        "inMissionId": "A1.Convo.Garrus",
+        "sortIndex": 90101,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "Garrus thanks you for bringing him on the mission. He expresses irritation with all the rules of C-Sec and is looking forward to getting things done.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 511,
+            "y": 895,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.Convo.Garrus.2",
+        "inMissionId": "A1.Convo.Garrus",
+        "sortIndex": 90102,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "2nd Normandy Convo",
+        "description": "You can inquire about why Garrus joined C-Sec. He talks about his father, who was an officer and who hates the Spectres.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 511,
+            "y": 895,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Garrus.3",
+        "inMissionId": "A1.Convo.Garrus",
+        "sortIndex": 90103,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "3rd Normandy Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Garrus will discuss his encounter with [megametracker://person?id=O1.Saleon], which starts his loyalty quest [megametracker://mission?id=A1.L.FindDrSaleon].",
+        "relatedMissionIds": ["A1.L.FindDrSaleon"],
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 511,
+            "y": 895,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Garrus.4",
+        "inMissionId": "A1.Convo.Garrus",
+        "sortIndex": 90104,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "4th Normandy Convo",
+        "description": "Garrus expresses frustration with the prospect of Saren getting away. He asks if the Council is protecting Saren, and suggests that Shepard just kill him rather than try to take him in for trial.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 511,
+            "y": 895,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Garrus.5",
+        "inMissionId": "A1.Convo.Garrus",
+        "sortIndex": 90105,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "5th Normandy Convo",
+        "description": "Garrus thanks Shepard for all he's learned on the Normandy. He has decided to reapply for Spectre training and make a difference in the galaxy.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 511,
+            "y": 895,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Citadel Lockdown"
+        }]
+
+
+    }, {
+        "id": "A1.Convo.Joker",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Jeff \"Joker\" Moreau",
+        "description": "Conversations with [megametracker://person?id=P1.Joker] aboard the Normandy.",
+        "inMapId": "G.N1.3.Map",
+        "isShowInParentMap": true,
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Jeff_%22Joker%22_Moreau/Unique_dialogue"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }]
+
+    }, {
+        "id": "A1.Convo.Kaidan",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Kaidan Alenko",
+        "description": "Conversations with [megametracker://person?id=S1.Kaidan] aboard the Normandy.",
+        "inMapId": "G.N1.2",
+        "mapLocationPoint": {
+            "x": 948,
+            "y": 1180,
+            "radius": 1
+        },
+        "relatedDecisionIds": ["D1.LoveKaidan"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Kaidan_Alenko/Unique_dialogue"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Normandy"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Ilos Started"
+        }]
+    }, {
+        "id": "A1.Convo.Kaidan.1",
+        "inMissionId": "A1.Convo.Kaidan",
+        "sortIndex": 90101,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo (FemShep)",
+        "description": "Kaidan is anxious about how you are doing after Eden Prime. You can ask him about his Alliance service. \n\nIn this and future conversations, be careful in your responses if you want to romance him. Some Renegade answers are fine, but any which cut the conversation short will be held against you, so you may want to save the game first and rewind if you push too far.",
+        "inMapId": "G.N1.2",
+        "mapLocationPoint": {
+            "x": 1424,
+            "y": 840,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedAfter",
+            "id": "Unlocked Citadel: Presidium"
+        }]
+    }, {
+        "id": "A1.Convo.Kaidan.2",
+        "inMissionId": "A1.Convo.Kaidan",
+        "sortIndex": 90102,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "2nd Normandy Convo",
+        "description": "Talk to Kaidan about the mission on Eden Prime. He will try to reassure you that it was not Shepard's fault things went sideways.",
+        "inMapId": "G.N1.2",
+        "mapLocationPoint": {
+            "x": 948,
+            "y": 1180,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map"
+        }]
+    }, {
+        "id": "A1.Convo.Kaidan.3",
+        "inMissionId": "A1.Convo.Kaidan",
+        "sortIndex": 90103,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "3rd Normandy Convo",
+        "annotationNote": "Romance Option",
+        "description": "Kaidan wants to talk about Saren and the Council's refusal to act. You can call him a romantic, which he admits to with some embarrassment. You can also ask him about his biotic training at \"Brain Camp\" and the history of human biotics. \n\nRomance path: Ask Kaidan about his childhood friends, and he mentions an old crush (whom he compares to Shepard). He finishes by apologizing for getting too personal. If you continue to show interest, he asks if you talk to all the crew like this, and you can flirtingly reply that it's just to him.",
+        "inMapId": "G.N1.2",
+        "mapLocationPoint": {
+            "x": 948,
+            "y": 1180,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Therum, Feros, or Noveria"
+        }]
+    }, {
+        "id": "A1.Convo.Kaidan.4",
+        "inMissionId": "A1.Convo.Kaidan",
+        "sortIndex": 90104,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "4th Normandy Convo",
+        "description": "Kaidan mentions that Liara is interested in Shepard. You can learn more about his past biotics training, where he accidentally killed his abusive turian instructor.",
+        "inMapId": "G.N1.2",
+        "mapLocationPoint": {
+            "x": 948,
+            "y": 1180,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Kaidan.5",
+        "inMissionId": "A1.Convo.Kaidan",
+        "sortIndex": 90105,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Exclusivity Check (FemShep)",
+        "annotationNote": "Romance Lock",
+        "description": "If you are romancing Kaidan and Liara simultaneously, they will now confront you and demand you pick one or the other. \"Can't I have you both?\" effectively selects Liara.",
+        "inMapId": "G.N1.1.3",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Kaidan.6",
+        "inMissionId": "A1.Convo.Kaidan",
+        "sortIndex": 90106,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "5th Normandy Convo (FemShep)",
+        "annotationNote": "Romance Lock",
+        "description": "A flirty conversation where Kaidan says the mission comes first, but he is interested in pursuing things after that.",
+        "inMapId": "G.N1.2",
+        "mapLocationPoint": {
+            "x": 948,
+            "y": 1180,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedAfter",
+            "id": "Ashley Saved on Virmire",
+        }, {
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Kaidan.7",
+        "inMissionId": "A1.Convo.Kaidan",
+        "sortIndex": 90107,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Normandy Almost-Kiss (FemShep)",
+        "description": "This conversation is automatic once you have locked into a romance. Your potential partner tries to console you following the lockdown. If you don't reject him/her, you almost kiss - Joker interrupts to inform you that Anderson is waiting to speak to Shepard at Flux.",
+        "inMapId": "G.N1.2",
+        "mapLocationPoint": {
+            "x": 948,
+            "y": 1180,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Citadel Lockdown"
+        }]
+
+
+    }, {
+        "id": "A1.Convo.Liara",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Liara T'Soni",
+        "description": "Conversations with [megametracker://person?id=S1.Liara] aboard the Normandy.",
+        "inMapId": "G.N1.2.5",
+        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D1.LoveLiara"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Liara_T%27Soni/Unique_Dialogue"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed Therum"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Ilos Started"
+        }]
+    }, {
+        "id": "A1.Convo.Liara.1",
+        "inMissionId": "A1.Convo.Liara",
+        "sortIndex": 90101,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "Liara thanks you for rescuing her. She explains why she became an archeologist and expresses her fascination with the protheans and, by extension, Shepard. You can also inquire about her mother Benezia and learn more about the asari mating process.",
+        "inMapId": "G.N1.2.5",
+        "isShowInParentMap": true
+    }, {
+        "id": "A1.Convo.Liara.2",
+        "inMissionId": "A1.Convo.Liara",
+        "sortIndex": 90102,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "2nd Normandy Convo",
+        "annotationNote": "Romance Option",
+        "description": "You can inquire more about asari lifespans and Liara provides an alien perspective on humanity. She reveals that she has been reading up on Shepard. She again expresses her interest and asks in you are currently involved with Ashley or Kaidan. Regardless of your answer, she will press on and ask if you are attracted to her. If you affirm this, she will ask for time to think.",
+        "inMapId": "G.N1.2.5",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Liara.3",
+        "inMissionId": "A1.Convo.Liara",
+        "sortIndex": 90103,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "3rd Normandy Convo",
+        "annotationNote": "Romance Option",
+        "description": "Liara will talk more about asari mating. She also confesses she is a virgin. Then she will conclude that the mission comes first.",
+        "inMapId": "G.N1.2.5",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Liara.4",
+        "inMissionId": "A1.Convo.Liara",
+        "sortIndex": 90104,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Exclusivity Check",
+        "annotationNote": "Romance Lock",
+        "description": "If you are romancing Kaidan or Ashley and Liara simultaneously, they will now confront you and demand you pick one or the other. \"Can't I have you both?\" effectively selects Liara.",
+        "inMapId": "G.N1.1.3",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Liara.5",
+        "inMissionId": "A1.Convo.Liara",
+        "sortIndex": 90105,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Normandy Almost-Kiss",
+        "description": "This conversation is automatic once you have locked into a romance. Your potential partner tries to console you following the lockdown. If you don't reject him/her, you almost kiss - Joker interrupts to inform you that Anderson is waiting to speak to Shepard at Flux.",
+        "inMapId": "G.N1.2.5",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Citadel Lockdown"
+        }]
+
+    }, {
+        "id": "A1.Convo.Tali",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Tali'Zorah",
+        "description": "Conversations with [megametracker://person?id=S1.Tali] aboard the Normandy.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 1903,
+            "y": 859,
+            "radius": 1
+        },
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Tali%27Zorah_nar_Rayya/Unique_dialogue"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Ilos Started"
+        }]
+    }, {
+        "id": "A1.Convo.Tali.1",
+        "inMissionId": "A1.Convo.Tali",
+        "sortIndex": 90101,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "Tali geeks out over the Normandy. She talks about the aging quarian fleet and the Pilgrimage which requires young quarians to journey into the galaxy and bring back a gift to the fleet. You can also ask about quarian government and their history with the geth.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 1903,
+            "y": 859,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.Convo.Tali.2",
+        "inMissionId": "A1.Convo.Tali",
+        "sortIndex": 90102,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "2nd Normandy Convo",
+        "description": "Tali expresses homesickness in the silence and emptiness of the Normandy. But she says the mission is more important than going home to the fleet.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 1903,
+            "y": 859,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Tali.3",
+        "inMissionId": "A1.Convo.Tali",
+        "sortIndex": 90103,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "3rd Normandy Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Tali asks for the geth data you acquired in [megametracker://mission?id=A1.U.GethIncursions] for her pilgrimage [megametracker://mission?id=A1.L.TaliAndTheGeth].",
+        "relatedMissionIds": ["A1.L.TaliAndTheGeth"],
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 1903,
+            "y": 859,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Investigated Geth Outposts"
+        }]
+    }, {
+        "id": "A1.Convo.Tali.4",
+        "inMissionId": "A1.Convo.Tali",
+        "sortIndex": 90104,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "4th Normandy Convo",
+        "description": "Tali's mood is much improved.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 1903,
+            "y": 859,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Tali.5",
+        "inMissionId": "A1.Convo.Tali",
+        "sortIndex": 90105,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "5th Normandy Convo",
+        "description": "Tali thinks the mission is almost done and is looking forward to returning to the fleet.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 1903,
+            "y": 859,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Citadel Lockdown"
+        }]
+
+    }, {
+        "id": "A1.Convo.Wrex",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Urdnot Wrex",
+        "description": "Conversations with [megametracker://person?id=S1.Wrex] aboard the Normandy.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 783,
+            "y": 1279,
+            "radius": 1
+        },
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Urdnot_Wrex/Unique_Dialogue"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Ilos Started"
+        }]
+    }, {
+        "id": "A1.Convo.Wrex.1",
+        "inMissionId": "A1.Convo.Wrex",
+        "sortIndex": 90101,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "Wrex is not very chatty. If you press him, he brings up the Genophage. If you try to connect with him over the shared struggles of your species, he gets offended. He despairs of the krogan people's future.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 783,
+            "y": 1279,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.Convo.Wrex.2",
+        "inMissionId": "A1.Convo.Wrex",
+        "sortIndex": 90102,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "2nd Normandy Convo",
+        "description": "Wrex discusses how he meant Saren. He worked a job for him briefly, but got such a bad vibe that he took off before payday. Every other merc who stayed ended up dead.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 783,
+            "y": 1279,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Therum, Feros, or Noveria"
+        }]
+    }, {
+        "id": "A1.Convo.Wrex.3",
+        "inMissionId": "A1.Convo.Wrex",
+        "sortIndex": 90103,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "3rd Normandy Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Talk to Wrex about why he became a mercenary. He will reveal how he was betrayed on Tuchanka by his own father. This starts his loyalty mission [megametracker://mission?id=A1.L.WrexFamilyArmor].",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 783,
+            "y": 1279,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Wrex.4",
+        "inMissionId": "A1.Convo.Wrex",
+        "sortIndex": 90104,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "4th Normandy Convo",
+        "description": "You can press Wrex over what he has done to help the krogan. He will talk more about his career as a merc. If you ask later for stories, he'll tell you a funny story about a contract he got to kill an old girlfriend.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 783,
+            "y": 1279,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Two of Therum, Feros, or Noveria",
+        }]
+    }, {
+        "id": "A1.Convo.Wrex.5",
+        "inMissionId": "A1.Convo.Wrex",
+        "sortIndex": 90105,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "5th Normandy Convo",
+        "description": "Wrex acknowledges that you did what you had to on Virmire, and says it was worth it so long as Saren pays for it.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 783,
+            "y": 1279,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Wrex Saved on Virmire",
+        }]
+    }, {
+        "id": "A1.Convo.Wrex.6",
+        "inMissionId": "A1.Convo.Wrex",
+        "sortIndex": 90106,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "6th Normandy Convo",
+        "description": "Wrex affirms that he supports you in defying the Council.",
+        "inMapId": "G.N1.3",
+        "mapLocationPoint": {
+            "x": 783,
+            "y": 1279,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Citadel Lockdown"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Wrex Saved on Virmire",
+        }]
+
+    }]
+}

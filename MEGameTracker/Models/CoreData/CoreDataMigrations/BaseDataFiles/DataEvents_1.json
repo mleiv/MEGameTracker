@@ -475,6 +475,24 @@
                 }
             }
         }]
+    }, {
+        "id": "Wrex Saved on Virmire",
+        "gameVersion": "1",
+        "description": "[megametracker://mission?id=A1.V.WrexAndTheGenophage]",
+        "actions": [{
+            "target": {
+                "type": "Person",
+                "id": "S1.Wrex"
+            },
+            "changes": {
+                "On": {
+                    "isAvailable": false
+                },
+                "Off": {
+                    "isAvailable": true
+                }
+            }
+        }]
 	}, {
 		"id": "Ilos Started",
 		"gameVersion": "1",

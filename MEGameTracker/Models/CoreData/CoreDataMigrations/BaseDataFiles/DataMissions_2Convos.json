@@ -1,0 +1,3151 @@
+{
+    "missions": [{
+
+      "id": "A1.Convo.EDI",
+      "sortIndex": 9010,
+      "gameVersion": "2",
+      "missionType": "Conversation",
+      "name": "EDI",
+      "description": "Conversations with [megametracker://person?id=S3.EDI] aboard the Normandy.",
+      "inMapId": "G.N2.2.Bridge",
+      "isShowInParentMap": true,
+      "relatedLinks": ["http://masseffect.wikia.com/wiki/EDI/Unique_dialogue#Mass_Effect_2"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map 2"
+      }]
+   }, {
+      "id": "A1.Convo.Joker",
+      "sortIndex": 9010,
+      "gameVersion": "2",
+      "missionType": "Conversation",
+      "name": "Jeff \"Joker\" Moreau",
+      "description": "Conversations with [megametracker://person?id=P1.Joker] aboard the Normandy.",
+      "inMapId": "G.N2.2.Bridge",
+      "isShowInParentMap": true,
+      "relatedLinks": ["http://masseffect.wikia.com/wiki/Jeff_%22Joker%22_Moreau/Unique_dialogue#Mass_Effect_2"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map 2"
+      }]
+   }, {
+      "id": "A1.Convo.Kasumi",
+      "sortIndex": 9010,
+      "gameVersion": "2",
+      "missionType": "Conversation",
+      "name": "Kasumi Goto",
+      "description": "Conversations with [megametracker://person?id=S2.Kasumi] aboard the Normandy.",
+      "x-inMapId": "G.N2.3 TODO:",
+      "x-isShowInParentMap": true,
+      "relatedLinks": ["http://masseffect.wikia.com/wiki/Kasumi_Goto/Unique_dialogue"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map 2"
+      }]
+   }, {
+      "id": "A1.Convo.Zaeed",
+      "sortIndex": 9010,
+      "gameVersion": "2",
+      "missionType": "Conversation",
+      "name": "Zaeed Massani",
+      "description": "Conversations with [megametracker://person?id=S2.Zaeed] aboard the Normandy.",
+      "x-inMapId": "G.N2.3 TODO:",
+      "x-isShowInParentMap": true,
+      "relatedLinks": ["http://masseffect.wikia.com/wiki/Zaeed_Massani/Unique_dialogue"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map 2"
+      }]
+   }, {
+        "id": "A2.Convo.Kelly",
+        "sortIndex": 9010,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Kelly Chambers",
+        "description": "Conversations with [megametracker://person?id=P2.Chambers] aboard the Normandy.",
+        "inMapId": "G.N2.2.Map",
+        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D2.LoveKelly"],
+        "conversationRewards": [{
+            "set": {
+                "context": "During first conversation",
+                "options": [{
+                    "context": "\"The pleasure is mine.\" and \"Sure.\"",
+                    "id": "A2.Convo.Kelly.P1",
+                    "type": "Paragon",
+                    "value": 0,
+                    "trigger": "You can now address her as \"Kelly.\""
+                }, {
+                    "set": {
+                        "context": "Investigate: \"What do you think of Cerberus?\" and \"Does Cerberus hate aliens?\"",
+                        "options": [{
+                            "id": "A2.Convo.Kelly.P2",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You are very loving.\""
+                        }, {
+                            "id": "A2.Convo.Kelly.R2",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You're naive.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "Investigate: \"Are you happy here?\" and \"We won't.\"",
+                        "options": [{
+                            "id": "A2.Convo.Kelly.P3A",
+                            "type": "Paragon",
+                            "value": 0,
+                            "context": "\"I'd catch you.\"",
+                            "trigger": "Friendship track."
+                        }, {
+                            "id": "A2.Convo.Kelly.P3B",
+                            "type": "Paragon",
+                            "value": 0,
+                            "context": "\"I'd embrace you.\"",
+                            "trigger": "Romance track."
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "When Kelly worries that she was too flirty previously",
+                "options": [{
+                    "id": "A2.Convo.Kelly.P5A",
+                    "type": "Paragon",
+                    "value": 0,
+                    "context": "\"Informal is fine.\"",
+                    "trigger": "Friendship track."
+                }, {
+                    "id": "A2.Convo.Kelly.P5B",
+                    "type": "Paragon",
+                    "value": 0,
+                    "context": "\"I liked it.\"",
+                    "trigger": "Romance track."
+                }]
+            }
+        }, {
+            "set": {
+                "context": "When Kelly talks about Tali or Thane",
+                "options": [{
+                    "id": "A2.Convo.Kelly.P8B",
+                    "type": "Paragon",
+                    "value": 0,
+                    "context": "\"How so?\" and \"Are you into aliens?\"",
+                    "trigger": "Romance track."
+                }]
+            }
+        }, {
+            "context": "One of the above exchanges will lead to: \"Let's have dinner.\"",
+            "id": "A2.Convo.Kelly.P15",
+            "type": "Paragade",
+            "value": 0,
+            "paragadeValue": [5, 5],
+            "trigger": "Invite Kelly up to your cabin for dinner. She will offer to feed your fish."
+        }, {
+            "context": "After the collector ship: \"Worried? You do care.\" and \"What about me?\"",
+            "id": "A2.Convo.Kelly.P20",
+            "type": "Paragon",
+            "value": 0,
+            "trigger": "Romance track."
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }]
+    }, {
+        "id": "A2.Convo.Kelly.1",
+        "inMissionId": "A2.Convo.Kelly",
+        "sortIndex": 90101,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "Kelly introduces herself. You have several Paragon options if you explore all the Investigate options. If you want a relationship, talk with Kelly after every mission, and be nice. There are many more flirting options than the ones I've specifically called out in the conversation rewards, but they are not necessary to trigger the romance.",
+        "inMapId": "G.N2.2.Map",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Kelly.5",
+        "inMissionId": "A2.Convo.Kelly",
+        "sortIndex": 90105,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Normandy Cabin Visit",
+        "description": "Once you have completed enough of the interactions, invite Kelly up to your cabin for dinner. She will offer to feed your fish.",
+        "inMapId": "G.N2.1.Terminal",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Kelly.9",
+        "inMissionId": "A2.Convo.Kelly",
+        "sortIndex": 90109,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Normandy Cabin Visit",
+        "description": "This requires (in addition to the dinner conversation): \n - Ask Kelly about aliens when discussing Tali or Thane. \n - Have no other active love interest. \n - Save Kelly from the Collector Base, and ask her how she is doing afterwards. \n - Leave the Normandy, and come back. \n\nYou will receive a private message from Kelly. head up to your cabin and invite her up. \n\n([Source|https://www.gamefaqs.com/boards/944907-mass-effect-2/53455594])",
+        "inMapId": "G.N2.1.Terminal",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Collector Base"
+        }]
+    }, {
+        "id": "A2.Convo.Garrus",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Garrus Vakarian",
+        "description": "Conversations with [megametracker://person?id=S2.Garrus] after his recruitment aboard the Normandy.",
+        "inMapId": "G.N2.3.Battery",
+        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D2.LoveGarrus"],
+        "relatedMissionIds": ["A2.L.Garrus"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Garrus_Vakarian/Unique_dialogue#Mass_Effect_2"],
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "context": "During first conversation",
+                "options": [{
+                    "id": "A2.Convo.Garrus.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"We're not with them.\""
+                }, {
+                    "id": "A2.Convo.Garrus.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Glad you're happy here.\""
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Garrus"
+        }]
+    }, {
+        "id": "A2.Convo.Garrus.1",
+        "inMissionId": "A2.Convo.Garrus",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Convo",
+        "description": "Garrus discusses how his squad on Omega was killed.",
+        "inMapId": "G.N2.3.Battery",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Garrus.2",
+        "inMissionId": "A2.Convo.Garrus",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Garrus has located Sidonis and wants your help in taking him down.",
+        "inMapId": "G.N2.3.Battery",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Garrus"]
+    }, {
+        "id": "A2.Convo.Garrus.3",
+        "inMissionId": "A2.Convo.Garrus",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "3rd Convo",
+        "annotationNote": "Romance Option",
+        "description": "Garrus discusses managing stress when facing a tough battle.",
+        "inMapId": "G.N2.3.Battery",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Garrus"
+        }]
+    }, {
+        "id": "A2.Convo.Garrus.4",
+        "inMissionId": "A2.Convo.Garrus",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "4th Convo (FemShep)",
+        "annotationNote": "Romance Option",
+        "description": "Garrus discusses the weirdness of cross-species intercourse.",
+        "inMapId": "G.N2.3.Battery",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Garrus"
+        }]
+    }, {
+        "id": "A2.Convo.Garrus.5",
+        "inMissionId": "A2.Convo.Garrus",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo (FemShep)",
+        "annotationNote": "Romance Lock",
+        "description": "This is your last chance to lock-in with Garrus or friend-zone him. \n\nIf you talk to Mordin after this, he will offer you some medical advice on the hookup.",
+        "inMapId": "G.N2.3.Battery",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Garrus"
+        }]
+    }, {
+        "id": "A2.Convo.Grunt",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Grunt",
+        "description": "Conversations with [megametracker://person?id=S2.Grunt] after his recruitment aboard the Normandy.",
+        "inMapId": "G.N2.4.Port",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Grunt"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Grunt/Unique_dialogue"],
+        "conversationRewards": [{
+            "set": {
+                "context": "During first conversation",
+                "options": [{
+                    "id": "A2.Convo.Grunt.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"You have no reaction?\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Grunt.P2",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"And yet you became strong.\""
+                        }, {
+                            "id": "A2.Convo.Grunt.R2",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Ignore it. I need a warrior.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fourth conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Grunt.P4",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Why is that funny?\""
+                        }, {
+                            "id": "A2.Convo.Grunt.R4",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"This brutality has a point?\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Grunt.P5",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I don't like hearing this.\""
+                        }, {
+                            "id": "A2.Convo.Grunt.R5A",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Not quite, but I'm not krogan.\""
+                        }, {
+                            "id": "A2.Convo.Grunt.R5B",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"What about Garrus?\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fifth conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Grunt.P6",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You even trying to get better?\""
+                        }, {
+                            "id": "A2.Convo.Grunt.R6",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Save some for our enemies.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Grunt.P7",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"This isn't going well.\""
+                        }, {
+                            "id": "A2.Convo.Grunt.R7",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"That's what we need.\""
+                        }]
+                    }
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Grunt"
+        }]
+    }, {
+        "id": "A2.Convo.Grunt.1",
+        "inMissionId": "A2.Convo.Grunt",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Convo",
+        "description": "Grunt complains about the cargo hold as being a military target. He does not see the importance of the all things he automatically knows from [Okeer's|megametracker://person?id=O2.Okeer] imprint.",
+        "inMapId": "G.N2.4.Port",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Grunt.2",
+        "inMissionId": "A2.Convo.Grunt",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Convo",
+        "description": "Grunt is starting to make sense of his memories.",
+        "inMapId": "G.N2.4.Port",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Grunt.3",
+        "inMissionId": "A2.Convo.Grunt",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "3rd Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Grunt is confused by the undirected rage filling him. He needs help from the krogan to make sense of this stage in his development.",
+        "inMapId": "G.N2.4.Port",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Grunt"]
+    }, {
+        "id": "A2.Convo.Grunt.4",
+        "inMissionId": "A2.Convo.Grunt",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "4th Convo",
+        "description": "Grunt is pleased with his new clan. His violent tendencies have not diminished.",
+        "inMapId": "G.N2.4.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Grunt"
+        }]
+    }, {
+        "id": "A2.Convo.Grunt.5",
+        "inMissionId": "A2.Convo.Grunt",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo",
+        "description": "Grunt shares happy imprinted memories of killing people.",
+        "inMapId": "G.N2.4.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Grunt"
+        }]
+    }, {
+        "id": "A2.Convo.Jack",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Jack",
+        "description": "Conversations with [megametracker://person?id=S2.Jack] after her recruitment aboard the Normandy.",
+        "inMapId": "G.N2.4.SubDeck",
+        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D2.LoveJack"],
+        "relatedMissionIds": ["A2.L.Jack"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Jack/Unique_dialogue"],
+        "conversationRewards": [{
+            "set": {
+                "context": "During first conversation",
+                "options": [{
+                    "id": "A2.Convo.Jack.P10",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Glad they're helping.\""
+                }, {
+                    "id": "A2.Convo.Jack.P11",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"I can't let you do that.\""
+                }, {
+                    "id": "A2.Convo.Jack.P12",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Do you want better quarters?\""
+                }, {
+                    "id": "A2.Convo.Jack.P13",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"My mission is too important.\""
+                }, {
+                    "id": "A2.Convo.Jack.R14",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"You sound excited.\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During second conversation",
+                "options": [{
+                    "id": "A2.Convo.Jack.R20",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"I wouldn't joke about that.\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P21",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You don't trust anyone?\""
+                        }, {
+                            "id": "A2.Convo.Jack.R22",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You're bitter as hell.\""
+                        }]
+                    }
+                }, {
+                    "id": "A2.Convo.Jack.P23",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"You regret none of it?\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During third conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P30",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I'm curious.\""
+                        }, {
+                            "id": "A2.Convo.Jack.R30",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Answer my questions.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P31",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"What if I really care?\""
+                        }, {
+                            "id": "A2.Convo.Jack.R31",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You don't make this easy.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "context": "\"What do the tattoos mean?\" and \"No close relationships?\" and \"You must have friends.\" and \"We'll talk again.\"",
+                        "options": [{
+                            "id": "A2.Convo.Jack.P32",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"No, I want to get to know you.\" or \"You fascinate me.\""
+                        }, {
+                            "set": {
+                                "context": "\"Yes. I want you.\" (Male Shepard only.)",
+                                "options": [{
+                                    "id": "A2.Convo.Jack.R33",
+                                    "type": "Renegade",
+                                    "value": 2,
+                                    "trigger": "\"Sounds good to me.\" (and ... hookup)"
+                                }]
+                            }
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fourth conversation",
+                "options": [{
+                    "id": "A2.Convo.Jack.R40",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Make it quick.\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P41",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I'll confront them.\""
+                        }, {
+                            "id": "A2.Convo.Jack.R41",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Cerberus is different now.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P42",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Let's go.\""
+                        }, {
+                            "id": "A2.Convo.Jack.R42",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Leave it behind you.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fifth conversation",
+                "options": [{
+                    "id": "A2.Convo.Jack.R50",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Get over yourself.\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P51",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Feel like you've changed?\""
+                        }, {
+                            "id": "A2.Convo.Jack.R51",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"I need you functional.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P52A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I wanted to help you.\""
+                        }, {
+                            "id": "A2.Convo.Jack.P52B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"It's a start.\""
+                        }, {
+                            "id": "A2.Convo.Jack.R52",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Deal with it.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "isExclusiveSet": true,
+                "context": "During sixth conversation",
+                "options": [{
+                    "id": "A2.Convo.Jack.P60",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"I'm interested.\""
+                }, {
+                    "id": "A2.Convo.Jack.R60",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"So what?\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During seventh conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P70",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You have survivor's guilt?\""
+                        }, {
+                            "id": "A2.Convo.Jack.R70",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"I assume you took revenge.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "\"I'm staying right here.\"",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P71",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"We're all nuts.\""
+                        }, {
+                            "id": "A2.Convo.Jack.R71",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Your trauma is unimpressive.\""
+                        }]
+                    }
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Jack"
+        }]
+    }, {
+        "id": "A2.Convo.Jack.1",
+        "inMissionId": "A2.Convo.Jack",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Convo",
+        "description": "Jack shortly vents her anger with Cerberus.",
+        "inMapId": "G.N2.4.SubDeck",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Jack.2",
+        "inMissionId": "A2.Convo.Jack",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Convo",
+        "description": "Jack talks about the criminals she fell in with after escaping from Cerberus.",
+        "inMapId": "G.N2.4.SubDeck",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Jack.3",
+        "inMissionId": "A2.Convo.Jack",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "3rd Convo",
+        "annotationNote": "Romance Option",
+        "description": "Jack talks about her tattoos. There is an option for a quickie hookup with Jack.",
+        "inMapId": "G.N2.4.SubDeck",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Jack.4",
+        "inMissionId": "A2.Convo.Jack",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "4th Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Jack discusses her childhood in a Cerberus research facility. She has found the coordinates in the Cerberus files and she wants to go blow it up.",
+        "inMapId": "G.N2.4.SubDeck",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Jack"]
+    }, {
+        "id": "A2.Convo.Jack.5",
+        "inMissionId": "A2.Convo.Jack",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo",
+        "description": "Jack contemplates her future now that the Cerberus facility is destroyed.",
+        "inMapId": "G.N2.4.SubDeck",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Jack"
+        }]
+    }, {
+        "id": "A2.Convo.Jack.6",
+        "inMissionId": "A2.Convo.Jack",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "6th Convo",
+        "annotationNote": "Romance Option",
+        "description": "Jack rebuffs Shepard's advances.",
+        "inMapId": "G.N2.4.SubDeck",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Jack"
+        }]
+    }, {
+        "id": "A2.Convo.Jack.7",
+        "inMissionId": "A2.Convo.Jack",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "7th Convo (BroShep)",
+        "annotationNote": "Romance Option",
+        "description": "Jack reveals her last boyfriend died trying to help her.",
+        "inMapId": "G.N2.4.SubDeck",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Jack"
+        }]
+    }, {
+        "id": "A2.Convo.Jack.8",
+        "inMissionId": "A2.Convo.Jack",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "8th Convo (BroShep)",
+        "annotationNote": "Romance Lock",
+        "description": "This is your last chance to lock-in with Jack or friend-zone her. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
+        "inMapId": "G.N2.4.SubDeck",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Jack"
+        }]
+    }, {
+        "id": "A2.Convo.Jacob",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Jacob Taylor",
+        "description": "Conversations with [megametracker://person?id=S2.Jacob] aboard the Normandy.",
+        "inMapId": "G.N2.2.Armory",
+        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D2.LoveJacob"],
+        "relatedMissionIds": ["A2.L.Jacob"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Jacob_Taylor/Unique_dialogue"],
+        "conversationRewards": [{
+            "set": {
+                "context": "During first conversation",
+                "options": [{
+                    "id": "A2.Convo.Jacob.R10",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Bringing you wasn't my choice.\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P11A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Glad to have you aboard.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.P11B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I appreciate your honesty.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R11",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Do your job. Nothing more.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During second conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P20",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Don't be so formal, Jacob.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R20",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"I need a reason?\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P21A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You're still in top shape.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.P21B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I like that you took a stand.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R21",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"They lost a good man.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "(Male Shepard only.)",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "set": {
+                                "context": "\"I like that you took a stand.\" or \"They lost a good man.\"",
+                                "isExclusiveSet": true,
+                                "options": [{
+                                    "id": "A2.Convo.Jacob.P22",
+                                    "type": "Paragon",
+                                    "value": 2,
+                                    "trigger": "\"We don't need them.\""
+                                }, {
+                                    "id": "A2.Convo.Jacob.R22",
+                                    "type": "Renegade",
+                                    "value": 2,
+                                    "trigger": "\"Can't tell people everything.\""
+                                }]
+                            }
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "(Female Shepard only.)",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "context": "\"You're still in top shape.\"",
+                            "id": "A2.Convo.Jacob.P23",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"We don't need them.\""
+                        }, {
+                            "set": {
+                                "context": "\"I like that you took a stand.\" or \"They lost a good man.\"",
+                                "isExclusiveSet": true,
+                                "options": [{
+                                    "id": "A2.Convo.Jacob.P24",
+                                    "type": "Paragon",
+                                    "value": 2,
+                                    "trigger": "\"Thanks for thinking of me.\""
+                                }, {
+                                    "id": "A2.Convo.Jacob.R24",
+                                    "type": "Renegade",
+                                    "value": 2,
+                                    "trigger": "\"You think I'm perfect.\""
+                                }]
+                            }
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "(Female Shepard only.)",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P25",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I make you nervous?\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R25",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"For now.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During third conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P30A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You left a note with Chambers.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.P30B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Something on your mind?\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R30",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"I decide what's personal.\""
+                        }]
+                    }
+                }, {
+                    "id": "A2.Convo.Jacob.R31",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Get to the point.\""
+                }, {
+                    "id": "A2.Convo.Jacob.P32",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"You don't want to find him?\""
+                }]
+            }
+        }, {
+            "set": {
+                "isExclusiveSet": true,
+                "context": "During fourth conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P40",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Good job.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R40",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"We'd better be.\""
+                        }]
+                    }
+                }, {
+                    "id": "A2.Convo.Jacob.R41",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Still toying with us?\""
+                }, {
+                    "id": "A2.Convo.Jacob.R42",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"To help or mess with him?\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P43",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You're welcome.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R43",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"One time only.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fifth conversation (no prior romance)",
+                "options": [{
+                    "set": {
+                        "context": "\"The ship needs a bar.\"",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P50",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"It usually is.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R50",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"I wouldn't know.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "\"We can't let our guard down.\"",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P51",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I can lie if you want.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R51",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Toughen up.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "(Female Shepard only.) During fifth conversation (prior romance)",
+                "options": [{
+                    "set": {
+                        "context": "\"The ship needs a bar.\"",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P52",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"It usually is.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R52",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"I wouldn't know.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P53",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Are you all right?\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R53",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Yes, move on.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "\"Are you all right?\" above",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P54A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Your dad should matter more.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.P54B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You're hurt. I want to help.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R54",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Just being nosey.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P55",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"We all carry something.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R55",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"That's just naive denial.\" (blocks any romance)"
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "\"We all carry something.\" above",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jacob.P56A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Loneliness.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.P56B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Survivor guilt.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.P56C",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Nothing.\""
+                        }, {
+                            "id": "A2.Convo.Jacob.R56A",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"None of your business.\" (blocks any romance)"
+                        }, {
+                            "id": "A2.Convo.Jacob.R56B",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"The burden of command.\""
+                        }]
+                    }
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Freedom's Progress"
+        }]
+    }, {
+        "id": "A2.Convo.Jacob.1",
+        "inMissionId": "A2.Convo.Jacob",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Convo",
+        "description": "Jacob admits to Cerberus' checkered past, and makes clear that he won't do anything he finds objectionable for them or for you.",
+        "inMapId": "G.N2.2.Armory",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Jacob.2",
+        "inMissionId": "A2.Convo.Jacob",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Convo",
+        "description": "Jacob discusses why he joined Cerberus.",
+        "inMapId": "G.N2.2.Armory",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Jacob.3",
+        "inMissionId": "A2.Convo.Jacob",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "3rd Convo",
+        "annotationNote": "Romance Option",
+        "description": "Jacob discusses his family (or lack thereof) and hints that he and Miranda were involved, but are not any longer.",
+        "inMapId": "G.N2.2.Armory",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Jacob.4",
+        "inMissionId": "A2.Convo.Jacob",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "4th Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Jacob reveals that his father's ship went missing 10 years ago. Cerberus has finally uncovered a lead to its crash site and Jacob wants to investigate.",
+        "inMapId": "G.N2.2.Armory",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Jacob"]
+    }, {
+        "id": "A2.Convo.Jacob.5",
+        "inMissionId": "A2.Convo.Jacob",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo",
+        "annotationNote": "Romance Option",
+        "description": "(No prior romance) Jacob complains about the lack of popular support in opposing the Collectors. \n\n(Prior romance) Jacob shys away from talking about his father.",
+        "inMapId": "G.N2.2.Armory",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Jacob"
+        }]
+    }, {
+        "id": "A2.Convo.Jacob.6",
+        "inMissionId": "A2.Convo.Jacob",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "6th Convo (FemShep)",
+        "annotationNote": "Romance Option",
+        "description": "Jacob sweet talks you.",
+        "inMapId": "G.N2.2.Armory",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Jacob"
+        }]
+    }, {
+        "id": "A2.Convo.Jacob.7",
+        "inMissionId": "A2.Convo.Jacob",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "7th Convo (FemShep)",
+        "annotationNote": "Romance Lock",
+        "description": "This is your last chance to lock-in with Jacob or friend-zone him. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
+        "inMapId": "G.N2.2.Armory",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Jacob"
+        }]
+    }, {
+        "id": "A2.Convo.Legion",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Legion",
+        "description": "Conversations with [megametracker://person?id=S2.Legion] after its recruitment aboard the Normandy.",
+        "inMapId": "G.N2.3.Core",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Legion"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Legion/Unique_dialogue"],
+        "conversationRewards": [{
+            "set": {
+                "context": "During fifth conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Legion.P1A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Do you hold a grudge?\""
+                        }, {
+                            "id": "A2.Convo.Legion.P1B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Why couldn't you coexist?\""
+                        }, {
+                            "id": "A2.Convo.Legion.R1",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"I bet you attacked them first.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Legion.P2",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You're avoiding the problem.\""
+                        }, {
+                            "id": "A2.Convo.Legion.R2A",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"And that's acceptable?\""
+                        }, {
+                            "id": "A2.Convo.Legion.R2B",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Of course they hate you.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During sixth conversation",
+                "options": [{
+                    "set": {
+                        "context": "\"Questions of existence?\"",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Legion.P3",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"A surprising interest.\""
+                        }, {
+                            "id": "A2.Convo.Legion.R3",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Are you mocking us?\""
+                        }]
+                    }
+                }, {
+                    "id": "A2.Convo.Legion.R4",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"That sounds bleak.\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Legion.P5",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"The heretics wanted that.\""
+                        }, {
+                            "id": "A2.Convo.Legion.R5",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You're becoming a Reaper?\""
+                        }]
+                    }
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Legion"
+        }]
+    }, {
+        "id": "A2.Convo.Legion.1",
+        "inMissionId": "A2.Convo.Legion",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Convo",
+        "description": "",
+        "inMapId": "G.N2.3.Core",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Legion.2",
+        "inMissionId": "A2.Convo.Legion",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "",
+        "inMapId": "G.N2.3.Core",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Legion"]
+    }, {
+        "id": "A2.Convo.Legion.3",
+        "inMissionId": "A2.Convo.Legion",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "3rd Convo",
+        "description": "",
+        "inMapId": "G.N2.3.Core",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Legion"
+        }]
+    }, {
+        "id": "A2.Convo.Legion.4",
+        "inMissionId": "A2.Convo.Legion",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "4th Convo",
+        "description": "",
+        "inMapId": "G.N2.3.Core",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Legion"
+        }]
+    }, {
+        "id": "A2.Convo.Legion.5",
+        "inMissionId": "A2.Convo.Legion",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo",
+        "description": "",
+        "inMapId": "G.N2.3.Core",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Legion"
+        }]
+    }, {
+        "id": "A2.Convo.Legion.6",
+        "inMissionId": "A2.Convo.Legion",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "6th Convo",
+        "description": "",
+        "inMapId": "G.N2.3.Core",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Legion"
+        }]
+    }, {
+        "id": "A2.Convo.Miranda",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Miranda Lawson",
+        "description": "Conversations with [megametracker://person?id=S2.Miranda] aboard the Normandy.",
+        "inMapId": "G.N2.3.Cabin",
+        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D2.LoveMiranda"],
+        "relatedMissionIds": ["A2.L.Miranda"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Miranda_Lawson/Unique_dialogue"],
+        "conversationRewards": [{
+            "set": {
+                "context": "During second conversation",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.Miranda.P10",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"I'm not Cerberus.\""
+                }, {
+                    "id": "A2.Convo.Miranda.R10",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"This is my operation.\""
+                }]
+            }
+        }, {
+            "context": "During third conversation",
+            "id": "A2.Convo.Miranda.P30",
+            "type": "Paragon",
+            "value": 2,
+            "trigger": "\"Of course.\""
+        }, {
+            "set": {
+                "context": "During fourth conversation",
+                "options": [{
+                    "id": "A2.Convo.Miranda.P40",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"What about Oriana?\""
+                }, {
+                    "id": "A2.Convo.Miranda.P41",
+                    "type": "Paragon",
+                    "value": 2,
+                    "context": "(Male Shepard)",
+                    "trigger": "\"It's nice to see you smile\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fifth conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Miranda.P50",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Cerberus is wrong.\""
+                        }, {
+                            "id": "A2.Convo.Miranda.R50",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"So do I.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Miranda.P51",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"And you.\""
+                        }, {
+                            "id": "A2.Convo.Miranda.R51",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You sound unhappy.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Miranda.P52",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You always bring that up.\""
+                        }, {
+                            "id": "A2.Convo.Miranda.R52",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"This again?\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "(Male Shepard only)",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Miranda.P53",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You are hard to compliment.\""
+                        }, {
+                            "id": "A2.Convo.Miranda.R53",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You're jealous.\" (with opportunity to kiss her)"
+                        }]
+                    }
+                }, {
+                    "context": "(Female Shepard only)",
+                    "id": "A2.Convo.Miranda.P54",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"That's not true.\""
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Freedom's Progress"
+        }]
+    }, {
+        "id": "A2.Convo.Miranda.1",
+        "inMissionId": "A2.Convo.Miranda",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Convo",
+        "description": "Miranda discusses her role on the Normandy as the Illusive Man's agent. She promotes Cerberus' humanity-first agenda. She reveals that she was extensively enhanced genetically.",
+        "inMapId": "G.N2.3.Cabin",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Miranda.2",
+        "inMissionId": "A2.Convo.Miranda",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Convo",
+        "description": "Miranda talks about her wealthy but controlling father and how Cerberus helped her to escape him.",
+        "inMapId": "G.N2.3.Cabin",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Miranda.3",
+        "inMissionId": "A2.Convo.Miranda",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "3rd Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Miranda reveals that she has a sister - or rather, a younger genetic clone - whom she has hidden from her father. But he has tracked her down and Miranda needs your help to relocate her.",
+        "inMapId": "G.N2.3.Cabin",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Miranda"]
+    }, {
+        "id": "A2.Convo.Miranda.4",
+        "inMissionId": "A2.Convo.Miranda",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "4th Convo",
+        "annotationNote": "Romance Option",
+        "description": "Miranda thanks you for helping to relocate Oriana.",
+        "inMapId": "G.N2.3.Cabin",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Miranda"
+        }]
+    }, {
+        "id": "A2.Convo.Miranda.5",
+        "inMissionId": "A2.Convo.Miranda",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo",
+        "annotationNote": "Romance Option",
+        "description": "Miranda continues to defend Cerberus. She admits that she sees all her successes as due to her genetics rather than any merit on her part. BroShep can kiss her ([https://www.youtube.com/watch?v=N_8-bm9cY6o]).",
+        "inMapId": "G.N2.3.Cabin",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Miranda"
+        }]
+    }, {
+        "id": "A2.Convo.Miranda.6",
+        "inMissionId": "A2.Convo.Miranda",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "6th Convo (BroShep)",
+        "annotationNote": "Romance Option",
+        "description": "Miranda complains that this romance is distracting from the mission.",
+        "inMapId": "G.N2.3.Cabin",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Miranda"
+        }]
+    }, {
+        "id": "A2.Convo.Miranda.7",
+        "inMissionId": "A2.Convo.Miranda",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "7th Convo (BroShep)",
+        "annotationNote": "Romance Lock",
+        "description": "This is your last chance to lock-in with Miranda or friend-zone her. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
+        "inMapId": "G.N2.3.Cabin",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Miranda"
+        }]
+    }, {
+        "id": "A2.Convo.Mordin",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Mordin Solus",
+        "description": "Conversations with [megametracker://person?id=S2.Mordin] after his recruitment aboard the Normandy.",
+        "inMapId": "G.N2.2.Lab",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Mordin"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Mordin_Solus/Unique_dialogue"],
+        "conversationRewards": [{
+            "set": {
+                "context": "During second conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Mordin.P20",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"What did you do?\""
+                        }, {
+                            "id": "A2.Convo.Mordin.R20",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"I suspected as much.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Mordin.P21",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"This is good news.\""
+                        }, {
+                            "id": "A2.Convo.Mordin.R21",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"This is a major threat.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Mordin.P22A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"What you did was wrong.\""
+                        }, {
+                            "id": "A2.Convo.Mordin.P22B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Thank you for telling me.\""
+                        }, {
+                            "id": "A2.Convo.Mordin.R22",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You did the right thing.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During third conversation",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.Mordin.P30",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Remind me.\" and \"That's impressive work.\" and \"That's horrific!\" and \"I don't buy that.\""
+                }, {
+                    "id": "A2.Convo.Mordin.R30",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Remind me.\" and \"That's impressive work.\" and \"Damn right it did.\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fifth conversation",
+                "options": [{
+                    "context": "\"I'm interested.\"",
+                    "id": "A2.Convo.Mordin.P50",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Can they be saved?\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During sixth conversation",
+                "options": [{
+                    "set": {
+                        "context": "(No love interest)",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Mordin.P60A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You're joking with me.\""
+                        }, {
+                            "id": "A2.Convo.Mordin.P60B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Thanks, anyway.\""
+                        }, {
+                            "id": "A2.Convo.Mordin.R60",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"I'm not interested.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "(A love interest)",
+                        "options": [{
+                            "id": "A2.Convo.Mordin.R61",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"What? I'm not doing that!\""
+                        }, {
+                            "context": "(Tali, Garrus or Thane love interest)",
+                            "id": "A2.Convo.Mordin.R62",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I care about Tali/Garrus/Thane.\""
+                        }, {
+                            "set": {
+                                "context": "\"Give me your advice.\"",
+                                "isExclusiveSet": true,
+                                "options": [{
+                                    "id": "A2.Convo.Mordin.P63",
+                                    "type": "Paragon",
+                                    "value": 2,
+                                    "trigger": "\"You're joking with me.\""
+                                }, {
+                                    "id": "A2.Convo.Mordin.R63",
+                                    "type": "Renegade",
+                                    "value": 2,
+                                    "trigger": "\"Don't worry yourself.\""
+                                }]
+                            }
+                        }]
+                    }
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Mordin"
+        }]
+    }, {
+        "id": "A2.Convo.Mordin.1",
+        "inMissionId": "A2.Convo.Mordin",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Convo",
+        "description": "Mordin is very impressed with the Normandy's facilities. He talks more about the salarian STG and the Genophage. He mocks [megametracker://person?id=P1.Kirrahe] a bit, if you bring up that you met him in Game 1.",
+        "inMapId": "G.N2.2.Lab",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Mordin.2",
+        "inMissionId": "A2.Convo.Mordin",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Convo",
+        "description": "Mordin talks more about the Genophage and how his team had to modify it once the krogan evolved to resist it. He refuses to apologize for this work.",
+        "inMapId": "G.N2.2.Lab",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Mordin.3",
+        "inMissionId": "A2.Convo.Mordin",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "3rd Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Mordin reveals that a member of his STG team, [megametracker://person?id=O2.Maelon], was taken by the krogan and needs rescue.",
+        "inMapId": "G.N2.2.Lab",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.Loyalty.Mordin"]
+    }, {
+        "id": "A2.Convo.Mordin.4",
+        "inMissionId": "A2.Convo.Mordin",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "4th Convo",
+        "description": "Mordin vents briefly about Maelon's actions, but is not terribly aggrieved.",
+        "inMapId": "G.N2.2.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Mordin"
+        }]
+    }, {
+        "id": "A2.Convo.Mordin.5",
+        "inMissionId": "A2.Convo.Mordin",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo",
+        "description": "Mordin explains his theory on the protheans evolving into the Collectors. He also sings Gilbert & Sullivan \"I am the very model of scientist salarian.\" (It is awesome.)",
+        "inMapId": "G.N2.2.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Mordin"
+        }]
+    }, {
+        "id": "A2.Convo.Mordin.6",
+        "inMissionId": "A2.Convo.Mordin",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "6th Convo",
+        "description": "If you are in a relationship, Mordin will offer some advice and suggestions on your upcoming intercourse. If you are not, he will preemptively decline a relationship between the two of you.",
+        "inMapId": "G.N2.2.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Mordin"
+        }]
+    }, {
+        "id": "A2.Convo.Mordin.7",
+        "inMissionId": "A2.Convo.Mordin",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "7th Convo",
+        "description": "Mordin discusses his family and explains that they know nothing about his work. He also explains that salarians have a short life span.",
+        "inMapId": "G.N2.2.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Mordin"
+        }]
+    }, {
+        "id": "A2.Convo.Samara",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Samara/Morinth",
+        "description": "Conversations with [megametracker://person?id=S2.Samara] (or Morinth) after her recruitment aboard the Normandy.",
+        "inMapId": "G.N2.3.Starboard",
+        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D2.LoveSamara"],
+        "relatedMissionIds": ["A2.L.Samara"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Samara/Unique_dialogue"],
+        "conversationRewards": [{
+            "set": {
+                "context": "During third conversation",
+                "options": [{
+                    "id": "A2.Convo.Samara.R30",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Sounds like you.\""
+                }, {
+                    "id": "A2.Convo.Samara.P31",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"I can see why she's dangerous.\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Samara.P32",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Let's go get her.\""
+                        }, {
+                            "id": "A2.Convo.Samara.R32",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"I'll think about it.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Samara.P33",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Samara. I'm so sorry.\""
+                        }, {
+                            "id": "A2.Convo.Samara.R33",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You should have told me.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fourth conversation",
+                "options": [{
+                    "set": {
+                        "context": "If Morinth was killed",
+                        "options": [{
+                            "id": "A2.Convo.Samara.P40",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Don't be fatalistic.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "context": "If Morinth escaped",
+                        "options": [{
+                            "id": "A2.Convo.Samara.P41",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I'm sorry.\""
+                        }, {
+                            "id": "A2.Convo.Samara.R41",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"This was a waste of time.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fifth conversation",
+                "options": [{
+                    "id": "A2.Convo.Samara.P50",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"You make it sound final.\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Samara.P51",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"We'll get through it.\""
+                        }, {
+                            "id": "A2.Convo.Samara.R51",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"The mission is paramount.\""
+                        }]
+                    }
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Samara"
+        }]
+    }, {
+        "id": "A2.Convo.Samara.1",
+        "inMissionId": "A2.Convo.Samara",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Convo",
+        "description": "Samara talks about the loneliness of her calling, but mostly avoids reavealing anything.",
+        "inMapId": "G.N2.3.Starboard",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Samara.2",
+        "inMissionId": "A2.Convo.Samara",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Convo",
+        "description": "Samara discusses the role of the Justicar and the brutality of her code.",
+        "inMapId": "G.N2.3.Starboard",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Samara.3",
+        "inMissionId": "A2.Convo.Samara",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "3rd Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Samara reveals that she is hunting is her daughter Morinth, one of a dangerous breed of killers the asari have named the \"Ardat-Yakshi,\" who consume their victims when mating.",
+        "inMapId": "G.N2.3.Starboard",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Samara"]
+    }, {
+        "id": "A2.Convo.Samara.4",
+        "inMissionId": "A2.Convo.Samara",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "4th Convo",
+        "description": "Samara grieves her daughter's death. \n\nIf you let Morinth live, then Morinth will reveal that she disliked Samara and is not sad she is dead.",
+        "inMapId": "G.N2.3.Starboard",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Samara"
+        }]
+    }, {
+        "id": "A2.Convo.Samara.5",
+        "inMissionId": "A2.Convo.Samara",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo (Samara)",
+        "description": "Samara admits that she does not think the squad will make it through the final mission.",
+        "inMapId": "G.N2.3.Starboard",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Samara"
+        }]
+    }, {
+        "id": "A2.Convo.Samara.6",
+        "inMissionId": "A2.Convo.Samara",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "6th Convo (Samara)",
+        "annotationNote": "Romance Option",
+        "description": "Samara rebuffs Shepard's advances.",
+        "inMapId": "G.N2.3.Starboard",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Samara"
+        }]
+    }, {
+        "id": "A2.Convo.Samara.7",
+        "inMissionId": "A2.Convo.Samara",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo (Morinth)",
+        "annotationNote": "Romance Lock",
+        "description": "Morinth insists she won't kill you if you mate. But then she does.",
+        "inMapId": "G.N2.3.Starboard",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Collector Base"
+        }]
+    }, {
+        "id": "A2.Convo.Tali",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Tali'Zorah",
+        "description": "Conversations with [megametracker://person?id=S2.Tali] after her recruitment aboard the Normandy.",
+        "inMapId": "G.N2.4.Station",
+        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D2.LoveTali", "D2.RaelZorahReputation"],
+        "relatedMissionIds": ["A2.L.Tali"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Tali%27Zorah_nar_Rayya/Unique_dialogue#Mass_Effect_2"],
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "context": "During first conversation",
+                "options": [{
+                    "id": "A2.Convo.Tali.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"I don't trust them.\""
+                }, {
+                    "id": "A2.Convo.Tali.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"They're on our side.\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During third conversation",
+                "options": [{
+                    "set": {
+                        "context": "Tali is exonerated by implicating her father",
+                        "options": [{
+                            "set": {
+                                "isExclusiveSet": true,
+                                "options": [{
+                                    "id": "A2.Convo.Tali.P30",
+                                    "type": "Paragon",
+                                    "value": 2,
+                                    "trigger": "\"I wanted to help you.\""
+                                }, {
+                                    "id": "A2.Convo.Tali.R30",
+                                    "type": "Renegade",
+                                    "value": 2,
+                                    "trigger": "\"You wanted this too.\""
+                                }]
+                            }
+                        }, {
+                            "id": "A2.Convo.Tali.P31",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I'm so sorry, Tali.\""
+                        }]
+                    }
+                }, {
+                    "context": "Tali is exonerated without implicating her father",
+                    "id": "A2.Convo.Tali.P32",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"You deserved better.\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fourth conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "context": "\"Suited life sounds difficult.\"",
+                        "options": [{
+                            "id": "A2.Convo.Tali.P4",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I trust you, too.\""
+                        }, {
+                            "id": "A2.Convo.Tali.R4",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You're embarrassed?\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fifth conversation",
+                "options": [{
+                    "set": {
+                        "context": "\"I want to be with you.\"",
+                        "options": [{
+                            "id": "A2.Convo.Tali.P5",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Don't take too long.\""
+                        }]
+                    }
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Tali"
+        }]
+    }, {
+        "id": "A2.Convo.Tali.1",
+        "inMissionId": "A2.Convo.Tali",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Convo",
+        "description": "Tali discusses the quarian political hierarchy and what the quarians have against Cerberus.",
+        "inMapId": "G.N2.4.Station",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Tali.2",
+        "inMissionId": "A2.Convo.Tali",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Tali reveals that the quarian Admiralty Board has accused her of treason and she must return to stand trial. She has no idea what the charges are.",
+        "inMapId": "G.N2.4.Station",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Tali"]
+    }, {
+        "id": "A2.Convo.Tali.3",
+        "inMissionId": "A2.Convo.Tali",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "3rd Convo",
+        "description": "If you revealed that Tali's father committed treason to save Tali, she is furious and refuses to speak to you again. If you did not, she apologizes for dragging you into the trial and dicusses the power vacuum created by her father's death.",
+        "inMapId": "G.N2.4.Station",
+        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D2.RaelZorahReputation"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Tali"
+        }]
+    }, {
+        "id": "A2.Convo.Tali.4",
+        "inMissionId": "A2.Convo.Tali",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "4th Convo",
+        "annotationNote": "Romance Option",
+        "description": "Tali discusses the risks inherent in the weakened quarian immune system.",
+        "inMapId": "G.N2.4.Station",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Tali"
+        }]
+    }, {
+        "id": "A2.Convo.Tali.5",
+        "inMissionId": "A2.Convo.Tali",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo (BroShep)",
+        "annotationNote": "Romance Option",
+        "description": "Tali apologizes for hitting on you before.",
+        "inMapId": "G.N2.4.Station",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Tali"
+        }]
+    }, {
+        "id": "A2.Convo.Tali.6",
+        "inMissionId": "A2.Convo.Tali",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "6th Convo (BroShep)",
+        "annotationNote": "Romance Lock",
+        "description": "This is your last chance to lock-in with Tali or friend-zone her. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
+        "inMapId": "G.N2.4.Station",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Tali"
+        }]
+    }, {
+        "id": "A2.Convo.Thane",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Thane Krios",
+        "description": "Conversations with [megametracker://person?id=S2.Thane] after his recruitment aboard the Normandy.",
+        "inMapId": "G.N2.3.Support",
+        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D2.LoveThane"],
+        "relatedMissionIds": ["A2.L.Thane"],
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Thane_Krios/Unique_dialogue"],
+        "conversationRewards": [{
+            "set": {
+                "context": "During first conversation",
+                "options": [{
+                    "id": "A2.Convo.Thane.P10",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Can we help?\""
+                }]
+            }
+        }, {
+            "set": {
+                "isExclusiveSet": true,
+                "context": "During second conversation",
+                "options": [{
+                    "id": "A2.Convo.Thane.P20",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"You're not a typical assassin.\""
+                }, {
+                    "id": "A2.Convo.Thane.R20",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"You don't seem confident.\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During third conversation",
+                "options": [{
+                    "id": "A2.Convo.Thane.P30",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Every pang of guilt.\""
+                }, {
+                    "id": "A2.Convo.Thane.P31",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"My gun doesn't have free will.\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Thane.P32",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"That's irresponsible.\""
+                        }, {
+                            "id": "A2.Convo.Thane.R32",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"That's convenient.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "context": "\"You're lonely.\"",
+                        "options": [{
+                            "id": "A2.Convo.Thane.P33A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Just a friend?\" or \"You're a good man, Thane.\""
+                        }, {
+                            "id": "A2.Convo.Thane.P33B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"It's never too late to change.\""
+                        }, {
+                            "id": "A2.Convo.Thane.R33",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"That a 'poor me' I hear?\""
+                        }]
+                    }
+                }, {
+                    "id": "A2.Convo.Thane.R34",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"It's just business.\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fourth conversation",
+                "options": [{
+                    "set": {
+                        "context": "\"That's not what I expected.\"",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Thane.P40",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Why didn't you take him?\""
+                        }, {
+                            "id": "A2.Convo.Thane.R40",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You abandoned him.\""
+                        }]
+                    }
+                }, {
+                    "id": "A2.Convo.Thane.R41",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Get on with it.\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During fifth conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Thane.P50",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Yes, but I could wait.\""
+                        }, {
+                            "id": "A2.Convo.Thane.R50",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"No kidding.\""
+                        }]
+                    }
+                }, {
+                    "id": "A2.Convo.Thane.R51",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"You were careless.\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Thane.P52",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Your body did. Not your soul.\""
+                        }, {
+                            "id": "A2.Convo.Thane.R52",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"I would have, too.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Thane.P53A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You're my crew.\""
+                        }, {
+                            "id": "A2.Convo.Thane.P53B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "context": "(Female Shepard only)",
+                            "trigger": "\"I want you, Thane.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During sixth conversation",
+                "options": [{
+                    "id": "A2.Convo.Thane.R60",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Don't I always?\""
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Thane.P61",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I'm happy for you.\""
+                        }, {
+                            "id": "A2.Convo.Thane.R61",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Don't leave it yet.\""
+                        }]
+                    }
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Thane"
+        }]
+    }, {
+        "id": "A2.Convo.Thane.1",
+        "inMissionId": "A2.Convo.Thane",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Convo",
+        "description": "Thane discusses his terminal illness, Kepler Syndrome.",
+        "inMapId": "G.N2.3.Support",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Thane.2",
+        "inMissionId": "A2.Convo.Thane",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Convo",
+        "description": "Thane discusses his career as an assassin and his species' debt to the hanar.",
+        "inMapId": "G.N2.3.Support",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Thane.3",
+        "inMissionId": "A2.Convo.Thane",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "3rd Convo",
+        "description": "Thane reveals that drell have perfect memories.",
+        "inMapId": "G.N2.3.Support",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Thane.4",
+        "inMissionId": "A2.Convo.Thane",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "4th Convo",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Thane reveals that he abandoned his son when his wife died, and now Kolyat has decided to become an assassin. Thane wants to prevent this.",
+        "inMapId": "G.N2.3.Support",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Thane"]
+    }, {
+        "id": "A2.Convo.Thane.5",
+        "inMissionId": "A2.Convo.Thane",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo",
+        "annotationNote": "Romance Option",
+        "description": "Thane discusses his wife, how he met her and how she was killed to get to him.",
+        "inMapId": "G.N2.3.Support",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Thane"
+        }]
+    }, {
+        "id": "A2.Convo.Thane.6",
+        "inMissionId": "A2.Convo.Thane",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "6th Convo (FemShep)",
+        "annotationNote": "Romance Option",
+        "description": "Thane explains his nickname for you, \"siha,\" is a warrior-angel, and it is how he viewed his wife, and now how he sees you.",
+        "inMapId": "G.N2.3.Support",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Thane"
+        }]
+    }, {
+        "id": "A2.Convo.Thane.7",
+        "inMissionId": "A2.Convo.Thane",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "7th Convo (FemShep)",
+        "annotationNote": "Romance Lock",
+        "description": "This is your last chance to lock-in with Thane or friend-zone him. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
+        "inMapId": "G.N2.3.Support",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Thane"
+        }]
+    }, {
+        "id": "A2.Convo.Disputes",
+        "sortIndex": 9050,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Normandy Arguments",
+        "description": "Disputes between squad members.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Freedom's Progress"
+        }]
+    }, {
+        "id": "A2.Convo.MirandaJack",
+        "inMissionId": "A2.Convo.Disputes",
+        "sortIndex": 9050,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Argument: ",
+        "name": "Jack vs Miranda",
+        "description": "",
+        "inMapId": "G.N2.2.Briefing",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "context": "Resolving the dispute while maintaining both squad members loyalty",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.JackMiranda.P1",
+                    "type": "Paragon",
+                    "value": 15,
+                    "trigger": "\"This is a distraction.\""
+                }, {
+                    "id": "A2.Convo.JackMiranda.R1",
+                    "type": "Renegade",
+                    "value": 15,
+                    "trigger": "\"This ends now!\""
+                }, {
+                    "set": {
+                        "context": "\"Back off, Miranda.\" and then returning to speak to Miranda",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.JackMiranda.P5",
+                            "type": "Paragon",
+                            "value": 15,
+                            "trigger": "\"Be the better woman.\""
+                        }, {
+                            "id": "A2.Convo.JackMiranda.R5",
+                            "type": "Renegade",
+                            "value": 15,
+                            "trigger": "\"Don't give me that crap.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "\"Too bad, Jack.\" and then returning to speak to Jack",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.JackMiranda.P10",
+                            "type": "Paragon",
+                            "value": 15,
+                            "trigger": "\"It was lip service.\""
+                        }, {
+                            "id": "A2.Convo.JackMiranda.R10",
+                            "type": "Renegade",
+                            "value": 15,
+                            "trigger": "\"I like you angry.\""
+                        }]
+                    }
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Miranda and Jack"
+        }]
+    }, {
+        "id": "A2.Convo.TaliLegion",
+        "inMissionId": "A2.Convo.Disputes",
+        "sortIndex": 9050,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Argument: ",
+        "name": "Tali vs Legion",
+        "description": "",
+        "inMapId": "G.N2.2.Briefing",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "context": "Resolving the dispute while maintaining both squad members loyalty",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.TaliLegion.P1",
+                    "type": "Paragon",
+                    "value": 15,
+                    "trigger": "\"You are both right.\""
+                }, {
+                    "id": "A2.Convo.TaliLegion.R1",
+                    "type": "Renegade",
+                    "value": 15,
+                    "trigger": "\"Knock this crap off.\""
+                }, {
+                    "set": {
+                        "context": "\"Back off, Tali.\" and then returning to speak to Tali",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.TaliLegion.P5",
+                            "type": "Paragon",
+                            "value": 15,
+                            "trigger": "\"We need Legion.\""
+                        }, {
+                            "id": "A2.Convo.TaliLegion.R5",
+                            "type": "Renegade",
+                            "value": 15,
+                            "trigger": "\"He's not a pet.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "\"Legion, stop transmitting.\" and then returning to speak to Legion",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.TaliLegion.P10",
+                            "type": "Paragon",
+                            "value": 15,
+                            "trigger": "\"You're right, I am sorry.\""
+                        }, {
+                            "id": "A2.Convo.TaliLegion.R10",
+                            "type": "Renegade",
+                            "value": 15,
+                            "trigger": "\"I lied to her.\""
+                        }]
+                    }
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Tali and Legion"
+        }]
+
+    }, {
+        "id": "A2.Convo.Shops",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Shop Discounts",
+        "description": "Conversations with shopowners.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Freedom's Progress"
+        }]
+    }, {
+        "id": "A2.Convo.CitadelSouvenirs",
+        "inMissionId": "A2.Convo.Shops",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Citadel Souvenirs Discount",
+        "description": "Convince Deleia Sanassi to give you a discount at the Citadel Souvenirs store.",
+        "inMapId": "G.C2.27.Souvenirs",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.CitadelSouvenirs.P1A",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm Deleia_*",
+                    "trigger": "\"Want an endorsement?\""
+                }, {
+                    "id": "A2.Convo.CitadelSouvenirs.P1B",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "(If re-instated as a Spectre)",
+                    "trigger": "\"I'm a Spectre\""
+                }, {
+                    "id": "A2.Convo.CitadelSouvenirs.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate Deleia_*",
+                    "trigger": "(Accuse her of classism.)"
+                }]
+            }
+        }]
+    }, {
+        "id": "A2.Convo.RodamExpeditions",
+        "inMissionId": "A2.Convo.Shops",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Rodam Expeditions Discount",
+        "description": "Convince Etarn Tiron to give you a discount at the Rodam Expeditions store.",
+        "inMapId": "G.C2.28.Rodam",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.RodamExpeditions.P1",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm Etarn_*",
+                    "trigger": "\"Want an endorsement?\" or \"I'd like a discount.\""
+                }, {
+                    "id": "A2.Convo.RodamExpeditions.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate Etarn_*",
+                    "trigger": "\"You should give me a discount.\" or \"Give me a discount.\""
+                }]
+            }
+        }]
+    }, {
+        "id": "A2.Convo.SirtaFoundation",
+        "inMissionId": "A2.Convo.Shops",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Sirta Foundation Discount",
+        "description": "Convince Kian Louros to give you a discount at the Sirta Foundation store.",
+        "inMapId": "G.C2.26.Sirta",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.SirtaFoundation.P1",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm Kian_*",
+                    "trigger": "\"Want an endorsement?\""
+                }, {
+                    "id": "A2.Convo.SirtaFoundation.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate Kian_*",
+                    "trigger": "\"You should give me a discount.\""
+                }]
+            }
+        }]
+    }, {
+        "id": "A2.Convo.SaronisApplications",
+        "inMissionId": "A2.Convo.Shops",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Saronis Applications Discount",
+        "description": "Convince Marab to give you a discount at the Saronis Applications store.",
+        "inMapId": "G.C2.26.Saronis",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.SaronisApplications.P1",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm Marab_*",
+                    "trigger": "\"Want an endorsement?\""
+                }, {
+                    "id": "A2.Convo.SaronisApplications.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate Marab_*",
+                    "trigger": "\"You should give me a discount.\""
+                }]
+            }
+        }]
+    }, {
+        "id": "A2.Convo.SerriceTechnology",
+        "inMissionId": "A2.Convo.Shops",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Serrice Technology Discount",
+        "description": "Convince Hermia to give you a discount at the Serrice Technology store.",
+        "inMapId": "G.Ter.Cre.Tas.Ill.1.Serrice",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.SerriceTechnology.P1",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm Hermia_*",
+                    "trigger": "\"I'm a big spender.\""
+                }, {
+                    "id": "A2.Convo.SerriceTechnology.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate Hermia_*",
+                    "trigger": "\"This stuff might be crap.\""
+                }]
+            }
+        }]
+    }, {
+        "id": "A2.Convo.KennsSalvage",
+        "inMissionId": "A2.Convo.Shops",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Kenn's Salvage Discount",
+        "description": "Convince Kenn to give you a discount at the Kenn's Salvage store (before getting a discount at Harrot's).",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1.Kenn",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.KennsSalvage.P1",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm Kenn_*",
+                    "trigger": "\"Maybe we can cut a deal.\""
+                }, {
+                    "id": "A2.Convo.KennsSalvage.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate Kenn_*",
+                    "trigger": "\"Your prices are insulting.\""
+                }]
+            }
+        }],
+        "relatedMissionIds": ["A2.O.StrugglingQuarian"]
+    }, {
+        "id": "A2.Convo.OmegaMarket",
+        "inMissionId": "A2.Convo.Shops",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Omega Market Discount",
+        "description": "Convince Marsh to give you a discount at the Omega Market store.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1.Market",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.SerriceTechnology.P1",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm Marsh_*",
+                    "trigger": "\"Convince me to shop here.\""
+                }, {
+                    "id": "A2.Convo.SerriceTechnology.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate Marsh_*",
+                    "trigger": "\"These prices are insulting.\""
+                }]
+            }
+        }]
+    }, {
+        "id": "A2.Convo.Miscellaneous",
+        "sortIndex": 9095,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Miscellaneous",
+        "description": "Conversations with various lesser characters in Mass Effect 2.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Freedom's Progress"
+        }]
+    }, {
+        "id": "A2.Convo.RachniAgent",
+        "inMissionId": "A2.Convo.Miscellaneous",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Rachni Agent",
+        "description": "If the Rachni Queen was spared in Game 1, her asari agent approaches you on Illium.",
+        "x-inMapId": "TODO: Illium Spaceport",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.RachniAgent.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Stop controlling her!\""
+                }, {
+                    "id": "A2.Convo.RachniAgent.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "Tell her to be good."
+                }]
+            }
+        }],
+        "relatedDecisionIds": ["D1.RachniQueen"]
+    }, {
+        "id": "A2.Convo.Fist2",
+        "inMissionId": "A2.Convo.Miscellaneous",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Fist",
+        "description": "If Fist was spared in Game 1, you will encounter him again in the lower level of Afterlife on Omega.",
+        "x-inMapId": "TODO: Lower Afterlife",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.Fist2.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"You're welcome.\""
+                }, {
+                    "id": "A2.Convo.Fist2.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "I don't remember or care."
+                }]
+            }
+        }],
+        "relatedDecisionIds": ["D1.Fist"]
+    }, {
+        "id": "A2.Convo.Kylan",
+        "inMissionId": "A2.Convo.Miscellaneous",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Kylan",
+        "description": "A bravo and his men threaten you outside Afterlife on Omega.",
+        "x-inMapId": "TODO: Outside Afterlife",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.Kylan.P1",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm Kylan_*",
+                    "trigger": "\"Careful, now.\""
+                }, {
+                    "id": "A2.Convo.Kylan.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate Kylan_*",
+                    "trigger": "A dead man."
+                }]
+            }
+        }]
+    }, {
+        "id": "A2.Convo.AlJilani",
+        "inMissionId": "A2.Convo.Miscellaneous",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Khalisah Al-Jilani",
+        "description": "Khalisah Al-Jilani again tries to interview and humiliate you on the Citadel.",
+        "x-inMapId": "TODO: Dark Star Lounge",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.AlJilani.P1A",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"You made me look bad.\""
+                }, {
+                    "id": "A2.Convo.AlJilani.P1B",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Yes, I remember.\""
+                }, {
+                    "id": "A2.Convo.AlJilani.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Am I supposed to know you?\""
+                }]
+            }
+        }, {
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.AlJilani.R2A",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*Renegade Interrupt*",
+                    "trigger": "(End conversation.)"
+                }, {
+                    "id": "A2.Convo.AlJilani.P2A",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm Al-Jilani_*",
+                    "trigger": "\"We stood as one to save many.\" or \"We created an opportunity.\""
+                }, {
+                    "id": "A2.Convo.AlJilani.R2B",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate Al-Jilani_*",
+                    "trigger": "Don't disrespect the dead."
+                }, {
+                    "id": "A2.Convo.AlJilani.P2C",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"I'm not doing this.\""
+                }, {
+                    "id": "A2.Convo.AlJilani.R2C",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"I don't need this garbage.\""
+                }]
+            }
+        }],
+        "relatedDecisionIds": ["D2.AlJilani"]
+
+    }]
+}

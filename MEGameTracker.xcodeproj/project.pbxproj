@@ -276,6 +276,8 @@
 		B199ECE81D09B2EE007BE489 /* Calloutsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199ECE41D09B2EE007BE489 /* Calloutsable.swift */; };
 		B199ECE91D09B2EE007BE489 /* CalloutsNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199ECE51D09B2EE007BE489 /* CalloutsNib.swift */; };
 		B199ECEA1D09B2EE007BE489 /* CalloutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199ECE61D09B2EE007BE489 /* CalloutsView.swift */; };
+		B19B7DA91F9BCE170091CC11 /* DataMissions_2Convos.json in Resources */ = {isa = PBXBuildFile; fileRef = B19B7DA81F9BCE170091CC11 /* DataMissions_2Convos.json */; };
+		B19B7DB31F9BCE2A0091CC11 /* DataMissions_1Convos.json in Resources */ = {isa = PBXBuildFile; fileRef = B19B7DB21F9BCE2A0091CC11 /* DataMissions_1Convos.json */; };
 		B19BECB71F5E6576007B3FE6 /* Change20170905Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECB61F5E6576007B3FE6 /* Change20170905Tests.swift */; };
 		B19BECB91F5E668C007B3FE6 /* Change20170905.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECB81F5E668C007B3FE6 /* Change20170905.swift */; };
 		B1A1B0651E137CBD009A5688 /* GameSegmentsNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1B0641E137CBD009A5688 /* GameSegmentsNib.swift */; };
@@ -786,6 +788,8 @@
 		B199ECE41D09B2EE007BE489 /* Calloutsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calloutsable.swift; sourceTree = "<group>"; };
 		B199ECE51D09B2EE007BE489 /* CalloutsNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutsNib.swift; sourceTree = "<group>"; };
 		B199ECE61D09B2EE007BE489 /* CalloutsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutsView.swift; sourceTree = "<group>"; };
+		B19B7DA81F9BCE170091CC11 /* DataMissions_2Convos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DataMissions_2Convos.json; sourceTree = "<group>"; };
+		B19B7DB21F9BCE2A0091CC11 /* DataMissions_1Convos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataMissions_1Convos.json; sourceTree = "<group>"; };
 		B19BECB61F5E6576007B3FE6 /* Change20170905Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change20170905Tests.swift; sourceTree = "<group>"; };
 		B19BECB81F5E668C007B3FE6 /* Change20170905.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change20170905.swift; sourceTree = "<group>"; };
 		B1A1B0641E137CBD009A5688 /* GameSegmentsNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSegmentsNib.swift; sourceTree = "<group>"; };
@@ -2015,9 +2019,11 @@
 				B1A881481CF2546800603253 /* DataMaps_TerminusSystems.json */,
 				B1A8814B1CF2546800603253 /* DataMissions_1.json */,
 				B1A881491CF2546800603253 /* DataMissions_1Assignments.json */,
+				B19B7DB21F9BCE2A0091CC11 /* DataMissions_1Convos.json */,
 				B1A8814A1CF2546800603253 /* DataMissions_1Misc.json */,
 				B14BFFF21CFBDC890016965A /* DataMissions_2.json */,
 				B14BFFF41CFBDCAD0016965A /* DataMissions_2Assignments.json */,
+				B19B7DA81F9BCE170091CC11 /* DataMissions_2Convos.json */,
 				B14BFFF61CFBDCC60016965A /* DataMissions_2Misc.json */,
 				B1EA40ED1DFCE62F006948B0 /* DataMissions_3.json */,
 				B1EA40FB1DFCEE93006948B0 /* DataMissions_3Assignments.json */,
@@ -2615,6 +2621,7 @@
 				B1EA40F01DFCE6F8006948B0 /* DataPersons_3.json in Resources */,
 				B1C388671BA4B35E0088D8A8 /* GroupFlow.storyboard in Resources */,
 				B01D8F271BA139500039E003 /* ShepardAppearance.storyboard in Resources */,
+				B19B7DA91F9BCE170091CC11 /* DataMissions_2Convos.json in Resources */,
 				B1E2C8011CE413120001AFC9 /* MissionsGroupRow.xib in Resources */,
 				B17D7D141CAB6D2900548595 /* SearchGroupSplitView.storyboard in Resources */,
 				B1A8815A1CF2546800603253 /* DataMaps_TerminusSystems.json in Resources */,
@@ -2646,6 +2653,7 @@
 				B01D8F241BA139500039E003 /* Shepard.storyboard in Resources */,
 				B028AF2C1BA12B1900C73373 /* Assets.xcassets in Resources */,
 				B14BFFFB1CFBDCF70016965A /* DataDecisions_2.json in Resources */,
+				B19B7DB31F9BCE2A0091CC11 /* DataMissions_1Convos.json in Resources */,
 				B1A8815F1CF2546800603253 /* DataPersons_2.json in Resources */,
 				B01D8F201BA139500039E003 /* Settings.storyboard in Resources */,
 				B04FA6DC1BB2276B006474CB /* MissionsGroups.storyboard in Resources */,
