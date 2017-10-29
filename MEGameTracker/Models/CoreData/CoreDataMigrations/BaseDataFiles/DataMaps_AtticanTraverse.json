@@ -3273,7 +3273,7 @@
 		"gameVersionData": {
 			"1": {
 				"isHidden": false,
-				"image": "Detail_Maps/Game1/UNC/Generic_Research_Facility.pdf",
+				"image": "Detail_Maps/Game1/UNC/Ontarom/Ontarom_Research_Facility.pdf",
 				"referenceSize": "2083x2083"
 			}
 		}
@@ -4448,15 +4448,26 @@
 				"isHidden": false
 			}
 		}
+    }, {
+        "id": "G.Att.Pan.Ref.Ilo.Rui.1",
+        "name": "To Archives",
+        "isShowInList": false,
+        "linkToMapId": "G.Att.Pan.Ref.Ilo.Archives",
+        "inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+        "mapLocationPoint": {
+            "x": 892,
+            "y": 43,
+            "radius": 20
+        }
 	}, {
 		"id": "G.Att.Pan.Ref.Ilo.Rui.1",
-		"name": "Drop Zone / To Archives",
+		"name": "Drop Zone",
 		"isShowInList": false,
 		"linkToMapId": "G.Att.Pan.Ref.Ilo.Archives",
 		"inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
 		"mapLocationPoint": {
 			"x": 892,
-			"y": 93,
+            "y": 143,
 			"radius": 20
 		}
 	}, {
@@ -4565,6 +4576,17 @@
 			"y": 1093,
 			"radius": 20
 		}
+    }, {
+        "id": "G.Att.Pan.Ref.Ilo.Rui.9B",
+        "name": "Exit Ruins",
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Pan.Ref.Ilo.Ruins",
+        "mapLocationPoint": {
+            "x": 310,
+            "y": 1151,
+            "radius": 20
+        }
 	}, {
 		"id": "G.Att.Pan.Ref.Ilo.Rui.10",
 		"name": "To Upper Ruins (C)",

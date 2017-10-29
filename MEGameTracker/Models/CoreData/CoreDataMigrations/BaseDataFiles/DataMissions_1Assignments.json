@@ -442,6 +442,7 @@
 		"name": "Citadel: Doctor Michel",
 		"aliases": ["Citadel: Doctor Michel", "Citadel: Doctor Michel is Safe"],
 		"description": "The doctor is being blackmailed. Speak to her at the Med Clinic in the Upper Wards if you want to help.\n\n*Note: if you have did not rescue Dr. Michel from Fist, you may have trouble getting this quest. Go back to Fist's office and then return to the Med Clinic.*",
+        "objectivesCountToCompletion": 4,
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
@@ -534,8 +535,8 @@
 		"description": "Find [Captain Anderson|megametracker://person?id=P1.Anderson] and ask him about [megametracker://person?id=O1.Banes]. Then speak to [Rear Admiral Kahoku|megametracker://person?id=O1.Kahoku] in the Citadel Tower. Note: Kahoku will not be available after [megametracker://mission?id=A1.U.MissingMarines].",
 		"inMapId": "G.C1.Tower",
 		"mapLocationPoint": {
-			"x": 1333,
-			"y": 1475,
+			"x": 750,
+			"y": 608,
 			"radius": 1
 		},
 		"events": [{
@@ -1466,10 +1467,11 @@
 		"missionType": "Assignment",
 		"name": "Citadel: Planting a Bug",
 		"description": "[megametracker://person?id=O1.Wong] in the Citadel Tower is gathering information on dangerously overworked traffic control operators. She wants Shepard to plant a bug in the control room so she can monitor them.\n\n*Note: This is available after leaving the Citadel for the first time (and is relying on a signal of Therum/Feros/Noveria to indicate that).*",
+        "objectivesCountToCompletion": 3,
 		"inMapId": "G.C1.Tower",
 		"mapLocationPoint": {
-			"x": 1043,
-			"y": 1447,
+			"x": 1040,
+			"y": 636,
 			"radius": 1
 		},
 		"conversationRewards": [{
@@ -1517,8 +1519,8 @@
         "description": "Go to the Citadel Tower and speak to Emily Wong.",
         "inMapId": "G.C1.Tower",
         "mapLocationPoint": {
-            "x": 1043,
-            "y": 1447,
+            "x": 1040,
+            "y": 636,
             "radius": 1
         },
 	}, {
@@ -1545,8 +1547,8 @@
 		"description": "Return to the Citadel Tower and inform Emily Wong that you have planted the listening device.",
 		"inMapId": "G.C1.Tower",
 		"mapLocationPoint": {
-			"x": 1043,
-			"y": 1447,
+            "x": 1040,
+            "y": 636,
 			"radius": 1
 		}
 	}, {
@@ -2469,6 +2471,7 @@
         "gameVersion": "1",
         "missionType": "Objective",
         "name": "Speak to Opold",
+        "objectivesCountToCompletion": 2,
         "inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
         "mapLocationPoint": {
             "x": 1375,
@@ -2506,6 +2509,7 @@
 		"missionType": "Assignment",
 		"name": "Noveria: Lorik Qui'in",
 		"description": "[megametracker://person?id=O1.Quiin] offers a garage pass in return for recovering his evidence against Adminstrator Anoleis, in his office at Synthetic Insights. [Gianna Parasini|megametracker://person?id=O1.Gianna] will mention Lorik after you have finished speaking with Anoleis in his office, or you can just talk to Qui'in directly to acquire the mission.",
+        "objectivesCountToCompletion": 4,
         "inMapId": "G.Ear.Hor.Pax.Nov.PortHanshen",
         "mapLocationPoint": {
             "x": 1408,
@@ -3274,6 +3278,7 @@
 		"missionType": "Assignment",
 		"name": "UNC: Dead Scientists",
 		"description": "A terminal in the Port Hanshen hotel on Noveria reveals a doctor in the [megametracker://map?id=G.Att.Kep.Newton] who is in danger. You can also acquire this mission by going to [megametracker://map?id=G.Att.Kep.New.Ontarom].",
+        "objectivesCountToCompletion": 3,
 		"inMapId": "G.Att.Kep.New.Ontarom",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3353,6 +3358,7 @@
 		"missionType": "Assignment",
 		"name": "UNC: Depot Sigma-23",
 		"description": "Head to the unidentified space facility in [megametracker://maplocation?id=G.Ear.Argos&type=Map] to find the source of the engineered rachni infestation and destroy it.\n\nMemorize your route through the facility, as you will have to exit in a (timed) hurry.",
+        "objectivesCountToCompletion": 4,
 		"inMapId": "G.Ear.Arg.Gor.USF",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3451,6 +3457,7 @@
 		"missionType": "Assignment",
 		"name": "UNC: Geth Incursions",
 		"description": "Reports suggest the geth are setting up outposts in the [megametracker://map?id=G.Att.Armstrong].  These reports can be found on a terminal in the ExoGeni facility on Feros, or on Virmire ([TODO]). (You can also acquire the assignment by traveling to the [megametracker://map?id=G.Att.Armstrong].)",
+        "objectivesCountToCompletion": 6,
         "inMapId": "G.Att.Armstrong",
         "isShowInParentMap": true,
 		"conversationRewards": [{
@@ -3558,6 +3565,7 @@
 		"missionType": "Assignment",
 		"name": "UNC: ExoGeni Facility",
 		"description": "Hacking a terminal on the upper level of the ExoGeni headquarters on Feros reveals some suspicious ExoGeni activity in [megametracker://map?id=G.Att.Mar.Vostok].",
+        "objectivesCountToCompletion": 3,
 		"inMapId": "G.Att.Mar.Vos.Nodacrux",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3778,6 +3786,7 @@
 		"missionType": "Assignment",
 		"name": "UNC: Colony of the Dead",
 		"description": "A server node in the ExoGeni Facility on Feros reveals doctor's notes regarding some troubling samples he received from a mysterious group called Cerberus. (You may also start this assignment by just heading out and finding the research station which supplied the samples.)",
+        "objectivesCountToCompletion": 3,
 		"inMapId": "G.Att.Mar.Mat.Chasca",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -3840,6 +3849,7 @@
 		"missionType": "Assignment",
 		"name": "UNC: Espionage Probe",
 		"description": "Hacking a terminal aboard the downed Borealis on Feros will reveal an Alliance secret: they put a nuclear payload inside an old espionage probe. They need you to recover the probe before this is discovered. \n\nYou may also start this assignment by just heading out and finding the probe.",
+        "objectivesCountToCompletion": 3,
 		"inMapId": "G.Att.Voy.Ama.Agebinium",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -4150,8 +4160,8 @@
 		"description": "You've found the dead bodies of men who served under Admiral Kahoku. Return to the Citadel Tower and inform the admiral of their fate.",
 		"inMapId": "G.C1.Tower",
 		"mapLocationPoint": {
-			"x": 1231,
-			"y": 1435,
+            "x": 750,
+            "y": 608,
 			"radius": 1
 		}
 	}, {
@@ -4162,6 +4172,7 @@
 		"missionType": "Assignment",
 		"name": "UNC: Privateers",
 		"description": "The MSV Majesty was attacked by pirates travelling through [megametracker://map?id=G.Ear.Hor.Strenuus]. Find those responsible and inform [Garoth|megametracker://person?id=O1.Garoth] on the Citadel.\n\nYou can obtain this mission by speaking to Garoth in the Citadel Tower, from a terminal on Noveria, or by scanning the MSV Majesty itself.",
+        "objectivesCountToCompletion": 5,
 		"inMapId": "G.Ear.Hor.Str.MSVMajesty",
 		"isShowInParentMap": true,
 		"relatedLinks": [
@@ -4218,8 +4229,8 @@
         "description": "Talk to Garoth in the Citadel Tower about his missing brother.",
         "inMapId": "G.C1.Tower",
         "mapLocationPoint": {
-            "x": 1027,
-            "y": 1047,
+            "x": 1053,
+            "y": 1030,
             "radius": 1
         }
     }, {
@@ -4271,8 +4282,8 @@
 		"description": "You've discovered what happened to Willem, Garoth's brother. Return to the Citadel Tower and tell Garoth of his brother's fate.",
 		"inMapId": "G.C1.Tower",
 		"mapLocationPoint": {
-			"x": 1031,
-			"y": 1063,
+            "x": 1053,
+            "y": 1030,
 			"radius": 1
 		},
 		"isOpensDetail": false
@@ -4284,6 +4295,7 @@
 		"missionType": "Assignment",
 		"name": "UNC: Hostile Takeover",
 		"description": "A computer console in the C-Sec Academy offices reveals that C-Sec is suspicious of Helena Blake, currently at [the Emporium|megametracker://maplocation?id=G.C1.Presidium&title=Helena%20Blake&location=711x1207]. You can also acquire this assigment by speaking to [megametracker://person?id=O1.Helena] directly.",
+        "objectivesCountToCompletion": 3,
 		"inMapId": "G.C1.Presidium",
 		"mapLocationPoint": {
 			"x": 711,
@@ -4492,6 +4504,7 @@
 		"missionType": "Assignment",
 		"name": "UNC: Major Kyle",
 		"description": "A computer console in Executor Palin's office reveals the deaths of two Alliance officials sent to investigate [Major Kyle|megametracker://person?id=O1.Kyle] at his compound in [megametracker://map?id=G.Att.Hawking].",
+        "objectivesCountToCompletion": 4,
 		"inMapId": "G.Att.Haw.Cen.Presrop",
 		"isShowInParentMap": true,
 		"relatedLinks": [

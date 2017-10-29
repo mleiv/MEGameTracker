@@ -23,7 +23,7 @@
 		"gameVersion": "2",
 		"missionType": "Mission",
 		"name": "Prologue: Awakening",
-		"description": "You awake in a Cerberus Medical Facility under attack. Guided by the voice of Miranda, and helped by the operative, Jacob, you must make your way to the [Shuttle Bay|megametracker://maplocation?id=G.Ear.Laz.Bay], where you can escape from the facility. At the end of the mission, Miranda will take you to see the Illusive Man, head of Cerberus. \n\nThis mission is also an introduction to new characters and game play.",
+		"description": "You awake in a Cerberus Medical Facility under attack. Guided by the voice of Miranda, and helped by the operative, Jacob, you must make your way to the [Shuttle Bay|megametracker://maplocation?id=G.Ear.Laz.Bay], where you can escape from the facility. At the end of the mission, Miranda will take you to see the Illusive Man, head of Cerberus. \n\nThis mission is also an introduction to new characters and game play. \n\nIf you are a Game 1 import or a NewGame+ player, you will receive 25% more experience on this and all other missions.",
 		"inMapId": "G.Ear.Lazarus",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Prologue:_Awakening"],
 		"experience": 1000,
@@ -453,7 +453,7 @@
 		"gameVersion": "2",
 		"missionType": "Mission",
 		"name": "Freedom's Progress",
-		"description": "",
+		"description": "Discover what happened to the missing human colonist of Freedom's Progress.",
 		"inMapId": "G.Ter.Freedoms",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Freedom%27s_Progress_(mission)"],
 		"experience": 1000,
@@ -570,13 +570,13 @@
 							"type": "Paragon",
 							"value": 5,
 							"context": "*Paragon Interrupt*",
-							"trigger": ""
+							"trigger": "Shut down the feeds."
 						}, {
 							"id": "M2.FreedomsProgress.R8",
 							"type": "Renegade",
 							"value": 5,
 							"context": "*Renegade Interrupt*",
-							"trigger": ""
+							"trigger": "Turn off the monitors."
 						}]
 					}
 				}, {
@@ -644,6 +644,7 @@
 					"id": "M2.FreedomsProgress.P14",
 					"type": "Paragon",
 					"value": 2,
+                    "context": "(Available if selected at first opportunity.)",
 					"trigger": "\"I decide who's on my team.\" and \"I hope so.\""
 				}]
 			}
@@ -669,6 +670,7 @@
 					"id": "M2.FreedomsProgress.R16",
 					"type": "Renegade",
 					"value": 2,
+                    "context": "(Available if selected at first opportunity.)",
 					"trigger": "\"Glad to hear it.\""
 				}]
 			}
