@@ -38,10 +38,11 @@ public struct Change20170905: CoreDataMigrationType {
         // only run if prior bad data may have been saved
         guard App.current.lastBuild > 0 else { return }
         // load the old items.
-        for (index, var fromItem) in Item.getAllExisting(
-            ids: oldItemIds,
-            gameSequenceUuid: nil
-        ).enumerated() {
+        for index in 0..<oldItemIds.count {
+            guard var fromItem = Item.getExisting(
+                id: oldItemIds[index],
+                gameSequenceUuid: nil
+            ) else { continue }
             if let toItem = Item.get(
                 id: newItemIds[index],
                 gameSequenceUuid: fromItem.gameSequenceUuid

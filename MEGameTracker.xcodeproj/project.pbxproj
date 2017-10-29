@@ -182,6 +182,8 @@
 		B145FDE11E67E64800403A36 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B145FDE01E67E64800403A36 /* Photo.swift */; };
 		B145FDE31E67E65500403A36 /* Photographical.swift in Sources */ = {isa = PBXBuildFile; fileRef = B145FDE21E67E65500403A36 /* Photographical.swift */; };
 		B145FDE51E67EB1E00403A36 /* Shepard.AppearanceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B145FDE41E67EB1E00403A36 /* Shepard.AppearanceError.swift */; };
+		B14AB78D1F9D66FA009539CF /* Change20171022.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AB78C1F9D66FA009539CF /* Change20171022.swift */; };
+		B14AB7971FA55330009539CF /* Change20171022Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AB7961FA55330009539CF /* Change20171022Tests.swift */; };
 		B14BFFF31CFBDC890016965A /* DataMissions_2.json in Resources */ = {isa = PBXBuildFile; fileRef = B14BFFF21CFBDC890016965A /* DataMissions_2.json */; };
 		B14BFFF51CFBDCAD0016965A /* DataMissions_2Assignments.json in Resources */ = {isa = PBXBuildFile; fileRef = B14BFFF41CFBDCAD0016965A /* DataMissions_2Assignments.json */; };
 		B14BFFF71CFBDCC60016965A /* DataMissions_2Misc.json in Resources */ = {isa = PBXBuildFile; fileRef = B14BFFF61CFBDCC60016965A /* DataMissions_2Misc.json */; };
@@ -694,6 +696,8 @@
 		B145FDE01E67E64800403A36 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		B145FDE21E67E65500403A36 /* Photographical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photographical.swift; sourceTree = "<group>"; };
 		B145FDE41E67EB1E00403A36 /* Shepard.AppearanceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shepard.AppearanceError.swift; sourceTree = "<group>"; };
+		B14AB78C1F9D66FA009539CF /* Change20171022.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change20171022.swift; sourceTree = "<group>"; };
+		B14AB7961FA55330009539CF /* Change20171022Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change20171022Tests.swift; sourceTree = "<group>"; };
 		B14BFFF21CFBDC890016965A /* DataMissions_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataMissions_2.json; sourceTree = "<group>"; };
 		B14BFFF41CFBDCAD0016965A /* DataMissions_2Assignments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataMissions_2Assignments.json; sourceTree = "<group>"; };
 		B14BFFF61CFBDCC60016965A /* DataMissions_2Misc.json */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 3; lastKnownFileType = text.json; path = DataMissions_2Misc.json; sourceTree = "<group>"; };
@@ -1520,6 +1524,7 @@
 				B1B9D72B1E66A56E00AE94D9 /* Change20170228.swift */,
 				B136B1231E6CA4B80017F738 /* Change20170305.swift */,
 				B19BECB81F5E668C007B3FE6 /* Change20170905.swift */,
+				B14AB78C1F9D66FA009539CF /* Change20171022.swift */,
 			);
 			path = CoreDataMigrations;
 			sourceTree = "<group>";
@@ -2209,6 +2214,7 @@
 			children = (
 				B1C66C7F1E8EE87000BDAF9A /* Change20170305Tests.swift */,
 				B19BECB61F5E6576007B3FE6 /* Change20170905Tests.swift */,
+				B14AB7961FA55330009539CF /* Change20171022Tests.swift */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -2914,6 +2920,7 @@
 				B1EDCDC31E7017910078D4B2 /* ShepardLoveInterestRowType.swift in Sources */,
 				B122A1341CF802AA008E6D1E /* MapLinkType.swift in Sources */,
 				B04BF1E81BA12C7900072DA2 /* Person.swift in Sources */,
+				B14AB78D1F9D66FA009539CF /* Change20171022.swift in Sources */,
 				B12458831E39D35A0043F5D1 /* TextDataRowType.swift in Sources */,
 				B1A9957B1F43FBCF00EFDE18 /* CodableCoreDataManageable.swift in Sources */,
 				B04FA6D51BB22555006474CB /* DataMissions.swift in Sources */,
@@ -3000,6 +3007,7 @@
 				B16FBC891E5F646700E151C7 /* DecisionTests.swift in Sources */,
 				B16FBC951E5FAD8100E151C7 /* GameSequenceTests.swift in Sources */,
 				B16FBC931E5FAD7000E151C7 /* ShepardTests.swift in Sources */,
+				B14AB7971FA55330009539CF /* Change20171022Tests.swift in Sources */,
 				B1F1DC591E5E82AD00755AAD /* PersonTests.swift in Sources */,
 				B19191871CE3A98400CF367E /* MissionSortingTests.swift in Sources */,
 				B1811F561E63624D007559AE /* AppTests.swift in Sources */,

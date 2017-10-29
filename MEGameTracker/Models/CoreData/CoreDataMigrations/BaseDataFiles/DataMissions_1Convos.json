@@ -1,12 +1,29 @@
 {
     "missions": [{
 
-        "id": "A1.Convo.Ashley",
-        "sortIndex": 9010,
+
+        "x-comment-x": "-----------------------Squad-------------------------",
+        "id": "A1.Convo.Squad",
+        "sortIndex": 9000,
         "gameVersion": "1",
         "missionType": "Conversation",
+        "name": "Squad",
+        "description": "Conversations with squad members in Mass Effect.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "?"
+        }]
+    }, {
+        "id": "A1.Convo.Ashley",
+        "inMissionId": "A1.Convo.Squad",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Ashley Williams",
         "description": "Conversations with [megametracker://person?id=S1.Ashley] aboard the Normandy.",
+        "objectivesCountToCompletion": 7,
+        "objectivesNote": "Solely to block auto-completion when checking parent mission completed.",
         "inMapId": "G.N1.3",
         "mapLocationPoint": {
             "x": 240,
@@ -93,7 +110,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Ashley.5",
@@ -108,7 +125,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Ashley.6",
@@ -127,7 +144,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Ashley.7",
@@ -145,60 +162,24 @@
         },
         "events": [{
             "type": "BlockedAfter",
-            "id": "Kaidan Saved on Virmire",
+            "id": "Kaidan Saved on Virmire"
         }, {
             "type": "BlockedUntil",
             "id": "Citadel Lockdown"
         }]
 
-    }, {
-        "id": "A1.Convo.Chakwas",
-        "sortIndex": 9010,
-        "gameVersion": "1",
-        "missionType": "Conversation",
-        "name": "Dr. Chakwas",
-        "description": "Conversations with [megametracker://person?id=P1.Chakwas] aboard the Normandy.",
-        "inMapId": "G.N1.2.1",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Unlocked Normandy"
-        }, {
-            "type": "BlockedAfter",
-            "id": "Ilos Started"
-        }]
-    }, {
-        "id": "A1.Convo.Chakwas.1",
-        "inMissionId": "A1.Convo.Chakwas",
-        "sortIndex": 90101,
-        "gameVersion": "1",
-        "missionType": "Objective",
-        "name": "1st Normandy Convo",
-        "description": "You can ask Dr. Chakwas about her long career in the Alliance, and about [megametracker://person?id=P1.Anderson] and [megametracker://person?id=S1.Kaidan].",
-        "inMapId": "G.N1.2.1",
-        "isShowInParentMap": true
-    }, {
-        "id": "A1.Convo.Chakwas.2",
-        "inMissionId": "A1.Convo.Chakwas",
-        "sortIndex": 90102,
-        "gameVersion": "1",
-        "missionType": "Objective",
-        "name": "2nd Normandy Convo",
-        "description": "Chakwas comments on how strange it is to be a fugitive and asks Shepard not to let the crew down.",
-        "inMapId": "G.N1.2.1",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Citadel Lockdown"
-        }]
 
     }, {
         "id": "A1.Convo.Garrus",
+        "inMissionId": "A1.Convo.Squad",
         "sortIndex": 9010,
         "gameVersion": "1",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Garrus Vakarian",
         "description": "Conversations with [megametracker://person?id=S1.Garrus] aboard the Normandy.",
+        "objectivesCountToCompletion": 5,
+        "objectivesNote": "Solely to block auto-completion when checking parent mission completed.",
         "inMapId": "G.N1.3",
         "mapLocationPoint": {
             "x": 511,
@@ -208,7 +189,7 @@
         "relatedLinks": ["http://masseffect.wikia.com/wiki/Garrus_Vakarian/Unique_dialogue"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Unlocked Galaxy Map 2"
+            "id": "Unlocked Galaxy Map"
         }, {
             "type": "BlockedAfter",
             "id": "Ilos Started"
@@ -243,7 +224,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Therum, Feros, or Noveria",
+            "id": "Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Garrus.3",
@@ -263,7 +244,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Garrus.4",
@@ -281,7 +262,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Garrus.5",
@@ -304,27 +285,16 @@
 
 
     }, {
-        "id": "A1.Convo.Joker",
-        "sortIndex": 9010,
-        "gameVersion": "1",
-        "missionType": "Conversation",
-        "name": "Jeff \"Joker\" Moreau",
-        "description": "Conversations with [megametracker://person?id=P1.Joker] aboard the Normandy.",
-        "inMapId": "G.N1.3.Map",
-        "isShowInParentMap": true,
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/Jeff_%22Joker%22_Moreau/Unique_dialogue"],
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Unlocked Galaxy Map 2"
-        }]
-
-    }, {
         "id": "A1.Convo.Kaidan",
+        "inMissionId": "A1.Convo.Squad",
         "sortIndex": 9010,
         "gameVersion": "1",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Kaidan Alenko",
         "description": "Conversations with [megametracker://person?id=S1.Kaidan] aboard the Normandy.",
+        "objectivesCountToCompletion": 7,
+        "objectivesNote": "Solely to block auto-completion when checking parent mission completed.",
         "inMapId": "G.N1.2",
         "mapLocationPoint": {
             "x": 948,
@@ -411,7 +381,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Kaidan.5",
@@ -426,7 +396,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Kaidan.6",
@@ -445,10 +415,10 @@
         },
         "events": [{
             "type": "BlockedAfter",
-            "id": "Ashley Saved on Virmire",
+            "id": "Ashley Saved on Virmire"
         }, {
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Kaidan.7",
@@ -472,11 +442,15 @@
 
     }, {
         "id": "A1.Convo.Liara",
+        "inMissionId": "A1.Convo.Squad",
         "sortIndex": 9010,
         "gameVersion": "1",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Liara T'Soni",
         "description": "Conversations with [megametracker://person?id=S1.Liara] aboard the Normandy.",
+        "objectivesCountToCompletion": 5,
+        "objectivesNote": "Solely to block auto-completion when checking parent mission completed.",
         "inMapId": "G.N1.2.5",
         "isShowInParentMap": true,
         "relatedDecisionIds": ["D1.LoveLiara"],
@@ -511,7 +485,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Liara.3",
@@ -526,7 +500,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Liara.4",
@@ -541,7 +515,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Liara.5",
@@ -560,11 +534,15 @@
 
     }, {
         "id": "A1.Convo.Tali",
+        "inMissionId": "A1.Convo.Squad",
         "sortIndex": 9010,
         "gameVersion": "1",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Tali'Zorah",
         "description": "Conversations with [megametracker://person?id=S1.Tali] aboard the Normandy.",
+        "objectivesCountToCompletion": 5,
+        "objectivesNote": "Solely to block auto-completion when checking parent mission completed.",
         "inMapId": "G.N1.3",
         "mapLocationPoint": {
             "x": 1903,
@@ -574,7 +552,7 @@
         "relatedLinks": ["http://masseffect.wikia.com/wiki/Tali%27Zorah_nar_Rayya/Unique_dialogue"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Unlocked Galaxy Map 2"
+            "id": "Unlocked Galaxy Map"
         }, {
             "type": "BlockedAfter",
             "id": "Ilos Started"
@@ -609,7 +587,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Therum, Feros, or Noveria",
+            "id": "Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Tali.3",
@@ -647,7 +625,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Tali.5",
@@ -670,11 +648,15 @@
 
     }, {
         "id": "A1.Convo.Wrex",
+        "inMissionId": "A1.Convo.Squad",
         "sortIndex": 9010,
         "gameVersion": "1",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Urdnot Wrex",
         "description": "Conversations with [megametracker://person?id=S1.Wrex] aboard the Normandy.",
+        "objectivesCountToCompletion": 6,
+        "objectivesNote": "Solely to block auto-completion when checking parent mission completed.",
         "inMapId": "G.N1.3",
         "mapLocationPoint": {
             "x": 783,
@@ -684,7 +666,7 @@
         "relatedLinks": ["http://masseffect.wikia.com/wiki/Urdnot_Wrex/Unique_Dialogue"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Unlocked Galaxy Map 2"
+            "id": "Unlocked Galaxy Map"
         }, {
             "type": "BlockedAfter",
             "id": "Ilos Started"
@@ -738,7 +720,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Wrex.4",
@@ -756,7 +738,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Two of Therum, Feros, or Noveria",
+            "id": "Two of Therum, Feros, or Noveria"
         }]
     }, {
         "id": "A1.Convo.Wrex.5",
@@ -774,7 +756,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Wrex Saved on Virmire",
+            "id": "Wrex Saved on Virmire"
         }]
     }, {
         "id": "A1.Convo.Wrex.6",
@@ -795,8 +777,415 @@
             "id": "Citadel Lockdown"
         }, {
             "type": "BlockedUntil",
-            "id": "Wrex Saved on Virmire",
+            "id": "Wrex Saved on Virmire"
         }]
 
+    }, {
+
+        "x-comment-x": "-----------------------Crew-------------------------",
+        "id": "A1.Convo.Crew",
+        "sortIndex": 9001,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Crew",
+        "description": "Conversations with the crew in Mass Effect.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Normandy"
+        }]
+    }, {
+        "id": "A1.T.LeaveCitadel",
+        "inMissionId": "A1.Convo.Citadel",
+        "sortIndex": 9005,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Speech to Crew",
+        "description": "The first time you leave the Citadel, Shepard gives a speech to the crew.",
+        "inMapId": "G.N1.1.1",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "context": "Departing Speech",
+                "options": [{
+                    "id": "A1.T.LeaveCitadel.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Humanity must do its part.\""
+                }, {
+                    "id": "A1.T.LeaveCitadel.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Nobody's going to help us.\""
+                }]
+            }
+        }, {
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A1.T.LeaveCitadel.P2",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Everyone is counting on us.\""
+                }, {
+                    "id": "A1.T.LeaveCitadel.R2",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Humanity's in this alone!\""
+                }]
+            }
+        }],
+        "relatedLinks": [
+            "https://masseffect.wikia.com/wiki/Prologue:_On_the_Normandy#Leaving_the_Citadel"
+        ],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map"
+        }]
+    }, {
+        "id": "A1.Convo.Chakwas",
+        "inMissionId": "A1.Convo.Crew",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Dr. Chakwas",
+        "description": "Conversations with [megametracker://person?id=P1.Chakwas] aboard the Normandy.",
+        "inMapId": "G.N1.2.1",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Normandy"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Ilos Started"
+        }]
+    }, {
+        "id": "A1.Convo.Chakwas.1",
+        "inMissionId": "A1.Convo.Chakwas",
+        "sortIndex": 90101,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "You can ask Dr. Chakwas about her long career in the Alliance, and about [megametracker://person?id=P1.Anderson] and [megametracker://person?id=S1.Kaidan].",
+        "objectivesCountToCompletion": 1,
+        "objectivesNote": "Solely to block auto-completion when checking parent mission completed.",
+        "inMapId": "G.N1.2.1",
+        "isShowInParentMap": true
+    }, {
+        "id": "A1.Convo.Chakwas.2",
+        "inMissionId": "A1.Convo.Chakwas",
+        "sortIndex": 90102,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "2nd Normandy Convo",
+        "description": "Chakwas comments on how strange it is to be a fugitive and asks Shepard not to let the crew down.",
+        "inMapId": "G.N1.2.1",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Citadel Lockdown"
+        }]
+    }, {
+        "id": "A1.Convo.Joker",
+        "inMissionId": "A1.Convo.Crew",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Jeff \"Joker\" Moreau",
+        "description": "Conversations with [megametracker://person?id=P1.Joker] aboard the Normandy.",
+        "inMapId": "G.N1.1.1",
+        "isShowInParentMap": true,
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Jeff_%22Joker%22_Moreau/Unique_dialogue"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map"
+        }]
+
+    }, {
+        "id": "A1.T.AliensOnNormandy",
+        "inMissionId": "A1.Convo.Miscellaneous",
+        "sortIndex": 210,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "name": "Charles Pressly",
+        "description": "Conversations with [megametracker://person?id=P1.Joker] aboard the Normandy.",
+        "objectivesCountToCompletion": 1,
+        "objectivesNote": "Solely to block auto-completion when checking parent mission completed.",
+        "inMapId": "G.N1.1",
+        "mapLocationPoint": {
+            "x": 1019,
+            "y": 950,
+            "radius": 20
+        },
+        "conversationRewards": [{
+            "x-comment-y": "TODO: find out if exclusive set?",
+            "id": "A1.T.AliensOnNormandy.P1",
+            "type": "Paragon",
+            "value": 2,
+            "context": "Talking to Pressly",
+            "trigger": "\"They're on our side.\""
+        }, {
+            "id": "A1.T.AliensOnNormandy.R2",
+            "type": "Renegade",
+            "value": 2,
+            "context": "Talking to Pressly",
+            "trigger": "\"You doubt my decisions?\""
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map"
+        }]
+
+    }, {
+
+        "x-comment-x": "-----------------------Citadel-------------------------",
+        "id": "A1.Convo.Citadel",
+        "sortIndex": 9005,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Citadel",
+        "description": "Conversations with various other characters on the Citadel.",
+        "objectivesCountToCompletion": 1,
+        "objectivesNote": "Solely to block auto-completion when checking parent mission completed.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed Feros Mission"
+        }]
+    }, {
+        "id": "A1.Convo.Citadel.Udina",
+        "inMissionId": "A1.Convo.Citadel",
+        "sortIndex": 9006,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Ambassador Udina",
+        "description": "[megametracker://person?id=P1.Udina] is concerned with the repercussions of the actions on Feros.",
+        "inMapId": "G.N1",
+        "relatedMissionIds": ["M1.Feros.14"],
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A1.Convo.Citadel.Udina.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"That's all you care about?\""
+                }, {
+                    "id": "A1.Convo.Citadel.Udina.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"They were expendable\""
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed Feros Mission"
+        }]
+    }, {
+
+        "x-comment-x": "-----------------------Feros-------------------------",
+        "id": "A1.Convo.Feros",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Feros",
+        "description": "Conversations with various other characters on Feros.",
+        "objectivesCountToCompletion": 2,
+        "objectivesNote": "Solely to block auto-completion when checking parent mission completed.",
+        "relatedMissionIds": ["M1.Feros.3"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Drove The Geth Dropship From Zhu's Hope"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Talked to the ExoGeni VI"
+        }]
+    }, {
+        "id": "A1.Convo.Feros.Blakes",
+        "inMissionId": "A1.Convo.Feros",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Calantha and Hollis Blake",
+        "description": "[megametracker://person?id=O1.BlakeC] and [megametracker://person?id=O1.BlakeH], Zhu's Hope colonists, are exhibiting strange behavior.",
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "context": "Speaking to Calantha Blake",
+                "options": [{
+                    "id": "A1.Convo.Feros.Blakes.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"What's wrong?\""
+                }, {
+                    "id": "A1.Convo.Feros.Blakes.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"I hope you're not contagious.\""
+                }]
+            }
+        }],
+        "inMapId": "G.Ear.Att.The.Fer.ZhusHope",
+        "mapLocationPoint": {
+            "x": 834,
+            "y": 1309,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.Convo.Feros.Newstead",
+        "inMissionId": "A1.Convo.Feros",
+        "sortIndex": 9010,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Ian Newstead",
+        "description": "[megametracker://person?id=O1.Ian], a Zhu's Hope colonist, is exhibiting strange behavior.",
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "context": "Speaking to Ian Newstead",
+                "options": [{
+                    "id": "A1.Convo.Feros.Newstead.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Can I help?\""
+                }, {
+                    "id": "A1.Convo.Feros.Newstead.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Kill him.\" (Does not kill him.)"
+                }]
+            }
+        }],
+        "inMapId": "G.Ear.Att.The.Fer.Tunnels",
+        "mapLocationPoint": {
+            "x": 1183,
+            "y": 148,
+            "radius": 1
+        }
+    }, {
+
+        "x-comment-x": "-----------------------Virmire-------------------------",
+        "id": "A1.Convo.Virmire",
+        "sortIndex": 9015,
+        "gameVersion": "1",
+        "missionType": "Conversation",
+        "name": "Virmire",
+        "description": "Conversations with various other characters on Virmire.",
+        "objectivesCountToCompletion": 3,
+        "objectivesNote": "Solely to block auto-completion when checking parent mission completed.",
+        "relatedMissionIds": ["M1.Virmire.6.1"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Virmire: Labs"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Completed Virmire Mission"
+        }]
+    }, {
+        "id": "A1.Convo.Virmire.Imness",
+        "inMissionId": "A1.Convo.Virmire",
+        "sortIndex": 9015,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Lieutenant Ganto Imness",
+        "description": "There is a lucid prisoner, [Lieutenant Ganto Imness|megametracker://person?id=O1.Imness], held in Cell Block A. You can free him before the base is destroyed, or leave him to die. There are also several other salarians in the next cell, who are too far gone to save.",
+        "conversationRewards": [{
+            "set": {
+                "context": "When Imness asks to be released",
+                "options": [{
+                    "id": "A1.Convo.Virmire.Imness.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "context": "Release Imness",
+                    "trigger": "\"I think I can trust you.\" or \"I'm letting you out.\""
+                }, {
+                    "id": "A1.Convo.Virmire.Imness.R1",
+                    "type": "Renegade",
+                    "value": 9,
+                    "context": "Leave Imness locked up (note: this is not an exclusive choice - you can select this, and then come back and let him out)",
+                    "trigger": "\"Too risky.\""
+                }]
+            }
+        }],
+        "inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+        "mapLocationPoint": {
+            "x": 1019,
+            "y": 1057,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.Convo.Virmire.Others",
+        "inMissionId": "A1.Convo.Virmire",
+        "sortIndex": 9016,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Non-lucid Prisoners",
+        "description": "There are also several salarians in the cell next to [megametracker://person?id=O1.Imness], who were experimented on and their minds are gone.",
+        "conversationRewards": [{
+            "set": {
+                "context": "Deciding what to do about the mindless prisoners",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A1.Convo.Virmire.Others.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "context": "Release the other prisoners",
+                    "trigger": "\"They're no threat.\""
+                }, {
+                    "id": "A1.Convo.Virmire.Others.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "context": "Leave the other prisoners locked up",
+                    "trigger": "\"Open the door and kill them.\" or \"Eliminate them.\""
+                }]
+            }
+        }],
+        "inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+        "mapLocationPoint": {
+            "x": 989,
+            "y": 1077,
+            "radius": 1
+        }
+    }, {
+        "id": "A1.Convo.Virmire.Avot",
+        "inMissionId": "A1.Convo.Virmire",
+        "sortIndex": 9017,
+        "gameVersion": "1",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Private Menos Avot",
+        "description": "There are several salarians imprisoned in a cell in Cell Block B. [Private Menos Avot|megametracker://person?id=O1.Avot] is among them, and explains the experiments [Saren|megametracker://person?id=E1.Saren] has been conducting on them and begs you to let him out. You can choose to let them all out (which results in a fight), or leave them behind, to die.",
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "context": "When Avot asks to be released",
+                "options": [{
+                    "id": "A1.Convo.Virmire.Avot.P1",
+                    "type": "Paragon",
+                    "value": 8,
+                    "context": "Release Avot and the prisoners",
+                    "trigger": "\"All right. Let him out.\""
+                }, {
+                    "id": "A1.Convo.Virmire.Avot.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "context": "Leave Avot and the prisoners locked up",
+                    "trigger": "\"No.\" or \"Sorry. I can't risk it.\""
+                }]
+            }
+        }],
+        "inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
+        "mapLocationPoint": {
+            "x": 587,
+            "y": 1444,
+            "radius": 1
+        }
     }]
 }

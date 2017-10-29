@@ -1,199 +1,46 @@
 {
     "missions": [{
 
-      "id": "A1.Convo.EDI",
-      "sortIndex": 9010,
-      "gameVersion": "2",
-      "missionType": "Conversation",
-      "name": "EDI",
-      "description": "Conversations with [megametracker://person?id=S3.EDI] aboard the Normandy.",
-      "inMapId": "G.N2.2.Bridge",
-      "isShowInParentMap": true,
-      "relatedLinks": ["http://masseffect.wikia.com/wiki/EDI/Unique_dialogue#Mass_Effect_2"],
-      "events": [{
-         "type": "BlockedUntil",
-         "id": "Unlocked Galaxy Map 2"
-      }]
-   }, {
-      "id": "A1.Convo.Joker",
-      "sortIndex": 9010,
-      "gameVersion": "2",
-      "missionType": "Conversation",
-      "name": "Jeff \"Joker\" Moreau",
-      "description": "Conversations with [megametracker://person?id=P1.Joker] aboard the Normandy.",
-      "inMapId": "G.N2.2.Bridge",
-      "isShowInParentMap": true,
-      "relatedLinks": ["http://masseffect.wikia.com/wiki/Jeff_%22Joker%22_Moreau/Unique_dialogue#Mass_Effect_2"],
-      "events": [{
-         "type": "BlockedUntil",
-         "id": "Unlocked Galaxy Map 2"
-      }]
-   }, {
-      "id": "A1.Convo.Kasumi",
-      "sortIndex": 9010,
-      "gameVersion": "2",
-      "missionType": "Conversation",
-      "name": "Kasumi Goto",
-      "description": "Conversations with [megametracker://person?id=S2.Kasumi] aboard the Normandy.",
-      "x-inMapId": "G.N2.3 TODO:",
-      "x-isShowInParentMap": true,
-      "relatedLinks": ["http://masseffect.wikia.com/wiki/Kasumi_Goto/Unique_dialogue"],
-      "events": [{
-         "type": "BlockedUntil",
-         "id": "Unlocked Galaxy Map 2"
-      }]
-   }, {
-      "id": "A1.Convo.Zaeed",
-      "sortIndex": 9010,
-      "gameVersion": "2",
-      "missionType": "Conversation",
-      "name": "Zaeed Massani",
-      "description": "Conversations with [megametracker://person?id=S2.Zaeed] aboard the Normandy.",
-      "x-inMapId": "G.N2.3 TODO:",
-      "x-isShowInParentMap": true,
-      "relatedLinks": ["http://masseffect.wikia.com/wiki/Zaeed_Massani/Unique_dialogue"],
-      "events": [{
-         "type": "BlockedUntil",
-         "id": "Unlocked Galaxy Map 2"
-      }]
-   }, {
-        "id": "A2.Convo.Kelly",
-        "sortIndex": 9010,
-        "gameVersion": "2",
-        "missionType": "Conversation",
-        "name": "Kelly Chambers",
-        "description": "Conversations with [megametracker://person?id=P2.Chambers] aboard the Normandy.",
-        "inMapId": "G.N2.2.Map",
-        "isShowInParentMap": true,
-        "relatedDecisionIds": ["D2.LoveKelly"],
-        "conversationRewards": [{
-            "set": {
-                "context": "During first conversation",
-                "options": [{
-                    "context": "\"The pleasure is mine.\" and \"Sure.\"",
-                    "id": "A2.Convo.Kelly.P1",
-                    "type": "Paragon",
-                    "value": 0,
-                    "trigger": "You can now address her as \"Kelly.\""
-                }, {
-                    "set": {
-                        "context": "Investigate: \"What do you think of Cerberus?\" and \"Does Cerberus hate aliens?\"",
-                        "options": [{
-                            "id": "A2.Convo.Kelly.P2",
-                            "type": "Paragon",
-                            "value": 2,
-                            "trigger": "\"You are very loving.\""
-                        }, {
-                            "id": "A2.Convo.Kelly.R2",
-                            "type": "Renegade",
-                            "value": 2,
-                            "trigger": "\"You're naive.\""
-                        }]
-                    }
-                }, {
-                    "set": {
-                        "context": "Investigate: \"Are you happy here?\" and \"We won't.\"",
-                        "options": [{
-                            "id": "A2.Convo.Kelly.P3A",
-                            "type": "Paragon",
-                            "value": 0,
-                            "context": "\"I'd catch you.\"",
-                            "trigger": "Friendship track."
-                        }, {
-                            "id": "A2.Convo.Kelly.P3B",
-                            "type": "Paragon",
-                            "value": 0,
-                            "context": "\"I'd embrace you.\"",
-                            "trigger": "Romance track."
-                        }]
-                    }
-                }]
-            }
-        }, {
-            "set": {
-                "context": "When Kelly worries that she was too flirty previously",
-                "options": [{
-                    "id": "A2.Convo.Kelly.P5A",
-                    "type": "Paragon",
-                    "value": 0,
-                    "context": "\"Informal is fine.\"",
-                    "trigger": "Friendship track."
-                }, {
-                    "id": "A2.Convo.Kelly.P5B",
-                    "type": "Paragon",
-                    "value": 0,
-                    "context": "\"I liked it.\"",
-                    "trigger": "Romance track."
-                }]
-            }
-        }, {
-            "set": {
-                "context": "When Kelly talks about Tali or Thane",
-                "options": [{
-                    "id": "A2.Convo.Kelly.P8B",
-                    "type": "Paragon",
-                    "value": 0,
-                    "context": "\"How so?\" and \"Are you into aliens?\"",
-                    "trigger": "Romance track."
-                }]
-            }
-        }, {
-            "context": "One of the above exchanges will lead to: \"Let's have dinner.\"",
-            "id": "A2.Convo.Kelly.P15",
-            "type": "Paragade",
-            "value": 0,
-            "paragadeValue": [5, 5],
-            "trigger": "Invite Kelly up to your cabin for dinner. She will offer to feed your fish."
-        }, {
-            "context": "After the collector ship: \"Worried? You do care.\" and \"What about me?\"",
-            "id": "A2.Convo.Kelly.P20",
-            "type": "Paragon",
-            "value": 0,
-            "trigger": "Romance track."
-        }],
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Unlocked Galaxy Map 2"
-        }]
-    }, {
-        "id": "A2.Convo.Kelly.1",
-        "inMissionId": "A2.Convo.Kelly",
-        "sortIndex": 90101,
-        "gameVersion": "2",
-        "missionType": "Objective",
-        "name": "1st Normandy Convo",
-        "description": "Kelly introduces herself. You have several Paragon options if you explore all the Investigate options. If you want a relationship, talk with Kelly after every mission, and be nice. There are many more flirting options than the ones I've specifically called out in the conversation rewards, but they are not necessary to trigger the romance.",
-        "inMapId": "G.N2.2.Map",
-        "isShowInParentMap": true
-    }, {
-        "id": "A2.Convo.Kelly.5",
-        "inMissionId": "A2.Convo.Kelly",
-        "sortIndex": 90105,
-        "gameVersion": "2",
-        "missionType": "Objective",
-        "name": "1st Normandy Cabin Visit",
-        "description": "Once you have completed enough of the interactions, invite Kelly up to your cabin for dinner. She will offer to feed your fish.",
-        "inMapId": "G.N2.1.Terminal",
-        "isShowInParentMap": true
-    }, {
-        "id": "A2.Convo.Kelly.9",
-        "inMissionId": "A2.Convo.Kelly",
-        "sortIndex": 90109,
-        "gameVersion": "2",
-        "missionType": "Objective",
-        "name": "2nd Normandy Cabin Visit",
-        "description": "This requires (in addition to the dinner conversation): \n - Ask Kelly about aliens when discussing Tali or Thane. \n - Have no other active love interest. \n - Save Kelly from the Collector Base, and ask her how she is doing afterwards. \n - Leave the Normandy, and come back. \n\nYou will receive a private message from Kelly. head up to your cabin and invite her up. \n\n([Source|https://www.gamefaqs.com/boards/944907-mass-effect-2/53455594])",
-        "inMapId": "G.N2.1.Terminal",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Collector Base"
-        }]
-    }, {
-        "id": "A2.Convo.Garrus",
+        "id": "A2.Convo.Squad",
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Conversation",
+        "name": "Squad",
+        "description": "Conversations with your squad members in Mass Effect 2.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Freedom's Progress"
+        }]
+    }, {
+        "id": "A2.Convo.Kasumi",
+        "inMissionId": "A2.Convo.Squad",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Kasumi Goto",
+        "description": "Conversations with [megametracker://person?id=S2.Kasumi] aboard the Normandy.",
+        "inMapId": "G.N2.3Quarters",
+        "mapLocationPoint": {
+            "x": 1709,
+            "y": 698,
+            "radius": 1
+        },
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Kasumi_Goto/Unique_dialogue"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Acquired: Kasumi"
+        }]
+    }, {
+        "id": "A2.Convo.Garrus",
+        "inMissionId": "A2.Convo.Squad",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Garrus Vakarian",
         "description": "Conversations with [megametracker://person?id=S2.Garrus] after his recruitment aboard the Normandy.",
         "inMapId": "G.N2.3.Battery",
@@ -291,9 +138,11 @@
         }]
     }, {
         "id": "A2.Convo.Grunt",
+        "inMissionId": "A2.Convo.Squad",
         "sortIndex": 9000,
         "gameVersion": "2",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Grunt",
         "description": "Conversations with [megametracker://person?id=S2.Grunt] after his recruitment aboard the Normandy.",
         "inMapId": "G.N2.4.Port",
@@ -467,9 +316,11 @@
         }]
     }, {
         "id": "A2.Convo.Jack",
+        "inMissionId": "A2.Convo.Squad",
         "sortIndex": 9000,
         "gameVersion": "2",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Jack",
         "description": "Conversations with [megametracker://person?id=S2.Jack] after her recruitment aboard the Normandy.",
         "inMapId": "G.N2.4.SubDeck",
@@ -839,9 +690,11 @@
         }]
     }, {
         "id": "A2.Convo.Jacob",
+        "inMissionId": "A2.Convo.Squad",
         "sortIndex": 9000,
         "gameVersion": "2",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Jacob Taylor",
         "description": "Conversations with [megametracker://person?id=S2.Jacob] aboard the Normandy.",
         "inMapId": "G.N2.2.Armory",
@@ -1301,9 +1154,11 @@
         }]
     }, {
         "id": "A2.Convo.Legion",
+        "inMissionId": "A2.Convo.Squad",
         "sortIndex": 9000,
         "gameVersion": "2",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Legion",
         "description": "Conversations with [megametracker://person?id=S2.Legion] after its recruitment aboard the Normandy.",
         "inMapId": "G.N2.3.Core",
@@ -1481,9 +1336,11 @@
         }]
     }, {
         "id": "A2.Convo.Miranda",
+        "inMissionId": "A2.Convo.Squad",
         "sortIndex": 9000,
         "gameVersion": "2",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Miranda Lawson",
         "description": "Conversations with [megametracker://person?id=S2.Miranda] aboard the Normandy.",
         "inMapId": "G.N2.3.Cabin",
@@ -1700,9 +1557,11 @@
         }]
     }, {
         "id": "A2.Convo.Mordin",
+        "inMissionId": "A2.Convo.Squad",
         "sortIndex": 9000,
         "gameVersion": "2",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Mordin Solus",
         "description": "Conversations with [megametracker://person?id=S2.Mordin] after his recruitment aboard the Normandy.",
         "inMapId": "G.N2.2.Lab",
@@ -1944,9 +1803,11 @@
         }]
     }, {
         "id": "A2.Convo.Samara",
+        "inMissionId": "A2.Convo.Squad",
         "sortIndex": 9000,
         "gameVersion": "2",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Samara/Morinth",
         "description": "Conversations with [megametracker://person?id=S2.Samara] (or Morinth) after her recruitment aboard the Normandy.",
         "inMapId": "G.N2.3.Starboard",
@@ -2152,13 +2013,19 @@
         }]
     }, {
         "id": "A2.Convo.Tali",
+        "inMissionId": "A2.Convo.Squad",
         "sortIndex": 9000,
         "gameVersion": "2",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Tali'Zorah",
         "description": "Conversations with [megametracker://person?id=S2.Tali] after her recruitment aboard the Normandy.",
-        "inMapId": "G.N2.4.Station",
-        "isShowInParentMap": true,
+        "inMapId": "G.N2.4Engineering",
+        "mapLocationPoint": {
+            "x": 1194,
+            "y": 840,
+            "radius": 1
+        },
         "relatedDecisionIds": ["D2.LoveTali", "D2.RaelZorahReputation"],
         "relatedMissionIds": ["A2.L.Tali"],
         "relatedLinks": ["http://masseffect.wikia.com/wiki/Tali%27Zorah_nar_Rayya/Unique_dialogue#Mass_Effect_2"],
@@ -2263,8 +2130,12 @@
         "missionType": "Objective",
         "name": "1st Convo",
         "description": "Tali discusses the quarian political hierarchy and what the quarians have against Cerberus.",
-        "inMapId": "G.N2.4.Station",
-        "isShowInParentMap": true
+        "inMapId": "G.N2.4Engineering",
+        "mapLocationPoint": {
+            "x": 1194,
+            "y": 840,
+            "radius": 1
+        }
     }, {
         "id": "A2.Convo.Tali.2",
         "inMissionId": "A2.Convo.Tali",
@@ -2274,8 +2145,12 @@
         "name": "2nd Convo",
         "annotationNote": "Loyalty Mission Dialogue",
         "description": "Tali reveals that the quarian Admiralty Board has accused her of treason and she must return to stand trial. She has no idea what the charges are.",
-        "inMapId": "G.N2.4.Station",
-        "isShowInParentMap": true,
+        "inMapId": "G.N2.4Engineering",
+        "mapLocationPoint": {
+            "x": 1194,
+            "y": 840,
+            "radius": 1
+        },
         "relatedMissionIds": ["A2.L.Tali"]
     }, {
         "id": "A2.Convo.Tali.3",
@@ -2285,8 +2160,12 @@
         "missionType": "Objective",
         "name": "3rd Convo",
         "description": "If you revealed that Tali's father committed treason to save Tali, she is furious and refuses to speak to you again. If you did not, she apologizes for dragging you into the trial and dicusses the power vacuum created by her father's death.",
-        "inMapId": "G.N2.4.Station",
-        "isShowInParentMap": true,
+        "inMapId": "G.N2.4Engineering",
+        "mapLocationPoint": {
+            "x": 1194,
+            "y": 840,
+            "radius": 1
+        },
         "relatedDecisionIds": ["D2.RaelZorahReputation"],
         "events": [{
             "type": "BlockedUntil",
@@ -2301,8 +2180,12 @@
         "name": "4th Convo",
         "annotationNote": "Romance Option",
         "description": "Tali discusses the risks inherent in the weakened quarian immune system.",
-        "inMapId": "G.N2.4.Station",
-        "isShowInParentMap": true,
+        "inMapId": "G.N2.4Engineering",
+        "mapLocationPoint": {
+            "x": 1194,
+            "y": 840,
+            "radius": 1
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Tali"
@@ -2316,8 +2199,12 @@
         "name": "5th Convo (BroShep)",
         "annotationNote": "Romance Option",
         "description": "Tali apologizes for hitting on you before.",
-        "inMapId": "G.N2.4.Station",
-        "isShowInParentMap": true,
+        "inMapId": "G.N2.4Engineering",
+        "mapLocationPoint": {
+            "x": 1194,
+            "y": 840,
+            "radius": 1
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Tali"
@@ -2331,17 +2218,23 @@
         "name": "6th Convo (BroShep)",
         "annotationNote": "Romance Lock",
         "description": "This is your last chance to lock-in with Tali or friend-zone her. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
-        "inMapId": "G.N2.4.Station",
-        "isShowInParentMap": true,
+        "inMapId": "G.N2.4Engineering",
+        "mapLocationPoint": {
+            "x": 1194,
+            "y": 840,
+            "radius": 1
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Tali"
         }]
     }, {
         "id": "A2.Convo.Thane",
+        "inMissionId": "A2.Convo.Squad",
         "sortIndex": 9000,
         "gameVersion": "2",
-        "missionType": "Conversation",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
         "name": "Thane Krios",
         "description": "Conversations with [megametracker://person?id=S2.Thane] after his recruitment aboard the Normandy.",
         "inMapId": "G.N2.3.Support",
@@ -2630,7 +2523,351 @@
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Thane"
         }]
+
     }, {
+        "id": "A2.Convo.Zaeed",
+        "inMissionId": "A2.Convo.Squad",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Zaeed Massani",
+        "description": "Conversations with [megametracker://person?id=S2.Zaeed] aboard the Normandy.",
+        "inMapId": "G.N2.4Engineering",
+        "mapLocationPoint": {
+            "x": 627,
+            "y": 579,
+            "radius": 1
+        },
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Zaeed_Massani/Unique_dialogue"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Acquired: Zaeed"
+        }]
+    }, {
+
+
+
+        "id": "A2.Convo.Crew",
+        "sortIndex": 9010,
+        "gameVersion": "2",
+        "missionType": "Conversation",
+        "name": "Crew",
+        "description": "Conversations with your crew in Mass Effect 2.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Freedom's Progress"
+        }]
+    }, {
+        "id": "A2.Convo.Chakwas",
+        "inMissionId": "A2.Convo.Crew",
+        "sortIndex": 9010,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Dr. Chakwas",
+        "description": "Conversations with [megametracker://person?id=P1.Chakwas] aboard the Normandy.",
+        "inMapId": "G.N2.3.Lab",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "context": "During first conversation",
+                "options": [{
+                    "id": "A1.Convo.Chakwas.P0",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Why are you here?\""
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }]
+    }, {
+        "id": "A2.Convo.Chakwas.1",
+        "inMissionId": "A2.Convo.Chakwas",
+        "sortIndex": 90101,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "You can inquire how and why Chakwas joined Cerberus. She is very clear that she views it as working for Shepard, not for them. If you ask if she needs anything, it will start [megametracker://mission?id=A2.N.SerriceIceBrandy].",
+        "inMapId": "G.N2.3.Lab",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.N.SerriceIceBrandy"]
+
+    }, {
+        "id": "A2.Convo.DD",
+        "inMissionId": "A2.Convo.Crew",
+        "sortIndex": 9010,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Daniels and Donnelly",
+        "description": "Conversations with [megametracker://person?id=P2.Daniels] and [megametracker://person?id=P2.Donnelly] aboard the Normandy.",
+        "inMapId": "G.N2.4Engineering",
+        "mapLocationPoint": {
+            "x": 1194,
+            "y": 1240,
+            "radius": 1
+        },
+        "conversationRewards": [{
+            "set": {
+                "context": "During first conversation",
+                "options": [{
+                    "id": "A1.Convo.DD.P0",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Why are you here?\""
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }]
+    }, {
+        "id": "A2.Convo.DD.1",
+        "inMissionId": "A2.Convo.DD",
+        "sortIndex": 90101,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "Daniels and Donnelly are former Alliance engineers who fought in the Battle of The Citadel. They joined Cerberus when the Alliance denied the looming Reaper threat. If you ask if they need anything, it will start [megametracker://mission?id=A2.N.FBACouplings].",
+        "inMapId": "G.N2.4Engineering",
+        "mapLocationPoint": {
+            "x": 1194,
+            "y": 1240,
+            "radius": 1
+        },
+        "relatedMissionIds": ["A2.N.FBACouplings"]
+
+    }, {
+        "id": "A2.Convo.EDI",
+        "inMissionId": "A2.Convo.Crew",
+        "sortIndex": 9010,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "EDI",
+        "description": "Conversations with [megametracker://person?id=S3.EDI] aboard the Normandy.",
+        "inMapId": "G.N2.2.Bridge",
+        "isShowInParentMap": true,
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/EDI/Unique_dialogue#Mass_Effect_2"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }]
+    }, {
+        "id": "A2.Convo.EDI.1",
+        "inMissionId": "A2.Convo.EDI",
+        "sortIndex": 90101,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "You can ask EDI for more information about her purpose and functionality, and about Cerberus, but she is unable to answer in many instances due to Cerberus blocks in her programming.",
+        "inMapId": "G.N2.2.Bridge",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Gardner",
+        "inMissionId": "A2.Convo.Crew",
+        "sortIndex": 9010,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Mess Sergeant Garner",
+        "description": "Conversations with [megametracker://person?id=P2.Gardner] aboard the Normandy.",
+        "inMapId": "G.N2.3.Kitchen",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }]
+    }, {
+        "id": "A2.Convo.Gardner.1",
+        "inMissionId": "A2.Convo.Gardner",
+        "sortIndex": 90101,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "Gardner serves multiple handyman roles on the Normandy. He is loyal to Cerberus and believes in their cause. If you ask if he needs anything, it will start [megametracker://mission?id=A2.N.SpecialIngredients].",
+        "inMapId": "G.N2.3.Kitchen",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.N.SpecialIngredients"]
+    }, {
+        "id": "A2.Convo.Joker",
+        "inMissionId": "A2.Convo.Crew",
+        "sortIndex": 9010,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Jeff \"Joker\" Moreau",
+        "description": "Conversations with [megametracker://person?id=P1.Joker] aboard the Normandy.",
+        "inMapId": "G.N2.2.Bridge",
+        "isShowInParentMap": true,
+        "relatedLinks": ["http://masseffect.wikia.com/wiki/Jeff_%22Joker%22_Moreau/Unique_dialogue#Mass_Effect_2"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }]
+    }, {
+        "id": "A2.Convo.Joker.1",
+        "inMissionId": "A2.Convo.Joker",
+        "sortIndex": 90101,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Normandy Convo",
+        "description": "Joker is delighted with the Normandy SR2. But he hates EDI. You can also inquire about the ship and the new crew, or your adventures in Game 1, and what happened to the old crew.",
+        "inMapId": "G.N2.2.Bridge",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Kelly",
+        "inMissionId": "A2.Convo.Crew",
+        "sortIndex": 9010,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Kelly Chambers",
+        "description": "Conversations with [megametracker://person?id=P2.Chambers] aboard the Normandy.",
+        "inMapId": "G.N2.2.Map",
+        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D2.LoveKelly"],
+        "conversationRewards": [{
+            "set": {
+                "context": "During first conversation",
+                "options": [{
+                    "context": "\"The pleasure is mine.\" and \"Sure.\"",
+                    "id": "A2.Convo.Kelly.P1",
+                    "type": "Paragon",
+                    "value": 0,
+                    "trigger": "You can now address her as \"Kelly.\""
+                }, {
+                    "set": {
+                        "context": "Investigate: \"What do you think of Cerberus?\" and \"Does Cerberus hate aliens?\"",
+                        "options": [{
+                            "id": "A2.Convo.Kelly.P2",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"You are very loving.\""
+                        }, {
+                            "id": "A2.Convo.Kelly.R2",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You're naive.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "context": "Investigate: \"Are you happy here?\" and \"We won't.\"",
+                        "options": [{
+                            "id": "A2.Convo.Kelly.P3A",
+                            "type": "Paragon",
+                            "value": 0,
+                            "context": "\"I'd catch you.\"",
+                            "trigger": "Friendship track."
+                        }, {
+                            "id": "A2.Convo.Kelly.P3B",
+                            "type": "Paragon",
+                            "value": 0,
+                            "context": "\"I'd embrace you.\"",
+                            "trigger": "Romance track."
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "When Kelly worries that she was too flirty previously",
+                "options": [{
+                    "id": "A2.Convo.Kelly.P5A",
+                    "type": "Paragon",
+                    "value": 0,
+                    "context": "\"Informal is fine.\"",
+                    "trigger": "Friendship track."
+                }, {
+                    "id": "A2.Convo.Kelly.P5B",
+                    "type": "Paragon",
+                    "value": 0,
+                    "context": "\"I liked it.\"",
+                    "trigger": "Romance track."
+                }]
+            }
+        }, {
+            "set": {
+                "context": "When Kelly talks about Tali or Thane",
+                "options": [{
+                    "id": "A2.Convo.Kelly.P8B",
+                    "type": "Paragon",
+                    "value": 0,
+                    "context": "\"How so?\" and \"Are you into aliens?\"",
+                    "trigger": "Romance track."
+                }]
+            }
+        }, {
+            "context": "One of the above exchanges will lead to: \"Let's have dinner.\"",
+            "id": "A2.Convo.Kelly.P15",
+            "type": "Paragade",
+            "value": 0,
+            "paragadeValue": [5, 5],
+            "trigger": "Invite Kelly up to your cabin for dinner. She will offer to feed your fish."
+        }, {
+            "context": "After the collector ship: \"Worried? You do care.\" and \"What about me?\"",
+            "id": "A2.Convo.Kelly.P20",
+            "type": "Paragon",
+            "value": 0,
+            "trigger": "Romance track."
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
+        }]
+    }, {
+        "id": "A2.Convo.Kelly.1",
+        "inMissionId": "A2.Convo.Kelly",
+        "sortIndex": 90101,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Normandy Convos",
+        "description": "Kelly introduces herself. You have several Paragon options if you explore all the Investigate options. If you want a relationship, talk with Kelly after every mission, and be nice. There are many more flirting options than the ones I've specifically called out in the conversation rewards, but they are not necessary to trigger the romance.",
+        "inMapId": "G.N2.2.Map",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Kelly.5",
+        "inMissionId": "A2.Convo.Kelly",
+        "sortIndex": 90105,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "1st Normandy Cabin Visit",
+        "description": "Once you have completed enough of the interactions, invite Kelly up to your cabin for dinner. She will offer to feed your fish.",
+        "inMapId": "G.N2.1.Terminal",
+        "isShowInParentMap": true
+    }, {
+        "id": "A2.Convo.Kelly.9",
+        "inMissionId": "A2.Convo.Kelly",
+        "sortIndex": 90109,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Normandy Cabin Visit",
+        "description": "This requires (in addition to the dinner conversation): \n - Ask Kelly about aliens when discussing Tali or Thane. \n - Have no other active love interest. \n - Save Kelly from the Collector Base, and ask her how she is doing afterwards. \n - Leave the Normandy, and come back. \n\nYou will receive a private message from Kelly. head up to your cabin and invite her up. \n\n([Source|https://www.gamefaqs.com/boards/944907-mass-effect-2/53455594])",
+        "inMapId": "G.N2.1.Terminal",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Collector Base"
+        }]
+    }, {
+
+
+
+
+
+
+
+
+
         "id": "A2.Convo.Disputes",
         "sortIndex": 9050,
         "gameVersion": "2",
@@ -2769,6 +3006,10 @@
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Tali and Legion"
         }]
+
+
+
+
 
     }, {
         "id": "A2.Convo.Shops",
@@ -2985,100 +3226,63 @@
             }
         }]
     }, {
+
+
+
+
+
+
         "id": "A2.Convo.Miscellaneous",
         "sortIndex": 9095,
         "gameVersion": "2",
         "missionType": "Conversation",
         "name": "Miscellaneous",
-        "description": "Conversations with various lesser characters in Mass Effect 2.",
+        "description": "Conversations with various other characters in Mass Effect 2.",
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Freedom's Progress"
         }]
     }, {
-        "id": "A2.Convo.RachniAgent",
+        "id": "A2.Convo.Aria",
         "inMissionId": "A2.Convo.Miscellaneous",
-        "sortIndex": 9090,
+        "sortIndex": 9010,
         "gameVersion": "2",
         "missionType": "Objective",
         "titlePrefix": "Conversation: ",
-        "name": "Rachni Agent",
-        "description": "If the Rachni Queen was spared in Game 1, her asari agent approaches you on Illium.",
-        "x-inMapId": "TODO: Illium Spaceport",
-        "isShowInParentMap": true,
+        "name": "Aria T'Loak",
+        "description": "Meeting [megametracker://person?id=P2.Aria] for the first time on Omega.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+        "mapLocationPoint": {
+            "x": 784,
+            "y": 287,
+            "radius": 1
+        },
         "conversationRewards": [{
+            "context": "When her bodyguard tries to scan you.",
+            "id": "A1.Convo.Aria.P0",
+            "type": "Renegade",
+            "value": 2,
+            "trigger": "\"Like hell.\""
+        }, {
             "set": {
+                "context": "After Aria explains the one rule on Omega.",
                 "isExclusiveSet": true,
                 "options": [{
-                    "id": "A2.Convo.RachniAgent.P1",
+                    "id": "A1.Convo.Aria.P1",
                     "type": "Paragon",
                     "value": 2,
-                    "trigger": "\"Stop controlling her!\""
+                    "trigger": "\"Simple enough.\""
                 }, {
-                    "id": "A2.Convo.RachniAgent.R1",
+                    "id": "A1.Convo.Aria.R1",
                     "type": "Renegade",
                     "value": 2,
-                    "trigger": "Tell her to be good."
+                    "trigger": "\"I have similar rules.\""
                 }]
             }
         }],
-        "relatedDecisionIds": ["D1.RachniQueen"]
-    }, {
-        "id": "A2.Convo.Fist2",
-        "inMissionId": "A2.Convo.Miscellaneous",
-        "sortIndex": 9090,
-        "gameVersion": "2",
-        "missionType": "Objective",
-        "titlePrefix": "Conversation: ",
-        "name": "Fist",
-        "description": "If Fist was spared in Game 1, you will encounter him again in the lower level of Afterlife on Omega.",
-        "x-inMapId": "TODO: Lower Afterlife",
-        "isShowInParentMap": true,
-        "conversationRewards": [{
-            "set": {
-                "isExclusiveSet": true,
-                "options": [{
-                    "id": "A2.Convo.Fist2.P1",
-                    "type": "Paragon",
-                    "value": 2,
-                    "trigger": "\"You're welcome.\""
-                }, {
-                    "id": "A2.Convo.Fist2.R1",
-                    "type": "Renegade",
-                    "value": 2,
-                    "trigger": "I don't remember or care."
-                }]
-            }
-        }],
-        "relatedDecisionIds": ["D1.Fist"]
-    }, {
-        "id": "A2.Convo.Kylan",
-        "inMissionId": "A2.Convo.Miscellaneous",
-        "sortIndex": 9090,
-        "gameVersion": "2",
-        "missionType": "Objective",
-        "titlePrefix": "Conversation: ",
-        "name": "Kylan",
-        "description": "A bravo and his men threaten you outside Afterlife on Omega.",
-        "x-inMapId": "TODO: Outside Afterlife",
-        "isShowInParentMap": true,
-        "conversationRewards": [{
-            "set": {
-                "isExclusiveSet": true,
-                "options": [{
-                    "id": "A2.Convo.Kylan.P1",
-                    "type": "Paragon",
-                    "value": 5,
-                    "context": "*_Charm Kylan_*",
-                    "trigger": "\"Careful, now.\""
-                }, {
-                    "id": "A2.Convo.Kylan.R1",
-                    "type": "Renegade",
-                    "value": 5,
-                    "context": "*_Intimidate Kylan_*",
-                    "trigger": "A dead man."
-                }]
-            }
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Galaxy Map 2"
         }]
     }, {
         "id": "A2.Convo.AlJilani",
@@ -3146,6 +3350,161 @@
             }
         }],
         "relatedDecisionIds": ["D2.AlJilani"]
+    }, {
+        "id": "A2.Convo.Fist2",
+        "inMissionId": "A2.Convo.Miscellaneous",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Fist",
+        "description": "If Fist was spared in Game 1, you will encounter him again in the lower level of Afterlife on Omega.",
+        "x-inMapId": "TODO: Lower Afterlife",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.Fist2.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"You're welcome.\""
+                }, {
+                    "id": "A2.Convo.Fist2.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "I don't remember or care."
+                }]
+            }
+        }],
+        "relatedDecisionIds": ["D1.Fist"]
+    }, {
+        "id": "A2.Convo.Gavorn",
+        "inMissionId": "A2.Convo.Miscellaneous",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Captain Gavorn",
+        "description": "Conversation with [megametracker://person?id=O2.Gavorn] on Omega.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+        "mapLocationPoint": {
+            "x": 624,
+            "y": 1532,
+            "radius": 1
+        },
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "context": "When he asks about all the dead vorcha in the Quarantine Zone (Speak to Shisk at Kenn's Salvage first)",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.Gavorn.P0",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Who, me? Nah.\""
+                }, {
+                    "id": "A2.Convo.Gavorn.R0",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"I did you a favor.\""
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Mordin"
+        }]
+    }, {
+        "id": "A2.Convo.Gavorn.1",
+        "inMissionId": "A2.Convo.Gavorn",
+        "sortIndex": 90901,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Speak to Shisk",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1421,
+            "y": 1326,
+            "radius": 1
+        }
+    }, {
+        "id": "A2.Convo.Gavorn.2",
+        "inMissionId": "A2.Convo.Gavorn",
+        "sortIndex": 90901,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Speak to Gavorn",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 624,
+            "y": 1532,
+            "radius": 1
+        }
+    }, {
+        "id": "A2.Convo.Kylan",
+        "inMissionId": "A2.Convo.Miscellaneous",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Kylan",
+        "description": "A bravo and his men threaten you outside Afterlife on Omega.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+        "mapLocationPoint": {
+            "x": 724,
+            "y": 1181,
+            "radius": 20
+        },
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.Kylan.P1",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm Kylan_*",
+                    "trigger": "\"Careful, now.\""
+                }, {
+                    "id": "A2.Convo.Kylan.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate Kylan_*",
+                    "trigger": "A dead man."
+                }]
+            }
+        }]
 
+    }, {
+        "id": "A2.Convo.RachniAgent",
+        "inMissionId": "A2.Convo.Miscellaneous",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Rachni Agent",
+        "description": "If the Rachni Queen was spared in Game 1, her asari agent approaches you on Illium.",
+        "x-inMapId": "TODO: Illium Spaceport",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.RachniAgent.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Stop controlling her!\""
+                }, {
+                    "id": "A2.Convo.RachniAgent.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "Tell her to be good."
+                }]
+            }
+        }],
+        "relatedDecisionIds": ["D1.RachniQueen"]
     }]
 }

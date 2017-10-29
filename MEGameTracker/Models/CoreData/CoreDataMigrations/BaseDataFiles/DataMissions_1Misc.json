@@ -1,328 +1,329 @@
 {
-	"missions": [{
-		"x-comment-x": "-----------------------DLC-------------------------",
-		"id": "DLC1.X57.BringDownTheSky",
-		"sortIndex": 95,
-		"gameVersion": "1",
-		"missionType": "DLC",
-		"name": "X57: Bring Down the Sky",
-		"description": "Three fusion torches have been directed to drive the asteroid X57 into a human colony on a nearby planet. You must shut down these three fusion torches. Note: this is *not* a timed assignment, so you can travel freely during the mission anywhere on the galaxy map with no adverse consequences.\n\n*_This assignment was released as part of the Bring Down the Sky DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
-		"inMapId": "G.Ear.Exo.Asg.X57",
-		"isShowInParentMap": true,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/X57:_Bring_Down_the_Sky"
-		],
-		"relatedMissionIds": ["DLC1.X57.MissingEngineers", "DLC1.X57.AvoidTheBlastingCaps"],
-		"relatedDecisionIds": ["D1.X57Hostages"],
-		"conversationRewards": [{
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Talking to survivor Simon at Torch #1",
-				"options": [{
-					"id": "DLC1.P1",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"They're not all like this.\""
-				}, {
-					"id": "DLC1.R1",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"Why wouldn't they?\""
-				}]
-			}
-		}, {
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Acquire the key from Charn",
-				"options": [{
-					"id": "DLC1.P2",
-					"type": "Paragon",
-					"value": 8,
-					"context": "*_Charm_* Charn (Requires 2 Charm)",
-					"trigger": "\"Forget Balak.\""
-				}, {
-					"id": "DLC1.P3",
-					"type": "Paragon",
-					"value": 8,
-					"context": "*_Intimidate_* Charn (Requires 2 Intimidate)",
-					"trigger": "\"Don't be stupid.\""
-				}, {
-					"id": "DLC1.R2",
-					"type": "Renegade",
-					"value": 9,
-					"trigger": "Attack him."
-				}]
-			}
-		}, {
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Decide what to do with Balak",
-				"options": [{
-					"id": "DLC1.P4",
-					"type": "Paragon",
-					"value": 24,
-					"trigger": "Let him go to save hostages."
-				}, {
-					"id": "DLC1.R3",
-					"type": "Renegade",
-					"value": 25,
-					"trigger": "Attack him."
-				}]
-			}
-		}, {
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Talking to Simon afterwards",
-				"options": [{
-					"id": "DLC1.P4",
-					"type": "Paragon",
-					"value": 2,
-					"context": "(After letting Balak go)",
-					"trigger": "\"Only temporarily.\""
-				}, {
-					"id": "DLC1.R3",
-					"type": "Renegade",
-					"value": 2,
-					"context": "(After killing Balak)",
-					"trigger": "\"Damn right I am.\" and \"As hard as possible.\""
-				}]
-			}
-		}, {
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Persuade Simon to give you his omni-tool",
-				"options": [{
-					"id": "DLC1.P4",
-					"type": "Paragon",
-					"value": 0,
-					"context": "*_Charm_* Simon (Requires 4 Charm)",
-					"trigger": "\"How about your omni-tool?\""
-				}, {
-					"id": "DLC1.R4",
-					"type": "Renegade",
-					"value": 0,
-					"context": "*_Intimidate_* Simon (Requires 4 Intimidate)",
-					"trigger": "\"Hand over your omni-tool.\""
-				}]
-			}
-		}],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.1",
-		"sortIndex": 9501,
-		"inMissionId": "DLC1.X57.BringDownTheSky",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "First Fusion Torch",
-		"description": "Each torch is guarded by turrets. Enter the facility, disable the torch control, and fight the batarian terrorists in the room beyond. When complete, you will be able to contact [megametracker://person?id=O1.Bowman] and learn what is going on.",
-		"inMapId": "G.Ear.Exo.Asg.X57.1TorchFacility",
-		"isShowInParentMap": true,
-		"relatedMissionIds": ["DLC1.X57.MissingEngineers"]
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.1.A",
-		"sortIndex": 9502,
-		"inMissionId": "DLC1.X57.BringDownTheSky.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Torch Control",
-		"inMapId": "G.Ear.Exo.Asg.X57.1TorchFacility",
-		"mapLocationPoint": {
-			"x": 1285,
-			"y": 1726,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.2",
-		"sortIndex": 9503,
-		"inMissionId": "DLC1.X57.BringDownTheSky",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Second Fusion Torch",
-		"description": "Each torch is guarded by turrets. Enter the facility, fight off the batarians and rocket drones inside. Disable the torch control. When accomplished, there will be a cut scene to Kate and the other hostages.",
-		"inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
-		"isShowInParentMap": true,
-		"relatedMissionIds": ["DLC1.X57.AvoidTheBlastingCaps"]
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.2.A",
-		"sortIndex": 9504,
-		"inMissionId": "DLC1.X57.BringDownTheSky.2",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Torch Control",
-		"inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
-		"mapLocationPoint": {
-			"x": 1285,
-			"y": 1726,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.3",
-		"sortIndex": 9505,
-		"inMissionId": "DLC1.X57.BringDownTheSky",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Third Fusion Torch",
-		"description": "Each torch is guarded by turrets. Enter the facility, fight off the batarians and varren war beasts inside. Disable the torch control. When accomplished, [Charn|megametracker://person?id=Charn] will be waiting downstairs.",
-		"inMapId": "G.Ear.Exo.Asg.X57.3TorchFacility",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.3.A",
-		"sortIndex": 9506,
-		"inMissionId": "DLC1.X57.BringDownTheSky.3",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Torch Control",
-		"inMapId": "G.Ear.Exo.Asg.X57.3TorchFacility",
-		"mapLocationPoint": {
-			"x": 1285,
-			"y": 1726,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.4",
-		"sortIndex": 9507,
-		"inMissionId": "DLC1.X57.BringDownTheSky",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Charn and the Key",
-		"description": "You will have to fight [Charn's|megametracker://person?id=Charn] reinforcements. But with enough persuasion, you can convince Charn to give you the key to the main facility where the terrorists and hostages are. Otherwise, you will have to kill him.",
-		"inMapId": "G.Ear.Exo.Asg.X57.3TorchFacility"
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.5",
-		"sortIndex": 9508,
-		"inMissionId": "DLC1.X57.BringDownTheSky",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Head to the Main Facility",
-		"description": "You have the pass key for the main facility. Head there and confront Balak. \n\nHead inside and up to the second floor and fight off the first wave of batarians.",
-		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.6",
-		"sortIndex": 9509,
-		"inMissionId": "DLC1.X57.BringDownTheSky",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Deal With Balak",
-		"description": "[Balak|megametracker://person?id=E1.Balak] has locked up the hostages in a cell with a bomb. \n\nIf you kill Balak, he will kill all the hostages and then you will have to fight him and his bodyguards and varren (and you then have the choice of killing Balak, torturing him, leaving him to die, or turning him over to the Alliance). \n\nIf you let Balak go, you will have 10 minutes to find and disable the three bombs concealed in the facility.",
-		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
-		"relatedDecisionIds": ["D1.X57Hostages"]
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.6.1",
-		"sortIndex": 9510,
-		"inMissionId": "DLC1.X57.BringDownTheSky.6",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Bomb 1",
-		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
-		"mapLocationPoint": {
-			"x": 530,
-			"y": 1268,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.6.2",
-		"sortIndex": 9511,
-		"inMissionId": "DLC1.X57.BringDownTheSky.6",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Bomb 2",
-		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
-		"mapLocationPoint": {
-			"x": 1991,
-			"y": 1275,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.6.3",
-		"sortIndex": 9512,
-		"inMissionId": "DLC1.X57.BringDownTheSky.6",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Bomb 3",
-		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
-		"mapLocationPoint": {
-			"x": 1136,
-			"y": 1028,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.X57.BringDownTheSky.7",
-		"sortIndex": 9513,
-		"inMissionId": "DLC1.X57.BringDownTheSky",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Aftermath",
-		"description": "Simon offers you a reward of armor for saving the human colony. You also have the option of persuading him to give you his omni-tool. If you saved the hostages, you can let them out (in a cell by the stairs up to Medical).\n\nThe next time you access the galaxy map, asteroid X57 will have been moved back where it belongs.",
-		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
-		"mapLocationPoint": {
-			"x": 557,
-			"y": 246,
-			"radius": 1
-		}
+   "missions": [{
+      "x-comment-x": "-----------------------DLC-------------------------",
+      "id": "DLC1.X57.BringDownTheSky",
+      "sortIndex": 95,
+      "gameVersion": "1",
+      "missionType": "DLC",
+      "name": "X57: Bring Down the Sky",
+      "description": "Three fusion torches have been directed to drive the asteroid X57 into a human colony on a nearby planet. You must shut down these three fusion torches. Note: this is *not* a timed assignment, so you can travel freely during the mission anywhere on the galaxy map with no adverse consequences.\n\n*_This assignment was released as part of the Bring Down the Sky DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
+      "inMapId": "G.Ear.Exo.Asg.X57",
+      "isShowInParentMap": true,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/X57:_Bring_Down_the_Sky"
+      ],
+      "relatedMissionIds": ["DLC1.X57.MissingEngineers", "DLC1.X57.AvoidTheBlastingCaps"],
+      "relatedDecisionIds": ["D1.X57Hostages"],
+      "conversationRewards": [{
+         "set": {
+            "isExclusiveSet": true,
+            "context": "Talking to survivor Simon at Torch #1",
+            "options": [{
+               "id": "DLC1.P1",
+               "type": "Paragon",
+               "value": 2,
+               "trigger": "\"They're not all like this.\""
+            }, {
+               "id": "DLC1.R1",
+               "type": "Renegade",
+               "value": 2,
+               "trigger": "\"Why wouldn't they?\""
+            }]
+         }
+      }, {
+         "set": {
+            "isExclusiveSet": true,
+            "context": "Acquire the key from Charn",
+            "options": [{
+               "id": "DLC1.P2",
+               "type": "Paragon",
+               "value": 8,
+               "context": "*_Charm_* Charn (Requires 2 Charm)",
+               "trigger": "\"Forget Balak.\""
+            }, {
+               "id": "DLC1.P3",
+               "type": "Paragon",
+               "value": 8,
+               "context": "*_Intimidate_* Charn (Requires 2 Intimidate)",
+               "trigger": "\"Don't be stupid.\""
+            }, {
+               "id": "DLC1.R2",
+               "type": "Renegade",
+               "value": 9,
+               "trigger": "Attack him."
+            }]
+         }
+      }, {
+         "set": {
+            "isExclusiveSet": true,
+            "context": "Decide what to do with Balak",
+            "options": [{
+               "id": "DLC1.P4",
+               "type": "Paragon",
+               "value": 24,
+               "trigger": "Let him go to save hostages."
+            }, {
+               "id": "DLC1.R3",
+               "type": "Renegade",
+               "value": 25,
+               "trigger": "Attack him."
+            }]
+         }
+      }, {
+         "set": {
+            "isExclusiveSet": true,
+            "context": "Talking to Simon afterwards",
+            "options": [{
+               "id": "DLC1.P4",
+               "type": "Paragon",
+               "value": 2,
+               "context": "(After letting Balak go)",
+               "trigger": "\"Only temporarily.\""
+            }, {
+               "id": "DLC1.R3",
+               "type": "Renegade",
+               "value": 2,
+               "context": "(After killing Balak)",
+               "trigger": "\"Damn right I am.\" and \"As hard as possible.\""
+            }]
+         }
+      }, {
+         "set": {
+            "isExclusiveSet": true,
+            "context": "Persuade Simon to give you his omni-tool",
+            "options": [{
+               "id": "DLC1.P4",
+               "type": "Paragon",
+               "value": 0,
+               "context": "*_Charm_* Simon (Requires 4 Charm)",
+               "trigger": "\"How about your omni-tool?\""
+            }, {
+               "id": "DLC1.R4",
+               "type": "Renegade",
+               "value": 0,
+               "context": "*_Intimidate_* Simon (Requires 4 Intimidate)",
+               "trigger": "\"Hand over your omni-tool.\""
+            }]
+         }
+      }],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.1",
+      "sortIndex": 9501,
+      "inMissionId": "DLC1.X57.BringDownTheSky",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "First Fusion Torch",
+      "description": "Each torch is guarded by turrets. Enter the facility, disable the torch control, and fight the batarian terrorists in the room beyond. When complete, you will be able to contact [megametracker://person?id=O1.Bowman] and learn what is going on.",
+      "inMapId": "G.Ear.Exo.Asg.X57.1TorchFacility",
+      "isShowInParentMap": true,
+      "relatedMissionIds": ["DLC1.X57.MissingEngineers"]
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.1.A",
+      "sortIndex": 9502,
+      "inMissionId": "DLC1.X57.BringDownTheSky.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Torch Control",
+      "inMapId": "G.Ear.Exo.Asg.X57.1TorchFacility",
+      "mapLocationPoint": {
+         "x": 1285,
+         "y": 1726,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.2",
+      "sortIndex": 9503,
+      "inMissionId": "DLC1.X57.BringDownTheSky",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Second Fusion Torch",
+      "description": "Each torch is guarded by turrets. Enter the facility, fight off the batarians and rocket drones inside. Disable the torch control. When accomplished, there will be a cut scene to Kate and the other hostages.",
+      "inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
+      "isShowInParentMap": true,
+      "relatedMissionIds": ["DLC1.X57.AvoidTheBlastingCaps"]
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.2.A",
+      "sortIndex": 9504,
+      "inMissionId": "DLC1.X57.BringDownTheSky.2",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Torch Control",
+      "inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
+      "mapLocationPoint": {
+         "x": 1285,
+         "y": 1726,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.3",
+      "sortIndex": 9505,
+      "inMissionId": "DLC1.X57.BringDownTheSky",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Third Fusion Torch",
+      "description": "Each torch is guarded by turrets. Enter the facility, fight off the batarians and varren war beasts inside. Disable the torch control. When accomplished, [Charn|megametracker://person?id=Charn] will be waiting downstairs.",
+      "inMapId": "G.Ear.Exo.Asg.X57.3TorchFacility",
+      "isShowInParentMap": true
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.3.A",
+      "sortIndex": 9506,
+      "inMissionId": "DLC1.X57.BringDownTheSky.3",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Torch Control",
+      "inMapId": "G.Ear.Exo.Asg.X57.3TorchFacility",
+      "mapLocationPoint": {
+         "x": 1285,
+         "y": 1726,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.4",
+      "sortIndex": 9507,
+      "inMissionId": "DLC1.X57.BringDownTheSky",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Charn and the Key",
+      "description": "You will have to fight [Charn's|megametracker://person?id=Charn] reinforcements. But with enough persuasion, you can convince Charn to give you the key to the main facility where the terrorists and hostages are. Otherwise, you will have to kill him.",
+      "inMapId": "G.Ear.Exo.Asg.X57.3TorchFacility"
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.5",
+      "sortIndex": 9508,
+      "inMissionId": "DLC1.X57.BringDownTheSky",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Head to the Main Facility",
+      "description": "You have the pass key for the main facility. Head there and confront Balak. \n\nHead inside and up to the second floor and fight off the first wave of batarians.",
+      "inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+      "isShowInParentMap": true
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.6",
+      "sortIndex": 9509,
+      "inMissionId": "DLC1.X57.BringDownTheSky",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Deal With Balak",
+      "description": "[Balak|megametracker://person?id=E1.Balak] has locked up the hostages in a cell with a bomb. \n\nIf you kill Balak, he will kill all the hostages and then you will have to fight him and his bodyguards and varren (and you then have the choice of killing Balak, torturing him, leaving him to die, or turning him over to the Alliance). \n\nIf you let Balak go, you will have 10 minutes to find and disable the three bombs concealed in the facility.",
+      "inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+      "relatedDecisionIds": ["D1.X57Hostages"]
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.6.1",
+      "sortIndex": 9510,
+      "inMissionId": "DLC1.X57.BringDownTheSky.6",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Bomb 1",
+      "inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+      "mapLocationPoint": {
+         "x": 530,
+         "y": 1268,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.6.2",
+      "sortIndex": 9511,
+      "inMissionId": "DLC1.X57.BringDownTheSky.6",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Bomb 2",
+      "inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+      "mapLocationPoint": {
+         "x": 1991,
+         "y": 1275,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.6.3",
+      "sortIndex": 9512,
+      "inMissionId": "DLC1.X57.BringDownTheSky.6",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Bomb 3",
+      "inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+      "mapLocationPoint": {
+         "x": 1136,
+         "y": 1028,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.X57.BringDownTheSky.7",
+      "sortIndex": 9513,
+      "inMissionId": "DLC1.X57.BringDownTheSky",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Aftermath",
+      "description": "Simon offers you a reward of armor for saving the human colony. You also have the option of persuading him to give you his omni-tool. If you saved the hostages, you can let them out (in a cell by the stairs up to Medical).\n\nThe next time you access the galaxy map, asteroid X57 will have been moved back where it belongs.",
+      "inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+      "mapLocationPoint": {
+         "x": 557,
+         "y": 246,
+         "radius": 1
+      }
 
-	}, {
-		"id": "DLC1.X57.MissingEngineers",
-		"sortIndex": 96,
-		"gameVersion": "1",
-		"missionType": "DLC",
-		"name": "X57: Missing Engineers",
-		"description": "There are three engineers missing on the surface of asteroid X57.\n\n*_This assignment was released as part of the Bring Down the Sky DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
-		"inMapId": "G.Ear.Exo.Asg.X57",
-		"isShowInParentMap": true,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/X57:_Missing_Engineers"
-		],
-		"relatedMissionIds": ["DLC1.X57.BringDownTheSky", "DLC1.X57.AvoidTheBlastingCaps"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "DLC1.X57.MissingEngineers.1",
-		"sortIndex": 9601,
-		"inMissionId": "DLC1.X57.MissingEngineers",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Find Hymes",
-		"description": "You can find the body of C. Hymes at Survey Station 1.",
-		"inMapId": "G.Ear.Exo.Asg.X57.10",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC1.X57.MissingEngineers.2",
-		"sortIndex": 9602,
-		"inMissionId": "DLC1.X57.MissingEngineers",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Find Montoya",
-		"description": "R. Montoya left Survey Station 2 to investigate signs of fighting.",
-		"inMapId": "G.Ear.Exo.Asg.X57.12",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC1.X57.MissingEngineers.3",
-		"sortIndex": 9603,
-		"inMissionId": "DLC1.X57.MissingEngineers",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Find Mendel",
-		"description": "You can find the body of G. Mendel at Survey Station 3.",
-		"inMapId": "G.Ear.Exo.Asg.X57.13",
-		"isShowInParentMap": true
+   }, {
+      "id": "DLC1.X57.MissingEngineers",
+      "sortIndex": 96,
+      "gameVersion": "1",
+      "missionType": "DLC",
+      "name": "X57: Missing Engineers",
+      "description": "There are three engineers missing on the surface of asteroid X57.\n\n*_This assignment was released as part of the Bring Down the Sky DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
+      "objectivesCountToCompletion": 5,
+      "inMapId": "G.Ear.Exo.Asg.X57",
+      "isShowInParentMap": true,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/X57:_Missing_Engineers"
+      ],
+      "relatedMissionIds": ["DLC1.X57.BringDownTheSky", "DLC1.X57.AvoidTheBlastingCaps"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "DLC1.X57.MissingEngineers.1",
+      "sortIndex": 9601,
+      "inMissionId": "DLC1.X57.MissingEngineers",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Find Hymes",
+      "description": "You can find the body of C. Hymes at Survey Station 1.",
+      "inMapId": "G.Ear.Exo.Asg.X57.10",
+      "isShowInParentMap": true
+   }, {
+      "id": "DLC1.X57.MissingEngineers.2",
+      "sortIndex": 9602,
+      "inMissionId": "DLC1.X57.MissingEngineers",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Find Montoya",
+      "description": "R. Montoya left Survey Station 2 to investigate signs of fighting.",
+      "inMapId": "G.Ear.Exo.Asg.X57.12",
+      "isShowInParentMap": true
+   }, {
+      "id": "DLC1.X57.MissingEngineers.3",
+      "sortIndex": 9603,
+      "inMissionId": "DLC1.X57.MissingEngineers",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Find Mendel",
+      "description": "You can find the body of G. Mendel at Survey Station 3.",
+      "inMapId": "G.Ear.Exo.Asg.X57.13",
+      "isShowInParentMap": true
    }, {
       "id": "DLC1.X57.MissingEngineers.3B",
       "sortIndex": 9603,
@@ -333,510 +334,508 @@
       "description": "You can find the body of T. Slajs by his vehicle at the top of a ridge.",
       "inMapId": "G.Ear.Exo.Asg.X57.9",
       "isShowInParentMap": true
-	}, {
-		"id": "DLC1.X57.MissingEngineers.4",
-		"sortIndex": 9604,
-		"inMissionId": "DLC1.X57.MissingEngineers",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Give Simon The Bad News",
-		"inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
-		"mapLocationPoint": {
-			"x": 556,
-			"y": 245,
-			"radius": 1
-		},
-		"isOpensDetail": false
+   }, {
+      "id": "DLC1.X57.MissingEngineers.4",
+      "sortIndex": 9604,
+      "inMissionId": "DLC1.X57.MissingEngineers",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Give Simon The Bad News",
+      "inMapId": "G.Ear.Exo.Asg.X57.MainFacility",
+      "mapLocationPoint": {
+         "x": 556,
+         "y": 245,
+         "radius": 1
+      },
+      "isOpensDetail": false
 
-	}, {
-		"id": "DLC1.X57.AvoidTheBlastingCaps",
-		"sortIndex": 97,
-		"gameVersion": "1",
-		"missionType": "DLC",
-		"name": "X57: Avoid The Blasting Caps",
-		"description": "The area around the second fusion torch has been mined with blasting caps. You will need to exit the Mako and walk up to the facility carefully to avoid being blown up.\n\n*_This assignment was released as part of the Bring Down the Sky DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
-		"inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
-		"isShowInParentMap": true,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/X57:_Avoid_the_Blasting_Caps"
-		],
-		"relatedMissionIds": ["DLC1.X57.BringDownTheSky", "DLC1.X57.MissingEngineers"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "DLC1.X57.AvoidTheBlastingCaps.1",
-		"sortIndex": 9701,
-		"inMissionId": "DLC1.X57.AvoidTheBlastingCaps",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Proceed On Foot",
-		"description": "The blasting caps are equipped with proximity detectors. The closer you get, the more likely they'll go off. Look for the blasting that are further apart than the rest.",
-		"inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
-		"isShowInParentMap": true
-
-
-	}, {
-		"id": "DLC1.PS.CombatMissions",
-		"sortIndex": 98,
-		"gameVersion": "1",
-		"missionType": "DLC",
-		"name": "Pinnacle Station: Combat Missions",
-		"description": "Talk to [Admiral Ahern|megametracker://maplocation?id=G.Ear.Arg.Pho.Pin.CommandDeck&title=Ahern&location=1028x1115] or [Ochren|megametracker://maplocation?id=G.Ear.Arg.Pho.Pin.CommandDeck&title=Ochren&location=1085x1957] on Pinnacle Station to begin. You need to earn the best score in each of the twelve simulations to complete the assignment. There are four modes with two simulated locations each, and a third location for each mode will open up after the first two are bested. \n\n*_This assignment was released as part of the Pinnacle Station DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
-		"inMapId": "G.Ear.Arg.Pho.PinnacleStation",
-		"isShowInParentMap": true,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/Pinnacle_Station:_Combat_Missions"
-		],
-		"relatedMissionIds": ["DLC1.PS.Vidinos", "DLC1.PS.Convoy"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}, {
-			"type": "Triggers",
-			"id": "Completed Ahern's Challenge"
-		}]
-	}, {
-		"id": "DLC1.PS.CombatMissions.1",
-		"sortIndex": 9801,
-		"inMissionId": "DLC1.PS.CombatMissions",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Combat Simulations",
-		"description": "Beat all twelve scenarios. There are only eight scenarios initially - the final four are revealed only after the first eight are bested. You will be completing this challange simultaneously with [megametracker://mission?id=DLC1.PS.Vidinos].",
-		"relatedMissionIds": ["DLC1.PS.Vidinos.1"],
-        "sideEffects": ["Tip: use the sprint modifier (\"A\" in XBox and \"X\" in PlayStation - see [https://strategywiki.org/wiki/Mass_Effect/Controls] for more) to run faster."]
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.1",
-		"sortIndex": 9802,
-		"identicalMissionId": "DLC1.PS.Vidinos.1.1",
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Time Trial: Warehouse",
-		"annotationNote": "20 kills in 1:24.67 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Warehouse",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.2",
-		"sortIndex": 9803,
-		"identicalMissionId": "DLC1.PS.Vidinos.1.2",
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Time Trial: Tropical",
-		"annotationNote": "25 kills in 1:20.94 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.3",
-		"sortIndex": 9804,
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Time Trial: Volcanic",
-		"annotationNote": "20 kills in 1:54.61 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed 8 Pinnacle Station Combat Missions"
-        }]
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.4",
-		"sortIndex": 9805,
-		"identicalMissionId": "DLC1.PS.Vidinos.1.4",
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Capture: Volcanic",
-		"annotationNote": "3 objectives in 2:00.53 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.5",
-		"sortIndex": 9806,
-		"identicalMissionId": "DLC1.PS.Vidinos.1.5",
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Capture: Tropical",
-		"annotationNote": "4 objectives in 1:58.67 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.6",
-		"sortIndex": 9807,
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Capture: Subterranean",
-		"annotationNote": "3 objectives in 1:29.47 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Subterranean",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed 8 Pinnacle Station Combat Missions"
-        }]
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.7",
-		"sortIndex": 9808,
-		"identicalMissionId": "DLC1.PS.Vidinos.1.7",
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Survival: Volcanic",
-		"annotationNote": "Survive for 1:31.83 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.8",
-		"sortIndex": 9809,
-		"identicalMissionId": "DLC1.PS.Vidinos.1.8",
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Survival: Tropical",
-		"annotationNote": "Survive for 1:46.43 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.9",
-		"sortIndex": 9810,
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Survival: Subterranean",
-		"annotationNote": "Survive for 2:20.57 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Subterranean",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed 8 Pinnacle Station Combat Missions"
-        }]
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.10",
-		"sortIndex": 9811,
-		"identicalMissionId": "DLC1.PS.Vidinos.1.10",
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Hunt: Subterranean",
-		"annotationNote": "35 kills in 0:25 (+time per kill)",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Subterranean",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.11",
-		"sortIndex": 9812,
-		"identicalMissionId": "DLC1.PS.Vidinos.1.11",
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Hunt: Volcanic",
-		"annotationNote": "43 kills in 0:10 (+time per kill)",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false
-	}, {
-		"id": "DLC1.PS.CombatMissions.1.12",
-		"sortIndex": 9813,
-		"inMissionId": "DLC1.PS.CombatMissions.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Hunt: Tropical",
-		"annotationNote": "50 kills in 0:25 (+time per kill)",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false,
-        "isShowPin": false,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed 8 Pinnacle Station Combat Missions"
-        }]
-	}, {
-		"id": "DLC1.PS.CombatMissions.2",
-		"sortIndex": 9814,
-		"inMissionId": "DLC1.PS.CombatMissions",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Ahern's Challenge",
-		"description": "[Ahern|megametracker://person?id=O1.Ahern] has designed a scenario in the simulator based on a mission he took part in during the First Contact War. Head to the Data Bank and, once you retrieve the data, hold off the Turian mercenaries for five minutes. The two turrets can be activated to assist you.",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Ahern",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-        "isShowPin": false
-	}, {
-		"id": "DLC1.PS.Vidinos",
-		"sortIndex": 99,
-		"gameVersion": "1",
-		"missionType": "DLC",
-		"name": "Pinnacle Station: Vidinos",
-		"description": "After beating the first simulation game, you discover [Vidinos|megametracker://person?id=O1.Vidinos] threatening a fellow human, Bryant, for his high score. Vidinos is convinced no human can beat the Turian high scores in the simulations. He challenges you to beat 8 games, and offers a weapon as a prize if you can do it.\n\n*_This assignment was released as part of the Pinnacle Station DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
-		"inMapId": "G.Ear.Arg.Pho.PinnacleStation",
-		"isShowInParentMap": true,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/Pinnacle_Station:_Vidinos"
-		],
-		"relatedMissionIds": ["DLC1.PS.CombatMissions", "DLC1.PS.Convoy"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "DLC1.PS.Vidinos.1",
-		"sortIndex": 9901,
-		"inMissionId": "DLC1.PS.Vidinos",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Beat all 8 Base Scenarios",
-		"description": " You will be completing this challange simultaneously with [megametracker://mission?id=DLC1.PS.CombatMissions.1].",
-		"relatedMissionIds": ["DLC1.PS.CombatMissions.1"],
-        "events": [{
-            "type": "Triggers",
-            "id": "Completed 8 Pinnacle Station Combat Missions"
-        }]
-	}, {
-		"id": "DLC1.PS.Vidinos.1.1",
-		"sortIndex": 9902,
-		"identicalMissionId": "DLC1.PS.CombatMissions.1.1",
-		"inMissionId": "DLC1.PS.Vidinos.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Time Trial: Warehouse",
-		"annotationNote": "20 kills in 1:24.67 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Warehouse",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.PS.Vidinos.1.2",
-		"sortIndex": 9903,
-		"identicalMissionId": "DLC1.PS.CombatMissions.1.2",
-		"inMissionId": "DLC1.PS.Vidinos.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Time Trial: Tropical",
-		"annotationNote": "25 kills in 1:20.94 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.PS.Vidinos.1.4",
-		"sortIndex": 9904,
-		"identicalMissionId": "DLC1.PS.CombatMissions.1.4",
-		"inMissionId": "DLC1.PS.Vidinos.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Capture: Volcanic",
-		"annotationNote": "3 objectives in 2:00.53 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.PS.Vidinos.1.5",
-		"sortIndex": 9905,
-		"identicalMissionId": "DLC1.PS.CombatMissions.1.5",
-		"inMissionId": "DLC1.PS.Vidinos.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Capture: Tropical",
-		"annotationNote": "4 objectives in 1:58.67 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.PS.Vidinos.1.7",
-		"sortIndex": 9906,
-		"identicalMissionId": "DLC1.PS.CombatMissions.1.7",
-		"inMissionId": "DLC1.PS.Vidinos.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Survival: Volcanic",
-		"annotationNote": "Survive for 1:31.83 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.PS.Vidinos.1.8",
-		"sortIndex": 9907,
-		"identicalMissionId": "DLC1.PS.CombatMissions.1.8",
-		"inMissionId": "DLC1.PS.Vidinos.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Survival: Tropical",
-		"annotationNote": "Survive for 1:46.43 time",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.PS.Vidinos.1.10",
-		"sortIndex": 9908,
-		"identicalMissionId": "DLC1.PS.CombatMissions.1.10",
-		"inMissionId": "DLC1.PS.Vidinos.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Hunt: Subterranean",
-		"annotationNote": "35 kills in 0:25 (+time per kill)",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Subterranean",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.PS.Vidinos.1.11",
-		"sortIndex": 9909,
-		"identicalMissionId": "DLC1.PS.CombatMissions.1.11",
-		"inMissionId": "DLC1.PS.Vidinos.1",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Hunt: Volcanic",
-		"annotationNote": "43 kills in 0:10 (+time per kill)",
-		"inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
-		"mapLocationPoint": {
-			"x": 1040,
-			"y": 1040,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "DLC1.PS.Convoy",
-		"sortIndex": 100,
-		"gameVersion": "1",
-		"missionType": "DLC",
-		"name": "Pinnacle Station: Convoy",
-		"description": "[Ahern|megametracker://person?id=O1.Ahern] has given you his apartment on [megametracker://maplocation?id=G.Ear.Arg.Pho.Intaisei&type=Map] for beating his simulation on Pinnacle Station. You can use the [personal computer|megametracker://maplocation?id=G.Ear.Arg.Pho.Int.3&type=Map] there to buy random equipment from the convoy MSV Collins. You will only discover what the item is once you have purchased it. You can continue to purchase items throughout the game.\n\n*_This assignment was released as part of the Pinnacle Station DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
-		"inMapId": "G.Ear.Arg.Pho.Intaisei",
-		"isShowInParentMap": true,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/Pinnacle_Station:_Convoy"
-		],
-		"relatedMissionIds": ["DLC1.PS.CombatMissions", "DLC1.PS.Convoy"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Completed Ahern's Challenge"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "DLC1.PS.Convoy.1",
-		"sortIndex": 10001,
-		"inMissionId": "DLC1.PS.Convoy",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Purchase a Random Item",
-		"inMapId": "G.Ear.Arg.Pho.Int.3",
-		"isShowInParentMap": true,
-		"isOpensDetail": false
+   }, {
+      "id": "DLC1.X57.AvoidTheBlastingCaps",
+      "sortIndex": 97,
+      "gameVersion": "1",
+      "missionType": "DLC",
+      "name": "X57: Avoid The Blasting Caps",
+      "description": "The area around the second fusion torch has been mined with blasting caps. You will need to exit the Mako and walk up to the facility carefully to avoid being blown up.\n\n*_This assignment was released as part of the Bring Down the Sky DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
+      "inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
+      "isShowInParentMap": true,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/X57:_Avoid_the_Blasting_Caps"
+      ],
+      "relatedMissionIds": ["DLC1.X57.BringDownTheSky", "DLC1.X57.MissingEngineers"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "DLC1.X57.AvoidTheBlastingCaps.1",
+      "sortIndex": 9701,
+      "inMissionId": "DLC1.X57.AvoidTheBlastingCaps",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Proceed On Foot",
+      "description": "The blasting caps are equipped with proximity detectors. The closer you get, the more likely they'll go off. Look for the blasting that are further apart than the rest.",
+      "inMapId": "G.Ear.Exo.Asg.X57.2TorchFacility",
+      "isShowInParentMap": true
 
 
+   }, {
+      "id": "DLC1.PS.CombatMissions",
+      "sortIndex": 98,
+      "gameVersion": "1",
+      "missionType": "DLC",
+      "name": "Pinnacle Station: Combat Missions",
+      "description": "Talk to [Admiral Ahern|megametracker://maplocation?id=G.Ear.Arg.Pho.Pin.CommandDeck&title=Ahern&location=1028x1115] or [Ochren|megametracker://maplocation?id=G.Ear.Arg.Pho.Pin.CommandDeck&title=Ochren&location=1085x1957] on Pinnacle Station to begin. You need to earn the best score in each of the twelve simulations to complete the assignment. There are four modes with two simulated locations each, and a third location for each mode will open up after the first two are bested. \n\n*_This assignment was released as part of the Pinnacle Station DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
+      "inMapId": "G.Ear.Arg.Pho.PinnacleStation",
+      "isShowInParentMap": true,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/Pinnacle_Station:_Combat_Missions"
+      ],
+      "relatedMissionIds": ["DLC1.PS.Vidinos", "DLC1.PS.Convoy"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }, {
+         "type": "Triggers",
+         "id": "Completed Ahern's Challenge"
+      }]
+   }, {
+      "id": "DLC1.PS.CombatMissions.1",
+      "sortIndex": 9801,
+      "inMissionId": "DLC1.PS.CombatMissions",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Combat Simulations",
+      "description": "Beat all twelve scenarios. There are only eight scenarios initially - the final four are revealed only after the first eight are bested. You will be completing this challange simultaneously with [megametracker://mission?id=DLC1.PS.Vidinos].",
+      "relatedMissionIds": ["DLC1.PS.Vidinos.1"],
+      "sideEffects": ["Tip: use the sprint modifier (\"A\" in XBox and \"X\" in PlayStation - see [https://strategywiki.org/wiki/Mass_Effect/Controls] for more) to run faster."]
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.1",
+      "sortIndex": 9802,
+      "identicalMissionId": "DLC1.PS.Vidinos.1.1",
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Time Trial: Warehouse",
+      "annotationNote": "20 kills in 1:24.67 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Warehouse",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.2",
+      "sortIndex": 9803,
+      "identicalMissionId": "DLC1.PS.Vidinos.1.2",
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Time Trial: Tropical",
+      "annotationNote": "25 kills in 1:20.94 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.3",
+      "sortIndex": 9804,
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Time Trial: Volcanic",
+      "annotationNote": "20 kills in 1:54.61 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false,
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Completed 8 Pinnacle Station Combat Missions"
+      }]
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.4",
+      "sortIndex": 9805,
+      "identicalMissionId": "DLC1.PS.Vidinos.1.4",
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Capture: Volcanic",
+      "annotationNote": "3 objectives in 2:00.53 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.5",
+      "sortIndex": 9806,
+      "identicalMissionId": "DLC1.PS.Vidinos.1.5",
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Capture: Tropical",
+      "annotationNote": "4 objectives in 1:58.67 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.6",
+      "sortIndex": 9807,
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Capture: Subterranean",
+      "annotationNote": "3 objectives in 1:29.47 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Subterranean",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false,
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Completed 8 Pinnacle Station Combat Missions"
+      }]
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.7",
+      "sortIndex": 9808,
+      "identicalMissionId": "DLC1.PS.Vidinos.1.7",
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Survival: Volcanic",
+      "annotationNote": "Survive for 1:31.83 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.8",
+      "sortIndex": 9809,
+      "identicalMissionId": "DLC1.PS.Vidinos.1.8",
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Survival: Tropical",
+      "annotationNote": "Survive for 1:46.43 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.9",
+      "sortIndex": 9810,
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Survival: Subterranean",
+      "annotationNote": "Survive for 2:20.57 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Subterranean",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false,
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Completed 8 Pinnacle Station Combat Missions"
+      }]
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.10",
+      "sortIndex": 9811,
+      "identicalMissionId": "DLC1.PS.Vidinos.1.10",
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Hunt: Subterranean",
+      "annotationNote": "35 kills in 0:25 (+time per kill)",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Subterranean",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.11",
+      "sortIndex": 9812,
+      "identicalMissionId": "DLC1.PS.Vidinos.1.11",
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Hunt: Volcanic",
+      "annotationNote": "43 kills in 0:10 (+time per kill)",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false
+   }, {
+      "id": "DLC1.PS.CombatMissions.1.12",
+      "sortIndex": 9813,
+      "inMissionId": "DLC1.PS.CombatMissions.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Hunt: Tropical",
+      "annotationNote": "50 kills in 0:25 (+time per kill)",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false,
+      "isShowPin": false,
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Completed 8 Pinnacle Station Combat Missions"
+      }]
+   }, {
+      "id": "DLC1.PS.CombatMissions.2",
+      "sortIndex": 9814,
+      "inMissionId": "DLC1.PS.CombatMissions",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Ahern's Challenge",
+      "description": "[Ahern|megametracker://person?id=O1.Ahern] has designed a scenario in the simulator based on a mission he took part in during the First Contact War. Head to the Data Bank and, once you retrieve the data, hold off the Turian mercenaries for five minutes. The two turrets can be activated to assist you.",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Ahern",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isShowPin": false
+   }, {
+      "id": "DLC1.PS.Vidinos",
+      "sortIndex": 99,
+      "gameVersion": "1",
+      "missionType": "DLC",
+      "name": "Pinnacle Station: Vidinos",
+      "description": "After beating the first simulation game, you discover [Vidinos|megametracker://person?id=O1.Vidinos] threatening a fellow human, Bryant, for his high score. Vidinos is convinced no human can beat the Turian high scores in the simulations. He challenges you to beat 8 games, and offers a weapon as a prize if you can do it.\n\n*_This assignment was released as part of the Pinnacle Station DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
+      "inMapId": "G.Ear.Arg.Pho.PinnacleStation",
+      "isShowInParentMap": true,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/Pinnacle_Station:_Vidinos"
+      ],
+      "relatedMissionIds": ["DLC1.PS.CombatMissions", "DLC1.PS.Convoy"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "DLC1.PS.Vidinos.1",
+      "sortIndex": 9901,
+      "inMissionId": "DLC1.PS.Vidinos",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Beat all 8 Base Scenarios",
+      "description": " You will be completing this challange simultaneously with [megametracker://mission?id=DLC1.PS.CombatMissions.1].",
+      "relatedMissionIds": ["DLC1.PS.CombatMissions.1"],
+      "events": [{
+         "type": "Triggers",
+         "id": "Completed 8 Pinnacle Station Combat Missions"
+      }]
+   }, {
+      "id": "DLC1.PS.Vidinos.1.1",
+      "sortIndex": 9902,
+      "identicalMissionId": "DLC1.PS.CombatMissions.1.1",
+      "inMissionId": "DLC1.PS.Vidinos.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Time Trial: Warehouse",
+      "annotationNote": "20 kills in 1:24.67 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Warehouse",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.PS.Vidinos.1.2",
+      "sortIndex": 9903,
+      "identicalMissionId": "DLC1.PS.CombatMissions.1.2",
+      "inMissionId": "DLC1.PS.Vidinos.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Time Trial: Tropical",
+      "annotationNote": "25 kills in 1:20.94 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.PS.Vidinos.1.4",
+      "sortIndex": 9904,
+      "identicalMissionId": "DLC1.PS.CombatMissions.1.4",
+      "inMissionId": "DLC1.PS.Vidinos.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Capture: Volcanic",
+      "annotationNote": "3 objectives in 2:00.53 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.PS.Vidinos.1.5",
+      "sortIndex": 9905,
+      "identicalMissionId": "DLC1.PS.CombatMissions.1.5",
+      "inMissionId": "DLC1.PS.Vidinos.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Capture: Tropical",
+      "annotationNote": "4 objectives in 1:58.67 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.PS.Vidinos.1.7",
+      "sortIndex": 9906,
+      "identicalMissionId": "DLC1.PS.CombatMissions.1.7",
+      "inMissionId": "DLC1.PS.Vidinos.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Survival: Volcanic",
+      "annotationNote": "Survive for 1:31.83 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.PS.Vidinos.1.8",
+      "sortIndex": 9907,
+      "identicalMissionId": "DLC1.PS.CombatMissions.1.8",
+      "inMissionId": "DLC1.PS.Vidinos.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Survival: Tropical",
+      "annotationNote": "Survive for 1:46.43 time",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Tropical",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.PS.Vidinos.1.10",
+      "sortIndex": 9908,
+      "identicalMissionId": "DLC1.PS.CombatMissions.1.10",
+      "inMissionId": "DLC1.PS.Vidinos.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Hunt: Subterranean",
+      "annotationNote": "35 kills in 0:25 (+time per kill)",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Subterranean",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.PS.Vidinos.1.11",
+      "sortIndex": 9909,
+      "identicalMissionId": "DLC1.PS.CombatMissions.1.11",
+      "inMissionId": "DLC1.PS.Vidinos.1",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Hunt: Volcanic",
+      "annotationNote": "43 kills in 0:10 (+time per kill)",
+      "inMapId": "G.Ear.Arg.Pho.Pin.Volcanic",
+      "mapLocationPoint": {
+         "x": 1040,
+         "y": 1040,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "DLC1.PS.Convoy",
+      "sortIndex": 100,
+      "gameVersion": "1",
+      "missionType": "DLC",
+      "name": "Pinnacle Station: Convoy",
+      "description": "[Ahern|megametracker://person?id=O1.Ahern] has given you his apartment on [megametracker://maplocation?id=G.Ear.Arg.Pho.Intaisei&type=Map] for beating his simulation on Pinnacle Station. You can use the [personal computer|megametracker://maplocation?id=G.Ear.Arg.Pho.Int.3&type=Map] there to buy random equipment from the convoy MSV Collins. You will only discover what the item is once you have purchased it. You can continue to purchase items throughout the game.\n\n*_This assignment was released as part of the Pinnacle Station DLC pack. Some versions of Mass Effect Game 1 now include it by default._*",
+      "inMapId": "G.Ear.Arg.Pho.Intaisei",
+      "isShowInParentMap": true,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/Pinnacle_Station:_Convoy"
+      ],
+      "relatedMissionIds": ["DLC1.PS.CombatMissions", "DLC1.PS.Convoy"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Completed Ahern's Challenge"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "DLC1.PS.Convoy.1",
+      "sortIndex": 10001,
+      "inMissionId": "DLC1.PS.Convoy",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Purchase a Random Item",
+      "inMapId": "G.Ear.Arg.Pho.Int.3",
+      "isShowInParentMap": true,
+      "isOpensDetail": false
 
 
 
@@ -846,638 +845,362 @@
 
 
 
-	}, {
-		"x-comment-x": "-----------------------Collections-------------------------",
-		"id": "A1.C1.ScanTheKeepers",
-		"sortIndex": 10,
-		"gameVersion": "1",
-		"missionType": "Collection",
-		"name": "Citadel: Scan the Keepers",
-		"description": "You can acquire this quest by speaking to Chorban directly in the Citadel Tower (Keeper 10 below) or during the assignment [megametracker://mission?id=A1.C1.JahleedsFears]. \n\nScan all the Citadel Keepers and return the data to the person who gave you the scanner. You do not have to turn this assignment in to receive its reward.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/Citadel:_Scan_the_Keepers"
-		],
-		"relatedMissionIds": ["A1.C1.JahleedsFears"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Citadel: Lower Levels"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Citadel Lockdown: Exile"
-		}]
-	}, {
-		"id": "A1.UC.AsariWritings",
-		"sortIndex": 45,
-		"gameVersion": "1",
-		"missionType": "Collection",
-		"name": "UNC: Asari Writings",
-		"aliases": ["UNC: Asari Writings", "UNC: Collection Complete"],
-		"description": "Acquire 10 of the 16 asari writings by scanning planets across the Galaxy Map.",
-		"objectivesCountToCompletion": 10,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/UNC:_Asari_Writings"
-		],
-		"relatedDecisionIds": ["D1.AsariWritings"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "A1.UC.SignsBattle",
-		"sortIndex": 45,
-		"gameVersion": "1",
-		"missionType": "Collection",
-		"name": "UNC: Locate Signs of Battle",
-		"aliases": ["UNC: Locate Signs of Battle", "UNC: Entire Collection is Found"],
-		"description": "Acquire salarian medallions and id tags by scanning planets across the Galaxy Map.",
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/UNC:_Locate_Signs_of_Battle"
-		],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "A1.UC.SignsBattle.Medallions",
-		"sortIndex": 4501,
-		"inMissionId": "A1.UC.SignsBattle",
-		"gameVersion": "1",
-		"missionType": "Set",
-		"pageTitle": "Collection",
-		"name": "Signs of Battle: League Medallions",
-		"description": "Acquire 10 of the 12 league medallions by scanning planets across the Galaxy Map.",
-		"objectivesCountToCompletion": 10
-	}, {
-		"id": "A1.UC.SignsBattle.IdTags",
-		"sortIndex": 4502,
-		"inMissionId": "A1.UC.SignsBattle",
-		"gameVersion": "1",
-		"missionType": "Set",
-		"pageTitle": "Collection",
-		"name": "Signs of Battle: ID Tags",
-		"description": "Acquire 3 of the 4 id tags by scanning planets across the Galaxy Map.",
-		"objectivesCountToCompletion": 3
-	}, {
-		"id": "A1.UC.ProtheanDataDiscs",
-		"sortIndex": 45,
-		"gameVersion": "1",
-		"missionType": "Collection",
-		"name": "UNC: Prothean Data Discs",
-		"aliases": ["UNC: Prothean Data Discs", "UNC: Collection Complete"],
-		"description": "Acquire 7 of the 10 prothean data discs by scanning planets across the Galaxy Map.",
-		"objectivesCountToCompletion": 7,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/UNC:_Prothean_Data_Discs"
-		],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "A1.UC.Minerals",
-		"sortIndex": 45,
-		"gameVersion": "1",
-		"missionType": "Collection",
-		"name": "UNC: Valuable Minerals",
-		"aliases": ["UNC: Valuable Minerals", "UNC: Survey is Complete"],
-		"description": "",
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/UNC:_Valuable_Minerals"
-		],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "A1.UC.Minerals.Gas",
-		"sortIndex": 4503,
-		"inMissionId": "A1.UC.Minerals",
-		"gameVersion": "1",
-		"missionType": "Set",
-		"pageTitle": "Collection",
-		"name": "Valuable Minerals: Gas",
-		"description": "Acquire 6 of the 10 gas deposits by scanning planets across the Galaxy Map.",
-		"objectivesCountToCompletion": 6
-	}, {
-		"id": "A1.UC.Minerals.LightMetal",
-		"sortIndex": 4504,
-		"inMissionId": "A1.UC.Minerals",
-		"gameVersion": "1",
-		"missionType": "Set",
-		"pageTitle": "Collection",
-		"name": "Valuable Minerals: Light Metal",
-		"description": "Acquire 20 of the 34 light metal deposits by scanning planets across the Galaxy Map.",
-		"objectivesCountToCompletion": 20
-	}, {
-		"id": "A1.UC.Minerals.HeavyMetal",
-		"sortIndex": 4505,
-		"inMissionId": "A1.UC.Minerals",
-		"gameVersion": "1",
-		"missionType": "Set",
-		"pageTitle": "Collection",
-		"name": "Valuable Minerals: Heavy Metal",
-		"description": "Acquire 20 of the 34 heavy metal deposits by scanning planets across the Galaxy Map.",
-		"objectivesCountToCompletion": 20
-	}, {
-		"id": "A1.UC.Minerals.RareEarth",
-		"sortIndex": 4506,
-		"inMissionId": "A1.UC.Minerals",
-		"gameVersion": "1",
-		"missionType": "Set",
-		"pageTitle": "Collection",
-		"name": "Valuable Minerals: Rare Earth",
-		"description": "Acquire 20 of the 36 rare earth deposits by scanning planets across the Galaxy Map.",
-		"objectivesCountToCompletion": 20
-
-	}, {
-		"id": "A1.UC.TurianInsignias",
-		"sortIndex": 45,
-		"gameVersion": "1",
-		"missionType": "Collection",
-		"name": "UNC: Turian Insignias",
-		"aliases": ["UNC: Turian Insignias", "UNC: Collection Complete"],
-		"description": "Acquire 13 of the 17 turian insignias by scanning planets across the Galaxy Map.",
-		"objectivesCountToCompletion": 13,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/UNC:_Turian_Insignias"
-		],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
 
 
-	}, {
-		"x-comment-x": "-----------------------LOYALTY QUESTS-------------------------",
-		"id": "A1.L.FindDrSaleon",
-		"sortIndex": 80,
-		"gameVersion": "1",
-		"missionType": "Loyalty",
-		"name": "Garrus: Find Dr. Saleon",
-		"aliases": ["Garrus: Find Dr. Saleon", "Garrus: Dr. Saleon is Dead"],
-		"isLoyaltyMission": true,
-		"description": "Talk to [Garrus|megametracker://person?id=S1.Garrus] for the third time aboard the Normandy and he will reveal that he has never been able to bring rogue geneticist [Dr. Saleon|megametracker://person?id=O1.Saleon] to justice. Track this doctor down. (Shepard can also find the doctor first and talk to Garrus later.)",
-		"inMapId": "G.Att.Kep.Her.MSVFedele",
-		"isShowInParentMap": true,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/Garrus:_Find_Dr._Saleon"
-		],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "A1.L.FindDrSaleon.1",
-		"sortIndex": 8001,
-		"inMissionId": "A1.L.FindDrSaleon",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Talk to Garrus",
-		"inMapId": "G.N1.3",
-		"mapLocationPoint": {
-			"x": 511,
-			"y": 895,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "A1.L.FindDrSaleon.3",
-		"sortIndex": 8003,
-		"inMissionId": "A1.L.FindDrSaleon",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Find Dr. Saleon",
-		"description": "Garrus gave the coordinates of Dr. Saleon's last known whereabouts. Head to the Herschel System in the Kepler Verge.",
-		"inMapId": "G.Att.Kep.Her.MSVFedele",
-		"mapLocationPoint": {
-			"x": 1504,
-			"y": 1237,
-			"radius": 1
-		}
-	}, {
-		"id": "A1.L.TaliAndTheGeth",
-		"sortIndex": 82,
-		"gameVersion": "1",
-		"missionType": "Loyalty",
-		"name": "Tali and the Geth",
-		"aliases": ["Tali and the Geth", "Tali's pilgrimage"],
-		"isLoyaltyMission": true,
-		"description": "Talk to [Tali|megametracker://person?id=S1.Tali] about the encrypted files Shepard found at the end of [megametracker://mission?id=A1.U.GethIncursions]. Tali wants to use them as her Pilgrimage gift to the flotilla.",
-		"inMapId": "G.Att.Arm.Gri.Sol.Outpost",
-		"mapLocationPoint": {
-			"x": 930,
-			"y": 1735,
-			"radius": 1
-		},
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/Tali_and_the_Geth"
-		],
-		"relatedMissionIds": ["A1.U.GethIncursions"],
-        "relatedDecisionIds": ["D1.TaliData"],
-		"conversationRewards": [{
-			"set": {
-				"isExclusiveSet": true,
-				"options": [{
-					"id": "A1.L.TaliAndTheGeth.P",
-					"type": "Paragon",
-					"value": 1,
-					"context": "Give Tali the data",
-					"trigger": "\"All right.\" / \"Take it.\""
-				}, {
-					"id": "A1.L.TaliAndTheGeth.R",
-					"type": "Renegade",
-					"value": 1,
-					"context": "Deny Tali the data",
-					"trigger": "\"I can't take that risk.\""
-				}]
-			}
-		}],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Investigated Geth Outposts"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "A1.L.TaliAndTheGeth.1",
-		"sortIndex": 8201,
-		"inMissionId": "A1.L.TaliAndTheGeth",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Encrypted Files",
-		"inMapId": "G.Att.Arm.Gri.Sol.Outpost",
-		"mapLocationPoint": {
-			"x": 930,
-			"y": 1735,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "A1.L.TaliAndTheGeth.2",
-		"sortIndex": 8202,
-		"inMissionId": "A1.L.TaliAndTheGeth",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Speak to Tali",
-		"inMapId": "G.N1.3",
-		"mapLocationPoint": {
-			"x": 1903,
-			"y": 859,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "A1.L.WrexFamilyArmor",
-		"sortIndex": 81,
-		"gameVersion": "1",
-		"missionType": "Loyalty",
-		"name": "Wrex: Family Armor",
-		"isLoyaltyMission": true,
-		"description": "Talk to [Wrex|megametracker://person?id=S1.Wrex] for the third time aboard the Normandy and he will reveal that he wants to recover a ceremonial suit of armor belonging to the Urdnot clan. Track this armor down. (Shepard can also acquire the armor first and talk to Wrex later.)",
-		"inMapId": "G.Ear.Arg.Pho.Tun.PirateBase",
-		"isShowInParentMap": true,
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/Wrex:_Family_Armor"
-		],
-		"relatedDecisionIds": ["D1.WrexArmor"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}, {
-			"type": "Triggers",
-			"id": "Acquired Wrex's Family Armor"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Ilos Started"
-		}]
-	}, {
-		"id": "A1.L.WrexFamilyArmor.1",
-		"sortIndex": 8101,
-		"inMissionId": "A1.L.WrexFamilyArmor",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Talk to Wrex",
-		"inMapId": "G.N1.3",
-		"mapLocationPoint": {
-			"x": 783,
-			"y": 1279,
-			"radius": 1
-		},
-		"isOpensDetail": false
-	}, {
-		"id": "A1.L.WrexFamilyArmor.2",
-		"sortIndex": 8102,
-		"inMissionId": "A1.L.WrexFamilyArmor",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Find Wrex's Armor",
-		"description": "Find the turian who stole Wrex's family armor. He's hiding at a base somewhere in the Argos Rho cluster.",
-		"inMapId": "G.Ear.Arg.Pho.Tun.PirateBase",
-		"mapLocationPoint": {
-			"x": 1271,
-			"y": 1694,
-			"radius": 1
-		}
+   }, {
+      "x-comment-x": "-----------------------Collections-------------------------",
+      "id": "A1.C1.ScanTheKeepers",
+      "sortIndex": 10,
+      "gameVersion": "1",
+      "missionType": "Collection",
+      "name": "Citadel: Scan the Keepers",
+      "description": "You can acquire this quest by speaking to Chorban directly in the Citadel Tower (Keeper 10 below) or during the assignment [megametracker://mission?id=A1.C1.JahleedsFears]. \n\nScan all the Citadel Keepers and return the data to the person who gave you the scanner. You do not have to turn this assignment in to receive its reward.",
+      "inMapId": "G.C",
+      "isShowInParentMap": true,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/Citadel:_Scan_the_Keepers"
+      ],
+      "relatedMissionIds": ["A1.C1.JahleedsFears"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Citadel: Lower Levels"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Citadel Lockdown: Exile"
+      }]
+   }, {
+      "id": "A1.UC.AsariWritings",
+      "sortIndex": 45,
+      "gameVersion": "1",
+      "missionType": "Collection",
+      "name": "UNC: Asari Writings",
+      "aliases": ["UNC: Asari Writings", "UNC: Collection Complete"],
+      "description": "Acquire 10 of the 16 asari writings by scanning planets across the Galaxy Map.",
+      "objectivesCountToCompletion": 10,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/UNC:_Asari_Writings"
+      ],
+      "relatedDecisionIds": ["D1.AsariWritings"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "A1.UC.SignsBattle",
+      "sortIndex": 45,
+      "gameVersion": "1",
+      "missionType": "Collection",
+      "name": "UNC: Locate Signs of Battle",
+      "aliases": ["UNC: Locate Signs of Battle", "UNC: Entire Collection is Found"],
+      "description": "Acquire salarian medallions and id tags by scanning planets across the Galaxy Map.",
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/UNC:_Locate_Signs_of_Battle"
+      ],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "A1.UC.SignsBattle.Medallions",
+      "sortIndex": 4501,
+      "inMissionId": "A1.UC.SignsBattle",
+      "gameVersion": "1",
+      "missionType": "Set",
+      "pageTitle": "Collection",
+      "name": "Signs of Battle: League Medallions",
+      "description": "Acquire 10 of the 12 league medallions by scanning planets across the Galaxy Map.",
+      "objectivesCountToCompletion": 10
+   }, {
+      "id": "A1.UC.SignsBattle.IdTags",
+      "sortIndex": 4502,
+      "inMissionId": "A1.UC.SignsBattle",
+      "gameVersion": "1",
+      "missionType": "Set",
+      "pageTitle": "Collection",
+      "name": "Signs of Battle: ID Tags",
+      "description": "Acquire 3 of the 4 id tags by scanning planets across the Galaxy Map.",
+      "objectivesCountToCompletion": 3
+   }, {
+      "id": "A1.UC.ProtheanDataDiscs",
+      "sortIndex": 45,
+      "gameVersion": "1",
+      "missionType": "Collection",
+      "name": "UNC: Prothean Data Discs",
+      "aliases": ["UNC: Prothean Data Discs", "UNC: Collection Complete"],
+      "description": "Acquire 7 of the 10 prothean data discs by scanning planets across the Galaxy Map.",
+      "objectivesCountToCompletion": 7,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/UNC:_Prothean_Data_Discs"
+      ],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "A1.UC.Minerals",
+      "sortIndex": 45,
+      "gameVersion": "1",
+      "missionType": "Collection",
+      "name": "UNC: Valuable Minerals",
+      "aliases": ["UNC: Valuable Minerals", "UNC: Survey is Complete"],
+      "description": "",
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/UNC:_Valuable_Minerals"
+      ],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "A1.UC.Minerals.Gas",
+      "sortIndex": 4503,
+      "inMissionId": "A1.UC.Minerals",
+      "gameVersion": "1",
+      "missionType": "Set",
+      "pageTitle": "Collection",
+      "name": "Valuable Minerals: Gas",
+      "description": "Acquire 6 of the 10 gas deposits by scanning planets across the Galaxy Map.",
+      "objectivesCountToCompletion": 6
+   }, {
+      "id": "A1.UC.Minerals.LightMetal",
+      "sortIndex": 4504,
+      "inMissionId": "A1.UC.Minerals",
+      "gameVersion": "1",
+      "missionType": "Set",
+      "pageTitle": "Collection",
+      "name": "Valuable Minerals: Light Metal",
+      "description": "Acquire 20 of the 34 light metal deposits by scanning planets across the Galaxy Map.",
+      "objectivesCountToCompletion": 20
+   }, {
+      "id": "A1.UC.Minerals.HeavyMetal",
+      "sortIndex": 4505,
+      "inMissionId": "A1.UC.Minerals",
+      "gameVersion": "1",
+      "missionType": "Set",
+      "pageTitle": "Collection",
+      "name": "Valuable Minerals: Heavy Metal",
+      "description": "Acquire 20 of the 34 heavy metal deposits by scanning planets across the Galaxy Map.",
+      "objectivesCountToCompletion": 20
+   }, {
+      "id": "A1.UC.Minerals.RareEarth",
+      "sortIndex": 4506,
+      "inMissionId": "A1.UC.Minerals",
+      "gameVersion": "1",
+      "missionType": "Set",
+      "pageTitle": "Collection",
+      "name": "Valuable Minerals: Rare Earth",
+      "description": "Acquire 20 of the 36 rare earth deposits by scanning planets across the Galaxy Map.",
+      "objectivesCountToCompletion": 20
+
+   }, {
+      "id": "A1.UC.TurianInsignias",
+      "sortIndex": 45,
+      "gameVersion": "1",
+      "missionType": "Collection",
+      "name": "UNC: Turian Insignias",
+      "aliases": ["UNC: Turian Insignias", "UNC: Collection Complete"],
+      "description": "Acquire 13 of the 17 turian insignias by scanning planets across the Galaxy Map.",
+      "objectivesCountToCompletion": 13,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/UNC:_Turian_Insignias"
+      ],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
 
 
+   }, {
+      "x-comment-x": "-----------------------LOYALTY QUESTS-------------------------",
+      "id": "A1.L.FindDrSaleon",
+      "sortIndex": 80,
+      "gameVersion": "1",
+      "missionType": "Loyalty",
+      "name": "Garrus: Find Dr. Saleon",
+      "aliases": ["Garrus: Find Dr. Saleon", "Garrus: Dr. Saleon is Dead"],
+      "isLoyaltyMission": true,
+      "description": "Talk to [Garrus|megametracker://person?id=S1.Garrus] for the third time aboard the Normandy and he will reveal that he has never been able to bring rogue geneticist [Dr. Saleon|megametracker://person?id=O1.Saleon] to justice. Track this doctor down. (Shepard can also find the doctor first and talk to Garrus later.)",
+      "inMapId": "G.Att.Kep.Her.MSVFedele",
+      "isShowInParentMap": true,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/Garrus:_Find_Dr._Saleon"
+      ],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "A1.L.FindDrSaleon.1",
+      "sortIndex": 8001,
+      "inMissionId": "A1.L.FindDrSaleon",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Talk to Garrus",
+      "inMapId": "G.N1.3",
+      "mapLocationPoint": {
+         "x": 511,
+         "y": 895,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "A1.L.FindDrSaleon.3",
+      "sortIndex": 8003,
+      "inMissionId": "A1.L.FindDrSaleon",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Find Dr. Saleon",
+      "description": "Garrus gave the coordinates of Dr. Saleon's last known whereabouts. Head to the Herschel System in the Kepler Verge.",
+      "inMapId": "G.Att.Kep.Her.MSVFedele",
+      "mapLocationPoint": {
+         "x": 1504,
+         "y": 1237,
+         "radius": 1
+      }
+   }, {
+      "id": "A1.L.TaliAndTheGeth",
+      "sortIndex": 82,
+      "gameVersion": "1",
+      "missionType": "Loyalty",
+      "name": "Tali and the Geth",
+      "aliases": ["Tali and the Geth", "Tali's pilgrimage"],
+      "isLoyaltyMission": true,
+      "description": "Talk to [Tali|megametracker://person?id=S1.Tali] about the encrypted files Shepard found at the end of [megametracker://mission?id=A1.U.GethIncursions]. Tali wants to use them as her Pilgrimage gift to the flotilla.",
+      "inMapId": "G.Att.Arm.Gri.Sol.Outpost",
+      "mapLocationPoint": {
+         "x": 930,
+         "y": 1735,
+         "radius": 1
+      },
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/Tali_and_the_Geth"
+      ],
+      "relatedMissionIds": ["A1.U.GethIncursions"],
+      "relatedDecisionIds": ["D1.TaliData"],
+      "conversationRewards": [{
+         "set": {
+            "isExclusiveSet": true,
+            "options": [{
+               "id": "A1.L.TaliAndTheGeth.P",
+               "type": "Paragon",
+               "value": 1,
+               "context": "Give Tali the data",
+               "trigger": "\"All right.\" / \"Take it.\""
+            }, {
+               "id": "A1.L.TaliAndTheGeth.R",
+               "type": "Renegade",
+               "value": 1,
+               "context": "Deny Tali the data",
+               "trigger": "\"I can't take that risk.\""
+            }]
+         }
+      }],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Investigated Geth Outposts"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "A1.L.TaliAndTheGeth.1",
+      "sortIndex": 8201,
+      "inMissionId": "A1.L.TaliAndTheGeth",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Encrypted Files",
+      "inMapId": "G.Att.Arm.Gri.Sol.Outpost",
+      "mapLocationPoint": {
+         "x": 930,
+         "y": 1735,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "A1.L.TaliAndTheGeth.2",
+      "sortIndex": 8202,
+      "inMissionId": "A1.L.TaliAndTheGeth",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Speak to Tali",
+      "inMapId": "G.N1.3",
+      "mapLocationPoint": {
+         "x": 1903,
+         "y": 859,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "A1.L.WrexFamilyArmor",
+      "sortIndex": 81,
+      "gameVersion": "1",
+      "missionType": "Loyalty",
+      "name": "Wrex: Family Armor",
+      "isLoyaltyMission": true,
+      "description": "Talk to [Wrex|megametracker://person?id=S1.Wrex] for the third time aboard the Normandy and he will reveal that he wants to recover a ceremonial suit of armor belonging to the Urdnot clan. Track this armor down. (Shepard can also acquire the armor first and talk to Wrex later.)",
+      "inMapId": "G.Ear.Arg.Pho.Tun.PirateBase",
+      "isShowInParentMap": true,
+      "relatedLinks": [
+         "https://masseffect.wikia.com/wiki/Wrex:_Family_Armor"
+      ],
+      "relatedDecisionIds": ["D1.WrexArmor"],
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Unlocked Galaxy Map"
+      }, {
+         "type": "Triggers",
+         "id": "Acquired Wrex's Family Armor"
+      }, {
+         "type": "BlockedAfter",
+         "id": "Ilos Started"
+      }]
+   }, {
+      "id": "A1.L.WrexFamilyArmor.1",
+      "sortIndex": 8101,
+      "inMissionId": "A1.L.WrexFamilyArmor",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Talk to Wrex",
+      "inMapId": "G.N1.3",
+      "mapLocationPoint": {
+         "x": 783,
+         "y": 1279,
+         "radius": 1
+      },
+      "isOpensDetail": false
+   }, {
+      "id": "A1.L.WrexFamilyArmor.2",
+      "sortIndex": 8102,
+      "inMissionId": "A1.L.WrexFamilyArmor",
+      "gameVersion": "1",
+      "missionType": "Objective",
+      "name": "Find Wrex's Armor",
+      "description": "Find the turian who stole Wrex's family armor. He's hiding at a base somewhere in the Argos Rho cluster.",
+      "inMapId": "G.Ear.Arg.Pho.Tun.PirateBase",
+      "mapLocationPoint": {
+         "x": 1271,
+         "y": 1694,
+         "radius": 1
+      }
 
-	}, {
-		"id": "A1.T.LeaveCitadel",
-		"x-comment-x": "-----------------------Tasks-------------------------",
-		"sortIndex": 200,
-		"gameVersion": "1",
-		"missionType": "Task",
-		"name": "Leave The Citadel For The First Time",
-		"description": "The first time you leave the Citadel has a morality dialogue opportunity.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
-		"x-comment-y": "TODO: get coords for dock location?",
-		"conversationRewards": [{
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Departing Speech",
-				"options": [{
-					"id": "A1.T.LeaveCitadel.P1",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"Humanity must do its part.\""
-				}, {
-					"id": "A1.T.LeaveCitadel.R1",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"Nobody's going to help us.\""
-				}]
-			}
-		}, {
-			"set": {
-				"isExclusiveSet": true,
-				"options": [{
-					"id": "A1.T.LeaveCitadel.P2",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"Everyone is counting on us.\""
-				}, {
-					"id": "A1.T.LeaveCitadel.R2",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"Humanity's in this alone!\""
-				}]
-			}
-		}],
-		"relatedLinks": [
-			"https://masseffect.wikia.com/wiki/Prologue:_On_the_Normandy#Leaving_the_Citadel"
-		],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}]
-	}, {
-		"id": "A1.T.AliensOnNormandy",
-		"sortIndex": 210,
-		"gameVersion": "1",
-		"missionType": "Task",
-		"name": "Talk to Navigator Pressly About Aliens on The Normandy",
-		"description": "Talking to [megametracker://person?id=P1.Pressly] has a morality dialogue opportunity.",
-		"inMapId": "G.N1.1",
-		"conversationRewards": [{
-			"x-comment-y": "TODO: find out if exclusive set?",
-			"id": "A1.T.AliensOnNormandy.P1",
-			"type": "Paragon",
-			"value": 2,
-			"context": "Talking to Pressly",
-			"trigger": "\"They're on our side.\""
-		}, {
-			"id": "A1.T.AliensOnNormandy.R2",
-			"type": "Renegade",
-			"value": 2,
-			"context": "Talking to Pressly",
-			"trigger": "\"You doubt my decisions?\""
-		}],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Galaxy Map"
-		}]
-	}, {
-		"id": "A1.T.StrangeBehavior",
-		"sortIndex": 220,
-		"gameVersion": "1",
-		"missionType": "Task",
-		"name": "Feros: Strange Behavior",
-		"description": "Several Zhu's Hope colonists are exhibiting strange behavior.",
-		"conversationRewards": [{
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Speaking to the Calantha Blake",
-				"options": [{
-					"id": "A1.T.StrangeBehavior.P1",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"What's wrong?\""
-				}, {
-					"id": "A1.T.StrangeBehavior.R1",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"I hope you're not contagious.\""
-				}]
-			}
-		}, {
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Speaking to Ian Newstead",
-				"options": [{
-					"id": "A1.T.StrangeBehavior.P2",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"Can I help?\""
-				}, {
-					"id": "A1.T.StrangeBehavior.R2",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"Kill him.\" (Does not kill him.)"
-				}]
-			}
-		}],
-		"relatedMissionIds": ["M1.Feros.3"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Drove The Geth Dropship From Zhu's Hope"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Talked to the ExoGeni VI"
-		}]
-	}, {
-		"id": "A1.T.StrangeBehavior.1",
-		"sortIndex": 22001,
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Calantha and Hollis Blake",
-		"inMissionId": "A1.T.StrangeBehavior",
-		"inMapId": "G.Ear.Att.The.Fer.ZhusHope",
-		"mapLocationPoint": {
-			"x": 834,
-			"y": 1309,
-			"radius": 1
-		}
-	}, {
-		"id": "A1.T.StrangeBehavior.2",
-		"sortIndex": 22002,
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Ian Newstead",
-		"inMissionId": "A1.T.StrangeBehavior",
-		"inMapId": "G.Ear.Att.The.Fer.Tunnels",
-		"mapLocationPoint": {
-			"x": 1183,
-			"y": 148,
-			"radius": 1
-		}
-	}, {
-		"id": "A1.T.UdinaOnFeros",
-		"sortIndex": 230,
-		"gameVersion": "1",
-		"missionType": "Task",
-		"name": "Talk to Udina After Feros",
-		"description": "[Ambassador Udina|megametracker://person?id=P1.Udina] is concerned with the repercussions of the actions on Feros.",
-		"inMapId": "G.N1",
-		"relatedMissionIds": ["M1.Feros.14"],
-		"conversationRewards": [{
-			"set": {
-				"isExclusiveSet": true,
-				"options": [{
-					"id": "A1.T.UdinaOnFerosP",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"That's all you care about?\""
-				}, {
-					"id": "A1.T.UdinaOnFerosR",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"They were expendable\""
-				}]
-			}
-		}],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Completed Feros Mission"
-		}]
-	}, {
-		"id": "A1.T.VirmirePrisoners",
-		"sortIndex": 240,
-		"gameVersion": "1",
-		"missionType": "Task",
-		"name": "Virmire: Cell Block Prisoners",
-		"description": "In Cell Blocks A and B on [Saren's|megametracker://person?id=E1.Saren] base on Virmire, there are several prisoners whom Saren has been experimenting on. You can let them out or leave them to die when the base is destroyed.",
-		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
-		"conversationRewards": [{
-			"set": {
-				"isExclusiveSet": true,
-				"context": "In Cell Block B",
-				"options": [{
-					"id": "A1.T.VirmirePrisoners.1.P1",
-					"type": "Paragon",
-					"value": 8,
-					"context": "Release Avot and the prisoners",
-					"trigger": "\"All right. Let him out.\""
-				}, {
-					"id": "A1.T.VirmirePrisoners.1.R1",
-					"type": "Renegade",
-					"value": 2,
-					"context": "Leave Avot and the prisoners locked up",
-					"trigger": "\"No.\" or \"Sorry. I can't risk it.\""
-				}]
-			}
-		}, {
-			"set": {
-				"context": "In Cell Block A",
-				"options": [{
-					"id": "A1.T.VirmirePrisoners.2.P1",
-					"type": "Paragon",
-					"value": 2,
-					"context": "Release Imness",
-					"trigger": "\"I think I can trust you.\" or \"I'm letting you out.\""
-				}, {
-					"id": "A1.T.VirmirePrisoners.2.R1",
-					"type": "Renegade",
-					"value": 9,
-					"context": "Leave Imness locked up (note: this is not an exclusive choice - you can select this, and then come back and let him out)",
-					"trigger": "\"Too risky.\""
-				}]
-			}
-		}, {
-			"set": {
-				"context": "In Cell Block A",
-				"isExclusiveSet": true,
-				"options": [{
-					"id": "A1.T.VirmirePrisoners.2.P2",
-					"type": "Paragon",
-					"value": 2,
-					"context": "Release the other prisoners",
-					"trigger": "\"They're no threat.\""
-				}, {
-					"id": "A1.T.VirmirePrisoners.2.R2",
-					"type": "Renegade",
-					"value": 2,
-					"context": "Leave the other prisoners locked up",
-					"trigger": "\"Open the door and kill them.\" or \"Eliminate them.\""
-				}]
-			}
-		}],
-		"relatedMissionIds": ["M1.Virmire.6.1"],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Unlocked Virmire: Labs"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Completed Virmire Mission"
-		}]
-	}, {
-		"id": "A1.T.VirmirePrisoners.1",
-		"sortIndex": 24001,
-		"inMissionId": "A1.T.VirmirePrisoners",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Cell Block B",
-		"description": "There are several salarians imprisoned in a cell in Cell Block B. [Private Menos Avot|megametracker://person?id=O1.Avot] is among them, and explains the experiments [Saren|megametracker://person?id=E1.Saren] has been conducting on them and begs you to let him out. You can choose to let them all out (which results in a fight), or leave them behind, to die.",
-		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
-		"mapLocationPoint": {
-			"x": 587,
-			"y": 1444,
-			"radius": 1
-		}
-	}, {
-		"id": "A1.T.VirmirePrisoners.2",
-		"sortIndex": 24002,
-		"inMissionId": "A1.T.VirmirePrisoners",
-		"gameVersion": "1",
-		"missionType": "Objective",
-		"name": "Cell Block A",
-		"description": "There is a lucid prisoner, [Lieutenant Ganto Imness|megametracker://person?id=O1.Imness], held in Cell Block A. You can free him before the base is destroyed, or leave him to die. There are also several other salarians in the next cell, who are too far gone to save.",
-		"inMapId": "G.Att.Sen.Hoc.Vir.BaseEntry",
-		"mapLocationPoint": {
-			"x": 1019,
-			"y": 1057,
-			"radius": 1
-		}
-	}]
+
+   }]
 }
