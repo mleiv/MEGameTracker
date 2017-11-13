@@ -184,7 +184,7 @@ public struct Map: Codable, MapLocationable, Eventsable {
     }
 
     public mutating func setGeneralData() {
-        // nothing for now
+        self.gameVersion = generalData.gameVersion
     }
     public mutating func setGeneralData(_ generalData: DataMap) {
         self.generalData = generalData

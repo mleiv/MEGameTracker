@@ -371,7 +371,7 @@ extension Item {
 		} else if first.isAvailable != second.isAvailable {
 			return first.isAvailable // push to start
         } else if first.sortIndex != second.sortIndex {
-                return first.sortIndex < second.sortIndex
+            return first.sortIndex < second.sortIndex
 		} else {
 			return first.id < second.id
 		}

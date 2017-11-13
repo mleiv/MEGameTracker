@@ -1,5 +1,5 @@
 //
-//  GameMaps.swift
+//  CloudKitMaps.swift
 //  MEGameTracker
 //
 //  Created by Emily Ivie on 12/31/16.

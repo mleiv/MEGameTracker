@@ -181,7 +181,8 @@ final public class MapController: UIViewController,
 		mapLocation?.shownInMapId = map?.id
 
 		// changed should not be necessary, but... it is
-		if var map = self.map?.changed(gameVersion: App.current.gameVersion) {
+		if let map = self.map?.changed(gameVersion: App.current.gameVersion) {
+            self.map = map
 
 			if !UIWindow.isInterfaceBuilder {
 				// load map locations
