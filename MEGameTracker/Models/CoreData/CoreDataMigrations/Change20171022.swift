@@ -18,6 +18,8 @@ public struct Change20171022: CoreDataMigrationType {
         toMissionId: "A2.Convo.Chakwas",
         ids: [
             (fromId: "A2.N.SerriceIceBrandy.P0", toId: "A2.Convo.Chakwas.P0"),
+            (fromId: "A2.N.SerriceIceBrandy.P1", toId: "A2.Convo.Chakwas.P1"),
+            (fromId: "A2.N.SerriceIceBrandy.R1", toId: "A2.Convo.Chakwas.R1"),
         ]
     ), (
         fromMissionId: "A2.D.Mordin",
@@ -89,12 +91,53 @@ public struct Change20171022: CoreDataMigrationType {
         "A1.Convo.Citadel.Udina",
     ]
 
+    let itemIds: [(old: String, new: String)] = [
+        ("A2.UC.ArmorUpgrades.MG.I.2", "A2.UC.ArmorUpgrades.MG.I.7"),
+        ("A2.UC.ArmorUpgrades.MG.I.3", "A2.UC.ArmorUpgrades.MG.I.8"),
+        ("A2.UC.ArmorUpgrades.DP.I.2", "A2.UC.ArmorUpgrades.DP.I.7"),
+        ("A2.UC.ArmorUpgrades.DP.I.3", "A2.UC.ArmorUpgrades.DP.I.8"),
+        ("A2.UC.ArmorUpgrades.TD.I.2", "A2.UC.ArmorUpgrades.TD.I.7"),
+        ("A2.UC.ArmorUpgrades.TD.I.3", "A2.UC.ArmorUpgrades.TD.I.8"),
+        ("A2.UC.ArmorUpgrades.TD.I.4", "A2.UC.ArmorUpgrades.TD.I.9"),
+        ("A2.UC.ArmorUpgrades.TD.I.5", "A2.UC.ArmorUpgrades.TD.I.10"),
+        ("A2.UC.ArmorUpgrades.BD.I.2", "A2.UC.ArmorUpgrades.BD.I.7"),
+        ("A2.UC.ArmorUpgrades.BD.I.3", "A2.UC.ArmorUpgrades.BD.I.8"),
+        ("A2.UC.ArmorUpgrades.Cyb.I.2", "A2.UC.ArmorUpgrades.Cyb.I.8"),
+        ("A2.UC.ArmorUpgrades.Cyb.I.3", "A2.UC.ArmorUpgrades.Cyb.I.9"),
+        ("A2.UC.WeaponUpgrades.AR.I.2", "A2.UC.WeaponUpgrades.AR.I.8"),
+        ("A2.UC.WeaponUpgrades.AR.I.3", "A2.UC.WeaponUpgrades.AR.I.9"),
+        ("A2.UC.WeaponUpgrades.AR.I.1W", "A2.UC.WeaponUpgrades.AR.I.10"),
+        ("A2.UC.WeaponUpgrades.AR.I.2W", "A2.UC.WeaponUpgrades.AR.I.11"),
+        ("A2.UC.WeaponUpgrades.AR.I.3W", "A2.UC.WeaponUpgrades.AR.I.12"),
+        ("A2.UC.WeaponUpgrades.HP.I.2", "A2.UC.WeaponUpgrades.HP.I.7"),
+        ("A2.UC.WeaponUpgrades.HP.I.3", "A2.UC.WeaponUpgrades.HP.I.8"),
+        ("A2.UC.WeaponUpgrades.HP.I.1W", "A2.UC.WeaponUpgrades.HP.I.9"),
+        ("A2.UC.WeaponUpgrades.SG.I.2", "A2.UC.WeaponUpgrades.SG.I.7"),
+        ("A2.UC.WeaponUpgrades.SG.I.3", "A2.UC.WeaponUpgrades.SG.I.8"),
+        ("A2.UC.WeaponUpgrades.SG.I.1W", "A2.UC.WeaponUpgrades.SG.I.9"),
+        ("A2.UC.WeaponUpgrades.SG.I.2W", "A2.UC.WeaponUpgrades.SG.I.10"),
+        ("A2.UC.WeaponUpgrades.SR.I.2", "A2.UC.WeaponUpgrades.SR.I.7"),
+        ("A2.UC.WeaponUpgrades.SR.I.3", "A2.UC.WeaponUpgrades.SR.I.8"),
+        ("A2.UC.WeaponUpgrades.SR.I.1W", "A2.UC.WeaponUpgrades.SR.I.9"),
+        ("A2.UC.WeaponUpgrades.SR.I.2W", "A2.UC.WeaponUpgrades.SR.I.10"),
+        ("A2.UC.WeaponUpgrades.SMG.I.2", "A2.UC.WeaponUpgrades.SMG.I.7"),
+        ("A2.UC.WeaponUpgrades.SMG.I.3", "A2.UC.WeaponUpgrades.SMG.I.8"),
+        ("A2.UC.WeaponUpgrades.SMG.I.1W", "A2.UC.WeaponUpgrades.SMG.I.9"),
+        ("A2.UC.WeaponUpgrades.SMG.I.2W", "A2.UC.WeaponUpgrades.SMG.I.10"),
+        ("A2.UC.WeaponUpgrades.HW.I.1W", "A2.UC.WeaponUpgrades.HW.I.8"),
+        ("A2.UC.WeaponUpgrades.HW.I.2W", "A2.UC.WeaponUpgrades.HW.I.9"),
+        ("A2.UC.WeaponUpgrades.HW.I.3W", "A2.UC.WeaponUpgrades.HW.I.10"),
+        ("A2.UC.WeaponUpgrades.HW.I.4W", "A2.UC.WeaponUpgrades.HW.I.11"),
+        ("A2.UC.WeaponUpgrades.HW.I.5W", "A2.UC.WeaponUpgrades.HW.I.12"),
+    ]
+
     /// Correct some changes ids
     public func run() {
         // only run if prior bad data may have been saved
         guard App.current.lastBuild > 0 else { return }
         remapMoralityChoices()
         correctMovedMissions()
+        correctRenamedItem()
     }
 
     private func remapMoralityChoices() {
@@ -137,5 +180,25 @@ public struct Change20171022: CoreDataMigrationType {
         }
         // delete the old data mission.
         _ = DataMission.deleteAll(ids: oldMissionIds)
+    }
+
+    private func correctRenamedItem() {
+        // load the old items.
+        for index in 0..<itemIds.count {
+            guard var fromItem = Item.getExisting(
+                id: itemIds[index].old,
+                gameSequenceUuid: nil
+            ) else { continue }
+            if let toItem = Item.get(
+                id: itemIds[index].new,
+                gameSequenceUuid: fromItem.gameSequenceUuid
+            ) {
+                _ = toItem.changed(isAcquired: fromItem.isAcquired)
+            }
+            // delete the old items.
+            _ = fromItem.delete()
+        }
+        // delete the old data item.
+        _ = DataItem.deleteAll(ids: itemIds.map({ $0.old }))
     }
 }

@@ -246,63 +246,7 @@
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Explore Site",
-      "description": "There are several locations you may want to visit and view flashbacks to Game 1. These are all optional to the mission."
-   }, {
-      "id": "DLC2.NormandyCrashSite.1.1",
-      "inMissionId": "DLC2.NormandyCrashSite.1",
-      "sortIndex": 100011,
-      "gameVersion": "2",
-      "missionType": "Objective",
-      "name": "Normandy Sign",
-      "isOpensDetail": false
-   }, {
-      "id": "DLC2.NormandyCrashSite.1.2",
-      "inMissionId": "DLC2.NormandyCrashSite.1",
-      "sortIndex": 100011,
-      "gameVersion": "2",
-      "missionType": "Objective",
-      "name": "Cockpit",
-      "isOpensDetail": false
-   }, {
-      "id": "DLC2.NormandyCrashSite.1.3",
-      "inMissionId": "DLC2.NormandyCrashSite.1",
-      "sortIndex": 100011,
-      "gameVersion": "2",
-      "missionType": "Objective",
-      "name": "Sleeper Pods",
-      "isOpensDetail": false
-   }, {
-      "id": "DLC2.NormandyCrashSite.1.4",
-      "inMissionId": "DLC2.NormandyCrashSite.1",
-      "sortIndex": 100011,
-      "gameVersion": "2",
-      "missionType": "Objective",
-      "name": "Mako",
-      "isOpensDetail": false
-   }, {
-      "id": "DLC2.NormandyCrashSite.1.5",
-      "inMissionId": "DLC2.NormandyCrashSite.1",
-      "sortIndex": 100011,
-      "gameVersion": "2",
-      "missionType": "Objective",
-      "name": "CIC",
-      "isOpensDetail": false
-   }, {
-      "id": "DLC2.NormandyCrashSite.1.6",
-      "inMissionId": "DLC2.NormandyCrashSite.1",
-      "sortIndex": 100011,
-      "gameVersion": "2",
-      "missionType": "Objective",
-      "name": "Pressly's Datapad",
-      "isOpensDetail": false
-   }, {
-      "id": "DLC2.NormandyCrashSite.1.7",
-      "inMissionId": "DLC2.NormandyCrashSite.1",
-      "sortIndex": 100011,
-      "gameVersion": "2",
-      "missionType": "Objective",
-      "name": "Mess Hall",
-      "isOpensDetail": false
+      "description": "There are several locations you may want to visit and view flashbacks to Game 1. You can also read [Pressly's Datapad|megametracker://maplocation?id=G.Ter.Ome.Ama.Alchera&title=Datapad&location=1622x1046]. These are all optional to the mission."
    }, {
       "id": "DLC2.NormandyCrashSite.2",
       "inMissionId": "DLC2.NormandyCrashSite",
@@ -318,7 +262,7 @@
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Place Monument",
-      "description": "When you are done gathering the dog tags and exploring the wreckage, place the monument and return to the shuttle."
+      "description": "When you are done gathering the dog tags and exploring the wreckage, place the monument wherever you have decided is best, and exit via the shuttle."
    }, {
       "id": "DLC2.Overlord",
       "sortIndex": 1000,
@@ -371,6 +315,8 @@
       "description": "Speak to Dr. Archer and prevent the VI from using the satellite dish.",
       "experience": 250,
       "reward": "3,750 Credits",
+      "inMapId": "G.Ter.Pho.Typ.Ait.1Hermes",
+      "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord_(assignment)"],
       "events": [{
          "type": "Triggers",
@@ -382,8 +328,14 @@
       "sortIndex": 100011,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Retract Satellite Dish",
-      "description": "Enter the facility and head down the ramp. Shoot out the cracked window and through that room. The door on the right leads to the dish controls. Retract the dish."
+      "name": "Retract Dish",
+      "description": "Enter the facility and head down the ramp. Shoot out the cracked window and through that room. The door on the right leads to the dish controls. Retract the dish.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.1Hermes",
+      "mapLocationPoint": {
+         "x": 397,
+         "y": 1178,
+         "radius": 1
+      }
    }, {
       "id": "DLC2.Overlord.1.2",
       "inMissionId": "DLC2.Overlord.1",
@@ -391,7 +343,9 @@
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Take Tram",
-      "description": "The VI overrides your actions, and now you must destroy the satellite dish to stop it. Head out through the mess hall, which is now overrun with geth. You will want to head upstairs and make your way to the tram. Activate it and travel to the dish location."
+      "description": "The VI overrides your actions, and now you must destroy the satellite dish to stop the upload. Head out through the mess hall, which is now overrun with geth. You will want to head upstairs and make your way to the tram. Activate it and travel to the dish location.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.1.Tram",
+      "isShowInParentMap": true
    }, {
       "id": "DLC2.Overlord.1.3",
       "inMissionId": "DLC2.Overlord.1",
@@ -399,7 +353,9 @@
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Cross Walkway to Dish",
-      "description": "Note: Despite what Dr. Archer says, this is not a timed mission. \n\nHead across the catwalks, eliminating the small group of geth that attack you. Activate the walkway controls and cross over to the dish itself. There will be a major battle here."
+      "description": "Note: Despite what Dr. Archer says, this is not a timed mission. \n\nHead across the catwalks, eliminating the small group of geth that attack you. Activate the walkway controls and cross over to the dish itself. There will be a major battle here.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.1.Bridge",
+      "isShowInParentMap": true
    }, {
       "id": "DLC2.Overlord.1.4",
       "inMissionId": "DLC2.Overlord.1",
@@ -407,7 +363,54 @@
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Destroy Dish",
-      "description": "There are four capacitors spaced across the edge of the dish and you will need to destroy three of them to take down the dish. Destroying each capacitor will spawn a new geth attack."
+      "description": "There are four capacitors spaced across the edge of the dish and you will need to destroy three of them to take down the dish. Destroying each capacitor will spawn a new geth attack.",
+      "objectivesCountToCompletion": 3,
+      "inMapId": "G.Ter.Pho.Typ.Ait.1Hermes",
+      "mapLocationPoint": {
+         "x": 1301,
+         "y": 626,
+         "radius": 1
+      }
+   }, {
+      "id": "DLC2.Overlord.1.4.1",
+      "inMissionId": "DLC2.Overlord.1.4",
+      "sortIndex": 100014,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Destroy Capacitor",
+      "inMapId": "G.Ter.Pho.Typ.Ait.1.Capacitor1",
+      "isShowInParentMap": true,
+      "isOpensDetail": false
+   }, {
+      "id": "DLC2.Overlord.1.4.2",
+      "inMissionId": "DLC2.Overlord.1.4",
+      "sortIndex": 100014,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Destroy Capacitor",
+      "inMapId": "G.Ter.Pho.Typ.Ait.1.Capacitor2",
+      "isShowInParentMap": true,
+      "isOpensDetail": false
+   }, {
+      "id": "DLC2.Overlord.1.4.3",
+      "inMissionId": "DLC2.Overlord.1.4",
+      "sortIndex": 100014,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Destroy Capacitor",
+      "inMapId": "G.Ter.Pho.Typ.Ait.1.Capacitor3",
+      "isShowInParentMap": true,
+      "isOpensDetail": false
+   }, {
+      "id": "DLC2.Overlord.1.4.4",
+      "inMissionId": "DLC2.Overlord.1.4",
+      "sortIndex": 100014,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Destroy Capacitor",
+      "inMapId": "G.Ter.Pho.Typ.Ait.1.Capacitor4",
+      "isShowInParentMap": true,
+      "isOpensDetail": false
    }, {
       "id": "DLC2.Overlord.1.5",
       "inMissionId": "DLC2.Overlord.1",
@@ -415,7 +418,13 @@
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Speak to Archer",
-      "description": "Archer reveals that Project Overlord's goal was integrating a human mind into a VI. Archer chose his brother, but [David|megametracker://person?id=O2.ArcherD] was overpowered by the VI. Three override signals must be sent to disable the VI, located at Atlas Station. Archer will take care of Hermes station, but you must send the override signals from Prometheus and Vulcan stations."
+      "description": "Archer reveals that Project Overlord's goal was integrating a human mind into a VI. Archer chose his brother, but [David|megametracker://person?id=O2.ArcherD] was overpowered by the VI. Three override signals must be sent to disable the VI, located at Atlas Station. Archer will take care of Hermes station, but you must send the override signals from Prometheus and Vulcan stations.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.1Hermes",
+      "mapLocationPoint": {
+         "x": 243,
+         "y": 1756,
+         "radius": 1
+      }
    }, {
       "id": "DLC2.Overlord.2",
       "inMissionId": "DLC2.Overlord",
@@ -564,7 +573,7 @@
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Project Firewalker: Rosalie Lost",
-      "description": "After you are dropped off by the wreckage, bypass the cargo computer to open the crate and retrieve the Hammerhead. Then there is a basic gathering assignment as an introduction to the Hammerhead's controls. Follow the instructions to collect all the research packets.",
+      "description": "After you are dropped off at the wreckage, bypass the cargo computer to open the crate and retrieve the Hammerhead. Then there is a basic gathering assignment as an introduction to the Hammerhead's controls. Follow the instructions to collect the seven research packets.",
       "inMapId": "G.Att.Ism.Ely.Zeona",
       "isShowInParentMap": true,
       "experience": 125,
@@ -1112,7 +1121,6 @@
          "y": 1786,
          "radius": 1
       },
-      "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Veteran"],
       "conversationRewards": [{
          "set": {
@@ -1180,13 +1188,13 @@
       "name": "Zaeed: The Price of Revenge (DLC)",
       "isLoyaltyMission": true,
       "description": "Before Zaeed can commmit himself to helping you defeat the Collectors, he needs your help finishing some prior business he has on Zorya at a Blue Suns refinery. \n\n*Note: Save your game before landing on Zorya, because you may not have the reputation to finish it the way you want. But the initial Paragon Interrupt punch is a pretty good gut check on whether you are high enough.* \n\n*_This assignment was released as part of the Cerberus Network DLC pack._*",
-        "objectivesCountToCompletion": 4,
+      "objectivesCountToCompletion": 4,
       "inMapId": "G.Att.Ism.Fai.Zorya",
       "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Zaeed:_The_Price_of_Revenge"],
+      "relatedDecisionIds": ["D2.ZaeedLoyalty"],
       "experience": 750,
       "reward": "30,000 Credits Paragon/15,000 Credits Renegade",
-      "objectivesCountToCompletion": 4,
       "conversationRewards": [{
          "set": {
             "context": "After extending the bridge",
@@ -1457,7 +1465,6 @@
          "radius": 1
       },
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Master_Thief"],
-      "relatedDecisionIds": ["D2.Graybox"],
       "events": [{
          "type": "BlockedUntil",
          "id": "Completed: Freedom's Progress"
@@ -1498,10 +1505,11 @@
       "missionType": "Loyalty",
       "name": "Kasumi: Stealing Memory (DLC)",
       "isLoyaltyMission": true,
-      "description": "Kasumi Goto's former partner, [Keiji|megametracker://person?id=O2.Keiji], was killed by the ruthless arms dealer, [megametracker://person?id=O2.Hock], for a valuable neural implant, called a graybox, containing dangerous secrets. Kasumi needs your help to break into Hock's vault and recover the graybox.\n\n*_This assignment was released as part of the Stolen Memory DLC pack._*",
+      "description": "Kasumi Goto's former partner, [Keiji|megametracker://person?id=O2.Keiji], was killed by the ruthless arms dealer, [megametracker://person?id=E2.Hock], for a valuable neural implant, called a graybox, containing dangerous secrets. Kasumi needs your help to break into Hock's vault and recover the graybox.\n\n*_This assignment was released as part of the Stolen Memory DLC pack._*",
       "inMapId": "G.OuC.Ser.Bol.Bekenstein",
       "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Kasumi:_Stealing_Memory"],
+      "relatedDecisionIds": ["D2.KasumiLoyalty", "D2.Graybox"],
       "events": [{
          "type": "BlockedUntil",
          "id": "Acquired: Kasumi"
@@ -1512,22 +1520,6 @@
       "experience": 750,
       "reward": "30,000 Credits",
       "conversationRewards": [{
-         "set": {
-            "context": "Talking to Kasumi on the way to the party",
-            "isExclusiveSet": true,
-            "options": [{
-               "id": "A2.L.Kasumi.P1",
-               "type": "Paragon",
-               "value": 2,
-               "trigger": "\"What's the plan?\""
-            }, {
-               "id": "A2.L.Kasumi.R1",
-               "type": "Renegade",
-               "value": 2,
-               "trigger": "\"I can do this alone.\""
-            }]
-         }
-      }, {
          "set": {
             "context": "Meeting Hock",
             "isExclusiveSet": true,
@@ -1545,7 +1537,24 @@
          }
       }, {
          "set": {
+            "context": "After Hock refuses to let Kasumi inside",
+            "isExclusiveSet": true,
+            "options": [{
+               "id": "A2.L.Kasumi.P1",
+               "type": "Paragon",
+               "value": 2,
+               "trigger": "\"What's the plan?\""
+            }, {
+               "id": "A2.L.Kasumi.R1",
+               "type": "Renegade",
+               "value": 2,
+               "trigger": "\"I can do this alone.\""
+            }]
+         }
+      }, {
+         "set": {
             "context": "Keeping Hock talking (for the voice recording)",
+            "isExclusiveSet": true,
             "options": [{
                "set": {
                   "isExclusiveSet": true,
@@ -1633,59 +1642,44 @@
                "trigger": "Shoot up some of the expensive art and piss Hock off."
             }]
          }
-      }, {
-         "set": {
-            "context": "In the shuttle with Kasumi afterwards",
-            "options": [{
-               "set": {
-                  "isExclusiveSet": true,
-                  "options": [{
-                     "id": "A2.L.Kasumi.P8",
-                     "type": "Paragon",
-                     "value": 5,
-                     "trigger": "\"Keep the graybox.\""
-                  }, {
-                     "id": "A2.L.Kasumi.R8",
-                     "type": "Renegade",
-                     "value": 2,
-                     "trigger": "\"Destroy the graybox.\" or \"It's what he wants.\""
-                  }]
-               }
-            }, {
-               "set": {
-                  "context": "After convincing Kasumi to destroy the graybox",
-                  "isExclusiveSet": true,
-                  "options": [{
-                     "id": "A2.L.Kasumi.P9",
-                     "type": "Paragon",
-                     "value": 5,
-                     "trigger": "\"Let me do it.\""
-                  }, {
-                     "id": "A2.L.Kasumi.R9",
-                     "type": "Renegade",
-                     "value": 2,
-                     "trigger": "\"Do it.\""
-                  }]
-               }
-            }]
-         }
       }]
+   }, {
+      "id": "A2.L.Kasumi.0",
+      "inMissionId": "A2.L.Kasumi",
+      "sortIndex": 3000,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Locate Vault Door",
+      "description": "Head down to the vault and identify the security protocols used.",
+      "inMapId": "G.OuC.Ser.Bol.Bek.1.VaultE",
+      "isShowInParentMap": true
    }, {
       "id": "A2.L.Kasumi.1",
       "inMissionId": "A2.L.Kasumi",
       "sortIndex": 3001,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Break Into The Vault",
+      "name": "Disable Vault Security",
       "description": "Hock has the best security measures in place to protect his vault. You will need to acquire several things before you can break in.",
-      "inMapId": "G.OuC.Ser.Bol.Bek.1Home"
+      "inMapId": "G.OuC.Ser.Bol.Bek.1.VaultE",
+      "isShowInParentMap": true
    }, {
       "id": "A2.L.Kasumi.1.1",
       "inMissionId": "A2.L.Kasumi.1",
       "sortIndex": 30011,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Find Vault Password",
+      "name": "Kasumi: Voice Lock",
+      "description": "Discover the vault password and sample Hock's voice to impersonate him.",
+      "inMapId": "G.OuC.Ser.Bol.Bek.1.VaultE",
+      "isShowInParentMap": true
+   }, {
+      "id": "A2.L.Kasumi.1.1.1",
+      "inMissionId": "A2.L.Kasumi.1.1",
+      "sortIndex": 30011,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Vault Password",
       "description": "The vault password is changed daily. Break into the security room and locate the [datapad|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Donovan%20Hock&location=173x1494] with the vault password stored on it.",
       "inMapId": "G.OuC.Ser.Bol.Bek.1Home",
       "mapLocationPoint": {
@@ -1694,12 +1688,12 @@
          "radius": 1
       }
    }, {
-      "id": "A2.L.Kasumi.1.2",
-      "inMissionId": "A2.L.Kasumi.1",
+      "id": "A2.L.Kasumi.1.1.2",
+      "inMissionId": "A2.L.Kasumi.1.1",
       "sortIndex": 30012,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Record Hock's Voice",
+      "name": "Hock's Voice",
       "description": "The vault password is only valid in Hock's own voice. Keep [Hock|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Donovan%20Hock&location=599x1289] talking until Kasumi gets enough to reconstruct the voice password for the Vault.",
       "sideEffects": ["This same ploy was used in the 1992 movie [Sneakers|https://www.imdb.com/title/tt0105435/], where Mary McDonnell (Battlestar Galactica) has to trick her date into saying all the words in his corporate voice passport."],
       "inMapId": "G.OuC.Ser.Bol.Bek.1Home",
@@ -1714,9 +1708,10 @@
       "sortIndex": 30013,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Get Hock's DNA",
-      "description": "To get Hock's DNA, you will need to break into his private rooms. There are two ways to get there: \n\n1) Use the [datapad|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Datapad&location=398x810] with information about Chief Roe to convince the guard to let you in. \n\n2) Jump down from the [balcony|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1.Balcony&type=Map] to outside of the mansion and then shoot the glass to get back inside the hallway outside Hock's rooms. \n\nThe DNA you need is on the Wine Glass, the Couch Cushion, and the Datapad. \n\nDo not touch the [Alarm Clock|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Alarm%20Clock&location=1803x1199] or more guards will show up.",
-      "inMapId": "G.OuC.Ser.Bol.Bek.1.Bedroom",
+      "name": "Kasumi: DNA Scanner",
+      "description": "To get Hock's DNA, you will need to break into his private rooms. There are two ways to get there: \n\n1) Use the [datapad|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Datapad&location=398x810] with information about Chief Roe to convince the guard to let you in. \n\n2) Jump down from the [balcony|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1.Balcony&type=Map] to outside of the mansion and then shoot the glass to get back inside the hallway outside Hock's rooms. \n\nThe DNA you need is on the Wine Glass, the Antique Weapons Collection, and the Datapad. \n\nDo not touch the [Alarm Clock|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Alarm%20Clock&location=1803x1199] or more guards will show up.",
+      "objectivesCountToCompletion": 3,
+      "inMapId": "G.OuC.Ser.Bol.Bek.1.VaultE",
       "isShowInParentMap": true
    }, {
       "id": "A2.L.Kasumi.1.3.1",
@@ -1728,8 +1723,8 @@
       "isOpensDetail": false,
       "inMapId": "G.OuC.Ser.Bol.Bek.1Home",
       "mapLocationPoint": {
-         "x": 1775,
-         "y": 1005,
+         "x": 1725,
+         "y": 955,
          "radius": 1
       }
    }, {
@@ -1738,12 +1733,12 @@
       "sortIndex": 300132,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Couch Cushion",
+      "name": "Antique Weapons Collection",
       "isOpensDetail": false,
       "inMapId": "G.OuC.Ser.Bol.Bek.1Home",
       "mapLocationPoint": {
-         "x": 1785,
-         "y": 920,
+         "x": 1938,
+         "y": 1289,
          "radius": 1
       }
    }, {
@@ -1766,8 +1761,32 @@
       "sortIndex": 30014,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Cut the Power",
-      "description": "Cut the power to the kinetic barrier by pulling the [statuette|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.1Home&title=Statuette&location=365x1194] on the wall.",
+      "name": "Kasumi: Kinetic Barrier",
+      "description": "Cut the power to the kinetic barrier around the vault.",
+      "inMapId": "G.OuC.Ser.Bol.Bek.1.VaultE",
+      "isShowInParentMap": true
+   }, {
+      "id": "A2.L.Kasumi.1.4.1",
+      "inMissionId": "A2.L.Kasumi.1.4",
+      "sortIndex": 30014,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Scan Power Cable",
+      "isOpensDetail": false,
+      "inMapId": "G.OuC.Ser.Bol.Bek.1Home",
+      "mapLocationPoint": {
+         "x": 767,
+         "y": 382,
+         "radius": 1
+      }
+   }, {
+      "id": "A2.L.Kasumi.1.4.2",
+      "inMissionId": "A2.L.Kasumi.1.4",
+      "sortIndex": 30014,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Pull Statuette",
+      "isOpensDetail": false,
       "inMapId": "G.OuC.Ser.Bol.Bek.1Home",
       "mapLocationPoint": {
          "x": 365,
@@ -1780,7 +1799,7 @@
       "sortIndex": 3002,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Find Keiji's Graybox",
+      "name": "Locate the Graybox",
       "description": "The vault is full of valuable art. Locate the graybox. The signal will pulse louder and more rapidly the closer you get to the graybox. As soon as you take the graybox, Hock's forces will attack.",
       "sideEffects": [
          "If you look into the next room past the Statue of Liberty's head, you can see two Conduit scultptures, probably modelled after the one on the Citadel in Game 1 (where it was assumed to be ancient Prothean art).",
@@ -1798,8 +1817,22 @@
       "sortIndex": 3003,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Escape Outside",
-      "description": "Hock seals you in the garage. To escape, you need to make a new door. Make your way to the factory and use the [canon|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.2.Canon&type=Map] on the [volatile canisters|megametracker://maplocation?id=G.OuC.Ser.Bol.Bek.2Vault&title=Volatile%20Canisters&location=1018x903] to get out to the truck loading bay and from there to the wharf.",
+      "name": "Escape Hock's Facility",
+      "description": "Hock seals you in the garage. To escape, you need to make a new door. Make your way to the factory and use the canon on the volatile canisters to get out to the truck loading bay and from there to the wharf.",
+      "inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+      "mapLocationPoint": {
+         "x": 1622,
+         "y": 1376,
+         "radius": 1
+      }
+   }, {
+      "id": "A2.L.Kasumi.3.1",
+      "inMissionId": "A2.L.Kasumi.3",
+      "sortIndex": 3003,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Fire Canon",
+      "isOpensDetail": false,
       "inMapId": "G.OuC.Ser.Bol.Bek.2.Canon",
       "isShowInParentMap": true
    }, {
@@ -1808,7 +1841,7 @@
       "sortIndex": 3004,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Destroy Hock's Gunship",
+      "name": "Defeat Donovan Hock",
       "description": "Hock's mercenaries will attack you in waves while his personal gunship attacks you. You can attack the gunship to speed up the process, but his shields won't fall until Kasumi's cut-scene. At that point, you can destroy the gunship and complete the mission. Take the shuttle when you are done looting the wharf.",
       "inMapId": "G.OuC.Ser.Bol.Bek.2.Platform",
       "isShowInParentMap": true
@@ -1822,13 +1855,14 @@
       "missionType": "Dossier",
       "name": "Archangel",
       "description": "A formidable mercenary commander and expert sniper, Archangel is currently involved in a one-man war against the three gangs of Omega. You must extract him from this battle alive if you want him on the squad.",
-        "objectivesCountToCompletion": 8,
-      "inMapId": "G.Ter.Ome.Sah.Omega",
+      "objectivesCountToCompletion": 8,
+      "inMapId": "G.Ter.Ome.Sah.Ome.1.Depot",
       "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_Archangel"],
       "relatedMissionIds": ["A2.O.DatapadRecovered"],
       "experience": 1000,
       "reward": "20,000 Credits",
+      "sideEffects": ["Zaeed offers some fun commentary and additional conversations on this mission, so consider bringing him along."],
       "conversationRewards": [{
          "set": {
             "context": "Ridiculed by the mercenary recruiter (if Shepard is female)",
@@ -1842,7 +1876,7 @@
          }
       }, {
          "set": {
-            "context": "Talking to the young man who is signing on after you",
+            "context": "Talking to the young man (Jonn Whitson) who is signing on after you",
             "options": [{
                "set": {
                   "isExclusiveSet": true,
@@ -1853,8 +1887,8 @@
                      "trigger": "\"How old are you?\""
                   }, {
                      "id": "A2.D.Garrus.R2",
-                     "type": "Credits",
-                     "value": 2000,
+                     "type": "Renegade",
+                     "value": 2,
                      "trigger": "\"Yes.\""
                   }]
                }
@@ -1905,7 +1939,7 @@
          }
       }, {
          "set": {
-            "context": "Talking to Archangel",
+            "context": "Meeting Archangel",
             "options": [{
                "set": {
                   "isExclusiveSet": true,
@@ -1925,12 +1959,12 @@
                "set": {
                   "isExclusiveSet": true,
                   "options": [{
-                     "id": "A2.D.Garrus.P7",
+                     "id": "A2.D.Garrus.P7B",
                      "type": "Paragon",
                      "value": 2,
                      "trigger": "\"They won't get through.\""
                   }, {
-                     "id": "A2.D.Garrus.R7",
+                     "id": "A2.D.Garrus.R7B",
                      "type": "Renegade",
                      "value": 2,
                      "trigger": "\"Let's kick ass.\""
@@ -1942,18 +1976,23 @@
                "value": 5,
                "context": "*Renegade Interrupt*",
                "trigger": "Sniper a LOKI Mech."
-            }, {
+            }]
+         }
+      }, {
+         "set": {
+            "context": "When the Blood Pack infiltrate the tunnels",
+            "options": [{
                "set": {
                   "isExclusiveSet": true,
                   "options": [{
                      "id": "A2.D.Garrus.P9",
                      "type": "Paragon",
-                     "value": 2,
+                     "value": 5,
                      "trigger": "\"I'm not leaving you alone.\""
                   }, {
                      "id": "A2.D.Garrus.R9",
                      "type": "Renegade",
-                     "value": 2,
+                     "value": 5,
                      "trigger": "\"You need help.\""
                   }]
                }
@@ -2016,7 +2055,7 @@
       "mapLocationPoint": {
          "x": 784,
          "y": 287,
-         "radius": 20
+         "radius": 1
       }
    }, {
       "id": "A2.D.Garrus.1",
@@ -2026,8 +2065,12 @@
       "missionType": "Objective",
       "name": "Sign on to Attack Archangel",
       "description": "If you have not already spoken to Aria, you must first make a token appearance before the ruler of Omega before you can begin the Archangel mission. Then you can sign up as a freelancer with the mercenary groups, to be frontline fodder in the attack on Archangel. \n\nAfter signing on, you can pick up a ride to Archangel's base in Kima District with a Blue Suns driver at the [Transport Depot|megametracker://maplocation?id=G.Ter.Ome.Sah.Ome.1.Depot&type=Map].",
-      "inMapId": "G.Ter.Ome.Sah.Ome.1.Private",
-      "isShowInParentMap": true
+      "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+      "mapLocationPoint": {
+         "x": 563,
+         "y": 683,
+         "radius": 1
+      }
    }, {
       "id": "A2.D.Garrus.3",
       "inMissionId": "A2.D.Garrus",
@@ -2055,7 +2098,7 @@
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Sabotage Gunship",
-      "description": "Talk to Cathka while he is repairing the gunship. There will be a renegade interrupt to injure Cathka and thereby prevent any repairs to the ship. \n\n_Note: talking to Cathka/Cathka's Assistant will move the story along to the attack on Archangel's base. You will no longer have access to the mercenary area after the conversation._",
+      "description": "Talk to Cathka/Cathka's assistant by the gunship. There will be a renegade interrupt to injure Cathka and thereby prevent any repairs to the ship. \n\n_Note: this will progress the action to an attack on Archangel's base. You will no longer have access to the mercenary area after the conversation._",
       "inMapId": "G.Ter.Ome.Sah.Ome.3Archangel",
       "mapLocationPoint": {
          "x": 582,
@@ -2911,7 +2954,7 @@
       "missionType": "Dossier",
       "name": "The Justicar",
       "description": "Samara is a justicar, a rare member of an asari monastic group trained in enhanced combat biotics alongside standard weapons. Samara was recently sighted on Illium, outside normal asari space.",
-        "objectivesCountToCompletion": 10,
+      "objectivesCountToCompletion": 10,
       "inMapId": "G.Ter.Cre.Tas.Illium",
       "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Justicar"],
@@ -3220,8 +3263,8 @@
       "missionType": "Dossier",
       "name": "The Professor",
       "description": "Recruit the salarian Mordin Solus, currently operating a Medical Clinic in the slums of Omega. He may have the technology to counter the Collector attacks.",
-      "inMapId": "G.Ter.Ome.Sah.Omega",
-        "objectivesCountToCompletion": 8,
+      "objectivesCountToCompletion": 8,
+      "inMapId": "G.Ter.Ome.Sah.Ome.1.Quarantine",
       "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Professor"],
       "relatedMissionIds": ["A2.O.MissingAssistant"],
@@ -4339,6 +4382,7 @@
       "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Garrus:_Eye_for_an_Eye"],
       "relatedMissionIds": ["A2.Convo.Garrus.2"],
+      "relatedDecisionIds": ["D2.GarrusLoyalty"],
       "conversationRewards": [{
          "set": {
             "context": "Threatening the volus in the warehouse",
@@ -4639,6 +4683,7 @@
       "reward": "25,000 Credits",
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Grunt:_Rite_of_Passage"],
       "relatedMissionIds": ["A2.Convo.Grunt.3"],
+      "relatedDecisionIds": ["D2.GruntLoyalty"],
       "conversationRewards": [{
          "set": {
             "context": "Speaking to Urdnet Wrex or Wreave",
@@ -4909,6 +4954,7 @@
       "reward": "25,000 Credits",
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Jack:_Subject_Zero"],
       "relatedMissionIds": ["A2.Convo.Jack.4", "A2.Convo.MirandaJack"],
+      "relatedDecisionIds": ["D2.JackLoyalty"],
       "conversationRewards": [{
          "set": {
             "context": "On the shuttle to the facility",
@@ -5237,7 +5283,7 @@
       "inMapId": "G.Ter.Ros.Alp.2175Aeia",
       "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Jacob:_The_Gift_of_Greatness"],
-      "relatedDecisionIds": ["D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3"],
+      "relatedDecisionIds": ["D2.JacobLoyalty", "D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3"],
       "relatedMissionIds": ["A2.Convo.Jacob.4"],
       "conversationRewards": [{
          "set": {
@@ -5498,7 +5544,7 @@
       "experience": 1000,
       "reward": "25,000 Credits",
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Legion:_A_House_Divided"],
-      "relatedDecisionIds": ["D2.Heretics"],
+      "relatedDecisionIds": ["D2.LegionLoyalty", "D2.Heretics"],
       "relatedMissionIds": ["A2.Convo.Legion.2", "A2.Convo.TaliLegion"],
       "conversationRewards": [{
          "set": {
@@ -5731,6 +5777,7 @@
       "experience": 1000,
       "reward": "25,000 Credits",
       "relatedMissionIds": ["A2.I.LostLocketFound", "A2.Convo.Miranda.3", "A2.Convo.MirandaJack"],
+      "relatedDecisionIds": ["D2.MirandaLoyalty"],
       "conversationRewards": [{
          "set": {
             "context": "Speaking to Lanteia",
@@ -5946,7 +5993,7 @@
       "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Mordin:_Old_Blood"],
       "relatedMissionIds": ["A2.T.CombustionManifold", "A2.T.MissingScout", "A2.Convo.Mordin.3"],
-      "relatedDecisionIds": ["D2.Maelon", "D2.MaelonsData"],
+      "relatedDecisionIds": ["D2.MordinLoyalty", "D2.Maelon", "D2.MaelonsData"],
       "experience": 1000,
       "reward": "25,000 Credits",
       "conversationRewards": [{
@@ -6240,7 +6287,7 @@
       "experience": 1000,
       "reward": "25,000 Credits",
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Samara:_The_Ardat-Yakshi"],
-      "relatedDecisionIds": ["D2.SamaraMorinth"],
+      "relatedDecisionIds": ["D2.SamaraLoyalty", "D2.SamaraMorinth"],
       "relatedMissionIds": ["A2.Convo.Samara.3"],
       "conversationRewards": [{
          "set": {
@@ -6507,11 +6554,11 @@
       "name": "Tali: Treason",
       "isLoyaltyMission": true,
       "description": "Tali is summoned before the Migrant Fleet on mysterious charges of treason. During her trial, it is revealed that her father was experimenting on live geth. The court demands that she board his ship the Alarei and locate evidence of what happened and that she was not involved.",
-        "objectivesCountToCompletion": 9,
+      "objectivesCountToCompletion": 9,
       "inMapId": "G.Ter.Val.Rah.Fleet",
       "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Tali:_Treason"],
-      "relatedDecisionIds": ["D2.TaliNotExiled", "D2.RaelZorahReputation"],
+      "relatedDecisionIds": ["D2.TaliLoyalty", "D2.TaliNotExiled", "D2.RaelZorahReputation"],
       "relatedMissionIds": ["A2.Convo.Tali.2", "A2.Convo.TaliLegion"],
       "conversationRewards": [{
          "set": {
@@ -7133,6 +7180,7 @@
       "reward": "25,000 Credits",
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Thane:_Sins_of_the_Father"],
       "relatedMissionIds": ["A2.Convo.Thane.4"],
+      "relatedDecisionIds": ["D2.ThaneLoyalty"],
       "conversationRewards": [{
          "set": {
             "context": "Talking to Mouse",
@@ -7425,6 +7473,10 @@
       "inMapId": "G.C2.ZakeraWardL28",
       "isShowInParentMap": true
 
+
+
+
+
    }, {
       "x-comment-x": "-----------------------UPGRADES-------------------------",
       "id": "A2.UC.1NormandyUpgrades",
@@ -7691,7 +7743,7 @@
       "gameVersion": "2",
       "missionType": "Collection",
       "name": "Souvenirs",
-      "description": "A list of miscellaneous other souvenir purchases you can make in Game 2.",
+      "description": "A list of miscellaneous other souvenirs you can acquire in Game 2.",
       "events": [{
          "type": "BlockedUntil",
          "id": "Completed: Freedom's Progress"

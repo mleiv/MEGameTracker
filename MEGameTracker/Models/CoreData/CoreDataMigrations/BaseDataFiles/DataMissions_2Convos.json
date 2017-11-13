@@ -42,7 +42,7 @@
         "missionType": "Objective",
         "titlePrefix": "Conversation: ",
         "name": "Garrus Vakarian",
-        "description": "Conversations with [megametracker://person?id=S2.Garrus] after his recruitment aboard the Normandy.",
+        "description": "Conversations with [megametracker://person?id=S1.Garrus] after his recruitment aboard the Normandy.",
         "inMapId": "G.N2.3.Battery",
         "isShowInParentMap": true,
         "relatedDecisionIds": ["D2.LoveGarrus"],
@@ -76,7 +76,7 @@
         "gameVersion": "2",
         "missionType": "Objective",
         "name": "1st Convo",
-        "description": "Garrus discusses how his squad on Omega was killed.",
+        "description": "Garrus discusses how he gathered his squad and how they were all killed on Omega after being betrayed by a fellow squad member, [megametracker://person?id=O2.Sidonis].",
         "inMapId": "G.N2.3.Battery",
         "isShowInParentMap": true
     }, {
@@ -90,7 +90,11 @@
         "description": "Garrus has located Sidonis and wants your help in taking him down.",
         "inMapId": "G.N2.3.Battery",
         "isShowInParentMap": true,
-        "relatedMissionIds": ["A2.L.Garrus"]
+        "relatedMissionIds": ["A2.L.Garrus"],
+        "events": [{
+           "type": "BlockedUntil",
+           "id": "Completed: Horizon"
+        }]
     }, {
         "id": "A2.Convo.Garrus.3",
         "inMissionId": "A2.Convo.Garrus",
@@ -285,7 +289,11 @@
         "description": "Grunt is confused by the undirected rage filling him. He needs help from the krogan to make sense of this stage in his development.",
         "inMapId": "G.N2.4.Port",
         "isShowInParentMap": true,
-        "relatedMissionIds": ["A2.L.Grunt"]
+        "relatedMissionIds": ["A2.L.Grunt"],
+        "events": [{
+           "type": "BlockedUntil",
+           "id": "Completed: Horizon"
+        }]
     }, {
         "id": "A2.Convo.Grunt.4",
         "inMissionId": "A2.Convo.Grunt",
@@ -628,7 +636,11 @@
         "description": "Jack discusses her childhood in a Cerberus research facility. She has found the coordinates in the Cerberus files and she wants to go blow it up.",
         "inMapId": "G.N2.4.SubDeck",
         "isShowInParentMap": true,
-        "relatedMissionIds": ["A2.L.Jack"]
+        "relatedMissionIds": ["A2.L.Jack"],
+        "events": [{
+           "type": "BlockedUntil",
+           "id": "Completed: Horizon"
+        }]
     }, {
         "id": "A2.Convo.Jack.5",
         "inMissionId": "A2.Convo.Jack",
@@ -840,7 +852,7 @@
             }
         }, {
             "set": {
-                "context": "During third conversation",
+                "context": "During fourth conversation",
                 "options": [{
                     "set": {
                         "isExclusiveSet": true,
@@ -876,7 +888,7 @@
         }, {
             "set": {
                 "isExclusiveSet": true,
-                "context": "During fourth conversation",
+                "context": "During fifth conversation",
                 "options": [{
                     "set": {
                         "isExclusiveSet": true,
@@ -921,7 +933,7 @@
             }
         }, {
             "set": {
-                "context": "During fifth conversation (no prior romance)",
+                "context": "During sixth conversation",
                 "options": [{
                     "set": {
                         "context": "\"The ship needs a bar.\"",
@@ -938,7 +950,12 @@
                             "trigger": "\"I wouldn't know.\""
                         }]
                     }
-                }, {
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During sixth conversation (no prior romance)",
+                "options": [{
                     "set": {
                         "context": "\"We can't let our guard down.\"",
                         "isExclusiveSet": true,
@@ -958,24 +975,8 @@
             }
         }, {
             "set": {
-                "context": "(Female Shepard only.) During fifth conversation (prior romance)",
+                "context": "(Female Shepard only.) During sixth conversation (prior romance)",
                 "options": [{
-                    "set": {
-                        "context": "\"The ship needs a bar.\"",
-                        "isExclusiveSet": true,
-                        "options": [{
-                            "id": "A2.Convo.Jacob.P52",
-                            "type": "Paragon",
-                            "value": 2,
-                            "trigger": "\"It usually is.\""
-                        }, {
-                            "id": "A2.Convo.Jacob.R52",
-                            "type": "Renegade",
-                            "value": 2,
-                            "trigger": "\"I wouldn't know.\""
-                        }]
-                    }
-                }, {
                     "set": {
                         "isExclusiveSet": true,
                         "options": [{
@@ -1106,14 +1107,33 @@
         "description": "Jacob reveals that his father's ship went missing 10 years ago. Cerberus has finally uncovered a lead to its crash site and Jacob wants to investigate.",
         "inMapId": "G.N2.2.Armory",
         "isShowInParentMap": true,
-        "relatedMissionIds": ["A2.L.Jacob"]
+        "relatedMissionIds": ["A2.L.Jacob"],
+        "events": [{
+           "type": "BlockedUntil",
+           "id": "Completed: Horizon"
+        }]
+    }, {
+        "id": "A2.Convo.Jacob.4B",
+        "inMissionId": "A2.Convo.Jacob",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "5th Convo",
+        "description": "Discuss the mission on Aeia with Jacob.",
+        "inMapId": "G.N2.2.Armory",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Jacob"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Secured Loyalty: Jacob"
+        }]
     }, {
         "id": "A2.Convo.Jacob.5",
         "inMissionId": "A2.Convo.Jacob",
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo",
+        "name": "6th Convo",
         "annotationNote": "Romance Option",
         "description": "(No prior romance) Jacob complains about the lack of popular support in opposing the Collectors. \n\n(Prior romance) Jacob shys away from talking about his father.",
         "inMapId": "G.N2.2.Armory",
@@ -1128,7 +1148,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo (FemShep)",
+        "name": "7th Convo (FemShep)",
         "annotationNote": "Romance Option",
         "description": "Jacob sweet talks you.",
         "inMapId": "G.N2.2.Armory",
@@ -1143,7 +1163,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "7th Convo (FemShep)",
+        "name": "8th Convo (FemShep)",
         "annotationNote": "Romance Lock",
         "description": "This is your last chance to lock-in with Jacob or friend-zone him. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
         "inMapId": "G.N2.2.Armory",
@@ -1494,7 +1514,11 @@
         "description": "Miranda reveals that she has a sister - or rather, a younger genetic clone - whom she has hidden from her father. But he has tracked her down and Miranda needs your help to relocate her.",
         "inMapId": "G.N2.3.Cabin",
         "isShowInParentMap": true,
-        "relatedMissionIds": ["A2.L.Miranda"]
+        "relatedMissionIds": ["A2.L.Miranda"],
+        "events": [{
+           "type": "BlockedUntil",
+           "id": "Completed: Horizon"
+        }]
     }, {
         "id": "A2.Convo.Miranda.4",
         "inMissionId": "A2.Convo.Miranda",
@@ -1744,7 +1768,11 @@
         "description": "Mordin reveals that a member of his STG team, [megametracker://person?id=O2.Maelon], was taken by the krogan and needs rescue.",
         "inMapId": "G.N2.2.Lab",
         "isShowInParentMap": true,
-        "relatedMissionIds": ["A2.Loyalty.Mordin"]
+        "relatedMissionIds": ["A2.Loyalty.Mordin"],
+        "events": [{
+           "type": "BlockedUntil",
+           "id": "Completed: Horizon"
+        }]
     }, {
         "id": "A2.Convo.Mordin.4",
         "inMissionId": "A2.Convo.Mordin",
@@ -2582,6 +2610,22 @@
                     "trigger": "\"Why are you here?\""
                 }]
             }
+        }, {
+            "set": {
+                "context": "Sometime after drinking the brandy",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A1.Convo.Chakwas.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"I enjoyed it.\" and \"We must save humanity.\""
+                }, {
+                    "id": "A1.Convo.Chakwas.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"I enjoyed it.\" and \"I want revenge.\""
+                }]
+            }
         }],
         "events": [{
             "type": "BlockedUntil",
@@ -2598,6 +2642,35 @@
         "inMapId": "G.N2.3.Lab",
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.N.SerriceIceBrandy"]
+    }, {
+        "id": "A2.Convo.Chakwas.2",
+        "inMissionId": "A2.Convo.Chakwas",
+        "sortIndex": 90101,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "2nd Normandy Convo",
+        "description": "Dr. Chakwas shares a drink with you and recalls the best days of the old Normandy. She is less enthusiastic about Cerberus.",
+        "inMapId": "G.N2.3.Lab",
+        "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.N.SerriceIceBrandy"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "A2.N.SerriceIceBrandy"
+        }]
+    }, {
+        "id": "A2.Convo.Chakwas.3",
+        "inMissionId": "A2.Convo.Chakwas",
+        "sortIndex": 90101,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "3rd Normandy Convo",
+        "description": "Chakwas apologizes for drinking so much, and asks for your thoughts on the prior conversation.",
+        "inMapId": "G.N2.3.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "A2.N.SerriceIceBrandy"
+        }]
 
     }, {
         "id": "A2.Convo.DD",

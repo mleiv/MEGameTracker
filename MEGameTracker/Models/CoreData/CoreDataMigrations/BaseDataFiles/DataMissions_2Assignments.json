@@ -1530,7 +1530,8 @@
 		"description": "Grizz has a job for you. Aria's old adviser, the Patriarch, is in danger from thugs trying to make a name for themselves. Aria wants the Patriarch moved someplace safe until the threat is gone.",
         "objectivesCountToCompletion": 2,
 		"experience": 40,
-		"inMapId": "G.Ter.Ome.Sah.Omega",
+        "reward": "3,000 Credits",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
 		"mapLocationPoint": {
 			"x": 649,
 			"y": 585,
@@ -1612,6 +1613,20 @@
 			"type": "BlockedUntil",
 			"id": "Completed: One Omega Dossier"
 		}]
+    }, {
+        "id": "A2.O.ThePatriarch.0",
+        "inMissionId": "A2.O.ThePatriarch",
+        "sortIndex": 1000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Talk to Grizz",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+        "mapLocationPoint": {
+            "x": 649,
+            "y": 585,
+            "radius": 1
+        },
 	}, {
 		"id": "A2.O.ThePatriarch.1",
 		"inMissionId": "A2.O.ThePatriarch",
@@ -1620,9 +1635,7 @@
 		"missionType": "Objective",
 		"name": "Talk to The Patriarch",
 		"description": "You can find the Patriarch in the lower level of Afterlife. There are three resolutions available. The Paragon option is convincing the Patriarch to let your squad fight on his behalf. The Renegade option is to mock the Patriarch, convincing him to rush off into battle and die. The neutral option is to convince the Patriarch to go into hiding until things cool off.",
-		"experience": 40,
-		"reward": "3,000 Credits",
-		"inMapId": "G.Ter.Ome.Sah.Omega",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
 		"mapLocationPoint": {
 			"x": 1605,
 			"y": 829,
@@ -1660,10 +1673,10 @@
 		"missionType": "Objective",
 		"name": "Report to Grizz",
 		"description": "If you picked the neutral route, Grizz will thank you and that's it. If you picked the Paragon or Renegade, he will ask you to talk to Aria as well. Then, if you selected the Paragon route, and have completed [megametracker://mission?id=A2.O.DatapadRecovered], Aria will reward you with the location a cache on an uncharted world ([megametracker://mission?id=A2.N7.EclipseSmugglingDepot]).",
-		"inMapId": "G.Ter.Ome.Sah.Omega",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
 		"mapLocationPoint": {
-			"x": 1300,
-			"y": 1331,
+            "x": 1605,
+            "y": 829,
 			"radius": 1
 		}
 	}, {
@@ -1673,7 +1686,7 @@
 		"missionType": "Assignment",
 		"name": "Omega: Struggling Quarian",
 		"description": "A quarian named Kenn is trying to raise enough money to leave Omega, but is being undercut by Harrot, a powerful merchant.",
-        "objectivesCountToCompletion": 2,
+        "objectivesCountToCompletion": 3,
 		"experience": 40,
 		"inMapId": "G.Ter.Ome.Sah.Ome.1.Kenn",
 		"isShowInParentMap": true,
@@ -1724,9 +1737,19 @@
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Speak to Harrot (Optional)",
-		"description": "Convince Harrot to leave Kenn alone (requires Paragon) or just buy Kenn out (requires Renegade). This also rewards a discount on both stores for the rest of the game. \n\nIf you select Renegade, Kenn will be gone when you return to his store. If you select Paragon, you can still buy Kenn a ticket off Omega for more Paragon.",
+		"description": "Convince Harrot to leave Kenn alone (requires Paragon) or just buy Kenn out (requires Renegade). This also rewards a discount on both stores for the rest of the game.",
 		"inMapId": "G.Ter.Ome.Sah.Ome.1.Emporium",
 		"isShowInParentMap": true
+    }, {
+        "id": "A2.O.StrugglingQuarian.3",
+        "inMissionId": "A2.O.StrugglingQuarian",
+        "sortIndex": 1000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Inform Kenn (Optional)",
+        "description": "If you opted for the Paragon resolution with Harrot, you can check in with Kenn before he leaves Omega. You can also offer to pay his way home. \n\nIf you selected the Renegade option, Kenn will already be gone.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1.Kenn",
+        "isShowInParentMap": true
 
 
 	}, {
@@ -2116,28 +2139,11 @@
 		"missionType": "Assignment",
 		"name": "Normandy: Serrice Ice Brandy",
 		"description": "Dr. Chakwas tells you she lost a rare bottle of Serrice Ice Brandy when the original Normandy was destroyed. If you can, find her a new bottle. \n\nAcquired by speaking to Dr. Chakwas in the Medical Bay.",
-		"x-experience": "TOOD:",
 		"objectivesCountToCompletion": 1,
 		"inMapId": "G.N2.3.Lab",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Normandy:_Serrice_Ice_Brandy"],
-		"conversationRewards": [{
-			"set": {
-				"context": "Drinking the brandy",
-				"isExclusiveSet": true,
-				"options": [{
-					"id": "A2.N.SerriceIceBrandy.P1",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"We must save humanity.\""
-				}, {
-					"id": "A2.N.SerriceIceBrandy.R1",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"I want revenge.\""
-				}]
-			}
-		}],
+        "relatedMissionIds": ["A2.Convo.Chakwas.2"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
