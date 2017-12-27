@@ -1897,7 +1897,7 @@
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Secondary/Alchera/Alchera.pdf",
-                "referenceSize": "2083x2083",
+                "referenceSize": "2083x2083"
             }
         }
     }, {
@@ -3064,9 +3064,9 @@
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 139,
-                    "y": 182,
+                    "y": 156,
                     "width": 1800,
-                    "height": 305
+                    "height": 260
                 },
                 "isHidden": false
             }
@@ -3153,7 +3153,68 @@
             "radius": 20
         }
     }, {
-        "id": "G.Ter.Pho.Typ.Ait.2Vulcan",
+        "id": "G.Ter.Pho.Typ.Ait.2Aite",
+        "name": "Aite Grounds",
+        "inMapId": "G.Ter.Pho.Typ.Aite",
+        "mapType": "Area",
+        "relatedLinks": [
+            "http://masseffect.wikia.com/wiki/Hermes_Station"
+        ],
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Secondary/Aite/Aite_Grounds.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 139,
+                    "y": 416,
+                    "width": 1800,
+                    "height": 260
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Pho.Typ.Ait.2.Start",
+        "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
+        "name": "Start",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 447,
+            "y": 930,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pho.Typ.Ait.2.ToVulcan",
+        "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
+        "name": "To Vulcan Station",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1333,
+            "y": 42,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pho.Typ.Ait.2.ToPrometheus",
+        "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
+        "name": "To Prometheus Station",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1675,
+            "y": 1941,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pho.Typ.Ait.2.ToAtlas",
+        "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
+        "name": "To Atlas Station",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1358,
+            "y": 1597,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pho.Typ.Ait.3Vulcan",
         "name": "Vulcan Station",
         "inMapId": "G.Ter.Pho.Typ.Aite",
         "mapType": "Structure",
@@ -3166,15 +3227,25 @@
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 139,
-                    "y": 650,
+                    "y": 676,
                     "width": 1800,
-                    "height": 305
+                    "height": 260
                 },
                 "isHidden": false
             }
         }
     }, {
-        "id": "G.Ter.Pho.Typ.Ait.3Prometheus",
+        "id": "G.Ter.Pho.Typ.Ait.3.Start",
+        "inMapId": "G.Ter.Pho.Typ.Ait.3Vulcan",
+        "name": "Start",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 211,
+            "y": 1661,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pho.Typ.Ait.4Prometheus",
         "name": "Prometheus Station",
         "inMapId": "G.Ter.Pho.Typ.Aite",
         "mapType": "Structure",
@@ -3187,15 +3258,35 @@
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 139,
-                    "y": 1115,
+                    "y": 936,
                     "width": 1800,
-                    "height": 305
+                    "height": 260
                 },
                 "isHidden": false
             }
         }
     }, {
-        "id": "G.Ter.Pho.Typ.Ait.4Atlas",
+        "id": "G.Ter.Pho.Typ.Ait.4.Start",
+        "inMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
+        "name": "Start",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 170,
+            "y": 190,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pho.Typ.Ait.4.Exit",
+        "inMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
+        "name": "Exit",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 265,
+            "y": 1809,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pho.Typ.Ait.5Atlas",
         "name": "Atlas Station",
         "inMapId": "G.Ter.Pho.Typ.Aite",
         "mapType": "Structure",
@@ -3208,9 +3299,9 @@
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 139,
-                    "y": 1580,
+                    "y": 1196,
                     "width": 1800,
-                    "height": 305
+                    "height": 260
                 },
                 "isHidden": false
             }

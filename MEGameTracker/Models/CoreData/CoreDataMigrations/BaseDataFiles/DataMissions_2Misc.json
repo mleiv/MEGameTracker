@@ -426,9 +426,21 @@
          "radius": 1
       }
    }, {
-      "id": "DLC2.Overlord.2",
+      "id": "DLC2.Overlord.02",
       "inMissionId": "DLC2.Overlord",
       "sortIndex": 10002,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Cerberus Data Packets (Optional)",
+      "description": "Gather the 6 Cerberus data packets scattered across Aite.",
+      "events": [{
+         "type": "BlockedUntil",
+         "id": "Completed: Overlord: Hermes Station"
+      }]
+   }, {
+      "id": "DLC2.Overlord.03",
+      "inMissionId": "DLC2.Overlord",
+      "sortIndex": 10003,
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Overlord: Vulcan Station",
@@ -444,26 +456,52 @@
          "id": "Completed: Overlord: Vulcan Station"
       }, {
          "type": "Triggers",
-         "id": "Completed: Overlord: Vulcan and Prometheus Station"
+         "id": "Completed: Overlord: Vulcan and Prometheus Stations"
       }]
    }, {
-      "id": "DLC2.Overlord.2.1",
-      "inMissionId": "DLC2.Overlord.2",
+      "id": "DLC2.Overlord.03.1",
+      "inMissionId": "DLC2.Overlord.03",
       "sortIndex": 100021,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Outpost",
-      "description": "Take the Hammerhead toward the Vulcan station, using steam vents for elevation boosts, and avoiding lava. At the outpost you will be blocked from continuing, so exit, enter the facility and eliminate the geth there. Use the console to reactivate the malfunctioning valve. Get back in the Hammerhead and use the steam vents to continue on."
+      "name": "Outpost Steam Valve",
+      "description": "Take the Hammerhead toward the Vulcan station, using steam vents for elevation boosts, and avoiding lava. At the outpost you will be blocked from continuing, so exit, enter the facility and eliminate the geth there. Use the console to reactivate the malfunctioning valve. Get back in the Hammerhead and use the steam vents to continue on.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.3Vulcan",
+      "mapLocationPoint": {
+         "x": 150,
+         "y": 376,
+         "radius": 1
+      }
    }, {
-      "id": "DLC2.Overlord.2.2",
-      "inMissionId": "DLC2.Overlord.2",
+      "id": "DLC2.Overlord.03.2",
+      "inMissionId": "DLC2.Overlord.03",
       "sortIndex": 100022,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Station Interior",
-      "description": "Once you have reached Vulcan Station, exit the Hammerhead and enter the facility. You will have to fight many mechs of various sizes to reach the override switch. Activate it and return to the Hammerhead."
+      "name": "Enter Station",
+      "description": "Exit the Hammerhead to enter the facility and fight your way through the defending geth.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.3Vulcan",
+      "mapLocationPoint": {
+         "x": 1501,
+         "y": 1009,
+         "radius": 1
+      }
    }, {
-      "id": "DLC2.Overlord.3",
+      "id": "DLC2.Overlord.03.3",
+      "inMissionId": "DLC2.Overlord.03",
+      "sortIndex": 100023,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Station Override",
+      "description": "Activate the override switch.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.3Vulcan",
+      "mapLocationPoint": {
+         "x": 814,
+         "y": 1948,
+         "radius": 1
+      }
+   }, {
+      "id": "DLC2.Overlord.04",
       "inMissionId": "DLC2.Overlord",
       "sortIndex": 10003,
       "gameVersion": "2",
@@ -481,34 +519,132 @@
          "id": "Completed: Overlord: Prometheus Station"
       }, {
          "type": "Triggers",
-         "id": "Completed: Overlord: Vulcan and Prometheus Station"
+         "id": "Completed: Overlord: Vulcan and Prometheus Stations"
       }]
    }, {
-      "id": "DLC2.Overlord.3.1",
-      "inMissionId": "DLC2.Overlord.3",
+      "id": "DLC2.Overlord.04.1",
+      "inMissionId": "DLC2.Overlord.04",
       "sortIndex": 100031,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Take Out Shield",
-      "description": "When you reach Prometheus Station, it is protected by a shield. You will need to take out the shield generators, which unfortunately are also behind the shield. There is also a cannon targeting the Hammerhead. You can trick the cannon into firing on the shield generators, or use the Hammerhead's missiles to take them out."
+      "name": "Shielded Cannon",
+      "description": "When you reach Prometheus Station, it is protected by a shield. You will need to take out the shield generators, which unfortunately are also behind the shield. There is also a cannon targeting the Hammerhead. You can trick the cannon into firing on the shield generators, or use the Hammerhead's missiles to take them out. Then destroy the cannon.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
+      "mapLocationPoint": {
+         "x": 607,
+         "y": 432,
+         "radius": 1
+      }
    }, {
-      "id": "DLC2.Overlord.3.2",
-      "inMissionId": "DLC2.Overlord.3",
+      "id": "DLC2.Overlord.04.1.1",
+      "inMissionId": "DLC2.Overlord.04.1",
+      "sortIndex": 100031,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Shield Generator 1",
+      "inMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
+      "mapLocationPoint": {
+         "x": 452,
+         "y": 326,
+         "radius": 1
+      }
+   }, {
+      "id": "DLC2.Overlord.04.1.2",
+      "inMissionId": "DLC2.Overlord.04.1",
+      "sortIndex": 100031,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Shield Generator 2",
+      "inMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
+      "mapLocationPoint": {
+         "x": 517,
+         "y": 206,
+         "radius": 1
+      }
+   }, {
+      "id": "DLC2.Overlord.04.1.3",
+      "inMissionId": "DLC2.Overlord.04.1",
+      "sortIndex": 100031,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Shield Generator 3",
+      "inMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
+      "mapLocationPoint": {
+         "x": 671,
+         "y": 181,
+         "radius": 1
+      }
+   }, {
+      "id": "DLC2.Overlord.04.1.4",
+      "inMissionId": "DLC2.Overlord.04.1",
+      "sortIndex": 100031,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Shield Generator 4",
+      "inMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
+      "mapLocationPoint": {
+         "x": 748,
+         "y": 267,
+         "radius": 1
+      }
+   }, {
+      "id": "DLC2.Overlord.04.3",
+      "inMissionId": "DLC2.Overlord.04",
       "sortIndex": 100032,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Cross to Control Station",
-      "description": "There is initially no danger entering the facility, as all the geth are locked in stasis. The VI will lock doors behind you as you go. But the large room housing the control station has been shifted to prevent access. You must move the platforms to create a bridge to the control station. \n\nMove the middle piece up one space. Move the left piece right one and up one. Cross and activate the override."
+      "name": "Enter Station",
+      "description": "There is initially no danger entering the facility, as all the geth are locked in stasis.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
+      "mapLocationPoint": {
+         "x": 607,
+         "y": 432,
+         "radius": 1
+      }
    }, {
-      "id": "DLC2.Overlord.3.3",
-      "inMissionId": "DLC2.Overlord.3",
+      "id": "DLC2.Overlord.04.4",
+      "inMissionId": "DLC2.Overlord.04",
+      "sortIndex": 100032,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Control Station Platforms",
+      "description": "The large room housing the control station has been shifted to prevent access. You must move the platforms to create a bridge to the control station. \n\nMove the middle piece up one space. Move the left piece right one and then move both up one.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
+      "mapLocationPoint": {
+         "x": 1570,
+         "y": 637,
+         "radius": 1
+      }
+   }, {
+      "id": "DLC2.Overlord.04.5",
+      "inMissionId": "DLC2.Overlord.04",
+      "sortIndex": 100032,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Station Override",
+      "description": "Cross the platforms to the control station. Once you activate the override switch, all the geth in the facility will attack.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
+      "mapLocationPoint": {
+         "x": 1962,
+         "y": 650,
+         "radius": 1
+      }
+   }, {
+      "id": "DLC2.Overlord.04.6",
+      "inMissionId": "DLC2.Overlord.04",
       "sortIndex": 100033,
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Escape",
-      "description": "Now you have to fight your way through all the geth you saw on the way in. When you are finally outside, reboard the Hammerhead."
+      "description": "Now you have to fight your way through all the geth you saw on the way in. When you are finally outside, reboard the Hammerhead.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
+      "mapLocationPoint": {
+         "x": 1311,
+         "y": 1919,
+         "radius": 1
+      }
    }, {
-      "id": "DLC2.Overlord.4",
+      "id": "DLC2.Overlord.05",
       "inMissionId": "DLC2.Overlord",
       "sortIndex": 10004,
       "gameVersion": "2",
@@ -520,35 +656,35 @@
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord:_Atlas_Station"],
       "events": [{
          "type": "BlockedUntil",
-         "id": "Completed: Overlord: Vulcan and Prometheus Station"
+         "id": "Completed: Overlord: Vulcan and Prometheus Stations"
       }]
    }, {
-      "id": "DLC2.Overlord.4.1",
-      "inMissionId": "DLC2.Overlord.4",
+      "id": "DLC2.Overlord.05.1",
+      "inMissionId": "DLC2.Overlord.05",
       "sortIndex": 100041,
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Elevator",
       "description": "The facility can be reached under the waterfall. Exit the Hammerhead and head inside. The elevator is damaged, so you will need to call it several times to convince it to come to your level, level 7. be prepared for all the geth inside when it opens. When they are dealt with, take the elevator down. It will crash, but you get to level 1 at least. Head down the hall and open the panel to cut off network access."
    }, {
-      "id": "DLC2.Overlord.4.2",
-      "inMissionId": "DLC2.Overlord.4",
+      "id": "DLC2.Overlord.05.2",
+      "inMissionId": "DLC2.Overlord.05",
       "sortIndex": 100042,
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Inside The VI",
       "description": "When you try to disconnect Atlas Station, you are pulled into a virtual reality. It will alternate between green visions of the past and orange present where you can be killed by the geth. You will be fighting alone here. Head down the hallway and make you way to the second elevator, operated by a computer, and also full of geth. When they are dispatched, take the elevator down."
    }, {
-      "id": "DLC2.Overlord.4.3",
-      "inMissionId": "DLC2.Overlord.4",
+      "id": "DLC2.Overlord.05.3",
+      "inMissionId": "DLC2.Overlord.05",
       "sortIndex": 100043,
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "David",
       "description": "David is attempting to upload himself to the Normandy. You will alternate between fighting geth, shooting out the control nodes travelling down the cables to David, and shooting at the core (ie, David), whenever its shields drop. Once the core is destroyed, you are returned to reality and you can see the real David hooked up to the VI."
    }, {
-      "id": "DLC2.Overlord.4.4",
-      "inMissionId": "DLC2.Overlord.4",
+      "id": "DLC2.Overlord.05.4",
+      "inMissionId": "DLC2.Overlord.05",
       "sortIndex": 100044,
       "gameVersion": "2",
       "missionType": "Objective",

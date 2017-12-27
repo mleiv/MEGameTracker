@@ -50,7 +50,7 @@ final class BaseDataImportTest: MEGameTrackerTests {
     }
 
     func testOneImport() {
-        let filename = "DataMissions_1Convos"
+        let filename = "DataMaps_TerminusSystems"
         do {
             if let file = Bundle.main.path(forResource: filename, ofType: "json") {
                 let data = try Data(contentsOf: URL(fileURLWithPath: file))

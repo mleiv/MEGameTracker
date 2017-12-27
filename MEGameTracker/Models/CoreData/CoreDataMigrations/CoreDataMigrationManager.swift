@@ -29,7 +29,7 @@ public struct CoreDataMigrationManager {
 			CoreDataMigrations.onStart.fire(true)
 		}
 
-//        let lastBuild = 30 // DEBUG
+        let lastBuild = 30 // DEBUG
 		for (_, migration) in migrationsAvailable {
 			if migration.fromBuild > lastBuild && migration.fromBuild <= App.current.build {
 				CoreDataMigrations.isRunning = true

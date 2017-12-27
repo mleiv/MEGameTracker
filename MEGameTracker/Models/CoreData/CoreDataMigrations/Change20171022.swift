@@ -80,6 +80,18 @@ public struct Change20171022: CoreDataMigrationType {
         "A1.T.StrangeBehavior.1",
         "A1.T.StrangeBehavior.2",
         "A1.T.UdinaOnFeros",
+        "DLC2.Overlord.2.1",
+        "DLC2.Overlord.2.2",
+        "DLC2.Overlord.2",
+        "DLC2.Overlord.3.1",
+        "DLC2.Overlord.3.2",
+        "DLC2.Overlord.3.3",
+        "DLC2.Overlord.3",
+        "DLC2.Overlord.4.1",
+        "DLC2.Overlord.4.2",
+        "DLC2.Overlord.4.3",
+        "DLC2.Overlord.4.4",
+        "DLC2.Overlord.4",
     ]
     let newMissionIds = [
         "",
@@ -89,6 +101,18 @@ public struct Change20171022: CoreDataMigrationType {
         "A1.Convo.Feros.Blakes",
         "A1.Convo.Feros.Newstead",
         "A1.Convo.Citadel.Udina",
+        "DLC2.Overlord.03.1",
+        "DLC2.Overlord.03.3",
+        "DLC2.Overlord.03",
+        "DLC2.Overlord.04.1",
+        "DLC2.Overlord.04.5",
+        "DLC2.Overlord.04.6",
+        "DLC2.Overlord.04",
+        "DLC2.Overlord.05.1",
+        "DLC2.Overlord.05.2",
+        "DLC2.Overlord.05.3",
+        "DLC2.Overlord.05.4",
+        "DLC2.Overlord.05",
     ]
 
     let itemIds: [(old: String, new: String)] = [
