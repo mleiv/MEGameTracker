@@ -3060,7 +3060,7 @@
         ],
         "gameVersionData": {
             "2": {
-                "image": "Detail_Maps/Game2/_Secondary/Aite/Overlord_Hermes.pdf",
+                "image": "Detail_Maps/Game2/_Secondary/Aite/Aite_Hermes_Station.pdf",
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 139,
@@ -3157,16 +3157,13 @@
         "name": "Aite Grounds",
         "inMapId": "G.Ter.Pho.Typ.Aite",
         "mapType": "Area",
-        "relatedLinks": [
-            "http://masseffect.wikia.com/wiki/Hermes_Station"
-        ],
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Secondary/Aite/Aite_Grounds.pdf",
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
-                    "x": 139,
-                    "y": 416,
+                    "x": 140,
+                    "y": 540,
                     "width": 1800,
                     "height": 260
                 },
@@ -3187,6 +3184,7 @@
         "id": "G.Ter.Pho.Typ.Ait.2.ToVulcan",
         "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
         "name": "To Vulcan Station",
+        "linkToMapId": "G.Ter.Pho.Typ.Ait.3Vulcan",
         "isOpensDetail": false,
         "mapLocationPoint": {
             "x": 1333,
@@ -3197,6 +3195,7 @@
         "id": "G.Ter.Pho.Typ.Ait.2.ToPrometheus",
         "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
         "name": "To Prometheus Station",
+        "linkToMapId": "G.Ter.Pho.Typ.Ait.4Prometheus",
         "isOpensDetail": false,
         "mapLocationPoint": {
             "x": 1675,
@@ -3207,6 +3206,7 @@
         "id": "G.Ter.Pho.Typ.Ait.2.ToAtlas",
         "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
         "name": "To Atlas Station",
+        "linkToMapId": "G.Ter.Pho.Typ.Ait.5Atlas",
         "isOpensDetail": false,
         "mapLocationPoint": {
             "x": 1358,
@@ -3223,11 +3223,11 @@
         ],
         "gameVersionData": {
             "2": {
-                "image": "Detail_Maps/Game2/_Secondary/Aite/Overlord_Vulcan.pdf",
+                "image": "Detail_Maps/Game2/_Secondary/Aite/Aite_Vulcan_Station.pdf",
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
-                    "x": 139,
-                    "y": 676,
+                    "x": 140,
+                    "y": 926,
                     "width": 1800,
                     "height": 260
                 },
@@ -3250,15 +3250,15 @@
         "inMapId": "G.Ter.Pho.Typ.Aite",
         "mapType": "Structure",
         "relatedLinks": [
-            "http://masseffect.wikia.com/wiki/Vulcan_Station"
+            "http://masseffect.wikia.com/wiki/Prometheus_Station"
         ],
         "gameVersionData": {
             "2": {
-                "image": "Detail_Maps/Game2/_Secondary/Aite/Overlord_Prometheus.pdf",
+                "image": "Detail_Maps/Game2/_Secondary/Aite/Aite_Prometheus_Station.pdf",
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 139,
-                    "y": 936,
+                    "y": 1320,
                     "width": 1800,
                     "height": 260
                 },
@@ -3291,20 +3291,30 @@
         "inMapId": "G.Ter.Pho.Typ.Aite",
         "mapType": "Structure",
         "relatedLinks": [
-            "http://masseffect.wikia.com/wiki/Vulcan_Station"
+            "http://masseffect.wikia.com/wiki/Atlas_Station"
         ],
         "gameVersionData": {
             "2": {
-                "image": "Detail_Maps/Game2/_Secondary/Aite/Overlord_Atlas.pdf",
+                "image": "Detail_Maps/Game2/_Secondary/Aite/Aite_Atlas_Station.pdf",
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 139,
-                    "y": 1196,
+                    "y": 1708,
                     "width": 1800,
                     "height": 260
                 },
                 "isHidden": false
             }
+        }
+    }, {
+        "id": "G.Ter.Pho.Typ.Ait.5.Start",
+        "inMapId": "G.Ter.Pho.Typ.Ait.5Atlas",
+        "name": "Start",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 203,
+            "y": 1790,
+            "radius": 20
         }
     }, {
         "id": "G.Ter.Pho.Typ.Moros",

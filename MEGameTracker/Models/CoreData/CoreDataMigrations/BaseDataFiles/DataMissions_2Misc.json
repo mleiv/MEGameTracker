@@ -315,9 +315,9 @@
       "description": "Speak to Dr. Archer and prevent the VI from using the satellite dish.",
       "experience": 250,
       "reward": "3,750 Credits",
-      "inMapId": "G.Ter.Pho.Typ.Ait.1Hermes",
-      "isShowInParentMap": true,
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord_(assignment)"],
+      "inMapId": "G.Ter.Pho.Typ.Aite",
+      "isShowInParentMap": true,
       "events": [{
          "type": "Triggers",
          "id": "Completed: Overlord: Hermes Station"
@@ -433,6 +433,8 @@
       "missionType": "Objective",
       "name": "Cerberus Data Packets (Optional)",
       "description": "Gather the 6 Cerberus data packets scattered across Aite.",
+      "inMapId": "G.Ter.Pho.Typ.Aite",
+      "isShowInParentMap": true,
       "events": [{
          "type": "BlockedUntil",
          "id": "Completed: Overlord: Hermes Station"
@@ -448,6 +450,8 @@
       "experience": 250,
       "reward": "3,750 Credits",
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord:_Vulcan_Station"],
+      "inMapId": "G.Ter.Pho.Typ.Aite",
+      "isShowInParentMap": true,
       "events": [{
          "type": "BlockedUntil",
          "id": "Completed: Overlord: Hermes Station"
@@ -511,6 +515,8 @@
       "experience": 250,
       "reward": "3,750 Credits",
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord:_Prometheus_Station"],
+      "inMapId": "G.Ter.Pho.Typ.Aite",
+      "isShowInParentMap": true,
       "events": [{
          "type": "BlockedUntil",
          "id": "Completed: Overlord: Hermes Station"
@@ -654,6 +660,8 @@
       "experience": 250,
       "reward": "7,500 Credits",
       "relatedLinks": ["https://masseffect.wikia.com/wiki/Overlord:_Atlas_Station"],
+      "inMapId": "G.Ter.Pho.Typ.Aite",
+      "isShowInParentMap": true,
       "events": [{
          "type": "BlockedUntil",
          "id": "Completed: Overlord: Vulcan and Prometheus Stations"
@@ -665,31 +673,93 @@
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Elevator",
-      "description": "The facility can be reached under the waterfall. Exit the Hammerhead and head inside. The elevator is damaged, so you will need to call it several times to convince it to come to your level, level 7. be prepared for all the geth inside when it opens. When they are dealt with, take the elevator down. It will crash, but you get to level 1 at least. Head down the hall and open the panel to cut off network access."
+      "description": "The facility can be reached under the waterfall. Exit the Hammerhead and head inside. The elevator is damaged, so you will need to call it several times to convince it to come to your level, level 7. be prepared for all the geth inside when it opens. When they are dealt with, take the elevator down. It will crash, but you get to level 1 at least. Head down the hall and open the panel to cut off network access.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.5Atlas",
+      "mapLocationPoint": {
+         "x": 812,
+         "y": 926,
+         "radius": 1
+      }
+   }, {
+      "id": "DLC2.Overlord.05.1.1",
+      "inMissionId": "DLC2.Overlord.05.1",
+      "sortIndex": 100041,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "3D Diagnostic Simulation (Optional)",
+      "annotationNote": "-3 Floors",
+      "isOpensDetail": false,
+      "inMapId": "G.Ter.Pho.Typ.Ait.5Atlas",
+      "mapLocationPoint": {
+         "x": 809,
+         "y": 1109,
+         "radius": 1
+      }
+   }, {
+      "id": "DLC2.Overlord.05.1.2",
+      "inMissionId": "DLC2.Overlord.05.1",
+      "sortIndex": 100041,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Secure Computer (Optional)",
+      "annotationNote": "+3 Floors",
+      "isOpensDetail": false,
+      "inMapId": "G.Ter.Pho.Typ.Ait.5Atlas",
+      "mapLocationPoint": {
+         "x": 809,
+         "y": 1182,
+         "radius": 1
+      }
    }, {
       "id": "DLC2.Overlord.05.2",
       "inMissionId": "DLC2.Overlord.05",
       "sortIndex": 100042,
       "gameVersion": "2",
       "missionType": "Objective",
-      "name": "Inside The VI",
-      "description": "When you try to disconnect Atlas Station, you are pulled into a virtual reality. It will alternate between green visions of the past and orange present where you can be killed by the geth. You will be fighting alone here. Head down the hallway and make you way to the second elevator, operated by a computer, and also full of geth. When they are dispatched, take the elevator down."
+      "name": "VI Server Console",
+      "description": "Disconnect the VI Server. You will be sucked into a virtual reality.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.5Atlas",
+      "mapLocationPoint": {
+         "x": 775,
+         "y": 341,
+         "radius": 1
+      }
    }, {
       "id": "DLC2.Overlord.05.3",
+      "inMissionId": "DLC2.Overlord.05",
+      "sortIndex": 100042,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Elevator to Core",
+      "description": "You will be fighting alone inside the virtual reality. Head down the stairs and circle around the upper level. In the middle, there are two rooms with scenes from David's past. At the end, there is a larger room with the elevator down to the VR Core. When you summon it to the upper level, it comes with a bunch of geth. When the dust clears, head down to the Core.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.5Atlas",
+      "mapLocationPoint": {
+         "x": 1408,
+         "y": 775,
+         "radius": 1
+      }
+   }, {
+      "id": "DLC2.Overlord.05.4",
       "inMissionId": "DLC2.Overlord.05",
       "sortIndex": 100043,
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "David",
-      "description": "David is attempting to upload himself to the Normandy. You will alternate between fighting geth, shooting out the control nodes travelling down the cables to David, and shooting at the core (ie, David), whenever its shields drop. Once the core is destroyed, you are returned to reality and you can see the real David hooked up to the VI."
+      "description": "David is attempting to upload himself to the Normandy. You will alternate between fighting geth, shooting out the control nodes travelling down the cables to David, and shooting at the core (ie, David), whenever its shields drop. Once the core is destroyed, you are returned to reality and you can see the real David hooked up to the VI.",
+      "inMapId": "G.Ter.Pho.Typ.Ait.5Atlas",
+      "mapLocationPoint": {
+         "x": 1408,
+         "y": 1043,
+         "radius": 1
+      }
    }, {
-      "id": "DLC2.Overlord.05.4",
+      "id": "DLC2.Overlord.05.5",
       "inMissionId": "DLC2.Overlord.05",
       "sortIndex": 100044,
       "gameVersion": "2",
       "missionType": "Objective",
       "name": "Aftermath",
-      "description": "Dr. Archer shows up and, despite everything that has happened, he wants to continue the experiment. You can talk him down and in the end have two choices: to take David with you and entrust him to Jon Grissom Academy, where he will later reappear in Game 3 (Paragon), or leave him with Dr. Archer where he will later die (Renegade)."
+      "description": "Dr. Archer shows up and, despite everything that has happened, he wants to continue the experiment. In the end you have two choices: to take David with you and entrust him to Jon Grissom Academy, where he will later reappear in Game 3 (Paragon), or leave him with Dr. Archer where he will later die (Renegade)."
    }, {
       "id": "DLC2.Firewalker",
       "sortIndex": 1000,

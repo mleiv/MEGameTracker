@@ -109,9 +109,9 @@ public struct Change20171022: CoreDataMigrationType {
         "DLC2.Overlord.04.6",
         "DLC2.Overlord.04",
         "DLC2.Overlord.05.1",
-        "DLC2.Overlord.05.2",
         "DLC2.Overlord.05.3",
         "DLC2.Overlord.05.4",
+        "DLC2.Overlord.05.5",
         "DLC2.Overlord.05",
     ]
 
