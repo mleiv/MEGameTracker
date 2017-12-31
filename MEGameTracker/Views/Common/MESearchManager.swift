@@ -68,6 +68,12 @@ final public class MESearchManager: NSObject {
 		searchController.searchBar.setNeedsLayout()
 		searchController.searchBar.layoutIfNeeded()
 		self.searchController = searchController
+//        TODO: fix the excess header between search bar and results.
+//        Below is icky and doesn't work well on horizontal/ipad
+//        if #available(iOS 10.0, *) {
+//            resultsController?.automaticallyAdjustsScrollViewInsets = false
+//            resultsController?.tableView.contentInset = UIEdgeInsetsMake(64, 0, 44, 0)
+//        }
 	}
 }
 
