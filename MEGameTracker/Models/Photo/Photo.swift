@@ -16,6 +16,7 @@ public struct Photo: Codable {
 
 	internal var filePath: String
 	internal var isCustomSavedPhoto: Bool = true
+    public var modifiedDate = Date()
 
 // MARK: Computed Properties
 
@@ -29,6 +30,11 @@ public struct Photo: Codable {
 		if let filePath = filePath {
 			self.filePath = filePath
 			isCustomSavedPhoto = !NSPredicate(format:"SELF MATCHES %@", "http:.*").evaluate(with: filePath)
+            if isCustomSavedPhoto,
+                let value = try? FileManager.default.attributesOfItem(atPath: filePath)[.modificationDate],
+                let date = value as? Date {
+                modifiedDate = date
+            }
 		} else {
 			return nil
 		}
@@ -51,6 +57,7 @@ extension Photo {
 			let imageData = UIImagePNGRepresentation(image) {
 			do {
 				try imageData.write(to: url, options: [.atomic])
+                Nuke.Cache.shared[Request(url: url)] = image
 				return Photo(filePath: filePath)
 			} catch {}
 		}
@@ -117,7 +124,7 @@ extension Photo {
 
 extension Photo: Equatable {
 	static public func == (lhs: Photo, rhs: Photo) -> Bool {
-		return lhs.filePath == rhs.filePath
+		return lhs.filePath == rhs.filePath && lhs.modifiedDate == rhs.modifiedDate
 	}
 }
 

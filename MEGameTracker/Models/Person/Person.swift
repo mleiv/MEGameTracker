@@ -249,10 +249,10 @@ extension Person {
     ) -> Person {
         guard photo != self._photo else { return self }
         var person = self
-        // delete any prior custom photo
-        if let _photo = person._photo {
-            _ = _photo.delete()
-        }
+//        We use old filename, so don't delete
+//        if let _photo = person._photo {
+//            _ = _photo.delete()
+//        }
         person._photo = photo
         person.generalData = generalData.changed(gameVersion: gameVersion)
         person.changeEffects(

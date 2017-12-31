@@ -188,6 +188,7 @@ extension Shepard {
                 }
             }
 		}
+        // TODO: delete other custom photos (Person)?
 		// don't have to notify or cascade: GameSequence did that for you
 		return deleteAll(with: manager, alterFetchRequest: alterFetchRequest)
 	}

@@ -283,9 +283,10 @@ extension Shepard {
     ) -> Shepard {
         guard photo != self.photo else { return self }
         var shepard = self
-        if let photo = shepard.photo {
-            _ = photo.delete()
-        }
+//        We use old filename, so don't delete
+//        if let photo = shepard.photo {
+//            _ = photo.delete()
+//        }
         shepard.photo = photo
         shepard.changeEffects(
             isSave: isSave,
