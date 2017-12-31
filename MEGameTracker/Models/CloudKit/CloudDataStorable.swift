@@ -451,6 +451,12 @@ extension CloudDataStorable where Self: GameRowStorable {
             element.rawData = nil
             let changes = element.getAdditionalCloudFields(changeRecord: changeRecord)
             element = element.changed(changes)
+            // special case
+            if element.pendingCloudChanges["photo"] == nil, // don't overwrite pending
+                var photographicalElement = element as? PhotoEditable,
+                let image = GamesDataBackup.current.getCachedImage(recordId: recordId, key: "photoFile") {
+                _ = photographicalElement.savePhoto(image: image, isSave: false)
+            }
             element.isSavedToCloud = true
             // reapply any local changes
             if !element.pendingCloudChanges.isEmpty {

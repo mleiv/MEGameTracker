@@ -70,7 +70,7 @@ extension Photo {
 		guard let view = view else { return }
 		view.image = nil
 		if let photo = source?.photo, let url = photo.getUrl() {
-			Nuke.loadImage(with: url, into: view)
+			Nuke.Manager.shared.loadImage(with: url, into: view)
 			DispatchQueue.main.async {
 				if placeholder != nil && view.image == nil {
 					view.image = placeholder
@@ -86,7 +86,7 @@ extension Photo {
 	/// Optional - invoke when photo view disappears from screen and this will cancel any pending requests
 	public static func cancelPhoto(inView view: UIImageView?) {
 		guard let view = view else { return }
-		Nuke.cancelRequest(for: view)
+		Nuke.Manager.shared.cancelRequest(for: view)
 	}
 
 	/// Get a URL for the specified file path (local or remote).
@@ -127,4 +127,3 @@ extension Photo: Equatable {
 		return lhs.filePath == rhs.filePath && lhs.modifiedDate == rhs.modifiedDate
 	}
 }
-

@@ -69,7 +69,8 @@ extension Shepard: CloudDataStorable {
             let changes = element.getAdditionalCloudFields(changeRecord: changeRecord)
             element = element.changed(changes)
             // special case
-            if let image = GamesDataBackup.current.getCachedImage(recordId: recordId, key: "photoFile") {
+            if element.pendingCloudChanges["photo"] == nil, // don't overwrite pending
+                let image = GamesDataBackup.current.getCachedImage(recordId: recordId, key: "photoFile") {
                 _ = element.savePhoto(image: image, isSave: false)
             }
             element.isSavedToCloud = true

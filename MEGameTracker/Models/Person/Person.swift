@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct Person: Codable, Photographical, Eventsable {
+public struct Person: Codable, Photographical, PhotoEditable, Eventsable {
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -241,6 +241,15 @@ extension Person {
         return person
     }
 
+    /// PhotoEditable Protocol
+    /// Return a copy of this Person with photo changed
+    public func changed(photo: Photo) -> Person {
+        return changed(photo: photo, isSave: true)
+    }
+    /// Return a copy of this Person with photo changed
+    public func changed(photo: Photo, isSave: Bool) -> Person {
+        return changed(photo: photo, isSave: isSave, isNotify: true)
+    }
     /// Return a copy of this Person with photo changed
     public func changed(
         photo: Photo,
@@ -249,10 +258,7 @@ extension Person {
     ) -> Person {
         guard photo != self._photo else { return self }
         var person = self
-//        We use old filename, so don't delete
-//        if let _photo = person._photo {
-//            _ = _photo.delete()
-//        }
+        // We use old filename, so don't delete
         person._photo = photo
         person.generalData = generalData.changed(gameVersion: gameVersion)
         person.changeEffects(

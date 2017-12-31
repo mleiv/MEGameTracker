@@ -10,7 +10,7 @@ import UIKit
 
 // swiftlint:disable file_length
 
-public struct Shepard: Codable, Photographical {
+public struct Shepard: Codable, Photographical, PhotoEditable {
 
     enum CodingKeys: String, CodingKey {
         case uuid
@@ -188,15 +188,6 @@ extension Shepard {
 	public func newNote() -> Note {
 		return Note(identifyingObject: .shepard)
 	}
-
-    /// A special setter for saving a UIImage
-    public mutating func savePhoto(image: UIImage, isSave: Bool = true) -> Bool {
-        if let photo = Photo.create(image, object: self) {
-            self = changed(photo: photo, isSave: isSave)
-            return true
-        }
-        return false
-    }
 }
 
 // MARK: Data Change Actions
@@ -275,18 +266,24 @@ extension Shepard {
         return shepard
     }
 
+    /// PhotoEditable Protocol
+    /// Return a copy of this Shepard with photo changed
+    public func changed(photo: Photo) -> Shepard {
+        return changed(photo: photo, isSave: true)
+    }
+    /// Return a copy of this Shepard with photo changed
+    public func changed(photo: Photo, isSave: Bool) -> Shepard {
+        return changed(photo: photo, isSave: isSave, isNotify: true)
+    }
     /// Return a copy of this Shepard with photo changed
     public func changed(
         photo: Photo,
-        isSave: Bool = true,
-        isNotify: Bool = true
+        isSave: Bool,
+        isNotify: Bool
     ) -> Shepard {
         guard photo != self.photo else { return self }
         var shepard = self
-//        We use old filename, so don't delete
-//        if let photo = shepard.photo {
-//            _ = photo.delete()
-//        }
+        // We use old filename, so don't delete
         shepard.photo = photo
         shepard.changeEffects(
             isSave: isSave,

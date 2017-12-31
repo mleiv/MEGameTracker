@@ -328,6 +328,7 @@
 		B1AB4D7E1D14EA07006F016C /* DataItems_2Loot.json in Resources */ = {isa = PBXBuildFile; fileRef = B1AB4D7D1D14EA07006F016C /* DataItems_2Loot.json */; };
 		B1AB4D801D14ED8A006F016C /* ItemDisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AB4D7F1D14ED8A006F016C /* ItemDisplayType.swift */; };
 		B1AB8C251E2B517B00AC9ACE /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AB8C241E2B517B00AC9ACE /* HeartButton.swift */; };
+		B1AEF15F1FF9A9D000DDB169 /* PhotoEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AEF15E1FF9A9D000DDB169 /* PhotoEditable.swift */; };
 		B1B11FD41E4E99E200D97CA1 /* 20160210.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = B1B11FD31E4E99E200D97CA1 /* 20160210.xcmappingmodel */; };
 		B1B11FD81E4E9CA000D97CA1 /* CoreDataMigrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B11FD71E4E9CA000D97CA1 /* CoreDataMigrations.swift */; };
 		B1B11FE21E4E9D2F00D97CA1 /* CoreDataMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B11FE11E4E9D2F00D97CA1 /* CoreDataMigration.swift */; };
@@ -842,6 +843,7 @@
 		B1AB4D7D1D14EA07006F016C /* DataItems_2Loot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataItems_2Loot.json; sourceTree = "<group>"; };
 		B1AB4D7F1D14ED8A006F016C /* ItemDisplayType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDisplayType.swift; sourceTree = "<group>"; };
 		B1AB8C241E2B517B00AC9ACE /* HeartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
+		B1AEF15E1FF9A9D000DDB169 /* PhotoEditable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditable.swift; sourceTree = "<group>"; };
 		B1B11FD31E4E99E200D97CA1 /* 20160210.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 20160210.xcmappingmodel; sourceTree = "<group>"; };
 		B1B11FD71E4E9CA000D97CA1 /* CoreDataMigrations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataMigrations.swift; sourceTree = "<group>"; };
 		B1B11FE11E4E9D2F00D97CA1 /* CoreDataMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataMigration.swift; sourceTree = "<group>"; };
@@ -1692,6 +1694,7 @@
 			children = (
 				B145FDE01E67E64800403A36 /* Photo.swift */,
 				B145FDE21E67E65500403A36 /* Photographical.swift */,
+				B1AEF15E1FF9A9D000DDB169 /* PhotoEditable.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -2867,6 +2870,7 @@
 				B092C3C11BAF9EDD0078CEF2 /* GameNotes.swift in Sources */,
 				B137FC4B1BA4C970000D312E /* HairlineBorderView.swift in Sources */,
 				B1F306661CE7B86000A830C9 /* Spinnerable.swift in Sources */,
+				B1AEF15F1FF9A9D000DDB169 /* PhotoEditable.swift in Sources */,
 				B1D4D2671C8CC5720000F150 /* MissionsSplitViewController.swift in Sources */,
 				B0AAE0461BACEB7E0042B14E /* Linkable.swift in Sources */,
 				B01D8F221BA139500039E003 /* GameRow.swift in Sources */,
