@@ -25,4 +25,9 @@ extension DataDecision: DataRowStorable {
 		coreItem.name = name
 		coreItem.gameVersion = gameVersion.stringValue
 	}
+
+    /// (DataRowStorable Protocol)
+    public mutating func migrateId(id newId: String) {
+        id = newId
+    }
 }

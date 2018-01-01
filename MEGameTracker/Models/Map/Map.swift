@@ -23,8 +23,8 @@ public struct Map: Codable, MapLocationable, Eventsable {
     public var rawData: Data? // transient
 	public var generalData: DataMap
 
-	public private(set) var id: String
-	public private(set) var gameVersion: GameVersion
+	public internal(set) var id: String
+	public internal(set) var gameVersion: GameVersion
 	private var _annotationNote: String?
 
 	/// (GameModifying, GameRowStorable Protocol) 

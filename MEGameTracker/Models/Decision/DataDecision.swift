@@ -26,8 +26,8 @@ public struct DataDecision: Codable {
 
 // MARK: Properties
     public var rawData: Data? // transient
-	public private(set) var id: String
-	public private(set) var gameVersion: GameVersion
+	public internal(set) var id: String
+	public internal(set) var gameVersion: GameVersion
 	public var name: String = "Unknown"
 	public var description: String?
 

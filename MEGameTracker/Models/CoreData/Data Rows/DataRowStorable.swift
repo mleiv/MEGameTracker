@@ -43,6 +43,9 @@ public protocol DataRowStorable: CodableCoreDataStorable {
         ids: [String],
         with manager: CodableCoreDataManageable?
     ) -> Bool
+
+    /// Allow data to be issued a new id for migrations.
+    mutating func migrateId(id newId: String)
 }
 
 extension DataRowStorable {

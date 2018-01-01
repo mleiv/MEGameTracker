@@ -138,6 +138,9 @@ public protocol GameRowStorable: CodableCoreDataStorable {
     static func deleteOrphans(
         with manager: CodableCoreDataManageable?
     ) -> Bool
+
+    /// Allow data to be issued a new id for migrations.
+    mutating func migrateId(id newId: String)
 }
 
 extension GameRowStorable {

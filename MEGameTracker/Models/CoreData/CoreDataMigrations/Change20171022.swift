@@ -92,6 +92,13 @@ public struct Change20171022: CoreDataMigrationType {
         "DLC2.Overlord.4.3",
         "DLC2.Overlord.4.4",
         "DLC2.Overlord.4",
+        "DLC2.NormandyCrashSite.1.1",
+        "DLC2.NormandyCrashSite.1.2",
+        "DLC2.NormandyCrashSite.1.3",
+        "DLC2.NormandyCrashSite.1.4",
+        "DLC2.NormandyCrashSite.1.5",
+        "DLC2.NormandyCrashSite.1.6",
+        "DLC2.NormandyCrashSite.1.7",
     ]
     let newMissionIds = [
         "",
@@ -113,6 +120,13 @@ public struct Change20171022: CoreDataMigrationType {
         "DLC2.Overlord.05.4",
         "DLC2.Overlord.05.5",
         "DLC2.Overlord.05",
+        "DLC2.NormandyCrashSite.3.1",
+        "DLC2.NormandyCrashSite.3.2",
+        "DLC2.NormandyCrashSite.3.3",
+        "DLC2.NormandyCrashSite.3.4",
+        "DLC2.NormandyCrashSite.3.5",
+        "DLC2.NormandyCrashSite.2.1",
+        "DLC2.NormandyCrashSite.3.7",
     ]
 
     let itemIds: [(old: String, new: String)] = [
@@ -159,9 +173,27 @@ public struct Change20171022: CoreDataMigrationType {
     public func run() {
         // only run if prior bad data may have been saved
         guard App.current.lastBuild > 0 else { return }
-        remapMoralityChoices()
         correctMovedMissions()
         correctRenamedItem()
+        remapMoralityChoices()
+        cleanup()
+    }
+
+    private func createIfMissingMission(id: String, gameVersion: GameVersion) -> Mission? {
+        if let mission = Mission.get(id: id) {
+            return mission
+        }
+        var dataMission = DataMission(id: id)
+        dataMission.gameVersion = gameVersion
+        _ = dataMission.save()
+        return Mission.get(id: id)
+    }
+
+    private func cleanup() {
+        _ = DataMission.deleteAll(ids: oldMissionIds)
+        Mission.getAll(ids: oldMissionIds).forEach { var m = $0; _ = m.delete() }
+        _ = DataItem.deleteAll(ids: itemIds.map({ $0.old }))
+        Item.getAll(ids: itemIds.map({ $0.old })).forEach { var i = $0; _ = i.delete() }
     }
 
     private func remapMoralityChoices() {
@@ -170,15 +202,18 @@ public struct Change20171022: CoreDataMigrationType {
                 ids: [mapData.fromMissionId],
                 gameSequenceUuid: nil
             ) {
-                if var toMission = Mission.get(id: mapData.toMissionId) {
+                if var toMission = createIfMissingMission(id: mapData.toMissionId, gameVersion: fromMission.gameVersion) {
                     let fromIds = fromMission.selectedConversationRewards
                     guard !fromIds.isEmpty else { continue }
+                    var selectedConversationRewards: [String] = []
                     for idMapData in mapData.ids {
                         if fromIds.contains(idMapData.fromId) {
-                            fromMission.generalData.conversationRewards.unsetSelectedId(idMapData.fromId)
-                            toMission.generalData.conversationRewards.setSelectedId(idMapData.toId)
+                            selectedConversationRewards.append(idMapData.toId)
+                            fromMission.generalData.conversationRewards
+                                .unsetSelectedId(idMapData.fromId)
                         }
                     }
+                    toMission.overrideSelectedConversationRewards(selectedConversationRewards)
                     _ = fromMission.save()
                     _ = toMission.save()
                 }
@@ -193,17 +228,12 @@ public struct Change20171022: CoreDataMigrationType {
                 id: oldMissionIds[index],
                 gameSequenceUuid: nil
             ) else { continue }
-            if let toMission = Mission.get(
-                id: newMissionIds[index],
-                gameSequenceUuid: fromMission.gameSequenceUuid
-            ) {
-                _ = toMission.changed(isCompleted: fromMission.isCompleted)
+            if !newMissionIds[index].isEmpty {
+                var newMission = fromMission
+                newMission.migrateId(id: newMissionIds[index])
+                _ = newMission.save()
             }
-            // delete the old missions.
-            _ = fromMission.delete()
         }
-        // delete the old data mission.
-        _ = DataMission.deleteAll(ids: oldMissionIds)
     }
 
     private func correctRenamedItem() {
@@ -213,16 +243,11 @@ public struct Change20171022: CoreDataMigrationType {
                 id: itemIds[index].old,
                 gameSequenceUuid: nil
             ) else { continue }
-            if let toItem = Item.get(
-                id: itemIds[index].new,
-                gameSequenceUuid: fromItem.gameSequenceUuid
-            ) {
-                _ = toItem.changed(isAcquired: fromItem.isAcquired)
+            if !itemIds[index].new.isEmpty {
+                var newItem = fromItem
+                newItem.migrateId(id: itemIds[index].new)
+                _ = newItem.save()
             }
-            // delete the old items.
-            _ = fromItem.delete()
         }
-        // delete the old data item.
-        _ = DataItem.deleteAll(ids: itemIds.map({ $0.old }))
     }
 }

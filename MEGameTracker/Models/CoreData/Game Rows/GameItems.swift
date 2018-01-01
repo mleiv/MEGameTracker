@@ -44,6 +44,11 @@ extension Item: GameRowStorable {
 		return item
 	}
 
+    /// (GameRowStorable Protocol)
+    public mutating func migrateId(id newId: String) {
+        id = newId
+        generalData.migrateId(id: newId)
+    }
 }
 
 extension Item {

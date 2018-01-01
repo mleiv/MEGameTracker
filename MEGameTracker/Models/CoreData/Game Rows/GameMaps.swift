@@ -43,6 +43,12 @@ extension Map: GameRowStorable {
 		item.events = item.getEvents(with: manager)
 		return item
 	}
+
+    /// (GameRowStorable Protocol)
+    public mutating func migrateId(id newId: String) {
+        id = newId
+        generalData.migrateId(id: newId)
+    }
 }
 
 extension Map {

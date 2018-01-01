@@ -30,4 +30,9 @@ extension DataMission: DataRowStorable, DataEventsable {
 		coreItem.gameVersion = gameVersion.stringValue
 		coreItem.relatedEvents = getRelatedDataEvents(context: coreItem.managedObjectContext)
 	}
+
+    /// (DataRowStorable Protocol)
+    public mutating func migrateId(id newId: String) {
+        id = newId
+    }
 }

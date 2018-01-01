@@ -38,8 +38,8 @@ public struct DataPerson: Codable, Photographical {
 
 // MARK: Properties
     public var rawData: Data? // transient
-	public private(set) var id: String
-	public private(set) var gameVersion: GameVersion = .game1
+	public internal(set) var id: String
+	public internal(set) var gameVersion: GameVersion = .game1
 	public private(set) var name: String = "Unknown"
 	public private(set) var personType: PersonType = .other
 	public private(set) var description: String?

@@ -21,7 +21,7 @@ public struct Item: MapLocationable, Eventsable {
     public var rawData: Data? // transient
 	public var generalData: DataItem
 
-	public private(set) var id: String
+	public internal(set) var id: String
 	private var _annotationNote: String?
 
 	/// (GameModifying, GameRowStorable Protocol) 

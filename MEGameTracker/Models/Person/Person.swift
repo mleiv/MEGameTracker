@@ -23,8 +23,8 @@ public struct Person: Codable, Photographical, PhotoEditable, Eventsable {
     public var rawData: Data? // transient
 	public var generalData: DataPerson
 
-	public private(set) var id: String
-	public private(set) var gameVersion: GameVersion
+	public internal(set) var id: String
+	public internal(set) var gameVersion: GameVersion
 	private var _photo: Photo?
 
 	/// (GameModifying, GameRowStorable Protocol) 

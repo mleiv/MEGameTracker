@@ -28,6 +28,11 @@ extension DataPerson: DataRowStorable, DataEventsable {
 		coreItem.isFemaleLoveInterest = gameValues(key: "isFemaleLoveInterest", defaultValue: "0")
 		coreItem.relatedEvents = getRelatedDataEvents(context: coreItem.managedObjectContext)
 	}
+
+    /// (DataRowStorable Protocol)
+    public mutating func migrateId(id newId: String) {
+        id = newId
+    }
 }
 
 extension DataPerson {

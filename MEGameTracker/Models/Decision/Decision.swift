@@ -22,7 +22,7 @@ public struct Decision: Codable {
     public var rawData: Data? // transient
 	public var generalData: DataDecision
 
-	public private(set) var id: String
+	public internal(set) var id: String
 
 	/// (GameModifying, GameRowStorable Protocol) 
 	/// This value's game identifier.

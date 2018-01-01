@@ -34,8 +34,8 @@ public struct DataMission: Codable, DataMapLocationable {
 
 // MARK: Properties
     public var rawData: Data? // transient
-	public private(set) var id: String
-	public private(set) var gameVersion: GameVersion
+	public internal(set) var id: String
+	public internal(set) var gameVersion: GameVersion
 	private var _name: String = "Unknown"
 	public var pageTitle: String?
 	public var titlePrefix: String?

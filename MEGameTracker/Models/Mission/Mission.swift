@@ -27,7 +27,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
     public var rawData: Data? // transient
 	public var generalData: DataMission
 
-	public private(set) var id: String
+	public internal(set) var id: String
 	private var overrideName: String?
 	internal var overrideAnnotationNote: String?
 
@@ -107,9 +107,9 @@ public struct Mission: Codable, MapLocationable, Eventsable {
 	}
 
 	public var selectedConversationRewards: [String] {
-		return conversationRewards.selectedIds()
+		return tempSelectedConversationRewards ?? conversationRewards.selectedIds()
 	}
-	private var tempSelectedConversationRewards: [String]?
+	private var tempSelectedConversationRewards: [String]? // transient, do not save
 
 	public var objectivesCountToCompletion: Int? { return generalData.objectivesCountToCompletion }
 
@@ -200,7 +200,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
     public mutating func setGeneralData() {
         if let list = tempSelectedConversationRewards {
             generalData.conversationRewards.setSelectedIds(list)
-            tempSelectedConversationRewards = []
+            tempSelectedConversationRewards = nil
         }
     }
     public mutating func setGeneralData(_ generalData: DataMission) {
@@ -233,6 +233,12 @@ public struct Mission: Codable, MapLocationable, Eventsable {
         try serializeDateModifiableData(encoder: encoder)
         try serializeGameModifyingData(encoder: encoder)
         try serializeLocalCloudData(encoder: encoder)
+    }
+
+    public mutating func overrideSelectedConversationRewards(
+        _ selectedConversationRewards: [String]
+    ) {
+        tempSelectedConversationRewards = selectedConversationRewards
     }
 }
 

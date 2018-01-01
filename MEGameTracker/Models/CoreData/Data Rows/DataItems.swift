@@ -30,4 +30,9 @@ extension DataItem: DataRowStorable, DataEventsable {
 		coreItem.relatedEvents = getRelatedDataEvents(context: coreItem.managedObjectContext)
 //        coreItem.setValue(itemType.stringValue, forKey: "itemType")
 	}
+
+    /// (DataRowStorable Protocol)
+    public mutating func migrateId(id newId: String) {
+        id = newId
+    }
 }

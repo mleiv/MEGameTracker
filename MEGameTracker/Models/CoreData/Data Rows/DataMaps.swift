@@ -28,6 +28,11 @@ extension DataMap: DataRowStorable, DataEventsable {
 		coreItem.isMain = isMain ? 1 : 0
 		coreItem.relatedEvents = getRelatedDataEvents(context: coreItem.managedObjectContext)
 	}
+
+    /// (DataRowStorable Protocol)
+    public mutating func migrateId(id newId: String) {
+        id = newId
+    }
 }
 
 extension DataMap {

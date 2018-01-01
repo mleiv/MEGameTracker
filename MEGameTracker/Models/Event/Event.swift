@@ -23,7 +23,7 @@ public struct Event: Codable {
     public var rawData: Data? // transient
 	public var generalData: DataEvent
 
-	public private(set) var id: String
+	public internal(set) var id: String
 	public var type = EventType.unknown
 
 	/// Not yet loaded from database.

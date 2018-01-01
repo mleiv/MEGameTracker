@@ -102,18 +102,18 @@ final class Change20171022Tests: MEGameTrackerTests {
         super.tearDown()
     }
 
-    /// Test migrating a decision
+    /// Test migrating a decision to a brand-new mission (does not exist at time of migration)
     func testMoveMissions() {
         initializeCurrentGame() // needed for saving with game uuid
 
         let fromMission1 = create(Mission.self, from: mission1From)
         let fromMission2 = create(Mission.self, from: mission2From)
-        _ = create(Mission.self, from: mission12To)
         _ = fromMission1?.changed(conversationRewardId: "A1.T.StrangeBehavior.P1", isSelected: true)
         _ = fromMission2?.changed(isCompleted: true)
 
         App.current.lastBuild = 1 // required to run
         Change20171022().run()
+        _ = create(DataMission.self, from: mission12To)
 
         let toMission12 = Mission.get(id: "A1.Convo.Feros.Blakes")
         XCTAssertTrue(

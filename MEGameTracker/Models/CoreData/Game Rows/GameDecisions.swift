@@ -41,6 +41,12 @@ extension Decision: GameRowStorable {
 	) -> Decision {
 		return Decision(id: generalData.id, generalData: generalData)
 	}
+
+    /// (GameRowStorable Protocol)
+    public mutating func migrateId(id newId: String) {
+        id = newId
+        generalData.migrateId(id: newId)
+    }
 }
 
 extension Decision {

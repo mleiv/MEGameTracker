@@ -24,8 +24,8 @@ public struct DataEvent: Codable {
 
 // MARK: Properties
     public var rawData: Data? // transient
-	public private(set) var id: String
-	public private(set) var gameVersion: GameVersion?
+	public internal(set) var id: String
+	public internal(set) var gameVersion: GameVersion?
 	public var description: String?
 
 	public var isAlert = false

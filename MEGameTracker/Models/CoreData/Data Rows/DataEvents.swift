@@ -24,4 +24,9 @@ extension DataEvent: DataRowStorable {
 		coreItem.id = id
 		coreItem.gameVersion = gameVersion?.stringValue
 	}
+
+    /// (DataRowStorable Protocol)
+    public mutating func migrateId(id newId: String) {
+        id = newId
+    }
 }
