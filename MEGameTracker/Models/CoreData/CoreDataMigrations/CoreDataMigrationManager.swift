@@ -15,11 +15,12 @@ public struct CoreDataMigrationManager {
 	public static var didLoadBaseData = false
 
 	public let migrationsAvailable: [Int: CoreDataMigration] = [ // Int is just for easier reference when editing
-		1: CoreDataMigration(fromBuild: 49, loadMigration: { return BaseDataImport() }),
-		2: CoreDataMigration(fromBuild: 42, loadMigration: { return Change20170228() }),
-		3: CoreDataMigration(fromBuild: 44, loadMigration: { return Change20170305() }),
-        4: CoreDataMigration(fromBuild: 47, loadMigration: { return Change20170905() }),
-        5: CoreDataMigration(fromBuild: 48, loadMigration: { return Change20171022() }),
+		1: CoreDataMigration(fromBuild: 54, loadMigration: { return BaseDataImport() }),
+//        2: CoreDataMigration(fromBuild: 54, loadMigration: { return CoreDataEliminateDuplicates() }),
+		3: CoreDataMigration(fromBuild: 42, loadMigration: { return Change20170228() }),
+		4: CoreDataMigration(fromBuild: 44, loadMigration: { return Change20170305() }),
+        5: CoreDataMigration(fromBuild: 47, loadMigration: { return Change20170905() }),
+        6: CoreDataMigration(fromBuild: 48, loadMigration: { return Change20171022() }),
 	]
 
 	public func migrateFrom(lastBuild: Int, completion: @escaping (() -> Void) = {}) {
@@ -29,7 +30,7 @@ public struct CoreDataMigrationManager {
 			CoreDataMigrations.onStart.fire(true)
 		}
 
-//        let lastBuild = 30 // DEBUG
+        let lastBuild = 30 // DEBUG
 		for (_, migration) in migrationsAvailable {
 			if migration.fromBuild > lastBuild && migration.fromBuild <= App.current.build {
 				CoreDataMigrations.isRunning = true
