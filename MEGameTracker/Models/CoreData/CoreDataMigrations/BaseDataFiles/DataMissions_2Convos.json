@@ -20,12 +20,8 @@
         "titlePrefix": "Conversation: ",
         "name": "Kasumi Goto",
         "description": "Conversations with [megametracker://person?id=S2.Kasumi] aboard the Normandy.",
-        "inMapId": "G.N2.3Quarters",
-        "mapLocationPoint": {
-            "x": 1709,
-            "y": 698,
-            "radius": 1
-        },
+        "inMapId": "G.N2.3.Port",
+        "isShowInParentMap": true,
         "relatedLinks": ["http://masseffect.wikia.com/wiki/Kasumi_Goto/Unique_dialogue"],
         "events": [{
             "type": "BlockedUntil",
@@ -78,7 +74,14 @@
         "name": "1st Convo",
         "description": "Garrus discusses how he gathered his squad and how they were all killed on Omega after being betrayed by a fellow squad member, [megametracker://person?id=O2.Sidonis].",
         "inMapId": "G.N2.3.Battery",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Garrus",
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Garrus Convo 1"
+        }]
     }, {
         "id": "A2.Convo.Garrus.2",
         "inMissionId": "A2.Convo.Garrus",
@@ -92,8 +95,14 @@
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.L.Garrus"],
         "events": [{
-           "type": "BlockedUntil",
-           "id": "Completed: Horizon"
+            "type": "BlockedUntil",
+            "id": "Completed: Garrus Convo 1 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Horizon + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Garrus Convo 2"
         }]
     }, {
         "id": "A2.Convo.Garrus.3",
@@ -109,6 +118,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Garrus"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Garrus Convo 3"
         }]
     }, {
         "id": "A2.Convo.Garrus.4",
@@ -123,7 +135,13 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Garrus"
+            "id": "Completed: Garrus Convo 3 + 1"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender F"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Garrus Convo 4"
         }]
     }, {
         "id": "A2.Convo.Garrus.5",
@@ -138,7 +156,10 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Garrus"
+            "id": "Completed: Garrus Convo 4 + 1"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender F"
         }]
     }, {
         "id": "A2.Convo.Grunt",
@@ -174,6 +195,41 @@
                             "type": "Renegade",
                             "value": 2,
                             "trigger": "\"Ignore it. I need a warrior.\""
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "During second conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Grunt.P3A",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"Why is that funny?\""
+                        }, {
+                            "id": "A2.Convo.Grunt.R3A",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"This brutality has a point?\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Grunt.P3B",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I don't like hearing this.\""
+                        }, {
+                            "id": "A2.Convo.Grunt.R3B",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Not quite, but I'm not krogan.\" or \"What about Garrus?\""
                         }]
                     }
                 }]
@@ -265,9 +321,16 @@
         "gameVersion": "2",
         "missionType": "Objective",
         "name": "1st Convo",
-        "description": "Grunt complains about the cargo hold as being a military target. He does not see the importance of the all things he automatically knows from [Okeer's|megametracker://person?id=O2.Okeer] imprint.",
+        "description": "Grunt considers how he was created strong but others were created weak.",
         "inMapId": "G.N2.4.Port",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Horizon"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Grunt Convo 1"
+        }]
     }, {
         "id": "A2.Convo.Grunt.2",
         "inMissionId": "A2.Convo.Grunt",
@@ -277,7 +340,14 @@
         "name": "2nd Convo",
         "description": "Grunt is starting to make sense of his memories.",
         "inMapId": "G.N2.4.Port",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Grunt Convo 1 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Grunt Convo 2"
+        }]
     }, {
         "id": "A2.Convo.Grunt.3",
         "inMissionId": "A2.Convo.Grunt",
@@ -291,8 +361,11 @@
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.L.Grunt"],
         "events": [{
-           "type": "BlockedUntil",
-           "id": "Completed: Horizon"
+            "type": "BlockedUntil",
+            "id": "Completed: Grunt Convo 2 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Grunt Convo 3"
         }]
     }, {
         "id": "A2.Convo.Grunt.4",
@@ -307,6 +380,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Grunt"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Grunt Convo 4"
         }]
     }, {
         "id": "A2.Convo.Grunt.5",
@@ -320,7 +396,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Grunt"
+            "id": "Completed: Grunt Convo 4 + 1"
         }]
     }, {
         "id": "A2.Convo.Jack",
@@ -340,10 +416,22 @@
             "set": {
                 "context": "During first conversation",
                 "options": [{
-                    "id": "A2.Convo.Jack.P10",
-                    "type": "Paragon",
-                    "value": 2,
-                    "trigger": "\"Glad they're helping.\""
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P10",
+                            "type": "Paragon",
+                            "value": 2,
+                            "context": "(If you did share the Cerberus files)",
+                            "trigger": "\"Glad they're helping.\""
+                        }, {
+                            "id": "A2.Convo.Jack.R10",
+                            "type": "Renegade",
+                            "value": 2,
+                            "context": "(If you did not share the Cerberus files)",
+                            "trigger": "\"I didn't let you.\""
+                        }]
+                    }
                 }, {
                     "id": "A2.Convo.Jack.P11",
                     "type": "Paragon",
@@ -355,15 +443,26 @@
                     "value": 2,
                     "trigger": "\"Do you want better quarters?\""
                 }, {
-                    "id": "A2.Convo.Jack.P13",
-                    "type": "Paragon",
-                    "value": 2,
-                    "trigger": "\"My mission is too important.\""
-                }, {
-                    "id": "A2.Convo.Jack.R14",
+                    "id": "A2.Convo.Jack.R12B",
                     "type": "Renegade",
                     "value": 2,
                     "trigger": "\"You sound excited.\""
+                }, {
+                    "set": {
+                        "context": "(If you offer better quarters)",
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P13",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"My mission is too important.\""
+                        }, {
+                            "id": "A2.Convo.Jack.R13",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"How would you help?\""
+                        }]
+                    }
                 }]
             }
         }, {
@@ -603,7 +702,11 @@
         "name": "1st Convo",
         "description": "Jack shortly vents her anger with Cerberus.",
         "inMapId": "G.N2.4.SubDeck",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Jack Convo 1"
+        }]
     }, {
         "id": "A2.Convo.Jack.2",
         "inMissionId": "A2.Convo.Jack",
@@ -613,18 +716,35 @@
         "name": "2nd Convo",
         "description": "Jack talks about the criminals she fell in with after escaping from Cerberus.",
         "inMapId": "G.N2.4.SubDeck",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Horizon"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jack Convo 2"
+        }]
     }, {
         "id": "A2.Convo.Jack.3",
         "inMissionId": "A2.Convo.Jack",
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "3rd Convo",
+        "name": "3rd Convo (BroShep)",
         "annotationNote": "Romance Option",
         "description": "Jack talks about her tattoos. There is an option for a quickie hookup with Jack.",
         "inMapId": "G.N2.4.SubDeck",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Jack Convo 2 + 1"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender M"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jack Convo 3"
+        }]
     }, {
         "id": "A2.Convo.Jack.4",
         "inMissionId": "A2.Convo.Jack",
@@ -638,8 +758,11 @@
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.L.Jack"],
         "events": [{
-           "type": "BlockedUntil",
-           "id": "Completed: Horizon"
+            "type": "BlockedUntil",
+            "id": "Completed: Jack Convo 3 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jack Convo 4"
         }]
     }, {
         "id": "A2.Convo.Jack.5",
@@ -654,6 +777,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Jack"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jack Convo 5"
         }]
     }, {
         "id": "A2.Convo.Jack.6",
@@ -661,14 +787,20 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo",
+        "name": "6th Convo (BroShep)",
         "annotationNote": "Romance Option",
         "description": "Jack rebuffs Shepard's advances.",
         "inMapId": "G.N2.4.SubDeck",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Jack"
+            "id": "Completed: Jack Convo 5 + 1"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender M"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jack Convo 6"
         }]
     }, {
         "id": "A2.Convo.Jack.7",
@@ -683,7 +815,13 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Jack"
+            "id": "Completed: Jack Convo 6 + 1"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender M"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jack Convo 7"
         }]
     }, {
         "id": "A2.Convo.Jack.8",
@@ -698,7 +836,10 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Jack"
+            "id": "Completed: Jack Convo 7 + 1"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender M"
         }]
     }, {
         "id": "A2.Convo.Jacob",
@@ -1093,9 +1234,13 @@
         "missionType": "Objective",
         "name": "3rd Convo",
         "annotationNote": "Romance Option",
-        "description": "Jacob discusses his family (or lack thereof) and hints that he and Miranda were involved, but are not any longer.",
+        "description": "Jacob discusses his family (or lack thereof) and hints that he and Miranda were involved, but are not any longer.\n\nThis conversation is not available if you have not left open the possibility for romance.",
         "inMapId": "G.N2.2.Armory",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Horizon"
+        }]
     }, {
         "id": "A2.Convo.Jacob.4",
         "inMissionId": "A2.Convo.Jacob",
@@ -1109,8 +1254,8 @@
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.L.Jacob"],
         "events": [{
-           "type": "BlockedUntil",
-           "id": "Completed: Horizon"
+            "type": "BlockedUntil",
+            "id": "Completed: Horizon"
         }]
     }, {
         "id": "A2.Convo.Jacob.4B",
@@ -1156,6 +1301,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Jacob"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender F"
         }]
     }, {
         "id": "A2.Convo.Jacob.7",
@@ -1171,6 +1319,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Jacob"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender F"
         }]
     }, {
         "id": "A2.Convo.Legion",
@@ -1492,7 +1643,14 @@
         "name": "1st Convo",
         "description": "Miranda discusses her role on the Normandy as the Illusive Man's agent. She promotes Cerberus' humanity-first agenda. She reveals that she was extensively enhanced genetically.",
         "inMapId": "G.N2.3.Cabin",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Freedom's Progress"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Miranda Convo 1"
+        }]
     }, {
         "id": "A2.Convo.Miranda.2",
         "inMissionId": "A2.Convo.Miranda",
@@ -1502,7 +1660,14 @@
         "name": "2nd Convo",
         "description": "Miranda talks about her wealthy but controlling father and how Cerberus helped her to escape him.",
         "inMapId": "G.N2.3.Cabin",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Miranda Convo 1 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Miranda Convo 2"
+        }]
     }, {
         "id": "A2.Convo.Miranda.3",
         "inMissionId": "A2.Convo.Miranda",
@@ -1516,8 +1681,14 @@
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.L.Miranda"],
         "events": [{
-           "type": "BlockedUntil",
-           "id": "Completed: Horizon"
+            "type": "BlockedUntil",
+            "id": "Completed: Miranda Convo 2 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Horizon"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Miranda Convo 3"
         }]
     }, {
         "id": "A2.Convo.Miranda.4",
@@ -1533,6 +1704,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Miranda"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Miranda Convo 4"
         }]
     }, {
         "id": "A2.Convo.Miranda.5",
@@ -1547,7 +1721,10 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Miranda"
+            "id": "Completed: Miranda Convo 4 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Miranda Convo 5"
         }]
     }, {
         "id": "A2.Convo.Miranda.6",
@@ -1562,7 +1739,13 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Miranda"
+            "id": "Completed: Miranda Convo 5 + 1"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender M"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Miranda Convo 6"
         }]
     }, {
         "id": "A2.Convo.Miranda.7",
@@ -1578,6 +1761,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Miranda"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender M"
         }]
     }, {
         "id": "A2.Convo.Mordin",
@@ -1746,7 +1932,14 @@
         "name": "1st Convo",
         "description": "Mordin is very impressed with the Normandy's facilities. He talks more about the salarian STG and the Genophage. He mocks [megametracker://person?id=P1.Kirrahe] a bit, if you bring up that you met him in Game 1.",
         "inMapId": "G.N2.2.Lab",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Mordin"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Mordin Convo 1"
+        }]
     }, {
         "id": "A2.Convo.Mordin.2",
         "inMissionId": "A2.Convo.Mordin",
@@ -1756,7 +1949,14 @@
         "name": "2nd Convo",
         "description": "Mordin talks more about the Genophage and how his team had to modify it once the krogan evolved to resist it. He refuses to apologize for this work.",
         "inMapId": "G.N2.2.Lab",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Mordin Convo 1 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Mordin Convo 2"
+        }]
     }, {
         "id": "A2.Convo.Mordin.3",
         "inMissionId": "A2.Convo.Mordin",
@@ -1770,8 +1970,14 @@
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.Loyalty.Mordin"],
         "events": [{
-           "type": "BlockedUntil",
-           "id": "Completed: Horizon"
+            "type": "BlockedUntil",
+            "id": "Completed: Mordin Convo 2 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Horizon + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Mordin Convo 3"
         }]
     }, {
         "id": "A2.Convo.Mordin.4",
@@ -1785,7 +1991,10 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Mordin"
+            "id": "Completed: Mordin Convo 3 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Mordin Convo 4"
         }]
     }, {
         "id": "A2.Convo.Mordin.5",
@@ -1799,7 +2008,10 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Mordin"
+            "id": "Completed: Mordin Convo 4 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Mordin Convo 5"
         }]
     }, {
         "id": "A2.Convo.Mordin.6",
@@ -1813,7 +2025,10 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Mordin"
+            "id": "Completed: Mordin Convo 5 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Mordin Convo 6"
         }]
     }, {
         "id": "A2.Convo.Mordin.7",
@@ -1827,7 +2042,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Mordin"
+            "id": "Completed: Mordin Convo 6 + 1"
         }]
     }, {
         "id": "A2.Convo.Samara",
@@ -1958,7 +2173,14 @@
         "name": "1st Convo",
         "description": "Samara talks about the loneliness of her calling, but mostly avoids reavealing anything.",
         "inMapId": "G.N2.3.Starboard",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Samara"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Samara Convo 1"
+        }]
     }, {
         "id": "A2.Convo.Samara.2",
         "inMissionId": "A2.Convo.Samara",
@@ -1968,7 +2190,14 @@
         "name": "2nd Convo",
         "description": "Samara discusses the role of the Justicar and the brutality of her code.",
         "inMapId": "G.N2.3.Starboard",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Samara Convo 1 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Samara Convo 2"
+        }]
     }, {
         "id": "A2.Convo.Samara.3",
         "inMissionId": "A2.Convo.Samara",
@@ -1980,7 +2209,14 @@
         "description": "Samara reveals that she is hunting is her daughter Morinth, one of a dangerous breed of killers the asari have named the \"Ardat-Yakshi,\" who consume their victims when mating.",
         "inMapId": "G.N2.3.Starboard",
         "isShowInParentMap": true,
-        "relatedMissionIds": ["A2.L.Samara"]
+        "relatedMissionIds": ["A2.L.Samara"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Samara Convo 2 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Samara Convo 3"
+        }]
     }, {
         "id": "A2.Convo.Samara.4",
         "inMissionId": "A2.Convo.Samara",
@@ -1994,6 +2230,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Samara"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Samara Convo 4"
         }]
     }, {
         "id": "A2.Convo.Samara.5",
@@ -2007,7 +2246,10 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Samara"
+            "id": "Completed: Samara Convo 4 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Samara Convo 5"
         }]
     }, {
         "id": "A2.Convo.Samara.6",
@@ -2022,7 +2264,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Samara"
+            "id": "Completed: Samara Convo 5 + 1"
         }]
     }, {
         "id": "A2.Convo.Samara.7",
@@ -2157,13 +2399,20 @@
         "gameVersion": "2",
         "missionType": "Objective",
         "name": "1st Convo",
-        "description": "Tali discusses the quarian political hierarchy and what the quarians have against Cerberus.",
+        "description": "If Reegar survived, you can ask how he is doing. Tali will talk about missing the old Normandy and her suspicions of Cerberus.",
         "inMapId": "G.N2.4Engineering",
         "mapLocationPoint": {
             "x": 1194,
             "y": 840,
             "radius": 1
-        }
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Tali"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Tali Convo 1"
+        }]
     }, {
         "id": "A2.Convo.Tali.2",
         "inMissionId": "A2.Convo.Tali",
@@ -2179,7 +2428,14 @@
             "y": 840,
             "radius": 1
         },
-        "relatedMissionIds": ["A2.L.Tali"]
+        "relatedMissionIds": ["A2.L.Tali"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Tali Convo 1 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Tali Convo 2"
+        }]
     }, {
         "id": "A2.Convo.Tali.3",
         "inMissionId": "A2.Convo.Tali",
@@ -2198,6 +2454,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Tali"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Tali Convo 3"
         }]
     }, {
         "id": "A2.Convo.Tali.4",
@@ -2216,7 +2475,10 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Tali"
+            "id": "Completed: Tali Convo 3 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Tali Convo 4"
         }]
     }, {
         "id": "A2.Convo.Tali.5",
@@ -2235,7 +2497,13 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Tali"
+            "id": "Completed: Tali Convo 4 + 1"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender M"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Tali Convo 5"
         }]
     }, {
         "id": "A2.Convo.Tali.6",
@@ -2254,7 +2522,10 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Tali"
+            "id": "Completed: Tali Convo 5 + 1"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender M"
         }]
     }, {
         "id": "A2.Convo.Thane",
@@ -2291,7 +2562,7 @@
                     "trigger": "\"You're not a typical assassin.\""
                 }, {
                     "id": "A2.Convo.Thane.R20",
-                    "type": "Paragon",
+                    "type": "Renegade",
                     "value": 2,
                     "trigger": "\"You don't seem confident.\""
                 }]
@@ -2473,7 +2744,14 @@
         "name": "1st Convo",
         "description": "Thane discusses his terminal illness, Kepler Syndrome.",
         "inMapId": "G.N2.3.Support",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Thane"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Thane Convo 1"
+        }]
     }, {
         "id": "A2.Convo.Thane.2",
         "inMissionId": "A2.Convo.Thane",
@@ -2483,7 +2761,14 @@
         "name": "2nd Convo",
         "description": "Thane discusses his career as an assassin and his species' debt to the hanar.",
         "inMapId": "G.N2.3.Support",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Thane Convo 1 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Thane Convo 2"
+        }]
     }, {
         "id": "A2.Convo.Thane.3",
         "inMissionId": "A2.Convo.Thane",
@@ -2493,7 +2778,14 @@
         "name": "3rd Convo",
         "description": "Thane reveals that drell have perfect memories.",
         "inMapId": "G.N2.3.Support",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Thane Convo 2 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Thane Convo 3"
+        }]
     }, {
         "id": "A2.Convo.Thane.4",
         "inMissionId": "A2.Convo.Thane",
@@ -2505,7 +2797,14 @@
         "description": "Thane reveals that he abandoned his son when his wife died, and now Kolyat has decided to become an assassin. Thane wants to prevent this.",
         "inMapId": "G.N2.3.Support",
         "isShowInParentMap": true,
-        "relatedMissionIds": ["A2.L.Thane"]
+        "relatedMissionIds": ["A2.L.Thane"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Thane Convo 3 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Thane Convo 4"
+        }]
     }, {
         "id": "A2.Convo.Thane.5",
         "inMissionId": "A2.Convo.Thane",
@@ -2520,6 +2819,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Thane"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Thane Convo 5"
         }]
     }, {
         "id": "A2.Convo.Thane.6",
@@ -2534,7 +2836,13 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Thane"
+            "id": "Completed: Thane Convo 5 + 1"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender F"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Thane Convo 6"
         }]
     }, {
         "id": "A2.Convo.Thane.7",
@@ -2549,7 +2857,10 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Thane"
+            "id": "Completed: Thane Convo 6 + 1"
+        }, {
+            "type": "RequiresConfig",
+            "id": "Gender F"
         }]
 
     }, {
@@ -2805,8 +3116,12 @@
         "titlePrefix": "Conversation: ",
         "name": "Kelly Chambers",
         "description": "Conversations with [megametracker://person?id=P2.Chambers] aboard the Normandy.",
-        "inMapId": "G.N2.2.Map",
-        "isShowInParentMap": true,
+        "inMapId": "G.N2.2",
+        "mapLocationPoint": {
+            "x": 1264,
+            "y": 986,
+            "radius": 1
+        },
         "relatedDecisionIds": ["D2.LoveKelly"],
         "conversationRewards": [{
             "set": {
@@ -2849,6 +3164,27 @@
                             "trigger": "Romance track."
                         }]
                     }
+                }]
+            }
+        }, {
+            "set": {
+                "context": "Dialog with Kelly post-Horizon (don't say \"Fine.\")",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.Kelly.P4",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"That is history,\" or \"Yes.\" and \"Thank you.\""
+                }, {
+                    "id": "A2.Convo.Kelly.R4A",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"That is history,\" or \"Yes.\" and \"No, it's easy.\""
+                }, {
+                    "id": "A2.Convo.Kelly.R4B",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"No.\""
                 }]
             }
         }, {
@@ -2903,10 +3239,32 @@
         "sortIndex": 90101,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "Normandy Convos",
+        "name": "Normandy Convos (General)",
         "description": "Kelly introduces herself. You have several Paragon options if you explore all the Investigate options. If you want a relationship, talk with Kelly after every mission, and be nice. There are many more flirting options than the ones I've specifically called out in the conversation rewards, but they are not necessary to trigger the romance.",
-        "inMapId": "G.N2.2.Map",
-        "isShowInParentMap": true
+        "inMapId": "G.N2.2",
+        "mapLocationPoint": {
+            "x": 1264,
+            "y": 986,
+            "radius": 1
+        }
+    }, {
+        "id": "A2.Convo.Kelly.2",
+        "inMissionId": "A2.Convo.Kelly",
+        "sortIndex": 90101,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Normandy Convo (Horizon)",
+        "description": "Kelly will ask about your old squadmate, and if you still have feelings for them. You can have this conversation whether or not you were romantically involved with Kaiden or Ashley in Game 1.",
+        "inMapId": "G.N2.2",
+        "mapLocationPoint": {
+            "x": 1264,
+            "y": 986,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Horizon"
+        }]
     }, {
         "id": "A2.Convo.Kelly.5",
         "inMissionId": "A2.Convo.Kelly",
@@ -3112,7 +3470,7 @@
                     "id": "A2.Convo.CitadelSouvenirs.P1A",
                     "type": "Paragon",
                     "value": 5,
-                    "context": "*_Charm Deleia_*",
+                    "context": "*_Charm_* Deleia",
                     "trigger": "\"Want an endorsement?\""
                 }, {
                     "id": "A2.Convo.CitadelSouvenirs.P1B",
@@ -3124,8 +3482,66 @@
                     "id": "A2.Convo.CitadelSouvenirs.R1",
                     "type": "Renegade",
                     "value": 5,
-                    "context": "*_Intimidate Deleia_*",
+                    "context": "*_Intimidate_* Deleia*",
                     "trigger": "(Accuse her of classism.)"
+                }]
+            }
+        }]
+    }, {
+        "id": "A2.Convo.GatewayPersonalDefense",
+        "inMissionId": "A2.Convo.Shops",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Gateway Personal Defense Discount",
+        "description": "You can earn a discount from the merchant at Gateway Personal Defense during [megametracker://mission?id=A2.I.ATroublemaker]",
+        "inMapId": "G.Ter.Cre.Tas.Ill.1.Gateway",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "context": "Confront the merchant during the Conrad Verner mission, _A Troublemaker_.",
+                "options": [{
+                    "id": "A2.Convo.GatewayPersonalDefense.P1",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm_* Merchant",
+                    "trigger": "(lie) \"I'll help you.\""
+                }, {
+                    "id": "A2.Convo.GatewayPersonalDefense.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate_* Merchant",
+                    "trigger": "\"Shut up and listen.\""
+                }]
+            }
+        }]
+    }, {
+        "id": "A2.Convo.MemoriesOfIllium",
+        "inMissionId": "A2.Convo.Shops",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Memories of Illium Discount",
+        "description": "You can earn a discount from the merchant at Memories of Illium during [megametracker://mission?id=A2.I.BlueRoseOfIllium]",
+        "inMapId": "G.Ter.Cre.Tas.Ill.1.Memories",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "set": {
+                "isExclusiveSet": true,
+                "context": "Resolve Ereba's romantic troubles during the assignment _Blue Rose of Illium_.",
+                "options": [{
+                    "id": "A2.Convo.MemoriesOfIllium.P1",
+                    "type": "Paragon",
+                    "value": 5,
+                    "context": "*_Charm_* Ereba",
+                    "trigger": "\"You should make a decision.\" and \"You should take him back.\""
+                }, {
+                    "id": "A2.Convo.MemoriesOfIllium.R1",
+                    "type": "Renegade",
+                    "value": 5,
+                    "context": "*_Intimidate_* Ereba",
+                    "trigger": "\"You should make a decision.\" and \"Get rid of him.\""
                 }]
             }
         }]
@@ -3146,13 +3562,13 @@
                     "id": "A2.Convo.RodamExpeditions.P1",
                     "type": "Paragon",
                     "value": 5,
-                    "context": "*_Charm Etarn_*",
+                    "context": "*_Charm_* Etarn",
                     "trigger": "\"Want an endorsement?\" or \"I'd like a discount.\""
                 }, {
                     "id": "A2.Convo.RodamExpeditions.R1",
                     "type": "Renegade",
                     "value": 5,
-                    "context": "*_Intimidate Etarn_*",
+                    "context": "*_Intimidate_* Etarn",
                     "trigger": "\"You should give me a discount.\" or \"Give me a discount.\""
                 }]
             }
@@ -3174,13 +3590,13 @@
                     "id": "A2.Convo.SirtaFoundation.P1",
                     "type": "Paragon",
                     "value": 5,
-                    "context": "*_Charm Kian_*",
+                    "context": "*_Charm_* Kian",
                     "trigger": "\"Want an endorsement?\""
                 }, {
                     "id": "A2.Convo.SirtaFoundation.R1",
                     "type": "Renegade",
                     "value": 5,
-                    "context": "*_Intimidate Kian_*",
+                    "context": "*_Intimidate_* Kian",
                     "trigger": "\"You should give me a discount.\""
                 }]
             }
@@ -3202,13 +3618,13 @@
                     "id": "A2.Convo.SaronisApplications.P1",
                     "type": "Paragon",
                     "value": 5,
-                    "context": "*_Charm Marab_*",
+                    "context": "*_Charm_* Marab",
                     "trigger": "\"Want an endorsement?\""
                 }, {
                     "id": "A2.Convo.SaronisApplications.R1",
                     "type": "Renegade",
                     "value": 5,
-                    "context": "*_Intimidate Marab_*",
+                    "context": "*_Intimidate_* Marab",
                     "trigger": "\"You should give me a discount.\""
                 }]
             }
@@ -3230,13 +3646,13 @@
                     "id": "A2.Convo.SerriceTechnology.P1",
                     "type": "Paragon",
                     "value": 5,
-                    "context": "*_Charm Hermia_*",
+                    "context": "*_Charm_* Hermia",
                     "trigger": "\"I'm a big spender.\""
                 }, {
                     "id": "A2.Convo.SerriceTechnology.R1",
                     "type": "Renegade",
                     "value": 5,
-                    "context": "*_Intimidate Hermia_*",
+                    "context": "*_Intimidate_* Hermia",
                     "trigger": "\"This stuff might be crap.\""
                 }]
             }
@@ -3258,13 +3674,13 @@
                     "id": "A2.Convo.KennsSalvage.P1",
                     "type": "Paragon",
                     "value": 5,
-                    "context": "*_Charm Kenn_*",
+                    "context": "*_Charm_* Kenn",
                     "trigger": "\"Maybe we can cut a deal.\""
                 }, {
                     "id": "A2.Convo.KennsSalvage.R1",
                     "type": "Renegade",
                     "value": 5,
-                    "context": "*_Intimidate Kenn_*",
+                    "context": "*_Intimidate_* Kenn",
                     "trigger": "\"Your prices are insulting.\""
                 }]
             }
@@ -3287,13 +3703,13 @@
                     "id": "A2.Convo.SerriceTechnology.P1",
                     "type": "Paragon",
                     "value": 5,
-                    "context": "*_Charm Marsh_*",
+                    "context": "*_Charm_* Marsh",
                     "trigger": "\"Convince me to shop here.\""
                 }, {
                     "id": "A2.Convo.SerriceTechnology.R1",
                     "type": "Renegade",
                     "value": 5,
-                    "context": "*_Intimidate Marsh_*",
+                    "context": "*_Intimidate_* Marsh",
                     "trigger": "\"These prices are insulting.\""
                 }]
             }
@@ -3401,13 +3817,13 @@
                     "id": "A2.Convo.AlJilani.P2A",
                     "type": "Paragon",
                     "value": 5,
-                    "context": "*_Charm Al-Jilani_*",
+                    "context": "*_Charm_* Al-Jilani",
                     "trigger": "\"We stood as one to save many.\" or \"We created an opportunity.\""
                 }, {
                     "id": "A2.Convo.AlJilani.R2B",
                     "type": "Renegade",
                     "value": 5,
-                    "context": "*_Intimidate Al-Jilani_*",
+                    "context": "*_Intimidate_* Al-Jilani",
                     "trigger": "Don't disrespect the dead."
                 }, {
                     "id": "A2.Convo.AlJilani.P2C",
@@ -3539,13 +3955,13 @@
                     "id": "A2.Convo.Kylan.P1",
                     "type": "Paragon",
                     "value": 5,
-                    "context": "*_Charm Kylan_*",
+                    "context": "*_Charm_* Kylan",
                     "trigger": "\"Careful, now.\""
                 }, {
                     "id": "A2.Convo.Kylan.R1",
                     "type": "Renegade",
                     "value": 5,
-                    "context": "*_Intimidate Kylan_*",
+                    "context": "*_Intimidate_* Kylan",
                     "trigger": "A dead man."
                 }]
             }
@@ -3560,7 +3976,12 @@
         "titlePrefix": "Conversation: ",
         "name": "Rachni Agent",
         "description": "If the Rachni Queen was spared in Game 1, her asari agent approaches you on Illium.",
-        "x-inMapId": "TODO: Illium Spaceport",
+        "inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+        "mapLocationPoint": {
+            "x": 736,
+            "y": 760,
+            "radius": 1
+        },
         "isShowInParentMap": true,
         "conversationRewards": [{
             "set": {

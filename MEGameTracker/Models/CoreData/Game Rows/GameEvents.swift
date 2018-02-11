@@ -28,7 +28,9 @@ extension Event: GameRowStorable {
         setDateModifiableColumnsOnSave(coreItem: coreItem)
 		coreItem.id = id
 		coreItem.gameSequenceUuid = gameSequenceUuid?.uuidString
-		coreItem.isTriggered = isTriggered ? 1 : 0
+        coreItem.isTriggered = isTriggered ? 1 : 0
+        coreItem.triggeredDate = triggeredDate
+        coreItem.isAny = isAny
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 		coreItem.dataParent = generalData.entity(context: coreItem.managedObjectContext)
 	}
@@ -120,6 +122,21 @@ extension Event {
 			)
 		}
 	}
+
+    // return all events with any mission triggers
+    public static func getTypeAnyMission(
+        gameSequenceUuid: UUID,
+        with manager: CodableCoreDataManageable? = nil
+    ) -> [Event] {
+        return getAllFromData(
+            gameSequenceUuid: gameSequenceUuid
+        ) { fetchRequest in
+            fetchRequest.predicate = NSPredicate(
+                format: "(%K == %@)",
+                #keyPath(DataEvents.isAny), BaseDataFileImportType.mission.stringValue
+            )
+        }
+    }
 
 	/// Get all ids of a given type related to the event specified.
 	public static func getAffectedIds<T: CodableCoreDataStorable>(

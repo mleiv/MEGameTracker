@@ -55,6 +55,10 @@ public enum MissionType: String, Codable {
 		]
 	}
 
+    public static var anyMissionTriggers: [MissionType] {
+        return [.mission, .assignment, .dossier, .loyalty, .dlc]
+    }
+
 	/// Returns the string values of all the enum variations.
 	private static let stringValues: [MissionType: String] = {
         return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
@@ -115,4 +119,8 @@ public enum MissionType: String, Codable {
 		default: return "\(stringValue): "
 		}
 	}
+
+    public var isAnyMissionTrigger: Bool {
+        return MissionType.anyMissionTriggers.contains(self)
+    }
 }

@@ -29,6 +29,7 @@ extension Item: GameRowStorable {
 		coreItem.id = id
 		coreItem.gameSequenceUuid = gameSequenceUuid?.uuidString
 		coreItem.isAcquired = isAcquired ? 1 : 0
+        coreItem.acquiredDate = acquiredDate
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 		coreItem.dataParent = generalData.entity(context: coreItem.managedObjectContext)
 	}

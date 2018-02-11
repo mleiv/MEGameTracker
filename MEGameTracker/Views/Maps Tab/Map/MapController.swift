@@ -292,11 +292,11 @@ extension MapController {
 
 		if isInlineCalloutsVisible {
 			if let controller = mapCalloutsWrapper.includedController as? MapCalloutsGroupsController {
+                controller.map = map
+                controller.inheritedMapLocations = mapLocations
+                controller.heightConstraint = mapCalloutsWrapperHeightConstraint
 				controller.isDontScroll = true // use map page scroll instead
 				controller.shouldSegueToCallout = true // normally we just show callout box, but no image = segue to callout
-				controller.heightConstraint = mapCalloutsWrapperHeightConstraint
-				controller.map = map
-				controller.inheritedMapLocations = mapLocations
 				controller.navigationPushController = self.navigationController // triggers setup
 			}
 		}

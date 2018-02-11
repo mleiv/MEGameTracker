@@ -13,6 +13,7 @@ public struct Item: MapLocationable, Eventsable {
     enum CodingKeys: String, CodingKey {
         case id
         case isAcquired
+        case acquiredDate
     }
 
 // MARK: Constants
@@ -50,6 +51,9 @@ public struct Item: MapLocationable, Eventsable {
 		set { _events = filterEvents(newValue) }
 	}
 	public var rawEventDictionary: [CodableDictionary] { return generalData.rawEventDictionary }
+
+    // used only in CoreData queries
+    public var acquiredDate: Date?
 
 	public internal(set) var isAcquired = false
 
@@ -169,6 +173,7 @@ public struct Item: MapLocationable, Eventsable {
         id = try container.decode(String.self, forKey: .id)
         generalData = DataItem(id: id) // faulted for now
         isAcquired = try container.decodeIfPresent(Bool.self, forKey: .isAcquired) ?? isAcquired
+        acquiredDate = try container.decodeIfPresent(Date.self, forKey: .acquiredDate)
         try unserializeDateModifiableData(decoder: decoder)
         try unserializeGameModifyingData(decoder: decoder)
         try unserializeLocalCloudData(decoder: decoder)
@@ -178,6 +183,7 @@ public struct Item: MapLocationable, Eventsable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
         try container.encode(isAcquired, forKey: .isAcquired)
+        try container.encode(acquiredDate, forKey: .acquiredDate)
         try serializeDateModifiableData(encoder: encoder)
         try serializeGameModifyingData(encoder: encoder)
         try serializeLocalCloudData(encoder: encoder)
@@ -237,6 +243,8 @@ extension Item {
         guard isAcquired != self.isAcquired else { return self }
         var item = self
         item.isAcquired = isAcquired
+        item.acquiredDate = isAcquired ? Date() : nil
+        item.applyEventChanges(isAcquired: isAcquired)
         item.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
@@ -290,6 +298,15 @@ extension Item {
 			}
 		}
 	}
+
+    private mutating func applyEventChanges(isAcquired: Bool) {
+        guard !GamesDataBackup.current.isSyncing else { return }
+        events = events.map {
+            return $0.type == .triggers
+                ? $0.changed(isTriggered: isAcquired, isSave: true) ?? $0
+                : $0
+        }
+    }
 }
 
 // MARK: Dummy data for Interface Builder

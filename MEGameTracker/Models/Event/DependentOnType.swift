@@ -24,6 +24,8 @@ public struct DependentOnType: Codable {
 	public var events: [String] = []
 	public var decisions: [String] = []
 
+	private let anyMissionPrefix = "Any Mission After:"
+
 // MARK: Initialization
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -41,7 +43,23 @@ extension DependentOnType {
 	public var isTriggered: Bool {
 		var count = 0
 		for id in events {
-			if let event = Event.get(id: id) {
+			if id.contains(anyMissionPrefix) {
+				let eventId = String(id[id.index(
+                    id.startIndex,
+                    offsetBy: anyMissionPrefix.count + 1
+                )...])
+                if let event = Event.get(id: eventId),
+                    event.isTriggered,
+                    let triggeredDate = event.triggeredDate,
+                    let gameVersion = event.gameVersion {
+                    count += Mission.getCompletedCount(
+                        after: triggeredDate,
+                        missionType: .mission,
+                        gameVersion: gameVersion
+                    )
+print("\(id) \(count)")
+				}
+			} else if let event = Event.get(id: id) {
 				count += event.isTriggered ? 1 : 0
 			}
 		}

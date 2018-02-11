@@ -16,10 +16,14 @@ final public class CalloutsView: SimpleArrayDataRow {
 		}
 		return []
 	}()
+    var lastCalloutCount = 0
 	public var callouts: [MapLocationable] {
 		if UIWindow.isInterfaceBuilder {
 			return dummyRows
 		}
+//        if ((controller?.callouts.count ?? 0) != lastCalloutCount) {
+//            lastCalloutCount = controller?.callouts.count ?? 0
+//        }
 		return controller?.callouts ?? []
 	}
 	public var shouldSegueToCallout: Bool = true

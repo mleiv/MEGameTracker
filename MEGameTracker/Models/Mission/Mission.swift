@@ -16,6 +16,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
         case id
         case name
         case isCompleted
+        case completedDate
         case selectedConversationRewards
     }
 
@@ -57,6 +58,9 @@ public struct Mission: Codable, MapLocationable, Eventsable {
 		set { _events = filterEvents(newValue) }
 	}
     public var rawEventDictionary: [CodableDictionary] { return generalData.rawEventDictionary }
+
+    // used only in CoreData queries
+    public var completedDate: Date?
 
 	public internal(set) var isCompleted = false
 
@@ -214,6 +218,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
         generalData = DataMission(id: id) // faulted for now
         overrideName = try container.decodeIfPresent(String.self, forKey: .name)
         isCompleted = try container.decodeIfPresent(Bool.self, forKey: .isCompleted) ?? isCompleted
+        completedDate = try container.decodeIfPresent(Date.self, forKey: .completedDate)
         tempSelectedConversationRewards = try container.decodeIfPresent(
             [String].self,
             forKey: .selectedConversationRewards
@@ -229,6 +234,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
         try container.encode(id, forKey: .id)
         try container.encode(overrideName, forKey: .name)
         try container.encode(isCompleted, forKey: .isCompleted)
+        try container.encode(completedDate, forKey: .completedDate)
         try container.encode(selectedConversationRewards, forKey: .selectedConversationRewards)
         try serializeDateModifiableData(encoder: encoder)
         try serializeGameModifyingData(encoder: encoder)
@@ -308,6 +314,7 @@ extension Mission {
         guard self.isCompleted != isCompleted else { return self }
         var mission = self
         mission.isCompleted = isCompleted
+        mission.completedDate = isCompleted ? Date() : nil
         mission.applyEventChanges(isCompleted: isCompleted)
         mission.changeEffects(
             isSave: isSave,
@@ -382,6 +389,9 @@ extension Mission {
         }
         if isNotify {
             Mission.onChange.fire((id: self.id, object: self))
+        }
+        if missionType.isAnyMissionTrigger, let gameSequenceUuid = gameSequenceUuid {
+            Event.triggerAnyMissionChange(gameSequenceUuid: gameSequenceUuid)
         }
     }
 

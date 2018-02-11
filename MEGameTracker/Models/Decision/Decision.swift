@@ -14,6 +14,7 @@ public struct Decision: Codable {
         case id
         case gameSequenceUuid
         case isSelected
+        case selectedDate
     }
 
 // MARK: Constants
@@ -42,6 +43,9 @@ public struct Decision: Codable {
 	/// (CloudDataStorable Protocol)  
 	/// A copy of the last cloud kit record.
 	public var lastRecordData: Data?
+
+    // used only in CoreData queries
+    public var selectedDate: Date?
 
 	public private(set) var isSelected = false
 
@@ -102,6 +106,7 @@ public struct Decision: Codable {
         gameSequenceUuid = try container.decode(UUID.self, forKey: .gameSequenceUuid)
         generalData = DataDecision(id: id) // faulted for now
         isSelected = try container.decodeIfPresent(Bool.self, forKey: .isSelected) ?? isSelected
+        selectedDate = try container.decodeIfPresent(Date.self, forKey: .selectedDate)
         try unserializeDateModifiableData(decoder: decoder)
         try unserializeGameModifyingData(decoder: decoder)
         try unserializeLocalCloudData(decoder: decoder)
@@ -112,6 +117,7 @@ public struct Decision: Codable {
         try container.encode(id, forKey: .id)
         try container.encode(gameSequenceUuid, forKey: .gameSequenceUuid)
         try container.encode(isSelected, forKey: .isSelected)
+        try container.encode(selectedDate, forKey: .selectedDate)
         try serializeDateModifiableData(encoder: encoder)
         try serializeGameModifyingData(encoder: encoder)
         try serializeLocalCloudData(encoder: encoder)
@@ -151,6 +157,7 @@ extension Decision {
 		guard isSelected != self.isSelected else { return self }
         var decision = self
 		decision.isSelected = isSelected
+        decision.selectedDate = isSelected ? Date() : nil
 		decision.changeEffects(
             isSave: isSave,
             isNotify: isNotify,

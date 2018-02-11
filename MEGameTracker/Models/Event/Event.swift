@@ -15,6 +15,7 @@ public struct Event: Codable {
         case gameSequenceUuid
         case type
         case isTriggered
+        case triggeredDate
     }
 
 // MARK: Constants
@@ -57,6 +58,12 @@ public struct Event: Codable {
 	/// transient property used for tracking purposes
 	public var inItemId: String?
 
+    public var isAny: String? { return generalData.isAny }
+    private var isDependentOnChangedIsTriggered: Bool = false // transient
+
+    // used only in CoreData queries
+    public var triggeredDate: Date?
+
 	public private(set) var isTriggered = false
 
 // MARK: Computed Properties
@@ -95,6 +102,7 @@ public struct Event: Codable {
 	public func isBlockingInGame(_ gameVersion: GameVersion) -> Bool {
 		switch type {
 		case .unavailableInGame: return isUnavailableInGame(gameVersion)
+        case .requiresConfig: return isBlocking
 		default: return gameVersion == self.generalData.gameVersion ? isBlocking : false
 		}
 	}
@@ -107,12 +115,15 @@ public struct Event: Codable {
 	}
 
 	private var isUnavailableInCurrentConfig: Bool {
+        // TODO: remove dependence on global app?
 		if type == .requiresConfig {
 			switch id {
-				case "Origin Earthborn": return App.current.game?.shepard?.origin != .earthborn
-				case "Origin Spacer": return App.current.game?.shepard?.origin != .spacer
-				case "Origin Colonist": return App.current.game?.shepard?.origin != .colonist
-				default: return false
+            case "Gender M": return App.current.game?.shepard?.gender != .male
+            case "Gender F": return App.current.game?.shepard?.gender != .female
+            case "Origin Earthborn": return App.current.game?.shepard?.origin != .earthborn
+            case "Origin Spacer": return App.current.game?.shepard?.origin != .spacer
+            case "Origin Colonist": return App.current.game?.shepard?.origin != .colonist
+            default: return false
 			}
 		}
 		return false
@@ -155,7 +166,8 @@ public struct Event: Codable {
 	}
 
 	public mutating func setGeneralData() {
-		if let dependentOn = generalData.dependentOn {
+		if let dependentOn = generalData.dependentOn, isTriggered != dependentOn.isTriggered {
+            isDependentOnChangedIsTriggered = true
 			isTriggered = dependentOn.isTriggered
 		}
 	}
@@ -171,6 +183,7 @@ public struct Event: Codable {
         gameSequenceUuid = try container.decode(UUID.self, forKey: .gameSequenceUuid)
         generalData = DataEvent(id: id) // faulted for now
         isTriggered = try container.decodeIfPresent(Bool.self, forKey: .isTriggered) ?? isTriggered
+        triggeredDate = try container.decodeIfPresent(Date.self, forKey: .triggeredDate)
         try unserializeDateModifiableData(decoder: decoder)
         try unserializeGameModifyingData(decoder: decoder)
         try unserializeLocalCloudData(decoder: decoder)
@@ -182,6 +195,7 @@ public struct Event: Codable {
         try container.encode(gameSequenceUuid, forKey: .gameSequenceUuid)
         try container.encode(type, forKey: .type)
         try container.encode(isTriggered, forKey: .isTriggered)
+        try container.encode(triggeredDate, forKey: .triggeredDate)
         try serializeDateModifiableData(encoder: encoder)
         try serializeGameModifyingData(encoder: encoder)
         try serializeLocalCloudData(encoder: encoder)
@@ -227,6 +241,7 @@ extension Event {
         guard isTriggered != self.isTriggered else { return self }
         var event = self
         event.isTriggered = isTriggered
+        event.triggeredDate = isTriggered ? Date() : nil
         event.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
@@ -300,6 +315,17 @@ extension Event {
 }
 
 extension Event {
+
+    /// Trigger all the events related to new level
+    public static func triggerAnyMissionChange(gameSequenceUuid: UUID) {
+        let events = Event.getTypeAnyMission(gameSequenceUuid: gameSequenceUuid)
+        for var event in events {
+            if event.isDependentOnChangedIsTriggered {
+                event.isTriggered = !event.isTriggered
+                _ = event.changed(isTriggered: !event.isTriggered, isSave: true)
+            }
+        }
+    }
 
 	/// Trigger all the events related to new level
 	public static func triggerLevelChange(_ value: Int, for shepard: Shepard?) {

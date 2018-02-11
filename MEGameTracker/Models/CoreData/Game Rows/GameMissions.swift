@@ -31,6 +31,7 @@ extension Mission: GameRowStorable {
 		coreItem.id = id
 		coreItem.gameSequenceUuid = gameSequenceUuid?.uuidString
 		coreItem.isCompleted = isCompleted ? 1 : 0
+        coreItem.completedDate = completedDate
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 		coreItem.dataParent = generalData.entity(context: coreItem.managedObjectContext)
 	}
@@ -203,4 +204,24 @@ extension Mission {
             completed: completedCount
         )
 	}
+
+    public static func getCompletedCount(
+        after: Date,
+        missionType: MissionType = .mission,
+        gameVersion: GameVersion = .game1,
+        with manager: CodableCoreDataManageable? = nil
+    ) -> Int {
+        return Mission.getCount(with: nil) { fetchRequest in
+            fetchRequest.predicate = NSPredicate(
+                format: "((%K in %@) AND (%K == %@) AND (%K == true) AND %K >= %@)",
+                #keyPath(GameMissions.dataParent.missionType),
+                MissionType.anyMissionTriggers.map { $0.stringValue },
+                #keyPath(GameMissions.dataParent.gameVersion),
+                gameVersion.stringValue,
+                #keyPath(GameMissions.isCompleted),
+                #keyPath(GameMissions.completedDate),
+                after as NSDate
+            )
+        }
+    }
 }

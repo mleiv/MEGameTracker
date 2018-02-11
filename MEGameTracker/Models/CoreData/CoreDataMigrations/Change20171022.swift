@@ -224,7 +224,7 @@ public struct Change20171022: CoreDataMigrationType {
     private func correctMovedMissions() {
         // load the old missions.
         for index in 0..<oldMissionIds.count {
-            guard var fromMission = Mission.getExisting(
+            guard let fromMission = Mission.getExisting(
                 id: oldMissionIds[index],
                 gameSequenceUuid: nil
             ) else { continue }
@@ -239,7 +239,7 @@ public struct Change20171022: CoreDataMigrationType {
     private func correctRenamedItem() {
         // load the old items.
         for index in 0..<itemIds.count {
-            guard var fromItem = Item.getExisting(
+            guard let fromItem = Item.getExisting(
                 id: itemIds[index].old,
                 gameSequenceUuid: nil
             ) else { continue }

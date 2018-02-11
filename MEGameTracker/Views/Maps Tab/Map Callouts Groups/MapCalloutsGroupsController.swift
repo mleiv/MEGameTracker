@@ -62,14 +62,15 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 
 	override public func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		guard let mapLocation = self.mapLocation,
-			let controller = tabControllers[mapLocation.mapLocationType.headingValue] else { return }
-		switchToTab(controller)
+		if let mapLocation = self.mapLocation,
+			let controller = tabControllers[mapLocation.mapLocationType.headingValue] {
+			switchToTab(controller)
+		}
 		if isHeightNeedsSetting {
 			// force it to resize
 			heightConstraint?.constant = 100.0
-			view.layoutIfNeeded()
 		}
+        view.layoutIfNeeded()
 	}
 
 	override public func viewDidLayoutSubviews() {
@@ -105,7 +106,13 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 		let emptyTableRowHeight = CGFloat(40.0)
 		var maxHeight = CGFloat(0.0)
 		for (_, controller) in tabControllers {
-			maxHeight = max(maxHeight, (controller as? MapCalloutsController)?.estimatedHeight ?? 0)
+            guard let calloutsController = controller as? MapCalloutsController else { continue }
+            let height = calloutsController.estimatedHeight
+            if height == 0 && calloutsController.callouts.count > 0 {
+                calloutsController.calloutsView?.setNeedsLayout()
+                calloutsController.calloutsView?.layoutIfNeeded()
+            }
+			maxHeight = max(maxHeight, height)
 		}
 		let height =  max(emptyTableRowHeight, maxHeight) + (tabs?.bounds.height ?? 0)
 		heightConstraint?.constant = max(height, view.bounds.height) // never be smaller than self

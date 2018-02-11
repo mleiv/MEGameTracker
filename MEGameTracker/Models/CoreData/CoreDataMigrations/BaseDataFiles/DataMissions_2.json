@@ -644,7 +644,7 @@
 					"id": "M2.FreedomsProgress.P14",
 					"type": "Paragon",
 					"value": 2,
-                    "context": "(Available if selected at first opportunity.)",
+					"context": "(Available if selected at first opportunity.)",
 					"trigger": "\"I decide who's on my team.\" and \"I hope so.\""
 				}]
 			}
@@ -670,7 +670,7 @@
 					"id": "M2.FreedomsProgress.R16",
 					"type": "Renegade",
 					"value": 2,
-                    "context": "(Available if selected at first opportunity.)",
+					"context": "(Available if selected at first opportunity.)",
 					"trigger": "\"Glad to hear it.\""
 				}]
 			}
@@ -724,14 +724,113 @@
 		"gameVersion": "2",
 		"missionType": "Mission",
 		"name": "Stop The Collectors",
-		"aliases": ["Stop The Collectors", "Stop the Collectors: Assemble a team", "Stop the Collectors: Go to Horizon", "Stop the Collectors: Investigate Collector Ship", "Stop the Collectors: Acquire Reaper IFF", "Stop the Collectors: Await IFF Installation", "Stop the Collectors: Use Omega-4 Relay", "Stop the Collectors: Defeat the Collectors"],
 		"description": "This is a general wrapper mission for the remaining plot missions of Game 2. We suggest completely ignoring it until the end, and checking it completed before moving to Game 3.",
-		"todo": "TODO: Make events for all the things that change the title of this mission",
 		"inMapId": null,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Stop_the_Collectors"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "M2.StopCollectors.1",
+		"sortIndex": 41,
+		"inMissionId": "M2.StopCollectors",
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Assemble a Team",
+		"isOpensDetail": false,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Freedom's Progress"
+		}]
+	}, {
+		"id": "M2.StopCollectors.2",
+		"sortIndex": 42,
+		"inMissionId": "M2.StopCollectors",
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Go to Horizon",
+		"isOpensDetail": false,
+		"identicalMissionId": "M2.Horizon",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: 4 Dossiers"
+		}]
+	}, {
+		"id": "M2.StopCollectors.3",
+		"sortIndex": 41,
+		"inMissionId": "M2.StopCollectors",
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Assemble a Team",
+		"isOpensDetail": false,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Horizon"
+		}]
+	}, {
+		"id": "M2.StopCollectors.4",
+		"sortIndex": 43,
+		"inMissionId": "M2.StopCollectors",
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Investigate Collector Ship",
+		"isOpensDetail": false,
+		"identicalMissionId": "M2.CollectorShip",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: 2 More Dossiers + 5"
+		}]
+	}, {
+		"id": "M2.StopCollectors.5",
+		"sortIndex": 44,
+		"inMissionId": "M2.StopCollectors",
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Acquire Reaper IFF",
+		"isOpensDetail": false,
+		"identicalMissionId": "M2.ReaperIFF",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Collector Ship"
+		}]
+	}, {
+		"id": "M2.StopCollectors.6",
+		"sortIndex": 45,
+		"inMissionId": "M2.StopCollectors",
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Await IFF Installation",
+		"isOpensDetail": false,
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Reaper IFF"
+		}]
+	}, {
+		"id": "M2.StopCollectors.7",
+		"sortIndex": 46,
+		"inMissionId": "M2.StopCollectors",
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Use Omega-4 Relay",
+		"isOpensDetail": false,
+		"identicalMissionId": "M2.CollectorBase.2",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Normandy Attacked"
+		}]
+	}, {
+		"id": "M2.StopCollectors.8",
+		"sortIndex": 47,
+		"inMissionId": "M2.StopCollectors",
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Defeat The Collectors",
+		"isOpensDetail": false,
+		"identicalMissionId": "M2.CollectorBase.3",
+		"events": [{
+			"type": "BlockedUntil",
+			"id": "Completed: Omega 4 Relay"
 		}]
 	}, {
 		"id": "M2.Horizon",
@@ -766,12 +865,12 @@
 				"context": "Meeting the mechanic Delan",
 				"options": [{
 					"id": "M2.Horizon.R2",
-					"type": "Paragon",
+					"type": "Renegade",
 					"value": 2,
 					"trigger": "\"Calm down!\""
 				}, {
 					"id": "M2.Horizon.P3",
-					"type": "Renegade",
+					"type": "Paragon",
 					"value": 2,
 					"trigger": "\"Who are you?\""
 				}, {
@@ -851,7 +950,7 @@
 							"id": "M2.Horizon.P8",
 							"type": "Paragon",
 							"value": 2,
-							"trigger": "\"I didn't want to hurt you.\""
+							"trigger": "\"I didn't want to hurt you.\" or \"Too much time has passed.\""
 						}, {
 							"id": "M2.Horizon.R8",
 							"type": "Renegade",
@@ -893,7 +992,7 @@
 					"id": "M2.Horizon.P11",
 					"type": "Paragon",
 					"value": 2,
-					"trigger": "\"You're too emotional, 'Virmire Survivor.'\""
+					"trigger": "\"You're too emotional, Ashley/Kaiden.\""
 				}, {
 					"set": {
 						"isExclusiveSet": true,
@@ -916,7 +1015,7 @@
 			"type": "Paragade",
 			"value": 0,
 			"paragadeValue": [5, 5],
-			"trigger": "(Completing the assignment.)"
+			"trigger": "(Completing the mission.)"
 		}, {
 			"set": {
 				"context": "Debrief with the Illusive Man",
@@ -983,37 +1082,16 @@
 					"trigger": "\"Don't lose your nerve now.\""
 				}]
 			}
-		}, {
-			"set": {
-				"context": "Dialog with Kelly (if Kaidan or Ashley was a possible love interest in Game 1) - don't say \"Fine.\"",
-				"isExclusiveSet": true,
-				"options": [{
-					"id": "M2.Horizon.P18",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"That is history,\" or \"Yes.\" and \"Thank you.\""
-				}, {
-					"id": "M2.Horizon.R18",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"That is history,\" or \"Yes.\" and \"No, it's easy.\""
-				}, {
-					"id": "M2.Horizon.R19",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"No.\""
-				}]
-			}
 		}],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Freedom's Progress"
+			"id": "Completed: 4 Dossiers"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Horizon"
 		}, {
 			"type": "Triggers",
 			"id": "Collector Ship Warning"
-		}, {
-			"type": "Triggers",
-			"id": "Completed: Horizon"
 		}]
 	}, {
 		"id": "M2.Horizon.1",
@@ -1065,7 +1143,12 @@
 		"missionType": "Objective",
 		"name": "Entrance to Starport",
 		"description": "After defeating the Collectors and Scions in the outer buildings, open the doors to the starport and the final battle.",
-		"inMapId": "TODO"
+        "inMapId": "G.Att.Sha.Ier.Horizon",
+        "mapLocationPoint": {
+            "x": 756,
+            "y": 1778,
+            "radius": 1
+        }
 	}, {
 		"id": "M2.Horizon.5",
 		"inMissionId": "M2.Horizon",
@@ -1073,7 +1156,7 @@
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Transmitter",
-		"description": "Eliminate the forces defending the transmitter, then activate it and defend the area from three waves of enemy attacks.",
+		"description": "Eliminate the forces defending the transmitter, then activate it and defend the area from three waves of enemy attacks. The final attack includes a Praetorian, so I recommend saving some of your heavy weapons for that.",
 		"inMapId": "G.Att.Sha.Ier.Horizon",
 		"mapLocationPoint": {
 			"x": 431,
@@ -1197,7 +1280,7 @@
 			"type": "Paragade",
 			"value": 0,
 			"paragadeValue": [5, 5],
-			"trigger": "(Completing the assignment.)"
+			"trigger": "(Completing the mission.)"
 		}, {
 			"set": {
 				"context": "Confronting the Illusive Man",
@@ -1273,7 +1356,7 @@
 		}],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Horizon"
+			"id": "Completed: 2 More Dossiers + 5"
 		}, {
 			"type": "Triggers",
 			"id": "Completed: Collector Ship"
@@ -1342,7 +1425,7 @@
 			"type": "Paragade",
 			"value": 0,
 			"paragadeValue": [5, 5],
-			"trigger": "(Completing the assignment.)"
+			"trigger": "(Completing the mission.)"
 		}, {
 			"set": {
 				"isExclusiveSet": true,
@@ -1571,9 +1654,6 @@
 		}, {
 			"type": "Triggers",
 			"id": "Normandy Attacked"
-		}, {
-			"type": "Triggers",
-			"id": "Completed: Collector Base"
 		}]
 	}, {
 		"id": "M2.CollectorBase.2",
@@ -1588,6 +1668,9 @@
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Normandy Attacked"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Omega 4 Relay"
 		}]
 	}, {
 		"id": "M2.CollectorBase.3",

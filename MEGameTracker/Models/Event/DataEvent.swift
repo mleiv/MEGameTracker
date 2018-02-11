@@ -15,6 +15,7 @@ public struct DataEvent: Codable {
         case gameVersion
         case description
         case isAlert
+        case isAny
         case eraseParentValue
         case dependentOn
         case actions
@@ -30,6 +31,7 @@ public struct DataEvent: Codable {
 
 	public var isAlert = false
 	public var eraseParentValue = false
+    public var isAny: String?
 	public var dependentOn: DependentOnType?
 	public var actions: [Action] = []
 
@@ -48,6 +50,7 @@ public struct DataEvent: Codable {
         gameVersion = try container.decodeIfPresent(GameVersion.self, forKey: .gameVersion)
         description = try container.decodeIfPresent(String.self, forKey: .description)
         isAlert = try container.decodeIfPresent(Bool.self, forKey: .isAlert) ?? isAlert
+        isAny = try container.decodeIfPresent(String.self, forKey: .isAny)
         eraseParentValue = try container.decodeIfPresent(Bool.self, forKey: .eraseParentValue) ?? eraseParentValue
         dependentOn = try container.decodeIfPresent(DependentOnType.self, forKey: .dependentOn)
         actions = try container.decodeIfPresent([Action].self, forKey: .actions) ?? actions
@@ -59,6 +62,7 @@ public struct DataEvent: Codable {
         try container.encode(gameVersion, forKey: .gameVersion)
         try container.encode(description, forKey: .description)
         try container.encode(isAlert, forKey: .isAlert)
+        try container.encode(isAny, forKey: .isAny)
         try container.encode(eraseParentValue, forKey: .eraseParentValue)
         try container.encode(dependentOn, forKey: .dependentOn)
         try container.encode(actions, forKey: .actions)

@@ -198,7 +198,12 @@
 		"itemDisplayType": "Novelty",
 		"name": "Glass of Wine",
 		"price": null,
-		"mapNoteForLater": "TODO: Illium_NosAstra Drink Kiosk !!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 1777,
+			"y": 485,
+			"radius": 1
+		},
 		"inMissionId": "A2.UC.Souvenirs"
 	}, {
 		"id": "A2.UC.Souvenirs.I.5Drink",
@@ -207,7 +212,12 @@
 		"itemDisplayType": "Novelty",
 		"name": "Mystery Drink!",
 		"price": null,
-		"mapNoteForLater": "TODO: Illium_NosAstra Drink Kiosk !!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 1777,
+			"y": 485,
+			"radius": 1
+		},
 		"inMissionId": "A2.UC.Souvenirs"
 	}, {
 		"id": "A2.UC.Souvenirs.I.6Shot",
@@ -216,7 +226,12 @@
 		"itemDisplayType": "Novelty",
 		"name": "Shot of Liquor",
 		"price": null,
-		"mapNoteForLater": "TODO: Illium_NosAstra Drink Kiosk !!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 1777,
+			"y": 485,
+			"radius": 1
+		},
 		"inMissionId": "A2.UC.Souvenirs"
 	}, {
 		"id": "A2.UC.Souvenirs.I.7PyjakMeat",
@@ -329,7 +344,12 @@
 		"itemDisplayType": "Goal",
 		"name": "Serrice Ice Brandy (Option 3)",
 		"price": "-1,000 Credits",
-		"mapNoteForLater": "TODO: Illium_NosAstra Drink Kiosk !!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
+		"mapLocationPoint": {
+			"x": 1777,
+			"y": 485,
+			"radius": 1
+		}
 	}, {
 		"id": "A2.UC.NormandyRequests.I.4IceBrandy",
 		"inMissionId": "A2.N.SerriceIceBrandy",
@@ -351,7 +371,7 @@
 		"name": "Argus Scanner Array (Advanced Mineral Scanner)",
 		"annotationNote": "Faster Planet Scanning",
 		"price": "-15,000 Iridium",
-		"id": "G.N2.3.Cabin",
+		"inMapId": "G.N2.3.Cabin",
 		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.NormandyUpgrades.I.2HSA",
@@ -435,7 +455,11 @@
 			"x": 969,
 			"y": 1580,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Medi-Gel 1"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.MG.I.2",
 		"inMissionId": "A2.UC.ArmorUpgrades.MG",
@@ -453,7 +477,7 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 2nd Medi-Gel"
+			"id": "Upgrade: Medi-Gel 2"
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.MG.I.3",
@@ -468,7 +492,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 3rd Medi-Gel"
+			"id": "Upgrade: Medi-Gel 3"
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.MG.I.4",
@@ -479,7 +503,11 @@
 		"name": "Medi-Gel Capacity 4 (Microscanner)",
 		"annotationNote": "+1 Medi-Gel Capacity",
 		"price": "-10,000 Palladium",
-		"mapNoteForLater": "TODO: Arrival - In the hangar with the crane, behind the metal boxes, use the crane to gain access"
+		"mapNoteForLater": "TODO: Arrival - In the hangar with the crane, behind the metal boxes, use the crane to gain access",
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Medi-Gel 4"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.MG.I.5",
 		"inMissionId": "A2.UC.ArmorUpgrades.MG",
@@ -490,7 +518,11 @@
 		"annotationNote": "+1 Medi-Gel Capacity",
 		"price": "-30,000 Credits",
 		"inMapId": "G.C2.26.Sirta",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Medi-Gel 5"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.MG.I.6",
 		"inMissionId": "A2.UC.ArmorUpgrades.MG",
@@ -501,10 +533,14 @@
 		"annotationNote": "+1 Medi-Gel Capacity",
 		"price": "-30,000 Credits",
 		"inMapId": "G.Ter.Cre.Tas.Ill.1.Serrice",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Medi-Gel 6"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.MG.I.7",
-		"inMissionId": "A2.UC.2ArmorUpgrades.MG",
+		"inMissionId": "A2.UC.ArmorUpgrades.MG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
 		"itemDisplayType": "Goal",
@@ -517,7 +553,7 @@
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.MG.I.8",
-		"inMissionId": "A2.UC.2ArmorUpgrades.MG",
+		"inMissionId": "A2.UC.ArmorUpgrades.MG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
 		"itemDisplayType": "Goal",
@@ -543,7 +579,11 @@
 			"x": 267,
 			"y": 801,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Damage Protection 1"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.DP.I.2",
 		"inMissionId": "A2.UC.ArmorUpgrades.DP",
@@ -561,7 +601,7 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 2nd Damage Protection"
+			"id": "Upgrade: Damage Protection 2"
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.DP.I.3",
@@ -575,7 +615,7 @@
 		"inMapId": "G.Ter.Pyl.Dir.Canalus",
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 3rd Damage Protection"
+			"id": "Upgrade: Damage Protection 3"
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.DP.I.4",
@@ -591,7 +631,11 @@
 			"x": 1091,
 			"y": 1731,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Damage Protection 4"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.DP.I.5",
 		"inMissionId": "A2.UC.ArmorUpgrades.DP",
@@ -602,7 +646,11 @@
 		"annotationNote": "Squad: +10% Damage Protection",
 		"price": "-90,000 Credits",
 		"inMapId": "G.C2.26.Saronis",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Damage Protection 5"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.DP.I.6",
 		"inMissionId": "A2.UC.ArmorUpgrades.DP",
@@ -617,6 +665,9 @@
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Collector Ship"
+		}, {
+			"type": "Triggers",
+			"id": "Upgrade: Damage Protection 6"
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.DP.I.7",
@@ -649,7 +700,7 @@
 	}, {
 		"x-subcomment-x": "----- TECH DAMAGE ---",
 		"id": "A2.UC.ArmorUpgrades.TD.I.1",
-        "sortIndex": 1,
+		"sortIndex": 1,
 		"inMissionId": "A2.UC.ArmorUpgrades.TD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -662,10 +713,14 @@
 			"x": 1214,
 			"y": 864,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Tech Damage 1"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.TD.I.2",
-        "sortIndex": 2,
+		"sortIndex": 2,
 		"inMissionId": "A2.UC.ArmorUpgrades.TD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -676,11 +731,11 @@
 		"inMapId": null,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 2nd Tech Damage"
+			"id": "Upgrade: Tech Damage 2"
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.TD.I.3",
-        "sortIndex": 3,
+		"sortIndex": 3,
 		"inMissionId": "A2.UC.ArmorUpgrades.TD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -691,11 +746,11 @@
 		"inMapId": null,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 3rd Tech Damage"
+			"id": "Upgrade: Tech Damage 3"
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.TD.I.4",
-        "sortIndex": 4,
+		"sortIndex": 4,
 		"inMissionId": "A2.UC.ArmorUpgrades.TD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -708,10 +763,14 @@
 			"x": 1204,
 			"y": 1220,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Tech Damage 4"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.TD.I.5",
-        "sortIndex": 5,
+		"sortIndex": 5,
 		"inMissionId": "A2.UC.ArmorUpgrades.TD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -719,10 +778,14 @@
 		"name": "Tech Damage 5 (Multicore Amplifier)",
 		"annotationNote": "Squad: +10% Tech Damage",
 		"price": "-500 Element Zero",
-		"inMapId": null
+		"inMapId": null,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Tech Damage 5"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.TD.I.6",
-        "sortIndex": 6,
+		"sortIndex": 6,
 		"inMissionId": "A2.UC.ArmorUpgrades.TD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -730,10 +793,14 @@
 		"name": "Tech Damage 6 (Multicore Amplifier)",
 		"annotationNote": "Squad: +10% Tech Damage",
 		"price": "-500 Element Zero",
-		"inMapId": null
+		"inMapId": null,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Tech Damage 6"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.TD.I.7",
-        "sortIndex": 7,
+		"sortIndex": 7,
 		"inMissionId": "A2.UC.ArmorUpgrades.TD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -747,7 +814,7 @@
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.TD.I.8",
-        "sortIndex": 8,
+		"sortIndex": 8,
 		"inMissionId": "A2.UC.ArmorUpgrades.TD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -761,7 +828,7 @@
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.TD.I.9",
-        "sortIndex": 9,
+		"sortIndex": 9,
 		"inMissionId": "A2.UC.ArmorUpgrades.TD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -769,15 +836,11 @@
 		"name": "Bypass Module",
 		"annotationNote": "Shepard: Doubles Bypass Time",
 		"price": "-30,000 Credits",
-		"inMapId": "G.CollectorShip",
-		"mapLocationPoint": {
-			"x": 1267,
-			"y": 1435,
-			"radius": 1
-		}
+        "inMapId": "G.Ter.Cre.Tas.Ill.1.Serrice",
+        "isShowInParentMap": true
 	}, {
 		"id": "A2.UC.ArmorUpgrades.TD.I.10",
-        "sortIndex": 10,
+		"sortIndex": 10,
 		"inMissionId": "A2.UC.ArmorUpgrades.TD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -792,7 +855,7 @@
 
 		"x-subcomment-x": "----- BIOTIC ---",
 		"id": "A2.UC.ArmorUpgrades.BD.I.1",
-        "sortIndex": 1,
+		"sortIndex": 1,
 		"inMissionId": "A2.UC.ArmorUpgrades.BD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -805,10 +868,14 @@
 			"x": 871,
 			"y": 1649,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Biotic Damage 1"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.BD.I.2",
-        "sortIndex": 2,
+		"sortIndex": 2,
 		"inMissionId": "A2.UC.ArmorUpgrades.BD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -824,11 +891,11 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 2nd Biotic Damage"
+			"id": "Upgrade: Biotic Damage 2"
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.BD.I.3",
-        "sortIndex": 3,
+		"sortIndex": 3,
 		"inMissionId": "A2.UC.ArmorUpgrades.BD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -844,11 +911,11 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 3rd Biotic Damage"
+			"id": "Upgrade: Biotic Damage 3"
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.BD.I.4",
-        "sortIndex": 4,
+		"sortIndex": 4,
 		"inMissionId": "A2.UC.ArmorUpgrades.BD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -858,10 +925,14 @@
 		"price": "-75,000 Credits",
 		"inMapId": "G.Att.Had.Hop.Kopis",
 		"isShowInParentMap": true,
-		"mapNoteForLater": "TODO: Project Firewalker Prothean Ruin Research Terminal"
+		"mapNoteForLater": "TODO: Project Firewalker Prothean Ruin Research Terminal",
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Biotic Damage 4"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.BD.I.5",
-        "sortIndex": 5,
+		"sortIndex": 5,
 		"inMissionId": "A2.UC.ArmorUpgrades.BD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -870,10 +941,14 @@
 		"annotationNote": "Squad: +10% Biotic Damage",
 		"price": "-90,000 Credits",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1.Fortack",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Biotic Damage 5"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.BD.I.6",
-        "sortIndex": 6,
+		"sortIndex": 6,
 		"inMissionId": "A2.UC.ArmorUpgrades.BD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -882,10 +957,14 @@
 		"annotationNote": "Squad: +10% Biotic Damage",
 		"price": "-90,000 Credits",
 		"inMapId": "G.Ter.Cre.Tas.Ill.1.Serrice",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Biotic Damage 6"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.BD.I.7",
-        "sortIndex": 7,
+		"sortIndex": 7,
 		"inMissionId": "A2.UC.ArmorUpgrades.BD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -899,7 +978,7 @@
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.BD.I.8",
-        "sortIndex": 8,
+		"sortIndex": 8,
 		"inMissionId": "A2.UC.ArmorUpgrades.BD",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -914,7 +993,7 @@
 	}, {
 		"x-subcomment-x": "----- CYBERNETIC ---",
 		"id": "A2.UC.ArmorUpgrades.Cyb.I.1",
-        "sortIndex": 1,
+		"sortIndex": 1,
 		"inMissionId": "A2.UC.ArmorUpgrades.Cyb",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -927,10 +1006,14 @@
 			"x": 585,
 			"y": 700,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Skin Weave 1"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.Cyb.I.2",
-        "sortIndex": 2,
+		"sortIndex": 2,
 		"inMissionId": "A2.UC.ArmorUpgrades.Cyb",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -941,11 +1024,11 @@
 		"mapNoteForLater": "TODO: Derelict Reaper, Research Terminal",
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 2nd Heavy Skin Weave"
+			"id": "Upgrade: Heavy Skin Weave 1"
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.Cyb.I.3",
-        "sortIndex": 3,
+		"sortIndex": 3,
 		"inMissionId": "A2.UC.ArmorUpgrades.Cyb",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -956,11 +1039,11 @@
 		"inMapId": "G.Ter.Ome.Ari.MSVMule",
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 3rd Heavy Skin Weave"
+			"id": "Upgrade: Heavy Skin Weave 3"
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.Cyb.I.4",
-        "sortIndex": 4,
+		"sortIndex": 4,
 		"inMissionId": "A2.UC.ArmorUpgrades.Cyb",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -971,10 +1054,14 @@
 		"price": "-25,000 Palladium",
 		"inMapId": "G.Ear.Vip.Bah.Aratoht",
 		"isShowInParentMap": true,
-		"mapNoteForLater": "TODO: Arrival (assignment) – in a room, after the elevator from the core room, on the left side of a hallway, with some palladium and a wall safe."
+		"mapNoteForLater": "TODO: Arrival (assignment) – in a room, after the elevator from the core room, on the left side of a hallway, with some palladium and a wall safe.",
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Skin Weave 4"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.Cyb.I.5",
-        "sortIndex": 5,
+		"sortIndex": 5,
 		"inMissionId": "A2.UC.ArmorUpgrades.Cyb",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -983,15 +1070,19 @@
 		"annotationNote": "Shepard: +10% Health",
 		"sideEffects": ["DLC Bonus upgrade in [megametracker://mission?id=DLC2.Overlord]."],
 		"price": "-10,000 Palladium",
-      "inMapId": "G.Ter.Pho.Typ.Ait.5Atlas",
-      "mapLocationPoint": {
-         "x": 898,
-         "y": 608,
-         "radius": 1
-      }
+		"inMapId": "G.Ter.Pho.Typ.Ait.5Atlas",
+		"mapLocationPoint": {
+			"x": 898,
+			"y": 608,
+			"radius": 1
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Skin Weave 5"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.Cyb.I.6",
-        "sortIndex": 6,
+		"sortIndex": 6,
 		"inMissionId": "A2.UC.ArmorUpgrades.Cyb",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1000,10 +1091,14 @@
 		"annotationNote": "Shepard: +10% Health",
 		"price": "-90,000 Credits",
 		"inMapId": "G.Ter.Cre.Tas.Ill.1.Gateway",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Skin Weave 6"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.Cyb.I.7",
-        "sortIndex": 7,
+		"sortIndex": 7,
 		"inMissionId": "A2.UC.ArmorUpgrades.Cyb",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1012,10 +1107,14 @@
 		"annotationNote": "Shepard: +10% Health",
 		"price": "-90,000 Credits",
 		"inMapId": "G.Ter.Ome.Sah.Ome.1.Kenn",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Skin Weave 7"
+		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.Cyb.I.8",
-        "sortIndex": 8,
+		"sortIndex": 8,
 		"inMissionId": "A2.UC.ArmorUpgrades.Cyb",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1030,7 +1129,7 @@
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.Cyb.I.9",
-        "sortIndex": 9,
+		"sortIndex": 9,
 		"inMissionId": "A2.UC.ArmorUpgrades.Cyb",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1050,7 +1149,7 @@
 		"x-comment-x": "-------- WEAPON UPGRADES -------",
 		"x-subcomment-x": "----- ASSAULT RIFLES ---",
 		"id": "A2.UC.WeaponUpgrades.AR.I.1",
-        "sortIndex": 1,
+		"sortIndex": 1,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1058,15 +1157,15 @@
 		"name": "Assault Rifle Damage 1 (Kinetic Pulsar)",
 		"annotationNote": "Squad: +10% Assault Rifle Damage",
 		"price": "-2,500 Iridium",
-        "inMapId": "G.Ter.Ome.Sah.Ome.2Quarantine",
-        "mapLocationPoint": {
-            "x": 836,
-            "y": 1076,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Sah.Ome.2Quarantine",
+		"mapLocationPoint": {
+			"x": 836,
+			"y": 1076,
+			"radius": 1
+		}
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.2",
-        "sortIndex": 2,
+		"sortIndex": 2,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1086,7 +1185,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.3",
-        "sortIndex": 3,
+		"sortIndex": 3,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1101,7 +1200,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.4",
-        "sortIndex": 4,
+		"sortIndex": 4,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1118,7 +1217,7 @@
 		}
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.5",
-        "sortIndex": 5,
+		"sortIndex": 5,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1131,7 +1230,7 @@
 		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.6",
-        "sortIndex": 6,
+		"sortIndex": 6,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1143,7 +1242,7 @@
 		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.7",
-        "sortIndex": 7,
+		"sortIndex": 7,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1155,7 +1254,7 @@
 		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.8",
-        "sortIndex": 8,
+		"sortIndex": 8,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1169,7 +1268,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.9",
-        "sortIndex": 9,
+		"sortIndex": 9,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1183,7 +1282,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.10",
-        "sortIndex": 10,
+		"sortIndex": 10,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1199,7 +1298,7 @@
 		}
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.11",
-        "sortIndex": 11,
+		"sortIndex": 11,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1215,7 +1314,7 @@
 		}
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.12",
-        "sortIndex": 12,
+		"sortIndex": 12,
 		"inMissionId": "A2.UC.WeaponUpgrades.AR",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1233,7 +1332,7 @@
 	}, {
 		"x-subcomment-x": "----- HEAVY PISTOLS ---",
 		"id": "A2.UC.WeaponUpgrades.HP.I.1",
-        "sortIndex": 1,
+		"sortIndex": 1,
 		"inMissionId": "A2.UC.WeaponUpgrades.HP",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1246,10 +1345,14 @@
 			"x": 685,
 			"y": 1717,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Pistol 1"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HP.I.2",
-        "sortIndex": 2,
+		"sortIndex": 2,
 		"inMissionId": "A2.UC.WeaponUpgrades.HP",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1260,11 +1363,11 @@
 		"mapNoteForLater": "TODO: Thane Sins of the Father",
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 2nd Heavy Pistol"
+			"id": "Upgrade: Heavy Pistol 2"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HP.I.3",
-        "sortIndex": 3,
+		"sortIndex": 3,
 		"inMissionId": "A2.UC.WeaponUpgrades.HP",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1280,11 +1383,11 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 3rd Heavy Pistol"
+			"id": "Upgrade: Heavy Pistol 3"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HP.I.4",
-        "sortIndex": 4,
+		"sortIndex": 4,
 		"inMissionId": "A2.UC.WeaponUpgrades.HP",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1298,10 +1401,14 @@
 			"x": 995,
 			"y": 1607,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Pistol 4"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HP.I.5",
-        "sortIndex": 5,
+		"sortIndex": 5,
 		"inMissionId": "A2.UC.WeaponUpgrades.HP",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1310,10 +1417,14 @@
 		"annotationNote": "Squad: +10% Heavy Pistol Damage",
 		"price": "-60,000 Credits",
 		"inMapId": "G.C2.28.Rodam",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Pistol 5"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.1HP.I.6",
-        "sortIndex": 6,
+		"sortIndex": 6,
 		"inMissionId": "A2.UC.WeaponUpgrades.HP",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1322,15 +1433,19 @@
 		"annotationNote": "Squad: +10% Heavy Pistol Damage",
 		"price": "-60,000 Credits",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1.Fortack",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Pistol 6"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HP.I.7",
-        "sortIndex": 7,
+		"sortIndex": 7,
 		"inMissionId": "A2.UC.WeaponUpgrades.HP",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
 		"itemDisplayType": "Goal",
-		"name": "Heavy Pistol Penetration (Sabot Jacketing)",
+		"name": "AP Heavy Pistol (Sabot Jacketing)",
 		"annotationNote": "Squad: +10% Heavy Pistol Armor Damage",
 		"price": "-15,000 Palladium",
 		"events": [{
@@ -1339,7 +1454,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HP.I.8",
-        "sortIndex": 8,
+		"sortIndex": 8,
 		"inMissionId": "A2.UC.WeaponUpgrades.HP",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1353,7 +1468,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HP.I.9",
-        "sortIndex": 9,
+		"sortIndex": 9,
 		"inMissionId": "A2.UC.WeaponUpgrades.HP",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1370,7 +1485,7 @@
 	}, {
 		"x-subcomment-x": "----- SHOTGUNS ----",
 		"id": "A2.UC.WeaponUpgrades.SG.I.1",
-        "sortIndex": 1,
+		"sortIndex": 1,
 		"inMissionId": "A2.UC.WeaponUpgrades.SG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1383,10 +1498,14 @@
 			"x": 1075,
 			"y": 961,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Shotgun Damage 1"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.2",
-        "sortIndex": 2,
+		"sortIndex": 2,
 		"inMissionId": "A2.UC.WeaponUpgrades.SG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1403,11 +1522,11 @@
 		"mapNoteForLater": "TODO: FIND SHAMAN LOCATION - HE GIVES THIS",
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 2nd Shotgun"
+			"id": "Upgrade: Shotgun Damage 2"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.3",
-        "sortIndex": 3,
+		"sortIndex": 3,
 		"inMissionId": "A2.UC.WeaponUpgrades.SG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1418,11 +1537,11 @@
 		"mapNoteForLater": "TODO: Derelict Reaper Mission",
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 3rd Shotgun"
+			"id": "Upgrade: Shotgun Damage 3"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.4",
-        "sortIndex": 4,
+		"sortIndex": 4,
 		"inMissionId": "A2.UC.WeaponUpgrades.SG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1432,10 +1551,14 @@
 		"sideEffects": ["DLC Bonus upgrade after [megametracker://mission?id=DLC2.LairShadowBroker]."],
 		"price": "-10,000 Platinum",
 		"inMapId": "G.Ter.Hou.Sow.Hag.2.Pickup",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Shotgun Damage 4"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.5",
-        "sortIndex": 5,
+		"sortIndex": 5,
 		"inMissionId": "A2.UC.WeaponUpgrades.SG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1444,10 +1567,14 @@
 		"annotationNote": "Squad: +10% Shotgun Damage",
 		"price": "-60,000 Credits",
 		"inMapId": "G.Ter.Ome.Sah.Ome.1.Kenn",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Shotgun Damage 5"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.6",
-        "sortIndex": 6,
+		"sortIndex": 6,
 		"inMissionId": "A2.UC.WeaponUpgrades.SG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1456,10 +1583,14 @@
 		"annotationNote": "Squad: +10% Shotgun Damage",
 		"price": "-60,000 Credits",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1.Fortack",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Shotgun Damage 6"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.7",
-        "sortIndex": 7,
+		"sortIndex": 7,
 		"inMissionId": "A2.UC.WeaponUpgrades.SG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1473,7 +1604,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.8",
-        "sortIndex": 8,
+		"sortIndex": 8,
 		"inMissionId": "A2.UC.WeaponUpgrades.SG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1487,7 +1618,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.9",
-        "sortIndex": 9,
+		"sortIndex": 9,
 		"inMissionId": "A2.UC.WeaponUpgrades.SG",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1503,7 +1634,7 @@
 		}
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.10",
-        "sortIndex": 10,
+		"sortIndex": 10,
 		"inMissionId": "A2.UC.WeaponUpgrades.SG",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1521,7 +1652,7 @@
 	}, {
 		"x-subcomment-x": "----- SNIPER RIFLES ----",
 		"id": "A2.UC.WeaponUpgrades.SR.I.1",
-        "sortIndex": 1,
+		"sortIndex": 1,
 		"inMissionId": "A2.UC.WeaponUpgrades.SR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1534,10 +1665,14 @@
 			"x": 1888,
 			"y": 623,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Sniper Rifle Damage 1"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.2",
-        "sortIndex": 2,
+		"sortIndex": 2,
 		"inMissionId": "A2.UC.WeaponUpgrades.SR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1548,11 +1683,11 @@
 		"mapNoteForLater": "TODO: Garrus: Eye for an Eye",
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 2nd Sniper Rifle"
+			"id": "Upgrade: Sniper Rifle Damage 2"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.3",
-        "sortIndex": 3,
+		"sortIndex": 3,
 		"inMissionId": "A2.UC.WeaponUpgrades.SR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1563,11 +1698,11 @@
 		"mapNoteForLater": "TODO: Derelict Reaper Mission",
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 3rd Sniper Rifle"
+			"id": "Upgrade: Sniper Rifle Damage 3"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.1SR.I.4",
-        "sortIndex": 4,
+		"sortIndex": 4,
 		"inMissionId": "A2.UC.WeaponUpgrades.SR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1577,10 +1712,14 @@
 		"sideEffects": ["DLC Bonus upgrade after [megametracker://mission?id=DLC2.LairShadowBroker]."],
 		"price": "-7,500 Platinum",
 		"inMapId": "G.Ter.Hou.Sow.Hag.2.Pickup",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Sniper Rifle Damage 4"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.5",
-        "sortIndex": 5,
+		"sortIndex": 5,
 		"inMissionId": "A2.UC.WeaponUpgrades.SR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1589,10 +1728,14 @@
 		"annotationNote": "Squad: +10% Sniper Rifle Damage",
 		"price": "-60,000 Credits",
 		"inMapId": "G.C2.28.Rodam",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Sniper Rifle Damage 5"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.6",
-        "sortIndex": 6,
+		"sortIndex": 6,
 		"inMissionId": "A2.UC.WeaponUpgrades.SR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1601,15 +1744,19 @@
 		"annotationNote": "Squad: +10% Sniper Rifle Damage",
 		"price": "-60,000 Credits",
 		"inMapId": "G.Ter.Ome.Sah.Ome.1.Market",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Sniper Rifle Damage 6"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.7",
-        "sortIndex": 7,
+		"sortIndex": 7,
 		"inMissionId": "A2.UC.WeaponUpgrades.SR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
 		"itemDisplayType": "Goal",
-		"name": "Sniper Rifle Penetration (Tungsten Sabot Jacket)",
+		"name": "AP Sniper Rifle (Tungsten Sabot Jacket)",
 		"annotationNote": "Squad: +50% Sniper Rifle Armor Damage",
 		"price": "-15,000 Platinum",
 		"inMapId": null,
@@ -1619,7 +1766,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.8",
-        "sortIndex": 8,
+		"sortIndex": 8,
 		"inMissionId": "A2.UC.WeaponUpgrades.SR",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1634,7 +1781,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.9",
-        "sortIndex": 9,
+		"sortIndex": 9,
 		"inMissionId": "A2.UC.WeaponUpgrades.SR",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1644,13 +1791,13 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/M-97_Viper"],
 		"inMapId": "G.Ter.Cre.Tas.Ill.2Darius",
 		"mapLocationPoint": {
-			"x": 731,
-			"y": 719,
+			"x": 735,
+			"y": 740,
 			"radius": 1
 		}
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.10",
-        "sortIndex": 10,
+		"sortIndex": 10,
 		"inMissionId": "A2.UC.WeaponUpgrades.SR",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1668,7 +1815,7 @@
 	}, {
 		"x-subcomment-x": "----- SUBMACHINE GUNS ----",
 		"id": "A2.UC.WeaponUpgrades.SMG.I.1",
-        "sortIndex": 1,
+		"sortIndex": 1,
 		"inMissionId": "A2.UC.WeaponUpgrades.SMG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1678,13 +1825,17 @@
 		"price": "-2,500 Iridium",
 		"inMapId": "G.Ter.Ome.Sah.Ome.3Archangel",
 		"mapLocationPoint": {
-            "x": 383,
-            "y": 1061,
+			"x": 383,
+			"y": 1061,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Submachine Gun Damage 1"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.2",
-        "sortIndex": 2,
+		"sortIndex": 2,
 		"inMissionId": "A2.UC.WeaponUpgrades.SMG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1700,11 +1851,11 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 2nd Submachine Gun"
+			"id": "Upgrade: Submachine Gun Damage 2"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.3",
-        "sortIndex": 3,
+		"sortIndex": 3,
 		"inMissionId": "A2.UC.WeaponUpgrades.SMG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1720,11 +1871,11 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 3rd Submachine Gun"
+			"id": "Upgrade: Submachine Gun Damage 3"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.4",
-        "sortIndex": 4,
+		"sortIndex": 4,
 		"inMissionId": "A2.UC.WeaponUpgrades.SMG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1734,10 +1885,14 @@
 		"sideEffects": ["DLC Bonus upgrade after [megametracker://mission?id=DLC2.LairShadowBroker]."],
 		"price": "-10,000 Iridium",
 		"inMapId": "G.Ter.Hou.Sow.Hag.2.Pickup",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Submachine Gun Damage 4"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.5",
-        "sortIndex": 5,
+		"sortIndex": 5,
 		"inMissionId": "A2.UC.WeaponUpgrades.SMG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1746,10 +1901,14 @@
 		"annotationNote": "Squad: +10% Submachine Gun Damage",
 		"price": "-60,000 Credits",
 		"inMapId": "G.C2.28.Rodam",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Submachine Gun Damage 5"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.6",
-        "sortIndex": 6,
+		"sortIndex": 6,
 		"inMissionId": "A2.UC.WeaponUpgrades.SMG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1758,10 +1917,14 @@
 		"annotationNote": "Squad: +10% Submachine Gun Damage",
 		"price": "60,000 Credits",
 		"inMapId": "G.Ter.Cre.Tas.Ill.1.Gateway",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Submachine Gun Damage 6"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.7",
-        "sortIndex": 7,
+		"sortIndex": 7,
 		"inMissionId": "A2.UC.WeaponUpgrades.SMG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1775,7 +1938,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.8",
-        "sortIndex": 8,
+		"sortIndex": 8,
 		"inMissionId": "A2.UC.WeaponUpgrades.SMG",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1789,7 +1952,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.9",
-        "sortIndex": 9,
+		"sortIndex": 9,
 		"inMissionId": "A2.UC.WeaponUpgrades.SMG",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1805,7 +1968,7 @@
 		}
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.10",
-        "sortIndex": 10,
+		"sortIndex": 10,
 		"inMissionId": "A2.UC.WeaponUpgrades.SMG",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1823,7 +1986,7 @@
 	}, {
 		"x-subcomment-x": "----- HEAVY WEAPON AMMO ----",
 		"id": "A2.UC.WeaponUpgrades.HW.I.1",
-        "sortIndex": 1,
+		"sortIndex": 1,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1839,11 +2002,11 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 1st Heavy Weapon Ammo"
+			"id": "Upgrade: Heavy Weapon Ammo 1"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW.I.2",
-        "sortIndex": 2,
+		"sortIndex": 2,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1859,11 +2022,11 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 2nd Heavy Weapon Ammo"
+			"id": "Upgrade: Heavy Weapon Ammo 2"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW.I.3",
-        "sortIndex": 3,
+		"sortIndex": 3,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1874,11 +2037,11 @@
 		"inMapId": "G.Ter.Shr.XeC.ZadaBan",
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 3rd Heavy Weapon Ammo"
+			"id": "Upgrade: Heavy Weapon Ammo 3"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW.I.4",
-        "sortIndex": 4,
+		"sortIndex": 4,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1892,10 +2055,14 @@
 			"x": 1215,
 			"y": 819,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Weapon Ammo 4"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW.I.5",
-        "sortIndex": 5,
+		"sortIndex": 5,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1904,10 +2071,14 @@
 		"annotationNote": "Shepard: +15% Heavy Weapon Ammo",
 		"price": "-30,000 Credits",
 		"inMapId": "G.Ter.Ome.Sah.Ome.1.Kenn",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Weapon Ammo 5"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW.I.6",
-        "sortIndex": 6,
+		"sortIndex": 6,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1916,10 +2087,14 @@
 		"annotationNote": "Shepard: +15% Heavy Weapon Ammo",
 		"price": "-30,000 Credits",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Weapon Ammo 6"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW.I.7",
-        "sortIndex": 7,
+		"sortIndex": 7,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
@@ -1928,10 +2103,14 @@
 		"annotationNote": "Shepard: +15% Heavy Weapon Ammo",
 		"price": "-30,000 Credits",
 		"sideEffects": ["DLC Bonus upgrade after [megametracker://mission?id=DLC2.Arrival]."],
-		"inMapId": null
+		"inMapId": null,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Heavy Weapon Ammo 7"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW.I.8",
-        "sortIndex": 8,
+		"sortIndex": 8,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1946,7 +2125,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW.I.9",
-        "sortIndex": 9,
+		"sortIndex": 9,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1961,7 +2140,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW.I.10",
-        "sortIndex": 10,
+		"sortIndex": 10,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1976,7 +2155,7 @@
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW.I.11",
-        "sortIndex": 11,
+		"sortIndex": 11,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -1992,6 +2171,7 @@
 		}
 	}, {
 		"id": "A2.UC.WeaponUpgrades.HW.I.12",
+        "sortIndex": 12,
 		"inMissionId": "A2.UC.WeaponUpgrades.HW",
 		"gameVersion": "2",
 		"itemType": "Weapon",
@@ -2066,7 +2246,7 @@
 		"name": "Mordin Omni-Tool (Tech Upgrade)",
 		"annotationNote": "Mordin: +20% Tech Damage",
 		"price": "-3,000 Element Zero",
-		"id": "G.N2.3.Lab",
+		"inMapId": "G.N2.3.Lab",
 		"isShowInParentMap": true
 	}, {
 		"id": "A2.UC.SquadUpgrades.I.2SZBB",
@@ -2128,379 +2308,379 @@
 		"x-comment-x": "-------- NORMANDY DOG TAGS -------",
 		"id": "DLC2.NormandyCrashSite.2.I.1",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 1,
+		"sortIndex": 1,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Bakari, Jamin",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 1217,
-            "y": 1632,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 1217,
+			"y": 1632,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.2",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 2,
+		"sortIndex": 2,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Barrett, Germeen",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 1344,
-            "y": 754,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 1344,
+			"y": 754,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.3",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 3,
+		"sortIndex": 3,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Chase, Addison",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 1492,
-            "y": 1135,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 1492,
+			"y": 1135,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.4",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 4,
+		"sortIndex": 4,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Crosby, Silas",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 1249,
-            "y": 1103,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 1249,
+			"y": 1103,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.5",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 5,
+		"sortIndex": 5,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Draven, Rosamund",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 442,
-            "y": 1308,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 442,
+			"y": 1308,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.6",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 6,
+		"sortIndex": 6,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Draven, Talitha",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 662,
-            "y": 1653,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 662,
+			"y": 1653,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.7",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 7,
+		"sortIndex": 7,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Dubyansky, Alexei",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 512,
-            "y": 461,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 512,
+			"y": 461,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.8",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 8,
+		"sortIndex": 8,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Emerson, Hector",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 1458,
-            "y": 267,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 1458,
+			"y": 267,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.9",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 9,
+		"sortIndex": 9,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Felawa, Robert",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 932,
-            "y": 887,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 932,
+			"y": 887,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.10",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 10,
+		"sortIndex": 10,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Gladstone, Harvey J.",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 1491,
-            "y": 970,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 1491,
+			"y": 970,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.11",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 11,
+		"sortIndex": 11,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Grenado, Caroline",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 794,
-            "y": 1222,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 794,
+			"y": 1222,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.12",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 12,
+		"sortIndex": 12,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Grieco, Marcus",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 1111,
-            "y": 853,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 1111,
+			"y": 853,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.13",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 13,
+		"sortIndex": 13,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Laflamme, Orden",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 1034,
-            "y": 677,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 1034,
+			"y": 677,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.14",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 14,
+		"sortIndex": 14,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Lowe, Helen M.",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 754,
-            "y": 371,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 754,
+			"y": 371,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.15",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 15,
+		"sortIndex": 15,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Negulesco, Monica",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 987,
-            "y": 620,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 987,
+			"y": 620,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.16",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 16,
+		"sortIndex": 16,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
 		"name": "Pakti, Abishek",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 499,
-            "y": 851,
-            "radius": 1
-        }
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 499,
+			"y": 851,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.17",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 17,
+		"sortIndex": 17,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
-        "name": "Rahman, Mandira",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 908,
-            "y": 1434,
-            "radius": 1
-        }
+		"name": "Rahman, Mandira",
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 908,
+			"y": 1434,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.18",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 18,
+		"sortIndex": 18,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
-        "name": "Tanaka, Raymond",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 794,
-            "y": 660,
-            "radius": 1
-        }
+		"name": "Tanaka, Raymond",
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 794,
+			"y": 660,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.19",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 19,
+		"sortIndex": 19,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
-        "name": "Tucks, Carlton",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 1044,
-            "y": 1752,
-            "radius": 1
-        }
+		"name": "Tucks, Carlton",
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 1044,
+			"y": 1752,
+			"radius": 1
+		}
 	}, {
 		"id": "DLC2.NormandyCrashSite.2.I.20",
 		"inMissionId": "DLC2.NormandyCrashSite.2",
-        "sortIndex": 20,
+		"sortIndex": 20,
 		"gameVersion": "2",
 		"itemType": "Collection",
 		"itemDisplayType": "Goal",
-        "name": "Waaberi, Amina",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 1001,
-            "y": 1286,
-            "radius": 1
-        }
+		"name": "Waaberi, Amina",
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 1001,
+			"y": 1286,
+			"radius": 1
+		}
 
-    }, {
-        "x-comment-x": "-------- Project Overlord -------",
-        "id": "DLC2.Overlord.02.I.1",
-        "inMissionId": "DLC2.Overlord.02",
-        "gameVersion": "2",
-        "itemType": "Collection",
-        "itemDisplayType": "Goal",
-        "name": "Data Packet 1",
-        "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
-        "mapLocationPoint": {
-            "x": 1248,
-            "y": 193,
-            "radius": 1
-        }
-    }, {
-        "id": "DLC2.Overlord.02.I.2",
-        "inMissionId": "DLC2.Overlord.02",
-        "gameVersion": "2",
-        "itemType": "Collection",
-        "itemDisplayType": "Goal",
-        "name": "Data Packet 2",
-        "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
-        "mapLocationPoint": {
-            "x": 1294,
-            "y": 665,
-            "radius": 1
-        }
-    }, {
-        "id": "DLC2.Overlord.02.I.3",
-        "inMissionId": "DLC2.Overlord.02",
-        "gameVersion": "2",
-        "itemType": "Collection",
-        "itemDisplayType": "Goal",
-        "name": "Data Packet 3",
-        "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
-        "mapLocationPoint": {
-            "x": 1673,
-            "y": 466,
-            "radius": 1
-        }
-    }, {
-        "id": "DLC2.Overlord.02.I.4",
-        "inMissionId": "DLC2.Overlord.02",
-        "gameVersion": "2",
-        "itemType": "Collection",
-        "itemDisplayType": "Goal",
-        "name": "Data Packet 4",
-        "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
-        "mapLocationPoint": {
-            "x": 1664,
-            "y": 1289,
-            "radius": 1
-        }
-    }, {
-        "id": "DLC2.Overlord.02.I.5",
-        "inMissionId": "DLC2.Overlord.02",
-        "gameVersion": "2",
-        "itemType": "Collection",
-        "itemDisplayType": "Goal",
-        "name": "Data Packet 5",
-        "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
-        "mapLocationPoint": {
-            "x": 1420,
-            "y": 1588,
-            "radius": 1
-        }
-    }, {
-        "id": "DLC2.Overlord.02.I.6",
-        "inMissionId": "DLC2.Overlord.02",
-        "gameVersion": "2",
-        "itemType": "Collection",
-        "itemDisplayType": "Goal",
-        "name": "Data Packet 6",
-        "inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
-        "mapLocationPoint": {
-            "x": 454,
-            "y": 1311,
-            "radius": 1
-        }
+	}, {
+		"x-comment-x": "-------- Project Overlord -------",
+		"id": "DLC2.Overlord.02.I.1",
+		"inMissionId": "DLC2.Overlord.02",
+		"gameVersion": "2",
+		"itemType": "Collection",
+		"itemDisplayType": "Goal",
+		"name": "Data Packet 1",
+		"inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
+		"mapLocationPoint": {
+			"x": 1248,
+			"y": 193,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.Overlord.02.I.2",
+		"inMissionId": "DLC2.Overlord.02",
+		"gameVersion": "2",
+		"itemType": "Collection",
+		"itemDisplayType": "Goal",
+		"name": "Data Packet 2",
+		"inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
+		"mapLocationPoint": {
+			"x": 1294,
+			"y": 665,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.Overlord.02.I.3",
+		"inMissionId": "DLC2.Overlord.02",
+		"gameVersion": "2",
+		"itemType": "Collection",
+		"itemDisplayType": "Goal",
+		"name": "Data Packet 3",
+		"inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
+		"mapLocationPoint": {
+			"x": 1673,
+			"y": 466,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.Overlord.02.I.4",
+		"inMissionId": "DLC2.Overlord.02",
+		"gameVersion": "2",
+		"itemType": "Collection",
+		"itemDisplayType": "Goal",
+		"name": "Data Packet 4",
+		"inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
+		"mapLocationPoint": {
+			"x": 1664,
+			"y": 1289,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.Overlord.02.I.5",
+		"inMissionId": "DLC2.Overlord.02",
+		"gameVersion": "2",
+		"itemType": "Collection",
+		"itemDisplayType": "Goal",
+		"name": "Data Packet 5",
+		"inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
+		"mapLocationPoint": {
+			"x": 1420,
+			"y": 1588,
+			"radius": 1
+		}
+	}, {
+		"id": "DLC2.Overlord.02.I.6",
+		"inMissionId": "DLC2.Overlord.02",
+		"gameVersion": "2",
+		"itemType": "Collection",
+		"itemDisplayType": "Goal",
+		"name": "Data Packet 6",
+		"inMapId": "G.Ter.Pho.Typ.Ait.2Aite",
+		"mapLocationPoint": {
+			"x": 454,
+			"y": 1311,
+			"radius": 1
+		}
 
 
-    }, {
-        "x-comment-x": "-------- NOVELTY -------",
-        "id": "DLC2.NormandyCrashSite.I.0A",
-        "inMissionId": "A2.UC.Souvenirs",
-        "gameVersion": "2",
-        "itemType": "Loot",
-        "itemDisplayType": "Loot",
-        "name": "Shepard's Helmet",
-        "inMapId": "G.Ter.Ome.Ama.Alchera",
-        "mapLocationPoint": {
-            "x": 1464,
-            "y": 1576,
-            "radius": 1
-        }
+	}, {
+		"x-comment-x": "-------- NOVELTY -------",
+		"id": "DLC2.NormandyCrashSite.I.0A",
+		"inMissionId": "A2.UC.Souvenirs",
+		"gameVersion": "2",
+		"itemType": "Loot",
+		"itemDisplayType": "Loot",
+		"name": "Shepard's Helmet",
+		"inMapId": "G.Ter.Ome.Ama.Alchera",
+		"mapLocationPoint": {
+			"x": 1464,
+			"y": 1576,
+			"radius": 1
+		}
 
 	}]
 }

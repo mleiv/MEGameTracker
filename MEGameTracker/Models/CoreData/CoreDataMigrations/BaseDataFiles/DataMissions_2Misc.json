@@ -159,7 +159,7 @@
     }],
     "events": [{
       "type": "BlockedUntil",
-      "id": "Completed: Freedom's Progress"
+      "id": "Completed: Horizon"
     }]
   }, {
     "id": "DLC2.Arrival.1",
@@ -245,7 +245,7 @@
     "sortIndex": 10002,
     "gameVersion": "2",
     "missionType": "Objective",
-    "name": "Find Dog Tags",
+    "name": "Find Lost Crew",
     "description": "Gather the dog tags of at least 16 of the 20 missing crewmembers. You can also view Pressly's Datapad (his dog tag is not found)."
    }, {
       "id": "DLC2.NormandyCrashSite.2.1",
@@ -939,7 +939,7 @@
     "missionType": "DLC",
     "name": "Lair of the Shadow Broker",
     "description": "In recovering Shepard's body, Liara ended up losing her partner, [megametracker://person?id=O2.Feron]. Feron was an agent of the Shadow Broker, but betrayed him to help Liara. Now she wants to track down the Shadow Broker and find out what happened to Feron. \n\nLike the Pinnacle Station DLC in Game 1, completing this assigment results in an ongoing set of rewards. Completing it early will boost your finances. \n\n*_This assignment was released as part of the Lair of the Shadow Broker DLC pack._*",
-    "inMapId": "G.Ter.Cre.Tas.Ill.1.Administration",
+    "inMapId": "G.Ter.Cre.Tas.Illium",
     "isShowInParentMap": true,
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Lair_of_the_Shadow_Broker_(mission)"],
     "relatedMissionIds": ["A2.I.SystemHacking", "A2.I.TheObserver"],
@@ -1034,7 +1034,7 @@
       }
     }, {
       "set": {
-        "context": "After taking Vasir down",
+        "context": "As Vasir is dying",
         "options": [{
           "set": {
             "isExclusiveSet": true,
@@ -1065,7 +1065,12 @@
               "trigger": "\"What they had to do.\""
             }]
           }
-        }, {
+        }]
+      }
+    }, {
+      "set": {
+        "context": "Talking to Liara",
+        "options": [{
           "id": "DLC2.LairShadowBroker.P8",
           "type": "Paragon",
           "value": 5,
@@ -1134,7 +1139,13 @@
           "id": "DLC2.LairShadowBroker.P14",
           "type": "Paragon",
           "value": 5,
-          "trigger": "(Hug her.) - And kiss a Game 1 love interest Liara."
+          "trigger": "[Hug her.]"
+        }, {
+          "id": "DLC2.LairShadowBroker.P14B",
+          "type": "Paragon",
+          "value": 0,
+          "context": "*Paragon Interrupt* (After Paragon response above)",
+          "trigger": "Kiss Liara."
         }, {
           "id": "DLC2.LairShadowBroker.R14",
           "type": "Renegade",
@@ -1192,17 +1203,45 @@
       "radius": 1
     }
   }, {
+    "id": "DLC2.LairShadowBroker.3B",
+    "inMissionId": "DLC2.LairShadowBroker",
+    "sortIndex": 10004,
+    "gameVersion": "2",
+    "missionType": "Objective",
+    "name": "Dracon Trade Center",
+    "description": "Travel to the Dracon Trade Center. Before you go far, there is an explosion, taking out several floors. Vasir heads to the roof while you head in to investigate from below. Head upstairs (the elevator is out) and up to the plaza and to the left for the Baria Frontiers office.",
+    "inMapId": "G.Ter.Cre.Tas.Ill.6Dracon",
+    "mapLocationPoint": {
+      "x": 907,
+      "y": 343,
+      "radius": 1
+    }
+  }, {
     "id": "DLC2.LairShadowBroker.4",
     "inMissionId": "DLC2.LairShadowBroker",
     "sortIndex": 10004,
     "gameVersion": "2",
     "missionType": "Objective",
-    "name": "Baria Frontiers",
-    "description": "Travel to the Dracon Trade Center. Before you go far, there is an explosion, taking out several floors. Vasir heads to the roof while you head in to investigate from below. Head upstairs (the elevator is out) and up to the plaza and to the left for the Baria Frontiers office. Check the log to find that Liara was there just minutes earlier.",
+    "name": "Baria Frontiers Log",
+    "description": "Check the log to find that Liara was there just minutes earlier. The door to the Baria Frontiers offices will open. Inside Shadow Broker agents are waiting to attack you with flashbangs. Fight your way down the hallways, past the explosion epicenter, and through the cafeteria.",
     "inMapId": "G.Ter.Cre.Tas.Ill.6Dracon",
     "mapLocationPoint": {
       "x": 907,
       "y": 343,
+      "radius": 1
+    }
+  }, {
+    "id": "DLC2.LairShadowBroker.4B",
+    "inMissionId": "DLC2.LairShadowBroker",
+    "sortIndex": 10005,
+    "gameVersion": "2",
+    "missionType": "Objective",
+    "name": "Maintenance Console",
+    "description": "Activate the fire suppression system to get upstairs, where more Shadow Broker agents are waiting.",
+    "inMapId": "G.Ter.Cre.Tas.Ill.6Dracon",
+    "mapLocationPoint": {
+      "x": 715,
+      "y": 583,
       "radius": 1
     }
   }, {
@@ -1211,12 +1250,12 @@
     "sortIndex": 10005,
     "gameVersion": "2",
     "missionType": "Objective",
-    "name": "Find Sekat",
-    "description": "This floor is crawling with Shadow Broker troops. Fight your way down the hallways, past the explosion epicenter, through the cafeteria, and upstairs (activating the [Fire Suppression System|megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.6Dracon&title=Suppression System&location=715x583] first). \n\nAt the end of the upstairs hallway is a door to a room which runs the length of the hallway. Fight your way through. \n\nWhen you open the door at the end of the room, Sekat is killed by a Shadow Broker agent on the other side, and then the agent is killed by Vasir. Then Liara reveals herself.",
+    "name": "Sekat",
+    "description": "At the end of the upstairs hallway is a door to a room which runs the length of the hallway. When you open the door at the end of the room, Sekat is killed by a Shadow Broker agent on the other side, and then the agent is killed by Vasir.",
     "inMapId": "G.Ter.Cre.Tas.Ill.6Dracon",
     "mapLocationPoint": {
-      "x": 961,
-      "y": 1208,
+      "x": 955,
+      "y": 1182,
       "radius": 1
     }
   }, {
@@ -1226,13 +1265,23 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Liara",
-    "description": "Liara confronts Vasir, whom she reveals is also a Shadow Broker agent. In the ensuing fight, you and Vasir plummet down to the plaza on the prior level. Shadow Broker troops pour out from the Eldfell-Ashland Energy offices and Vasir heads downstairs. \n\nOnce you have eliminated all of them, follow Vasir down to the entrance. She will escape in her car, and you and Liara follow in a cab.",
+    "description": "Liara confronts Vasir, whom she reveals is also a Shadow Broker agent. In the ensuing fight, you and Vasir plummet down to the plaza on the prior level. Shadow Broker troops pour out from the Eldfell-Ashland Energy offices and Vasir heads downstairs.",
     "inMapId": "G.Ter.Cre.Tas.Ill.6Dracon",
     "mapLocationPoint": {
-      "x": 961,
-      "y": 1208,
+      "x": 955,
+      "y": 1182,
       "radius": 1
     }
+  }, {
+    "id": "DLC2.LairShadowBroker.6B",
+    "inMissionId": "DLC2.LairShadowBroker",
+    "sortIndex": 10007,
+    "gameVersion": "2",
+    "missionType": "Objective",
+    "name": "Vasir",
+    "description": "Eliminate the Shadow Broker troops and follow Vasir down to the entrance. She will escape in her car, and you and Liara follow in a cab.",
+    "inMapId": "G.Ter.Cre.Tas.Ill.6.Azure",
+    "isShowInParentMap": true
   }, {
     "id": "DLC2.LairShadowBroker.7",
     "inMissionId": "DLC2.LairShadowBroker",
@@ -1247,7 +1296,7 @@
     "sortIndex": 10008,
     "gameVersion": "2",
     "missionType": "Objective",
-    "name": "Find Vasir",
+    "name": "Confront Vasir",
     "description": "Vasir leaves a [bloody trail|megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.7Azure&title=Blood%20Trail&location=1086x1693] as she flees through the hotel. Shadow Broker troops land to distract you from the chase. Eliminate them and then follow Vasir to the outdoor cafe, where she takes a hostage. If you have high enough Reputation, you and Liara can rescue the hostage unwounded.",
     "inMapId": "G.Ter.Cre.Tas.Ill.7Azure",
     "mapLocationPoint": {
@@ -1586,7 +1635,7 @@
           "id": "A2.L.Zaeed.P12",
           "type": "Paragon",
           "value": 0,
-          "context": "*_Charm Zaeed_*",
+          "context": "*_Charm_* Zaeed",
           "trigger": "\"You brought this on yourself.\" (Gains Loyalty)"
         }]
       }
@@ -2468,7 +2517,7 @@
     "missionType": "Dossier",
     "name": "The Assassin",
     "description": "Thane Krios is a drell trained from childhood as an elite assassin, proficient in both long-range sniping kills and close infiltration. He has slowed his activities in recent years but is rumored to have a target on Illium.",
-    "inMapId": "G.Ter.Cre.Tas.Ill.2Darius",
+    "inMapId": "G.Ter.Cre.Tas.Illium",
     "isShowInParentMap": true,
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Assassin"],
     "experience": 1000,
@@ -2614,7 +2663,7 @@
               "type": "Renegade",
               "value": 5,
               "context": "*Renegade Interrupt*",
-              "trigger": ""
+              "trigger": "Punch Telon."
             }, {
               "id": "A2.D.Thane.P11",
               "type": "Paragon",
@@ -2809,10 +2858,10 @@
     "missionType": "Objective",
     "name": "Talk to Seryna",
     "description": "Seryna used to be head of security for Nassana Dantius. After she confronted Nassana about a series of assassinations, she was fired. She provided information to Thane and has an idea where he has gone.",
-    "inMapId": "G.Ter.Cre.Tas.Illium",
+    "inMapId": "G.Ter.Cre.Tas.Ill.1Main",
     "mapLocationPoint": {
-      "x": 1538,
-      "y": 1213,
+      "x": 1570,
+      "y": 1231,
       "radius": 1
     }
   }, {
@@ -3044,67 +3093,6 @@
               "trigger": "\"You can wait for your files.\""
             }]
           }
-        }, {
-          "set": {
-            "context": "Checking on Jack in the Engineering sub-level",
-            "isExclusiveSet": true,
-            "options": [{
-              "id": "A2.D.Jack.P13",
-              "type": "Paragon",
-              "value": 2,
-              "context": "(If you did share the Cerberus files)",
-              "trigger": "\"Glad they're helping.\""
-            }, {
-              "id": "A2.D.Jack.R13",
-              "type": "Renegade",
-              "value": 2,
-              "context": "(If you did not share the Cerberus files)",
-              "trigger": "\"I didn't let you.\""
-            }]
-          }
-        }]
-      }
-    }, {
-      "set": {
-        "context": "Checking on Jack in the Engineering sub-level",
-        "options": [{
-          "set": {
-            "isExclusiveSet": true,
-            "options": [{
-              "id": "A2.D.Jack.P14",
-              "type": "Paragon",
-              "value": 2,
-              "context": "(If you did share the Cerberus files)",
-              "trigger": "\"Glad they're helping.\""
-            }, {
-              "id": "A2.D.Jack.R14",
-              "type": "Renegade",
-              "value": 2,
-              "context": "(If you did not share the Cerberus files)",
-              "trigger": "\"I didn't let you.\""
-            }]
-          }
-        }, {
-          "id": "A2.D.Jack.P15",
-          "type": "Paragon",
-          "value": 2,
-          "trigger": "\"Do you want better quarters?\""
-        }, {
-          "set": {
-            "context": "(If you offer better quarters)",
-            "isExclusiveSet": true,
-            "options": [{
-              "id": "A2.D.Jack.P16",
-              "type": "Paragon",
-              "value": 2,
-              "trigger": "\"My mission is too important.\""
-            }, {
-              "id": "A2.D.Jack.R16",
-              "type": "Renegade",
-              "value": 2,
-              "trigger": "\"How would you help?\""
-            }]
-          }
         }]
       }
     }],
@@ -3272,7 +3260,7 @@
                   "id": "A2.D.Samara.R3",
                   "type": "Renegade",
                   "value": 2,
-                  "trigger": "\"No, not really.\""
+                  "trigger": "\"Not really.\""
                 }]
               }
             }, {
@@ -3479,7 +3467,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Gunship",
-    "description": "Here you will have to take down the Eclipse gunship.",
+    "description": "Here you will have to take down the Eclipse gunship. It will alternate from side to side, so you need to swap cover whenever it does. Use whatever heavy weapon you are carrying to take it down.",
     "inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
     "mapLocationPoint": {
       "x": 1162,
@@ -3526,6 +3514,20 @@
     "mapLocationPoint": {
       "x": 1900,
       "y": 1390,
+      "radius": 1
+    }
+  }, {
+    "id": "A2.D.Samara.11",
+    "inMissionId": "A2.D.Samara",
+    "sortIndex": 2101,
+    "gameVersion": "2",
+    "missionType": "Objective",
+    "name": "Return to Samara",
+    "description": "Give the ship's name to Samara and accept her oath of service. You may return to the Normandy or stay at the spaceport to wrap up other business.",
+    "inMapId": "G.Ter.Cre.Tas.Ill.3Spaceport",
+    "mapLocationPoint": {
+      "x": 448,
+      "y": 930,
       "radius": 1
     }
   }, {
@@ -4192,16 +4194,30 @@
     "description": "The next door is locked. Contact Tali through the Communication Control and she will unlock it for you.",
     "inMapId": "G.Ter.Far.Dho.Hae.Comm",
     "isShowInParentMap": true
-  }, {
-    "id": "A2.D.Tali.5",
-    "inMissionId": "A2.D.Tali",
-    "sortIndex": 2085,
-    "gameVersion": "2",
-    "missionType": "Objective",
-    "name": "Open Shutters",
-    "description": "There is a large open courtyard to fight through. Enter the room at the far end and activate the shutter control to open up the next area.",
-    "inMapId": "G.Ter.Far.Dho.Hae.Shutter",
-    "isShowInParentMap": true
+   }, {
+      "id": "A2.D.Tali.5",
+      "inMissionId": "A2.D.Tali",
+      "sortIndex": 2085,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Lift Security Lockdown",
+      "description": "There is a large open courtyard to fight through. Enter the room at the far end and activate the shutter control to open up the next area.",
+      "inMapId": "G.Ter.Far.Dho.Hae.Sec",
+      "isShowInParentMap": true
+   }, {
+      "id": "A2.D.Tali.5B",
+      "inMissionId": "A2.D.Tali",
+      "sortIndex": 2085,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Kal'Reegar",
+      "description": "Speak to the wounded Kal'Reegar. He will offer strategy advice against the geth Colossus and may help in the fight, depnding on conversation choices. If you do not forbid him from attacking the Colossus via the Paragon Interrupt, he will die at the conclusion of the next battle.",
+      "inMapId": "G.Ter.Far.Dho.Haestrom",
+      "mapLocationPoint": {
+         "x": 837,
+         "y": 457,
+         "radius": 1
+      }
   }, {
     "id": "A2.D.Tali.6",
     "inMissionId": "A2.D.Tali",
@@ -4209,7 +4225,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Defeat Geth Colossus",
-    "description": "You can find [Kal'Reegar|megametracker://maplocation?id=G.Ter.Far.Dho.Haestrom&title=Kal%27Reegar&location=837x457] wounded just down the stairs from the shutter control. He will offer strategy advice against the geth Colossus and may help in the fight, depnding on conversation choices. _Note: if Kal'Reegar is still attacking the Colossus when it powers down, it will kill him when it comes back online._",
+    "description": "On the left, you can fight the geth and be shielded from the Colossus and the sun. On the right is an elevated catwalk with cover from the geth and the Colossus, but with sun exposure. Through the middle is open to the Colossus but with cover from the geth and the sun.",
     "inMapId": "G.Ter.Far.Dho.Haestrom",
     "mapLocationPoint": {
       "x": 481,
@@ -4237,7 +4253,7 @@
     "gameVersion": "2",
     "missionType": "Dossier",
     "name": "The Warlord",
-    "description": "",
+    "description": "The brutal krogan warlord, Dr. Okeer, is at a Blue Suns camp on Korlus.",
     "inMapId": "G.Att.Eag.Imi.Korlus",
     "isShowInParentMap": true,
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Dossier:_The_Warlord"],
@@ -4334,12 +4350,12 @@
           "set": {
             "isExclusiveSet": true,
             "options": [{
-              "id": "A2.D.Grunt.P4",
+              "id": "A2.D.Grunt.P6A",
               "type": "Paragon",
               "value": 2,
               "trigger": "\"Okeer, I presume?\""
             }, {
-              "id": "A2.D.Grunt.R4",
+              "id": "A2.D.Grunt.R6A",
               "type": "Renegade",
               "value": 2,
               "trigger": "\"Change your tone.\""
@@ -4443,7 +4459,13 @@
               "id": "A2.D.Grunt.R11",
               "type": "Renegade",
               "value": 2,
+              "context": "(Blocks further discussion)",
               "trigger": "\"Keep it to yourselves.\""
+            }, {
+               "id": "A2.D.Grunt.N11",
+               "type": "Credits",
+               "value": 0,
+               "trigger": "\"That excited, are you?\""
             }]
           }
         }, {
@@ -4458,7 +4480,12 @@
               "id": "A2.D.Grunt.R12",
               "type": "Renegade",
               "value": 2,
-              "trigger": "\"Replaceable.\""
+              "trigger": "\"He gets out, we vent the hold.\" and \"Replaceable.\""
+            }, {
+               "id": "A2.D.Grunt.N12",
+               "type": "Credits",
+               "value": 0,
+               "trigger": "\"That's the fun part.\""
             }]
           }
         }]
@@ -4526,7 +4553,7 @@
               "type": "Renegade",
               "value": 5,
               "context": "*Renegade Interrupt*",
-              "trigger": "Shoot Grunt."
+              "trigger": "Shoot Grunt. (He does not die.)"
             }, {
               "id": "A2.D.Grunt.P18",
               "type": "Paragon",
@@ -4639,6 +4666,16 @@
       "y": 1675,
       "radius": 1
     }
+   }, {
+      "id": "A2.D.Grunt.7",
+      "inMissionId": "A2.D.Grunt",
+      "sortIndex": 2077,
+      "gameVersion": "2",
+      "missionType": "Objective",
+      "name": "Activate the Krogan (Optional)",
+       "description": "Acquiring the krogan tank is one of the triggers for [megametracker://mission?id=M2.Horizon]. So, you can leave him in the tank, but why? You are just one team member fewer if you do that.",
+      "inMapId": "G.N2.4.Port",
+      "isShowInParentMap": true
 
 
   }, {
@@ -5050,13 +5087,13 @@
           "id": "A2.L.Grunt.P5",
           "type": "Paragon",
           "value": 5,
-          "context": "*_Charm Uvenk_*",
+          "context": "*_Charm_* Uvenk",
           "trigger": "\"You argue like an alien.\""
         }, {
           "id": "A2.L.Grunt.R5",
           "type": "Renegade",
           "value": 5,
-          "context": "*_Intimidate Uvenk_*",
+          "context": "*_Intimidate_* Uvenk",
           "trigger": "\"So you're fearful.\""
         }]
       }
@@ -5323,7 +5360,7 @@
               "id": "A2.L.Jack.P7A",
               "type": "Paragon",
               "value": 15,
-              "conext": "*_Charm Jack_*",
+              "conext": "*_Charm_* Jack",
               "trigger": "\"Killing him changes nothing.\""
             }, {
               "set": {
@@ -5342,7 +5379,7 @@
               "id": "A2.L.Jack.R7A",
               "type": "Renegade",
               "value": 15,
-              "conext": "*_Intimidate Jack_*",
+              "conext": "*_Intimidate_* Jack",
               "trigger": "\"Do it.\""
             }, {
               "set": {
@@ -6141,7 +6178,7 @@
           "type": "Paragon",
           "value": 5,
           "context": "*Paragon Interrupt*",
-          "trigger": ""
+          "trigger": "(Prevent Miranda from shooting Niket.)"
         }]
       }
     }, {
@@ -6163,13 +6200,13 @@
             }]
           }
         }, {
-          "context": "If Miranda killed Niket",
+          "context": "If Miranda did not kill Niket",
           "id": "A2.L.Miranda.P11",
           "type": "Paragon",
           "value": 2,
           "trigger": "\"You would've regretted it.\""
         }, {
-          "context": "If Miranda did not kill Niket",
+          "context": "If Miranda killed Niket",
           "id": "A2.L.Miranda.P12",
           "type": "Paragon",
           "value": 2,
@@ -6634,19 +6671,19 @@
       "value": 2,
       "trigger": "\"Get away from me.\""
     }, {
-      "context": "*_Intimidate Verf_*",
+      "context": "*_Intimidate_* Verf",
       "id": "A2.L.Samara.R7",
       "type": "Renegade",
       "value": 5,
       "trigger": "\"Let's step outside.\""
     }, {
-      "context": "*_Charm Bartender Edwin_*",
+      "context": "*_Charm_* Bartender Edwin",
       "id": "A2.L.Samara.P8",
       "type": "Paragon",
       "value": 5,
       "trigger": "\"Treat your customers.\""
     }, {
-      "context": "*_Intimidate Vertin_*",
+      "context": "*_Intimidate_* Vertin",
       "id": "A2.L.Samara.R9",
       "type": "Renegade",
       "value": 5,
@@ -6874,13 +6911,13 @@
               "id": "A2.L.Tali.P3A",
               "type": "Paragon",
               "value": 5,
-              "context": "*_Charm Kar'Danna_*",
+              "context": "*_Charm_* Kar'Danna",
               "trigger": "\"You'll have to shoot us both.\""
             }, {
               "id": "A2.L.Tali.R3",
               "type": "Renegade",
               "value": 5,
-              "context": "*_Intimidate Kar'Danna_*",
+              "context": "*_Intimidate_* Kar'Danna",
               "trigger": "\"If it acts up, I'll kill it.\""
             }, {
               "id": "A2.L.Tali.P3B",
@@ -6917,13 +6954,13 @@
               "id": "A2.L.Tali.P6",
               "type": "Paragon",
               "value": 5,
-              "context": "*_Charm Shala'Raan_*",
+              "context": "*_Charm_* Shala'Raan",
               "trigger": "\"It's my pleasure.\""
             }, {
               "id": "A2.L.Tali.R6A",
               "type": "Renegade",
               "value": 5,
-              "context": "*_Intimidate Shala'Raan_*",
+              "context": "*_Intimidate_* Shala'Raan",
               "trigger": "\"Look at her record.\""
             }, {
               "id": "A2.L.Tali.R6B",
@@ -6939,13 +6976,13 @@
               "id": "A2.L.Tali.P7",
               "type": "Paragon",
               "value": 5,
-              "context": "*_Charm Shala'Raan_*",
+              "context": "*_Charm_* Shala'Raan",
               "trigger": "\"We need to help.\""
             }, {
               "id": "A2.L.Tali.R7",
               "type": "Renegade",
               "value": 5,
-              "context": "*_Intimidate Shala'Raan_*",
+              "context": "*_Intimidate_* Shala'Raan",
               "trigger": "\"You've got a lot of nerve.\""
             }]
           }
@@ -7130,13 +7167,13 @@
               "id": "A2.L.Tali.P36A",
               "type": "Paragon",
               "value": 30,
-              "context": "*_Charm the board_*",
+              "context": "*_Charm_* the board",
               "trigger": "\"I don't need evidence.\""
             }, {
               "id": "A2.L.Tali.R36B",
               "type": "Renegade",
               "value": 30,
-              "context": "*_Intimidate the board_*",
+              "context": "*_Intimidate_* the board",
               "trigger": "\"You're wasting our time!\""
             }, {
               "id": "A2.L.Tali.P36B",
@@ -7467,13 +7504,13 @@
           "id": "A2.L.Thane.P1",
           "type": "Paragon",
           "value": 5,
-          "context": "*_Charm Mouse_*",
+          "context": "*_Charm_* Mouse",
           "trigger": "\"We'll protect you.\""
         }, {
           "id": "A2.L.Thane.R1B",
           "type": "Renegade",
           "value": 5,
-          "context": "*_Intimidate Mouse_*",
+          "context": "*_Intimidate_* Mouse",
           "trigger": "\"I'm losing patience.\""
         }, {
           "id": "A2.L.Thane.R1C",
@@ -7493,7 +7530,7 @@
               "type": "Paragade",
               "value": 0,
               "paragadeValue": [5, 5],
-              "context": "*_Intimidate Kellum_*",
+              "context": "*_Intimidate_* Kellum",
               "trigger": "\"I'm a Spectre. Start talking.\""
             }, {
               "id": "A2.L.Thane.R5",
@@ -7510,13 +7547,13 @@
               "id": "A2.L.Thane.P6",
               "type": "Paragon",
               "value": 5,
-              "context": "*_Charm Kellum_*",
+              "context": "*_Charm_* Kellum",
               "trigger": "\"We'll sweeten the pot.\""
             }, {
               "id": "A2.L.Thane.R6",
               "type": "Renegade",
               "value": 5,
-              "context": "*_Intimidate Kellum_*",
+              "context": "*_Intimidate_* Kellum",
               "trigger": "\"You should talk to us.\""
             }]
           }
@@ -7547,13 +7584,13 @@
               "id": "A2.L.Thane.P10",
               "type": "Paragon",
               "value": 5,
-              "context": "*_Charm Reynolds_*",
+              "context": "*_Charm_* Reynolds",
               "trigger": "\"I'm a health inspector.\""
             }, {
               "id": "A2.L.Thane.R10",
               "type": "Renegade",
               "value": 5,
-              "context": "*_Intimidate Reynolds_*",
+              "context": "*_Intimidate_* Reynolds",
               "trigger": "\"There's a bomb.\""
             }]
           }
@@ -7571,13 +7608,13 @@
               "id": "A2.L.Thane.P11",
               "type": "Paragon",
               "value": 5,
-              "context": "*_Charm Reynolds_*",
+              "context": "*_Charm_* Reynolds",
               "trigger": "\"I'm lost.\""
             }, {
               "id": "A2.L.Thane.R11B",
               "type": "Renegade",
               "value": 5,
-              "context": "*_Intimidate Reynolds_*",
+              "context": "*_Intimidate_* Reynolds",
               "trigger": "\"You can't stop me.\""
             }]
           }
@@ -7595,13 +7632,13 @@
               "id": "A2.L.Thane.P11",
               "type": "Paragon",
               "value": 5,
-              "context": "*_Charm Reynolds_*",
+              "context": "*_Charm_* Reynolds",
               "trigger": "\"Here's the truth.\""
             }, {
               "id": "A2.L.Thane.R11B",
               "type": "Renegade",
               "value": 5,
-              "context": "*_Intimidate Reynolds_*",
+              "context": "*_Intimidate_* Reynolds",
               "trigger": "\"A life is at stake.\""
             }]
           }
@@ -7663,13 +7700,13 @@
           "id": "A2.L.Thane.P30",
           "type": "Paragon",
           "value": 5,
-          "context": "*_Charm Bailey_*",
+          "context": "*_Charm_* Bailey",
           "trigger": "\"Those guys were criminals.\""
         }, {
           "id": "A2.L.Thane.R30",
           "type": "Renegade",
           "value": 5,
-          "context": "*_Intimidate Bailey_*",
+          "context": "*_Intimidate_* Bailey",
           "trigger": "\"Who cares about them?\""
         }]
       }

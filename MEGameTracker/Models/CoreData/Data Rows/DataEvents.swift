@@ -23,6 +23,7 @@ extension DataEvent: DataRowStorable {
 		// only save searchable columns
 		coreItem.id = id
 		coreItem.gameVersion = gameVersion?.stringValue
+        coreItem.isAny = isAny
 	}
 
     /// (DataRowStorable Protocol)

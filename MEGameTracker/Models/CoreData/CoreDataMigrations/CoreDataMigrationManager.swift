@@ -21,6 +21,7 @@ public struct CoreDataMigrationManager {
 		4: CoreDataMigration(fromBuild: 44, loadMigration: { return Change20170305() }),
         5: CoreDataMigration(fromBuild: 47, loadMigration: { return Change20170905() }),
         6: CoreDataMigration(fromBuild: 48, loadMigration: { return Change20171022() }),
+        7: CoreDataMigration(fromBuild: 53, loadMigration: { return Change20180203() }),
 	]
 
 	public func migrateFrom(lastBuild: Int, completion: @escaping (() -> Void) = {}) {

@@ -191,6 +191,7 @@
 		B14BFFF91CFBDCE40016965A /* DataEvents_2.json in Resources */ = {isa = PBXBuildFile; fileRef = B14BFFF81CFBDCE40016965A /* DataEvents_2.json */; };
 		B14BFFFB1CFBDCF70016965A /* DataDecisions_2.json in Resources */ = {isa = PBXBuildFile; fileRef = B14BFFFA1CFBDCF70016965A /* DataDecisions_2.json */; };
 		B14BFFFD1CFC001D0016965A /* DataItems_2.json in Resources */ = {isa = PBXBuildFile; fileRef = B14BFFFC1CFC001D0016965A /* DataItems_2.json */; };
+		B14E5E3E2026AA6200EE63F9 /* Change20180203.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E5E352026AA6100EE63F9 /* Change20180203.swift */; };
 		B14EA9271CF3E1B0009F2B0A /* DecisionDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14EA91C1CF3E1B0009F2B0A /* DecisionDetail.storyboard */; };
 		B14EA9281CF3E1B0009F2B0A /* DecisionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14EA91E1CF3E1B0009F2B0A /* DecisionDetailController.swift */; };
 		B14EA9291CF3E1B0009F2B0A /* DecisionRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14EA9201CF3E1B0009F2B0A /* DecisionRow.xib */; };
@@ -414,6 +415,7 @@
 		B1F466DF1DA0AE7200EBA563 /* IBStyledThings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D71DA0AE7200EBA563 /* IBStyledThings.swift */; };
 		B1F466E01DA0AE7200EBA563 /* IBStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D81DA0AE7200EBA563 /* IBStyler.swift */; };
 		B1F466E11DA0AE7200EBA563 /* IBStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D91DA0AE7200EBA563 /* IBStyleManager.swift */; };
+		B1F78D3B202804670008B36B /* 20180204.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = B1F78D3A202804670008B36B /* 20180204.xcmappingmodel */; };
 		B1FE46A41F493E720050B082 /* GameRowStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE46A31F493E720050B082 /* GameRowStorable.swift */; };
 		B1FE46AE1F4948700050B082 /* DataRowStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE46AD1F4948700050B082 /* DataRowStorable.swift */; };
 		B1FFE3341CF6AA17007B3160 /* ConversationRewardsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE3321CF6AA17007B3160 /* ConversationRewardsable.swift */; };
@@ -702,11 +704,13 @@
 		B14AB78C1F9D66FA009539CF /* Change20171022.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change20171022.swift; sourceTree = "<group>"; };
 		B14AB7961FA55330009539CF /* Change20171022Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change20171022Tests.swift; sourceTree = "<group>"; };
 		B14BFFF21CFBDC890016965A /* DataMissions_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataMissions_2.json; sourceTree = "<group>"; };
-		B14BFFF41CFBDCAD0016965A /* DataMissions_2Assignments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataMissions_2Assignments.json; sourceTree = "<group>"; };
+		B14BFFF41CFBDCAD0016965A /* DataMissions_2Assignments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataMissions_2Assignments.json; sourceTree = "<group>"; wrapsLines = 0; };
 		B14BFFF61CFBDCC60016965A /* DataMissions_2Misc.json */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 3; lastKnownFileType = text.json; path = DataMissions_2Misc.json; sourceTree = "<group>"; };
 		B14BFFF81CFBDCE40016965A /* DataEvents_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataEvents_2.json; sourceTree = "<group>"; };
 		B14BFFFA1CFBDCF70016965A /* DataDecisions_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataDecisions_2.json; sourceTree = "<group>"; };
 		B14BFFFC1CFC001D0016965A /* DataItems_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataItems_2.json; sourceTree = "<group>"; };
+		B14E5E352026AA6100EE63F9 /* Change20180203.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change20180203.swift; sourceTree = "<group>"; };
+		B14E5E3F2027C74000EE63F9 /* CoreData20180204.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData20180204.xcdatamodel; sourceTree = "<group>"; };
 		B14EA91D1CF3E1B0009F2B0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DecisionDetail.storyboard; sourceTree = "<group>"; };
 		B14EA91E1CF3E1B0009F2B0A /* DecisionDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionDetailController.swift; sourceTree = "<group>"; };
 		B14EA9211CF3E1B0009F2B0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DecisionRow.xib; sourceTree = "<group>"; };
@@ -931,6 +935,7 @@
 		B1F466D71DA0AE7200EBA563 /* IBStyledThings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyledThings.swift; sourceTree = "<group>"; };
 		B1F466D81DA0AE7200EBA563 /* IBStyler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyler.swift; sourceTree = "<group>"; };
 		B1F466D91DA0AE7200EBA563 /* IBStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyleManager.swift; sourceTree = "<group>"; };
+		B1F78D3A202804670008B36B /* 20180204.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 20180204.xcmappingmodel; sourceTree = "<group>"; };
 		B1FE46A31F493E720050B082 /* GameRowStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRowStorable.swift; sourceTree = "<group>"; };
 		B1FE46AD1F4948700050B082 /* DataRowStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRowStorable.swift; sourceTree = "<group>"; };
 		B1FFE3321CF6AA17007B3160 /* ConversationRewardsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRewardsable.swift; sourceTree = "<group>"; };
@@ -1524,12 +1529,14 @@
 				B1A8813D1CF2546800603253 /* BaseDataFiles */,
 				B0DD4DEE1BBE0AD500EF4A54 /* BaseDataImport.swift */,
 				B16CF4881F573D4600651D3E /* BaseDataFileImportType.swift */,
-				B1B11FD31E4E99E200D97CA1 /* 20160210.xcmappingmodel */,
 				B1B9D72B1E66A56E00AE94D9 /* Change20170228.swift */,
 				B136B1231E6CA4B80017F738 /* Change20170305.swift */,
 				B19BECB81F5E668C007B3FE6 /* Change20170905.swift */,
 				B14AB78C1F9D66FA009539CF /* Change20171022.swift */,
+				B14E5E352026AA6100EE63F9 /* Change20180203.swift */,
 				B142AB921FF9E692003B93E9 /* CoreDataEliminateDuplicates.swift */,
+				B1B11FD31E4E99E200D97CA1 /* 20160210.xcmappingmodel */,
+				B1F78D3A202804670008B36B /* 20180204.xcmappingmodel */,
 			);
 			path = CoreDataMigrations;
 			sourceTree = "<group>";
@@ -2828,6 +2835,7 @@
 				B1DE27981CFB84D10041D341 /* RadioOptionRowView.swift in Sources */,
 				B13CC9501E720C8B00E5AD64 /* IBStylesheet.swift in Sources */,
 				B01D8F1D1BA139500039E003 /* METab.swift in Sources */,
+				B1F78D3B202804670008B36B /* 20180204.xcmappingmodel in Sources */,
 				B16D72391D2B5F00002296DD /* RecentlyViewedImages.swift in Sources */,
 				B16D72371D2B471C002296DD /* Duplet.swift in Sources */,
 				B199ECE91D09B2EE007BE489 /* CalloutsNib.swift in Sources */,
@@ -2893,6 +2901,7 @@
 				B03E38501BBF48D400A36D0F /* RecentlyViewedList.swift in Sources */,
 				B02673691BF6FD80003E4F07 /* GameItems.swift in Sources */,
 				B0C355F51BB3807D005CD0BF /* MapCalloutsController.swift in Sources */,
+				B14E5E3E2026AA6200EE63F9 /* Change20180203.swift in Sources */,
 				B04BF1F01BA12C7900072DA2 /* Shepard.DefaultPhoto.swift in Sources */,
 				B06575081BA8F99C0025F6E7 /* Markupable.swift in Sources */,
 				B1188E1A1CF2B00D009235E9 /* ObjectivesView.swift in Sources */,
@@ -3781,10 +3790,11 @@
 		B1B11FE31E4E9E8B00D97CA1 /* CoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B14E5E3F2027C74000EE63F9 /* CoreData20180204.xcdatamodel */,
 				B1B11FE41E4E9E8B00D97CA1 /* CoreData.xcdatamodel */,
 				B1B11FE51E4E9E8B00D97CA1 /* CoreData20170208.xcdatamodel */,
 			);
-			currentVersion = B1B11FE51E4E9E8B00D97CA1 /* CoreData20170208.xcdatamodel */;
+			currentVersion = B14E5E3F2027C74000EE63F9 /* CoreData20180204.xcdatamodel */;
 			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
