@@ -3168,7 +3168,7 @@
             }
         }, {
             "set": {
-                "context": "Dialog with Kelly post-Horizon (don't say \"Fine.\")",
+                "context": "Dialogue with Kelly post-Horizon (don't say \"Fine.\")",
                 "isExclusiveSet": true,
                 "options": [{
                     "id": "A2.Convo.Kelly.P4",
@@ -3185,6 +3185,22 @@
                     "type": "Renegade",
                     "value": 2,
                     "trigger": "\"No.\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "Dialogue with Kelly post-Collector Ship",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A2.Convo.Kelly.P4D",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Thank the entire crew.\""
+                }, {
+                    "id": "A2.Convo.Kelly.R4D",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"I didn't need her.\""
                 }]
             }
         }, {
@@ -3264,6 +3280,24 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Horizon"
+        }]
+    }, {
+        "id": "A2.Convo.Kelly.3",
+        "inMissionId": "A2.Convo.Kelly",
+        "sortIndex": 90101,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Normandy Convo (Collector Ship)",
+        "description": "Kelly will talk about how awesome EDI is.",
+        "inMapId": "G.N2.2",
+        "mapLocationPoint": {
+            "x": 1264,
+            "y": 986,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Collector Ship"
         }]
     }, {
         "id": "A2.Convo.Kelly.5",

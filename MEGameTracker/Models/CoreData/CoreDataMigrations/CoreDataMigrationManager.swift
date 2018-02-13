@@ -14,14 +14,14 @@ public struct CoreDataMigrationManager {
 	// We *will* want to load base data multiple times, if data has changed between builds.
 	public static var didLoadBaseData = false
 
-	public let migrationsAvailable: [Int: CoreDataMigration] = [ // Int is just for easier reference when editing
-		1: CoreDataMigration(fromBuild: 53, loadMigration: { return BaseDataImport() }),
-//        2: CoreDataMigration(fromBuild: 54, loadMigration: { return CoreDataEliminateDuplicates() }),
-		3: CoreDataMigration(fromBuild: 42, loadMigration: { return Change20170228() }),
-		4: CoreDataMigration(fromBuild: 44, loadMigration: { return Change20170305() }),
-        5: CoreDataMigration(fromBuild: 47, loadMigration: { return Change20170905() }),
-        6: CoreDataMigration(fromBuild: 48, loadMigration: { return Change20171022() }),
-        7: CoreDataMigration(fromBuild: 53, loadMigration: { return Change20180203() }),
+	public let migrationsAvailable: [CoreDataMigration] = [ // Int is just for easier reference when editing
+		CoreDataMigration(fromBuild: 56, loadMigration: { return BaseDataImport() }),
+//        CoreDataMigration(fromBuild: 54, loadMigration: { return CoreDataEliminateDuplicates() }),
+		CoreDataMigration(fromBuild: 42, loadMigration: { return Change20170228() }),
+		CoreDataMigration(fromBuild: 44, loadMigration: { return Change20170305() }),
+        CoreDataMigration(fromBuild: 47, loadMigration: { return Change20170905() }),
+        CoreDataMigration(fromBuild: 48, loadMigration: { return Change20171022() }),
+        CoreDataMigration(fromBuild: 56, loadMigration: { return Change20180203() }),
 	]
 
 	public func migrateFrom(lastBuild: Int, completion: @escaping (() -> Void) = {}) {
@@ -31,8 +31,8 @@ public struct CoreDataMigrationManager {
 			CoreDataMigrations.onStart.fire(true)
 		}
 
-//        let lastBuild = 30 // DEBUG
-		for (_, migration) in migrationsAvailable {
+        let lastBuild = 55 // DEBUG
+		for (migration) in migrationsAvailable {
 			if migration.fromBuild > lastBuild && migration.fromBuild <= App.current.build {
 				CoreDataMigrations.isRunning = true
 				migration.loadMigration().run()

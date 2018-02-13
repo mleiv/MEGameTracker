@@ -596,7 +596,7 @@
 		"inMapId": "G.CollectorShip",
 		"mapLocationPoint": {
 			"x": 979,
-			"y": 931,
+			"y": 881,
 			"radius": 1
 		},
 		"events": [{
@@ -671,7 +671,7 @@
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.DP.I.7",
-		"inMissionId": "A2.UC.2ArmorUpgrades.DP",
+		"inMissionId": "A2.UC.ArmorUpgrades.DP",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
 		"itemDisplayType": "Goal",
@@ -685,7 +685,7 @@
 		}]
 	}, {
 		"id": "A2.UC.ArmorUpgrades.DP.I.8",
-		"inMissionId": "A2.UC.2ArmorUpgrades.DP",
+		"inMissionId": "A2.UC.ArmorUpgrades.DP",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
 		"itemDisplayType": "Goal",
@@ -728,7 +728,12 @@
 		"name": "Tech Damage 2 (Multicore Amplifier)",
 		"annotationNote": "Squad: +10% Tech Damage",
 		"price": "-500 Element Zero",
-		"inMapId": null,
+        "inMapId": "G.CollectorShip",
+        "mapLocationPoint": {
+            "x": 1267,
+            "y": 1435,
+            "radius": 1
+        },
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Tech Damage 2"
@@ -743,7 +748,13 @@
 		"name": "Tech Damage 3 (Multicore Amplifier)",
 		"annotationNote": "Squad: +10% Tech Damage",
 		"price": "-500 Element Zero",
-		"inMapId": null,
+        "inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
+        "mapLocationPoint": {
+            "x": 1204,
+            "y": 1220,
+            "radius": 1
+        },
+        "inMapId": "TODO: Tali loyalty",
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Tech Damage 3"
@@ -758,13 +769,10 @@
 		"name": "Tech Damage 4 (Multicore Amplifier)",
 		"annotationNote": "Squad: +10% Tech Damage",
 		"price": "-500 Element Zero",
-		"inMapId": "G.OuC.Ser.Bol.Bek.2Vault",
-		"mapLocationPoint": {
-			"x": 1204,
-			"y": 1220,
-			"radius": 1
-		},
 		"events": [{
+            "type": "BlockedUntil",
+            "id": "Upgrade: Tech Damage 2"
+        }, {
 			"type": "Triggers",
 			"id": "Upgrade: Tech Damage 4"
 		}]
@@ -778,7 +786,8 @@
 		"name": "Tech Damage 5 (Multicore Amplifier)",
 		"annotationNote": "Squad: +10% Tech Damage",
 		"price": "-500 Element Zero",
-		"inMapId": null,
+        "inMapId": "G.C2.26.Saronis",
+        "isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Tech Damage 5"
@@ -793,7 +802,8 @@
 		"name": "Tech Damage 6 (Multicore Amplifier)",
 		"annotationNote": "Squad: +10% Tech Damage",
 		"price": "-500 Element Zero",
-		"inMapId": null,
+        "inMapId": "G.Ter.Cre.Tas.Ill.1.Serrice",
+        "isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Tech Damage 6"

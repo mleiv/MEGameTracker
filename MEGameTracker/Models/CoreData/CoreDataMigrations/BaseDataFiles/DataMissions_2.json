@@ -1086,9 +1086,9 @@
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: 4 Dossiers"
-        }, {
-            "type": "Triggers",
-            "id": "Completed: Horizon"
+		}, {
+			"type": "Triggers",
+			"id": "Completed: Horizon"
 		}, {
 			"type": "Triggers",
 			"id": "Collector Ship Warning"
@@ -1143,12 +1143,12 @@
 		"missionType": "Objective",
 		"name": "Entrance to Starport",
 		"description": "After defeating the Collectors and Scions in the outer buildings, open the doors to the starport and the final battle.",
-        "inMapId": "G.Att.Sha.Ier.Horizon",
-        "mapLocationPoint": {
-            "x": 756,
-            "y": 1778,
-            "radius": 1
-        }
+		"inMapId": "G.Att.Sha.Ier.Horizon",
+		"mapLocationPoint": {
+			"x": 756,
+			"y": 1778,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.Horizon.5",
 		"inMissionId": "M2.Horizon",
@@ -1180,7 +1180,7 @@
 		"missionType": "Mission",
 		"name": "Collector Ship",
 		"description": "_Note: The rules for triggering this mission are complicated ([https://masseffect.wikia.com/wiki/Collector_Ship_(mission)#Acquisition]), but the basics are: five missions after Horizon, and eight squad members._ \n\nIf you miss the upgrades on this mission, you can buy them at [megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.1.Serrice&type=Map] on Illium.",
-		"inMapId": "G.CollectorShip",
+		"inMapId": "G.CollectorShip.Startc",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Collector_Ship_(mission)"],
 		"conversationRewards": [{
@@ -1335,22 +1335,6 @@
 					"type": "Renegade",
 					"value": 2,
 					"trigger": "\"I still don't like it.\""
-				}]
-			}
-		}, {
-			"set": {
-				"isExclusiveSet": true,
-				"context": "Talking to Kelly",
-				"options": [{
-					"id": "M2.CollectorShip.P12",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"Thank the entire crew.\""
-				}, {
-					"id": "M2.CollectorShip.R12",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"I didn't need her.\""
 				}]
 			}
 		}],
