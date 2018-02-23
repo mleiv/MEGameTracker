@@ -11,6 +11,7 @@
 		"inMapId": "G.C2.27.CSec",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Captain_Bailey"],
+        "sideEffects": ["When discussing the option to fix your records or stay dead, Bailey will mention being declared dead for a year as a popular tax dodge - this is from H2G2's Restaurant at the End of the Universe, where the deceased [Hotblack Desiato|http://hitchhikers.wikia.com/wiki/Disaster_Area] is enjoying the show."],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
@@ -46,18 +47,17 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Crime_in_Progress"],
 		"conversationRewards": [{
 			"set": {
-				"context": "After recovering Kor Tun's credit chit",
 				"options": [{
 					"id": "A2.C.CrimeInProgress.P1",
 					"type": "Paragon",
 					"value": 5,
-					"trigger": "(complete assignment)"
+					"trigger": "Complete assignment."
 				}, {
 					"id": "A2.C.CrimeInProgress.P2",
 					"type": "Paragon",
 					"value": 5,
-					"context": "Pull Spectre rank on the officer",
-					"trigger": "*Paragon Interrupt*"
+					"context": "*Paragon Interrupt*",
+                    "trigger": "Pull Spectre rank on the officer"
 				}]
 			}
 		}],
@@ -75,6 +75,20 @@
 		"inMapId": "G.C2.26.Saronis",
 		"isShowInParentMap": true,
 		"isOpensDetail": false
+    }, {
+        "id": "A2.C.CrimeInProgress.2",
+        "inMissionId": "A2.C.CrimeInProgress",
+        "sortIndex": 1000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Return Credit Chit",
+        "inMapId": "G.C2.ZakeraWardL26",
+        "mapLocationPoint": {
+            "x": 1100,
+            "y": 1040,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A2.C.FalsePositives",
 		"sortIndex": 4,
@@ -82,7 +96,7 @@
 		"missionType": "Assignment",
 		"name": "Citadel: False Positives",
 		"aliases": ["Citadel: False Positives", "Citadel: Forged IDs"],
-		"description": "Asari Kalara Tomi is unable to leave the Citadel, after being flagged as a potential threat for geth infiltration. She needs help clearing up the mistake. \n\nThis assignment is acquired either during Garrus' loyalty mission, by picking up a forged id before two large mechs, or by talking to two asari found sitting near the stairs down to Level 26, after completing Thane's loyalty mission. \n\n_Note: You may be able to complete this mission twice, if you do Thane's mission first and help the asari, and then finish Garrus' mission and return to give the (reappeared) asari the fake id._",
+		"description": "Asari Kalara Tomi is unable to leave the Citadel, after being flagged as a potential threat for geth infiltration. She needs help clearing up the mistake. \n\nThis assignment is acquired either during Garrus' loyalty mission, by picking up a forged id before two large mechs, or by talking to two asari found sitting near the stairs down from Level 27, after completing Thane's loyalty mission. \n\n_Note: You may be able to complete this mission twice, if you do Thane's mission first and help the asari, and then finish Garrus' mission and return to give the (reappeared) asari the fake id._",
 		"experience": 40,
 		"reward": "1,000-2,000 Credits",
 		"conversationRewards": [{
@@ -129,8 +143,8 @@
 		}],
 		"inMapId": "G.C2.ZakeraWardL27",
 		"mapLocationPoint": {
-			"x": 683,
-			"y": 647,
+            "x": 702,
+            "y": 640,
 			"radius": 1
 		},
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Found_Forged_ID"],
@@ -145,13 +159,41 @@
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Forged IDs (Optional)",
-		"inMapId": "TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+		"inMapId": "G.C2.FactoryDistrict",
 		"mapLocationPoint": {
-			"x": 683,
-			"y": 647,
+			"x": 1645,
+			"y": 1532,
 			"radius": 1
 		},
 		"isOpensDetail": false
+    }, {
+        "id": "A2.C.FalsePositives.3",
+        "inMissionId": "A2.C.FalsePositives",
+        "sortIndex": 1000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Talk to Customs (Optional)",
+        "inMapId": "G.C2.ZakeraWardL27",
+        "mapLocationPoint": {
+            "x": 964,
+            "y": 1475,
+            "radius": 1
+        },
+        "isOpensDetail": false
+    }, {
+        "id": "A2.C.FalsePositives.4",
+        "inMissionId": "A2.C.FalsePositives",
+        "sortIndex": 1000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Talk to Kalara",
+        "inMapId": "G.C2.ZakeraWardL27",
+        "mapLocationPoint": {
+            "x": 702,
+            "y": 640,
+            "radius": 1
+        },
+        "isOpensDetail": false
 	}, {
 		"id": "A2.C.KroganSushi",
 		"sortIndex": 5,
@@ -159,7 +201,7 @@
 		"missionType": "Assignment",
 		"name": "Citadel: Krogan Sushi",
 		"description": "Krogan Kargesh and Rukar and arguing over whether there are any fish in the Presidium lakes. You can resolve their argument by speaking to the [megametracker://person?id=O2.Groundskeeper], a turian at the Dark Star Lounge.",
-		"objectivesCountToCompletion": 1,
+		"objectivesCountToCompletion": 2,
 		"experience": 40,
 		"reward": "1,000 Credits",
 		"inMapId": "G.C2.ZakeraWardL27",
@@ -216,6 +258,20 @@
 		"inMapId": "G.C2.27.Souvenirs",
 		"isShowInParentMap": true,
 		"isOpensDetail": false
+    }, {
+        "id": "A2.C.KroganSushi.3",
+        "inMissionId": "A2.C.KroganSushi",
+        "sortIndex": 1001,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Talk to Kargesh",
+        "inMapId": "G.C2.ZakeraWardL27",
+        "mapLocationPoint": {
+            "x": 1252,
+            "y": 746,
+            "radius": 1
+        },
+        "isOpensDetail": false
 
 	}, {
 		"x-comment-x": "-----------------------ILLIUM-------------------------",
@@ -226,7 +282,6 @@
 		"name": "Illium: Blue Rose of Illium",
 		"description": "The asari merchant [megametracker://person?id=O2.Ereba] and her krogan boyfriend [megametracker://person?id=O2.Charr] are having problems in their relationship. You might be able to help them decide what to do.\n\nResolving Ereba's problems with Charm or Intimidate results in a discount at the Memories of Illium store.",
 		"inMapId": "G.Ter.Cre.Tas.Ill.1Main",
-		"x-comment-y": "TODO: get correct location",
 		"mapLocationPoint": {
 			"x": 1403,
 			"y": 1629,
@@ -1847,6 +1902,7 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.OuC.Min.For.Aequitas",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Abandoned_Mine"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -1862,6 +1918,7 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Att.Eag.Str.Jarrahe",
+        "isShowInParentMap": true,
 		"relatedMissionIds": ["A2.N7.WreckedMerchantFreighter", "A2.N7.HahneKedar"],
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Abandoned_Research_Station"],
 		"events": [{
@@ -1947,6 +2004,7 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Ter.Pyl.Dir.Canalus",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Anomalous_Weather_Detected"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -1962,6 +2020,7 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Ter.Ros.Eno.Joab",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Archeological_Dig_Site"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -1976,16 +2035,27 @@
 		"gameVersion": "2",
 		"missionType": "Assignment",
 		"name": "N7: Blood Pack Communications Relay",
-		"description": "_\"Preliminary scans indicate a high-powered communications relay on the planet. Communications match known Blood Pack mercenary protocols. A concentration of krogan and vorcha signals are massed inside what appears to be a mining operation. Life signs detected. Unknown species. Advise caution.\"_ \n\nFight through the Blood Pack and klixen (similar to rachni) to shut down the communications relay on the hill. If you have the Shrike Abyssal charts from [megametracker://mission?id=MA2.UC.StarCharts], it is not important which Blood Pack mission you complete first. Otherwise you will need to complete this one first.",
+		"description": "_\"Preliminary scans indicate a high-powered communications relay on the planet. Communications match known Blood Pack mercenary protocols. A concentration of krogan and vorcha signals are massed inside what appears to be a mining operation. Life signs detected. Unknown species. Advise caution.\"_ \n\nFight through the Blood Pack and klixen (similar to rachni) to shut down the communications relay on the hill. If you have the Shrike Abyssal charts from [megametracker://mission?id=A2.UC.StarCharts], it is not important which Blood Pack mission you complete first. Otherwise you will need to complete this one first.",
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Ter.Cre.Lus.Tarith",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Blood_Pack_Communications_Relay"],
 		"relatedMissionIds": ["A2.N7.BloodPackBase"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
 		}]
+	}, {
+		"id": "A2.N7.BloodPackCommunicationsRelay.1",
+		"inMissionId": "A2.N7.BloodPackCommunicationsRelay",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Shut Down Relay",
+		"inMapId": "G.Ter.Cre.Lus.Tar.2Terminal",
+        "isShowInParentMap": true,
+		"isOpensDetail": false
 	}, {
 		"id": "A2.N7.BloodPackBase",
 		"sortIndex": 1000,
@@ -1996,6 +2066,7 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Ter.Shr.XeC.ZadaBan",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Blood_Pack_Base"],
 		"relatedMissionIds": ["A2.N7.BloodPackCommunicationsRelay"],
 		"events": [{
@@ -2012,6 +2083,7 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Ter.Sig.Dec.Sanctum",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Blue_Suns_Base"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -2023,15 +2095,26 @@
 		"gameVersion": "2",
 		"missionType": "Assignment",
 		"name": "N7: Captured Mining Facility",
-		"description": "_\"Mercenary activity detected inside a mining facility on the planet's surface. Facility confirmed registered to Eldfell-Ashland Energy Corporation. Eclipse presence confirmed. Distress beacon powered down at site. Sensors detect multiple space faring vessel launches from facility.\"_ Enter the facility and fight through the Eclipse mercenaries to the central computer. Start decrypting the data there and fight off more mercenaries until it finishes.\n\n",
+		"description": "_\"Mercenary activity detected inside a mining facility on the planet's surface. Facility confirmed registered to Eldfell-Ashland Energy Corporation. Eclipse presence confirmed. Distress beacon powered down at site. Sensors detect multiple space faring vessel launches from facility.\"_ \n\nEnter the facility and fight through the Eclipse mercenaries to the central computer. Start decrypting the data there and fight off more mercenaries until it finishes.\n\n",
 		"experience": 125,
 		"reward": "7,500 Credits",
 		"inMapId": "G.Ter.Cre.Zel.Helyme",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Captured_Mining_Facility"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
 		}]
+	}, {
+		"id": "A2.N7.MiningFacility.1",
+		"inMissionId": "A2.N7.MiningFacility",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Decrypt Data",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Cre.Zel.Hel.3Mainframe",
+		"isShowInParentMap": true
 	}, {
 		"id": "A2.N7.SmugglingDepot",
 		"sortIndex": 1000,
@@ -2042,6 +2125,7 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Ter.Hou.Far.Daratar",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Eclipse_Smuggling_Depot"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -2057,11 +2141,82 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Att.Cal.Sol.Sinmara",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Endangered_Research_Station"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Collector Ship"
 		}]
+	}, {
+		"id": "A2.N7.ResearchStation.1",
+		"inMissionId": "A2.N7.ResearchStation",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Bypass Terminal",
+		"inMapId": "G.Att.Cal.Sol.Sin.2Terminal",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.N7.ResearchStation.2",
+		"inMissionId": "A2.N7.ResearchStation",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Control Switch X2",
+		"inMapId": "G.Att.Cal.Sol.Sin.3Terminal",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.N7.ResearchStation.3",
+		"inMissionId": "A2.N7.ResearchStation",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Activate Cooling Unit",
+		"inMapId": "G.Att.Cal.Sol.Sin.4Terminal",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.N7.ResearchStation.4",
+		"inMissionId": "A2.N7.ResearchStation",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Control Switch X2",
+		"inMapId": "G.Att.Cal.Sol.Sin.3Terminal",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.N7.ResearchStation.5",
+		"inMissionId": "A2.N7.ResearchStation",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Activate Shield Generator",
+		"inMapId": "G.Att.Cal.Sol.Sin.5Terminal",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.N7.ResearchStation.6",
+		"inMissionId": "A2.N7.ResearchStation",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Control Switch X2",
+		"inMapId": "G.Att.Cal.Sol.Sin.3Terminal",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
+	}, {
+		"id": "A2.N7.ResearchStation.7",
+		"inMissionId": "A2.N7.ResearchStation",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Activate Shield",
+		"inMapId": "G.Att.Cal.Sol.Sin.6Terminal",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
 	}, {
 		"id": "A2.N7.HahneKedar",
 		"sortIndex": 1000,
@@ -2072,12 +2227,23 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Ter.Tit.Has.Capek",
+        "isShowInParentMap": true,
 		"relatedMissionIds": ["A2.N7.WreckedMerchantFreighter", "A2.N7.AbandonedResearchStation"],
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Hahne-Kedar_Facility"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Jarrahe Station"
 		}]
+	}, {
+		"id": "A2.N7.HahneKedar.1",
+		"inMissionId": "A2.N7.HahneKedar",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Shut Down Production Line",
+		"inMapId": "G.Ter.Tit.Has.Cap.2PLine",
+		"isShowInParentMap": true,
+		"isOpensDetail": false
 	}, {
 		"id": "A2.N7.ImminentShipCrash",
 		"sortIndex": 1000,
@@ -2088,6 +2254,7 @@
 		"experience": 125,
 		"reward": "7,500 Credits",
 		"inMapId": "G.Ter.Pyl.Nar.MSVArrow",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Imminent_Ship_Crash"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -2103,6 +2270,7 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Ter.Sig.Ske.Watson",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Javelin_Missiles_Launched"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -2118,6 +2286,7 @@
 		"experience": 125,
 		"reward": "7,500 Credits",
 		"inMapId": "G.Ter.Ome.Fat.Lorek",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Lost_Operative"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -2161,11 +2330,152 @@
 		"experience": 125,
 		"reward": "7,500 Credits",
 		"inMapId": "G.Att.Cal.Tal.Taitus",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Mining_the_Canyon"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Collector Ship"
 		}]
+	}, {
+		"id": "A2.N7.MiningTheCanyon.01",
+		"inMissionId": "A2.N7.MiningTheCanyon",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Fix Mech",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Cal.Tal.Taitus",
+		"mapLocationPoint": {
+			"x": 1252,
+			"y": 1631,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.N7.MiningTheCanyon.02",
+		"inMissionId": "A2.N7.MiningTheCanyon",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Mech Shutdown 1",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Cal.Tal.Taitus",
+		"mapLocationPoint": {
+			"x": 1365,
+			"y": 1671,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.N7.MiningTheCanyon.03",
+		"inMissionId": "A2.N7.MiningTheCanyon",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Battery 1",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Cal.Tal.Taitus",
+		"mapLocationPoint": {
+			"x": 1374,
+			"y": 1772,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.N7.MiningTheCanyon.04",
+		"inMissionId": "A2.N7.MiningTheCanyon",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Mech Shutdown 2",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Cal.Tal.Taitus",
+		"mapLocationPoint": {
+			"x": 1697,
+			"y": 1130,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.N7.MiningTheCanyon.05",
+		"inMissionId": "A2.N7.MiningTheCanyon",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Battery 2",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Cal.Tal.Taitus",
+		"mapLocationPoint": {
+			"x": 1810,
+			"y": 967,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.N7.MiningTheCanyon.06",
+		"inMissionId": "A2.N7.MiningTheCanyon",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Mech Shutdown 3",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Cal.Tal.Taitus",
+		"mapLocationPoint": {
+			"x": 1205,
+			"y": 835,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.N7.MiningTheCanyon.07",
+		"inMissionId": "A2.N7.MiningTheCanyon",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Battery 3",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Cal.Tal.Taitus",
+		"mapLocationPoint": {
+			"x": 736,
+			"y": 1033,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.N7.MiningTheCanyon.08",
+		"inMissionId": "A2.N7.MiningTheCanyon",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Mech Shutdown 4",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Cal.Tal.Taitus",
+		"mapLocationPoint": {
+			"x": 876,
+			"y": 299,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.N7.MiningTheCanyon.09",
+		"inMissionId": "A2.N7.MiningTheCanyon",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Battery 4",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Cal.Tal.Taitus",
+		"mapLocationPoint": {
+			"x": 990,
+			"y": 174,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.N7.MiningTheCanyon.10",
+		"inMissionId": "A2.N7.MiningTheCanyon",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Mech Shutdown 5",
+		"isOpensDetail": false,
+		"inMapId": "G.Att.Cal.Tal.Taitus",
+		"mapLocationPoint": {
+			"x": 578,
+			"y": 184,
+			"radius": 1
+		}
 	}, {
 		"id": "A2.N7.MSVEstevanico",
 		"sortIndex": 1000,
@@ -2176,6 +2486,7 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Ter.Hou.Plo.Zanethu",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_MSV_Estevanico"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -2191,6 +2502,7 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Ter.Ome.Ari.MSVMule",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_MSV_Strontium_Mule"],
 		"events": [{
 			"type": "BlockedUntil",
@@ -2209,11 +2521,26 @@
 		"experience": 125,
 		"reward": "3,750 Credits",
 		"inMapId": "G.Att.Had.She.Gei",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Quarian_Crash_Site"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
 		}]
+	}, {
+		"id": "A2.N7.QuarianCrashSite.1",
+		"inMissionId": "A2.N7.QuarianCrashSite",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Defend Forzan vas Idenna",
+		"inMapId": "G.Att.Had.She.Gei",
+		"mapLocationPoint": {
+			"x": 848,
+			"y": 694,
+			"radius": 1
+		},
+		"isOpensDetail": false
 	}, {
 		"id": "A2.N7.WreckedMerchantFreighter",
 		"sortIndex": 1000,
@@ -2319,6 +2646,7 @@
 		"description": "The mechanic on Tuchanka needs a Combustion Manifold, which you will run across during [megametracker://mission?id=A2.L.Mordin]. You can talk to the mechanic before boarding the vehicle to the Weyrloc Facility to start the assignment, or just turn the manifold in after completing the loyalty mission.",
 		"experience": 40,
 		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+        "isShowInParentMap": true,
 		"relatedMissionIds": ["A2.L.Mordin"],
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tuchanka:_Combustion_Manifold"],
 		"events": [{
@@ -2358,6 +2686,7 @@
 		"description": "Ratch invites you to kill some pyjaks - pests on Tuchanka. A minigame is available next to Chief Scout where you can fire dual turrets against three waves of pyjaks. \n\n_Completing this assignment rewards a discount at the store, as well as makes available Pyjak Meat for purchase._",
 		"experience": 40,
 		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+        "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tuchanka:_Killing_Pyjaks"],
 		"sideEffects": [
 			"After completing this mission and buying the Pyjak Meat from Ratch, if you feed the meat to the varren Urz, Urz will become your loyal pet, following you everywhere on Tuchanka."
@@ -2412,6 +2741,7 @@
 		"description": "Talk to Chief Scout next to the Pyjak firing range. He is looking for missing scout sent into Weyrloc territory. \n\nWhen you find the despondent scout in the Weyrloc facility, you can persuade him to leave. If you lie, he will attack you instead, and the assignment will fail. \n\n_You must speak to Chief Scout before boarding the vehicle for [megametracker://mission>id=A2.L.Mordin], or the missing scout will not be found in the Weyloc Facility_",
 		"experience": 40,
 		"inMapId": "G.InC.Kro.Ara.Tuchanka",
+        "isShowInParentMap": true,
 		"conversationRewards": [{
 			"id": "A2.T.MissingScout.P1",
 			"type": "Paragon",

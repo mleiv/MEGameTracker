@@ -1867,7 +1867,128 @@
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 1160,
-			"y": 1611,
+			"y": 1421,
+			"radius": 20
+		}
+		
+	}, {
+		"id": "G.C2.FactoryDistrict",
+		"name": "Citadel: Factory District",
+		"inMapId": "G.C",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+		"mapType":"Level",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/Citadel/Citadel_Factory_District.pdf",
+				"referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 140,
+					"y": 1315,
+					"width": 1800,
+					"height": 260
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Zakera Ward"
+        }, {
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C2.Fac.Start",
+		"inMapId": "G.C2.FactoryDistrict",
+		"name": "Start",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 452,
+			"y": 1800,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.Fac.Bridge",
+		"inMapId": "G.C2.FactoryDistrict",
+		"name": "Bridge Control",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 610,
+			"y": 132,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.Fac.Shutter",
+		"inMapId": "G.C2.FactoryDistrict",
+		"name": "Shutter Control",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1756,
+			"y": 1526,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.Fac.Fade",
+		"inMapId": "G.C2.FactoryDistrict",
+		"name": "Harkin's Hideout",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1749,
+			"y": 242,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.800Blocks",
+		"name": "Citadel: 800 Blocks",
+		"inMapId": "G.C",
+		"rerootBreadcrumbs": true,
+		"isHidden": true,
+		"mapType":"Level",
+		"gameVersionData": {
+			"2": {
+				"image": "Detail_Maps/Game2/Citadel/Citadel_800_Blocks.pdf",
+				"referenceSize": "2083x2083",
+				"mapLocationPoint": {
+					"x": 140,
+					"y": 1704,
+					"width": 1800,
+					"height": 260
+				},
+				"isHidden": false
+			}
+		},
+		"events": [{
+            "type": "BlockedUntil",
+            "id": "Unlocked Citadel: Zakera Ward"
+        }, {
+			"type": "UnavailableInGame",
+			"id": "Game1"
+		}, {
+			"type": "UnavailableInGame",
+			"id": "Game3"
+		}]
+	}, {
+		"id": "G.C2.800.1Start",
+		"inMapId": "G.C2.800Blocks",
+		"name": "Start",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 1900,
+			"y": 1739,
+			"radius": 20
+		}
+	}, {
+		"id": "G.C2.800.2Talid",
+		"inMapId": "G.C2.800Blocks",
+		"name": "To Talid's Apartment",
+		"isOpensDetail": false,
+		"mapLocationPoint": {
+			"x": 93,
+			"y": 1536,
 			"radius": 20
 		}
 	}]

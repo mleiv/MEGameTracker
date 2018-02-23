@@ -439,8 +439,33 @@
 		"price": "-50,000 Platinum"
 
 
+
 	}, {
 		"x-comment-x": "-------- ARMOR UPGRADES -------",
+		"id": "A2.UC.ArmorUpgrades.I.1",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Aegis Vest",
+		"annotationNote": "Increases health by 5%",
+		"price": "-2,000 Credits",
+		"inMapId": "G.C2.28.Rodam",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.ArmorUpgrades.I.2",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Life Support Webbing",
+		"annotationNote": "Increases health by 10%",
+		"price": "-8,000 Credits",
+		"inMapId": "G.C2.26.Sirta",
+		"isShowInParentMap": true
+	}, {
 		"x-subcomment-x": "----- MEDI-GEL ---",
 		"id": "A2.UC.ArmorUpgrades.MG.I.1",
 		"inMissionId": "A2.UC.ArmorUpgrades.MG",
@@ -1155,8 +1180,22 @@
 
 
 
+
 	}, {
 		"x-comment-x": "-------- WEAPON UPGRADES -------",
+		"id": "A2.UC.WeaponUpgrades.I.1",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.WeaponUpgrades",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Off-Hand Ammo Pack",
+		"annotationNote": "Increases spare ammo capacity by 10%",
+		"price": "-2,000 Credits",
+		"inMapId": "G.C2.28.Rodam",
+		"isShowInParentMap": true
+
+	}, {
 		"x-subcomment-x": "----- ASSAULT RIFLES ---",
 		"id": "A2.UC.WeaponUpgrades.AR.I.1",
 		"sortIndex": 1,
@@ -1370,7 +1409,12 @@
 		"name": "Heavy Pistol Damage 2 (Titan Pulsar)",
 		"annotationNote": "Squad: +10% Heavy Pistol Damage",
 		"price": "-5,000 Palladium",
-		"mapNoteForLater": "TODO: Thane Sins of the Father",
+        "inMapId": "G.C2.800Blocks",
+        "mapLocationPoint": {
+            "x": 1930,
+            "y": 1623,
+            "radius": 1
+        },
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Heavy Pistol 2"
@@ -1690,7 +1734,12 @@
 		"name": "Sniper Rifle Damage 2 (Scram Pulsar)",
 		"annotationNote": "Squad: +10% Sniper Rifle Damage",
 		"price": "-2,500 Platinum",
-		"mapNoteForLater": "TODO: Garrus: Eye for an Eye",
+		"inMapId": "G.C2.FactoryDistrict",
+		"mapLocationPoint": {
+			"x": 1856,
+			"y": 1581,
+			"radius": 1
+		},
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Sniper Rifle Damage 2"

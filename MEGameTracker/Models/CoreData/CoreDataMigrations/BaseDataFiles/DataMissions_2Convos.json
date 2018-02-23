@@ -2590,7 +2590,7 @@
                             "trigger": "\"That's irresponsible.\""
                         }, {
                             "id": "A2.Convo.Thane.R32",
-                            "type": "Paragon",
+                            "type": "Renegade",
                             "value": 2,
                             "trigger": "\"That's convenient.\""
                         }]
@@ -2611,7 +2611,7 @@
                             "trigger": "\"It's never too late to change.\""
                         }, {
                             "id": "A2.Convo.Thane.R33",
-                            "type": "Paragon",
+                            "type": "Renegade",
                             "value": 2,
                             "trigger": "\"That a 'poor me' I hear?\""
                         }]
@@ -2627,6 +2627,11 @@
             "set": {
                 "context": "During fourth conversation",
                 "options": [{
+                    "id": "A2.Convo.Thane.R39",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Get on with it.\""
+                }, {
                     "set": {
                         "context": "\"That's not what I expected.\"",
                         "isExclusiveSet": true,
@@ -2642,11 +2647,6 @@
                             "trigger": "\"You abandoned him.\""
                         }]
                     }
-                }, {
-                    "id": "A2.Convo.Thane.R41",
-                    "type": "Renegade",
-                    "value": 2,
-                    "trigger": "\"Get on with it.\""
                 }]
             }
         }, {
@@ -3586,7 +3586,7 @@
         "gameVersion": "2",
         "missionType": "Objective",
         "name": "Rodam Expeditions Discount",
-        "description": "Convince Etarn Tiron to give you a discount at the Rodam Expeditions store.",
+        "description": "Convince Etarn Tiron to give you a discount at the Rodam Expeditions store. \n\nThe Renegade option delights Tiron; I recommend it.",
         "inMapId": "G.C2.28.Rodam",
         "isShowInParentMap": true,
         "conversationRewards": [{
@@ -3642,7 +3642,7 @@
         "gameVersion": "2",
         "missionType": "Objective",
         "name": "Saronis Applications Discount",
-        "description": "Convince Marab to give you a discount at the Saronis Applications store.",
+        "description": "Convince Marab to give you a discount at the Saronis Applications store. \n\nI tend to Renegade discounts wherever possible, but Marab is so fun and unethusiastic that I always Paragon him instead (it's my favorite store on the Citadel).",
         "inMapId": "G.C2.26.Saronis",
         "isShowInParentMap": true,
         "conversationRewards": [{
@@ -3816,8 +3816,13 @@
         "titlePrefix": "Conversation: ",
         "name": "Khalisah Al-Jilani",
         "description": "Khalisah Al-Jilani again tries to interview and humiliate you on the Citadel.",
-        "x-inMapId": "TODO: Dark Star Lounge",
-        "isShowInParentMap": true,
+        "inMapId": "G.C2.ZakeraWardL28",
+        "mapLocationPoint": {
+            "x": 1460,
+            "y": 900,
+            "radius": 1
+        },
+        "sideEffects": ["You can see Al-Jilani being punched/kicked/etc. by a variety of other interviewees in the Shadow Broker's Video Archive."],
         "conversationRewards": [{
             "set": {
                 "isExclusiveSet": true,
@@ -3872,7 +3877,7 @@
                 }]
             }
         }],
-        "relatedDecisionIds": ["D2.AlJilani"]
+        "relatedDecisionIds": ["D1.AlJilani", "D2.AlJilani"]
     }, {
         "id": "A2.Convo.Fist2",
         "inMissionId": "A2.Convo.Miscellaneous",
