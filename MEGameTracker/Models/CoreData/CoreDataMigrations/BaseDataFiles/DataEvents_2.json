@@ -64,7 +64,7 @@
          ]
       }
    }, {
-      "id": "Completed: Garrus Convo 2",
+      "id": "Loyalty Available: Garrus",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Garrus.2]"
    }, {
@@ -104,7 +104,14 @@
    }, {
       "id": "Completed: Grunt Convo 1 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the first conversation with Grunt."
+      "description": "Complete one mission after the first conversation with Grunt.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Grunt Convo 1"
+         ]
+      }
    }, {
       "id": "Completed: Grunt Convo 2",
       "gameVersion": "2",
@@ -112,9 +119,16 @@
    }, {
       "id": "Completed: Grunt Convo 2 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the second conversation with Grunt."
+      "description": "Complete one mission after the second conversation with Grunt.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Grunt Convo 2"
+         ]
+      }
    }, {
-      "id": "Completed: Grunt Convo 3",
+      "id": "Loyalty Available: Grunt",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Grunt.3]"
    }, {
@@ -124,7 +138,14 @@
    }, {
       "id": "Completed: Grunt Convo 4 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the fourth conversation with Grunt."
+      "description": "Complete one mission after the fourth conversation with Grunt.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Grunt Convo 4"
+         ]
+      }
    }, {
       "id": "Completed: Jack Convo 1",
       "gameVersion": "2",
@@ -136,7 +157,14 @@
    }, {
       "id": "Completed: Jack Convo 2 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the second conversation with Jack."
+      "description": "Complete one mission after the second conversation with Jack.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jack Convo 2"
+         ]
+      }
    }, {
       "id": "Completed: Jack Convo 3",
       "gameVersion": "2",
@@ -144,9 +172,16 @@
    }, {
       "id": "Completed: Jack Convo 3 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the third conversation with Jack."
+      "description": "Complete one mission after the third conversation with Jack.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jack Convo 3"
+         ]
+      }
    }, {
-      "id": "Completed: Jack Convo 4",
+      "id": "Loyalty Available: Jack",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Jack.4]"
    }, {
@@ -156,7 +191,14 @@
    }, {
       "id": "Completed: Jack Convo 5 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the fifth conversation with Jack."
+      "description": "Complete one mission after the fifth conversation with Jack.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jack Convo 5"
+         ]
+      }
    }, {
       "id": "Completed: Jack Convo 6",
       "gameVersion": "2",
@@ -164,7 +206,14 @@
    }, {
       "id": "Completed: Jack Convo 6 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the sixth conversation with Jack."
+      "description": "Complete one mission after the sixth conversation with Jack.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jack Convo 6"
+         ]
+      }
    }, {
       "id": "Completed: Jack Convo 7",
       "gameVersion": "2",
@@ -172,7 +221,14 @@
    }, {
       "id": "Completed: Jack Convo 7 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the seventh conversation with Jack."
+      "description": "Complete one mission after the seventh conversation with Jack.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jack Convo 7"
+         ]
+      }
    }, {
       "id": "Completed: Miranda Convo 1",
       "gameVersion": "2",
@@ -180,7 +236,14 @@
    }, {
       "id": "Completed: Miranda Convo 1 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the first conversation with Miranda."
+      "description": "Complete one mission after the first conversation with Miranda.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Miranda Convo 1"
+         ]
+      }
    }, {
       "id": "Completed: Miranda Convo 2",
       "gameVersion": "2",
@@ -188,9 +251,16 @@
    }, {
       "id": "Completed: Miranda Convo 2 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the second conversation with Miranda."
+      "description": "Complete one mission after the second conversation with Miranda.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Miranda Convo 2"
+         ]
+      }
    }, {
-      "id": "Completed: Miranda Convo 3",
+      "id": "Loyalty Available: Miranda",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Miranda.3]"
    }, {
@@ -200,7 +270,14 @@
    }, {
       "id": "Completed: Miranda Convo 4 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the fourth conversation with Miranda."
+      "description": "Complete one mission after the fourth conversation with Miranda.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Miranda Convo 4"
+         ]
+      }
    }, {
       "id": "Completed: Miranda Convo 5",
       "gameVersion": "2",
@@ -208,7 +285,14 @@
    }, {
       "id": "Completed: Miranda Convo 5 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the fifth conversation with Miranda."
+      "description": "Complete one mission after the fifth conversation with Miranda.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Miranda Convo 5"
+         ]
+      }
    }, {
       "id": "Completed: Mordin Convo 1",
       "gameVersion": "2",
@@ -216,7 +300,14 @@
    }, {
       "id": "Completed: Mordin Convo 1 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the first conversation with Mordin."
+      "description": "Complete one mission after the first conversation with Mordin.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Mordin Convo 1"
+         ]
+      }
    }, {
       "id": "Completed: Mordin Convo 2",
       "gameVersion": "2",
@@ -224,15 +315,18 @@
    }, {
       "id": "Completed: Mordin Convo 2 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the second conversation with Mordin."
+      "description": "Complete one mission after the second conversation with Mordin.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Mordin Convo 2"
+         ]
+      }
    }, {
-      "id": "Completed: Mordin Convo 3",
+      "id": "Loyalty Available: Mordin",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Mordin.3]"
-   }, {
-      "id": "Completed: Mordin Convo 3 + 1",
-      "gameVersion": "2",
-      "description": "Complete one mission after the third conversation with Mordin."
    }, {
       "id": "Completed: Mordin Convo 4",
       "gameVersion": "2",
@@ -240,7 +334,14 @@
    }, {
       "id": "Completed: Mordin Convo 4 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the fourth conversation with Mordin."
+      "description": "Complete one mission after the fourth conversation with Mordin.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Mordin Convo 4"
+         ]
+      }
    }, {
       "id": "Completed: Mordin Convo 5",
       "gameVersion": "2",
@@ -248,7 +349,14 @@
    }, {
       "id": "Completed: Mordin Convo 5 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the fifth conversation with Mordin."
+      "description": "Complete one mission after the fifth conversation with Mordin.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Mordin Convo 5"
+         ]
+      }
    }, {
       "id": "Completed: Mordin Convo 6",
       "gameVersion": "2",
@@ -256,7 +364,14 @@
    }, {
       "id": "Completed: Mordin Convo 6 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the sixth conversation with Mordin."
+      "description": "Complete one mission after the sixth conversation with Mordin.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Mordin Convo 6"
+         ]
+      }
    }, {
       "id": "Completed: Samara Convo 1",
       "gameVersion": "2",
@@ -264,7 +379,14 @@
    }, {
       "id": "Completed: Samara Convo 1 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the first conversation with Samara."
+      "description": "Complete one mission after the first conversation with Samara.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Samara Convo 1"
+         ]
+      }
    }, {
       "id": "Completed: Samara Convo 2",
       "gameVersion": "2",
@@ -272,9 +394,16 @@
    }, {
       "id": "Completed: Samara Convo 2 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the second conversation with Samara."
+      "description": "Complete one mission after the second conversation with Samara.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Samara Convo 2"
+         ]
+      }
    }, {
-      "id": "Completed: Samara Convo 3",
+      "id": "Loyalty Available: Samara",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Samara.3]"
    }, {
@@ -284,7 +413,14 @@
    }, {
       "id": "Completed: Samara Convo 4 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the fourth conversation with Samara."
+      "description": "Complete one mission after the fourth conversation with Samara.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Samara Convo 4"
+         ]
+      }
    }, {
       "id": "Completed: Samara Convo 5",
       "gameVersion": "2",
@@ -292,7 +428,14 @@
    }, {
       "id": "Completed: Samara Convo 5 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the fifth conversation with Samara."
+      "description": "Complete one mission after the fifth conversation with Samara.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Samara Convo 5"
+         ]
+      }
    }, {
       "id": "Completed: Tali Convo 1",
       "gameVersion": "2",
@@ -300,9 +443,16 @@
    }, {
       "id": "Completed: Tali Convo 1 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the first conversation with Tali."
+      "description": "Complete one mission after the first conversation with Tali.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Tali Convo 1"
+         ]
+      }
    }, {
-      "id": "Completed: Tali Convo 2",
+      "id": "Loyalty Available: Tali",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Tali.2]"
    }, {
@@ -312,7 +462,14 @@
    }, {
       "id": "Completed: Tali Convo 3 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the third conversation with Tali."
+      "description": "Complete one mission after the third conversation with Tali.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Tali Convo 3"
+         ]
+      }
    }, {
       "id": "Completed: Tali Convo 4",
       "gameVersion": "2",
@@ -320,7 +477,14 @@
    }, {
       "id": "Completed: Tali Convo 4 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the fourth conversation with Tali."
+      "description": "Complete one mission after the fourth conversation with Tali.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Tali Convo 4"
+         ]
+      }
    }, {
       "id": "Completed: Tali Convo 5",
       "gameVersion": "2",
@@ -328,7 +492,14 @@
    }, {
       "id": "Completed: Tali Convo 5 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the fifth conversation with Tali."
+      "description": "Complete one mission after the fifth conversation with Tali.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Tali Convo 5"
+         ]
+      }
    }, {
       "id": "Completed: Thane Convo 1",
       "gameVersion": "2",
@@ -336,7 +507,14 @@
    }, {
       "id": "Completed: Thane Convo 1 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the first conversation with Thane."
+      "description": "Complete one mission after the first conversation with Thane.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Thane Convo 1"
+         ]
+      }
    }, {
       "id": "Completed: Thane Convo 2",
       "gameVersion": "2",
@@ -344,7 +522,14 @@
    }, {
       "id": "Completed: Thane Convo 2 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the second conversation with Thane."
+      "description": "Complete one mission after the second conversation with Thane.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Thane Convo 2"
+         ]
+      }
    }, {
       "id": "Completed: Thane Convo 3",
       "gameVersion": "2",
@@ -352,9 +537,16 @@
    }, {
       "id": "Completed: Thane Convo 3 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the third conversation with Thane."
+      "description": "Complete one mission after the third conversation with Thane.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Thane Convo 3"
+         ]
+      }
    }, {
-      "id": "Completed: Thane Convo 4",
+      "id": "Loyalty Available: Thane",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Thane.4]"
    }, {
@@ -364,7 +556,14 @@
    }, {
       "id": "Completed: Thane Convo 5 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the fifth conversation with Thane."
+      "description": "Complete one mission after the fifth conversation with Thane.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Thane Convo 5"
+         ]
+      }
    }, {
       "id": "Completed: Thane Convo 6",
       "gameVersion": "2",
@@ -372,7 +571,14 @@
    }, {
       "id": "Completed: Thane Convo 6 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the sixth conversation with Thane."
+      "description": "Complete one mission after the sixth conversation with Thane.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Thane Convo 6"
+         ]
+      }
 
    }, {
       "x-comment-x": "-----------------------LOYALTY-------------------------",
@@ -557,14 +763,14 @@
       }]
 
    }, {
-      "id": "Secured Loyalty: Mordin or Grunt",
+      "id": "Loyalty Available: Mordin or Grunt",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.L.Grunt] or [megametracker://mission?id=A2.L.Mordin]",
       "dependentOn": {
          "countTo": 1,
          "events": [
-            "Secured Loyalty: Mordin",
-            "Secured Loyalty: Grunt"
+            "Loyalty Available: Mordin",
+            "Loyalty Available: Grunt"
          ]
       }
 

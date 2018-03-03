@@ -102,7 +102,7 @@
             "id": "Completed: Horizon + 1"
         }, {
             "type": "Triggers",
-            "id": "Completed: Garrus Convo 2"
+            "id": "Loyalty Available: Garrus"
         }]
     }, {
         "id": "A2.Convo.Garrus.3",
@@ -365,7 +365,7 @@
             "id": "Completed: Grunt Convo 2 + 1"
         }, {
             "type": "Triggers",
-            "id": "Completed: Grunt Convo 3"
+            "id": "Loyalty Available: Grunt"
         }]
     }, {
         "id": "A2.Convo.Grunt.4",
@@ -762,7 +762,7 @@
             "id": "Completed: Jack Convo 3 + 1"
         }, {
             "type": "Triggers",
-            "id": "Completed: Jack Convo 4"
+            "id": "Loyalty Available: Jack"
         }]
     }, {
         "id": "A2.Convo.Jack.5",
@@ -1688,7 +1688,7 @@
             "id": "Completed: Horizon"
         }, {
             "type": "Triggers",
-            "id": "Completed: Miranda Convo 3"
+            "id": "Loyalty Available: Miranda"
         }]
     }, {
         "id": "A2.Convo.Miranda.4",
@@ -1977,7 +1977,7 @@
             "id": "Completed: Horizon + 1"
         }, {
             "type": "Triggers",
-            "id": "Completed: Mordin Convo 3"
+            "id": "Loyalty Available: Mordin"
         }]
     }, {
         "id": "A2.Convo.Mordin.4",
@@ -1991,7 +1991,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Mordin Convo 3 + 1"
+            "id": "Secured Loyalty: Mordin"
         }, {
             "type": "Triggers",
             "id": "Completed: Mordin Convo 4"
@@ -2215,7 +2215,7 @@
             "id": "Completed: Samara Convo 2 + 1"
         }, {
             "type": "Triggers",
-            "id": "Completed: Samara Convo 3"
+            "id": "Loyalty Available: Samara"
         }]
     }, {
         "id": "A2.Convo.Samara.4",
@@ -2434,7 +2434,7 @@
             "id": "Completed: Tali Convo 1 + 1"
         }, {
             "type": "Triggers",
-            "id": "Completed: Tali Convo 2"
+            "id": "Loyalty Available: Tali"
         }]
     }, {
         "id": "A2.Convo.Tali.3",
@@ -2803,7 +2803,7 @@
             "id": "Completed: Thane Convo 3 + 1"
         }, {
             "type": "Triggers",
-            "id": "Completed: Thane Convo 4"
+            "id": "Loyalty Available: Thane"
         }]
     }, {
         "id": "A2.Convo.Thane.5",
@@ -3580,6 +3580,17 @@
             }
         }]
     }, {
+        "id": "A2.Convo.RatchsWares",
+        "inMissionId": "A2.Convo.Shops",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Ratch's Wares Discount",
+        "description": "Youc an earn a discount from Ratch by completing [megametracker://mission?id=A2.T.KillingPyjaks].",
+        "inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
+        "isShowInParentMap": true,
+        "identicalMissionId": "A2.T.KillingPyjaks"
+    }, {
         "id": "A2.Convo.RodamExpeditions",
         "inMissionId": "A2.Convo.Shops",
         "sortIndex": 9090,
@@ -3698,7 +3709,7 @@
         "gameVersion": "2",
         "missionType": "Objective",
         "name": "Kenn's Salvage Discount",
-        "description": "Convince Kenn to give you a discount at the Kenn's Salvage store (before getting a discount at Harrot's).",
+        "description": "Convince Kenn to give you a discount at the Kenn's Salvage store (_before_ getting a discount at Harrot's).",
         "inMapId": "G.Ter.Ome.Sah.Ome.1.Kenn",
         "isShowInParentMap": true,
         "conversationRewards": [{

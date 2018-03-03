@@ -4017,6 +4017,10 @@
             "https://masseffect.wikia.com/wiki/Zada_Ban"
         ],
         "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Tertiary/Zada_Ban/Zada_Ban.pdf",
+                "referenceSize": "2083x2083"
+            },
             "3": {
                 "mapLocationPoint": {
                     "x": 874,
@@ -4024,6 +4028,16 @@
                     "radius": 100
                 }
             }
+        }
+    }, {
+        "id": "G.Ter.Shr.XeC.Zad.1Start",
+        "inMapId": "G.Ter.Shr.XeC.ZadaBan",
+        "name": "Start",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 839,
+            "y": 278,
+            "radius": 20
         }
     }, {
         "id": "G.Ter.Shr.XeC.Aphras",
@@ -4881,7 +4895,33 @@
         },
         "relatedLinks": [
             "http: //masseffect.wikia.com/wiki/Migrant_Fleet"
-        ]
+        ],
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Secondary/Migrant_Fleet/Migrant_Fleet.pdf",
+                "referenceSize": "2083x2083"
+            }
+        }
+    }, {
+        "id": "G.Ter.Val.Rah.Fleet.1Normandy",
+        "inMapId": "G.Ter.Val.Rah.Fleet",
+        "name": "To Normandy",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 66,
+            "y": 1365,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Val.Rah.Fleet.2Alarei",
+        "inMapId": "G.Ter.Val.Rah.Fleet",
+        "name": "To The Alarei",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1246,
+            "y": 1340,
+            "radius": 20
+        }
     }, {
         "x-comment-x": "-----------------------Pylos Nebula-------------------------",
         "id": "G.Ter.Pylos",

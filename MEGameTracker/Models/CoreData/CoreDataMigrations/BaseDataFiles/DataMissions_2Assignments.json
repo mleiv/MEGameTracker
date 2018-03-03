@@ -1909,6 +1909,34 @@
 			"id": "Completed: Freedom's Progress"
 		}]
 	}, {
+		"id": "A2.N7.AbandonedMine.1",
+		"inMissionId": "A2.N7.AbandonedMine",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Bomb",
+		"isOpensDetail": false,
+		"inMapId": "G.OuC.Min.For.Aequitas",
+        "mapLocationPoint": {
+            "x": 456,
+            "y": 276,
+            "radius": 1
+        }
+	}, {
+		"id": "A2.N7.AbandonedMine.2",
+		"inMissionId": "A2.N7.AbandonedMine",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Bomb",
+		"isOpensDetail": false,
+		"inMapId": "G.OuC.Min.For.Aequitas",
+        "mapLocationPoint": {
+            "x": 456,
+            "y": 404,
+            "radius": 1
+        }
+	}, {
 		"id": "A2.N7.AbandonedResearchStation",
 		"sortIndex": 1000,
 		"gameVersion": "2",
@@ -2073,6 +2101,76 @@
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
 		}]
+	}, {
+		"id": "A2.N7.BloodPackBase.1",
+		"inMissionId": "A2.N7.BloodPackBase",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Containment Unit",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Shr.XeC.ZadaBan",
+        "mapLocationPoint": {
+            "x": 482,
+            "y": 1027,
+            "radius": 1
+        },
+	}, {
+		"id": "A2.N7.BloodPackBase.2",
+		"inMissionId": "A2.N7.BloodPackBase",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Containment Unit",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Shr.XeC.ZadaBan",
+        "mapLocationPoint": {
+            "x": 482,
+            "y": 1140,
+            "radius": 1
+        },
+	}, {
+		"id": "A2.N7.BloodPackBase.3",
+		"inMissionId": "A2.N7.BloodPackBase",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Containment Unit",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Shr.XeC.ZadaBan",
+        "mapLocationPoint": {
+            "x": 562,
+            "y": 1027,
+            "radius": 1
+        },
+	}, {
+		"id": "A2.N7.BloodPackBase.4",
+		"inMissionId": "A2.N7.BloodPackBase",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Containment Unit",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Shr.XeC.ZadaBan",
+        "mapLocationPoint": {
+            "x": 562,
+            "y": 1140,
+            "radius": 1
+        },
+	}, {
+		"id": "A2.N7.BloodPackBase.5",
+		"inMissionId": "A2.N7.BloodPackBase",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Evacuate",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Shr.XeC.ZadaBan",
+        "mapLocationPoint": {
+            "x": 840,
+            "y": 1305,
+            "radius": 1
+        },
 	}, {
 		"id": "A2.N7.BlueSunsBase",
 		"sortIndex": 1000,
@@ -2651,7 +2749,7 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tuchanka:_Combustion_Manifold"],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Secured Loyalty: Mordin"
+            "id": "Loyalty Available: Mordin"
 		}]
 	}, {
 		"id": "A2.T.CombustionManifold.1",
@@ -2693,7 +2791,7 @@
 		],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Secured Loyalty: Mordin or Grunt"
+			"id": "Loyalty Available: Mordin or Grunt"
 		}, {
 			"type": "Triggers",
 			"id": "Completed: Killing Pyjacks"
@@ -2718,7 +2816,7 @@
 		"missionType": "Objective",
 		"name": "Kill Pyjaks",
 		"description": "",
-		"inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Defense",
 		"isShowInParentMap": true,
 		"isOpensDetail": false
 	}, {
@@ -2738,7 +2836,7 @@
 		"gameVersion": "2",
 		"missionType": "Assignment",
 		"name": "Tuchanka: Missing Scout",
-		"description": "Talk to Chief Scout next to the Pyjak firing range. He is looking for missing scout sent into Weyrloc territory. \n\nWhen you find the despondent scout in the Weyrloc facility, you can persuade him to leave. If you lie, he will attack you instead, and the assignment will fail. \n\n_You must speak to Chief Scout before boarding the vehicle for [megametracker://mission>id=A2.L.Mordin], or the missing scout will not be found in the Weyloc Facility_",
+		"description": "Talk to Chief Scout next to the Pyjak firing range. He is looking for missing scout sent into Weyrloc territory. \n\nWhen you find the despondent scout in the Weyrloc facility, you can persuade him to leave. If you lie, he will attack you instead, and the assignment will fail. \n\n_You must speak to Chief Scout before boarding the vehicle for [megametracker://mission?id=A2.L.Mordin], or the missing scout will not be found in the Weyloc Facility_",
 		"experience": 40,
 		"inMapId": "G.InC.Kro.Ara.Tuchanka",
         "isShowInParentMap": true,
@@ -2825,7 +2923,7 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Tuchanka:_Old_Blood:_Missing_Scout"],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Secured Loyalty: Mordin"
+            "id": "Loyalty Available: Mordin"
 		}]
 	}, {
 		"id": "A2.T.MissingScout.1",

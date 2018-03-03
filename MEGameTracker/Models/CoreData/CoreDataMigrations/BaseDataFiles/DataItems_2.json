@@ -74,8 +74,12 @@
 		"itemDisplayType": "Novelty",
 		"name": "Flotilla Vessel",
 		"price": null,
-		"mapNoteForLater": "TODO: Migrant_Fleet Tali Treason Alarei",
-		"inMissionId": "A2.UC.Ships"
+        "inMapId": "G.Ter.Val.Rah.Fleet",
+		"mapLocationPoint": {
+			"x": 1729,
+			"y": 379,
+			"radius": 1
+		}
 	}, {
 		"id": "A2.UC.Ships.I.4Normandy",
 		"gameVersion": "2",
@@ -442,26 +446,158 @@
 
 	}, {
 		"x-comment-x": "-------- ARMOR UPGRADES -------",
-		"id": "A2.UC.ArmorUpgrades.I.1",
+		"id": "A2.UC.ArmorUpgrades.I.01",
 		"sortIndex": 1,
-		"inMissionId": "A2.UC.ArmorUpgrades",
+		"inMissionId": "A2.UC.ArmorUpgrades.A.1Helmet",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Visor",
+		"annotationNote": "Helmet. Increases head shot damage by 10%",
+		"price": "-2,000 Credits",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Emporium",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.ArmorUpgrades.I.02",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades.A.1Helmet",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Death Mask",
+		"annotationNote": "Helmet. Increases negotiation by 10%",
+		"price": "-8,000 Credits",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.ArmorUpgrades.I.10",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades.A.2Chest",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Capacitor Chestplate",
+		"annotationNote": "Chest. Decreases shield recharge by 10%",
+		"price": "-4,000 Credits",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Emporium",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.ArmorUpgrades.I.11",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades.A.2Chest",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
 		"itemDisplayType": "Goal",
 		"name": "Aegis Vest",
-		"annotationNote": "Increases health by 5%",
+		"annotationNote": "Chest. Increases health by 5%",
 		"price": "-2,000 Credits",
 		"inMapId": "G.C2.28.Rodam",
 		"isShowInParentMap": true
 	}, {
-		"id": "A2.UC.ArmorUpgrades.I.2",
+		"id": "A2.UC.ArmorUpgrades.I.12",
 		"sortIndex": 1,
-		"inMissionId": "A2.UC.ArmorUpgrades",
+		"inMissionId": "A2.UC.ArmorUpgrades.A.2Chest",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Shield Harness",
+		"annotationNote": "Chest. Increases shields by 5%",
+		"price": "-8,000 Credits",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.ArmorUpgrades.I.20",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades.A.3Shoulders",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Strength Boost Pads",
+		"annotationNote": "Arms. Increases melee damage by 25%",
+		"price": "-4,000 Credits",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Market",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.ArmorUpgrades.I.21",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades.A.3Shoulders",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Amplifier Plates",
+		"annotationNote": "Arms. Increases power damage by 5%",
+		"price": "-2,000 Credits",
+		"inMapId": "G.Ter.Cre.Tas.Ill.1.Gateway",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.ArmorUpgrades.I.22",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades.A.3Shoulders",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Asymmetric Defense Layer",
+		"annotationNote": "Shoulders. Increases health by 5%",
+		"price": "-8,000 Credits",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.ArmorUpgrades.I.31",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades.A.4Arms",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Stabilization Gauntlets",
+		"annotationNote": "Arms. Increases shields by 5%",
+		"price": "-4,000 Credits",
+		"inMapId": "G.InC.Kro.Ara.Tuc.1.Ratch",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.WeaponUpgrades.I.32",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades.A.4Arms",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Off-Hand Ammo Pack",
+		"annotationNote": "Arms. Increases ammo capacity by 10%",
+		"price": "-2,000 Credits",
+		"inMapId": "G.C2.28.Rodam",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.ArmorUpgrades.I.40",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades.A.5Legs",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Ordnance Packs",
+		"annotationNote": "Legs. Increases heavy weapons ammo by 10%",
+		"price": "-2,000 Credits",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Emporium",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.ArmorUpgrades.I.41",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades.A.5Legs",
+		"gameVersion": "2",
+		"itemType": "Upgrade",
+		"itemDisplayType": "Goal",
+		"name": "Stimulator Conduits",
+		"annotationNote": "Arms. Increases storm speed by 10%",
+		"price": "-4,000 Credits",
+		"inMapId": "G.Ter.Ome.Sah.Ome.1.Market",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.UC.ArmorUpgrades.I.42",
+		"sortIndex": 1,
+		"inMissionId": "A2.UC.ArmorUpgrades.A.5Legs",
 		"gameVersion": "2",
 		"itemType": "Upgrade",
 		"itemDisplayType": "Goal",
 		"name": "Life Support Webbing",
-		"annotationNote": "Increases health by 10%",
+		"annotationNote": "Legs. Increases health by 10%",
 		"price": "-8,000 Credits",
 		"inMapId": "G.C2.26.Sirta",
 		"isShowInParentMap": true
@@ -779,7 +915,6 @@
             "y": 1220,
             "radius": 1
         },
-        "inMapId": "TODO: Tali loyalty",
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Tech Damage 3"
@@ -794,6 +929,12 @@
 		"name": "Tech Damage 4 (Multicore Amplifier)",
 		"annotationNote": "Squad: +10% Tech Damage",
 		"price": "-500 Element Zero",
+        "inMapId": "G.Ter.Val.Rah.Fleet",
+		"mapLocationPoint": {
+			"x": 542,
+			"y": 1002,
+			"radius": 1
+		},
 		"events": [{
             "type": "BlockedUntil",
             "id": "Upgrade: Tech Damage 2"
@@ -1183,19 +1324,6 @@
 
 	}, {
 		"x-comment-x": "-------- WEAPON UPGRADES -------",
-		"id": "A2.UC.WeaponUpgrades.I.1",
-		"sortIndex": 1,
-		"inMissionId": "A2.UC.WeaponUpgrades",
-		"gameVersion": "2",
-		"itemType": "Upgrade",
-		"itemDisplayType": "Goal",
-		"name": "Off-Hand Ammo Pack",
-		"annotationNote": "Increases spare ammo capacity by 10%",
-		"price": "-2,000 Credits",
-		"inMapId": "G.C2.28.Rodam",
-		"isShowInParentMap": true
-
-	}, {
 		"x-subcomment-x": "----- ASSAULT RIFLES ---",
 		"id": "A2.UC.WeaponUpgrades.AR.I.1",
 		"sortIndex": 1,
@@ -1569,11 +1697,10 @@
 		"price": "-5,000 Platinum",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1Main",
 		"mapLocationPoint": {
-			"x": 1099,
-			"y": 235,
+            "x": 1590,
+            "y": 967,
 			"radius": 1
 		},
-		"mapNoteForLater": "TODO: FIND SHAMAN LOCATION - HE GIVES THIS",
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Shotgun Damage 2"
@@ -2255,7 +2382,12 @@
 		"name": "Geth Shield Strength 1 (Cyclonic Particles)",
 		"annotationNote": "Squad: +25% Shield Strength",
 		"price": "-2,500 Platinum",
-		"mapNoteForLater": "TODO: Tali Treason, Monitor"
+        "inMapId": "G.Ter.Val.Rah.Fleet",
+		"mapLocationPoint": {
+			"x": 1749,
+			"y": 1706,
+			"radius": 1
+		}
 	}, {
 		"id": "A2.UC.SquadUpgrades.GSS.I.2",
 		"inMissionId": "A2.UC.SquadUpgrades.GSS",

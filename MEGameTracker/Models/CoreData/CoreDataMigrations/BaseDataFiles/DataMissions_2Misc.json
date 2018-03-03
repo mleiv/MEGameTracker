@@ -4916,7 +4916,7 @@
       "id": "Completed: Horizon"
     }, {
       "type": "BlockedUntil",
-      "id": "Completed: Garrus Convo 2"
+      "id": "Loyalty Available: Garrus"
     }, {
       "type": "Triggers",
       "id": "Secured Loyalty: Garrus"
@@ -5023,15 +5023,15 @@
       "set": {
         "context": "Speaking to Urdnet Wrex or Wreave",
         "options": [{
+           "id": "A2.L.Grunt.R1",
+           "type": "Renegade",
+           "value": 2,
+           "trigger": "\"Does that change anything?\" or \"Grunt's link to Okeer is good?\""
+        }, {
           "id": "A2.L.Grunt.P1",
           "type": "Paragon",
           "value": 2,
           "trigger": "\"His call.\""
-        }, {
-          "id": "A2.L.Grunt.R1",
-          "type": "Renegade",
-          "value": 2,
-          "trigger": "\"Does that change anything?\" or \"Grunt's link to Okeer is good?\""
         }]
       }
     }, {
@@ -5080,18 +5080,35 @@
               "type": "Renegade",
               "value": 5,
               "context": "*Renegade Interrupt*",
-              "trigger": ""
+              "trigger": "Head-butt Uvenk."
             }, {
-              "id": "A2.L.Grunt.P5",
-              "type": "Paragon",
-              "value": 2,
-              "trigger": "\"You defy a shaman?\""
-            }]
-          }
-        }, {
-          "set": {
-            "isExclusiveSet": true,
-            "options": [{
+              "set": {
+                "options": [{
+                  "id": "A2.L.Grunt.P5",
+                  "type": "Paragon",
+                  "value": 2,
+                  "trigger": "\"You defy a shaman?\""
+                }, {
+                  "set": {
+                    "isExclusiveSet": true,
+                    "context": "\"What is your problem, Uvenk?\"",
+                    "options": [{
+                      "id": "A2.L.Grunt.P5",
+                      "type": "Paragon",
+                      "value": 5,
+                      "context": "*_Charm_* Uvenk",
+                      "trigger": "\"You argue like an alien.\""
+                    }, {
+                      "id": "A2.L.Grunt.R5",
+                      "type": "Renegade",
+                      "value": 5,
+                      "context": "*_Intimidate_* Uvenk",
+                      "trigger": "\"So you're fearful.\""
+                    }]
+                  }
+                }]
+              }
+            }, {
               "id": "A2.L.Grunt.R3A",
               "type": "Renegade",
               "value": 2,
@@ -5103,24 +5120,6 @@
               "trigger": "\"Let's get this crap going!\""
             }]
           }
-        }]
-      }
-    }, {
-      "set": {
-        "isExclusiveSet": true,
-        "context": "\"What is your problem, Uvenk?\"",
-        "options": [{
-          "id": "A2.L.Grunt.P5",
-          "type": "Paragon",
-          "value": 5,
-          "context": "*_Charm_* Uvenk",
-          "trigger": "\"You argue like an alien.\""
-        }, {
-          "id": "A2.L.Grunt.R5",
-          "type": "Renegade",
-          "value": 5,
-          "context": "*_Intimidate_* Uvenk",
-          "trigger": "\"So you're fearful.\""
         }]
       }
     }, {
@@ -5202,7 +5201,7 @@
       "id": "Completed: Horizon"
     }, {
       "type": "BlockedUntil",
-      "id": "Completed: Grunt Convo 3"
+      "id": "Loyalty Available: Grunt"
     }, {
       "type": "Triggers",
       "id": "Secured Loyalty: Grunt"
@@ -5224,7 +5223,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Shaman",
-    "description": "Head upstairs to talk to the shaman. He will agree that Grunt is worthy to complete the rite, but that he needs a krantt to fight with him. You volunteer. \n\nWhen you officially accept the rite from the shaman, you will be immediately transported to the site.",
+    "description": "Head upstairs to talk to the shaman (FYI, he prefers Reneagde answers). He will agree that Grunt is worthy to complete the rite, but that he needs a krantt to fight with him. You volunteer. \n\nWhen you officially accept the rite from the shaman, you will be immediately transported to the site.",
     "inMapId": "G.InC.Kro.Ara.Tuc.1Main",
     "mapLocationPoint": {
       "x": 1590,
@@ -5268,7 +5267,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Gatatog Uvenk",
-    "description": "Uvenk has changed his mind and now wants Grunt in his clan, and he's not taking no for an answer. You will have to kill him and his krannt in order to leave.",
+               "description": "Uvenk has changed his mind and now wants Grunt in his clan, and he's not taking no for an answer. You will have to kill him and his krannt in order to leave. \n\nNote: the assignment is finished when Uvenk dies, so loot the place before you kill him.",
     "inMapId": "G.InC.Kro.Ara.Tuc.3Ruins",
     "mapLocationPoint": {
       "x": 1150,
@@ -5496,7 +5495,7 @@
       "id": "Completed: Horizon"
     }, {
       "type": "BlockedUntil",
-      "id": "Completed: Jack Convo 4"
+      "id": "Loyalty Available: Jack"
     }, {
       "type": "Triggers",
       "id": "Secured Loyalty: Jack"
@@ -5774,7 +5773,7 @@
       "id": "Completed: Horizon"
     }, {
       "type": "BlockedUntil",
-      "id": "Completed: Jacob Convo 4"
+      "id": "Loyalty Available: Jacob"
     }, {
       "type": "Triggers",
       "id": "Secured Loyalty: Jacob"
@@ -6264,7 +6263,7 @@
       "id": "Completed: Horizon"
     }, {
       "type": "BlockedUntil",
-      "id": "Completed: Miranda Convo 3"
+      "id": "Loyalty Available: Miranda"
     }]
   }, {
     "id": "A2.L.Mir.1",
@@ -6372,7 +6371,6 @@
     }, {
       "set": {
         "context": "Examining the dead krogan female",
-        "isExclusiveSet": true,
         "options": [{
           "set": {
             "isExclusiveSet": true,
@@ -6393,12 +6391,12 @@
             "context": "After selecting Paragon above",
             "isExclusiveSet": true,
             "options": [{
-              "id": "A2.L.Mordin.P8",
+              "id": "A2.L.Mordin.P8A",
               "type": "Paragon",
               "value": 2,
               "trigger": "\"Like undo the genophage.\""
             }, {
-              "id": "A2.L.Mordin.R8",
+              "id": "A2.L.Mordin.R8A",
               "type": "Renegade",
               "value": 2,
               "trigger": "\"Great. Talk about the corpse.\""
@@ -6406,15 +6404,15 @@
           }
         }, {
           "set": {
-            "context": "After selecting Renegade on either above",
+            "context": "After selecting either Renegade above",
             "isExclusiveSet": true,
             "options": [{
-              "id": "A2.L.Mordin.P8",
+              "id": "A2.L.Mordin.P8B",
               "type": "Paragon",
               "value": 2,
               "trigger": "\"The genophage was wrong.\""
             }, {
-              "id": "A2.L.Mordin.R8",
+              "id": "A2.L.Mordin.R8B",
               "type": "Renegade",
               "value": 2,
               "trigger": "\"The genophage was right.\""
@@ -6422,7 +6420,7 @@
           }
         }, {
           "set": {
-            "context": "After selecting Paragon on either above",
+            "context": "After selecting either Paragon above",
             "isExclusiveSet": true,
             "options": [{
               "id": "A2.L.Mordin.P9",
@@ -6547,12 +6545,12 @@
           "set": {
             "isExclusiveSet": true,
             "options": [{
-              "id": "A2.L.Mordin.P15",
+              "id": "A2.L.Mordin.P16",
               "type": "Paragon",
               "value": 15,
               "trigger": "\"You should help the krogan.\" or \"Hold onto the data.\""
             }, {
-              "id": "A2.L.Mordin.R15",
+              "id": "A2.L.Mordin.R16",
               "type": "Renegade",
               "value": 15,
               "trigger": "\"Genophage was the right call.\" or \"Destroy the data for now.\""
@@ -6566,7 +6564,7 @@
       "id": "Completed: Horizon"
     }, {
       "type": "BlockedUntil",
-      "id": "Completed: Mordin Convo 3"
+      "id": "Loyalty Available: Mordin"
     }, {
       "type": "Triggers",
       "id": "Secured Loyalty: Mordin"
@@ -6578,8 +6576,8 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Take Transport",
-    "description": "Head over to the mechanic and use the transport there to travel out to the Weyrloc facility.",
-    "inMapId": "G.InC.Kro.Ara.Tuc.1.Mechanic",
+    "description": "Speak to Chief Scout to board the transport to the Weyrloc Facility.",
+    "inMapId": "G.InC.Kro.Ara.Tuc.1.Defense",
     "isShowInParentMap": true
   }, {
     "id": "A2.L.Mor.2",
@@ -6747,7 +6745,7 @@
       "id": "Completed: Horizon"
     }, {
       "type": "BlockedUntil",
-      "id": "Completed: Samara Convo 3"
+      "id": "Loyalty Available: Samara"
     }, {
       "type": "Triggers",
       "id": "Secured Loyalty: Samara"
@@ -6906,7 +6904,7 @@
         "context": "Meeting Captain Kar'Danna",
         "options": [{
           "set": {
-            "context": "(With Legion)",
+            "context": "(Without Legion)",
             "options": [{
               "id": "A2.L.Tali.P1",
               "type": "Paragon",
@@ -6917,13 +6915,13 @@
         }, {
           "set": {
             "isExclusiveSet": true,
-            "context": "(Without Legion)",
+            "context": "(With Legion)",
             "options": [{
               "id": "A2.L.Tali.R2",
               "type": "Renegade",
               "value": 5,
               "context": "*Renegade Interrupt*",
-              "trigger": ""
+              "trigger": "Intimidate Kar'Danna into backing down."
             }, {
               "id": "A2.L.Tali.P2A",
               "type": "Paragon",
@@ -7041,22 +7039,6 @@
       "type": "Paragon",
       "value": 2,
       "trigger": "\"I hope you feel better.\""
-    }, {
-      "set": {
-        "context": "Speaking to Shala'Raan after the hearing",
-        "isExclusiveSet": true,
-        "options": [{
-          "id": "A2.L.Tali.P15",
-          "type": "Paragon",
-          "value": 2,
-          "trigger": "\"You went too far.\""
-        }, {
-          "id": "A2.L.Tali.R15",
-          "type": "Renegade",
-          "value": 2,
-          "trigger": "\"Thanks. Will it help?\""
-        }]
-      }
     }, {
       "set": {
         "context": "Speaking to Shala'Raan after the hearing",
@@ -7212,7 +7194,7 @@
               "type": "Renegade",
               "value": 30,
               "context": "(If Veetor and Kal'Reegar are there)",
-              "trigger": "\"[Rally the Crowd.]\""
+              "trigger": "\"(Rally the Crowd.)\""
             }, {
               "id": "A2.L.Tali.P36B",
               "type": "Paragon",
@@ -7249,7 +7231,7 @@
       }
     }, {
       "set": {
-        "context": "Speaking to Admiral Daro'Xen after the trial",
+        "context": "(If Tali was exiled) Speaking to Admiral Daro'Xen after the trial",
         "isExclusiveSet": true,
         "options": [{
           "id": "A2.L.Tali.P40",
@@ -7297,7 +7279,7 @@
       }
     }, {
       "set": {
-        "context": "(If Tali was exonerated) Speaking to Admiral Zaal'Koris after the trial",
+        "context": "(If Tali was exiled) Speaking to Admiral Zaal'Koris after the trial",
         "isExclusiveSet": true,
         "options": [{
           "id": "A2.L.Tali.P55",
@@ -7329,7 +7311,7 @@
       "id": "Completed: Horizon"
     }, {
       "type": "BlockedUntil",
-      "id": "Completed: Tali Convo 2"
+      "id": "Loyalty Available: Tali"
     }, {
       "type": "Triggers",
       "id": "Secured Loyalty: Tali"
@@ -7343,7 +7325,11 @@
     "name": "Board the Rayya",
     "description": "Head to the Migrant Fleet and board the Rayya, with Tali's passphrase. Captain Kar'Danna will greet you and explain the charges against Tali: smuggling active geth. Then you will speak with Admiral Shala'Raan, an old friend of Tali's mother. She reveals that Tali has been stripped of her ship name, a step towards exile. She is evasive when Tali asks about her father.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
+    "mapLocationPoint": {
+      "x": 124,
+      "y": 1367,
+      "radius": 1
+    }
   }, {
     "id": "A2.L.Tali.2",
     "inMissionId": "A2.L.Tali",
@@ -7353,7 +7339,11 @@
     "name": "The Hearing",
     "description": "Tali is brought before the Admiralty Board. They surprise her with the news that her father's ship, the Alarei, was overrun by geth and everyone aboard is presumed dead. The Board blames Tali for supplying the Alarei with live geth. They offer her one chance to clear her name: board the Alarei and find proof of her innocence.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
+    "mapLocationPoint": {
+      "x": 757,
+      "y": 1002,
+      "radius": 1
+    }
   }, {
     "id": "A2.L.Tali.3",
     "inMissionId": "A2.L.Tali",
@@ -7361,9 +7351,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Garden Plaza (Optional)",
-    "description": "You can speak privately with the admirals and other quarians present in the plaza.",
-    "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
+    "description": "You can speak privately with the admirals and other quarians present in the plaza."
   }, {
     "id": "A2.L.Tali.3.1",
     "inMissionId": "A2.L.Tali.3",
@@ -7373,7 +7361,11 @@
     "name": "Admiral Shala'Raan",
     "description": "[megametracker://person?id=P2.Raan] apologizes for blind-siding Tali with the news about her father. She hopes Tali will find evidence of her innocence on the Alarei.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
+    "mapLocationPoint": {
+      "x": 587,
+      "y": 1101,
+      "radius": 1
+    }
   }, {
     "id": "A2.L.Tali.3.2",
     "inMissionId": "A2.L.Tali.3",
@@ -7383,7 +7375,11 @@
     "name": "Admiral Daro'Xen",
     "description": "[megametracker://person?id=P2.Raan] is uninterested in the purported reasons for the trial, but she sees its true purpose as defining whether the quarians continue to fear the geth or move forward to reclaim their past. She wants to research AI again and to use geth to further her technical knowledge.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
+    "mapLocationPoint": {
+      "x": 805,
+      "y": 824,
+      "radius": 1
+    }
   }, {
     "id": "A2.L.Tali.3.3",
     "inMissionId": "A2.L.Tali.3",
@@ -7393,7 +7389,11 @@
     "name": "Admiral Hen'Gerrel",
     "description": "[megametracker://person?id=P2.Gerrel] wants to start a war with the geth and retake the quarian homeworld. He considered Rael'Zorah both an old friend and an ally. He thinks Tali is innocent.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
+    "mapLocationPoint": {
+      "x": 665,
+      "y": 1173,
+      "radius": 1
+    }
   }, {
     "id": "A2.L.Tali.3.4",
     "inMissionId": "A2.L.Tali.3",
@@ -7403,7 +7403,11 @@
     "name": "Admiral Zaal'Koris",
     "description": "[megametracker://person?id=P2.Koris] wants peace with the geth. He sees Rael'Zorah's weapons research as inherently reckless, and wants Tali's exile to be symbol to other quarians to stop such efforts in the future.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
+    "mapLocationPoint": {
+      "x": 803,
+      "y": 1187,
+      "radius": 1
+    }
   }, {
     "id": "A2.L.Tali.3.5",
     "inMissionId": "A2.L.Tali.3",
@@ -7413,7 +7417,11 @@
     "name": "Kal'Reegar",
     "description": "[megametracker://person?id=O2.KalReegar] is present if he did not die during [megametracker://mission?id=A2.D.Tali].",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true,
+    "mapLocationPoint": {
+      "x": 697,
+      "y": 677,
+      "radius": 1
+    },
     "events": [{
       "type": "BlockedUntil",
       "id": "Saved Kal'Reegar"
@@ -7427,7 +7435,11 @@
     "name": "Veetor'Nara",
     "description": "[megametracker://person?id=O2.Veetor] is present if he was not given to Cerberus after [megametracker://mission?id=M2.FreedomsProgress], with Dr. Elan'Shiya, who is helping with his recovery.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true,
+    "mapLocationPoint": {
+      "x": 680,
+      "y": 824,
+      "radius": 1
+    },
     "events": [{
       "type": "BlockedUntil",
       "id": "Saved Veetor"
@@ -7441,11 +7453,11 @@
     "name": "Captain Kar'Danna",
     "description": "[megametracker://person?id=O2.Danna] will apologize for not telling Tali about her father.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true,
-    "events": [{
-      "type": "BlockedUntil",
-      "id": "Saved Veetor"
-    }]
+    "mapLocationPoint": {
+      "x": 124,
+      "y": 1367,
+      "radius": 1
+    }
   }, {
     "id": "A2.L.Tali.4",
     "inMissionId": "A2.L.Tali",
@@ -7455,17 +7467,11 @@
     "name": "Board the Alarei",
     "description": "Take a shuttle to the Alarei. Fight through the geth on the first level, recovering any crew logs of the events preceeding the geth takeover.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
-  }, {
-    "id": "A2.L.Tali.5",
-    "inMissionId": "A2.L.Tali",
-    "sortIndex": 3085,
-    "gameVersion": "2",
-    "missionType": "Objective",
-    "name": "Damaged Console",
-    "description": "Head upstairs and through the Chem Lab to the console. Tali will hack it looking for information.",
-    "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
+    "mapLocationPoint": {
+      "x": 1248,
+      "y": 1339,
+      "radius": 1
+    }
   }, {
     "id": "A2.L.Tali.6",
     "inMissionId": "A2.L.Tali",
@@ -7475,7 +7481,11 @@
     "name": "Find Rael'Zorah",
     "description": "There will be an elevated battle after opening the next door, with the geth entering from a doorway below. When they are all disposed of, head down the ramp and through that doorway to find Rael'Zorah. Tali finds a message on his body, directing Tali to recover evidence on the bridge which exonerates her.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
+    "mapLocationPoint": {
+      "x": 1701,
+      "y": 556,
+      "radius": 1
+    }
   }, {
     "id": "A2.L.Tali.7",
     "inMissionId": "A2.L.Tali",
@@ -7485,7 +7495,11 @@
     "name": "Recover Evidence",
     "description": "Head upstairs for a final battle on the bridge. When they are eliminated, get the evidence left by Rael'Zorah. The record affirms that he never told Tali what he was doing, but unfortunately also incriminates Rael'Zorah.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true,
+    "mapLocationPoint": {
+      "x": 1701,
+      "y": 163,
+      "radius": 1
+    },
     "sideEffects": ["The Quarian Model Ship is in this room."]
   }, {
     "id": "A2.L.Tali.8",
@@ -7496,7 +7510,11 @@
     "name": "Trial",
     "description": "Return to the Rayya to conclude the trial. If you reveal the evidence you recovered from the Alarei, Tali will be furious and not speak to you for the rest of the game. If you don't have Kal'Reegar and Veetor there to assist with her defense, she may be exiled, which has huge consequences for Game 3.",
     "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
+    "mapLocationPoint": {
+      "x": 757,
+      "y": 1002,
+      "radius": 1
+    }
   }, {
     "id": "A2.L.Tali.9",
     "inMissionId": "A2.L.Tali",
@@ -7504,9 +7522,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Wrap-up (Optional)",
-    "description": "You can again speak privately with the admirals and other quarians about the outcome of the trial. Gerrel and Xen are particularly curious about what you found on the Alarei, if you did not reveal it during the trial.",
-    "inMapId": "G.Ter.Val.Rah.Fleet",
-    "isShowInParentMap": true
+    "description": "You can again speak privately with the admirals and other quarians about the outcome of the trial. Gerrel and Xen are particularly curious about what you found on the Alarei, if you did not reveal it during the trial."
   }, {
     "id": "A2.L.Thane",
     "sortIndex": 304,
@@ -7630,7 +7646,7 @@
                   "context": "*_Charm_* Reynolds",
                   "trigger": "\"I'm a health inspector.\""
                 }, {
-                  "id": "A2.L.Thane.R10",
+                  "id": "A2.L.Thane.R10B",
                   "type": "Renegade",
                   "value": 5,
                   "context": "*_Intimidate_* Reynolds",
@@ -7672,13 +7688,13 @@
                   "context": "*Renegade interrupt*",
                   "trigger": "Punch Reynolds in the stomach."
                 }, {
-                  "id": "A2.L.Thane.P11",
+                  "id": "A2.L.Thane.P12",
                   "type": "Paragon",
                   "value": 5,
                   "context": "*_Charm_* Reynolds",
                   "trigger": "\"Here's the truth.\""
                 }, {
-                  "id": "A2.L.Thane.R11B",
+                  "id": "A2.L.Thane.R12B",
                   "type": "Renegade",
                   "value": 5,
                   "context": "*_Intimidate_* Reynolds",
@@ -7761,7 +7777,7 @@
       "id": "Completed: Horizon"
     }, {
       "type": "BlockedUntil",
-      "id": "Completed: Thane Convo 4"
+      "id": "Loyalty Available: Thane"
     }, {
       "type": "Triggers",
       "id": "Secured Loyalty: Thane"
@@ -7807,7 +7823,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Elias Kelham",
-    "description": "You need to get Kelham to give up the assassination target. Bailey stalls Kelham's lawyer to buy you time, but you have to work quickly. The quickest way to make him talk is claim Spectre status, if you have the Renegade points. You can also beat an answer out of him (only requires the third interrupt). The two Charm/ntimidate options require you to commit - for charm you must take on good cop yourself and select all paragon options, the reverse for intimidate. Otherwise the lawyer interrupts and your only remaining options are to make a deal. \n\nKelham gives up the name of the target, [megametracker://person?id=O2.Talid], a particularly repllant anti-human politician.",
+    "description": "You need to get Kelham to give up the assassination target. Bailey stalls Kelham's lawyer to buy you time, but you have to work quickly. The quickest way to make him talk is claim Spectre status, if you have the Renegade points. You can also beat an answer out of him (only requires the third interrupt). The two Charm/Intimidate options require you to commit - for charm you must take on good cop yourself and select all paragon options, the reverse for intimidate. Otherwise the lawyer interrupts and your only remaining options are to make a deal. \n\nKelham gives up the name of the target, [megametracker://person?id=O2.Talid], a particularly repllant anti-human politician.",
     "inMapId": "G.C2.27.CSec",
     "isShowInParentMap": true
   }, {
@@ -7946,6 +7962,54 @@
       "type": "BlockedUntil",
       "id": "Unlocked Galaxy Map 2"
     }]
+  }, {
+    "id": "A2.UC.ArmorUpgrades.A",
+    "inMissionId": "A2.UC.2ArmorUpgrades",
+    "sortIndex": 10000,
+    "gameVersion": "2",
+    "missionType": "Upgrade",
+    "name": "Armor Accessories",
+    "description": ""
+  }, {
+    "id": "A2.UC.ArmorUpgrades.A.1Helmet",
+    "inMissionId": "A2.UC.ArmorUpgrades.A",
+    "sortIndex": 10000,
+    "gameVersion": "2",
+    "missionType": "Upgrade",
+    "name": "Helmet",
+    "description": ""
+  }, {
+    "id": "A2.UC.ArmorUpgrades.A.2Chest",
+    "inMissionId": "A2.UC.ArmorUpgrades.A",
+    "sortIndex": 10000,
+    "gameVersion": "2",
+    "missionType": "Upgrade",
+    "name": "Chest",
+    "description": ""
+  }, {
+    "id": "A2.UC.ArmorUpgrades.A.3Shoulders",
+    "inMissionId": "A2.UC.ArmorUpgrades.A",
+    "sortIndex": 10000,
+    "gameVersion": "2",
+    "missionType": "Upgrade",
+    "name": "Shoulders",
+    "description": ""
+  }, {
+    "id": "A2.UC.ArmorUpgrades.A.4Arms",
+    "inMissionId": "A2.UC.ArmorUpgrades.A",
+    "sortIndex": 10000,
+    "gameVersion": "2",
+    "missionType": "Upgrade",
+    "name": "Arms",
+    "description": ""
+  }, {
+    "id": "A2.UC.ArmorUpgrades.A.5Legs",
+    "inMissionId": "A2.UC.ArmorUpgrades.A",
+    "sortIndex": 10000,
+    "gameVersion": "2",
+    "missionType": "Upgrade",
+    "name": "Legs",
+    "description": ""
   }, {
     "id": "A2.UC.ArmorUpgrades.DP",
     "inMissionId": "A2.UC.2ArmorUpgrades",
