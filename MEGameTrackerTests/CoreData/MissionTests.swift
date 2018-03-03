@@ -323,4 +323,20 @@ final class MissionTests: MEGameTrackerTests {
 		let event = Event.get(id: "Completed: Joab Prothean Pyramid")
 		XCTAssert(event?.isTriggered == true, "Reported incorrect triggered event state")
 	}
+
+    func testCompletedAfter() {
+        initializeCurrentGame() // needed for saving with game uuid
+
+        guard let beforeDate = Calendar.current.date(byAdding: .second, value: -1, to: Date())
+            else { XCTAssert(false); return; }
+
+        let mission = create(Mission.self, from: digJson)
+        _ = mission?.changed(isCompleted: true)
+        let missionsAfterDate = Mission.getCompletedCount(
+            after: beforeDate,
+            missionTypes: MissionType.anyMissionTriggers,
+            gameVersion: mission?.gameVersion ?? .game1
+        )
+        XCTAssertEqual(missionsAfterDate, 1)
+    }
 }

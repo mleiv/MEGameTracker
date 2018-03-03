@@ -31,6 +31,34 @@ final class EventTests: MEGameTrackerTests {
 
 	let prologue2EventJson = "{\"id\": \"Completed: Prologue 1\", \"gameVersion\": \"2\",\"description\": \"[megametracker:\\/\\/mission?id=M2.Prologue1]\"}"
 
+    let additiveEventBase = """
+	{
+        "id": "Completed: Additive Event Base",
+        "gameVersion": "1"
+	}
+""";
+    let additiveMission = """
+    {
+        "id": "Additive Mission",
+        "name": "Additive Mission",
+        "gameVersion": "1",
+        "missionType": "Assignment"
+    }
+""";
+    let additiveEventTarget = """
+    {
+      "id": "Completed: Additive Event Base + 1",
+      "gameVersion": "1",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Additive Event Base"
+         ]
+      }
+    }
+""";
+
 	// swiftlint:enable line_length
 
 	override func setUp() {
@@ -168,5 +196,20 @@ final class EventTests: MEGameTrackerTests {
 		waitForExpectations(timeout: 0.1) { _ in }
 		Mission.onChange.cancelSubscription(for: self)
 	}
+
+    func testAdditiveEvents() {
+        initializeCurrentGame() // needed for saving event with game uuid
+
+        let eventBase = create(Event.self, from: additiveEventBase)
+        let eventTarget = create(DataEvent.self, from: additiveEventTarget)
+        let mission = create(Mission.self, from: additiveMission)
+
+        _ = eventBase?.changed(isTriggered: true)
+        sleep(2)
+        _ = mission?.changed(isCompleted: true)
+
+        let resultEvent = Event.get(id: eventTarget?.id ?? "")
+        XCTAssertTrue(resultEvent?.isTriggered ?? false)
+    }
 
 }

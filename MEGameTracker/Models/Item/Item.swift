@@ -248,7 +248,7 @@ extension Item {
         item.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
-            cloudChanges: ["isAcquired": isAcquired]
+            cloudChanges: ["isAcquired": isAcquired, "acquiredDate": acquiredDate]
         )
         if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
             item.applyToHierarchy(

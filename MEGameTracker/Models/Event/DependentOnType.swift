@@ -54,7 +54,7 @@ extension DependentOnType {
                     let gameVersion = event.gameVersion {
                     count += Mission.getCompletedCount(
                         after: triggeredDate,
-                        missionType: .mission,
+                        missionTypes: MissionType.anyMissionTriggers,
                         gameVersion: gameVersion
                     )
 print("\(id) \(count)")

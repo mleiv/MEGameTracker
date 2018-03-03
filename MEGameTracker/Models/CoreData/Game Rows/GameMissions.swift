@@ -207,15 +207,15 @@ extension Mission {
 
     public static func getCompletedCount(
         after: Date,
-        missionType: MissionType = .mission,
+        missionTypes: [MissionType] = [.mission],
         gameVersion: GameVersion = .game1,
         with manager: CodableCoreDataManageable? = nil
     ) -> Int {
         return Mission.getCount(with: nil) { fetchRequest in
             fetchRequest.predicate = NSPredicate(
-                format: "((%K in %@) AND (%K == %@) AND (%K == true) AND %K >= %@)",
+                format: "((%K in %@) AND (%K == %@) AND (%K == true) AND %K > %@)",
                 #keyPath(GameMissions.dataParent.missionType),
-                MissionType.anyMissionTriggers.map { $0.stringValue },
+                missionTypes.map { $0.stringValue },
                 #keyPath(GameMissions.dataParent.gameVersion),
                 gameVersion.stringValue,
                 #keyPath(GameMissions.isCompleted),

@@ -217,6 +217,7 @@
 		B160EE931CF95DB80028910C /* SliderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160EE901CF95DB80028910C /* SliderRow.swift */; };
 		B16197321F4537C20039BF26 /* CodableDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16197311F4537C20039BF26 /* CodableDictionary.swift */; };
 		B16197341F4537D00039BF26 /* CodableDictionaryValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16197331F4537D00039BF26 /* CodableDictionaryValueType.swift */; };
+		B1647055204A3CDB0038F4D2 /* EventTriggerMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1647054204A3CDB0038F4D2 /* EventTriggerMigration.swift */; };
 		B169BB961CF4035C006BC234 /* VoiceActorLinkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169BB921CF4035C006BC234 /* VoiceActorLinkable.swift */; };
 		B169BB981CF4035C006BC234 /* VoiceActorLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169BB941CF4035C006BC234 /* VoiceActorLinkView.swift */; };
 		B169BB9D1CF406CB006BC234 /* VoiceActorLinkRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B169BB9A1CF406CB006BC234 /* VoiceActorLinkRow.xib */; };
@@ -736,6 +737,7 @@
 		B160EE901CF95DB80028910C /* SliderRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderRow.swift; sourceTree = "<group>"; };
 		B16197311F4537C20039BF26 /* CodableDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDictionary.swift; sourceTree = "<group>"; };
 		B16197331F4537D00039BF26 /* CodableDictionaryValueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDictionaryValueType.swift; sourceTree = "<group>"; };
+		B1647054204A3CDB0038F4D2 /* EventTriggerMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTriggerMigration.swift; sourceTree = "<group>"; };
 		B169BB921CF4035C006BC234 /* VoiceActorLinkable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceActorLinkable.swift; sourceTree = "<group>"; };
 		B169BB941CF4035C006BC234 /* VoiceActorLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceActorLinkView.swift; sourceTree = "<group>"; };
 		B169BB9B1CF406CB006BC234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VoiceActorLinkRow.xib; sourceTree = "<group>"; };
@@ -1535,6 +1537,7 @@
 				B14AB78C1F9D66FA009539CF /* Change20171022.swift */,
 				B14E5E352026AA6100EE63F9 /* Change20180203.swift */,
 				B142AB921FF9E692003B93E9 /* CoreDataEliminateDuplicates.swift */,
+				B1647054204A3CDB0038F4D2 /* EventTriggerMigration.swift */,
 				B1B11FD31E4E99E200D97CA1 /* 20160210.xcmappingmodel */,
 				B1F78D3A202804670008B36B /* 20180204.xcmappingmodel */,
 			);
@@ -2756,6 +2759,7 @@
 				B16F8D881E18CD120074F66B /* CloudKitMissions.swift in Sources */,
 				B14EA9371CF3F4DA009F2B0A /* RelatedLinksable.swift in Sources */,
 				B145FDDD1E67E1BC00403A36 /* Shepard.AppearanceAttributeType.swift in Sources */,
+				B1647055204A3CDB0038F4D2 /* EventTriggerMigration.swift in Sources */,
 				B0DD4DEF1BBE0AD500EF4A54 /* CoreDataMigrationManager.swift in Sources */,
 				B04FA6DD1BB2276B006474CB /* MissionsGroupsController.swift in Sources */,
 				B07A2C731C792B43007B6418 /* UIHeaderTabs.swift in Sources */,

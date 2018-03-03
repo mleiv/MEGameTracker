@@ -245,7 +245,7 @@ extension Event {
         event.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
-            cloudChanges: ["isTriggered": isTriggered]
+            cloudChanges: ["isTriggered": isTriggered, "triggeredDate": triggeredDate]
         )
         if isCascadeChanges != .none  && !GamesDataBackup.current.isSyncing {
             if !event.generalData.isAlert {
@@ -273,11 +273,12 @@ extension Event {
             DispatchQueue.global(qos: .background).sync { // blocking - signals firing at same time == problems
                 copySelf.notifyDataOwnersOfChange()
             }
-        }
-        if generalData.isAlert && isTriggered && generalData.dependentOn?.isTriggered != false { // nil or true
-            let alert = Alert(title: nil, description: generalData.description ?? "")
-            DispatchQueue.global(qos: .userInitiated).async {
-                Alert.onSignal.fire(alert)
+            if generalData.isAlert && isTriggered
+                && generalData.dependentOn?.isTriggered != false { // nil or true
+                let alert = Alert(title: nil, description: generalData.description ?? "")
+                DispatchQueue.global(qos: .userInitiated).async {
+                    Alert.onSignal.fire(alert)
+                }
             }
         }
     }

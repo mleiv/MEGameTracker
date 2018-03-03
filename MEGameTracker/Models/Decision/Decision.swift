@@ -161,7 +161,7 @@ extension Decision {
 		decision.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
-            cloudChanges: ["isSelected": isSelected]
+            cloudChanges: ["isSelected": isSelected, "selectedDate": selectedDate]
         )
         if isCascadeChanges != .none  && !GamesDataBackup.current.isSyncing {
             if decision.loveInterestId != nil {

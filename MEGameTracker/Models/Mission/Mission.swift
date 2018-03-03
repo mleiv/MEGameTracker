@@ -319,7 +319,7 @@ extension Mission {
         mission.changeEffects(
             isSave: isSave,
             isNotify: isNotify,
-            cloudChanges: ["isCompleted": isCompleted]
+            cloudChanges: ["isCompleted": isCompleted, "completedDate": completedDate]
         )
         if isCascadeChanges != .none && !GamesDataBackup.current.isSyncing {
             mission.applyToHierarchy(
