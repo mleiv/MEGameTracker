@@ -5307,7 +5307,7 @@
       }
     }, {
       "set": {
-        "context": "After the varren fight",
+        "context": "After the second security log",
         "isExclusiveSet": true,
         "options": [{
           "id": "A2.L.Jack.P2",
@@ -5323,7 +5323,7 @@
       }
     }, {
       "set": {
-        "context": "After the two-way mirror",
+        "context": "After the fourth security log",
         "isExclusiveSet": true,
         "options": [{
           "id": "A2.L.Jack.P3",
@@ -5431,7 +5431,7 @@
                   "type": "Paragon",
                   "value": 10,
                   "context": "*Paragon Interrupt*",
-                  "trigger": ""
+                  "trigger": "Order Jack to stand down."
                 }, {
                   "set": {
                     "options": [{
@@ -5462,7 +5462,7 @@
                       "type": "Renegade",
                       "value": 10,
                       "context": "*Renegade Interrupt*",
-                      "trigger": ""
+                      "trigger": "Threaten to shoot Aresh if Jack doesn't."
                     }, {
                       "set": {
                         "options": [{
@@ -5591,7 +5591,7 @@
     "inMapId": "G.Att.Nub.Dak.Pragia",
     "mapLocationPoint": {
       "x": 1950,
-      "y": 1510,
+      "y": 1490,
       "radius": 1
     }
   }, {
@@ -5824,20 +5824,6 @@
     "mapLocationPoint": {
       "x": 939,
       "y": 703,
-      "radius": 1
-    }
-  }, {
-    "id": "A2.L.Jac.5",
-    "inMissionId": "A2.L.Jacob",
-    "sortIndex": 3045,
-    "gameVersion": "2",
-    "missionType": "Objective",
-    "name": "Dead Bodies",
-    "description": "When you come upon the dead bodies, Ronald Taylor will come over the loudspeaker, saying the crew mutinied. You will be attacked by more mechs on your way up the path.",
-    "inMapId": "G.Ter.Ros.Alp.2175Aeia",
-    "mapLocationPoint": {
-      "x": 1047,
-      "y": 675,
       "radius": 1
     }
   }, {
@@ -6630,7 +6616,7 @@
     "relatedMissionIds": ["A2.Convo.Samara.3"],
     "conversationRewards": [{
       "set": {
-        "context": "Talking to Nef's mother",
+        "context": "Talking to Diana, Nef's mother",
         "options": [{
           "id": "A2.L.Samara.P1",
           "type": "Paragon",
@@ -6659,7 +6645,7 @@
               "type": "Paragon",
               "value": 5,
               "context": "*Paragon Interrupt*",
-              "trigger": ""
+              "trigger": "Comfort Diana."
             }, {
               "id": "A2.L.Samara.R3",
               "type": "Renegade",
@@ -6766,7 +6752,7 @@
     "sortIndex": 3032,
     "gameVersion": "2",
     "missionType": "Objective",
-    "name": "Nef",
+    "name": "Go to Apartment",
     "description": "When you reach Nef's apartment, only her mother is there. She informs you that Nef was murdered and the local police don't seem to care. She allows you to search through Nef's things. In particular, Nef's journal will give you some clues to finding Morinth, particularly what she likes and how to get into the Afterlife VIP lounge.",
     "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
     "mapLocationPoint": {
@@ -6781,7 +6767,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Afterlife VIP",
-    "description": "Talk your way into Afterlife's VIP lounge. You will need to namedrop Jaruut. \n\nOnce inside, you need to perform three tasks to get Aria's attention. Additionally, you can get some Renegade by telling off the kid at the door who is begging for Expel 10 tickets.",
+    "description": "Talk your way into Afterlife's VIP lounge. You will need to namedrop Jaruut. You can get some Renegade by telling off the kid at the door who is begging for Expel 10 tickets.",
     "inMapId": "G.Ter.Ome.Sah.Ome.1.AfterlifeVIP",
     "isShowInParentMap": true
   }, {
@@ -6791,7 +6777,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Attract Morinth",
-    "description": "You must complete three tasks to attract Morinth's attention. Most of these activites are one-ty-only, so if you do something wrong, you will have to move on to the next one. If you fail to complete three, Morinth will leave and you will lose Samara's loyalty.",
+    "description": "You must complete three tasks to attract Morinth's attention. Most of these activites are one-try-only, so if you do something wrong, you will have to move on to the next one. If you fail to complete three, Morinth will leave and you will lose Samara's loyalty.",
     "objectivesCountToCompletion": 3,
     "inMapId": "G.Ter.Ome.Sah.Omega",
     "isShowInParentMap": true
@@ -6862,7 +6848,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Impress Morinth",
-    "description": "When you join Morinth at her table, use the clues from Nef's journal to impress her. Specifically, say \"I'm conifdent.\" followed by these (in any order): travel, danger, power, the band Expel 10, the drug Hallex, the artist Forta, and the vid Vaenia. \n\nIf you mention the justicars or family, or fail to impress Morinth, she will leave and you will lose Samara's loyalty.",
+    "description": "When you join Morinth at her table, use the clues from Nef's journal to impress her. Specifically, say \"I'm confident.\" followed by these (in any order): travel, danger, power, the band Expel 10, the drug Hallex, the artist Forta, and the vid Vaenia. If you select the wrong answer (and it's not obviously offensive), you will have a Charm/Intimidate response to recover. \n\nIf you mention the justicars or family, or fail to impress Morinth, she will leave and you will lose Samara's loyalty.",
     "inMapId": "G.Ter.Ome.Sah.Omega",
     "isShowInParentMap": true
   }, {

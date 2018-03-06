@@ -1380,7 +1380,7 @@
 		"gameVersion": "2",
 		"missionType": "Assignment",
 		"name": "Omega: Batarian Bartender",
-		"description": "A batarian bartender is poisoning humans and has made a personal attack. \n\nThis assignment is acquired by ordering a drink at the lower Afterlife club from the batarian Forvan, and thereby being poisoned. On the upside, after finishing this assignment, you get free drinks at the club for the rest of the game!",
+                 "description": "A batarian bartender is poisoning humans and has made a personal attack. \n\nThis assignment is acquired by ordering a drink at the lower Afterlife club from the batarian Forvan, and thereby being poisoned. You wake up in [the slums|megametracker://maplocation?id=G.Ter.Ome.Sah.Ome.1Main&title=After%20Poisoning&location=1168x1276]. On the upside, after finishing this assignment, you get free drinks at the club for the rest of the game!",
 		"experience": 40,
 		"reward": "Free Drinks",
 		"inMapId": "G.Ter.Ome.Sah.Ome.1Main",
@@ -1741,11 +1741,39 @@
 				}]
 			}
 		}, {
-			"id": "A2.O.ThePatriarch.P6",
-			"type": "Paragon",
-			"value": 2,
-			"context": "Talking to Aria after the Patriarch dies",
-			"trigger": "\"He didn't live like a krogan.\""
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Talking to Aria afterwards",
+				"options": [{
+					"id": "A2.O.ThePatriarch.P6",
+					"type": "Paragon",
+					"value": 2,
+					"context": "If the Patriarch dies",
+					"trigger": "\"He didn't live like a krogan.\""
+				}, {
+					"id": "A2.O.ThePatriarch.R6B",
+					"type": "Renegade",
+					"value": 2,
+					"context": "If the Patriarch lives",
+					"trigger": "\"Your intel must be faulty.\""
+				}]
+			}
+		}, {
+			"set": {
+				"isExclusiveSet": true,
+				"context": "When Aria offers the location of the cache (if you completed the Datapad Recovered assignment)",
+				"options": [{
+					"id": "A2.O.ThePatriarch.P10",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"No thanks.\""
+				}, {
+					"id": "A2.O.ThePatriarch.R10",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Just like that?\""
+				}]
+			}
 		}],
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_The_Patriarch"],
 		"events": [{
@@ -1787,7 +1815,35 @@
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Paragon Resolution (Optional)",
-		"description": "Convince the Patriarch to let your squad fight on his behalf as _krantt_ (this is easier if Grunt is with you, otherwise you will need Paragon points). When you leave Afterlife, two Blood Pack mercenaries will threaten you. You can leave or fight them (cutscene, not real fighting), but either way this concludes the assignment. \n\nIf you speak to the Patriarch afterwards, he will give you some advice about Aria and Omega."
+		"description": "Convince the Patriarch to let your squad fight on his behalf as _krantt_ (this is easier if you have completed Grunt's loyalty mission, otherwise you will need Paragon points). \n\nOutside Afterlife, two Blood Pack mercenaries will threaten you. You can leave or fight them (cutscene, not real fighting), but either way this concludes the assignment. \n\nSpeak to the Patriarch afterward for some extra morality points."
+	}, {
+		"id": "A2.O.ThePatriarch.2.1",
+		"inMissionId": "A2.O.ThePatriarch.2",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Find Thugs",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+        "mapLocationPoint": {
+            "x": 1471,
+            "y": 991,
+            "radius": 1
+        }
+	}, {
+		"id": "A2.O.ThePatriarch.2.2",
+		"inMissionId": "A2.O.ThePatriarch.2",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Inform Patriarch (Optional)",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+		"mapLocationPoint": {
+			"x": 1605,
+			"y": 829,
+			"radius": 1
+		}
 	}, {
 		"id": "A2.O.ThePatriarch.3",
 		"inMissionId": "A2.O.ThePatriarch",
@@ -2052,7 +2108,7 @@
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Archeological_Dig_Site"],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Secured Loyalty: Jacob"
+			"id": "Loyalty Available: Jacob"
 		}, {
 			"type": "Triggers",
 			"id": "Completed: Joab Prothean Pyramid"

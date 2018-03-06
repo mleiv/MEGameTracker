@@ -147,6 +147,100 @@
          ]
       }
    }, {
+      "id": "Completed: Jacob Convo 1",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Jacob.1]"
+   }, {
+      "id": "Completed: Jacob Convo 1 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the first conversation with Jacob.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jacob Convo 1"
+         ]
+      }
+   }, {
+      "id": "Completed: Jacob Convo 2",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Jacob.2]"
+   }, {
+      "id": "Completed: Jacob Convo 2 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the second conversation with Jacob.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jacob Convo 2"
+         ]
+      }
+   }, {
+      "id": "Completed: Jacob Convo 3",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Jacob.3]"
+   }, {
+      "id": "Completed: Jacob Convo 3 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the third conversation with Jacob.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jacob Convo 3"
+         ]
+      }
+   }, {
+      "id": "Loyalty Available: Jacob",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Jacob.4]"
+   }, {
+      "id": "Completed: Jacob Convo 4B",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Jacob.4B]"
+   }, {
+      "id": "Completed: Jacob Convo 4B + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the fifth conversation with Jacob.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jacob Convo 4"
+         ]
+      }
+   }, {
+      "id": "Completed: Jacob Convo 5",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Jacob.5]"
+   }, {
+      "id": "Completed: Jacob Convo 5 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the sixth conversation with Jacob.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jacob Convo 5"
+         ]
+      }
+   }, {
+      "id": "Completed: Jacob Convo 6",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Jacob.6]"
+   }, {
+      "id": "Completed: Jacob Convo 6 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the seventh conversation with Jacob.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jacob Convo 6"
+         ]
+      }
+   }, {
       "id": "Completed: Jack Convo 1",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Jack.1]"
@@ -166,24 +260,24 @@
          ]
       }
    }, {
-      "id": "Completed: Jack Convo 3",
+      "id": "Loyalty Available: Jack",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Jack.3]"
    }, {
-      "id": "Completed: Jack Convo 3 + 1",
+      "id": "Completed: Jack Convo 4",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Jack.4]"
+   }, {
+      "id": "Completed: Jack Convo 4 + 1",
       "gameVersion": "2",
       "description": "Complete one mission after the third conversation with Jack.",
       "isAny": "missions",
       "dependentOn": {
          "countTo": 1,
          "events": [
-            "Any Mission After: Completed: Jack Convo 3"
+            "Any Mission After: Completed: Jack Convo 4"
          ]
       }
-   }, {
-      "id": "Loyalty Available: Jack",
-      "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.Convo.Jack.4]"
    }, {
       "id": "Completed: Jack Convo 5",
       "gameVersion": "2",

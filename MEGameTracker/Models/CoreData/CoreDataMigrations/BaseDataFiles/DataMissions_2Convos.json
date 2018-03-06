@@ -499,62 +499,6 @@
             "set": {
                 "context": "During third conversation",
                 "options": [{
-                    "set": {
-                        "isExclusiveSet": true,
-                        "options": [{
-                            "id": "A2.Convo.Jack.P30",
-                            "type": "Paragon",
-                            "value": 2,
-                            "trigger": "\"I'm curious.\""
-                        }, {
-                            "id": "A2.Convo.Jack.R30",
-                            "type": "Renegade",
-                            "value": 2,
-                            "trigger": "\"Answer my questions.\""
-                        }]
-                    }
-                }, {
-                    "set": {
-                        "isExclusiveSet": true,
-                        "options": [{
-                            "id": "A2.Convo.Jack.P31",
-                            "type": "Paragon",
-                            "value": 2,
-                            "trigger": "\"What if I really care?\""
-                        }, {
-                            "id": "A2.Convo.Jack.R31",
-                            "type": "Renegade",
-                            "value": 2,
-                            "trigger": "\"You don't make this easy.\""
-                        }]
-                    }
-                }, {
-                    "set": {
-                        "isExclusiveSet": true,
-                        "context": "\"What do the tattoos mean?\" and \"No close relationships?\" and \"You must have friends.\" and \"We'll talk again.\"",
-                        "options": [{
-                            "id": "A2.Convo.Jack.P32",
-                            "type": "Paragon",
-                            "value": 2,
-                            "trigger": "\"No, I want to get to know you.\" or \"You fascinate me.\""
-                        }, {
-                            "set": {
-                                "context": "\"Yes. I want you.\" (Male Shepard only.)",
-                                "options": [{
-                                    "id": "A2.Convo.Jack.R33",
-                                    "type": "Renegade",
-                                    "value": 2,
-                                    "trigger": "\"Sounds good to me.\" (and ... hookup)"
-                                }]
-                            }
-                        }]
-                    }
-                }]
-            }
-        }, {
-            "set": {
-                "context": "During fourth conversation",
-                "options": [{
                     "id": "A2.Convo.Jack.R40",
                     "type": "Renegade",
                     "value": 2,
@@ -593,7 +537,7 @@
             }
         }, {
             "set": {
-                "context": "During fifth conversation",
+                "context": "During fourth conversation",
                 "options": [{
                     "id": "A2.Convo.Jack.R50",
                     "type": "Renegade",
@@ -638,6 +582,58 @@
             }
         }, {
             "set": {
+                "context": "During fifth conversation",
+                "options": [{
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P30",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"I'm curious.\""
+                        }, {
+                            "id": "A2.Convo.Jack.R30",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Answer my questions.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "options": [{
+                            "id": "A2.Convo.Jack.P31",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"What if I really care?\""
+                        }, {
+                            "id": "A2.Convo.Jack.R31",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"You don't make this easy.\""
+                        }]
+                    }
+                }, {
+                    "set": {
+                        "isExclusiveSet": true,
+                        "context": "\"What do the tattoos mean?\" and \"No close relationships?\" and \"You must have friends.\" and \"We'll talk again.\"",
+                        "options": [{
+                            "id": "A2.Convo.Jack.P32",
+                            "type": "Paragon",
+                            "value": 2,
+                            "trigger": "\"No, I want to get to know you.\" or \"You fascinate me.\""
+                        }, {
+                            "context": "\"Yes. I want you.\" (Male Shepard only.)",
+                            "id": "A2.Convo.Jack.R33",
+                            "type": "Renegade",
+                            "value": 2,
+                            "trigger": "\"Sounds good to me.\" (and ... hookup)"
+                        }]
+                    }
+                }]
+            }
+        }, {
+            "set": {
                 "isExclusiveSet": true,
                 "context": "During sixth conversation",
                 "options": [{
@@ -654,7 +650,7 @@
             }
         }, {
             "set": {
-                "context": "During seventh conversation",
+                "context": "During seventh conversation (BroShep)",
                 "options": [{
                     "set": {
                         "isExclusiveSet": true,
@@ -730,27 +726,6 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "3rd Convo (BroShep)",
-        "annotationNote": "Romance Option",
-        "description": "Jack talks about her tattoos. There is an option for a quickie hookup with Jack.",
-        "inMapId": "G.N2.4.SubDeck",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Jack Convo 2 + 1"
-        }, {
-            "type": "RequiresConfig",
-            "id": "Gender M"
-        }, {
-            "type": "Triggers",
-            "id": "Completed: Jack Convo 3"
-        }]
-    }, {
-        "id": "A2.Convo.Jack.4",
-        "inMissionId": "A2.Convo.Jack",
-        "sortIndex": 9000,
-        "gameVersion": "2",
-        "missionType": "Objective",
         "name": "4th Convo",
         "annotationNote": "Loyalty Mission Dialogue",
         "description": "Jack discusses her childhood in a Cerberus research facility. She has found the coordinates in the Cerberus files and she wants to go blow it up.",
@@ -759,13 +734,13 @@
         "relatedMissionIds": ["A2.L.Jack"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Jack Convo 3 + 1"
+            "id": "Completed: Jack Convo 2 + 1"
         }, {
             "type": "Triggers",
             "id": "Loyalty Available: Jack"
         }]
     }, {
-        "id": "A2.Convo.Jack.5",
+        "id": "A2.Convo.Jack.4",
         "inMissionId": "A2.Convo.Jack",
         "sortIndex": 9000,
         "gameVersion": "2",
@@ -779,6 +754,23 @@
             "id": "Secured Loyalty: Jack"
         }, {
             "type": "Triggers",
+            "id": "Completed: Jack Convo 4"
+        }]
+    }, {
+        "id": "A2.Convo.Jack.5",
+        "inMissionId": "A2.Convo.Jack",
+        "sortIndex": 9000,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "6th Convo",
+        "description": "You can ask about Jack's tattoos and her prior relationships.",
+        "inMapId": "G.N2.4.SubDeck",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Jack Convo 4 + 1"
+        }, {
+            "type": "Triggers",
             "id": "Completed: Jack Convo 5"
         }]
     }, {
@@ -787,17 +779,14 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo (BroShep)",
+        "name": "6th Convo",
         "annotationNote": "Romance Option",
-        "description": "Jack rebuffs Shepard's advances.",
+        "description": "Jack rebuffs BroShep romantic overtures, or lets FemShep know she's not interested.",
         "inMapId": "G.N2.4.SubDeck",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Jack Convo 5 + 1"
-        }, {
-            "type": "RequiresConfig",
-            "id": "Gender M"
         }, {
             "type": "Triggers",
             "id": "Completed: Jack Convo 6"
@@ -1028,8 +1017,7 @@
             }
         }, {
             "set": {
-                "isExclusiveSet": true,
-                "context": "During fifth conversation",
+                "context": "In the briefing room, directly after Aeia",
                 "options": [{
                     "set": {
                         "isExclusiveSet": true,
@@ -1215,7 +1203,11 @@
         "name": "1st Convo",
         "description": "Jacob admits to Cerberus' checkered past, and makes clear that he won't do anything he finds objectionable for them or for you.",
         "inMapId": "G.N2.2.Armory",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Jacob Convo 1"
+        }]
     }, {
         "id": "A2.Convo.Jacob.2",
         "inMissionId": "A2.Convo.Jacob",
@@ -1225,7 +1217,14 @@
         "name": "2nd Convo",
         "description": "Jacob discusses why he joined Cerberus.",
         "inMapId": "G.N2.2.Armory",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Jacob Convo 1 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jacob Convo 2"
+        }]
     }, {
         "id": "A2.Convo.Jacob.3",
         "inMissionId": "A2.Convo.Jacob",
@@ -1234,12 +1233,18 @@
         "missionType": "Objective",
         "name": "3rd Convo",
         "annotationNote": "Romance Option",
-        "description": "Jacob discusses his family (or lack thereof) and hints that he and Miranda were involved, but are not any longer.\n\nThis conversation is not available if you have not left open the possibility for romance.",
+        "description": "Jacob discusses his family (or lack thereof) and hints that he and Miranda were involved, but are not any longer.\n\nJacob is uncomfortable with any flirting from FemShep.",
         "inMapId": "G.N2.2.Armory",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Horizon"
+            "id": "Completed: Jacob Convo 2 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Horizon",
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jacob Convo 3"
         }]
     }, {
         "id": "A2.Convo.Jacob.4",
@@ -1255,7 +1260,13 @@
         "relatedMissionIds": ["A2.L.Jacob"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Horizon"
+            "id": "Completed: Jacob Convo 3 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Horizon",
+        }, {
+            "type": "Triggers",
+            "id": "Loyalty Available: Jacob"
         }]
     }, {
         "id": "A2.Convo.Jacob.4B",
@@ -1264,13 +1275,15 @@
         "gameVersion": "2",
         "missionType": "Objective",
         "name": "5th Convo",
-        "description": "Discuss the mission on Aeia with Jacob.",
-        "inMapId": "G.N2.2.Armory",
+        "description": "Jacob will briefly thank you for your help on Aeia, but doesn't want to talk further.",
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.L.Jacob"],
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Jacob"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jacob Convo 4B"
         }]
     }, {
         "id": "A2.Convo.Jacob.5",
@@ -1280,12 +1293,15 @@
         "missionType": "Objective",
         "name": "6th Convo",
         "annotationNote": "Romance Option",
-        "description": "(No prior romance) Jacob complains about the lack of popular support in opposing the Collectors. \n\n(Prior romance) Jacob shys away from talking about his father.",
+        "description": "(No prior romance) Jacob complains about how little support the mission has. \n\n(Prior romance) Jacob shys away from talking about his father.",
         "inMapId": "G.N2.2.Armory",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Jacob"
+            "id": "Completed: Jacob Convo 4B + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jacob Convo 5"
         }]
     }, {
         "id": "A2.Convo.Jacob.6",
@@ -1300,10 +1316,13 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Jacob"
+            "id": "Completed: Jacob Convo 5 + 1"
         }, {
             "type": "RequiresConfig",
             "id": "Gender F"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jacob Convo 6"
         }]
     }, {
         "id": "A2.Convo.Jacob.7",
@@ -1318,7 +1337,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Jacob"
+            "id": "Completed: Jacob Convo 6 + 1"
         }, {
             "type": "RequiresConfig",
             "id": "Gender F"
@@ -1716,7 +1735,7 @@
         "missionType": "Objective",
         "name": "5th Convo",
         "annotationNote": "Romance Option",
-        "description": "Miranda continues to defend Cerberus. She admits that she sees all her successes as due to her genetics rather than any merit on her part. BroShep can kiss her ([https://www.youtube.com/watch?v=N_8-bm9cY6o]).",
+        "description": "Miranda continues to defend Cerberus. She admits that she sees all her successes as due to her genetics rather than any merit on her part. BroShep can kiss her ([YouTube|https://www.youtube.com/watch?v=N_8-bm9cY6o]).",
         "inMapId": "G.N2.3.Cabin",
         "isShowInParentMap": true,
         "events": [{
@@ -3352,7 +3371,7 @@
         "titlePrefix": "Argument: ",
         "name": "Jack vs Miranda",
         "description": "",
-        "inMapId": "G.N2.2.Briefing",
+        "inMapId": "G.N2.3.Cabin",
         "isShowInParentMap": true,
         "conversationRewards": [{
             "set": {
@@ -3983,6 +4002,22 @@
             "radius": 1
         }
     }, {
+        "id": "A2.Convo.Helena",
+        "inMissionId": "A2.Convo.Miscellaneous",
+        "sortIndex": 9090,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "titlePrefix": "Conversation: ",
+        "name": "Helena Blake",
+        "description": "If you interacted with her in Game 1 (and let her live), you can speak to [megametracker://people?id=O1.Helena] outside Afterlife. She reveals that she is now helping the less fortunate as a social worker on Omega.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
+        "mapLocationPoint": {
+            "x": 784,
+            "y": 397,
+            "radius": 1
+        },
+        "relatedDecsionIds": ["D1.HelenaBlake"]
+    }, {
         "id": "A2.Convo.Kylan",
         "inMissionId": "A2.Convo.Miscellaneous",
         "sortIndex": 9090,
@@ -3997,7 +4032,6 @@
             "y": 1181,
             "radius": 20
         },
-        "isShowInParentMap": true,
         "conversationRewards": [{
             "set": {
                 "isExclusiveSet": true,
@@ -4032,7 +4066,6 @@
             "y": 760,
             "radius": 1
         },
-        "isShowInParentMap": true,
         "conversationRewards": [{
             "set": {
                 "isExclusiveSet": true,
