@@ -59,7 +59,7 @@ public struct EventTriggerMigration: CoreDataMigrationType {
                 event2?.notifySaveToCloud(fields: [
                     "isTriggered": item.isAcquired,
                     "triggeredDate": item.acquiredDate
-                    ])
+                ])
                 _ = event2?.save()
             }
         }

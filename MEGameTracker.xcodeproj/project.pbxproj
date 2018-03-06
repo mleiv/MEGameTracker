@@ -218,6 +218,7 @@
 		B16197321F4537C20039BF26 /* CodableDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16197311F4537C20039BF26 /* CodableDictionary.swift */; };
 		B16197341F4537D00039BF26 /* CodableDictionaryValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16197331F4537D00039BF26 /* CodableDictionaryValueType.swift */; };
 		B1647055204A3CDB0038F4D2 /* EventTriggerMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1647054204A3CDB0038F4D2 /* EventTriggerMigration.swift */; };
+		B1647057204CE2870038F4D2 /* EventTriggerMigrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1647056204CE2870038F4D2 /* EventTriggerMigrationTests.swift */; };
 		B169BB961CF4035C006BC234 /* VoiceActorLinkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169BB921CF4035C006BC234 /* VoiceActorLinkable.swift */; };
 		B169BB981CF4035C006BC234 /* VoiceActorLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169BB941CF4035C006BC234 /* VoiceActorLinkView.swift */; };
 		B169BB9D1CF406CB006BC234 /* VoiceActorLinkRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B169BB9A1CF406CB006BC234 /* VoiceActorLinkRow.xib */; };
@@ -738,6 +739,7 @@
 		B16197311F4537C20039BF26 /* CodableDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDictionary.swift; sourceTree = "<group>"; };
 		B16197331F4537D00039BF26 /* CodableDictionaryValueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDictionaryValueType.swift; sourceTree = "<group>"; };
 		B1647054204A3CDB0038F4D2 /* EventTriggerMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTriggerMigration.swift; sourceTree = "<group>"; };
+		B1647056204CE2870038F4D2 /* EventTriggerMigrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTriggerMigrationTests.swift; sourceTree = "<group>"; };
 		B169BB921CF4035C006BC234 /* VoiceActorLinkable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceActorLinkable.swift; sourceTree = "<group>"; };
 		B169BB941CF4035C006BC234 /* VoiceActorLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceActorLinkView.swift; sourceTree = "<group>"; };
 		B169BB9B1CF406CB006BC234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VoiceActorLinkRow.xib; sourceTree = "<group>"; };
@@ -2231,6 +2233,7 @@
 				B1C66C7F1E8EE87000BDAF9A /* Change20170305Tests.swift */,
 				B19BECB61F5E6576007B3FE6 /* Change20170905Tests.swift */,
 				B14AB7961FA55330009539CF /* Change20171022Tests.swift */,
+				B1647056204CE2870038F4D2 /* EventTriggerMigrationTests.swift */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -3029,6 +3032,7 @@
 				B16FBC951E5FAD8100E151C7 /* GameSequenceTests.swift in Sources */,
 				B16FBC931E5FAD7000E151C7 /* ShepardTests.swift in Sources */,
 				B14AB7971FA55330009539CF /* Change20171022Tests.swift in Sources */,
+				B1647057204CE2870038F4D2 /* EventTriggerMigrationTests.swift in Sources */,
 				B1F1DC591E5E82AD00755AAD /* PersonTests.swift in Sources */,
 				B19191871CE3A98400CF367E /* MissionSortingTests.swift in Sources */,
 				B1811F561E63624D007559AE /* AppTests.swift in Sources */,
