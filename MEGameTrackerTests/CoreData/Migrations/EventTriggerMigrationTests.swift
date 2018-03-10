@@ -93,21 +93,31 @@ final class EventTriggerMigrationTests: MEGameTrackerTests {
     func testMigration() {
         initializeCurrentGame() // needed for saving event with game uuid
 
+        let testOldDate = Date(timeIntervalSinceNow: -1000)
+
         // initialize mission data without event
-        let mission1 = create(Mission.self, from: mission1Data)
+        var mission1 = create(Mission.self, from: mission1Data)
         let mission2 = create(Mission.self, from: mission2Data)
-        _ = mission1?.changed(isCompleted: true)
+        mission1?.isCompleted = true
+        mission1?.completedDate = testOldDate
+        _ = mission1?.save()
+
         // initialize item data without event
-        let item1 = create(Item.self, from: item1Data)
+        var item1 = create(Item.self, from: item1Data)
         let item2 = create(Item.self, from: item2Data)
-        _ = item1?.changed(isAcquired: true)
+        item1?.isAcquired = true
+        item1?.acquiredDate = testOldDate
+        _ = item1?.save()
+
         // initialize decision data without event
-        let decision = create(Decision.self, from: decisionData)
-        _ = decision?.changed(isSelected: true)
+        var decision = create(Decision.self, from: decisionData)
+        decision = decision?.changed(isSelected: true)
+        decision?.selectedDate = testOldDate
+        _ = decision?.save()
 
         // initialize events
-        _ = create(DataEvent.self, from: missionEventData)
-        _ = create(DataEvent.self, from: itemEventData)
+        let missionEvent = create(DataEvent.self, from: missionEventData)
+        let itemEvent = create(DataEvent.self, from: itemEventData)
         let decisionEvent = create(DataEvent.self, from: decisionEventData)
 
         // reinitialize mission data (aka BaseDataMigration)
@@ -129,5 +139,19 @@ final class EventTriggerMigrationTests: MEGameTrackerTests {
         XCTAssertTrue(Mission.get(id: mission2?.id ?? "")?.isAvailable ?? false)
         XCTAssertTrue(Item.get(id: item2?.id ?? "")?.isAvailable ?? false)
         XCTAssertTrue(Event.get(id: decisionEvent?.id ?? "")?.isTriggered ?? false)
+
+        // test the event dates were changed to match
+        XCTAssertTrue(roughlyEqualDates(Event.get(id: missionEvent?.id ?? "")?.triggeredDate, testOldDate))
+        XCTAssertTrue(roughlyEqualDates(Event.get(id: itemEvent?.id ?? "")?.triggeredDate, testOldDate))
+        XCTAssertTrue(roughlyEqualDates(Event.get(id: decisionEvent?.id ?? "")?.triggeredDate, testOldDate))
+    }
+
+    private func roughlyEqualDates(
+        _ date1: Date?,
+        _ date2: Date?,
+        allowedDifference: TimeInterval = 1.0
+    ) -> Bool {
+        guard let date1 = date1, let date2 = date2 else { return false }
+        return abs(date1.timeIntervalSince(date2)) < allowedDifference
     }
 }
