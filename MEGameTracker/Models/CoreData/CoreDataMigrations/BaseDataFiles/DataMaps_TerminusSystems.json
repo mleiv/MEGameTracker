@@ -1285,7 +1285,13 @@
         },
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Daratar"
-        ]
+        ],
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Tertiary/Daratar/Daratar.pdf",
+                "referenceSize": "2083x2083",
+            }
+        }
     }, {
         "id": "G.Ter.Hou.Far.Tunfigel",
         "name": "Tunfigel",
@@ -2417,6 +2423,7 @@
         "inMapId": "G.Ter.Ome.Sah.Ome.1Main",
         "name": "To Afterlife VIP Lounge",
         "isShowInList": false,
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
         "mapLocationPoint": {
             "x": 1724,
             "y": 941,
@@ -2654,7 +2661,76 @@
             "y": 770,
             "radius": 20
         }
-
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+        "name": "Omega: Afterlife VIP / Morinth's Apartment",
+        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "rerootBreadcrumbs": true,
+        "isHidden": true,
+        "mapType": "Area",
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/Omega/Omega_Afterlife_VIP.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 139,
+                    "y": 1115,
+                    "width": 1800,
+                    "height": 305
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4.Morinth",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+        "name": "Morinth",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1484,
+            "y": 1812,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4.Sword",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+        "name": "Sword",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1681,
+            "y": 1977,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4.Pills",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+        "name": "Pill Bottle",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1484,
+            "y": 1928,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4.Statue",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+        "name": "Statue",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1720,
+            "y": 1537,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4.Chess",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+        "name": "Chess Set",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1503,
+            "y": 1363,
+            "radius": 20
+        }
 
 
 
@@ -3600,7 +3676,13 @@
         },
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Joab"
-        ]
+        ],
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Tertiary/Joab/Joab.pdf",
+                "referenceSize": "2083x2083",
+            }
+        }
     }, {
         "id": "G.Ter.Ros.Eno.Goliath",
         "name": "Goliath",
@@ -5016,7 +5098,33 @@
         },
         "relatedLinks": [
             "http: //masseffect.wikia.com/wiki/Canalus"
-        ]
+        ],
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Tertiary/Canalus/Canalus.pdf",
+                "referenceSize": "2083x2083",
+            }
+        }
+    }, {
+        "id": "G.Ter.Pyl.Dir.Can.1Start",
+        "inMapId": "G.Ter.Pyl.Dir.Canalus",
+        "name": "Start",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 255,
+            "y": 943,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pyl.Dir.Can.2Device",
+        "inMapId": "G.Ter.Pyl.Dir.Canalus",
+        "name": "Geth Device",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1934,
+            "y": 1024,
+            "radius": 20
+        }
     }, {
         "id": "G.Ter.Pyl.Dir.Zeth",
         "name": "Zeth",
@@ -5207,7 +5315,23 @@
         },
         "relatedLinks": [
             "http: //masseffect.wikia.com/wiki/MSV_Broken_Arrow"
-        ]
+        ],
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Tertiary/MSV_Broken_Arrow/MSV_Broken_Arrow.pdf",
+                "referenceSize": "2083x2083",
+            }
+        }
+    }, {
+        "id": "G.Ter.Pyl.Nar.MSV.1Start",
+        "inMapId": "G.Ter.Pyl.Nar.MSVArrow",
+        "name": "Start",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 538,
+            "y": 1695,
+            "radius": 20
+        }
     }, {
         "id": "G.Ter.Pyl.Nar.Jonus",
         "name": "Jonus",

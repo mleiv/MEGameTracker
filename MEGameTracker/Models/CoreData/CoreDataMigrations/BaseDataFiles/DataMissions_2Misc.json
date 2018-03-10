@@ -6767,7 +6767,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Afterlife VIP",
-    "description": "Talk your way into Afterlife's VIP lounge. You will need to namedrop Jaruut. You can get some Renegade by telling off the kid at the door who is begging for Expel 10 tickets.",
+    "description": "Talk your way into Afterlife's VIP lounge. You will need to namedrop Jaruut.",
     "inMapId": "G.Ter.Ome.Sah.Ome.1.AfterlifeVIP",
     "isShowInParentMap": true
   }, {
@@ -6777,10 +6777,14 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Attract Morinth",
-    "description": "You must complete three tasks to attract Morinth's attention. Most of these activites are one-try-only, so if you do something wrong, you will have to move on to the next one. If you fail to complete three, Morinth will leave and you will lose Samara's loyalty.",
+    "description": "You must complete three tasks to attract Morinth's attention. Most of these activites are one-try-only, so if you do something wrong, you will have to move on to the next one. If you fail to complete three, Morinth will leave and you will lose Samara's loyalty. \n\nYou can get some extra Renegade by telling off [megametracker://maplocation?id=G.Ter.Ome.Sah.Ome.4AfterlifeVIP&title=Vij&location=655x1129] at the door who is begging for Expel 10 tickets.",
     "objectivesCountToCompletion": 3,
-    "inMapId": "G.Ter.Ome.Sah.Omega",
-    "isShowInParentMap": true
+    "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+    "mapLocationPoint": {
+        "x": 892,
+        "y": 1426,
+        "radius": 1
+    }
   }, {
     "id": "A2.L.Samara.4.1",
     "inMissionId": "A2.L.Samara.4",
@@ -6789,8 +6793,25 @@
     "missionType": "Objective",
     "name": "Undercover Reporter",
     "description": "Horftin's companion, Moirall, is an undercover reporter spying on gang leader Florit at a table on the other side of the club. Horftin has discovered her cover is blown and her life is in danger. Go talk to Moirall, using the words \"terminal\" and \"eternity\" in that order.",
-    "inMapId": "G.Ter.Ome.Sah.Omega",
-    "isShowInParentMap": true
+    "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+    "mapLocationPoint": {
+        "x": 320,
+        "y": 891,
+        "radius": 1
+    }
+  }, {
+    "id": "A2.L.Samara.4.1.1",
+    "inMissionId": "A2.L.Samara.4.1",
+    "sortIndex": 30341,
+    "gameVersion": "2",
+    "missionType": "Objective",
+    "name": "Alert Moirall",
+    "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+    "mapLocationPoint": {
+        "x": 1070,
+        "y": 1011,
+        "radius": 1
+    }
   }, {
     "id": "A2.L.Samara.4.2",
     "inMissionId": "A2.L.Samara.4",
@@ -6799,8 +6820,12 @@
     "missionType": "Objective",
     "name": "Asari Dancer",
     "description": "The turian Meln is harassing the club dancer Hallia. Take him down.",
-    "inMapId": "G.Ter.Ome.Sah.Omega",
-    "isShowInParentMap": true
+    "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+    "mapLocationPoint": {
+        "x": 711,
+        "y": 768,
+        "radius": 1
+    }
   }, {
     "id": "A2.L.Samara.4.3",
     "inMissionId": "A2.L.Samara.4",
@@ -6809,8 +6834,12 @@
     "missionType": "Objective",
     "name": "Dance",
     "description": "Charm Waera into dancing with you.",
-    "inMapId": "G.Ter.Ome.Sah.Omega",
-    "isShowInParentMap": true
+    "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+    "mapLocationPoint": {
+        "x": 635,
+        "y": 478,
+        "radius": 1
+    }
   }, {
     "id": "A2.L.Samara.4.4",
     "inMissionId": "A2.L.Samara.4",
@@ -6819,8 +6848,12 @@
     "missionType": "Objective",
     "name": "Insult Krogan",
     "description": "Verf is mocking humans in a corner of the bar. Challenge him to a fight (it results in a staredown, which you win).",
-    "inMapId": "G.Ter.Ome.Sah.Omega",
-    "isShowInParentMap": true
+    "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+    "mapLocationPoint": {
+        "x": 981,
+        "y": 313,
+        "radius": 1
+    }
   }, {
     "id": "A2.L.Samara.4.5",
     "inMissionId": "A2.L.Samara.4",
@@ -6829,8 +6862,12 @@
     "missionType": "Objective",
     "name": "Intimidate Turians",
     "description": "Vertin and Huck are in a corner of the bar talking about their plans for a mugging. If you have enough Renegade, you can intimidate them into a fight, otherwise you can bribe them into leaving (you won't be spending your own credits).",
-    "inMapId": "G.Ter.Ome.Sah.Omega",
-    "isShowInParentMap": true
+    "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+    "mapLocationPoint": {
+        "x": 218,
+        "y": 310,
+        "radius": 1
+    }
   }, {
     "id": "A2.L.Samara.4.6",
     "inMissionId": "A2.L.Samara.4",
@@ -6839,8 +6876,12 @@
     "missionType": "Objective",
     "name": "Buy Drinks",
     "description": "Buy the whole club a round of drinks. If you have enough Paragon, you can talk the bartender into doing it free (but either way, you don't spend your own credits on this).",
-    "inMapId": "G.Ter.Ome.Sah.Omega",
-    "isShowInParentMap": true
+    "inMapId": "G.Ter.Ome.Sah.Ome.4AfterlifeVIP",
+    "mapLocationPoint": {
+        "x": 1151,
+        "y": 326,
+        "radius": 1
+    }
   }, {
     "id": "A2.L.Samara.5",
     "inMissionId": "A2.L.Samara",
@@ -6848,9 +6889,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Impress Morinth",
-    "description": "When you join Morinth at her table, use the clues from Nef's journal to impress her. Specifically, say \"I'm confident.\" followed by these (in any order): travel, danger, power, the band Expel 10, the drug Hallex, the artist Forta, and the vid Vaenia. If you select the wrong answer (and it's not obviously offensive), you will have a Charm/Intimidate response to recover. \n\nIf you mention the justicars or family, or fail to impress Morinth, she will leave and you will lose Samara's loyalty.",
-    "inMapId": "G.Ter.Ome.Sah.Omega",
-    "isShowInParentMap": true
+    "description": "When you join Morinth at her table, use the clues from Nef's journal to impress her. Specifically, say \"I'm confident.\" followed by these (in any order): travel, danger, power, the band Expel 10, the drug Hallex, the artist Forta, and the vid Vaenia. If you select the wrong answer (and it's not obviously offensive), you will have a Charm/Intimidate response to recover. \n\nIf you mention the justicars or family, or fail to impress Morinth, she will leave and you will lose Samara's loyalty."
   }, {
     "id": "A2.L.Samara.5",
     "inMissionId": "A2.L.Samara",
@@ -6859,7 +6898,7 @@
     "missionType": "Objective",
     "name": "Morinth's Apartment",
     "description": "There are several items in Morinth's apartment which you can examine to learn more about her. When you are ready, speak to Morinth. You will need to charm or intimidate her in order to resist her seduction. Either way, Samara shows up to finish the battle.",
-    "inMapId": "G.Ter.Ome.Sah.Omega",
+    "inMapId": "G.Ter.Ome.Sah.Ome.4.Morinth",
     "isShowInParentMap": true
   }, {
     "id": "A2.L.Samara.6",
@@ -6868,9 +6907,7 @@
     "gameVersion": "2",
     "missionType": "Objective",
     "name": "Choose Samara or Morinth",
-    "description": "Samara and Morinth are evenly matched. Morinth suggests that you intervene and she will take Samara's place on the Normandy, without anyone else the wiser. There are Game 3 consequences to siding with Morinth, but so long as you don't try to romance her later, it has no consequences in Game 2.",
-    "inMapId": "G.Ter.Ome.Sah.Omega",
-    "isShowInParentMap": true
+    "description": "Samara and Morinth are evenly matched. Morinth suggests that you intervene and she will take Samara's place on the Normandy, without anyone else the wiser. There are Game 3 consequences to siding with Morinth, but so long as you don't try to romance her later, it has no consequences in Game 2."
   }, {
     "id": "A2.L.Tali",
     "sortIndex": 308,
