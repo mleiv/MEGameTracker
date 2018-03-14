@@ -2096,7 +2096,7 @@
 		}]
 	}, {
 		"id": "A2.N7.ArcheologicalDig",
-		"sortIndex": 1000,
+		"sortIndex": 1005,
 		"gameVersion": "2",
 		"missionType": "Assignment",
 		"name": "N7: Archeological Dig Site",
@@ -2106,6 +2106,7 @@
 		"inMapId": "G.Ter.Ros.Eno.Joab",
         "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Archeological_Dig_Site"],
+        "relatedMissionIds": ["A2.N7.MSVStrontiumMule", "A2.N7.BlueSunsBase", "A2.N7.JavelinMissiles"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Loyalty Available: Jacob"
@@ -2184,7 +2185,7 @@
             "x": 482,
             "y": 1027,
             "radius": 1
-        },
+        }
 	}, {
 		"id": "A2.N7.BloodPackBase.2",
 		"inMissionId": "A2.N7.BloodPackBase",
@@ -2198,7 +2199,7 @@
             "x": 482,
             "y": 1140,
             "radius": 1
-        },
+        }
 	}, {
 		"id": "A2.N7.BloodPackBase.3",
 		"inMissionId": "A2.N7.BloodPackBase",
@@ -2212,7 +2213,7 @@
             "x": 562,
             "y": 1027,
             "radius": 1
-        },
+        }
 	}, {
 		"id": "A2.N7.BloodPackBase.4",
 		"inMissionId": "A2.N7.BloodPackBase",
@@ -2226,7 +2227,7 @@
             "x": 562,
             "y": 1140,
             "radius": 1
-        },
+        }
 	}, {
 		"id": "A2.N7.BloodPackBase.5",
 		"inMissionId": "A2.N7.BloodPackBase",
@@ -2240,10 +2241,10 @@
             "x": 840,
             "y": 1305,
             "radius": 1
-        },
+        }
 	}, {
 		"id": "A2.N7.BlueSunsBase",
-		"sortIndex": 1000,
+		"sortIndex": 1007,
 		"gameVersion": "2",
 		"missionType": "Assignment",
 		"name": "N7: Blue Suns Base",
@@ -2253,10 +2254,21 @@
 		"inMapId": "G.Ter.Sig.Dec.Sanctum",
         "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Blue_Suns_Base"],
+        "relatedMissionIds": ["A2.N7.ArcheologicalDig", "A2.N7.MSVStrontiumMule", "A2.N7.JavelinMissiles"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: MSV Strontium Mule"
 		}]
+	}, {
+		"id": "A2.N7.BlueSunsBase.1",
+		"inMissionId": "A2.N7.BlueSunsBase",
+		"sortIndex": 1007,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Disable Signal",
+		"isOpensDetail": false,
+		"inMapId": "G.Ter.Sig.Dec.San.3Signal",
+        "isShowInParentMap": true
 	}, {
 		"id": "A2.N7.MiningFacility",
 		"sortIndex": 1000,
@@ -2486,20 +2498,31 @@
         }
 	}, {
 		"id": "A2.N7.JavelinMissiles",
-		"sortIndex": 1000,
+		"sortIndex": 1010,
 		"gameVersion": "2",
 		"missionType": "Assignment",
 		"name": "N7: Javelin Missiles Launched",
-		"description": "_\"Scans detect an Alliance colony defended by a Javelin Mk. II missile base. A distress signal indicates that the base is compromised by batarians who have launched two missiles at the Alliance colony. Total destruction of the colony is imminent. Zero probability of survivors if missiles strike. Find the control panel in the Javelin Mk. II missile base. Time of impact calculated: landing party will have 5 minutes to deactivate the missiles after shuttle touchdown.\"_ \n\n This mission is normally acquired after [megametracker://person?id=P2.N7.BlueSunsBase], but you can also just go to the planet and scan it.\n\n*THIS IS A TIMED MISSION!* Fight your way to the silo control room and bypass the terminal. You will have to make a choice to save the spaceport or the residential district.",
+		"description": "_\"Scans detect an Alliance colony defended by a Javelin Mk. II missile base. A distress signal indicates that the base is compromised by batarians who have launched two missiles at the Alliance colony. Total destruction of the colony is imminent. Zero probability of survivors if missiles strike. Find the control panel in the Javelin Mk. II missile base. Time of impact calculated: landing party will have 5 minutes to deactivate the missiles after shuttle touchdown.\"_ \n\n This mission is normally acquired after [megametracker://mission?id=A2.N7.BlueSunsBase], but you can also just go to the planet and scan it.\n\n*THIS IS A TIMED MISSION!* Fight your way to the silo control room and bypass the terminal. You will have to make a choice to save the spaceport or the residential district. \n\n_Note: You can loot the area after diverting the missiles, if you find yourself short on time._",
 		"experience": 125,
 		"reward": "3,750 Credits",
-		"inMapId": "G.Ter.Sig.Ske.Watson",
+		"inMapId": "G.Ter.Sig.Ske.Franklin",
         "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Javelin_Missiles_Launched"],
+        "relatedMissionIds": ["A2.N7.ArcheologicalDig", "A2.N7.MSVStrontiumMule", "A2.N7.BlueSunsBase"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Freedom's Progress"
 		}]
+    }, {
+        "id": "A2.N7.JavelinMissiles.1",
+        "inMissionId": "A2.N7.JavelinMissiles",
+        "sortIndex": 1010,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Divert Missiles",
+        "isOpensDetail": false,
+		"inMapId": "G.Ter.Sig.Ske.Fra.2Console",
+        "isShowInParentMap": true
 	}, {
 		"id": "A2.N7.LostOperative",
 		"sortIndex": 1000,
@@ -2717,8 +2740,56 @@
 			"id": "Completed: Freedom's Progress"
 		}]
 	}, {
-		"id": "A2.N7.MSVStrontiumMule",
+		"id": "A2.N7.MSVEstevanico.1",
+		"inMissionId": "A2.N7.MSVEstevanico",
 		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Shoot Loose Tiles",
+		"description": "Shoot the loose tiles as you are descending into the wreck. They will fall and create a bridge.",
+		"inMapId": "G.Ter.Hou.Plo.Zan.2Tiles",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.N7.MSVEstevanico.2",
+		"inMissionId": "A2.N7.MSVEstevanico",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Vault Onto Hull",
+		"description": "Cross the narrow pipes to get back up onto the ship's hull. It's a tricky vault - try ducking into cover and then rotating the camera view about 30 degrees to the right before vaulting up.",
+		"inMapId": "G.Ter.Hou.Plo.Zanethu",
+		"mapLocationPoint": {
+			"x": 1695,
+			"y": 948,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.N7.MSVEstevanico.3",
+		"inMissionId": "A2.N7.MSVEstevanico",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Falling Ramp",
+		"description": "As you descend the ramp, it breaks off and forms a bridge between two areas in the bottom of the ship.",
+		"inMapId": "G.Ter.Hou.Plo.Zanethu",
+		"mapLocationPoint": {
+			"x": 768,
+			"y": 1309,
+			"radius": 1
+		}
+	}, {
+		"id": "A2.N7.MSVEstevanico.4",
+		"inMissionId": "A2.N7.MSVEstevanico",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Salvage Data",
+		"description": "As you descend the ramp, it breaks off and forms a bridge between two areas in the bottom of the ship.",
+		"inMapId": "G.Ter.Hou.Plo.Zan.3Mainframe",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.N7.MSVStrontiumMule",
+		"sortIndex": 1006,
 		"gameVersion": "2",
 		"missionType": "Assignment",
 		"name": "N7: MSV Strontium Mule",
@@ -2728,6 +2799,7 @@
 		"inMapId": "G.Ter.Ome.Ari.MSVMule",
         "isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_MSV_Strontium_Mule"],
+        "relatedMissionIds": ["A2.N7.ArcheologicalDig", "A2.N7.BlueSunsBase", "A2.N7.JavelinMissiles"],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Joab Prothean Pyramid"
@@ -2735,6 +2807,50 @@
 			"type": "Triggers",
 			"id": "Completed: MSV Strontium Mule"
 		}]
+	}, {
+		"id": "A2.N7.MSVStrontiumMule.1",
+		"inMissionId": "A2.N7.MSVStrontiumMule",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Unlock Doors",
+		"description": "Use the security console to unlock the three doors.",
+		"inMapId": "G.Ter.Ome.Ari.MSV.3Console",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.N7.MSVStrontiumMule.2",
+		"inMissionId": "A2.N7.MSVStrontiumMule",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Unlock Bridge",
+		"description": "Use the security console to unlock the bridge.",
+		"inMapId": "G.Ter.Ome.Ari.MSV.6Console",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.N7.MSVStrontiumMule.3",
+		"inMissionId": "A2.N7.MSVStrontiumMule",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Cargo Codes",
+		"description": "Read the ship's log to discover the codes for the valuable cargo.",
+		"inMapId": "G.Ter.Ome.Ari.MSV.7Log",
+		"isShowInParentMap": true
+	}, {
+		"id": "A2.N7.MSVStrontiumMule.4",
+		"inMissionId": "A2.N7.MSVStrontiumMule",
+		"sortIndex": 1000,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Recover Cargo",
+		"description": "Go back to the previously-locked room and retrieve the ship's cargo.",
+		"inMapId": "G.Ter.Ome.Ari.MSVMule",
+        "mapLocationPoint": {
+            "x": 823,
+            "y": 594,
+            "radius": 1
+        }
 	}, {
 		"id": "A2.N7.QuarianCrashSite",
 		"sortIndex": 1000,

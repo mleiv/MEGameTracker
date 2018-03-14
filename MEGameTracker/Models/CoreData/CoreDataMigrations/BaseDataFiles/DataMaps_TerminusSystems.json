@@ -1539,6 +1539,10 @@
             "https://masseffect.wikia.com/wiki/Zanethu"
         ],
         "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Tertiary/MSV_Estevanico/MSV_Estevanico.pdf",
+                "referenceSize": "2083x2083"
+            },
             "3": {
                 "mapLocationPoint": {
                     "x": 576,
@@ -1546,6 +1550,36 @@
                     "radius": 100
                 }
             }
+        }
+    }, {
+        "id": "G.Ter.Hou.Plo.Zan.1Start",
+        "inMapId": "G.Ter.Hou.Plo.Zanethu",
+        "name": "Start",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 834,
+            "y": 528,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Hou.Plo.Zan.2Tiles",
+        "inMapId": "G.Ter.Hou.Plo.Zanethu",
+        "name": "Loose Tiles",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 834,
+            "y": 320,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Hou.Plo.Zan.3Mainframe",
+        "inMapId": "G.Ter.Hou.Plo.Zanethu",
+        "name": "Mainframe",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1310,
+            "y": 1756,
+            "radius": 20
         }
     }, {
         "id": "G.Ter.Hou.Plo.Synalus",
@@ -2102,7 +2136,83 @@
         },
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/MSV_Strontium_Mule"
-        ]
+        ],
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Tertiary/MSV_Strontium_Mule/MSV_Strontium_Mule.pdf",
+                "referenceSize": "2083x2083",
+            }
+        },
+    }, {
+        "id": "G.Ter.Ome.Ari.MSV.1Start",
+        "inMapId": "G.Ter.Ome.Ari.MSVMule",
+        "name": "Docking Bay",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1922,
+            "y": 1797,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Ari.MSV.2Console",
+        "inMapId": "G.Ter.Ome.Ari.MSVMule",
+        "name": "Airlock Security Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 812,
+            "y": 1917,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Ari.MSV.3Console",
+        "inMapId": "G.Ter.Ome.Ari.MSVMule",
+        "name": "Hub Security Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1270,
+            "y": 1118,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Ari.MSV.4Console",
+        "inMapId": "G.Ter.Ome.Ari.MSVMule",
+        "name": "Cargo Room Main Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 169,
+            "y": 600,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Ari.MSV.5Console",
+        "inMapId": "G.Ter.Ome.Ari.MSVMule",
+        "name": "Transmission Relay Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1678,
+            "y": 133,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Ari.MSV.6Console",
+        "inMapId": "G.Ter.Ome.Ari.MSVMule",
+        "name": "Bridge Security Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1678,
+            "y": 533,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Ari.MSV.7Log",
+        "inMapId": "G.Ter.Ome.Ari.MSVMule",
+        "name": "Ship's Main Log",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1863,
+            "y": 334,
+            "radius": 20
+        }
     }, {
         "x-comment-x": "--------Batalla-------",
         "id": "G.Ter.Ome.Batalla",
@@ -2674,7 +2784,7 @@
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 139,
-                    "y": 1115,
+                    "y": 1582,
                     "width": 1800,
                     "height": 305
                 },
@@ -4249,7 +4359,43 @@
         },
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Sanctum"
-        ]
+        ],
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Tertiary/Sanctum/Sanctum.pdf",
+                "referenceSize": "2083x2083",
+            }
+        },
+    }, {
+        "id": "G.Ter.Sig.Dec.San.1Start",
+        "inMapId": "G.Ter.Sig.Dec.Sanctum",
+        "name": "Start",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1287,
+            "y": 1760,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Sig.Dec.San.2Notice",
+        "inMapId": "G.Ter.Sig.Dec.Sanctum",
+        "name": "Closure Notice",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 929,
+            "y": 890,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Sig.Dec.San.3Signal",
+        "inMapId": "G.Ter.Sig.Dec.Sanctum",
+        "name": "Distress Beacon Signal",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1082,
+            "y": 669,
+            "radius": 20
+        }
     }, {
         "x-comment-x": "--------Lenal-------",
         "id": "G.Ter.Sig.Lenal",
@@ -4618,7 +4764,33 @@
         },
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Franklin"
-        ]
+        ],
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Tertiary/Franklin/Franklin.pdf",
+                "referenceSize": "2083x2083"
+            }
+        }
+    }, {
+        "id": "G.Ter.Sig.Ske.Fra.1Start",
+        "inMapId": "G.Ter.Sig.Ske.Franklin",
+        "name": "Start",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 624,
+            "y": 1637,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Sig.Ske.Fra.2Console",
+        "inMapId": "G.Ter.Sig.Ske.Franklin",
+        "name": "Kill Switch Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1416,
+            "y": 304,
+            "radius": 20
+        }
     }, {
         "id": "G.Ter.Sig.Ske.Crick",
         "name": "Crick",
