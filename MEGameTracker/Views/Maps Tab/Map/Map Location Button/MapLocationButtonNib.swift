@@ -46,7 +46,7 @@ final public class MapLocationButtonNib: UIView {
 
 	public func set(location: MapLocationable, isShowPin: Bool = false) {
 		mapLocationPoint = location.mapLocationPoint
-		title?.text = location.name
+        title?.text = location.mapLocationType == .map ? location.name : nil // hide clutter
 		pinColor = (location as? Item)?.itemDisplayType?.color ?? Styles.Colors.tintColor
 		self.isShowPin = isShowPin
 	}
