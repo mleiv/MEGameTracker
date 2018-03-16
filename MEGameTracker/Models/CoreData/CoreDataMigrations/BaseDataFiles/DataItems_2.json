@@ -1197,8 +1197,13 @@
 		"itemDisplayType": "Goal",
 		"name": "Heavy Skin Weave 2 (Lattice Shunting)",
 		"annotationNote": "Shepard: +10% Health",
-		"price": "-5,000 Palladium",
-		"mapNoteForLater": "TODO: Derelict Reaper, Research Terminal",
+		"price": "-5,000 Palladium",		
+		"inMapId": "G.Att.Haw.Tho.Reaper",
+        "mapLocationPoint": {
+            "x": 1330,
+            "y": 48,
+            "radius": 1
+        },
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Heavy Skin Weave 1"
@@ -1722,7 +1727,12 @@
 		"name": "Shotgun Damage 3 (Synchronized Pulsar)",
 		"annotationNote": "Squad: +10% Shotgun Damage",
 		"price": "-7,500 Platinum",
-		"mapNoteForLater": "TODO: Derelict Reaper Mission",
+		"inMapId": "G.Att.Haw.Tho.Reaper",
+        "mapLocationPoint": {
+            "x": 766,
+            "y": 1980,
+            "radius": 1
+        },
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Shotgun Damage 3"
@@ -1888,7 +1898,12 @@
 		"name": "Sniper Rifle Damage 3 (Scram Pulsar)",
 		"annotationNote": "Squad: +10% Sniper Rifle Damage",
 		"price": "-5,000 Platinum",
-		"mapNoteForLater": "TODO: Derelict Reaper Mission",
+		"inMapId": "G.Att.Haw.Tho.Reaper",
+        "mapLocationPoint": {
+            "x": 1235,
+            "y": 850,
+            "radius": 1
+        },
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Sniper Rifle Damage 3"

@@ -4707,7 +4707,7 @@
     "inMapId": "G.C2.27.CSec",
     "isShowInParentMap": true,
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Garrus:_Eye_for_an_Eye"],
-    "relatedMissionIds": ["A2.Convo.Garrus.2"],
+    "relatedMissionIds": [],
     "relatedDecisionIds": ["D2.GarrusLoyalty"],
     "conversationRewards": [{
       "set": {
@@ -5017,8 +5017,12 @@
     "experience": 1000,
     "reward": "25,000 Credits",
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Grunt:_Rite_of_Passage"],
-    "relatedMissionIds": ["A2.Convo.Grunt.3"],
+    "relatedMissionIds": [],
     "relatedDecisionIds": ["D2.GruntLoyalty"],
+    "sideEffects": [
+      "There was initially a loyalty-breaking choice in Grunt's mission, similar to Zaeed's. You can listen to the deleted post-mission dialogue here: [Youtube|https://www.youtube.com/watch?v=HrgsVU6qtUw].",
+      "There was an argument between Grunt and Mordin at the end of their loyalty missions, similar to the Miranda-Jack and Tali-Legion arguments. You can listen to the deleted audio here: [Youtube|https://www.youtube.com/watch?v=wMHCuaVrW1I]."
+    ],
     "conversationRewards": [{
       "set": {
         "context": "Speaking to Urdnet Wrex or Wreave",
@@ -5287,7 +5291,7 @@
     "experience": 1000,
     "reward": "25,000 Credits",
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Jack:_Subject_Zero"],
-    "relatedMissionIds": ["A2.Convo.Jack.4", "A2.Convo.MirandaJack"],
+    "relatedMissionIds": ["A2.Convo.MirandaJack"],
     "relatedDecisionIds": ["D2.JackLoyalty"],
     "conversationRewards": [{
       "set": {
@@ -5618,7 +5622,7 @@
     "isShowInParentMap": true,
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Jacob:_The_Gift_of_Greatness"],
     "relatedDecisionIds": ["D2.JacobLoyalty", "D2.RonaldTaylor.1", "D2.RonaldTaylor.2", "D2.RonaldTaylor.3"],
-    "relatedMissionIds": ["A2.Convo.Jacob.4"],
+    "relatedMissionIds": [],
     "conversationRewards": [{
       "set": {
         "context": "Encountering the first survivor",
@@ -5868,7 +5872,7 @@
     "reward": "25,000 Credits",
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Legion:_A_House_Divided"],
     "relatedDecisionIds": ["D2.LegionLoyalty", "D2.Heretics"],
-    "relatedMissionIds": ["A2.Convo.Legion.2", "A2.Convo.TaliLegion"],
+    "relatedMissionIds": ["A2.Convo.TaliLegion"],
     "conversationRewards": [{
       "set": {
         "context": "While boarding Heretic Station, Legion asks to rewrite the heretics when done",
@@ -5968,10 +5972,7 @@
     }],
     "events": [{
       "type": "BlockedUntil",
-      "id": "Completed: Horizon"
-    }, {
-      "type": "BlockedUntil",
-      "id": "Acquired: Legion"
+      "id": "Loyalty Available: Legion"
     }, {
       "type": "Triggers",
       "id": "Secured Loyalty: Legion"
@@ -6099,7 +6100,7 @@
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Miranda:_The_Prodigal"],
     "experience": 1000,
     "reward": "25,000 Credits",
-    "relatedMissionIds": ["A2.I.LostLocketFound", "A2.Convo.Miranda.3", "A2.Convo.MirandaJack"],
+    "relatedMissionIds": ["A2.I.LostLocketFound", "A2.Convo.MirandaJack"],
     "relatedDecisionIds": ["D2.MirandaLoyalty"],
     "conversationRewards": [{
       "set": {
@@ -6318,10 +6319,13 @@
     "inMapId": "G.InC.Kro.Ara.Tuchanka",
     "isShowInParentMap": true,
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Mordin:_Old_Blood"],
-    "relatedMissionIds": ["A2.T.CombustionManifold", "A2.T.MissingScout", "A2.Convo.Mordin.3"],
+    "relatedMissionIds": ["A2.T.CombustionManifold", "A2.T.MissingScout"],
     "relatedDecisionIds": ["D2.MordinLoyalty", "D2.Maelon", "D2.MaelonsData"],
     "experience": 1000,
     "reward": "25,000 Credits",
+    "sideEffects": [
+      "There was an argument between Grunt and Mordin at the end of their loyalty missions, similar to the Miranda-Jack and Tali-Legion arguments. You can listen to the deleted audio here: [Youtube|https://www.youtube.com/watch?v=wMHCuaVrW1I]."
+    ],
     "conversationRewards": [{
       "id": "A2.L.Mordin.P2",
       "type": "Paragon",
@@ -6613,7 +6617,7 @@
     "reward": "25,000 Credits",
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Samara:_The_Ardat-Yakshi"],
     "relatedDecisionIds": ["D2.SamaraLoyalty", "D2.SamaraMorinth"],
-    "relatedMissionIds": ["A2.Convo.Samara.3"],
+    "relatedMissionIds": [],
     "conversationRewards": [{
       "set": {
         "context": "Talking to Diana, Nef's mother",
@@ -6921,7 +6925,7 @@
     "isShowInParentMap": true,
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Tali:_Treason"],
     "relatedDecisionIds": ["D2.TaliLoyalty", "D2.TaliNotExiled", "D2.RaelZorahReputation"],
-    "relatedMissionIds": ["A2.Convo.Tali.2", "A2.Convo.TaliLegion"],
+    "relatedMissionIds": ["A2.Convo.TaliLegion"],
     "conversationRewards": [{
       "set": {
         "context": "Meeting Captain Kar'Danna",
@@ -7559,7 +7563,7 @@
     "experience": 1000,
     "reward": "25,000 Credits",
     "relatedLinks": ["https://masseffect.wikia.com/wiki/Thane:_Sins_of_the_Father"],
-    "relatedMissionIds": ["A2.Convo.Thane.4"],
+    "relatedMissionIds": [],
     "relatedDecisionIds": ["D2.ThaneLoyalty"],
     "conversationRewards": [{
       "set": {

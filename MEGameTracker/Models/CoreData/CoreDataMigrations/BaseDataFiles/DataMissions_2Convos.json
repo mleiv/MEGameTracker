@@ -1357,7 +1357,7 @@
         "relatedLinks": ["http://masseffect.wikia.com/wiki/Legion/Unique_dialogue"],
         "conversationRewards": [{
             "set": {
-                "context": "During fifth conversation",
+                "context": "During fourth conversation",
                 "options": [{
                     "set": {
                         "isExclusiveSet": true,
@@ -1402,7 +1402,7 @@
             }
         }, {
             "set": {
-                "context": "During sixth conversation",
+                "context": "During fifth conversation",
                 "options": [{
                     "set": {
                         "context": "\"Questions of existence?\"",
@@ -1452,24 +1452,21 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "1st Convo",
-        "description": "",
-        "inMapId": "G.N2.3.Core",
-        "isShowInParentMap": true
-    }, {
-        "id": "A2.Convo.Legion.2",
-        "inMissionId": "A2.Convo.Legion",
-        "sortIndex": 9000,
-        "gameVersion": "2",
-        "missionType": "Objective",
         "name": "2nd Convo",
         "annotationNote": "Loyalty Mission Dialogue",
-        "description": "",
+        "description": "Legion discusses the heretic virus and the location of the heretic station.",
         "inMapId": "G.N2.3.Core",
         "isShowInParentMap": true,
-        "relatedMissionIds": ["A2.L.Legion"]
+        "relatedMissionIds": ["A2.L.Legion"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Acquired: Legion"
+        }, {
+            "type": "Triggers",
+            "id": "Loyalty Available: Legion"
+        }]
     }, {
-        "id": "A2.Convo.Legion.3",
+        "id": "A2.Convo.Legion.2",
         "inMissionId": "A2.Convo.Legion",
         "sortIndex": 9000,
         "gameVersion": "2",
@@ -1481,9 +1478,12 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Secured Loyalty: Legion"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Legion Convo 2"
         }]
     }, {
-        "id": "A2.Convo.Legion.4",
+        "id": "A2.Convo.Legion.3",
         "inMissionId": "A2.Convo.Legion",
         "sortIndex": 9000,
         "gameVersion": "2",
@@ -1494,10 +1494,13 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Legion"
+            "id": "Completed: Legion Convo 2 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Legion Convo 3"
         }]
     }, {
-        "id": "A2.Convo.Legion.5",
+        "id": "A2.Convo.Legion.4",
         "inMissionId": "A2.Convo.Legion",
         "sortIndex": 9000,
         "gameVersion": "2",
@@ -1508,10 +1511,13 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Legion"
+            "id": "Completed: Legion Convo 3 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Legion Convo 4"
         }]
     }, {
-        "id": "A2.Convo.Legion.6",
+        "id": "A2.Convo.Legion.5",
         "inMissionId": "A2.Convo.Legion",
         "sortIndex": 9000,
         "gameVersion": "2",
@@ -1522,7 +1528,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Legion"
+            "id": "Completed: Legion Convo 4 + 1"
         }]
     }, {
         "id": "A2.Convo.Miranda",
@@ -2207,15 +2213,17 @@
         "gameVersion": "2",
         "missionType": "Objective",
         "name": "2nd Convo",
-        "description": "Samara discusses the role of the Justicar and the brutality of her code.",
+        "annotationNote": "Loyalty Mission Dialogue",
+        "description": "Samara reveals that she is hunting is her daughter Morinth, one of a dangerous breed of killers the asari have named the \"Ardat-Yakshi,\" who consume their victims when mating.",
         "inMapId": "G.N2.3.Starboard",
         "isShowInParentMap": true,
+        "relatedMissionIds": ["A2.L.Samara"],
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Samara Convo 1 + 1"
         }, {
             "type": "Triggers",
-            "id": "Completed: Samara Convo 2"
+            "id": "Loyalty Available: Samara"
         }]
     }, {
         "id": "A2.Convo.Samara.3",
@@ -2224,17 +2232,15 @@
         "gameVersion": "2",
         "missionType": "Objective",
         "name": "3rd Convo",
-        "annotationNote": "Loyalty Mission Dialogue",
-        "description": "Samara reveals that she is hunting is her daughter Morinth, one of a dangerous breed of killers the asari have named the \"Ardat-Yakshi,\" who consume their victims when mating.",
+        "description": "Samara grieves her daughter's death. \n\nIf you let Morinth live, then Morinth will reveal that she disliked Samara and is not sad she is dead.",
         "inMapId": "G.N2.3.Starboard",
         "isShowInParentMap": true,
-        "relatedMissionIds": ["A2.L.Samara"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Samara Convo 2 + 1"
+            "id": "Secured Loyalty: Samara"
         }, {
             "type": "Triggers",
-            "id": "Loyalty Available: Samara"
+            "id": "Completed: Samara Convo 3"
         }]
     }, {
         "id": "A2.Convo.Samara.4",
@@ -2242,13 +2248,13 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo",
-        "description": "Samara grieves her daughter's death. \n\nIf you let Morinth live, then Morinth will reveal that she disliked Samara and is not sad she is dead.",
+        "name": "4th Convo (Samara)",
+        "description": "Samara discusses the role of the Justicar and the brutality of her code.",
         "inMapId": "G.N2.3.Starboard",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Samara"
+            "id": "Completed: Samara Convo 3 + 1"
         }, {
             "type": "Triggers",
             "id": "Completed: Samara Convo 4"
@@ -2260,7 +2266,7 @@
         "gameVersion": "2",
         "missionType": "Objective",
         "name": "5th Convo (Samara)",
-        "description": "Samara admits that she does not think the squad will make it through the final mission.",
+        "description": "Samara discusses her adventures. She will talk about encountering [megametracker://person?id=P1.Nihlus], if you ask. Samara admits that she does not think the squad will make it through the final mission. ",
         "inMapId": "G.N2.3.Starboard",
         "isShowInParentMap": true,
         "events": [{

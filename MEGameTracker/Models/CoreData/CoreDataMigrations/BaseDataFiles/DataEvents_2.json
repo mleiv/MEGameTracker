@@ -324,6 +324,55 @@
          ]
       }
    }, {
+      "id": "Loyalty Available: Legion",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Legion.1]"
+   }, {
+      "id": "Completed: Legion Convo 2",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Legion.2]"
+   }, {
+      "id": "Completed: Legion Convo 2 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the second conversation with Legion.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Legion Convo 2"
+         ]
+      }
+   }, {
+      "id": "Completed: Legion Convo 3",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Legion.3]"
+   }, {
+      "id": "Completed: Legion Convo 3 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the third conversation with Legion.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Legion Convo 3"
+         ]
+      }
+   }, {
+      "id": "Completed: Legion Convo 4",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Legion.4]"
+   }, {
+      "id": "Completed: Legion Convo 4 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the fourth conversation with Legion.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Legion Convo 4"
+         ]
+      }
+   }, {
       "id": "Completed: Miranda Convo 1",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Miranda.1]"
@@ -482,24 +531,35 @@
          ]
       }
    }, {
-      "id": "Completed: Samara Convo 2",
+      "id": "Completed: Samara Convo 1 + 1",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.Convo.Samara.2]"
-   }, {
-      "id": "Completed: Samara Convo 2 + 1",
-      "gameVersion": "2",
-      "description": "Complete one mission after the second conversation with Samara.",
+      "description": "Complete one mission after the first conversation with Samara.",
       "isAny": "missions",
       "dependentOn": {
          "countTo": 1,
          "events": [
-            "Any Mission After: Completed: Samara Convo 2"
+            "Any Mission After: Completed: Samara Convo 1"
          ]
       }
    }, {
       "id": "Loyalty Available: Samara",
       "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Samara.2]"
+   }, {
+      "id": "Completed: Samara Convo 3",
+      "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Samara.3]"
+   }, {
+      "id": "Completed: Samara Convo 3 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the third conversation with Samara.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Samara Convo 3"
+         ]
+      }
    }, {
       "id": "Completed: Samara Convo 4",
       "gameVersion": "2",

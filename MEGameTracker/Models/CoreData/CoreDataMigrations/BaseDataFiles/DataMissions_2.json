@@ -1485,6 +1485,9 @@
 		}, {
 			"type": "Triggers",
 			"id": "Completed: Reaper IFF"
+        }, {
+            "type": "Triggers",
+            "id": "Acquired: Legion"
 		}]
 	}, {
 		"id": "M2.ReaperIFF.1",
@@ -1494,8 +1497,12 @@
 		"missionType": "Objective",
 		"name": "Cerberus Lab",
 		"description": "Explore the missing Cerberus team's lab. Their logs reveal that Indoctrination was starting.",
-		"inMapId": "G.Att.Haw.Tho.Reaper",
-		"isShowInParentMap": true
+        "inMapId": "G.Att.Haw.Tho.Reaper",
+        "mapLocationPoint": {
+            "x": 402,
+            "y": 1231,
+            "radius": 1
+        }
 	}, {
 		"id": "M2.ReaperIFF.2",
 		"inMissionId": "M2.ReaperIFF",
@@ -1504,18 +1511,26 @@
 		"missionType": "Objective",
 		"name": "Exit Lab",
 		"description": "When you exit the lab into the Reaper itself, its kinetic barriers activate, locking you in and the Normandy out. Edi sends you the location of the barriers' power source in the ship's core, but if you shut it down the Reaper will also plummet to the planet's surface.",
-		"inMapId": "G.Att.Haw.Tho.Reaper",
-		"isShowInParentMap": true
+        "inMapId": "G.Att.Haw.Tho.Reaper",
+        "mapLocationPoint": {
+            "x": 188,
+            "y": 989,
+            "radius": 1
+        }
 	}, {
 		"id": "M2.ReaperIFF.3",
 		"inMissionId": "M2.ReaperIFF",
 		"sortIndex": 73,
 		"gameVersion": "2",
 		"missionType": "Objective",
-		"name": "Catwalks",
-		"description": "You will find more Cerberus logs and some remains of the science team as you move along the catwalks. You will also be attacked by a group of husks. As you follow the ramp down, several larger waves of husks attack. Continue to the next set of logs and remains. An unseen sniper takes down two husks in front of you. Turn left and in the next open area, another, lerger mob of husks attack. There is a final log here, then bypass the door to the next area.",
-		"inMapId": "G.Att.Haw.Tho.Reaper",
-		"isShowInParentMap": true
+		"name": "Exit Reaper Interior",
+		"description": "On the catwalks, you will find more Cerberus logs and some remains of the science team as you move along the catwalks. You will also be attacked by a group of husks. As you follow the ramp down, several larger waves of husks attack. Continue to the next set of logs and remains. An unseen sniper takes down two husks in front of you. Turn left and in the next open area, another, lerger mob of husks attack. There is a final log here, then bypass the door to the next area.",
+        "inMapId": "G.Att.Haw.Tho.Reaper",
+        "mapLocationPoint": {
+            "x": 1501,
+            "y": 711,
+            "radius": 1
+        }
 	}, {
 		"id": "M2.ReaperIFF.4",
 		"inMissionId": "M2.ReaperIFF",
@@ -1523,9 +1538,13 @@
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Mysterious Geth",
-		"description": "As you enter the next area, a mysterious geth sniper with a piece of N7 armor takes down two husks about to attack you. It greets you by name, and then leaves before you can investigate. Every section of this area has a mob of husks, so move forward carefully, elimating each mob as you enter a new section. Bypass the door to access the core.",
+		"description": "As you enter the Reaper exterior catwalks, a mysterious geth sniper with a piece of N7 armor takes down two husks about to attack you. It greets you by name, and then leaves before you can investigate. Every section of this area has a mob of husks, so move forward carefully, elimating each mob as you enter a new section. Bypass the door to access the core.",
 		"inMapId": "G.Att.Haw.Tho.Reaper",
-		"isShowInParentMap": true
+        "mapLocationPoint": {
+            "x": 52,
+            "y": 1832,
+            "radius": 1
+        }
 	}, {
 		"id": "M2.ReaperIFF.5",
 		"inMissionId": "M2.ReaperIFF",
@@ -1534,18 +1553,26 @@
 		"missionType": "Objective",
 		"name": "Reaper IFF",
 		"description": "The Reaper IFF is conveniently situated in the accessway just outside the core.",
-		"inMapId": "G.Att.Haw.Tho.Reaper",
-		"isShowInParentMap": true
+        "inMapId": "G.Att.Haw.Tho.Reaper",
+        "mapLocationPoint": {
+            "x": 1829,
+            "y": 1322,
+            "radius": 1
+        }
 	}, {
 		"id": "M2.ReaperIFF.6",
 		"inMissionId": "M2.ReaperIFF",
 		"sortIndex": 76,
 		"gameVersion": "2",
 		"missionType": "Objective",
-		"name": "Reaper Core",
+		"name": "Destroy Reaper Core",
 		"description": "You will briefly spot the mysterious geth again, attempting to access the core and fighting off husks. The husks take the geth down. Then they notice you. You must alternate between killing the mobs of husks and firing on the Reaper Core whenever it is open and vulnerable. There are three rounds of this until it is destroyed. At that point, you retrieve the fallen geth and flee the plummeting ship.",
 		"inMapId": "G.Att.Haw.Tho.Reaper",
-		"isShowInParentMap": true
+        "mapLocationPoint": {
+            "x": 1844,
+            "y": 996,
+            "radius": 1
+        }
 	}, {
 		"id": "M2.ReaperIFF.7",
 		"inMissionId": "M2.ReaperIFF",
@@ -1554,7 +1581,7 @@
 		"missionType": "Objective",
 		"name": "Legion",
 		"description": "Back aboard the Normandy, you must decide what to do with the geth. You can activate it or not, or send it to Cerberus for research (and 50,000 Credits). There are Game 3 consequences to all these choices.",
-		"inMapId": "G.Att.Haw.Tho.Reaper",
+		"inMapId": "G.N2.3.Core",
 		"isShowInParentMap": true
 	}, {
 		"id": "M2.CollectorBase.1",
