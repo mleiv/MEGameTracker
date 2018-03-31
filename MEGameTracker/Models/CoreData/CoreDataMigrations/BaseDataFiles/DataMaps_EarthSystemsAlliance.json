@@ -4568,7 +4568,7 @@
 		"gameVersionData": {
 			"1": {
 				"isHidden": false,
-                "note": "TODO: Change msp to not have upper right chamber (just hall to chamber - it deadends).",
+                "note": "TODO: Change map to not have upper right chamber (just hall to chamber - it deadends).",
 				"image": "Detail_Maps/Game1/UNC/Generic_Mine.pdf",
 				"referenceSize": "2083x2083"
 			}
@@ -7119,7 +7119,136 @@
 		},
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Aratoht"
-		]
+		],
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Secondary/Aratoht/Aratoht_Menu.pdf",
+                "referenceSize": "2083x2083",
+                "isSplitMenu": true
+            }
+        }
+    }, {
+        "id": "G.Ear.Vip.Bah.Ara.Aratoht",
+        "name": "Aratoht Base",
+        "inMapId": "G.Ear.Vip.Bah.Aratoht",
+        "rerootBreadcrumbs": true,
+        "isHidden": true,
+        "mapType": "Area",
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Secondary/Aratoht/Aratoht.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 143,
+                    "y": 167,
+                    "width": 1800,
+                    "height": 800
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ear.Vip.Bah.Ara.Ara.1Start",
+        "inMapId": "G.Ear.Vip.Bah.Ara.Aratoht",
+        "name": "Drop Zone",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1291,
+            "y": 1609,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Vip.Bah.Ara.Ara.2Exit",
+        "inMapId": "G.Ear.Vip.Bah.Ara.Aratoht",
+        "name": "To Arcturus Station",
+        "linkToMapId": "G.Ear.Vip.Bah.Ara.Arcturus",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1417,
+            "y": 388,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Vip.Bah.Ara.Arcturus",
+        "name": "Arcturus Station",
+        "inMapId": "G.Ear.Vip.Bah.Aratoht",
+        "rerootBreadcrumbs": true,
+        "isHidden": true,
+        "mapType": "Area",
+        "gameVersionData": {
+            "2": {
+                "image": "Detail_Maps/Game2/_Secondary/Aratoht/Arcturus_Station.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 143,
+                    "y": 1135,
+                    "width": 1800,
+                    "height": 800
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ear.Vip.Bah.Ara.Arc.1Start",
+        "inMapId": "G.Ear.Vip.Bah.Ara.Arcturus",
+        "name": "Entrance",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 743,
+            "y": 1882,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Vip.Bah.Ara.Arc.2WL",
+        "inMapId": "G.Ear.Vip.Bah.Ara.Arcturus",
+        "name": "Weapons Locker",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 817,
+            "y": 1850,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Vip.Bah.Ara.Arc.3Row",
+        "inMapId": "G.Ear.Vip.Bah.Ara.Arcturus",
+        "name": "Object Rho",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 780,
+            "y": 1471,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Vip.Bah.Ara.Arc.4WL",
+        "inMapId": "G.Ear.Vip.Bah.Ara.Arcturus",
+        "name": "Weapons Locker",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 990,
+            "y": 1918,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Vip.Bah.Ara.Arc.5Cooling",
+        "inMapId": "G.Ear.Vip.Bah.Ara.Arcturus",
+        "name": "Cooling Controls A",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1610,
+            "y": 1114,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Vip.Bah.Ara.Arc.6Cooling",
+        "inMapId": "G.Ear.Vip.Bah.Ara.Arcturus",
+        "name": "Cooling Controls B",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1178,
+            "y": 186,
+            "radius": 20
+        }
+
 	}, {
 		"id": "G.Ear.Vip.Bah.Yunaca",
 		"name": "Yunaca",

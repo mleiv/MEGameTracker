@@ -36,6 +36,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
+        "objectivesCountToCompletion": 5,
         "titlePrefix": "Conversation: ",
         "name": "Garrus Vakarian",
         "description": "Conversations with [megametracker://person?id=S1.Garrus] after his recruitment aboard the Normandy.",
@@ -167,6 +168,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
+        "objectivesCountToCompletion": 5,
         "titlePrefix": "Conversation: ",
         "name": "Grunt",
         "description": "Conversations with [megametracker://person?id=S2.Grunt] after his recruitment aboard the Normandy.",
@@ -404,6 +406,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
+        "objectivesCountToCompletion": 8,
         "titlePrefix": "Conversation: ",
         "name": "Jack",
         "description": "Conversations with [megametracker://person?id=S2.Jack] after her recruitment aboard the Normandy.",
@@ -836,6 +839,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
+        "objectivesCountToCompletion": 8,
         "titlePrefix": "Conversation: ",
         "name": "Jacob Taylor",
         "description": "Conversations with [megametracker://person?id=S2.Jacob] aboard the Normandy.",
@@ -1348,6 +1352,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
+        "objectivesCountToCompletion": 6,
         "titlePrefix": "Conversation: ",
         "name": "Legion",
         "description": "Conversations with [megametracker://person?id=S2.Legion] after its recruitment aboard the Normandy.",
@@ -1357,7 +1362,7 @@
         "relatedLinks": ["http://masseffect.wikia.com/wiki/Legion/Unique_dialogue"],
         "conversationRewards": [{
             "set": {
-                "context": "During fourth conversation",
+                "context": "During fifth conversation",
                 "options": [{
                     "set": {
                         "isExclusiveSet": true,
@@ -1402,7 +1407,7 @@
             }
         }, {
             "set": {
-                "context": "During fifth conversation",
+                "context": "During sixth conversation",
                 "options": [{
                     "set": {
                         "context": "\"Questions of existence?\"",
@@ -1452,7 +1457,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "2nd Convo",
+        "name": "1st Convo",
         "annotationNote": "Loyalty Mission Dialogue",
         "description": "Legion discusses the heretic virus and the location of the heretic station.",
         "inMapId": "G.N2.3.Core",
@@ -1471,8 +1476,8 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "3rd Convo",
-        "description": "",
+        "name": "2nd Convo",
+        "description": "Discuss the outcome of the mission against the Heretics.",
         "inMapId": "G.N2.3.Core",
         "isShowInParentMap": true,
         "events": [{
@@ -1488,8 +1493,8 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo",
-        "description": "",
+        "name": "3rd Convo",
+        "description": "You ask Legion about its N7 armor.",
         "inMapId": "G.N2.3.Core",
         "isShowInParentMap": true,
         "events": [{
@@ -1505,8 +1510,8 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo",
-        "description": "",
+        "name": "4th Convo",
+        "description": "Ask Legion about its mobile platform and how it gives some independence from the geth consensus.",
         "inMapId": "G.N2.3.Core",
         "isShowInParentMap": true,
         "events": [{
@@ -1522,13 +1527,30 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo",
-        "description": "",
+        "name": "5th Convo",
+        "description": "Ask Legion about the war with the quarians.",
         "inMapId": "G.N2.3.Core",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Legion Convo 4 + 1"
+       }, {
+           "type": "Triggers",
+           "id": "Completed: Legion Convo 5"
+        }]
+     }, {
+         "id": "A2.Convo.Legion.6",
+         "inMissionId": "A2.Convo.Legion",
+         "sortIndex": 9000,
+         "gameVersion": "2",
+         "missionType": "Objective",
+         "name": "6th Convo",
+         "description": "Ask Legion about the future of the geth. They want to join together into one megastructure.",
+         "inMapId": "G.N2.3.Core",
+         "isShowInParentMap": true,
+         "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Legion Convo 5 + 1"
         }]
     }, {
         "id": "A2.Convo.Miranda",
@@ -1536,6 +1558,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
+        "objectivesCountToCompletion": 7,
         "titlePrefix": "Conversation: ",
         "name": "Miranda Lawson",
         "description": "Conversations with [megametracker://person?id=S2.Miranda] aboard the Normandy.",
@@ -1796,6 +1819,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
+        "objectivesCountToCompletion": 7,
         "titlePrefix": "Conversation: ",
         "name": "Mordin Solus",
         "description": "Conversations with [megametracker://person?id=S2.Mordin] after his recruitment aboard the Normandy.",
@@ -2075,6 +2099,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
+        "objectivesCountToCompletion": 7,
         "titlePrefix": "Conversation: ",
         "name": "Samara/Morinth",
         "description": "Conversations with [megametracker://person?id=S2.Samara] (or Morinth) after her recruitment aboard the Normandy.",
@@ -2312,6 +2337,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
+        "objectivesCountToCompletion": 6,
         "titlePrefix": "Conversation: ",
         "name": "Tali'Zorah",
         "description": "Conversations with [megametracker://person?id=S2.Tali] after her recruitment aboard the Normandy.",
@@ -2558,6 +2584,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
+        "objectivesCountToCompletion": 7,
         "titlePrefix": "Conversation: ",
         "name": "Thane Krios",
         "description": "Conversations with [megametracker://person?id=S2.Thane] after his recruitment aboard the Normandy.",
@@ -3269,6 +3296,12 @@
             "type": "Paragon",
             "value": 0,
             "trigger": "Romance track."
+        }, {
+            "context": "After the final battle",
+            "id": "A2.Convo.Kelly.P25",
+            "type": "Paragon",
+            "value": 2,
+            "trigger": "\"Are you okay?\""
         }],
         "events": [{
             "type": "BlockedUntil",
@@ -3335,13 +3368,31 @@
         "inMapId": "G.N2.1.Terminal",
         "isShowInParentMap": true
     }, {
+        "id": "A2.Convo.Kelly.8",
+        "inMissionId": "A2.Convo.Kelly",
+        "sortIndex": 90108,
+        "gameVersion": "2",
+        "missionType": "Objective",
+        "name": "Normandy Convo (Collector Station)",
+        "description": "Ask Kelly how she is holding up after being kidnapped by the Collectors.",
+        "inMapId": "G.N2.2",
+        "mapLocationPoint": {
+            "x": 1264,
+            "y": 986,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Collector Base"
+        }]
+    }, {
         "id": "A2.Convo.Kelly.9",
         "inMissionId": "A2.Convo.Kelly",
         "sortIndex": 90109,
         "gameVersion": "2",
         "missionType": "Objective",
         "name": "2nd Normandy Cabin Visit",
-        "description": "This requires (in addition to the dinner conversation): \n - Ask Kelly about aliens when discussing Tali or Thane. \n - Have no other active love interest. \n - Save Kelly from the Collector Base, and ask her how she is doing afterwards. \n - Leave the Normandy, and come back. \n\nYou will receive a private message from Kelly. head up to your cabin and invite her up. \n\n([Source|https://www.gamefaqs.com/boards/944907-mass-effect-2/53455594])",
+        "description": "This requires (in addition to the dinner conversation): \n - Ask Kelly about aliens when discussing Tali or Thane. \n - Have no other active love interest. \n - Save Kelly from the Collector Station, and ask her how she is doing afterwards. \n - Leave the Normandy, and come back. \n\nYou will receive a private message from Kelly. head up to your cabin and invite her up. \n\n([Source|https://www.gamefaqs.com/boards/944907-mass-effect-2/53455594])",
         "inMapId": "G.N2.1.Terminal",
         "isShowInParentMap": true,
         "events": [{

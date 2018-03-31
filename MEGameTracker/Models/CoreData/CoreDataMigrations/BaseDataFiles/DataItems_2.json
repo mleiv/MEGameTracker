@@ -664,7 +664,12 @@
 		"name": "Medi-Gel Capacity 4 (Microscanner)",
 		"annotationNote": "+1 Medi-Gel Capacity",
 		"price": "-10,000 Palladium",
-		"mapNoteForLater": "TODO: Arrival - In the hangar with the crane, behind the metal boxes, use the crane to gain access",
+        "inMapId": "G.Ear.Vip.Bah.Ara.Aratoht",
+		"mapLocationPoint": {
+			"x": 349,
+			"y": 1173,
+			"radius": 1
+		},
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Medi-Gel 4"
@@ -1239,9 +1244,12 @@
 		"annotationNote": "Shepard: +10% Health",
 		"sideEffects": ["DLC Bonus upgrade in [megametracker://mission?id=DLC2.Arrival]."],
 		"price": "-25,000 Palladium",
-		"inMapId": "G.Ear.Vip.Bah.Aratoht",
-		"isShowInParentMap": true,
-		"mapNoteForLater": "TODO: Arrival (assignment) – in a room, after the elevator from the core room, on the left side of a hallway, with some palladium and a wall safe.",
+        "inMapId": "G.Ear.Vip.Bah.Ara.Arcturus",
+		"mapLocationPoint": {
+			"x": 384,
+			"y": 679,
+			"radius": 1
+		},
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Heavy Skin Weave 4"
@@ -2311,7 +2319,12 @@
 		"annotationNote": "Shepard: +15% Heavy Weapon Ammo",
 		"price": "-30,000 Credits",
 		"sideEffects": ["DLC Bonus upgrade after [megametracker://mission?id=DLC2.Arrival]."],
-		"inMapId": null,
+        "inMapId": "G.Ear.Vip.Bah.Ara.Aratoht",
+        "mapLocationPoint": {
+            "x": 953,
+            "y": 2055,
+            "radius": 1
+        },
 		"events": [{
 			"type": "Triggers",
 			"id": "Upgrade: Heavy Weapon Ammo 7"
@@ -2419,7 +2432,12 @@
 		"name": "Geth Shield Strength 2 (Cyclonic Particles)",
 		"annotationNote": "Squad: +25% Shield Strength",
 		"price": "-2,500 Platinum",
-		"mapNoteForLater": "TODO: Legion, A House Divided, geth Terminal"
+        "inMapId": "G.Ter.Pho.Sea.Station",
+		"mapLocationPoint": {
+			"x": 1676,
+			"y": 1157,
+			"radius": 1
+		}
 	}, {
 		"id": "A2.UC.SquadUpgrades.KV.I.1",
 		"inMissionId": "A2.UC.SquadUpgrades.KV",

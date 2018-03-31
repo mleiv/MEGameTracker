@@ -373,6 +373,21 @@
          ]
       }
    }, {
+      "id": "Completed: Legion Convo 5",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Legion.5]"
+   }, {
+      "id": "Completed: Legion Convo 5 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the fifth conversation with Legion.",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Legion Convo 5"
+         ]
+      }
+   }, {
       "id": "Completed: Miranda Convo 1",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Miranda.1]"
@@ -948,6 +963,17 @@
          "events": [
             "Secured Loyalty: Tali",
             "Secured Loyalty: Legion"
+         ]
+      }
+   }, {
+      "id": "Loyalty Available: Garrus or Secured Loyalty: Thane",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.L.Tali] and [megametracker://mission?id=A2.L.Legion]",
+      "dependentOn": {
+         "countTo": 2,
+         "events": [
+            "Loyalty Available: Garrus",
+            "Secured Loyalty: Thane"
          ]
       }
 
@@ -1819,6 +1845,11 @@
       "id": "Normandy Attacked",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=M2.CollectorBase.1]"
+    }, {
+        "id": "Normandy Attack Warning",
+        "gameVersion": "2",
+        "description": "Warning: you can only complete 2 missions, or all the squad loyalty missions, after Reaper IFF before the Normandy is attacked by the Collectors.",
+        "isAlert": true
    }, {
       "id": "Completed: Omega 4 Relay",
       "gameVersion": "2",

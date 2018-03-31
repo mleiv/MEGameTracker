@@ -812,7 +812,7 @@
 		"inMissionId": "M2.StopCollectors",
 		"gameVersion": "2",
 		"missionType": "Objective",
-		"name": "Use Omega-4 Relay",
+		"name": "Use Omega 4 Relay",
 		"isOpensDetail": false,
 		"identicalMissionId": "M2.CollectorBase.2",
 		"events": [{
@@ -827,7 +827,7 @@
 		"missionType": "Objective",
 		"name": "Defeat The Collectors",
 		"isOpensDetail": false,
-		"identicalMissionId": "M2.CollectorBase.3",
+		"identicalMissionId": "M2.CollectorBase.5",
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Omega 4 Relay"
@@ -843,6 +843,7 @@
 		"reward": "30,000 Credits",
 		"inMapId": "G.Att.Sha.Ier.Horizon",
 		"isShowInParentMap": true,
+		"identicalMissionId": "M2.StopCollectors.2",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Horizon_(mission)"],
 		"conversationRewards": [{
 			"set": {
@@ -1182,6 +1183,7 @@
 		"description": "_Note: The rules for triggering this mission are complicated ([https://masseffect.wikia.com/wiki/Collector_Ship_(mission)#Acquisition]), but the basics are: five missions after Horizon, and eight squad members._ \n\nIf you miss the upgrades on this mission, you can buy them at [megametracker://maplocation?id=G.Ter.Cre.Tas.Ill.1.Serrice&type=Map] on Illium.",
 		"inMapId": "G.CollectorShip.Start",
 		"isShowInParentMap": true,
+		"identicalMissionId": "M2.StopCollectors.4",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Collector_Ship_(mission)"],
 		"conversationRewards": [{
 			"set": {
@@ -1381,13 +1383,14 @@
 		"gameVersion": "2",
 		"missionType": "Mission",
 		"name": "Reaper IFF",
-		"description": "_Note: Since this mission triggers a countdown to the Normandy attack, you may want to complete all your other loyalty missions beforehand, so you have room to complete Legion's loyalty mission immediately after._ \n\nYou will need a Reaper IFF (\"Identify Friend/Foe\") to get through the Omega 4 Relay safely. Cerberus has located a derelict Reaper ship with this IFF, but the science team sent to investigate has failed to report back.",
+		"description": "_Note: Since this mission triggers the Normandy attack (after 2 more assignments are completed), you may want to complete all your other loyalty missions beforehand, so you have room to complete Legion's loyalty mission immediately after (if you want, you can do Tali's loyalty mission *with* Legion, which is always entertaining)._ \n\nYou will need a Reaper IFF (\"Identify Friend/Foe\") to get through the Omega 4 Relay safely. Cerberus has located a derelict Reaper ship with this IFF, but the science team sent to investigate has failed to report back.",
 		"experience": 1000,
 		"reward": "25,000 Credits",
 		"inMapId": "G.Att.Haw.Tho.Reaper",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Reaper_IFF"],
 		"relatedDecisionIds": ["D2.LegionCerberus"],
+		"identicalMissionId": "M2.StopCollectors.5",
 		"conversationRewards": [{
 			"set": {
 				"isExclusiveSet": true,
@@ -1485,9 +1488,12 @@
 		}, {
 			"type": "Triggers",
 			"id": "Completed: Reaper IFF"
-        }, {
-            "type": "Triggers",
-            "id": "Acquired: Legion"
+		}, {
+			"type": "Triggers",
+			"id": "Acquired: Legion"
+		}, {
+			"type": "Triggers",
+			"id": "Normandy Attack Warning"
 		}]
 	}, {
 		"id": "M2.ReaperIFF.1",
@@ -1497,12 +1503,12 @@
 		"missionType": "Objective",
 		"name": "Cerberus Lab",
 		"description": "Explore the missing Cerberus team's lab. Their logs reveal that Indoctrination was starting.",
-        "inMapId": "G.Att.Haw.Tho.Reaper",
-        "mapLocationPoint": {
-            "x": 402,
-            "y": 1231,
-            "radius": 1
-        }
+		"inMapId": "G.Att.Haw.Tho.Reaper",
+		"mapLocationPoint": {
+			"x": 402,
+			"y": 1231,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.ReaperIFF.2",
 		"inMissionId": "M2.ReaperIFF",
@@ -1511,12 +1517,12 @@
 		"missionType": "Objective",
 		"name": "Exit Lab",
 		"description": "When you exit the lab into the Reaper itself, its kinetic barriers activate, locking you in and the Normandy out. Edi sends you the location of the barriers' power source in the ship's core, but if you shut it down the Reaper will also plummet to the planet's surface.",
-        "inMapId": "G.Att.Haw.Tho.Reaper",
-        "mapLocationPoint": {
-            "x": 188,
-            "y": 989,
-            "radius": 1
-        }
+		"inMapId": "G.Att.Haw.Tho.Reaper",
+		"mapLocationPoint": {
+			"x": 188,
+			"y": 989,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.ReaperIFF.3",
 		"inMissionId": "M2.ReaperIFF",
@@ -1525,12 +1531,12 @@
 		"missionType": "Objective",
 		"name": "Exit Reaper Interior",
 		"description": "On the catwalks, you will find more Cerberus logs and some remains of the science team as you move along the catwalks. You will also be attacked by a group of husks. As you follow the ramp down, several larger waves of husks attack. Continue to the next set of logs and remains. An unseen sniper takes down two husks in front of you. Turn left and in the next open area, another, lerger mob of husks attack. There is a final log here, then bypass the door to the next area.",
-        "inMapId": "G.Att.Haw.Tho.Reaper",
-        "mapLocationPoint": {
-            "x": 1501,
-            "y": 711,
-            "radius": 1
-        }
+		"inMapId": "G.Att.Haw.Tho.Reaper",
+		"mapLocationPoint": {
+			"x": 1501,
+			"y": 711,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.ReaperIFF.4",
 		"inMissionId": "M2.ReaperIFF",
@@ -1540,11 +1546,11 @@
 		"name": "Mysterious Geth",
 		"description": "As you enter the Reaper exterior catwalks, a mysterious geth sniper with a piece of N7 armor takes down two husks about to attack you. It greets you by name, and then leaves before you can investigate. Every section of this area has a mob of husks, so move forward carefully, elimating each mob as you enter a new section. Bypass the door to access the core.",
 		"inMapId": "G.Att.Haw.Tho.Reaper",
-        "mapLocationPoint": {
-            "x": 52,
-            "y": 1832,
-            "radius": 1
-        }
+		"mapLocationPoint": {
+			"x": 52,
+			"y": 1832,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.ReaperIFF.5",
 		"inMissionId": "M2.ReaperIFF",
@@ -1553,12 +1559,12 @@
 		"missionType": "Objective",
 		"name": "Reaper IFF",
 		"description": "The Reaper IFF is conveniently situated in the accessway just outside the core.",
-        "inMapId": "G.Att.Haw.Tho.Reaper",
-        "mapLocationPoint": {
-            "x": 1829,
-            "y": 1322,
-            "radius": 1
-        }
+		"inMapId": "G.Att.Haw.Tho.Reaper",
+		"mapLocationPoint": {
+			"x": 1829,
+			"y": 1322,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.ReaperIFF.6",
 		"inMissionId": "M2.ReaperIFF",
@@ -1568,11 +1574,11 @@
 		"name": "Destroy Reaper Core",
 		"description": "You will briefly spot the mysterious geth again, attempting to access the core and fighting off husks. The husks take the geth down. Then they notice you. You must alternate between killing the mobs of husks and firing on the Reaper Core whenever it is open and vulnerable. There are three rounds of this until it is destroyed. At that point, you retrieve the fallen geth and flee the plummeting ship.",
 		"inMapId": "G.Att.Haw.Tho.Reaper",
-        "mapLocationPoint": {
-            "x": 1844,
-            "y": 996,
-            "radius": 1
-        }
+		"mapLocationPoint": {
+			"x": 1844,
+			"y": 996,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.ReaperIFF.7",
 		"inMissionId": "M2.ReaperIFF",
@@ -1590,7 +1596,7 @@
 		"missionType": "Mission",
 		"name": "The Normandy Attacked",
 		"description": "The Normandy is attacked by Collectors. As Joker, you must get down to the [megametracker://maplocation?id=G.N2.3.Core&type=Map] and unshackle EDI so she can save the ship. EDI provides directions, but Joker must evade the Collectors or the mission will fail.",
-		"inMapId": "G.N",
+		"inMapId": "G.N2.Attacked",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Stop_the_Collectors#Save_the_Ship"],
 		"conversationRewards": [{
 			"set": {
@@ -1672,10 +1678,11 @@
 		"gameVersion": "2",
 		"missionType": "Mission",
 		"name": "The Omega 4 Relay",
-		"description": "You take the fight through the Omega 4 Relay to the Collector Base in the Galactic Core. If you have not upgraded the Normandy's defenses, key members of the crew will die as Joker maneuvers the Normandy through the debris field and evades the attacking Collector ships. And Oculus punches through the ship and you must fight it off. When you have successfully cleared the ship of hostiles, the Normandy will engage the Collector Cruser and the resulting explosion will force the Normandy to crash land on the Collector Base. \n\n_Note: If you delay going through the Omega 4 Relay after the Collectors, members of the Normandy crew may die before you can rescue them._",
+		"description": "You take the fight through the Omega 4 Relay to the Collector Base in the Galactic Core. If you have not upgraded the Normandy's defenses, key members of the crew will die as Joker maneuvers the Normandy through the debris field and evades the attacking Collector ships. An Oculus punches through the ship and you must fight it off. When you have successfully cleared the ship of hostiles, the Normandy will engage the Collector Cruser and the resulting explosion will force the Normandy to crash land on the Collector Base. \n\n_Note: If you delay going through the Omega 4 Relay after the Collectors, members of the Normandy crew may die before you can rescue them._",
 		"inMapId": "G.Ter.Ome.Sah.Omega4",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Stop_the_Collectors#Use_Omega_4_Relay"],
+		"identicalMissionId": "M2.StopCollectors.7",
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Normandy Attacked"
@@ -1725,8 +1732,12 @@
 		"missionType": "Objective",
 		"name": "Heat Exchanger #1",
 		"isOpensDetail": false,
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"inMapId": "G.Core.CollectorStation1",
+		"mapLocationPoint": {
+			"x": 368,
+			"y": 159,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.CollectorBase.3.2",
 		"inMissionId": "M2.CollectorBase.3",
@@ -1735,8 +1746,12 @@
 		"missionType": "Objective",
 		"name": "Heat Exchanger #2",
 		"isOpensDetail": false,
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"inMapId": "G.Core.CollectorStation1",
+		"mapLocationPoint": {
+			"x": 905,
+			"y": 1684,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.CollectorBase.3.3",
 		"inMissionId": "M2.CollectorBase.3",
@@ -1745,8 +1760,12 @@
 		"missionType": "Objective",
 		"name": "Heat Exchanger #3",
 		"isOpensDetail": false,
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"inMapId": "G.Core.CollectorStation1",
+		"mapLocationPoint": {
+			"x": 921,
+			"y": 1215,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.CollectorBase.3.4",
 		"inMissionId": "M2.CollectorBase.3",
@@ -1755,8 +1774,12 @@
 		"missionType": "Objective",
 		"name": "Heat Exchanger #4",
 		"isOpensDetail": false,
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"inMapId": "G.Core.CollectorStation1",
+		"mapLocationPoint": {
+			"x": 869,
+			"y": 686,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.CollectorBase.3.5",
 		"inMissionId": "M2.CollectorBase.3",
@@ -1765,8 +1788,12 @@
 		"missionType": "Objective",
 		"name": "Heat Exchanger #5",
 		"isOpensDetail": false,
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"inMapId": "G.Core.CollectorStation1",
+		"mapLocationPoint": {
+			"x": 1662,
+			"y": 1094,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.CollectorBase.3.6",
 		"inMissionId": "M2.CollectorBase.3",
@@ -1775,8 +1802,12 @@
 		"missionType": "Objective",
 		"name": "Heat Exchanger #6",
 		"isOpensDetail": false,
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"inMapId": "G.Core.CollectorStation1",
+		"mapLocationPoint": {
+			"x": 1808,
+			"y": 747,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.CollectorBase.3.7",
 		"inMissionId": "M2.CollectorBase.3",
@@ -1785,8 +1816,12 @@
 		"missionType": "Objective",
 		"name": "Heat Exchanger #7",
 		"isOpensDetail": false,
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"inMapId": "G.Core.CollectorStation1",
+		"mapLocationPoint": {
+			"x": 1616,
+			"y": 441,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.CollectorBase.3.8",
 		"inMissionId": "M2.CollectorBase.3",
@@ -1795,8 +1830,12 @@
 		"missionType": "Objective",
 		"name": "Heat Exchanger #8",
 		"isOpensDetail": false,
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"inMapId": "G.Core.CollectorStation1",
+		"mapLocationPoint": {
+			"x": 1450,
+			"y": 262,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.CollectorBase.4",
 		"sortIndex": 11,
@@ -1842,21 +1881,6 @@
 							"trigger": "\"People died. Make it count.\""
 						}]
 					}
-				}, {
-					"set": {
-						"isExclusiveSet": true,
-						"options": [{
-							"id": "M2.CollectorBase.3.P3",
-							"type": "Paragon",
-							"value": 2,
-							"trigger": "\"The galaxy is depending on us.\""
-						}, {
-							"id": "M2.CollectorBase.3.R3",
-							"type": "Renegade",
-							"value": 2,
-							"trigger": "\"Feel sorry for the Collectors.\""
-						}]
-					}
 				}]
 			}
 		}, {
@@ -1891,8 +1915,13 @@
 		"missionType": "Objective",
 		"name": "Stop #1",
 		"description": "",
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"isOpensDetail": false,
+		"inMapId": "G.Core.CollectorStation2",
+		"mapLocationPoint": {
+			"x": 406,
+			"y": 1489,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.CollectorBase.4.2",
 		"inMissionId": "M2.CollectorBase.4",
@@ -1901,8 +1930,13 @@
 		"missionType": "Objective",
 		"name": "Stop #2",
 		"description": "",
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"isOpensDetail": false,
+		"inMapId": "G.Core.CollectorStation2",
+		"mapLocationPoint": {
+			"x": 918,
+			"y": 1446,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.CollectorBase.4.3",
 		"inMissionId": "M2.CollectorBase.4",
@@ -1911,17 +1945,38 @@
 		"missionType": "Objective",
 		"name": "Stop #3",
 		"description": "",
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"isOpensDetail": false,
+		"inMapId": "G.Core.CollectorStation2",
+		"mapLocationPoint": {
+			"x": 1140,
+			"y": 1000,
+			"radius": 1
+		}
 	}, {
 		"id": "M2.CollectorBase.4.4",
+		"inMissionId": "M2.CollectorBase.4",
+		"sortIndex": 113,
+		"gameVersion": "2",
+		"missionType": "Objective",
+		"name": "Stop #3",
+		"description": "",
+		"isOpensDetail": false,
+		"inMapId": "G.Core.CollectorStation2",
+		"mapLocationPoint": {
+			"x": 1534,
+			"y": 789,
+			"radius": 1
+		}
+	}, {
+		"id": "M2.CollectorBase.4.5",
 		"inMissionId": "M2.CollectorBase.4",
 		"sortIndex": 114,
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Race to Door",
 		"description": "",
-		"inMapId": "G.Core",
+		"isOpensDetail": false,
+		"inMapId": "G.Core.Col2.2Final",
 		"isShowInParentMap": true
 	}, {
 		"id": "M2.CollectorBase.5",
@@ -1929,15 +1984,32 @@
 		"gameVersion": "2",
 		"missionType": "Mission",
 		"name": "Final Battle",
-		"description": "The team splits up again, with one side tasked with holding off the Collector forces at the door, and the other with accompanying you to uncover the base's secrets (as well as fight the final boss battle). This team selection is more fuzzy, but you want to leave some squad members with good defensive abilities like Grunt, Garrus, and Zaeed to guard your back, or that team will die. You should only take loyal squad members on your team, or they will die after the final battle. \n\nIn the central chamber, you will find the Collector's project: a human Reaper, made from liquified humans. This will be a platform battle, like the one in the middle of [megametracker://mission?id=M2.CollectorShip]. You will need to fight off attackers while shooting out the feeding tubes of the Reaper. When you have finished destroying the tubes, you must decide whether to salvage the technology for Cerberus or blow the base up. \n\nUnfortunately, then the human Reaper wakes up and attacks you itself, *while* Collector forces continue to attack. When you finally dispatch it, the base begins to fall apart and Joker arrives for emergency pickup in a shuttle. If you have less than two squad members left, you will die at this point. Otherwise the Normandy will evacuate the base before it explodes. \n\nIf you saved the base for the Illusive Man, the explosion is blue and leaves the base (somewhat) intact afterwards. Otherwise, it annhilates pretty much everything back to the relay.",
+		"description": "The team splits up again, with one side tasked with holding off the Collector forces at the door, and the other with accompanying you to uncover the base's secrets (as well as fight the final boss battle). This team selection is more fuzzy, but you want to leave some squad members with good defensive abilities like Grunt, Garrus, and Zaeed to guard your back, or that team will die. You should only take loyal squad members on your team, or they will die after the final battle. \n\nIn the central chamber, you will find the Collector's project: a human Reaper, made from liquified humans. This will be a platform battle, like the one in the middle of [megametracker://mission?id=M2.CollectorShip]. You will need to fight off attackers while shooting out the feeding tubes of the Reaper. When you have finished destroying the tubes, you must decide whether to salvage the technology for Cerberus or blow the base up. \n\nUnfortunately, then the human Reaper wakes up and attacks you itself, *while* Collector forces continue to attack. When you finally dispatch it, the base begins to fall apart and Joker arrives for emergency pickup in a shuttle. If you have less than two squad members left, you will die at this point. Otherwise the Normandy will evacuate the base before it explodes. \n\nIf you saved the base for the Illusive Man, the explosion is blue and leaves the base (somewhat) intact afterwards. Otherwise, it annhilates pretty much everything back to the relay. \n\n_*Note: Don't bring the Arc Projector against the human Reaper - it does no damage. And - due to meager clip drops from the Collectors here - you may need all the ammo in all your weapons by the time you are done.*_",
 		"inMapId": "G.Core",
 		"isShowInParentMap": true,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Suicide_Mission#Final_Battle"],
-		"relatedDecisionIds": ["D2.Garrus", "D2.Grunt", "D2.Jack", "D2.Jacob", "D2.Kasumi", "D2.Legion", "D2.Miranda", "D2.Mordin", "D2.Samara", "D2.Tali", "D2.Thane", "D2.PrejekPaddlefish"],
+		"relatedDecisionIds": ["D2.Garrus", "D2.Grunt", "D2.Jack", "D2.Jacob", "D2.Kasumi", "D2.Legion", "D2.Miranda", "D2.Mordin", "D2.Samara", "D2.Tali", "D2.Thane", "D2.CollectorStation"],
 		"sideEffects": [
 			"If you want to see what happens when everyone dies, here you go: [YouTube|https://www.youtube.com/watch?v=ScrdrJZu-0g]"
 		],
+		"identicalMissionId": "M2.StopCollectors.8",
 		"conversationRewards": [{
+			"set": {
+				"isExclusiveSet": true,
+				"context": "Speech before the final battle",
+				"options": [{
+					"id": "M2.CollectorBase.4.P0",
+					"type": "Paragon",
+					"value": 2,
+					"trigger": "\"The galaxy is depending on us.\""
+				}, {
+					"id": "M2.CollectorBase.4.R0",
+					"type": "Renegade",
+					"value": 2,
+					"trigger": "\"Feel sorry for the Collectors.\""
+				}]
+			}
+		}, {
 			"set": {
 				"isExclusiveSet": true,
 				"context": "Facing the human Reaper",
@@ -2037,9 +2109,7 @@
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Platform Battle",
-		"description": "On the flying platforms, fight off six waves of Reaper forces.",
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"description": "On the flying platforms, fight off six waves of Reaper forces."
 	}, {
 		"id": "M2.CollectorBase.5.2",
 		"inMissionId": "M2.CollectorBase.5",
@@ -2047,9 +2117,7 @@
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Console",
-		"description": "Activate the console to continue into the core.",
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"description": "Activate the console to continue into the core."
 	}, {
 		"id": "M2.CollectorBase.5.3",
 		"inMissionId": "M2.CollectorBase.5",
@@ -2057,9 +2125,7 @@
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Destroy Tubes",
-		"description": "Alternate between fighting more waves of Reaper forces on platforms, and shooting the human Reaper's feeding tubes.",
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"description": "Alternate between fighting more waves of Reaper forces on platforms, and shooting the human Reaper's feeding tubes."
 	}, {
 		"id": "M2.CollectorBase.5.4",
 		"inMissionId": "M2.CollectorBase.5",
@@ -2067,9 +2133,7 @@
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Preserve Technology",
-		"description": "The Illusive Man wants to preserve the human Reaper for study. You can't wholly prevent him from salvaging Reaper tech, but if you consent he obtains the human Reaper's brain at the end of th mission, otherwise he settles with salvaging the human Reaper's heart.",
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"description": "The Illusive Man wants to preserve the human Reaper for study. You can't wholly prevent him from salvaging Reaper tech, but if you consent he obtains the human Reaper's brain at the end of th mission, otherwise he settles with salvaging the human Reaper's heart."
 	}, {
 		"id": "M2.CollectorBase.5.5",
 		"inMissionId": "M2.CollectorBase.5",
@@ -2077,9 +2141,7 @@
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Human Reaper Larva",
-		"description": "The human Reaper is not dead. It struggles to rise to the platform and attack you. You will now alternate between fighting more waves of Reaper forces on platforms, and shooting the human Reaper (in the weakpoints in its eye or chest), while hiding from its extremely deadly, periodic Reaper laser attack.",
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"description": "The human Reaper is not dead. It struggles to rise to the platform and attack you. You will now alternate between fighting more waves of Reaper forces on platforms, and shooting the human Reaper (in the weakpoints in its eye or chest), while hiding from its extremely deadly, periodic Reaper laser attack."
 	}, {
 		"id": "M2.CollectorBase.5.6",
 		"inMissionId": "M2.CollectorBase.5",
@@ -2087,9 +2149,7 @@
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Escape",
-		"description": "You must now flee the Collector base. If enough squad members have survived, they will catch you as you jump for the Normandy shuttle. Otherwise, you plummet to your death. \n\nAs the Normandy flees, the Collector Base will blow up, either because you ignored the Illusive Man and destroyed it or because a radiation blast (blue) destroyed all organic life still aboard.",
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"description": "You must now flee the Collector base. If enough squad members have survived, they will catch you as you jump for the Normandy shuttle. Otherwise, you plummet to your death. \n\nAs the Normandy flees, the Collector Base will blow up, either because you ignored the Illusive Man and destroyed it or because a radiation blast (blue) destroyed all organic life still aboard."
 	}, {
 		"id": "M2.CollectorBase.5.6",
 		"inMissionId": "M2.CollectorBase.5",
@@ -2097,8 +2157,6 @@
 		"gameVersion": "2",
 		"missionType": "Objective",
 		"name": "Aftermath",
-		"description": "Give an accounting to the Illusive Man of your choices. Bury the dead (or, if there are no dead, repair the Normandy).",
-		"inMapId": "G.Core",
-		"isShowInParentMap": true
+		"description": "Give an accounting to the Illusive Man of your choices. Bury the dead (or, if there are no dead, repair the Normandy)."
 	}]
 }
