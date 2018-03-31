@@ -40,6 +40,13 @@ public struct Change20180203: CoreDataMigrationType {
         ids: [
             (fromId: "A2.Convo.Thane.R41", toId: "A2.Convo.Thane.R39"),
         ]
+    ), (
+        fromMissionId: "M2.CollectorBase.3",
+        toMissionId: "M2.CollectorBase.4",
+        ids: [
+            (fromId: "M2.CollectorBase.3.P3", toId: "M2.CollectorBase.4.P0"),
+            (fromId: "M2.CollectorBase.3.R3", toId: "M2.CollectorBase.4.R0"),
+        ]
     )]
 
     /// Correct some changes ids
