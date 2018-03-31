@@ -81,11 +81,7 @@ import UIKit
 			tableView?.delegate = self
 			tableView?.dataSource = self
 			if let layoutTable = tableView as? LayoutNotifyingTableView {
-                let name = "\(self)"
-                layoutTable.onLayout = {
-                    print(name)
-                    layoutTable.constrainTableHeight()
-                }
+                layoutTable.onLayout = layoutTable.constrainTableHeight
 			}
 			setupTable()
 
