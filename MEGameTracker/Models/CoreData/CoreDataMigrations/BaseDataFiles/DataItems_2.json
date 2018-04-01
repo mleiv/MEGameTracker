@@ -728,7 +728,7 @@
 		"price": "-25,000 Platinum",
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Upgrades: 2nd Medi-Gel"
+			"id": "Upgrades: 3rd Medi-Gel"
 		}]
 	}, {
 		"x-subcomment-x": "----- DAMAGE PROTECTION ---",
@@ -943,7 +943,7 @@
 		},
 		"events": [{
             "type": "BlockedUntil",
-            "id": "Upgrade: Tech Damage 2"
+			"id": "Upgrades: 2nd Tech Damage"
         }, {
 			"type": "Triggers",
 			"id": "Upgrade: Tech Damage 4"
@@ -1358,7 +1358,11 @@
 			"x": 836,
 			"y": 1076,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Assault Rifle 1"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.2",
 		"sortIndex": 2,
@@ -1377,7 +1381,7 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 2nd Assault Rifle"
+			"id": "Upgrade: Assault Rifle 2"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.3",
@@ -1393,7 +1397,7 @@
         "isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrades: 3rd Assault Rifle"
+			"id": "Upgrade: Assault Rifle 3"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.4",
@@ -1411,7 +1415,11 @@
 			"x": 847,
 			"y": 1163,
 			"radius": 1
-		}
+		},
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Assault Rifle 4"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.5",
 		"sortIndex": 5,
@@ -1424,7 +1432,11 @@
 		"sideEffects": ["DLC Bonus upgrade after [megametracker://mission?id=DLC2.LairShadowBroker]."],
 		"price": "-12,500 Iridium",
 		"inMapId": "G.Ter.Hou.Sow.Hag.2.Pickup",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Assault Rifle 5"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.6",
 		"sortIndex": 6,
@@ -1436,7 +1448,11 @@
 		"annotationNote": "Squad: +10% Assault Rifle Damage",
 		"price": "-60,000 Credits",
 		"inMapId": "G.Ter.Cre.Tas.Ill.1.Gateway",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Assault Rifle 6"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.7",
 		"sortIndex": 7,
@@ -1448,7 +1464,11 @@
 		"annotationNote": "Squad: +10% Assault Rifle Damage",
 		"price": "-60,000 Credits",
 		"inMapId": "G.InC.Kro.Ara.Tuc.1.Fortack",
-		"isShowInParentMap": true
+		"isShowInParentMap": true,
+		"events": [{
+			"type": "Triggers",
+			"id": "Upgrade: Assault Rifle 7"
+		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.AR.I.8",
 		"sortIndex": 8,
@@ -1703,7 +1723,7 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Shotgun Damage 1"
+			"id": "Upgrade: Shotgun 1"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.2",
@@ -1723,7 +1743,7 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Shotgun Damage 2"
+			"id": "Upgrade: Shotgun 2"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.3",
@@ -1743,7 +1763,7 @@
         },
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Shotgun Damage 3"
+			"id": "Upgrade: Shotgun 3"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.4",
@@ -1760,7 +1780,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Shotgun Damage 4"
+			"id": "Upgrade: Shotgun 4"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.5",
@@ -1776,7 +1796,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Shotgun Damage 5"
+			"id": "Upgrade: Shotgun 5"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.6",
@@ -1792,7 +1812,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Shotgun Damage 6"
+			"id": "Upgrade: Shotgun 6"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SG.I.7",
@@ -1874,7 +1894,7 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Sniper Rifle Damage 1"
+			"id": "Upgrade: Sniper Rifle 1"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.2",
@@ -1894,7 +1914,7 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Sniper Rifle Damage 2"
+			"id": "Upgrade: Sniper Rifle 2"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.3",
@@ -1914,7 +1934,7 @@
         },
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Sniper Rifle Damage 3"
+			"id": "Upgrade: Sniper Rifle 3"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.1SR.I.4",
@@ -1931,7 +1951,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Sniper Rifle Damage 4"
+			"id": "Upgrade: Sniper Rifle 4"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.5",
@@ -1947,7 +1967,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Sniper Rifle Damage 5"
+			"id": "Upgrade: Sniper Rifle 5"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.6",
@@ -1963,7 +1983,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Sniper Rifle Damage 6"
+			"id": "Upgrade: Sniper Rifle 6"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SR.I.7",
@@ -2047,7 +2067,7 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Submachine Gun Damage 1"
+			"id": "Upgrade: Submachine Gun 1"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.2",
@@ -2067,7 +2087,7 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Submachine Gun Damage 2"
+			"id": "Upgrade: Submachine Gun 2"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.3",
@@ -2087,7 +2107,7 @@
 		},
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Submachine Gun Damage 3"
+			"id": "Upgrade: Submachine Gun 3"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.4",
@@ -2104,7 +2124,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Submachine Gun Damage 4"
+			"id": "Upgrade: Submachine Gun 4"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.5",
@@ -2120,7 +2140,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Submachine Gun Damage 5"
+			"id": "Upgrade: Submachine Gun 5"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.6",
@@ -2136,7 +2156,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "Triggers",
-			"id": "Upgrade: Submachine Gun Damage 6"
+			"id": "Upgrade: Submachine Gun 6"
 		}]
 	}, {
 		"id": "A2.UC.WeaponUpgrades.SMG.I.7",
