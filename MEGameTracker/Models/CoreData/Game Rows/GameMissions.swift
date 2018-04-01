@@ -43,7 +43,7 @@ extension Mission: GameRowStorable {
 		with manager: CodableCoreDataManageable?
 	) -> Mission {
 		var item = Mission(id: data.id, generalData: data)
-		item.events = item.getEvents(with: manager)
+        item.events = item.getEvents(gameSequenceUuid: item.gameSequenceUuid, with: manager)
 		return item
 	}
 

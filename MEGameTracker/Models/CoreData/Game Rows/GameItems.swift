@@ -41,7 +41,7 @@ extension Item: GameRowStorable {
 		with manager: CodableCoreDataManageable?
 	) -> Item {
 		var item = Item(id: data.id, generalData: data)
-		item.events = item.getEvents(with: manager)
+        item.events = item.getEvents(gameSequenceUuid: item.gameSequenceUuid, with: manager)
 		return item
 	}
 

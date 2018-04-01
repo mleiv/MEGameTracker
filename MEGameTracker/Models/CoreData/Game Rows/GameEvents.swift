@@ -73,10 +73,11 @@ extension Event {
 	public static func get(
 		id: String?,
 		type: EventType,
+        gameSequenceUuid: UUID? = nil,
 		with manager: CodableCoreDataManageable? = nil
 	) -> Event? {
 		guard let id = id, !id.isEmpty else { return nil }
-		var one = get(id: id, with: manager)
+        var one = get(id: id, gameSequenceUuid: gameSequenceUuid, with: manager)
 		one?.type = type
 		return one
 	}

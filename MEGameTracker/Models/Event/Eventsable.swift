@@ -9,20 +9,21 @@
 import UIKit
 
 public protocol Eventsable {
+    var gameSequenceUuid: UUID? { get }
     var events: [Event] { get set }
     var rawEventDictionary: [CodableDictionary] { get }
-    func getEvents(with manager: CodableCoreDataManageable?) -> [Event]
+    func getEvents(gameSequenceUuid: UUID?, with manager: CodableCoreDataManageable?) -> [Event]
 }
 
 extension Eventsable {
 
-    public func getEvents(with manager: CodableCoreDataManageable?) -> [Event] {
+    public func getEvents(gameSequenceUuid: UUID?, with manager: CodableCoreDataManageable?) -> [Event] {
         let events: [Event] = rawEventDictionary.map({
             $0.dictionary
         }).map({
             guard let id = $0["id"] as? String,
                 let type = EventType(stringValue: $0["type"] as? String ?? ""),
-                var e = Event.get(id: id, type: type, with: manager)
+                var e = Event.get(id: id, type: type, gameSequenceUuid: gameSequenceUuid, with: manager)
             else { return nil }
             // store what object is holding this at present:
             if let mission = self as? Mission {
@@ -40,6 +41,6 @@ extension Eventsable {
     }
 
     public func getEvents() -> [Event] {
-        return getEvents(with: nil)
+        return getEvents(gameSequenceUuid: self.gameSequenceUuid, with: nil)
     }
 }

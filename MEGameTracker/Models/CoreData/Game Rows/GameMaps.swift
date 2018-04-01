@@ -40,7 +40,7 @@ extension Map: GameRowStorable {
 		with manager: CodableCoreDataManageable?
 	) -> Map {
 		var item = Map(id: data.id, generalData: data)
-		item.events = item.getEvents(with: manager)
+		item.events = item.getEvents(gameSequenceUuid: item.gameSequenceUuid, with: manager)
 		return item
 	}
 
