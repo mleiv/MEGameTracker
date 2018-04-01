@@ -33,7 +33,7 @@ public struct EventTriggerMigration: CoreDataMigrationType {
                     isSave: false,
                     isNotify: false
                 )
-                event2?.triggeredDate = mission.completedDate
+                event2?.triggeredDate = mission.isCompleted ? mission.completedDate ?? Date() : nil
                 event2?.markChanged()
                 event2?.notifySaveToCloud(fields: [
                     "isTriggered": mission.isCompleted,
@@ -54,7 +54,7 @@ public struct EventTriggerMigration: CoreDataMigrationType {
                     isSave: false,
                     isNotify: false
                 )
-                event2?.triggeredDate = item.acquiredDate
+                event2?.triggeredDate =  item.isAcquired ? item.acquiredDate ?? Date() : nil
                 event2?.markChanged()
                 event2?.notifySaveToCloud(fields: [
                     "isTriggered": item.isAcquired,
@@ -75,7 +75,7 @@ public struct EventTriggerMigration: CoreDataMigrationType {
                     isSave: false,
                     isNotify: false
                 )
-                event2?.triggeredDate = decision.selectedDate
+                event2?.triggeredDate = decision.isSelected ? decision.selectedDate ?? Date() : nil
                 event2?.markChanged()
                 event2?.notifySaveToCloud(fields: [
                     "isTriggered": decision.isSelected,
