@@ -2424,7 +2424,6 @@
 				B028AF1E1BA12B1900C73373 /* Frameworks */,
 				B028AF1F1BA12B1900C73373 /* Resources */,
 				B13632831E30624900FC5F33 /* CopyFiles */,
-				B1F39AB71E71EB4F00B48E76 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2466,7 +2465,7 @@
 					B028AF201BA12B1900C73373 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = LNQGUJUGYP;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -2482,7 +2481,7 @@
 					};
 					B028AF341BA12B1900C73373 = {
 						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						TestTargetID = B028AF201BA12B1900C73373;
 					};
 				};
@@ -2705,22 +2704,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B1F39AB71E71EB4F00B48E76 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B028AF1D1BA12B1900C73373 /* Sources */ = {
