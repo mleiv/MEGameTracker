@@ -328,12 +328,12 @@ extension SimpleCloudKitManageable {
 			self.isSyncing = true
 		}
 
-		let options = CKFetchRecordZoneChangesOperation.ZoneOptions()
+        let options = CKFetchRecordZoneChangesOperation.ZoneConfiguration()
 		options.previousServerChangeToken = changeToken
-		let operation = CKFetchRecordZoneChangesOperation(
-			recordZoneIDs: [zoneId],
-			optionsByRecordZoneID: [zoneId: options]
-		)
+        let operation = CKFetchRecordZoneChangesOperation(
+            recordZoneIDs: [zoneId],
+            configurationsByRecordZoneID: [zoneId : options]
+        )
 		operation.fetchAllChanges = true
 		if let qos = qualityOfService {
 			operation.qualityOfService = qos
