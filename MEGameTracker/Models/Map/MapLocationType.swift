@@ -10,19 +10,14 @@ import UIKit
 
 /// Various types of a MapLocationable object. 
 /// Provides correct headers and grouping when querying a general set of MapLocation.
-public enum MapLocationType: String, Codable {
+public enum MapLocationType: String, Codable, CaseIterable {
 	case map = "Map"
 	case mission = "Mission"
 	case item = "Item"
 
-	/// Returns a list of all possible enum variations.
-	public static func all() -> [MapLocationType] {
-		return [.map, .mission, .item]
-	}
-
 	/// Returns the string values of all the enum variations.
 	private static let stringValues: [MapLocationType: String] = {
-        return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
+        return Dictionary(uniqueKeysWithValues: allCases.map { ($0, $0.stringValue) })
     }()
 
 	/// Returns the heading string values of all the enum variations.

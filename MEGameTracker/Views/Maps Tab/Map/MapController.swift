@@ -743,7 +743,7 @@ extension MapController: Describable {
 extension MapController {
 	private func setupGameSegments() {
 		var games: [GameVersion] = []
-		for game in GameVersion.all() {
+		for game in GameVersion.allCases {
 			if map?.isAvailableInGame(game) == true {
 				games.append(game)
 			}

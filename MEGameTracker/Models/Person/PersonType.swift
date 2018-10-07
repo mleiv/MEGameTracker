@@ -9,22 +9,12 @@
 import Foundation
 
 /// Defines various person types.
-public enum PersonType: String, Codable {
+public enum PersonType: String, Codable, CaseIterable {
 
 	case squad = "Squad"
 	case enemy = "Enemy"
     case associate = "Associate"
     case other = "Other"
-
-	/// Returns a list of all possible enum variations.
-	public static func all() -> [PersonType] {
-		return [
-            .squad,
-            .enemy,
-            .associate,
-            .other
-        ]
-	}
 
     /// Returns a list of enum variations used in PersonType categories.
     public static func categories() -> [PersonType] {

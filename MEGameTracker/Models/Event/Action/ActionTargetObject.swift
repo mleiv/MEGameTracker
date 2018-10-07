@@ -9,21 +9,16 @@
 import Foundation
 
 /// Types of objects available for event actions to target.
-public enum ActionTargetObject: String, Codable {
+public enum ActionTargetObject: String, Codable, CaseIterable {
 
 	case decision = "Decision"
 	case item = "Item"
 	case mission = "Mission"
     case person = "Person"
 
-	/// Returns a list of all possible enum variations.
-	public static func all() -> [ActionTargetObject] {
-		return [.decision, .item, .mission]
-	}
-
 	/// Creates an enum from a string value, if possible.
 	public init?(stringValue: String?) {
-		guard let type = ActionTargetObject.all()
+		guard let type = ActionTargetObject.allCases
 			.filter({ $0.rawValue == stringValue })
 			.map({ $0 })
             .first

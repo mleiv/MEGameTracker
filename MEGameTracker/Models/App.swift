@@ -86,7 +86,7 @@ final public class App: Codable {
         let missionsContainer = try? container.nestedContainer(
             keyedBy: GameVersion.self,
             forKey: .recentlyViewedMissions)
-        for gameVersion in GameVersion.all() {
+        for gameVersion in GameVersion.allCases {
             recentlyViewedMissions[gameVersion] = try missionsContainer?.decodeIfPresent(
                     RecentlyViewedList.self,
                     forKey: gameVersion

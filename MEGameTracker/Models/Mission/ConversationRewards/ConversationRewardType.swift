@@ -9,27 +9,16 @@
 import Foundation
 
 /// The varying results for a conversation.
-public enum ConversationRewardType: String, Codable {
+public enum ConversationRewardType: String, Codable, CaseIterable {
 	case paragon = "Paragon"
 	case renegade = "Renegade"
 	case paragade = "Paragade"
 	case neutral = "Neutral"
 	case credits = "Credits"
 
-	/// Returns a list of all possible enum variations.
-	public static func all() -> [ConversationRewardType] {
-		return [
-            .paragon,
-            .renegade,
-            .paragade,
-            .neutral,
-            .credits
-        ]
-	}
-
 	/// Returns the string values of all the enum variations.
 	private static let stringValues: [ConversationRewardType: String] = {
-        return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
+        return Dictionary(uniqueKeysWithValues: allCases.map { ($0, $0.stringValue) })
     }()
 
 	/// Creates an enum from a string value, if possible.

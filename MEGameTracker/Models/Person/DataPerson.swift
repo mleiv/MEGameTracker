@@ -207,7 +207,7 @@ extension DataPerson {
 
     public func gameValues(key: String, defaultValue: String = "") -> String {
         var data: [String] = []
-        for game in GameVersion.all() {
+        for game in GameVersion.allCases {
             data.append(value(key: key, forGame: game) ?? defaultValue)
         }
         return "|\(data.joined(separator: "|"))|".lowercased()

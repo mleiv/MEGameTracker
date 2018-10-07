@@ -10,7 +10,7 @@ import Foundation
 
 /// Event types are defined in the target object using the event rather than in an event object itself.
 /// Example: the event of "Unlocked Galaxy Map" is flagged in blockedUntil in the mission A1.C1.AsariConsort.
-public enum EventType: String, Codable {
+public enum EventType: String, Codable, CaseIterable {
 
 	case unknown = "Unknown"
 	case unavailableInGame = "UnavailableInGame"
@@ -19,21 +19,9 @@ public enum EventType: String, Codable {
 	case blockedAfter = "BlockedAfter"
 	case triggers = "Triggers"
 
-	/// Returns a list of all possible enum variations.
-	public static func all() -> [EventType] {
-		return [
-            .unknown,
-            .unavailableInGame,
-            .requiresConfig,
-            .blockedUntil,
-            .blockedAfter,
-            .triggers,
-        ]
-	}
-
 	/// Returns the string values of all the enum variations.
 	private static let stringValues: [EventType: String] = {
-        return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
+        return Dictionary(uniqueKeysWithValues: allCases.map { ($0, $0.stringValue) })
     }()
 
 	/// Creates an enum from a string value, if possible.

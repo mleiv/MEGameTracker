@@ -10,25 +10,17 @@ import UIKit
 
 /// Distinguishes item variants so they can be displayed with UI differences. 
 /// Consider this a subset of ItemType.
-public enum ItemDisplayType: String, Codable {
+public enum ItemDisplayType: String, Codable, CaseIterable {
 
 	case goal = "Goal"
 	case loot = "Loot"
 	case medkit = "MedKit"
 	case novelty = "Novelty"
 
-	/// Returns a list of all possible enum variations.
-	public static func all() -> [ItemDisplayType] {
-		return [.goal, .loot, .medkit, .novelty]
-	}
-
 	/// Returns the string values of all the enum variations.
-	private static let stringValues: [ItemDisplayType: String] = [
-		.goal: "Goal",
-		.loot: "Loot",
-		.medkit: "MedKit",
-		.novelty: "Novelty",
-	]
+    private static let stringValues: [ItemDisplayType: String] = {
+        return Dictionary(uniqueKeysWithValues: allCases.map { ($0, $0.stringValue) })
+    }()
 
 	/// Creates an enum from a string value, if possible.
 	public init?(stringValue: String?) {

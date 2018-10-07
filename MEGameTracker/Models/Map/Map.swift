@@ -286,7 +286,7 @@ extension Map {
 
     private func gameValuesForIsExplored() -> String {
         var gameValues: [String] = []
-        for game in GameVersion.all() {
+        for game in GameVersion.allCases {
             gameValues.append(isExploredPerGameVersion[game] == true ? "1" : "0")
         }
         return "|\(gameValues.joined(separator: "|"))|"
@@ -446,7 +446,7 @@ extension Map {
 //
 //    public func gameValuesForIsExplored() -> String {
 //        var data: [String] = []
-//        for game in GameVersion.all() {
+//        for game in GameVersion.allCases {
 //            data.append(isExploredPerGameVersion[game] == true ? "1" : "0")
 //        }
 //        return "|\(data.joined(separator: "|"))|"

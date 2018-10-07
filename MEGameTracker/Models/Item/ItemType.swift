@@ -9,52 +9,29 @@
 import UIKit
 
 /// Defines various item types. Some are only available in one game.
-public enum ItemType: String, Codable {
+public enum ItemType: String, Codable, CaseIterable {
 
+    case weapon = "Weapon"
+    case armor = "Armor"
+    case upgrade = "Upgrade"
+    case loot = "Loot"
+    case ammo = "Ammo"
+    case medkit = "MedKit"
+    case intel = "Intel"
+    case scan = "Scan"// game 3
+    case artifact = "Artifact"
+    case collection = "Collection"
+    case salvage = "Salvage"
+    case wreckage = "Wreckage"
+    case warAsset = "War Asset"
+    case souvenir = "Souvenir"
+    case request = "Request"
+    case pet = "Pet"
 	case unknown = "Unknown"
-	case souvenir = "Souvenir"
-	case request = "Request"
-	case pet = "Pet"
-	case weapon = "Weapon"
-	case ammo = "Ammo"
-	case armor = "Armor"
-	case medkit = "MedKit"
-	case loot = "Loot"
-	case scan = "Scan"// game 3
-	case artifact = "Artifact"
-	case collection = "Collection"
-	case salvage = "Salvage"
-	case wreckage = "Wreckage"
-	case warAsset = "War Asset"
-	case intel = "Intel"
-	case upgrade = "Upgrade"
-
-	/// Returns a list of all possible enum variations.
-	public static func all() -> [ItemType] {
-		return [
-			.weapon,
-			.armor,
-			.upgrade,
-			.loot,
-			.ammo,
-			.medkit,
-			.intel,
-			.scan,
-			.artifact,
-			.collection,
-			.salvage,
-			.wreckage,
-			.warAsset,
-			.souvenir,
-			.request,
-			.pet,
-			.unknown,
-		]
-	}
 
 	/// Returns the string values of all the enum variations.
 	private static let stringValues: [ItemType: String] = {
-        return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
+        return Dictionary(uniqueKeysWithValues: allCases.map { ($0, $0.stringValue) })
     }()
 
 	/// Returns the heading string values of all the enum variations.

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Defines various mission types.
-public enum MissionType: String, Codable {
+public enum MissionType: String, Codable, CaseIterable {
 
 	case mission = "Mission"
 	case assignment = "Assignment"
@@ -22,23 +22,6 @@ public enum MissionType: String, Codable {
 	case conversation = "Conversation"
 	case objective = "Objective"
 	case subset = "Set"
-
-	/// Returns a list of all possible enum variations.
-	public static func all() -> [MissionType] {
-		return [
-			.mission,
-			.assignment,
-			.dossier,
-			.loyalty,
-			.dlc,
-			.collection,
-			.upgrade,
-			.task,
-			.conversation,
-			.objective,
-			.subset,
-		]
-	}
 
     /// Returns a list of enum variations used in MissionType categories.
 	public static func categories() -> [MissionType] {
@@ -61,7 +44,7 @@ public enum MissionType: String, Codable {
 
 	/// Returns the string values of all the enum variations.
 	private static let stringValues: [MissionType: String] = {
-        return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
+        return Dictionary(uniqueKeysWithValues: allCases.map { ($0, $0.stringValue) })
     }()
 
 	/// Returns the heading string values of all the enum variations.
@@ -105,7 +88,7 @@ public enum MissionType: String, Codable {
 
 	/// Returns the int value of an enum.
 	public var intValue: Int? {
-        return MissionType.all().index(of: self)
+        return MissionType.allCases.index(of: self)
 	}
 
 	/// Provides a title prefix for a mission of the specified enum type.

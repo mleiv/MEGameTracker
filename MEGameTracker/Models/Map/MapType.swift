@@ -9,7 +9,7 @@
 import Foundation
 
 /// Defines various map types. Allows for some general logic on sets of maps.
-public enum MapType: String, Codable {
+public enum MapType: String, Codable, CaseIterable {
 
 	case galaxy = "Galaxy"
 	// regional clusters have no map
@@ -27,28 +27,9 @@ public enum MapType: String, Codable {
 	case building = "Structure"
 	case location = "Location"
 
-	/// Returns a list of all possible enum variations.
-	public static func all() -> [MapType] {
-		return [
-            .galaxy,
-            .cluster,
-            .system,
-            .planet,
-            .moon,
-            .asteroid,
-            .city,
-            .ship,
-            .fleet,
-            .area,
-            .level,
-            .building,
-            .location
-        ]
-	}
-
 	/// Returns the string values of all the enum variations.
 	private static let stringValues: [MapType: String] = {
-        return Dictionary(uniqueKeysWithValues: all().map { ($0, $0.stringValue) })
+        return Dictionary(uniqueKeysWithValues: allCases.map { ($0, $0.stringValue) })
     }()
 
 	/// Returns the heading string values of all the enum variations.
@@ -95,7 +76,7 @@ public enum MapType: String, Codable {
 
 	/// Returns the int value of an enum.
 	public var intValue: Int? {
-		return MapType.all().index(of: self)
+		return MapType.allCases.index(of: self)
 	}
 
 	/// Provides a window title for a map of the specified enum type.

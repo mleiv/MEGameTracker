@@ -9,15 +9,10 @@
 import Foundation
 
 /// Specifies the different game version options.
-public enum GameVersion: String, CodingKey, Codable {
+public enum GameVersion: String, CodingKey, Codable, CaseIterable {
     case game1 = "1"
     case game2 = "2"
     case game3 = "3"
-
-    /// Returns a list of all possible enum variations.
-    public static func all() -> [GameVersion] {
-        return [.game1, .game2, .game3]
-    }
 
     /// Creates an enum from a string value, if possible.
     public init?(stringValue: String?) {
@@ -40,7 +35,7 @@ public enum GameVersion: String, CodingKey, Codable {
 
     /// The index of this game version 0 - 2
     public var index: Int {
-        return GameVersion.all().index(of: self) ?? 0
+        return GameVersion.allCases.index(of: self) ?? 0
     }
 
     /// The int of this game version 1 - 3

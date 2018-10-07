@@ -196,7 +196,7 @@ extension Item {
 	/// Add game version restrictions to events.
 	public func filterEvents(_ events: [Event]) -> [Event] {
 		var filteredEvents: [Event] = []
-		for otherGameVersion in GameVersion.all() where otherGameVersion != gameVersion {
+		for otherGameVersion in GameVersion.allCases where otherGameVersion != gameVersion {
 			filteredEvents.append(Event.faulted(id: "Game\(otherGameVersion.stringValue)", type: .unavailableInGame))
 		}
 		filteredEvents += events.filter({ $0.gameVersion == self.gameVersion || $0.gameVersion == nil })
