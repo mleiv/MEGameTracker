@@ -24,7 +24,7 @@ extension Mission: CloudDataStorable {
     public func getAdditionalCloudFields(changeRecord: CloudDataRecordChange) -> [String: Any?] {
         var changes = changeRecord.changeSet
         changes["isCompleted"] = (changes["isCompleted"] as? Int == 1) || (changes["isCompleted"] as? Double == 1)
-        changes.removeValue(forKey: "lastRecordData")
+        // changes.removeValue(forKey: "lastRecordData")
         return changes
     }
 }

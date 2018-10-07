@@ -327,12 +327,9 @@ extension CloudDataStorable {
 	internal static func serializeLastRecordData(
 		record: CKRecord
 	) -> Data {
-		let archivedData = NSMutableData()
-		let archiver = NSKeyedArchiver(forWritingWith: archivedData)
-		archiver.requiresSecureCoding = true
-		record.encodeSystemFields(with: archiver)
-		archiver.finishEncoding()
-		return archivedData as Data
+        let archiver = NSKeyedArchiver(requiringSecureCoding: true)
+        record.encodeSystemFields(with: archiver)
+        return archiver.encodedData
 	}
 
 }

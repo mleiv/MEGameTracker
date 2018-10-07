@@ -25,7 +25,7 @@ extension GameSequence: CloudDataStorable {
     /// Alter any CK items before handing to codable to modify/create object
     public func getAdditionalCloudFields(changeRecord: CloudDataRecordChange) -> [String: Any?] {
         var changes = changeRecord.changeSet
-        changes.removeValue(forKey: "lastRecordData")
+        // changes.removeValue(forKey: "lastRecordData")
         return changes
     }
 

@@ -22,7 +22,7 @@ extension Event: CloudDataStorable {
     public func getAdditionalCloudFields(changeRecord: CloudDataRecordChange) -> [String: Any?] {
         var changes = changeRecord.changeSet
         changes["isTriggered"] = (changes["isTriggered"] as? Int == 1) || (changes["isTriggered"] as? Double == 1)
-        changes.removeValue(forKey: "lastRecordData")
+        // changes.removeValue(forKey: "lastRecordData")
         return changes
     }
 }

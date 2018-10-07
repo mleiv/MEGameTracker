@@ -31,7 +31,7 @@ extension Note: CloudDataStorable {
         var changes = changeRecord.changeSet
         changes["gameSequenceUuid"] = self.gameSequenceUuid //?
         changes.removeValue(forKey: "identifyingObject") // fallback to element's value
-        changes.removeValue(forKey: "lastRecordData")
+        // changes.removeValue(forKey: "lastRecordData")
         return changes
     }
 
