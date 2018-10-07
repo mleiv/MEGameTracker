@@ -20,18 +20,20 @@ public enum CodableDictionaryValueType: Codable {
     case float(Float)
     case date(Date)
     case string(String)
+    case data(Data)
     indirect case dictionary(CodableDictionary)
     indirect case array([CodableDictionaryValueType])
     case empty
 
-//    public init(_ value: Date) { self = .date(value) }
-//    public init(_ value: UUID) { self = .uuid(value) }
-//    public init(_ value: Int) { self = .int(value) }
-//    public init(_ value: Float) { self = .float(value) }
-//    public init(_ value: Bool) { self = .bool(value) }
-//    public init(_ value: String) { self = .string(value) }
-//    public init(_ value: CodableDictionary) { self = .dictionary(value) }
-//    // nil?
+    //    public init(_ value: Date) { self = .date(value) }
+    //    public init(_ value: UUID) { self = .uuid(value) }
+    //    public init(_ value: Int) { self = .int(value) }
+    //    public init(_ value: Float) { self = .float(value) }
+    //    public init(_ value: Bool) { self = .bool(value) }
+    //    public init(_ value: String) { self = .string(value) }
+    //    public init(_ value: Data) { self = .data(value) }
+    //    public init(_ value: CodableDictionary) { self = .dictionary(value) }
+    //    // nil?
 
     public init(_ value: Any?) {
         self = {
@@ -48,6 +50,8 @@ public enum CodableDictionaryValueType: Codable {
                 return .float(value)
             } else if let value = value as? Date {
                 return .date(value)
+            } else if let value = value as? Data {
+                return .data(value)
             } else if let value = value as? String {
                 return .string(value)
             } else if let value = value as? CodableDictionary {
@@ -86,6 +90,8 @@ public enum CodableDictionaryValueType: Codable {
                 return .float(value)
             } else if let value = try? container.decode(Date.self) {
                 return .date(value)
+            } else if let value = try? container.decode(Data.self) {
+                return .data(value)
             } else if let value = try? container.decode(String.self) {
                 return .string(value)
             } else {
@@ -97,31 +103,33 @@ public enum CodableDictionaryValueType: Codable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
-            case .uuid(let value): try container.encode(value)
-            case .bool(let value): try container.encode(value)
-            case .int(let value): try container.encode(value)
-            case .double(let value): try container.encode(value)
-            case .float(let value): try container.encode(value)
-            case .date(let value): try container.encode(value)
-            case .string(let value): try container.encode(value)
-            case .dictionary(let value): try container.encode(value)
-            case .array(let value): try container.encode(value)
-            default: try container.encodeNil()
+        case .uuid(let value): try container.encode(value)
+        case .bool(let value): try container.encode(value)
+        case .int(let value): try container.encode(value)
+        case .double(let value): try container.encode(value)
+        case .float(let value): try container.encode(value)
+        case .date(let value): try container.encode(value)
+        case .data(let value): try container.encode(value)
+        case .string(let value): try container.encode(value)
+        case .dictionary(let value): try container.encode(value)
+        case .array(let value): try container.encode(value)
+        default: try container.encodeNil()
         }
     }
 
     public var value: Any? {
         switch self {
-            case .uuid(let value): return value
-            case .bool(let value): return value
-            case .int(let value): return value
-            case .double(let value): return value
-            case .float(let value): return value
-            case .date(let value): return value
-            case .string(let value): return value
-            case .dictionary(let value): return value
-            case .array(let value): return value.map { $0.value }
-            default: return nil
+        case .uuid(let value): return value
+        case .bool(let value): return value
+        case .int(let value): return value
+        case .double(let value): return value
+        case .float(let value): return value
+        case .date(let value): return value
+        case .data(let value): return value
+        case .string(let value): return value
+        case .dictionary(let value): return value
+        case .array(let value): return value.map { $0.value }
+        default: return nil
         }
     }
 }
