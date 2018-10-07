@@ -15,7 +15,8 @@ open class IBStyledView: UIView, IBStylable {
     open var identifier: String? {
         didSet{
             if didLayout && oldValue != identifier {
-                styler?.didApplyStyles = false; styler?.applyStyles()
+                styler?.didApplyStyles = false
+                _ = styler?.applyStyles()
             }
         }
     }
@@ -29,7 +30,7 @@ open class IBStyledView: UIView, IBStylable {
     }
 
     override open func layoutSubviews() {
-        styler?.applyStyles()
+        _ = styler?.applyStyles()
         super.layoutSubviews()
         didLayout = true
     }
@@ -42,7 +43,7 @@ open class IBStyledLabel: UILabel, IBStylable {
         didSet{
             if didLayout && oldValue != identifier {
                 styler?.didApplyStyles = false
-                styler?.applyStyles()
+                _ = styler?.applyStyles()
             }
         }
     }
@@ -56,7 +57,7 @@ open class IBStyledLabel: UILabel, IBStylable {
     }
 
     override open func layoutSubviews() {
-        styler?.applyStyles()
+        _ = styler?.applyStyles()
         super.layoutSubviews()
         didLayout = true
     }
@@ -69,7 +70,7 @@ open class IBStyledTextField: UITextField, IBStylable {
         didSet{
             if didLayout && oldValue != identifier {
                 styler?.didApplyStyles = false
-                styler?.applyStyles()
+                _ = styler?.applyStyles()
             }
         }
     }
@@ -84,7 +85,7 @@ open class IBStyledTextField: UITextField, IBStylable {
 
     override open func layoutSubviews() {
         contentVerticalAlignment = .center
-        styler?.applyStyles()
+        _ = styler?.applyStyles()
         super.layoutSubviews()
         didLayout = true
     }
@@ -97,7 +98,7 @@ open class IBStyledTextView: UITextView, IBStylable {
         didSet{
             if didLayout && oldValue != identifier {
                 styler?.didApplyStyles = false
-                styler?.applyStyles()
+                _ = styler?.applyStyles()
             }
         }
     }
@@ -112,7 +113,7 @@ open class IBStyledTextView: UITextView, IBStylable {
     }
 
     override open func layoutSubviews() {
-        styler?.applyStyles()
+        _ = styler?.applyStyles()
         textContainer.lineFragmentPadding = 0
         if !isScrollEnabled && heightConstraint == nil {
             isScrollEnabled = true // iOS bug http://stackoverflow.com/a/33503522/5244752
@@ -132,7 +133,7 @@ open class IBStyledImageView: UIImageView, IBStylable {
         didSet{
             if didLayout && oldValue != identifier {
                 styler?.didApplyStyles = false
-                styler?.applyStyles()
+                _ = styler?.applyStyles()
             }
         }
     }
@@ -146,7 +147,7 @@ open class IBStyledImageView: UIImageView, IBStylable {
     }
 
     override open func layoutSubviews() {
-        styler?.applyStyles()
+        _ = styler?.applyStyles()
         super.layoutSubviews()
         didLayout = true
     }
@@ -159,7 +160,7 @@ open class IBStyledButton: UIButton, IBStylable {
         didSet{
             if didLayout && oldValue != identifier {
                 styler?.didApplyStyles = false
-                styler?.applyStyles()
+                _ = styler?.applyStyles()
             }
         }
     }
@@ -178,7 +179,7 @@ open class IBStyledButton: UIButton, IBStylable {
     }
 
     override open func layoutSubviews() {
-        styler?.applyStyles()
+        _ = styler?.applyStyles()
         let state = getState()
         if lastState != state {
             lastState = state
@@ -251,7 +252,7 @@ open class IBStyledSegmentedControl: UISegmentedControl, IBStylable {
         didSet{
             if didLayout && oldValue != identifier {
                 styler?.didApplyStyles = false
-                styler?.applyStyles()
+                _ = styler?.applyStyles()
             }
         }
     }
@@ -265,7 +266,7 @@ open class IBStyledSegmentedControl: UISegmentedControl, IBStylable {
     }
 
     override open func layoutSubviews() {
-        styler?.applyStyles()
+        _ = styler?.applyStyles()
         super.layoutSubviews()
         didLayout = true
     }
