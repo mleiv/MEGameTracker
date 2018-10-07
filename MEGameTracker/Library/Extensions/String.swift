@@ -10,8 +10,8 @@ import Foundation
 
 extension String {
 	func intIndexOf(_ character: Character) -> Int? {
-		guard let index = characters.index(of: character) else { return nil }
-		return characters.distance(from: startIndex, to: index)
+		guard let index = index(of: character) else { return nil }
+		return distance(from: startIndex, to: index)
 	}
 	/**
 		Pads the left side of a string with the specified string up to the specified length.
@@ -22,10 +22,10 @@ extension String {
 		- returns: The padded string
 	*/
 	func lpad(_ padding: String, length: Int) -> (String) {
-		if self.characters.count > length {
+		if self.count > length {
 			return self
 		}
-		return "".padding(toLength: length - self.characters.count, withPad:padding, startingAt:0) + self
+		return "".padding(toLength: length - self.count, withPad:padding, startingAt:0) + self
 	}
 	/**
 		Pads the right side of a string with the specified string up to the specified length.
@@ -36,7 +36,7 @@ extension String {
 		- returns: The padded string
 	*/
 	func rpad(_ padding: String, length: Int) -> (String) {
-		if self.characters.count > length { return self }
+		if self.count > length { return self }
 		return self.padding(toLength: length, withPad:padding, startingAt:0)
 	}
 	/**
@@ -53,7 +53,7 @@ extension String {
 		- returns: Int length of string
 	*/
 	var length: Int {
-		return self.characters.count
+		return self.count
 	}
 	/**
 		Returns character at a specific position from a string.
@@ -62,7 +62,7 @@ extension String {
 		- returns: Character
 	*/
 	subscript (index: Int) -> Character {
-		return self[self.characters.index(self.startIndex, offsetBy: index)]
+		return self[self.index(self.startIndex, offsetBy: index)]
 	}
 	subscript (index: Int) -> String {
 		return String(self[index] as Character)
@@ -75,7 +75,7 @@ extension String {
 		- returns: String
 	*/
 	func stringFrom(_ start: Int, to end: Int? = nil) -> String {
-		var maximum = self.characters.count
+		var maximum = self.count
 
 		let i = start < 0 ? self.endIndex : self.startIndex
 		let ioffset = min(maximum, max(-1 * maximum, start))
@@ -85,7 +85,7 @@ extension String {
 
 		let j = end < 0 ? self.endIndex : self.startIndex
 		let joffset = min(maximum, max(-1 * maximum, end ?? 0))
-		let endIndex = end != nil && end! < self.characters.count ? self.index(j, offsetBy: joffset) : self.endIndex
+		let endIndex = end != nil && end! < self.count ? self.index(j, offsetBy: joffset) : self.endIndex
 		return String(self[startIndex..<endIndex])
 	}
 	/**
@@ -95,8 +95,8 @@ extension String {
 		- returns: String
 	*/
 	func onlyCharacters(_ allowed: String) -> String {
-		let search = allowed.characters
-		return characters.filter({ search.contains($0) }).reduce("", { $0 + String($1) })
+		let search = allowed
+		return filter({ search.contains($0) }).reduce("", { $0 + String($1) })
 	}
 	/**
 		Simple pattern matcher. Requires full match (ie, includes ^$ implicitly).

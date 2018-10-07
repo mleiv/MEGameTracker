@@ -47,7 +47,7 @@ class PersonsController: UITableViewController, Spinnerable {
 		// swiftlint:disable line_length
 		let person1 = Person.getDummy(json: "{\"id\": 2,\"name\": \"Liara T'soni\",\"description\": \"An archeologist specializing in the ancient prothean culture, Liara is the \\\"pureblood\\\" daughter of Matriarch Benezia, and doesn't know her father. At 106 - young for an asari - she has eschewed the typical frivolities of youth and instead pursued a life of scholarly solitude.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": true,\"isFemaleLoveInterest\": true,\"race\": \"Asari\",\"profession\": \"Scientist\",\"organization\": null,\"photo\": \"Default Liara\",\"gameVersion\": true,\"relatedLinks\": \"[\\\"https://masseffect.wikia.com/wiki/Liara_T%27Soni\\\"]\",\"voiceActor\": \"Ali Hillis\"}")
 		let person2 = Person.getDummy(json: "{\"id\": 8,\"name\": \"David Anderson\",\"description\": \"The previous commander of the Normandy, Anderson is a mentor and friend of Shepard. He has a bad history with Saren, who prevented him from being promoted to Spectre himself many years ago. He remains on the Citadel after Eden Prime and provides Shepard with information and advice.\",\"personType\": \"Squad\",\"isMaleLoveInterest\": false,\"isFemaleLoveInterest\": false,\"race\": \"Human\",\"profession\": \"Captain\",\"organization\": \"Alliance\",\"photo\": \"Default Anderson\",\"gameVersion\": true,\"relatedLinks\": \"[\\\"https://masseffect.wikia.com/wiki/David_Anderson\\\"]\",\"voiceActor\": \"Keith David Patrick Seitz\"}")
-		persons = [person1, person2].flatMap { $0 }
+		persons = [person1, person2].compactMap { $0 }
 		// swiftlint:enable line_length
 	}
 
@@ -131,13 +131,13 @@ class PersonsController: UITableViewController, Spinnerable {
 		_ tableView: UITableView,
 		estimatedHeightForRowAt indexPath: IndexPath
 	) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 	override func tableView(
 		_ tableView: UITableView,
 		heightForRowAt indexPath: IndexPath
 	) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

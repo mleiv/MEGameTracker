@@ -12,11 +12,11 @@ import UIKit
 final public class ShepardLoveInterestRow: HairlineBorderView, ValueDataRowDisplayable {
 
 // MARK: Inspectable
-	@IBInspectable open var typeName: String = "None" {
+	@IBInspectable public var typeName: String = "None" {
 		didSet { setDummyDataRowType() }
 	}
-	@IBInspectable open var showRowDivider: Bool = false
-	@IBInspectable open var isHideOnEmpty: Bool = true
+	@IBInspectable public var showRowDivider: Bool = false
+	@IBInspectable public var isHideOnEmpty: Bool = true
 
 // MARK: Outlets
 	@IBOutlet weak public var loveInterestImageView: UIImageView?
@@ -31,8 +31,8 @@ final public class ShepardLoveInterestRow: HairlineBorderView, ValueDataRowDispl
 	@IBAction public func buttonClicked(_ sender: UIButton) { onClick?(sender) }
 
 // MARK: Properties
-	open var didSetup = false
-	open var isSettingUp = false
+	public var didSetup = false
+	public var isSettingUp = false
 
 	// Protocol: IBViewable
 	public var isAttachedNibWrapper = false
@@ -54,7 +54,7 @@ final public class ShepardLoveInterestRow: HairlineBorderView, ValueDataRowDispl
 
 // MARK: Hide when not initialized (as though if empty)
 
-	open override func layoutSubviews() {
+	public override func layoutSubviews() {
 		if !UIWindow.isInterfaceBuilder && !isAttachedNib && isHideOnEmpty && !didSetup {
 			isHidden = true
 		} else {

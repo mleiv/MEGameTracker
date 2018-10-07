@@ -15,7 +15,7 @@ import UIKit
 public class IBStyler: NSObject {
 
     /// The stylable UIView in question.
-    weak var styledElement: IBStylable?
+    var styledElement: IBStylable?
 
     /// Tracks if styles have been applied once already.
     var didApplyStyles = false
@@ -31,7 +31,7 @@ public class IBStyler: NSObject {
         super.init()
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(
-            forName: NSNotification.Name.UIContentSizeCategoryDidChange,
+            forName: UIContentSizeCategory.didChangeNotification,
             object: nil,
             queue: nil,
             using: { [weak self] _ in self?.changeTextSize() })
@@ -44,10 +44,11 @@ public class IBStyler: NSObject {
 
     /// Returns the stylesheet id for the UIView.
     var elementIdentifier: String {
-        if (styledElement?.identifier ?? "").isEmpty {
-            return styledElement?.defaultIdentifier ?? ""
+        if let styledElementIdentifier = styledElement?.identifier,
+            !styledElementIdentifier.isEmpty {
+            return styledElementIdentifier
         }
-        return styledElement?.identifier ?? ""
+        return styledElement?.defaultIdentifier ?? ""
     }
 
     /// Only applies IBStyles once.
@@ -66,7 +67,7 @@ public class IBStyler: NSObject {
 
     /// A special function for IBStyledButton elements to change state-specific styles on state-changing events
     ///    (see IBStyledButton for more).
-    public func applyState(_ state: UIControlState) {
+    public func applyState(_ state: UIControl.State) {
         //changes only styles specific to a state, also ignores didApplyFormat flag
         guard !elementIdentifier.isEmpty  else { return }
         IBStyleManager.current.apply(identifier: elementIdentifier, to: styledElement as? UIView, forState: state)

@@ -30,10 +30,10 @@ extension Shepard {
 		/// Returns a human-readable error message if the appearance code doesn't parse properly.
 		public static func codeLengthError(_ code: String, gender: Gender, game: GameVersion) -> String? {
 			let reportLength = ExpectedCodeLength[gender]?[game] ?? 0
-			if reportLength == code.characters.count {
+			if reportLength == code.count {
 				return nil
 			} else {
-				return String(format: CodeLengthIncorrect, code.characters.count, reportLength)
+				return String(format: CodeLengthIncorrect, code.count, reportLength)
 			}
 		}
 

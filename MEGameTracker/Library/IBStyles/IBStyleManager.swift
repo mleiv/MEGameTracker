@@ -61,23 +61,23 @@ extension IBStyleManager {
 	public func apply(
 		identifier: String,
 		to element: UIView?,
-		forState state: UIControlState
+		forState state: UIControl.State
 	) {
 		var properties = getAllInheritedProperties(stylesheet?.styles[identifier] ?? [:])
 		switch state {
-			case UIControlState() :
+			case UIControl.State() :
 				if let p2 = properties[.stateActive] as? IBStyleProperty.List {
 					properties = getAllInheritedProperties(p2)
 				}
-			case UIControlState.disabled :
+			case UIControl.State.disabled :
 				if let p2 = properties[.stateDisabled] as? IBStyleProperty.List {
 					properties = getAllInheritedProperties(p2)
 				}
-			case UIControlState.highlighted :
+			case UIControl.State.highlighted :
 				if let p2 = properties[.statePressed] as? IBStyleProperty.List {
 					properties = getAllInheritedProperties(p2)
 				}
-			case UIControlState.selected :
+			case UIControl.State.selected :
 				if let p2 = properties[.stateSelected] as? IBStyleProperty.List {
 					properties = getAllInheritedProperties(p2)
 				}
@@ -159,7 +159,7 @@ extension IBStyleManager {
 	fileprivate func apply(
 		properties: IBStyleProperty.List,
 		to element: UIView?,
-		forState state: UIControlState = UIControlState()
+		forState state: UIControl.State = UIControl.State()
 	) {
 		guard let element = element else { return }
 		if let textView = element as? UITextView {
@@ -183,7 +183,7 @@ extension IBStyleManager {
 					if let image = value as? UIImage, let button = element as? UIButton {
 						button.setImage(image, for: state)
 						if let imageView = button.imageView {
-							button.bringSubview(toFront: imageView)
+							button.bringSubviewToFront(imageView)
 						}
 					}
 				case .cornerRadius:
@@ -222,7 +222,7 @@ extension IBStyleManager {
 	fileprivate func change(
 		textColor color: UIColor?,
 		inView view: UIView?,
-		forState state: UIControlState = UIControlState()
+		forState state: UIControl.State = UIControl.State()
 	) {
 		guard let color = color, let view = view else { return }
 		if let colorElement = view as? UIButton {
@@ -241,7 +241,7 @@ extension IBStyleManager {
 	fileprivate func change(
 		backgroundColor color: UIColor?,
 		inView view: UIView?,
-		forState state: UIControlState = UIControlState()
+		forState state: UIControl.State = UIControl.State()
 	) {
 		guard let color = color, let view = view else { return }
 		if let textField = view as? UITextField {
@@ -255,7 +255,7 @@ extension IBStyleManager {
 		view.layer.backgroundColor = color.cgColor
 		if let colorElement = view as? UISegmentedControl {
 			colorElement.setTitleTextAttributes([
-				NSAttributedStringKey.foregroundColor: color
+				NSAttributedString.Key.foregroundColor: color
 			], for: .disabled)
 		}
 	}
@@ -264,7 +264,7 @@ extension IBStyleManager {
 	fileprivate func change(
 		backgroundGradient gradient: IBGradient?,
 		inView view: UIView?,
-		forState state: UIControlState = UIControlState()
+		forState state: UIControl.State = UIControl.State()
 	) {
 		guard let gradient = gradient, let view = view else { return }
 		let gradientView = gradient.createGradientView(view.bounds)
@@ -275,7 +275,7 @@ extension IBStyleManager {
 		})
 		view.layer.insertSublayer(gradientView.layer, at: 0)
 		gradientView.autoresizingMask = [
-			UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight
+			UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight
 		]
 	}
 
@@ -283,7 +283,7 @@ extension IBStyleManager {
 	fileprivate func change(
 		fontClass: IBFont?,
 		inView view: UIView?,
-		forState state: UIControlState = UIControlState()
+		forState state: UIControl.State = UIControl.State()
 	) {
 		guard let fontClass = fontClass, let view = view else { return }
 		if let font = fontClass.getUIFont(),
@@ -296,7 +296,7 @@ extension IBStyleManager {
 	fileprivate func change(
 		paddingList list: [FloatLiteralType]?,
 		inView view: UIView?,
-		forState state: UIControlState = UIControlState()
+		forState state: UIControl.State = UIControl.State()
 	) {
 		guard var list = list, let view = view else { return }
 		if list.count == 1 {

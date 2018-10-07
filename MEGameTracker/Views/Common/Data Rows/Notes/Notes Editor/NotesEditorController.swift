@@ -83,23 +83,23 @@ final public class NotesEditorController: UIViewController {
 		let notificationCenter = NotificationCenter.default
 		notificationCenter.addObserver(self,
 			selector: #selector(NotesEditorController.keyboardWillBeShown(_:)),
-			name: NSNotification.Name.UIKeyboardDidShow,
+			name: UIResponder.keyboardDidShowNotification,
 			object: nil
 		)
 		notificationCenter.addObserver(self,
 			selector: #selector(NotesEditorController.keyboardWillBeHidden(_:)),
-			name: NSNotification.Name.UIKeyboardDidHide,
+			name: UIResponder.keyboardDidHideNotification,
 			object: nil
 		)
 	}
 	func deregisterForKeyboardNotifications() {
 		let notificationCenter = NotificationCenter.default
-		notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-		notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+		notificationCenter.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
+		notificationCenter.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
 	}
 	@objc func keyboardWillBeShown(_ notification: Notification) {
 		if let userInfo = (notification as NSNotification).userInfo {
-			let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size
+			let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size
 			keyboardHeightConstraint?.constant = CGFloat(keyboardSize.height)
 		}
 	}

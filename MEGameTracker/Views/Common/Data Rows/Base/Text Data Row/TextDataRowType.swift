@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol TextDataRowType {
-	weak var row: TextDataRow? { get set }
+    var row: TextDataRow? { get set }
 	var text: String? { get }
 	var linkOriginController: UIViewController? { get }
 	var isHideOnEmpty: Bool { get }

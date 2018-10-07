@@ -110,9 +110,9 @@ extension TabGroupsControllable where Self: UIViewController {
 			animated: false,
 			completion: nil
 		)
-		tabsPageViewController.willMove(toParentViewController: self)
-		self.addChildViewController(tabsPageViewController)
-		tabsPageViewController.didMove(toParentViewController: self)
+		tabsPageViewController.willMove(toParent: self)
+		self.addChild(tabsPageViewController)
+		tabsPageViewController.didMove(toParent: self)
 		tabsContentWrapper.addSubview(tabsPageViewController.view)
 		tabsPageViewController.view.translatesAutoresizingMaskIntoConstraints = false
 		tabsPageViewController.view.leadingAnchor.constraint(equalTo: tabsContentWrapper.leadingAnchor)
@@ -177,7 +177,7 @@ extension TabGroupsControllable where Self: UIViewController {
 	}
 
 	public func switchToTab(_ controller: UIViewController) {
-		var direction = UIPageViewControllerNavigationDirection.forward
+		var direction = UIPageViewController.NavigationDirection.forward
 		if let tabName = tabControllers.keys.filter(({ self.tabControllers[$0] === controller})).first,
 			let index = tabNames.index(of: tabName) {
 			guard index != tabCurrentIndex else { return }

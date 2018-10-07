@@ -47,7 +47,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 	}
 
 	func fetchDummyData() {
-		persons[.squad] = [Person.getDummy(), Person.getDummy()].flatMap { $0 }
+		persons[.squad] = [Person.getDummy(), Person.getDummy()].compactMap { $0 }
 		persons[.associate] = []
 		persons[.enemy] = []
 	}

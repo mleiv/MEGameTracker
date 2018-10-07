@@ -26,15 +26,15 @@ class MarkupableTests: XCTestCase {
 		let label = MarkupLabel()
 		label.identifier = "Body.AccentColor"
 		label.text = "**Bold**"
-		let attributes: [NSAttributedStringKey: Any] = label.attributedText?.attributes(
+		let attributes: [NSAttributedString.Key: Any] = label.attributedText?.attributes(
 			at: 0,
 			longestEffectiveRange: nil,
 			in: NSRange(location: 0, length: label.attributedText?.length ?? 0)
 		) ?? [:]
 //		"identifier": Body.NormalColor
-        let color = attributes[NSAttributedStringKey.foregroundColor] as? UIColor
+        let color = attributes[NSAttributedString.Key.foregroundColor] as? UIColor
 		XCTAssert(color == Styles.Colors.accentColor, "Color is incorrect")
-        let font = attributes[NSAttributedStringKey.font] as? UIFont
+        let font = attributes[NSAttributedString.Key.font] as? UIFont
 		XCTAssert(font == Styles.Fonts.body.boldStyle.getUIFont(), "Font is incorrect")
     }
 

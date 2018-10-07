@@ -155,7 +155,7 @@ extension NotesView { // :UITableViewDelegate
 
 	@objc public func tableView(
 		_ tableView: UITableView,
-		commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+		commitEditingStyle editingStyle: UITableViewCell.EditingStyle,
 		forRowAtIndexPath indexPath: IndexPath
 	) {
 		if notes.indices.contains((indexPath as NSIndexPath).row) && editingStyle == .delete {

@@ -60,7 +60,6 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 		case "item": redirectItem(parameters: parameters)
 		case "map": redirectMap(parameters: parameters)
 		case "maplocation": redirectMapLocationable(parameters: parameters)
-		case "maplocation": redirectMapLocationable(parameters: parameters) // TODO: figure out why it does this ?!?
 		case "mission": redirectMission(parameters: parameters)
 		default: break
 		}
@@ -156,7 +155,7 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 					return mapLocation
 				} else if
 					let name = parameters["title"],
-					let mapLocationCoords = parameters["location"]?.characters.split(separator: "x").map(String.init),
+					let mapLocationCoords = parameters["location"]?.split(separator: "x").map(String.init),
 					let mapLocationX = Double(mapLocationCoords[0]),
 					let mapLocationY = Double(mapLocationCoords[1]) {
 					let mapLocationRadius = Double(parameters["radius"] ?? "") ?? 1.0
@@ -311,7 +310,7 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 		// pattern: tab -> [flow wrapper] (we come in here) -> navi -> flow wrapper -> controller
 		if let controller2 = wrapperController as? UINavigationController {
 			if let controller3 = controller2.visibleViewController { // [tab-specific kind] flow controller
-				if let controller4 = controller3.childViewControllers.first { // actual scene view controller
+				if let controller4 = controller3.children.first { // actual scene view controller
 					return controller4
 				}
 			}

@@ -27,7 +27,7 @@ extension Spinnerable {
 		let useView = self is UITableViewController ? view?.superview : view
 		guard let view = useView,
 			  let spinner: SpinnerNib = {
-			if let spinner = view.subviews.flatMap({ $0 as? SpinnerNib }).first {
+			if let spinner = view.subviews.compactMap({ $0 as? SpinnerNib }).first {
 				return spinner
 			} else {
 				if let spinner = SpinnerNib.loadNib(title: title) {
@@ -44,7 +44,7 @@ extension Spinnerable {
 	public func updateSpinnerProgress(inView view: UIView?, percentCompleted: Int) {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		let useView = self is UITableViewController ? view?.superview : view
-		if let spinner = useView?.subviews.flatMap({ $0 as? SpinnerNib }).first {
+		if let spinner = useView?.subviews.compactMap({ $0 as? SpinnerNib }).first {
 			spinner.updateProgress(percentCompleted: percentCompleted)
 		}
 	}
@@ -57,7 +57,7 @@ extension Spinnerable {
 	public func stopSpinner(inView view: UIView?, isRemoveFromView: Bool) {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		let useView = self is UITableViewController ? view?.superview : view
-		if let spinner = useView?.subviews.flatMap({ $0 as? SpinnerNib }).first {
+		if let spinner = useView?.subviews.compactMap({ $0 as? SpinnerNib }).first {
 			spinner.stop()
 			if isRemoveFromView {
 				spinner.removeFromSuperview()
@@ -68,6 +68,6 @@ extension Spinnerable {
 	public func isSpinning(inView view: UIView?) -> Bool {
 		guard !UIWindow.isInterfaceBuilder else { return false }
 		let useView = self is UITableViewController ? view?.superview : view
-		return useView?.subviews.flatMap({ $0 as? SpinnerNib }).first != nil
+		return useView?.subviews.compactMap({ $0 as? SpinnerNib }).first != nil
 	}
 }

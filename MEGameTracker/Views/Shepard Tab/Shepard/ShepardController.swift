@@ -298,9 +298,9 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 extension ShepardController: UIImagePickerControllerDelegate {
 
 	func pickPhoto(_ sender: UIButton) {
-		let imageController = UIAlertController(title: nil, message: nil, preferredStyle:UIAlertControllerStyle.actionSheet)
+		let imageController = UIAlertController(title: nil, message: nil, preferredStyle:UIAlertController.Style.actionSheet)
 
-		imageController.addAction(UIAlertAction(title: "Camera Roll", style: UIAlertActionStyle.default) { _ in
+		imageController.addAction(UIAlertAction(title: "Camera Roll", style: UIAlertAction.Style.default) { _ in
 			if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
 				self.imagePicker.sourceType = .photoLibrary
 				self.imagePicker.allowsEditing = true
@@ -309,7 +309,7 @@ extension ShepardController: UIImagePickerControllerDelegate {
 		})
 
 		if UIImagePickerController.availableCaptureModes(for: .rear) != nil { // prevent simulator error
-			imageController.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.default) { _ in
+			imageController.addAction(UIAlertAction(title: "Camera", style: UIAlertAction.Style.default) { _ in
 				if UIImagePickerController.isSourceTypeAvailable(.camera) {
 					self.imagePicker.sourceType = .camera
 					self.imagePicker.allowsEditing = true
@@ -318,7 +318,7 @@ extension ShepardController: UIImagePickerControllerDelegate {
 			})
 		}
 
-		imageController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { _ in })
+		imageController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { _ in })
 
 		let iPadPopover = imageController.popoverPresentationController
 		iPadPopover?.sourceRect = sender.frame
@@ -328,10 +328,13 @@ extension ShepardController: UIImagePickerControllerDelegate {
 	}
     public func imagePickerController(
         _ picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [String : Any]
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
     ) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
 		picker.dismiss(animated: true, completion: nil)
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage,
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage,
             var game = App.current.game,
             game.shepard?.savePhoto(image: image) == true {
             setupPhotoValue()
@@ -340,11 +343,11 @@ extension ShepardController: UIImagePickerControllerDelegate {
 			let alert = UIAlertController(
 				title: nil,
 				message: "There was an error saving this image",
-				preferredStyle: UIAlertControllerStyle.alert
+				preferredStyle: UIAlertController.Style.alert
 			)
 			alert.addAction(UIAlertAction(
 				title: "Try Again",
-				style: UIAlertActionStyle.default,
+				style: UIAlertAction.Style.default,
 				handler: { _ in
 					alert.dismiss(animated: true, completion: nil)
 				}
@@ -483,3 +486,13 @@ extension ShepardController: VoiceActorLinkable {
 	}
 }
 // swiftlint:enable file_length
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}

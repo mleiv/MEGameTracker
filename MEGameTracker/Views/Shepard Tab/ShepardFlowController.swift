@@ -11,7 +11,7 @@ import UIKit
 class ShepardFlowController: IBIncludedThing {
 
 	var appearanceController: ShepardAppearanceController? {
-		for child in childViewControllers where !UIWindow.isInterfaceBuilder {
+		for child in children where !UIWindow.isInterfaceBuilder {
 			if let appearanceController = child as? ShepardAppearanceController {
 				return appearanceController
 			}

@@ -13,7 +13,7 @@ public struct Alert {
 
 // MARK: Types
 
-	public typealias ActionButtonType = (title: String, style: UIAlertActionStyle, handler: ((UIAlertAction) -> Void))
+	public typealias ActionButtonType = (title: String, style: UIAlertAction.Style, handler: ((UIAlertAction) -> Void))
 
 // MARK: Properties
 

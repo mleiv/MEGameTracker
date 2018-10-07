@@ -173,7 +173,7 @@ open class IBIncludedSubThing: UIView, IBIncludedThingLoadable {
 		if topController == nil {
 			return nil
 		}
-		for viewController in topController.childViewControllers {
+		for viewController in topController.children {
 			// first try, deep dive into child controllers
 			if let parentViewController = findParent(ofController: viewController) {
 				return parentViewController
@@ -209,7 +209,7 @@ public protocol IBIncludedThingLoadable: class {
 	var includedNib: String? { get set }
 	var nibController: String? { get set }
 	// reference:
-	weak var includedController: UIViewController? { get set }
+    var includedController: UIViewController? { get set }
 	// main:
 	func attach(toController parentController: UIViewController?, toView parentView: UIView?)
 	func detach()
@@ -240,7 +240,7 @@ extension IBIncludedThingLoadable {
 	/// Main function to remove the included content.
 	public func detach() {
 		includedController?.view.removeFromSuperview()
-		includedController?.removeFromParentViewController()
+		includedController?.removeFromParent()
 		self.includedStoryboard = nil
 		self.sceneId = nil
 		self.includedNib = nil
@@ -284,9 +284,9 @@ extension IBIncludedThingLoadable {
 		// save for later use
 		includedController = controller
 		// attach to hierarchy
-		controller.willMove(toParentViewController: parentController)
-		parentController.addChildViewController(controller)
-		controller.didMove(toParentViewController: parentController)
+		controller.willMove(toParent: parentController)
+		parentController.addChild(controller)
+		controller.didMove(toParent: parentController)
 	}
 
 	/// Internal: inserts the included view inside the IBIncludedThing view. 
@@ -357,7 +357,7 @@ extension UIViewController {
 	/// A convenient utility for quickly running some code on a view controller of a specific type 
 	///	in the current view controller hierarchy.
 	public func find<T: UIViewController>(controllerType: T.Type, apply: ((T) -> Void)) {
-		for childController in childViewControllers {
+		for childController in children {
 			if let foundController = childController as? T {
 				apply(foundController)
 			} else {

@@ -290,7 +290,7 @@ extension SimpleCoreDataManageable {
             alterFetchRequest(fetchRequest)
             do {
                 let items: [T] = try fetchRequest.execute()
-                result = items.flatMap { transformEntity($0) }
+                result = items.compactMap { transformEntity($0) }
             } catch let fetchError as NSError {
                 print("Error: getAllTransformed failed: \(fetchError)")
             }

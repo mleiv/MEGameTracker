@@ -39,7 +39,7 @@ import UIKit
 		compatibleWith: nil
 	)
 
-	override open func setup() {
+	override public func setup() {
 		if nib == nil, let view = RadioButtonNib.loadNib(
 			onImage: isParamour ? HeartButton.checkedImage : HeartButton.checkedAltImage,
 			offImage: isParamour ? HeartButton.uncheckedImage : HeartButton.uncheckedAltImage

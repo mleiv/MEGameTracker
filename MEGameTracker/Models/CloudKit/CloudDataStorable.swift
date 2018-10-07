@@ -68,12 +68,12 @@ public protocol CloudDataStorable {
 	static var defaultManager: SimpleCloudKitManageableConforming { get set }
 
 	/// Create a consistent record id for any cloud kit object.
-	func getRecordId() -> CKRecordID
+	func getRecordId() -> CKRecord.ID
 
 	/// Create a consistent record id based on a provided recordName.
 	static func getRecordId(
 		recordName: String
-	) -> CKRecordID
+	) -> CKRecord.ID
 
 	/// Save changed fields and mark local object as needing a cloud sync.
 	mutating func notifySaveToCloud(fields: [String: Any?])
@@ -100,11 +100,11 @@ public protocol CloudDataStorable {
 	static func getAllDeletesToCloud(
 		isFullDatabaseCopy: Bool,
 		with manager: CodableCoreDataManageable?
-	) -> [CKRecordID]
+	) -> [CKRecord.ID]
 
 	/// Any action on completion of a cloud delete.
 	static func confirmRecordIdDeleted(
-		recordId: CKRecordID,
+		recordId: CKRecord.ID,
 		with manager: CodableCoreDataManageable?
 	)
 
@@ -127,7 +127,7 @@ public protocol CloudDataStorable {
 
 	/// Translate a record object into a local serialized value for local batch delete.
 	static func serializeRecordDelete(
-		recordId: CKRecordID
+		recordId: CKRecord.ID
 	) -> CloudDataRecordChange
 }
 
@@ -138,16 +138,16 @@ extension CloudDataStorable {
 
 	/// (Protocol default)
 	/// Create a consistent record id for any cloud kit object.
-	public func getRecordId() -> CKRecordID {
-		return CKRecordID(recordName: getIdentifyingName(), zoneID: GamesDataBackup.current.zoneId)
+	public func getRecordId() -> CKRecord.ID {
+		return CKRecord.ID(recordName: getIdentifyingName(), zoneID: GamesDataBackup.current.zoneId)
 	}
 
 	/// (Protocol default)
 	/// Create a consistent record id based on a provided recordName.
 	public static func getRecordId(
 		recordName: String
-	) -> CKRecordID {
-		return CKRecordID(recordName: recordName, zoneID: GamesDataBackup.current.zoneId)
+	) -> CKRecord.ID {
+		return CKRecord.ID(recordName: recordName, zoneID: GamesDataBackup.current.zoneId)
 	}
 
 // MARK: Save
@@ -183,8 +183,8 @@ extension CloudDataStorable {
 	/// (Protocol default)
 	/// Create a CKRecord object (based on object's last record object, if it is available).
 	public func createCKRecord() -> CKRecord {
-		if let archivedData = lastRecordData {
-			let unarchiver = NSKeyedUnarchiver(forReadingWith: archivedData)
+		if let archivedData = lastRecordData,
+            let unarchiver = try? NSKeyedUnarchiver(forReadingFrom: archivedData) {
 			unarchiver.requiresSecureCoding = true
 			if let record = CKRecord(coder: unarchiver) {
 				return record
@@ -255,7 +255,7 @@ extension CloudDataStorable {
 	public static func getAllDeletesToCloud(
 		isFullDatabaseCopy: Bool,
 		with manager: CodableCoreDataManageable?
-	) -> [CKRecordID] {
+	) -> [CKRecord.ID] {
 		guard !isFullDatabaseCopy else { return [] }
 		let source = Self.entityName
         let deletedRows = DeletedRow.getAll(with: manager) { fetchRequest in
@@ -267,7 +267,7 @@ extension CloudDataStorable {
 	/// (Protocol default)
 	/// Any action on completion of a cloud delete.
 	public static func confirmRecordIdDeleted(
-		recordId: CKRecordID,
+		recordId: CKRecord.ID,
 		with manager: CodableCoreDataManageable?
 	) {
         _ = DeletedRow.delete(identifier: recordId.recordName, with: manager)
@@ -313,7 +313,7 @@ extension CloudDataStorable {
 	/// (Protocol default)
 	/// Translate a record object into a local serialized value for local batch delete.
 	public static func serializeRecordDelete(
-		recordId: CKRecordID
+		recordId: CKRecord.ID
 	) -> CloudDataRecordChange {
         return CloudDataRecordChange(
             recordId: recordId.recordName,

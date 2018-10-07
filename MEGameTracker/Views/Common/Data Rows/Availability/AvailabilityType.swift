@@ -44,11 +44,17 @@ public struct AvailabilityRowType: TextDataRowType {
 			didSetup = true
 			view.backgroundColor = UIColor.black
 			view.textView?.identifier = "Caption.DisabledOppositeColor.MediumItalic"
-			view.textView?.linkTextAttributes = [
-				NSAttributedStringKey.foregroundColor.rawValue: Styles.Colors.linkOnBlackColor
-			]
+			view.textView?.linkTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([
+				NSAttributedString.Key.foregroundColor.rawValue: Styles.Colors.linkOnBlackColor
+			])
 			view.textView?.textAlignment = .center
 		}
 		view.textView?.text = text
 	}
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }

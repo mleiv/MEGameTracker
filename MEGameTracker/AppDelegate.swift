@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(
 		_ application: UIApplication,
-		didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+		didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
 	) -> Bool {
 		// Override point for customization after application launch.
 		return true
@@ -112,7 +112,7 @@ extension AppDelegate {
 		}
 
 		// UI stuff
-		Styles.current.initialize(fromWindow: window)
+        Styles.current.initialize(fromWindow: window)
 
 		// start the chain to load core data and cloud data and init the ME App:
 		initializeData(application: application)
@@ -146,10 +146,11 @@ extension AppDelegate {
 			self.isAppFirstOpen = false
 			self.isClosedApp = true
 			// close app
-			if backgroundTask != UIBackgroundTaskInvalid, let backgroundTask = backgroundTask {
+			if let backgroundTask = backgroundTask,
+                backgroundTask.rawValue != convertFromUIBackgroundTaskIdentifier(UIBackgroundTaskIdentifier.invalid) {
 				application.endBackgroundTask(backgroundTask)
 			}
-			backgroundTask = UIBackgroundTaskInvalid
+			backgroundTask = UIBackgroundTaskIdentifier(rawValue: convertFromUIBackgroundTaskIdentifier(UIBackgroundTaskIdentifier.invalid))
 		}
 
 		backgroundTask = application.beginBackgroundTask {
@@ -316,4 +317,9 @@ extension AppDelegate {
 			self?.appSaveTimer?.tolerance = interval // we aren't that picky about when this runs
 		}
 	}
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIBackgroundTaskIdentifier(_ input: UIBackgroundTaskIdentifier) -> Int {
+	return input.rawValue
 }

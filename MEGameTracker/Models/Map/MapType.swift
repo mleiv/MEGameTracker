@@ -81,7 +81,7 @@ public enum MapType: String, Codable {
 	/// Creates an enum from a heading string value, if possible.
 	public init?(headingValue: String?) {
 		guard let type = MapType.headingValues
-			.filter({ $0.1 == headingValue }).map({ $0.0 }).filter({ $0 != nil }).map({ $0! }).first
+			.filter({ $0.1 == headingValue }).map({ $0.0 }).first
 		else {
 			return nil
 		}

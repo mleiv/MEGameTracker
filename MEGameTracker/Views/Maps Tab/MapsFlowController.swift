@@ -15,7 +15,7 @@ class MapsFlowController: IBIncludedThing {
 	}
 
 	@IBAction func openCallouts(_ sender: AnyObject!) {
-		if let controller = childViewControllers.first as? MapSplitViewController {
+		if let controller = children.first as? MapSplitViewController {
 			let ferriedSegue: FerriedPrepareForSegueClosure = controller.ferriedSegueForCallouts
 			if controller.isCalloutsOpen {
 				controller.closeDetailStoryboard(sender)

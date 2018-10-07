@@ -84,15 +84,15 @@ extension DeletedRow {
 extension DeletedRow {
 
     /// Record identifier for this deleted row.
-    public func getRecordId(recordName: String? = nil) -> CKRecordID {
-        return CKRecordID(recordName: recordName ?? identifier, zoneID: GamesDataBackup.current.zoneId)
+    public func getRecordId(recordName: String? = nil) -> CKRecord.ID {
+        return CKRecord.ID(recordName: recordName ?? identifier, zoneID: GamesDataBackup.current.zoneId)
     }
 
     /// Returns all deleted rows waiting to be sent to the cloud for deletion there.
     public static func getAllDeletesToCloud(
         isFullDatabaseCopy: Bool,
         with manager: CodableCoreDataManageable?
-    ) -> [CKRecordID] {
+    ) -> [CKRecord.ID] {
         guard !isFullDatabaseCopy else { return [] }
         let manager = manager ?? defaultManager
         let deletedRows = DeletedRow.getAll(with: manager)

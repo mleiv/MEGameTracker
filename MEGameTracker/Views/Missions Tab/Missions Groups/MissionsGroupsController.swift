@@ -113,7 +113,7 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 		missionCounts[.mission] = (total: 27, available: 15, unavailable: 10, completed: 2)
 		missionCounts[.assignment] = (total: 57, available: 32, unavailable: 25, completed: 0)
 		missionCounts[.dlc] = (total: 11, available: 8, unavailable: 2, completed: 1)
-		recentMissions = [Mission.getDummy()].flatMap { $0 }
+		recentMissions = [Mission.getDummy()].compactMap { $0 }
 	}
 
 	func precacheMissions() {
@@ -413,10 +413,10 @@ extension MissionsGroupsController {
 	}
 
 	override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

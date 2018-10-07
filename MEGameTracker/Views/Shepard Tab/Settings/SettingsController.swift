@@ -52,13 +52,13 @@ class SettingsController: UITableViewController, Spinnerable {
 		_ tableView: UITableView,
 		estimatedHeightForRowAt indexPath: IndexPath
 	) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 	override func tableView(
 		_ tableView: UITableView,
 		heightForRowAt indexPath: IndexPath
 	) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 
 	override func tableView(
@@ -86,7 +86,7 @@ class SettingsController: UITableViewController, Spinnerable {
 
 	override func tableView(
 		_ tableView: UITableView,
-		commit editingStyle: UITableViewCellEditingStyle,
+		commit editingStyle: UITableViewCell.EditingStyle,
 		forRowAt indexPath: IndexPath
 	) {
 		guard !UIWindow.isInterfaceBuilder else { return }
@@ -95,11 +95,11 @@ class SettingsController: UITableViewController, Spinnerable {
 				let alert = UIAlertController(
 					title: nil,
 					message: "App requires at least one game.",
-					preferredStyle: UIAlertControllerStyle.alert
+					preferredStyle: UIAlertController.Style.alert
 				)
 				alert.addAction(UIAlertAction(
 					title: "Okay",
-					style: UIAlertActionStyle.default,
+					style: UIAlertAction.Style.default,
 					handler: { _ in
 						alert.dismiss(animated: true, completion: nil)
 					}
@@ -112,7 +112,7 @@ class SettingsController: UITableViewController, Spinnerable {
 				let game = games.remove(at: (indexPath as NSIndexPath).row)
 				_ = App.current.delete(uuid: game.uuid)
 				tableView.beginUpdates()
-				tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+				tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
 				tableView.endUpdates()
 				isUpdating = false
 				stopSpinner(inView: view.superview)
@@ -154,7 +154,7 @@ class SettingsController: UITableViewController, Spinnerable {
 	}
 
 	func fetchDummyData() {
-		games = [GameSequence.getDummy(), GameSequence.getDummy()].flatMap { $0 }
+		games = [GameSequence.getDummy(), GameSequence.getDummy()].compactMap { $0 }
 	}
 
 	func setupGameRow(_ row: Int, cell: GameRow) {

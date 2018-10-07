@@ -54,7 +54,7 @@ extension Photo {
 	public static func create(_ image: UIImage, object: Photographical) -> Photo? {
 		let filePath = object.photoFileNameIdentifier
 		if let url = Photo.getUrl(filePath: filePath, isCustomSavedPhoto: true),
-			let imageData = UIImagePNGRepresentation(image) {
+			let imageData = image.pngData() {
 			do {
 				try imageData.write(to: url, options: [.atomic])
                 Nuke.Cache.shared[Request(url: url)] = image

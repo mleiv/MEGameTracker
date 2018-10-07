@@ -93,7 +93,6 @@ public enum ItemType: String, Codable {
 		guard let type = ItemType.headingValues
 			.filter({ $0.1 == headingValue })
 			.map({ $0.0 })
-            .filter({ $0 != nil }).map({ $0! })
             .first
 		else {
 			return nil

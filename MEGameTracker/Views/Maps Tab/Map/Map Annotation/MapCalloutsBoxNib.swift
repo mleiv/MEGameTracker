@@ -163,11 +163,11 @@ extension MapCalloutsBoxNib {
 	func limitMapLocations(_ mapLocations: [MapLocationable]) -> [MapLocationable] {
 		// filter out child missions/items in same location as parent
 		// TODO: make an exception for specific callouts from segue!
-		var ids: [String] = Array(Set( mapLocations.flatMap { $0.id }))
+		var ids: [String] = Array(Set( mapLocations.compactMap { $0.id }))
 		var mapLocations = mapLocations.sorted(by: MapCalloutsBoxNib.sort).filter {
 			!ids.contains($0.inMissionId ?? "") || (explicitCallout?.isEqual($0) ?? false)
 		}
-		mapLocations = mapLocations.flatMap {
+		mapLocations = mapLocations.compactMap {
 			if let index = ids.index(of: $0.id) { ids.remove(at: index); return $0 }; return nil
 		}
 		guard mapLocations.first is Map else {

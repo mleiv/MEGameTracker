@@ -263,10 +263,10 @@ extension PersonController: UIImagePickerControllerDelegate {
 		let imageController = UIAlertController(
 			title: nil,
 			message: nil,
-			preferredStyle:UIAlertControllerStyle.actionSheet
+			preferredStyle:UIAlertController.Style.actionSheet
 		)
 
-		imageController.addAction(UIAlertAction(title: "Camera Roll", style: UIAlertActionStyle.default) { _ in
+		imageController.addAction(UIAlertAction(title: "Camera Roll", style: UIAlertAction.Style.default) { _ in
 			if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
 				self.imagePicker.sourceType = .photoLibrary
 				self.imagePicker.allowsEditing = true
@@ -275,7 +275,7 @@ extension PersonController: UIImagePickerControllerDelegate {
 		})
 
 		if UIImagePickerController.availableCaptureModes(for: .rear) != nil { // prevent simulator error
-			imageController.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.default) { _ in
+			imageController.addAction(UIAlertAction(title: "Camera", style: UIAlertAction.Style.default) { _ in
 				if UIImagePickerController.isSourceTypeAvailable(.camera) {
 					self.imagePicker.sourceType = .camera
 					self.imagePicker.allowsEditing = true
@@ -284,7 +284,7 @@ extension PersonController: UIImagePickerControllerDelegate {
 			})
 		}
 
-		imageController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { _ in })
+		imageController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { _ in })
 
 		let iPadPopover = imageController.popoverPresentationController
 		iPadPopover?.sourceRect = sender.frame
@@ -305,11 +305,11 @@ extension PersonController: UIImagePickerControllerDelegate {
 			let alert = UIAlertController(
 				title: nil,
 				message: "There was an error saving this image",
-				preferredStyle: UIAlertControllerStyle.alert
+				preferredStyle: UIAlertController.Style.alert
 			)
 			alert.addAction(UIAlertAction(
 				title: "Try Again",
-				style: UIAlertActionStyle.default,
+				style: UIAlertAction.Style.default,
 				handler: { _ in
 					alert.dismiss(animated: true, completion: nil)
 				}

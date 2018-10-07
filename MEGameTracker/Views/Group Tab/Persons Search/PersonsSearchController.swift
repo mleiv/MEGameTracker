@@ -53,7 +53,7 @@ class PersonsSearchController: UITableViewController, Spinnerable {
 	}
 
 	func fetchDummyData() {
-		persons = [Person.getDummy(), Person.getDummy()].flatMap { $0 }
+		persons = [Person.getDummy(), Person.getDummy()].compactMap { $0 }
 	}
 
 	func setupTableCustomCells() {
@@ -129,14 +129,14 @@ extension PersonsSearchController {
 		_ tableView: UITableView,
 		estimatedHeightForRowAt indexPath: IndexPath
 	) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 
 	override func tableView(
 		_ tableView: UITableView,
 		heightForRowAt indexPath: IndexPath
 	) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 
 	override func tableView(

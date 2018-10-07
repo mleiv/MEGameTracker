@@ -12,9 +12,9 @@ public typealias FerriedPrepareForSegueClosure = ((UIViewController) -> Void)
 
 /// For device-specific segues: splits on Regular width, pushes on Compact width.
 public protocol MESplitViewController: class {
-	weak var mainPlaceholder: IBIncludedSubThing? { get } // required
-	weak var detailBorderLeftView: UIView? { get } // required
-	weak var detailPlaceholder: IBIncludedSubThing? { get } // required
+    var mainPlaceholder: IBIncludedSubThing? { get } // required
+    var detailBorderLeftView: UIView? { get } // required
+    var detailPlaceholder: IBIncludedSubThing? { get } // required
 	var ferriedSegue: FerriedPrepareForSegueClosure? { get set } // required
 	var dontSplitViewInPage: Bool { get } // required
 	func performChangeableSegue(
@@ -85,7 +85,7 @@ extension MESplitViewController where Self: UIViewController {
 final public class MESplitViewControllerBarButtonItem: UIBarButtonItem {
 	// https://www.reddit.com/r/swift/comments/3fjzap/creating_button_action_programatically_using/
 	var actionHandler: (() -> Void)?
-	public convenience init(title: String?, style: UIBarButtonItemStyle, actionHandler: (() -> Void)?) {
+	public convenience init(title: String?, style: UIBarButtonItem.Style, actionHandler: (() -> Void)?) {
 		self.init(title: title, style: style, target: nil, action: nil)
 		self.target = self
 		self.action = #selector(MESplitViewControllerBarButtonItem.triggerClosureAction(_:))

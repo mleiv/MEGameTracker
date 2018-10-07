@@ -30,7 +30,7 @@ extension Markupable where Self: UIView {
 			let match = regex.firstMatch(
 				in: unmarkedText ?? "",
 				options: [],
-				range: NSMakeRange(0, unmarkedText?.characters.count ?? 0)
+				range: NSMakeRange(0, unmarkedText?.count ?? 0)
 			)
 //			print("\(unmarkedText) \(match)")
 			return match != nil // verified: nothing to parse
@@ -61,7 +61,7 @@ extension Markupable where Self: UIView {
 			regex.enumerateMatches(
 				in: sourceString,
 				options: NSRegularExpression.MatchingOptions(rawValue: 0),
-				range: NSMakeRange(0, sourceString.characters.count),
+				range: NSMakeRange(0, sourceString.count),
 				using: { (result, _, _) in
 					//(NSTextCheckingResult?, NSMatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void)
 					if let match = result, match.numberOfRanges == 1 {
@@ -74,9 +74,9 @@ extension Markupable where Self: UIView {
 							let identifier = self.identifier {
 							text = Styles.current.shiftStyleToBoldItalic(identifier, text: textString.stringFrom(2, to: -2))
 						} else if textString.length > 2 {
-							if textString.characters.first == "*", let identifier = self.identifier {
+							if textString.first == "*", let identifier = self.identifier {
 								text = Styles.current.shiftStyleToBold(identifier, text: textString.stringFrom(1, to: -1))
-							} else if textString.characters.first == "_", let identifier = self.identifier {
+							} else if textString.first == "_", let identifier = self.identifier {
 								text = Styles.current.shiftStyleToItalic(identifier, text: textString.stringFrom(1, to: -1))
 							}
 						}
@@ -99,7 +99,7 @@ extension Markupable where Self: UIView {
 			regex.enumerateMatches(
 				in: sourceString,
 				options: NSRegularExpression.MatchingOptions(rawValue: 0),
-				range: NSMakeRange(0, sourceString.characters.count),
+				range: NSMakeRange(0, sourceString.count),
 				using: { (result, _, _) in
 					//(NSTextCheckingResult?, NSMatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void)
 					if let match = result, match.numberOfRanges == 3 {
@@ -173,7 +173,7 @@ extension Markupable where Self: UIView {
 			let attributedLinkImage = NSAttributedString(attachment: linkImage)
 			attributedText.replaceCharacters(in: NSMakeRange(0, 0), with: attributedLinkImage)
 		}
-		attributedText.addAttribute(NSAttributedStringKey.link,
+		attributedText.addAttribute(NSAttributedString.Key.link,
 			value: link,
 			range: NSMakeRange(0, attributedText.length)
 		)

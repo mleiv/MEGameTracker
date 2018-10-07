@@ -76,7 +76,7 @@ final public class ShepardAppearanceSliderCell: UITableViewCell {
 		slider?.value = min(slider.maximumValue, Float(value ?? 0))
 		slider?.addTarget(self,
 			action: #selector(ShepardAppearanceSliderCell.sliderChanged(_:)),
-			for: UIControlEvents.valueChanged
+			for: UIControl.Event.valueChanged
 		)
 		noticeLabel?.text = notice
 		noticeLabel?.isHidden = !(notice?.isEmpty == false)

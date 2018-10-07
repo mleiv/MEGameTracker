@@ -70,13 +70,13 @@ final public class MapsController: UITableViewController, Spinnerable {
 		maps = [.main: [], .recent: []]
 		let map1 = Map.getDummy(json: "{\"id\": 8,\"name\": \"Normandy\",\"description\": \"None\",\"gameVersion\": 2,\"sortIndex\": 1,\"relatedLinks\": \"[\\\"https://masseffect.wikia.com/wiki/Normandy\\\"]\"}")
 		let map2 = Map.getDummy(json: "{\"id\": 1,\"name\": \"Galaxy\",\"description\": \"None\",\"gameVersion\": null,\"sortIndex\": 0,\"relatedLinks\": \"[\\\"https://masseffect.wikia.com/wiki/Galaxy\\\"]\",\"imageName\":\"Galaxy\"}")
-		maps[.main] = [map1, map2].flatMap { $0 }
+		maps[.main] = [map1, map2].compactMap { $0 }
 		let oneDayAgo = Date(timeIntervalSinceNow: TimeInterval(24 * 60 * 60) * -1)
 		var map3 = Map.getDummy(json: "{\"id\": 10,\"name\": \"Omega\",\"description\": \"None\",\"gameVersion\": 2,\"breadcrumbs\": [{\"id\": 1,\"name\": \"Galaxy\"},{\"id\": 2,\"name\": \"Omega Nebula\"},{\"id\": 3,\"name\": \"Sahrabarik\"}],\"relatedLinks\": \"[\\\"https://masseffect.wikia.com/wiki/Omega\\\"]\"}")
 		map3?.modifiedDate = oneDayAgo
 		var map4 = Map.getDummy(json: "{\"id\": 11,\"name\": \"Dossier: The Professor\",\"description\": \"None\",\"gameVersion\": 2,\"breadcrumbs\": [{\"id\": 1,\"name\": \"Galaxy\"},{\"id\": 2,\"name\": \"Omega Nebula\"},{\"id\": 3,\"name\": \"Sahrabarik\"},{\"id\": 10,\"name\": \"Omega\"}],\"relatedLinks\": \"[\\\"https://masseffect.wikia.com/wiki/Omega\\\"]\"}")
 		map4?.modifiedDate = Date()
-		maps[.recent] = [map3, map4].flatMap { $0 }
+		maps[.recent] = [map3, map4].compactMap { $0 }
 		// swiftlint:enable line_length
 	}
 
@@ -235,7 +235,7 @@ extension MapsController {
 
 	override public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		if tableView != self.tableView { // search
-			let sections = searchedMapLocations.keys.flatMap { $0 }
+			let sections = searchedMapLocations.keys.compactMap { $0 }
 			if sections.count <= 1 {
 				return 0
 			}
@@ -318,10 +318,10 @@ extension MapsController {
 	}
 
 	override public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 	override public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 
 	override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

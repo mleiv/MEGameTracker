@@ -35,7 +35,7 @@ public protocol SimpleCloudKitManageable: class, SimpleCloudKitManageableConform
 		completion: @escaping ((Bool) -> Void)
 	)
 	func deleteOneFromCloud(
-		recordId: CKRecordID,
+		recordId: CKRecord.ID,
 		recordType: String,
 		completion: @escaping ((Bool) -> Void)
 	)
@@ -44,11 +44,11 @@ public protocol SimpleCloudKitManageable: class, SimpleCloudKitManageableConform
 		completion: @escaping ((Bool) -> Void)
 	)
 	func fetchSavesToCloud() -> [CKRecord]
-	func fetchDeletesToCloud() -> [CKRecordID]
+	func fetchDeletesToCloud() -> [CKRecord.ID]
 	func changesToCloudCompletion(
 		isSuccess: Bool,
 		savedRecords: [CKRecord],
-		deletedRecordIds: [CKRecordID],
+		deletedRecordIds: [CKRecord.ID],
 		completion: @escaping ((Bool) -> Void)
 	)
 	func resetLocalData(
@@ -97,9 +97,9 @@ public protocol SimpleCloudKitManageable: class, SimpleCloudKitManageableConform
 	)
 	func postChangeBatch(
 		recordsToSave: [CKRecord],
-		recordIDsToDelete: [CKRecordID],
+		recordIDsToDelete: [CKRecord.ID],
 		isRootRequest: Bool,
-		batchCompletion: @escaping (([CKRecord]?, [CKRecordID]?) -> Void),
+		batchCompletion: @escaping (([CKRecord]?, [CKRecord.ID]?) -> Void),
 		finalCompletion: @escaping ((Bool) -> Void)
 	)
 	func checkAvailability(
@@ -117,8 +117,8 @@ extension SimpleCloudKitManageable {
 	var privateDatabase: CKDatabase? {
 		return container.privateCloudDatabase
 	}
-	var zoneId: CKRecordZoneID {
-		return CKRecordZoneID(zoneName: zoneName, ownerName: CKCurrentUserDefaultName)
+	var zoneId: CKRecordZone.ID {
+		return CKRecordZone.ID(zoneName: zoneName, ownerName: CKCurrentUserDefaultName)
 	}
 
 	// MARK: customizable
@@ -131,7 +131,7 @@ extension SimpleCloudKitManageable {
 		completion(true)
 	}
 	public func deleteOneFromCloud(
-		recordId: CKRecordID,
+		recordId: CKRecord.ID,
 		recordType: String,
 		completion: @escaping ((Bool) -> Void)
 	) { completion(true) }
@@ -142,11 +142,11 @@ extension SimpleCloudKitManageable {
 		completion(true)
 	}
 	public func fetchSavesToCloud() -> [CKRecord] { return [] }
-	public func fetchDeletesToCloud() -> [CKRecordID] { return [] }
+	public func fetchDeletesToCloud() -> [CKRecord.ID] { return [] }
 	public func changesToCloudCompletion(
 		isSuccess: Bool,
 		savedRecords: [CKRecord],
-		deletedRecordIds: [CKRecordID],
+		deletedRecordIds: [CKRecord.ID],
 		completion: @escaping ((Bool) -> Void)
 	) {
 		completion(true)
@@ -328,7 +328,7 @@ extension SimpleCloudKitManageable {
 			self.isSyncing = true
 		}
 
-		let options = CKFetchRecordZoneChangesOptions()
+		let options = CKFetchRecordZoneChangesOperation.ZoneOptions()
 		options.previousServerChangeToken = changeToken
 		let operation = CKFetchRecordZoneChangesOperation(
 			recordZoneIDs: [zoneId],
@@ -348,7 +348,7 @@ extension SimpleCloudKitManageable {
 			}
 		}
 
-		operation.recordWithIDWasDeletedBlock = { (recordId: CKRecordID, recordType: String) -> Void in
+		operation.recordWithIDWasDeletedBlock = { (recordId: CKRecord.ID, recordType: String) -> Void in
 			if !self.isFirstSync {
 				// (we don't need to delete stuff if this is our first time fetching data)
 				self.deleteOneFromCloud(recordId: recordId, recordType: recordType) { isQueued in
@@ -482,9 +482,9 @@ extension SimpleCloudKitManageable {
 
 	public func postChangeBatch(
 		recordsToSave: [CKRecord],
-		recordIDsToDelete: [CKRecordID],
+		recordIDsToDelete: [CKRecord.ID],
 		isRootRequest: Bool,
-		batchCompletion: @escaping (([CKRecord]?, [CKRecordID]?) -> Void),
+		batchCompletion: @escaping (([CKRecord]?, [CKRecord.ID]?) -> Void),
 		finalCompletion: @escaping ((Bool) -> Void)
 	) {
 		log("postChangeBatch recordsToSave = \(recordsToSave.count) " +
@@ -496,7 +496,7 @@ extension SimpleCloudKitManageable {
 		operation.modifyRecordsCompletionBlock = {
 			(
 				savedRecords: [CKRecord]?,
-				deletedRecordIds: [CKRecordID]?,
+				deletedRecordIds: [CKRecord.ID]?,
 				error: Error?
 			) in
 			if let error = error {
@@ -552,8 +552,8 @@ extension SimpleCloudKitManageable {
 
 	internal func processChangeBatchLimitExceeded(
 		recordsToSave: [CKRecord],
-		recordIDsToDelete: [CKRecordID],
-		batchCompletion: @escaping (([CKRecord]?, [CKRecordID]?) -> Void),
+		recordIDsToDelete: [CKRecord.ID],
+		batchCompletion: @escaping (([CKRecord]?, [CKRecord.ID]?) -> Void),
 		finalCompletion: @escaping ((Bool) -> Void)
 	) {
 		log("processChangeBatchLimitExceeded recordsToSave = \(recordsToSave.count) " +
@@ -561,7 +561,7 @@ extension SimpleCloudKitManageable {
 
 		// subdivide into batches and send bit by bit
 		var saveBatches: [[CKRecord]] = []
-		var deleteBatches: [[CKRecordID]] = []
+		var deleteBatches: [[CKRecord.ID]] = []
 		var isDivided = false
 		if let batches = splitBatch(original: recordsToSave) {
 			saveBatches = batches
@@ -620,7 +620,7 @@ extension SimpleCloudKitManageable {
 		operation.modifyRecordZonesCompletionBlock = {
 			(
 				savedRecordZones: [CKRecordZone]?,
-				deletedRecordZoneIDs: [CKRecordZoneID]?,
+				deletedRecordZoneIDs: [CKRecordZone.ID]?,
 				error: Error?
 			) in
 			if let error = error {
@@ -687,7 +687,7 @@ extension SimpleCloudKitManageable {
 	}
 
 	func compareAccount(
-		recordId: CKRecordID?,
+		recordId: CKRecord.ID?,
 		completion: @escaping ((Bool) -> Void) = { _ in }
 	) {
 		guard let currentAccount = recordId?.recordName else { completion(true); return }
@@ -778,7 +778,7 @@ extension SimpleCloudKitManageable {
 		}
 		log("subscribeDataChanges")
 		let subscription = CKDatabaseSubscription(subscriptionID: subscriptionId)
-		let notificationInfo = CKNotificationInfo()
+		let notificationInfo = CKSubscription.NotificationInfo()
 		notificationInfo.shouldSendContentAvailable = true
 		subscription.notificationInfo = notificationInfo
 		let operation = CKModifySubscriptionsOperation(

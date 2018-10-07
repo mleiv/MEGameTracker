@@ -115,7 +115,7 @@ extension ConversationRewardSet {
 			let hasOnlyOneLevel: Bool = subset.reduce(true) { $0 && ($1.subset?.isEmpty ?? true) }
 			if hasOnlyOneLevel && (isExclusiveSet || recursedOptions.count == 1) {
 				// insert into same row
-				let nextOptions = recursedOptions.flatMap({ $0.options.first })
+				let nextOptions = recursedOptions.compactMap({ $0.options.first })
 				returnRows = [(level: level, commonContext: commonContext, options: nextOptions)]
 			} else if let context = commonContext {
 				let contextRow: [ConversationRewards.FlatData] = [(level: level, commonContext: context, options: [])]

@@ -73,14 +73,18 @@ public struct SimpleUserDefaults<Type> {
 				|| Type.self == String.self {
 				hasCachedValue = true
 				value = UserDefaults.standard.object(forKey: name) as? Type
-			} else {
+			} else if let T = Type.self as? NSCoding.Protocol {
 				// we don't always have to archive Array and Dictionary
 				// but this is easier
 				hasCachedValue = true
-				if let data = UserDefaults.standard.object(forKey: name) as? Data {
-					value = (NSKeyedUnarchiver.unarchiveObject(with: data) as? Type)
+				if let data = UserDefaults.standard.object(forKey: name) as? Data,
+                    let unarchivedData = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [T], from: data) as? Type
+                    {
+					value = unarchivedData
 				}
-			}
+            } else {
+                let x = 5// big error
+            }
 		}
 		return value ?? defaultValue
 	}

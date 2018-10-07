@@ -142,7 +142,7 @@ public struct MapLocationsList {
 //			button.onClick = self.onClick
 
 			if let locationGroup: [MapLocationable] = locations[key], locationGroup.count > 1 {
-				button.mapLocationPoint = locationGroup.flatMap {
+				button.mapLocationPoint = locationGroup.compactMap {
 					$0.mapLocationPoint
 				}.reduce(MapLocationPoint(x: 0, y: 0, radius: 0)) {
 					$0.width > $1.width && $0.height > $1.height ? $0 : $1

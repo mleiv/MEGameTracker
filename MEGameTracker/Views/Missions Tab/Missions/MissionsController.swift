@@ -25,7 +25,7 @@ final class MissionsController: UITableViewController, Spinnerable {
 	var missions: [Mission] {
 		get {
 			guard !UIWindow.isInterfaceBuilder else {
-				return [Mission.getDummy(), Mission.getDummy()].flatMap { $0 }
+				return [Mission.getDummy(), Mission.getDummy()].compactMap { $0 }
 			}
 			return missionsSplitViewController?.missions ?? []
 		}
@@ -176,14 +176,14 @@ final class MissionsController: UITableViewController, Spinnerable {
 		_ tableView: UITableView,
 		estimatedHeightForRowAt indexPath: IndexPath
 	) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 
 	override func tableView(
 		_ tableView: UITableView,
 		heightForRowAt indexPath: IndexPath
 	) -> CGFloat {
-		return UITableViewAutomaticDimension
+		return UITableView.automaticDimension
 	}
 
 	override func tableView(

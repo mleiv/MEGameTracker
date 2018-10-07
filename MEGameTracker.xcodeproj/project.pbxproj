@@ -163,7 +163,6 @@
 		B136B1241E6CA4B80017F738 /* Change20170305.swift in Sources */ = {isa = PBXBuildFile; fileRef = B136B1231E6CA4B80017F738 /* Change20170305.swift */; };
 		B137FC4A1BA4C970000D312E /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137FC481BA4C970000D312E /* BorderView.swift */; };
 		B137FC4B1BA4C970000D312E /* HairlineBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137FC491BA4C970000D312E /* HairlineBorderView.swift */; };
-		B13CC9501E720C8B00E5AD64 /* IBStylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC94F1E720C8B00E5AD64 /* IBStylesheet.swift */; };
 		B13FB8AA1F43CF78002CCE65 /* CloudDataRecordChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13FB8A91F43CF78002CCE65 /* CloudDataRecordChange.swift */; };
 		B141089E1F43F1D1007C3430 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B141089D1F43F1D1007C3430 /* CoreDataManager.swift */; };
 		B1427AE51D1E1ED20038932B /* GameMapLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1427AE41D1E1ED20038932B /* GameMapLocations.swift */; };
@@ -223,7 +222,6 @@
 		B169BB981CF4035C006BC234 /* VoiceActorLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169BB941CF4035C006BC234 /* VoiceActorLinkView.swift */; };
 		B169BB9D1CF406CB006BC234 /* VoiceActorLinkRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B169BB9A1CF406CB006BC234 /* VoiceActorLinkRow.xib */; };
 		B169BB9E1CF406CB006BC234 /* VoiceActorLinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169BB9C1CF406CB006BC234 /* VoiceActorLinkRow.swift */; };
-		B16A90B01E73581200CC81DF /* IBStyleProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A90AF1E73581200CC81DF /* IBStyleProperty.swift */; };
 		B16CF4891F573D4600651D3E /* BaseDataFileImportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16CF4881F573D4600651D3E /* BaseDataFileImportType.swift */; };
 		B16D72371D2B471C002296DD /* Duplet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D72361D2B471C002296DD /* Duplet.swift */; };
 		B16D72391D2B5F00002296DD /* RecentlyViewedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D72381D2B5F00002296DD /* RecentlyViewedImages.swift */; };
@@ -269,6 +267,14 @@
 		B19191871CE3A98400CF367E /* MissionSortingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19191861CE3A98400CF367E /* MissionSortingTests.swift */; };
 		B19215541E5CB9A400594796 /* SimpleCoreDataManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19215511E5CB9A400594796 /* SimpleCoreDataManageable.swift */; };
 		B19215601E5CC69B00594796 /* DeletedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B192155F1E5CC69B00594796 /* DeletedRow.swift */; };
+		B1952B802161C73C00061C5B /* IBStyleProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B782161C73B00061C5B /* IBStyleProperty.swift */; };
+		B1952B812161C73C00061C5B /* IBStylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B792161C73B00061C5B /* IBStylesheet.swift */; };
+		B1952B822161C73C00061C5B /* IBStylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7A2161C73B00061C5B /* IBStylable.swift */; };
+		B1952B832161C73C00061C5B /* IBGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7B2161C73B00061C5B /* IBGradient.swift */; };
+		B1952B842161C73C00061C5B /* IBStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7C2161C73B00061C5B /* IBStyler.swift */; };
+		B1952B852161C73C00061C5B /* IBFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7D2161C73C00061C5B /* IBFont.swift */; };
+		B1952B862161C73C00061C5B /* IBStyledThings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7E2161C73C00061C5B /* IBStyledThings.swift */; };
+		B1952B872161C73C00061C5B /* IBStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7F2161C73C00061C5B /* IBStyleManager.swift */; };
 		B19684751CF8D76C005608A7 /* OriginHintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19684731CF8D76C005608A7 /* OriginHintable.swift */; };
 		B19684761CF8D76C005608A7 /* OriginHintType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19684741CF8D76C005608A7 /* OriginHintType.swift */; };
 		B196847E1CF8DC04005608A7 /* AvailabilityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19684791CF8DC04005608A7 /* AvailabilityType.swift */; };
@@ -411,12 +417,6 @@
 		B1F3467A1CF1789100D2B28A /* LayoutNotifyingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F346791CF1789100D2B28A /* LayoutNotifyingTableView.swift */; };
 		B1F346851CF1898900D2B28A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F346841CF1898900D2B28A /* Note.swift */; };
 		B1F346871CF1899400D2B28A /* IdentifyingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F346861CF1899400D2B28A /* IdentifyingObject.swift */; };
-		B1F466DC1DA0AE7200EBA563 /* IBFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D41DA0AE7200EBA563 /* IBFont.swift */; };
-		B1F466DD1DA0AE7200EBA563 /* IBGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D51DA0AE7200EBA563 /* IBGradient.swift */; };
-		B1F466DE1DA0AE7200EBA563 /* IBStylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D61DA0AE7200EBA563 /* IBStylable.swift */; };
-		B1F466DF1DA0AE7200EBA563 /* IBStyledThings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D71DA0AE7200EBA563 /* IBStyledThings.swift */; };
-		B1F466E01DA0AE7200EBA563 /* IBStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D81DA0AE7200EBA563 /* IBStyler.swift */; };
-		B1F466E11DA0AE7200EBA563 /* IBStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F466D91DA0AE7200EBA563 /* IBStyleManager.swift */; };
 		B1F78D3B202804670008B36B /* 20180204.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = B1F78D3A202804670008B36B /* 20180204.xcmappingmodel */; };
 		B1FE46A41F493E720050B082 /* GameRowStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE46A31F493E720050B082 /* GameRowStorable.swift */; };
 		B1FE46AE1F4948700050B082 /* DataRowStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE46AD1F4948700050B082 /* DataRowStorable.swift */; };
@@ -683,7 +683,6 @@
 		B136B1231E6CA4B80017F738 /* Change20170305.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Change20170305.swift; sourceTree = "<group>"; };
 		B137FC481BA4C970000D312E /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		B137FC491BA4C970000D312E /* HairlineBorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineBorderView.swift; sourceTree = "<group>"; };
-		B13CC94F1E720C8B00E5AD64 /* IBStylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStylesheet.swift; sourceTree = "<group>"; };
 		B13FB8A91F43CF78002CCE65 /* CloudDataRecordChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDataRecordChange.swift; sourceTree = "<group>"; };
 		B141089D1F43F1D1007C3430 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B1427AE41D1E1ED20038932B /* GameMapLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMapLocations.swift; sourceTree = "<group>"; };
@@ -744,7 +743,6 @@
 		B169BB941CF4035C006BC234 /* VoiceActorLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceActorLinkView.swift; sourceTree = "<group>"; };
 		B169BB9B1CF406CB006BC234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VoiceActorLinkRow.xib; sourceTree = "<group>"; };
 		B169BB9C1CF406CB006BC234 /* VoiceActorLinkRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceActorLinkRow.swift; sourceTree = "<group>"; };
-		B16A90AF1E73581200CC81DF /* IBStyleProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyleProperty.swift; sourceTree = "<group>"; };
 		B16CF4881F573D4600651D3E /* BaseDataFileImportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataFileImportType.swift; sourceTree = "<group>"; };
 		B16D72361D2B471C002296DD /* Duplet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duplet.swift; sourceTree = "<group>"; };
 		B16D72381D2B5F00002296DD /* RecentlyViewedImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentlyViewedImages.swift; sourceTree = "<group>"; };
@@ -790,6 +788,14 @@
 		B19191861CE3A98400CF367E /* MissionSortingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionSortingTests.swift; sourceTree = "<group>"; };
 		B19215511E5CB9A400594796 /* SimpleCoreDataManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCoreDataManageable.swift; sourceTree = "<group>"; };
 		B192155F1E5CC69B00594796 /* DeletedRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletedRow.swift; sourceTree = "<group>"; };
+		B1952B782161C73B00061C5B /* IBStyleProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyleProperty.swift; sourceTree = "<group>"; };
+		B1952B792161C73B00061C5B /* IBStylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStylesheet.swift; sourceTree = "<group>"; };
+		B1952B7A2161C73B00061C5B /* IBStylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStylable.swift; sourceTree = "<group>"; };
+		B1952B7B2161C73B00061C5B /* IBGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBGradient.swift; sourceTree = "<group>"; };
+		B1952B7C2161C73B00061C5B /* IBStyler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyler.swift; sourceTree = "<group>"; };
+		B1952B7D2161C73C00061C5B /* IBFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBFont.swift; sourceTree = "<group>"; };
+		B1952B7E2161C73C00061C5B /* IBStyledThings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyledThings.swift; sourceTree = "<group>"; };
+		B1952B7F2161C73C00061C5B /* IBStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyleManager.swift; sourceTree = "<group>"; };
 		B19684731CF8D76C005608A7 /* OriginHintable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginHintable.swift; sourceTree = "<group>"; };
 		B19684741CF8D76C005608A7 /* OriginHintType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginHintType.swift; sourceTree = "<group>"; };
 		B19684791CF8DC04005608A7 /* AvailabilityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityType.swift; sourceTree = "<group>"; };
@@ -933,12 +939,6 @@
 		B1F346791CF1789100D2B28A /* LayoutNotifyingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutNotifyingTableView.swift; sourceTree = "<group>"; };
 		B1F346841CF1898900D2B28A /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		B1F346861CF1899400D2B28A /* IdentifyingObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyingObject.swift; sourceTree = "<group>"; };
-		B1F466D41DA0AE7200EBA563 /* IBFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBFont.swift; sourceTree = "<group>"; };
-		B1F466D51DA0AE7200EBA563 /* IBGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBGradient.swift; sourceTree = "<group>"; };
-		B1F466D61DA0AE7200EBA563 /* IBStylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStylable.swift; sourceTree = "<group>"; };
-		B1F466D71DA0AE7200EBA563 /* IBStyledThings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyledThings.swift; sourceTree = "<group>"; };
-		B1F466D81DA0AE7200EBA563 /* IBStyler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyler.swift; sourceTree = "<group>"; };
-		B1F466D91DA0AE7200EBA563 /* IBStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyleManager.swift; sourceTree = "<group>"; };
 		B1F78D3A202804670008B36B /* 20180204.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 20180204.xcmappingmodel; sourceTree = "<group>"; };
 		B1FE46A31F493E720050B082 /* GameRowStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRowStorable.swift; sourceTree = "<group>"; };
 		B1FE46AD1F4948700050B082 /* DataRowStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRowStorable.swift; sourceTree = "<group>"; };
@@ -2362,14 +2362,14 @@
 		B1F466D01DA0AE7200EBA563 /* IBStyles */ = {
 			isa = PBXGroup;
 			children = (
-				B1F466D41DA0AE7200EBA563 /* IBFont.swift */,
-				B1F466D51DA0AE7200EBA563 /* IBGradient.swift */,
-				B1F466D61DA0AE7200EBA563 /* IBStylable.swift */,
-				B1F466D71DA0AE7200EBA563 /* IBStyledThings.swift */,
-				B16A90AF1E73581200CC81DF /* IBStyleProperty.swift */,
-				B1F466D81DA0AE7200EBA563 /* IBStyler.swift */,
-				B1F466D91DA0AE7200EBA563 /* IBStyleManager.swift */,
-				B13CC94F1E720C8B00E5AD64 /* IBStylesheet.swift */,
+				B1952B7D2161C73C00061C5B /* IBFont.swift */,
+				B1952B7B2161C73B00061C5B /* IBGradient.swift */,
+				B1952B7A2161C73B00061C5B /* IBStylable.swift */,
+				B1952B7E2161C73C00061C5B /* IBStyledThings.swift */,
+				B1952B7F2161C73C00061C5B /* IBStyleManager.swift */,
+				B1952B782161C73B00061C5B /* IBStyleProperty.swift */,
+				B1952B7C2161C73B00061C5B /* IBStyler.swift */,
+				B1952B792161C73B00061C5B /* IBStylesheet.swift */,
 			);
 			path = IBStyles;
 			sourceTree = "<group>";
@@ -2459,13 +2459,13 @@
 		B028AF191BA12B1900C73373 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Emily Ivie";
 				TargetAttributes = {
 					B028AF201BA12B1900C73373 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = LNQGUJUGYP;
-						LastSwiftMigration = "";
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -2481,7 +2481,7 @@
 					};
 					B028AF341BA12B1900C73373 = {
 						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = "";
+						LastSwiftMigration = 1000;
 						TestTargetID = B028AF201BA12B1900C73373;
 					};
 				};
@@ -2721,7 +2721,6 @@
 				B1B55C4A1E70317E0095A526 /* ValueAltDataRow.swift in Sources */,
 				B099985B1BAB490100ADAA5D /* LineCenteredTextImage.swift in Sources */,
 				B1B43AD81E7272C200746CB0 /* CalloutBalloon.swift in Sources */,
-				B1F466E01DA0AE7200EBA563 /* IBStyler.swift in Sources */,
 				B0F25DA61BC6E0EC007DB127 /* UIPDFView.swift in Sources */,
 				B12B82DB1D012F4F006C83AA /* EventDirection.swift in Sources */,
 				B1A882091CF29AD100603253 /* NotesView.swift in Sources */,
@@ -2734,13 +2733,14 @@
 				B133A2EB1F44C66400524A28 /* CloudDataChangeValue.swift in Sources */,
 				B1B55C4C1E70317E0095A526 /* ValueDataRowDisplayable.swift in Sources */,
 				B1A8820E1CF29AD100603253 /* RelatedMissionsView.swift in Sources */,
-				B1F466DF1DA0AE7200EBA563 /* IBStyledThings.swift in Sources */,
+				B1952B872161C73C00061C5B /* IBStyleManager.swift in Sources */,
 				B14EA9281CF3E1B0009F2B0A /* DecisionDetailController.swift in Sources */,
 				B18566971E6FA27A00E19FC5 /* DecisionsListLinkable.swift in Sources */,
 				B04BF16A1BA12C2E00072DA2 /* UIImage.swift in Sources */,
 				B160EE891CF951500028910C /* ShepardReputationRowType.swift in Sources */,
 				B1EB7C3D1C97CA64006B18BA /* UIViewController.swift in Sources */,
 				B02ACD371BA2797000B7CCB0 /* GameSequences.swift in Sources */,
+				B1952B852161C73C00061C5B /* IBFont.swift in Sources */,
 				B0F7557B1BBE109200984A3C /* MapCalloutsGroupsController.swift in Sources */,
 				B16F8D881E18CD120074F66B /* CloudKitMissions.swift in Sources */,
 				B14EA9371CF3F4DA009F2B0A /* RelatedLinksable.swift in Sources */,
@@ -2765,7 +2765,6 @@
 				B04BF1691BA12C2E00072DA2 /* String.swift in Sources */,
 				B137FC4A1BA4C970000D312E /* BorderView.swift in Sources */,
 				B14EA92B1CF3E1B0009F2B0A /* Decisionsable.swift in Sources */,
-				B1F466DD1DA0AE7200EBA563 /* IBGradient.swift in Sources */,
 				B1DFF0711C9B5C8700FC6500 /* MarkupLabel.swift in Sources */,
 				B1F306671CE7B86000A830C9 /* SpinnerNib.swift in Sources */,
 				B14EA92F1CF3E653009F2B0A /* Bordered.swift in Sources */,
@@ -2775,6 +2774,7 @@
 				B0AAE0481BACEBFE0042B14E /* LinkableButton.swift in Sources */,
 				B0A796EE1C7D764F004F1A56 /* ShepardSplitViewController.swift in Sources */,
 				B0077AAA1BA774860054205D /* LinkHandler.swift in Sources */,
+				B1952B822161C73C00061C5B /* IBStylable.swift in Sources */,
 				B04BF1D71BA12C7900072DA2 /* App.swift in Sources */,
 				B04BF1EB1BA12C7900072DA2 /* Shepard.ClassTalent.swift in Sources */,
 				B15153891F4CD0A400FB7B45 /* DependsOnDecisionValueType.swift in Sources */,
@@ -2783,7 +2783,6 @@
 				B1427AE51D1E1ED20038932B /* GameMapLocations.swift in Sources */,
 				B1DFF0731C9B70DF00FC6500 /* DependentOnType.swift in Sources */,
 				B122A1331CF802AA008E6D1E /* MapLinkable.swift in Sources */,
-				B1F466DE1DA0AE7200EBA563 /* IBStylable.swift in Sources */,
 				B152FEF41D8CD0D600060DD1 /* Comparison.swift in Sources */,
 				B145FDC31E679AB500403A36 /* ActionTargetObject.swift in Sources */,
 				B16F8D521E188F820074F66B /* CloudDataStorable.swift in Sources */,
@@ -2795,7 +2794,6 @@
 				B1FFE3581CF6B151007B3160 /* ConversationRewardsDetailRow.swift in Sources */,
 				B01D8F2E1BA139500039E003 /* ShepardLoveInterestController.swift in Sources */,
 				B04FA6D31BB2231F006474CB /* MissionType.swift in Sources */,
-				B16A90B01E73581200CC81DF /* IBStyleProperty.swift in Sources */,
 				B19684841CF8F13E005608A7 /* Aliasable.swift in Sources */,
 				B145FDD61E67CAB800403A36 /* ConversationRewardType.swift in Sources */,
 				B026735F1BF6E692003E4F07 /* DataItem.swift in Sources */,
@@ -2804,6 +2802,7 @@
 				B02ACD361BA2797000B7CCB0 /* GamePersons.swift in Sources */,
 				B1C2A7541E2CA0B100809653 /* MapLocationButtonNib.swift in Sources */,
 				B129D0CB1C94E52D00CFDD84 /* NSAttributedString.swift in Sources */,
+				B1952B802161C73C00061C5B /* IBStyleProperty.swift in Sources */,
 				B1B11FD81E4E9CA000D97CA1 /* CoreDataMigrations.swift in Sources */,
 				B1FFE3591CF6B151007B3160 /* ConversationRewardsDetailController.swift in Sources */,
 				B02673611BF6E6B9003E4F07 /* ItemType.swift in Sources */,
@@ -2823,7 +2822,6 @@
 				B1A882111CF29AD100603253 /* SideEffectRow.swift in Sources */,
 				B1D4D2611C8CC55A0000F150 /* PersonsGroupsController.swift in Sources */,
 				B1DE27981CFB84D10041D341 /* RadioOptionRowView.swift in Sources */,
-				B13CC9501E720C8B00E5AD64 /* IBStylesheet.swift in Sources */,
 				B01D8F1D1BA139500039E003 /* METab.swift in Sources */,
 				B1F78D3B202804670008B36B /* 20180204.xcmappingmodel in Sources */,
 				B16D72391D2B5F00002296DD /* RecentlyViewedImages.swift in Sources */,
@@ -2875,6 +2873,7 @@
 				B1AEF15F1FF9A9D000DDB169 /* PhotoEditable.swift in Sources */,
 				B1D4D2671C8CC5720000F150 /* MissionsSplitViewController.swift in Sources */,
 				B0AAE0461BACEB7E0042B14E /* Linkable.swift in Sources */,
+				B1952B812161C73C00061C5B /* IBStylesheet.swift in Sources */,
 				B01D8F221BA139500039E003 /* GameRow.swift in Sources */,
 				B1A9957F1F43FBF000EFDE18 /* GenericDecodable.swift in Sources */,
 				B04BF16E1BA12C2E00072DA2 /* IBIncludedThing.swift in Sources */,
@@ -2904,6 +2903,7 @@
 				B01DE64E1BB217AA008F4926 /* MapsFlowController.swift in Sources */,
 				B08E2A531BB23246009546F8 /* Map.swift in Sources */,
 				B1FFE3571CF6B151007B3160 /* ConversationRewardDetailOption.swift in Sources */,
+				B1952B832161C73C00061C5B /* IBGradient.swift in Sources */,
 				B1B11FE61E4E9E8B00D97CA1 /* CoreData.xcdatamodeld in Sources */,
 				B01D8F321BA139500039E003 /* ShepardReputationController.swift in Sources */,
 				B160EE871CF951500028910C /* ShepardClassRowType.swift in Sources */,
@@ -2941,6 +2941,7 @@
 				B13FB8AA1F43CF78002CCE65 /* CloudDataRecordChange.swift in Sources */,
 				B1834A291E78BBDE0042B3AB /* ShepardAppearanceSliderCell.swift in Sources */,
 				B1E1A2821E22ED8100029CBE /* Spinner.swift in Sources */,
+				B1952B842161C73C00061C5B /* IBStyler.swift in Sources */,
 				B1FFE3341CF6AA17007B3160 /* ConversationRewardsable.swift in Sources */,
 				B1C1008E1CC0AB9800D0CDF2 /* Alert.swift in Sources */,
 				B0F61F8B1BB0E90C007E8A5E /* GameVersion.swift in Sources */,
@@ -2978,18 +2979,17 @@
 				B1D1E37B1E1C251400860A42 /* SimpleUserDefaults.swift in Sources */,
 				B01D8F281BA139500039E003 /* ShepardAppearanceController.swift in Sources */,
 				B14EA92A1CF3E1B0009F2B0A /* DecisionRow.swift in Sources */,
+				B1952B862161C73C00061C5B /* IBStyledThings.swift in Sources */,
 				B16F8D871E18CD120074F66B /* CloudKitMaps.swift in Sources */,
 				B16F8D8B1E18CD120074F66B /* CloudKitSequences.swift in Sources */,
 				B119A9DD1C974BBF00FE098C /* PopupAlertView.swift in Sources */,
 				B16F7BA01F4E6D2600467022 /* DataEventsable.swift in Sources */,
 				B169BB981CF4035C006BC234 /* VoiceActorLinkView.swift in Sources */,
 				B16F8D841E18CD120074F66B /* CloudKitDecisions.swift in Sources */,
-				B1F466E11DA0AE7200EBA563 /* IBStyleManager.swift in Sources */,
 				B04FA6D71BB22657006474CB /* GameMissions.swift in Sources */,
 				B11D83901C98C6CB0096FD77 /* DataEvents.swift in Sources */,
 				B01D8F1B1BA139500039E003 /* Styles.swift in Sources */,
 				B1C388701BA4B35E0088D8A8 /* PersonRow.swift in Sources */,
-				B1F466DC1DA0AE7200EBA563 /* IBFont.swift in Sources */,
 				B02673631BF6EA52003E4F07 /* Item.swift in Sources */,
 				B1A1B06E1E137F5B009A5688 /* GameSegments.swift in Sources */,
 				B1D4D26D1C8CCB240000F150 /* MissionController.swift in Sources */,
@@ -3577,12 +3577,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -3610,13 +3612,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -3633,12 +3635,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -3660,12 +3664,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -3689,8 +3693,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -3711,8 +3714,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -3725,8 +3727,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.urdnot.MassEffectTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MEGameTracker.app/MEGameTracker";
 			};
 			name = Debug;
@@ -3739,8 +3740,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.urdnot.MassEffectTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MEGameTracker.app/MEGameTracker";
 			};
 			name = Release;

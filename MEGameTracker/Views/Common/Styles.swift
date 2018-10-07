@@ -256,45 +256,45 @@ public struct Styles: IBStylesheet {
 
 		if let titleFont = Fonts.body.boldStyle.getUIFont() {
 			UINavigationBar.appearance().titleTextAttributes = [
-				NSAttributedStringKey.font: titleFont,
-				NSAttributedStringKey.foregroundColor: Colors.navBarTitle,
+				NSAttributedString.Key.font: titleFont,
+				NSAttributedString.Key.foregroundColor: Colors.navBarTitle,
 			]
 		}
 		if let titleFont = Fonts.body.normalStyle.getUIFont() {
-			UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: titleFont], for: UIControlState())
+			UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: titleFont], for: UIControl.State())
 		}
 
 		UISegmentedControl.appearance().tintColor = Colors.tintColor
 		UISegmentedControl.appearance().backgroundColor = Colors.tintOppositeColor
 		UISegmentedControl.appearance().setTitleTextAttributes([
-			NSAttributedStringKey.foregroundColor: Colors.tintOppositeColor
+			NSAttributedString.Key.foregroundColor: Colors.tintOppositeColor
 		], for: .disabled)
 		UISwitch.appearance().onTintColor = Styles.Colors.tintColor
 		UISwitch.appearance().tintColor = Styles.Colors.tintOppositeColor
 
 		if let fontNormal = Fonts.body.normalStyle.getUIFont() {
-			UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedStringKey.font: fontNormal], for: .normal)
+			UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.font: fontNormal], for: .normal)
 		}
 
 		let bundle = Bundle.currentAppBundle
 		let minimumTrackImage = UIImage(named: "Slider Filled", in: bundle, compatibleWith: nil)?
-									.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 5, 0, 5))
+									.resizableImage(withCapInsets: UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 5))
 		let maximumTrackImage = UIImage(named: "Slider Empty", in: bundle, compatibleWith: nil)?
-									.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 5, 0, 5))
+									.resizableImage(withCapInsets: UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 5))
 		let thumbImage = UIImage(named: "Slider Thumb", in: bundle, compatibleWith: nil)
-		UISlider.appearance().setMinimumTrackImage(minimumTrackImage, for: UIControlState())
-		UISlider.appearance().setMaximumTrackImage(maximumTrackImage, for: UIControlState())
-		UISlider.appearance().setThumbImage(thumbImage, for: UIControlState())
+		UISlider.appearance().setMinimumTrackImage(minimumTrackImage, for: UIControl.State())
+		UISlider.appearance().setMaximumTrackImage(maximumTrackImage, for: UIControl.State())
+		UISlider.appearance().setThumbImage(thumbImage, for: UIControl.State())
 		UISlider.appearance().setThumbImage(thumbImage, for: .highlighted)
 
-		UITextView.appearance().linkTextAttributes = [
-			NSAttributedStringKey.foregroundColor.rawValue: Colors.linkOnWhiteColor
-		]
+		UITextView.appearance().linkTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([
+			NSAttributedString.Key.foregroundColor.rawValue: Colors.linkOnWhiteColor
+		])
 
 		let toolbarItems = UIBarButtonItem.appearance()
 		toolbarItems.tintColor = Colors.tintColor
 		if let font = Fonts.caption.boldStyle.getUIFont() {
-			toolbarItems.setTitleTextAttributes([NSAttributedStringKey.font: font], for: UIControlState())
+			toolbarItems.setTitleTextAttributes([NSAttributedString.Key.font: font], for: UIControl.State())
 		}
 	}
 }
@@ -320,14 +320,14 @@ extension IBStylesheet {
 
 	public func shiftStyleToItalic(_ style: String, text: String) -> NSAttributedString {
 		if let styles = styles[style] {
-			var attributes: [NSAttributedStringKey: AnyObject] = [:]
+			var attributes: [NSAttributedString.Key: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
-				attributes[NSAttributedStringKey.font] = fontStyle.italic().getUIFont()
+				attributes[NSAttributedString.Key.font] = fontStyle.italic().getUIFont()
 			}
 			if let color = styles[.textColor] as? UIColor {
-				attributes[NSAttributedStringKey.foregroundColor] = color
+				attributes[NSAttributedString.Key.foregroundColor] = color
 			}
-			attributes[NSAttributedStringKey(rawValue: "identifier")] = style as AnyObject?
+			attributes[NSAttributedString.Key(rawValue: "identifier")] = style as AnyObject?
 			return NSAttributedString(string: text, attributes: attributes)
 		}
 		return NSAttributedString()
@@ -335,14 +335,14 @@ extension IBStylesheet {
 
 	public func shiftStyleToBold(_ style: String, text: String) -> NSAttributedString {
 		if let styles = styles[style] {
-			var attributes: [NSAttributedStringKey: AnyObject] = [:]
+			var attributes: [NSAttributedString.Key: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
-				attributes[NSAttributedStringKey.font] = fontStyle.bold().getUIFont()
+				attributes[NSAttributedString.Key.font] = fontStyle.bold().getUIFont()
 			}
 			if let color = styles[.textColor] as? UIColor {
-				attributes[NSAttributedStringKey.foregroundColor] = color
+				attributes[NSAttributedString.Key.foregroundColor] = color
 			}
-			attributes[NSAttributedStringKey(rawValue: "identifier")] = style as AnyObject?
+			attributes[NSAttributedString.Key(rawValue: "identifier")] = style as AnyObject?
 			return NSAttributedString(string: text, attributes: attributes)
 		}
 		return NSAttributedString()
@@ -350,14 +350,14 @@ extension IBStylesheet {
 
 	public func shiftStyleToBoldItalic(_ style: String, text: String) -> NSAttributedString {
 		if let styles = styles[style] {
-			var attributes: [NSAttributedStringKey: AnyObject] = [:]
+			var attributes: [NSAttributedString.Key: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
-				attributes[NSAttributedStringKey.font] = fontStyle.italic().bold().getUIFont()
+				attributes[NSAttributedString.Key.font] = fontStyle.italic().bold().getUIFont()
 			}
 			if let color = styles[.textColor] as? UIColor {
-				attributes[NSAttributedStringKey.foregroundColor] = color
+				attributes[NSAttributedString.Key.foregroundColor] = color
 			}
-			attributes[NSAttributedStringKey(rawValue: "identifier")] = style as AnyObject?
+			attributes[NSAttributedString.Key(rawValue: "identifier")] = style as AnyObject?
 			return NSAttributedString(string: text, attributes: attributes)
 		}
 		return NSAttributedString()
@@ -372,16 +372,16 @@ extension IBStylesheet {
 		return attributedText
 	}
 
-	private func getAttributesByStyleName(_ style: String) -> [NSAttributedStringKey: AnyObject] {
+	private func getAttributesByStyleName(_ style: String) -> [NSAttributedString.Key: AnyObject] {
 		if let styles = styles[style] {
-			var attributes: [NSAttributedStringKey: AnyObject] = [:]
+			var attributes: [NSAttributedString.Key: AnyObject] = [:]
 			if let fontStyle = styles[.font] as? IBFont {
-				attributes[NSAttributedStringKey.font] = fontStyle.getUIFont()
+				attributes[NSAttributedString.Key.font] = fontStyle.getUIFont()
 			}
 			if let color = styles[.textColor] as? UIColor {
-				attributes[NSAttributedStringKey.foregroundColor] = color
+				attributes[NSAttributedString.Key.foregroundColor] = color
 			}
-			attributes[NSAttributedStringKey(rawValue: "identifier")] = style as AnyObject?
+			attributes[NSAttributedString.Key(rawValue: "identifier")] = style as AnyObject?
 			return attributes
 		}
 		return [:]
@@ -394,7 +394,7 @@ extension IBStylesheet {
 					return regex.stringByReplacingMatches(
 						in: oldStyle,
 						options: NSRegularExpression.MatchingOptions(rawValue: 0),
-						range: NSMakeRange(0, oldStyle.characters.count),
+						range: NSMakeRange(0, oldStyle.count),
 						withTemplate: "AltAccentColor"
 					)
 				}
@@ -409,7 +409,7 @@ extension IBStylesheet {
 	) -> NSAttributedString {
 		var newAttributedText = NSMutableAttributedString(attributedString: attributedText)
 		attributedText.enumerateAttribute(
-			NSAttributedStringKey(rawValue: "identifier"),
+			NSAttributedString.Key(rawValue: "identifier"),
 			in: NSMakeRange(0, attributedText.length),
 			options: NSAttributedString.EnumerationOptions(rawValue: 0)
 		) { (value, _, _) -> Void in
@@ -428,3 +428,9 @@ public enum StyleCategory {
 	case plain, italic, medium, link
 }
 // swiftlint:enable file_length type_body_length
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}

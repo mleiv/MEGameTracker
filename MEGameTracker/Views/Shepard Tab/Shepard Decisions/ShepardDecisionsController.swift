@@ -79,7 +79,7 @@ final public class ShepardDecisionsController: UIViewController, Spinnerable {
 	func fetchDummyData() {
 		shepard = Shepard.getDummy()
 		let game = shepard?.gameVersion ?? .game1
-		allDecisions[game] = [Decision.getDummy(), Decision.getDummy()].flatMap { $0 }
+		allDecisions[game] = [Decision.getDummy(), Decision.getDummy()].compactMap { $0 }
 	}
 
 	func changeGame(index: Int) {

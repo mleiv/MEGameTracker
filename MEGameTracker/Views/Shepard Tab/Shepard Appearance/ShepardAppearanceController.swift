@@ -329,7 +329,7 @@ extension ShepardAppearanceController {
 
 	func setupTableCustomCells() {
 		let bundle =  Bundle(for: type(of: self))
-        attributesTableView?.rowHeight = UITableViewAutomaticDimension
+        attributesTableView?.rowHeight = UITableView.automaticDimension
         attributesTableView?.estimatedRowHeight = 88
 		attributesTableView?.register(
 			UINib(nibName: "ShepardAppearanceSliderCell", bundle: bundle),

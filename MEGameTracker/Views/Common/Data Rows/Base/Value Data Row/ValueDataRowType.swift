@@ -12,7 +12,7 @@ public protocol ValueDataRowType {
 //	associatedtype ValueDataRow: ValueDataRowDisplayable
 //	weak var view: ValueDataRow? { get set }
 	// ... because Swift generics still suck
-	weak var row: ValueDataRowDisplayable? { get set }
+    var row: ValueDataRowDisplayable? { get set }
 	var heading: String? { get }
 	var value: String? { get }
 	var viewController: UIViewController? { get }

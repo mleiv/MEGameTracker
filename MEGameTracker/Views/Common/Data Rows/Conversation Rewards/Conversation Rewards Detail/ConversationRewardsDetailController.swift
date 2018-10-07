@@ -30,7 +30,7 @@ final public class ConversationRewardsDetailController: UITableViewController {
 	}
 
 	func setup() {
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
 
 		rewards = mission?.conversationRewards.flatRows() ?? []

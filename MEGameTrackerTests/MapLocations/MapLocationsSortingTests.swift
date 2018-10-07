@@ -58,7 +58,7 @@ final class MapLocationsSortingTests: MEGameTrackerTests {
 			return
 		}
 
-		let missions: [Mission] = [mission2, mission1, mission3].sorted(by: MapLocation.sort).flatMap({ $0 as Mission })
+		let missions: [Mission] = [mission2, mission1, mission3].sorted(by: MapLocation.sort).compactMap({ $0 as Mission })
 //		let missions = [mission5, mission2, mission1, mission4, mission3].sort(Mission.sort)
 		XCTAssert(missions[0] == mission1, "Invalid sort index 1")
 		XCTAssert(missions[1] == mission2, "Invalid sort index 2")

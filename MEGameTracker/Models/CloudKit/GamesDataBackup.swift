@@ -28,7 +28,7 @@ final public class GamesDataBackup: SimpleCloudKitManageable {
 		completion(isQueued)
 	}
 	public func deleteOneFromCloud(
-		recordId: CKRecordID,
+		recordId: CKRecord.ID,
 		recordType: String,
 		completion: @escaping ((Bool) -> Void)
 	) {
@@ -47,13 +47,13 @@ final public class GamesDataBackup: SimpleCloudKitManageable {
 	public func fetchSavesToCloud() -> [CKRecord] {
 		return gatherAllSavesToCloud()
 	}
-	public func fetchDeletesToCloud() -> [CKRecordID] {
+	public func fetchDeletesToCloud() -> [CKRecord.ID] {
 		return gatherAllDeletesToCloud()
 	}
 	public func changesToCloudCompletion(
 		isSuccess: Bool,
 		savedRecords: [CKRecord],
-		deletedRecordIds: [CKRecordID],
+		deletedRecordIds: [CKRecord.ID],
 		completion: @escaping ((Bool) -> Void)
 	) {
 		log("changesToCloudCompletion isSuccess = \(isSuccess) " +
@@ -150,7 +150,7 @@ extension GamesDataBackup {
         return true
 	}
 
-	public func queueDeleteFromCloud(recordId: CKRecordID, recordType: String) -> Bool {
+	public func queueDeleteFromCloud(recordId: CKRecord.ID, recordType: String) -> Bool {
         log("queueDeleteFromCloud \(recordType)")
         switch recordType {
             case Decision.entityName:
@@ -229,10 +229,10 @@ let manager = CoreDataManager.current
 		return records
 	}
 
-	public func gatherAllDeletesToCloud() -> [CKRecordID] {
+	public func gatherAllDeletesToCloud() -> [CKRecord.ID] {
 		guard !isFirstSync else { return [] }
 let manager = CoreDataManager.current
-		var recordIds: [CKRecordID] = []
+		var recordIds: [CKRecord.ID] = []
 
         recordIds += DeletedRow.getAllDeletesToCloud(isFullDatabaseCopy: false, with: manager)
 
@@ -244,7 +244,7 @@ let manager = CoreDataManager.current
 	// swiftlint:disable function_body_length
 	public func confirmAllChangesToCloud (
 		savedRecords: [CKRecord],
-		deletedRecordIds: [CKRecordID]
+		deletedRecordIds: [CKRecord.ID]
 	) -> Bool {
 		if isFirstSync && accountStatus != .available {
 			return deleteAllPendingCloudData()

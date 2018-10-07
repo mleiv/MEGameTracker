@@ -48,8 +48,11 @@ extension UIView {
 
 extension UIView {
 	func clone() -> UIView! {
-		let viewData = NSKeyedArchiver.archivedData(withRootObject: self)
-		return NSKeyedUnarchiver.unarchiveObject(with: viewData) as? UIView
+        if let viewData = try? NSKeyedArchiver.archivedData(withRootObject: self, requiringSecureCoding: true),
+            let view = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIView.self, from: viewData) {
+            return view
+        }
 		//snapshotViewAfterScreenUpdates ?
+        return nil
 	}
 }

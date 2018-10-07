@@ -241,7 +241,7 @@ extension Shepard {
 			if let error = Format.codeLengthError(oldAppearanceCode, gender: gender, game: gameVersion) {
 				initError = error
 			}
-			for element in oldAppearanceCode.characters {
+			for element in oldAppearanceCode {
 				if let attributeList = Appearance.attributes[gender]?[gameVersion],
 					attributeList.count > contents.count {
 					let attribute = attributeList[contents.count]
