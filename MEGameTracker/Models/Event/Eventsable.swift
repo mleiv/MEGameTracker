@@ -22,7 +22,7 @@ extension Eventsable {
             $0.dictionary
         }).map({
             guard let id = $0["id"] as? String,
-                let type = EventType(stringValue: $0["type"] as? String ?? ""),
+                let type = EventType(stringValue: $0["type"] as? String),
                 var e = Event.get(id: id, type: type, gameSequenceUuid: gameSequenceUuid, with: manager)
             else { return nil }
             // store what object is holding this at present:

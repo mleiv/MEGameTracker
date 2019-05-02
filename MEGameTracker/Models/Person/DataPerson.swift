@@ -282,7 +282,7 @@ extension DataPerson: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension DataPerson: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension DataPerson: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}

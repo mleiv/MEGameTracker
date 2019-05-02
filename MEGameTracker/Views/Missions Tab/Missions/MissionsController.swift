@@ -101,7 +101,7 @@ final class MissionsController: UITableViewController, Spinnerable {
 
 	func selectMission(_ mission: Mission?) -> Bool {
 		guard let mission = mission else { return false }
-		if let index = missions.index(of: mission) {
+		if let index = missions.firstIndex(of: mission) {
 			DispatchQueue.main.async { [weak self] in
 				let indexPath = IndexPath(row: index, section: 0)
 				let cell = self?.tableView.cellForRow(at: indexPath)
@@ -232,7 +232,7 @@ extension MissionsController {
 		// listen for changes to mission data
 		Mission.onChange.cancelSubscription(for: self)
 		_ = Mission.onChange.subscribe(on: self) { [weak self] changed in
-			if let index = self?.missions.index(where: { $0.id == changed.id }),
+			if let index = self?.missions.firstIndex(where: { $0.id == changed.id }),
 				let newMission = changed.object ?? Mission.get(id: changed.id),
 				newMission.missionType != .objective {
 				self?.missions[index] = newMission

@@ -145,7 +145,7 @@ extension Note: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension Note: Hashable {
-	public var hashValue: Int { return uuid.hashValue }
-}
+//// MARK: Hashable
+//extension Note: Hashable {
+//    public var hashValue: Int { return uuid.hashValue }
+//}

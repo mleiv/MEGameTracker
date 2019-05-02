@@ -15,7 +15,7 @@ open class IBStyledView: UIView, IBStylable {
     open var identifier: String? {
         didSet{
             if didLayout && oldValue != identifier {
-                styler?.didApplyStyles = false
+                _ = styler?.didApplyStyles = false
                 _ = styler?.applyStyles()
             }
         }
@@ -23,12 +23,12 @@ open class IBStyledView: UIView, IBStylable {
     open var defaultIdentifier: String { return "View" }
     open lazy var styler: IBStyler? = { return IBStyler(element: self) }()
     open var didLayout = false
-
+    
     public convenience init(identifier: String) {
         self.init()
         self.identifier = identifier
     }
-
+    
     override open func layoutSubviews() {
         _ = styler?.applyStyles()
         super.layoutSubviews()
@@ -50,12 +50,12 @@ open class IBStyledLabel: UILabel, IBStylable {
     open var defaultIdentifier: String { return "Label" }
     open lazy var styler: IBStyler? = { return IBStyler(element: self) }()
     open var didLayout = false
-
+    
     public convenience init(identifier: String) {
         self.init()
         self.identifier = identifier
     }
-
+    
     override open func layoutSubviews() {
         _ = styler?.applyStyles()
         super.layoutSubviews()
@@ -82,7 +82,7 @@ open class IBStyledTextField: UITextField, IBStylable {
         self.init()
         self.identifier = identifier
     }
-
+    
     override open func layoutSubviews() {
         contentVerticalAlignment = .center
         _ = styler?.applyStyles()
@@ -111,7 +111,7 @@ open class IBStyledTextView: UITextView, IBStylable {
         self.init()
         self.identifier = identifier
     }
-
+    
     override open func layoutSubviews() {
         _ = styler?.applyStyles()
         textContainer.lineFragmentPadding = 0
@@ -145,7 +145,7 @@ open class IBStyledImageView: UIImageView, IBStylable {
         self.init()
         self.identifier = identifier
     }
-
+    
     override open func layoutSubviews() {
         _ = styler?.applyStyles()
         super.layoutSubviews()
@@ -172,12 +172,12 @@ open class IBStyledButton: UIButton, IBStylable {
     open lazy var styler: IBStyler? = { return IBStyler(element: self) }()
     open var didLayout = false
     open var lastState: UIControl.State?
-
+    
     public convenience init(identifier: String) {
         self.init()
         self.identifier = identifier
     }
-
+    
     override open func layoutSubviews() {
         _ = styler?.applyStyles()
         let state = getState()
@@ -188,7 +188,7 @@ open class IBStyledButton: UIButton, IBStylable {
         super.layoutSubviews()
         didLayout = true
     }
-
+    
     override open func prepareForInterfaceBuilder() {
         if tempDisabled {
             isEnabled = false
@@ -200,7 +200,7 @@ open class IBStyledButton: UIButton, IBStylable {
         lastState = state
         styler?.applyState(state)
     }
-
+    
     /// A subset of states which IBStyles can actually handle currently. :/
     func getState() -> UIControl.State {
         if !isEnabled {
@@ -259,12 +259,12 @@ open class IBStyledSegmentedControl: UISegmentedControl, IBStylable {
     open var defaultIdentifier: String { return "SegmentedControl" }
     open lazy var styler: IBStyler? = { return IBStyler(element: self) }()
     open var didLayout = false
-
+    
     public convenience init(identifier: String) {
         self.init()
         self.identifier = identifier
     }
-
+    
     override open func layoutSubviews() {
         _ = styler?.applyStyles()
         super.layoutSubviews()

@@ -203,7 +203,7 @@ final public class MapController: UIViewController,
 
 				// update map location in case it changed version
 				if let mapLocation = mapLocation,
-					let index = mapLocations.index(where: { $0.isEqual(mapLocation) }) {
+					let index = mapLocations.firstIndex(where: { $0.isEqual(mapLocation) }) {
 					self.mapLocation = mapLocations[index]
 					explicitMapLocationable = nil
 				}
@@ -589,7 +589,7 @@ extension MapController {
         changed: (id: String, object: T?)
     ) {
         var mapLocations = self.mapLocations
-        if let index = mapLocations.index(where: { $0.id == changed.id }),
+        if let index = mapLocations.firstIndex(where: { $0.id == changed.id }),
             var newLocation = Mission.get(id: changed.id),
             let oldLocation = mapLocations[index] as? T,
             newLocation.modifiedDate > oldLocation.modifiedDate {

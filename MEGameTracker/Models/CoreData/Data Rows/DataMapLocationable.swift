@@ -67,7 +67,7 @@ extension DataMapLocationable where Self: Codable {
     /// Fetch MapLocationable values from a Codable dictionary.
     public mutating func unserializeMapLocationableData(decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DataMapLocationableCodingKeys.self)
-        mapLocationPoint = try container.decodeIfPresent(MapLocationPoint.self, forKey: .mapLocationPoint)
+        mapLocationPoint = try? container.decodeIfPresent(MapLocationPoint.self, forKey: .mapLocationPoint)
         inMapId = try container.decodeIfPresent(String.self, forKey: .inMapId)
         inMissionId = try container.decodeIfPresent(String.self, forKey: .inMissionId)
         sortIndex = try container.decodeIfPresent(Int.self, forKey: .sortIndex) ?? sortIndex

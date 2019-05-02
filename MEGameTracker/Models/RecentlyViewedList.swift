@@ -45,7 +45,7 @@ extension RecentlyViewedList {
     /// Add a new recently viewed object to the list.
     public mutating func add(_ id: String?) {
         guard let id = id else { return }
-        if let index = contents.index(where: { $0.id == id }) {
+        if let index = contents.firstIndex(where: { $0.id == id }) {
             contents.remove(at: index)
         }
         contents.insert(RecentlyViewedList.Item(id: id, date: Date()), at: 0)

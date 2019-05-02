@@ -129,7 +129,7 @@ extension DataDecision: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension DataDecision: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension DataDecision: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}

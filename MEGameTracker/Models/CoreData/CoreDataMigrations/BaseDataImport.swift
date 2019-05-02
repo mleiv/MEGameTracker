@@ -288,9 +288,9 @@ extension BaseDataImport {
                 isChanged = true
             }
             var childInheritableEvents = inheritableEvents + childMap.getInheritableEvents()
-            while let index = eventData.index(where: { $0["eraseParentValue"] as? Bool == true }) {
+            while let index = eventData.firstIndex(where: { $0["eraseParentValue"] as? Bool == true }) {
                 let event = eventData.remove(at: index)
-                if let index2 = childInheritableEvents.index(where: { event["id"] as? String == $0["id"] as? String }) {
+                if let index2 = childInheritableEvents.firstIndex(where: { event["id"] as? String == $0["id"] as? String }) {
                     childInheritableEvents.remove(at: index2)
                 }
                 isChanged = true
@@ -321,7 +321,7 @@ extension BaseDataImport {
                 eventData.append(event.dictionary)
                 isChanged = true
             }
-            while let index = eventData.index(where: { $0["eraseParentValue"] as? Bool == true }) {
+            while let index = eventData.firstIndex(where: { $0["eraseParentValue"] as? Bool == true }) {
                 eventData.remove(at: index)
                 isChanged = true
             }
@@ -353,9 +353,9 @@ extension BaseDataImport {
                 isChanged = true
             }
             var childInheritableEvents = inheritableEvents + childMission.getInheritableEvents()
-            while let index = eventData.index(where: { $0["eraseParentValue"] as? Bool == true }) {
+            while let index = eventData.firstIndex(where: { $0["eraseParentValue"] as? Bool == true }) {
                 let event = eventData.remove(at: index)
-                if let index2 = childInheritableEvents.index(where: { event["id"] as? String == $0["id"] as? String }) {
+                if let index2 = childInheritableEvents.firstIndex(where: { event["id"] as? String == $0["id"] as? String }) {
                     childInheritableEvents.remove(at: index2)
                 }
                 isChanged = true
@@ -390,7 +390,7 @@ extension BaseDataImport {
                 ])
                 isChanged = true
             }
-            while let index = eventData.index(where: { $0["eraseParentValue"] as? Bool == true }) {
+            while let index = eventData.firstIndex(where: { $0["eraseParentValue"] as? Bool == true }) {
                 eventData.remove(at: index)
                 isChanged = true
             }

@@ -70,7 +70,7 @@ public struct CoreDataStructuralMigrations {
 
 	private func reduceMomsToPendingChanges(moms: [NSManagedObjectModel]) throws -> [NSManagedObjectModel] {
 		let meta = try NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: NSSQLiteStoreType, at: storeUrl)
-		guard let index = moms.index(where: {
+		guard let index = moms.firstIndex(where: {
 			$0.isConfiguration(withName: nil, compatibleWithStoreMetadata: meta)
 		}) else {
 			throw MigrationError.incompatibleModels

@@ -405,7 +405,7 @@ extension Event: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension Event: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension Event: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}

@@ -182,22 +182,23 @@ final class ShepardTests: MEGameTrackerTests {
 		_ = shepard?.savePhoto(image: image, isSave: true)
         let uuid = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFD")!
         shepard = Shepard.get(uuid: uuid)
-		let lastChanged = shepard?.modifiedDate
 		XCTAssert(shepard?.photo?.isCustomSavedPhoto == true, "Failed to customize photo")
 
 		// check change was propogated to other versions:
         let uuid2 = UUID(uuidString: "BC0D3009-3385-4132-851A-DF472CBF9EFE")!
         shepard = Shepard.get(uuid: uuid2)
+        let lastChanged = shepard?.modifiedDate
 		XCTAssert(shepard?.photo?.isCustomSavedPhoto == true, "Failed to customize photo on other version")
+
+        sleep(1)
 
 		// #2) Don't share if other version already has a custom image
 		guard let image2 = UIImage(named: "Heart Empty") else {
 			return XCTAssert(false, "Failed to create an image")
 		}
 
-		_ = shepard?.savePhoto(image: image2, isSave: true)
         shepard = Shepard.get(uuid: uuid)
-		XCTAssert(shepard?.photo?.isCustomSavedPhoto == true, "Failed to customize photo")
+        _ = shepard?.savePhoto(image: image2, isSave: true)
 
 		// check change was NOT propogated to other versions:
         shepard = Shepard.get(uuid: uuid2)

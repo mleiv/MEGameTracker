@@ -73,7 +73,7 @@ class PersonsController: UITableViewController, Spinnerable {
 	/// Updates table rows with any custom data to person (like photo)
 	func updatePersonOnChange(_ person: Person) {
 		guard !isUpdating else { return }
-		if let index = persons.index(of: person) {
+		if let index = persons.firstIndex(of: person) {
 			persons[index] = person
 		}
 		isUpdating = true
@@ -157,7 +157,7 @@ class PersonsController: UITableViewController, Spinnerable {
 
 	// custom for DeepLinkable
 	func selectPerson(_ person: Person) {
-		if let index = persons.index(of: person) {
+		if let index = persons.firstIndex(of: person) {
 			tableView.selectRow(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .top)
 		}
 		startSpinner(inView: view.superview)

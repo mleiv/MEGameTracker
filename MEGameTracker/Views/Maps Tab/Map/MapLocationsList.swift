@@ -93,7 +93,7 @@ public struct MapLocationsList {
 		if locations[key] == nil {
 			locations[key] = [location]
 		} else {
-			if let index = locations[key]?.index(where: { $0.isEqual(location) }) {
+			if let index = locations[key]?.firstIndex(where: { $0.isEqual(location) }) {
 				locations[key]?[index] = location
 			} else {
 				locations[key]?.append(location)
@@ -114,7 +114,7 @@ public struct MapLocationsList {
 
 	public mutating func remove(location: MapLocationable) {
 		guard let point = location.mapLocationPoint else { return }
-		if let index = locations[point.key]?.index(where: { $0.isEqual(location) }) {
+		if let index = locations[point.key]?.firstIndex(where: { $0.isEqual(location) }) {
 			locations[point.key]?.remove(at: index)
 			if locations[point.key]?.isEmpty == true {
 				removeButton(atKey: point.key)

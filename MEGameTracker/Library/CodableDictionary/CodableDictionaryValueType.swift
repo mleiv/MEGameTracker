@@ -37,7 +37,9 @@ public enum CodableDictionaryValueType: Codable {
 
     public init(_ value: Any?) {
         self = {
-            if let value = value as? UUID {
+            if let value = value as? CodableDictionaryValueType {
+                return value
+            } else if let value = value as? UUID {
                 return .uuid(value)
             } else if let value = value as? Bool {
                 return .bool(value)
@@ -91,6 +93,10 @@ public enum CodableDictionaryValueType: Codable {
             } else if let value = try? container.decode(Date.self) {
                 return .date(value)
             } else if let value = try? container.decode(Data.self) {
+                if let stringValue = try? container.decode(String.self),
+                    ["Triggers", "BlockedUntil"].contains(stringValue) { // I can't even...
+                    return .string(stringValue)
+                }
                 return .data(value)
             } else if let value = try? container.decode(String.self) {
                 return .string(value)

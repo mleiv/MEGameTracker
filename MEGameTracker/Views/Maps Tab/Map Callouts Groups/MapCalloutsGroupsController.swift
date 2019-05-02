@@ -186,7 +186,7 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 
 	func setControllerData(controller: UIViewController?, forTab tabName: String) {
 		guard let controller = controller as? MapCalloutsController else { return }
-		if let tabIndex = tabNames.index(of: tabName) {
+		if let tabIndex = tabNames.firstIndex(of: tabName) {
 			let type = MapLocationType.allCases[tabIndex]
 			controller.callouts = mapLocations[type] ?? []
 		} else {

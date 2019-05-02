@@ -401,7 +401,7 @@ extension Person: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension Person: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension Person: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}

@@ -108,7 +108,7 @@ extension DataEvent: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension DataEvent: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension DataEvent: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}

@@ -171,30 +171,30 @@ final class EventTests: MEGameTrackerTests {
 	/// Test Event dependent on others
 	func testCombinedEvents() {
 		initializeCurrentGame() // needed for saving event with game uuid
-		let noveria1 = create(Event.self, from: noveria1Json)
-		let noveria2 = create(Event.self, from: noveria2Json)
-		var noveriaCombined = create(Event.self, from: noveriaCombinedJson)
+        let noveria1 = create(Event.self, from: noveria1Json)
+        let noveria2 = create(Event.self, from: noveria2Json)
+        var noveriaCombined = create(Event.self, from: noveriaCombinedJson)
 		_ = create(Mission.self, from: noveriaCombinedMissionJson)
 
-		let expectationMissionOnChange = expectation(description: "Mission on change triggered")
-		Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
-			if changed.id == "M1.Noveria.7Contamination",
-				let mission = changed.object ?? Mission.get(id: changed.id),
-				mission.isAvailable {
-				expectationMissionOnChange.fulfill()
-			}
-		}
+        let expectationMissionOnChange = expectation(description: "Mission on change triggered")
+        Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+            if changed.id == "M1.Noveria.7Contamination",
+                let mission = changed.object ?? Mission.get(id: changed.id),
+                mission.isAvailable {
+                expectationMissionOnChange.fulfill()
+            }
+        }
 
-		XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
-		_ = noveria1?.changed(isTriggered: true)
-		noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
-		XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
-		_ = noveria2?.changed(isTriggered: true)
-		noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
-		XCTAssert(noveriaCombined?.isTriggered == true, "Reported incorrect triggered event state")
+        XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
+        _ = noveria1?.changed(isTriggered: true)
+        noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
+        XCTAssert(noveriaCombined?.isTriggered == false, "Reported incorrect initial event state")
+        _ = noveria2?.changed(isTriggered: true)
+        noveriaCombined = Event.get(id: "Noveria Peak 15 Repaired")
+        XCTAssert(noveriaCombined?.isTriggered == true, "Reported incorrect triggered event state")
 
-		waitForExpectations(timeout: 0.1) { _ in }
-		Mission.onChange.cancelSubscription(for: self)
+        waitForExpectations(timeout: 0.1) { _ in }
+        Mission.onChange.cancelSubscription(for: self)
 	}
 
     func testAdditiveEvents() {

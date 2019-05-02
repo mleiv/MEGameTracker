@@ -76,7 +76,7 @@ public enum MapType: String, Codable, CaseIterable {
 
 	/// Returns the int value of an enum.
 	public var intValue: Int? {
-		return MapType.allCases.index(of: self)
+		return MapType.allCases.firstIndex(of: self)
 	}
 
 	/// Provides a window title for a map of the specified enum type.

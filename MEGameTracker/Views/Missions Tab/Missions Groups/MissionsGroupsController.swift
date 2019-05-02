@@ -162,7 +162,7 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 	func missionsRowByType(_ type: MissionType) -> Int? {
 		let sections = Array(missionCounts.keys)
 		let sortedSections = sections.sorted { $0.intValue < $1.intValue }
-		return sortedSections.index(of: type)
+		return sortedSections.firstIndex(of: type)
 	}
 
 	func searchedMissionsTypeBySection(_ section: Int) -> MissionType? {
@@ -483,7 +483,7 @@ extension MissionsGroupsController {
 		if precachedMissions.reduce(false, { $0 || $1.1.contains(where: { $0.id == changed.id }) }),
 			let newMission = changed.object ?? Mission.get(id: changed.id),
 			newMission.missionType != .objective,
-			let index = precachedMissions[newMission.missionType]?.index(where: { $0.id == newMission.id }) {
+			let index = precachedMissions[newMission.missionType]?.firstIndex(where: { $0.id == newMission.id }) {
 			// change counts
 			processChangedMissionCounts(newMission)
 			// update cached data
@@ -495,7 +495,7 @@ extension MissionsGroupsController {
 		}
 
 		// check recently viewed
-		if let index = recentMissions.index(where: { $0.id == changed.id }),
+		if let index = recentMissions.firstIndex(where: { $0.id == changed.id }),
 			let newMission = changed.object ?? Mission.get(id: changed.id) {
 			recentMissions[index] = newMission
 			reloadRows([IndexPath(row: index, section: MissionsGroupsSection.recent.rawValue)])
@@ -504,7 +504,7 @@ extension MissionsGroupsController {
 
 	/// Changes any local data and UI to reflect updated missions groups counts.
 	private func processChangedMissionCounts(_ newMission: Mission) {
-		guard let index = precachedMissions[newMission.missionType]?.index(where: { $0.id == newMission.id }),
+		guard let index = precachedMissions[newMission.missionType]?.firstIndex(where: { $0.id == newMission.id }),
             let oldMission = precachedMissions[newMission.missionType]?[index]
 		else {
 			return

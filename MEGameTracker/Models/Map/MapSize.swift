@@ -20,7 +20,7 @@ public struct MapSize: Codable {
             referenceSizeBits.count == 2,
             let w = NumberFormatter().number(from: referenceSizeBits[0]),
             let h = NumberFormatter().number(from: referenceSizeBits[1]) {
-            size = CGSize(width: Double(w), height: Double(h))
+            size = CGSize(width: Double(truncating: w), height: Double(truncating: h))
         } else {
             size = nil
         }

@@ -88,7 +88,7 @@ public enum MissionType: String, Codable, CaseIterable {
 
 	/// Returns the int value of an enum.
 	public var intValue: Int? {
-        return MissionType.allCases.index(of: self)
+        return MissionType.allCases.firstIndex(of: self)
 	}
 
 	/// Provides a title prefix for a mission of the specified enum type.

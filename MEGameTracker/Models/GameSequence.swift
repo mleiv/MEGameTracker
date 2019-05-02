@@ -189,7 +189,7 @@ extension GameSequence: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension GameSequence: Hashable {
-	public var hashValue: Int { return uuid.hashValue }
-}
+//// MARK: Hashable
+//extension GameSequence: Hashable {
+//    public var hashValue: Int { return uuid.hashValue }
+//}

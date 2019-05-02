@@ -538,8 +538,8 @@ extension Map: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension Map: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension Map: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}
 // swiftlint:enable file_length

@@ -293,7 +293,7 @@ extension CloudDataStorable {
                     return (v as? NSArray) as? [String]
                 case let v where v is CKAsset:
                     if let v = v as? CKAsset,
-                        let image = UIImage(contentsOfFile: v.fileURL.path) {
+                        let image = UIImage(contentsOfFile: v.fileURL!.path) {
                         return GamesDataBackup.current.cacheImage(image, recordId: record.recordID.recordName, key: key)
                     }
                     fallthrough

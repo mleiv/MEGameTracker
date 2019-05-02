@@ -561,8 +561,8 @@ extension Mission: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension Mission: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension Mission: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}
 // swiftlint:enable file_length

@@ -217,7 +217,7 @@ extension DataItem: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension DataItem: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension DataItem: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}

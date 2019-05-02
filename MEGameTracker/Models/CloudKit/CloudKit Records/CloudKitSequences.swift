@@ -24,7 +24,7 @@ extension GameSequence: CloudDataStorable {
     /// (CloudDataStorable Protocol)
     /// Alter any CK items before handing to codable to modify/create object
     public func getAdditionalCloudFields(changeRecord: CloudDataRecordChange) -> [String: Any?] {
-        var changes = changeRecord.changeSet
+        let changes = changeRecord.changeSet
         // changes.removeValue(forKey: "lastRecordData")
         return changes
     }

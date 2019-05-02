@@ -35,7 +35,7 @@ public enum GameVersion: String, CodingKey, Codable, CaseIterable {
 
     /// The index of this game version 0 - 2
     public var index: Int {
-        return GameVersion.allCases.index(of: self) ?? 0
+        return GameVersion.allCases.firstIndex(of: self) ?? 0
     }
 
     /// The int of this game version 1 - 3

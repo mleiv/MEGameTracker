@@ -189,7 +189,7 @@ final public class MapsController: UITableViewController, Spinnerable {
 			var reloadRows: [IndexPath] = []
 			// can appear in both sections
 			for type in (self?.maps ?? [:]).keys {
-				if let index = self?.maps[type]?.index(where: { $0.id == changed.id }),
+				if let index = self?.maps[type]?.firstIndex(where: { $0.id == changed.id }),
 					let newMap = changed.object ?? Map.get(id: changed.id) {
 					self?.maps[type]?[index] = newMap
 					reloadRows.append(IndexPath(row: index, section: type.rawValue))
@@ -372,9 +372,9 @@ extension MapsController {
 //			return mapLocation?.isShowInParentMap == true ? Map.get(id: map.inMapId ?? "") : nil
 //		}()
 		let indexPath: IndexPath? = {
-			if let index = maps[MapsSection.main]?.index(of: map) {
+			if let index = maps[MapsSection.main]?.firstIndex(of: map) {
 				return IndexPath(row: index, section: MapsSection.main.rawValue)
-			} else if let index = maps[MapsSection.recent]?.index(of: map) {
+			} else if let index = maps[MapsSection.recent]?.firstIndex(of: map) {
 				return IndexPath(row: index, section: MapsSection.recent.rawValue)
 			}
 			return nil

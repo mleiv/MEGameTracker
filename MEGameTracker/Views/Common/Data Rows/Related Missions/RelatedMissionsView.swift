@@ -67,7 +67,7 @@ final public class RelatedMissionsView: SimpleArrayDataRow {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		Mission.onChange.cancelSubscription(for: self)
 		_ = Mission.onChange.subscribe(on: self) { [weak self] changed in
-			if let index = self?.missions.index(where: { $0.id == changed.id }),
+			if let index = self?.missions.firstIndex(where: { $0.id == changed.id }),
 				   let newRow = changed.object ?? Mission.get(id: changed.id) {
 				self?.controller?.relatedMissions[index] = newRow
 				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]

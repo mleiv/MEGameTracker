@@ -402,7 +402,7 @@ extension Item: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension Item: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension Item: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}

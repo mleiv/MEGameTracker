@@ -552,8 +552,8 @@ extension Shepard: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension Shepard: Hashable {
-	public var hashValue: Int { return uuid.hashValue }
-}
+//// MARK: Hashable
+//extension Shepard: Hashable {
+//    public var hashValue: Int { return uuid.hashValue }
+//}
 // swiftlint:enable file_length

@@ -13,9 +13,9 @@ public struct Duplet<A: Hashable, B: Hashable>: Hashable {
 	let one: A
 	let two: B
 
-	public var hashValue: Int {
-		return one.hashValue ^ two.hashValue
-	}
+//    public var hashValue: Int {
+//        return one.hashValue ^ two.hashValue
+//    }
 
 	public init(_ one: A, _ two: B) {
 		self.one = one

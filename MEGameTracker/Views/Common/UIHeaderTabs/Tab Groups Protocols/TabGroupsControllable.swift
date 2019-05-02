@@ -132,7 +132,7 @@ extension TabGroupsControllable where Self: UIViewController {
 	) -> UIViewController? {
 
 		if let tabName = tabControllers.keys.filter(({ self.tabControllers[$0] === viewController})).first,
-			let index = tabNames.index(of: tabName) {
+			let index = tabNames.firstIndex(of: tabName) {
 			tabCurrentIndex = index
 			let prevIndex = tabCurrentIndex - 1
 			if 0..<tabControllers.count ~= prevIndex {
@@ -149,7 +149,7 @@ extension TabGroupsControllable where Self: UIViewController {
 	) -> UIViewController? {
 
 		if let tabName = tabControllers.keys.filter(({ self.tabControllers[$0] === viewController})).first,
-			let index = tabNames.index(of: tabName) {
+			let index = tabNames.firstIndex(of: tabName) {
 			tabCurrentIndex = index
 			let nextIndex = tabCurrentIndex + 1
 			if 0..<tabControllers.count ~= nextIndex {
@@ -170,7 +170,7 @@ extension TabGroupsControllable where Self: UIViewController {
 		if completed, let
 			controller = pageViewController.viewControllers?.last,
 			let tabName = tabControllers.keys.filter(({ self.tabControllers[$0] === controller})).first,
-			let index = tabNames.index(of: tabName) {
+			let index = tabNames.firstIndex(of: tabName) {
 			tabCurrentIndex = index
 			tabs.change(selectedSegmentIndex: tabCurrentIndex)
 		}
@@ -179,7 +179,7 @@ extension TabGroupsControllable where Self: UIViewController {
 	public func switchToTab(_ controller: UIViewController) {
 		var direction = UIPageViewController.NavigationDirection.forward
 		if let tabName = tabControllers.keys.filter(({ self.tabControllers[$0] === controller})).first,
-			let index = tabNames.index(of: tabName) {
+			let index = tabNames.firstIndex(of: tabName) {
 			guard index != tabCurrentIndex else { return }
 			direction = index > tabCurrentIndex ? .forward : .reverse
 			tabCurrentIndex = index

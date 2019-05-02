@@ -90,7 +90,7 @@ final public class NotesView: SimpleArrayDataRow {
 
 	func deleteRow(_ note: Note, sender: UIView?) -> Bool {
 		var note = note
-		if note.delete(), let index = notes.index(of: note) {
+		if note.delete(), let index = notes.firstIndex(of: note) {
 			controller?.notes.remove(at: index)
 			let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
 			removeRows(rows)
@@ -106,7 +106,7 @@ final public class NotesView: SimpleArrayDataRow {
 		Note.onChange.cancelSubscription(for: self)
 		_ = Note.onChange.subscribe(on: self) { [weak self] changed in
 			if let uuid = UUID(uuidString: changed.id),
-                let index = self?.notes.index(where: { $0.uuid == uuid }) ,
+                let index = self?.notes.firstIndex(where: { $0.uuid == uuid }) ,
 				   let newRow = changed.object ?? Note.get(uuid: uuid) {
 				self?.controller?.notes[index] = newRow
 				let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
@@ -116,7 +116,7 @@ final public class NotesView: SimpleArrayDataRow {
 				let blankNote = self?.controller?.getBlankNote(),
 				note.identifyingObject == blankNote.identifyingObject {
 				self?.controller?.notes.append(note)
-				if let index = self?.notes.index(of: note) {
+				if let index = self?.notes.firstIndex(of: note) {
 					let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
 					self?.insertRows(rows)
 				}

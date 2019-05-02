@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
 	func intIndexOf(_ character: Character) -> Int? {
-		guard let index = index(of: character) else { return nil }
+		guard let index = firstIndex(of: character) else { return nil }
 		return distance(from: startIndex, to: index)
 	}
 	/**

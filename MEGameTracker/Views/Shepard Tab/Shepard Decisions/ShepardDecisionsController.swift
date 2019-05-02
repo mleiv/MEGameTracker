@@ -115,7 +115,7 @@ final public class ShepardDecisionsController: UIViewController, Spinnerable {
 		Decision.onChange.cancelSubscription(for: self)
 		_ = Decision.onChange.subscribe(on: self) { [weak self] changed in
 			if let object = changed.object,
-				let index = self?.allDecisions[gameVersion]?.index(of: object) {
+				let index = self?.allDecisions[gameVersion]?.firstIndex(of: object) {
 				self?.allDecisions[gameVersion]?[index] = object
 				DispatchQueue.main.async {
 					self?.setupDecisions()

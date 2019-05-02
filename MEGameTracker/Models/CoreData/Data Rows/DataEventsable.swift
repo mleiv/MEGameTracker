@@ -30,7 +30,7 @@ extension DataEventsable {
     public func getRelatedDataEvents(
         context: NSManagedObjectContext?
     ) -> NSSet {
-        let ids = getIdsFromrawEventDictionary()
+        let ids = getIdsFromRawEventDictionary()
         guard !ids.isEmpty else { return NSSet() }
         let manager = type(of: defaultManager).init(context: context)
         let directEvents = DataEvent.getAll(ids: ids, with: manager)
@@ -41,7 +41,7 @@ extension DataEventsable {
         return NSSet(array: allEvents)
     }
 
-    private func getIdsFromrawEventDictionary() -> [String] {
+    private func getIdsFromRawEventDictionary() -> [String] {
         return rawEventDictionary.map { $0["id"] as? String }.filter({ $0 != nil }).map({ $0! })
     }
 }

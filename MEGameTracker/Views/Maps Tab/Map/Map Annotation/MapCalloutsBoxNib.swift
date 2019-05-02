@@ -168,7 +168,7 @@ extension MapCalloutsBoxNib {
 			!ids.contains($0.inMissionId ?? "") || (explicitCallout?.isEqual($0) ?? false)
 		}
 		mapLocations = mapLocations.compactMap {
-			if let index = ids.index(of: $0.id) { ids.remove(at: index); return $0 }; return nil
+			if let index = ids.firstIndex(of: $0.id) { ids.remove(at: index); return $0 }; return nil
 		}
 		guard mapLocations.first is Map else {
 			return mapLocations
@@ -384,8 +384,8 @@ extension MapCalloutsBoxNib: Calloutsable {
 extension MapCalloutsBoxNib {
 	static let typeSortOrder: [MapLocationType] = [.map, .mission, .item]
 	static func sort(_ first: MapLocationable, _ second: MapLocationable) -> Bool {
-		if let firstType = typeSortOrder.index(of: first.mapLocationType),
-			let secondType = typeSortOrder.index(of: second.mapLocationType),
+		if let firstType = typeSortOrder.firstIndex(of: first.mapLocationType),
+			let secondType = typeSortOrder.firstIndex(of: second.mapLocationType),
 			firstType != secondType {
 			return firstType < secondType
 		} else if let firstMission = first as? Mission, let secondMission = second as? Mission {

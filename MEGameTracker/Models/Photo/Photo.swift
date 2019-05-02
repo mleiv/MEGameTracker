@@ -31,7 +31,7 @@ public struct Photo: Codable {
 			self.filePath = filePath
 			isCustomSavedPhoto = !NSPredicate(format:"SELF MATCHES %@", "http:.*").evaluate(with: filePath)
             if isCustomSavedPhoto,
-                let value = try? FileManager.default.attributesOfItem(atPath: filePath)[.modificationDate],
+                let value = ((try? FileManager.default.attributesOfItem(atPath: filePath)[.modificationDate]) as Any??),
                 let date = value as? Date {
                 modifiedDate = date
             }

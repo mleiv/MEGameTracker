@@ -52,7 +52,7 @@ final public class CalloutsView: SimpleArrayDataRow {
 
 	public func select(mapLocation: MapLocationable?, sender: UIView?) {
 		guard let mapLocation = mapLocation else { return }
-		if let index = callouts.index(where: { $0.isEqual(mapLocation) }) {
+		if let index = callouts.firstIndex(where: { $0.isEqual(mapLocation) }) {
 			let indexPath = IndexPath(row: index, section: 0)
 			openRow(indexPath: indexPath, sender: sender)
 		}
@@ -231,7 +231,7 @@ final public class CalloutsView: SimpleArrayDataRow {
         changed: (id: String, object: T?)
     ) {
         var callouts = controller?.callouts ?? []
-        if let index = callouts.index(where: { $0.id == changed.id }),
+        if let index = callouts.firstIndex(where: { $0.id == changed.id }),
            let callout = changed.object ?? T.get(id: changed.id),
            callout.modifiedDate > (callouts[index] as? T)?.modifiedDate ?? Date.distantPast {
             if let newRow = callout as? MapLocationable {
@@ -275,7 +275,7 @@ final public class CalloutsView: SimpleArrayDataRow {
 
 	func highlight(mapLocation: MapLocationable?) {
 		guard isVisible, let mapLocation = mapLocation else { return }
-		if let index = callouts.index(where: { $0.isEqual(mapLocation) }) {
+		if let index = callouts.firstIndex(where: { $0.isEqual(mapLocation) }) {
 			nib?.tableView?.selectRow(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .top)
 		}
 	}

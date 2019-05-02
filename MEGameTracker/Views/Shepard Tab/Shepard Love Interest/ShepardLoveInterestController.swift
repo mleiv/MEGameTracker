@@ -82,7 +82,7 @@ class ShepardLoveInterestController: UITableViewController, Spinnerable {
 		// listen for decision changes
 		Decision.onChange.cancelSubscription(for: self)
 		_ = Decision.onChange.subscribe(on: self) { [weak self] changed in
-			if let index = self?.persons.index(where: { $0.loveInterestDecisionId == changed.id }) {
+			if let index = self?.persons.firstIndex(where: { $0.loveInterestDecisionId == changed.id }) {
 				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
 				self?.reloadRows(reloadRows)
 			}
@@ -90,7 +90,7 @@ class ShepardLoveInterestController: UITableViewController, Spinnerable {
 		// listen for changes to persons data
 		Person.onChange.cancelSubscription(for: self)
 		_ = Person.onChange.subscribe(on: self) { [weak self] changed in
-			if let index = self?.persons.index(where: { $0.id == changed.id }),
+			if let index = self?.persons.firstIndex(where: { $0.id == changed.id }),
 				let newPerson = changed.object ?? Person.get(id: changed.id) {
 				self?.persons[index] = newPerson
 				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]

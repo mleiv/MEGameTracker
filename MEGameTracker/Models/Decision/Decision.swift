@@ -261,7 +261,7 @@ extension Decision: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension Decision: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension Decision: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}

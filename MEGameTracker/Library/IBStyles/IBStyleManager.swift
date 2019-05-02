@@ -23,7 +23,7 @@ import UIKit
 ///    public var fonts: [IBFont.Style: String] {
 ///        return [:]
 ///    }
-///    public var styles: [String: IBStyles.Properties] {
+///    public var styles: [String: IBStyleProperty.List] {
 ///        return [:]
 ///    }
 ///    func applyGlobalStyles(inWindow window: UIWindow?) {

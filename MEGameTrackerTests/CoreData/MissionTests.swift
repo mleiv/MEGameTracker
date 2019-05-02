@@ -13,7 +13,29 @@ final class MissionTests: MEGameTrackerTests {
 
 	// swiftlint:disable line_length
 
-	let garrusJson = "{\"id\": \"M1.Garrus\",\"sortIndex\": 3,\"gameVersion\": \"1\",\"missionType\": \"Mission\",\"name\": \"Citadel: Garrus\",\"isOptional\": true,\"inMapId\": \"G.C1.Tower\",\"mapLocationPoint\": {\"x\": 1049,\"y\": 571,\"radius\": true},\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/Citadel:_Expose_Saren#Report_to_the_Council\"],\"relatedMissionIds\": [\"M1.ExposeSaren\", \"M1.ShadowBroker\"]}"
+	let garrusJson =
+    """
+    {
+        "id": "M1.Garrus",
+        "sortIndex": 3,
+        "gameVersion": "1",
+        "missionType": "Mission",
+        "name": "Citadel: Garrus",
+        "isOptional": true,
+        "inMapId": "G.C1.Tower",
+        "mapLocationPoint": {
+            "x": 1049,
+            "y": 571,
+            "radius": true
+        },
+        "relatedLinks": [ "https:\\/\\/masseffect.wikia.com\\/wiki\\/Citadel:_Expose_Saren#Report_to_the_Council"
+        ],
+        "relatedMissionIds": [
+            "M1.ExposeSaren",
+            "M1.ShadowBroker"
+        ]
+    }
+    """
 
 	let garrus1Json = "{\"id\": \"M1.Garrus.1\",\"gameVersion\": \"1\",\"missionType\": \"Objective\",\"name\": \"Speak to Harkin\",\"inMissionId\": \"M1.Garrus\"}"
 
@@ -27,9 +49,30 @@ final class MissionTests: MEGameTrackerTests {
 
 	let insignias3Json = "{\"id\": \"A1.UC.TurianInsignias.I.3\",\"gameVersion\": \"1\",\"itemType\": \"Collection\",\"itemDisplayType\": \"Goal\",\"name\": \"Turian Insignia: Edessan Colony\",\"inMissionId\": \"A1.UC.TurianInsignias\"}"
 
-	let digJson = "{\"id\": \"A2.N7.ArcheologicalDig\",\"sortIndex\": 10,\"gameVersion\": \"2\",\"missionType\": \"Assignment\",\"name\": \"N7: Archeological Dig Site\",\"relatedLinks\": [\"https:\\/\\/masseffect.wikia.com\\/wiki\\/N7:_Archeological_Dig_Site\"],\"events\": [{\"type\": \"Triggers\",\"id\": \"Completed: Joab Prothean Pyramid\"}]}"
+	let digJson =
+    """
+    {
+        "id": "A2.N7.ArcheologicalDig",
+        "sortIndex": 10,
+        "gameVersion": "2",
+        "missionType": "Assignment",
+        "name": "N7: Archeological Dig Site",
+        "relatedLinks": [
+            "https:\\/\\/masseffect.wikia.com\\/wiki\\/N7:_Archeological_Dig_Site"
+        ],
+        "events": [
+            {"type": "Triggers", "id": "Completed: Joab Prothean Pyramid"}
+        ]
+    }
+    """
 
-	let pyramidJson = "{\"id\": \"Completed: Joab Prothean Pyramid\",\"gameVersion\": \"2\"}"
+	let pyramidJson =
+    """
+    {
+        "id": "Completed: Joab Prothean Pyramid",
+        "gameVersion": "2"
+    }
+    """
 
 	// swiftlint:enable line_length
 

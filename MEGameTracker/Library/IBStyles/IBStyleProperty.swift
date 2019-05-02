@@ -85,12 +85,12 @@ public enum IBStyleProperty {
 
 // MARK: IBStyles.Property Extensions
 extension IBStyleProperty: Hashable {
-    public var hashValue: Int {
+    public func hash(into hasher: inout Hasher) {
         switch self {
-			case (.custom(let v1)):
-				return v1.hashValue
-			default:
-				return "\(self)".hashValue
+        case (.custom(let v1)):
+            hasher.combine(v1)
+        default:
+            break
         }
     }
 }

@@ -126,7 +126,7 @@ final public class ObjectivesView: SimpleArrayDataRow {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		Mission.onChange.cancelSubscription(for: self)
 		_ = Mission.onChange.subscribe(on: self) { [weak self] changed in
-			if let index = self?.objectives.index(where: { $0.id == changed.id }),
+			if let index = self?.objectives.firstIndex(where: { $0.id == changed.id }),
 				   let newRow = changed.object ?? Mission.get(id: changed.id) {
 				self?.controller?.objectives[index] = newRow
 				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
@@ -136,7 +136,7 @@ final public class ObjectivesView: SimpleArrayDataRow {
 		}
 		Item.onChange.cancelSubscription(for: self)
 		_ = Item.onChange.subscribe(on: self) { [weak self] changed in
-			if let index = self?.objectives.index(where: { $0.id == changed.id }),
+			if let index = self?.objectives.firstIndex(where: { $0.id == changed.id }),
 				   let newRow = changed.object ?? Item.get(id: changed.id) {
 				self?.controller?.objectives[index] = newRow
 				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]

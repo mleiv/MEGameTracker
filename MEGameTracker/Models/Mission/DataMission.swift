@@ -115,10 +115,10 @@ public struct DataMission: Codable, DataMapLocationable {
             String.self,
             forKey: .identicalMissionId
         ) ?? identicalMissionId
-        conversationRewards = try container.decodeIfPresent(
+        conversationRewards = (try? container.decodeIfPresent(
             ConversationRewards.self,
             forKey: .conversationRewards
-        ) ?? conversationRewards
+        )) ?? conversationRewards
         sortIndex = try container.decodeIfPresent(Int.self, forKey: .sortIndex) ?? sortIndex
         relatedLinks = try container.decodeIfPresent([String].self, forKey: .relatedLinks) ?? relatedLinks
         relatedDecisionIds = try container.decodeIfPresent(
@@ -131,10 +131,10 @@ public struct DataMission: Codable, DataMapLocationable {
             forKey: .relatedMissionIds
         ) ?? relatedMissionIds
         objectivesCountToCompletion = try container.decodeIfPresent(Int.self, forKey: .objectivesCountToCompletion)
-        rawEventDictionary = try container.decodeIfPresent(
+        rawEventDictionary = (try? container.decodeIfPresent(
             [CodableDictionary].self,
             forKey: .events
-        ) ?? rawEventDictionary
+        )) ?? rawEventDictionary
         try unserializeMapLocationableData(decoder: decoder)
     }
 
@@ -241,7 +241,7 @@ extension DataMission: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension DataMission: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension DataMission: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}

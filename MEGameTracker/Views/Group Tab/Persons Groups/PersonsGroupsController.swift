@@ -61,7 +61,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 
 	func setControllerData(controller: UIViewController?, forTab tabName: String) {
 		guard let controller = controller as? PersonsController else { return }
-		if let tabIndex = tabNames.index(of: tabName) {
+		if let tabIndex = tabNames.firstIndex(of: tabName) {
 			let type = PersonType.categories()[tabIndex]
 			controller.persons = persons[type] ?? []
 		} else {
@@ -107,7 +107,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 		Person.onChange.cancelSubscription(for: self)
 		_ = Person.onChange.subscribe(on: self) { [weak self] changed in
 			for type in (self?.persons ?? [:]).keys {
-				if let index = self?.persons[type]?.index(where: { $0.id == changed.id }),
+				if let index = self?.persons[type]?.firstIndex(where: { $0.id == changed.id }),
 					let newPerson = changed.object ?? Person.get(id: changed.id) {
 					self?.persons[type]?[index] = newPerson
 					let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
@@ -122,7 +122,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 				return
 			}
 			for type in (self?.persons ?? [:]).keys {
-				if let index = self?.persons[type]?.index(where: { $0.loveInterestDecisionId == changed.id }) {
+				if let index = self?.persons[type]?.firstIndex(where: { $0.loveInterestDecisionId == changed.id }) {
 					if let personId = self?.persons[type]?[index].id,
 						let newPerson = Person.get(id: personId) {
 						self?.persons[type]?[index] = newPerson
@@ -186,7 +186,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 	func selectPerson(_ person: Person?) -> Bool {
 		guard let person = person, view != nil else { return false }
 		let index: Int = {
-			return tabNames.index(of: person.personType.headingValue) ?? 0
+			return tabNames.firstIndex(of: person.personType.headingValue) ?? 0
 		}()
 		if tabNames.indices.contains(index) == true,
 		   let listController = tabControllers[tabNames[index]] {

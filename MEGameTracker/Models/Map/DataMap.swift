@@ -231,7 +231,7 @@ extension DataMap: Equatable {
 	}
 }
 
-// MARK: Hashable
-extension DataMap: Hashable {
-	public var hashValue: Int { return id.hashValue }
-}
+//// MARK: Hashable
+//extension DataMap: Hashable {
+//    public var hashValue: Int { return id.hashValue }
+//}
