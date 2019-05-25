@@ -334,7 +334,7 @@
 		}],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: Palaven"
+			"id": "Completed: Priority: Sur'Kesh + 1"
 		}]
 	}, {
 		"id": "A3.TurretSchematics",
@@ -565,6 +565,7 @@
 		"isShowInParentMap": true,
 		"experience": 210,
 		"reward": "5,000 Credits",
+        "objectivesCountToCompletion": 3,
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Inspirational_Stories"],
 		"conversationRewards": [{
 			"set": {
@@ -1302,7 +1303,7 @@
 		"inMissionId": "A3.N7FuelReactors",
 		"sortIndex": 13001,
 		"gameVersion": "3",
-		"missionType": "Assignment",
+		"missionType": "Objective",
 		"name": "Toxic Gas",
 		"description": "Avoid the gas - it will kill you. Locate the crane controls and use the buttons to move the two containers to the right. Then head to the control console to vent the gas."
 	}, {
@@ -1310,7 +1311,7 @@
 		"inMissionId": "A3.N7FuelReactors",
 		"sortIndex": 13002,
 		"gameVersion": "3",
-		"missionType": "Assignment",
+		"missionType": "Objective",
 		"name": "Barrier Engines (Optional)",
 		"description": "Look around the cleared area for six Reaper barrier engines and destroy them."
 	}, {
@@ -1318,7 +1319,7 @@
 		"inMissionId": "A3.N7FuelReactors",
 		"sortIndex": 13003,
 		"gameVersion": "3",
-		"missionType": "Assignment",
+		"missionType": "Objective",
 		"name": "Fuel Rods",
 		"description": "Return to the fuel rod control and unlock the fuel rods. Fight off the Reaper attack. After you have cleared the area, you will need to seal the two moderator tanks."
 	}, {
@@ -1326,7 +1327,7 @@
 		"inMissionId": "A3.N7FuelReactors",
 		"sortIndex": 13003,
 		"gameVersion": "3",
-		"missionType": "Assignment",
+		"missionType": "Objective",
 		"name": "Moderator Tanks",
 		"description": "Seal the two moderator tanks."
 	}, {
@@ -1334,7 +1335,7 @@
 		"inMissionId": "A3.N7FuelReactors",
 		"sortIndex": 13004,
 		"gameVersion": "3",
-		"missionType": "Assignment",
+		"missionType": "Objective",
 		"name": "Restart Reactor",
 		"description": "Restart the reactor. Fight off the Reaper attack. When Riley asks for help, if you ignore her, she will die."
 	}, {
@@ -1445,12 +1446,12 @@
 					"set": {
 						"isExclusiveSet": true,
 						"options": [{
-							"id": "A3.TurianPlatoon.P10",
+							"id": "A3.TurianPlatoon.P10.Dup1",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"Any ideas?\""
 						}, {
-							"id": "A3.TurianPlatoon.R10",
+							"id": "A3.TurianPlatoon.R10.Dup1",
 							"type": "Renegade",
 							"value": 2,
 							"trigger": "\"You've infected them before.\""
@@ -1460,12 +1461,12 @@
 					"set": {
 						"isExclusiveSet": true,
 						"options": [{
-							"id": "A3.TurianPlatoon.P11",
+							"id": "A3.TurianPlatoon.P11.Dup1",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"That was devious.\""
 						}, {
-							"id": "A3.TurianPlatoon.R11",
+							"id": "A3.TurianPlatoon.R11.Dup1",
 							"type": "Renegade",
 							"value": 2,
 							"trigger": "\"That was clever.\""
@@ -1733,12 +1734,12 @@
 				"context": "Before leaving the planet, to Legion/Geth VI",
 				"isExclusiveSet": true,
 				"options": [{
-					"id": "A3.GethFighterSquadrons.P3",
+					"id": "A3.GethFighterSquadrons.P4",
 					"type": "Paragon",
 					"value": 2,
 					"trigger": "\"I'll take your word for it.\" or \"I can sympathize with that.\""
 				}, {
-					"id": "A3.GethFighterSquadrons.R3",
+					"id": "A3.GethFighterSquadrons.R4",
 					"type": "Renegade",
 					"value": 2,
 					"trigger": "\"I shouldn't have trusted you.\""
@@ -1756,22 +1757,22 @@
 					"set": {
 						"isExclusiveSet": true,
 						"options": [{
-							"id": "A3.GethFighterSquadrons.P5A",
+							"id": "A3.GethFighterSquadrons.P5A.Dup1",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"Good. We can end this war.\""
 						}, {
-							"id": "A3.GethFighterSquadrons.R5A",
+							"id": "A3.GethFighterSquadrons.R5A.Dup1",
 							"type": "Renegade",
 							"value": 2,
 							"trigger": "\"Good. We can destroy the geth.\""
 						}, {
-							"id": "A3.GethFighterSquadrons.P5B",
+							"id": "A3.GethFighterSquadrons.P5B.Dup1",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"Is that a problem?\" and \"I agree.\""
 						}, {
-							"id": "A3.GethFighterSquadrons.R5B",
+							"id": "A3.GethFighterSquadrons.R5B.Dup1",
 							"type": "Renegade",
 							"value": 2,
 							"trigger": "\"Is that a problem?\" and \"No.\""
@@ -1781,19 +1782,19 @@
 					"set": {
 						"isExclusiveSet": true,
 						"options": [{
-							"id": "A3.GethFighterSquadrons.P6",
+							"id": "A3.GethFighterSquadrons.P6.Dup1",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"I don't want them destroyed.\""
 						}, {
 							"set": {
 								"options": [{
-									"id": "A3.GethFighterSquadrons.R6A",
+									"id": "A3.GethFighterSquadrons.R6A.Dup1",
 									"type": "Renegade",
 									"value": 2,
 									"trigger": "\"The geth need to die.\""
 								}, {
-									"id": "A3.GethFighterSquadrons.R6B",
+									"id": "A3.GethFighterSquadrons.R6B.Dup1",
 									"type": "Renegade",
 									"value": 2,
 									"context": "*Renegade Interrupt*",
@@ -1947,22 +1948,22 @@
 					"set": {
 						"isExclusiveSet": true,
 						"options": [{
-							"id": "A3.GethFighterSquadrons.P5A",
+							"id": "A3.GethFighterSquadrons.P5A.Dup2",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"Good. We can end this war.\""
 						}, {
-							"id": "A3.GethFighterSquadrons.R5A",
+							"id": "A3.GethFighterSquadrons.R5A.Dup2",
 							"type": "Renegade",
 							"value": 2,
 							"trigger": "\"Good. We can destroy the geth.\""
 						}, {
-							"id": "A3.GethFighterSquadrons.P5B",
+							"id": "A3.GethFighterSquadrons.P5B.Dup2",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"Is that a problem?\" and \"I agree.\""
 						}, {
-							"id": "A3.GethFighterSquadrons.R5B",
+							"id": "A3.GethFighterSquadrons.R5B.Dup2",
 							"type": "Renegade",
 							"value": 2,
 							"trigger": "\"Is that a problem?\" and \"No.\""
@@ -1972,19 +1973,19 @@
 					"set": {
 						"isExclusiveSet": true,
 						"options": [{
-							"id": "A3.GethFighterSquadrons.P6",
+							"id": "A3.GethFighterSquadrons.P6.Dup2",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"I don't want them destroyed.\""
 						}, {
 							"set": {
 								"options": [{
-									"id": "A3.GethFighterSquadrons.R6A",
+									"id": "A3.GethFighterSquadrons.R6A.Dup2",
 									"type": "Renegade",
 									"value": 2,
 									"trigger": "\"The geth need to die.\""
 								}, {
-									"id": "A3.GethFighterSquadrons.R6B",
+									"id": "A3.GethFighterSquadrons.R6B.Dup2",
 									"type": "Renegade",
 									"value": 2,
 									"context": "*Renegade Interrupt*",
@@ -2012,7 +2013,7 @@
 		"sortIndex": 13151,
 		"gameVersion": "3",
 		"missionType": "Objective",
-		"name": "AA Tower 2",
+		"name": "AA Tower 1",
 		"description": "Follow the path to the jamming tower in the distance until you reach the first AA tower. Clear the area of hostiles. Assign a squad member to take the guns offline while the rest of you defend from a wave of geth. This is followed by another wave of geth, with your whole team back in the fight."
 	}, {
 		"id": "A3.AdmiralKoris.2",
@@ -2119,10 +2120,7 @@
 		}],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: Sur'Kesh"
-		}, {
-			"type": "BlockedAfter",
-			"id": "Completed: Priority: Tuchanka"
+            "id": "Completed: Attican Traverse: Krogan Team or Tuchanka: Turian Platoon"
 		}]
 	}, {
 		"id": "A3.BenningEvidence.1",
@@ -2140,7 +2138,7 @@
 		"gameVersion": "3",
 		"missionType": "Assignment",
 		"name": "Grissom Academy: Emergency Evacuation",
-		"description": "[megametracker://person?id=P3.Sanders] has requested an evacuation of Grissom Academy before the Reapers reach it. However, the turian cruiser that is supposedly responding has a signature suspiciously similar to one known by Cerberus in Game 2. And in fact, when you reach the facility, it is blockaded by Cerberus ships.",
+		"description": "[megametracker://person?id=O3.Sanders] has requested an evacuation of Grissom Academy before the Reapers reach it. However, the turian cruiser that is supposedly responding has a signature suspiciously similar to one known by Cerberus in Game 2. And in fact, when you reach the facility, it is blockaded by Cerberus ships.",
 		"inMapId": "G.Ear.Pet.Vet.Grissom",
 		"isShowInParentMap": true,
 		"experience": 0,
@@ -2297,12 +2295,12 @@
 						"context": "(If David Archer is dead)",
 						"isExclusiveSet": true,
 						"options": [{
-							"id": "A3.GrissomAcademy.P21",
+							"id": "A3.GrissomAcademy.P22",
 							"type": "Paragon",
 							"value": 5,
 							"trigger": "(Contact Kahlee Sanders.)"
 						}, {
-							"id": "A3.GrissomAcademy.R21",
+							"id": "A3.GrissomAcademy.R22",
 							"type": "Renegade",
 							"value": 5,
 							"trigger": "(Destroy the shield.)"
@@ -2312,7 +2310,7 @@
 					"set": {
 						"context": "(If David Archer is present)",
 						"options": [{
-							"id": "A3.GrissomAcademy.R20",
+							"id": "A3.GrissomAcademy.R23",
 							"type": "Paragade",
 							"value": 5,
 							"trigger": "(Send to Kahlee for help.)"
@@ -2380,7 +2378,7 @@
 	}, {
 		"id": "A3.GrissomAcademy.2",
 		"inMissionId": "A3.GrissomAcademy",
-		"sortIndex": 10252,
+		"sortIndex": 10251,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Orion Hall",
@@ -2388,7 +2386,7 @@
 	}, {
 		"id": "A3.GrissomAcademy.3",
 		"inMissionId": "A3.GrissomAcademy",
-		"sortIndex": 10253,
+		"sortIndex": 10251,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Atrium 1",
@@ -2396,7 +2394,7 @@
 	}, {
 		"id": "A3.GrissomAcademy.4",
 		"inMissionId": "A3.GrissomAcademy",
-		"sortIndex": 10254,
+		"sortIndex": 10251,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Atrium 2",
@@ -2404,7 +2402,7 @@
 	}, {
 		"id": "A3.GrissomAcademy.5",
 		"inMissionId": "A3.GrissomAcademy",
-		"sortIndex": 10255,
+		"sortIndex": 10251,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Octavia",
@@ -2412,7 +2410,7 @@
 	}, {
 		"id": "A3.GrissomAcademy.6",
 		"inMissionId": "A3.GrissomAcademy",
-		"sortIndex": 10256,
+		"sortIndex": 10251,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Final Battle",
@@ -2420,7 +2418,7 @@
 	}, {
 		"id": "A3.GrissomAcademy.6",
 		"inMissionId": "A3.GrissomAcademy",
-		"sortIndex": 10256,
+		"sortIndex": 10251,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Shuttle",
@@ -2513,12 +2511,12 @@
 					"set": {
 						"isExclusiveSet": true,
 						"options": [{
-							"id": "A3.TurianPlatoon.P10",
+							"id": "A3.TurianPlatoon.P10.Dup2",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"Any ideas?\""
 						}, {
-							"id": "A3.TurianPlatoon.R10",
+							"id": "A3.TurianPlatoon.R10.Dup2",
 							"type": "Renegade",
 							"value": 2,
 							"trigger": "\"You've infected them before.\""
@@ -2528,12 +2526,12 @@
 					"set": {
 						"isExclusiveSet": true,
 						"options": [{
-							"id": "A3.TurianPlatoon.P11",
+							"id": "A3.TurianPlatoon.P11.Dup2",
 							"type": "Paragon",
 							"value": 2,
 							"trigger": "\"That was devious.\""
 						}, {
-							"id": "A3.TurianPlatoon.R11",
+							"id": "A3.TurianPlatoon.R11.Dup2",
 							"type": "Renegade",
 							"value": 2,
 							"trigger": "\"That was clever.\""
@@ -2566,7 +2564,7 @@
 	}, {
 		"id": "A3.KroganTeam.2",
 		"inMissionId": "A3.KroganTeam",
-		"sortIndex": 11002,
+		"sortIndex": 11001,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Tunnels",
@@ -2574,7 +2572,7 @@
 	}, {
 		"id": "A3.KroganTeam.3",
 		"inMissionId": "A3.KroganTeam",
-		"sortIndex": 11003,
+		"sortIndex": 11001,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Central Chamber",
@@ -2707,6 +2705,8 @@
 		"missionType": "Assignment",
 		"name": "Kallini: Ardat-Yakshi Monastery",
 		"description": "Asari commandos were sent to rescue or destroy an Ardat-Yakshi monastery besieged by Reaper forces, but they have gone silent. Finish their task. If [megametracker://person?id=S2.Samara] survived Game 2, she will be here on a similar purpose.",
+        "inMapId": "G.OuC.Nim.Mes.Lesuss",
+        "isShowInParentMap": true,
 		"experience": 0,
 		"reward": "12,500 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kallini:_Ardat-Yakshi_Monastery"],
@@ -2725,7 +2725,7 @@
 					"id": "A3.ArdatYakshiMonastery.R1",
 					"type": "Renegade",
 					"value": 2,
-					"trigger": "\"Then neither do we.\""
+					"trigger": "\"Then neither do we.\" or \"Then we put them down.\""
 				}]
 			}
 		}, {
@@ -2768,8 +2768,8 @@
 					"set": {
 						"context": "(If Samara survived Game 2)",
 						"options": [{
-							"id": "A3.ArdatYakshiMonastery.P4",
-							"type": "Paragon",
+							"id": "A3.ArdatYakshiMonastery.R4",
+							"type": "Renegade",
 							"value": 2,
 							"context": "\"The Ardat-Yakshi are innocent?\"",
 							"trigger": "\"Doesn't change why we're here.\""
@@ -2905,12 +2905,12 @@
 									"value": 15,
 									"trigger": "\"Are you sure?\""
 								}, {
-									"id": "A3.ArdatYakshiMonastery.R10",
+									"id": "A3.ArdatYakshiMonastery.R21",
 									"type": "Renegade",
 									"value": 5,
 									"trigger": "\"I can't let you live.\""
 								}, {
-									"id": "A3.ArdatYakshiMonastery.R12",
+									"id": "A3.ArdatYakshiMonastery.R21B",
 									"type": "Renegade",
 									"value": 10,
 									"context": "*Renegade Interrupt*",

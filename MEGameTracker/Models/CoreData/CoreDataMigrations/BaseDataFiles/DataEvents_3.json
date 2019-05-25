@@ -19,6 +19,17 @@
 		"id": "Completed: Priority: Sur'Kesh",
 		"gameVersion": "3",
 		"description": "[megametracker://mission?id=M3.1.SurKesh]"
+    }, {
+        "id": "Completed: Priority: Sur'Kesh + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after [megametracker://mission?id=M3.1.SurKesh]",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Priority: Sur'Kesh"
+            ]
+        }
 	}, {
 		"id": "Completed: Priority: Sur'Kesh and Krogan or Turian Mission",
 		"gameVersion": "3",
@@ -38,6 +49,17 @@
 		"id": "Completed: Priority: The Citadel II",
 		"gameVersion": "3",
 		"description": "[megametracker://mission?id=M3.2.Citadel2]"
+    }, {
+        "id": "Completed: Priority: The Citadel II + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after [megametracker://mission?id=M3.2.Citadel2]",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Priority: The Citadel II"
+            ]
+        }
 	}, {
 		"id": "Completed: Priority: Perseus Veil",
 		"gameVersion": "3",
@@ -108,6 +130,17 @@
 		"id": "Completed: Priority: Thessia",
 		"gameVersion": "3",
 		"description": "[megametracker://mission?id=M3.2.Thessia]"
+    }, {
+        "id": "Completed: Priority: Thessia + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after [megametracker://mission?id=M3.2.Thessia]",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Priority: Thessia"
+            ]
+        }
 	}, {
 		"id": "Completed: Priority: Horizon",
 		"gameVersion": "3",
@@ -233,5 +266,35 @@
 		"description": "[megametracker://mission?id=DLC3.Citadel1] and [megametracker://mission?id=DLC3.Citadel2]"
 
 
+    }, {
+        "id": "Completed: Cortez Convo 2",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.Cortez.2]"
+    }, {
+        "id": "Completed: Cortez Convo 2 + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after the second conversation with Cortez",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Cortez Convo 2"
+            ]
+        }
+    }, {
+        "id": "Completed: Cortez Convo 3",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.Cortez.3]"
+    }, {
+        "id": "Completed: Cortez Convo 3 + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after the third conversation with Cortez",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Cortez Convo 3"
+            ]
+        }
 	}]
 }

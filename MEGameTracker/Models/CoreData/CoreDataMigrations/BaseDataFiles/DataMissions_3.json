@@ -304,6 +304,7 @@
 				"context": "Speaking to the Illusive Man",
 				"options": [{
 					"set": {
+                        "context": "\"You're wasting time.\"",
 						"isExclusiveSet": true,
 						"options": [{
 							"id": "M3.0.Mars.P10A",
@@ -1143,7 +1144,6 @@
 		}, {
 			"set": {
 				"context": "When Eve suggests summoning Kalross",
-				"isExclusiveSet": true,
 				"options": [{
 					"set": {
 						"isExclusiveSet": true,
@@ -1308,12 +1308,12 @@
 				"context": "Speaking to Wrex/Wreave about Mordin's death",
 				"isExclusiveSet": true,
 				"options": [{
-					"id": "M3.1.Tuchanka.P25",
+					"id": "M3.1.Tuchanka.P26",
 					"type": "Paragon",
 					"value": 2,
 					"trigger": "\"He was a good friend.\""
 				}, {
-					"id": "M3.1.Tuchanka.R25",
+					"id": "M3.1.Tuchanka.R26",
 					"type": "Renegade",
 					"value": 2,
 					"trigger": "\"He insisted.\" or (if cure was sabotaged) \"Why? What did you see?\""
@@ -1572,7 +1572,7 @@
 					"value": 2,
 					"trigger": "\"And Ash.\" or \"And Kaidan.\" (If Ashley/Kaidan survived)"
 				}, {
-					"id": "M3.2.Citadel2.R30",
+					"id": "M3.2.Citadel2.R30B",
 					"type": "Renegade",
 					"value": 2,
 					"trigger": "\"About time.\""
@@ -2090,7 +2090,7 @@
 		"gameVersion": "3",
 		"missionType": "Mission",
 		"name": "Priority: The Citadel III",
-		"description": "The asari councilor [megametracker://person?id=P1.Valern] (or [megametracker://person?id=O2.Esheel] if Valern died in Game 1) urgently requests to speak with you on the Citadel. You can find her in the Citadel Embassies at Udina's former office. \n\nIf you betrayed Wrex during [megametracker://mission?id=M3.1.Tuchanka], you will need to avoid the Normandy dock (say, by completing assignments which terminate back in the Normandy) or you will be confronted and have to kill him.",
+		"description": "The asari councilor [megametracker://person?id=O1.Valern] (or [megametracker://person?id=O2.Esheel] if Valern died in Game 1) urgently requests to speak with you on the Citadel. You can find her in the Citadel Embassies at Udina's former office. \n\nIf you betrayed Wrex during [megametracker://mission?id=M3.1.Tuchanka], you will need to avoid the Normandy dock (say, by completing assignments which terminate back in the Normandy) or you will be confronted and have to kill him.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
 		"experience": 0,

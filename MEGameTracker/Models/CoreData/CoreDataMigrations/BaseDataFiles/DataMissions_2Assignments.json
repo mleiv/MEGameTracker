@@ -110,13 +110,13 @@
 					"context": "*_Charm_* customs agent",
 					"trigger": "\"They're not geth!\""
 				}, {
-					"id": "A2.C.CrimeInProgress.P2",
+					"id": "A2.C.FalsePositives.R2",
 					"type": "Renegade",
 					"value": 5,
 					"context": "*_Intimidate_* customs agent",
 					"trigger": "\"This is crap.\""
 				}, {
-					"id": "A2.C.CrimeInProgress.P1B",
+					"id": "A2.C.FalsePositives.P1B",
 					"type": "Paragon",
 					"value": 5,
 					"context": "*_Charm_* customs agent",
@@ -128,12 +128,12 @@
 				"context": "Talking to Kalara Tomi after speaking to the Customs agent",
 				"isExclusiveSet": true,
 				"options": [{
-					"id": "A2.C.FalsePositives.P2",
+					"id": "A2.C.FalsePositives.P5",
 					"type": "Paragon",
 					"value": 2,
 					"trigger": "\"I'm a Spectre.\" or \"Friendly persuasion.\""
 				}, {
-					"id": "A2.C.FalsePositives.R2",
+					"id": "A2.C.FalsePositives.R5",
 					"type": "Renegade",
 					"value": 5,
 					"context": "(Using the forged ids found during [megametracker://mission?id=A2.D.Garrus])",

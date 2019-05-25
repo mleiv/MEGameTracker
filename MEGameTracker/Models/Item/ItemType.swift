@@ -27,6 +27,7 @@ public enum ItemType: String, Codable, CaseIterable {
     case souvenir = "Souvenir"
     case request = "Request"
     case pet = "Pet"
+    case model = "Model"
 	case unknown = "Unknown"
 
 	/// Returns the string values of all the enum variations.

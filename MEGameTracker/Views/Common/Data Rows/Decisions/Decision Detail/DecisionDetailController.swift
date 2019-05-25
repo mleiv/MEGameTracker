@@ -32,6 +32,7 @@ final public class DecisionDetailController: UIViewController {
 	func setup() {
 		isPopover = popover?.arrowDirection != .unknown
 		titleLabel?.text = decision?.name
+        gameLabel?.text = decision?.gameVersion.headingValue
 		textView?.text = decision?.description
 		textView?.linkOriginController = decisionsView?.viewController
 		originHintLabel?.text = "RE: \(originHint ?? "")"

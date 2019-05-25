@@ -71,7 +71,7 @@ final class BaseDataImportTest: MEGameTrackerTests {
         BaseDataImport().run()
         let time = Int(Date().timeIntervalSince(start))
         print("Performance: testBaseDataImportTime ran in \(time) seconds")
-        XCTAssert(time < 150) // my ancient computer is slow
+        XCTAssert(time < 300) // my ancient computer is slow
         let decisionsCount = DataDecision.getCount()
         XCTAssert(decisionsCount > 100)
         let eventsCount = DataEvent.getCount()
@@ -101,4 +101,50 @@ final class BaseDataImportTest: MEGameTrackerTests {
 
 //    }
 
+    // The downsides of manually editing JSON files instead of maintaining a relational database
+    func testConversationIdsUnique() {
+        let files = BaseDataImport().progressFiles
+        var convoIds: [String: Bool] = [:]
+        var noFailuresFound = true
+        for row in files where row.type == .mission {
+            let filename = row.filename
+            if let file = Bundle.main.path(forResource: filename, ofType: "json"),
+                let data = try? Data(contentsOf: URL(fileURLWithPath: file)),
+                let extractedData = try? JSONSerialization.jsonObject(with: data, options: []),
+                let missions = (extractedData as? [String: Any])?["missions"] as? [[String: Any]] {
+                for mission in missions {
+                    if let conversations = mission["conversationRewards"] as? [[String: Any]] {
+                        for conversation in conversations {
+                            for id in recursedConversationIds(conversation) {
+                                if (convoIds[id] == true) {
+                                    print("Duplicate conversation id: \(id)")
+                                    noFailuresFound = false
+                                } else {
+                                    convoIds[id] = true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        XCTAssert(noFailuresFound, "Found duplicate ids")
+    }
+
+    private func recursedConversationIds(_ data: [String: Any]) -> [String] {
+        var ids: [String] = [];
+        for (key, value) in data {
+            if key == "id", let id = value as? String {
+                ids.append( id)
+                continue
+            } else if let subDataList = value as? [[String: Any]] {
+                for subData in subDataList {
+                    ids.append(contentsOf: recursedConversationIds(subData))
+                }
+            } else if let subData = value as? [String: Any] {
+                ids.append(contentsOf: recursedConversationIds(subData))
+            }
+        }
+        return ids;
+    }
 }

@@ -176,25 +176,25 @@
 			"id": "Completed: Priority: Eden Prime"
 		}]
 	}, {
-		"inMissionId": "DLC3.FromAshes2.1",
-		"id": "DLC3.FromAshes2",
+		"inMissionId": "DLC3.FromAshes2",
+		"id": "DLC3.FromAshes2.1",
 		"sortIndex": 10021,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Processing Update",
 		"isOpensDetail": false
 	}, {
-		"inMissionId": "DLC3.FromAshes2.2",
-		"id": "DLC3.FromAshes2",
-		"sortIndex": 10022,
+		"inMissionId": "DLC3.FromAshes2",
+		"id": "DLC3.FromAshes2.2",
+		"sortIndex": 10021,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Troop Deployment Update",
 		"isOpensDetail": false
 	}, {
-		"inMissionId": "DLC3.FromAshes2.3",
-		"id": "DLC3.FromAshes2",
-		"sortIndex": 10023,
+		"inMissionId": "DLC3.FromAshes2",
+		"id": "DLC3.FromAshes2.3",
+		"sortIndex": 10021,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Resistance Information Update",
@@ -255,7 +255,11 @@
 					"trigger": "Prevent James from lowering artifact shield, causing brain damage to Ann Bryson."
 				}]
 			}
-		}]
+		}],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel I"
+        }]
 	}, {
 		"id": "DLC3.Leviathan.1",
 		"inMissionId": "DLC3.Leviathan",
@@ -412,7 +416,7 @@
 		"relatedDecisionIds": ["D3.OmegaReactor", "D3.OmegaKiss"],
 		"conversationRewards": [{
 			"set": {
-				"context": "After the initial battle",
+				"context": "After \"Disable The Defense System\" battle",
 				"options": [{
 					"id": "DLC3.Omega3.P0",
 					"type": "Renegade",
@@ -1238,7 +1242,7 @@
 		}]
 	}, {
 		"id": "DLC3.Omega3.Hacker.1",
-		"inMissionId": "DLC3.Omega3.Mechanic",
+		"inMissionId": "DLC3.Omega3.Hacker",
 		"sortIndex": 10819,
 		"gameVersion": "3",
 		"missionType": "Objective",
@@ -1248,8 +1252,8 @@
 		"isShowInParentMap": true
 	}, {
 		"id": "DLC3.Omega3.Hacker.2",
-		"inMissionId": "DLC3.Omega3.Mechanic",
-		"sortIndex": 10820,
+		"inMissionId": "DLC3.Omega3.Hacker",
+		"sortIndex": 10819,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Console",
@@ -1258,8 +1262,8 @@
 		"isShowInParentMap": true
 	}, {
 		"id": "DLC3.Omega3.Hacker.3",
-		"inMissionId": "DLC3.Omega3.Mechanic",
-		"sortIndex": 10821,
+		"inMissionId": "DLC3.Omega3.Hacker",
+		"sortIndex": 10819,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Console",
@@ -1580,7 +1584,6 @@
 				"options": [{
 					"set": {
 						"context": "\"I'll end you.\"",
-						"isExclusiveSet": true,
 						"options": [{
 							"id": "DLC3.Citadel.P35",
 							"type": "Paragon",
@@ -1598,7 +1601,6 @@
 				}, {
 					"set": {
 						"context": "\"I'll end you painfully.\"",
-						"isExclusiveSet": true,
 						"options": [{
 							"id": "DLC3.Citadel.R35",
 							"type": "Renegade",
@@ -1678,7 +1680,6 @@
 		}, {
 			"set": {
 				"context": "When the clone ambushes you in the Shuttle Bay",
-				"isExclusiveSet": true,
 				"options": [{
 					"id": "DLC3.Citadel.P50",
 					"type": "Renegade",
@@ -1726,7 +1727,7 @@
 					"set": {
 						"options": [{
 							"id": "DLC3.Citadel.R55",
-							"type": "Paragon",
+							"type": "Renegade",
 							"value": 2,
 							"trigger": "\"I want to kill you.\""
 						}, {
@@ -2156,47 +2157,6 @@
 		"experience": 0,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Party"],
-		"conversationRewards": [{
-			"id": "DLC3.Citadel2.PR10",
-			"type": "Renegade",
-			"value": 2,
-			"trigger": "Citadel Arena: Spin Zone Elite Challenge"
-		}, {
-			"id": "DLC3.Citadel2.PR10",
-			"type": "Renegade",
-			"value": 2,
-			"trigger": "Citadel Arena: Geth Challenge"
-		}, {
-			"id": "DLC3.Citadel2.PR10",
-			"type": "Renegade",
-			"value": 5,
-			"trigger": "Citadel Arena: Medi-Gel Challenge"
-		}, {
-			"id": "DLC3.Citadel2.PR10",
-			"type": "Renegade",
-			"value": 2,
-			"trigger": "Citadel Arena: Thermal Clip Challenge"
-		}, {
-			"id": "DLC3.Citadel2.PR10",
-			"type": "Renegade",
-			"value": 2,
-			"trigger": "Citadel Arena: Reaper Solo Challenge"
-		}, {
-			"id": "DLC3.Citadel2.PR10",
-			"type": "Renegade",
-			"value": 15,
-			"trigger": "Citadel Arena: Charity Reaper Challenge"
-		}, {
-			"id": "DLC3.Citadel2.PR10",
-			"type": "Renegade",
-			"value": 2,
-			"trigger": "Citadel Arena: Prothean Challenge"
-		}, {
-			"id": "DLC3.Citadel2.PR10",
-			"type": "Renegade",
-			"value": 5,
-			"trigger": "Citadel Arena: Cerberus Challenge"
-		}],
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Citadel DLC 1"
@@ -2344,16 +2304,6 @@
 		"inMapId": "G.C",
 		"isShowInParentMap": true
 	}, {
-		"id": "DLC3.Citadel2.5.Ashley",
-		"inMissionId": "DLC3.Citadel2.5",
-		"sortIndex": 15025,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Ashley",
-		"description": "Meet Ashley at the upstairs casino bar. See [megametracker://mission?id=A3.Convo.S.Ashley.8] for more.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
-	}, {
 		"id": "DLC3.Citadel2.5.Cortez",
 		"inMissionId": "DLC3.Citadel2.5",
 		"sortIndex": 15025,
@@ -2370,9 +2320,19 @@
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"name": "Jack",
-		"description": "Jack wants to play a game at the arena. See [megametracker://mission?id=A3.Convo.A.Jack.2] for more.",
+		"description": "Jack wants to play a game at the arena. You must have started [megametracker://mission?id=A3.Convo.A.Jack.2] before this is available.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel2.5.Jacob",
+        "inMissionId": "DLC3.Citadel2.5",
+        "sortIndex": 15026,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Jacob",
+        "description": "Meet Jacob outside the arcade. See [megametracker://mission?id=A3.Convo.A.Jacob.2] for more.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true
 	}, {
 		"id": "DLC3.Citadel2.5.Liara",
 		"inMissionId": "DLC3.Citadel2.5",
@@ -2381,16 +2341,6 @@
 		"missionType": "Objective",
 		"name": "Liara",
 		"description": "Invite Liara up to the apartment. See [megametracker://mission?id=A3.Convo.S.Liara.8] for more.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.Citadel2.5.Kaidan",
-		"inMissionId": "DLC3.Citadel2.5",
-		"sortIndex": 15025,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Kaidan",
-		"description": "Invite Kaidan up to the apartment. See [megametracker://mission?id=A3.Convo.S.Kaidan.8] for more.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true
 	}, {
@@ -2403,6 +2353,16 @@
 		"description": "Invite Tali up to the apartment. See [megametracker://mission?id=A3.Convo.S.Tali.9] for more.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel2.5.Thane",
+        "inMissionId": "DLC3.Citadel2.5",
+        "sortIndex": 15026,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Kolyat",
+        "description": "Hold a memorial for Thane. See [megametracker://mission?id=A3.Convo.A.Thane.3] for more.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true
 
 
 	}, {
@@ -2415,6 +2375,16 @@
 		"description": "Many of your friends want some one-on-one before the party. Check your messages to confirm who is available and where to meet them.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel2.6.Ashley",
+        "inMissionId": "DLC3.Citadel2.6",
+        "sortIndex": 15025,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Ashley",
+        "description": "Meet Ashley at the upstairs casino bar. See [megametracker://mission?id=A3.Convo.S.Ashley.8] for more.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true
 	}, {
 		"id": "DLC3.Citadel2.6.Grunt",
 		"inMissionId": "DLC3.Citadel2.6",
@@ -2423,16 +2393,6 @@
 		"missionType": "Objective",
 		"name": "Grunt",
 		"description": "Talk to the Officer across from the Rapid Transit cars. See [megametracker://mission?id=A3.Convo.A.Grunt.2] for more.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.Citadel2.6.Jacob",
-		"inMissionId": "DLC3.Citadel2.6",
-		"sortIndex": 15026,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Jacob",
-		"description": "Meet Jacob outside the arcade. See [megametracker://mission?id=A3.Convo.A.Jacob.2] for more.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true
 	}, {
@@ -2445,16 +2405,16 @@
 		"description": "Meet Joker at the upstairs casino bar (no prior message). See [megametracker://mission?id=A3.Convo.C.Joker.12] for more.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.Citadel2.6.Thane",
-		"inMissionId": "DLC3.Citadel2.6",
-		"sortIndex": 15026,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Kolyat",
-		"description": "Hold a memorial for Thane. See [megametracker://mission?id=A3.Convo.A.Thane.3] for more.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel2.6.Kaidan",
+        "inMissionId": "DLC3.Citadel2.6",
+        "sortIndex": 15025,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Kaidan",
+        "description": "Invite Kaidan up to the apartment. See [megametracker://mission?id=A3.Convo.S.Kaidan.8] for more.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true
 	}, {
 		"id": "DLC3.Citadel2.6.Traynor",
 		"inMissionId": "DLC3.Citadel2.6",
@@ -2537,147 +2497,6 @@
 		"description": "Encounter Wrex at the upstairs casino bar (no prior message). He is trying to recover from all the krogan females who want him to father their children.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true
-
-
-
-	}, {
-		"id": "DLC3.Citadel2.10",
-		"inMissionId": "DLC3.Citadel2",
-		"sortIndex": 15030,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Citadel Arena",
-		"description": "You will be issued a series of challenges in the Armax Arsenal Arena. Apart from being financially lucrative, you can earn reputation by completing them.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.Citadel2.10.1",
-		"inMissionId": "DLC3.Citadel2.10",
-		"sortIndex": 150301,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Spin Zone Elite Challenge",
-		"description": "Elkoss Combine Citadel Sports Division wants to be your corporate sponsor. But first they want you to complete the Spin Zone Challenge with Elite enemies. \n\nNote: this is very challenging, so although you are given it first, put it off until much later.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.Citadel2.10.2",
-		"inMissionId": "DLC3.Citadel2.10",
-		"sortIndex": 150302,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Geth Challenge",
-		"description": "The Citadel University Engineering Club wants you to complete the geth arena challenge on the Blasteroid map. They reward you later with a special mod: SMG Power Magnifier.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
-		"x-note-x": "TODO: Loot here - add it later http://masseffect.wikia.com/wiki/Citadel_Arena:_Geth_Challenge"
-	}, {
-		"id": "DLC3.Citadel2.10.3",
-		"inMissionId": "DLC3.Citadel2.10",
-		"sortIndex": 150303,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Medi-Gel Challenge",
-		"description": "BlastoFan17485 thinks you are cheating. He dares you to compete using the modifier for No Medi-Gel.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.Citadel2.10.4",
-		"inMissionId": "DLC3.Citadel2.10",
-		"sortIndex": 150304,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Thermal Clip Challenge",
-		"description": "A fan from the asteroid belts suggests a match using the modifier for No Thermal Clips with Collector enemies, to highlight material scarcity.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.Citadel2.10.5",
-		"inMissionId": "DLC3.Citadel2.10",
-		"sortIndex": 150305,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Reaper Solo Challenge",
-		"description": "The \"Hour 20\" News Team wants you to try a solo challenge with Reaper enemies, so they can use the footage in place of real video for their war coverage.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.Citadel2.10.6",
-		"inMissionId": "DLC3.Citadel2.10",
-		"sortIndex": 150306,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Charity Reaper Challenge",
-		"description": "Lati, an asari child with a cerebral tumor, has come to see you compete and her dream is to see you fight Elite Reaper enemies.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.Citadel2.10.7",
-		"inMissionId": "DLC3.Citadel2.10",
-		"sortIndex": 150307,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Prothean Challenge",
-		"description": "The \"Hour 20\" News Team wants you to compete with Javik in the arena, with Reaper enemies.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.Citadel2.10.8",
-		"inMissionId": "DLC3.Citadel2.10",
-		"sortIndex": 150308,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Cerberus Challenge",
-		"description": "A fan asks you to fight with an all-Alliance squad against Cerberus enemies, to prove that you no longer work for Cerberus.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.Citadel2.10.9",
-		"inMissionId": "DLC3.Citadel2.10",
-		"sortIndex": 150309,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Unusual Scores",
-		"description": "Armax Arsenal Arena is trying to isolate a bug in the arena code. They ask you to complete in three specific configurations to trip the error, each providing a reward for your time.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
-		"x-note-x": "TODO: Loot here - add it later http://masseffect.wikia.com/wiki/Citadel_Arena:_Unusual_Scores"
-	}, {
-		"id": "DLC3.Citadel2.10.9.1",
-		"inMissionId": "DLC3.Citadel2.10.9",
-		"sortIndex": 150309,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Super-Elite Enemies",
-		"description": "Reward: Sniper Rifle High-Velocity Barrel"
-	}, {
-		"id": "DLC3.Citadel2.10.9.2",
-		"inMissionId": "DLC3.Citadel2.10.9",
-		"sortIndex": 150309,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "All Positive Bonus Modifiers",
-		"description": "Reward: Pistol Power Magnifier"
-	}, {
-		"id": "DLC3.Citadel2.10.9.3",
-		"inMissionId": "DLC3.Citadel2.10.9",
-		"sortIndex": 150309,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Spin Zone/Geth/Elite/Shields",
-		"description": "Use \"Spin Zone\" map, \"geth\" enemies, \"Elite\" difficulty, and \"enhanced enemy shields\" bonus modifier. Reward: Assault Rifle Thermal Scope"
-	}, {
-		"id": "DLC3.Citadel2.10.10",
-		"inMissionId": "DLC3.Citadel2.10",
-		"sortIndex": 150310,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"name": "Break The Scoreboard",
-		"description": "After you score more than 9,999 points in a match, Armax Arsenal Arena offers you some elite armor - Cerberus Phantom.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
-		"x-note-x": "TODO: Loot here - add it later http://masseffect.wikia.com/wiki/Armax_Arsenal_Arena"
-
 
 
 
@@ -2866,14 +2685,211 @@
 		"description": "Head back to the Normandy. Your crew will meet you there. \n\n_Note: You can still complete any Silversun Strip activities after leaving the Citadel._",
 		"inMapId": "G.C",
 		"isShowInParentMap": true
-	}, {
-		"id": "DLC3.ExtendedCut",
-		"sortIndex": 2000,
-		"gameVersion": "3",
-		"missionType": "DLC",
-		"name": "Extended Cut",
-		"description": "The original ending cut scenes of Game 3 were short and unsatisfying, with many plot holes. This provides a longer and more meaningful ending. \n\n*_This was released as part of the Extended Cut DLC pack._*",
-		"relatedLinks": ["https://masseffect.wikia.com/wiki/Mass_Effect_3:_Extended_Cut"]
+
+
+
+    }, {
+        "id": "DLC3.Citadel3",
+        "inMissionId": "DLC3.Citadel2",
+        "sortIndex": 15030,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Citadel Arena",
+        "description": "You will be issued a series of challenges in the Armax Arsenal Arena. Apart from being financially lucrative, you can earn reputation by completing them.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "conversationRewards": [{
+            "id": "DLC3.Citadel2.PR10",
+            "type": "Renegade",
+            "value": 2,
+            "trigger": "Citadel Arena: Spin Zone Elite Challenge"
+        }, {
+            "id": "DLC3.Citadel2.PR20",
+            "type": "Renegade",
+            "value": 2,
+            "trigger": "Citadel Arena: Geth Challenge"
+        }, {
+            "id": "DLC3.Citadel2.PR30",
+            "type": "Renegade",
+            "value": 5,
+            "trigger": "Citadel Arena: Medi-Gel Challenge"
+        }, {
+            "id": "DLC3.Citadel2.PR40",
+            "type": "Renegade",
+            "value": 2,
+            "trigger": "Citadel Arena: Thermal Clip Challenge"
+        }, {
+            "id": "DLC3.Citadel2.PR50",
+            "type": "Renegade",
+            "value": 2,
+            "trigger": "Citadel Arena: Reaper Solo Challenge"
+        }, {
+            "id": "DLC3.Citadel2.PR60",
+            "type": "Renegade",
+            "value": 15,
+            "trigger": "Citadel Arena: Charity Reaper Challenge"
+        }, {
+            "id": "DLC3.Citadel2.PR70",
+            "type": "Renegade",
+            "value": 2,
+            "trigger": "Citadel Arena: Prothean Challenge"
+        }, {
+            "id": "DLC3.Citadel2.PR80",
+            "type": "Renegade",
+            "value": 5,
+            "trigger": "Citadel Arena: Cerberus Challenge"
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Citadel DLC"
+        }]
+    }, {
+        "id": "DLC3.Citadel3.01",
+        "inMissionId": "DLC3.Citadel3",
+        "sortIndex": 150303,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Medi-Gel Challenge",
+        "description": "BlastoFan17485 thinks you are cheating. He dares you to compete using the modifier for No Medi-Gel.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel3.02",
+        "inMissionId": "DLC3.Citadel3",
+        "sortIndex": 150301,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Spin Zone Elite Challenge",
+        "description": "Elkoss Combine Citadel Sports Division wants to be your corporate sponsor. But first they want you to complete the Spin Zone Challenge with Elite enemies. \n\nNote: this is very challenging, so although you are given it first, put it off until much later.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel3.03",
+        "inMissionId": "DLC3.Citadel3",
+        "sortIndex": 150302,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Geth Challenge",
+        "description": "The Citadel University Engineering Club wants you to complete the geth arena challenge on the Blasteroid map. They reward you later with a special mod: SMG Power Magnifier.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "x-note-x": "TODO: Loot here - add it later http://masseffect.wikia.com/wiki/Citadel_Arena:_Geth_Challenge"
+    }, {
+        "id": "DLC3.Citadel3.04",
+        "inMissionId": "DLC3.Citadel3",
+        "sortIndex": 150305,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Reaper Solo Challenge",
+        "description": "The \"Hour 20\" News Team wants you to try a solo challenge with Reaper enemies, so they can use the footage in place of real video for their war coverage.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel3.05",
+        "inMissionId": "DLC3.Citadel3",
+        "sortIndex": 150307,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Prothean Challenge",
+        "description": "The \"Hour 20\" News Team wants you to compete with Javik in the arena, with Reaper enemies.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel3.06",
+        "inMissionId": "DLC3.Citadel3",
+        "sortIndex": 150304,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Thermal Clip Challenge",
+        "description": "A fan from the asteroid belts suggests a match using the modifier for No Thermal Clips with Collector enemies, to highlight material scarcity.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel3.07",
+        "inMissionId": "DLC3.Citadel3",
+        "sortIndex": 150308,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Cerberus Challenge",
+        "description": "A fan asks you to fight with an all-Alliance squad against Cerberus enemies, to prove that you no longer work for Cerberus.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel3.08",
+        "inMissionId": "DLC3.Citadel3",
+        "sortIndex": 150306,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Charity Reaper Challenge",
+        "description": "*_Available after you get the Arena Leaderboard Top Score_* \n\nLati, an asari child with a cerebral tumor, has come to see you compete and her dream is to see you fight Elite Reaper enemies.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel3.09",
+        "inMissionId": "DLC3.Citadel3",
+        "sortIndex": 150310,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Break The Scoreboard",
+        "description": "After you score more than 9,999 points in a match, Armax Arsenal Arena offers you some elite armor - Cerberus Phantom.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "x-note-x": "TODO: Loot here - add it later http://masseffect.wikia.com/wiki/Armax_Arsenal_Arena"
+    }, {
+        "id": "DLC3.Citadel3.10",
+        "inMissionId": "DLC3.Citadel3",
+        "sortIndex": 150309,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Unusual Scores",
+        "description": "*_Available after you buy all the mods available and [megametracker://mission?id=DLC3.Citadel3.09]_* \n\nArmax Arsenal Arena is trying to isolate a bug in the arena code. They ask you to complete in three specific configurations to trip the error, each providing a reward for your time.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "x-note-x": "TODO: Loot here - add it later http://masseffect.wikia.com/wiki/Citadel_Arena:_Unusual_Scores"
+    }, {
+        "id": "DLC3.Citadel3.10.1",
+        "inMissionId": "DLC3.Citadel3.10",
+        "sortIndex": 150309,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Super-Elite Enemies",
+        "description": "Reward: Sniper Rifle High-Velocity Barrel"
+    }, {
+        "id": "DLC3.Citadel3.10.2",
+        "inMissionId": "DLC3.Citadel3.10",
+        "sortIndex": 150309,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "All Positive Bonus Modifiers",
+        "description": "Reward: Pistol Power Magnifier"
+    }, {
+        "id": "DLC3.Citadel3.10.3",
+        "inMissionId": "DLC3.Citadel3.10",
+        "sortIndex": 150309,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Spin Zone/Geth/Elite/Shields",
+        "description": "Use \"Spin Zone\" map, \"geth\" enemies, \"Elite\" difficulty, and \"enhanced enemy shields\" bonus modifier. Reward: Assault Rifle Thermal Scope"
+
+
+
+
+    }, {
+        "id": "DLC3.ExtendedCut",
+        "sortIndex": 2000,
+        "gameVersion": "3",
+        "missionType": "DLC",
+        "name": "Extended Cut",
+        "description": "The original ending cut scenes of Game 3 were short and unsatisfying, with many plot holes. This provides a longer and more meaningful ending. \n\n*_This was released as part of the Extended Cut DLC pack._*",
+        "relatedLinks": ["https://masseffect.wikia.com/wiki/Mass_Effect_3:_Extended_Cut"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Earth"
+        }]
+
 
 
 	}, {
@@ -3094,7 +3110,7 @@
 		}],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: The Citadel II"
+			"id": "Completed: Priority: Palaven"
 		}]
 	}, {
 		"id": "A3.HesperiaPeriodStatue",

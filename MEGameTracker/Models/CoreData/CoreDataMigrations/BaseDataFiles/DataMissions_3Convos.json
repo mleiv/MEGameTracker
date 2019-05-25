@@ -135,7 +135,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: The Citadel II"
+			"id": "Completed: Priority: The Citadel II + 1"
 		}]
 	}, {
 		"id": "A3.Convo.S.Ashley.6",
@@ -166,7 +166,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Rannoch: Geth Fighter Squadrons and Rannoch: Admiral Koris or Priority: Rannoch"
+			"id": "Completed: Priority: The Citadel II + 1"
 		}]
 	}, {
 		"id": "A3.Convo.S.Ashley.8",
@@ -481,7 +481,7 @@
 			"trigger": "(Automatic)"
 		}, {
 			"context": "When Garrus and Joker discuss Mordin",
-			"id": "A3.Convo.C.Joker.PR10",
+			"id": "A3.Convo.C.Joker.PR10.Dup2",
 			"type": "Paragade",
 			"value": 2,
 			"trigger": "(Automatic)"
@@ -550,7 +550,7 @@
 			}
 		}, {
 			"context": "Walking in on Garrus and Tali after Cerberus headquarters was destroyed",
-			"id": "A3.Convo.S.Garrus.PR50",
+			"id": "A3.Convo.S.Garrus.PR55",
 			"type": "Paragade",
 			"value": 2,
 			"trigger": "(Automatic)"
@@ -1077,7 +1077,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: The Citadel II"
+			"id": "Completed: Priority: The Citadel II + 1"
 		}]
 	}, {
 		"id": "A3.Convo.S.Kaidan.6",
@@ -1108,7 +1108,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Rannoch: Geth Fighter Squadrons and Rannoch: Admiral Koris or Priority: Rannoch"
+			"id": "Completed: Priority: The Citadel II + 1"
 		}]
 	}, {
 		"id": "A3.Convo.S.Kaidan.8",
@@ -1510,7 +1510,7 @@
 		"missionType": "Objective",
 		"titlePrefix": "Tali: ",
 		"name": "4th Normandy Convo",
-		"description": "Tali is standing by the Normandy Memorial. If you have not spoken to Liara at all since Thessia, Tali will tell you Thessia is not your fault. If you come back after intervening between Liara and Javik, Tali will be discussing with Garrus how distraught Liara is. She will ask you to go talk to her. If you have already spoken to Liara in her office, come back and let Tali know. All three of these actions grant reputation.",
+		"description": "Tali is standing by the Normandy Memorial. You can speak to her three times for reputation. \n\n1. If you have not spoken to Liara at all since Thessia, Tali will tell you Thessia is not your fault. \n\n2. If you come back after intervening between Liara and Javik, Tali will be discussing with Garrus how distraught Liara is. She will ask you to go talk to her. \n\n3. After you have spoken to Liara in her office, you can speak to Tali and let her know it's taken care of.",
 		"inMapId": "G.N",
 		"isShowInParentMap": true,
 		"events": [{
@@ -1835,7 +1835,7 @@
 		"relatedMissionIds": ["A3.GX12ThermalPipe"],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: Tuchanka"
+			"id": "Completed: Priority: Sur'Kesh"
 		}]
 	}, {
 		"id": "A3.Convo.C.Allers",
@@ -2050,7 +2050,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Medical Supplies"
+			"id": "Completed: Priority: The Citadel II"
 		}]
 
 	}, {
@@ -2145,8 +2145,8 @@
 							"value": 2,
 							"trigger": "\"That's an order.\""
 						}, {
-							"id": "A3.Convo.C.Cortez.P6",
-							"type": "Paragade",
+							"id": "A3.Convo.C.Cortez.P6B",
+							"type": "Paragon",
 							"value": 2,
 							"context": "*_Charm_* Cortez",
 							"trigger": "\"Do it for me.\""
@@ -2200,7 +2200,7 @@
 			"set": {
 				"context": "Talking to Cortez in Purgatory after the coup",
 				"options": [{
-					"id": "A3.Convo.C.Cortez.PR20",
+					"id": "A3.Convo.C.Cortez.P20",
 					"type": "Paragon",
 					"value": 0,
 					"context": "*Paragon Interrupt*",
@@ -2242,6 +2242,9 @@
 		"events": [{
 			"type": "BlockedUntil",
 			"id": "Completed: Priority: Palaven"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Cortez Convo 2"
 		}]
 	}, {
 		"id": "A3.Convo.C.Cortez.3",
@@ -2256,7 +2259,10 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: Sur'Kesh"
+            "id": "Completed: Cortez Convo 2 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Cortez Convo 3"
 		}]
 	}, {
 		"id": "A3.Convo.C.Cortez.4",
@@ -2271,7 +2277,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: Sur'Kesh"
+            "id": "Completed: Cortez Convo 3 + 1"
 		}]
 	}, {
 		"id": "A3.Convo.C.Cortez.5",
@@ -2305,14 +2311,14 @@
 			"id": "Completed: Priority: The Citadel II"
 		}]
 	}, {
-		"id": "A3.Convo.C.Cortez.7",
+		"id": "A3.Convo.C.Cortez.7a",
 		"inMissionId": "A3.Convo.C.Cortez",
 		"sortIndex": 90017,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"titlePrefix": "Cortez: ",
 		"name": "1st Citadel DLC",
-		"description": "Invite Cortez and Vega over to watch a biotiball game. If you've romanced him, there's some post-game snuggling.",
+        "description": "Meet Cortez by the Rapid Transit cars. He takes you for a joyride in the shuttle. If you've romanced him, there's a lot of romantic dialogue and a hookup off-screen.",
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
 		"events": [{
@@ -2320,14 +2326,14 @@
 			"id": "Completed: Citadel DLC 1"
 		}]
 	}, {
-		"id": "A3.Convo.C.Cortez.8",
+		"id": "A3.Convo.C.Cortez.8a",
 		"inMissionId": "A3.Convo.C.Cortez",
 		"sortIndex": 90018,
 		"gameVersion": "3",
 		"missionType": "Objective",
 		"titlePrefix": "Cortez: ",
 		"name": "2nd Citadel DLC",
-		"description": "Meet Cortez by the Rapid Transit cars. He takes you for a joyride in the shuttle. If you've romanced him, there's a lot of romantic dialogue and a hookup off-screen.",
+        "description": "Invite Cortez and Vega over to watch a biotiball game. If you've romanced him, there's some post-game snuggling.",
 		"annotationNote": "Romance Option",
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
@@ -2369,7 +2375,7 @@
 			"trigger": "(Automatic)"
 		}, {
 			"context": "When Garrus and Joker discuss Mordin",
-			"id": "A3.Convo.C.Joker.PR10",
+			"id": "A3.Convo.C.Joker.PR10.Dup1",
 			"type": "Paragade",
 			"value": 2,
 			"trigger": "(Automatic)"
@@ -2664,73 +2670,6 @@
 		"inMapId": "G.N",
 		"isShowInParentMap": true
 	}, {
-		"id": "A3.Convo.C.Mordin",
-		"inMissionId": "A3.Convo.Crew",
-		"sortIndex": 9001,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"titlePrefix": "Conversations: ",
-		"name": "Mordin Solus",
-		"description": "Conversations with [megametracker://person?id=S2.Mordin].",
-		"conversationRewards": [{
-			"set": {
-				"context": "Defending Mordin from Wrex's suspicions",
-				"isExclusiveSet": true,
-				"options": [{
-					"id": "A3.Convo.C.Mordin.P1",
-					"type": "Paragon",
-					"value": 2,
-					"trigger": "\"He's trustworthy, Wrex.\""
-				}, {
-					"id": "A3.Convo.C.Mordin.R1",
-					"type": "Renegade",
-					"value": 2,
-					"trigger": "\"Suspicion is healthy.\""
-				}]
-			}
-		}],
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Completed: Priority: Sur'Kesh"
-		}]
-	}, {
-		"id": "A3.Convo.C.Mordin.1",
-		"inMissionId": "A3.Convo.C.Mordin",
-		"sortIndex": 90011,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"titlePrefix": "Mordin: ",
-		"name": "1st Normandy Convo",
-		"description": "Mordin/Wiks is treating Eve, but Wrex storms in suspiciously. He is sent off to get a tissue sample, and after you speak with Eve, you can talk more to Mordin about the Genophage cure he is creating. He still refuses to admit the Genophage was wrong. He muses about what he'll do when the war is over, go to the beach and collect seashells, experiment on the seashells.",
-		"inMapId": "G.N",
-		"isShowInParentMap": true
-	}, {
-		"id": "A3.Convo.C.Mordin.2",
-		"inMissionId": "A3.Convo.C.Mordin",
-		"sortIndex": 90012,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"titlePrefix": "Mordin: ",
-		"name": "2nd Normandy Convo",
-		"description": "_Note: this is available one mission after [megametracker://mission?id=M3.1.SurKesh]_ \n\nYou can now ask Mordin about the Shroud.",
-		"inMapId": "G.N",
-		"isShowInParentMap": true
-	}, {
-		"id": "A3.Convo.C.Mordin.3",
-		"inMissionId": "A3.Convo.C.Mordin",
-		"sortIndex": 90013,
-		"gameVersion": "3",
-		"missionType": "Objective",
-		"titlePrefix": "Mordin: ",
-		"name": "1st Citadel DLC",
-		"description": "There are some messages from Mordin left in your apartment after the party.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
-		"events": [{
-			"type": "BlockedUntil",
-			"id": "Completed: Citadel DLC 1"
-		}]
-	}, {
 		"id": "A3.Convo.C.Traynor",
 		"inMissionId": "A3.Convo.Crew",
 		"sortIndex": 9001,
@@ -2915,7 +2854,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: Mars"
+			"id": "Completed: Priority: Sur'Kesh"
 		}]
 	}, {
 		"id": "A3.Convo.A.AlJilani",
@@ -3226,7 +3165,7 @@
 		}],
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: Geth Dreadnought"
+            "id": "Completed: Ex-Cerberus Scientists"
 		}]
 	}, {
 		"id": "A3.Convo.A.Jacob.1",
@@ -3282,9 +3221,9 @@
 		"conversationRewards": [{
 			"set": {
 				"context": "Speaking to Jack in Purgatory",
-				"isExclusiveSet": true,
 				"options": [{
 					"set": {
+                        "isExclusiveSet": true,
 						"options": [{
 							"id": "A3.Convo.A.Jack.P1",
 							"type": "Paragon",
@@ -3297,13 +3236,13 @@
 							"trigger": "\"Keep at it.\""
 						}]
 					}
-				}, {
-					"id": "A3.Convo.A.Jack.P5",
-					"type": "Paragade",
-					"value": 2,
-					"trigger": "(Automatic)"
-				}]
-			}
+                }, {
+                    "id": "A3.Convo.A.Jack.P5",
+                    "type": "Paragade",
+                    "value": 2,
+                    "trigger": "(Automatic)"
+                }]
+            }
 		}, {
 			"set": {
 				"context": "Playing a game at the Arena with Jack",
@@ -3710,7 +3649,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: The Citadel II"
+			"id": "Completed: Priority: The Citadel II + 1"
 		}]
 	}, {
 		"id": "A3.Convo.A.Miranda.3",
@@ -3752,7 +3691,7 @@
 		"missionType": "Objective",
 		"titlePrefix": "Miranda: ",
 		"name": "2nd Citadel DLC",
-		"description": "Meet Miranda near the casino bar to play some roulette and ply her with wine.",
+		"description": "Meet Miranda near the quasar machines to play some roulette and ply her with wine.",
 		"annotationNote": "Romance Option",
 		"inMapId": "G.C",
 		"isShowInParentMap": true,
@@ -3776,6 +3715,73 @@
 			"id": "Completed: Priority: Cerberus Headquarters"
 		}]
 
+    }, {
+        "id": "A3.Convo.A.Mordin",
+        "inMissionId": "A3.Convo.Associates",
+        "sortIndex": 9001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Conversations: ",
+        "name": "Mordin Solus",
+        "description": "Conversations with [megametracker://person?id=S2.Mordin].",
+        "conversationRewards": [{
+            "set": {
+                "context": "Defending Mordin from Wrex's suspicions",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A3.Convo.A.Mordin.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"He's trustworthy, Wrex.\""
+                }, {
+                    "id": "A3.Convo.A.Mordin.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Suspicion is healthy.\""
+                }]
+            }
+        }],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Sur'Kesh"
+        }]
+    }, {
+        "id": "A3.Convo.A.Mordin.1",
+        "inMissionId": "A3.Convo.A.Mordin",
+        "sortIndex": 90011,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Mordin: ",
+        "name": "1st Normandy Convo",
+        "description": "Mordin/Wiks is treating Eve, but Wrex storms in suspiciously. He is sent off to get a tissue sample, and after you speak with Eve, you can talk more to Mordin about the Genophage cure he is creating. He still refuses to admit the Genophage was wrong. He muses about what he'll do when the war is over, go to the beach and collect seashells, experiment on the seashells.",
+        "inMapId": "G.N",
+        "isShowInParentMap": true
+    }, {
+        "id": "A3.Convo.A.Mordin.2",
+        "inMissionId": "A3.Convo.A.Mordin",
+        "sortIndex": 90012,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Mordin: ",
+        "name": "2nd Normandy Convo",
+        "description": "_Note: this is available one mission after [megametracker://mission?id=M3.1.SurKesh]_ \n\nYou can now ask Mordin about the Shroud.",
+        "inMapId": "G.N",
+        "isShowInParentMap": true
+    }, {
+        "id": "A3.Convo.A.Mordin.3",
+        "inMissionId": "A3.Convo.A.Mordin",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Mordin: ",
+        "name": "1st Citadel DLC",
+        "description": "There are some messages from Mordin left in your apartment after the party.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC 1"
+        }]
 	}, {
 		"id": "A3.Convo.A.Raan",
 		"inMissionId": "A3.Convo.Associates",
@@ -4177,6 +4183,21 @@
 			"type": "BlockedUntil",
 			"id": "Completed: Citadel DLC 1"
 		}]
+    }, {
+        "id": "A3.Convo.A.Zaeed.1",
+        "inMissionId": "A3.Convo.A.Zaeed",
+        "sortIndex": 90021,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Zaeed: ",
+        "name": "1st Citadel Convo",
+        "description": "Talk to Zaeed in the loading docks and gain an asset for the war.",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Rannoch: Geth Fighter Squadrons and Rannoch: Admiral Koris or Priority: Rannoch"
+        }]
 	}, {
 		"id": "A3.Convo.A.Zaeed.2",
 		"inMissionId": "A3.Convo.A.Zaeed",
@@ -4306,7 +4327,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Priority: Geth Dreadnought"
+			"id": "Completed: Priority: Thessia + 1"
 		}]
 	}, {
 		"id": "A3.Convo.N.5RaanGerrel",
@@ -4328,7 +4349,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Rannoch: Geth Fighter Squadrons"
+			"id": "Completed: Rannoch: Geth Fighter Squadrons or Rannoch: Admiral Koris"
 		}]
 	}, {
 		"id": "A3.Convo.N.6XenTali",
@@ -4360,7 +4381,7 @@
 		"isShowInParentMap": true,
 		"events": [{
 			"type": "BlockedUntil",
-			"id": "Completed: Rannoch: Admiral Koris"
+			"id": "Completed: Rannoch: Geth Fighter Squadrons"
 		}]
 	}, {
 		"id": "A3.Convo.N.7JavikEdi",
@@ -4469,7 +4490,7 @@
 		"name": "Arguing Physicians",
 		"description": "A human physician is arguing with her salarian colleague that the hospital needs to start triaging patient needs for when supply shortages arise, allowing the most terminal to die. Pick a side.",
 		"conversationRewards": [{
-			"id": "A3.Convo.OC.Hospital1.PR5",
+			"id": "A3.Convo.OC.Hospital2.PR5",
 			"type": "Paragade",
 			"value": 2,
 			"trigger": "(Automatic)"

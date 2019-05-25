@@ -148,17 +148,205 @@
 		"sortIndex": 1170
 
 	}, {
-		"x-comment-x": "-------- NOVELTY -------",
-		"id": "DLC3.Leviathan.I.1",
+        "x-comment-x": "-------- NOVELTY -------",
+        "id": "DLC3.Leviathan.I.1B",
         "inMissionId": "A3.Souvenirs",
-		"gameVersion": "3",
-		"itemType": "Loot",
-		"itemDisplayType": "Loot",
-		"name": "Screaming Husk Head",
-		"annotationNote": "Talk to Vega in Bryson's lab",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
-		"sortIndex": 1096
+        "identicalMissionId": "DLC3.Leviathan.I.1A",
+        "gameVersion": "3",
+        "itemType": "Loot",
+        "itemDisplayType": "Loot",
+        "name": "Screaming Husk Head",
+        "annotationNote": "Talk to Vega in Bryson's lab",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel I"
+        }],
+        "sortIndex": 1096
+    }, {
+        "x-comment-x": "-------- (duplicate for mission listing) -------",
+        "id": "DLC3.Leviathan.5.I.1A",
+        "inMissionId": "DLC3.Leviathan.5",
+        "identicalMissionId": "DLC3.Leviathan.I.1B",
+        "gameVersion": "3",
+        "itemType": "Loot",
+        "itemDisplayType": "Loot",
+        "name": "Screaming Husk Head",
+        "annotationNote": "Talk to Vega in Bryson's lab",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "sortIndex": 10904
+    }, {
+        "id": "A3.Souvenirs.I.01VI",
+        "inMissionId": "A3.Souvenirs",
+        "gameVersion": "3",
+        "itemType": "Pet",
+        "itemDisplayType": "Novelty",
+        "name": "Aquarium VI",
+        "annotationNote": "Elkoss Combine / Arsenal Supplies",
+        "description": "Will automatically feed your fish (particularly helpful if you acquire [megametracker://item?id=A3.Souvenirs.I.5Eel].",
+        "price": "-25,000 Credits",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "sortIndex": 1096
+    }, {
+        "id": "A3.Souvenirs.I.02KoiFish",
+        "inMissionId": "A3.Souvenirs",
+        "gameVersion": "3",
+        "itemType": "Pet",
+        "itemDisplayType": "Novelty",
+        "name": "Koi Fish",
+        "annotationNote": "Kanala Exports",
+        "price": "-1,000 Credits",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "sortIndex": 1096
+    }, {
+        "id": "A3.Souvenirs.I.03Dartfish",
+        "inMissionId": "A3.Souvenirs",
+        "gameVersion": "3",
+        "itemType": "Pet",
+        "itemDisplayType": "Novelty",
+        "name": "Striped Dartfish",
+        "annotationNote": "Kanala Exports",
+        "price": "-1,000 Credits",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Sur'Kesh"
+        }],
+        "sortIndex": 1096
+    }, {
+        "id": "A3.Souvenirs.I.04Jellyfish",
+        "inMissionId": "A3.Souvenirs",
+        "gameVersion": "3",
+        "itemType": "Pet",
+        "itemDisplayType": "Novelty",
+        "name": "Balan Jellyfish",
+        "annotationNote": "Kanala Exports",
+        "price": "-1,000 Credits",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel II"
+        }],
+        "sortIndex": 1096
+    }, {
+        "id": "A3.Souvenirs.I.05Eel",
+        "inMissionId": "A3.Souvenirs",
+        "gameVersion": "3",
+        "itemType": "Pet",
+        "itemDisplayType": "Novelty",
+        "name": "Khar’Shan Snapping Eel",
+        "annotationNote": "Kanala Exports",
+        "description": "Will eat your other fish if you ever forget to feed them.",
+        "price": "-10,000 Credits",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Rannoch"
+        }],
+        "sortIndex": 1096
+    }, {
+        "id": "A3.Souvenirs.I.06Kodiak",
+        "inMissionId": "A3.Souvenirs",
+        "gameVersion": "3",
+        "itemType": "Souvenir",
+        "itemDisplayType": "Novelty",
+        "name": "Alliance Kodiak",
+        "annotationNote": "Kassa Fabrication",
+        "price": "-1,000 Credits",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel I"
+        }],
+        "sortIndex": 1096
+    }, {
+        "id": "A3.Souvenirs.I.07Citadel",
+        "inMissionId": "A3.Souvenirs",
+        "gameVersion": "3",
+        "itemType": "Model",
+        "itemDisplayType": "Novelty",
+        "name": "Citadel",
+        "annotationNote": "Nos Astra Sporting Goods",
+        "price": "-1,000 Credits",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven"
+        }],
+        "sortIndex": 1096
+    }, {
+        "id": "A3.Souvenirs.I.08Dreadnought",
+        "inMissionId": "A3.Souvenirs",
+        "gameVersion": "3",
+        "itemType": "Model",
+        "itemDisplayType": "Novelty",
+        "name": "Alliance Dreadnought",
+        "annotationNote": "Kassa Fabrication",
+        "price": "-1,000 Credits",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Sur'Kesh"
+        }],
+        "sortIndex": 1096
+    }, {
+        "id": "A3.Souvenirs.I.09Fighter",
+        "inMissionId": "A3.Souvenirs",
+        "gameVersion": "3",
+        "itemType": "Model",
+        "itemDisplayType": "Novelty",
+        "name": "Alliance Figher",
+        "annotationNote": "Kassa Fabrication",
+        "price": "-1,000 Credits",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Sur'Kesh"
+        }],
+        "sortIndex": 1096
+    }, {
+        "id": "A3.Souvenirs.I.10Liveship",
+        "inMissionId": "A3.Souvenirs",
+        "gameVersion": "3",
+        "itemType": "Model",
+        "itemDisplayType": "Novelty",
+        "name": "Liveship",
+        "annotationNote": "Elkoss Combine / Arsenal Supplies",
+        "price": "-1,000 Credits",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Geth Dreadnought"
+        }],
+        "sortIndex": 1096
+    }, {
+        "id": "A3.Souvenirs.I.11GethFreighter",
+        "inMissionId": "A3.Souvenirs",
+        "gameVersion": "3",
+        "itemType": "Model",
+        "itemDisplayType": "Novelty",
+        "name": "Geth Freighter",
+        "annotationNote": "Elkoss Combine / Arsenal Supplies",
+        "price": "-1,000 Credits",
+        "inMapId": "G.C",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Geth Dreadnought"
+        }],
+        "sortIndex": 1096
 		
 	}, {
 		"x-comment-x": "-------- LOST PROPERTY -------",
@@ -201,12 +389,13 @@
 		"itemType": "Souvenir",
 		"itemDisplayType": "Novelty",
 		"name": "UT-47 Kodiak Shuttle",
+        "description": "This is not actually a Kodiak shuttle, but a Human Heavy Cruiser. It was mislabelled in Game 2 and is now just called \"Alliance Shuttle.\"",
 		"annotationNote": "Deck 2 CIC",
 		"inMapId": "G.N",
 		"isShowInParentMap": true,
 		"sortIndex": 1097
 	}, {
-		"id": "A3.LostProperty.I.3",
+		"id": "A3.LostProperty.I.2A",
         "inMissionId": "A3.LostProperty",
 		"gameVersion": "3",
 		"itemType": "Souvenir",

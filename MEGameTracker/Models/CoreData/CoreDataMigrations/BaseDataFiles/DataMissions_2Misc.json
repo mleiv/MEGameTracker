@@ -1601,7 +1601,7 @@
       }
     }, {
       "context": "Leaving Liara on Hagalaz",
-      "id": "DLC2.LairShadowBroker.P14",
+      "id": "DLC2.LairShadowBroker.P15",
       "type": "Paragon",
       "value": 2,
       "trigger": "\"I'll miss you.\""
@@ -3447,7 +3447,7 @@
           "context": "(If this was discussed in a previous conversation with the warden)",
           "trigger": "\"What about serving the galaxy?\""
         }, {
-          "id": "A2.D.Jack.R5",
+          "id": "A2.D.Jack.R5B",
           "type": "Renegade",
           "value": 2,
           "trigger": "\"Hell, no.\""
@@ -5526,13 +5526,13 @@
                     "isExclusiveSet": true,
                     "context": "\"What is your problem, Uvenk?\"",
                     "options": [{
-                      "id": "A2.L.Grunt.P5",
+                      "id": "A2.L.Grunt.P5B",
                       "type": "Paragon",
                       "value": 5,
                       "context": "*_Charm_* Uvenk",
                       "trigger": "\"You argue like an alien.\""
                     }, {
-                      "id": "A2.L.Grunt.R5",
+                      "id": "A2.L.Grunt.R5B",
                       "type": "Renegade",
                       "value": 5,
                       "context": "*_Intimidate_* Uvenk",
@@ -7587,7 +7587,7 @@
               "value": 2,
               "trigger": "\"This wasn't his choice.\""
             }, {
-              "id": "A2.L.Tali.R20",
+              "id": "A2.L.Tali.R25",
               "type": "Renegade",
               "value": 2,
               "trigger": "\"We'll destroy the geth.\""
@@ -7620,7 +7620,7 @@
           "value": 2,
           "trigger": "\"He wanted to keep his promise.\""
         }, {
-          "id": "A2.L.Tali.P30",
+          "id": "A2.L.Tali.P30B",
           "type": "Paragon",
           "value": 2,
           "trigger": "\"That's what we needed.\""
@@ -7665,7 +7665,7 @@
               "context": "*_Intimidate_* the board",
               "trigger": "\"You're wasting our time!\""
             }, {
-              "id": "A2.L.Tali.P36B",
+              "id": "A2.L.Tali.R36C",
               "type": "Renegade",
               "value": 30,
               "context": "(If Veetor and Kal'Reegar are there)",
@@ -7676,7 +7676,7 @@
               "value": 30,
               "trigger": "\"We have no evidence.\""
             }, {
-              "id": "A2.L.Tali.R36C",
+              "id": "A2.L.Tali.R36D",
               "type": "Renegade",
               "value": 30,
               "trigger": "\"Yes. Here is the evidence.\""
@@ -7776,7 +7776,7 @@
       "trigger": "\"You were motivated.\""
     }, {
       "context": "(If Shepard rallied the crowd) Talking to Kal'Reegar after the trial",
-      "id": "A2.L.Tali.P60",
+      "id": "A2.L.Tali.P61",
       "type": "Paragon",
       "value": 2,
       "trigger": "\"Thanks for standing by me.\""
@@ -8109,7 +8109,7 @@
                 "context": "On entering the storage room",
                 "isExclusiveSet": true,
                 "options": [{
-                   "id": "A2.L.Thane.R11A",
+                   "id": "A2.L.Thane.R11A.Dup1",
                    "type": "Renegade",
                    "value": 5,
                    "context": "*Renegade interrupt*",
@@ -8133,7 +8133,7 @@
                 "context": "After \"Nothing bad.\"",
                 "isExclusiveSet": true,
                 "options": [{
-                  "id": "A2.L.Thane.R11A",
+                  "id": "A2.L.Thane.R11A.Dup2",
                   "type": "Renegade",
                   "value": 5,
                   "context": "*Renegade interrupt*",
@@ -8157,7 +8157,7 @@
                 "context": "After \"It's not important.\"",
                 "isExclusiveSet": true,
                 "options": [{
-                  "id": "A2.L.Thane.R11A",
+                  "id": "A2.L.Thane.R11A.Dup3",
                   "type": "Renegade",
                   "value": 5,
                   "context": "*Renegade interrupt*",
