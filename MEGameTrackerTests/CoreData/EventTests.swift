@@ -124,7 +124,7 @@ final class EventTests: MEGameTrackerTests {
 
 		// - verify signal is fired
         let expectationMissionOnChange = expectation(description: "Mission on change triggered")
-        Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+        Mission.onChange.subscribe(with: self) { (changed: (id: String, object: Mission?)) in
             if changed.id == "M1.Prologue",
                 let mission = changed.object ?? Mission.get(id: changed.id),
                 mission.name == "Prologue: On The Normandy" {
@@ -150,7 +150,7 @@ final class EventTests: MEGameTrackerTests {
 
         // - verify signal is fired
         let expectationDecisionOnChange = expectation(description: "Decision on change triggered")
-        Decision.onChange.subscribe(on: self) { (changed: (id: String, object: Decision?)) in
+        Decision.onChange.subscribe(with: self) { (changed: (id: String, object: Decision?)) in
             if changed.id == "D1.WrexArmor" {
                 expectationDecisionOnChange.fulfill()
             }
@@ -177,7 +177,7 @@ final class EventTests: MEGameTrackerTests {
 		_ = create(Mission.self, from: noveriaCombinedMissionJson)
 
         let expectationMissionOnChange = expectation(description: "Mission on change triggered")
-        Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+        Mission.onChange.subscribe(with: self) { (changed: (id: String, object: Mission?)) in
             if changed.id == "M1.Noveria.7Contamination",
                 let mission = changed.object ?? Mission.get(id: changed.id),
                 mission.isAvailable {

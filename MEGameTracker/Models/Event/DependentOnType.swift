@@ -57,7 +57,6 @@ extension DependentOnType {
                         missionTypes: MissionType.anyMissionTriggers,
                         gameVersion: gameVersion
                     )
-print("\(id) \(count)")
 				}
 			} else if let event = Event.get(id: id) {
 				count += event.isTriggered ? 1 : 0

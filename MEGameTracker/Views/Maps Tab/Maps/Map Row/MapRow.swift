@@ -9,6 +9,7 @@
 import UIKit
 
 final public class MapRow: UITableViewCell {
+    let changeQueue = DispatchQueue(label: "MapRow.data", qos: .background)
 
 // MARK: Types
 	typealias Checkbox = MapCheckbox
@@ -156,9 +157,11 @@ final public class MapRow: UITableViewCell {
 				nameLabel.identifier ?? "",
 				toString: self.map?.name ?? ""
 			).toggleStrikethrough(isExplored)
-			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
-				_ = self.map?.changed(isExplored: isExplored, isSave: true)
-				spinnerController?.stopSpinner(inView: self.origin?.view)
+            self.changeQueue.sync {
+                _ = self.map?.changed(isExplored: isExplored, isSave: true)
+                DispatchQueue.main.async {
+                    spinnerController?.stopSpinner(inView: self.origin?.view)
+                }
 			}
 		}
 	}

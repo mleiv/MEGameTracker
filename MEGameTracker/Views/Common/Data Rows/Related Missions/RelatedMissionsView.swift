@@ -66,7 +66,7 @@ final public class RelatedMissionsView: SimpleArrayDataRow {
 	override func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		Mission.onChange.cancelSubscription(for: self)
-		_ = Mission.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Mission.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.missions.firstIndex(where: { $0.id == changed.id }),
 				   let newRow = changed.object ?? Mission.get(id: changed.id) {
 				self?.controller?.relatedMissions[index] = newRow

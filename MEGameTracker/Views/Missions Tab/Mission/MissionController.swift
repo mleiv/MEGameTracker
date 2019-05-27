@@ -226,10 +226,10 @@ final public class MissionController: UIViewController,
 	func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadOnShepardChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
 		// listen for changes to mission data
 		Mission.onChange.cancelSubscription(for: self)
-		_ = Mission.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Mission.onChange.subscribe(with: self) { [weak self] changed in
 			if self?.mission?.id == changed.id, let newMission = changed.object ?? Mission.get(id: changed.id) {
 				self?.mission = newMission
 				self?.reloadDataOnChange() // the didSet check will view these missions as identical and not fire

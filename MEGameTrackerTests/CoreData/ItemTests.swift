@@ -132,7 +132,7 @@ final class ItemTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationItemAcquired = expectation(description: "Item on change triggered")
-		Item.onChange.subscribe(on: self) { (changed: (id: String, object: Item?)) in
+		Item.onChange.subscribe(with: self) { (changed: (id: String, object: Item?)) in
 			if changed.id == "M1.Prologue.Loot.I.1",
 				let item = changed.object ?? Item.get(id: changed.id),
 				item.isAcquired {

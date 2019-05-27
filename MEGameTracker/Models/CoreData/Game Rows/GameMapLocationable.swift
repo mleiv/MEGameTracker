@@ -37,6 +37,8 @@ public protocol MapLocationable {
 	var isShowInList: Bool { get }
 	var isShowPin: Bool { get }
 	var isOpensDetail: Bool { get }
+
+    var modifiedDate: Date { get }
 }
 
 extension MapLocationable {

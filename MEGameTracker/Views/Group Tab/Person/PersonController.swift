@@ -200,17 +200,17 @@ final public class PersonController: UIViewController, Spinnerable, UINavigation
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadOnShepardChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
 		// listen for decision changes
 		Decision.onChange.cancelSubscription(for: self)
-		_ = Decision.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Decision.onChange.subscribe(with: self) { [weak self] changed in
 			if self?.person?.loveInterestDecisionId == changed.id {
 				self?.heartButton.toggle(isOn: self?.person?.isLoveInterest ?? false)
 			}
 		}
 		// listen for changes to persons data
 		Person.onChange.cancelSubscription(for: self)
-		_ = Person.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Person.onChange.subscribe(with: self) { [weak self] changed in
 			if self?.person?.id == changed.id, let newPerson = changed.object ?? Person.get(id: changed.id) {
 				self?.person = newPerson
 			}

@@ -88,7 +88,7 @@ final class MapTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationMapAcquired = expectation(description: "Map on change triggered")
-		Map.onChange.subscribe(on: self) { (changed: (id: String, object: Map?)) in
+		Map.onChange.subscribe(with: self) { (changed: (id: String, object: Map?)) in
 			if changed.id == "G.Ear.Exo.Utopia",
 				let map = changed.object ?? Map.get(id: changed.id),
 				map.isExplored {

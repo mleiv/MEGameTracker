@@ -114,7 +114,8 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 	override public func viewDidLoad() {
 		super.viewDidLoad()
 		if !UIWindow.isInterfaceBuilder && App.isInitializing {
-			App.onDidInitialize.subscribe(on: self) { [weak self] (_) -> Void in
+            App.onDidInitialize.cancelSubscription(for: self)
+			App.onDidInitialize.subscribe(with: self) { [weak self] (_) -> Void in
                 DispatchQueue.main.async { () -> Void in
                     self?.setup()
                     self?.view.layoutIfNeeded()
@@ -279,17 +280,15 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 		guard !UIWindow.isInterfaceBuilder else { return }
 		//listen for shepard changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
 //		// listen for love interest decision changes
 //		Decision.onChange.cancelSubscription(for: self)
-//		_ = Decision.onChange.subscribe(on: self) { [weak self] changed in
+//		_ = Decision.onChange.subscribe(with: self) { [weak self] changed in
 //			if let object = changed.object, object.loveInterestId != nil {
 //				DispatchQueue.main.async {
 //					self?.setupLoveInterest()
 //				}
-
 //			}
-
 //		}
 	}
 

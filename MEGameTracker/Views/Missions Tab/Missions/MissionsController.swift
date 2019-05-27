@@ -10,6 +10,9 @@ import UIKit
 
 final class MissionsController: UITableViewController, Spinnerable {
 
+    //let changeQueue = DispatchQueue(label: "MissionsController.data", qos: .background)
+    let transitionQueue = DispatchQueue(label: "MissionsController.transition", qos: .background)
+
 	var missionsSplitViewController: MissionsSplitViewController? {
 		guard !UIWindow.isInterfaceBuilder else { return nil }
 		return parent as? MissionsSplitViewController
@@ -125,7 +128,7 @@ final class MissionsController: UITableViewController, Spinnerable {
 				self.startSpinner(inView: self.view.superview)
 			}
 		}
-		DispatchQueue.global(qos: .background).async {
+		transitionQueue.sync {
 			if let parentController = self.parent as? MissionsSplitViewController {
 				let ferriedSegue: FerriedPrepareForSegueClosure = {
 					(destinationController: UIViewController) in
@@ -228,10 +231,10 @@ extension MissionsController {
 		registerPreCacheListener()
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadOnShepardChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange).sample(every: 0.2)
 		// listen for changes to mission data
 		Mission.onChange.cancelSubscription(for: self)
-		_ = Mission.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Mission.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.missions.firstIndex(where: { $0.id == changed.id }),
 				let newMission = changed.object ?? Mission.get(id: changed.id),
 				newMission.missionType != .objective {
@@ -247,7 +250,7 @@ extension MissionsController {
 		guard missions.isEmpty else { return }
 		let signal = isLoadedSignal
 		signal?.cancelSubscription(for: self)
-		signal?.subscribeOnce(on: self) { [weak self] (type: MissionType, values: [Mission]) in
+		signal?.subscribeOnce(with: self) { [weak self] (type: MissionType, values: [Mission]) in
 			guard type == self?.missionsType else { return }
 			self?.missions = values
 			self?.reloadAllRows()
@@ -263,7 +266,7 @@ extension MissionsController: DeepLinkable {
 		DispatchQueue.main.async { [weak self] in
 			self?.startSpinner(inView: self?.view.superview)
 		}
-		DispatchQueue.global(qos: .background).async { [weak self] in
+		transitionQueue.sync { [weak self] in
 			if let mission = object as? Mission {
 				if self?.selectMission(mission) == true {
 					self?.deepLinkedMission = nil

@@ -9,6 +9,7 @@
 import UIKit
 
 final class MissionRow: UITableViewCell {
+    let changeQueue = DispatchQueue(label: "MissionRow.data", qos: .background)
 
 // MARK: Types
 	typealias Checkbox = MissionCheckbox
@@ -154,9 +155,9 @@ final class MissionRow: UITableViewCell {
 			self.setCheckboxImage(isCompleted: isCompleted, isAvailable: self.mission?.isAvailable ?? false)
 			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
 				?? "", toString: self.mission?.name ?? "").toggleStrikethrough(isCompleted)
-            DispatchQueue.global(qos: .background).async {
+            self.changeQueue.sync {
                 _ = self.mission?.changed(isCompleted: isCompleted, isSave: true)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
+                DispatchQueue.main.async {
                     spinnerController?.stopSpinner(inView: self.origin?.view)
                 }
             }

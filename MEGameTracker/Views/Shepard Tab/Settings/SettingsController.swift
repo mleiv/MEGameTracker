@@ -167,6 +167,6 @@ class SettingsController: UITableViewController, Spinnerable {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		//listen for relationship changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
 	}
 }

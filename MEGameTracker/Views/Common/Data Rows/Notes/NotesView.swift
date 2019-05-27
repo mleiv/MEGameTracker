@@ -104,7 +104,7 @@ final public class NotesView: SimpleArrayDataRow {
 	override func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		Note.onChange.cancelSubscription(for: self)
-		_ = Note.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Note.onChange.subscribe(with: self) { [weak self] changed in
 			if let uuid = UUID(uuidString: changed.id),
                 let index = self?.notes.firstIndex(where: { $0.uuid == uuid }) ,
 				   let newRow = changed.object ?? Note.get(uuid: uuid) {

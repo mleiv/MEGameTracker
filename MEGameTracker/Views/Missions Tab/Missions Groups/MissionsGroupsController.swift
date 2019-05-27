@@ -13,6 +13,9 @@ import UIKit
 
 final class MissionsGroupsController: UITableViewController, Spinnerable {
 
+    let changeQueue = DispatchQueue(label: "MissionsGroupsController.data", qos: .background)
+    let transitionQueue = DispatchQueue(label: "MissionsGroupsController.transition", qos: .background)
+
 	var shepardUuid: UUID?
 	var didSetup = false
 	var isUpdating = false
@@ -59,7 +62,7 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 
 		guard !UIWindow.isInterfaceBuilder else { return }
 
-		DispatchQueue.global(qos: .background).async { [weak self] in
+        DispatchQueue.global(qos: .background).async { [weak self] in
 			self?.deepLink(self?.deepLinkedMission)
 		}
 	}
@@ -117,14 +120,13 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 	}
 
 	func precacheMissions() {
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            let gameVersion = App.current.gameVersion
-            guard let missionCounts = self?.missionCounts else { return }
-            for type in missionCounts.keys {
-                let missions = Mission.getAllType(type, gameVersion: gameVersion).sorted(by: Mission.sort)
-                self?.onPreCacheFinished.fire((type: type, values: missions))
-                // cancel if we switched missions mid-query:
-                guard gameVersion == App.current.gameVersion else { return }
+        let gameVersion = App.current.gameVersion
+        for type in missionCounts.keys {
+            let missions = Mission.getAllType(type, gameVersion: gameVersion).sorted(by: Mission.sort)
+            onPreCacheFinished.fire((type: type, values: missions))
+            // cancel if we switched missions mid-query:
+            guard gameVersion == App.current.gameVersion else { return }
+            changeQueue.sync { [weak self] in
                 self?.precachedMissions[type] = missions
                 if missionCounts[type]?.unavailable == 0 {
                     self?.recountMissions(type: type)
@@ -190,7 +192,7 @@ extension MissionsGroupsController {
 		DispatchQueue.main.async {
 			self.startSpinner(inView: self.view.superview)
 		}
-		DispatchQueue.global(qos: .background).async {
+		transitionQueue.sync {
 			// Uses strong self (don't want to give up page until spinner is turned off)
 			self.deepLinkedMission = mission
 			self.lastSelectedMissionsGroup = mission?.missionType
@@ -206,7 +208,7 @@ extension MissionsGroupsController {
 		DispatchQueue.main.async {
 			self.startSpinner(inView: self.view.superview)
 		}
-		DispatchQueue.global(qos: .background).async {
+		transitionQueue.sync {
 			// Uses strong self (don't want to give up page until spinner is turned off)
 			self.lastSelectedMissionsGroup = missionType
 			DispatchQueue.main.async { // strong self (don't want to give up page until spinner is turned off)
@@ -298,7 +300,7 @@ extension MissionsGroupsController {
 		DispatchQueue.main.async {
 			self.startSpinner(inView: self.view.superview)
 		}
-		DispatchQueue.global(qos: .background).async {
+		changeQueue.sync {
 			self.setupMissionGroups(isReloadData: true)
 			DispatchQueue.main.async {
 				self.stopSpinner(inView: self.view.superview)
@@ -313,7 +315,7 @@ extension MissionsGroupsController {
 		DispatchQueue.main.async {
 			self.startSpinner(inView: self.view.superview)
 		}
-		DispatchQueue.global(qos: .background).async {
+		changeQueue.sync {
 			self.setupRecentlyViewed(isReloadData: true)
 			DispatchQueue.main.async {
 				self.stopSpinner(inView: self.view.superview)
@@ -461,48 +463,49 @@ extension MissionsGroupsController {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadOnShepardChange)
+        _ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
 		// listen for changes to recently viewed list
 		App.onRecentlyViewedMissionsChange.cancelSubscription(for: self)
-		_ = App.onRecentlyViewedMissionsChange.subscribe(on: self, callback: reloadRecentRows)
+		_ = App.onRecentlyViewedMissionsChange.subscribe(with: self, callback: reloadRecentRows)
 		// listen for changes to mission data
 		Mission.onChange.cancelSubscription(for: self)
-		_ = Mission.onChange.subscribe(on: self) { [weak self] changed in
-			DispatchQueue.global(qos: .background).async { [weak self] in
-				self?.processChangedMission(changed)
-			}
-		}
+        _ = Mission.onChange.subscribe(with: self, callback: processChangedMission)
 		// decisions are loaded at detail page, don't have to listen
 	}
 
 	/// Changes any local data and UI to reflect an updated mission.
+    /// Triggered from background queue
 	private func processChangedMission(_ changed: (id: String, object: Mission?)) {
-
 		// check counts and cache
 		// we do a pre-check that this mission id is in our list, and then a proper index later once we know mission type.
-		if precachedMissions.reduce(false, { $0 || $1.1.contains(where: { $0.id == changed.id }) }),
+        if precachedMissions.contains(where: { $0.1.contains(where: { $0.id == changed.id }) }),
 			let newMission = changed.object ?? Mission.get(id: changed.id),
-			newMission.missionType != .objective,
 			let index = precachedMissions[newMission.missionType]?.firstIndex(where: { $0.id == newMission.id }) {
-			// change counts
-			processChangedMissionCounts(newMission)
-			// update cached data
-			if precachedMissions.keys.contains(newMission.missionType) {
-				var missions = precachedMissions[newMission.missionType] ?? []
-				missions[index] = newMission
-				precachedMissions[newMission.missionType] = missions.sorted(by: Mission.sort)
-			}
-		}
+            changeQueue.sync { [weak self] in
+                // change counts
+                self?.processChangedMissionCounts(newMission)
+            }
+            // update cached data
+            var missions = precachedMissions[newMission.missionType] ?? []
+            missions[index] = newMission
+            missions = missions.sorted(by: Mission.sort)
+            changeQueue.sync { [weak self] in
+                self?.precachedMissions[newMission.missionType] = missions
+            }
+        }
 
 		// check recently viewed
 		if let index = recentMissions.firstIndex(where: { $0.id == changed.id }),
 			let newMission = changed.object ?? Mission.get(id: changed.id) {
-			recentMissions[index] = newMission
-			reloadRows([IndexPath(row: index, section: MissionsGroupsSection.recent.rawValue)])
+            changeQueue.sync { [weak self] in
+                self?.recentMissions[index] = newMission
+                self?.reloadRows([IndexPath(row: index, section: MissionsGroupsSection.recent.rawValue)])
+            }
 		}
 	}
 
 	/// Changes any local data and UI to reflect updated missions groups counts.
+    /// Triggered from changeQueue
 	private func processChangedMissionCounts(_ newMission: Mission) {
 		guard let index = precachedMissions[newMission.missionType]?.firstIndex(where: { $0.id == newMission.id }),
             let oldMission = precachedMissions[newMission.missionType]?[index]
@@ -514,13 +517,13 @@ extension MissionsGroupsController {
 		let isCompletedCountChange = oldMission.isCompleted != newMission.isCompleted
 		let isAvailableCountChange = oldMission.isAvailable != newMission.isAvailable
         precachedMissions[newMission.missionType]?[index] = newMission
-		if isCompletedCountChange || isAvailableCountChange {
+        if isCompletedCountChange || isAvailableCountChange {
             recountMissions(type: newMission.missionType)
-			// update rows
-			if let rowIndex = missionsRowByType(newMission.missionType) {
-				reloadRows([IndexPath(row: rowIndex, section: MissionsGroupsSection.main.rawValue)])
-			}
-		}
+            // update rows
+            if let rowIndex = missionsRowByType(newMission.missionType) {
+                reloadRows([IndexPath(row: rowIndex, section: MissionsGroupsSection.main.rawValue)])
+            }
+        }
 	}
 }
 
@@ -566,7 +569,7 @@ extension MissionsGroupsController {
 			let currentSearchTimestamp = Date()
 			self.currentSearchTimestamp = currentSearchTimestamp
 			searchManager?.reloadData()
-			DispatchQueue.global(qos: .background).async {
+			changeQueue.sync {
 				// Uses strong self (don't want to give up page until spinner is turned off)
 //				print("\n\nSearching: \(search)")
 				let missions = Mission.getAll(likeName: search).sorted(by: Mission.sort)
@@ -608,7 +611,7 @@ extension MissionsGroupsController: DeepLinkable {
 		DispatchQueue.main.async { [weak self] in
 			self?.startSpinner(inView: self?.view.superview)
 		}
-		DispatchQueue.global(qos: .background).async { [weak self] in
+		transitionQueue.sync { [weak self] in
 			if let mission = object as? Mission {
 				if self?.selectMission(mission) == true {
 //					self?.deepLinkedMission = nil

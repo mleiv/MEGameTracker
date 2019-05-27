@@ -9,6 +9,7 @@
 import UIKit
 
 class PersonsSearchController: UITableViewController, Spinnerable {
+    let changeQueue = DispatchQueue(label: "PersonsSearchController.data", qos: .background)
 
 	@IBOutlet weak var tempSearchBar: UISearchBar!
 	var searchController: UISearchController?
@@ -85,10 +86,10 @@ class PersonsSearchController: UITableViewController, Spinnerable {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gender/romantic changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
 		// listen for changes to persons data
 		Person.onChange.cancelSubscription(for: self)
-		_ = Person.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Person.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.persons.firstIndex(where: { $0.id == changed.id }),
 				let newPerson = changed.object ?? Person.get(id: changed.id) {
 				self?.persons[index] = newPerson
@@ -197,7 +198,7 @@ extension PersonsSearchController: UISearchBarDelegate, UISearchControllerDelega
 		}
 		currentSearchText = search ?? ""
 		if !UIWindow.isInterfaceBuilder, let search = search {
-			DispatchQueue.global(qos: .background).async { [weak self] in
+			changeQueue.sync { [weak self] in
 				self?.persons = Person.getAll(likeName: search).sorted(by: Person.sort)
 				guard search == self?.currentSearchText else { return }
 				DispatchQueue.main.async { [weak self] in

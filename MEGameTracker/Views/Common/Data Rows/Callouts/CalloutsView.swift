@@ -247,19 +247,19 @@ final public class CalloutsView: SimpleArrayDataRow {
 	override func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
         Map.onChange.cancelSubscription(for: self)
-        _ = Map.onChange.subscribe(on: self) { [weak self] changed in
+        _ = Map.onChange.subscribe(with: self) { [weak self] changed in
             self?.reloadOnCalloutChange(type: Map.self, changed: changed)
         }
         Mission.onChange.cancelSubscription(for: self)
-        _ = Mission.onChange.subscribe(on: self) { [weak self] changed in
+        _ = Mission.onChange.subscribe(with: self) { [weak self] changed in
             self?.reloadOnCalloutChange(type: Mission.self, changed: changed)
         }
         Item.onChange.cancelSubscription(for: self)
-        _ = Item.onChange.subscribe(on: self) { [weak self] changed in
+        _ = Item.onChange.subscribe(with: self) { [weak self] changed in
             self?.reloadOnCalloutChange(type: Item.self, changed: changed)
         }
 		MapLocation.onChangeSelection.cancelSubscription(for: self)
-		_ = MapLocation.onChangeSelection.subscribe(on: self) { [weak self] (mapLocation: MapLocationable) in
+		_ = MapLocation.onChangeSelection.subscribe(with: self) { [weak self] (mapLocation: MapLocationable) in
 			guard mapLocation.shownInMapId == self?.callouts.first?.shownInMapId else { return }
 			self?.highlight(mapLocation: mapLocation)
 		}

@@ -97,7 +97,7 @@ final class AppTests: MEGameTrackerTests {
 
         // - verify signal is fired
         let expectationShepardChanged1 = expectation(description: "Shepard on change triggered")
-        App.onCurrentShepardChange.subscribe(on: self) { _ in
+        App.onCurrentShepardChange.subscribe(with: self) { _ in
             expectationShepardChanged1.fulfill()
         }
 
@@ -112,7 +112,7 @@ final class AppTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationShepardChanged2 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) { _ in
+		App.onCurrentShepardChange.subscribe(with: self) { _ in
 			expectationShepardChanged2.fulfill()
 		}
 
@@ -131,7 +131,7 @@ final class AppTests: MEGameTrackerTests {
 
         // - verify signal is fired
         let expectationShepardChanged3 = expectation(description: "Shepard on change triggered")
-        App.onCurrentShepardChange.subscribe(on: self) { _ in
+        App.onCurrentShepardChange.subscribe(with: self) { _ in
             expectationShepardChanged3.fulfill()
         }
 
@@ -149,7 +149,7 @@ final class AppTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationShepardChanged4 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) { _ in
+		App.onCurrentShepardChange.subscribe(with: self) { _ in
 			expectationShepardChanged4.fulfill()
 		}
 
@@ -167,7 +167,7 @@ final class AppTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationShepardChanged5 = expectation(description: "Shepard on change triggered")
-		App.onCurrentShepardChange.subscribe(on: self) { _ in
+		App.onCurrentShepardChange.subscribe(with: self) { _ in
 			expectationShepardChanged5.fulfill()
 		}
 

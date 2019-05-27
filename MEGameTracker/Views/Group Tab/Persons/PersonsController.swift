@@ -9,7 +9,6 @@
 import UIKit
 
 class PersonsController: UITableViewController, Spinnerable {
-
 	// set by page controller parent
 	var persons: [Person] = []
 	var tabsController: UIViewController?
@@ -85,12 +84,11 @@ class PersonsController: UITableViewController, Spinnerable {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for decision changes
 //		Decision.onChange.cancelSubscription(for: self)
-//		_ = Decision.onChange.subscribe(on: self) { [weak self] changed in
+//		_ = Decision.onChange.subscribe(with: self) { [weak self] changed in
 //			if let index = self?.persons.index(where: { $0.loveInterestDecisionId == changed.id }) {
 //				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
 //				self?.reloadRows(reloadRows)
 //			}
-
 //		}
 	}
 

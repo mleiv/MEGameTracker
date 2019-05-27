@@ -112,6 +112,6 @@ final public class ShepardClassController: UIViewController, SideEffectsable {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes only
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadOnShepardChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
 	}
 }

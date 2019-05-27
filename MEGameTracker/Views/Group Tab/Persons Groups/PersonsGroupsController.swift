@@ -102,10 +102,10 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
 		// listen for changes to persons data
 		Person.onChange.cancelSubscription(for: self)
-		_ = Person.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Person.onChange.subscribe(with: self) { [weak self] changed in
 			for type in (self?.persons ?? [:]).keys {
 				if let index = self?.persons[type]?.firstIndex(where: { $0.id == changed.id }),
 					let newPerson = changed.object ?? Person.get(id: changed.id) {
@@ -117,7 +117,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 			}
 		}
 		Decision.onChange.cancelSubscription(for: self)
-		_ = Decision.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Decision.onChange.subscribe(with: self) { [weak self] changed in
 			if let decision = changed.object, decision.loveInterestId == nil {
 				return
 			}

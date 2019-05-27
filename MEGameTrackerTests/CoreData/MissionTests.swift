@@ -152,7 +152,7 @@ final class MissionTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationMissionCompleted = expectation(description: "Mission on change triggered")
-		Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+		Mission.onChange.subscribe(with: self) { (changed: (id: String, object: Mission?)) in
 			if changed.id == "M1.Garrus",
 				let mission = changed.object ?? Mission.get(id: changed.id),
 				mission.isCompleted {
@@ -199,7 +199,7 @@ final class MissionTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationMissionCompleted = expectation(description: "Mission on change triggered")
-		Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+		Mission.onChange.subscribe(with: self) { (changed: (id: String, object: Mission?)) in
 			if changed.id == "M1.Garrus",
 				let mission = changed.object ?? Mission.get(id: changed.id),
 				mission.isCompleted {
@@ -222,7 +222,7 @@ final class MissionTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationMissionUncompleted = expectation(description: "Mission on change triggered")
-		Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+		Mission.onChange.subscribe(with: self) { (changed: (id: String, object: Mission?)) in
 			if changed.id == "M1.Garrus",
 				let mission = changed.object ?? Mission.get(id: changed.id),
 				!mission.isCompleted {
@@ -254,7 +254,7 @@ final class MissionTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationMissionCompleted2 = expectation(description: "Mission on change triggered")
-		Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+		Mission.onChange.subscribe(with: self) { (changed: (id: String, object: Mission?)) in
 			if changed.id == "M1.Garrus",
 				let mission = changed.object ?? Mission.get(id: changed.id),
 				mission.isCompleted {
@@ -295,7 +295,7 @@ final class MissionTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationMissionCompleted = expectation(description: "Mission on change triggered")
-		Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+		Mission.onChange.subscribe(with: self) { (changed: (id: String, object: Mission?)) in
 			if changed.id == "A1.UC.TurianInsignias",
 				let mission = changed.object ?? Mission.get(id: changed.id),
 				mission.isCompleted {
@@ -320,7 +320,7 @@ final class MissionTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationMissionUncompleted = expectation(description: "Mission on change triggered")
-		Mission.onChange.subscribe(on: self) { (changed: (id: String, object: Mission?)) in
+		Mission.onChange.subscribe(with: self) { (changed: (id: String, object: Mission?)) in
 			if changed.id == "A1.UC.TurianInsignias",
 				let mission = changed.object ?? Mission.get(id: changed.id),
 				!mission.isCompleted {

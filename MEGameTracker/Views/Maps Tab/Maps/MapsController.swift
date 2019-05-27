@@ -12,6 +12,8 @@ import UIKit
 // TODO: Refactor
 
 final public class MapsController: UITableViewController, Spinnerable {
+    let changeQueue = DispatchQueue(label: "MapsController.data", qos: .background)
+    let transitionQueue = DispatchQueue(label: "MapsController.transition", qos: .background)
 
 	@IBOutlet weak var tempSearchBar: UISearchBar!
 	var searchManager: MESearchManager?
@@ -34,9 +36,7 @@ final public class MapsController: UITableViewController, Spinnerable {
 		super.viewDidLoad()
 		setup()
 		pageLoaded = true
-		DispatchQueue.global(qos: .background).async { [weak self] in
-			self?.startListeners()
-		}
+		startListeners()
 		DispatchQueue.main.async { [weak self] in
 			if self?.deepLinkedMap != nil {
 				self?.startSpinner(inView: self?.view.superview)
@@ -145,7 +145,7 @@ final public class MapsController: UITableViewController, Spinnerable {
 		DispatchQueue.main.async {
 			self.startSpinner(inView: self.view.superview)
 		}
-		DispatchQueue.global(qos: .background).async {
+		changeQueue.sync {
 			self.setupMaps()
 			DispatchQueue.main.async {
 				self.tableView.reloadData()
@@ -179,13 +179,13 @@ final public class MapsController: UITableViewController, Spinnerable {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadOnShepardChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
 		// listen for changes to recently viewed list
 		App.onRecentlyViewedMapsChange.cancelSubscription(for: self)
-		_ = App.onRecentlyViewedMapsChange.subscribe(on: self, callback: reloadDataOnChange)
+		_ = App.onRecentlyViewedMapsChange.subscribe(with: self, callback: reloadDataOnChange)
 		// listen for changes to maps data 
 		Map.onChange.cancelSubscription(for: self)
-		_ = Map.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Map.onChange.subscribe(with: self) { [weak self] changed in
 			var reloadRows: [IndexPath] = []
 			// can appear in both sections
 			for type in (self?.maps ?? [:]).keys {
@@ -206,14 +206,11 @@ final public class MapsController: UITableViewController, Spinnerable {
 //						map2.events = map2.events.map({ changedEvent == $0 ? changedEvent : $0 })
 //						self?.searchedMapLocations[key]?[index] = map2
 //					}
-
 //					if var map2 = map as? Map {
 //						map2.events = map2.events.map({ changedEvent == $0 ? changedEvent : $0 })
 //						self?.searchedMapLocations[key]?[index] = map2
 //					}
-
 //				}
-
 //			}
 	}
 }
@@ -483,7 +480,9 @@ extension MapsController {
 				).sorted(by: MapLocation.sort)
 				guard currentSearchTimestamp == self.currentSearchTimestamp
 					  && self.searchManager?.showSearchData == true else { return }
-				self.searchedMapLocations[.map] = list1
+                self.changeQueue.sync {
+                    self.searchedMapLocations[.map] = list1
+                }
 				let list2 = MapLocation.getAllMissions(
 					likeName: search,
 					limit: 30,
@@ -491,7 +490,9 @@ extension MapsController {
 				).filter({ $0.inMapId != nil }).sorted(by: MapLocation.sort)
 				guard currentSearchTimestamp == self.currentSearchTimestamp
 					  && self.searchManager?.showSearchData == true else { return }
-				self.searchedMapLocations[.mission] = list2
+                self.changeQueue.sync {
+                    self.searchedMapLocations[.mission] = list2
+                }
 				let list3 = MapLocation.getAllItems(
 					likeName: search,
 					limit: 30,
@@ -499,7 +500,9 @@ extension MapsController {
 				).sorted(by: MapLocation.sort)
 				guard currentSearchTimestamp == self.currentSearchTimestamp
 					  && self.searchManager?.showSearchData == true else { return }
-				self.searchedMapLocations[.item] = list3
+                self.changeQueue.sync {
+                    self.searchedMapLocations[.item] = list3
+                }
 				DispatchQueue.main.async {
 					guard currentSearchTimestamp == self.currentSearchTimestamp
 						  && self.searchManager?.showSearchData == true else { return }
@@ -520,7 +523,7 @@ extension MapsController {
 extension MapsController: DeepLinkable {
 
 	public func deepLink(_ object: DeepLinkType?, type: String? = nil) {
-		DispatchQueue.global(qos: .background).async { [weak self] in
+		transitionQueue.sync { [weak self] in
 			if let map = object as? Map, type != "MapLocationable" {
 				self?.deepLinkedMapLocationable = nil
 				// second, make sure page is done loading:

@@ -109,11 +109,11 @@ final public class ShepardDecisionsController: UIViewController, Spinnerable {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
 		// listen for decision changes
 		let gameVersion = self.gameVersion
 		Decision.onChange.cancelSubscription(for: self)
-		_ = Decision.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Decision.onChange.subscribe(with: self) { [weak self] changed in
 			if let object = changed.object,
 				let index = self?.allDecisions[gameVersion]?.firstIndex(of: object) {
 				self?.allDecisions[gameVersion]?[index] = object

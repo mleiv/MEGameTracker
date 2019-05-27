@@ -77,7 +77,7 @@ final public class DecisionsView: SimpleArrayDataRow {
 	override func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		Decision.onChange.cancelSubscription(for: self)
-		_ = Decision.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Decision.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.decisions.firstIndex(where: { $0.id == changed.id }),
 				   let newDecision = changed.object ?? Decision.get(id: changed.id) {
 				self?.controller?.decisions[index] = newDecision

@@ -75,7 +75,7 @@ final class PersonTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationDecisionLoved = expectation(description: "Decision on change triggered")
-		Decision.onChange.subscribe(on: self) { (changed: (id: String, object: Decision?)) in
+		Decision.onChange.subscribe(with: self) { (changed: (id: String, object: Decision?)) in
 			if changed.id == "D1.LoveLiara",
 				let decision = changed.object ?? Decision.get(id: changed.id),
 				decision.isSelected {

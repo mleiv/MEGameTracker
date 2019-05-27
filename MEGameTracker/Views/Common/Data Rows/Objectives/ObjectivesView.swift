@@ -125,7 +125,7 @@ final public class ObjectivesView: SimpleArrayDataRow {
 	override func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		Mission.onChange.cancelSubscription(for: self)
-		_ = Mission.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Mission.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.objectives.firstIndex(where: { $0.id == changed.id }),
 				   let newRow = changed.object ?? Mission.get(id: changed.id) {
 				self?.controller?.objectives[index] = newRow
@@ -135,7 +135,7 @@ final public class ObjectivesView: SimpleArrayDataRow {
 			}
 		}
 		Item.onChange.cancelSubscription(for: self)
-		_ = Item.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Item.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.objectives.firstIndex(where: { $0.id == changed.id }),
 				   let newRow = changed.object ?? Item.get(id: changed.id) {
 				self?.controller?.objectives[index] = newRow

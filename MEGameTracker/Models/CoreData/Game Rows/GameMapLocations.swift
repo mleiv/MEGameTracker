@@ -193,28 +193,53 @@ extension MapLocation {
 	}
 
 	/// Assemble all child locations of a set of locations.
-	public static func addChildMapLocations(mapLocations: [MapLocationable]) -> [MapLocationable] {
+    public static func addChildMapLocations(
+        mapLocations: [MapLocationable],
+        includeAllChildren: Bool = false
+    ) -> [MapLocationable] {
 		// include sub missions and sub items, but change their location point to their parent
 		var allChildMapLocations: [MapLocationable] = []
 		for mapLocation in mapLocations {
-			var childMapLocations: [MapLocationable] = []
 			if mapLocation.mapLocationType == .map {
-				childMapLocations += MapLocation.getAllMissions(
-					inMapId: mapLocation.id,
-					gameVersion: App.current.gameVersion
-				)
-				childMapLocations += MapLocation.getAllItems(
-					inMapId: mapLocation.id,
-					gameVersion: App.current.gameVersion
-				)
-				for (index, _) in childMapLocations.enumerated() {
-					childMapLocations[index].mapLocationPoint = mapLocation.mapLocationPoint
-					childMapLocations[index].mapLocationPoint?.radius = 1
-				}
-				allChildMapLocations += childMapLocations
+                allChildMapLocations += addRecursedChildMapLocations(mapLocations: [mapLocation], includeAllChildren: includeAllChildren).map {
+                    var location = $0
+                    location.mapLocationPoint = mapLocation.mapLocationPoint
+                    location.mapLocationPoint?.radius = 1
+                    return location
+                }
 			}
 		}
 		return mapLocations + allChildMapLocations
 	}
+
+    private static func addRecursedChildMapLocations(
+        mapLocations: [MapLocationable],
+        includeAllChildren: Bool = false,
+        level: Int = 0
+    ) -> [MapLocationable] {
+        var allChildMapLocations: [MapLocationable] = []
+        for mapLocation in mapLocations {
+            var childMapLocations: [MapLocationable] = []
+            if mapLocation.mapLocationType == .map {
+                childMapLocations += MapLocation.getAllMissions(
+                    inMapId: mapLocation.id,
+                    gameVersion: App.current.gameVersion
+                )
+                childMapLocations += MapLocation.getAllItems(
+                    inMapId: mapLocation.id,
+                    gameVersion: App.current.gameVersion
+                )
+                if includeAllChildren {
+                    let nextLevelMaps: [Map] = MapLocation.getAllMaps(
+                        inMapId: mapLocation.id,
+                        gameVersion: App.current.gameVersion
+                        ) as? [Map] ?? []
+                    childMapLocations += addRecursedChildMapLocations(mapLocations: nextLevelMaps, includeAllChildren: includeAllChildren, level: level + 1)
+                }
+                allChildMapLocations += childMapLocations
+            }
+        }
+        return allChildMapLocations
+    }
 
 }

@@ -9,6 +9,7 @@
 import UIKit
 
 final public class MapCalloutsGroupsController: UIViewController, TabGroupsControllable {
+    let changeQueue = DispatchQueue(label: "MapCalloutsGroupsController.data", qos: .background)
 
 	public var map: Map?
 	public var mapLocation: MapLocationable?
@@ -135,8 +136,6 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 						// we don't want to show submissions or subitems
 						// also, don't show map image callouts without a link if there is no map
 						allMapLocations = allMapLocations.filter({ $0.isOpensDetail })
-					} else {
-						allMapLocations = MapLocation.addChildMapLocations(mapLocations: allMapLocations)
 					}
 				}
 				for type in MapLocationType.allCases {
@@ -154,7 +153,33 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 			tabCurrentIndex = type.intValue ?? 0
 			break
 		}
+
+        setupEnhancedData()
 	}
+
+    func setupEnhancedData() {
+        guard !UIWindow.isInterfaceBuilder,
+            let map = map, !map.isSplitMenu && map.image != nil else { return }
+
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            let mapLocations: [MapLocationable] = MapLocation.addChildMapLocations(
+                mapLocations: map.getMapLocations(),
+                includeAllChildren: true
+                ).map { var m = $0; m.shownInMapId = map.id; return m }
+            self?.changeQueue.sync {
+                for type in MapLocationType.allCases {
+                    self?.mapLocations[type] = mapLocations.filter({
+                        $0.mapLocationType == type
+                    }).sorted(by: MapLocation.sort)
+                }
+                DispatchQueue.main.async {
+                    self?.setAllControllerData()
+                    self?.setupMapLocationsCounts()
+                    self?.setTabTitles(self?.tabTitles ?? [])
+                }
+            }
+        }
+    }
 
 	func isFinishedCallout(_ mapLocation: MapLocationable) -> Bool {
 		if let mission = mapLocation as? Mission {
@@ -204,9 +229,11 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 	func reloadMapLocationRows(_ reloadRows: [IndexPath], inTabType type: MapLocationType) {
 		if let controller = tabControllers[type.headingValue] as? MapCalloutsController {
 			controller.callouts = mapLocations[type] ?? []
-			DispatchQueue.main.async {
+			DispatchQueue.main.async { [weak self] in
 				controller.reloadRows(reloadRows)
-				self.reloadMapLocationsCountForType(type)
+                self?.changeQueue.sync {
+                    self?.reloadMapLocationsCountForType(type)
+                }
 			}
 		}
 	}
@@ -244,10 +271,10 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 		guard !UIWindow.isInterfaceBuilder else { return }
 		//listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(on: self, callback: reloadOnShepardChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
 		// check just for tab switches
 		MapLocation.onChangeSelection.cancelSubscription(for: self)
-		_ = MapLocation.onChangeSelection.subscribe(on: self) { [weak self] mapLocation in
+		_ = MapLocation.onChangeSelection.subscribe(with: self) { [weak self] mapLocation in
 			guard let controller = self?.tabControllers[mapLocation.mapLocationType.headingValue] else { return }
 			guard mapLocation.shownInMapId == self?.map?.id else { return }
 			self?.switchToTab(controller)

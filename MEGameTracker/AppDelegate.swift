@@ -119,7 +119,7 @@ extension AppDelegate {
 
 		// set up a listener to the show-an-alert signal
 		Alert.onSignal.cancelSubscription(for: self)
-		_ = Alert.onSignal.subscribe(on: self) { [weak self] (alert: Alert) in
+		_ = Alert.onSignal.subscribe(with: self) { [weak self] (alert: Alert) in
 			DispatchQueue.main.async {
 				if let controller = self?.window?.rootViewController?.activeViewController {
 					alert.show(fromController: controller)
@@ -241,7 +241,7 @@ extension AppDelegate {
 
 		// Subscribe to migration progress
 		CoreDataMigrations.onPercentProgress.cancelSubscription(for: self)
-		_ = CoreDataMigrations.onPercentProgress.subscribe(on: self) { (progress: Int) in
+		_ = CoreDataMigrations.onPercentProgress.subscribe(with: self) { (progress: Int) in
 			spinnerUpdateProgressBlock(progress)
 		}
 

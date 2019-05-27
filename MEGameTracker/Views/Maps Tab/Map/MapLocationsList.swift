@@ -100,7 +100,7 @@ public struct MapLocationsList {
 				locations[key] = locations[key]?.sorted(by: MapLocation.sort)
 			}
 		}
-		addButton(atKey: key)
+        addButton(atKey: key)
 		return true
 	}
 

@@ -89,7 +89,7 @@ final class DecisionTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationDecisionOnChange = expectation(description: "Decision on change triggered")
-		Decision.onChange.subscribe(on: self) { (changed: (id: String, object: Decision?)) in
+		Decision.onChange.subscribe(with: self) { (changed: (id: String, object: Decision?)) in
 			if changed.id == "D1.Fist" {
 				expectationDecisionOnChange.fulfill()
 			}
@@ -126,7 +126,7 @@ final class DecisionTests: MEGameTrackerTests {
 
 		// - verify signal is fired
 		let expectationDecisionOnChange = expectation(description: "Decision on change triggered")
-		Decision.onChange.subscribe(on: self) { (changed: (id: String, object: Decision?)) in
+		Decision.onChange.subscribe(with: self) { (changed: (id: String, object: Decision?)) in
 			if changed.id == "D1.Ashley",
 				let decision = changed.object ?? Decision.get(id: changed.id),
 				!decision.isSelected {

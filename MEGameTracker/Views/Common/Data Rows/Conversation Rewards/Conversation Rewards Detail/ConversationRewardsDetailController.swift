@@ -76,7 +76,7 @@ final public class ConversationRewardsDetailController: UITableViewController {
 	internal func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		Mission.onChange.cancelSubscription(for: self)
-		_ = Mission.onChange.subscribe(on: self) { [weak self] changed in
+		_ = Mission.onChange.subscribe(with: self) { [weak self] changed in
 			if self?.mission?.id == changed.id,
 				let newMission = changed.object ?? Mission.get(id: changed.id) {
 				// We have to listen and change mission so that when save is called on each change, 
