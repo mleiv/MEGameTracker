@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -422,6 +422,8 @@
 		B1F78D3B202804670008B36B /* 20180204.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = B1F78D3A202804670008B36B /* 20180204.xcmappingmodel */; };
 		B1FE46A41F493E720050B082 /* GameRowStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE46A31F493E720050B082 /* GameRowStorable.swift */; };
 		B1FE46AE1F4948700050B082 /* DataRowStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE46AD1F4948700050B082 /* DataRowStorable.swift */; };
+		B1FED4D6229C7888001503F1 /* Change20190527.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FED4D5229C7888001503F1 /* Change20190527.swift */; };
+		B1FED4D8229C807A001503F1 /* Change20190527Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FED4D7229C807A001503F1 /* Change20190527Tests.swift */; };
 		B1FFE3341CF6AA17007B3160 /* ConversationRewardsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE3321CF6AA17007B3160 /* ConversationRewardsable.swift */; };
 		B1FFE3351CF6AA17007B3160 /* ConversationRewardsRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE3331CF6AA17007B3160 /* ConversationRewardsRowType.swift */; };
 		B1FFE3541CF6B151007B3160 /* ConversationRewardsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1FFE3491CF6B151007B3160 /* ConversationRewardsDetail.storyboard */; };
@@ -946,6 +948,8 @@
 		B1F78D3A202804670008B36B /* 20180204.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 20180204.xcmappingmodel; sourceTree = "<group>"; };
 		B1FE46A31F493E720050B082 /* GameRowStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRowStorable.swift; sourceTree = "<group>"; };
 		B1FE46AD1F4948700050B082 /* DataRowStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRowStorable.swift; sourceTree = "<group>"; };
+		B1FED4D5229C7888001503F1 /* Change20190527.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change20190527.swift; sourceTree = "<group>"; };
+		B1FED4D7229C807A001503F1 /* Change20190527Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change20190527Tests.swift; sourceTree = "<group>"; };
 		B1FFE3321CF6AA17007B3160 /* ConversationRewardsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRewardsable.swift; sourceTree = "<group>"; };
 		B1FFE3331CF6AA17007B3160 /* ConversationRewardsRowType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRewardsRowType.swift; sourceTree = "<group>"; };
 		B1FFE34A1CF6B151007B3160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ConversationRewardsDetail.storyboard; sourceTree = "<group>"; };
@@ -1543,6 +1547,7 @@
 				B19BECB81F5E668C007B3FE6 /* Change20170905.swift */,
 				B14AB78C1F9D66FA009539CF /* Change20171022.swift */,
 				B14E5E352026AA6100EE63F9 /* Change20180203.swift */,
+				B1FED4D5229C7888001503F1 /* Change20190527.swift */,
 				B142AB921FF9E692003B93E9 /* CoreDataEliminateDuplicates.swift */,
 				B1647054204A3CDB0038F4D2 /* EventTriggerMigration.swift */,
 				B1B11FD31E4E99E200D97CA1 /* 20160210.xcmappingmodel */,
@@ -2246,6 +2251,7 @@
 				B1C66C7F1E8EE87000BDAF9A /* Change20170305Tests.swift */,
 				B19BECB61F5E6576007B3FE6 /* Change20170905Tests.swift */,
 				B14AB7961FA55330009539CF /* Change20171022Tests.swift */,
+				B1FED4D7229C807A001503F1 /* Change20190527Tests.swift */,
 				B1647056204CE2870038F4D2 /* EventTriggerMigrationTests.swift */,
 			);
 			path = Migrations;
@@ -2501,7 +2507,7 @@
 				};
 			};
 			buildConfigurationList = B028AF1C1BA12B1900C73373 /* Build configuration list for PBXProject "MEGameTracker" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -2748,6 +2754,7 @@
 				B1B55C4C1E70317E0095A526 /* ValueDataRowDisplayable.swift in Sources */,
 				B1A8820E1CF29AD100603253 /* RelatedMissionsView.swift in Sources */,
 				B1952B872161C73C00061C5B /* IBStyleManager.swift in Sources */,
+				B1FED4D6229C7888001503F1 /* Change20190527.swift in Sources */,
 				B14EA9281CF3E1B0009F2B0A /* DecisionDetailController.swift in Sources */,
 				B18566971E6FA27A00E19FC5 /* DecisionsListLinkable.swift in Sources */,
 				B04BF16A1BA12C2E00072DA2 /* UIImage.swift in Sources */,
@@ -3029,6 +3036,7 @@
 				B16FBC891E5F646700E151C7 /* DecisionTests.swift in Sources */,
 				B16FBC951E5FAD8100E151C7 /* GameSequenceTests.swift in Sources */,
 				B16FBC931E5FAD7000E151C7 /* ShepardTests.swift in Sources */,
+				B1FED4D8229C807A001503F1 /* Change20190527Tests.swift in Sources */,
 				B14AB7971FA55330009539CF /* Change20171022Tests.swift in Sources */,
 				B1647057204CE2870038F4D2 /* EventTriggerMigrationTests.swift in Sources */,
 				B1F1DC591E5E82AD00755AAD /* PersonTests.swift in Sources */,
@@ -3683,7 +3691,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3703,7 +3712,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LNQGUJUGYP;
 				INFOPLIST_FILE = MEGameTracker/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.urdnot.MassEffectTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -3725,7 +3737,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LNQGUJUGYP;
 				INFOPLIST_FILE = MEGameTracker/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.urdnot.MassEffectTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -3739,7 +3754,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MEGameTrackerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.urdnot.MassEffectTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3753,7 +3772,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MEGameTrackerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.urdnot.MassEffectTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

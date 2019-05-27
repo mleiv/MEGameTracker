@@ -15,7 +15,7 @@ public struct CoreDataMigrationManager {
 	public static var didLoadBaseData = false
 
 	public let migrationsAvailable: [CoreDataMigration] = [ // Int is just for easier reference when editing
-		CoreDataMigration(fromBuild: 63, loadMigration: { return BaseDataImport() }),
+		CoreDataMigration(fromBuild: 64, loadMigration: { return BaseDataImport() }),
 //        CoreDataMigration(fromBuild: 54, loadMigration: { return CoreDataEliminateDuplicates() }),
 		CoreDataMigration(fromBuild: 42, loadMigration: { return Change20170228() }),
 		CoreDataMigration(fromBuild: 44, loadMigration: { return Change20170305() }),
@@ -23,6 +23,7 @@ public struct CoreDataMigrationManager {
         CoreDataMigration(fromBuild: 48, loadMigration: { return Change20171022() }),
         CoreDataMigration(fromBuild: 56, loadMigration: { return Change20180203() }),
         CoreDataMigration(fromBuild: 60, loadMigration: { return EventTriggerMigration() }),
+        CoreDataMigration(fromBuild: 62, loadMigration: { return Change20190527() }),
 	]
 
 	public func migrateFrom(lastBuild: Int, completion: @escaping (() -> Void) = {}) {
