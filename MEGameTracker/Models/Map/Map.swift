@@ -197,8 +197,7 @@ public struct Map: Codable, MapLocationable, Eventsable {
         gameVersion = .game1
         generalData = DataMap(id: id) // faulted for now
         let isExploredString = try container.decodeIfPresent(String.self, forKey: .isExplored) ?? ""
-
-        isExploredPerGameVersion = gameValuesFromIsExplored(gameValues: isExploredString)
+        isExploredPerGameVersion = Map.gameValuesFromIsExplored(gameValues: isExploredString)
         try unserializeDateModifiableData(decoder: decoder)
         try unserializeGameModifyingData(decoder: decoder)
         try unserializeLocalCloudData(decoder: decoder)
@@ -207,8 +206,7 @@ public struct Map: Codable, MapLocationable, Eventsable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
-
-        try container.encode(gameValuesForIsExplored(), forKey: .isExplored)
+        try container.encode(Map.gameValuesForIsExplored(isExploredPerGameVersion: isExploredPerGameVersion), forKey: .isExplored)
         try serializeDateModifiableData(encoder: encoder)
         try serializeGameModifyingData(encoder: encoder)
         try serializeLocalCloudData(encoder: encoder)
@@ -284,7 +282,7 @@ extension Map {
 		}
 	}
 
-    private func gameValuesForIsExplored() -> String {
+    static func gameValuesForIsExplored(isExploredPerGameVersion: [GameVersion: Bool]) -> String {
         var gameValues: [String] = []
         for game in GameVersion.allCases {
             gameValues.append(isExploredPerGameVersion[game] == true ? "1" : "0")
@@ -292,7 +290,7 @@ extension Map {
         return "|\(gameValues.joined(separator: "|"))|"
     }
 
-    private func gameValuesFromIsExplored(gameValues: String) -> [GameVersion: Bool] {
+    static func gameValuesFromIsExplored(gameValues: String) -> [GameVersion: Bool] {
         let pieces = gameValues.components(separatedBy: "|")
         if pieces.count == 5 {
             var values: [GameVersion: Bool] = [:]

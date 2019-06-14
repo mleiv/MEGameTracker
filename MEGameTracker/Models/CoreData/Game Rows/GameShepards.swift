@@ -139,17 +139,44 @@ extension Shepard {
         let commonData = getSharedData()
         var isSaved = true
         for var sequenceShepard in shepards {
-            if sequenceShepard.uuid != uuid {
-                sequenceShepard.setCommonData(commonData)
-                isSaved = isSaved && sequenceShepard.saveAnyChanges(
-                    isCascadeChanges: .none,
-                    isAllowDelay: false,
-                    with: manager
-                )
-            }
+            sequenceShepard.setCommonData(commonData)
+            isSaved = isSaved && sequenceShepard.saveAnyChanges(
+                isCascadeChanges: .none,
+                isAllowDelay: false,
+                with: manager
+            )
         }
         hasUnsavedChanges = !isSaved // sequence save
 	}
+
+// MARK: Copy
+
+    /// Copy the shepard to a new game
+    public static func copyAll(
+        in gameVersions: [GameVersion],
+        sourceUuid: UUID,
+        destinationUuid: UUID,
+        with manager: CodableCoreDataManageable?
+        ) -> Bool {
+        return copyAll(with: manager, alterFetchRequest: { fetchRequest in
+            fetchRequest.predicate = NSPredicate(
+                format: "(gameVersion in %@ and gameSequenceUuid == %@)",
+                gameVersions.map({ $0.stringValue }),
+                sourceUuid.uuidString)
+        }, setChangedValues: { nsManagedObject in
+            let uuid = UUID()
+            nsManagedObject.setValue(uuid.uuidString, forKey: "uuid")
+            nsManagedObject.setValue(destinationUuid.uuidString, forKey: "gameSequenceUuid")
+            if let data = nsManagedObject.value(forKey: serializedDataKey) as? Data,
+                var shepard = try? defaultManager.decoder.decode(Shepard.self, from: data) {
+                shepard.uuid = uuid
+                shepard.gameSequenceUuid = destinationUuid
+                if let data2 = try? defaultManager.encoder.encode(shepard) {
+                    nsManagedObject.setValue(data2, forKey: serializedDataKey)
+                }
+            }
+        })
+    }
 
 // MARK: Delete
 

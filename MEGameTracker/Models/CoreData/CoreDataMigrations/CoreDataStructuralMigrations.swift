@@ -17,6 +17,7 @@ public struct CoreDataStructuralMigrations {
 		"CoreData",
 		"CoreData20170208",
         "CoreData20180204",
+        "CoreData20190609",
 	]
 
 	enum MigrationError: String, Error {

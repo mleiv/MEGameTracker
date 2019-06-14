@@ -69,6 +69,12 @@ public protocol SimpleCoreDataManageable {
         setChangedValues: @escaping SetAdditionalColumns<T>
     ) -> Bool
 
+    /// Copy all rows of an entity matching restrictions.
+    func copyAll<T: NSManagedObject>(
+        alterFetchRequest: @escaping AlterFetchRequest<T>,
+        setChangedValues: @escaping SetAdditionalColumns<T>
+    ) -> Bool
+
     /// Delete single row of a entity.
     func deleteOne<T: NSManagedObject>(
         item: T
@@ -410,6 +416,48 @@ extension SimpleCoreDataManageable {
                 result = true
             } catch let saveError as NSError {
                 print("Error: save failed for \(T.self): \(saveError)")
+            }
+        }
+        waitForEndTask.wait()
+        return result
+    }
+
+    /// Copy all rows of an entity matching restrictions.
+    public func copyAll<T: NSManagedObject>(
+        alterFetchRequest: @escaping AlterFetchRequest<T>,
+        setChangedValues: @escaping SetAdditionalColumns<T>
+    ) -> Bool {
+        guard !Self.isCoreDataInaccessible else { return false }
+        let moc = context
+        var result: Bool = true
+        let waitForEndTask = DispatchWorkItem {} // semaphore flag
+        persistentContainer.performBackgroundTask { moc in
+            defer { waitForEndTask.perform() }
+            moc.automaticallyMergesChangesFromParent = true
+            moc.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+
+            guard let fetchRequest = T.fetchRequest() as? NSFetchRequest<T> else { return }
+            alterFetchRequest(fetchRequest)
+            do {
+                let items: [T] = try fetchRequest.execute()
+                for item in items {
+                    let copyItem = T(context: moc)
+                    let attributes = item.entity.attributesByName
+                    for (key, _) in attributes {
+                        copyItem.setValue(item.value(forKey: key), forKey: key)
+                    }
+                    setChangedValues(copyItem)
+                    // note, we aren't duplicating the relationship entities. Just the relationship.
+                    let relationships = item.entity.relationshipsByName
+                    for (key, _) in relationships {
+                        copyItem.setValue(item.value(forKey: key), forKey: key)
+                    }
+                }
+                try moc.save()
+            }
+            catch let saveError as NSError {
+                result = false
+                print("Error: copyAll failed for \(T.self): \(saveError)")
             }
         }
         waitForEndTask.wait()

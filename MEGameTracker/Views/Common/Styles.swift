@@ -33,6 +33,7 @@ public struct Styles: IBStylesheet {
 		public static let disabledOppositeColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 		public static let linkOnWhiteColor = UIColor(red: 0.2, green: 0.3, blue: 0.9, alpha: 1.0)
 		public static let linkOnBlackColor = UIColor(red: 0.4, green: 0.6, blue: 1.0, alpha: 1.0)
+        public static let additionColor = UIColor(red: 0, green: 0.7, blue: 0.1, alpha: 1.0)
 	}
 	/// Define your fonts using general style groups.
 	/// Fonts are automatically scalable (property .hasAdjustableFontSize can remove this behavior).

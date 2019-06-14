@@ -78,7 +78,9 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 				self.tableView.reloadData()
 			}
 		}
-		precacheMissions()
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            self?.precacheMissions()
+        }
 	}
 
 	func setupRecentlyViewed(isReloadData: Bool = false) {

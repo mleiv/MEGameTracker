@@ -82,6 +82,13 @@ public protocol CodableCoreDataStorable: Codable {
         with manager: CodableCoreDataManageable?
     ) -> Bool
 
+    /// Copies all rows that match the core data request.
+    static func copyAll(
+        with manager: CodableCoreDataManageable?,
+        alterFetchRequest: @escaping AlterFetchRequest<EntityType>,
+        setChangedValues: @escaping SetAdditionalColumns<EntityType>
+    ) -> Bool
+
     /// Deletes the struct's core data equivalent.
     mutating func delete(
         with manager: CodableCoreDataManageable?
@@ -107,6 +114,9 @@ extension CodableCoreDataStorable {
 
     /// The closure type for editing fetch requests.
     public typealias AlterFetchRequest<T: NSManagedObject> = ((NSFetchRequest<T>) -> Void)
+
+    /// The closure type for editing fetched entity objects.
+    public typealias SetAdditionalColumns<T: NSManagedObject> = ((T) -> Void)
 
     /// Convenience - get the static version for easy instance reference.
     public var defaultManager: CodableCoreDataManageable {
@@ -306,6 +316,26 @@ extension CodableCoreDataStorable {
         items: [Self]
     ) -> Bool {
         return saveAll(items: items, with: nil)
+    }
+
+    /// (Protocol default)
+    /// Copies all rows that match the core data request.
+    public static func copyAll(
+        with manager: CodableCoreDataManageable?,
+        alterFetchRequest: @escaping AlterFetchRequest<EntityType>,
+        setChangedValues: @escaping SetAdditionalColumns<EntityType>
+        ) -> Bool {
+        let manager = manager ?? defaultManager
+        return manager.copyAll(alterFetchRequest: alterFetchRequest, setChangedValues: setChangedValues)
+    }
+
+    /// Convenience version of copyAll:manager:AlterFetchRequest<EntityType>
+    ///    (manager not required).
+    public static func copyAll(
+        alterFetchRequest: @escaping AlterFetchRequest<EntityType>,
+        setChangedValues: @escaping SetAdditionalColumns<EntityType>
+        ) -> Bool {
+        return copyAll(with: nil, alterFetchRequest: alterFetchRequest, setChangedValues: setChangedValues)
     }
 
     /// (Protocol default)

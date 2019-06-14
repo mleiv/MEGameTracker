@@ -88,19 +88,6 @@ final public class NotesView: SimpleArrayDataRow {
 		}
 	}
 
-	func deleteRow(_ note: Note, sender: UIView?) -> Bool {
-		var note = note
-		if note.delete(), let index = notes.firstIndex(of: note) {
-			controller?.notes.remove(at: index)
-			let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
-			removeRows(rows)
-			return true
-		} else {
-			print("Could not delete note") // TODO: alert
-			return false
-		}
-	}
-
 	override func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		Note.onChange.cancelSubscription(for: self)
@@ -153,16 +140,29 @@ final public class NotesView: SimpleArrayDataRow {
 
 extension NotesView { // :UITableViewDelegate
 
-	@objc public func tableView(
-		_ tableView: UITableView,
-		commitEditingStyle editingStyle: UITableViewCell.EditingStyle,
-		forRowAtIndexPath indexPath: IndexPath
-	) {
-		if notes.indices.contains((indexPath as NSIndexPath).row) && editingStyle == .delete {
-			tableView.isUserInteractionEnabled = false
-			let cell = tableView.cellForRow(at: indexPath)
-			_ = deleteRow(notes[(indexPath as NSIndexPath).row], sender: cell)
-			tableView.isUserInteractionEnabled = true
-		}
-	}
+    @objc public func tableView(
+        _ tableView: UITableView,
+        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration? {
+        let deleteAction = contextualDeleteAction(forRowAtIndexPath: indexPath)
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+
+    func contextualDeleteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(
+            style: .destructive,
+            title: "Delete",
+            handler: { (action, view, completionHandler) in
+                if var note = self.controller?.notes.remove(at: indexPath.row) {
+                    _ = note.delete()
+                }
+                completionHandler(true)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic) // temp hack
+        })
+
+        action.image = UIImage(named: "Trash")
+        action.backgroundColor = .red
+
+        return action
+    }
 }

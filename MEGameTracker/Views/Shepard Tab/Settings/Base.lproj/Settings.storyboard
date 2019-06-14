@@ -1,23 +1,27 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XTG-wj-UzQ">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XTG-wj-UzQ">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Settings Controller-->
         <scene sceneID="XNx-w5-nlH">
             <objects>
-                <tableViewController id="XTG-wj-UzQ" customClass="SettingsController" customModule="MassEffectTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="XTG-wj-UzQ" customClass="SettingsController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rfn-GH-WoO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="JsZ-dg-5fT" customClass="HairlineBorderView" customModule="MassEffectTracker" customModuleProvider="target">
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="JsZ-dg-5fT" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
@@ -25,12 +29,12 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="FlT-MZ-yx4" customClass="HairlineBorderView" customModule="MassEffectTracker" customModuleProvider="target">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="FlT-MZ-yx4" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="112" width="414" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
@@ -39,15 +43,15 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Default" textLabel="0sf-hy-Oks" rowHeight="80" style="IBUITableViewCellStyleDefault" id="W2V-T0-Kh5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="Default" textLabel="0sf-hy-Oks" rowHeight="80" style="IBUITableViewCellStyleDefault" id="W2V-T0-Kh5">
                                 <rect key="frame" x="0.0" y="32" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W2V-T0-Kh5" id="j7U-fz-i7H">
-                                    <rect key="frame" x="0.0" y="0.0" width="381" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0sf-hy-Oks">
-                                            <rect key="frame" x="15" y="0.0" width="364" height="80"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -66,7 +70,6 @@
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvQ-ZR-QsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

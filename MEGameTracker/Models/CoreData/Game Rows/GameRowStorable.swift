@@ -121,6 +121,14 @@ public protocol GameRowStorable: CodableCoreDataStorable {
         with manager: CodableCoreDataManageable?
     ) -> Bool
 
+    /// Copy all the matching game values.
+    static func copyAll(
+        in gameVersions: [GameVersion],
+        sourceUuid: UUID,
+        destinationUuid: UUID,
+        with manager: CodableCoreDataManageable?
+    ) -> Bool 
+
     /// Delete the game value.
     static func delete(
         id: String,
@@ -307,14 +315,18 @@ extension GameRowStorable {
                     return one
                 },
                 alterFetchRequest: { fetchRequest in
+                    var predicates: [NSPredicate] = []
                     if let gameSequenceUuid = gameSequenceUuid {
-                        fetchRequest.predicate = NSPredicate(
+                        predicates.append(NSPredicate(
                             format: "(gameSequenceUuid == %@)",
                             gameSequenceUuid.uuidString
-                        )
+                        ))
                     }
                     if !ids.isEmpty {
-                        fetchRequest.predicate = NSPredicate(format: "(id in %@)", ids)
+                        predicates.append(NSPredicate(format: "(id in %@)", ids))
+                    }
+                    if predicates.count > 0 {
+                        fetchRequest.predicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: predicates)
                     }
                     alterFetchRequest(fetchRequest)
                 }
@@ -505,6 +517,42 @@ extension GameRowStorable {
         return isSaved
     }
 
+// MARK: Copy
+
+    /// (Protocol default)
+    /// Copy all the matching game values to a new GameSequence UUID.
+    public static func copyAll(
+        in gameVersions: [GameVersion],
+        sourceUuid: UUID,
+        destinationUuid: UUID,
+        with manager: CodableCoreDataManageable?
+        ) -> Bool {
+        return copyAll(with: manager, alterFetchRequest: { fetchRequest in
+            fetchRequest.predicate = NSPredicate(
+                format: "(dataParent.gameVersion in %@ and gameSequenceUuid == %@)",
+                gameVersions.map({ $0.stringValue }),
+                sourceUuid.uuidString)
+        }, setChangedValues: { nsManagedObject in
+            nsManagedObject.setValue(destinationUuid.uuidString, forKey: "gameSequenceUuid")
+            if let data = nsManagedObject.value(forKey: serializedDataKey) as? Data,
+                var item = try? defaultManager.decoder.decode(Self.self, from: data) {
+                item.gameSequenceUuid = destinationUuid
+                if let data2 = try? defaultManager.encoder.encode(item) {
+                    nsManagedObject.setValue(data2, forKey: serializedDataKey)
+                }
+            }
+        })
+    }
+
+    /// Convenience version of copyAll:gameSequenceUuid:manager (no manager required).
+    public static func copyAll(
+        in gameVersions: [GameVersion],
+        sourceUuid: UUID,
+        destinationUuid: UUID
+        ) -> Bool {
+        return copyAll(in: gameVersions, sourceUuid: sourceUuid, destinationUuid: destinationUuid, with: nil)
+    }
+
 // MARK: Delete
 
     /// (Protocol default)
@@ -559,5 +607,6 @@ extension GameRowStorable {
     public static func deleteOrphans() -> Bool {
         return deleteOrphans(with: nil)
     }
+
 }
 // swiftlint:enable file_length

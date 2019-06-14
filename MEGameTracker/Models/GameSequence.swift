@@ -148,6 +148,19 @@ extension GameSequence {
 //		markChanged()
 //		_ = saveAnyChanges() // this is called later in GameSequence change(gameVersion:)
 	}
+
+    /// Creates a clone of the prior game, resetting at the game version specified
+    func restarted(at gameVersion: GameVersion, isAllowDelay: Bool) -> GameSequence {
+        var newGameSequence = GameSequence()
+        _ = copyAll(below: gameVersion, destinationGame: newGameSequence)
+        if let newShepard = Shepard.get(gameVersion: gameVersion, gameSequenceUuid: newGameSequence.uuid) {
+            newGameSequence.shepard = newShepard.incrementDuplicationCount(
+                isSave: true,
+                isNotify: false
+            )
+        }
+        return newGameSequence
+    }
 }
 
 // MARK: Dummy data for Interface Builder

@@ -34,9 +34,9 @@ extension Shepard {
             }
         }
 
-        private typealias FilePathsByGameVersion = [GameVersion: String]
+        typealias FilePathsByGameVersion = [GameVersion: String]
 
-        private static let filePaths: [Shepard.Gender: FilePathsByGameVersion] = [
+        static let filePaths: [Shepard.Gender: FilePathsByGameVersion] = [
             .male: [
                 .game1: "http://urdnot.com/megametracker/app/images/Game1/1_BroShep.png",
                 .game2: "http://urdnot.com/megametracker/app/images/Game2/2_BroShep.png",

@@ -121,6 +121,7 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
                     self?.view.layoutIfNeeded()
                 }
 			}
+            setupLoadingScreen()
 		} else {
 			setup()
 		}
@@ -133,19 +134,27 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 
 // MARK: Setup
 
+    func setupLoadingScreen() {
+        let loadingGender: Shepard.Gender = Bool.random() ? .male : .female
+        genderSegment.selectedSegmentIndex = loadingGender == .male ? 0 : 1
+        photoImageView.image = UIImage(named: loadingGender == .male ? "Default BroShep" : "Default FemShep")
+    }
+
 	func setup() {
 		startSpinner(inView: view)
 		defer { stopSpinner(inView: view) }
 
 		fetchData()
 
-		genderSegment.selectedSegmentIndex = shepard?.gender == .male ? 0 : 1
+        guard let shepard = shepard else { return }
 
-		gameSegment.selectedSegmentIndex = shepard?.gameVersion.index ?? 0
+		genderSegment.selectedSegmentIndex = shepard.gender == .male ? 0 : 1
 
-		nameField.text = shepard?.name.stringValue
+		gameSegment.selectedSegmentIndex = shepard.gameVersion.index
 
-		surnameLabel.text = Shepard.DefaultSurname
+		nameField.text = shepard.name.stringValue
+
+        surnameLabel.text = Shepard.DefaultSurname + (shepard.duplicationCount > 1 ? " \(shepard.duplicationCount)" : "")
 
 		guard !UIWindow.isInterfaceBuilder else { return }
 
@@ -175,6 +184,10 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 	func fetchData() {
 		guard !UIWindow.isInterfaceBuilder else { return fetchDummyData() }
 		shepard = App.current.game?.shepard
+        // cache default photos to prevent confusing delay in gender swap
+        for filePath in Shepard.DefaultPhoto.filePaths.flatMap({ $0.1 }).map({ $0.1 }) {
+            _ = Photo(filePath: filePath)
+        }
 	}
 
 	func fetchDummyData() {

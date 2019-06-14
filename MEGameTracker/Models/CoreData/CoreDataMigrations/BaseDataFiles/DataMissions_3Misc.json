@@ -353,8 +353,12 @@
 		"missionType": "DLC",
 		"name": "Citadel: Aria T'Loak",
 		"description": "Speak to Aria at Purgatory club on the Citadel. She wants help retaking Omega from Cerberus. \n\n*_This assignment was released as part of the Omega DLC pack._*",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.5Purgatory",
+        "mapLocationPoint": {
+            "x": 565,
+            "y": 1546,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Aria_T%27Loak"],
@@ -2122,7 +2126,7 @@
 		"missionType": "Objective",
 		"name": "CIC",
 		"description": "Crawl under the subfloor to the Stair Access Control. You can hear the mercs complaining about being left behind to be cannon-fodder. When you activate the control, they immediately attack. Clear CAT6 out of the CIC. Loot this floor and check out the dumpster from your cabin, left by the elevator. If you have the hamster, you can click on it multiple times for additional dialogue.",
-		"inMapId": "G.N",
+		"inMapId": "G.N3.2CIC",
 		"isShowInParentMap": true
 	}, {
 		"id": "DLC3.Citadel1.8.3",
@@ -2132,7 +2136,7 @@
 		"missionType": "Objective",
 		"name": "Defeat Clone",
 		"description": "Go down the elevator to the Shuttle Bay. If you are confused by the cutscenes, focus on the armor: your clone is wearing the classic N7 armor with a red or blue stripe. You will see a banner with Clone Medi-Gel: 5. You have to weaken the clone enough that he is forced to use all five of his medi-gel packs. The mercs are infinite, so focus on the clone. Halfway through, Joker and Cortez bring in their SkyCar to block the Normandy from escaping to FTL. Your clone opens the doors and launches the shuttle to attack them. The Shuttle Bay is open for the rest of the battle. When your clone uses the last medi-gel, the fight devolves to wrestling and punching at the edge of the open bay doors. You are both knocked off, dangling from the ship. Your crew comes and pulls you up, but Brooks leaves the clone to die. You can try to save the clone, but either you kick it off or it lets go and falls to its death.",
-		"inMapId": "G.N",
+		"inMapId": "G.N3.5ShuttleBay",
 		"isShowInParentMap": true,
 		"sideEffects": ["\"Conrad Verner is better at being me than you are!\""]
 	}, {
@@ -2143,7 +2147,7 @@
 		"missionType": "Objective",
 		"name": "Aftermath",
 		"description": "Cortez and Joker are assessing the ship for damage. EDI is back in control (and harassing a merc on the bridge). Cortez brings out Brooks in handcuffs. You can Paragon her into staying in them, or she escapes and is shot dead. Either way, there's great dialogue. Afterwards, back at your apartment Joker will suggest having a party.",
-		"inMapId": "G.N",
+		"inMapId": "G.N3.5ShuttleBay",
 		"isShowInParentMap": true
 	}, {
 		"id": "DLC3.Citadel2",
@@ -2932,8 +2936,12 @@
 		"missionType": "Objective",
 		"name": "Hades Nexus: Prothean Sphere",
 		"description": "A refugee in the Citadel docks thinks he knows where a prothean sphere is. Locate it and let him know it was found.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.2HoldingArea",
+        "mapLocationPoint": {
+            "x": 232,
+            "y": 1220,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Hades_Nexus:_Prothean_Sphere"],
@@ -2955,8 +2963,12 @@
 		"missionType": "Objective",
 		"name": "Hades Nexus: Obelisk of Karza",
 		"description": "A researcher in the courtyard at the Citadel is looking for an artifact with prothean language translations. When you find the Obelisk, let him know that it is what he is looking for.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 1221,
+            "y": 1094,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Hades_Nexus:_Obelisk_of_Karza"],
@@ -2978,8 +2990,12 @@
 		"missionType": "Objective",
 		"name": "Citadel: Kakliosaur Fossil",
 		"description": "A salarian scientist near the Selkish Arms apartments thinks he might be able to improve krogan endurance in toxic environments if he had a preserved kakliosaur specimin. When you find the fossil, turn it over for this project.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 804,
+            "y": 1368,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Kakliosaur_Fossil"],
@@ -3001,8 +3017,12 @@
 		"missionType": "Objective",
 		"name": "Dekuuna: Code of the Ancients",
 		"description": "An elcor just outside the Purgatory elevator needs the ancient elcor text, the Code of the Ancients, to inspire his people, but it is on Dekuuna. Bring it to him when you have found it.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.5Purgatory",
+        "mapLocationPoint": {
+            "x": 1036,
+            "y": 139,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Dekuuna:_Code_of_the_Ancients"],
@@ -3025,8 +3045,12 @@
 		"missionType": "Objective",
 		"name": "Apien Crest: Banner of the First Regiment",
 		"description": "A turian officer hanging out in Purgatory needs the Banner of the First Regiment to inspire his troops. Find it and notify him that you have it.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.5Purgatory",
+        "mapLocationPoint": {
+            "x": 1262,
+            "y": 1669,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Apien_Crest:_Banner_of_the_First_Regiment"],
@@ -3048,8 +3072,12 @@
 		"missionType": "Objective",
 		"name": "Shrike Abyssal: Prothean Obelisk",
 		"description": "A volus diplomat in the Citadel embassy is looking for a lost Prothean obelisk. Find it and give it to him.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.3Embassies",
+        "mapLocationPoint": {
+            "x": 1702,
+            "y": 1072,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Shrike_Abyssal:_Prothean_Obelisk"],
@@ -3071,8 +3099,12 @@
 		"missionType": "Objective",
 		"name": "Irune: Book of Plenix",
 		"description": "A volus in the Presidium Commons wants to inspire his people, but he needs the rare Book of Plenix. Find it and bring it back to him.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 114,
+            "y": 1372,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Irune:_Book_of_Plenix"],
@@ -3097,8 +3129,12 @@
 		"missionType": "Objective",
 		"name": "Kite's Nest: Pillars of Strength",
 		"description": "A batarian preacher in the Citadel docks wants the Pillars of Strength to inspire the batarian refugees. Find them and bring them to him.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.2HoldingArea",
+        "mapLocationPoint": {
+            "x": 1202,
+            "y": 1074,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Kite%27s_Nest:_Pillars_of_Strength"],
@@ -3120,8 +3156,12 @@
 		"missionType": "Objective",
 		"name": "Athena Nebula: Hesperia-Period Statue",
 		"description": "An asari working on the Crucible in the Citadel Commons needs a statue from the Hesperia period. Find one and bring it to her.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 280,
+            "y": 1208,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Athena_Nebula:_Hesperia-Period_Statue"],
@@ -3143,8 +3183,12 @@
 		"missionType": "Objective",
 		"name": "Nimbus Cluster: Library of Asha",
 		"description": "An asari military trainer in Purgatory is looking for instructional texts. When you find the Library of Asha, delvier it to her.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.5Purgatory",
+        "mapLocationPoint": {
+            "x": 846,
+            "y": 1571,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Nimbus_Cluster:_Library_of_Asha"],
@@ -3166,8 +3210,12 @@
 		"missionType": "Objective",
 		"name": "Silean Nebula: Rings of Alune",
 		"description": "An Asari consultant on the Citadel needs the Rings of Alune. Find them in the Silean Nebula and return them to her at the Huerta Memorial Hospital.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.4Hospital",
+        "mapLocationPoint": {
+            "x": 1161,
+            "y": 1810,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Silean_Nebula:_Rings_of_Alune"],
@@ -3189,8 +3237,12 @@
 		"missionType": "Objective",
 		"name": "Valhallan Threshold: Prothean Data Drives",
 		"description": "An Alliance soldier knows the location of Prothean drives that could help with the Crucible project. Recover them from Garvug in the Valhallan Threshold and bring them to him at the Citadel docking bay.",
-		"inMapId": "G.C",
-		"isShowInParentMap": true,
+        "inMapId": "G.C3.1Dock",
+        "mapLocationPoint": {
+            "x": 1262,
+            "y": 1609,
+            "radius": 20
+        },
 		"experience": 0,
 		"reward": "15,000 Credits",
 		"relatedLinks": ["https://masseffect.wikia.com/wiki/Valhallan_Threshold:_Prothean_Data_Drives"],

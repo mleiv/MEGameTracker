@@ -19,6 +19,7 @@ public struct Shepard: Codable, Photographical, PhotoEditable {
         case gender
         case appearance
         case name
+        case duplicationCount
         case origin
         case reputation
         case classTalent = "class"
@@ -59,6 +60,8 @@ public struct Shepard: Codable, Photographical, PhotoEditable {
 
 	public private(set) var gameVersion: GameVersion
 
+    public private(set) var duplicationCount = 1
+
 	public private(set) var gender = Gender.male
 	public private(set) var name = Name.defaultMaleName
 	public private(set) var photo: Photo?
@@ -78,7 +81,7 @@ public struct Shepard: Codable, Photographical, PhotoEditable {
 	public var title: String {
 		return "\(origin.stringValue) \(reputation.stringValue) \(classTalent.stringValue)"
 	}
-	public var fullName: String { return "\(name.stringValue!) Shepard" }
+    public var fullName: String { return "\(name.stringValue!) Shepard" + (duplicationCount > 1 ? " \(duplicationCount)" : "") }
 	public var photoFileNameIdentifier: String {
 		return Shepard.getPhotoFileNameIdentifier(uuid: uuid)
 	}
@@ -124,6 +127,7 @@ public struct Shepard: Codable, Photographical, PhotoEditable {
         }
         let nameString = try container.decode(String.self, forKey: .name)
         name = Shepard.Name(name: nameString, gender: gender) ?? name
+        duplicationCount = try container.decodeIfPresent(Int.self, forKey: .duplicationCount) ?? duplicationCount
         origin = try container.decode(Shepard.Origin.self, forKey: .origin)
         reputation = try container.decode(Shepard.Reputation.self, forKey: .reputation)
         classTalent = try container.decode(Shepard.ClassTalent.self, forKey: .classTalent)
@@ -149,6 +153,7 @@ public struct Shepard: Codable, Photographical, PhotoEditable {
         try container.encode(gender, forKey: .gender)
         try container.encode(appearance.format(), forKey: .appearance)
         try container.encode(name.stringValue, forKey: .name)
+        try container.encode(duplicationCount, forKey: .duplicationCount)
         try container.encode(origin, forKey: .origin)
         try container.encode(reputation, forKey: .reputation)
         try container.encode(classTalent, forKey: .classTalent)
@@ -455,6 +460,20 @@ extension Shepard {
         return shepard
     }
 
+    /// Return a copy of this Shepard with duplicationCount changed
+    public func incrementDuplicationCount(
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        var shepard = self
+        shepard.duplicationCount = duplicationCount + 1
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify
+        )
+        return shepard
+    }
+
     /// Performs common behaviors after an object change
     private mutating func changeEffects(
         isSave: Bool = true,
@@ -469,6 +488,17 @@ extension Shepard {
         if isNotify {
             Shepard.onChange.fire((id: uuid.uuidString, object: self))
         }
+    }
+
+    mutating func restart(uuid: UUID, gameSequenceUuid: UUID) {
+        self.uuid = uuid
+        self.gameSequenceUuid = gameSequenceUuid
+        loveInterestId = nil
+        level = 0
+        paragon = 0
+        renegade = 0
+        rawData = nil
+        hasUnsavedChanges = true
     }
 }
 
@@ -489,6 +519,7 @@ extension Shepard {
         list["gameVersion"] = gameVersion
         list["gender"] = gender
         list["name"] = name
+        list["duplicationCount"] = duplicationCount
         list["origin"] = origin
         list["reputation"] = reputation
         list["class"] = classTalent
@@ -519,6 +550,10 @@ extension Shepard {
         if let name = data["name"] as? Name, name != self.name {
             self.name = name
             changed["name"] = name.stringValue
+        }
+        if let duplicationCount = data["duplicationCount"] as? Int, duplicationCount != self.duplicationCount {
+            self.duplicationCount = duplicationCount
+            changed["duplicationCount"] = duplicationCount
         }
         if let origin = data["origin"] as? Origin, origin != self.origin {
             self.origin = origin

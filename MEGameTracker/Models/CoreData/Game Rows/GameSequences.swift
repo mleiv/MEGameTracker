@@ -110,6 +110,38 @@ extension GameSequence {
 		return save(isCascadeChanges: isCascadeChanges, isAllowDelay: true, with: manager)
 	}
 
+// MARK: Copy
+
+    /// Copy this game to a new game
+    public func copyAll(
+        below gameVersion: GameVersion,
+        destinationGame: GameSequence,
+        with manager: CodableCoreDataManageable? = nil
+        ) -> Bool {
+        let manager = manager ?? defaultManager
+        let gameVersions = GameVersion.allCases.filter({ $0.intValue < gameVersion.intValue })
+
+        var isCopied = true
+
+        // mass copy all related objects
+        isCopied = isCopied && Decision.copyAll(in: gameVersions, sourceUuid: uuid, destinationUuid: destinationGame.uuid, with: manager)
+        isCopied = isCopied && Event.copyAll(in: gameVersions, sourceUuid: uuid, destinationUuid: destinationGame.uuid, with: manager)
+        isCopied = isCopied && Item.copyAll(in: gameVersions, sourceUuid: uuid, destinationUuid: destinationGame.uuid, with: manager)
+        isCopied = isCopied && Map.copyAll(in: gameVersions, sourceUuid: uuid, destinationUuid: destinationGame.uuid, with: manager)
+        isCopied = isCopied && Mission.copyAll(in: gameVersions, sourceUuid: uuid, destinationUuid: destinationGame.uuid, with: manager)
+        isCopied = isCopied && Shepard.copyAll(in: gameVersions, sourceUuid: uuid, destinationUuid: destinationGame.uuid, with: manager)
+
+        if let foundShepard = Shepard.get(gameVersion: gameVersion, gameSequenceUuid: uuid),
+            var newShepard = destinationGame.getShepardFromVersion(gameVersion) {
+            newShepard.setCommonData(foundShepard.getSharedData())
+            // class is not shared in setCommonData, so copy that manually
+            newShepard = newShepard.changed(class: foundShepard.classTalent, isSave: false, isNotify: false)
+            isCopied = isCopied && newShepard.saveAnyChanges(isCascadeChanges: .none, isAllowDelay: false)
+        }
+
+        return isCopied
+    }
+
 // MARK: Delete
 
 	/// Delete the value matching the ids specified, and cascades the delete to all game-specific data.
@@ -130,6 +162,7 @@ extension GameSequence {
 		// mass delete all related objects
 		// these may be redeleted individually, but I want to clean up everything. 
 		isDeleted = isDeleted && Decision.deleteAll(gameSequenceUuid: uuid, with: manager)
+        isDeleted = isDeleted && Event.deleteAll(gameSequenceUuid: uuid, with: manager)
 		isDeleted = isDeleted && Item.deleteAll(gameSequenceUuid: uuid, with: manager)
 		isDeleted = isDeleted && Map.deleteAll(gameSequenceUuid: uuid, with: manager)
 		isDeleted = isDeleted && Mission.deleteAll(gameSequenceUuid: uuid, with: manager)

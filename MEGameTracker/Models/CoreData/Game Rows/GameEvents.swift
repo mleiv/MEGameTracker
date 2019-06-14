@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 
 extension Event: GameRowStorable {
-
 	/// (CodableCoreDataStorable Protocol)
 	/// Type of the core data entity.
 	public typealias EntityType = GameEvents
@@ -27,6 +26,7 @@ extension Event: GameRowStorable {
 		// only save searchable columns
         setDateModifiableColumnsOnSave(coreItem: coreItem)
 		coreItem.id = id
+        coreItem.gameVersion = gameVersion?.stringValue
 		coreItem.gameSequenceUuid = gameSequenceUuid?.uuidString
         coreItem.isTriggered = isTriggered ? 1 : 0
         coreItem.triggeredDate = triggeredDate
@@ -159,5 +159,31 @@ extension Event {
             )
         }
         return result
+    }
+
+// MARK: Copy
+
+    /// Copy the event to a new game
+    public static func copyAll(
+        in gameVersions: [GameVersion],
+        sourceUuid: UUID,
+        destinationUuid: UUID,
+        with manager: CodableCoreDataManageable?
+        ) -> Bool {
+        return copyAll(with: manager, alterFetchRequest: { fetchRequest in
+            fetchRequest.predicate = NSPredicate(
+                format: "(gameVersion in %@ and gameSequenceUuid == %@)",
+                gameVersions.map({ $0.stringValue }),
+                sourceUuid.uuidString)
+        }, setChangedValues: { nsManagedObject in
+            nsManagedObject.setValue(destinationUuid.uuidString, forKey: "gameSequenceUuid")
+            if let data = nsManagedObject.value(forKey: serializedDataKey) as? Data,
+                var item = try? defaultManager.decoder.decode(Event.self, from: data) {
+                item.gameSequenceUuid = destinationUuid
+                if let data2 = try? defaultManager.encoder.encode(item) {
+                    nsManagedObject.setValue(data2, forKey: serializedDataKey)
+                }
+            }
+        })
     }
 }

@@ -24,6 +24,8 @@ public struct CoreDataMigrationManager {
         CoreDataMigration(fromBuild: 56, loadMigration: { return Change20180203() }),
         CoreDataMigration(fromBuild: 60, loadMigration: { return EventTriggerMigration() }),
         CoreDataMigration(fromBuild: 62, loadMigration: { return Change20190527() }),
+        CoreDataMigration(fromBuild: 65, loadMigration: { return MapIsExploredMigration() }),
+        CoreDataMigration(fromBuild: 67, loadMigration: { return EventGameVersionMigration() }),
 	]
 
 	public func migrateFrom(lastBuild: Int, completion: @escaping (() -> Void) = {}) {

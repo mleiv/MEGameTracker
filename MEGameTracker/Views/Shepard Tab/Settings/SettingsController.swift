@@ -12,15 +12,15 @@ class SettingsController: UITableViewController, Spinnerable {
 
 	var games: [GameSequence] = []
 
-	var didstartListeners = true
+	var didStartListeners = true
 	var isUpdating = true
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setup()
-		if !didstartListeners {
+		if !didStartListeners {
 			startListeners()
-			didstartListeners = true
+			didStartListeners = true
 		}
 	}
 
@@ -76,49 +76,126 @@ class SettingsController: UITableViewController, Spinnerable {
 		}
 	}
 
-	override func tableView(
-		_ tableView: UITableView,
-		canEditRowAt indexPath: IndexPath
-	) -> Bool {
-		guard !UIWindow.isInterfaceBuilder else { return false }
-		return true
-	}
+    override func tableView(
+        _ tableView: UITableView,
+        leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+        ) -> UISwipeActionsConfiguration? {
+        let restartAction = contextualRestartAction(forRowAtIndexPath: indexPath)
+        return UISwipeActionsConfiguration(actions: [restartAction])
+    }
 
-	override func tableView(
-		_ tableView: UITableView,
-		commit editingStyle: UITableViewCell.EditingStyle,
-		forRowAt indexPath: IndexPath
-	) {
-		guard !UIWindow.isInterfaceBuilder else { return }
-		if editingStyle == .delete {
-			if games.count == 1 {
-				let alert = UIAlertController(
-					title: nil,
-					message: "App requires at least one game.",
-					preferredStyle: UIAlertController.Style.alert
-				)
-				alert.addAction(UIAlertAction(
-					title: "Okay",
-					style: UIAlertAction.Style.default,
-					handler: { _ in
-						alert.dismiss(animated: true, completion: nil)
-					}
-				))
-				present(alert, animated: true, completion: nil)
-				tableView.reloadData() // TODO: better way to cancel delete?
-			} else if (indexPath as NSIndexPath).row < games.count {
-				startSpinner(inView: view.superview)
-				isUpdating = true
-				let game = games.remove(at: (indexPath as NSIndexPath).row)
-				_ = App.current.delete(uuid: game.uuid)
-				tableView.beginUpdates()
-				tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-				tableView.endUpdates()
-				isUpdating = false
-				stopSpinner(inView: view.superview)
-			}
-		}
-	}
+    override func tableView(
+        _ tableView: UITableView,
+        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration? {
+        let deleteAction = contextualDeleteAction(forRowAtIndexPath: indexPath)
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+
+    func contextualDeleteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(
+            style: .destructive,
+            title: "Delete",
+            handler: { (action, view, completionHandler) in
+                guard !UIWindow.isInterfaceBuilder else { return }
+
+                guard indexPath.row < self.games.count else { return }
+
+                guard self.games.count > 1 else {
+                    let alert = UIAlertController(
+                        title: nil,
+                        message: "App requires at least one game.",
+                        preferredStyle: .alert
+                    )
+                    alert.addAction(UIAlertAction(
+                        title: "Okay",
+                        style: .default,
+                        handler: { _ in
+                            alert.dismiss(animated: true, completion: nil)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+
+                let game = self.games[indexPath.row]
+                let alert = UIAlertController(
+                    title: nil,
+                    message: "Are you sure you want to delete \(game.shepard?.fullName ?? "this game")",
+                    preferredStyle: .alert
+                )
+                alert.addAction(UIAlertAction(
+                    title: "Delete",
+                    style: .destructive,
+                    handler: { _ in
+                        let game = self.games.remove(at: indexPath.row)
+                        _ = App.current.delete(uuid: game.uuid)
+                        completionHandler(true)
+                        self.tableView.deleteRows(at: [indexPath], with: .automatic) // temp hack
+                }))
+                alert.addAction(UIAlertAction(
+                    title: "Cancel",
+                    style: .cancel,
+                    handler: { _ in
+                        alert.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
+        })
+
+        action.image = UIImage(named: "Trash")
+        action.backgroundColor = Styles.Colors.tintColor
+
+        return action
+    }
+
+    func contextualRestartAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(
+            style: .normal,
+            title: "Restart",
+            handler: { (action, view, completionHandler) in
+                guard !UIWindow.isInterfaceBuilder else { return }
+
+                guard indexPath.row < self.games.count else { return }
+
+                let game = self.games[indexPath.row]
+                let alert = UIAlertController(
+                    title: nil,
+                    message: "Which game are you restarting?",
+                    preferredStyle: .actionSheet
+                )
+                alert.addAction(UIAlertAction(
+                    title: "Game 1",
+                    style: .default,
+                    handler: { _ in
+                        let newGame = game.restarted(at: .game1, isAllowDelay: false)
+                        App.current.changeGame { _ in newGame }
+                        self.parent?.dismiss(animated: true, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(
+                    title: "Game 2",
+                    style: .default,
+                    handler: { _ in
+                        let newGame = game.restarted(at: .game2, isAllowDelay: false)
+                        App.current.changeGame { _ in newGame }
+                        self.parent?.dismiss(animated: true, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(
+                    title: "Game 3",
+                    style: .default,
+                    handler: { _ in
+                        let newGame = game.restarted(at: .game3, isAllowDelay: false)
+                        App.current.changeGame { _ in newGame }
+                        self.parent?.dismiss(animated: true, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                completionHandler(true)
+        })
+
+        action.image = UIImage(named: "Plus")
+        action.backgroundColor = Styles.Colors.additionColor
+
+        return action
+    }
 
 	// MARK: Table Elements
 

@@ -268,6 +268,8 @@
 		B19191871CE3A98400CF367E /* MissionSortingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19191861CE3A98400CF367E /* MissionSortingTests.swift */; };
 		B19215541E5CB9A400594796 /* SimpleCoreDataManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19215511E5CB9A400594796 /* SimpleCoreDataManageable.swift */; };
 		B19215601E5CC69B00594796 /* DeletedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B192155F1E5CC69B00594796 /* DeletedRow.swift */; };
+		B194C27822ADBE35009BB933 /* MapIsExploredMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194C27722ADBE35009BB933 /* MapIsExploredMigration.swift */; };
+		B194C28422ADBF6D009BB933 /* 20190609.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = B194C28322ADBF6D009BB933 /* 20190609.xcmappingmodel */; };
 		B1952B802161C73C00061C5B /* IBStyleProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B782161C73B00061C5B /* IBStyleProperty.swift */; };
 		B1952B812161C73C00061C5B /* IBStylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B792161C73B00061C5B /* IBStylesheet.swift */; };
 		B1952B822161C73C00061C5B /* IBStylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7A2161C73B00061C5B /* IBStylable.swift */; };
@@ -336,6 +338,8 @@
 		B1A9957B1F43FBCF00EFDE18 /* CodableCoreDataManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9957A1F43FBCF00EFDE18 /* CodableCoreDataManageable.swift */; };
 		B1A9957D1F43FBDB00EFDE18 /* CodableCoreDataStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9957C1F43FBDB00EFDE18 /* CodableCoreDataStorable.swift */; };
 		B1A9957F1F43FBF000EFDE18 /* GenericDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9957E1F43FBF000EFDE18 /* GenericDecodable.swift */; };
+		B1AAA12D22B3273000635AE8 /* ShepardRestartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAA12C22B3273000635AE8 /* ShepardRestartTests.swift */; };
+		B1AAA13B22B347EB00635AE8 /* EventGameVersionMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AAA13A22B347EB00635AE8 /* EventGameVersionMigration.swift */; };
 		B1AB4D7E1D14EA07006F016C /* DataItems_2Loot.json in Resources */ = {isa = PBXBuildFile; fileRef = B1AB4D7D1D14EA07006F016C /* DataItems_2Loot.json */; };
 		B1AB4D801D14ED8A006F016C /* ItemDisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AB4D7F1D14ED8A006F016C /* ItemDisplayType.swift */; };
 		B1AB8C251E2B517B00AC9ACE /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AB8C241E2B517B00AC9ACE /* HeartButton.swift */; };
@@ -793,6 +797,9 @@
 		B19191861CE3A98400CF367E /* MissionSortingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionSortingTests.swift; sourceTree = "<group>"; };
 		B19215511E5CB9A400594796 /* SimpleCoreDataManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCoreDataManageable.swift; sourceTree = "<group>"; };
 		B192155F1E5CC69B00594796 /* DeletedRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletedRow.swift; sourceTree = "<group>"; };
+		B194C27722ADBE35009BB933 /* MapIsExploredMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapIsExploredMigration.swift; sourceTree = "<group>"; };
+		B194C27A22ADBF09009BB933 /* CoreData20190609.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData20190609.xcdatamodel; sourceTree = "<group>"; };
+		B194C28322ADBF6D009BB933 /* 20190609.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 20190609.xcmappingmodel; sourceTree = "<group>"; };
 		B1952B782161C73B00061C5B /* IBStyleProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyleProperty.swift; sourceTree = "<group>"; };
 		B1952B792161C73B00061C5B /* IBStylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStylesheet.swift; sourceTree = "<group>"; };
 		B1952B7A2161C73B00061C5B /* IBStylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStylable.swift; sourceTree = "<group>"; };
@@ -861,6 +868,8 @@
 		B1A9957A1F43FBCF00EFDE18 /* CodableCoreDataManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableCoreDataManageable.swift; sourceTree = "<group>"; };
 		B1A9957C1F43FBDB00EFDE18 /* CodableCoreDataStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableCoreDataStorable.swift; sourceTree = "<group>"; };
 		B1A9957E1F43FBF000EFDE18 /* GenericDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDecodable.swift; sourceTree = "<group>"; };
+		B1AAA12C22B3273000635AE8 /* ShepardRestartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShepardRestartTests.swift; sourceTree = "<group>"; };
+		B1AAA13A22B347EB00635AE8 /* EventGameVersionMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventGameVersionMigration.swift; sourceTree = "<group>"; };
 		B1AB4D7D1D14EA07006F016C /* DataItems_2Loot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataItems_2Loot.json; sourceTree = "<group>"; };
 		B1AB4D7F1D14ED8A006F016C /* ItemDisplayType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDisplayType.swift; sourceTree = "<group>"; };
 		B1AB8C241E2B517B00AC9ACE /* HeartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
@@ -1550,8 +1559,11 @@
 				B1FED4D5229C7888001503F1 /* Change20190527.swift */,
 				B142AB921FF9E692003B93E9 /* CoreDataEliminateDuplicates.swift */,
 				B1647054204A3CDB0038F4D2 /* EventTriggerMigration.swift */,
+				B194C27722ADBE35009BB933 /* MapIsExploredMigration.swift */,
+				B1AAA13A22B347EB00635AE8 /* EventGameVersionMigration.swift */,
 				B1B11FD31E4E99E200D97CA1 /* 20160210.xcmappingmodel */,
 				B1F78D3A202804670008B36B /* 20180204.xcmappingmodel */,
+				B194C28322ADBF6D009BB933 /* 20190609.xcmappingmodel */,
 			);
 			path = CoreDataMigrations;
 			sourceTree = "<group>";
@@ -1613,6 +1625,7 @@
 				B12BCCDB1E626A3600C8F7B5 /* NoteTests.swift */,
 				B1F1DC581E5E82AD00755AAD /* PersonTests.swift */,
 				B16FBC921E5FAD7000E151C7 /* ShepardTests.swift */,
+				B1AAA12C22B3273000635AE8 /* ShepardRestartTests.swift */,
 				B16FBC941E5FAD8100E151C7 /* GameSequenceTests.swift */,
 			);
 			path = CoreData;
@@ -2736,6 +2749,7 @@
 				B04BF1E51BA12C7900072DA2 /* GameSequence.swift in Sources */,
 				B01D8F231BA139500039E003 /* SettingsController.swift in Sources */,
 				B185668B1E6F7E2A00E19FC5 /* IBViewable.swift in Sources */,
+				B1AAA13B22B347EB00635AE8 /* EventGameVersionMigration.swift in Sources */,
 				B1DF1AE11D67DF23008EBAAC /* DecisionsListLinkType.swift in Sources */,
 				B0E6E3181C7E3AFD00C6DB0C /* MapSplitViewController.swift in Sources */,
 				B1B55C4A1E70317E0095A526 /* ValueAltDataRow.swift in Sources */,
@@ -2903,6 +2917,7 @@
 				B1FFE3351CF6AA17007B3160 /* ConversationRewardsRowType.swift in Sources */,
 				B08E2A4E1BB23093009546F8 /* MapRow.swift in Sources */,
 				B17A5F261CF4FFE400E62422 /* SimpleArrayDataRowNib.swift in Sources */,
+				B194C28422ADBF6D009BB933 /* 20190609.xcmappingmodel in Sources */,
 				B11D838E1C98C6BF0096FD77 /* GameEvents.swift in Sources */,
 				B1B11FE21E4E9D2F00D97CA1 /* CoreDataMigration.swift in Sources */,
 				B1C99D121E2D63EA0008984E /* MapLocationButton.swift in Sources */,
@@ -2920,6 +2935,7 @@
 				B16197341F4537D00039BF26 /* CodableDictionaryValueType.swift in Sources */,
 				B1A6E81C1C962A8600EE6CB1 /* GameDecisions.swift in Sources */,
 				B1A6E8221C962B5F00EE6CB1 /* DataDecision.swift in Sources */,
+				B194C27822ADBE35009BB933 /* MapIsExploredMigration.swift in Sources */,
 				B1F3467A1CF1789100D2B28A /* LayoutNotifyingTableView.swift in Sources */,
 				B04FA6E91BB229D1006474CB /* MissionsController.swift in Sources */,
 				B01DE64E1BB217AA008F4926 /* MapsFlowController.swift in Sources */,
@@ -3035,6 +3051,7 @@
 				B16FBC8B1E5F72EC00E151C7 /* EventTests.swift in Sources */,
 				B16FBC891E5F646700E151C7 /* DecisionTests.swift in Sources */,
 				B16FBC951E5FAD8100E151C7 /* GameSequenceTests.swift in Sources */,
+				B1AAA12D22B3273000635AE8 /* ShepardRestartTests.swift in Sources */,
 				B16FBC931E5FAD7000E151C7 /* ShepardTests.swift in Sources */,
 				B1FED4D8229C807A001503F1 /* Change20190527Tests.swift in Sources */,
 				B14AB7971FA55330009539CF /* Change20171022Tests.swift in Sources */,
@@ -3820,11 +3837,12 @@
 		B1B11FE31E4E9E8B00D97CA1 /* CoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B194C27A22ADBF09009BB933 /* CoreData20190609.xcdatamodel */,
 				B14E5E3F2027C74000EE63F9 /* CoreData20180204.xcdatamodel */,
 				B1B11FE41E4E9E8B00D97CA1 /* CoreData.xcdatamodel */,
 				B1B11FE51E4E9E8B00D97CA1 /* CoreData20170208.xcdatamodel */,
 			);
-			currentVersion = B14E5E3F2027C74000EE63F9 /* CoreData20180204.xcdatamodel */;
+			currentVersion = B194C27A22ADBF09009BB933 /* CoreData20190609.xcdatamodel */;
 			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

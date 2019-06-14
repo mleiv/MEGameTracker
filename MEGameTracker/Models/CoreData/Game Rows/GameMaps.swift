@@ -28,7 +28,7 @@ extension Map: GameRowStorable {
         setDateModifiableColumnsOnSave(coreItem: coreItem) //TODO
 		coreItem.id = id
 		coreItem.gameSequenceUuid = gameSequenceUuid?.uuidString
-		coreItem.isExplored = isExplored ? 1 : 0
+        coreItem.isExplored = Map.gameValuesForIsExplored(isExploredPerGameVersion: isExploredPerGameVersion)
 		coreItem.isSavedToCloud = isSavedToCloud ? 1 : 0
 		coreItem.dataParent = generalData.entity(context: coreItem.managedObjectContext)
 	}
@@ -176,4 +176,35 @@ extension Map {
 		}
 		return maps
 	}
+
+    /// Copy all the matching game values to a new GameSequence UUID.
+    public static func copyAll(
+        in gameVersions: [GameVersion],
+        sourceUuid: UUID,
+        destinationUuid: UUID,
+        with manager: CodableCoreDataManageable?
+    ) -> Bool {
+        return copyAll(with: manager, alterFetchRequest: { fetchRequest in
+            fetchRequest.predicate = NSPredicate(
+                format: "gameSequenceUuid == %@",
+                sourceUuid.uuidString)
+        }, setChangedValues: { coreItem in
+            coreItem.setValue(destinationUuid.uuidString, forKey: "gameSequenceUuid")
+            var isExploredPerGameVersion = Map.gameValuesFromIsExplored(gameValues: coreItem.isExplored ?? "")
+            for (gameVersion, _) in isExploredPerGameVersion {
+                if !gameVersions.contains(gameVersion) {
+                    isExploredPerGameVersion[gameVersion] = false
+                }
+            }
+            coreItem.isExplored = Map.gameValuesForIsExplored(isExploredPerGameVersion: isExploredPerGameVersion)
+            if let data = coreItem.value(forKey: Map.serializedDataKey) as? Data,
+                var json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                json["isExplored"] = coreItem.isExplored
+                json["gameSequenceUuid"] = coreItem.gameSequenceUuid
+                if let data2 = try? JSONSerialization.data(withJSONObject: json) {
+                    coreItem.setValue(data2, forKey: serializedDataKey)
+                }
+            }
+        })
+    }
 }
