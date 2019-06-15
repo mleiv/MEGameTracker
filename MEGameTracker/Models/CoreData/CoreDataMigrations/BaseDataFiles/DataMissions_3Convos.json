@@ -1738,7 +1738,11 @@
         "name": "1st Normandy Convo",
         "description": "Start a sparring match with James, to learn more about him. If you are female, you can start flirting with him. If you return afterwards, James will talk more about his family.",
         "inMapId": "G.N3.5ShuttleBay",
-        "isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 1187,
+            "y": 1354,
+            "radius": 20
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel I"
@@ -1805,7 +1809,11 @@
         "name": "4th Normandy Convo",
         "description": "James asks if Legion can be trusted. He has nicknamed Tali \"Sparks.\"",
         "inMapId": "G.N3.5ShuttleBay",
-        "isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 1187,
+            "y": 1354,
+            "radius": 20
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Geth Dreadnought"
@@ -2311,7 +2319,11 @@
         "name": "1st Normandy Convo",
         "description": "Meet Cortez in the Shuttle Bay. He will explain his role and his history. If you ask about family, he will briefly mention that he lost his husband to the Collectors.",
         "inMapId": "G.N3.5ShuttleBay",
-        "isShowInParentMap": true
+        "mapLocationPoint": {
+            "x": 1501,
+            "y": 688,
+            "radius": 20
+        }
     }, {
         "id": "A3.Convo.C.Cortez.2",
         "inMissionId": "A3.Convo.C.Cortez",
@@ -2322,7 +2334,11 @@
         "name": "2nd Normandy Convo",
         "description": "_Note: this is available one mission after [megametracker://mission?id=M3.1.Palaven]_ \n\nCortez is listening to a recording of his husband's death. Reassure him (or he may die later on Earth).",
         "inMapId": "G.N3.5ShuttleBay",
-        "isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 1501,
+            "y": 688,
+            "radius": 20
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Palaven"
@@ -2340,7 +2356,11 @@
         "name": "3rd Normandy Convo",
         "description": "Talk to Cortez about his downtime. Convince him to take some shore leave (or he may die later on Earth).",
         "inMapId": "G.N3.5ShuttleBay",
-        "isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 1501,
+            "y": 688,
+            "radius": 20
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Cortez Convo 2 + 1"
