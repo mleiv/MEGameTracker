@@ -3154,6 +3154,265 @@
 
 
 
+    }, {
+        "id": "G.C3.Apartment",
+        "name": "Citadel DLC",
+        "mapType": "Area",
+        "isHidden": true,
+        "inMapId": "G.OuC.Ser.Widow",
+        "mapLocationPoint": {
+            "x": 622,
+            "y": 901,
+            "radius": 75
+        },
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Apartment.pdf",
+                "referenceSize": "2083x2083",
+                "isSplitMenu": true,
+                "isHidden": false
+            }
+        },
+        "events": [{
+            "type": "UnavailableInGame",
+            "id": "Game1"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game2"
+        }]
+    }, {
+        "id": "G.C3.Apartment.1",
+        "name": "Personal Apartment",
+        "inMapId": "G.C3.Apartment",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_ApartmentA.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 157,
+                    "width": 1800,
+                    "height": 830
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Apartment.2",
+        "name": "Silversun Strip",
+        "inMapId": "G.C3.Apartment",
+        "rerootBreadcrumbs": true,
+        "mapType": "Level",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_ApartmentB.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 1110,
+                    "width": 1800,
+                    "height": 830
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Avina",
+        "name": "Avina",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 1225,
+            "y": 851,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arcade",
+        "name": "Castle Arcade",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 570,
+            "y": 491,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arcade.Claw",
+        "name": "Claw Game",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 193,
+            "y": 253,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arcade.Relay",
+        "name": "Relay Defense",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 481,
+            "y": 323,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arcade.Eezo",
+        "name": "Shattered Eezo",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 571,
+            "y": 313,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arcade.Hanoi",
+        "name": "Towers of Hanoi",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 661,
+            "y": 323,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Casino",
+        "name": "Silver Coast Casino",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 727,
+            "y": 1694,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Casino.Bar",
+        "name": "Bar",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 672,
+            "y": 1122,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Casino.Quasar",
+        "name": "Quasar",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 607,
+            "y": 1724,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Casino.Racing",
+        "name": "Varren Racing",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 981,
+            "y": 1844,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Casino.Roulette",
+        "name": "Roulette",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 486,
+            "y": 1755,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arena",
+        "name": "Armax Arsenal Arena",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 1375,
+            "y": 1623,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arena.Shop",
+        "name": "Token Shop",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 1100,
+            "y": 1622,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arena.Procurement",
+        "name": "Procurement Interface",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 1226,
+            "y": 1543,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arena.Upgrades",
+        "name": "Weapon Upgrades",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 1226,
+            "y": 1543,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arena.Bench",
+        "name": "Weapons Bench",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 1706,
+            "y": 1637,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arena.Locker",
+        "name": "Armor Locker",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 1706,
+            "y": 1637,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arena.Sim",
+        "name": "Combat Simulator",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 1753,
+            "y": 1534,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.2.Arena.Controls",
+        "name": "Combat Sim Controls",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment.2",
+        "mapLocationPoint": {
+            "x": 1878,
+            "y": 1801,
+            "radius": 20
+        }
+
+
+
+
 
     }, {
         "id": "G.Core.CollectorStation1",
