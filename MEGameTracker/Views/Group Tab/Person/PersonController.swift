@@ -428,6 +428,7 @@ extension PersonController: SideEffectsable {
 		sideEffects = person?.sideEffects ?? []
 		sideEffectsView?.controller = self
 		sideEffectsView?.setup()
+        view.layoutIfNeeded()
 	}
 }
 

@@ -49,6 +49,8 @@ final public class ShepardReputationController: UIViewController, SideEffectsabl
 		if let shepard = self.shepard {
 			setupRadios(shepard: shepard)
 		}
+
+        view.layoutIfNeeded()
 	}
 
 	func fetchData() {

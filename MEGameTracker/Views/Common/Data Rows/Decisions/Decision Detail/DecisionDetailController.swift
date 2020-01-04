@@ -11,8 +11,8 @@ import UIKit
 final public class DecisionDetailController: UIViewController {
 
 	@IBOutlet weak var originHintLabel: UILabel?
-	@IBOutlet weak var titleLabel: MarkupLabel?
-	@IBOutlet weak var gameLabel: IBStyledLabel!
+	@IBOutlet weak var titleLabel: UILabel?
+	@IBOutlet weak var gameLabel: UILabel!
 	@IBOutlet weak var textView: MarkupTextView?
 	@IBOutlet weak var keyboardHeightConstraint: NSLayoutConstraint?
 
@@ -38,7 +38,7 @@ final public class DecisionDetailController: UIViewController {
 		originHintLabel?.text = "RE: \(originHint ?? "")"
 		originHintLabel?.superview?.isHidden = isPopover || (originHint?.isEmpty ?? true)
 		didSetup = true
-		view.layoutIfNeeded()
+        view.layoutIfNeeded()
 	}
 
 	@IBAction func cancel(_ sender: AnyObject) {

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,26 +13,28 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="daU-db-kvB" id="k7e-UU-3Zi">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Znm-gD-a8u">
-                        <rect key="frame" x="12" y="8" width="296" height="66.5"/>
+                        <rect key="frame" x="12" y="8" width="296" height="67"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0UG-of-WKI" userLabel="Checkbox">
-                                <rect key="frame" x="0.0" y="0.0" width="40" height="66.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="67"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="URL-Gg-wZG" userLabel="Checkbox">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="310" verticalHuggingPriority="310" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Item Checkbox Empty" translatesAutoresizingMaskIntoConstraints="NO" id="zVL-fc-HbC" userLabel="Checkbox">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="5fx-Sp-A7y"/>
                                                     <constraint firstAttribute="height" priority="900" constant="30" id="Hkk-Yd-MkH"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
+                                        <color key="tintColor" name="renegade"/>
                                         <constraints>
                                             <constraint firstItem="zVL-fc-HbC" firstAttribute="leading" secondItem="URL-Gg-wZG" secondAttribute="leading" id="HoC-uE-f5B"/>
                                             <constraint firstAttribute="trailing" secondItem="zVL-fc-HbC" secondAttribute="trailing" constant="10" id="blH-AE-vz1"/>
@@ -43,7 +43,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="Kue-1H-44F">
-                                        <rect key="frame" x="0.0" y="30" width="40" height="36.5"/>
+                                        <rect key="frame" x="0.0" y="30" width="40" height="37"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -51,61 +51,42 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" axis="vertical" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lMF-YQ-MK1" userLabel="Name">
-                                <rect key="frame" x="40" y="0.0" width="191.5" height="66.5"/>
+                                <rect key="frame" x="40" y="0.0" width="205.5" height="67"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="801" text="Omega Nebula &gt; Sahrabarik" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m87-U2-LTz" userLabel="Parent Mission" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="191.5" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="801" text="Souvenirs" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m87-U2-LTz" userLabel="Parent Mission">
+                                        <rect key="frame" x="0.0" y="0.0" width="205.5" height="8"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.AccentColor"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="300" verticalCompressionResistancePriority="805" text="Souvenir: Destiny Ascension" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-KH-wOO" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-1" width="191.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="300" verticalCompressionResistancePriority="805" text="Souvenir: Destiny Ascension" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-KH-wOO" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="7" width="205.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.NormalColor.Medium"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="804" text="Additional Description Here." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGG-LF-aeC" userLabel="Description" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="18.5" width="191.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="803" text="Omega" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8j-ce-QSf" userLabel="Location">
+                                        <rect key="frame" x="0.0" y="25.5" width="205.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.AccentColor"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="803" text="Omega" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8j-ce-QSf" userLabel="Location" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="35.5" width="191.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="804" text="Additional Description Here." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGG-LF-aeC" userLabel="Description" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="39" width="205.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.AccentColor"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="802" text="500 Credits" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smq-Vc-zEB" userLabel="Cost" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="52.5" width="191.5" height="14"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="802" text="500 Credits" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smq-Vc-zEB" userLabel="Cost">
+                                        <rect key="frame" x="0.0" y="52.5" width="205.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.NormalColor.Medium"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="805" text="Not Available in Game 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gk-C5-HG8" userLabel="Availability" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="66.5" width="191.5" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="805" text="Not Available in Game 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gk-C5-HG8" userLabel="Availability" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="67" width="205.5" height="0.0"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.DisabledColor.Italic"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <constraints>
@@ -113,13 +94,13 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="d44-eb-evB">
-                                <rect key="frame" x="231.5" y="0.0" width="49.5" height="66.5"/>
+                                <rect key="frame" x="245.5" y="0.5" width="35.5" height="66.5"/>
                             </view>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="c7Z-0g-qG2">
                                 <rect key="frame" x="281" y="26" width="15" height="15"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="255" verticalHuggingPriority="255" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="krT-Ex-IRB">
-                                        <rect key="frame" x="6" y="0.0" width="9" height="15"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -137,7 +118,7 @@
                         </constraints>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkJ-dX-wad">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="81.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="83"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="p51-o2-mGm"/>
                         </constraints>
@@ -145,36 +126,19 @@
                             <action selector="onClickCheckbox:" destination="daU-db-kvB" eventType="touchUpInside" id="LsQ-WC-J0x"/>
                         </connections>
                     </button>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPj-dq-ONx" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="15" y="81.5" width="305" height="1"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="EC9-J7-w5L"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                <color key="value" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
-                        </userDefinedRuntimeAttributes>
-                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="wkJ-dX-wad" firstAttribute="top" secondItem="k7e-UU-3Zi" secondAttribute="top" id="OMj-XF-PTc"/>
+                    <constraint firstAttribute="bottom" secondItem="wkJ-dX-wad" secondAttribute="bottom" id="TXU-hc-We4"/>
                     <constraint firstAttribute="bottom" secondItem="Znm-gD-a8u" secondAttribute="bottom" priority="900" constant="8" id="Vqb-7I-hnK"/>
                     <constraint firstItem="wkJ-dX-wad" firstAttribute="leading" secondItem="k7e-UU-3Zi" secondAttribute="leading" id="buF-Pf-3xa"/>
-                    <constraint firstItem="jPj-dq-ONx" firstAttribute="top" secondItem="wkJ-dX-wad" secondAttribute="bottom" id="clV-8L-b2S"/>
                     <constraint firstItem="Znm-gD-a8u" firstAttribute="top" secondItem="k7e-UU-3Zi" secondAttribute="top" priority="900" constant="8" id="d11-If-goK"/>
-                    <constraint firstAttribute="trailing" secondItem="jPj-dq-ONx" secondAttribute="trailing" id="fTr-9f-0Vc"/>
                     <constraint firstItem="Znm-gD-a8u" firstAttribute="leading" secondItem="k7e-UU-3Zi" secondAttribute="leading" constant="12" id="jgu-tO-pev"/>
-                    <constraint firstItem="jPj-dq-ONx" firstAttribute="leading" secondItem="k7e-UU-3Zi" secondAttribute="leading" constant="15" id="msg-AS-VhF"/>
-                    <constraint firstAttribute="bottom" secondItem="jPj-dq-ONx" secondAttribute="bottom" id="sHQ-aJ-9hh"/>
                     <constraint firstAttribute="trailing" secondItem="Znm-gD-a8u" secondAttribute="trailing" constant="12" id="utf-b9-vaN"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="background"/>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="availabilityLabel" destination="1Gk-C5-HG8" id="3pV-da-Zva"/>
                 <outlet property="checkboxImageView" destination="zVL-fc-HbC" id="xDR-eh-pcb"/>
@@ -194,5 +158,11 @@
     <resources>
         <image name="Disclosure" width="9" height="15"/>
         <image name="Item Checkbox Empty" width="30" height="30"/>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="renegade">
+            <color red="0.75" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

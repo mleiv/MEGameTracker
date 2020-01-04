@@ -47,7 +47,7 @@ final public class MapLocationButtonNib: UIView {
 	public func set(location: MapLocationable, isShowPin: Bool = false) {
 		mapLocationPoint = location.mapLocationPoint
         title?.text = location.mapLocationType == .map ? location.name : nil // hide clutter
-		pinColor = (location as? Item)?.itemDisplayType?.color ?? Styles.Colors.tintColor
+        pinColor = (location as? Item)?.itemDisplayType?.color ?? UIColor(named: "renegade") ?? UIColor.systemRed
 		self.isShowPin = isShowPin
 	}
 
@@ -103,8 +103,7 @@ final public class MapLocationButtonNib: UIView {
 				visibleHeightConstraint?.constant = bounds.height
 			}
 		}
-
-		layoutIfNeeded()
+        layoutIfNeeded()
 	}
 
 	private func addVisibleView() {

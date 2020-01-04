@@ -15,14 +15,13 @@ final public class ShepardLoveInterestRow: HairlineBorderView, ValueDataRowDispl
 	@IBInspectable public var typeName: String = "None" {
 		didSet { setDummyDataRowType() }
 	}
-	@IBInspectable public var showRowDivider: Bool = false
 	@IBInspectable public var isHideOnEmpty: Bool = true
 
 // MARK: Outlets
 	@IBOutlet weak public var loveInterestImageView: UIImageView?
 
-	@IBOutlet weak public var headingLabel: IBStyledLabel?
-	@IBOutlet weak public var valueLabel: IBStyledLabel?
+	@IBOutlet weak public var headingLabel: UILabel?
+	@IBOutlet weak public var valueLabel: UILabel?
 	@IBOutlet weak public var disclosureImageView: UIImageView?
 	@IBOutlet weak public var button: UIButton?
 

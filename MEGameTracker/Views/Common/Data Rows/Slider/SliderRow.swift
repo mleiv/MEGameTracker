@@ -24,7 +24,7 @@ final public class SliderRow: HairlineBorderView, IBViewable {
 	var onChangeBlock: ((_ sliderValue: Int) -> Void)?
 
 // MARK: Outlets
-	@IBOutlet weak var headingLabel: IBStyledLabel?
+	@IBOutlet weak var headingLabel: UILabel?
 	@IBOutlet weak var slider: UISlider?
 	@IBOutlet weak var rowDivider: HairlineBorderView?
 	@IBAction func onChange(_ sender: UISlider?) {

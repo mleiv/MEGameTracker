@@ -175,7 +175,7 @@ extension PersonsSearchController: UISearchBarDelegate, UISearchControllerDelega
 		// create search controller (no IB equivalent)
 		let controller = UISearchController(searchResultsController: nil)
         controller.hidesNavigationBarDuringPresentation = false
-		controller.dimsBackgroundDuringPresentation = false
+		controller.obscuresBackgroundDuringPresentation = false
 		controller.delegate = self
 		controller.searchResultsUpdater = self
 		controller.searchBar.delegate = self

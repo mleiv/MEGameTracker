@@ -68,7 +68,7 @@ extension MESplitViewController where Self: UIViewController {
 			controller.navigationItem.leftBarButtonItem = closeButton
 			detailPlaceholder?.isHidden = false
 			detailBorderLeftView?.isHidden = false
-			view.layoutIfNeeded()
+            view.layoutIfNeeded()
 		}
 	}
 

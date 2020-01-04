@@ -57,8 +57,6 @@ final public class MissionsGroupRow: UITableViewCell {
 		nameLabel?.isEnabled = availableCount > 0
 		descriptionLabel?.text = String(format: descriptionPattern, completedCount, unavailableCount)
 		disclosureImageView?.isHidden = nameLabel?.isEnabled != true
-
-		layoutIfNeeded()
 	}
 
 	/// Resets all text in the cases where row UI loads before data/setup.

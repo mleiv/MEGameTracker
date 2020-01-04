@@ -298,7 +298,7 @@ extension MapController {
 		let isToggleDetailsClosed = map?.image != nil
 
 		if isCalloutsButtonVisible {
-			parent?.parent?.navigationItem.rightBarButtonItem?.tintColor = Styles.Colors.tintColor
+            parent?.parent?.navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "renegade") ?? UIColor.systemRed
 			parent?.parent?.navigationItem.rightBarButtonItem?.isEnabled = true
 		} else {
 			parent?.parent?.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
@@ -370,8 +370,7 @@ extension MapController {
 			let button = mapLocationsList.buttons[key] {
 			mapLocationsList.insert(button: button, inView: mapImageWrapperView)
 		}
-		// relayout
-		mapImageWrapperView.layoutIfNeeded()
+        mapImageWrapperView.layoutIfNeeded()
 	}
 
 	func resizeAllMapLocations() {
@@ -387,8 +386,7 @@ extension MapController {
 		}
 		// make sure they were added to view
 		mapLocationsList.insertAll(inView: mapImageWrapperView)
-		// relayout
-		mapImageWrapperView.layoutIfNeeded()
+        mapImageWrapperView.layoutIfNeeded()
 	}
 
 	func openMapLocationable(_ mapLocation: MapLocationable) {
@@ -413,7 +411,7 @@ extension MapController {
 	func showCalloutBox(forButton button: MapLocationButtonNib) {
 		guard let currentCallout = self.currentCallout,
 			  map?.isSplitMenu == false else { return }
-		button.superview?.layoutIfNeeded()
+        button.superview?.layoutIfNeeded()
 		currentCallout.calloutOrigin = button
 		currentCallout.calloutOriginController = self
 		currentCallout.mapLocations = mapLocationsList.getLocations(fromButton: button)

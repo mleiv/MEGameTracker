@@ -40,7 +40,6 @@
 		B01D8F481BA13CF00039E003 /* ShepardTab.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01D8F471BA13CF00039E003 /* ShepardTab.xcassets */; };
 		B01DE64D1BB217AA008F4926 /* MapsFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01DE6491BB217AA008F4926 /* MapsFlow.storyboard */; };
 		B01DE64E1BB217AA008F4926 /* MapsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DE64B1BB217AA008F4926 /* MapsFlowController.swift */; };
-		B01DE64F1BB217AA008F4926 /* MapsTab.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01DE64C1BB217AA008F4926 /* MapsTab.xcassets */; };
 		B01DE6541BB21890008F4926 /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01DE6511BB21890008F4926 /* Maps.storyboard */; };
 		B01DE6551BB21890008F4926 /* MapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DE6531BB21890008F4926 /* MapsController.swift */; };
 		B01DE65F1BB220EA008F4926 /* MissionsFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01DE6571BB220EA008F4926 /* MissionsFlow.storyboard */; };
@@ -270,14 +269,9 @@
 		B19215601E5CC69B00594796 /* DeletedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B192155F1E5CC69B00594796 /* DeletedRow.swift */; };
 		B194C27822ADBE35009BB933 /* MapIsExploredMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194C27722ADBE35009BB933 /* MapIsExploredMigration.swift */; };
 		B194C28422ADBF6D009BB933 /* 20190609.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = B194C28322ADBF6D009BB933 /* 20190609.xcmappingmodel */; };
-		B1952B802161C73C00061C5B /* IBStyleProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B782161C73B00061C5B /* IBStyleProperty.swift */; };
 		B1952B812161C73C00061C5B /* IBStylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B792161C73B00061C5B /* IBStylesheet.swift */; };
 		B1952B822161C73C00061C5B /* IBStylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7A2161C73B00061C5B /* IBStylable.swift */; };
-		B1952B832161C73C00061C5B /* IBGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7B2161C73B00061C5B /* IBGradient.swift */; };
-		B1952B842161C73C00061C5B /* IBStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7C2161C73B00061C5B /* IBStyler.swift */; };
-		B1952B852161C73C00061C5B /* IBFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7D2161C73C00061C5B /* IBFont.swift */; };
 		B1952B862161C73C00061C5B /* IBStyledThings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7E2161C73C00061C5B /* IBStyledThings.swift */; };
-		B1952B872161C73C00061C5B /* IBStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1952B7F2161C73C00061C5B /* IBStyleManager.swift */; };
 		B19684751CF8D76C005608A7 /* OriginHintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19684731CF8D76C005608A7 /* OriginHintable.swift */; };
 		B19684761CF8D76C005608A7 /* OriginHintType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19684741CF8D76C005608A7 /* OriginHintType.swift */; };
 		B196847E1CF8DC04005608A7 /* AvailabilityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19684791CF8DC04005608A7 /* AvailabilityType.swift */; };
@@ -565,7 +559,6 @@
 		B01D8F471BA13CF00039E003 /* ShepardTab.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ShepardTab.xcassets; sourceTree = "<group>"; };
 		B01DE64A1BB217AA008F4926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapsFlow.storyboard; sourceTree = "<group>"; };
 		B01DE64B1BB217AA008F4926 /* MapsFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsFlowController.swift; sourceTree = "<group>"; };
-		B01DE64C1BB217AA008F4926 /* MapsTab.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MapsTab.xcassets; sourceTree = "<group>"; };
 		B01DE6521BB21890008F4926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Maps.storyboard; sourceTree = "<group>"; };
 		B01DE6531BB21890008F4926 /* MapsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsController.swift; sourceTree = "<group>"; };
 		B01DE6581BB220EA008F4926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MissionsFlow.storyboard; sourceTree = "<group>"; };
@@ -800,14 +793,9 @@
 		B194C27722ADBE35009BB933 /* MapIsExploredMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapIsExploredMigration.swift; sourceTree = "<group>"; };
 		B194C27A22ADBF09009BB933 /* CoreData20190609.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData20190609.xcdatamodel; sourceTree = "<group>"; };
 		B194C28322ADBF6D009BB933 /* 20190609.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 20190609.xcmappingmodel; sourceTree = "<group>"; };
-		B1952B782161C73B00061C5B /* IBStyleProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyleProperty.swift; sourceTree = "<group>"; };
 		B1952B792161C73B00061C5B /* IBStylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStylesheet.swift; sourceTree = "<group>"; };
 		B1952B7A2161C73B00061C5B /* IBStylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStylable.swift; sourceTree = "<group>"; };
-		B1952B7B2161C73B00061C5B /* IBGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBGradient.swift; sourceTree = "<group>"; };
-		B1952B7C2161C73B00061C5B /* IBStyler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyler.swift; sourceTree = "<group>"; };
-		B1952B7D2161C73C00061C5B /* IBFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBFont.swift; sourceTree = "<group>"; };
 		B1952B7E2161C73C00061C5B /* IBStyledThings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyledThings.swift; sourceTree = "<group>"; };
-		B1952B7F2161C73C00061C5B /* IBStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStyleManager.swift; sourceTree = "<group>"; };
 		B19684731CF8D76C005608A7 /* OriginHintable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginHintable.swift; sourceTree = "<group>"; };
 		B19684741CF8D76C005608A7 /* OriginHintType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginHintType.swift; sourceTree = "<group>"; };
 		B19684791CF8DC04005608A7 /* AvailabilityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityType.swift; sourceTree = "<group>"; };
@@ -1138,7 +1126,6 @@
 		B01DE6481BB217AA008F4926 /* Maps Tab */ = {
 			isa = PBXGroup;
 			children = (
-				B01DE64C1BB217AA008F4926 /* MapsTab.xcassets */,
 				B01DE6491BB217AA008F4926 /* MapsFlow.storyboard */,
 				B01DE64B1BB217AA008F4926 /* MapsFlowController.swift */,
 				B01DE6501BB21890008F4926 /* Maps */,
@@ -2395,13 +2382,8 @@
 		B1F466D01DA0AE7200EBA563 /* IBStyles */ = {
 			isa = PBXGroup;
 			children = (
-				B1952B7D2161C73C00061C5B /* IBFont.swift */,
-				B1952B7B2161C73B00061C5B /* IBGradient.swift */,
 				B1952B7A2161C73B00061C5B /* IBStylable.swift */,
 				B1952B7E2161C73C00061C5B /* IBStyledThings.swift */,
-				B1952B7F2161C73C00061C5B /* IBStyleManager.swift */,
-				B1952B782161C73B00061C5B /* IBStyleProperty.swift */,
-				B1952B7C2161C73B00061C5B /* IBStyler.swift */,
 				B1952B792161C73B00061C5B /* IBStylesheet.swift */,
 			);
 			path = IBStyles;
@@ -2672,7 +2654,6 @@
 				B01D8F1E1BA139500039E003 /* ShepardFlow.storyboard in Resources */,
 				B17D7D1A1CAB6D9000548595 /* PersonsSearch.storyboard in Resources */,
 				B1A1B06C1E137DB0009A5688 /* GameSegmentsNib.xib in Resources */,
-				B01DE64F1BB217AA008F4926 /* MapsTab.xcassets in Resources */,
 				B01DE65F1BB220EA008F4926 /* MissionsFlow.storyboard in Resources */,
 				B1A881561CF2546800603253 /* DataMaps_EarthSystemsAlliance.json in Resources */,
 				B1EA40F01DFCE6F8006948B0 /* DataPersons_3.json in Resources */,
@@ -2767,7 +2748,6 @@
 				B133A2EB1F44C66400524A28 /* CloudDataChangeValue.swift in Sources */,
 				B1B55C4C1E70317E0095A526 /* ValueDataRowDisplayable.swift in Sources */,
 				B1A8820E1CF29AD100603253 /* RelatedMissionsView.swift in Sources */,
-				B1952B872161C73C00061C5B /* IBStyleManager.swift in Sources */,
 				B1FED4D6229C7888001503F1 /* Change20190527.swift in Sources */,
 				B14EA9281CF3E1B0009F2B0A /* DecisionDetailController.swift in Sources */,
 				B18566971E6FA27A00E19FC5 /* DecisionsListLinkable.swift in Sources */,
@@ -2775,7 +2755,6 @@
 				B160EE891CF951500028910C /* ShepardReputationRowType.swift in Sources */,
 				B1EB7C3D1C97CA64006B18BA /* UIViewController.swift in Sources */,
 				B02ACD371BA2797000B7CCB0 /* GameSequences.swift in Sources */,
-				B1952B852161C73C00061C5B /* IBFont.swift in Sources */,
 				B1BC0BAD2169C3B10014A19D /* NSManagedObject.swift in Sources */,
 				B0F7557B1BBE109200984A3C /* MapCalloutsGroupsController.swift in Sources */,
 				B16F8D881E18CD120074F66B /* CloudKitMissions.swift in Sources */,
@@ -2838,7 +2817,6 @@
 				B02ACD361BA2797000B7CCB0 /* GamePersons.swift in Sources */,
 				B1C2A7541E2CA0B100809653 /* MapLocationButtonNib.swift in Sources */,
 				B129D0CB1C94E52D00CFDD84 /* NSAttributedString.swift in Sources */,
-				B1952B802161C73C00061C5B /* IBStyleProperty.swift in Sources */,
 				B1B11FD81E4E9CA000D97CA1 /* CoreDataMigrations.swift in Sources */,
 				B1FFE3591CF6B151007B3160 /* ConversationRewardsDetailController.swift in Sources */,
 				B02673611BF6E6B9003E4F07 /* ItemType.swift in Sources */,
@@ -2941,7 +2919,6 @@
 				B01DE64E1BB217AA008F4926 /* MapsFlowController.swift in Sources */,
 				B08E2A531BB23246009546F8 /* Map.swift in Sources */,
 				B1FFE3571CF6B151007B3160 /* ConversationRewardDetailOption.swift in Sources */,
-				B1952B832161C73C00061C5B /* IBGradient.swift in Sources */,
 				B1B11FE61E4E9E8B00D97CA1 /* CoreData.xcdatamodeld in Sources */,
 				B01D8F321BA139500039E003 /* ShepardReputationController.swift in Sources */,
 				B160EE871CF951500028910C /* ShepardClassRowType.swift in Sources */,
@@ -2979,7 +2956,6 @@
 				B13FB8AA1F43CF78002CCE65 /* CloudDataRecordChange.swift in Sources */,
 				B1834A291E78BBDE0042B3AB /* ShepardAppearanceSliderCell.swift in Sources */,
 				B1E1A2821E22ED8100029CBE /* Spinner.swift in Sources */,
-				B1952B842161C73C00061C5B /* IBStyler.swift in Sources */,
 				B1FFE3341CF6AA17007B3160 /* ConversationRewardsable.swift in Sources */,
 				B1C1008E1CC0AB9800D0CDF2 /* Alert.swift in Sources */,
 				B0F61F8B1BB0E90C007E8A5E /* GameVersion.swift in Sources */,
@@ -3727,12 +3703,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 73;
 				DEVELOPMENT_TEAM = LNQGUJUGYP;
 				INFOPLIST_FILE = MEGameTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.urdnot.MassEffectTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -3752,12 +3731,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 73;
 				DEVELOPMENT_TEAM = LNQGUJUGYP;
 				INFOPLIST_FILE = MEGameTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.urdnot.MassEffectTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

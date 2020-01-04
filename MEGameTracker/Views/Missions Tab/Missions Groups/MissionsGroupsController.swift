@@ -542,7 +542,6 @@ extension MissionsGroupsController {
 			UINib(nibName: "MissionRow", bundle: bundle),
 			forCellReuseIdentifier: "MissionRow"
 		)
-		resultsController.tableView?.separatorStyle = .none
 		resultsController.tableView?.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
 		resultsController.tableView?.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
 		resultsController.tableView?.dataSource = self

@@ -54,7 +54,7 @@ final public class MESearchManager: NSObject {
 		// create search controller (no IB equivalent)
 		let searchController = UISearchController(searchResultsController: resultsController)
         searchController.hidesNavigationBarDuringPresentation = false
-		searchController.dimsBackgroundDuringPresentation = false
+		searchController.obscuresBackgroundDuringPresentation = false
 		searchController.searchResultsUpdater = self
 		searchController.searchBar.delegate = self
 		searchController.searchBar.searchBarStyle = tempSearchBar?.searchBarStyle

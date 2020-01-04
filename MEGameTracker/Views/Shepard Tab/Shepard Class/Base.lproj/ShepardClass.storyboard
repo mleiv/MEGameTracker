@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,21 +16,21 @@
                         <viewControllerLayoutGuide type="bottom" id="BCg-J2-dR4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="343-25-6Qo">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="936"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEk-E8-Mxj">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="936"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSj-In-syH" userLabel="Interior">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1540"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1651"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8LF-94-JEJ" userLabel="Values">
-                                                <rect key="frame" x="0.0" y="10" width="600" height="1510"/>
+                                                <rect key="frame" x="0.0" y="10" width="375" height="1621"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaD-Rh-2xJ" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                        <color key="backgroundColor" name="background"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
@@ -40,7 +38,9 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5G-bE-aiw" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="600" height="35"/>
+                                                        <rect key="frame" x="0.0" y="50" width="375" height="53.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" name="paragon"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text">
                                                                 <string key="value">Soldiers can specialize in any weapon, and are the only class with access to assault rifles. They begin with medium armor, and are the only class with access to heavy armor.
@@ -49,13 +49,11 @@ Soldiers have combat abilities, but no biotic and tech abilities.
 
 The Soldier class talent increases health, and grants a small amount of health regeneration.</string>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-Yw-LAy" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="85" width="600" height="50"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="103.5" width="375" height="50"/>
+                                                        <color key="backgroundColor" name="background"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Engineer"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
@@ -63,7 +61,9 @@ The Soldier class talent increases health, and grants a small amount of health r
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUO-hf-OEM" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="135" width="600" height="35"/>
+                                                        <rect key="frame" x="0.0" y="153.5" width="375" height="53.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" name="paragon"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text">
                                                                 <string key="value">Engineers can only equip light armor. They have limited weapon choices.
@@ -72,13 +72,11 @@ Engineers have tech abilities, but no combat or biotic abilities.
 
 The Engineer class talent reduces recharge time for tech abilities, and increases tech protection.</string>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fal-wR-vho" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="170" width="600" height="50"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="207" width="375" height="50"/>
+                                                        <color key="backgroundColor" name="background"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Adept"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
@@ -86,7 +84,9 @@ The Engineer class talent reduces recharge time for tech abilities, and increase
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c19-41-8IL" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="220" width="600" height="35"/>
+                                                        <rect key="frame" x="0.0" y="257" width="375" height="53.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" name="paragon"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text">
                                                                 <string key="value">Adepts can only equip light armor. They have limited weapon choices.
@@ -95,13 +95,11 @@ Adepts have biotic abilities, but no combat or tech abilities.
 
 The Adept class talent reduces recharge time for biotic abilities, and increases biotic protection.</string>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSy-ea-687" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="255" width="600" height="50"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="310.5" width="375" height="50"/>
+                                                        <color key="backgroundColor" name="background"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Infiltrator"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
@@ -109,7 +107,9 @@ The Adept class talent reduces recharge time for biotic abilities, and increases
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6O2-F9-DTH" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="305" width="600" height="35"/>
+                                                        <rect key="frame" x="0.0" y="360.5" width="375" height="53.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" name="paragon"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text">
                                                                 <string key="value">Infiltrators can gain access to medium armor. They have limited weapon choices, but have access to sniper rifles.
@@ -118,13 +118,11 @@ Infiltrators have a mixture of combat and tech abilities, but no biotic abilitie
 
 The Infiltrator class talent reduces weapon heat buildup, and increases damage for proximity mine explosions.</string>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaL-2S-LFW" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="340" width="600" height="50"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="414" width="375" height="50"/>
+                                                        <color key="backgroundColor" name="background"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Sentinel"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
@@ -132,7 +130,9 @@ The Infiltrator class talent reduces weapon heat buildup, and increases damage f
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Gl-eZ-NU4" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="390" width="600" height="35"/>
+                                                        <rect key="frame" x="0.0" y="464" width="375" height="53.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" name="paragon"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text">
                                                                 <string key="value">Sentinels can only equip light armor. They have limited weapon choices.
@@ -144,8 +144,8 @@ The Sentinel class reduces cooldown time on abilities and small improvement to w
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2H4-kq-bed" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="425" width="600" height="50"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="517.5" width="375" height="50"/>
+                                                        <color key="backgroundColor" name="background"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Vanguard"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
@@ -153,7 +153,9 @@ The Sentinel class reduces cooldown time on abilities and small improvement to w
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrK-ej-pWs" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="475" width="600" height="35"/>
+                                                        <rect key="frame" x="0.0" y="567.5" width="375" height="53.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" name="paragon"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text">
                                                                 <string key="value">Vanguards can gain access to medium armor. They have limited weapon choices, but have access to shotguns.
@@ -162,12 +164,10 @@ Vanguards have a mixture of combat and biotic abilities, but no tech abilities.
 
 The Vanguard class talent increases weapon damage, and increases biotic protection.</string>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="Wvl-Rz-f4f" userLabel="Filler">
-                                                        <rect key="frame" x="0.0" y="510" width="600" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="621" width="375" height="1000"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -193,7 +193,7 @@ The Vanguard class talent increases weapon damage, and increases biotic protecti
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="secondaryBackground"/>
                         <constraints>
                             <constraint firstItem="DSj-In-syH" firstAttribute="height" secondItem="343-25-6Qo" secondAttribute="height" priority="100" id="Ddi-2F-Utg"/>
                             <constraint firstAttribute="trailing" secondItem="QEk-E8-Mxj" secondAttribute="trailing" id="IfD-J5-BXp"/>
@@ -204,10 +204,6 @@ The Vanguard class talent increases weapon damage, and increases biotic protecti
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1000"/>
                     <connections>
                         <outlet property="adeptRadio" destination="fal-wR-vho" id="osk-dA-c1X"/>
                         <outlet property="adeptSideEffectsView" destination="c19-41-8IL" id="DAC-Ez-elU"/>
@@ -228,4 +224,15 @@ The Vanguard class talent increases weapon damage, and increases biotic protecti
             <point key="canvasLocation" x="922" y="271"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="paragon">
+            <color red="0.10000000149011612" green="0.10000000149011612" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryBackground">
+            <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

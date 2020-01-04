@@ -54,7 +54,8 @@ struct Spinner {
 			}
 
 //			nib.isHidden = true
-			parentView.layoutIfNeeded()
+            parentView.layoutIfNeeded()
+            
 			nib.startSpinning()
 			UIView.animate(withDuration: 1.0, animations: {
 				nib.isHidden = false

@@ -69,7 +69,7 @@ final public class DecisionsView: SimpleArrayDataRow {
 				decisionDetail.popover = popover
 				popover.sourceView = sender
 				popover.sourceRect = sender.bounds
-			}
+            }
 			viewController?.present(decisionNavigationController, animated: true, completion: nil)
 		}
 	}

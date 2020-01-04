@@ -11,7 +11,6 @@ import UIKit
 /// All functions and properties pre-defined except for unmarkedText: String? and didMarkup: Bool = false.
 /// call markupText() in layoutSubviews before super.layoutSubviews().
 public protocol Markupable: class {
-	var identifier: String? { get }
 	var isMarkupable: Bool { get }
 	var unmarkedText: String? { get set }
 	var useAttributedText: NSAttributedString? { get set }
@@ -20,8 +19,23 @@ public protocol Markupable: class {
 	func markupLinks(_ attributedText: NSMutableAttributedString) -> NSMutableAttributedString
 }
 
-extension Markupable where Self: UIView {
+public protocol TextRendering: UIView {
+    var textRenderingTextColor: UIColor { get set }
+    var textRenderingFont: UIFont { get set }
+    var textRenderingAttributedText: NSAttributedString? { get set }
+}
+extension UILabel: TextRendering {
+    public var textRenderingTextColor: UIColor { get { return textColor } set { textColor = newValue } }
+    public var textRenderingFont: UIFont { get { return font } set { font = newValue } }
+    public var textRenderingAttributedText: NSAttributedString? { get { return attributedText } set { attributedText = newValue } }
+}
+extension UITextView: TextRendering {
+    public var textRenderingTextColor: UIColor { get { return textColor! } set { textColor = newValue } }
+    public var textRenderingFont: UIFont { get { return font! } set { font = newValue } }
+    public var textRenderingAttributedText: NSAttributedString? { get { return attributedText } set { attributedText = newValue } }
+}
 
+extension Markupable where Self: TextRendering {
 	// don't bother with hassle of NSAttributedString if we don't need it
 	public var isMarkupable: Bool {
 		let patterns = "(\\[(?:[^\\]]+\\|)?[^\\]]+\\]|\\*[^\\*]+\\*|\\_[^\\_]+\\_)"
@@ -40,7 +54,10 @@ extension Markupable where Self: UIView {
 
 	public func markup() {
 		let attributedText = NSMutableAttributedString(
-			attributedString: Styles.current.applyStyle(identifier ?? "", toString: unmarkedText ?? "")
+            attributedString: NSAttributedString(string: unmarkedText ?? "", attributes: [
+                .foregroundColor: self.textRenderingTextColor,
+                .font: self.textRenderingFont
+            ])
 		)
 		guard unmarkedText?.isEmpty == false && isMarkupable else {
 			useAttributedText = attributedText.string.isEmpty ? nil : attributedText
@@ -70,14 +87,16 @@ extension Markupable where Self: UIView {
 						var text = attributedText.attributedSubstring(from: wholeMatchRange)
 						let textString = text.string
 						if textString.length > 4
-							&& (textString.stringFrom(0, to: 2) == "*_" || textString.stringFrom(0, to: 2) == "_*"),
-							let identifier = self.identifier {
-							text = Styles.current.shiftStyleToBoldItalic(identifier, text: textString.stringFrom(2, to: -2))
+							&& (textString.stringFrom(0, to: 2) == "*_" || textString.stringFrom(0, to: 2) == "_*") {
+                            let subtext = text.attributedSubstring(from: NSRange(location: 2, length: text.length - 4))
+							text = shiftStyleToBoldItalic(text: subtext)
 						} else if textString.length > 2 {
-							if textString.first == "*", let identifier = self.identifier {
-								text = Styles.current.shiftStyleToBold(identifier, text: textString.stringFrom(1, to: -1))
-							} else if textString.first == "_", let identifier = self.identifier {
-								text = Styles.current.shiftStyleToItalic(identifier, text: textString.stringFrom(1, to: -1))
+							if textString.first == "*" {
+                                let subtext = text.attributedSubstring(from: NSRange(location: 1, length: text.length - 2))
+								text = shiftStyleToBold(text: subtext)
+							} else if textString.first == "_" {
+                                let subtext = text.attributedSubstring(from: NSRange(location: 1, length: text.length - 2))
+                                text = shiftStyleToItalic(text: subtext)
 							}
 						}
 						offsetIndex -= wholeMatchRange.length - text.length
@@ -173,7 +192,8 @@ extension Markupable where Self: UIView {
 			let attributedLinkImage = NSAttributedString(attachment: linkImage)
 			attributedText.replaceCharacters(in: NSMakeRange(0, 0), with: attributedLinkImage)
 		}
-		attributedText.addAttribute(NSAttributedString.Key.link,
+		attributedText.addAttribute(
+            .link,
 			value: link,
 			range: NSMakeRange(0, attributedText.length)
 		)
@@ -181,4 +201,31 @@ extension Markupable where Self: UIView {
 		// this changes the styles (color, font, etc), provided you have turned off default styling inside Styles.swift:
 		// Styles.convertToStyleCategory(.Link, attributedText: attributedText)
 	}
+    
+    private func shiftStyleToItalic(text: NSAttributedString) -> NSAttributedString {
+        if let descriptor = textRenderingFont.fontDescriptor.withSymbolicTraits(.traitItalic) {
+            let mutableText = NSMutableAttributedString(attributedString: text)
+            mutableText.addAttribute(.font, value: UIFont(descriptor: descriptor, size: textRenderingFont.pointSize), range: NSRange(location: 0, length: text.length))
+            return mutableText
+        }
+        return text
+    }
+    
+    private func shiftStyleToBold(text: NSAttributedString) -> NSAttributedString {
+        if let descriptor = textRenderingFont.fontDescriptor.withSymbolicTraits(.traitBold) {
+            let mutableText = NSMutableAttributedString(attributedString: text)
+            mutableText.addAttribute(.font, value: UIFont(descriptor: descriptor, size: textRenderingFont.pointSize), range: NSRange(location: 0, length: text.length))
+            return mutableText
+        }
+        return text
+    }
+    
+    private func shiftStyleToBoldItalic(text: NSAttributedString) -> NSAttributedString {
+        if let descriptor = textRenderingFont.fontDescriptor.withSymbolicTraits([.traitItalic, .traitBold]) {
+            let mutableText = NSMutableAttributedString(attributedString: text)
+            mutableText.addAttribute(.font, value: UIFont(descriptor: descriptor, size: textRenderingFont.pointSize), range: NSRange(location: 0, length: text.length))
+            return mutableText
+        }
+        return text
+    }
 }

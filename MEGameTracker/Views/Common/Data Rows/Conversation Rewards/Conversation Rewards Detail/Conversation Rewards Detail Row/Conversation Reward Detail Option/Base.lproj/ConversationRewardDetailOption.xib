@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,34 +17,32 @@
                     <subviews>
                         <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="7SU-u4-GNv" customClass="RadioButton" customModule="MEGameTracker" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="27" width="30" height="30"/>
+                            <accessibility key="accessibilityConfiguration" identifier="radio">
+                                <bool key="isElement" value="NO"/>
+                            </accessibility>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="TcP-5n-aK0"/>
                                 <constraint firstAttribute="width" constant="30" id="b53-bp-IKB"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLQ-Na-viC">
-                            <rect key="frame" x="40" y="10" width="291" height="64.5"/>
+                            <rect key="frame" x="40" y="3.5" width="291" height="77"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lih-tp-FgG">
-                                    <rect key="frame" x="0.0" y="8" width="291" height="48.5"/>
+                                    <rect key="frame" x="0.0" y="8" width="291" height="61"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="751" text="Paragon Context:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQU-Kb-8jt" userLabel="Paragon Context" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="291" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="751" text="Paragon Context:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQU-Kb-8jt" userLabel="Paragon Context" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="291" height="19.5"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="context" label="context"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                             <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.NormalColor"/>
-                                            </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="801" text="5 Paragon / 6 Renegade: &quot;Let me in and I'll help&quot;" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-de-oYq" userLabel="Paragon" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="17" width="291" height="31.5"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="801" text="5 Paragon / 6 Renegade: &quot;Let me in and I'll help&quot;" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-de-oYq" userLabel="Paragon" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="20.5" width="291" height="40.5"/>
+                                            <accessibility key="accessibilityConfiguration" label="reward"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.NormalColor"/>
-                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
                                 </stackView>
@@ -63,11 +58,15 @@
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCS-fd-u08">
                     <rect key="frame" x="0.0" y="0.0" width="331" height="84"/>
+                    <accessibility key="accessibilityConfiguration" identifier="button" label="Select"/>
                     <connections>
                         <action selector="selectOption:" destination="9K7-r5-Zpv" eventType="touchUpInside" id="WGZ-if-eNo"/>
                     </connections>
                 </button>
             </subviews>
+            <accessibility key="accessibilityConfiguration" identifier="option" label="Conversation Option">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <constraints>
                 <constraint firstItem="VvT-y9-Qfq" firstAttribute="top" secondItem="9K7-r5-Zpv" secondAttribute="top" priority="950" id="0Qc-AO-J1T"/>
                 <constraint firstAttribute="trailing" secondItem="MCS-fd-u08" secondAttribute="trailing" id="173-nS-kRt"/>

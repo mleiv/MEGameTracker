@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gsj-xB-tHj">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gsj-xB-tHj">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,9 +11,12 @@
         <scene sceneID="dQp-rM-xJf">
             <objects>
                 <navigationController id="gsj-xB-tHj" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="II4-18-P3x">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="II4-18-P3x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="headerFooterBackground"/>
+                        <color key="tintColor" name="paragon"/>
+                        <color key="barTintColor" name="headerBackground"/>
                     </navigationBar>
                     <connections>
                         <segue destination="eoX-sU-arq" kind="relationship" relationship="rootViewController" id="ejz-X0-0AX"/>
@@ -28,40 +29,37 @@
         <!--Decision-->
         <scene sceneID="tZC-F2-KIx">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="eoX-sU-arq" customClass="DecisionDetailController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eoX-sU-arq" customClass="DecisionDetailController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J8y-UA-uqE"/>
                         <viewControllerLayoutGuide type="bottom" id="er1-fD-F7y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sTP-wb-Q2i">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bbt-mf-cqP">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKQ-S6-dcK">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKQ-S6-dcK">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="275" translatesAutoresizingMaskIntoConstraints="NO" id="q7k-wy-eY8">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="738.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="958"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="270" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ksw-sd-p3V">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="738.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="958"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="sqN-JH-X49" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                            <view opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="sqN-JH-X49" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="300" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2y-0x-k9e" userLabel="originHint" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="300" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2y-0x-k9e" userLabel="originHint">
                                                                         <rect key="frame" x="15" y="8" width="345" height="34"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                                         <nil key="highlightedColor"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.NormalColor"/>
-                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
+                                                                <color key="backgroundColor" name="mapImageBackground"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="k2y-0x-k9e" secondAttribute="bottom" priority="900" constant="8" id="4Ro-8H-VcO"/>
                                                                     <constraint firstItem="k2y-0x-k9e" firstAttribute="leading" secondItem="sqN-JH-X49" secondAttribute="leading" constant="15" id="a9j-lD-SbR"/>
@@ -74,49 +72,41 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                        <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="260" translatesAutoresizingMaskIntoConstraints="NO" id="gWw-KR-0PS">
-                                                                <rect key="frame" x="0.0" y="50" width="375" height="688.5"/>
+                                                                <rect key="frame" x="0.0" y="50" width="375" height="908"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1MK-YQ-SdZ">
-                                                                        <rect key="frame" x="15" y="10" width="345" height="664"/>
+                                                                        <rect key="frame" x="15" y="10" width="345" height="883"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="300" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJH-dR-EX2" userLabel="Title" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="23.5"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="300" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJH-dR-EX2" userLabel="Title">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="24"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                                 <nil key="highlightedColor"/>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Header.NormalColor.Medium"/>
-                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="280" verticalCompressionResistancePriority="804" text="Game 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u93-y6-p5J" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="28.5" width="345" height="18"/>
-                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="280" verticalCompressionResistancePriority="804" text="Game 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u93-y6-p5J">
+                                                                                <rect key="frame" x="0.0" y="29" width="345" height="20.5"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.AccentColor"/>
-                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="255" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aW1-fd-h4o" customClass="MarkupTextView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="51.5" width="341.5" height="225.5"/>
-                                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <rect key="frame" x="0.0" y="54.5" width="345" height="302"/>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <color key="tintColor" name="paragon"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" priority="100" id="RA9-ij-yCM"/>
                                                                                 </constraints>
                                                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.NormalColor"/>
-                                                                                </userDefinedRuntimeAttributes>
                                                                             </textView>
                                                                             <view contentMode="scaleToFill" verticalHuggingPriority="200" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-wh-nOo" userLabel="FIller">
-                                                                                <rect key="frame" x="0.0" y="282" width="345" height="382"/>
+                                                                                <rect key="frame" x="0.0" y="361.5" width="345" height="521.5"/>
                                                                             </view>
                                                                         </subviews>
                                                                         <constraints>
@@ -124,7 +114,7 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="secondaryBackground"/>
                                                                 <constraints>
                                                                     <constraint firstItem="1MK-YQ-SdZ" firstAttribute="leading" secondItem="gWw-KR-0PS" secondAttribute="leading" constant="15" id="JQB-PK-ZPe"/>
                                                                     <constraint firstAttribute="bottom" secondItem="1MK-YQ-SdZ" secondAttribute="bottom" priority="900" constant="15" id="XZd-dL-Ib7"/>
@@ -165,7 +155,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="secondaryBackground"/>
                         <constraints>
                             <constraint firstItem="Bbt-mf-cqP" firstAttribute="leading" secondItem="sTP-wb-Q2i" secondAttribute="leading" id="Do6-sQ-75X"/>
                             <constraint firstAttribute="trailing" secondItem="Bbt-mf-cqP" secondAttribute="trailing" id="Dt0-9V-0hh"/>
@@ -192,4 +182,21 @@
             <point key="canvasLocation" x="-35" y="312"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="headerBackground">
+            <color red="0.97000002861022949" green="0.97000002861022949" blue="0.97000002861022949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="headerFooterBackground">
+            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mapImageBackground">
+            <color red="0.89999997615814209" green="0.89999997615814209" blue="0.89999997615814209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="paragon">
+            <color red="0.10000000149011612" green="0.10000000149011612" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryBackground">
+            <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

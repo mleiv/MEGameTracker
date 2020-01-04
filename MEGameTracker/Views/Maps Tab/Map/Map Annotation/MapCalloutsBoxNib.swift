@@ -30,7 +30,7 @@ import UIKit
 	@IBOutlet weak var paddingRightConstraint: NSLayoutConstraint?
 
 	@IBOutlet weak var footerWrapper: HairlineBorderView?
-	@IBOutlet weak var footerLabel: IBStyledLabel?
+	@IBOutlet weak var footerLabel: UILabel?
 
 	// Calloutsable
 	@IBOutlet weak var calloutsView: CalloutsView?
@@ -62,8 +62,8 @@ import UIKit
 	var tailLength = CGFloat(20.0)
 	var cornerRadius = CGFloat(10)
 	var calloutStrokeWidth = CGFloat(1.0)
-	var calloutStrokeColor = Styles.Colors.normalColor
-	var calloutBackgroundColor = Styles.Colors.normalOppositeColor
+	var calloutStrokeColor = UIColor.separator // Styles.colors.backgroundBorder
+	var calloutBackgroundColor = UIColor.systemBackground // Styles.colors.background
 
 	//footer
 	let pendingMessage = "%d_missions more missions, %d_items more items"
@@ -106,10 +106,10 @@ import UIKit
 		calloutsView?.controller = self
 
 		// size loaded data
-		calloutsView?.layoutIfNeeded()
+        calloutsView?.layoutIfNeeded()
 		constrainHeight()
 		constrainWidth()
-		layoutIfNeeded()
+        layoutIfNeeded()
 
 		// reset superview placement constraint
 		if constraintX == nil && constraintY == nil {
@@ -211,8 +211,8 @@ extension MapCalloutsBoxNib {
 			tailWidth: tailBaseWidth,
 			borderWidth: calloutStrokeWidth,
 			cornerRadius: cornerRadius,
-			borderColor: calloutStrokeColor,
-			backgroundColor: calloutBackgroundColor
+            borderColor: calloutStrokeColor,
+            backgroundColor: calloutBackgroundColor
 		)
 		balloon.render()
 	}
@@ -267,7 +267,7 @@ extension MapCalloutsBoxNib {
 		paddingBottomConstraint?.constant = tailDirection == .down ? tailLength : 0.0
 		paddingLeftConstraint?.constant = tailDirection == .left ? tailLength : 0.0
 		paddingRightConstraint?.constant = tailDirection == .right ? tailLength : 0.0
-		layoutIfNeeded()
+        layoutIfNeeded()
 		borderWrapper?.frame.size = calloutBounds.size
 	}
 

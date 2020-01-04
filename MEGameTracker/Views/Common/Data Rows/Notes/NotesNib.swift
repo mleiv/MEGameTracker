@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable final public class NotesNib: SimpleArrayDataRowNib {
 
 	@IBOutlet weak var addButton: UIButton?
-	@IBOutlet weak var addLabel: IBStyledLabel?
+	@IBOutlet weak var addLabel: UILabel?
 
 	public var onAdd: (() -> Void)?
 

@@ -1,53 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="IlU-Lu-Cfv" customClass="GameSegmentsNib" customModule="MassEffectTracker" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="IlU-Lu-Cfv" customClass="GameSegmentsNib" customModule="MEGameTracker" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMc-fg-sQy" customClass="IBStyledView" customModule="MassEffectTracker" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMc-fg-sQy">
                     <rect key="frame" x="15" y="10" width="345" height="24"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="270" verticalCompressionResistancePriority="770" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dZ7-rZ-cIu">
-                            <rect key="frame" x="0.0" y="5" width="345" height="14"/>
+                            <rect key="frame" x="0.0" y="10" width="345" height="4"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGx-lH-0nd" customClass="IBStyledLabel" customModule="MassEffectTracker" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="112.5" height="14"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <nil key="textColor"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGx-lH-0nd">
+                                    <rect key="frame" x="0.0" y="0.0" width="112.5" height="4"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                     <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.AccentColor"/>
-                                    </userDefinedRuntimeAttributes>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaH-DM-fPS" customClass="IBStyledLabel" customModule="MassEffectTracker" customModuleProvider="target">
-                                    <rect key="frame" x="116.5" y="0.0" width="112" height="14"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <nil key="textColor"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaH-DM-fPS">
+                                    <rect key="frame" x="116.5" y="0.0" width="112" height="4"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                     <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.AccentColor"/>
-                                    </userDefinedRuntimeAttributes>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWh-vM-nf6" customClass="IBStyledLabel" customModule="MassEffectTracker" customModuleProvider="target">
-                                    <rect key="frame" x="232.5" y="0.0" width="112.5" height="14"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <nil key="textColor"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWh-vM-nf6">
+                                    <rect key="frame" x="232.5" y="0.0" width="112.5" height="4"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                     <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.AccentColor"/>
-                                    </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>
                             <constraints>
@@ -55,7 +40,7 @@
                                 <constraint firstAttribute="height" secondItem="EGx-lH-0nd" secondAttribute="height" id="pj5-7G-wGb"/>
                             </constraints>
                         </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flT-fv-dRS" customClass="HairlineBorderView" customModule="MassEffectTracker" customModuleProvider="target">
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flT-fv-dRS" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="115" height="24"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
@@ -63,11 +48,11 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="YES"/>
                                 <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEq-fH-Iwm" customClass="HairlineBorderView" customModule="MassEffectTracker" customModuleProvider="target">
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEq-fH-Iwm" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
                             <rect key="frame" x="230" y="0.0" width="115" height="24"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
@@ -75,11 +60,12 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
                                 <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" name="background"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="PEq-fH-Iwm" secondAttribute="trailing" id="0G7-ve-ZTw"/>
                         <constraint firstAttribute="bottom" secondItem="PEq-fH-Iwm" secondAttribute="bottom" id="2QT-XX-oTo"/>
@@ -90,12 +76,14 @@
                         <constraint firstItem="flT-fv-dRS" firstAttribute="top" secondItem="yMc-fg-sQy" secondAttribute="top" id="ElL-Kq-1ft"/>
                         <constraint firstItem="PEq-fH-Iwm" firstAttribute="width" secondItem="yMc-fg-sQy" secondAttribute="width" multiplier="0.333" id="Fpb-6s-DhT"/>
                         <constraint firstItem="flT-fv-dRS" firstAttribute="leading" secondItem="yMc-fg-sQy" secondAttribute="leading" id="Fww-X0-Zu7"/>
-                        <constraint firstAttribute="bottom" secondItem="dZ7-rZ-cIu" secondAttribute="bottom" constant="5" id="RXp-4I-veN"/>
+                        <constraint firstAttribute="bottom" secondItem="dZ7-rZ-cIu" secondAttribute="bottom" constant="10" id="RXp-4I-veN"/>
                         <constraint firstAttribute="trailing" secondItem="dZ7-rZ-cIu" secondAttribute="trailing" id="T2B-c2-obg"/>
-                        <constraint firstItem="dZ7-rZ-cIu" firstAttribute="top" secondItem="yMc-fg-sQy" secondAttribute="top" constant="5" id="at4-U2-9Gj"/>
+                        <constraint firstItem="dZ7-rZ-cIu" firstAttribute="top" secondItem="yMc-fg-sQy" secondAttribute="top" constant="10" id="at4-U2-9Gj"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Box.FauxSegmentedControl"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
@@ -117,4 +105,9 @@
             <point key="canvasLocation" x="37.5" y="-305"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

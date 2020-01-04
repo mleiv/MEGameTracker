@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EDF-di-e8I">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EDF-di-e8I">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,33 +14,33 @@
                         <viewControllerLayoutGuide type="top" id="gqM-r6-kPT"/>
                         <viewControllerLayoutGuide type="bottom" id="WDW-cO-aAa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vbp-u8-LdY" userLabel="Root">
-                        <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="vbp-u8-LdY" userLabel="Root">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="FTA-Xm-WFV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRt-CN-GBr" customClass="IBIncludedSubThing" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="Missions"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="305" translatesAutoresizingMaskIntoConstraints="NO" id="5EJ-UB-WEk" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="375" y="0.0" width="0.0" height="623"/>
+                                    <view hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="305" translatesAutoresizingMaskIntoConstraints="NO" id="5EJ-UB-WEk" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="667"/>
                                         <constraints>
                                             <constraint firstAttribute="width" priority="900" constant="1" id="xYG-w4-19N"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZx-qo-85M" userLabel="Detail Placeholder" customClass="IBIncludedSubThing" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="375" y="0.0" width="0.0" height="623"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="667"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -54,7 +50,6 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FTA-Xm-WFV" firstAttribute="top" secondItem="vbp-u8-LdY" secondAttribute="top" id="1Jm-6C-6Fj"/>
                             <constraint firstAttribute="trailing" secondItem="FTA-Xm-WFV" secondAttribute="trailing" id="4mZ-M0-lIW"/>
@@ -65,8 +60,6 @@
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="detailBorderLeftView" destination="5EJ-UB-WEk" id="qF4-y1-REf"/>
                         <outlet property="detailPlaceholder" destination="BZx-qo-85M" id="sSI-Dg-pDr"/>

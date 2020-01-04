@@ -22,10 +22,10 @@ final class MissionRow: UITableViewCell {
 
 	@IBOutlet private weak var checkboxImageView: UIImageView?
 
-	@IBOutlet private weak var parentMissionLabel: MarkupLabel?
+	@IBOutlet private weak var parentMissionLabel: UILabel?
 	@IBOutlet private weak var nameLabel: MarkupLabel?
-	@IBOutlet private weak var descriptionLabel: MarkupLabel?
-	@IBOutlet private weak var locationLabel: MarkupLabel?
+	@IBOutlet private weak var descriptionLabel: UILabel?
+	@IBOutlet private weak var locationLabel: UILabel?
 	@IBOutlet private weak var availabilityLabel: MarkupLabel?
 
 	@IBOutlet private weak var fillerView: UIView?
@@ -85,8 +85,7 @@ final class MissionRow: UITableViewCell {
 			parentMissionLabel?.isHidden = parentMission.name.isEmpty
 			referenceMission = parentMission
 		}
-
-		nameLabel?.text = mission?.name // MarkupLabel relies on this to setup, so use .text first
+        nameLabel?.text = mission?.name // MarkupLabel relies on this to setup, so use .text first
 		nameLabel?.attributedText = nameLabel?.attributedText?.toggleStrikethrough(mission?.isCompleted ?? false)
 //		nameLabel?.isEnabled = mission?.isAvailable ?? false
 		nameLabel?.alpha = mission?.isAvailable ?? false ? 1.0 : 0.5
@@ -120,9 +119,9 @@ final class MissionRow: UITableViewCell {
 
 		disclosureImageView?.isHidden = !allowsSegue
 		disclosureImageWrapper?.isHidden = disclosureImageView?.isHidden ?? true
-
-		layoutIfNeeded()
-
+        
+        layoutIfNeeded()
+        
 		return true
 	}
 
@@ -147,14 +146,16 @@ final class MissionRow: UITableViewCell {
 	}
 
 	private func toggleMission() {
-		guard let nameLabel = self.nameLabel else { return }
+//		guard let nameLabel = self.nameLabel else { return }
 		let isCompleted = !(self.mission?.isCompleted ?? false)
 		let spinnerController = origin as? Spinnerable
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.origin?.view)
-			self.setCheckboxImage(isCompleted: isCompleted, isAvailable: self.mission?.isAvailable ?? false)
-			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
-				?? "", toString: self.mission?.name ?? "").toggleStrikethrough(isCompleted)
+//			self.setCheckboxImage(isCompleted: isCompleted, isAvailable: self.mission?.isAvailable ?? false)
+//            let attrString = NSAttributedString(string: self.mission?.name ?? "", attributes: isCompleted ? [.strikethroughStyle: NSUnderlineStyle.single, .foregroundColor: UIColor.white] : [:])
+//            nameLabel.attributedText = attrString
+//			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
+//				?? "", toString: self.mission?.name ?? "").toggleStrikethrough(isCompleted)
             self.changeQueue.sync {
                 _ = self.mission?.changed(isCompleted: isCompleted, isSave: true)
                 DispatchQueue.main.async {
@@ -169,7 +170,7 @@ final class MissionRow: UITableViewCell {
 // MARK: CalloutCellType
 extension MissionRow: CalloutCellType {
 	public var estimatedWidth: CGFloat {
-		layoutIfNeeded()
+        layoutIfNeeded()
 		let rightPad: CGFloat = (disclosureImageView?.isHidden ?? true) ? 5 : 0
 		let fillerWidth: CGFloat = fillerView?.bounds.width ?? 0
 		return bounds.width + (rightPad - fillerWidth)

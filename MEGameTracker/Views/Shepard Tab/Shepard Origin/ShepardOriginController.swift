@@ -49,6 +49,8 @@ final public class ShepardOriginController: UIViewController, SideEffectsable {
         if let shepard = self.shepard {
             setupRadios(shepard: shepard)
         }
+
+        view.layoutIfNeeded()
 	}
 
 	func fetchData() {

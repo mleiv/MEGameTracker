@@ -82,8 +82,6 @@ final public class ShepardAppearanceSliderCell: UITableViewCell {
 		noticeLabel?.isHidden = !(notice?.isEmpty == false)
 		errorLabel?.text = error
 		errorLabel?.isHidden = !(error?.isEmpty == false)
-
-		layoutIfNeeded()
 	}
 
 	/// Resets all text in the cases where row UI loads before data/setup.

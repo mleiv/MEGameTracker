@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="bVU-QW-zs6" customClass="DecisionRow" customModule="MassEffectTracker" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="bVU-QW-zs6" customClass="DecisionRow" customModule="MEGameTracker" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bVU-QW-zs6" id="FYO-yV-ULR">
@@ -19,18 +17,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LbM-nb-1ze">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="900" constant="50" id="KqQ-4A-od3"/>
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zaJ-hn-zPM">
-                        <rect key="frame" x="15" y="10.5" width="290" height="29"/>
+                        <rect key="frame" x="15" y="10" width="290" height="30"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ces-hb-VId" userLabel="Checkbox">
-                                <rect key="frame" x="0.0" y="0.0" width="25" height="29"/>
+                                <rect key="frame" x="0.0" y="0.0" width="25" height="30"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="QWZ-Dr-AxG" customClass="RadioButton" customModule="MassEffectTracker" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="QWZ-Dr-AxG" customClass="RadioButton" customModule="MEGameTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="TZf-Jz-jTr"/>
@@ -38,7 +36,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="lXF-Wt-WPr">
-                                        <rect key="frame" x="0.0" y="25" width="25" height="4"/>
+                                        <rect key="frame" x="0.0" y="25" width="25" height="5"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -46,25 +44,18 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jVR-8q-8bb">
-                                <rect key="frame" x="35" y="0.0" width="255" height="29"/>
+                                <rect key="frame" x="35" y="0.0" width="255" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="255" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZT-2i-3Yv" userLabel="title" customClass="MarkupLabel" customModule="MassEffectTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="255" height="11"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="255" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZT-2i-3Yv" userLabel="title" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="15.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.NormalColor"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="804" text="Game 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npc-ZW-k4w" customClass="IBStyledLabel" customModule="MassEffectTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="11" width="255" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="804" text="Game 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npc-ZW-k4w">
+                                        <rect key="frame" x="0.0" y="15.5" width="255" height="14.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.AccentColor"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                             </stackView>
@@ -74,7 +65,7 @@
                         </constraints>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3n-hD-syX">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="48.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="h3l-kp-v0M"/>
                         </constraints>
@@ -82,39 +73,23 @@
                             <action selector="onChange:" destination="bVU-QW-zs6" eventType="touchUpInside" id="C33-66-pVY"/>
                         </connections>
                     </button>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26R-wu-pxS" customClass="HairlineBorderView" customModule="MassEffectTracker" customModuleProvider="target">
-                        <rect key="frame" x="15" y="48.5" width="305" height="1"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="Oqq-wt-Ggf"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
-                        </userDefinedRuntimeAttributes>
-                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="LbM-nb-1ze" firstAttribute="leading" secondItem="FYO-yV-ULR" secondAttribute="leading" id="4uP-cW-7dy"/>
                     <constraint firstAttribute="bottom" secondItem="zaJ-hn-zPM" secondAttribute="bottom" priority="900" constant="10" id="I0a-Bx-kjs"/>
                     <constraint firstItem="zaJ-hn-zPM" firstAttribute="top" secondItem="FYO-yV-ULR" secondAttribute="top" priority="900" constant="10" id="IhA-9b-L6h"/>
-                    <constraint firstItem="26R-wu-pxS" firstAttribute="leading" secondItem="FYO-yV-ULR" secondAttribute="leading" constant="15" id="KcN-qo-UPS"/>
                     <constraint firstAttribute="bottom" secondItem="LbM-nb-1ze" secondAttribute="bottom" priority="900" id="Qwc-Zm-MTv"/>
                     <constraint firstItem="z3n-hD-syX" firstAttribute="leading" secondItem="FYO-yV-ULR" secondAttribute="leading" id="XwD-s2-nkw"/>
-                    <constraint firstItem="26R-wu-pxS" firstAttribute="top" secondItem="z3n-hD-syX" secondAttribute="bottom" id="da4-w7-oJK"/>
                     <constraint firstAttribute="trailing" secondItem="LbM-nb-1ze" secondAttribute="trailing" id="llX-Df-0QU"/>
+                    <constraint firstAttribute="bottom" secondItem="z3n-hD-syX" secondAttribute="bottom" id="mLQ-RU-gV5"/>
                     <constraint firstItem="z3n-hD-syX" firstAttribute="top" secondItem="FYO-yV-ULR" secondAttribute="top" id="tcu-xx-hLn"/>
                     <constraint firstItem="LbM-nb-1ze" firstAttribute="top" secondItem="FYO-yV-ULR" secondAttribute="top" id="ua2-Cm-6xD"/>
                     <constraint firstAttribute="trailing" secondItem="zaJ-hn-zPM" secondAttribute="trailing" constant="15" id="vP0-Ig-u7J"/>
                     <constraint firstItem="zaJ-hn-zPM" firstAttribute="leading" secondItem="FYO-yV-ULR" secondAttribute="leading" constant="15" id="z2E-UI-Nui"/>
-                    <constraint firstAttribute="trailing" secondItem="26R-wu-pxS" secondAttribute="trailing" id="z8s-Uz-u05"/>
-                    <constraint firstAttribute="bottom" secondItem="26R-wu-pxS" secondAttribute="bottom" id="zpf-82-bdY"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" name="background"/>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="gameLabel" destination="Npc-ZW-k4w" id="oGn-Sh-921"/>
                 <outlet property="radioButton" destination="QWZ-Dr-AxG" id="93a-cm-S2T"/>
@@ -124,4 +99,9 @@
             <point key="canvasLocation" x="124" y="256"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

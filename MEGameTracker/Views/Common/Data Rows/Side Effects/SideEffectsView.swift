@@ -38,7 +38,6 @@ import UIKit
 
 	override func setupTable() {
 		tableView?.allowsSelection = false
-		tableView?.separatorStyle = .none
 		tableView?.backgroundView?.isHidden = true
 		tableView?.backgroundColor = UIColor.clear
 		tableView?.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 10))

@@ -9,7 +9,7 @@ import UIKit
 
 @IBDesignable final public class RadioOptionRowNib: HairlineBorderView {
 
-	@IBOutlet weak var headingLabel: IBStyledLabel?
+	@IBOutlet weak var headingLabel: UILabel?
 	@IBOutlet weak var radioButton: RadioButton?
 
 	@IBOutlet weak var rowDivider: HairlineBorderView?

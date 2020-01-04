@@ -142,7 +142,7 @@ class SettingsController: UITableViewController, Spinnerable {
         })
 
         action.image = UIImage(named: "Trash")
-        action.backgroundColor = Styles.Colors.tintColor
+        action.backgroundColor = UIColor(named: "renegade") ?? UIColor.systemRed
 
         return action
     }
@@ -192,7 +192,7 @@ class SettingsController: UITableViewController, Spinnerable {
         })
 
         action.image = UIImage(named: "Plus")
-        action.backgroundColor = Styles.Colors.additionColor
+        action.backgroundColor = UIColor(named: "paragon") ?? UIColor.systemBlue
 
         return action
     }

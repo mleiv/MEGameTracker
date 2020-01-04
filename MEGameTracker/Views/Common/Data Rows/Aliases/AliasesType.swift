@@ -45,7 +45,8 @@ public struct AliasesType: TextDataRowType {
 	public mutating func setup(view: UIView?) {
 		guard let view = view as? RowType else { return }
 		if view.didSetup != true {
-			view.textView?.identifier = "Caption.DisabledColor"
+            view.textView?.textRenderingTextColor = UIColor.secondaryLabel
+            view.textView?.textRenderingFont = UIFont.preferredFont(forTextStyle: .caption1)
 			view.topPaddingConstraint?.constant = defaultPaddingTop
 		}
 	}

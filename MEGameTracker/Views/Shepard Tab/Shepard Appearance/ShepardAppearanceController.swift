@@ -242,9 +242,8 @@ final class ShepardAppearanceController: UIViewController,
 		ME2CodeField.delegate = self
 
 		ME2CodeChanged(ME2CodeField)
-
+        
 		didSetup = true
-		view.layoutIfNeeded()
 	}
 
 	func fetchData() {
@@ -267,7 +266,6 @@ final class ShepardAppearanceController: UIViewController,
 //            if relayout && attributesTableViewHeight != attributesTableView.bounds.height {
 //				view.setNeedsLayout()
 //            }
-			view.layoutIfNeeded()
 //			print("final frame \(attributesTableView.frame)")
 		} else {
 //			print("not laying out \(oldAttributesTableViewHeight) " +

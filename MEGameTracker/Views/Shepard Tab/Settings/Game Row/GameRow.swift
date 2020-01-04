@@ -53,8 +53,6 @@ final class GameRow: UITableViewCell {
 		nameLabel?.text = shepard?.fullName ?? ""
 		titleLabel?.text = shepard?.title
 		dateLabel?.text = String(format: dateMessage, shepard?.modifiedDate.format(.typical) ?? "")
-
-		layoutIfNeeded()
 	}
 
 	/// Resets all text in the cases where row UI loads before data/setup.

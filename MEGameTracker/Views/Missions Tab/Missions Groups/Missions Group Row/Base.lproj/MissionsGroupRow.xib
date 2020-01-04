@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,31 +13,30 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6xB-z7-0g1" id="i20-Wu-1tQ">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hz1-4f-L4D">
-                        <rect key="frame" x="15" y="8" width="293" height="32.5"/>
+                        <rect key="frame" x="15" y="8" width="293" height="34"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" axis="vertical" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Khu-9v-JGn">
-                                <rect key="frame" x="0.0" y="0.0" width="278" height="32.5"/>
+                                <rect key="frame" x="0.0" y="0.5" width="278" height="33"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="301" verticalHuggingPriority="300" verticalCompressionResistancePriority="805" text="Dossier: The Professor" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOa-p3-rBy" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="301" verticalHuggingPriority="300" verticalCompressionResistancePriority="805" text="Missions" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOa-p3-rBy" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="278" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.NormalColor.Medium"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="800" text="Omega" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3L-XP-nVM" userLabel="Description" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="19.5" width="278" height="13"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="800" text="3 Missions Available" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3L-XP-nVM" userLabel="Description" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="17" width="278" height="16"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.AccentColor"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.accentText"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
@@ -48,10 +45,11 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="hwy-Xm-4Go">
-                                <rect key="frame" x="278" y="9" width="15" height="15"/>
+                                <rect key="frame" x="278" y="9.5" width="15" height="15"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="255" verticalHuggingPriority="255" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="Zp6-Qk-RZ0">
-                                        <rect key="frame" x="6" y="0.0" width="9" height="15"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -68,33 +66,16 @@
                             <constraint firstAttribute="height" priority="100" id="yLb-fX-WaR"/>
                         </constraints>
                     </stackView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Z0-8d-9xC" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="15" y="48.5" width="305" height="1"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="pUB-EM-ltl"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                <color key="value" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
-                        </userDefinedRuntimeAttributes>
-                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="7Z0-8d-9xC" secondAttribute="trailing" id="BmX-e6-jQ7"/>
-                    <constraint firstItem="7Z0-8d-9xC" firstAttribute="top" secondItem="hz1-4f-L4D" secondAttribute="bottom" priority="900" constant="8" id="GeH-3x-aDn"/>
-                    <constraint firstAttribute="bottom" secondItem="7Z0-8d-9xC" secondAttribute="bottom" id="K0o-Js-Ou8"/>
+                    <constraint firstAttribute="bottom" secondItem="hz1-4f-L4D" secondAttribute="bottom" constant="8" id="66F-EE-6pi"/>
                     <constraint firstAttribute="trailing" secondItem="hz1-4f-L4D" secondAttribute="trailing" constant="12" id="L1c-Aa-3yH"/>
                     <constraint firstItem="hz1-4f-L4D" firstAttribute="leading" secondItem="i20-Wu-1tQ" secondAttribute="leading" constant="15" id="MbD-XS-cPZ"/>
-                    <constraint firstItem="7Z0-8d-9xC" firstAttribute="leading" secondItem="i20-Wu-1tQ" secondAttribute="leading" constant="15" id="jjI-Oc-EIx"/>
                     <constraint firstItem="hz1-4f-L4D" firstAttribute="top" secondItem="i20-Wu-1tQ" secondAttribute="top" priority="900" constant="8" id="qOB-Y3-YDo"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="background"/>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="descriptionLabel" destination="H3L-XP-nVM" id="PqS-sm-0zg"/>
                 <outlet property="disclosureImageView" destination="Zp6-Qk-RZ0" id="aBe-E8-Ahf"/>
@@ -106,5 +87,8 @@
     </objects>
     <resources>
         <image name="Disclosure" width="9" height="15"/>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

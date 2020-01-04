@@ -53,7 +53,7 @@ extension Alert {
 		// Which is too similar to destructive button (red),
 		// And I can't change it in Styles using appearance(),
 		// So I have to do it here, which pisses me off. 
-		alert.view.tintColor = Styles.Colors.altAccentColor
+        alert.view.tintColor = UIColor.systemBlue // Styles.colors.altTint
 
 		if let bounds = sender?.bounds {
 			alert.popoverPresentationController?.sourceRect = bounds

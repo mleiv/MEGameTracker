@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zsi-s2-uEj">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zsi-s2-uEj">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,11 +20,12 @@
         <!--Main Flow Tab Controller-->
         <scene sceneID="r4S-yi-gXG">
             <objects>
-                <tabBarController id="zsi-s2-uEj" customClass="MainFlowTabController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="zsi-s2-uEj" customClass="MainFlowTabController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="eeQ-Yq-Kpt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="footerBackground"/>
+                        <color key="selectedImageTintColor" name="renegade"/>
                     </tabBar>
                     <connections>
                         <segue destination="1OL-DO-KVC" kind="relationship" relationship="viewControllers" id="P1j-qE-Wz8"/>
@@ -42,12 +41,15 @@
         <!--Shepard-->
         <scene sceneID="S5c-sb-Byj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1OL-DO-KVC" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="1OL-DO-KVC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Shepard" image="Shepard Tab" selectedImage="Shepard Tab (Selected)" id="0hj-lR-Q1P"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dXt-Nu-WNo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="dXt-Nu-WNo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="headerFooterBackground"/>
+                        <color key="tintColor" name="paragon"/>
+                        <color key="barTintColor" name="headerBackground"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -71,12 +73,15 @@
         <!--Group-->
         <scene sceneID="TTR-XD-kHi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9d8-3j-4CL" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="9d8-3j-4CL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Group" image="Group Tab" selectedImage="Group Tab (Selected)" id="Ij6-Da-OCS"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="12c-ba-2SD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="12c-ba-2SD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="headerFooterBackground"/>
+                        <color key="tintColor" name="paragon"/>
+                        <color key="barTintColor" name="headerBackground"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -100,12 +105,15 @@
         <!--Maps-->
         <scene sceneID="eT9-8e-Ic5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4E-WK-NBR" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="d4E-WK-NBR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Maps" image="Maps Tab" selectedImage="Maps Tab (Selected)" id="5tS-1s-zDN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bbu-Xv-6wV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bbu-Xv-6wV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="headerFooterBackground"/>
+                        <color key="tintColor" name="paragon"/>
+                        <color key="barTintColor" name="headerBackground"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -129,12 +137,15 @@
         <!--Missions-->
         <scene sceneID="ebP-Az-vjn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hxF-sT-p8v" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="hxF-sT-p8v" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Missions" image="Missions Tab" selectedImage="Missions Tab (Selected)" id="sLs-g2-600"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5mp-90-PBL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="5mp-90-PBL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="headerFooterBackground"/>
+                        <color key="tintColor" name="paragon"/>
+                        <color key="barTintColor" name="headerBackground"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -155,5 +166,20 @@
         <image name="Missions Tab (Selected)" width="26" height="26"/>
         <image name="Shepard Tab" width="26" height="26"/>
         <image name="Shepard Tab (Selected)" width="26" height="26"/>
+        <namedColor name="footerBackground">
+            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="headerBackground">
+            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="headerFooterBackground">
+            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="paragon">
+            <color red="0.10000000149011612" green="0.10000000149011612" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="renegade">
+            <color red="0.75" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

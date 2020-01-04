@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WOD-en-YYc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WOD-en-YYc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,9 +11,12 @@
         <scene sceneID="bZa-j0-xHf">
             <objects>
                 <navigationController storyboardIdentifier="Nav-Wrapped Person" id="tdm-Q4-XBM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5e3-G5-t0h">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="5e3-G5-t0h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="headerFooterBackground"/>
+                        <color key="tintColor" name="paragon"/>
+                        <color key="barTintColor" name="headerBackground"/>
                     </navigationBar>
                     <connections>
                         <segue destination="61v-q9-1lF" kind="relationship" relationship="rootViewController" id="azV-yc-tXf"/>
@@ -33,10 +34,9 @@
                         <viewControllerLayoutGuide type="top" id="0rP-P6-dSz"/>
                         <viewControllerLayoutGuide type="bottom" id="JnK-7Z-lJM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QRg-Nc-ytH" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="QRg-Nc-ytH" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="Person"/>
                         </userDefinedRuntimeAttributes>
@@ -53,27 +53,26 @@
         <!--Persons-->
         <scene sceneID="Ypa-cg-7AG">
             <objects>
-                <viewController storyboardIdentifier="Persons" automaticallyAdjustsScrollViewInsets="NO" id="WOD-en-YYc" userLabel="Persons" customClass="GroupFlowController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Persons" id="WOD-en-YYc" userLabel="Persons" customClass="GroupFlowController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p7g-yA-UOF"/>
                         <viewControllerLayoutGuide type="bottom" id="oKV-bz-oc7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6S9-5Y-dzN" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="6S9-5Y-dzN" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="GroupSplitView"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Group" id="kek-XH-KGA">
                         <barButtonItem key="rightBarButtonItem" title="Search" id="O9f-PB-qor">
+                            <color key="tintColor" name="paragon"/>
                             <connections>
                                 <segue destination="9Db-QK-6oE" kind="presentation" identifier="Show GroupFlow.SearchPersons" id="Ph6-zc-3aF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="GroupSplitView"/>
                     </userDefinedRuntimeAttributes>
@@ -93,16 +92,14 @@
                         <viewControllerLayoutGuide type="top" id="EHg-Ym-pkp"/>
                         <viewControllerLayoutGuide type="bottom" id="Gac-hf-VKb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aCj-jv-ZiT" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="aCj-jv-ZiT" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="SearchGroupSplitView"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Group" id="yyY-GB-t1c"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="SearchGroupSplitView"/>
                     </userDefinedRuntimeAttributes>
@@ -117,11 +114,14 @@
         <!--Navigation Controller-->
         <scene sceneID="tTx-kM-oh7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Db-QK-6oE" sceneMemberID="viewController">
+                <navigationController id="9Db-QK-6oE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="INr-cP-bhe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="INr-cP-bhe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="headerFooterBackground"/>
+                        <color key="tintColor" name="paragon"/>
+                        <color key="barTintColor" name="headerBackground"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -133,7 +133,18 @@
             <point key="canvasLocation" x="3874" y="2910"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="headerBackground">
+            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="headerFooterBackground">
+            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="paragon">
+            <color red="0.10000000149011612" green="0.10000000149011612" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HJS-zQ-uke"/>
+        <segue reference="azV-yc-tXf"/>
     </inferredMetricsTieBreakers>
 </document>

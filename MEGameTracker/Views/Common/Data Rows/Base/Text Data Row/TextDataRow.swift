@@ -22,7 +22,6 @@ final public class TextDataRow: HairlineBorderView, IBViewable {
 		}
 	}
 
-	@IBInspectable public var showRowDivider: Bool = false
 	@IBInspectable public var isHideOnEmpty: Bool = true
 
 // MARK: Outlets
@@ -74,7 +73,7 @@ final public class TextDataRow: HairlineBorderView, IBViewable {
 		bottomPaddingConstraint?.constant = bottom
 		leadingPaddingConstraint?.constant = left
 		trailingPaddingConstraint?.constant = right
-		layoutIfNeeded()
+        layoutIfNeeded()
 	}
 
 	/// reload table headers because they are finnicky.

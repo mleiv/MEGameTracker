@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,23 +16,24 @@
                         <viewControllerLayoutGuide type="bottom" id="BCg-J2-dR4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1jD-Wb-SIN">
-                        <rect key="frame" x="0.0" y="44" width="600" height="956"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IN1-5b-ce5">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="956"/>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IN1-5b-ce5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Fb-7e-rGq">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1158.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1156.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AYY-2v-sQD" userLabel="Layout">
-                                                <rect key="frame" x="0.0" y="10" width="600" height="1128.5"/>
+                                                <rect key="frame" x="0.0" y="10" width="375" height="1126.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a57-Fp-xsp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                                         <subviews>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oIo-eh-LIH" customClass="IBStyledSegmentedControl" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="15" y="0.0" width="570" height="51"/>
+                                                                <rect key="frame" x="15" y="5" width="345" height="42"/>
+                                                                <color key="backgroundColor" name="background"/>
                                                                 <segments>
                                                                     <segment title="Game 1"/>
                                                                     <segment title="Game 2"/>
@@ -48,13 +47,14 @@
                                                         <constraints>
                                                             <constraint firstItem="oIo-eh-LIH" firstAttribute="leading" secondItem="a57-Fp-xsp" secondAttribute="leading" constant="15" id="Ktt-PC-Zkr"/>
                                                             <constraint firstAttribute="height" priority="100" id="Lai-R5-CnE"/>
-                                                            <constraint firstItem="oIo-eh-LIH" firstAttribute="top" secondItem="a57-Fp-xsp" secondAttribute="top" id="TqM-OC-8JD"/>
+                                                            <constraint firstItem="oIo-eh-LIH" firstAttribute="top" secondItem="a57-Fp-xsp" secondAttribute="top" constant="5" id="TqM-OC-8JD"/>
                                                             <constraint firstAttribute="trailing" secondItem="oIo-eh-LIH" secondAttribute="trailing" constant="15" id="e7n-3g-nT3"/>
-                                                            <constraint firstAttribute="bottom" secondItem="oIo-eh-LIH" secondAttribute="bottom" id="rku-YR-eq9"/>
+                                                            <constraint firstAttribute="bottom" secondItem="oIo-eh-LIH" secondAttribute="bottom" constant="5" id="rku-YR-eq9"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntY-bp-fba" customClass="DecisionsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="60" width="600" height="58.5"/>
+                                                        <rect key="frame" x="0.0" y="61" width="375" height="55.5"/>
+                                                        <color key="backgroundColor" name="background"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
@@ -62,7 +62,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSd-7l-dbn" userLabel="Filler">
-                                                        <rect key="frame" x="0.0" y="128.5" width="600" height="1000"/>
+                                                        <rect key="frame" x="0.0" y="126.5" width="375" height="1000"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -89,7 +89,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="secondaryBackground"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="IN1-5b-ce5" secondAttribute="bottom" id="1H2-IE-37x"/>
                             <constraint firstItem="IN1-5b-ce5" firstAttribute="leading" secondItem="1jD-Wb-SIN" secondAttribute="leading" id="ATe-CT-U9j"/>
@@ -99,10 +99,6 @@
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1000"/>
                     <connections>
                         <outlet property="decisionsView" destination="ntY-bp-fba" id="gPJ-CJ-PpF"/>
                         <outlet property="gameSegment" destination="oIo-eh-LIH" id="Xch-dI-law"/>
@@ -113,4 +109,12 @@
             <point key="canvasLocation" x="922" y="271"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryBackground">
+            <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

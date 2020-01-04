@@ -15,7 +15,7 @@ final class ConversationRewardsDetailRow: UITableViewCell {
 
 // MARK: Outlets
 	@IBOutlet private weak var indentConstraint1: NSLayoutConstraint?
-	@IBOutlet private weak var commonContextLabel: MarkupLabel?
+	@IBOutlet private weak var commonContextLabel: UILabel?
 	@IBOutlet private weak var optionsStack: UIStackView?
 
 // MARK: Properties
@@ -69,8 +69,8 @@ final class ConversationRewardsDetailRow: UITableViewCell {
 				}
 			}
 		}
-
-		layoutIfNeeded()
+        
+        layoutIfNeeded()
 	}
 
 	/// Resets all text in the cases where row UI loads before data/setup.

@@ -71,7 +71,6 @@ import UIKit
 				)
 			}
 			didSetup = true
-			layoutIfNeeded()
 		}
 	}
 

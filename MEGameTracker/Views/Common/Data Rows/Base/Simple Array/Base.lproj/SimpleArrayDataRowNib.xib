@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,61 +16,59 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rhp-Kp-mC3">
                     <rect key="frame" x="0.0" y="0.0" width="500" height="75"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsH-G6-rur" userLabel="Text" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="500" height="30.5"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsH-G6-rur" userLabel="Heading">
+                            <rect key="frame" x="0.0" y="0.0" width="500" height="39.5"/>
                             <subviews>
-                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOs-A0-Y6E" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="29.5" width="500" height="1"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="1" id="4nP-w6-49s"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="RrG-8e-iXL"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                            <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vc-kv-pdI" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="8" width="470" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vc-kv-pdI">
+                                    <rect key="frame" x="15" y="10" width="470" height="19.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.NormalColor"/>
-                                    </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="6Vc-kv-pdI" firstAttribute="top" secondItem="hsH-G6-rur" secondAttribute="top" priority="990" constant="8" id="Lco-wi-L5u"/>
-                                <constraint firstAttribute="bottom" secondItem="6Vc-kv-pdI" secondAttribute="bottom" priority="900" constant="2" id="NPH-ZS-LXq"/>
+                                <constraint firstItem="6Vc-kv-pdI" firstAttribute="top" secondItem="hsH-G6-rur" secondAttribute="top" priority="990" constant="10" id="Lco-wi-L5u"/>
+                                <constraint firstAttribute="bottom" secondItem="6Vc-kv-pdI" secondAttribute="bottom" priority="900" constant="10" id="NPH-ZS-LXq"/>
                                 <constraint firstAttribute="trailing" secondItem="6Vc-kv-pdI" secondAttribute="trailing" constant="15" id="Qff-XF-FyK"/>
                                 <constraint firstItem="6Vc-kv-pdI" firstAttribute="leading" secondItem="hsH-G6-rur" secondAttribute="leading" constant="15" id="Zfq-CZ-Oaf"/>
-                                <constraint firstAttribute="bottom" secondItem="UOs-A0-Y6E" secondAttribute="bottom" id="apS-8u-NhM"/>
-                                <constraint firstAttribute="trailing" secondItem="UOs-A0-Y6E" secondAttribute="trailing" id="xCe-Z5-xd4"/>
-                                <constraint firstItem="UOs-A0-Y6E" firstAttribute="leading" secondItem="hsH-G6-rur" secondAttribute="leading" id="xtm-EQ-CbP"/>
                             </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
-                                <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                         </view>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oej-3m-sWp" customClass="LayoutNotifyingTableView" customModule="MEGameTracker" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="30.5" width="500" height="44.5"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qrk-cA-m9F" userLabel="Rows">
+                            <rect key="frame" x="0.0" y="39.5" width="500" height="35.5"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oej-3m-sWp" customClass="LayoutNotifyingTableView" customModule="MEGameTracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="500" height="35.5"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="separatorColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOs-A0-Y6E" userLabel="Border" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="500" height="1"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="Fhg-i0-Vdt"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                            <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="UOs-A0-Y6E" firstAttribute="top" secondItem="Qrk-cA-m9F" secondAttribute="top" id="2GF-z5-nE9"/>
+                                <constraint firstItem="Oej-3m-sWp" firstAttribute="top" secondItem="Qrk-cA-m9F" secondAttribute="top" id="59z-at-sYK"/>
+                                <constraint firstItem="Oej-3m-sWp" firstAttribute="leading" secondItem="Qrk-cA-m9F" secondAttribute="leading" id="5EF-Jl-7SX"/>
+                                <constraint firstAttribute="trailing" secondItem="Oej-3m-sWp" secondAttribute="trailing" id="EJ4-9m-mRz"/>
+                                <constraint firstItem="UOs-A0-Y6E" firstAttribute="leading" secondItem="Qrk-cA-m9F" secondAttribute="leading" id="Eqz-6Q-wL2"/>
+                                <constraint firstAttribute="trailing" secondItem="UOs-A0-Y6E" secondAttribute="trailing" id="HpW-Ho-MVv"/>
+                                <constraint firstAttribute="bottom" secondItem="Oej-3m-sWp" secondAttribute="bottom" id="aBF-Td-a7R"/>
+                            </constraints>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>
+            <color key="backgroundColor" name="secondaryBackground"/>
             <constraints>
                 <constraint firstItem="rhp-Kp-mC3" firstAttribute="top" secondItem="Z3Q-sP-nnP" secondAttribute="top" id="FFB-Sw-V0t"/>
                 <constraint firstItem="rhp-Kp-mC3" firstAttribute="leading" secondItem="Z3Q-sP-nnP" secondAttribute="leading" id="bFb-Bm-928"/>
@@ -85,7 +81,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="color">
-                    <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
@@ -100,4 +96,9 @@
             <point key="canvasLocation" x="-4" y="120.5"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="secondaryBackground">
+            <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -18,7 +18,7 @@ final class DecisionRow: UITableViewCell {
 
 	@IBOutlet private weak var radioButton: RadioButton?
 	@IBOutlet private weak var titleLabel: MarkupLabel?
-	@IBOutlet private weak var gameLabel: IBStyledLabel?
+	@IBOutlet private weak var gameLabel: UILabel?
 
 	@IBAction private func onChange(_ sender: AnyObject?) { toggleDecision() }
 
@@ -59,8 +59,7 @@ final class DecisionRow: UITableViewCell {
 		titleLabel?.isEnabled = decision?.isAvailable ?? false
 		gameLabel?.text = decision?.gameVersion.headingValue
 		gameLabel?.isHidden = !isShowGameVersion
-
-		layoutIfNeeded()
+        layoutIfNeeded()
 	}
 
 	/// Resets all text in the cases where row UI loads before data/setup.

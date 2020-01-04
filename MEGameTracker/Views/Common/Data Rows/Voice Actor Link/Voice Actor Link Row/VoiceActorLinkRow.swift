@@ -14,8 +14,8 @@ final class VoiceActorLinkRow: UITableViewCell {
 // MARK: Constants
 
 // MARK: Outlets
-	@IBOutlet private weak var linkTitle: MarkupLabel?
-	@IBOutlet private weak var linkUrl: IBStyledLabel?
+	@IBOutlet private weak var linkTitle: UILabel?
+	@IBOutlet private weak var linkUrl: UILabel?
 
 // MARK: Properties
 	internal fileprivate(set) var voiceActor: VoiceActorType?
@@ -52,7 +52,7 @@ final class VoiceActorLinkRow: UITableViewCell {
 
 //		let linkParts = parseDomainFromLink(voiceActor?.url ?? "")
 		linkTitle?.text = voiceActor?.name
-		linkUrl?.text = "search on google.com"
+		linkUrl?.text = "search on DuckDuckGo"
 	}
 
 	/// Resets all text in the cases where row UI loads before data/setup.

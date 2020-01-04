@@ -13,7 +13,6 @@ public protocol TextDataRowType {
 	var text: String? { get }
 	var linkOriginController: UIViewController? { get }
 	var isHideOnEmpty: Bool { get }
-	var showRowDivider: Bool? { get }
 	mutating func setupView()
 	mutating func setupView<T: TextDataRow>(type: T.Type)
 	mutating func setup(view: UIView?)
@@ -24,7 +23,6 @@ extension TextDataRowType {
 	public var text: String? { return nil }
 	public var linkOriginController: UIViewController? { return nil }
 	public var isHideOnEmpty: Bool { return true }
-	public var showRowDivider: Bool? { return nil }
 
 	public mutating func setupView<T: TextDataRow>(type: T.Type) {
 		guard let row = row,
@@ -32,7 +30,6 @@ extension TextDataRowType {
 			!view.isSettingUp else { return }
 		view.isSettingUp = true
 
-		view.rowDivider?.isHidden = !(showRowDivider ?? view.showRowDivider)
 		view.textView?.text = text
 		view.textView?.linkOriginController = linkOriginController
 

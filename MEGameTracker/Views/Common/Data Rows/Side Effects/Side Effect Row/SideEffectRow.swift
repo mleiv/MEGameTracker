@@ -48,8 +48,8 @@ final class SideEffectRow: UITableViewCell {
 		backgroundColor = UIColor.clear
 		textView?.text = sideEffect
 		textView?.linkOriginController = parent?.viewController
-
-		layoutIfNeeded()
+        textView?.textContainerInset = UIEdgeInsets.zero
+        layoutIfNeeded()
 	}
 
 	/// Resets all text in the cases where row UI loads before data/setup.

@@ -113,6 +113,7 @@ extension AppDelegate {
 
 		// UI stuff
         Styles.current.initialize(fromWindow: window)
+        Styles.current.isInitialized = true
 
 		// start the chain to load core data and cloud data and init the ME App:
 		initializeData(application: application)

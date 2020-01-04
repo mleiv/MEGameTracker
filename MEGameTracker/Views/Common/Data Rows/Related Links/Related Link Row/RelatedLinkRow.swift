@@ -14,8 +14,8 @@ final class RelatedLinkRow: UITableViewCell {
 // MARK: Constants
 
 // MARK: Outlets
-	@IBOutlet private weak var linkTitle: MarkupLabel?
-	@IBOutlet private weak var linkUrl: IBStyledLabel?
+	@IBOutlet private weak var linkTitle: UILabel?
+	@IBOutlet private weak var linkUrl: UILabel?
 
 // MARK: Properties
 	private var parent: RelatedLinksView?
@@ -53,8 +53,6 @@ final class RelatedLinkRow: UITableViewCell {
 		linkTitle?.text = linkParts.domain
 		linkTitle?.isHidden = linkParts.domain.isEmpty
 		linkUrl?.text = linkParts.url
-
-		layoutIfNeeded()
 	}
 
 	/// Resets all text in the cases where row UI loads before data/setup.

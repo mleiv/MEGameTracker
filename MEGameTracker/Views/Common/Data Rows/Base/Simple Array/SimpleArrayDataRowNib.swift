@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable open class SimpleArrayDataRowNib: HairlineBorderView {
 
 	@IBOutlet weak var headingLabelWrapper: UIView?
-	@IBOutlet weak var headingLabel: IBStyledLabel?
+	@IBOutlet weak var headingLabel: UILabel?
 	@IBOutlet open weak var tableView: LayoutNotifyingTableView?
 
 	open class func loadNib(heading: String? = nil, cellNibs: [String] = []) -> SimpleArrayDataRowNib? {

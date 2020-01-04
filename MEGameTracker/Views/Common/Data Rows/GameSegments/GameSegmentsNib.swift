@@ -10,9 +10,9 @@ import UIKit
 
 final public class GameSegmentsNib: UIView {
 
-	@IBOutlet public weak var game1: IBStyledLabel?
-	@IBOutlet public weak var game2: IBStyledLabel?
-	@IBOutlet public weak var game3: IBStyledLabel?
+	@IBOutlet public weak var game1: UILabel?
+	@IBOutlet public weak var game2: UILabel?
+	@IBOutlet public weak var game3: UILabel?
 
 	public class func loadNib() -> GameSegmentsNib? {
 		let bundle = Bundle(for: GameSegmentsNib.self)

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,26 +13,22 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6xB-z7-0g1" id="i20-Wu-1tQ">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvD-gO-gq2">
-                        <rect key="frame" x="0.0" y="8" width="0.0" height="70.5"/>
+                        <rect key="frame" x="15" y="8" width="290" height="72"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a6t-oG-xhR">
-                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="70.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="72"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="755" text="Common Context:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeH-rK-lzD" userLabel="Common Context" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="755" text="Common Context:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeH-rK-lzD" userLabel="Common Context">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="19.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Caption.NormalColor"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QWv-t2-kix">
-                                        <rect key="frame" x="0.0" y="16" width="0.0" height="54.5"/>
+                                        <rect key="frame" x="0.0" y="19.5" width="290" height="52.5"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -46,33 +40,16 @@
                             <constraint firstAttribute="trailing" secondItem="a6t-oG-xhR" secondAttribute="trailing" id="lgG-SS-393"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue4-Kh-HHA" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="86.5" width="0.0" height="1"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="iZ3-z7-IAv"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                <color key="value" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
-                        </userDefinedRuntimeAttributes>
-                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Ue4-Kh-HHA" secondAttribute="trailing" id="3RS-Tr-Aif"/>
                     <constraint firstItem="cvD-gO-gq2" firstAttribute="leading" secondItem="i20-Wu-1tQ" secondAttribute="leading" constant="15" id="Hym-oi-DO6"/>
                     <constraint firstAttribute="trailing" secondItem="cvD-gO-gq2" secondAttribute="trailing" constant="15" id="OGP-nf-tgV"/>
-                    <constraint firstItem="Ue4-Kh-HHA" firstAttribute="leading" secondItem="i20-Wu-1tQ" secondAttribute="leading" constant="15" id="Szg-sc-Vxb"/>
-                    <constraint firstAttribute="bottom" secondItem="Ue4-Kh-HHA" secondAttribute="bottom" id="UrN-yw-nvC"/>
                     <constraint firstItem="cvD-gO-gq2" firstAttribute="top" secondItem="i20-Wu-1tQ" secondAttribute="top" priority="901" constant="8" id="VAA-tR-18s"/>
-                    <constraint firstItem="cvD-gO-gq2" firstAttribute="bottom" secondItem="Ue4-Kh-HHA" secondAttribute="top" priority="900" constant="-8" id="fdy-EY-veK"/>
+                    <constraint firstAttribute="bottom" secondItem="cvD-gO-gq2" secondAttribute="bottom" constant="8" id="mu2-9o-BeF"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="background"/>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="commonContextLabel" destination="WeH-rK-lzD" id="ZMQ-hI-csz"/>
                 <outlet property="indentConstraint1" destination="lUa-ay-QoC" id="RmV-SQ-gwX"/>
@@ -81,4 +58,9 @@
             <point key="canvasLocation" x="79" y="183"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

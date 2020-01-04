@@ -16,8 +16,8 @@ import UIKit
 
 // MARK: Outlets
 	@IBOutlet private weak var noteTextView: IBStyledTextView?
-	@IBOutlet private weak var dateLabel: IBStyledLabel?
-	@IBOutlet private weak var gameLabel: IBStyledLabel?
+	@IBOutlet private weak var dateLabel: UILabel?
+	@IBOutlet private weak var gameLabel: UILabel?
 
 // MARK: Properties
 	internal fileprivate(set) var note: Note?
@@ -57,8 +57,6 @@ import UIKit
 		} else {
 			gameLabel?.text = ""
 		}
-
-		layoutIfNeeded()
 	}
 
 	private func getShepard(uuid: UUID?) -> Shepard? {

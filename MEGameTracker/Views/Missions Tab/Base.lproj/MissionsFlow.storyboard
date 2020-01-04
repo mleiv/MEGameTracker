@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Eoj-Re-qaQ">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Eoj-Re-qaQ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,16 +15,14 @@
                         <viewControllerLayoutGuide type="top" id="D4K-fR-5Eh"/>
                         <viewControllerLayoutGuide type="bottom" id="T24-mZ-dO5"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GMd-Kx-MxH" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="GMd-Kx-MxH" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MissionsGroups"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Missions" id="JaG-Xt-y0f"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MissionsGroups"/>
                     </userDefinedRuntimeAttributes>
@@ -47,16 +43,14 @@
                         <viewControllerLayoutGuide type="top" id="p7g-yA-UOF"/>
                         <viewControllerLayoutGuide type="bottom" id="oKV-bz-oc7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vsZ-Uu-G1l" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="vsZ-Uu-G1l" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MissionsSplitView"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Missions" id="kek-XH-KGA"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MissionsSplitView"/>
                     </userDefinedRuntimeAttributes>
@@ -72,9 +66,12 @@
         <scene sceneID="JP2-ly-9jU">
             <objects>
                 <navigationController storyboardIdentifier="Nav-Wrapped Mission" id="JSE-bS-lj0" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P6H-UL-txE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="P6H-UL-txE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="headerFooterBackground"/>
+                        <color key="tintColor" name="paragon"/>
+                        <color key="barTintColor" name="headerBackground"/>
                     </navigationBar>
                     <connections>
                         <segue destination="upW-UY-JZg" kind="relationship" relationship="rootViewController" id="wjB-K1-EVO"/>
@@ -92,16 +89,14 @@
                         <viewControllerLayoutGuide type="top" id="o33-hF-QGc"/>
                         <viewControllerLayoutGuide type="bottom" id="vYJ-u6-7Qd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ofy-5K-IlE" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Ofy-5K-IlE" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="Mission"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Mission" id="Urg-Th-jco"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="Mission"/>
                     </userDefinedRuntimeAttributes>
@@ -111,7 +106,18 @@
             <point key="canvasLocation" x="5375" y="2227"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="headerBackground">
+            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="headerFooterBackground">
+            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="paragon">
+            <color red="0.10000000149011612" green="0.10000000149011612" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nlD-Cc-xaK"/>
+        <segue reference="wjB-K1-EVO"/>
     </inferredMetricsTieBreakers>
 </document>

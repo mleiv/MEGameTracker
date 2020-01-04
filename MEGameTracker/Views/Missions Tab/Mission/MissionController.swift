@@ -62,7 +62,7 @@ final public class MissionController: UIViewController,
 
 	public var originHint: String? { return mission?.name }
 
-	@IBOutlet weak var nameLabel: MarkupLabel?
+	@IBOutlet weak var nameLabel: UILabel?
 
 	@IBOutlet weak var checkboxImageView: UIImageView?
 
@@ -251,8 +251,8 @@ extension MissionController {
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.view)
 			self.setCheckboxImage(isCompleted: isCompleted, isAvailable: self.mission?.isAvailable ?? false)
-			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
-				?? "", toString: self.mission?.name ?? "").toggleStrikethrough(isCompleted)
+//			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
+//				?? "", toString: self.mission?.name ?? "").toggleStrikethrough(isCompleted)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
 				_ = self.mission?.changed(isCompleted: isCompleted, isSave: true)
 				spinnerController?.stopSpinner(inView: self.view)

@@ -9,13 +9,11 @@
 import UIKit
 
 public protocol ValueDataRowDisplayable: IBViewable {
-	var rowDivider: HairlineBorderView? { get set }
-	var headingLabel: IBStyledLabel? { get set }
-	var valueLabel: IBStyledLabel? { get set }
+	var headingLabel: UILabel? { get set }
+	var valueLabel: UILabel? { get set }
 	var isHidden: Bool { get set }
 	var top: Bool { get set }
 	var bottom: Bool { get set }
-	var showRowDivider: Bool { get }
 	var isSettingUp: Bool { get set }
 	var didSetup: Bool { get set }
 	var onClick: ((UIButton) -> Void)? { get set }

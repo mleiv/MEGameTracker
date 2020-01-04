@@ -1050,8 +1050,8 @@
         "inMapId": "G.N3.2CIC",
         "linkToMapId": "G.N3.1Cabin",
         "mapLocationPoint": {
-            "x": 1389,
-            "y": 1011,
+            "x": 1339,
+            "y": 911,
             "width": 45,
             "height": 95
         }
@@ -1062,8 +1062,8 @@
         "inMapId": "G.N3.2CIC",
         "linkToMapId": "G.N3.3Quarters",
         "mapLocationPoint": {
-            "x": 1389,
-            "y": 1011,
+            "x": 1339,
+            "y": 911,
             "width": 45,
             "height": 95
         }
@@ -1165,7 +1165,7 @@
         "isShowInList": false,
         "mapLocationPoint": {
             "x": 1543,
-            "y": 1036,
+            "y": 936,
             "width": 45,
             "height": 95
         }
@@ -1177,7 +1177,7 @@
         "isShowInList": false,
         "mapLocationPoint": {
             "x": 1543,
-            "y": 1036,
+            "y": 936,
             "width": 45,
             "height": 95
         }
@@ -1342,7 +1342,7 @@
             "id": "Game2"
         }]
     }, {
-        "id": "G.N3.4.Elevator",
+        "id": "G.N3.4.Elevator1",
         "name": "Elevator To Level 3",
         "isShowInList": false,
         "inMapId": "G.N3.4Engineering",
@@ -1354,7 +1354,7 @@
             "height": 95
         }
     }, {
-        "id": "G.N3.3.Elevator2",
+        "id": "G.N3.4.Elevator2",
         "name": "Elevator To Level 5",
         "inMapId": "G.N3.4Engineering",
         "linkToMapId": "G.N3.5ShuttleBay",
@@ -1536,7 +1536,12 @@
             "3": {
                 "image": "Detail_Maps/Game3/Citadel/Citadel.pdf",
                 "referenceSize": "2083x2083",
-                "isSplitMenu": true
+                "isSplitMenu": true,
+                "mapLocationPoint": {
+                    "x": 1362,
+                    "y": 882,
+                    "radius": 75
+                }
             }
         },
         "events": [{
@@ -3155,19 +3160,19 @@
 
 
     }, {
-        "id": "G.C3.Apartment",
+        "id": "G.C3.DLC",
         "name": "Citadel DLC",
         "mapType": "Area",
         "isHidden": true,
         "inMapId": "G.OuC.Ser.Widow",
         "mapLocationPoint": {
-            "x": 622,
-            "y": 901,
+            "x": 1362,
+            "y": 882,
             "radius": 75
         },
         "gameVersionData": {
             "3": {
-                "image": "Detail_Maps/Game3/Citadel/Citadel_Apartment.pdf",
+                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC.pdf",
                 "referenceSize": "2083x2083",
                 "isSplitMenu": true,
                 "isHidden": false
@@ -3181,232 +3186,546 @@
             "id": "Game2"
         }]
     }, {
-        "id": "G.C3.Apartment.1",
+        "id": "G.C3.Apartment",
         "name": "Personal Apartment",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC",
         "mapType": "Structure",
         "isHidden": true,
         "gameVersionData": {
             "3": {
-                "image": "Detail_Maps/Game3/Citadel/Citadel_ApartmentA.pdf",
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Apartment.pdf",
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 146,
-                    "y": 157,
+                    "y": 135,
                     "width": 1800,
-                    "height": 830
+                    "height": 187
                 },
                 "isHidden": false
             }
         }
     }, {
-        "id": "G.C3.Apartment.2",
-        "name": "Silversun Strip",
+        "id": "G.C3.Apartment.Terminal",
+        "name": "Personal Terminal",
+        "isOpensDetail": false,
         "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 777,
+            "y": 1012,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.Catalog",
+        "name": "Catalog",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 851,
+            "y": 971,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.Strip",
+        "name": "To Silversun Strip",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "linkToMapId": "G.C3.Silversun",
+        "mapLocationPoint": {
+            "x": 1849,
+            "y": 1497,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Silversun",
+        "name": "Silversun Strip",
+        "inMapId": "G.C3.DLC",
         "rerootBreadcrumbs": true,
         "mapType": "Level",
         "isHidden": true,
         "gameVersionData": {
             "3": {
-                "image": "Detail_Maps/Game3/Citadel/Citadel_ApartmentB.pdf",
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Silversun.pdf",
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 146,
-                    "y": 1110,
+                    "y": 1517,
                     "width": 1800,
-                    "height": 830
+                    "height": 187
                 },
                 "isHidden": false
             }
         }
     }, {
-        "id": "G.C3.Apartment.2.Avina",
+        "id": "G.C3.Silversun.Avina",
         "name": "Avina",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 1225,
             "y": 851,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arcade",
+        "id": "G.C3.Silversun.Catalog",
+        "name": "Catalog",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Silversun",
+        "mapLocationPoint": {
+            "x": 1413,
+            "y": 631,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Silversun.Apartment",
+        "name": "To Personal Apartment",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Silversun",
+        "linkToMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1460,
+            "y": 438,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Silversun.Arcade",
         "name": "Castle Arcade",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 570,
             "y": 491,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arcade.Claw",
+        "id": "G.C3.Silversun.Arcade.Claw",
         "name": "Claw Game",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 193,
             "y": 253,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arcade.Relay",
+        "id": "G.C3.Silversun.Arcade.Relay",
         "name": "Relay Defense",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 481,
             "y": 323,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arcade.Eezo",
+        "id": "G.C3.Silversun.Arcade.Eezo",
         "name": "Shattered Eezo",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 571,
             "y": 313,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arcade.Hanoi",
+        "id": "G.C3.Silversun.Arcade.Hanoi",
         "name": "Towers of Hanoi",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 661,
             "y": 323,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Casino",
+        "id": "G.C3.Silversun.Casino",
         "name": "Silver Coast Casino",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 727,
             "y": 1694,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Casino.Bar",
+        "id": "G.C3.Silversun.Casino.Bar",
         "name": "Bar",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 672,
             "y": 1122,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Casino.Quasar",
+        "id": "G.C3.Silversun.Casino.Quasar",
         "name": "Quasar",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 607,
             "y": 1724,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Casino.Racing",
+        "id": "G.C3.Silversun.Casino.Racing",
         "name": "Varren Racing",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 981,
             "y": 1844,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Casino.Roulette",
+        "id": "G.C3.Silversun.Casino.Roulette",
         "name": "Roulette",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 486,
             "y": 1755,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arena",
+        "id": "G.C3.Silversun.Arena",
         "name": "Armax Arsenal Arena",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 1375,
             "y": 1623,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arena.Shop",
+        "id": "G.C3.Silversun.Arena.Shop",
         "name": "Token Shop",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 1100,
             "y": 1622,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arena.Procurement",
+        "id": "G.C3.Silversun.Arena.Procurement",
         "name": "Procurement Interface",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 1226,
             "y": 1543,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arena.Upgrades",
+        "id": "G.C3.Silversun.Arena.Upgrades",
         "name": "Weapon Upgrades",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 1226,
             "y": 1543,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arena.Bench",
+        "id": "G.C3.Silversun.Arena.Bench",
         "name": "Weapons Bench",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 1706,
             "y": 1637,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arena.Locker",
+        "id": "G.C3.Silversun.Arena.Locker",
         "name": "Armor Locker",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 1706,
             "y": 1637,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arena.Sim",
+        "id": "G.C3.Silversun.Arena.Sim",
         "name": "Combat Simulator",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 1753,
             "y": 1534,
             "radius": 20
         }
     }, {
-        "id": "G.C3.Apartment.2.Arena.Controls",
+        "id": "G.C3.Silversun.Arena.Controls",
         "name": "Combat Sim Controls",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment.2",
+        "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 1878,
             "y": 1801,
+            "radius": 20
+        }
+
+
+
+    }, {
+        "id": "G.C3.Arena",
+        "name": "Citadel Arena",
+        "mapType": "Structure",
+        "isHidden": true,
+        "inMapId": "G.C3.DLC",
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Arena.pdf",
+                "referenceSize": "2083x2083",
+                "isSplitMenu": true,
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 1795,
+                    "width": 1800,
+                    "height": 187
+                },
+                "isHidden": false
+            }
+        },
+        "events": [{
+            "type": "UnavailableInGame",
+            "id": "Game1"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game2"
+        }]
+    }, {
+        "id": "G.C3.Arena.1Wingman",
+        "name": "Wingman",
+        "inMapId": "G.C3.Arena",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Arena_Wingman.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 129,
+                    "width": 1800,
+                    "height": 149
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Arena.1Wingman.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Arena.1Wingman",
+        "mapLocationPoint": {
+            "x": 972,
+            "y": 573,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Arena.2Blasteroid",
+        "name": "Blasteroid",
+        "inMapId": "G.C3.Arena",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Arena_Blasteroid.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 372,
+                    "width": 1800,
+                    "height": 149
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Arena.2Blasteroid.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Arena.2Blasteroid",
+        "mapLocationPoint": {
+            "x": 1253,
+            "y": 1559,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Arena.3SpinZone",
+        "name": "Spin Zone",
+        "inMapId": "G.C3.Arena",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Arena_SpinZone.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 605,
+                    "width": 1800,
+                    "height": 149
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Arena.3SpinZone.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Arena.3SpinZone",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Arena.4PainTrain",
+        "name": "Pain Train",
+        "inMapId": "G.C3.Arena",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Arena_X.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 845,
+                    "width": 1800,
+                    "height": 149
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Arena.4PainTrain.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Arena.4PainTrain",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Arena.5Classic",
+        "name": "Armax Classic",
+        "inMapId": "G.C3.Arena",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Arena_X.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 1080,
+                    "width": 1800,
+                    "height": 149
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Arena.5Classic.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Arena.5Classic",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Arena.6X",
+        "name": "X",
+        "inMapId": "G.C3.Arena",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Arena_X.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 1317,
+                    "width": 1800,
+                    "height": 149
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Arena.6X.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Arena.6X",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Arena.7X",
+        "name": "X",
+        "inMapId": "G.C3.Arena",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Arena_X.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 1552,
+                    "width": 1800,
+                    "height": 149
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Arena.7X.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Arena.7X",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Arena.8X",
+        "name": "X",
+        "inMapId": "G.C3.Arena",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Arena_X.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 1790,
+                    "width": 1800,
+                    "height": 149
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Arena.8X.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Arena.8X",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
             "radius": 20
         }
 

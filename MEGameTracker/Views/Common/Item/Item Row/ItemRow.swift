@@ -21,12 +21,12 @@ final class ItemRow: UITableViewCell {
 
 	@IBOutlet private weak var checkboxImageView: UIImageView?
 
-	@IBOutlet private weak var parentMissionLabel: MarkupLabel?
-	@IBOutlet private weak var nameLabel: IBStyledLabel?
-	@IBOutlet private weak var descriptionLabel: UILabel?
+	@IBOutlet private weak var parentMissionLabel: UILabel?
+	@IBOutlet private weak var nameLabel: MarkupLabel?
+	@IBOutlet private weak var descriptionLabel: MarkupLabel?
 	@IBOutlet private weak var locationLabel: UILabel?
 	@IBOutlet private weak var costLabel: UILabel?
-	@IBOutlet private weak var availabilityLabel: UILabel?
+	@IBOutlet private weak var availabilityLabel: MarkupLabel?
 
 	@IBOutlet private weak var fillerView: UIView?
 	@IBOutlet private weak var disclosureImageWrapper: UIView?
@@ -124,9 +124,8 @@ final class ItemRow: UITableViewCell {
 		}
 		setCheckboxImage(isAcquired: item?.isAcquired ?? false, isAvailable: item?.isAvailable ?? false)
 
+        layoutIfNeeded()
 		// TODO: make item view page
-
-		layoutIfNeeded()
 
 		return true
 	}
@@ -154,14 +153,16 @@ final class ItemRow: UITableViewCell {
 	}
 
 	private func toggleItem() {
-		guard let nameLabel = self.nameLabel else { return }
+//		guard let nameLabel = self.nameLabel else { return }
 		let isAcquired = !(self.item?.isAcquired ?? false)
 		let spinnerController = origin as? Spinnerable
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.origin?.view)
-			self.setCheckboxImage(isAcquired: isAcquired, isAvailable: self.item?.isAvailable ?? false)
-			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
-				?? "", toString: self.item?.name ?? "").toggleStrikethrough(isAcquired)
+//			self.setCheckboxImage(isAcquired: isAcquired, isAvailable: self.item?.isAvailable ?? false)
+//            let attrString = NSAttributedString(string: nameLabel.text ?? "", attributes: isAcquired ? [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single] : [:])
+//            nameLabel.attributedText = attrString
+//			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
+//				?? "", toString: self.item?.name ?? "").toggleStrikethrough(isAcquired)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
 				_ = self.item?.changed(isAcquired: isAcquired, isSave: true)
 				spinnerController?.stopSpinner(inView: self.origin?.view)

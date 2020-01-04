@@ -41,14 +41,14 @@ public struct MapLocationsList {
 				view.addSubview(button)
 			}
 		}
-		view.layoutIfNeeded()
+        view.layoutIfNeeded()
 	}
 
 	public func insert(button: MapLocationButtonNib, inView view: UIView) {
 		if button.superview == nil {
 			view.addSubview(button)
 		}
-		view.layoutIfNeeded()
+        view.layoutIfNeeded()
 	}
 
 	public func isFound(location: MapLocationable) -> Bool {
@@ -135,7 +135,7 @@ public struct MapLocationsList {
 
 				// move to zoom?
 
-				(button.title as? IBStyledLabel)?.identifier = "Body.NormalColor"
+//				(button.title as? UILabel)?.identifier = "Body.NormalColor"
 				button.titleWidthConstraint?.isActive = false
 			}
 

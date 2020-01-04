@@ -23,10 +23,10 @@ final public class MapRow: UITableViewCell {
 	@IBOutlet private weak var checkboxImageView: UIImageView?
 	@IBOutlet private weak var checkboxButton: UIButton?
 
-	@IBOutlet private weak var parentMapLabel: MarkupLabel?
+	@IBOutlet private weak var parentMapLabel: UILabel?
 	@IBOutlet private weak var nameLabel: MarkupLabel?
-	@IBOutlet private weak var descriptionLabel: MarkupLabel?
-	@IBOutlet private weak var locationLabel: MarkupLabel?
+	@IBOutlet private weak var descriptionLabel: UILabel?
+	@IBOutlet private weak var locationLabel: UILabel?
 	@IBOutlet private weak var availabilityLabel: MarkupLabel?
 
 	@IBOutlet private weak var fillerView: UIView?
@@ -115,14 +115,14 @@ final public class MapRow: UITableViewCell {
 			}
 		}
 
-		checkboxStack?.isHidden = !(map?.isExplorable ?? true)
-		checkboxButton?.isHidden = checkboxStack?.isHidden ?? false
+        let hideCheckbox = !(map?.isExplorable ?? true)
+		checkboxStack?.isHidden = hideCheckbox
+		checkboxButton?.isHidden = hideCheckbox
+        backgroundColor = isCalloutBoxRow ? UIColor.clear : UIColor(named: "background")!
 		setCheckboxImage(isExplored: map?.isExplored ?? false, isAvailable: map?.isAvailable ?? false)
 
 		disclosureImageView?.isHidden = !allowsSegue || !(map?.isOpensDetail ?? true)
 		disclosureImageWrapper?.isHidden = disclosureImageView?.isHidden ?? true
-
-		layoutIfNeeded()
 
 		return true
 	}
@@ -147,16 +147,12 @@ final public class MapRow: UITableViewCell {
 	}
 
 	private func toggleMap() {
-		guard map?.isExplorable == true, let nameLabel = self.nameLabel else { return }
+		guard map?.isExplorable == true else { return }
 		let isExplored = !(self.map?.isExplored ?? false)
 		let spinnerController = origin as? Spinnerable
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.origin?.view)
 			self.setCheckboxImage(isExplored: isExplored, isAvailable: self.map?.isAvailable ?? false)
-			nameLabel.attributedText = Styles.current.applyStyle(
-				nameLabel.identifier ?? "",
-				toString: self.map?.name ?? ""
-			).toggleStrikethrough(isExplored)
             self.changeQueue.sync {
                 _ = self.map?.changed(isExplored: isExplored, isSave: true)
                 DispatchQueue.main.async {
@@ -170,7 +166,7 @@ final public class MapRow: UITableViewCell {
 // MARK: CalloutCellType
 extension MapRow: CalloutCellType {
 	public var estimatedWidth: CGFloat {
-		layoutIfNeeded()
+        layoutIfNeeded()
 		let rightPad: CGFloat = (disclosureImageView?.isHidden ?? true) ? 5 : 0
 		let fillerWidth: CGFloat = fillerView?.bounds.width ?? 0
 		return bounds.width + (rightPad - fillerWidth)

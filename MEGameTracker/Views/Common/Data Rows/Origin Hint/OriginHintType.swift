@@ -52,7 +52,8 @@ public struct OriginHintType: TextDataRowType {
 		guard let view = view as? RowType else { return }
 		if !view.didSetup {
 //			view.backgroundColor = UIColor.red
-			view.textView?.identifier = "Caption.DisabledColor"
+            view.textView?.textRenderingTextColor = UIColor.secondaryLabel
+            view.textView?.textRenderingFont = UIFont.preferredFont(forTextStyle: .caption1)
 			view.bottomPaddingConstraint?.constant = defaultPaddingBottom
 			view.leadingPaddingConstraint?.constant = defaultPaddingSides
 			view.trailingPaddingConstraint?.constant = defaultPaddingSides

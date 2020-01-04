@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 open class HairlineBorderView: UIView {
-	@IBInspectable open var color: UIColor = UIColor.clear
+	@IBInspectable open var color: UIColor = UIColor.separator
 	@IBInspectable open var top: Bool = false
 	@IBInspectable open var bottom: Bool = false
 	@IBInspectable open var left: Bool = false

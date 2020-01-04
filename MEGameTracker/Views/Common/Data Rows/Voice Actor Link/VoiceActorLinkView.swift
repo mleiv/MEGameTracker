@@ -12,7 +12,7 @@ public typealias VoiceActorType = (name: String, url: String)
 
 final public class VoiceActorLinkView: SimpleArrayDataRow {
 
-	private var dummyLinks: [VoiceActorType] = [(name: "Mark Meer", url: "https://google.com")]
+	private var dummyLinks: [VoiceActorType] = [(name: "Mark Meer", url: "https://duckduckgo.com")]
 	public var links: [VoiceActorType] {
 		if UIWindow.isInterfaceBuilder {
 			return dummyLinks
@@ -20,7 +20,7 @@ final public class VoiceActorLinkView: SimpleArrayDataRow {
             var allowedCharacters = NSMutableCharacterSet.alphanumerics
             allowedCharacters.insert(charactersIn: "-._~")
 			let url = String(
-                format: googleSearchActorTemplate,
+                format: searchActorTemplate,
                 actor.addingPercentEncoding(withAllowedCharacters: allowedCharacters) ?? "unknown"
             )
 			return [(name: actor, url: url)]
@@ -33,7 +33,7 @@ final public class VoiceActorLinkView: SimpleArrayDataRow {
         }
     }
 
-	let googleSearchActorTemplate = "https://www.google.com/webhp?#q=%%22Mass+Effect%%22+wikipedia+IMDB+%%22%@%%22"
+	let searchActorTemplate = "https://duckduckgo.com/?q=%%22Mass+Effect%%22+wikipedia+IMDB+%%22%@%%22"
 	let linkHandler = LinkHandler()
 
 	override var heading: String? { return "Voice Actor" }

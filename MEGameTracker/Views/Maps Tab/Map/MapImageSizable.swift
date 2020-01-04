@@ -58,11 +58,11 @@ extension MapImageSizable {
 		else {
 			return
 		}
-		baseView?.layoutIfNeeded()
+        baseView?.layoutIfNeeded()
 		mapImageScrollView.superview?.isHidden = false
 		let maxHeight = (baseView?.bounds.height ?? 0) - (competingView?.bounds.height ?? 0)
 		mapImageScrollHeightConstraint.constant = maxHeight
-		mapImageScrollView.superview?.layoutIfNeeded()
+        mapImageScrollView.superview?.layoutIfNeeded()
 		mapImageScrollView.minimumZoomScale = currentImageRatio(
 			baseView: baseView,
 			competingView: competingView

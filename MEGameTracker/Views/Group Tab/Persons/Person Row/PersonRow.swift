@@ -17,9 +17,9 @@ final class PersonRow: UITableViewCell {
 	@IBOutlet private weak var photoImageView: UIImageView?
 
 	@IBOutlet private weak var nameLabel: UILabel?
-	@IBOutlet private weak var titleLabel: MarkupLabel?
-	@IBOutlet private weak var statusLabel: MarkupLabel?
-	@IBOutlet private weak var availabilityLabel: MarkupLabel?
+	@IBOutlet private weak var titleLabel: UILabel?
+	@IBOutlet private weak var statusLabel: UILabel?
+	@IBOutlet private weak var availabilityLabel: UILabel?
 	@IBOutlet private weak var heartButton: HeartButton?
 
 	@IBOutlet private weak var disclosureImageView: UIImageView?
@@ -82,8 +82,6 @@ final class PersonRow: UITableViewCell {
 		heartButton?.onClick = changeLoveSetting
 		disclosureImageView?.isHidden = hideDisclosure
 		selectionStyle = hideDisclosure ? .none : .default
-
-		layoutIfNeeded()
 	}
 
 	/// Resets all text in the cases where row UI loads before data/setup.

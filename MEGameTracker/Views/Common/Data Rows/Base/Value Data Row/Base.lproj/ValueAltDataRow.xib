@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,23 +16,16 @@
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RV3-uv-RsP">
                     <rect key="frame" x="15" y="10" width="473" height="45"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="255" text="Option:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8j-Aw-a0a" userLabel="title" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="50.5" height="45"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="255" text="Option:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8j-Aw-a0a" userLabel="title">
+                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="45"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                             <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.NormalColor"/>
-                            </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRm-vw-8rk" userLabel="detail" customClass="IBStyledLabel" customModule="MEGameTracker" customModuleProvider="target">
-                            <rect key="frame" x="55.5" y="0.0" width="403.5" height="45"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRm-vw-8rk" userLabel="detail">
+                            <rect key="frame" x="58.5" y="0.0" width="400.5" height="45"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                            <color key="textColor" name="renegade"/>
                             <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.TintColor"/>
-                            </userDefinedRuntimeAttributes>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="300" verticalHuggingPriority="200" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-gd-qd1">
                             <rect key="frame" x="464" y="0.0" width="9" height="45"/>
@@ -49,36 +40,17 @@
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvE-Gu-f0c">
-                    <rect key="frame" x="0.0" y="0.0" width="500" height="64"/>
+                    <rect key="frame" x="0.0" y="0.0" width="500" height="30"/>
                     <connections>
                         <action selector="buttonClicked:" destination="Z3Q-sP-nnP" eventType="touchUpInside" id="ryV-Xa-vaV"/>
                     </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9H-EQ-bmS" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                    <rect key="frame" x="15" y="64" width="485" height="1"/>
-                    <constraints>
-                        <constraint firstAttribute="height" priority="900" constant="1" id="tp3-au-OpK"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
-                        <userDefinedRuntimeAttribute type="color" keyPath="color">
-                            <color key="value" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
             </subviews>
             <constraints>
                 <constraint firstItem="RV3-uv-RsP" firstAttribute="leading" secondItem="Z3Q-sP-nnP" secondAttribute="leading" constant="15" id="2Mv-WZ-3If"/>
-                <constraint firstAttribute="bottom" secondItem="s9H-EQ-bmS" secondAttribute="bottom" priority="900" id="9iD-Tz-gbP"/>
                 <constraint firstItem="SvE-Gu-f0c" firstAttribute="leading" secondItem="Z3Q-sP-nnP" secondAttribute="leading" id="FJR-fn-xZG"/>
-                <constraint firstItem="s9H-EQ-bmS" firstAttribute="leading" secondItem="Z3Q-sP-nnP" secondAttribute="leading" constant="15" id="Jc1-8d-P81"/>
                 <constraint firstItem="RV3-uv-RsP" firstAttribute="top" secondItem="Z3Q-sP-nnP" secondAttribute="top" priority="900" constant="10" id="XLz-0Z-RNG"/>
-                <constraint firstAttribute="trailing" secondItem="s9H-EQ-bmS" secondAttribute="trailing" id="bjZ-tB-w0k"/>
                 <constraint firstAttribute="bottom" secondItem="RV3-uv-RsP" secondAttribute="bottom" priority="900" constant="10" id="ebg-AI-On0"/>
-                <constraint firstItem="SvE-Gu-f0c" firstAttribute="bottom" secondItem="s9H-EQ-bmS" secondAttribute="top" priority="900" id="hCg-ky-B48"/>
                 <constraint firstAttribute="trailing" secondItem="RV3-uv-RsP" secondAttribute="trailing" constant="12" id="sup-Gk-4l1"/>
                 <constraint firstAttribute="trailing" secondItem="SvE-Gu-f0c" secondAttribute="trailing" id="y20-3Q-8uk"/>
                 <constraint firstItem="SvE-Gu-f0c" firstAttribute="top" secondItem="Z3Q-sP-nnP" secondAttribute="top" id="yrL-50-pbp"/>
@@ -89,7 +61,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="color">
-                    <color key="value" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
@@ -100,13 +72,15 @@
                 <outlet property="button" destination="SvE-Gu-f0c" id="MKz-tW-LXq"/>
                 <outlet property="disclosureImageView" destination="Q5Q-gd-qd1" id="QKd-dO-BQQ"/>
                 <outlet property="headingLabel" destination="L8j-Aw-a0a" id="mLg-BI-iJa"/>
-                <outlet property="rowDivider" destination="s9H-EQ-bmS" id="nRB-1m-Ygf"/>
                 <outlet property="valueLabel" destination="vRm-vw-8rk" id="wdN-cq-WHa"/>
             </connections>
-            <point key="canvasLocation" x="-4" y="135.5"/>
+            <point key="canvasLocation" x="-4.7999999999999998" y="135.38230884557723"/>
         </view>
     </objects>
     <resources>
         <image name="Disclosure" width="9" height="15"/>
+        <namedColor name="renegade">
+            <color red="0.75" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

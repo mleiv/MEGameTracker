@@ -18,6 +18,10 @@ final class ConversationRewardDetailOption: UIView {
 	private let creditsMessage = "%@ Credits: %@"
 	private let paragadeMessage = "%@ Paragon / %@ Renegade: %@"
 	private let reputationMessage = "%@ Reputation %@"
+    private let defaultColor = UIColor.label
+    private let paragonColor = UIColor(named: "paragon") ?? UIColor.systemBlue
+    private let renegadeColor = UIColor(named: "renegade") ?? UIColor.systemRed
+    private let paragadeColor = UIColor(named: "paragade") ?? UIColor.systemPurple
 
 // MARK: Outlets
 	@IBOutlet private weak var button: RadioButton?
@@ -80,8 +84,7 @@ final class ConversationRewardDetailOption: UIView {
 		contextLabel?.isHidden = option.context?.isEmpty ?? true
 		optionLabel?.text = setLabelText(option: option)
 		button?.toggle(isOn: option.isSelected)
-
-		layoutIfNeeded()
+        layoutIfNeeded()
 	}
 
 	/// Resets all text in the cases where row UI loads before data/setup.
@@ -106,22 +109,29 @@ final class ConversationRewardDetailOption: UIView {
 		guard let option = self.option else { return }
 		// only works if we set style before setting content text
 		switch option.type {
-			case .paragon: optionLabel?.identifier = "Caption.ParagonColor" //TODO: constants
-			case .renegade: optionLabel?.identifier = "Caption.RenegadeColor"
+			case .paragon:
+                optionLabel?.textColor = paragonColor
+			case .renegade:
+                optionLabel?.textColor = renegadeColor
 			case .neutral: fallthrough
-			case .paragade: optionLabel?.identifier = "Caption.ParagadeColor"
-			case .credits: optionLabel?.identifier = "Caption.NormalColor.Medium"
+			case .paragade:
+                optionLabel?.textColor = paragadeColor
+			case .credits:
+                optionLabel?.textColor = defaultColor
 		}
 	}
 
 	private func setLabelText(option: ConversationRewards.FlatDataOption) -> String {
 		switch option.type {
-			case .paragon: return String(format: paragonMessage, option.points, option.trigger)
-			case .renegade: return String(format: renegadeMessage, option.points, option.trigger)
-			case .credits: return String(format: creditsMessage, option.points, option.trigger)
+			case .paragon:
+                return String(format: paragonMessage, option.points, option.trigger)
+			case .renegade:
+                return String(format: renegadeMessage, option.points, option.trigger)
+			case .credits:
+                return String(format: creditsMessage, option.points, option.trigger)
 			case .neutral: fallthrough
 			case .paragade:
-				var values = option.points.components(separatedBy: "/")
+				let values = option.points.components(separatedBy: "/")
 				if values.count == 2 {
 					return String(format: paragadeMessage, values[0], values[1], option.trigger)
 				} else {

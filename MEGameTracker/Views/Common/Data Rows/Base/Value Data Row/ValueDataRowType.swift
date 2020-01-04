@@ -17,7 +17,6 @@ public protocol ValueDataRowType {
 	var value: String? { get }
 	var viewController: UIViewController? { get }
 	var isHideOnEmpty: Bool { get }
-	var showRowDivider: Bool? { get }
 	var onClick: ((UIButton) -> Void) { get }
 	mutating func setupView()
 	mutating func setupView<T: ValueDataRowDisplayable>(type: T.Type)
@@ -30,7 +29,6 @@ extension ValueDataRowType {
 	public var value: String? { return nil }
 	public var viewController: UIViewController? { return nil }
 	public var isHideOnEmpty: Bool { return true }
-	public var showRowDivider: Bool? { return nil }
 
 	public mutating func setupView<T: ValueDataRowDisplayable>(type: T.Type) {
 		guard let row = row as? T,
@@ -38,7 +36,6 @@ extension ValueDataRowType {
 			!view.isSettingUp else { return }
 		view.isSettingUp = true
 
-		view.rowDivider?.isHidden = !(showRowDivider ?? row.showRowDivider)
 		view.onClick = onClick
 		view.headingLabel?.text = heading
 		view.valueLabel?.text = value

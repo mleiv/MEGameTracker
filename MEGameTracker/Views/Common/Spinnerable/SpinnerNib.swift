@@ -38,13 +38,13 @@ final public class SpinnerNib: UIView {
 	public func setupTitle() {
 		spinnerLabel?.text = title
 		spinnerLabel?.isHidden = !(title?.isEmpty == false)
-		layoutIfNeeded()
+        layoutIfNeeded()
 	}
 
 	public func setupProgress() {
 		spacerView?.isHidden = !isShowProgress
 		progressView?.isHidden = !isShowProgress
-		layoutIfNeeded()
+        layoutIfNeeded()
 	}
 
 	public func start() {
@@ -71,13 +71,12 @@ final public class SpinnerNib: UIView {
 
 	public func changeMessage(_ title: String) {
 		spinnerLabel?.text = title
-		layoutIfNeeded()
 	}
 
 	public class func loadNib(title: String? = nil) -> SpinnerNib? {
 		let bundle = Bundle(for: SpinnerNib.self)
 		if let view = bundle.loadNibNamed("SpinnerNib", owner: self, options: nil)?.first as? SpinnerNib {
-			view.spinner?.color = Styles.Colors.tintColor
+//            view.spinner?.color = Styles.colors.tint // Styles.colors.tint
 			view.title = title
 			return view
 		}

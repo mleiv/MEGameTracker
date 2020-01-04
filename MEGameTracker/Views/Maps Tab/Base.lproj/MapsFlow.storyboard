@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WOD-en-YYc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WOD-en-YYc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,12 +15,11 @@
                         <viewControllerLayoutGuide type="top" id="p7g-yA-UOF"/>
                         <viewControllerLayoutGuide type="bottom" id="oKV-bz-oc7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="noX-gZ-vQv" userLabel="Root">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="noX-gZ-vQv" userLabel="Root">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </view>
                     <navigationItem key="navigationItem" title="Maps" id="kek-XH-KGA"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="Maps"/>
                     </userDefinedRuntimeAttributes>
@@ -38,15 +35,14 @@
         <!--Map-->
         <scene sceneID="yCK-2a-Bmq">
             <objects>
-                <viewController storyboardIdentifier="Map" automaticallyAdjustsScrollViewInsets="NO" id="ebJ-C4-dEf" userLabel="Map" customClass="MapsFlowController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="ebJ-C4-dEf" userLabel="Map" customClass="MapsFlowController" customModule="MEGameTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iEd-v9-K5m"/>
                         <viewControllerLayoutGuide type="bottom" id="aSP-Uz-FIa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GyU-A0-MNR" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="GyU-A0-MNR" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MapSplitView"/>
                         </userDefinedRuntimeAttributes>
@@ -54,13 +50,12 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Map" id="5wO-nk-Ibc">
                         <barButtonItem key="rightBarButtonItem" title="Callouts" id="KKP-xq-Ug3">
+                            <color key="tintColor" name="paragon"/>
                             <connections>
                                 <action selector="openCallouts:" destination="ebJ-C4-dEf" id="Anp-vX-dBh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MapSplitView"/>
                     </userDefinedRuntimeAttributes>
@@ -82,8 +77,8 @@
                         <viewControllerLayoutGuide type="top" id="eHk-ka-cxP"/>
                         <viewControllerLayoutGuide type="bottom" id="7Qv-cP-H8C"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ODt-CO-xaO" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="ODt-CO-xaO" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MapCalloutsGroups"/>
@@ -97,8 +92,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MapCalloutsGroups"/>
                     </userDefinedRuntimeAttributes>
@@ -118,11 +111,14 @@
         <!--Navigation Controller-->
         <scene sceneID="Gjp-Mz-PIU">
             <objects>
-                <navigationController storyboardIdentifier="Nav-Wrapped Callouts" automaticallyAdjustsScrollViewInsets="NO" id="sLa-Er-SOF" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Nav-Wrapped Callouts" id="sLa-Er-SOF" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1JJ-yU-NA0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="1JJ-yU-NA0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="headerFooterBackground"/>
+                        <color key="tintColor" name="paragon"/>
+                        <color key="barTintColor" name="headerBackground"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -134,8 +130,19 @@
             <point key="canvasLocation" x="5342" y="1970"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="headerBackground">
+            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="headerFooterBackground">
+            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="paragon">
+            <color red="0.10000000149011612" green="0.10000000149011612" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Chh-Vn-t3T"/>
         <segue reference="AMO-cH-IdW"/>
+        <segue reference="Chh-Vn-t3T"/>
     </inferredMetricsTieBreakers>
 </document>

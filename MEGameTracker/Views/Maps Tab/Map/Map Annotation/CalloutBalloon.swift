@@ -35,8 +35,8 @@ public struct CalloutBalloon {
 		tailWidth: CGFloat = 10.0,
 		borderWidth: CGFloat = 1.0,
 		cornerRadius: CGFloat = 5.0,
-		borderColor: UIColor = .black,
-		backgroundColor: UIColor = .white
+		borderColor: UIColor = .separator,
+        backgroundColor: UIColor = UIColor(named: "secondaryBackground")!
 	) {
 		self.baseLayer = baseLayer
 		self.visibleWrapper = visibleWrapper

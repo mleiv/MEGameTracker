@@ -13,8 +13,6 @@ public struct DescriptionType: TextDataRowType {
 	var view: RowType? { return row }
 	public var row: TextDataRow?
 
-	public var identifier: String = "\(UUID().uuidString)"
-
 	public var controller: Describable?
 
 	public var text: String? {

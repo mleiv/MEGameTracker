@@ -42,11 +42,11 @@ public struct UnavailabilityRowType: TextDataRowType {
 		guard let view = view as? RowType else { return }
 		if UIWindow.isInterfaceBuilder || !didSetup {
 			didSetup = true
-			view.backgroundColor = UIColor.darkGray
-			view.textView?.identifier = "Caption.DisabledOppositeColor.MediumItalic"
-			view.textView?.linkTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([
-				NSAttributedString.Key.foregroundColor.rawValue: Styles.Colors.linkOnBlackColor
-			])
+            view.backgroundColor = UIColor(named: "availabilityBackground")
+            view.textView?.tintColor = UIColor(named: "availabilityLink")!
+            view.textView?.textRenderingFont = UIFont.preferredFont(forTextStyle: .caption1)
+            view.textView?.textRenderingTextColor = UIColor(named: "availabilityLabel")!
+            view.textView?.markup()
 			view.textView?.textAlignment = .center
 		}
 		view.textView?.text = text

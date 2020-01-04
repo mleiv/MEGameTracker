@@ -15,16 +15,13 @@ final public class ValueAltDataRow: HairlineBorderView, ValueDataRowDisplayable 
 		didSet { setDummyDataRowType() }
 	}
 	@IBInspectable public var hideHeadingOnCompactView: Bool = false
-	@IBInspectable public var showRowDivider: Bool = false
 	@IBInspectable public var isHideOnEmpty: Bool = true
 
 // MARK: Outlets
-	@IBOutlet weak public var headingLabel: IBStyledLabel?
-	@IBOutlet weak public var valueLabel: IBStyledLabel?
+	@IBOutlet weak public var headingLabel: UILabel?
+	@IBOutlet weak public var valueLabel: UILabel?
 	@IBOutlet weak public var disclosureImageView: UIImageView?
 	@IBOutlet weak public var button: UIButton?
-
-	@IBOutlet weak public var rowDivider: HairlineBorderView?
 
 	@IBAction public func buttonClicked(_ sender: UIButton) { onClick?(sender) }
 

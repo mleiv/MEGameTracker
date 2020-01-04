@@ -35,6 +35,5 @@ final public class UIHeaderTab: UIView {
 		unselectedWrapper?.isHidden = selected
 		selectedWrapper?.isHidden = !selected
 		self.onClick = onClick
-		layoutIfNeeded()
 	}
 }

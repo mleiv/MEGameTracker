@@ -40,7 +40,6 @@ import UIKit
 			view.alpha = enabled ? 1.0 : 0.5
 			view.parent = self
 			didSetup = true
-//			layoutIfNeeded()
 		}
 	}
 
