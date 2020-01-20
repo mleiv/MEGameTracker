@@ -19,9 +19,9 @@ final class ConversationRewardDetailOption: UIView {
 	private let paragadeMessage = "%@ Paragon / %@ Renegade: %@"
 	private let reputationMessage = "%@ Reputation %@"
     private let defaultColor = UIColor.label
-    private let paragonColor = UIColor(named: "paragon") ?? UIColor.systemBlue
-    private let renegadeColor = UIColor(named: "renegade") ?? UIColor.systemRed
-    private let paragadeColor = UIColor(named: "paragade") ?? UIColor.systemPurple
+    private let paragonColor = MEGameTrackerColor.paragon
+    private let renegadeColor = MEGameTrackerColor.renegade
+    private let paragadeColor = MEGameTrackerColor.paragade
 
 // MARK: Outlets
 	@IBOutlet private weak var button: RadioButton?

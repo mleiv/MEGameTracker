@@ -26,13 +26,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omu-tb-gkP">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="893"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="876"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ig2-YW-Gnz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="893"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="876"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SkQ-ZN-ItO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="165"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="XR8-98-Vwu" userLabel="Availability Wrapper" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
@@ -55,22 +55,23 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="Jb0-xP-8e8" userLabel="Breadcrumbs Wrapper" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="108" width="375" height="57"/>
+                                                                        <rect key="frame" x="0.0" y="108" width="375" height="40"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="301" translatesAutoresizingMaskIntoConstraints="NO" id="sYn-Ju-i4e">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="b46-xJ-pIU" userLabel="Checkbox">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="57"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
                                                                                         <subviews>
                                                                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Map Checkbox Empty" translatesAutoresizingMaskIntoConstraints="NO" id="kuA-uM-HT9">
                                                                                                 <rect key="frame" x="15" y="8" width="25" height="25"/>
+                                                                                                <color key="tintColor" name="renegade"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="width" secondItem="kuA-uM-HT9" secondAttribute="height" multiplier="1:1" id="MTt-KE-bGw"/>
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yr4-NA-puM">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="57"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                                                                                 <connections>
                                                                                                     <action selector="onClickCheckbox:" destination="FE8-Fz-nu7" eventType="touchUpInside" id="m2V-oE-0Nq"/>
@@ -90,17 +91,17 @@
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <view hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="hGB-OJ-axu">
-                                                                                        <rect key="frame" x="50" y="0.0" width="0.0" height="57"/>
+                                                                                        <rect key="frame" x="50" y="0.0" width="0.0" height="40"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" priority="900" constant="40" id="LfW-lf-0b5"/>
                                                                                             <constraint firstAttribute="width" priority="900" constant="15" id="Mfh-dy-dPB"/>
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-s8-EmI">
-                                                                                        <rect key="frame" x="50" y="0.0" width="270" height="57"/>
+                                                                                        <rect key="frame" x="50" y="0.0" width="270" height="40"/>
                                                                                         <subviews>
                                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="751" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Galaxy Map &gt; Omega Nebula &gt; Sahrabarik &gt; " translatesAutoresizingMaskIntoConstraints="NO" id="TFH-Wb-aQT" userLabel="Breadcrumbs" customClass="MarkupTextView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="57"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="height" priority="100" id="ofS-qp-Ybj"/>
                                                                                                 </constraints>
@@ -120,13 +121,14 @@
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <view contentMode="center" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="au2-74-AED" userLabel="Detail Disclosure">
-                                                                                        <rect key="frame" x="320" y="0.0" width="55" height="57"/>
+                                                                                        <rect key="frame" x="320" y="0.0" width="55" height="40"/>
                                                                                         <subviews>
                                                                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Vertical Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="o2B-jG-3Mp">
                                                                                                 <rect key="frame" x="5" y="8" width="35" height="40"/>
+                                                                                                <color key="tintColor" name="renegade"/>
                                                                                             </imageView>
                                                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pN5-D0-Cr0">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="57"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="40"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                                                                                 <connections>
                                                                                                     <action selector="onClickDisclosure:" destination="FE8-Fz-nu7" eventType="touchUpInside" id="GkG-gv-oax"/>
@@ -170,7 +172,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="305" translatesAutoresizingMaskIntoConstraints="NO" id="Jpl-wv-bK4" userLabel="Map Details">
-                                                                <rect key="frame" x="0.0" y="165" width="375" height="678"/>
+                                                                <rect key="frame" x="0.0" y="148" width="375" height="678"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="301" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7WG-KA-rnA">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="678"/>
@@ -239,7 +241,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="200" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="ssg-oX-yqe" userLabel="Scroll Wrapper">
-                                                                <rect key="frame" x="0.0" y="843" width="375" height="50"/>
+                                                                <rect key="frame" x="0.0" y="826" width="375" height="50"/>
                                                                 <subviews>
                                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="L2o-1Z-ynq">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -337,6 +339,9 @@
         </namedColor>
         <namedColor name="paragon">
             <color red="0.10000000149011612" green="0.10000000149011612" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="renegade">
+            <color red="0.75" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="secondaryBackground">
             <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

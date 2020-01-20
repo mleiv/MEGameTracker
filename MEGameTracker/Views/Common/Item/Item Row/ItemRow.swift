@@ -96,31 +96,33 @@ final class ItemRow: UITableViewCell {
 
 		disclosureImageView?.isHidden = true
 
-		if !(item?.isAvailable ?? false) {
-			if !isCalloutBoxRow, let text = item?.unavailabilityMessages.joined(separator: ", "), !text.isEmpty {
-				availabilityLabel?.text = text
-				availabilityLabel?.isHidden = false
-			}
+		if item?.isAvailable ?? false {
+            if let annotationNote = item?.annotationNote, !annotationNote.isEmpty {
+                descriptionLabel?.text = annotationNote
+                descriptionLabel?.isHidden = false
+            } else if !isCalloutBoxRow {
+                if let mapId = item?.inMapId, let map = Map.get(id: mapId) {
+                    // usually we don't want location data on items:
+                    let breadcrumbs = (map.getBreadcrumbs().map { $0.name } + [map.name]).joined(separator: " > ")
+                    locationLabel?.text = breadcrumbs
+                    locationLabel?.isHidden = false
+                }
+            }
+            if let price = item?.price, !price.isEmpty {
+                costLabel?.text = String(format: priceMessage, price)
+                costLabel?.isHidden = costLabel?.text?.isEmpty ?? true
+            }
+            // TODO: make item popover with more information
+            let hasLinkToMap = !isCalloutBoxRow && item?.inMapId != nil
+            disclosureImageView?.isHidden = item?.inMissionId == nil
+                && (item?.hasNoAdditionalData ?? false) && !hasLinkToMap
+            disclosureImageView?.tintColor = MEGameTrackerColor.renegade
 		} else {
-			if let annotationNote = item?.annotationNote, !annotationNote.isEmpty {
-				descriptionLabel?.text = annotationNote
-				descriptionLabel?.isHidden = false
-			} else if !isCalloutBoxRow {
-				if let mapId = item?.inMapId, let map = Map.get(id: mapId) {
-					// usually we don't want location data on items:
-					let breadcrumbs = (map.getBreadcrumbs().map { $0.name } + [map.name]).joined(separator: " > ")
-					locationLabel?.text = breadcrumbs
-					locationLabel?.isHidden = false
-				}
-			}
-			if let price = item?.price, !price.isEmpty {
-				costLabel?.text = String(format: priceMessage, price)
-				costLabel?.isHidden = costLabel?.text?.isEmpty ?? true
-			}
-			// TODO: make item popover with more information
-			let hasLinkToMap = !isCalloutBoxRow && item?.inMapId != nil
-			disclosureImageView?.isHidden = item?.inMissionId == nil
-				&& (item?.hasNoAdditionalData ?? false) && !hasLinkToMap
+            if !isCalloutBoxRow, let text = item?.unavailabilityMessages.joined(separator: ", "), !text.isEmpty {
+                availabilityLabel?.text = text
+                availabilityLabel?.isHidden = false
+            }
+            disclosureImageView?.tintColor = MEGameTrackerColor.disabled
 		}
 		setCheckboxImage(isAcquired: item?.isAcquired ?? false, isAvailable: item?.isAvailable ?? false)
 
@@ -143,28 +145,27 @@ final class ItemRow: UITableViewCell {
 
 // MARK: Supporting Functions
 	private func setCheckboxImage(isAcquired: Bool, isAvailable: Bool) {
+        checkboxImageView?.image = isAcquired ? Checkbox.filled.getImage() : Checkbox.empty.getImage()
 		if !isAvailable {
-			checkboxImageView?.image = isAcquired
-				? Checkbox.disabledFilled.getImage()
-				: Checkbox.disabledEmpty.getImage()
+            checkboxImageView?.tintColor = MEGameTrackerColor.disabled
 		} else {
-			checkboxImageView?.image = isAcquired ? Checkbox.filled.getImage() : Checkbox.empty.getImage()
+            checkboxImageView?.tintColor = MEGameTrackerColor.renegade
 		}
 	}
 
 	private func toggleItem() {
+        guard let item = self.item else { return }
 //		guard let nameLabel = self.nameLabel else { return }
-		let isAcquired = !(self.item?.isAcquired ?? false)
+		let isAcquired = !item.isAcquired
 		let spinnerController = origin as? Spinnerable
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.origin?.view)
-//			self.setCheckboxImage(isAcquired: isAcquired, isAvailable: self.item?.isAvailable ?? false)
-//            let attrString = NSAttributedString(string: nameLabel.text ?? "", attributes: isAcquired ? [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single] : [:])
-//            nameLabel.attributedText = attrString
-//			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
-//				?? "", toString: self.item?.name ?? "").toggleStrikethrough(isAcquired)
+            // make UI changes now
+            self.nameLabel?.attributedText = self.nameLabel?.attributedText?.toggleStrikethrough(isAcquired)
+            self.setCheckboxImage(isAcquired: isAcquired, isAvailable: item.isAvailable)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
-				_ = self.item?.changed(isAcquired: isAcquired, isSave: true)
+                // save changes to DB
+				self.item = item.changed(isAcquired: isAcquired, isSave: true)
 				spinnerController?.stopSpinner(inView: self.origin?.view)
 			}
 		}

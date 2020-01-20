@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -45,8 +46,9 @@
                                 <constraint firstAttribute="height" priority="100" id="59E-BC-fH9"/>
                             </constraints>
                         </stackView>
-                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="300" verticalHuggingPriority="200" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-gd-qd1">
-                            <rect key="frame" x="464" y="0.0" width="9" height="36"/>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="300" verticalHuggingPriority="200" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-gd-qd1">
+                            <rect key="frame" x="464" y="2" width="9" height="32.5"/>
+                            <color key="tintColor" name="renegade"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="9" id="Hqm-mB-a5Y"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="950" constant="15" id="R7q-Kx-MCS"/>
@@ -96,6 +98,9 @@
         </view>
     </objects>
     <resources>
-        <image name="Disclosure" width="9" height="15"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
+        <namedColor name="renegade">
+            <color red="0.75" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

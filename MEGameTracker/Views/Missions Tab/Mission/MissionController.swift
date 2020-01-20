@@ -245,31 +245,29 @@ final public class MissionController: UIViewController,
 
 extension MissionController {
 	func toggleCheckbox() {
-		guard let nameLabel = self.nameLabel else { return }
-		let isCompleted = !(self.mission?.isCompleted ?? false)
+        guard let mission = self.mission else { return }
+		let isCompleted = !mission.isCompleted
 		let spinnerController = self as Spinnerable?
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.view)
-			self.setCheckboxImage(isCompleted: isCompleted, isAvailable: self.mission?.isAvailable ?? false)
-//			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
-//				?? "", toString: self.mission?.name ?? "").toggleStrikethrough(isCompleted)
+            // make UI changes now
+            self.nameLabel?.attributedText = self.nameLabel?.attributedText?.toggleStrikethrough(isCompleted)
+			self.setCheckboxImage(isCompleted: isCompleted, isAvailable: mission.isAvailable)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
-				_ = self.mission?.changed(isCompleted: isCompleted, isSave: true)
+                // save changes to DB
+                self.mission = mission.changed(isCompleted: isCompleted, isSave: true)
 				spinnerController?.stopSpinner(inView: self.view)
 			}
 		}
 	}
 
 	func setCheckboxImage(isCompleted: Bool, isAvailable: Bool) {
-		if !isAvailable {
-			checkboxImageView?.image = isCompleted
-				? MissionCheckbox.disabledFilled.getImage()
-				: MissionCheckbox.disabledEmpty.getImage()
-		} else {
-			checkboxImageView?.image = isCompleted
-				? MissionCheckbox.filled.getImage()
-				: MissionCheckbox.empty.getImage()
-		}
+        checkboxImageView?.image = isCompleted ? MissionCheckbox.filled.getImage() : MissionCheckbox.empty.getImage()
+        if !isAvailable {
+            checkboxImageView?.tintColor = MEGameTrackerColor.disabled
+        } else {
+            checkboxImageView?.tintColor = MEGameTrackerColor.renegade
+        }
 	}
 }
 

@@ -78,6 +78,10 @@ final public class ShepardAppearanceSliderCell: UITableViewCell {
 			action: #selector(ShepardAppearanceSliderCell.sliderChanged(_:)),
 			for: UIControl.Event.valueChanged
 		)
+        
+        slider?.setThumbImage(UIImage(named: "Slider Thumb"), for: .normal)
+        slider?.setThumbImage(UIImage(named: "Slider Thumb"), for: .highlighted)
+
 		noticeLabel?.text = notice
 		noticeLabel?.isHidden = !(notice?.isEmpty == false)
 		errorLabel?.text = error

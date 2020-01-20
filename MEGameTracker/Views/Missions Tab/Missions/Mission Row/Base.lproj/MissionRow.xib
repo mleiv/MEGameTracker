@@ -84,8 +84,9 @@
                             <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="aDr-kM-yGL">
                                 <rect key="frame" x="278" y="0.0" width="15" height="85"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="255" verticalHuggingPriority="255" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="BqS-ju-Ig5">
-                                        <rect key="frame" x="7" y="0.0" width="8" height="85"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="255" verticalHuggingPriority="255" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BqS-ju-Ig5">
+                                        <rect key="frame" x="7" y="2" width="8" height="81.5"/>
+                                        <color key="tintColor" name="renegade"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="8" id="hK6-Bg-Rbb"/>
                                             <constraint firstAttribute="height" priority="101" constant="15" id="wa2-Kj-vvP"/>
@@ -143,8 +144,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Disclosure" width="9" height="15"/>
         <image name="Mission Checkbox Empty" width="30" height="30"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

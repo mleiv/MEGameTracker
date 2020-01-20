@@ -8,15 +8,22 @@
 
 import UIKit
 
+public struct MEGameTrackerColor {
+    static let renegade = UIColor(named: "renegade") ?? UIColor.systemRed
+    static let paragon = UIColor(named: "paragon") ?? UIColor.systemBlue
+    static let paragade = UIColor(named: "paragade") ?? UIColor.systemPurple
+    static let disabled = UIColor.secondaryLabel
+}
+
 public struct Styles: IBStylesheet {
 	public static var current = Styles()
 
     public var isInitialized: Bool = false
 
 	public func applyGlobalStyles(inWindow window: UIWindow?) {
-		window?.tintColor = UIColor(named: "renegade")
+		window?.tintColor = MEGameTrackerColor.renegade
         let toolbarItems = UIBarButtonItem.appearance()
-        toolbarItems.tintColor = UIColor(named: "paragon")
+        toolbarItems.tintColor = MEGameTrackerColor.paragon
 	}
 }
 

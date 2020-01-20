@@ -109,7 +109,7 @@
 		B08E2A551BB23256009546F8 /* DataMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E2A541BB23256009546F8 /* DataMaps.swift */; };
 		B08E2A571BB232EF009546F8 /* GameMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E2A561BB232EF009546F8 /* GameMaps.swift */; };
 		B092C3C11BAF9EDD0078CEF2 /* GameNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092C3C01BAF9EDD0078CEF2 /* GameNotes.swift */; };
-		B099985B1BAB490100ADAA5D /* LineCenteredTextImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099985A1BAB490100ADAA5D /* LineCenteredTextImage.swift */; };
+		B093393323D5001E0016F232 /* ShepardPhotoFrameBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093393223D5001E0016F232 /* ShepardPhotoFrameBorderView.swift */; };
 		B0A796ED1C7D764F004F1A56 /* ShepardSplitView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A796EA1C7D764F004F1A56 /* ShepardSplitView.storyboard */; };
 		B0A796EE1C7D764F004F1A56 /* ShepardSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A796EC1C7D764F004F1A56 /* ShepardSplitViewController.swift */; };
 		B0A9682D1C7D6AB300D3E335 /* MESplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9682C1C7D6AB300D3E335 /* MESplitViewController.swift */; };
@@ -632,7 +632,7 @@
 		B08E2A541BB23256009546F8 /* DataMaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMaps.swift; sourceTree = "<group>"; };
 		B08E2A561BB232EF009546F8 /* GameMaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMaps.swift; sourceTree = "<group>"; };
 		B092C3C01BAF9EDD0078CEF2 /* GameNotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameNotes.swift; sourceTree = "<group>"; };
-		B099985A1BAB490100ADAA5D /* LineCenteredTextImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineCenteredTextImage.swift; sourceTree = "<group>"; };
+		B093393223D5001E0016F232 /* ShepardPhotoFrameBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShepardPhotoFrameBorderView.swift; sourceTree = "<group>"; };
 		B0A796EB1C7D764F004F1A56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ShepardSplitView.storyboard; sourceTree = "<group>"; };
 		B0A796EC1C7D764F004F1A56 /* ShepardSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShepardSplitViewController.swift; sourceTree = "<group>"; };
 		B0A9682C1C7D6AB300D3E335 /* MESplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MESplitViewController.swift; sourceTree = "<group>"; };
@@ -1072,6 +1072,7 @@
 			children = (
 				B01D8ED01BA139500039E003 /* Shepard.storyboard */,
 				B01D8ED41BA139500039E003 /* ShepardController.swift */,
+				B093393223D5001E0016F232 /* ShepardPhotoFrameBorderView.swift */,
 			);
 			path = Shepard;
 			sourceTree = "<group>";
@@ -1433,7 +1434,6 @@
 		B06575061BA8F99C0025F6E7 /* Markupable */ = {
 			isa = PBXGroup;
 			children = (
-				B099985A1BAB490100ADAA5D /* LineCenteredTextImage.swift */,
 				B06575071BA8F99C0025F6E7 /* Markupable.swift */,
 				B1DFF0701C9B5C8700FC6500 /* MarkupLabel.swift */,
 				B06575091BA8F9AC0025F6E7 /* MarkupTextView.swift */,
@@ -2734,7 +2734,6 @@
 				B1DF1AE11D67DF23008EBAAC /* DecisionsListLinkType.swift in Sources */,
 				B0E6E3181C7E3AFD00C6DB0C /* MapSplitViewController.swift in Sources */,
 				B1B55C4A1E70317E0095A526 /* ValueAltDataRow.swift in Sources */,
-				B099985B1BAB490100ADAA5D /* LineCenteredTextImage.swift in Sources */,
 				B1B43AD81E7272C200746CB0 /* CalloutBalloon.swift in Sources */,
 				B0F25DA61BC6E0EC007DB127 /* UIPDFView.swift in Sources */,
 				B12B82DB1D012F4F006C83AA /* EventDirection.swift in Sources */,
@@ -3003,6 +3002,7 @@
 				B04FA6D71BB22657006474CB /* GameMissions.swift in Sources */,
 				B11D83901C98C6CB0096FD77 /* DataEvents.swift in Sources */,
 				B01D8F1B1BA139500039E003 /* Styles.swift in Sources */,
+				B093393323D5001E0016F232 /* ShepardPhotoFrameBorderView.swift in Sources */,
 				B1C388701BA4B35E0088D8A8 /* PersonRow.swift in Sources */,
 				B02673631BF6EA52003E4F07 /* Item.swift in Sources */,
 				B1A1B06E1E137F5B009A5688 /* GameSegments.swift in Sources */,

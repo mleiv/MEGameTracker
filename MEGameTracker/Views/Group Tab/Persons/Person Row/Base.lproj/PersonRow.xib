@@ -24,9 +24,15 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BsP-uz-ZJT">
                                         <rect key="frame" x="1" y="1" width="58" height="58"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="BsP-uz-ZJT" secondAttribute="bottom" constant="1" id="0YJ-WM-hyq"/>
                                     <constraint firstAttribute="width" constant="60" id="2HW-yb-Ky9"/>
@@ -35,6 +41,12 @@
                                     <constraint firstItem="BsP-uz-ZJT" firstAttribute="leading" secondItem="bsg-vZ-6QG" secondAttribute="leading" constant="1" id="5GY-eG-Rdx"/>
                                     <constraint firstAttribute="trailing" secondItem="BsP-uz-ZJT" secondAttribute="trailing" constant="1" id="xrK-f8-5NN"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" horizontalCompressionResistancePriority="740" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IWA-yA-NZ1">
                                 <rect key="frame" x="70" y="3" width="167" height="77.5"/>
@@ -88,8 +100,9 @@
                                     <constraint firstItem="pNs-T1-sQT" firstAttribute="top" secondItem="9nB-6d-3Bc" secondAttribute="top" id="syB-Y0-9Bn"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="0To-J6-eAi">
-                                <rect key="frame" x="287" y="34" width="9" height="15"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0To-J6-eAi">
+                                <rect key="frame" x="287" y="36" width="9" height="11.5"/>
+                                <color key="tintColor" name="renegade"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="990" constant="9" id="BJO-gS-k91"/>
                                     <constraint firstAttribute="height" priority="950" constant="15" id="voO-5q-At8"/>
@@ -123,7 +136,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Disclosure" width="9" height="15"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

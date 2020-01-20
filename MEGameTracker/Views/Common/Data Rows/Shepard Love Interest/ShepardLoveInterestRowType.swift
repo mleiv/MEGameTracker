@@ -39,15 +39,16 @@ public struct ShepardLoveInterestRowType: ValueDataRowType {
 
 	public mutating func setup(view: UIView?) {
 		guard let view = view as? RowType else { return }
+        let frame = view.loveInterestImageView?.superview // using a superview frame now
 		if let loveInterest = loveInterest {
 			Photo.addPhoto(
 				from: loveInterest,
 				toView: view.loveInterestImageView,
 				placeholder: UIImage.placeholderThumbnail()
 			)
-			view.loveInterestImageView?.isHidden = false
+            frame?.isHidden = false
 		} else {
-			view.loveInterestImageView?.isHidden = true
+			frame?.isHidden = true 
 		}
 		view.valueLabel?.text = value
 	}

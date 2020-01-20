@@ -16,38 +16,60 @@
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RV3-uv-RsP">
                     <rect key="frame" x="15" y="8" width="473" height="44"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default Liara" translatesAutoresizingMaskIntoConstraints="NO" id="8Je-Mi-GgE">
-                            <rect key="frame" x="0.0" y="2" width="40" height="40"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEd-1T-NR0" userLabel="Image Frame">
+                            <rect key="frame" x="0.0" y="1" width="42" height="42"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default Liara" translatesAutoresizingMaskIntoConstraints="NO" id="8Je-Mi-GgE">
+                                    <rect key="frame" x="1" y="1" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="900" constant="40" id="ADB-fT-zzi"/>
+                                        <constraint firstAttribute="width" secondItem="8Je-Mi-GgE" secondAttribute="height" multiplier="1:1" id="qso-0r-1Ek"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" priority="900" constant="40" id="ADB-fT-zzi"/>
-                                <constraint firstAttribute="width" secondItem="8Je-Mi-GgE" secondAttribute="height" multiplier="1:1" id="qso-0r-1Ek"/>
+                                <constraint firstAttribute="bottom" secondItem="8Je-Mi-GgE" secondAttribute="bottom" constant="1" id="0yw-sy-lfH"/>
+                                <constraint firstItem="8Je-Mi-GgE" firstAttribute="top" secondItem="JEd-1T-NR0" secondAttribute="top" constant="1" id="OCM-vg-iWS"/>
+                                <constraint firstItem="8Je-Mi-GgE" firstAttribute="leading" secondItem="JEd-1T-NR0" secondAttribute="leading" constant="1" id="koa-T1-xRl"/>
+                                <constraint firstAttribute="trailing" secondItem="8Je-Mi-GgE" secondAttribute="trailing" constant="1" id="pTm-Ce-jbT"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                     <integer key="value" value="20"/>
                                 </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
-                        </imageView>
+                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" text="Option:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8j-Aw-a0a" userLabel="title">
-                            <rect key="frame" x="45" y="12.5" width="53.5" height="19.5"/>
+                            <rect key="frame" x="47" y="12.5" width="53.5" height="19.5"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRm-vw-8rk" userLabel="detail">
-                            <rect key="frame" x="103.5" y="15" width="355.5" height="14.5"/>
+                            <rect key="frame" x="105.5" y="15" width="353.5" height="14.5"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                             <color key="textColor" name="renegade"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="300" verticalHuggingPriority="200" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-gd-qd1">
-                            <rect key="frame" x="464" y="7" width="9" height="30"/>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="300" verticalHuggingPriority="200" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-gd-qd1">
+                            <rect key="frame" x="464" y="14" width="9" height="16.5"/>
+                            <color key="tintColor" name="renegade"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="9" id="Hqm-mB-a5Y"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="950" constant="15" id="R7q-Kx-MCS"/>
                             </constraints>
                         </imageView>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="L8j-Aw-a0a" firstAttribute="leading" secondItem="JEd-1T-NR0" secondAttribute="trailing" constant="10" id="VJ6-wz-dSt"/>
+                    </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvE-Gu-f0c">
                     <rect key="frame" x="0.0" y="0.0" width="500" height="60"/>
@@ -86,12 +108,12 @@
                 <outlet property="loveInterestImageView" destination="8Je-Mi-GgE" id="33x-A9-Ppv"/>
                 <outlet property="valueLabel" destination="vRm-vw-8rk" id="6Ct-HE-TbS"/>
             </connections>
-            <point key="canvasLocation" x="-4" y="120"/>
+            <point key="canvasLocation" x="-4.7999999999999998" y="119.64017991004499"/>
         </view>
     </objects>
     <resources>
         <image name="Default Liara" width="150" height="200"/>
-        <image name="Disclosure" width="9" height="15"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <namedColor name="renegade">
             <color red="0.75" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -85,6 +85,9 @@ final public class SliderRow: HairlineBorderView, IBViewable {
 		view.onChangeBlock = onChangeBlock
 
 		view.rowDivider?.isHidden = !showRowDivider
+        
+        view.slider?.setThumbImage(UIImage(named: "Slider Thumb"), for: .normal)
+        view.slider?.setThumbImage(UIImage(named: "Slider Thumb"), for: .highlighted)
 
 		view.setup()
 

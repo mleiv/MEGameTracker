@@ -27,7 +27,7 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="310" verticalHuggingPriority="310" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Item Checkbox Empty" translatesAutoresizingMaskIntoConstraints="NO" id="zVL-fc-HbC" userLabel="Checkbox">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" name="renegade"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="5fx-Sp-A7y"/>
                                                     <constraint firstAttribute="height" priority="900" constant="30" id="Hkk-Yd-MkH"/>
@@ -99,8 +99,9 @@
                             <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="c7Z-0g-qG2">
                                 <rect key="frame" x="281" y="26" width="15" height="15"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="255" verticalHuggingPriority="255" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="krT-Ex-IRB">
-                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="255" verticalHuggingPriority="255" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="krT-Ex-IRB">
+                                        <rect key="frame" x="2.5" y="2" width="12.5" height="11.5"/>
+                                        <color key="tintColor" name="renegade"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -156,8 +157,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Disclosure" width="9" height="15"/>
         <image name="Item Checkbox Empty" width="30" height="30"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

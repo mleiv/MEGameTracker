@@ -19,24 +19,35 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zaJ-hn-zPM">
                         <rect key="frame" x="15" y="10" width="293" height="24"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Link" translatesAutoresizingMaskIntoConstraints="NO" id="v3s-iA-MwU" userLabel="Alert Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="58" height="24"/>
-                                <color key="tintColor" name="paragon"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqV-KI-Htn" userLabel="Icon">
+                                <rect key="frame" x="0.0" y="0.0" width="69" height="24"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Link" translatesAutoresizingMaskIntoConstraints="NO" id="v3s-iA-MwU" userLabel="Alert Image View">
+                                        <rect key="frame" x="0.0" y="-3" width="69" height="24"/>
+                                        <color key="tintColor" name="paragon"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="v3s-iA-MwU" secondAttribute="trailing" id="UOz-B1-mCx"/>
+                                    <constraint firstItem="v3s-iA-MwU" firstAttribute="top" secondItem="vqV-KI-Htn" secondAttribute="top" constant="-3" id="gPy-Fm-SGO"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="v3s-iA-MwU" secondAttribute="bottom" constant="3" id="mJv-WY-7lu"/>
+                                    <constraint firstItem="v3s-iA-MwU" firstAttribute="leading" secondItem="vqV-KI-Htn" secondAttribute="leading" id="rh4-0S-SBY"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" text="Example.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4O-mS-9MW">
-                                <rect key="frame" x="63" y="0.0" width="97" height="24"/>
+                                <rect key="frame" x="74" y="0.0" width="97" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                 <color key="textColor" name="paragon"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" verticalHuggingPriority="300" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="800" text="http://www.example.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctP-oV-FYo">
-                                <rect key="frame" x="165" y="0.0" width="114" height="24"/>
+                                <rect key="frame" x="176" y="0.0" width="103" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" name="paragon"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="jqS-CO-12U">
-                                <rect key="frame" x="284" y="0.0" width="9" height="24"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jqS-CO-12U">
+                                <rect key="frame" x="284" y="2" width="9" height="20.5"/>
                                 <color key="tintColor" name="paragon"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="950" constant="15" id="qu9-hD-R7s"/>
@@ -63,8 +74,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Disclosure" width="9" height="15"/>
         <image name="Link" width="29" height="18"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

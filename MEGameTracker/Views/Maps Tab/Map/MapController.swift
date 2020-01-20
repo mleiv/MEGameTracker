@@ -298,7 +298,7 @@ extension MapController {
 		let isToggleDetailsClosed = map?.image != nil
 
 		if isCalloutsButtonVisible {
-            parent?.parent?.navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "renegade") ?? UIColor.systemRed
+            parent?.parent?.navigationItem.rightBarButtonItem?.tintColor = MEGameTrackerColor.renegade
 			parent?.parent?.navigationItem.rightBarButtonItem?.isEnabled = true
 		} else {
 			parent?.parent?.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
@@ -675,28 +675,28 @@ extension MapController {
 extension MapController {
 
 	func toggleCheckbox() {
-		let isExplored = !(self.map?.isExplored ?? false)
+        guard let map = self.map else { return }
+		let isExplored = !map.isExplored
 		let spinnerController = self as Spinnerable?
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.view)
-			self.setCheckboxImage(isExplored: isExplored, isAvailable: self.map?.isAvailable ?? false)
+            // make UI changes now
+			self.setCheckboxImage(isExplored: isExplored, isAvailable: map.isAvailable)
 			self.changeQueue.sync {
-				_ = self.map?.changed(isExplored: isExplored, isSave: true)
+                // save changes to DB
+                self.map = map.changed(isExplored: isExplored, isSave: true)
 				spinnerController?.stopSpinner(inView: self.view)
 			}
 		}
 	}
 
 	func setCheckboxImage(isExplored: Bool, isAvailable: Bool) {
-		if !isAvailable {
-			checkboxImageView?.image = isExplored
-				? MapCheckbox.disabledFilled.getImage()
-				: MapCheckbox.disabledEmpty.getImage()
-		} else {
-			checkboxImageView?.image = isExplored
-				? MapCheckbox.filled.getImage()
-				: MapCheckbox.empty.getImage()
-		}
+        checkboxImageView?.image = isExplored ? MapCheckbox.filled.getImage() : MapCheckbox.empty.getImage()
+        if !isAvailable {
+            checkboxImageView?.tintColor = MEGameTrackerColor.disabled
+        } else {
+            checkboxImageView?.tintColor = MEGameTrackerColor.renegade
+        }
 	}
 }
 

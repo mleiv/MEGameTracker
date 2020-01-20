@@ -27,8 +27,9 @@
                             <color key="textColor" name="renegade"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="300" verticalHuggingPriority="200" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-gd-qd1">
-                            <rect key="frame" x="464" y="0.0" width="9" height="45"/>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="300" verticalHuggingPriority="200" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-gd-qd1">
+                            <rect key="frame" x="464" y="2" width="9" height="41.5"/>
+                            <color key="tintColor" name="renegade"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="9" id="Hqm-mB-a5Y"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="950" constant="15" id="R7q-Kx-MCS"/>
@@ -78,7 +79,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Disclosure" width="9" height="15"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <namedColor name="renegade">
             <color red="0.75" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

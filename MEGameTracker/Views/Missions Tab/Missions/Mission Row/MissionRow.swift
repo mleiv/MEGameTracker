@@ -107,6 +107,7 @@ final class MissionRow: UITableViewCell {
 					locationLabel?.isHidden = false
 				}
 			}
+            disclosureImageView?.tintColor = MEGameTrackerColor.renegade
 		} else {
 			if !isCalloutBoxRow,
 				let text = mission?.unavailabilityMessages.joined(separator: ", "),
@@ -114,6 +115,7 @@ final class MissionRow: UITableViewCell {
 				availabilityLabel?.text = text
 				availabilityLabel?.isHidden = false
 			}
+            disclosureImageView?.tintColor = MEGameTrackerColor.disabled
 		}
 		setCheckboxImage(isCompleted: mission?.isCompleted ?? false, isAvailable: mission?.isAvailable ?? false)
 
@@ -138,26 +140,26 @@ final class MissionRow: UITableViewCell {
 // MARK: Supporting Functions
 	private func setCheckboxImage(isCompleted: Bool, isAvailable: Bool) {
 		// TODO: make into protocol
+        checkboxImageView?.image = isCompleted ? Checkbox.filled.getImage() : Checkbox.empty.getImage()
 		if !isAvailable {
-			checkboxImageView?.image = isCompleted ? Checkbox.disabledFilled.getImage() : Checkbox.disabledEmpty.getImage()
+            checkboxImageView?.tintColor = MEGameTrackerColor.disabled
 		} else {
-			checkboxImageView?.image = isCompleted ? Checkbox.filled.getImage() : Checkbox.empty.getImage()
+            checkboxImageView?.tintColor = MEGameTrackerColor.renegade
 		}
 	}
 
 	private func toggleMission() {
-//		guard let nameLabel = self.nameLabel else { return }
-		let isCompleted = !(self.mission?.isCompleted ?? false)
+		guard let mission = self.mission else { return }
+		let isCompleted = !mission.isCompleted
 		let spinnerController = origin as? Spinnerable
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.origin?.view)
-//			self.setCheckboxImage(isCompleted: isCompleted, isAvailable: self.mission?.isAvailable ?? false)
-//            let attrString = NSAttributedString(string: self.mission?.name ?? "", attributes: isCompleted ? [.strikethroughStyle: NSUnderlineStyle.single, .foregroundColor: UIColor.white] : [:])
-//            nameLabel.attributedText = attrString
-//			nameLabel.attributedText = Styles.current.applyStyle(nameLabel.identifier
-//				?? "", toString: self.mission?.name ?? "").toggleStrikethrough(isCompleted)
+            // make UI changes now
+            self.nameLabel?.attributedText = self.nameLabel?.attributedText?.toggleStrikethrough(isCompleted)
+            self.setCheckboxImage(isCompleted: isCompleted, isAvailable: mission.isAvailable)
             self.changeQueue.sync {
-                _ = self.mission?.changed(isCompleted: isCompleted, isSave: true)
+                // save changes to DB
+                self.mission = mission.changed(isCompleted: isCompleted, isSave: true)
                 DispatchQueue.main.async {
                     spinnerController?.stopSpinner(inView: self.origin?.view)
                 }

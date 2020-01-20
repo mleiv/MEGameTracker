@@ -107,12 +107,14 @@ final public class MapRow: UITableViewCell {
 				descriptionLabel?.text = " - " + annotationNote // faux margin left
 				descriptionLabel?.isHidden = false
 			}
+            disclosureImageView?.tintColor = MEGameTrackerColor.renegade
 		} else {
 			if !isCalloutBoxRow,
 				let text = map?.unavailabilityMessages.joined(separator: ", "), !text.isEmpty {
 				availabilityLabel?.text = text
 				availabilityLabel?.isHidden = false
 			}
+            disclosureImageView?.tintColor = MEGameTrackerColor.disabled
 		}
 
         let hideCheckbox = !(map?.isExplorable ?? true)
@@ -139,22 +141,26 @@ final public class MapRow: UITableViewCell {
 
 // MARK: Supporting Functions
 	private func setCheckboxImage(isExplored: Bool, isAvailable: Bool) {
+        checkboxImageView?.image = isExplored ? Checkbox.filled.getImage() : Checkbox.empty.getImage()
 		if !isAvailable {
-			checkboxImageView?.image = isExplored ? Checkbox.disabledFilled.getImage() : Checkbox.disabledEmpty.getImage()
+            checkboxImageView?.tintColor = MEGameTrackerColor.disabled
 		} else {
-			checkboxImageView?.image = isExplored ? Checkbox.filled.getImage() : Checkbox.empty.getImage()
+            checkboxImageView?.tintColor = MEGameTrackerColor.renegade
 		}
 	}
 
 	private func toggleMap() {
-		guard map?.isExplorable == true else { return }
-		let isExplored = !(self.map?.isExplored ?? false)
+		guard let map = map, map.isExplorable == true else { return }
+		let isExplored = !map.isExplored
 		let spinnerController = origin as? Spinnerable
 		DispatchQueue.main.async {
 			spinnerController?.startSpinner(inView: self.origin?.view)
-			self.setCheckboxImage(isExplored: isExplored, isAvailable: self.map?.isAvailable ?? false)
+            // make UI changes now
+            self.nameLabel?.attributedText = self.nameLabel?.attributedText?.toggleStrikethrough(isExplored)
+			self.setCheckboxImage(isExplored: isExplored, isAvailable: map.isAvailable)
             self.changeQueue.sync {
-                _ = self.map?.changed(isExplored: isExplored, isSave: true)
+                // save changes to DB
+                self.map = map.changed(isExplored: isExplored, isSave: true)
                 DispatchQueue.main.async {
                     spinnerController?.stopSpinner(inView: self.origin?.view)
                 }

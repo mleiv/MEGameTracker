@@ -67,13 +67,15 @@ final class PersonRow: UITableViewCell {
 
 		statusLabel?.isHidden = true // TODO
 
-		if person?.isAvailable != true {
-			availabilityLabel?.text = person?.getUnavailabilityMessages().joined(separator: ", ")
-			availabilityLabel?.isHidden = availabilityLabel?.text?.isEmpty ?? true
-			statusLabel?.isHidden = true
+		if person?.isAvailable ?? false {
+            // statusLabel?.text = person?.status
+            availabilityLabel?.isHidden = true
+            disclosureImageView?.tintColor = MEGameTrackerColor.renegade
 		} else {
-//			statusLabel?.text = person?.status
-			availabilityLabel?.isHidden = true
+            availabilityLabel?.text = person?.getUnavailabilityMessages().joined(separator: ", ")
+            availabilityLabel?.isHidden = availabilityLabel?.text?.isEmpty ?? true
+            statusLabel?.isHidden = true
+            disclosureImageView?.tintColor = MEGameTrackerColor.disabled
 		}
 		titleLabel?.text = person?.title
 		heartButton?.isParamour = person?.isParamour ?? true

@@ -187,8 +187,8 @@ extension Markupable where Self: TextRendering {
 				in: Bundle.currentAppBundle,
 				compatibleWith: nil
 			) {
-			let linkImage = LineCenteredTextImage()
-			linkImage.image = image
+            let linkImage = NSTextAttachment()
+            linkImage.image = image
 			let attributedLinkImage = NSAttributedString(attachment: linkImage)
 			attributedText.replaceCharacters(in: NSMakeRange(0, 0), with: attributedLinkImage)
 		}

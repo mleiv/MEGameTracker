@@ -52,8 +52,9 @@
                                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="A11-qa-5kw">
                                                                     <rect key="frame" x="352" y="0.0" width="15" height="15"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disclosure (Disabled)" translatesAutoresizingMaskIntoConstraints="NO" id="c8R-hh-AB4">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="c8R-hh-AB4">
+                                                                            <rect key="frame" x="2.5" y="2" width="12.5" height="11.5"/>
+                                                                            <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </imageView>
                                                                     </subviews>
                                                                     <constraints>
@@ -151,7 +152,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Disclosure (Disabled)" width="9" height="15"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <namedColor name="secondaryBackground">
             <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
