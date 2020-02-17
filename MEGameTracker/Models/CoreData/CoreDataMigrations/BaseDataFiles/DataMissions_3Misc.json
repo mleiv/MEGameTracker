@@ -2544,12 +2544,47 @@
         "missionType": "Objective",
         "name": "Throw Party",
         "description": "Invite your friends up for the party. You can have a rowdy party, or a more reserved one. \n\nIf you do not (or cannot) invite all of the guests, some of the conversations may not be available and the remaining guests will be reassigned to other conversations.",
+        "objectivesCountToCompletion": 8,
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "Triggers",
             "id": "Completed: Citadel DLC Party"
         }]
+            
+   }, {
+       "id": "DLC3.Citadel2.15.1",
+       "inMissionId": "DLC3.Citadel2.15",
+       "sortIndex": 150311,
+       "gameVersion": "3",
+       "missionType": "Objective",
+       "name": "Tone of the Party 1",
+       "description": "You can select the tone for the first round of the party. The choice here doesn't affect the conversations available.",
+       "objectivesCountToCompletion": 1,
+       "inMapId": "G.C3.Apartment",
+       "mapLocationPoint": {
+           "x": 881,
+           "y": 1750,
+           "radius": 20
+       },
+       "events": [{
+           "type": "Triggers",
+           "id": "Completed: Citadel DLC Party - Round 1 Theme"
+       }]
+    }, {
+        "id": "DLC3.Citadel2.15.1.1",
+        "inMissionId": "DLC3.Citadel2.15.1",
+        "sortIndex": 150311,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Quiet"
+    }, {
+        "id": "DLC3.Citadel2.15.1.2",
+        "inMissionId": "DLC3.Citadel2.15.1",
+        "sortIndex": 150311,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Energetic"
     }, {
         "id": "DLC3.Citadel2.15.2",
         "inMissionId": "DLC3.Citadel2.15",
@@ -2557,13 +2592,11 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Hang Out With Guests 1",
-        "description": "Select the tone for the first stage of the party - quiet or energetic. \n\nWalk around to the various groups and talk to them. You can interact multiple times for additional dialogue, and if you leave an come back it often spawns new spontaneous dialogue. Some interactions will include you into the group and at that point you may be able to talk to individuals. Remember to visit both floors. If you are trying to hook up with James, talk to him.",
-        "inMapId": "G.C3.Apartment",
-        "mapLocationPoint": {
-            "x": 881,
-            "y": 1750,
-            "radius": 20
-        }
+        "description": "Walk around to the various groups and talk to them. You can interact multiple times for additional dialogue, and if you leave an come back it often spawns new spontaneous dialogue. Some interactions will include you into the group and at that point you may be able to talk to individuals. Remember to visit both floors. If you are trying to hook up with James, talk to him.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Round 1 Theme"
+        }]
     }, {
         "id": "DLC3.Citadel2.15.2.1",
         "inMissionId": "DLC3.Citadel2.15.2",
@@ -2572,6 +2605,7 @@
         "missionType": "Objective",
         "titlePrefix": "Round 1: ",
         "name": "Grunt, Wrex, Zaeed, and Javik",
+        "description": "...",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 923,
@@ -2586,6 +2620,7 @@
         "missionType": "Objective",
         "titlePrefix": "Round 1: ",
         "name": "Garrus, Traynor, Samara, Tali, Liara",
+        "description": "...",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 902,
@@ -2600,6 +2635,7 @@
         "missionType": "Objective",
         "titlePrefix": "Round 1: ",
         "name": "EDI, Joker, Miranda, Jacob",
+        "description": "Joker is mocking Cerberus' incompetance.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 667,
@@ -2621,14 +2657,16 @@
             "y": 1882,
             "radius": 20
         }
+        
     }, {
-        "id": "DLC3.Citadel2.15.6",
+        "id": "DLC3.Citadel2.15.5",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150316,
+        "sortIndex": 150315,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Hang Out With Guests 2",
-        "description": "Select the tone for the second stage of the party. \n\nWalk around to the various groups and talk to them. Remember to visit both floors. The groups have split up, but the same rules apply for interaction. Additionally, you have some conflicts to mediate.",
+        "name": "Tone of the Party 2",
+        "description": "You can select the tone for the second round of the party. The choice here changes the conversations available.",
+        "objectivesCountToCompletion": 1,
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 881,
@@ -2636,19 +2674,46 @@
             "radius": 20
         }
     }, {
-        "id": "DLC3.Citadel2.15.6.Quiet",
-        "inMissionId": "DLC3.Citadel2.15.6",
+        "id": "DLC3.Citadel2.15.5.1",
+        "inMissionId": "DLC3.Citadel2.15.5",
+        "sortIndex": 150315,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Mellow out/Keep it relaxed",
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Citadel DLC Party - Round 2 Theme Quiet"
+        }]
+    }, {
+        "id": "DLC3.Citadel2.15.5.2",
+        "inMissionId": "DLC3.Citadel2.15.5",
+        "sortIndex": 150315,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Let's get louder/Kick it up!",
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Citadel DLC Party - Round 2 Theme Energetic"
+        }]
+    }, {
+        "id": "DLC3.Citadel2.15.6.Q",
+        "inMissionId": "DLC3.Citadel2.15",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Mellow out/Keep it relaxed"
+        "name": "Hang Out With Guests 2 (Mellow)",
+        "description": "Walk around to the various groups and talk to them. Remember to visit both floors. The groups have split up, but the same rules apply for interaction. Additionally, you have some conflicts to mediate.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Round 2 Theme Quiet"
+        }]
     }, {
         "id": "DLC3.Citadel2.15.6.Q.1",
-        "inMissionId": "DLC3.Citadel2.15.6.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.6.Q",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2Q: ",
+        "titlePrefix": "Round 2: ",
         "name": "Grunt and Wrex",
         "description": "There is an exchange between Wrex, Grunt, and Shepard where they just keep repeating each others' names indefinitely.",
         "inMapId": "G.C3.Apartment",
@@ -2659,11 +2724,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.6.Q.2",
-        "inMissionId": "DLC3.Citadel2.15.6.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.6.Q",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2Q: ",
+        "titlePrefix": "Round 2: ",
         "name": "Javik, Jack, Cortez, and EDI",
         "description": "EDI and Cortez are arguing about whether to make some food. You can *Support Mixing Drinks* or *Support Making Food*.",
         "inMapId": "G.C3.Apartment",
@@ -2674,11 +2739,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.6.Q.3",
-        "inMissionId": "DLC3.Citadel2.15.6.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.6.Q",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2Q: ",
+        "titlePrefix": "Round 2: ",
         "name": "Tali, Jacob, Vega, Miranda, and Liara",
         "description": "Liara and James are arguing about which is better: the Normandy SR1 or SR2. You can *Support Normandy SR1*, or *Support Normandy SR2*.",
         "inMapId": "G.C3.Apartment",
@@ -2689,11 +2754,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.6.Q.4",
-        "inMissionId": "DLC3.Citadel2.15.6.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.6.Q",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2Q: ",
+        "titlePrefix": "Round 2: ",
         "name": "Garrus and Zaeed",
         "description": "Garrus and Zaeed are discussing tactical improvements to the apartment.",
         "inMapId": "G.C3.Apartment",
@@ -2704,11 +2769,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.6.Q.5",
-        "inMissionId": "DLC3.Citadel2.15.6.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.6.Q",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2Q: ",
+        "titlePrefix": "Round 2: ",
         "name": "Traynor, Joker, and Ashley/Kaidan",
         "description": "Traynor and Joker are talking about EDI.",
         "inMapId": "G.C3.Apartment",
@@ -2719,11 +2784,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.6.Q.6",
-        "inMissionId": "DLC3.Citadel2.15.6.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.6.Q",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2Q: ",
+        "titlePrefix": "Round 2: ",
         "name": "Samara",
         "description": "Samara is meditating.",
         "inMapId": "G.C3.Apartment",
@@ -2734,12 +2799,13 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.6.Q.7",
-        "inMissionId": "DLC3.Citadel2.15.6.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.6.Q",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2Q: ",
+        "titlePrefix": "Round 2: ",
         "name": "Kasumi",
+        "isOpensDetail": false,
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 1200,
@@ -2747,19 +2813,24 @@
             "radius": 20
         }
     }, {
-        "id": "DLC3.Citadel2.15.6.Energetic",
-        "inMissionId": "DLC3.Citadel2.15.6",
+        "id": "DLC3.Citadel2.15.6.E",
+        "inMissionId": "DLC3.Citadel2.15",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Let's get louder/Kick it up!"
+        "name": "Hang Out With Guests 2 (Loud)",
+        "description": "Walk around to the various groups and talk to them. Remember to visit both floors. The groups have split up, but the same rules apply for interaction. Additionally, you have some conflicts to mediate.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Round 2 Theme Energetic"
+        }]
     }, {
         "id": "DLC3.Citadel2.15.6.E.1",
-        "inMissionId": "DLC3.Citadel2.15.6.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.6.E",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2E: ",
+        "titlePrefix": "Round 2: ",
         "name": "Traynor, EDI, and Tali",
         "description": "EDI has engaged Traynor in an awkward conversation about Traynor's crush on her. Tali poisons herself on cheese.",
         "inMapId": "G.C3.Apartment",
@@ -2770,11 +2841,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.6.E.2",
-        "inMissionId": "DLC3.Citadel2.15.6.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.6.E",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2E: ",
+        "titlePrefix": "Round 2: ",
         "name": "Liara, Jacob, Vega, and Kaidan/Ashley",
         "description": "Liara and James are arguing upstairs about which is more powerful: physical or biotic powers. You can *Support Biotics*, or *Support Physical*. Kasumi makes an appearance.",
         "inMapId": "G.C3.Apartment",
@@ -2785,11 +2856,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.6.E.3",
-        "inMissionId": "DLC3.Citadel2.15.6.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.6.E",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2E: ",
+        "titlePrefix": "Round 2: ",
         "name": "Samara and Zaeed",
         "description": "Samara and Zaeed are appreciating the art.",
         "inMapId": "G.C3.Apartment",
@@ -2800,11 +2871,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.6.E.4",
-        "inMissionId": "DLC3.Citadel2.15.6.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.6.E",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2E: ",
+        "titlePrefix": "Round 2: ",
         "name": "Miranda and Jack",
         "inMapId": "G.C3.Apartment",
         "description": "Miranda and Jack are arguing at the private bar. You can *Support Friendship* or *Support Conflict*. Kasumi makes an appearance.",
@@ -2815,11 +2886,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.6.E.5",
-        "inMissionId": "DLC3.Citadel2.15.6.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.6.E",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2E: ",
+        "titlePrefix": "Round 2: ",
         "name": "Cortez, Joker, Javik, Garrus, and Wrex",
         "description": "Cortez and Joker are arguing about whether Joker's hobbies are manly enough. You can *Support Cortez* or *Support Joker*.",
         "inMapId": "G.C3.Apartment",
@@ -2830,11 +2901,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.6.E.6",
-        "inMissionId": "DLC3.Citadel2.15.6.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.6.E",
         "sortIndex": 150316,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 2E: ",
+        "titlePrefix": "Round 2: ",
         "name": "Grunt",
         "description": "Grunt is by the door rejecting would-be party-goers. You can *Invite Up* or *Turn Away*.",
         "inMapId": "G.C3.Apartment",
@@ -2843,14 +2914,16 @@
             "y": 1739,
             "radius": 20
         }
+
     }, {
-        "id": "DLC3.Citadel2.15.8",
+        "id": "DLC3.Citadel2.15.7",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150318,
+        "sortIndex": 150317,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Hang Out With Guests 3",
-        "description": "Select the activity for the third stage of the party - for the rowdy party: dancing or more conversation; for the quiet party: make snacks or deal cards. The resulting interactions depend on the prior stage Quiet/Energetic choice, so what you pick is completely irrelevant. \n\nWalk around to the various groups and talk to them. Remember to visit both floors. The groups have split up, but the same rules apply for interaction. Additionally, you have some conflicts to mediate.",
+        "name": "Tone of the Party 3",
+        "description": "You can select the tone for the third round of the party. The choice here does not change the conversations available; however, they are different based on the choice from round two.",
+        "objectivesCountToCompletion": 1,
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 881,
@@ -2859,21 +2932,61 @@
         },
         "sideEffects": [
             "If it's a quiet party at this stage, Tali's fantastic tattoo is revealed: \"It's a pretty bird made of rainbows. It's flying out the eyehole of a skull being held in the mouth of a thresher maw with a naked woman holding a sword on its back.\""
-        ]
+        ],
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Citadel DLC Party - Round 3 Theme"
+        }]
     }, {
-        "id": "DLC3.Citadel2.15.8.Quiet",
-        "inMissionId": "DLC3.Citadel2.15.6",
+        "id": "DLC3.Citadel2.15.7.1",
+        "inMissionId": "DLC3.Citadel2.15.7",
+        "sortIndex": 150317,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Make snacks"
+    }, {
+        "id": "DLC3.Citadel2.15.7.2",
+        "inMissionId": "DLC3.Citadel2.15.7",
+        "sortIndex": 150317,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deal cards"
+    }, {
+        "id": "DLC3.Citadel2.15.7.3",
+        "inMissionId": "DLC3.Citadel2.15.7",
+        "sortIndex": 150317,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Dance"
+    }, {
+        "id": "DLC3.Citadel2.15.7.4",
+        "inMissionId": "DLC3.Citadel2.15.7",
+        "sortIndex": 150317,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Check on guests"
+    }, {
+        "id": "DLC3.Citadel2.15.8.Q",
+        "inMissionId": "DLC3.Citadel2.15",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Make snacks/Deal cards"
+        "name": "Hang Out With Guests 3 (Mellow)",
+        "description": "Walk around to the various groups and talk to them. Remember to visit both floors. The groups have split up, but the same rules apply for interaction. Additionally, you have some conflicts to mediate.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Round 3 Theme"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Round 2 Theme Quiet"
+        }]
     }, {
         "id": "DLC3.Citadel2.15.8.Q.1",
-        "inMissionId": "DLC3.Citadel2.15.8.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.8.Q",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3Q: ",
+        "titlePrefix": "Round 3: ",
         "name": "Liara, Javik, Vega, and Kasumi",
         "description": "James is teaching Liara and Javik how to play cards. Liara is winning.",
         "inMapId": "G.C3.Apartment",
@@ -2884,11 +2997,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.8.Q.2",
-        "inMissionId": "DLC3.Citadel2.15.8.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.8.Q",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3Q: ",
+        "titlePrefix": "Round 3: ",
         "name": "Joker, Cortez, Samara, Wrex, Jacob, Jack, and Miranda",
         "description": "Joker and Cortez are arguing over who is the better pilot.",
         "inMapId": "G.C3.Apartment",
@@ -2899,11 +3012,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.8.Q.3",
-        "inMissionId": "DLC3.Citadel2.15.8.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.8.Q",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3Q: ",
+        "titlePrefix": "Round 3: ",
         "name": "Grunt, EDI, Traynor, and Kaidan/Ashley",
         "description": "EDI is cooking food and arguing about party efficiency.",
         "inMapId": "G.C3.Apartment",
@@ -2914,11 +3027,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.8.Q.3",
-        "inMissionId": "DLC3.Citadel2.15.8.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.8.Q",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3Q: ",
+        "titlePrefix": "Round 3: ",
         "name": "Tali",
         "description": "Tali is passed out in the bathroom, mumbling about her tattoo.",
         "inMapId": "G.C3.Apartment",
@@ -2929,11 +3042,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.8.Q.4",
-        "inMissionId": "DLC3.Citadel2.15.8.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.8.Q",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3Q: ",
+        "titlePrefix": "Round 3: ",
         "name": "Garrus",
         "description": "Garrus is discussing installing booby traps with Zaeed.",
         "inMapId": "G.C3.Apartment",
@@ -2944,11 +3057,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.8.Q.5",
-        "inMissionId": "DLC3.Citadel2.15.8.Quiet",
+        "inMissionId": "DLC3.Citadel2.15.8.Q",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3Q: ",
+        "titlePrefix": "Round 3: ",
         "name": "Zaeed",
         "description": "Zaeed is discussing installing booby traps with Garrus.",
         "inMapId": "G.C3.Apartment",
@@ -2958,19 +3071,27 @@
             "radius": 20
         }
     }, {
-        "id": "DLC3.Citadel2.15.8.Energetic",
-        "inMissionId": "DLC3.Citadel2.15.6",
+        "id": "DLC3.Citadel2.15.8.E",
+        "inMissionId": "DLC3.Citadel2.15",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Dance/Check on guests"
+        "name": "Hang Out With Guests 3 (Loud)",
+        "description": "Walk around to the various groups and talk to them. Remember to visit both floors. The groups have split up, but the same rules apply for interaction. Additionally, you have some conflicts to mediate.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Round 3 Theme"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Round 2 Theme Energetic"
+        }]
     }, {
         "id": "DLC3.Citadel2.15.8.E.1",
-        "inMissionId": "DLC3.Citadel2.15.8.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.8.E",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3E: ",
+        "titlePrefix": "Round 3: ",
         "name": "Traynor, Garrus, Jack, Cortez, Tali, and Samara",
         "description": "They are dancing in the kitchen, and reciting the elements.",
         "inMapId": "G.C3.Apartment",
@@ -2981,11 +3102,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.8.E.2",
-        "inMissionId": "DLC3.Citadel2.15.8.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.8.E",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3E: ",
+        "titlePrefix": "Round 3: ",
         "name": "Miranda, Liara, Jacob, Vega, Ashley/Kaidan",
         "description": "They are drunkenly arguing about biotics. If you sides with Liara in the prior argument, Liara levitates James. Otherwise, James and Jacob have a push up competition (Kasumi makes an appearance). \n\nAfterwards, if you haven't romanced James or Ashley, you can find them canoodling [around the corner|megametracker://maplocation?id=G.C3.Apartment&title=James%20&%20Ashley&location=745X592]. You can *Support Hook Up*, or *Support Cool It*.",
         "inMapId": "G.C3.Apartment",
@@ -2996,11 +3117,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.8.E.3",
-        "inMissionId": "DLC3.Citadel2.15.8.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.8.E",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3E: ",
+        "titlePrefix": "Round 3: ",
         "name": "Javik, Zaeed, and Wrex",
         "description": "They are musing about old times.",
         "inMapId": "G.C3.Apartment",
@@ -3011,11 +3132,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.8.E.4",
-        "inMissionId": "DLC3.Citadel2.15.8.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.8.E",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3E: ",
+        "titlePrefix": "Round 3: ",
         "name": "Joker and EDI",
         "description": "EDI wants Joker to dance with her and he does not want to. You can *Support Sitting* or *Support Dancing* (either way, they end up dancing).",
         "inMapId": "G.C3.Apartment",
@@ -3026,11 +3147,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.8.E.5",
-        "inMissionId": "DLC3.Citadel2.15.8.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.8.E",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3E: ",
+        "titlePrefix": "Round 3: ",
         "name": "Grunt",
         "description": "Grunt is passed out in the shower. He mumbles drunkenly a bunch of hilarious lines.",
         "inMapId": "G.C3.Apartment",
@@ -3041,11 +3162,11 @@
         }
     }, {
         "id": "DLC3.Citadel2.15.8.E.6",
-        "inMissionId": "DLC3.Citadel2.15.8.Energetic",
+        "inMissionId": "DLC3.Citadel2.15.8.E",
         "sortIndex": 150318,
         "gameVersion": "3",
         "missionType": "Objective",
-        "titlePrefix": "Round 3E: ",
+        "titlePrefix": "Round 3: ",
         "name": "Kasumi",
         "description": "Kasumi is rifling through your underwear.",
         "inMapId": "G.C3.Apartment",
@@ -3095,7 +3216,7 @@
         "gameVersion": "3",
         "missionType": "DLC",
         "name": "Citadel Arena",
-        "description": "You will be issued a series of challenges in the Armax Arsenal Arena. Apart from being financially lucrative, you can earn reputation by completing them. \n\n[Arena Maps|megametracker://maps?id=G.C3.Arena]",
+        "description": "You will be issued a series of challenges in the Armax Arsenal Arena. Apart from being financially lucrative, you can earn reputation by completing them. \n\n[Arena Maps|megametracker://map?id=G.C3.Arena]",
         "inMapId": "G.C3.Silversun.Arena",
         "isShowInParentMap": true,
         "conversationRewards": [{

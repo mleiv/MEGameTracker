@@ -144,7 +144,8 @@ open class IBIncludedSubThing: UIView, IBIncludedThingLoadable {
 	fileprivate func topController() -> UIViewController? {
 		if let controller = window?.rootViewController {
 			return controller
-		} else if let controller = UIApplication.shared.keyWindow?.rootViewController {
+		} else if let controller = UIApplication.shared.windows
+            .first(where: { $0.isKeyWindow })?.rootViewController {
 			return controller
 		}
 		return nil

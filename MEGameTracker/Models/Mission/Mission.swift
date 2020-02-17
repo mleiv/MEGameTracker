@@ -171,6 +171,9 @@ public struct Mission: Codable, MapLocationable, Eventsable {
 		let blockingEvents = events.filter({ (e: Event) in return e.isBlockingAfterInGame(App.current.gameVersion) })
 		return blockingEvents.map({ $0.description }).filter({ $0 != nil }).map({ $0! })
 	}
+    public var isAvailableAndParentAvailable: Bool {
+        return isAvailable && parentMission?.isAvailableAndParentAvailable ?? true
+    }
 
 //	public var searchableName: String // optional
 //	public var linkToMapId: String?  // optional

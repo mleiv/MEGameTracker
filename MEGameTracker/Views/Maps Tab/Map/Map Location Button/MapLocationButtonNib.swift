@@ -32,6 +32,7 @@ final public class MapLocationButtonNib: UIView {
 	public var mapLocationPoint: MapLocationPoint?
 	public var sizedMapLocationPoint: MapLocationPoint?
 	public var pinColor = UIColor.clear
+    private let unavailablePinColor = UIColor.systemGray
 //	public var onClick: ((MapLocationButtonNib) -> Void)?
 	public var isShowPin = false {
 		didSet { setVisible() }
@@ -46,8 +47,13 @@ final public class MapLocationButtonNib: UIView {
 
 	public func set(location: MapLocationable, isShowPin: Bool = false) {
 		mapLocationPoint = location.mapLocationPoint
-        title?.text = location.mapLocationType == .map ? location.name : nil // hide clutter
-        pinColor = (location as? Item)?.itemDisplayType?.color ?? MEGameTrackerColor.renegade
+        title?.text = location.mapLocationType == .map ? location.name : nil
+        if let mission = location as? Mission, !mission.isAvailableAndParentAvailable
+            && (pinColor == UIColor.clear || pinColor == unavailablePinColor) {
+            pinColor = unavailablePinColor
+        } else {
+            pinColor = (location as? Item)?.itemDisplayType?.color ?? MEGameTrackerColor.renegade
+        }
 		self.isShowPin = isShowPin
 	}
 

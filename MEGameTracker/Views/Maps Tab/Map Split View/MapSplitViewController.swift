@@ -103,7 +103,10 @@ final public class MapSplitViewController: UIViewController, MESplitViewControll
 	enum SimpleOrientation { case portrait, landscape }
 
 	func currentOrientation() -> SimpleOrientation {
-		let orientation = UIApplication.shared.statusBarOrientation
+        guard let orientation = UIApplication.shared.windows
+            .first(where: { $0.isKeyWindow })?.windowScene?.interfaceOrientation else {
+            return .landscape
+        }
 		if orientation == UIInterfaceOrientation.landscapeLeft || orientation == UIInterfaceOrientation.landscapeRight {
 			return .landscape
 		} else {

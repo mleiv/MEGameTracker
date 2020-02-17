@@ -40,6 +40,7 @@ final class MissionRow: UITableViewCell {
 	private var isCalloutBoxRow: Bool = false
 	private var allowsSegue: Bool = false
 	private var isShowParentMissionIfFound = false
+    private var isMissionAvailable = false
 
 // MARK: Change Listeners And Change Status Flags
 	private var isDefined = false
@@ -76,6 +77,8 @@ final class MissionRow: UITableViewCell {
 // MARK: Populate Data
 	private func setup() -> Bool {
 		guard !UIWindow.isInterfaceBuilder && nameLabel != nil else { return false }
+        
+        isMissionAvailable = mission?.isAvailableAndParentAvailable ?? false
 
 		parentMissionLabel?.isHidden = true
 		var referenceMission = mission
@@ -88,13 +91,13 @@ final class MissionRow: UITableViewCell {
         nameLabel?.text = mission?.name // MarkupLabel relies on this to setup, so use .text first
 		nameLabel?.attributedText = nameLabel?.attributedText?.toggleStrikethrough(mission?.isCompleted ?? false)
 //		nameLabel?.isEnabled = mission?.isAvailable ?? false
-		nameLabel?.alpha = mission?.isAvailable ?? false ? 1.0 : 0.5
+		nameLabel?.alpha = isMissionAvailable ? 1.0 : 0.5
 
 		descriptionLabel?.isHidden = true
 		locationLabel?.isHidden = true
 		availabilityLabel?.isHidden = true
 
-		if mission?.isAvailable == true {
+		if isMissionAvailable {
 			if let annotationNote = mission?.annotationNote,
 				!annotationNote.isEmpty {
 				descriptionLabel?.text = annotationNote
@@ -117,7 +120,7 @@ final class MissionRow: UITableViewCell {
 			}
             disclosureImageView?.tintColor = MEGameTrackerColor.disabled
 		}
-		setCheckboxImage(isCompleted: mission?.isCompleted ?? false, isAvailable: mission?.isAvailable ?? false)
+		setCheckboxImage(isCompleted: mission?.isCompleted ?? false, isAvailable: isMissionAvailable)
 
 		disclosureImageView?.isHidden = !allowsSegue
 		disclosureImageWrapper?.isHidden = disclosureImageView?.isHidden ?? true
@@ -156,7 +159,7 @@ final class MissionRow: UITableViewCell {
 			spinnerController?.startSpinner(inView: self.origin?.view)
             // make UI changes now
             self.nameLabel?.attributedText = self.nameLabel?.attributedText?.toggleStrikethrough(isCompleted)
-            self.setCheckboxImage(isCompleted: isCompleted, isAvailable: mission.isAvailable)
+            self.setCheckboxImage(isCompleted: isCompleted, isAvailable: self.isMissionAvailable)
             self.changeQueue.sync {
                 // save changes to DB
                 self.mission = mission.changed(isCompleted: isCompleted, isSave: true)

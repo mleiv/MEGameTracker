@@ -18,7 +18,7 @@ extension UIAlertController {
 	/// alertController.presentFromAppropriateController(animated: true) {}
 	/// ````
 	public func presentFromAppropriateController(animated: Bool, completion: (() -> Void)?) {
-		if let root = UIApplication.shared.keyWindow?.rootViewController {
+		if let root = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController  {
 			present(from: root, animated: animated, completion: completion)
 		}
 	}

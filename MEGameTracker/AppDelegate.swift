@@ -179,7 +179,7 @@ extension AppDelegate {
 
 		// Show spinner to player
 		let spinner = Spinner(title: "Initializing Data", isShowProgress: true)
-		if let root = UIApplication.shared.keyWindow?.rootViewController {
+		if let root = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController  {
 			// USE TOP WINDOW AND MAIN THREAD - BLOCK ALL OTHER ACTIONS UNTIL WE ARE DONE!
 			spinner.show(from: root.view, animated: true) {}
 		}

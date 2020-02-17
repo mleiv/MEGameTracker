@@ -128,6 +128,8 @@ final public class MissionController: UIViewController,
 	// SideEffectsable
 	@IBOutlet weak var sideEffectsView: SideEffectsView?
 	public var sideEffects: [String]? = []
+    
+    public var isMissionAvailable = false
 
 	@IBAction func onClickCheckbox(_ sender: UIButton) {
 		toggleCheckbox()
@@ -162,6 +164,8 @@ final public class MissionController: UIViewController,
 
 		if UIWindow.isInterfaceBuilder { fetchDummyData() }
 
+        isMissionAvailable = mission?.isAvailableAndParentAvailable ?? false
+        
 		nameLabel?.text = mission?.name ?? ""
 
 		if let type = mission?.missionType {
@@ -177,7 +181,7 @@ final public class MissionController: UIViewController,
 		setupAvailability()
 		setupUnavailability()
 
-		setCheckboxImage(isCompleted: mission?.isCompleted ?? false, isAvailable: mission?.isAvailable ?? false)
+		setCheckboxImage(isCompleted: mission?.isCompleted ?? false, isAvailable: isMissionAvailable)
 
 		setupConversationRewards()
 
@@ -252,7 +256,7 @@ extension MissionController {
 			spinnerController?.startSpinner(inView: self.view)
             // make UI changes now
             self.nameLabel?.attributedText = self.nameLabel?.attributedText?.toggleStrikethrough(isCompleted)
-			self.setCheckboxImage(isCompleted: isCompleted, isAvailable: mission.isAvailable)
+            self.setCheckboxImage(isCompleted: isCompleted, isAvailable: self.isMissionAvailable)
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(1)) {
                 // save changes to DB
                 self.mission = mission.changed(isCompleted: isCompleted, isSave: true)
@@ -297,7 +301,7 @@ extension MissionController: Unavailable {
 	//public var unavailabilityMessage: String? // already declared
 
 	func setupUnavailability() {
-		unavailabilityMessage = mission?.isAvailable == true
+        unavailabilityMessage = mission?.isAvailable == true
 			? mission?.unavailabilityAfterMessages.joined(separator: ", ")
 			: nil
 		unavailabilityRowType.setupView()
