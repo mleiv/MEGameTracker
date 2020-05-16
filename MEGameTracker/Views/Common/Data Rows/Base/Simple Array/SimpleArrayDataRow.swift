@@ -9,7 +9,9 @@ import UIKit
 
 /// The egneric protocol versions of this just made things more complicated.
 @IBDesignable open class SimpleArrayDataRow: UIView {
-
+    
+    @IBInspectable public var rowBackgroundColor: UIColor? = .clear
+    
 	// customize (required):
 
 	internal var heading: String? { return nil }

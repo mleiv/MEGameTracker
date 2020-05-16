@@ -45,7 +45,6 @@ final class SideEffectRow: UITableViewCell {
 // MARK: Populate Data
 	private func setup() {
 		guard textView != nil else { return }
-		backgroundColor = UIColor.clear
 		textView?.text = sideEffect
 		textView?.linkOriginController = parent?.viewController
         textView?.textContainerInset = UIEdgeInsets.zero

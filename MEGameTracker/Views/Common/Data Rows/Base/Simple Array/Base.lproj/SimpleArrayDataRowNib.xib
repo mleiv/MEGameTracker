@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,6 +26,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <color key="backgroundColor" name="secondaryBackground"/>
                             <constraints>
                                 <constraint firstItem="6Vc-kv-pdI" firstAttribute="top" secondItem="hsH-G6-rur" secondAttribute="top" priority="990" constant="10" id="Lco-wi-L5u"/>
                                 <constraint firstAttribute="bottom" secondItem="6Vc-kv-pdI" secondAttribute="bottom" priority="900" constant="10" id="NPH-ZS-LXq"/>
@@ -38,7 +39,7 @@
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oej-3m-sWp" customClass="LayoutNotifyingTableView" customModule="MEGameTracker" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="500" height="35.5"/>
-                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="separatorColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOs-A0-Y6E" userLabel="Border" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
@@ -54,7 +55,6 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="UOs-A0-Y6E" firstAttribute="top" secondItem="Qrk-cA-m9F" secondAttribute="top" id="2GF-z5-nE9"/>
                                 <constraint firstItem="Oej-3m-sWp" firstAttribute="top" secondItem="Qrk-cA-m9F" secondAttribute="top" id="59z-at-sYK"/>
@@ -68,7 +68,6 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" name="secondaryBackground"/>
             <constraints>
                 <constraint firstItem="rhp-Kp-mC3" firstAttribute="top" secondItem="Z3Q-sP-nnP" secondAttribute="top" id="FFB-Sw-V0t"/>
                 <constraint firstItem="rhp-Kp-mC3" firstAttribute="leading" secondItem="Z3Q-sP-nnP" secondAttribute="leading" id="bFb-Bm-928"/>

@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable open class CalloutsNib: SimpleArrayDataRowNib {
 
-	override open class func loadNib(heading: String? = nil, cellNibs: [String] = []) -> CalloutsNib? {
+    override open class func loadNib(heading: String? = nil, cellNibs: [String] = []) -> CalloutsNib? {
 		let bundle = Bundle(for: CalloutsNib.self)
 		if let view = bundle.loadNibNamed("CalloutsNib", owner: self, options: nil)?.first as? CalloutsNib {
 			let bundle =  Bundle(for: CalloutsNib.self)

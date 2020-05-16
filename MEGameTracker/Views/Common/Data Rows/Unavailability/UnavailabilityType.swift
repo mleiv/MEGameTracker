@@ -44,7 +44,7 @@ public struct UnavailabilityRowType: TextDataRowType {
 			didSetup = true
             view.backgroundColor = UIColor(named: "availabilityBackground")
             view.textView?.tintColor = UIColor(named: "availabilityLink")!
-            view.textView?.textRenderingFont = UIFont.preferredFont(forTextStyle: .caption1)
+            view.textView?.textRenderingFont = UIFont.preferredFont(forTextStyle: .callout)
             view.textView?.textRenderingTextColor = UIColor(named: "availabilityLabel")!
             view.textView?.markup()
 			view.textView?.textAlignment = .center

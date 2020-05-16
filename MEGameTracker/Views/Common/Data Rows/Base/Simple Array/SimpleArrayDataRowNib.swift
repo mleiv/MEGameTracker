@@ -14,7 +14,7 @@ import UIKit
 	@IBOutlet weak var headingLabel: UILabel?
 	@IBOutlet open weak var tableView: LayoutNotifyingTableView?
 
-	open class func loadNib(heading: String? = nil, cellNibs: [String] = []) -> SimpleArrayDataRowNib? {
+    open class func loadNib(heading: String? = nil, cellNibs: [String] = []) -> SimpleArrayDataRowNib? {
 		let bundle = Bundle(for: SimpleArrayDataRowNib.self)
 		if let view = bundle.loadNibNamed("SimpleArrayDataRowNib",
 				owner: self,

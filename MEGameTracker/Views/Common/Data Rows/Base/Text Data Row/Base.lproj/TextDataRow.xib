@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,10 +14,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXM-Hl-IR7">
-                    <rect key="frame" x="15" y="8" width="606" height="34"/>
+                    <rect key="frame" x="10" y="4" width="616" height="42"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Some Text" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kH7-ed-Wwe" userLabel="Description" customClass="MarkupTextView" customModule="MEGameTracker" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="606" height="34"/>
+                            <rect key="frame" x="0.0" y="0.0" width="616" height="42"/>
                             <color key="tintColor" name="paragon"/>
                             <constraints>
                                 <constraint firstAttribute="height" priority="100" id="dcq-VG-Bbd"/>
@@ -36,10 +36,10 @@
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="wXM-Hl-IR7" firstAttribute="leading" secondItem="XvL-H7-IyT" secondAttribute="leading" constant="15" id="2n6-LD-V11"/>
-                <constraint firstAttribute="bottom" secondItem="wXM-Hl-IR7" secondAttribute="bottom" constant="8" id="9h0-Ww-Cu8"/>
-                <constraint firstItem="wXM-Hl-IR7" firstAttribute="top" secondItem="XvL-H7-IyT" secondAttribute="top" constant="8" id="VUZ-cf-EOd"/>
-                <constraint firstAttribute="trailing" secondItem="wXM-Hl-IR7" secondAttribute="trailing" constant="15" id="W5G-RN-l22"/>
+                <constraint firstItem="wXM-Hl-IR7" firstAttribute="leading" secondItem="XvL-H7-IyT" secondAttribute="leading" constant="10" id="2n6-LD-V11"/>
+                <constraint firstAttribute="bottom" secondItem="wXM-Hl-IR7" secondAttribute="bottom" constant="4" id="9h0-Ww-Cu8"/>
+                <constraint firstItem="wXM-Hl-IR7" firstAttribute="top" secondItem="XvL-H7-IyT" secondAttribute="top" constant="4" id="VUZ-cf-EOd"/>
+                <constraint firstAttribute="trailing" secondItem="wXM-Hl-IR7" secondAttribute="trailing" constant="10" id="W5G-RN-l22"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

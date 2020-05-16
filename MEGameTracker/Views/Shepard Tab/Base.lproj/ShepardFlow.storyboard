@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="61v-q9-1lF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="61v-q9-1lF">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Shepard" id="FDN-ke-hZE">
                         <barButtonItem key="rightBarButtonItem" image="Wheel" id="zpT-Ln-iOZ">
-                            <color key="tintColor" name="paragon"/>
+                            <color key="tintColor" name="renegade"/>
                             <connections>
                                 <segue destination="qFk-c8-sJk" kind="presentation" identifier="Open Settings" id="UIR-h3-ZvJ"/>
                             </connections>
@@ -55,7 +55,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gsg-c2-j28"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="HBm-FL-4cA" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="580"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="ShepardAppearance"/>
@@ -87,7 +87,7 @@
                         <viewControllerLayoutGuide type="bottom" id="oKV-bz-oc7"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="noX-gZ-vQv" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="Settings"/>
@@ -122,7 +122,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VRx-58-Opr"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="WBZ-XD-NxP" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="356"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="ShepardReputation"/>
@@ -149,7 +149,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wbh-Rt-AXQ"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="wOr-g9-bVP" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="356"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="ShepardOrigin"/>
@@ -175,7 +175,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Dtp-Bu-56W"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="ZtR-hG-oxI" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="356"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="ShepardClass"/>
@@ -227,7 +227,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8Yo-ei-4cX"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="R1e-oj-qSF" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="356"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="ShepardLoveInterest"/>
@@ -358,7 +358,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PJp-QD-Hcb"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="4yK-Xd-Nyr" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="356"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="ShepardDecisions"/>
@@ -397,6 +397,14 @@
             <point key="canvasLocation" x="5610" y="3389"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="CsC-Pb-net"/>
+        <segue reference="Kew-WR-F5z"/>
+        <segue reference="tFJ-ET-gIM"/>
+        <segue reference="Cv8-Zc-9Se"/>
+        <segue reference="4JU-Dn-Ioq"/>
+        <segue reference="NKR-JN-hfm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Wheel" width="33" height="26"/>
         <namedColor name="headerBackground">
@@ -408,13 +416,8 @@
         <namedColor name="paragon">
             <color red="0.10000000149011612" green="0.10000000149011612" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="renegade">
+            <color red="0.75" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="VSc-UZ-NRU"/>
-        <segue reference="aAo-cP-QRb"/>
-        <segue reference="dbI-MM-qJL"/>
-        <segue reference="avL-se-GSr"/>
-        <segue reference="Xkc-lc-pnK"/>
-        <segue reference="yay-Ee-95m"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@
 		B0077AAA1BA774860054205D /* LinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0077AA91BA774860054205D /* LinkHandler.swift */; };
 		B00D07001C003ED60055044D /* NothingRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00D06FE1C003ED60055044D /* NothingRow.xib */; };
 		B00D07021C003F480055044D /* NothingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00D07011C003F480055044D /* NothingRow.swift */; };
+		B0194F3D246F5FBE007CA4DC /* MEGameTrackerColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0194F3C246F5FBE007CA4DC /* MEGameTrackerColor.swift */; };
 		B01D8F031BA139500039E003 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01D8E951BA139500039E003 /* MainFlow.storyboard */; };
 		B01D8F171BA139500039E003 /* RoundedCornersBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D8EB91BA139500039E003 /* RoundedCornersBox.swift */; };
 		B01D8F1B1BA139500039E003 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D8EBF1BA139500039E003 /* Styles.swift */; };
@@ -531,6 +532,7 @@
 		B0077AA91BA774860054205D /* LinkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkHandler.swift; sourceTree = "<group>"; };
 		B00D06FF1C003ED60055044D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/NothingRow.xib; sourceTree = "<group>"; };
 		B00D07011C003F480055044D /* NothingRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NothingRow.swift; sourceTree = "<group>"; };
+		B0194F3C246F5FBE007CA4DC /* MEGameTrackerColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEGameTrackerColor.swift; sourceTree = "<group>"; };
 		B01D8E961BA139500039E003 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainFlow.storyboard; sourceTree = "<group>"; };
 		B01D8EB91BA139500039E003 /* RoundedCornersBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersBox.swift; sourceTree = "<group>"; };
 		B01D8EBF1BA139500039E003 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
@@ -1014,6 +1016,7 @@
 				B1F346791CF1789100D2B28A /* LayoutNotifyingTableView.swift */,
 				B15909AB1BA4EDF30000A678 /* Links */,
 				B06575061BA8F99C0025F6E7 /* Markupable */,
+				B0194F3C246F5FBE007CA4DC /* MEGameTrackerColor.swift */,
 				B0A9682C1C7D6AB300D3E335 /* MESplitViewController.swift */,
 				B1EBB48A1CE027650015E669 /* MESearchManager.swift */,
 				B00D06FD1C003ED60055044D /* Nothing Row */,
@@ -2894,6 +2897,7 @@
 				B1FFE3351CF6AA17007B3160 /* ConversationRewardsRowType.swift in Sources */,
 				B08E2A4E1BB23093009546F8 /* MapRow.swift in Sources */,
 				B17A5F261CF4FFE400E62422 /* SimpleArrayDataRowNib.swift in Sources */,
+				B0194F3D246F5FBE007CA4DC /* MEGameTrackerColor.swift in Sources */,
 				B194C28422ADBF6D009BB933 /* 20190609.xcmappingmodel in Sources */,
 				B11D838E1C98C6BF0096FD77 /* GameEvents.swift in Sources */,
 				B1B11FE21E4E9D2F00D97CA1 /* CoreDataMigration.swift in Sources */,
@@ -3703,7 +3707,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 75;
+				CURRENT_PROJECT_VERSION = 76;
 				DEVELOPMENT_TEAM = LNQGUJUGYP;
 				INFOPLIST_FILE = MEGameTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -3731,7 +3735,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 75;
+				CURRENT_PROJECT_VERSION = 76;
 				DEVELOPMENT_TEAM = LNQGUJUGYP;
 				INFOPLIST_FILE = MEGameTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

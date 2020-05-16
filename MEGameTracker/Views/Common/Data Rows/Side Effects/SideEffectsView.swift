@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable final public class SideEffectsView: SimpleArrayDataRow {
 
 	@IBInspectable public var text: String?
-	private var dummySideEffects: [String] = ["This is a side effect in Game 3."]
+    private var dummySideEffects: [String] = ["This is a side effect in Game 3."]
 	var sideEffects: [String] {
 		return UIWindow.isInterfaceBuilder ? dummySideEffects : (controller?.sideEffects ?? inspectableData)
 	}

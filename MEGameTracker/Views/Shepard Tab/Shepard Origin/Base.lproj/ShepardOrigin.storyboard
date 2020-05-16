@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
     <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,10 +23,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Fb-7e-rGq" userLabel="Interior">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1051"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1058.5"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AYY-2v-sQD" userLabel="Values">
-                                                <rect key="frame" x="0.0" y="10" width="375" height="1021"/>
+                                                <rect key="frame" x="0.0" y="10" width="375" height="1028.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="k51-d7-Fui" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -38,7 +38,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="ovU-Ir-AbC" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                                        <rect key="frame" x="0.0" y="50" width="375" height="52.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="paragon"/>
                                                         <userDefinedRuntimeAttributes>
@@ -46,7 +46,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="c7L-kC-Ess" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="100" width="375" height="50"/>
+                                                        <rect key="frame" x="0.0" y="102.5" width="375" height="50"/>
                                                         <color key="backgroundColor" name="background"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Colonist"/>
@@ -55,7 +55,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="kaf-to-08w" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="150" width="375" height="50"/>
+                                                        <rect key="frame" x="0.0" y="152.5" width="375" height="52.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="paragon"/>
                                                         <userDefinedRuntimeAttributes>
@@ -65,7 +65,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="g46-5d-vGL" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="200" width="375" height="50"/>
+                                                        <rect key="frame" x="0.0" y="205" width="375" height="50"/>
                                                         <color key="backgroundColor" name="background"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Earthborn"/>
@@ -74,7 +74,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="do9-aI-bdT" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="250" width="375" height="50"/>
+                                                        <rect key="frame" x="0.0" y="255" width="375" height="52.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="paragon"/>
                                                         <userDefinedRuntimeAttributes>
@@ -82,7 +82,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="x61-Tq-pcq" userLabel="Filler">
-                                                        <rect key="frame" x="0.0" y="300" width="375" height="721"/>
+                                                        <rect key="frame" x="0.0" y="307.5" width="375" height="721"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>

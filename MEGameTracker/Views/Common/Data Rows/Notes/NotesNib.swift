@@ -19,7 +19,7 @@ import UIKit
 		onAdd?()
 	}
 
-	override public class func loadNib(heading: String? = nil, cellNibs: [String] = []) -> NotesNib? {
+    override public class func loadNib(heading: String? = nil, cellNibs: [String] = []) -> NotesNib? {
 		let bundle = Bundle(for: NotesNib.self)
 		if let view = bundle.loadNibNamed("NotesNib", owner: self, options: nil)?.first as? NotesNib {
 			view.headingLabel?.text = heading

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
-    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -191,7 +191,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zxB-id-nwo">
-                                                        <rect key="frame" x="0.0" y="397.5" width="768" height="478"/>
+                                                        <rect key="frame" x="0.0" y="397.5" width="768" height="477"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="n8l-No-6fG" userLabel="Notes Row" customClass="NotesView" customModule="MEGameTracker" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
@@ -200,31 +200,32 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="5U3-wP-SVb" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="50" width="768" height="53.5"/>
+                                                                <rect key="frame" x="0.0" y="50" width="768" height="52.5"/>
+                                                                <color key="backgroundColor" name="background"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="ZjO-dJ-WnS" userLabel="Decisions" customClass="DecisionsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="103.5" width="768" height="95"/>
+                                                                <rect key="frame" x="0.0" y="102.5" width="768" height="95"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="kJI-yl-EBW" customClass="RelatedMissionsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="198.5" width="768" height="129.5"/>
+                                                                <rect key="frame" x="0.0" y="197.5" width="768" height="129.5"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="Njg-Ig-Pod" customClass="RelatedLinksView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="328" width="768" height="75"/>
+                                                                <rect key="frame" x="0.0" y="327" width="768" height="75"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="viT-yI-ZhZ" customClass="VoiceActorLinkView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="403" width="768" height="75"/>
+                                                                <rect key="frame" x="0.0" y="402" width="768" height="75"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
@@ -236,7 +237,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="Zw9-LK-U9H" userLabel="Filler">
-                                                        <rect key="frame" x="0.0" y="890.5" width="768" height="113.5"/>
+                                                        <rect key="frame" x="0.0" y="889.5" width="768" height="114.5"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>

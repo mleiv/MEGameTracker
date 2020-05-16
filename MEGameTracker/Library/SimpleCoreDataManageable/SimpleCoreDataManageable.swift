@@ -428,7 +428,6 @@ extension SimpleCoreDataManageable {
         setChangedValues: @escaping SetAdditionalColumns<T>
     ) -> Bool {
         guard !Self.isCoreDataInaccessible else { return false }
-        let moc = context
         var result: Bool = true
         let waitForEndTask = DispatchWorkItem {} // semaphore flag
         persistentContainer.performBackgroundTask { moc in
