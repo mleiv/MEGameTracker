@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WOD-en-YYc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WOD-en-YYc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,7 +41,7 @@
                         <viewControllerLayoutGuide type="bottom" id="aSP-Uz-FIa"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="GyU-A0-MNR" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MapSplitView"/>
@@ -50,7 +50,6 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Map" id="5wO-nk-Ibc">
                         <barButtonItem key="rightBarButtonItem" title="Callouts" id="KKP-xq-Ug3">
-                            <color key="tintColor" name="paragon"/>
                             <connections>
                                 <action selector="openCallouts:" destination="ebJ-C4-dEf" id="Anp-vX-dBh"/>
                             </connections>
@@ -78,7 +77,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7Qv-cP-H8C"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="ODt-CO-xaO" userLabel="Root" customClass="IBIncludedThingPreview" customModule="MEGameTracker" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MapCalloutsGroups"/>
@@ -130,9 +129,13 @@
             <point key="canvasLocation" x="5342" y="1970"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="AMO-cH-IdW"/>
+        <segue reference="Chh-Vn-t3T"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="headerBackground">
-            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97000002861022949" green="0.97000002861022949" blue="0.97000002861022949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="headerFooterBackground">
             <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -141,8 +144,4 @@
             <color red="0.10000000149011612" green="0.10000000149011612" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="AMO-cH-IdW"/>
-        <segue reference="Chh-Vn-t3T"/>
-    </inferredMetricsTieBreakers>
 </document>
