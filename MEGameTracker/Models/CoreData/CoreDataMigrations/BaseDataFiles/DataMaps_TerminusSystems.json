@@ -888,7 +888,7 @@
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Tertiary/Helyme/Helyme.pdf",
-                "referenceSize": "2083x2083",
+                "referenceSize": "2083x2083"
             }
         }
     }, {
@@ -1289,7 +1289,7 @@
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Tertiary/Daratar/Daratar.pdf",
-                "referenceSize": "2083x2083",
+                "referenceSize": "2083x2083"
             }
         }
     }, {
@@ -2140,9 +2140,9 @@
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Tertiary/MSV_Strontium_Mule/MSV_Strontium_Mule.pdf",
-                "referenceSize": "2083x2083",
+                "referenceSize": "2083x2083"
             }
-        },
+        }
     }, {
         "id": "G.Ter.Ome.Ari.MSV.1Start",
         "inMapId": "G.Ter.Ome.Ari.MSVMule",
@@ -3211,7 +3211,7 @@
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Secondary/Heretic_Station/Heretic_Station.pdf",
-                "referenceSize": "2083x2083",
+                "referenceSize": "2083x2083"
             }
         }
     }, {
@@ -3876,7 +3876,7 @@
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Tertiary/Joab/Joab.pdf",
-                "referenceSize": "2083x2083",
+                "referenceSize": "2083x2083"
             }
         }
     }, {
@@ -4434,6 +4434,7 @@
             }
         }
     }, {
+        "x-comment-x": "--------Sanctum-------",
         "id": "G.Ter.Sig.Dec.Sanctum",
         "name": "Sanctum",
         "inMapId": "G.Ter.Sig.Decoris",
@@ -4449,9 +4450,13 @@
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Tertiary/Sanctum/Sanctum.pdf",
-                "referenceSize": "2083x2083",
+                "referenceSize": "2083x2083"
+            },
+            "3": {
+                "image": "Detail_Maps/Game3/_Secondary/Sanctum.pdf",
+                "referenceSize": "2083x2083"
             }
-        },
+        }
     }, {
         "id": "G.Ter.Sig.Dec.San.1Start",
         "inMapId": "G.Ter.Sig.Dec.Sanctum",
@@ -4461,6 +4466,12 @@
             "x": 1287,
             "y": 1760,
             "radius": 20
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "2": {
+                "isHidden": false
+            }
         }
     }, {
         "id": "G.Ter.Sig.Dec.San.2Notice",
@@ -4471,6 +4482,12 @@
             "x": 929,
             "y": 890,
             "radius": 20
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "2": {
+                "isHidden": false
+            }
         }
     }, {
         "id": "G.Ter.Sig.Dec.San.3Signal",
@@ -4481,6 +4498,28 @@
             "x": 1082,
             "y": 669,
             "radius": 20
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "2": {
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Sig.Dec.San.1Start",
+        "inMapId": "G.Ter.Sig.Dec.Sanctum",
+        "name": "Shuttle",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 941,
+            "y": 1699,
+            "radius": 20
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "isHidden": false
+            }
         }
     }, {
         "x-comment-x": "--------Lenal-------",
@@ -4993,7 +5032,7 @@
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Tertiary/Capek/Capek.pdf",
-                "referenceSize": "2083x2083",
+                "referenceSize": "2083x2083"
             }
         }
     }, {
@@ -5360,7 +5399,7 @@
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Tertiary/Canalus/Canalus.pdf",
-                "referenceSize": "2083x2083",
+                "referenceSize": "2083x2083"
             }
         }
     }, {
@@ -5577,7 +5616,7 @@
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Tertiary/MSV_Broken_Arrow/MSV_Broken_Arrow.pdf",
-                "referenceSize": "2083x2083",
+                "referenceSize": "2083x2083"
             }
         }
     }, {

@@ -1538,7 +1538,7 @@
         "gameVersion": "3",
         "missionType": "Assignment",
         "name": "N7: Cerberus Lab",
-        "description": "The Alliance has located a new Cerberus laboratory located on Sanctum. Fight off the Cerberus troops and recover two artifacts.",
+        "description": "The Alliance has located a new Cerberus laboratory located on Sanctum. Fight off the Cerberus troops and deactivate each containment system and bring the Reaper artifact nearby back to the shuttle.",
         "inMapId": "G.Ter.Sig.Dec.Sanctum",
         "isShowInParentMap": true,
         "experience": 0,
@@ -1551,10 +1551,37 @@
             "value": 5,
             "trigger": "(Completing the assignment.)"
         }],
+        "sideEffects": ["Journal entries from the Alliance Marine [megametracker://person?id=O3.Talavi]'s brother can be found in the lab."],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven"
+            "id": "Completed: Priority: The Citadel I"
         }]
+    }, {
+        "id": "A3.N7CerberusLab.1",
+        "sortIndex": 1000,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Containment System 1",
+        "inMissionId": "A3.N7CerberusLab",
+        "inMapId": "G.Ter.Sig.Dec.Sanctum",
+        "mapLocationPoint": {
+            "x": 1119,
+            "y": 628,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.N7CerberusLab.2",
+        "sortIndex": 1000,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Containment System 2",
+        "inMissionId": "A3.N7CerberusLab",
+        "inMapId": "G.Ter.Sig.Dec.Sanctum",
+        "mapLocationPoint": {
+            "x": 1739,
+            "y": 576,
+            "radius": 1
+        }
     }, {
         "id": "A3.N7CerberusAttack",
         "sortIndex": 1150,

@@ -7,8 +7,11 @@
 		"itemDisplayType": "Goal",
 		"name": "Alien Medi-Gel",
 		"inMapId": "G.Ter.Sig.Dec.Sanctum",
-		"annotationNote": "Found on console during N7: Cerberus Lab",
-		"isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 1483,
+            "y": 852,
+            "radius": 1
+        },
 		"sortIndex": 1016
 	}, {
 		"id": "A3.BioticAmp.I.1",
@@ -342,11 +345,15 @@
 		"id": "A3.LostProperty.I.0",
         "inMissionId": "A3.LostProperty",
 		"gameVersion": "3",
-		"itemType": "Souvenir",
+		"itemType": "Model",
 		"itemDisplayType": "Novelty",
 		"name": "Normandy SR1",
 		"inMapId": "G.N3.5ShuttleBay",
-		"isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 766,
+            "y": 1345,
+            "radius": 1
+        },
 		"sortIndex": 1097
 	}, {
 		"id": "A3.LostProperty.I.1A",
@@ -355,8 +362,8 @@
 		"itemType": "Pet",
 		"itemDisplayType": "Novelty",
 		"name": "Space Hamster",
-		"inMapId": "G.N3.4.SubDeck",
-		"isShowInParentMap": true,
+        "inMapId": "G.N3.4.SubDeck",
+        "isShowInParentMap": true,
 		"sortIndex": 1097
 	}, {
 		"id": "A3.LostProperty.I.1B",
@@ -373,92 +380,128 @@
 		"id": "A3.LostProperty.I.2",
         "inMissionId": "A3.LostProperty",
 		"gameVersion": "3",
-		"itemType": "Souvenir",
+		"itemType": "Model",
 		"itemDisplayType": "Novelty",
 		"name": "UT-47 Kodiak Shuttle",
         "description": "This is not actually a Kodiak shuttle, but a Human Heavy Cruiser. It was mislabelled in Game 2 and is now just called \"Alliance Shuttle.\"",
 		"inMapId": "G.N3.2CIC",
-		"isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 1690,
+            "y": 773,
+            "radius": 1
+        },
 		"sortIndex": 1097
 	}, {
 		"id": "A3.LostProperty.I.2A",
         "inMissionId": "A3.LostProperty",
 		"gameVersion": "3",
-		"itemType": "Souvenir",
+		"itemType": "Model",
 		"itemDisplayType": "Novelty",
 		"name": "Destiny Ascension",
-		"inMapId": "G.N3.3.LifeSupport",
-		"isShowInParentMap": true,
+		"inMapId": "G.N3.3Quarters",
+        "mapLocationPoint": {
+            "x": 1941,
+            "y": 1067,
+            "radius": 1
+        },
 		"sortIndex": 1097
 	}, {
 		"id": "A3.LostProperty.I.3",
         "inMissionId": "A3.LostProperty",
 		"gameVersion": "3",
-		"itemType": "Souvenir",
+		"itemType": "Model",
 		"itemDisplayType": "Novelty",
 		"name": "Turian Cruiser",
-		"inMapId": "G.N3.4.SubDeck",
-		"isShowInParentMap": true,
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": 243,
+            "y": 1186,
+            "radius": 1
+        },
 		"sortIndex": 1097
 	}, {
 		"id": "A3.LostProperty.I.4",
         "inMissionId": "A3.LostProperty",
 		"gameVersion": "3",
-		"itemType": "Souvenir",
+		"itemType": "Model",
 		"itemDisplayType": "Novelty",
 		"name": "Shadow Broker Ship",
-		"inMapId": "G.N3.4.SubDeck",
-		"isShowInParentMap": true,
+		"inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": 307,
+            "y": 864,
+            "radius": 1
+        },
 		"sortIndex": 1097
 	}, {
 		"id": "A3.LostProperty.I.5",
         "inMissionId": "A3.LostProperty",
 		"gameVersion": "3",
-		"itemType": "Souvenir",
+		"itemType": "Model",
 		"itemDisplayType": "Novelty",
 		"name": "Sovereign",
-		"inMapId": "G.N3.4.SubDeck",
-		"isShowInParentMap": true,
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": 423,
+            "y": 1041,
+            "radius": 1
+        },
 		"sortIndex": 1097
 	}, {
 		"id": "A3.LostProperty.I.6",
         "inMissionId": "A3.LostProperty",
 		"gameVersion": "3",
-		"itemType": "Souvenir",
+		"itemType": "Model",
 		"itemDisplayType": "Novelty",
 		"name": "Athabasca Class Freighter",
 		"inMapId": "G.N3.5ShuttleBay",
-		"isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 1556,
+            "y": 1468,
+            "radius": 1
+        },
 		"sortIndex": 1097
 	}, {
 		"id": "A3.LostProperty.I.7",
         "inMissionId": "A3.LostProperty",
 		"gameVersion": "3",
-		"itemType": "Souvenir",
+		"itemType": "Model",
 		"itemDisplayType": "Novelty",
 		"name": "Flotilla Vessel",
 		"inMapId": "G.N3.5ShuttleBay",
-		"isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 1331,
+            "y": 1344,
+            "radius": 1
+        },
 		"sortIndex": 1097
 	}, {
 		"id": "A3.LostProperty.I.8",
         "inMissionId": "A3.LostProperty",
 		"gameVersion": "3",
-		"itemType": "Souvenir",
+		"itemType": "Model",
 		"itemDisplayType": "Novelty",
 		"name": "Alliance Cruiser",
 		"inMapId": "G.N3.5ShuttleBay",
-		"isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 1606,
+            "y": 633,
+            "radius": 1
+        },
 		"sortIndex": 1097
 	}, {
 		"id": "A3.LostProperty.I.9",
         "inMissionId": "A3.LostProperty",
 		"gameVersion": "3",
-		"itemType": "Souvenir",
+		"itemType": "Model",
 		"itemDisplayType": "Novelty",
 		"name": "Geth Ship",
 		"inMapId": "G.N3.5ShuttleBay",
-		"isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 1653,
+            "y": 690,
+            "radius": 1
+        },
 		"sortIndex": 1097
 	}]
 }

@@ -10,11 +10,12 @@ import UIKit
 
 /// Defines various item types. Some are only available in one game.
 public enum ItemType: String, Codable, CaseIterable {
-
+    
+    case loot = "Loot"
     case weapon = "Weapon"
     case armor = "Armor"
     case upgrade = "Upgrade"
-    case loot = "Loot"
+    case mod = "Mod"
     case ammo = "Ammo"
     case medkit = "MedKit"
     case intel = "Intel"
@@ -28,6 +29,7 @@ public enum ItemType: String, Codable, CaseIterable {
     case request = "Request"
     case pet = "Pet"
     case model = "Model"
+    case datapad = "Datapad"
 	case unknown = "Unknown"
 
 	/// Returns the string values of all the enum variations.
@@ -37,23 +39,26 @@ public enum ItemType: String, Codable, CaseIterable {
 
 	/// Returns the heading string values of all the enum variations.
 	private static let headingValues: [ItemType: String] = [
-		.unknown: "Unknown",
-		.souvenir: "Souvenirs",
-		.request: "Requests",
-		.pet: "Pets",
-		.weapon: "Weapons",
-		.ammo: "Ammo",
-		.armor: "Armor",
-		.medkit: "MedKits",
-		.loot: "Loot",
-		.scan: "Scans",
-		.artifact: "Artifacts",
-		.collection: "Collections",
-		.salvage: "Salvage",
-		.wreckage: "Wreckage",
-		.warAsset: "War Assets",
-		.intel: "Intel",
-		.upgrade: "Upgrades",
+        .loot: "Loot",
+        .weapon: "Weapons",
+        .armor: "Armor",
+        .upgrade: "Upgrades",
+        .mod: "Mods",
+        .ammo: "Ammo",
+        .medkit: "MedKits",
+        .intel: "Intel",
+        .scan: "Scans",
+        .artifact: "Artifacts",
+        .collection: "Collections",
+        .salvage: "Salvage",
+        .wreckage: "Wreckage",
+        .warAsset: "War Assets",
+        .souvenir: "Souvenirs",
+        .request: "Requests",
+        .pet: "Pets",
+        .model: "Models",
+        .datapad: "Datapads",
+        .unknown: "Unknown"
 	]
 
 	/// Creates an enum from a string value, if possible.
@@ -86,9 +91,11 @@ public enum ItemType: String, Codable, CaseIterable {
 	/// Provides a title prefix for an item of the specified enum type.
 	public var titlePrefix: String {
 		switch self {
+        case .loot: fallthrough
 		case .medkit: fallthrough
 		case .ammo: fallthrough
 		case .collection: fallthrough
+        case .datapad: fallthrough
 		case .unknown: return ""
 		default: return "\(stringValue): "
 		}

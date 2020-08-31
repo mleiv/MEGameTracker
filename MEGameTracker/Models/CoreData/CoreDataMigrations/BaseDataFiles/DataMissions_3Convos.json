@@ -1300,7 +1300,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven"
+            "id": "Completed: Priority: The Citadel I"
         }]
     }, {
         "id": "A3.Convo.S.Liara.3",
@@ -3043,7 +3043,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Mars"
+            "id": "Completed: Bailey Convo 1"
         }]
 
     }, {
@@ -3198,7 +3198,11 @@
             "y": 1100,
             "radius": 20
         },
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Bailey Convo 1"
+        }]
     }, {
         "id": "A3.Convo.A.Bailey.2",
         "inMissionId": "A3.Convo.A.Bailey",
@@ -3835,7 +3839,11 @@
             "x": 938,
             "y": 1792,
             "radius": 20
-        }
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven + 1"
+        }]
     }, {
         "id": "A3.Convo.A.Miranda.2",
         "inMissionId": "A3.Convo.A.Miranda",
@@ -4300,7 +4308,11 @@
             "x": 334,
             "y": 643,
             "radius": 20
-        }
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven + 1"
+        }]
     }, {
         "id": "A3.Convo.A.Victus",
         "inMissionId": "A3.Convo.Associates",

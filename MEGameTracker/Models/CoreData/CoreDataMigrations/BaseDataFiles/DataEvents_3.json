@@ -1,24 +1,35 @@
 {
-	"events": [{
-		"id": "Completed: Prologue: Earth",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.0.Earth]"
-	}, {
-		"id": "Completed: Priority: Mars",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.0.Mars]"
-	}, {
-		"id": "Completed: Priority: The Citadel I",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.0.Citadel1]"
-	}, {
-		"id": "Completed: Priority: Palaven",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.1.Palaven]"
-	}, {
-		"id": "Completed: Priority: Sur'Kesh",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.1.SurKesh]"
+    "events": [{
+        "id": "Completed: Prologue: Earth",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.0.Earth]"
+    }, {
+        "id": "Completed: Priority: Mars",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.0.Mars]"
+    }, {
+        "id": "Completed: Priority: The Citadel I",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.0.Citadel1]"
+    }, {
+        "id": "Completed: Priority: Palaven",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.1.Palaven]"
+    }, {
+        "id": "Completed: Priority: Palaven + 1",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.1.Palaven]",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Priority: Sur'Kesh"
+            ]
+        }
+    }, {
+        "id": "Completed: Priority: Sur'Kesh",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.1.SurKesh]"
     }, {
         "id": "Completed: Priority: Sur'Kesh + 1",
         "gameVersion": "3",
@@ -30,25 +41,25 @@
                 "Any Mission After: Completed: Priority: Sur'Kesh"
             ]
         }
-	}, {
-		"id": "Completed: Priority: Sur'Kesh and Krogan or Turian Mission",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.1.SurKesh] and [megametracker://mission?id=A3.KroganTeam] or [megametracker://mission?id=A3.Bomb]",
-		"dependentOn": {
-			"countTo": 2,
-			"events": [
-				"Completed: Priority: Sur'Kesh",
-				"Completed: Attican Traverse: Krogan Team or Tuchanka: Bomb"
-			]
-		}
-	}, {
-		"id": "Completed: Priority: Tuchanka",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.1.Tuchanka]"
-	}, {
-		"id": "Completed: Priority: The Citadel II",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.2.Citadel2]"
+    }, {
+        "id": "Completed: Priority: Sur'Kesh and Krogan or Turian Mission",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.1.SurKesh] and [megametracker://mission?id=A3.KroganTeam] or [megametracker://mission?id=A3.Bomb]",
+        "dependentOn": {
+            "countTo": 2,
+            "events": [
+                "Completed: Priority: Sur'Kesh",
+                "Completed: Attican Traverse: Krogan Team or Tuchanka: Bomb"
+            ]
+        }
+    }, {
+        "id": "Completed: Priority: Tuchanka",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.1.Tuchanka]"
+    }, {
+        "id": "Completed: Priority: The Citadel II",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.2.Citadel2]"
     }, {
         "id": "Completed: Priority: The Citadel II + 1",
         "gameVersion": "3",
@@ -60,76 +71,76 @@
                 "Any Mission After: Completed: Priority: The Citadel II"
             ]
         }
-	}, {
-		"id": "Completed: Priority: Perseus Veil",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.2.PerseusVeil]",
-		"actions": [{
-			"target": {
-				"type": "Mission",
-				"id": "M3.2.PerseusVeil"
-			},
-			"changes": {
-				"On": {
-					"name": "Priority: Geth Dreadnought"
-				},
-				"Off": {
-					"name": "Priority: Perseus Veil"
-				}
-			}
-		}]
-	}, {
-		"id": "Completed: Priority: Geth Dreadnought",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.2.GethDreadnought]"
-	}, {
-		"id": "Completed: Rannoch: Geth Fighter Squadrons",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.GethFighterSquadrons]",
-		"actions": [{
-			"target": {
-				"type": "Decision",
-				"id": "D3.GethFighterSquadrons"
-			},
-			"changes": {
-				"On": {
-					"isSelected": true
-				},
-				"Off": {
-					"isSelected": false
-				}
-			}
-		}]
-	}, {
-		"id": "Completed: Rannoch: Admiral Koris",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.AdmiralKoris]",
-		"actions": [{
-			"target": {
-				"type": "Decision",
-				"id": "D3.JammingTower"
-			},
-			"changes": {
-				"On": {
-					"isSelected": true
-				},
-				"Off": {
-					"isSelected": false
-				}
-			}
-		}]
-	}, {
-		"id": "Completed: Priority: Rannoch",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.2.Rannoch]"
-	}, {
-		"id": "Completed: Priority: The Citadel III",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.2.Citadel3]"
-	}, {
-		"id": "Completed: Priority: Thessia",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.2.Thessia]"
+    }, {
+        "id": "Completed: Priority: Perseus Veil",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.2.PerseusVeil]",
+        "actions": [{
+            "target": {
+                "type": "Mission",
+                "id": "M3.2.PerseusVeil"
+            },
+            "changes": {
+                "On": {
+                    "name": "Priority: Geth Dreadnought"
+                },
+                "Off": {
+                    "name": "Priority: Perseus Veil"
+                }
+            }
+        }]
+    }, {
+        "id": "Completed: Priority: Geth Dreadnought",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.2.GethDreadnought]"
+    }, {
+        "id": "Completed: Rannoch: Geth Fighter Squadrons",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.GethFighterSquadrons]",
+        "actions": [{
+            "target": {
+                "type": "Decision",
+                "id": "D3.GethFighterSquadrons"
+            },
+            "changes": {
+                "On": {
+                    "isSelected": true
+                },
+                "Off": {
+                    "isSelected": false
+                }
+            }
+        }]
+    }, {
+        "id": "Completed: Rannoch: Admiral Koris",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.AdmiralKoris]",
+        "actions": [{
+            "target": {
+                "type": "Decision",
+                "id": "D3.JammingTower"
+            },
+            "changes": {
+                "On": {
+                    "isSelected": true
+                },
+                "Off": {
+                    "isSelected": false
+                }
+            }
+        }]
+    }, {
+        "id": "Completed: Priority: Rannoch",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.2.Rannoch]"
+    }, {
+        "id": "Completed: Priority: The Citadel III",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.2.Citadel3]"
+    }, {
+        "id": "Completed: Priority: Thessia",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.2.Thessia]"
     }, {
         "id": "Completed: Priority: Thessia + 1",
         "gameVersion": "3",
@@ -141,125 +152,125 @@
                 "Any Mission After: Completed: Priority: Thessia"
             ]
         }
-	}, {
-		"id": "Completed: Priority: Horizon",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.2.Horizon]"
-	}, {
-		"id": "Completed: Priority: Cerberus Headquarters",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.3.CerberusHQ]"
-	}, {
-		"id": "Completed: Priority: Earth",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=M3.3.Earth]"
-	}, {
-		"id": "Completed: Priority: Eden Prime",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=DLC3.FromAshes1]"
+    }, {
+        "id": "Completed: Priority: Horizon",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.2.Horizon]"
+    }, {
+        "id": "Completed: Priority: Cerberus Headquarters",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.3.CerberusHQ]"
+    }, {
+        "id": "Completed: Priority: Earth",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=M3.3.Earth]"
+    }, {
+        "id": "Completed: Priority: Eden Prime",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=DLC3.FromAshes1]"
 
-	}, {
-		"id": "Completed: Attican Traverse: Krogan Team",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.KroganTeam]"
-	}, {
-		"id": "Completed: Tuchanka: Turian Platoon",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.TurianPlatoon]"
-	}, {
-		"id": "Countdown to Bomb",
-		"gameVersion": "3",
-		"description": "The assignment Tuchanka: Bomb must be completed in the next three missions or it will expire.",
-		"isAlert": true
-	}, {
-		"id": "Completed: Tuchanka: Bomb",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.Bomb]"
-	}, {
-		"id": "Completed: Attican Traverse: Krogan Team or Tuchanka: Turian Platoon",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.KroganTeam] or [megametracker://mission?id=A3.TurianPlatoon]",
-		"dependentOn": {
-			"countTo": 1,
-			"events": [
-				"Completed: Attican Traverse: Krogan Team",
-				"Completed: Tuchanka: Turian Platoon"
-			]
-		}
-	}, {
-		"id": "Completed: Attican Traverse: Krogan Team or Tuchanka: Bomb",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.KroganTeam] or [megametracker://mission?id=A3.Bomb]",
-		"dependentOn": {
-			"countTo": 1,
-			"events": [
-				"Completed: Attican Traverse: Krogan Team",
-				"Completed: Tuchanka: Bomb"
-			]
-		}
+    }, {
+        "id": "Completed: Attican Traverse: Krogan Team",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.KroganTeam]"
+    }, {
+        "id": "Completed: Tuchanka: Turian Platoon",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.TurianPlatoon]"
+    }, {
+        "id": "Countdown to Bomb",
+        "gameVersion": "3",
+        "description": "The assignment Tuchanka: Bomb must be completed in the next three missions or it will expire.",
+        "isAlert": true
+    }, {
+        "id": "Completed: Tuchanka: Bomb",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.Bomb]"
+    }, {
+        "id": "Completed: Attican Traverse: Krogan Team or Tuchanka: Turian Platoon",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.KroganTeam] or [megametracker://mission?id=A3.TurianPlatoon]",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Completed: Attican Traverse: Krogan Team",
+                "Completed: Tuchanka: Turian Platoon"
+            ]
+        }
+    }, {
+        "id": "Completed: Attican Traverse: Krogan Team or Tuchanka: Bomb",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.KroganTeam] or [megametracker://mission?id=A3.Bomb]",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Completed: Attican Traverse: Krogan Team",
+                "Completed: Tuchanka: Bomb"
+            ]
+        }
 
-	}, {
-		"id": "Completed: Medical Supplies",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.MedicalSupplies]"
-	}, {
-		"id": "Completed: Rannoch: Geth Fighter Squadrons or Rannoch: Admiral Koris",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.GethFighterSquadrons] or [megametracker://mission?id=A3.AdmiralKoris]",
-		"dependentOn": {
-			"countTo": 1,
-			"events": [
-				"Completed: Rannoch: Geth Fighter Squandrons",
-				"Completed: Rannoch: Admiral Koris"
-			]
-		}
-	}, {
-		"id": "Completed: Rannoch: Geth Fighter Squadrons and Rannoch: Admiral Koris or Priority: Rannoch",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.GethFighterSquadrons] and [megametracker://mission?id=A3.AdmiralKoris] or [megametracker://mission?id=M3.2.Rannoch]",
-		"dependentOn": {
-			"countTo": 2,
-			"events": [
-				"Completed: Rannoch: Geth Fighter Squandrons",
-				"Completed: Rannoch: Admiral Koris",
-				"Completed: Priority: Rannoch"
-			]
-		}
+    }, {
+        "id": "Completed: Medical Supplies",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.MedicalSupplies]"
+    }, {
+        "id": "Completed: Rannoch: Geth Fighter Squadrons or Rannoch: Admiral Koris",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.GethFighterSquadrons] or [megametracker://mission?id=A3.AdmiralKoris]",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Completed: Rannoch: Geth Fighter Squandrons",
+                "Completed: Rannoch: Admiral Koris"
+            ]
+        }
+    }, {
+        "id": "Completed: Rannoch: Geth Fighter Squadrons and Rannoch: Admiral Koris or Priority: Rannoch",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.GethFighterSquadrons] and [megametracker://mission?id=A3.AdmiralKoris] or [megametracker://mission?id=M3.2.Rannoch]",
+        "dependentOn": {
+            "countTo": 2,
+            "events": [
+                "Completed: Rannoch: Geth Fighter Squandrons",
+                "Completed: Rannoch: Admiral Koris",
+                "Completed: Priority: Rannoch"
+            ]
+        }
 
-	}, {
-		"id": "Completed: Grissom Academy",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.GrissomAcademy]",
-		"actions": [{
-			"target": {
-				"type": "Decision",
-				"id": "D3.GrissomAcademy"
-			},
-			"changes": {
-				"On": {
-					"isSelected": true
-				},
-				"Off": {
-					"isSelected": false
-				}
-			}
-		}]
-	}, {
-		"id": "Completed: Ardat-Yakshi Monastery",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.ArdatYakshiMonastery]"
-	}, {
-		"id": "Completed: Ex-Cerberus Scientists",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=A3.ExCerberusScientists]"
-	}, {
-		"id": "Completed: Citadel DLC 1",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=DLC3.Citadel1]"
-	}, {
-		"id": "Completed: Citadel DLC Party",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=DLC3.Citadel2.15]"
+    }, {
+        "id": "Completed: Grissom Academy",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.GrissomAcademy]",
+        "actions": [{
+            "target": {
+                "type": "Decision",
+                "id": "D3.GrissomAcademy"
+            },
+            "changes": {
+                "On": {
+                    "isSelected": true
+                },
+                "Off": {
+                    "isSelected": false
+                }
+            }
+        }]
+    }, {
+        "id": "Completed: Ardat-Yakshi Monastery",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.ArdatYakshiMonastery]"
+    }, {
+        "id": "Completed: Ex-Cerberus Scientists",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.ExCerberusScientists]"
+    }, {
+        "id": "Completed: Citadel DLC 1",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=DLC3.Citadel1]"
+    }, {
+        "id": "Completed: Citadel DLC Party",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=DLC3.Citadel2.15]"
     }, {
         "id": "Completed: Citadel DLC Party - Round 1 Theme",
         "gameVersion": "3",
@@ -276,11 +287,16 @@
         "id": "Completed: Citadel DLC Party - Round 3 Theme",
         "gameVersion": "3",
         "description": "[megametracker://mission?id=DLC3.Citadel2.15.7]"
-	}, {
-		"id": "Completed: Citadel DLC",
-		"gameVersion": "3",
-		"description": "[megametracker://mission?id=DLC3.Citadel1] and [megametracker://mission?id=DLC3.Citadel2]"
+    }, {
+        "id": "Completed: Citadel DLC",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=DLC3.Citadel1] and [megametracker://mission?id=DLC3.Citadel2]"
 
+
+    }, {
+        "id": "Completed: Bailey Convo 1",
+        "gameVersion": "3",
+        "description": "[A3.Convo.A.Bailey.1]"
 
     }, {
         "id": "Completed: Cortez Convo 2",
@@ -312,5 +328,5 @@
                 "Any Mission After: Completed: Cortez Convo 3"
             ]
         }
-	}]
+    }]
 }

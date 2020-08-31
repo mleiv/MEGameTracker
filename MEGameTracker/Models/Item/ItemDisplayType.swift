@@ -16,6 +16,7 @@ public enum ItemDisplayType: String, Codable, CaseIterable {
 	case loot = "Loot"
 	case medkit = "MedKit"
 	case novelty = "Novelty"
+    case other = "Other" // other experience or information
 
 	/// Returns the string values of all the enum variations.
     private static let stringValues: [ItemDisplayType: String] = {
@@ -35,10 +36,11 @@ public enum ItemDisplayType: String, Codable, CaseIterable {
 	/// Returns a UI color appropriate to differentiate this item on a map.
 	public var color: UIColor {
 		switch self {
-			case .goal: return UIColor(red: 0.8, green: 0.0, blue: 0.0, alpha: 1.0)
-			case .loot: return UIColor(red: 0.9, green: 0.6, blue: 0.2, alpha: 1.0)
-			case .medkit: return UIColor(red: 0.3, green: 0.5, blue: 1.0, alpha: 1.0)
-			case .novelty: return UIColor(red: 1.0, green: 0.6, blue: 0.7, alpha: 1.0)
+            case .goal: return UIColor(red: 0.8, green: 0.0, blue: 0.0, alpha: 1.0)
+            case .loot: return UIColor(red: 0.9, green: 0.6, blue: 0.2, alpha: 1.0)
+            case .medkit: return UIColor(red: 0.3, green: 0.5, blue: 1.0, alpha: 1.0)
+            case .novelty: return UIColor(red: 1.0, green: 0.6, blue: 0.7, alpha: 1.0)
+            case .other: return UIColor(red: 0.6, green: 0.6, blue: 0.9, alpha: 1.0)
 		}
 	}
 }
