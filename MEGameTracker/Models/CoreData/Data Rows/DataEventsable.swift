@@ -36,7 +36,7 @@ extension DataEventsable {
         let directEvents = DataEvent.getAll(ids: ids, with: manager)
         let relatedEventIds = ids + directEvents.flatMap({ $0.dependentOn?.events ?? [] }) // yes Flat Map
         let allEvents: [DataEvents] = manager.getAll { fetchRequest in
-            fetchRequest.predicate = NSPredicate(format: "(%K in %@)", #keyPath(DataEvents.id), relatedEventIds)
+            fetchRequest.predicate = NSPredicate(format: "(%K in %@)", "id", relatedEventIds)
         }
         return NSSet(array: allEvents)
     }

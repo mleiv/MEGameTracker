@@ -29,7 +29,7 @@ public enum ItemType: String, Codable, CaseIterable {
     case request = "Request"
     case pet = "Pet"
     case model = "Model"
-    case datapad = "Datapad"
+    case data = "Data"
 	case unknown = "Unknown"
 
 	/// Returns the string values of all the enum variations.
@@ -57,7 +57,7 @@ public enum ItemType: String, Codable, CaseIterable {
         .request: "Requests",
         .pet: "Pets",
         .model: "Models",
-        .datapad: "Datapads",
+        .data: "Data",
         .unknown: "Unknown"
 	]
 
@@ -95,7 +95,7 @@ public enum ItemType: String, Codable, CaseIterable {
 		case .medkit: fallthrough
 		case .ammo: fallthrough
 		case .collection: fallthrough
-        case .datapad: fallthrough
+        case .data: fallthrough
 		case .unknown: return ""
 		default: return "\(stringValue): "
 		}

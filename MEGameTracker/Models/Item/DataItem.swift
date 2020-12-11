@@ -56,12 +56,12 @@ public struct DataItem: Codable, DataMapLocationable {
 	}
 
 	public var hasNoAdditionalData: Bool {
-		if relatedLinks.count > 0 {
-			return false
-		}
-		if description != nil {
-			return false
-		}
+//		if relatedLinks.count > 0 {
+//			return false
+//		}
+//		if description != nil {
+//			return false
+//		}
 		return true
 	}
 

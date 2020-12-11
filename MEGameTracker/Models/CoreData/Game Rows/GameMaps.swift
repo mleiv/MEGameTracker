@@ -83,7 +83,7 @@ extension Map {
 		return getFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K == %@)",
-				#keyPath(DataMaps.id), id
+                "id", id
 			)
 		}
 	}
@@ -106,7 +106,7 @@ extension Map {
 		return getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K in %@)",
-				#keyPath(DataMaps.id), ids
+				"id", ids
 			)
 		}
 	}

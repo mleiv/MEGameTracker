@@ -95,7 +95,7 @@ extension Person {
 		return getFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K == %@)",
-				#keyPath(DataPersons.id), id
+				"id", id
 			)
 		}
 	}
@@ -118,7 +118,7 @@ extension Person {
 		return getAllFromData(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K in %@)",
-				#keyPath(DataPersons.id), ids
+				"id", ids
 			)
 		}
 	}

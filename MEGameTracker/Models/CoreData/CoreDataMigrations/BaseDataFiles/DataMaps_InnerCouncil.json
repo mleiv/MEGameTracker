@@ -474,6 +474,7 @@
             ]
         },
         {
+            "x-comment-x": "--------SurKesh-------",
             "id": "G.InC.Ann.Pra.SurKesh",
             "name": "Sur'Kesh",
             "inMapId": "G.InC.Ann.Pranas",
@@ -485,9 +486,380 @@
             },
             "relatedLinks": [
                 "https://masseffect.wikia.com/wiki/Sur%27Kesh"
-            ]
-        },
-        {
+            ],
+            "gameVersionData": {
+                "3": {
+                    "rerootBreadcrumbs": true,
+                    "isSplitMenu": true,
+                    "image": "Detail_Maps/Game3/SurKesh/SurKesh.pdf",
+                    "referenceSize": "2083x2083"
+                }
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.1",
+            "name": "SurKesh: Level 6 (Landing Pad)",
+            "inMapId": "G.InC.Ann.Pra.SurKesh",
+            "mapType": "Area",
+            "mapLocationPoint": {
+                "x": 141,
+                "y": 125,
+                "width": 1800,
+                "height": 207
+            },
+            "image": "Detail_Maps/Game3/SurKesh/SurKesh1.pdf",
+            "referenceSize": "2083x2083",
+            "events": [{
+                "type": "UnavailableInGame",
+                "id": "Game1"
+            }, {
+                "type": "UnavailableInGame",
+                "id": "Game2"
+            }]
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.1.1Shuttle",
+            "name": "Shuttle",
+            "isOpensDetail": false,
+            "inMapId": "G.InC.Ann.Pra.SurKesh.1",
+            "mapLocationPoint": {
+                "x": 1334,
+                "y": 1513,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.1.2Elevator",
+            "name": "Elevator",
+            "isOpensDetail": false,
+            "inMapId": "G.InC.Ann.Pra.SurKesh.1",
+            "mapLocationPoint": {
+                "x": 1098,
+                "y": 407,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.1.3Console",
+            "name": "Console",
+            "isOpensDetail": false,
+            "inMapId": "G.InC.Ann.Pra.SurKesh.1",
+            "mapLocationPoint": {
+                "x": 0,
+                "y": 0,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.1.4ToLab",
+            "name": "To Level 1 (Lab)",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.6",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.1",
+            "mapLocationPoint": {
+                "x": 1096,
+                "y": 349,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.1.5To5",
+            "name": "From Level 5",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.2",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.1",
+            "mapLocationPoint": {
+                "x": 1270,
+                "y": 175,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.2",
+            "name": "SurKesh: Level 5",
+            "inMapId": "G.InC.Ann.Pra.SurKesh",
+            "mapType": "Area",
+            "mapLocationPoint": {
+                "x": 141,
+                "y": 455,
+                "width": 1800,
+                "height": 207
+            },
+            "image": "Detail_Maps/Game3/SurKesh/SurKesh2.pdf",
+            "referenceSize": "2083x2083",
+            "events": [{
+                "type": "UnavailableInGame",
+                "id": "Game1"
+            }, {
+                "type": "UnavailableInGame",
+                "id": "Game2"
+            }]
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.2.1Stairs",
+            "name": "From Level 4",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.3",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.2",
+            "mapLocationPoint": {
+                "x": 1555,
+                "y": 1164,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.2.2Ladder",
+            "name": "From Level 4",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.3",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.2",
+            "mapLocationPoint": {
+                "x": 1526,
+                "y": 405,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.2.3Ladder",
+            "name": "To Level 6 (Landing Pad)",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.1",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.2",
+            "mapLocationPoint": {
+                "x": 1347,
+                "y": 176,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.3",
+            "name": "SurKesh: Level 4",
+            "inMapId": "G.InC.Ann.Pra.SurKesh",
+            "mapType": "Area",
+            "mapLocationPoint": {
+                "x": 141,
+                "y": 780,
+                "width": 1800,
+                "height": 207
+            },
+            "image": "Detail_Maps/Game3/SurKesh/SurKesh3.pdf",
+            "referenceSize": "2083x2083",
+            "events": [{
+                "type": "UnavailableInGame",
+                "id": "Game1"
+            }, {
+                "type": "UnavailableInGame",
+                "id": "Game2"
+            }]
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.3.1Stairs",
+            "name": "From Level 3",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.4",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.3",
+            "mapLocationPoint": {
+                "x": 1324,
+                "y": 1890,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.3.2Stairs",
+            "name": "To Level 5",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.2",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.3",
+            "mapLocationPoint": {
+                "x": 1551,
+                "y": 882,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.3.3Ladder",
+            "name": "To Level 5",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.2",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.3",
+            "mapLocationPoint": {
+                "x": 1447,
+                "y": 405,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.4",
+            "name": "SurKesh: Level 3",
+            "inMapId": "G.InC.Ann.Pra.SurKesh",
+            "mapType": "Area",
+            "mapLocationPoint": {
+                "x": 141,
+                "y": 1100,
+                "width": 1800,
+                "height": 207
+            },
+            "image": "Detail_Maps/Game3/SurKesh/SurKesh4.pdf",
+            "referenceSize": "2083x2083",
+            "events": [{
+                "type": "UnavailableInGame",
+                "id": "Game1"
+            }, {
+                "type": "UnavailableInGame",
+                "id": "Game2"
+            }]
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.4.1Stairs",
+            "name": "From Level 2",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.5",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.4",
+            "mapLocationPoint": {
+                "x": 1309,
+                "y": 461,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.4.2Stairs",
+            "name": "To Level 4",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.3",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.4",
+            "mapLocationPoint": {
+                "x": 1213,
+                "y": 1655,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.4.3Varren",
+            "name": "Varren",
+            "isOpensDetail": false,
+            "inMapId": "G.InC.Ann.Pra.SurKesh.4",
+            "mapLocationPoint": {
+                "x": 1203,
+                "y": 938,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.4.4Varren",
+            "name": "Varren",
+            "isOpensDetail": false,
+            "inMapId": "G.InC.Ann.Pra.SurKesh.4",
+            "mapLocationPoint": {
+                "x": 1203,
+                "y": 835,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.4.5Varren",
+            "name": "Varren",
+            "isOpensDetail": false,
+            "inMapId": "G.InC.Ann.Pra.SurKesh.4",
+            "mapLocationPoint": {
+                "x": 1203,
+                "y": 728,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.5",
+            "name": "SurKesh: Level 2",
+            "inMapId": "G.InC.Ann.Pra.SurKesh",
+            "mapType": "Area",
+            "mapLocationPoint": {
+                "x": 141,
+                "y": 1420,
+                "width": 1800,
+                "height": 207
+            },
+            "image": "Detail_Maps/Game3/SurKesh/SurKesh5.pdf",
+            "referenceSize": "2083x2083",
+            "events": [{
+                "type": "UnavailableInGame",
+                "id": "Game1"
+            }, {
+                "type": "UnavailableInGame",
+                "id": "Game2"
+            }]
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.5.1Ladder",
+            "name": "From Level 1 (Lab)",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.6",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.5",
+            "mapLocationPoint": {
+                "x": 1074,
+                "y": 1686,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.5.2Stairs",
+            "name": "To Level 3",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.4",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.5",
+            "mapLocationPoint": {
+                "x": 1242,
+                "y": 465,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.5.3Yahg",
+            "name": "Yahg",
+            "isOpensDetail": false,
+            "inMapId": "G.InC.Ann.Pra.SurKesh.5",
+            "mapLocationPoint": {
+                "x": 1203,
+                "y": 938,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.5.4Yahg",
+            "name": "Yahg",
+            "isOpensDetail": false,
+            "inMapId": "G.InC.Ann.Pra.SurKesh.5",
+            "mapLocationPoint": {
+                "x": 1203,
+                "y": 835,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.5.5Yahg",
+            "name": "No Yahg",
+            "isOpensDetail": false,
+            "inMapId": "G.InC.Ann.Pra.SurKesh.5",
+            "mapLocationPoint": {
+                "x": 1203,
+                "y": 728,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.6",
+            "name": "SurKesh: Level 1 (Lab)",
+            "inMapId": "G.InC.Ann.Pra.SurKesh",
+            "mapType": "Area",
+            "mapLocationPoint": {
+                "x": 141,
+                "y": 1750,
+                "width": 1800,
+                "height": 207
+            },
+            "image": "Detail_Maps/Game3/SurKesh/SurKesh6.pdf",
+            "referenceSize": "2083x2083",
+            "events": [{
+                "type": "UnavailableInGame",
+                "id": "Game1"
+            }, {
+                "type": "UnavailableInGame",
+                "id": "Game2"
+            }]
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.6.1Elevator",
+            "name": "From Level 6 (Landing Pad)",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.1",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.6",
+            "mapLocationPoint": {
+                "x": 1137,
+                "y": 392,
+                "radius": 20
+            }
+        }, {
+            "id": "G.InC.Ann.Pra.SurKesh.6.2Ladder",
+            "name": "To Level 2",
+            "isShowInList": false,
+            "linkToMapId": "G.InC.Ann.Pra.SurKesh.5",
+            "inMapId": "G.InC.Ann.Pra.SurKesh.6",
+            "mapLocationPoint": {
+                "x": 1076,
+                "y": 1759,
+                "radius": 20
+            }
+        }, {
             "id": "G.InC.Ann.Pra.Ships",
             "name": "Diplomatic Ships",
             "inMapId": "G.InC.Ann.Pranas",

@@ -991,9 +991,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Sur'Kesh",
-        "description": "Land on Sur'Kesh. There will be a bit of a skirmish with the salarians, but [megametracker://person?id=O3.Wiks] intervenes. You can explore the upper level and speak to [megametracker://person?id=P1.Kirrahe] (or [megametracker://person?id=O3.Tolan]), as well as other salarians. When you are ready to continue, head into the elevator.",
-        "inMapId": "G.InC.Ann.Pra.SurKesh",
-        "isShowInParentMap": true,
+        "description": "Land on Sur'Kesh. There will be a bit of a skirmish with the salarians, but [megametracker://person?id=O3.Wiks] intervenes. You can explore the upper level and speak to [megametracker://person?id=P1.Kirrahe] (or [megametracker://person?id=O3.Tolan]), as well as other salarians. When you are ready to continue, take the elevator down to the lab.",
+        "inMapId": "G.InC.Ann.Pra.SurKesh.1",
         "sideEffects": [
             "On the top level at the far side opposite the elevator, don't miss the salarian at the console with the button you can press. Press that button. Press it lots. ([YouTube|https://www.youtube.com/watch?v=cPIIaK4Vl20])",
             "The salarian button gag reappears in Mass Effect: Andromeda on the planet Kadara. ([YouTube|https://www.youtube.com/watch?v=PnMGiiU-1J4])"
@@ -1004,60 +1003,79 @@
         "sortIndex": 113,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Enter Lab",
-        "description": "In the lab, you will meet with old squadmate [megametracker://person?id=S2.Mordin] (Wiks will fill his role if Mordin did not survive Game 2). Mordin reveals that he was the leak to Clan Urdnot. You learn that only one female has survived, but before you can bring her aboard the Normandy, Cerberus attacks. Mordin (or Wiks) leaves with the krogan and instructs you to meet him at the next checkpoint. \n\nYou can explore the lab, where there are some logs with more information. Use the elevator to head up, and then the emergency ladder when that fails.",
-        "inMapId": "G.InC.Ann.Pra.SurKesh",
-        "isShowInParentMap": true
-    }, {
-        "id": "M3.1.SurKesh.4",
-        "inMissionId": "M3.1.SurKesh",
-        "sortIndex": 114,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Level 1",
-        "description": "Fight through Cerberus troops and upstairs.",
-        "inMapId": "G.InC.Ann.Pra.SurKesh",
-        "isShowInParentMap": true
+        "name": "Lab",
+        "description": "In the lab, you will meet with old squadmate [megametracker://person?id=S2.Mordin] (Wiks will fill his role if Mordin did not survive Game 2). Mordin reveals that he was the leak to Clan Urdnot. You learn that only one female has survived, but before you can bring her aboard the Normandy, Cerberus attacks. Mordin (or Wiks) leaves with the krogan and instructs you to meet him at the next checkpoint. \n\nYou can explore the lab, where there are some logs with more information. Use the elevator to head up, and then the emergency exit ladder when that fails.",
+        "inMapId": "G.InC.Ann.Pra.SurKesh.6"
     }, {
         "id": "M3.1.SurKesh.6",
         "inMissionId": "M3.1.SurKesh",
         "sortIndex": 116,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Level 2 Checkpoint",
+        "name": "Checkpoint 1",
         "description": "This level is timed. You need to reach the checkpoint before the pod with the krogan female is compromised.",
-        "inMapId": "G.InC.Ann.Pra.SurKesh",
-        "isShowInParentMap": true
+        "inMapId": "G.InC.Ann.Pra.SurKesh.4",
+        "mapLocationPoint": {
+            "x": 722,
+            "y": 847,
+            "radius": 1
+        }
+    }, {
+        "id": "M3.1.SurKesh.6B",
+        "inMissionId": "M3.1.SurKesh",
+        "sortIndex": 116,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Species Observation Area",
+        "description": "Cerberus blows up the way forward, so take a detour through the species observation area.",
+        "inMapId": "G.InC.Ann.Pra.SurKesh.3",
+        "mapLocationPoint": {
+            "x": 1146,
+            "y": 1104,
+            "radius": 1
+        }
     }, {
         "id": "M3.1.SurKesh.7",
         "inMissionId": "M3.1.SurKesh",
         "sortIndex": 117,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Level 3 Power Terminal",
-        "description": "Kirrahe will help out kill a few Cerberus troops here if he is present. Head into the second room and activate the power.",
-        "inMapId": "G.InC.Ann.Pra.SurKesh",
-        "isShowInParentMap": true
+        "name": "Power Terminal",
+        "description": "Kirrahe will help out kill a few Cerberus troops here if he is present. Head into the far room and activate the power.",
+        "inMapId": "G.InC.Ann.Pra.SurKesh.2",
+        "mapLocationPoint": {
+            "x": 1380,
+            "y": 1498,
+            "radius": 1
+        }
     }, {
         "id": "M3.1.SurKesh.8",
         "inMissionId": "M3.1.SurKesh",
         "sortIndex": 118,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Level 3 Checkpoint",
+        "name": "Checkpoint 2",
         "description": "Head back to defend the pod with the krogan female.",
-        "inMapId": "G.InC.Ann.Pra.SurKesh",
-        "isShowInParentMap": true
+        "inMapId": "G.InC.Ann.Pra.SurKesh.2",
+        "mapLocationPoint": {
+            "x": 848,
+            "y": 947,
+            "radius": 1
+        }
     }, {
         "id": "M3.1.SurKesh.9",
         "inMissionId": "M3.1.SurKesh",
         "sortIndex": 119,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Level 4 Pod Release",
+        "name": "Checkpoint 3",
         "description": "Head up the ladder to the final level. Fight off all the Cerberus forces to defend the pod, then activate the release. Then you will have to destroy an Atlas Mech and more troops.",
-        "inMapId": "G.InC.Ann.Pra.SurKesh",
-        "isShowInParentMap": true
+        "inMapId": "G.InC.Ann.Pra.SurKesh.1",
+        "mapLocationPoint": {
+            "x": 909,
+            "y": 841,
+            "radius": 1
+        }
     }, {
         "id": "M3.1.Tuchanka",
         "sortIndex": 12,

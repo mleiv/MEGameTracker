@@ -53,7 +53,7 @@ extension DataMap {
 		let one: DataMap? = get(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K == %@)",
-				#keyPath(DataMaps.id), id
+				"id", id
 			)
 		}
 		return one

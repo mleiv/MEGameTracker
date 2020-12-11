@@ -90,8 +90,8 @@ extension Event {
 		return getAllFromData(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "((%K MATCHES [cd] %@) AND (%K == %@))",
-				#keyPath(DataEvents.id), "Level \\d+",
-				#keyPath(DataEvents.gameVersion), gameVersion.stringValue
+				"id", "Level \\d+",
+				"gameVersion", gameVersion.stringValue
 			)
 		}
 	}
@@ -104,8 +104,8 @@ extension Event {
 		return getAllFromData(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "((%K MATCHES [cd] %@) AND (%K == %@))",
-				#keyPath(DataEvents.id), "%Paragon \\d+",
-				#keyPath(DataEvents.gameVersion), gameVersion.stringValue
+				"id", "%Paragon \\d+",
+                "gameVersion", gameVersion.stringValue
 			)
 		}
 	}
@@ -118,8 +118,8 @@ extension Event {
 		return getAllFromData(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "((%K MATCHES [cd] %@) AND (%K == %@))",
-				#keyPath(DataEvents.id), "%Renegade \\d+",
-				#keyPath(DataEvents.gameVersion), gameVersion.stringValue
+				"id", "%Renegade \\d+",
+				"gameVersion", gameVersion.stringValue
 			)
 		}
 	}

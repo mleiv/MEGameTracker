@@ -137,7 +137,7 @@ extension Mission {
 		return getAllFromData(with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K in %@)",
-				#keyPath(DataMissions.id), ids
+				"id", ids
 			)
 		}
 	}

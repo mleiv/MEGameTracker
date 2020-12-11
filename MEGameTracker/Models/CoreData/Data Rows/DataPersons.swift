@@ -53,7 +53,7 @@ extension DataPerson {
 		let one: DataPerson? = get(gameVersion: gameVersion, with: manager) { fetchRequest in
 			fetchRequest.predicate = NSPredicate(
 				format: "(%K == %@)",
-				#keyPath(DataPersons.id), id
+				"id", id
 			)
 		}
 		return one
