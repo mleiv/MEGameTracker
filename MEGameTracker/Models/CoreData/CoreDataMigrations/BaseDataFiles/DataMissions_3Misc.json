@@ -2551,26 +2551,26 @@
             "type": "Triggers",
             "id": "Completed: Citadel DLC Party"
         }]
-            
-   }, {
-       "id": "DLC3.Citadel2.15.1",
-       "inMissionId": "DLC3.Citadel2.15",
-       "sortIndex": 150311,
-       "gameVersion": "3",
-       "missionType": "Objective",
-       "name": "Tone of the Party 1",
-       "description": "You can select the tone for the first round of the party. The choice here doesn't affect the conversations available.",
-       "objectivesCountToCompletion": 1,
-       "inMapId": "G.C3.Apartment",
-       "mapLocationPoint": {
-           "x": 881,
-           "y": 1750,
-           "radius": 20
-       },
-       "events": [{
-           "type": "Triggers",
-           "id": "Completed: Citadel DLC Party - Round 1 Theme"
-       }]
+
+    }, {
+        "id": "DLC3.Citadel2.15.1",
+        "inMissionId": "DLC3.Citadel2.15",
+        "sortIndex": 150311,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Tone of the Party 1",
+        "description": "You can select the tone for the first round of the party. The choice here doesn't affect the conversations available.",
+        "objectivesCountToCompletion": 1,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 881,
+            "y": 1750,
+            "radius": 20
+        },
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Citadel DLC Party - Round 1 Theme"
+        }]
     }, {
         "id": "DLC3.Citadel2.15.1.1",
         "inMissionId": "DLC3.Citadel2.15.1",
@@ -2657,7 +2657,7 @@
             "y": 1882,
             "radius": 20
         }
-        
+
     }, {
         "id": "DLC3.Citadel2.15.5",
         "inMissionId": "DLC3.Citadel2.15",
@@ -3473,6 +3473,20 @@
             "id": "Completed: Priority: Rannoch"
         }]
     }, {
+        "id": "A3.ProtheanSphere.2",
+        "inMissionId": "A3.ProtheanSphere",
+        "sortIndex": 1233,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Refugee",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.2HoldingArea",
+        "mapLocationPoint": {
+            "x": 232,
+            "y": 1220,
+            "radius": 20
+        }
+    }, {
         "id": "A3.ObeliskofKarza",
         "inMissionId": "A3.Artifacts",
         "sortIndex": 1231,
@@ -3500,6 +3514,20 @@
             "id": "Completed: Priority: Rannoch"
         }]
     }, {
+        "id": "A3.ObeliskofKarza.2",
+        "inMissionId": "A3.ObeliskofKarza",
+        "sortIndex": 1232,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Researcher",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 1221,
+            "y": 1094,
+            "radius": 20
+        }
+    }, {
         "id": "A3.KakliosaurFossil",
         "inMissionId": "A3.Artifacts",
         "sortIndex": 1236,
@@ -3526,6 +3554,20 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: Geth Dreadnought"
         }]
+    }, {
+        "id": "A3.KakliosaurFossil.2",
+        "inMissionId": "A3.KakliosaurFossil",
+        "sortIndex": 1237,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Scientist",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 804,
+            "y": 1368,
+            "radius": 20
+        }
     }, {
         "id": "A3.CodeOfTheAncients",
         "inMissionId": "A3.Artifacts",
@@ -3555,6 +3597,20 @@
             "id": "Completed: Priority: Rannoch"
         }]
     }, {
+        "id": "A3.CodeOfTheAncients.2",
+        "inMissionId": "A3.CodeOfTheAncients",
+        "sortIndex": 1231,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Elcor",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.5Purgatory",
+        "mapLocationPoint": {
+            "x": 1036,
+            "y": 139,
+            "radius": 20
+        }
+    }, {
         "id": "A3.ApienCrest",
         "inMissionId": "A3.Artifacts",
         "sortIndex": 1006,
@@ -3582,6 +3638,20 @@
             "id": "Completed: Priority: The Citadel I"
         }]
     }, {
+        "id": "A3.ApienCrest.2",
+        "inMissionId": "A3.ApienCrest",
+        "sortIndex": 1007,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Officer",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.5Purgatory",
+        "mapLocationPoint": {
+            "x": 1262,
+            "y": 1669,
+            "radius": 20
+        }
+    }, {
         "id": "A3.ProtheanObelisk",
         "inMissionId": "A3.Artifacts",
         "sortIndex": 1005,
@@ -3608,6 +3678,20 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: Palaven"
         }]
+    }, {
+        "id": "A3.ProtheanObelisk.2",
+        "inMissionId": "A3.ProtheanObelisk",
+        "sortIndex": 1006,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Volus",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.3Embassies",
+        "mapLocationPoint": {
+            "x": 1702,
+            "y": 1072,
+            "radius": 20
+        }
     }, {
         "id": "A3.BookOfPlenix",
         "inMissionId": "A3.Artifacts",
@@ -3639,6 +3723,20 @@
             "id": "Completed: Priority: The Citadel II"
         }]
     }, {
+        "id": "A3.BookOfPlenix.2",
+        "inMissionId": "A3.BookOfPlenix",
+        "sortIndex": 1031,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Volus",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 114,
+            "y": 1372,
+            "radius": 20
+        }
+    }, {
         "id": "A3.PillarsOfStrength",
         "inMissionId": "A3.Artifacts",
         "sortIndex": 1035,
@@ -3665,6 +3763,20 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: Palaven"
         }]
+    }, {
+        "id": "A3.PillarsOfStrength.2",
+        "inMissionId": "A3.PillarsOfStrength",
+        "sortIndex": 1036,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Preacher",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.2HoldingArea",
+        "mapLocationPoint": {
+            "x": 1202,
+            "y": 1074,
+            "radius": 20
+        }
     }, {
         "id": "A3.HesperiaPeriodStatue",
         "inMissionId": "A3.Artifacts",
@@ -3693,6 +3805,20 @@
             "id": "Completed: Priority: The Citadel II"
         }]
     }, {
+        "id": "A3.HesperiaPeriodStatue.2",
+        "inMissionId": "A3.HesperiaPeriodStatue",
+        "sortIndex": 1206,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Asari",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 280,
+            "y": 1208,
+            "radius": 20
+        }
+    }, {
         "id": "A3.LibraryofAsha",
         "inMissionId": "A3.Artifacts",
         "sortIndex": 1233,
@@ -3719,6 +3845,20 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
         }]
+    }, {
+        "id": "A3.LibraryofAsha.2",
+        "inMissionId": "A3.LibraryofAsha",
+        "sortIndex": 1234,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Trainer",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.5Purgatory",
+        "mapLocationPoint": {
+            "x": 846,
+            "y": 1571,
+            "radius": 20
+        }
     }, {
         "id": "A3.RingsofAlune",
         "inMissionId": "A3.Artifacts",
@@ -3747,6 +3887,20 @@
             "id": "Completed: Priority: Rannoch"
         }]
     }, {
+        "id": "A3.RingsofAlune.2",
+        "inMissionId": "A3.RingsofAlune",
+        "sortIndex": 1235,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Trainer",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.4Hospital",
+        "mapLocationPoint": {
+            "x": 1161,
+            "y": 1810,
+            "radius": 20
+        }
+    }, {
         "id": "A3.ProtheanDataDrives",
         "inMissionId": "A3.Artifacts",
         "sortIndex": 1235,
@@ -3773,5 +3927,19 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
         }]
+    }, {
+        "id": "A3.ProtheanDataDrives.2",
+        "inMissionId": "A3.ProtheanDataDrives",
+        "sortIndex": 1236,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Soldier",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.1Dock",
+        "mapLocationPoint": {
+            "x": 1262,
+            "y": 1609,
+            "radius": 20
+        }
     }]
 }

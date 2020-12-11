@@ -455,7 +455,10 @@ extension MapsController {
 			searchData: searchMapLocations,
 			closeSearch: closeSearch
 		)
-		tableView.tableHeaderView = searchManager?.searchController?.searchBar
+        if let searchBar = searchManager?.searchController?.searchBar {
+            // resize
+            tableView.tableHeaderView?.frame = searchBar.frame
+        }
 		// (doesn't size right if we try to use a container view controlled by search manager)
 	}
 

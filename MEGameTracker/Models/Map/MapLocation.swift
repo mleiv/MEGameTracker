@@ -25,4 +25,12 @@ public struct MapLocation {
 			return false
 		}
 	}
+
+    static func sortObjectives(_ first: MapLocationable, _ second: MapLocationable) -> Bool {
+        if first.sortIndex != second.sortIndex {
+            return first.sortIndex < second.sortIndex
+        } else {
+            return first.id < second.id
+        }
+    }
 }

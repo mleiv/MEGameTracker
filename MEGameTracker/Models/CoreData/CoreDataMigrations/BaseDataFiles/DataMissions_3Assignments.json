@@ -27,10 +27,28 @@
         }],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven"
+            "id": "Completed: Priority: The Citadel I"
         }, {
             "type": "BlockedAfter",
             "id": "Completed: Priority: Tuchanka"
+        }]
+    }, {
+        "id": "A3.AlienMediGel.2",
+        "sortIndex": 1017,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "inMissionId": "A3.AlienMediGel",
+        "name": "Deliver to Dr. Ravin",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.4Hospital",
+        "mapLocationPoint": {
+            "x": 919,
+            "y": 1797,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven"
         }]
     }, {
         "id": "A3.BarlaVon",
@@ -92,7 +110,7 @@
         }],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Sur'Kesh"
+            "id": "Completed: Priority: Palaven"
         }, {
             "type": "BlockedAfter",
             "id": "Completed: Priority: Tuchanka"
@@ -127,6 +145,20 @@
             "type": "BlockedAfter",
             "id": "Completed: Priority: Tuchanka"
         }]
+    }, {
+        "id": "A3.BioticAmp.2",
+        "sortIndex": 1027,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "inMissionId": "A3.BioticAmp",
+        "name": "Deliver to Asari",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.4Hospital",
+        "mapLocationPoint": {
+            "x": 1206,
+            "y": 798,
+            "radius": 20
+        }
     }, {
         "id": "A3.HanarDiplomat",
         "sortIndex": 1020,
@@ -324,8 +356,22 @@
         }],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Tuchanka"
+            "id": "Completed: Priority: Palaven"
         }]
+    }, {
+        "id": "A3.HeatingUnit.2",
+        "inMissionId": "A3.HeatingUnit",
+        "sortIndex": 1192,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Sellea",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 1592,
+            "y": 972,
+            "radius": 20
+        }
     }, {
         "id": "A3.PowerGrid",
         "sortIndex": 1151,
@@ -351,11 +397,25 @@
         }],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Sur'Kesh"
+            "id": "Completed: Priority: Palaven"
         }, {
             "type": "BlockedAfter",
             "id": "Completed: Priority: Tuchanka"
         }]
+    }, {
+        "id": "A3.PowerGrid.2",
+        "inMissionId": "A3.PowerGrid",
+        "sortIndex": 1152,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Alison",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.5Purgatory",
+        "mapLocationPoint": {
+            "x": 743,
+            "y": 555,
+            "radius": 20
+        }
     }, {
         "id": "A3.KroganDying",
         "sortIndex": 1101,
@@ -384,21 +444,12 @@
             "id": "Completed: Priority: Sur'Kesh"
         }]
     }, {
-        "id": "A3.KroganDying.1",
-        "inMissionId": "A3.KroganDying",
-        "sortIndex": 11011,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Find Message",
-        "inMapId": "G.Att.Nin.Mul.Utukku",
-        "isShowInParentMap": true
-    }, {
         "id": "A3.KroganDying.2",
         "inMissionId": "A3.KroganDying",
-        "sortIndex": 11012,
+        "sortIndex": 1102,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Give to Ereba"
+        "name": "Deliver to Ereba"
     }, {
         "id": "A3.GX12ThermalPipe",
         "sortIndex": 1110,
@@ -406,7 +457,7 @@
         "missionType": "Assignment",
         "name": "Citadel: GX12 Thermal Pipe",
         "description": "[megametracker://person?id=P2.Adams] has requested a GX12 thermal pipe to make the Normandy's engines safer. Puchase one at Elkoss Combine Arsenal Supplies in the Presdium Commons and deliver it to him.",
-        "inMapId": "G.C3.6.Elkoss",
+        "inMapId": "G.N3.4.Station",
         "isShowInParentMap": true,
         "experience": 375,
         "reward": "",
@@ -422,6 +473,16 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: Sur'Kesh + 1"
         }]
+    }, {
+        "id": "A3.GX12ThermalPipe.2",
+        "sortIndex": 1171,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "inMissionId": "A3.GX12ThermalPipe",
+        "name": "Deliver to Adams",
+        "isOpensDetail": false,
+        "inMapId": "G.N3.4.Station",
+        "isShowInParentMap": true
     }, {
         "id": "A3.TurretSchematics",
         "sortIndex": 1141,
@@ -449,6 +510,20 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
         }]
+    }, {
+        "id": "A3.TurretSchematics.2",
+        "sortIndex": 1142,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "inMissionId": "A3.TurretSchematics",
+        "name": "Deliver to C-Sec Officer",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 1287,
+            "y": 1145,
+            "radius": 20
+        }
     }, {
         "id": "A3.BatarianCodes",
         "sortIndex": 1210,
@@ -598,6 +673,20 @@
             "id": "Completed: Priority: The Citadel II"
         }]
     }, {
+        "id": "A3.CerberusCiphers.2",
+        "sortIndex": 1402,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "inMissionId": "A3.CerberusCiphers",
+        "name": "Deliver to C-Sec Officer",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.3Embassies",
+        "mapLocationPoint": {
+            "x": 303,
+            "y": 826,
+            "radius": 20
+        }
+    }, {
         "id": "A3.CerberusRetribution",
         "sortIndex": 1215,
         "gameVersion": "3",
@@ -688,6 +777,20 @@
             "id": "Completed: Priority: The Citadel II"
         }]
     }, {
+        "id": "A3.CerberusTurianPoison.2",
+        "inMissionId": "A3.CerberusTurianPoison",
+        "sortIndex": 1202,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Doctor",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.4Hospital",
+        "mapLocationPoint": {
+            "x": 930,
+            "y": 570,
+            "radius": 20
+        }
+    }, {
         "id": "A3.ChemicalTreatment",
         "sortIndex": 1301,
         "gameVersion": "3",
@@ -714,6 +817,20 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: Geth Dreadnought"
         }]
+    }, {
+        "id": "A3.ChemicalTreatment.2",
+        "sortIndex": 1302,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "inMissionId": "A3.ChemicalTreatment",
+        "name": "Deliver to Doctor",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.4Hospital",
+        "mapLocationPoint": {
+            "x": 881,
+            "y": 941,
+            "radius": 20
+        }
     }, {
         "id": "A3.InspirationalStories",
         "sortIndex": 1217,
@@ -815,12 +932,8 @@
         "missionType": "Assignment",
         "name": "Citadel: Medical Supplies",
         "description": "Speak to Dr. Chakwas (or Dr. Michel) on the Normandy. She explains that the refugees on the docks have a large store of military grade medical supplies while the Normandy is equipped with an excess of supplies for treating contagion, exposure, and malnutrition - all things that refugees might suffer from. She suggests you negotiate a trade with the refugee leader, [megametracker://person?id=O3.Tactus]. \n\nWhen you have, return to the doctor on the Normandy. If it is Chakwas, you will get a +5 Health bonus; if Michel, you will get a +2 MediGel Capacity bonus. Glyph will also have a technology upgrade for healing any Renegade scars (if you didn't get that in Game 2).",
-        "inMapId": "G.C3.2HoldingArea",
-        "mapLocationPoint": {
-            "x": 966,
-            "y": 1005,
-            "radius": 20
-        },
+        "inMapId": "G.N3.3.Lab",
+        "isShowInParentMap": true,
         "experience": 375,
         "reward": "",
         "relatedLinks": ["https://masseffect.wikia.com/wiki/Citadel:_Medical_Supplies"],
@@ -853,6 +966,7 @@
             "value": 5,
             "trigger": "(Completing the assignment.)"
         }],
+        "objectivesCountToCompletion": 3,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
@@ -863,11 +977,21 @@
     }, {
         "id": "A3.MedicalSupplies.1",
         "inMissionId": "A3.MedicalSupplies",
-        "sortIndex": 12181,
+        "sortIndex": 1217,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Speak to Tactus",
         "description": "Ask Tactus to swap medical supplies with the Normandy."
+    }, {
+        "id": "A3.MedicalSupplies.3",
+        "inMissionId": "A3.MedicalSupplies",
+        "sortIndex": 1219,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Chakwas/Michel",
+        "isOpensDetail": false,
+        "inMapId": "G.N3.3.Lab",
+        "isShowInParentMap": true
     }, {
         "id": "A3.MediGelSabotage",
         "sortIndex": 1219,
@@ -1029,6 +1153,20 @@
             "id": "Completed: Priority: Geth Dreadnought"
         }]
     }, {
+        "id": "A3.ReaperCodeFragments.2",
+        "sortIndex": 1312,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "inMissionId": "A3.ReaperCodeFragments",
+        "name": "Deliver to Asari",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.3Embassies",
+        "mapLocationPoint": {
+            "x": 1444,
+            "y": 819,
+            "radius": 20
+        }
+    }, {
         "id": "A3.TargetJammingTechnology",
         "sortIndex": 1316,
         "gameVersion": "3",
@@ -1055,6 +1193,20 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: Geth Dreadnought"
         }]
+    }, {
+        "id": "A3.TargetJammingTechnology.2",
+        "sortIndex": 1317,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "inMissionId": "A3.TargetJammingTechnology",
+        "name": "Deliver to C-Sec Officer",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 870,
+            "y": 1062,
+            "radius": 20
+        }
     }, {
         "id": "A3.VolusAmbassador",
         "sortIndex": 1222,
@@ -1113,6 +1265,7 @@
                 }]
             }
         }],
+        "objectivesCountToCompletion": 5,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
@@ -1197,7 +1350,7 @@
         "gameVersion": "3",
         "missionType": "Assignment",
         "name": "Citadel: Asari Widow",
-        "description": "A dead asari commando at the Ardat-Yakshi monastery left behind a message for her bondmate, Weshra. Find Weshra near Apollo's Cafe in the Presidium Commons.",
+        "description": "A dead asari commando, Tashya Porae, left behind a message at the Ardat-Yakshi monasteryfor her bondmate, Weshra. Find Weshra near Apollo's Cafe in the Presidium Commons.",
         "inMapId": "G.C3.6Presidium",
         "mapLocationPoint": {
             "x": 1186,
@@ -1219,15 +1372,19 @@
             "id": "Completed: Priority: The Citadel II"
         }]
     }, {
-        "id": "A3.AsariWidow.1",
-        "inMissionId": "A3.AsariWidow",
-        "sortIndex": 12411,
+        "id": "A3.AsariWidow.2",
+        "sortIndex": 1103,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Commando Message",
-        "description": "The final message of an asari commando to her bondmate.",
-        "inMapId": "G.OuC.Nim.Mes.Lesuss",
-        "isShowInParentMap": true
+        "inMissionId": "A3.AsariWidow",
+        "name": "Deliver to Weshra",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 1186,
+            "y": 772,
+            "radius": 20
+        }
 
     }, {
         "x-comment-x": "-----------------------ARIA-------------------------",
@@ -2501,6 +2658,20 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: Rannoch"
         }]
+    }, {
+        "id": "A3.ElcorExtraction.1",
+        "inMissionId": "A3.ElcorExtraction",
+        "sortIndex": 1351,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Ambassador",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.3Embassies",
+        "mapLocationPoint": {
+            "x": 1286,
+            "y": 784,
+            "radius": 20
+        }
 
 
     }, {
@@ -2529,18 +2700,22 @@
         }],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Attican Traverse: Krogan Team or Tuchanka: Turian Platoon"
+            "id": "Completed: Priority: Palaven"
         }]
     }, {
-        "id": "A3.BenningEvidence.1",
+        "id": "A3.BenningEvidence.2",
         "inMissionId": "A3.BenningEvidence",
-        "sortIndex": 10151,
+        "sortIndex": 1101,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Bilal Osoba's Dog Tags",
-        "description": "Ambassador Osoba has asked you to find his son's dog tags and return them to him.",
-        "inMapId": "G.Ear.Arc.Eul.Benning",
-        "isShowInParentMap": true
+        "name": "Deliver to Osoba",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.3Embassies",
+        "mapLocationPoint": {
+            "x": 1741,
+            "y": 654,
+            "radius": 20
+        }
     }, {
         "id": "A3.GrissomAcademy",
         "sortIndex": 1025,
@@ -2855,6 +3030,20 @@
             "type": "BlockedAfter",
             "id": "Completed: Priority: Tuchanka"
         }]
+    }, {
+        "id": "A3.PrototypeComponents.1",
+        "inMissionId": "A3.PrototypeComponents",
+        "sortIndex": 1032,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deliver to Scientist",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.4Hospital",
+        "mapLocationPoint": {
+            "x": 854,
+            "y": 599,
+            "radius": 20
+        }
     }, {
         "id": "A3.KroganTeam",
         "sortIndex": 1100,

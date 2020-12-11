@@ -265,7 +265,7 @@ extension Mission {
     }
 
 	public func getObjectives() -> [MapLocationable] {
-		return Mission.getAllObjectives(underId: id).sorted(by: MapLocation.sort)
+		return Mission.getAllObjectives(underId: id).sorted(by: MapLocation.sortObjectives)
 	}
 
 	public func getRelatedMissions(completion: @escaping (([Mission]) -> Void) = { _ in }) {

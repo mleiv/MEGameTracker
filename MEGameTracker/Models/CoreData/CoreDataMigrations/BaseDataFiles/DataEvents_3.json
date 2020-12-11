@@ -299,6 +299,22 @@
         "description": "[A3.Convo.A.Bailey.1]"
 
     }, {
+        "id": "Completed: Kelly Convo 2",
+        "gameVersion": "3",
+        "description": "[A3.Convo.A.Kelly.2]"
+    }, {
+        "id": "Completed: Kelly Convo 2 + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after the second conversation with Kelly",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Kelly Convo 2"
+            ]
+        }
+        
+    }, {
         "id": "Completed: Cortez Convo 2",
         "gameVersion": "3",
         "description": "[A3.Convo.C.Cortez.2]"

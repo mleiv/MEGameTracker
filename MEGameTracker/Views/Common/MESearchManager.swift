@@ -61,13 +61,20 @@ final public class MESearchManager: NSObject {
 			?? searchController.searchBar.searchBarStyle
 		searchController.searchBar.placeholder = tempSearchBar?.placeholder
 		searchController.searchBar.barTintColor = tempSearchBar?.barTintColor
-		// fix the black line:
-//		searchController.searchBar.layer.borderWidth = CGFloat(1)/UIScreen.mainScreen().scale //1px
-//		searchController.searchBar.layer.borderColor = tempSearchBar?.barTintColor?.CGColor
-		// replace placeholder:
 		searchController.searchBar.setNeedsLayout()
 		searchController.searchBar.layoutIfNeeded()
 		self.searchController = searchController
+        // replace placeholder:
+        if let tempParent = tempSearchBar?.superview {
+            tempSearchBar?.removeFromSuperview()
+            let searchBar = searchController.searchBar
+            tempParent.addSubview(searchBar)
+            searchBar.topAnchor.constraint(equalTo: tempParent.topAnchor).isActive = true
+            searchBar.bottomAnchor.constraint(equalTo: tempParent.bottomAnchor).isActive = true
+            searchBar.leadingAnchor.constraint(equalTo: tempParent.leadingAnchor).isActive = true
+            searchBar.trailingAnchor.constraint(equalTo: tempParent.trailingAnchor).isActive = true
+        }
+        
 //        TODO: fix the excess header between search bar and results.
 //        Below is icky and doesn't work well on horizontal/ipad
 //        if #available(iOS 10.0, *) {

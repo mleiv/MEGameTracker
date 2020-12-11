@@ -228,36 +228,33 @@
         "conversationRewards": [{
             "set": {
                 "context": "Meeting EDI in her new body",
+                "isExclusiveSet": true,
                 "options": [{
-                    "set": {
-                        "isExclusiveSet": true,
-                        "options": [{
-                            "id": "A3.Convo.S.EDI.P1",
-                            "type": "Paragon",
-                            "value": 2,
-                            "trigger": "\"That was dangerous.\""
-                        }, {
-                            "id": "A3.Convo.S.EDI.R1",
-                            "type": "Renegade",
-                            "value": 2,
-                            "trigger": "\"Nice going.\""
-                        }]
-                    }
+                    "id": "A3.Convo.S.EDI.P1",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"That was dangerous.\""
                 }, {
-                    "set": {
-                        "isExclusiveSet": true,
-                        "options": [{
-                            "id": "A3.Convo.S.EDI.P2",
-                            "type": "Paragon",
-                            "value": 2,
-                            "trigger": "\"Test it first.\""
-                        }, {
-                            "id": "A3.Convo.S.EDI.R2",
-                            "type": "Renegade",
-                            "value": 2,
-                            "trigger": "\"We can do that.\""
-                        }]
-                    }
+                    "id": "A3.Convo.S.EDI.R1",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"Nice going.\""
+                }]
+            }
+        }, {
+            "set": {
+                "context": "When EDI suggests using her body to join the squad",
+                "isExclusiveSet": true,
+                "options": [{
+                    "id": "A3.Convo.S.EDI.P2",
+                    "type": "Paragon",
+                    "value": 2,
+                    "trigger": "\"Test it first.\""
+                }, {
+                    "id": "A3.Convo.S.EDI.R2",
+                    "type": "Renegade",
+                    "value": 2,
+                    "trigger": "\"We can do that.\""
                 }]
             }
         }, {
@@ -1104,7 +1101,7 @@
         "missionType": "Objective",
         "titlePrefix": "Kaidan: ",
         "name": "3rd Citadel Convo",
-        "description": "_Note: this is available one mission after [megametracker://mission?id=M3.1.Palaven]_ \n\nCongratulate Kaidan on accepting Spectre status. He is trying to locate his old biotics students.",
+        "description": "Congratulate Kaidan on accepting Spectre status. He is trying to locate his old biotics students.",
         "inMapId": "G.C3.4Hospital",
         "mapLocationPoint": {
             "x": 1183,
@@ -1113,7 +1110,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven"
+            "id": "Completed: Priority: Palaven + 1"
         }]
     }, {
         "id": "A3.Convo.S.Kaidan.5",
@@ -3643,13 +3640,20 @@
         "missionType": "Objective",
         "titlePrefix": "Kelly: ",
         "name": "2nd Citadel Convo",
-        "description": "_Note: this is available one mission after [megametracker://mission?id=M3.1.Palaven]_ \n\nIf you instructed Kelly to hide from Cerberus, you can check in and she has changed her name and appearance.",
+        "description": "If you instructed Kelly to hide from Cerberus, you can check in and she has changed her name and appearance.",
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
             "x": 831,
             "y": 883,
             "radius": 20
-        }
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Kelly Convo 2"
+        }]
     }, {
         "id": "A3.Convo.A.Kelly.3",
         "inMissionId": "A3.Convo.A.Kelly",
@@ -3658,13 +3662,17 @@
         "missionType": "Objective",
         "titlePrefix": "Kelly: ",
         "name": "3rd Citadel Convo",
-        "description": "_Note: this is available one mission after the prior conversation_ \n\nIf she hasn't already, Kelly will apologize for spying on you in Game 2 for Cerberus.",
+        "description": "If she hasn't already, Kelly will apologize for spying on you in Game 2 for Cerberus.",
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
             "x": 831,
             "y": 883,
             "radius": 20
-        }
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Kelly Convo 2 + 1"
+        }]
     }, {
         "id": "A3.Convo.A.Kelly.4",
         "inMissionId": "A3.Convo.A.Kelly",

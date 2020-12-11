@@ -378,10 +378,14 @@
         "sortIndex": 21,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "To Facility",
+        "name": "Facility",
         "description": "Follow the path down to the facility to see what has happened. Take the elevator up to the garage. You will run into Liara, when she falls from the ducts. After eliminating Cerberus, climb onto the truck and over the railing to continue into the facility.",
-        "inMapId": "G.Ear.Loc.Sol.Mars.1.1Start",
-        "isShowInParentMap": true
+        "inMapId": "G.Ear.Loc.Sol.Mars.1Exterior",
+        "mapLocationPoint": {
+            "x": 930,
+            "y": 810,
+            "radius": 20
+        }
     }, {
         "id": "M3.0.Mars.2",
         "inMissionId": "M3.0.Mars",
@@ -672,9 +676,9 @@
         "sortIndex": 101,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Menae",
+        "name": "Corinthus",
         "description": "When you land on Palaven's moon, clear the area of Reaper forces, then find [megametracker://person?id=O3.Corinthus], who informs you that the Primarch was killed an hour ago. He needs the comm tower repaired so he can contact Palaven and learn who is the next Primarch.",
-        "inMapId": "G.InC.Api.Tre.Menae.1.1Start",
+        "inMapId": "G.InC.Api.Tre.Menae.1.5Corinthus",
         "isShowInParentMap": true
     }, {
         "id": "M3.1.Palaven.2",

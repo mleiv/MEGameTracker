@@ -555,8 +555,10 @@ extension MissionsGroupsController {
 			searchData: searchMissions,
 			closeSearch: closeSearch
 		)
-		tableView.tableHeaderView = searchManager?.searchController?.searchBar
-		// (doesn't size right if we try to use a container view controlled by search manager)
+        if let searchBar = searchManager?.searchController?.searchBar {
+            // resize
+            tableView.tableHeaderView?.frame = searchBar.frame
+        }
 	}
 
 	func searchMissions(_ search: String? = nil) {
