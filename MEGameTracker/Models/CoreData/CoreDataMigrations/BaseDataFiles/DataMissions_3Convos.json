@@ -854,7 +854,26 @@
         "name": "1st Normandy Convo",
         "description": "Javik is being guarded at gunpoint due to first contact protocol. Javik explains that protheans have greater sensory perceptions, a kind of psychic communication. He reads the prothean beacon in Shepard, and is angry that you did not heed the warnings, prepare.",
         "inMapId": "G.N3.4.Port",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Javik Convo 1"
+        }]
+    }, {
+        "id": "A3.Convo.S.Javik.1B",
+        "inMissionId": "A3.Convo.S.Javik",
+        "sortIndex": 90001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "2nd Normandy Convo",
+        "description": "Javik is exploring the ship and finds echoes of [megametracker://person?id=S2.Jack] in the subdeck.",
+        "inMapId": "G.N3.4.SubDeck",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Javik Convo 1 + 1"
+        }]
     }, {
         "id": "A3.Convo.S.Javik.2",
         "inMissionId": "A3.Convo.S.Javik",
@@ -869,7 +888,11 @@
             "x": 1741,
             "y": 654,
             "radius": 20
-        }
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Javik Convo 1 + 1"
+        }]
     }, {
         "id": "A3.Convo.S.Javik.3",
         "inMissionId": "A3.Convo.S.Javik",
@@ -1110,7 +1133,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven + 1"
+            "id": "Completed: Priority: Sur'Kesh"
         }]
     }, {
         "id": "A3.Convo.S.Kaidan.5",
@@ -1307,7 +1330,7 @@
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
         "name": "1st Citadel Convo",
-        "description": "Liara comments on how the Citadel is just recovering from Sovereign's attack, and that you should stock up on supplies before the Citadel faces real privation in the current Reaper assault. She also suggests you speak to [Barla Von|megametracker://mission?id=A3.BarlaVon]. \n\nIf you talk to [megametracker://person?id=O2.Aethyta], you can also try to tell Liara that Aethyta is her father (but Liara already knows). You can then persuade Liara to go speak to Aethyta.",
+        "description": "Liara comments on how the Citadel is just recovering from Sovereign's attack, and that you should stock up on supplies before the Citadel faces real privation in the current Reaper assault. She also suggests you speak to [Barla Von|megametracker://mission?id=A3.BarlaVon].",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.6Presidium",
         "mapLocationPoint": {
@@ -1318,6 +1341,29 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Palaven"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Liara Convo 3"
+        }]
+    }, {
+        "id": "A3.Convo.S.Liara.3B",
+        "inMissionId": "A3.Convo.S.Liara",
+        "sortIndex": 90003,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Liara: ",
+        "name": "2nd Citadel Convo",
+        "description": "After you have spoken to [megametracker://person?id=O2.Aethyta], you can also try to tell Liara that Aethyta is her father (Liara already knows). You can then persuade Liara to go speak to Aethyta.",
+        "annotationNote": "Romance Option",
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 970,
+            "y": 764,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Aethyta Convo 3"
         }]
     }, {
         "id": "A3.Convo.S.Liara.4",
@@ -1327,12 +1373,15 @@
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
         "name": "3rd Normandy Convo",
-        "description": "_Note: this is available one mission after [megametracker://mission?id=M3.1.SurKesh]_ \n\nLiara worries about how quickly the Reapers will destroy everything.",
+        "description": "Liara worries about how quickly the Reapers will destroy everything.",
         "inMapId": "G.N3.3.Liara",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Sur'Kesh"
+            "id": "Completed: Priority: Sur'Kesh + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Liara Convo 4"
         }]
     }, {
         "id": "A3.Convo.S.Liara.5",
@@ -1347,7 +1396,10 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Sur'Kesh and Krogan or Turian Mission"
+            "id": "Completed: Priority: Sur'Kesh + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Liara Convo 4 + 1"
         }]
     }, {
         "id": "A3.Convo.S.Liara.6",
@@ -1356,7 +1408,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
-        "name": "2nd Citadel Convo",
+        "name": "3rd Citadel Convo",
         "description": "_Note: this conversation is available one assignment after [megametracker://mission?id=M3.2.Citadel2]._ \n\nLiara is down at Meridian Place Market, at the bottom of the Presidium Commons, looking out over the garden. She muses about her childhood and her mother. If you are romancing here, this is where you ask her to commit.",
         "annotationNote": "Romance Lock",
         "inMapId": "G.C3.6Presidium",
@@ -1920,7 +1972,7 @@
         "relatedMissionIds": ["A3.GX12ThermalPipe"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Sur'Kesh"
+            "id": "Completed: Priority: Sur'Kesh + 2"
         }]
     }, {
         "id": "A3.Convo.C.Allers",
@@ -2145,6 +2197,21 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
         }]
+    }, {
+        "id": "A3.Convo.C.Chakwas.4",
+        "inMissionId": "A3.Convo.C.Chakwas",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Chakwas: ",
+        "name": "3rd Normandy Convo",
+        "description": "Dr. Chakwas is in the crew quarters talking to Adams. She explains that she has relocated temporarily to allow Mordin and Eve to use the MedBay.",
+        "inMapId": "G.N3.3.Quarters",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Sur'Kesh"
+        }]
 
     }, {
         "id": "A3.Convo.C.Cortez",
@@ -2342,7 +2409,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven"
+            "id": "Completed: Priority: Palaven + 1"
         }, {
             "type": "Triggers",
             "id": "Completed: Cortez Convo 2"
@@ -2387,6 +2454,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Cortez Convo 3 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Cortez Convo 4"
         }]
     }, {
         "id": "A3.Convo.C.Cortez.5",
@@ -2402,6 +2472,12 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Sur'Kesh"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Cortez Convo 4 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Cortez Convo 5"
         }]
     }, {
         "id": "A3.Convo.C.Cortez.6",
@@ -2422,6 +2498,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Cortez Convo 5 + 1"
         }]
     }, {
         "id": "A3.Convo.C.Cortez.7a",
@@ -2991,7 +3070,10 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Sur'Kesh"
+            "id": "Completed: Liara Convo 3 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Aethyta Convo 1"
         }]
     }, {
         "id": "A3.Convo.A.AlJilani",
@@ -3850,7 +3932,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven + 1"
+            "id": "Completed: Priority: Sur'Kesh"
         }]
     }, {
         "id": "A3.Convo.A.Miranda.2",
@@ -4533,7 +4615,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Tuchanka"
+            "id": "Completed: Priority: Sur'Kesh + 2"
         }]
     }, {
         "id": "A3.Convo.N.3LiaraJoker",

@@ -42,6 +42,17 @@
             ]
         }
     }, {
+        "id": "Completed: Priority: Sur'Kesh + 2",
+        "gameVersion": "3",
+        "description": "Complete two missions after [megametracker://mission?id=M3.1.SurKesh]",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 2,
+            "events": [
+                "Any Mission After: Completed: Priority: Sur'Kesh"
+            ]
+        }
+    }, {
         "id": "Completed: Priority: Sur'Kesh and Krogan or Turian Mission",
         "gameVersion": "3",
         "description": "[megametracker://mission?id=M3.1.SurKesh] and [megametracker://mission?id=A3.KroganTeam] or [megametracker://mission?id=A3.Bomb]",
@@ -305,7 +316,7 @@
     }, {
         "id": "Completed: Kelly Convo 2 + 1",
         "gameVersion": "3",
-        "description": "Complete one mission after the second conversation with Kelly",
+        "description": "Complete one mission after the 2nd Citadel conversation with Kelly",
         "isAny": "missions",
         "dependentOn": {
             "countTo": 1,
@@ -321,7 +332,7 @@
     }, {
         "id": "Completed: Cortez Convo 2 + 1",
         "gameVersion": "3",
-        "description": "Complete one mission after the second conversation with Cortez",
+        "description": "Complete one mission after the 2nd Normandy conversation with Cortez",
         "isAny": "missions",
         "dependentOn": {
             "countTo": 1,
@@ -336,7 +347,7 @@
     }, {
         "id": "Completed: Cortez Convo 3 + 1",
         "gameVersion": "3",
-        "description": "Complete one mission after the third conversation with Cortez",
+        "description": "Complete one mission after the 3rd Normandy conversation with Cortez",
         "isAny": "missions",
         "dependentOn": {
             "countTo": 1,
@@ -344,5 +355,85 @@
                 "Any Mission After: Completed: Cortez Convo 3"
             ]
         }
+    }, {
+        "id": "Completed: Cortez Convo 4",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.Cortez.4]"
+    }, {
+        "id": "Completed: Cortez Convo 4 + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after the 1st Citadel conversation with Cortez",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Cortez Convo 4"
+            ]
+        }
+    }, {
+        "id": "Completed: Cortez Convo 5",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.Cortez.5]"
+    }, {
+        "id": "Completed: Cortez Convo 5 + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after the 2nd Citadel conversation with Cortez",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Cortez Convo 5"
+            ]
+        }
+    }, {
+        "id": "Completed: Liara Convo 3",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.Liara.3]"
+    }, {
+        "id": "Completed: Liara Convo 3 + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after the 1st Citadel conversation with Liara",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Liara Convo 3"
+            ]
+        }
+    }, {
+        "id": "Completed: Liara Convo 4",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.Liara.4]"
+    }, {
+        "id": "Completed: Liara Convo 4 + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after the 3rd Normandy conversation with Liara",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Liara Convo 4"
+            ]
+        }
+    }, {
+        "id": "Completed: Aethyta Convo 3",
+        "gameVersion": "3",
+        "description": "[A3.Convo.A.Aethyta]"
+    }, {
+        "id": "Completed: Javik Convo 1",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.Liara.3]"
+    }, {
+        "id": "Completed: Javik Convo 1 + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after the 1st Normandy conversation with Javik",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Javik Convo 1 3"
+            ]
+        }
     }]
+    
 }
