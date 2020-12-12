@@ -9,7 +9,6 @@
         "name": "Priority: Eden Prime",
         "description": "Cerberus has discovered a Prothean artifact on Eden Prime. \n\n*_This assignment was released as part of the From Ashes DLC pack._*",
         "inMapId": "G.Ear.Exo.Uto.Eden",
-        "isLinksToParentMap": true,
         "experience": 0,
         "reward": "5,000 Credits",
         "relatedLinks": ["https://masseffect.wikia.com/wiki/Priority:_Eden_Prime"],
@@ -116,13 +115,29 @@
             "id": "Completed: Priority: Eden Prime"
         }]
     }, {
+        "id": "DLC3.FromAshes1.0",
+        "inMissionId": "DLC3.FromAshes1",
+        "sortIndex": 10011,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Elevator Console",
+        "description": "Lift the prothean pod using the console.",
+        "inMapId": "G.Ear.Exo.Uto.Eden",
+        "mapLocationPoint": {
+            "x": 1402,
+            "y": 908,
+            "radius": 1
+        }
+    }, {
         "id": "DLC3.FromAshes1.1",
         "inMissionId": "DLC3.FromAshes1",
         "sortIndex": 10011,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Examine Pod",
-        "description": "Sneak into the camp and investigate the prothean pod Cerberus has dug up. It is too damaged to attempt opening it without instructions and the correct command signal."
+        "description": "The pod is too damaged to attempt opening it without instructions and the correct command signal.",
+        "inMapId": "G.Ear.Exo.Uto.Eden.2Pod",
+        "isShowInParentMap": true
     }, {
         "id": "DLC3.FromAshes1.2",
         "inMissionId": "DLC3.FromAshes1",
@@ -130,7 +145,13 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Opening Instructions",
-        "description": "The opening instructions are in a lab to the left. You will see a prothean vision of Javik opening the prothean pod of a fallen teammate."
+        "description": "The opening instructions are in a lab to the left. You will see a prothean vision of Javik opening the prothean pod of a fallen teammate.",
+        "inMapId": "G.Ear.Exo.Uto.Eden",
+        "mapLocationPoint": {
+            "x": 199,
+            "y": 996,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.FromAshes1.3",
         "inMissionId": "DLC3.FromAshes1",
@@ -138,23 +159,37 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Command Signal",
-        "description": "The command signal is in a building to the right. You will see another prothean vision of Javik when the VI send the stasis command signal to all pods."
+        "description": "The command signal is in a building to the right. You will see another prothean vision of Javik when the VI send the stasis command signal to all pods.",
+        "inMapId": "G.Ear.Exo.Uto.Eden",
+        "mapLocationPoint": {
+            "x": 972,
+            "y": 170,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.FromAshes1.4",
+        "inMissionId": "DLC3.FromAshes1",
+        "sortIndex": 10013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Alternate Route",
+        "description": "Cerberus sends reinforcements to keep you from the pod, and destroys the bridge. Find another way back to the pod.",
+        "inMapId": "G.Ear.Exo.Uto.Eden",
+        "mapLocationPoint": {
+            "x": 1079,
+            "y": 845,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.FromAshes1.4B",
         "inMissionId": "DLC3.FromAshes1",
         "sortIndex": 10014,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Return to Pod",
-        "description": "Cerberus sends reinforcements to keep you from the pod, and destroys the bridge. Find another way."
-    }, {
-        "id": "DLC3.FromAshes1.5",
-        "inMissionId": "DLC3.FromAshes1",
-        "sortIndex": 10015,
-        "gameVersion": "3",
-        "missionType": "Objective",
         "name": "Open Pod",
-        "description": "When you have finished fighting off additional Cerberus forces, you can open the pod."
+        "description": "Open the prothean pod.",
+        "inMapId": "G.Ear.Exo.Uto.Eden.2Pod",
+        "isShowInParentMap": true
     }, {
         "id": "DLC3.FromAshes2",
         "sortIndex": 1002,
@@ -163,7 +198,6 @@
         "name": "Eden Prime: Resistance Movement",
         "description": "The colonists of Eden Prime are fighting the Cerberus occupation. Help the resistance movement by getting them Cerberus intel. You will need to gather three pieces of intel in the Cerberus camp. \n\n*_This assignment was released as part of the From Ashes DLC pack._*",
         "inMapId": "G.Ear.Exo.Uto.Eden",
-        "isLinksToParentMap": true,
         "experience": 0,
         "reward": "",
         "relatedLinks": ["https://masseffect.wikia.com/wiki/Eden_Prime:_Resistance_Movement"],
@@ -182,7 +216,13 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Processing Update",
-        "isOpensDetail": false
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Exo.Uto.Eden",
+        "mapLocationPoint": {
+            "x": 1320,
+            "y": 543,
+            "radius": 1
+        }
     }, {
         "inMissionId": "DLC3.FromAshes2",
         "id": "DLC3.FromAshes2.2",
@@ -190,7 +230,13 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Troop Deployment Update",
-        "isOpensDetail": false
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Exo.Uto.Eden",
+        "mapLocationPoint": {
+            "x": 833,
+            "y": 1444,
+            "radius": 1
+        }
     }, {
         "inMissionId": "DLC3.FromAshes2",
         "id": "DLC3.FromAshes2.3",
@@ -198,7 +244,13 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Resistance Information Update",
-        "isOpensDetail": false
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Exo.Uto.Eden",
+        "mapLocationPoint": {
+            "x": 507,
+            "y": 1148,
+            "radius": 1
+        }
 
     }, {
         "id": "DLC3.Leviathan",

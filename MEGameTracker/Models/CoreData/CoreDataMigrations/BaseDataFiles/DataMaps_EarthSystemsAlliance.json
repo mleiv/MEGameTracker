@@ -2909,7 +2909,6 @@
         "id": "G.Ear.Exo.Uto.Eden",
         "name": "Eden Prime",
         "referenceSize": "2083x2083",
-        "isSplitMenu": true,
         "image": null,
         "inMapId": "G.Ear.Exo.Utopia",
         "mapType": "Planet",
@@ -2923,12 +2922,16 @@
         ],
         "gameVersionData": {
             "1": {
+                "isSplitMenu": true,
                 "mapLocationPoint": {
                     "x": 721,
                     "y": 842,
                     "radius": 37
                 },
                 "image": "Detail_Maps/Game1/Eden_Prime/Eden_Prime.pdf"
+            },
+            "3": {
+                "image": "Detail_Maps/Game3/_Secondary/Eden_Prime.pdf"
             }
         },
         "events": [{
@@ -2937,6 +2940,7 @@
             "eraseParentValue": true
         }]
     }, {
+        "x-comment-x": "-- Game 1: Eden Prime --",
         "id": "G.Ear.Exo.Uto.Ede.A",
         "name": "Eden Prime Grounds",
         "isHidden": true,
@@ -3051,6 +3055,41 @@
             "x": 371,
             "y": 943,
             "radius": 20
+        }
+    }, {
+        "x-comment-x": "-- Game 3: Eden Prime --",
+        "id": "G.Ear.Exo.Uto.Eden.1Drop",
+        "name": "Drop Zone",
+        "isHidden": true,
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Exo.Uto.Eden",
+        "mapLocationPoint": {
+            "x": 1738,
+            "y": 124,
+            "radius": 20
+        },
+        "gameVersionData": {
+            "3": {
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ear.Exo.Uto.Eden.2Pod",
+        "name": "Prothean Pod",
+        "isHidden": true,
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Exo.Uto.Eden",
+        "mapLocationPoint": {
+            "x": 1342,
+            "y": 1000,
+            "radius": 20
+        },
+        "gameVersionData": {
+            "3": {
+                "isHidden": false
+            }
         }
     }, {
         "id": "G.Ear.Exo.Uto.Zion",
