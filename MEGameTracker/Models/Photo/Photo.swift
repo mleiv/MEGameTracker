@@ -57,7 +57,7 @@ extension Photo {
 			let imageData = image.pngData() {
 			do {
 				try imageData.write(to: url, options: [.atomic])
-                Nuke.Cache.shared[Request(url: url)] = image
+                ImageCache.shared[ImageRequest(url: url)] = ImageContainer(image: image)
 				return Photo(filePath: filePath)
 			} catch {}
 		}
@@ -70,7 +70,7 @@ extension Photo {
 		guard let view = view else { return }
 		view.image = nil
 		if let photo = source?.photo, let url = photo.getUrl() {
-			Nuke.Manager.shared.loadImage(with: url, into: view)
+			Nuke.loadImage(with: url, into: view)
 			DispatchQueue.main.async {
 				if placeholder != nil && view.image == nil {
 					view.image = placeholder
@@ -86,7 +86,7 @@ extension Photo {
 	/// Optional - invoke when photo view disappears from screen and this will cancel any pending requests
 	public static func cancelPhoto(inView view: UIImageView?) {
 		guard let view = view else { return }
-		Nuke.Manager.shared.cancelRequest(for: view)
+		Nuke.cancelRequest(for: view)
 	}
 
 	/// Get a URL for the specified file path (local or remote).

@@ -136,7 +136,7 @@
         "missionType": "Objective",
         "name": "Examine Pod",
         "description": "The pod is too damaged to attempt opening it without instructions and the correct command signal.",
-        "inMapId": "G.Ear.Exo.Uto.Eden.2Pod",
+        "inMapId": "G.Ear.Exo.Uto.Ede.2Pod",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.FromAshes1.2",
@@ -188,7 +188,7 @@
         "missionType": "Objective",
         "name": "Open Pod",
         "description": "Open the prothean pod.",
-        "inMapId": "G.Ear.Exo.Uto.Eden.2Pod",
+        "inMapId": "G.Ear.Exo.Uto.Ede.2Pod",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.FromAshes2",
@@ -340,6 +340,147 @@
             "https://masseffect.wikia.com/wiki/Leviathan:_Find_Garneau",
             "https://masseffect.wikia.com/wiki/Mahavid:_Leviathan"
         ]
+    }, {
+        "id": "DLC3.Leviathan.2.1",
+        "inMissionId": "DLC3.Leviathan.2",
+        "sortIndex": 10902,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Entrance",
+        "description": "Make your way to the TGES Mineral Works Entrance.",
+        "inMapId": "G.Att.Cal.Ays.Mah.1Entrance"
+    }, {
+        "id": "DLC3.Leviathan.2.2",
+        "inMissionId": "DLC3.Leviathan.2",
+        "sortIndex": 10902,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Personnel Area",
+        "description": "You will need to get a personnel id to enter this area.",
+        "inMapId": "G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 1894,
+            "y": 1095,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.2.2.1",
+        "inMissionId": "DLC3.Leviathan.2.2",
+        "sortIndex": 10902,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Personnel Id",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 825,
+            "y": 1174,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.2.3",
+        "inMissionId": "DLC3.Leviathan.2",
+        "sortIndex": 10902,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Medical Wing",
+        "description": "To access the medical area, you will need a patient id. You can use the password Garneau stored on his datapad to hack the security console and get the id.",
+        "inMapId": "G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 610,
+            "y": 967,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.2.3.1",
+        "inMissionId": "DLC3.Leviathan.2.3",
+        "sortIndex": 10902,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Garneau's Password",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 953,
+            "y": 1053,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.2.3.2",
+        "inMissionId": "DLC3.Leviathan.2.3",
+        "sortIndex": 10902,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Patient Number",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Cal.Ays.Mah.2.3Security",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Leviathan.2.4",
+        "inMissionId": "DLC3.Leviathan.2",
+        "sortIndex": 10902,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Garneau",
+        "description": "There is a body in the medical wing, but there is also a patient in the next room. Speak to him and it becomes clear he is controlled by Leviathan. When you push him too far, he escapes.",
+        "inMapId": "G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 559,
+            "y": 1056,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.2.5",
+        "inMissionId": "DLC3.Leviathan.2",
+        "sortIndex": 10902,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Pursuit",
+        "description": "Follow Garneau outside the station towards the mine itself. Reaper forces attack in several waves.",
+        "inMapId": "G.Att.Cal.Ays.Mah.3Mine",
+        "mapLocationPoint": {
+            "x": 1211,
+            "y": 218,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.2.6",
+        "inMissionId": "DLC3.Leviathan.2",
+        "sortIndex": 10902,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Activate Repair Drone",
+        "description": "To open the door to the mine, you will need to activate the repair drone and escort it to the repair terminal.",
+        "inMapId": "G.Att.Cal.Ays.Mah.3Mine",
+        "mapLocationPoint": {
+            "x": 1147,
+            "y": 1740,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.2.7",
+        "inMissionId": "DLC3.Leviathan.2",
+        "sortIndex": 10902,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Escort Repair Drone",
+        "description": "Protect the repair drone from Reaper attack. You must stay within the proximity bubble.",
+        "inMapId": "G.Att.Cal.Ays.Mah.3Mine",
+        "mapLocationPoint": {
+            "x": 1142,
+            "y": 1101,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.2.8",
+        "inMissionId": "DLC3.Leviathan.2",
+        "sortIndex": 10902,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Confront Garneau",
+        "description": "Go to the mine and confront Garneau/Leviathan.",
+        "id": "G.Att.Cal.Ays.Mah.3.2Mine",
+        "isShowInParentMap": true
     }, {
         "id": "DLC3.Leviathan.3",
         "inMissionId": "DLC3.Leviathan",

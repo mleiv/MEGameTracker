@@ -912,6 +912,7 @@
 			"id": "Game3"
 		}]
 	}, {
+        "x-comment-x": "--------TGES Mineral Works-------",
 		"id": "G.Att.Cal.Ays.Mahavid",
 		"name": "Mahavid",
 		"inMapId": "G.Att.Cal.Aysur",
@@ -926,17 +927,240 @@
 		],
 		"gameVersionData": {
 			"3": {
+                "name": "Mahavid: T-GES Mineral Works",
 				"mapLocationPoint": {
 					"x": 804,
 					"y": 1556,
 					"radius": 100
-				}
+				},
+                "rerootBreadcrumbs": true,
+                "isSplitMenu": true,
+                "image": "Detail_Maps/Game3/_Secondary/Mahavid/TGESMineralWorks.pdf",
+                "referenceSize": "2083x2083"
 			}
 		},
 		"events": [{
 			"type": "UnavailableInGame",
 			"id": "Game2"
 		}]
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.1Entrance",
+        "name": "Entrance",
+        "inMapId": "G.Att.Cal.Ays.Mahavid",
+        "mapType": "Area",
+        "mapLocationPoint": {
+            "x": 140,
+            "y": 290,
+            "width": 1800,
+            "height": 416
+        },
+        "image": "Detail_Maps/Game3/_Secondary/Mahavid/TGESMineralWorks_Entrance.pdf",
+        "referenceSize": "2083x2083",
+        "events": [{
+            "type": "UnavailableInGame",
+            "id": "Game1"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game2"
+        }]
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.1.1Start",
+        "name": "From Normandy",
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId":"G.Att.Cal.Ays.Mah.1Entrance",
+        "mapLocationPoint": {
+            "x": 1868,
+            "y": 610,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.1.2Elevator",
+        "name": "Elevator",
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId":"G.Att.Cal.Ays.Mah.1Entrance",
+        "mapLocationPoint": {
+            "x": 1411,
+            "y": 505,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.1.3Video",
+        "name": "Video Tour",
+        "isOpensDetail": false,
+        "inMapId":"G.Att.Cal.Ays.Mah.1Entrance",
+        "mapLocationPoint": {
+            "x": 278,
+            "y": 1644,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.1.4Terminal",
+        "name": "Repair Drone Terminal",
+        "isOpensDetail": false,
+        "inMapId":"G.Att.Cal.Ays.Mah.1Entrance",
+        "mapLocationPoint": {
+            "x": 65,
+            "y": 1340,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.1.5Elevator",
+        "name": "Elevator",
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId":"G.Att.Cal.Ays.Mah.1Entrance",
+        "mapLocationPoint": {
+            "x": 283,
+            "y": 1198,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.1.6Lab",
+        "name": "To Lab",
+        "isShowInList": false,
+        "linkToMapId": "G.Att.Cal.Ays.Mah.2Lab",
+        "inMapId":"G.Att.Cal.Ays.Mah.1Entrance",
+        "mapLocationPoint": {
+            "x": 283,
+            "y": 1151,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.2Lab",
+        "name": "Lab",
+        "inMapId": "G.Att.Cal.Ays.Mahavid",
+        "mapType": "Area",
+        "mapLocationPoint": {
+            "x": 140,
+            "y": 852,
+            "width": 1800,
+            "height": 416
+        },
+        "image": "Detail_Maps/Game3/_Secondary/Mahavid/TGESMineralWorks_MineralLab.pdf",
+        "referenceSize": "2083x2083",
+        "events": [{
+            "type": "UnavailableInGame",
+            "id": "Game1"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game2"
+        }]
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.2.1Entrance",
+        "name": "From Entrance",
+        "isShowInList": false,
+        "linkToMapId": "G.Att.Cal.Ays.Mah.1Entrance",
+        "inMapId":"G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 1618,
+            "y": 655,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.2.2Video",
+        "name": "Video Tour",
+        "isOpensDetail": false,
+        "inMapId":"G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 1463,
+            "y": 815,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.2.3Security",
+        "name": "Security Console",
+        "isOpensDetail": false,
+        "inMapId":"G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 1207,
+            "y": 1001,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.2.4Video",
+        "name": "Video Tour",
+        "isOpensDetail": false,
+        "inMapId":"G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 860,
+            "y": 904,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.2.5Video",
+        "name": "Video Tour",
+        "isOpensDetail": false,
+        "inMapId":"G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 836,
+            "y": 1344,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.2.6Body",
+        "name": "Body",
+        "isOpensDetail": false,
+        "inMapId":"G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 679,
+            "y": 1042,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.2.7Mine",
+        "name": "To Mine",
+        "isShowInList": false,
+        "linkToMapId": "G.Att.Cal.Ays.Mah.3Mine",
+        "inMapId":"G.Att.Cal.Ays.Mah.2Lab",
+        "mapLocationPoint": {
+            "x": 169,
+            "y": 896,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.3Mine",
+        "name": "Route to Mine",
+        "inMapId": "G.Att.Cal.Ays.Mahavid",
+        "mapType": "Area",
+        "mapLocationPoint": {
+            "x": 140,
+            "y": 1414,
+            "width": 1800,
+            "height": 416
+        },
+        "image": "Detail_Maps/Game3/_Secondary/Mahavid/TGESMineralWorks_MineRoute.pdf",
+        "referenceSize": "2083x2083",
+        "events": [{
+            "type": "UnavailableInGame",
+            "id": "Game1"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game2"
+        }]
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.3.1",
+        "name": "From Lab",
+        "isShowInList": false,
+        "linkToMapId": "G.Att.Cal.Ays.Mah.2Lab",
+        "inMapId":"G.Att.Cal.Ays.Mah.3Mine",
+        "mapLocationPoint": {
+            "x": 1732,
+            "y": 291,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Cal.Ays.Mah.3.2Mine",
+        "name": "To Mine (Cutscene)",
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId":"G.Att.Cal.Ays.Mah.3Mine",
+        "mapLocationPoint": {
+            "x": 1342,
+            "y": 1739,
+            "radius": 20
+        }
 	}, {
 		"id": "G.Att.Cal.Ays.Alformus",
 		"name": "Alformus",
@@ -1391,7 +1615,7 @@
         "gameVersionData": {
             "2": {
                 "image": "Detail_Maps/Game2/_Secondary/Karumto/Karumto.pdf",
-                "referenceSize": "2083x2083",
+                "referenceSize": "2083x2083"
             }
         }
 	}, {

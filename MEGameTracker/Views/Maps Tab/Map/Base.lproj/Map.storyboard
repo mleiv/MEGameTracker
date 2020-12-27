@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,42 +28,42 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omu-tb-gkP">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="876"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="885"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ig2-YW-Gnz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="876"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="885"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SkQ-ZN-ItO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="157"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="XR8-98-Vwu" userLabel="Availability Wrapper" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XR8-98-Vwu" userLabel="Availability Wrapper" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Availability"/>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="value" systemColor="separatorColor"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="6IP-pP-RIa" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="54" width="375" height="54"/>
+                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6IP-pP-RIa" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
                                                                         <color key="backgroundColor" name="background"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="OriginHint"/>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="value" systemColor="separatorColor"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="Jb0-xP-8e8" userLabel="Breadcrumbs Wrapper" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="108" width="375" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="100" width="375" height="57"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="301" translatesAutoresizingMaskIntoConstraints="NO" id="sYn-Ju-i4e">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="b46-xJ-pIU" userLabel="Checkbox">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="57"/>
                                                                                         <subviews>
                                                                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Map Checkbox Empty" translatesAutoresizingMaskIntoConstraints="NO" id="kuA-uM-HT9">
                                                                                                 <rect key="frame" x="15" y="8" width="25" height="25"/>
@@ -71,7 +73,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yr4-NA-puM">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="57"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                                                                                 <connections>
                                                                                                     <action selector="onClickCheckbox:" destination="FE8-Fz-nu7" eventType="touchUpInside" id="m2V-oE-0Nq"/>
@@ -79,6 +81,7 @@
                                                                                             </button>
                                                                                         </subviews>
                                                                                         <constraints>
+                                                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kuA-uM-HT9" secondAttribute="bottom" constant="8" id="2N9-AV-1lm"/>
                                                                                             <constraint firstItem="Yr4-NA-puM" firstAttribute="leading" secondItem="b46-xJ-pIU" secondAttribute="leading" id="6K2-jX-3QA"/>
                                                                                             <constraint firstAttribute="width" constant="50" id="Lgt-pn-MPR"/>
                                                                                             <constraint firstAttribute="bottom" secondItem="Yr4-NA-puM" secondAttribute="bottom" id="N4f-CP-BMx"/>
@@ -86,46 +89,43 @@
                                                                                             <constraint firstAttribute="trailing" secondItem="Yr4-NA-puM" secondAttribute="trailing" id="TDT-9u-xj0"/>
                                                                                             <constraint firstItem="Yr4-NA-puM" firstAttribute="top" secondItem="b46-xJ-pIU" secondAttribute="top" id="dZE-C9-HwV"/>
                                                                                             <constraint firstItem="kuA-uM-HT9" firstAttribute="top" secondItem="b46-xJ-pIU" secondAttribute="top" priority="950" constant="8" id="i9e-HL-c8a"/>
-                                                                                            <constraint firstAttribute="height" priority="200" constant="40" id="nm0-uo-Xbg"/>
+                                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="200" constant="42" id="nm0-uo-Xbg"/>
                                                                                             <constraint firstAttribute="trailing" secondItem="kuA-uM-HT9" secondAttribute="trailing" constant="10" id="tMf-5M-ajL"/>
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <view hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="hGB-OJ-axu">
-                                                                                        <rect key="frame" x="50" y="0.0" width="0.0" height="40"/>
+                                                                                        <rect key="frame" x="50" y="0.0" width="0.0" height="57"/>
                                                                                         <constraints>
-                                                                                            <constraint firstAttribute="height" priority="900" constant="40" id="LfW-lf-0b5"/>
+                                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="LfW-lf-0b5"/>
                                                                                             <constraint firstAttribute="width" priority="900" constant="15" id="Mfh-dy-dPB"/>
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-s8-EmI">
-                                                                                        <rect key="frame" x="50" y="0.0" width="270" height="40"/>
+                                                                                        <rect key="frame" x="50" y="0.0" width="270" height="57"/>
                                                                                         <subviews>
-                                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="751" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Galaxy Map &gt; Omega Nebula &gt; Sahrabarik &gt; " translatesAutoresizingMaskIntoConstraints="NO" id="TFH-Wb-aQT" userLabel="Breadcrumbs" customClass="MarkupTextView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
-                                                                                                <constraints>
-                                                                                                    <constraint firstAttribute="height" priority="100" id="ofS-qp-Ybj"/>
-                                                                                                </constraints>
+                                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="751" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Galaxy Map &gt; Omega Nebula &gt; Sahrabarik &gt; Omega" translatesAutoresizingMaskIntoConstraints="NO" id="TFH-Wb-aQT" userLabel="Breadcrumbs" customClass="MarkupTextView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="57"/>
                                                                                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                                             </textView>
                                                                                         </subviews>
                                                                                         <constraints>
-                                                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TFH-Wb-aQT" secondAttribute="bottom" priority="900" id="GO2-4W-JfS"/>
-                                                                                            <constraint firstItem="TFH-Wb-aQT" firstAttribute="centerY" secondItem="k7l-s8-EmI" secondAttribute="centerY" id="UbS-kL-WYh"/>
+                                                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TFH-Wb-aQT" secondAttribute="bottom" id="GO2-4W-JfS"/>
                                                                                             <constraint firstItem="TFH-Wb-aQT" firstAttribute="leading" secondItem="k7l-s8-EmI" secondAttribute="leading" id="XBJ-ZU-q9Y"/>
                                                                                             <constraint firstAttribute="trailing" secondItem="TFH-Wb-aQT" secondAttribute="trailing" id="han-1u-pnw"/>
-                                                                                            <constraint firstItem="TFH-Wb-aQT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k7l-s8-EmI" secondAttribute="top" priority="901" id="ucg-6Y-bnH"/>
+                                                                                            <constraint firstItem="TFH-Wb-aQT" firstAttribute="centerY" secondItem="k7l-s8-EmI" secondAttribute="centerY" id="u4b-pO-tNc"/>
+                                                                                            <constraint firstItem="TFH-Wb-aQT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k7l-s8-EmI" secondAttribute="top" id="ucg-6Y-bnH"/>
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <view contentMode="center" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="au2-74-AED" userLabel="Detail Disclosure">
-                                                                                        <rect key="frame" x="320" y="0.0" width="55" height="40"/>
+                                                                                        <rect key="frame" x="320" y="0.0" width="55" height="57"/>
                                                                                         <subviews>
                                                                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Vertical Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="o2B-jG-3Mp">
                                                                                                 <rect key="frame" x="5" y="8" width="35" height="20"/>
                                                                                                 <color key="tintColor" name="renegade"/>
                                                                                             </imageView>
                                                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pN5-D0-Cr0">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="40"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="57"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                                                                                 <connections>
                                                                                                     <action selector="onClickDisclosure:" destination="FE8-Fz-nu7" eventType="touchUpInside" id="GkG-gv-oax"/>
@@ -149,7 +149,6 @@
                                                                         <constraints>
                                                                             <constraint firstItem="sYn-Ju-i4e" firstAttribute="top" secondItem="Jb0-xP-8e8" secondAttribute="top" id="86d-vq-Zae"/>
                                                                             <constraint firstAttribute="bottom" secondItem="sYn-Ju-i4e" secondAttribute="bottom" id="9mK-Yy-1pe"/>
-                                                                            <constraint firstAttribute="height" priority="100" id="K1I-iW-l1R"/>
                                                                             <constraint firstItem="sYn-Ju-i4e" firstAttribute="leading" secondItem="Jb0-xP-8e8" secondAttribute="leading" id="ZGX-P9-Pd4"/>
                                                                             <constraint firstAttribute="trailing" secondItem="sYn-Ju-i4e" secondAttribute="trailing" id="ewl-qJ-AcU"/>
                                                                         </constraints>
@@ -159,17 +158,14 @@
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="value" systemColor="separatorColor"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                 </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" priority="100" id="dl6-vo-qbW"/>
-                                                                </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="305" translatesAutoresizingMaskIntoConstraints="NO" id="Jpl-wv-bK4" userLabel="Map Details">
-                                                                <rect key="frame" x="0.0" y="148" width="375" height="678"/>
+                                                                <rect key="frame" x="0.0" y="157" width="375" height="678"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="301" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7WG-KA-rnA">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="678"/>
@@ -181,7 +177,7 @@
                                                                                 </constraints>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <color key="value" systemColor="separatorColor"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
@@ -195,7 +191,7 @@
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Description"/>
                                                                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <color key="value" systemColor="separatorColor"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
                                                                                 </userDefinedRuntimeAttributes>
@@ -238,7 +234,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="200" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="ssg-oX-yqe" userLabel="Scroll Wrapper">
-                                                                <rect key="frame" x="0.0" y="826" width="375" height="50"/>
+                                                                <rect key="frame" x="0.0" y="835" width="375" height="50"/>
                                                                 <subviews>
                                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="L2o-1Z-ynq">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -258,7 +254,7 @@
                                                             </view>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" priority="100" id="Ipv-uQ-x4v"/>
+                                                            <constraint firstAttribute="height" priority="1" id="Ipv-uQ-x4v"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
@@ -325,6 +321,11 @@
             <point key="canvasLocation" x="922" y="271"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="TFH-Wb-aQT">
+            <size key="intrinsicContentSize" width="370.5" height="36.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Map Checkbox Empty" width="30" height="30"/>
         <image name="Vertical Disclosure" width="30" height="20"/>
@@ -343,5 +344,8 @@
         <namedColor name="secondaryBackground">
             <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

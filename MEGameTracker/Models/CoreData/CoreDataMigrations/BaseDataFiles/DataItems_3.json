@@ -19,10 +19,13 @@
         "gameVersion": "3",
         "itemType": "Upgrade",
         "itemDisplayType": "Goal",
-        "name": "Biotic Amp Interfaces",
-        "inMapId": "G.Ear.Pet.Vet.Grissom",
-        "annotationNote": "Found on a hallway terminal during Grissom Academy: Emergency Evacuation",
-        "isShowInParentMap": true,
+        "name": "Biotic Amp Schematics",
+        "inMapId": "G.Ear.Pet.Vet.Gri.3Shuttle",
+        "mapLocationPoint": {
+            "x": 1113,
+            "y": 1477,
+            "radius": 1
+        },
         "sortIndex": 1026
     }, {
         "id": "A3.HeatingUnit.I.1",
@@ -42,9 +45,12 @@
         "itemType": "Upgrade",
         "itemDisplayType": "Goal",
         "name": "Power Grid Schematics",
-        "annotationNote": "Found on console during N7: Cerberus Attack",
-        "inMapId": "G.InC.Kro.Ara.Tuchanka",
-        "isShowInParentMap": true,
+        "inMapId": "G.InC.Kro.Ara.Tuc.1Cerberus",
+        "mapLocationPoint": {
+            "x": 1743,
+            "y": 1086,
+            "radius": 1
+        },
         "sortIndex": 1151
     }, {
         "id": "A3.TurretSchematics.I.1",
@@ -52,7 +58,7 @@
         "gameVersion": "3",
         "itemType": "Upgrade",
         "itemDisplayType": "Goal",
-        "name": "Power Grid Schematics",
+        "name": "Turret Schematics",
         "annotationNote": "Found on crates during Tuchanka: Bomb",
         "inMapId": "G.InC.Kro.Ara.Tuchanka",
         "isShowInParentMap": true,

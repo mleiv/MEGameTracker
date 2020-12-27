@@ -428,31 +428,28 @@ extension MissionsGroupsController {
 		DispatchQueue.main.async {
             cell = tableView.cellForRow(at: indexPath)
 			self.startSpinner(inView: self.view.superview)
-            DispatchQueue.global(qos: .background).async {
-                // strong self (don't want to give up page until spinner is turned off)
-                if tableView != self.tableView { // search
-                    if let missionRow = cell as? MissionRow {
-                        var mission = missionRow.mission
-                        // can't link to objectives directly
-                        while let inMissionId = mission?.inMissionId,
-                            let mission2 = Mission.get(id: inMissionId) {
-                            mission = mission2
-                        }
-                        self.segueToMission(mission, sender: cell)
-                        return
+            if tableView != self.tableView { // search
+                if let missionRow = cell as? MissionRow {
+                    var mission = missionRow.mission
+                    // can't link to objectives directly
+                    if let inMissionId = mission?.inMissionId,
+                        let mission2 = Mission.get(id: inMissionId) {
+                        mission = mission2
                     }
-                } else {
-                    if let missionRow = cell as? MissionRow {
-                        self.segueToMission(missionRow.mission, sender: cell)
-                        return
-                    } else if let type = self.missionsTypeByRow((indexPath as NSIndexPath).row) {
-                        self.segueToMissionsGroup(type, sender: cell)
-                        return
-                    }
+                    self.segueToMission(mission, sender: cell)
+                    return
                 }
-                DispatchQueue.main.async { // strong self (don't want to give up page until spinner is turned off)
-                    self.stopSpinner(inView: self.view.superview)
+            } else {
+                if let missionRow = cell as? MissionRow {
+                    self.segueToMission(missionRow.mission, sender: cell)
+                    return
+                } else if let type = self.missionsTypeByRow((indexPath as NSIndexPath).row) {
+                    self.segueToMissionsGroup(type, sender: cell)
+                    return
                 }
+            }
+            DispatchQueue.main.async { // strong self (don't want to give up page until spinner is turned off)
+                self.stopSpinner(inView: self.view.superview)
             }
         }
     }

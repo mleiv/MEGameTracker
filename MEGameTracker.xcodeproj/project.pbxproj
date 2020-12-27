@@ -111,6 +111,8 @@
 		B08E2A571BB232EF009546F8 /* GameMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E2A561BB232EF009546F8 /* GameMaps.swift */; };
 		B092C3C11BAF9EDD0078CEF2 /* GameNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092C3C01BAF9EDD0078CEF2 /* GameNotes.swift */; };
 		B093393323D5001E0016F232 /* ShepardPhotoFrameBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093393223D5001E0016F232 /* ShepardPhotoFrameBorderView.swift */; };
+		B0969B7825954F9700B9FEF9 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0066E6125954E01003A2373 /* Nuke.framework */; };
+		B0969B7925954F9700B9FEF9 /* Nuke.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B0066E6125954E01003A2373 /* Nuke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0A796ED1C7D764F004F1A56 /* ShepardSplitView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A796EA1C7D764F004F1A56 /* ShepardSplitView.storyboard */; };
 		B0A796EE1C7D764F004F1A56 /* ShepardSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A796EC1C7D764F004F1A56 /* ShepardSplitViewController.swift */; };
 		B0A9682D1C7D6AB300D3E335 /* MESplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9682C1C7D6AB300D3E335 /* MESplitViewController.swift */; };
@@ -132,9 +134,6 @@
 		B0F61F8B1BB0E90C007E8A5E /* GameVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F61F8A1BB0E90C007E8A5E /* GameVersion.swift */; };
 		B0F7557A1BBE109200984A3C /* MapCalloutsGroups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F755771BBE109200984A3C /* MapCalloutsGroups.storyboard */; };
 		B0F7557B1BBE109200984A3C /* MapCalloutsGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F755791BBE109200984A3C /* MapCalloutsGroupsController.swift */; };
-		B10332951E690B60009C8E16 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10332841E690B4A009C8E16 /* Nuke.framework */; };
-		B10332961E690B60009C8E16 /* Nuke.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B10332841E690B4A009C8E16 /* Nuke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B10332991E690BC1009C8E16 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10332841E690B4A009C8E16 /* Nuke.framework */; };
 		B1188E181CF2B00D009235E9 /* Objectivesable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1188E141CF2B00D009235E9 /* Objectivesable.swift */; };
 		B1188E1A1CF2B00D009235E9 /* ObjectivesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1188E161CF2B00D009235E9 /* ObjectivesView.swift */; };
 		B119111B1E57959000BF7E06 /* BaseDataImportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B119111A1E57959000BF7E06 /* BaseDataImportTest.swift */; };
@@ -434,82 +433,47 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B0066E6025954E01003A2373 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0066E5825954E01003A2373 /* Nuke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C9174901BAE99EE004A7905;
+			remoteInfo = Nuke;
+		};
+		B0066E6225954E01003A2373 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0066E5825954E01003A2373 /* Nuke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C7C06771BCA882A00089D7F;
+			remoteInfo = "Nuke Unit Tests";
+		};
+		B0066E6425954E01003A2373 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0066E5825954E01003A2373 /* Nuke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C4F8FDF22E4B6ED0070ECFD;
+			remoteInfo = "Nuke Thread Safety Tests";
+		};
+		B0066E6625954E01003A2373 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0066E5825954E01003A2373 /* Nuke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C8D7BE81D9DC02B00D12EB7;
+			remoteInfo = "Nuke Performance Tests";
+		};
+		B0066E6825954E01003A2373 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0066E5825954E01003A2373 /* Nuke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C8D7BD01D9DBF1600D12EB7;
+			remoteInfo = "Nuke Tests Host";
+		};
 		B028AF361BA12B1900C73373 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B028AF191BA12B1900C73373 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B028AF201BA12B1900C73373;
 			remoteInfo = MEGameTracker;
-		};
-		B10332831E690B4A009C8E16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0C9174901BAE99EE004A7905;
-			remoteInfo = "Nuke iOS";
-		};
-		B10332851E690B4A009C8E16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0C22DA2C1BCAA220006E1D3B;
-			remoteInfo = "Nuke macOS";
-		};
-		B10332871E690B4A009C8E16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0C22D9C51BCA9734006E1D3B;
-			remoteInfo = "Nuke watchOS";
-		};
-		B10332891E690B4A009C8E16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0CC345971BD96CFE005C2DD8;
-			remoteInfo = "Nuke tvOS";
-		};
-		B103328B1E690B4A009C8E16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0C7C06771BCA882A00089D7F;
-			remoteInfo = "Nuke iOS Tests";
-		};
-		B103328D1E690B4A009C8E16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0C22DA381BCAA22A006E1D3B;
-			remoteInfo = "Nuke macOS Tests";
-		};
-		B103328F1E690B4A009C8E16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0CC345A31BD96D2A005C2DD8;
-			remoteInfo = "Nuke tvOS Tests";
-		};
-		B10332911E690B4A009C8E16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0C8D7BD01D9DBF1600D12EB7;
-			remoteInfo = "Nuke iOS Tests Host";
-		};
-		B10332931E690B4A009C8E16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0C8D7BE81D9DC02B00D12EB7;
-			remoteInfo = "Nuke iOS Performance Tests";
-		};
-		B10332971E690B60009C8E16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0C91748F1BAE99EE004A7905;
-			remoteInfo = "Nuke iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -520,7 +484,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B10332961E690B60009C8E16 /* Nuke.framework in CopyFiles */,
+				B0969B7925954F9700B9FEF9 /* Nuke.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +492,7 @@
 
 /* Begin PBXFileReference section */
 		B003611B1BEDA6BA007510E3 /* Maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Maps; sourceTree = "<group>"; };
+		B0066E5825954E01003A2373 /* Nuke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nuke.xcodeproj; path = Nuke/Nuke.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B0077AA71BA760190054205D /* PersonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonType.swift; sourceTree = "<group>"; };
 		B0077AA91BA774860054205D /* LinkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkHandler.swift; sourceTree = "<group>"; };
 		B00D06FF1C003ED60055044D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/NothingRow.xib; sourceTree = "<group>"; };
@@ -656,7 +621,6 @@
 		B0F61F8A1BB0E90C007E8A5E /* GameVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVersion.swift; sourceTree = "<group>"; };
 		B0F755781BBE109200984A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapCalloutsGroups.storyboard; sourceTree = "<group>"; };
 		B0F755791BBE109200984A3C /* MapCalloutsGroupsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCalloutsGroupsController.swift; sourceTree = "<group>"; };
-		B10332771E690B4A009C8E16 /* Nuke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nuke.xcodeproj; path = Nuke/Nuke.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B1188E141CF2B00D009235E9 /* Objectivesable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objectivesable.swift; sourceTree = "<group>"; };
 		B1188E161CF2B00D009235E9 /* ObjectivesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectivesView.swift; sourceTree = "<group>"; };
 		B119111A1E57959000BF7E06 /* BaseDataImportTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataImportTest.swift; sourceTree = "<group>"; };
@@ -965,7 +929,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B16F8D4D1E17320E0074F66B /* CloudKit.framework in Frameworks */,
-				B10332951E690B60009C8E16 /* Nuke.framework in Frameworks */,
+				B0969B7825954F9700B9FEF9 /* Nuke.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,13 +937,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B10332991E690BC1009C8E16 /* Nuke.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0066E5925954E01003A2373 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0066E6125954E01003A2373 /* Nuke.framework */,
+				B0066E6325954E01003A2373 /* Nuke Unit Tests.xctest */,
+				B0066E6525954E01003A2373 /* Nuke Thread Safety Tests.xctest */,
+				B0066E6725954E01003A2373 /* Nuke Performance Tests.xctest */,
+				B0066E6925954E01003A2373 /* Nuke Tests Host.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B00D06FD1C003ED60055044D /* Nothing Row */ = {
 			isa = PBXGroup;
 			children = (
@@ -1293,8 +1268,8 @@
 				B04BF1531BA12C2E00072DA2 /* Extensions */,
 				B04BF15C1BA12C2E00072DA2 /* IBIncluded */,
 				B1F466D01DA0AE7200EBA563 /* IBStyles */,
+				B0066E5825954E01003A2373 /* Nuke.xcodeproj */,
 				B1E196991F43BD7A00991A2C /* JsonCoder.swift */,
-				B10332771E690B4A009C8E16 /* Nuke.xcodeproj */,
 				B19215501E5CB9A400594796 /* SimpleCoreDataManageable */,
 				B1BFF9D41DA4AFAB003FA9FA /* Signals */,
 				B1D1E37A1E1C251400860A42 /* SimpleUserDefaults.swift */,
@@ -1574,22 +1549,6 @@
 				B0F755791BBE109200984A3C /* MapCalloutsGroupsController.swift */,
 			);
 			path = "Map Callouts Groups";
-			sourceTree = "<group>";
-		};
-		B10332781E690B4A009C8E16 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B10332841E690B4A009C8E16 /* Nuke.framework */,
-				B10332861E690B4A009C8E16 /* Nuke.framework */,
-				B10332881E690B4A009C8E16 /* Nuke.framework */,
-				B103328A1E690B4A009C8E16 /* Nuke.framework */,
-				B103328C1E690B4A009C8E16 /* Nuke iOS Tests.xctest */,
-				B103328E1E690B4A009C8E16 /* Nuke macOS Tests.xctest */,
-				B10332901E690B4A009C8E16 /* Nuke tvOS Tests.xctest */,
-				B10332921E690B4A009C8E16 /* Nuke iOS Tests Host.app */,
-				B10332941E690B4A009C8E16 /* Nuke iOS Performance Tests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		B1188E111CF2B00D009235E9 /* Objectives */ = {
@@ -2446,7 +2405,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				B10332981E690B60009C8E16 /* PBXTargetDependency */,
 			);
 			name = MEGameTracker;
 			productName = MEGameTracker;
@@ -2477,7 +2435,7 @@
 		B028AF191BA12B1900C73373 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Emily Ivie";
 				TargetAttributes = {
 					B028AF201BA12B1900C73373 = {
@@ -2517,8 +2475,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B10332781E690B4A009C8E16 /* Products */;
-					ProjectRef = B10332771E690B4A009C8E16 /* Nuke.xcodeproj */;
+					ProductGroup = B0066E5925954E01003A2373 /* Products */;
+					ProjectRef = B0066E5825954E01003A2373 /* Nuke.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -2530,67 +2488,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B10332841E690B4A009C8E16 /* Nuke.framework */ = {
+		B0066E6125954E01003A2373 /* Nuke.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Nuke.framework;
-			remoteRef = B10332831E690B4A009C8E16 /* PBXContainerItemProxy */;
+			remoteRef = B0066E6025954E01003A2373 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B10332861E690B4A009C8E16 /* Nuke.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Nuke.framework;
-			remoteRef = B10332851E690B4A009C8E16 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B10332881E690B4A009C8E16 /* Nuke.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Nuke.framework;
-			remoteRef = B10332871E690B4A009C8E16 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B103328A1E690B4A009C8E16 /* Nuke.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Nuke.framework;
-			remoteRef = B10332891E690B4A009C8E16 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B103328C1E690B4A009C8E16 /* Nuke iOS Tests.xctest */ = {
+		B0066E6325954E01003A2373 /* Nuke Unit Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Nuke iOS Tests.xctest";
-			remoteRef = B103328B1E690B4A009C8E16 /* PBXContainerItemProxy */;
+			path = "Nuke Unit Tests.xctest";
+			remoteRef = B0066E6225954E01003A2373 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B103328E1E690B4A009C8E16 /* Nuke macOS Tests.xctest */ = {
+		B0066E6525954E01003A2373 /* Nuke Thread Safety Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Nuke macOS Tests.xctest";
-			remoteRef = B103328D1E690B4A009C8E16 /* PBXContainerItemProxy */;
+			path = "Nuke Thread Safety Tests.xctest";
+			remoteRef = B0066E6425954E01003A2373 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B10332901E690B4A009C8E16 /* Nuke tvOS Tests.xctest */ = {
+		B0066E6725954E01003A2373 /* Nuke Performance Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Nuke tvOS Tests.xctest";
-			remoteRef = B103328F1E690B4A009C8E16 /* PBXContainerItemProxy */;
+			path = "Nuke Performance Tests.xctest";
+			remoteRef = B0066E6625954E01003A2373 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B10332921E690B4A009C8E16 /* Nuke iOS Tests Host.app */ = {
+		B0066E6925954E01003A2373 /* Nuke Tests Host.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "Nuke iOS Tests Host.app";
-			remoteRef = B10332911E690B4A009C8E16 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B10332941E690B4A009C8E16 /* Nuke iOS Performance Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Nuke iOS Performance Tests.xctest";
-			remoteRef = B10332931E690B4A009C8E16 /* PBXContainerItemProxy */;
+			path = "Nuke Tests Host.app";
+			remoteRef = B0066E6825954E01003A2373 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -3054,11 +2984,6 @@
 			isa = PBXTargetDependency;
 			target = B028AF201BA12B1900C73373 /* MEGameTracker */;
 			targetProxy = B028AF361BA12B1900C73373 /* PBXContainerItemProxy */;
-		};
-		B10332981E690B60009C8E16 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Nuke iOS";
-			targetProxy = B10332971E690B60009C8E16 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3608,6 +3533,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -3666,6 +3592,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -3707,7 +3634,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 84;
 				DEVELOPMENT_TEAM = LNQGUJUGYP;
 				INFOPLIST_FILE = MEGameTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -3735,7 +3662,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 84;
 				DEVELOPMENT_TEAM = LNQGUJUGYP;
 				INFOPLIST_FILE = MEGameTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

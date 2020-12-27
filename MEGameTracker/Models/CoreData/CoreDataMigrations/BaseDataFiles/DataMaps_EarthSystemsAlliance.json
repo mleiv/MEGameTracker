@@ -2942,7 +2942,7 @@
     }, {
         "x-comment-x": "-- Game 1: Eden Prime --",
         "id": "G.Ear.Exo.Uto.Ede.A",
-        "name": "Eden Prime Grounds",
+        "name": "Grounds",
         "isHidden": true,
         "referenceSize": "2083x2083",
         "image": "Detail_Maps/Game1/Eden_Prime/Eden_Prime_Grounds.pdf",
@@ -3027,7 +3027,7 @@
     }, {
         "id": "G.Ear.Exo.Uto.Ede.B",
         "inMapId": "G.Ear.Exo.Uto.Eden",
-        "name": "Eden Prime Spaceport",
+        "name": "Spaceport",
         "isHidden": true,
         "referenceSize": "2083x2083",
         "image": "Detail_Maps/Game1/Eden_Prime/Eden_Prime_Spaceport.pdf",
@@ -3058,7 +3058,7 @@
         }
     }, {
         "x-comment-x": "-- Game 3: Eden Prime --",
-        "id": "G.Ear.Exo.Uto.Eden.1Drop",
+        "id": "G.Ear.Exo.Uto.Ede.1Drop",
         "name": "Drop Zone",
         "isHidden": true,
         "isShowInList": false,
@@ -3075,7 +3075,7 @@
             }
         }
     }, {
-        "id": "G.Ear.Exo.Uto.Eden.2Pod",
+        "id": "G.Ear.Exo.Uto.Ede.2Pod",
         "name": "Prothean Pod",
         "isHidden": true,
         "isShowInList": false,
@@ -7367,6 +7367,7 @@
             "https://masseffect.wikia.com/wiki/Elysium"
         ]
     }, {
+        "x-comment-x": "--------Grissom Academy-------",
         "id": "G.Ear.Pet.Vet.Grissom",
         "name": "Grissom Academy",
         "inMapId": "G.Ear.Pet.Vetus",
@@ -7378,7 +7379,174 @@
         },
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Grissom_Academy"
-        ]
+        ],
+        "gameVersionData": {
+            "3": {
+                "rerootBreadcrumbs": true,
+                "isSplitMenu": true,
+                "image": "Detail_Maps/Game3/_Secondary/Grissom_Academy/Grissom_Academy.pdf",
+                "referenceSize": "2083x2083"
+            }
+        }
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.1OrionHall",
+        "name": "Orion Hall",
+        "inMapId": "G.Ear.Pet.Vet.Grissom",
+        "mapType": "Area",
+        "mapLocationPoint": {
+            "x": 140,
+            "y": 290,
+            "width": 1800,
+            "height": 416
+        },
+        "image": "Detail_Maps/Game3/_Secondary/Grissom_Academy/Grissom_Academy_OrionHall.pdf",
+        "referenceSize": "2083x2083",
+        "events": [{
+            "type": "UnavailableInGame",
+            "id": "Game1"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game2"
+        }]
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.1.1Start",
+        "name": "Start",
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Pet.Vet.Gri.1OrionHall",
+        "mapLocationPoint": {
+            "x": 1947,
+            "y": 1900,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.1.2Hall",
+        "name": "Orion Hall",
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Pet.Vet.Gri.1OrionHall",
+        "mapLocationPoint": {
+            "x": 445,
+            "y": 450,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.1.3Atrium",
+        "name": "To Atrium",
+        "isShowInList": false,
+        "linkToMapId": "G.Ear.Pet.Vet.Gri.2Atrium",
+        "inMapId": "G.Ear.Pet.Vet.Gri.1OrionHall",
+        "mapLocationPoint": {
+            "x": 447,
+            "y": 277,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.2Atrium",
+        "name": "Atrium",
+        "inMapId": "G.Ear.Pet.Vet.Grissom",
+        "mapType": "Area",
+        "mapLocationPoint": {
+            "x": 140,
+            "y": 852,
+            "width": 1800,
+            "height": 416
+        },
+        "image": "Detail_Maps/Game3/_Secondary/Grissom_Academy/Grissom_Academy_Atrium.pdf",
+        "referenceSize": "2083x2083",
+        "events": [{
+            "type": "UnavailableInGame",
+            "id": "Game1"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game2"
+        }]
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.2.1Orion",
+        "name": "From Orion Hall",
+        "isShowInList": false,
+        "linkToMapId": "G.Ear.Pet.Vet.Gri.1OrionHall",
+        "inMapId": "G.Ear.Pet.Vet.Gri.2Atrium",
+        "mapLocationPoint": {
+            "x": 766,
+            "y": 2032,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.2.2Docking",
+        "name": "To Evacuation",
+        "isShowInList": false,
+        "linkToMapId": "G.Ear.Pet.Vet.Gri.3Shuttle",
+        "inMapId": "G.Ear.Pet.Vet.Gri.2Atrium",
+        "mapLocationPoint": {
+            "x": 768,
+            "y": 30,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.3Shuttle",
+        "name": "Evacuation Route",
+        "inMapId": "G.Ear.Pet.Vet.Grissom",
+        "mapType": "Area",
+        "mapLocationPoint": {
+            "x": 140,
+            "y": 1414,
+            "width": 1800,
+            "height": 416
+        },
+        "image": "Detail_Maps/Game3/_Secondary/Grissom_Academy/Grissom_Academy_DockingArea.pdf",
+        "referenceSize": "2083x2083",
+        "events": [{
+            "type": "UnavailableInGame",
+            "id": "Game1"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game2"
+        }]
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.3.1Atrium",
+        "name": "From Atrium",
+        "isShowInList": false,
+        "linkToMapId": "G.Ear.Pet.Vet.Gri.2Atrium",
+        "inMapId": "G.Ear.Pet.Vet.Gri.3Shuttle",
+        "mapLocationPoint": {
+            "x": 1410,
+            "y": 2017,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.3.2Atlas",
+        "name": "Empty Atlas",
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Pet.Vet.Gri.3Shuttle",
+        "mapLocationPoint": {
+            "x": 1115,
+            "y": 1060,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.3.3Statue",
+        "name": "Grissom Statue",
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Pet.Vet.Gri.3Shuttle",
+        "mapLocationPoint": {
+            "x": 1090,
+            "y": 391,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Pet.Vet.Gri.3.4Shuttle",
+        "name": "To Shuttle (Cutscene)",
+        "isShowInList": false,
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Pet.Vet.Gri.3Shuttle",
+        "mapLocationPoint": {
+            "x": 1265,
+            "y": 55,
+            "radius": 20
+        }
     }, {
         "id": "G.Ear.Pet.Vet.Sidon",
         "name": "Sidon",

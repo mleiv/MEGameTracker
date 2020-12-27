@@ -1753,8 +1753,7 @@
         "missionType": "Assignment",
         "name": "N7: Cerberus Attack",
         "description": "Cerberus has taken control of an old military installation on Tuchanka and brought its cannons back up to clear a path for a Cerberus cruiser. Retake the facility and destroy the cruiser.",
-        "inMapId": "G.InC.Kro.Ara.Tuchanka",
-        "isShowInParentMap": true,
+        "inMapId": "G.InC.Kro.Ara.Tuc.1Cerberus",
         "experience": 0,
         "reward": "10,000 Credits",
         "relatedLinks": ["https://masseffect.wikia.com/wiki/N7:_Cerberus_Attack"],
@@ -1776,7 +1775,9 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Canon Console",
-        "description": "Fight your way to the canon control console. Activate the console and Cerberus will cut the power."
+        "description": "Fight your way to the canon control console. Activate the console and Cerberus will cut the power.",
+        "inMapId": "G.InC.Kro.Ara.Tuc.1.2Console",
+        "isShowInParentMap": true
     }, {
         "id": "A3.N7CerberusAttack.2",
         "inMissionId": "A3.N7CerberusAttack",
@@ -1786,13 +1787,43 @@
         "name": "Power Modules",
         "description": "Head back the way you came to the two power modules and shoot off the locks and reactivate them."
     }, {
+        "id": "A3.N7CerberusAttack.2.1",
+        "inMissionId": "A3.N7CerberusAttack.2",
+        "sortIndex": 11502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Power Module 1",
+        "isOpensDetail": false,
+        "inMapId": "G.InC.Kro.Ara.Tuc.1Cerberus",
+        "mapLocationPoint": {
+            "x": 87,
+            "y": 1544,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.N7CerberusAttack.2.2",
+        "inMissionId": "A3.N7CerberusAttack.2",
+        "sortIndex": 11502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Power Module 2",
+        "isOpensDetail": false,
+        "inMapId": "G.InC.Kro.Ara.Tuc.1Cerberus",
+        "mapLocationPoint": {
+            "x": 87,
+            "y": 1299,
+            "radius": 1
+        }
+    }, {
         "id": "A3.N7CerberusAttack.3",
         "inMissionId": "A3.N7CerberusAttack",
         "sortIndex": 11503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Shoot Cruiser",
-        "description": "Activate the control console again and use the canons to shoot down the Cerberus cruiser. If you quickly head outside, you can watch it explode."
+        "description": "Activate the control console again and use the canons to shoot down the Cerberus cruiser. If you quickly head outside, you can watch it explode.",
+        "inMapId": "G.InC.Kro.Ara.Tuc.1.2Console",
+        "isShowInParentMap": true
     }, {
         "id": "A3.N7CerberusAbductions",
         "sortIndex": 1160,
@@ -2731,7 +2762,6 @@
         "name": "Grissom Academy: Emergency Evacuation",
         "description": "[megametracker://person?id=O3.Sanders] has requested an evacuation of Grissom Academy before the Reapers reach it. However, the turian cruiser that is supposedly responding has a signature suspiciously similar to one known by Cerberus in Game 2. And in fact, when you reach the facility, it is blockaded by Cerberus ships.",
         "inMapId": "G.Ear.Pet.Vet.Grissom",
-        "isShowInParentMap": true,
         "experience": 0,
         "reward": "",
         "relatedLinks": ["https://masseffect.wikia.com/wiki/Grissom_Academy:_Emergency_Evacuation"],
@@ -2965,7 +2995,41 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Kahlee Sanders",
-        "description": "Enter the facility and find Sanders. She is besieged by Cerberus in a security office. Help eliminate them. Sanders explains that 20 students are still trapped in the facility."
+        "description": "Enter the facility and find Sanders. She is besieged by Cerberus in a security office. Help eliminate them. Sanders explains that 20 students are still trapped in the facility.",
+        "inMapId": "G.Ear.Pet.Vet.Gri.1OrionHall",
+        "mapLocationPoint": {
+            "x": 1430,
+            "y": 1825,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.GrissomAcademy.1B",
+        "inMissionId": "A3.GrissomAcademy",
+        "sortIndex": 10251,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Riley (Optional)",
+        "description": "Send Riley Bellermine back to Kahlee for help.",
+        "inMapId": "G.Ear.Pet.Vet.Gri.1OrionHall",
+        "mapLocationPoint": {
+            "x": 977,
+            "y": 1233,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.GrissomAcademy.1C",
+        "inMissionId": "A3.GrissomAcademy",
+        "sortIndex": 10251,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Seanne (Optional)",
+        "description": "Send Seanne Bellermine back to Kahlee for help.",
+        "inMapId": "G.Ear.Pet.Vet.Gri.1OrionHall",
+        "mapLocationPoint": {
+            "x": 255,
+            "y": 1577,
+            "radius": 1
+        }
     }, {
         "id": "A3.GrissomAcademy.2",
         "inMissionId": "A3.GrissomAcademy",
@@ -2973,7 +3037,45 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Orion Hall",
-        "description": "Make your way to Orion Hall where most of the students are gathered. If [megametracker://person?id=S2.Jack] survived Game 2, she will be leading the students. Otherwise the student [megametracker://person?id=O3.Prangley] is leading the group. After helping them eliminate the Cerberus troops there, you can speak to the students and explore the room."
+        "description": "Make your way to Orion Hall where most of the students are gathered. If [megametracker://person?id=S2.Jack] survived Game 2, she will be leading the students. Otherwise the student [megametracker://person?id=O3.Prangley] is leading the group. After helping them eliminate the Cerberus troops there, you can speak to the students and explore the room.",
+        "inMapId": "G.Ear.Pet.Vet.Gri.1.2Hall",
+        "isShowInParentMap": true
+    }, {
+        "id": "A3.GrissomAcademy.2B",
+        "inMissionId": "A3.GrissomAcademy",
+        "sortIndex": 10251,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Alternate Route",
+        "description": "Cerberus has cut off your route back to Cortez. You need to find an alternate route off the station.",
+    }, {
+        "id": "A3.GrissomAcademy.2B.1",
+        "inMissionId": "A3.GrissomAcademy.2B",
+        "sortIndex": 10251,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Cerberus Camera Control",
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Pet.Vet.Gri.1OrionHall",
+        "mapLocationPoint": {
+            "x": 163,
+            "y": 583,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.GrissomAcademy.2B.2",
+        "inMissionId": "A3.GrissomAcademy.2B",
+        "sortIndex": 10251,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Door Override",
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Pet.Vet.Gri.1OrionHall",
+        "mapLocationPoint": {
+            "x": 446,
+            "y": 75,
+            "radius": 1
+        }
     }, {
         "id": "A3.GrissomAcademy.3",
         "inMissionId": "A3.GrissomAcademy",
@@ -2981,7 +3083,13 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Atrium 1",
-        "description": "Head into the atrium for a huge fight with Cerberus, including an Atlas. The atrium is divided in two by a wall, so eliminate the enemies on this side first."
+        "description": "Head into the atrium for a huge fight with Cerberus, including an Atlas. The atrium is divided in two by a wall, so eliminate the enemies on this side first.",
+        "inMapId": "G.Ear.Pet.Vet.Gri.2Atrium",
+        "mapLocationPoint": {
+            "x": 765,
+            "y": 1461,
+            "radius": 1
+        }
     }, {
         "id": "A3.GrissomAcademy.4",
         "inMissionId": "A3.GrissomAcademy",
@@ -2989,7 +3097,13 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Atrium 2",
-        "description": "Go through the corridor to the other side of the atrium and finish off the troops there."
+        "description": "Go through the corridor to the other side of the atrium and finish off the troops there.",
+        "inMapId": "G.Ear.Pet.Vet.Gri.2Atrium",
+        "mapLocationPoint": {
+            "x": 765,
+            "y": 600,
+            "radius": 1
+        }
     }, {
         "id": "A3.GrissomAcademy.5",
         "inMissionId": "A3.GrissomAcademy",
@@ -2997,23 +3111,43 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Octavia",
-        "description": "In the corridors beyond the atrium, you will find a small group of students hiding behind a barrier. If you rescued [megametracker://person?id=O2.ArcherD] in Game 2, he will be with them and vouch for you. Otherwise you will need to persuade Octavia to trust you, or shoot through the barrier. If David is there, he will point you to a room with some weapons at the end of the corridor."
+        "description": "In the corridors beyond the atrium, you will find a small group of students hiding behind a barrier. If you rescued [megametracker://person?id=O2.ArcherD] in Game 2, he will be with them and vouch for you. Otherwise you will need to persuade Octavia to trust you, or shoot through the barrier. If David is there, he will point you to a room with some weapons at the end of the corridor.",
+        "inMapId": "G.Ear.Pet.Vet.Gri.3Shuttle",
+        "mapLocationPoint": {
+            "x": 1011,
+            "y": 1891,
+            "radius": 1
+        }
     }, {
         "id": "A3.GrissomAcademy.6",
+        "inMissionId": "A3.GrissomAcademy",
+        "sortIndex": 10251,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Atlas",
+        "description": "There is an empty atlas in this room. You can use it in the final battle if you climb inside.",
+        "inMapId": "G.Ear.Pet.Vet.Gri.3.2Atlas",
+        "isShowInParentMap": true
+    }, {
+        "id": "A3.GrissomAcademy.6B",
         "inMissionId": "A3.GrissomAcademy",
         "sortIndex": 10251,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Final Battle",
-        "description": "When you reach the room with the empty Atlas, you can climb inside and use it for the final battle. When you have eliminated most of the troops, another Atlas will come through and battle you Atlas-to-Atlas. Once it is down, Sanders will usher you on to the waiting shuttle. If Jack is not present, Prangley will die protecting the other students."
+        "description": "When you reach the room with the empty Atlas, you can climb inside and use it for the final battle. When you have eliminated most of the troops, another Atlas will come through and battle you Atlas-to-Atlas. Once it is down, Sanders will usher you on to the waiting shuttle. If Jack is not present, Prangley will die protecting the other students.",
+        "inMapId": "G.Ear.Pet.Vet.Gri.3.3Statue",
+        "isShowInParentMap": true
     }, {
-        "id": "A3.GrissomAcademy.6",
+        "id": "A3.GrissomAcademy.7",
         "inMissionId": "A3.GrissomAcademy",
         "sortIndex": 10251,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Shuttle",
-        "description": "If Jack is not present, Sanders will declare that the students are only fit for support roles in the war effort. Otherwise she will leave the decision up to you."
+        "description": "Head through to the shuttle cutscene. If Jack is not present, Sanders will declare that the students are only fit for support roles in the war effort. Otherwise she will leave the decision up to you.",
+        "inMapId": "G.Ear.Pet.Vet.Gri.3.4Shuttle",
+        "isShowInParentMap": true
     }, {
         "id": "A3.PrototypeComponents",
         "sortIndex": 1002,
