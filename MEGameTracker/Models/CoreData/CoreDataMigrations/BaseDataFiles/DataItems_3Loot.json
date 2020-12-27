@@ -962,15 +962,116 @@
         "x-comment-x": "-------- Leviathan: Dr Bryson's Lab -------",
         "id": "DLC3.Leviathan.Loot.I.01",
         "gameVersion": "3",
-        "itemType": "Loot",
+        "itemType": "Mod",
         "itemDisplayType": "Loot",
-        "name": "X",
-        "inMapId": "G.C",
+        "name": "Pistol Cranial Trauma System",
+        "relatedLinks": ["https://masseffect.fandom.com/wiki/Pistol_Cranial_Trauma_System"],
+        "inMapId": "G.C3.Bryson",
         "mapLocationPoint": {
-            "x": 0,
-            "y": 0,
+            "x": 337,
+            "y": 409,
             "radius": 1
         }
+    }, {
+        "id": "DLC3.Leviathan.Loot.I.02",
+        "gameVersion": "3",
+        "itemType": "Mod",
+        "itemDisplayType": "Loot",
+        "name": "SMG High-Velocity Barrel",
+        "relatedLinks": ["https://masseffect.fandom.com/wiki/SMG_High-Velocity_Barrel"],
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 801,
+            "y": 775,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.Loot.I.03",
+        "gameVersion": "3",
+        "itemType": "Mod",
+        "itemDisplayType": "Loot",
+        "name": "Pistol Ultralight Materials",
+        "relatedLinks": ["https://masseffect.fandom.com/wiki/Pistol_Ultralight_Materials"],
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1794,
+            "y": 439,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.Loot.I.04",
+        "gameVersion": "3",
+        "itemType": "Mod",
+        "itemDisplayType": "Loot",
+        "name": "SMG Mass Pulse Recoil System",
+        "relatedLinks": ["https://masseffect.fandom.com/wiki/SMG_Recoil_System"],
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1358,
+            "y": 1257,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.Loot.I.05",
+        "gameVersion": "3",
+        "itemType": "Data",
+        "itemDisplayType": "Other",
+        "name": "Picture",
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1348,
+            "y": 1110,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.Loot.I.06",
+        "gameVersion": "3",
+        "itemType": "Artifact",
+        "itemDisplayType": "Other",
+        "name": "Screaming Husk Head",
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 431,
+            "y": 871,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedAfter",
+            "id": "Completed: Leviathan: Find Ann Bryson"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.Loot.I.07",
+        "gameVersion": "3",
+        "itemType": "Mod",
+        "itemDisplayType": "Loot",
+        "name": "Assault Rifle Omni-Blade",
+        "relatedLinks": ["https://masseffect.fandom.com/wiki/Weapon_Mods#Assault_Rifle_Omni-Blade"],
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 668,
+            "y": 1026,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.Loot.I.08",
+        "gameVersion": "3",
+        "itemType": "Data",
+        "itemDisplayType": "Other",
+        "name": "Datapad",
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1264,
+            "y": 1112,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
     }, {
         "x-comment-x": "-------- Leviathan: TGES Mineral Works -------",
         "id": "DLC3.Leviathan.Loot.I.20",

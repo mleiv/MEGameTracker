@@ -3157,6 +3157,61 @@
         }
 
 
+    }, {
+        "id": "G.C3.Bryson",
+        "name": "Dr. Bryson's Lab",
+        "mapType": "Area",
+        "isHidden": true,
+        "inMapId": "G.OuC.Ser.Widow",
+        "mapLocationPoint": {
+            "x": 1362,
+            "y": 882,
+            "radius": 75
+        },
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_Brysons_Lab.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        },
+        "events": [{
+            "type": "UnavailableInGame",
+            "id": "Game1"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game2"
+        }]
+    }, {
+        "id": "G.C3.Bryson.1Map",
+        "name": "Galaxy Map",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 410,
+            "y": 975,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Bryson.2Skycar",
+        "name": "Skycar",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 903,
+            "y": 525,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Bryson.3Sovereign",
+        "name": "Sovereign Fragment",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1320,
+            "y": 867,
+            "radius": 20
+        }
 
 
     }, {
@@ -3728,6 +3783,7 @@
             "y": 1585,
             "radius": 20
         }
+        
 
 
 

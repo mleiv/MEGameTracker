@@ -319,13 +319,320 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Dr. Bryson",
-        "description": "Go to the Citadel to meet Dr. Bryson. Before you can speak with him, Bryson's Indoctrinated assistant, Hadley, kills him. After interrogating Hadley, search the lab for clues. There are six different items relating to Blackout Crimes, Creature Sightings, Rachni Activity, Locations with Element Zero, Prothean Activities, and Reaper Activities. You can add and remove filters to the search map on the first level of the lab, narrowing in on a destination. The three relevant right now are: Creature Sightings, Locations with Element Zero, and Reaper Activities.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true,
+        "description": "Go to the Citadel to meet Dr. Bryson. Before you can speak with him, Bryson's Indoctrinated assistant, Hadley, kills him. After interrogating Hadley, search the lab for clues.",
+        "inMapId": "G.C3.Bryson",
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Citadel:_Dr._Bryson",
             "https://masseffect.wikia.com/wiki/Citadel:_Leviathan_I"
         ]
+    }, {
+        "id": "DLC3.Leviathan.1.0A",
+        "inMissionId": "DLC3.Leviathan.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Audio Log",
+        "description": "A message from Dr. Garneau, a researcher working for Dr. Bryson.",
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 191,
+            "y": 866,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.0B",
+        "inMissionId": "DLC3.Leviathan.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Galaxy Map",
+        "description": "Open the galaxy map to start your search for clues.",
+        "inMapId": "G.C3.Bryson.1Map",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Leviathan.1.1",
+        "inMissionId": "DLC3.Leviathan.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Creature Sightings",
+        "description": "Dr. Bryson was using creature sightings to extrapolate a course to Leviathan."
+    }, {
+        "id": "DLC3.Leviathan.1.1.1",
+        "inMissionId": "DLC3.Leviathan.1.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Switch",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1055,
+            "y": 1367,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.1.2",
+        "inMissionId": "DLC3.Leviathan.1.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Display",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1113,
+            "y": 1403,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.2",
+        "inMissionId": "DLC3.Leviathan.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Locations with Element Zero",
+        "description": "Dr. Bryson was examinig meteorite samples for Element Zero. EDI hypothesizes that Leviathan may need to periodically replenish its eezo supply."
+    }, {
+        "id": "DLC3.Leviathan.1.2.1",
+        "inMissionId": "DLC3.Leviathan.1.2",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Rocks",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1267,
+            "y": 1368,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.2.2",
+        "inMissionId": "DLC3.Leviathan.1.2",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Scope",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1226,
+            "y": 1368,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.3",
+        "inMissionId": "DLC3.Leviathan.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Reaper Activities",
+        "description": "There is an encrypted data log of reaper fleet patterns, and a conversation between Dr. Bryson and Dr. Garneau where Bryson says he will keep the password \"close to his heart\"."
+    }, {
+        "id": "DLC3.Leviathan.1.3.1",
+        "inMissionId": "DLC3.Leviathan.1.3",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Video Log",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1142,
+            "y": 841,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.3.2",
+        "inMissionId": "DLC3.Leviathan.1.3",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Encrypted Device",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1180,
+            "y": 818,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.3.3",
+        "inMissionId": "DLC3.Leviathan.1.3",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Password",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1675,
+            "y": 1893,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.3.4",
+        "inMissionId": "DLC3.Leviathan.1.3",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Unencrypt Device",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1180,
+            "y": 818,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.4",
+        "inMissionId": "DLC3.Leviathan.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Blackout Crimes (Optional)",
+        "description": "A listing of crimes where the accused had no memory of the crime. And a record of dates and times."
+    }, {
+        "id": "DLC3.Leviathan.1.4.1",
+        "inMissionId": "DLC3.Leviathan.1.4",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Computer Console",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 659,
+            "y": 788,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.4.2",
+        "inMissionId": "DLC3.Leviathan.1.4",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Computer Console",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 741,
+            "y": 850,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.5",
+        "inMissionId": "DLC3.Leviathan.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Rachni Activity (Optional)",
+        "description": "Dr. Bryson's log hypothesizes that the ancient rachni were controlled by Leviathan. There is also a record of rachni ship sightings."
+    }, {
+        "id": "DLC3.Leviathan.1.5.1",
+        "inMissionId": "DLC3.Leviathan.1.5",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Video Log",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1307,
+            "y": 1115,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.5.2",
+        "inMissionId": "DLC3.Leviathan.1.5",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Computer Console",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1268,
+            "y": 1115,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.6",
+        "inMissionId": "DLC3.Leviathan.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Prothean Activities (Optional)",
+        "description": "X"
+    }, {
+        "id": "DLC3.Leviathan.1.6.1",
+        "inMissionId": "DLC3.Leviathan.1.6",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Prothean Artifact",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 150,
+            "y": 1076,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.7",
+        "inMissionId": "DLC3.Leviathan.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Thorian (Optional)",
+        "description": "Musings about the Thorian's mind control being related to Reaper indoctrination and that Leviathan may use the same technology."
+    }, {
+        "id": "DLC3.Leviathan.1.7.1",
+        "inMissionId": "DLC3.Leviathan.1.7",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "PDA",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1105,
+            "y": 1279,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.8",
+        "inMissionId": "DLC3.Leviathan.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Leviathan of Dis (Optional)",
+        "description": "Intercepted communications from the batarians about the Leviathan of Dis."
+    }, {
+        "id": "DLC3.Leviathan.1.8.1",
+        "inMissionId": "DLC3.Leviathan.1.8",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Audio Log",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1463,
+            "y": 1727,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.1.9",
+        "inMissionId": "DLC3.Leviathan.1",
+        "sortIndex": 10901,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Galaxy Map",
+        "description": "Enter three criteria into the galaxy map to find the next location: Creature Sightings, Locations with Element Zero, and Reaper Activities.",
+        "inMapId": "G.C3.Bryson.1Map",
+        "isShowInParentMap": true
     }, {
         "id": "DLC3.Leviathan.2",
         "inMissionId": "DLC3.Leviathan",
@@ -333,13 +640,17 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Dr. Garneau",
-        "description": "Head to the mining colony and look around for Garneau. The place is locked down and it will take some work to gain access to the medical wing. Take the personnel id from the datapad nearby and use it to get into the personnel area, where the security terminal will give you a patient id you can use to get into the medical wing. There you will find a patient locked up, claiming to be Garneau. Let him out and chase him as he flees. He is obviously Indoctrinated, but the Reaper forces chasing him see him as a threat. You follow him down into the mines, where he chooses to detonate himself and the artifact there rather than let you have it. You find the real Garneau's body nearby. At this point the workers wake up from their Indoctrination, having forgotten the last 10 years of their lives.",
+        "description": "Head to the mining colony and look around for Garneau. The place is locked down and the personnel there are uncooperative.",
         "inMapId": "G.Att.Cal.Ays.Mahavid",
         "isShowInParentMap": true,
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Leviathan:_Find_Garneau",
             "https://masseffect.wikia.com/wiki/Mahavid:_Leviathan"
-        ]
+        ],
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
     }, {
         "id": "DLC3.Leviathan.2.1",
         "inMissionId": "DLC3.Leviathan.2",
@@ -489,12 +800,237 @@
         "missionType": "Objective",
         "name": "Find Ann Bryson",
         "description": "Head back to the lab on the Citadel. EDI has shielded the artifact there to protect anyone else from being Indoctrinated. There is a message from Dr. Bryson's daughter [Ann|megametracker://person?id=O3.ABryson]. \n\nYou will need two more clues to find where Ann is. Open the drawer next to the husk and examine the pda inside. It has an access card to the requisition locker. Inside the locker is a clue. \n\nRead the datapad on the table mentioning Ann's ship, the Icarus. Examine the terminal enough times to show the Icarus. It is a long range ship, another clue.\n\n Use the ship schematics and equipment filters to decide where Ann has gone.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true,
+        "inMapId": "G.C3.Bryson",
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Citadel:_Leviathan_II",
             "https://masseffect.wikia.com/wiki/Leviathan:_Find_Ann_Bryson"
         ]
+    }, {
+        "id": "DLC3.Leviathan.3.1",
+        "inMissionId": "DLC3.Leviathan.3",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Message From Ann Bryson",
+        "description": "Ann has sent a message to her father about the danger of the artifact. She has found another one."
+    }, {
+        "id": "DLC3.Leviathan.3.1.1",
+        "inMissionId": "DLC3.Leviathan.3",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Personal Terminal",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1462,
+            "y": 1759,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.3.2",
+        "inMissionId": "DLC3.Leviathan.3",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Ship Clues",
+        "description": "Find the name of the ship Ann Bryson left on, and then use the computer console to bring up the ship's schematics."
+    }, {
+        "id": "DLC3.Leviathan.3.2.1",
+        "inMissionId": "DLC3.Leviathan.3.2",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "PDA",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1110,
+            "y": 1232,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.3.2.2",
+        "inMissionId": "DLC3.Leviathan.3.2",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Computer Console",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1072,
+            "y": 893,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.3.2.3",
+        "inMissionId": "DLC3.Leviathan.3.2",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Ship Schematics",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1092,
+            "y": 855,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.3.3",
+        "inMissionId": "DLC3.Leviathan.3",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Dig Site Clues",
+        "description": "Open the drawer to get the access card to the requisitions locker. You can examine the equipment in the locker to determine the characteristics of the dig site."
+    }, {
+        "id": "DLC3.Leviathan.3.3.1",
+        "inMissionId": "DLC3.Leviathan.3.3",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Drawer",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 353,
+            "y": 890,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.3.3.2",
+        "inMissionId": "DLC3.Leviathan.3.3",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Access Card",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 353,
+            "y": 890,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.3.3.3",
+        "inMissionId": "DLC3.Leviathan.3.3",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Requisitions Locker",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 686,
+            "y": 1022,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.3.4",
+        "inMissionId": "DLC3.Leviathan.3",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Artifact Characteristics (Optional)",
+        "description": "You can research properties of the artifact."
+    }, {
+        "id": "DLC3.Leviathan.3.4.1",
+        "inMissionId": "DLC3.Leviathan.3.4",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Structure",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 475,
+            "y": 873,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.3.4.2",
+        "inMissionId": "DLC3.Leviathan.3.4",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Energy Emissions",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 423,
+            "y": 878,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.3.5",
+        "inMissionId": "DLC3.Leviathan.3",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Stone Painting (Optional)",
+        "description": "There is an ancient painting in the lab, but it is not from the same galactic region which you are searching.",
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1643,
+            "y": 870,
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+    }, {
+        "id": "DLC3.Leviathan.3.6",
+        "inMissionId": "DLC3.Leviathan.3",
+        "sortIndex": 10903,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Galaxy Map",
+        "description": "Enter two criteria into the galaxy map to find the next location: Ship Schematics and Equipment.",
+        "inMapId": "G.C3.Bryson.1Map",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
     }, {
         "id": "DLC3.Leviathan.4",
         "inMissionId": "DLC3.Leviathan",
@@ -507,7 +1043,11 @@
         "isShowInParentMap": true,
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Namakli:_Leviathan"
-        ]
+        ],
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Leviathan: Find Ann Bryson"
+        }]
     }, {
         "id": "DLC3.Leviathan.5",
         "inMissionId": "DLC3.Leviathan",

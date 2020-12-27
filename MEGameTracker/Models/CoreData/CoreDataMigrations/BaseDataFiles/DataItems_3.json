@@ -162,30 +162,21 @@
         "inMissionId": "A3.Souvenirs",
         "identicalMissionId": "DLC3.Leviathan.I.1A",
         "gameVersion": "3",
-        "itemType": "Loot",
+        "itemType": "Souvenir",
         "itemDisplayType": "Loot",
         "name": "Screaming Husk Head",
         "annotationNote": "Talk to Vega in Bryson's lab",
-        "inMapId": "G.C",
-        "isShowInParentMap": true,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 431,
+            "y": 871,
+            "radius": 1
+        },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: The Citadel I"
+            "id": "Completed: Leviathan: Find Ann Bryson"
         }],
         "sortIndex": 1096
-    }, {
-        "x-comment-x": "-------- (duplicate for mission listing) -------",
-        "id": "DLC3.Leviathan.5.I.1A",
-        "inMissionId": "DLC3.Leviathan.5",
-        "identicalMissionId": "DLC3.Leviathan.I.1B",
-        "gameVersion": "3",
-        "itemType": "Loot",
-        "itemDisplayType": "Loot",
-        "name": "Screaming Husk Head",
-        "annotationNote": "Talk to Vega in Bryson's lab",
-        "inMapId": "G.C",
-        "isShowInParentMap": true,
-        "sortIndex": 10904
     }, {
         "id": "A3.Souvenirs.I.01VI",
         "inMissionId": "A3.Souvenirs",
