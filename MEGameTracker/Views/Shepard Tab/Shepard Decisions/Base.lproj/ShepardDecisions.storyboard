@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,86 +16,74 @@
                         <viewControllerLayoutGuide type="top" id="CTG-ij-bLR"/>
                         <viewControllerLayoutGuide type="bottom" id="BCg-J2-dR4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1jD-Wb-SIN">
+                    <view key="view" contentMode="scaleToFill" id="1jD-Wb-SIN" userLabel="Root">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IN1-5b-ce5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Fb-7e-rGq">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1156.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AYY-2v-sQD" userLabel="Layout">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="717"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AYY-2v-sQD" userLabel="Layout">
-                                                <rect key="frame" x="0.0" y="10" width="375" height="1126.5"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a57-Fp-xsp">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="591.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a57-Fp-xsp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
-                                                        <subviews>
-                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oIo-eh-LIH" customClass="IBStyledSegmentedControl" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="15" y="5" width="345" height="42"/>
-                                                                <color key="backgroundColor" name="background"/>
-                                                                <segments>
-                                                                    <segment title="Game 1"/>
-                                                                    <segment title="Game 2"/>
-                                                                    <segment title="Game 3"/>
-                                                                </segments>
-                                                                <connections>
-                                                                    <action selector="gameChanged:" destination="FE8-Fz-nu7" eventType="valueChanged" id="bBy-W0-kna"/>
-                                                                </connections>
-                                                            </segmentedControl>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="oIo-eh-LIH" firstAttribute="leading" secondItem="a57-Fp-xsp" secondAttribute="leading" constant="15" id="Ktt-PC-Zkr"/>
-                                                            <constraint firstAttribute="height" priority="100" id="Lai-R5-CnE"/>
-                                                            <constraint firstItem="oIo-eh-LIH" firstAttribute="top" secondItem="a57-Fp-xsp" secondAttribute="top" constant="5" id="TqM-OC-8JD"/>
-                                                            <constraint firstAttribute="trailing" secondItem="oIo-eh-LIH" secondAttribute="trailing" constant="15" id="e7n-3g-nT3"/>
-                                                            <constraint firstAttribute="bottom" secondItem="oIo-eh-LIH" secondAttribute="bottom" constant="5" id="rku-YR-eq9"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntY-bp-fba" customClass="DecisionsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="61" width="375" height="55.5"/>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oIo-eh-LIH" customClass="IBStyledSegmentedControl" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="15" y="5" width="345" height="582.5"/>
                                                         <color key="backgroundColor" name="background"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="showHeading" value="NO"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSd-7l-dbn" userLabel="Filler">
-                                                        <rect key="frame" x="0.0" y="126.5" width="375" height="1000"/>
-                                                    </view>
+                                                        <segments>
+                                                            <segment title="Game 1"/>
+                                                            <segment title="Game 2"/>
+                                                            <segment title="Game 3"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="gameChanged:" destination="FE8-Fz-nu7" eventType="valueChanged" id="bBy-W0-kna"/>
+                                                        </connections>
+                                                    </segmentedControl>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" priority="100" id="nGZ-2c-dD4"/>
+                                                    <constraint firstItem="oIo-eh-LIH" firstAttribute="leading" secondItem="a57-Fp-xsp" secondAttribute="leading" constant="15" id="Ktt-PC-Zkr"/>
+                                                    <constraint firstAttribute="height" priority="100" id="Lai-R5-CnE"/>
+                                                    <constraint firstItem="oIo-eh-LIH" firstAttribute="top" secondItem="a57-Fp-xsp" secondAttribute="top" constant="5" id="TqM-OC-8JD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oIo-eh-LIH" secondAttribute="trailing" constant="15" id="e7n-3g-nT3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="oIo-eh-LIH" secondAttribute="bottom" constant="5" id="rku-YR-eq9"/>
                                                 </constraints>
-                                            </stackView>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntY-bp-fba" customClass="DecisionsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="601.5" width="375" height="55.5"/>
+                                                <color key="backgroundColor" name="background"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showHeading" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSd-7l-dbn" userLabel="Filler">
+                                                <rect key="frame" x="0.0" y="667" width="375" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="100" id="YzG-TX-Ax9"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="AYY-2v-sQD" firstAttribute="leading" secondItem="8Fb-7e-rGq" secondAttribute="leading" id="NNx-GO-xf6"/>
-                                            <constraint firstItem="AYY-2v-sQD" firstAttribute="top" secondItem="8Fb-7e-rGq" secondAttribute="top" priority="900" constant="10" id="cnq-Ae-uhx"/>
-                                            <constraint firstItem="wSd-7l-dbn" firstAttribute="height" secondItem="8Fb-7e-rGq" secondAttribute="height" priority="100" id="ehM-df-yzc"/>
-                                            <constraint firstAttribute="trailing" secondItem="AYY-2v-sQD" secondAttribute="trailing" id="t2C-7O-2om"/>
-                                            <constraint firstAttribute="bottom" secondItem="AYY-2v-sQD" secondAttribute="bottom" priority="900" constant="20" id="yxv-Bk-uxu"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="8Fb-7e-rGq" firstAttribute="height" relation="greaterThanOrEqual" secondItem="IN1-5b-ce5" secondAttribute="height" id="NUY-wZ-zLz"/>
-                                    <constraint firstItem="8Fb-7e-rGq" firstAttribute="top" secondItem="IN1-5b-ce5" secondAttribute="top" id="VrW-Hz-nKx"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Fb-7e-rGq" secondAttribute="trailing" id="eyw-R1-wg3"/>
-                                    <constraint firstItem="8Fb-7e-rGq" firstAttribute="width" secondItem="IN1-5b-ce5" secondAttribute="width" id="hpA-0y-5Vn"/>
-                                    <constraint firstItem="8Fb-7e-rGq" firstAttribute="leading" secondItem="IN1-5b-ce5" secondAttribute="leading" id="lXn-TU-waR"/>
-                                    <constraint firstAttribute="bottom" secondItem="8Fb-7e-rGq" secondAttribute="bottom" id="xvN-di-Qlu"/>
+                                    <constraint firstAttribute="bottom" secondItem="AYY-2v-sQD" secondAttribute="bottom" id="J5a-1h-8Le"/>
+                                    <constraint firstAttribute="trailing" secondItem="AYY-2v-sQD" secondAttribute="trailing" id="b1C-Jd-bCV"/>
+                                    <constraint firstItem="AYY-2v-sQD" firstAttribute="leading" secondItem="IN1-5b-ce5" secondAttribute="leading" id="jS5-hJ-442"/>
+                                    <constraint firstItem="AYY-2v-sQD" firstAttribute="height" relation="greaterThanOrEqual" secondItem="IN1-5b-ce5" secondAttribute="height" id="uw4-xV-1U6"/>
+                                    <constraint firstItem="AYY-2v-sQD" firstAttribute="top" secondItem="IN1-5b-ce5" secondAttribute="top" id="wG8-4R-J1g"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" name="secondaryBackground"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="IN1-5b-ce5" secondAttribute="bottom" id="1H2-IE-37x"/>
                             <constraint firstItem="IN1-5b-ce5" firstAttribute="leading" secondItem="1jD-Wb-SIN" secondAttribute="leading" id="ATe-CT-U9j"/>
-                            <constraint firstItem="8Fb-7e-rGq" firstAttribute="height" secondItem="1jD-Wb-SIN" secondAttribute="height" priority="100" id="Abl-zy-tgc"/>
-                            <constraint firstItem="IN1-5b-ce5" firstAttribute="top" secondItem="1jD-Wb-SIN" secondAttribute="top" id="lKZ-Wn-S4t"/>
+                            <constraint firstItem="IN1-5b-ce5" firstAttribute="width" secondItem="1jD-Wb-SIN" secondAttribute="width" id="PKW-fa-zbI"/>
+                            <constraint firstItem="IN1-5b-ce5" firstAttribute="top" secondItem="CTG-ij-bLR" secondAttribute="bottom" id="cCL-IS-o18"/>
+                            <constraint firstItem="AYY-2v-sQD" firstAttribute="width" secondItem="1jD-Wb-SIN" secondAttribute="width" id="ied-YP-tCJ"/>
+                            <constraint firstItem="BCg-J2-dR4" firstAttribute="top" secondItem="IN1-5b-ce5" secondAttribute="bottom" id="rhS-LP-R9H"/>
                             <constraint firstAttribute="trailing" secondItem="IN1-5b-ce5" secondAttribute="trailing" id="rjU-70-k3y"/>
                         </constraints>
                     </view>
@@ -109,6 +98,11 @@
             <point key="canvasLocation" x="922" y="271"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="oIo-eh-LIH">
+            <size key="intrinsicContentSize" width="200" height="31"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

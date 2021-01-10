@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EDF-di-e8I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EDF-di-e8I">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +17,7 @@
                         <viewControllerLayoutGuide type="top" id="gqM-r6-kPT"/>
                         <viewControllerLayoutGuide type="bottom" id="WDW-cO-aAa"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="bgl-bt-Fg8">
+                    <view key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="bgl-bt-Fg8" userLabel="Root">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -29,10 +31,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="eRD-1p-58M" userLabel="Page Controller" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="600"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="separatorColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
@@ -41,7 +43,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-ej-rQv" userLabel="Filler">
-                                        <rect key="frame" x="0.0" y="650" width="375" height="17"/>
+                                        <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="100" id="plM-sb-TIG"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -52,7 +57,6 @@
                         <color key="backgroundColor" name="secondaryBackground"/>
                         <constraints>
                             <constraint firstItem="WDW-cO-aAa" firstAttribute="top" secondItem="QGD-pw-aeq" secondAttribute="bottom" id="PFi-7h-ewn"/>
-                            <constraint firstItem="fjN-ej-rQv" firstAttribute="height" secondItem="bgl-bt-Fg8" secondAttribute="height" priority="1" id="SQP-NN-ga8"/>
                             <constraint firstItem="QGD-pw-aeq" firstAttribute="leading" secondItem="bgl-bt-Fg8" secondAttribute="leading" id="aQs-0D-qzI"/>
                             <constraint firstAttribute="trailing" secondItem="QGD-pw-aeq" secondAttribute="trailing" id="gtO-Cf-bwA"/>
                             <constraint firstItem="QGD-pw-aeq" firstAttribute="top" secondItem="gqM-r6-kPT" secondAttribute="bottom" id="myF-pQ-TcD"/>
@@ -73,5 +77,8 @@
         <namedColor name="secondaryBackground">
             <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

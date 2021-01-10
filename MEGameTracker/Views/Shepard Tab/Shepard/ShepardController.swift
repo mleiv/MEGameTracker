@@ -271,19 +271,13 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 
 	func openChangeableSegue(_ sceneId: String, sender: AnyObject!) {
 		DispatchQueue.main.async {
-			self.startSpinner(inView: self.view)
-		}
-		DispatchQueue.global(qos: .background).async {
-			if let parentController = self.parent as? MESplitViewController {
-				let ferriedSegue: FerriedPrepareForSegueClosure = { _ in }
-				DispatchQueue.main.async {
-					parentController.performChangeableSegue("Show ShepardFlow.\(sceneId)", sender: sender, ferriedSegue: ferriedSegue)
-					self.stopSpinner(inView: self.view)
-				}
-			}
-			DispatchQueue.main.async {
-				self.stopSpinner(inView: self.view)
-			}
+            self.startSpinner(inView: self.view)
+            if let parentController = self.parent as? MESplitViewController {
+                let ferriedSegue: FerriedPrepareForSegueClosure = { _ in }
+                parentController.performChangeableSegue("Show ShepardFlow.\(sceneId)", sender: sender, ferriedSegue: ferriedSegue)
+                self.stopSpinner(inView: self.view)
+            }
+            self.stopSpinner(inView: self.view)
 		}
 	}
 

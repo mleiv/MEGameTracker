@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jcz-EQ-och">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jcz-EQ-och">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,349 +17,316 @@
                         <viewControllerLayoutGuide type="top" id="Mlg-Pn-5uh"/>
                         <viewControllerLayoutGuide type="bottom" id="FIv-9I-KHN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ScR-fu-f4g">
+                    <view key="view" contentMode="scaleToFill" id="ScR-fu-f4g" userLabel="Root">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YpK-v1-gmQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sp9-xo-LVc" userLabel="Interior">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="894.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="C6p-LM-9h5">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="840.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="C6p-LM-9h5">
-                                                <rect key="frame" x="0.0" y="15" width="375" height="859.5"/>
+                                            <view opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="DaH-Ir-JBe" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="76.5"/>
                                                 <subviews>
-                                                    <view opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="DaH-Ir-JBe" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Rg2-FL-iwD" userLabel="ME2 Header">
+                                                        <rect key="frame" x="15" y="5" width="345" height="66.5"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Rg2-FL-iwD" userLabel="ME2 Header">
-                                                                <rect key="frame" x="15" y="5" width="345" height="40"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Game 2/3 Code:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wem-31-TNu" userLabel="ME2 Label">
-                                                                        <rect key="frame" x="0.0" y="19.5" width="212" height="20.5"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="THp-pr-04S" customClass="IBStyledSegmentedControl" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="212" y="9" width="133" height="32"/>
-                                                                        <color key="backgroundColor" name="secondaryBackground"/>
-                                                                        <segments>
-                                                                            <segment title="Game 2"/>
-                                                                            <segment title="Game 3"/>
-                                                                        </segments>
-                                                                        <connections>
-                                                                            <action selector="game23Changed:" destination="Jcz-EQ-och" eventType="valueChanged" id="be2-9A-yFi"/>
-                                                                        </connections>
-                                                                    </segmentedControl>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" priority="100" id="7by-NC-rRe"/>
-                                                                </constraints>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="Rg2-FL-iwD" firstAttribute="leading" secondItem="DaH-Ir-JBe" secondAttribute="leading" constant="15" id="3IF-hW-oSd"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Rg2-FL-iwD" secondAttribute="trailing" constant="15" id="6Q1-3a-EvQ"/>
-                                                            <constraint firstItem="Rg2-FL-iwD" firstAttribute="top" secondItem="DaH-Ir-JBe" secondAttribute="top" priority="900" constant="5" id="UVW-dW-fdo"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Rg2-FL-iwD" secondAttribute="bottom" priority="900" constant="5" id="fmV-5G-82e"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view hidden="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="I9B-Rw-8ed" userLabel="Scan" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="375" height="0.0"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxT-Bk-6sG">
-                                                                <rect key="frame" x="116" y="8" width="143.5" height="0.0"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="mU8-Qh-SEX">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="0.0"/>
-                                                                    </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" text="Scan Code" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzq-p0-iXv">
-                                                                        <rect key="frame" x="60" y="-10" width="83.5" height="20.5"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="mU8-Qh-SEX" firstAttribute="top" secondItem="GxT-Bk-6sG" secondAttribute="top" id="IsS-UJ-cIh"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="Hzq-p0-iXv" secondAttribute="trailing" id="KSn-aB-4zk"/>
-                                                                    <constraint firstItem="Hzq-p0-iXv" firstAttribute="leading" secondItem="mU8-Qh-SEX" secondAttribute="trailing" constant="10" id="Nf6-ta-fMv"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="mU8-Qh-SEX" secondAttribute="bottom" id="haj-MY-Y2p"/>
-                                                                    <constraint firstItem="Hzq-p0-iXv" firstAttribute="centerY" secondItem="mU8-Qh-SEX" secondAttribute="centerY" id="sqX-7d-o2O"/>
-                                                                    <constraint firstAttribute="height" priority="100" id="tW7-tX-QWR"/>
-                                                                    <constraint firstItem="mU8-Qh-SEX" firstAttribute="leading" secondItem="GxT-Bk-6sG" secondAttribute="leading" id="tp4-Ao-AaA"/>
-                                                                </constraints>
-                                                            </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-uC-N3q" customClass="IBStyledButton" customModule="MEGameTracker" customModuleProvider="target">
-                                                                <rect key="frame" x="15" y="0.0" width="345" height="0.0"/>
-                                                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Game 2/3 Code:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wem-31-TNu" userLabel="ME2 Label">
+                                                                <rect key="frame" x="0.0" y="46" width="212" height="20.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="THp-pr-04S" customClass="IBStyledSegmentedControl" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="212" y="35.5" width="133" height="32"/>
+                                                                <color key="backgroundColor" name="secondaryBackground"/>
+                                                                <segments>
+                                                                    <segment title="Game 2"/>
+                                                                    <segment title="Game 3"/>
+                                                                </segments>
                                                                 <connections>
-                                                                    <action selector="scanCodeAction:" destination="Jcz-EQ-och" eventType="touchUpInside" id="R74-fp-D5I"/>
+                                                                    <action selector="game23Changed:" destination="Jcz-EQ-och" eventType="valueChanged" id="be2-9A-yFi"/>
                                                                 </connections>
-                                                            </button>
+                                                            </segmentedControl>
                                                         </subviews>
-                                                        <color key="backgroundColor" name="background"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GxT-Bk-6sG" secondAttribute="trailing" constant="15" id="0UU-F9-vo0"/>
-                                                            <constraint firstItem="1JD-uC-N3q" firstAttribute="leading" secondItem="I9B-Rw-8ed" secondAttribute="leading" constant="15" id="2fI-IU-KFA"/>
-                                                            <constraint firstAttribute="bottom" secondItem="1JD-uC-N3q" secondAttribute="bottom" id="Jho-sz-Hqm"/>
-                                                            <constraint firstItem="GxT-Bk-6sG" firstAttribute="top" secondItem="I9B-Rw-8ed" secondAttribute="top" priority="950" constant="8" id="QEE-qw-Hbd"/>
-                                                            <constraint firstAttribute="trailing" secondItem="1JD-uC-N3q" secondAttribute="trailing" constant="15" id="Zfv-fa-ctD"/>
-                                                            <constraint firstAttribute="bottom" secondItem="GxT-Bk-6sG" secondAttribute="bottom" priority="900" constant="8" id="bLy-ZL-Gy8"/>
-                                                            <constraint firstItem="1JD-uC-N3q" firstAttribute="top" secondItem="I9B-Rw-8ed" secondAttribute="top" id="j64-BT-pKq"/>
-                                                            <constraint firstItem="GxT-Bk-6sG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I9B-Rw-8ed" secondAttribute="leading" constant="15" id="run-XZ-8zB"/>
-                                                            <constraint firstItem="GxT-Bk-6sG" firstAttribute="centerX" secondItem="I9B-Rw-8ed" secondAttribute="centerX" id="vYA-NC-ynt"/>
-                                                            <constraint firstAttribute="height" priority="100" id="vxm-QK-x6o"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="Deu-4f-xwO" userLabel="2/3 Code">
-                                                        <rect key="frame" x="0.0" y="50" width="375" height="110.5"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Rg2-FL-iwD" firstAttribute="leading" secondItem="DaH-Ir-JBe" secondAttribute="leading" constant="15" id="3IF-hW-oSd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Rg2-FL-iwD" secondAttribute="trailing" constant="15" id="6Q1-3a-EvQ"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="100" constant="50" id="KwF-kA-45y"/>
+                                                    <constraint firstItem="Rg2-FL-iwD" firstAttribute="top" secondItem="DaH-Ir-JBe" secondAttribute="top" priority="900" constant="5" id="UVW-dW-fdo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Rg2-FL-iwD" secondAttribute="bottom" priority="900" constant="5" id="fmV-5G-82e"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" systemColor="separatorColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="I9B-Rw-8ed" userLabel="Scan" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="76.5" width="375" height="0.0"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxT-Bk-6sG">
+                                                        <rect key="frame" x="129" y="8" width="117.5" height="0.0"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uHr-tc-ZNv">
-                                                                <rect key="frame" x="15" y="8" width="345" height="94.5"/>
-                                                                <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalCompressionResistancePriority="755" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tUz-uD-7av" userLabel="Code Field">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="37"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                                                        <connections>
-                                                                            <action selector="ME2CodeChanged:" destination="Jcz-EQ-och" eventType="editingChanged" id="dSf-p6-2Kz"/>
-                                                                            <action selector="ME2CodeSelected:" destination="Jcz-EQ-och" eventType="editingDidBegin" id="n9W-nY-GIy"/>
-                                                                        </connections>
-                                                                    </textField>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="754" text="XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSf-rs-7pT" userLabel="Repeat Code">
-                                                                        <rect key="frame" x="0.0" y="42" width="345" height="13.5"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                                                        <color key="textColor" name="paragon"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Notice! Something to know about this slider." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DZ-Zh-hOv">
-                                                                        <rect key="frame" x="0.0" y="60.5" width="345" height="14.5"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Alert! This code is problematic for some reason. " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjt-6j-Wqi" userLabel="Alert Label">
-                                                                        <rect key="frame" x="0.0" y="80" width="345" height="14.5"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                                        <color key="textColor" name="renegade"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" priority="100" id="sfa-hX-CHt"/>
-                                                                </constraints>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" name="background"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="uHr-tc-ZNv" secondAttribute="trailing" constant="15" id="1Nm-G1-2CF"/>
-                                                            <constraint firstAttribute="bottom" secondItem="uHr-tc-ZNv" secondAttribute="bottom" priority="900" constant="8" id="LK3-n0-5qe"/>
-                                                            <constraint firstItem="uHr-tc-ZNv" firstAttribute="leading" secondItem="Deu-4f-xwO" secondAttribute="leading" constant="15" id="S1R-8r-loW"/>
-                                                            <constraint firstItem="uHr-tc-ZNv" firstAttribute="top" secondItem="Deu-4f-xwO" secondAttribute="top" priority="900" constant="8" id="aYK-5d-FrU"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-tV-dwo" userLabel="2/3 Code Button" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="160.5" width="375" height="51"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZ9-t4-Pis">
-                                                                <rect key="frame" x="15" y="0.0" width="345" height="51"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mU8-Qh-SEX">
+                                                                <rect key="frame" x="0.0" y="-1.5" width="24.5" height="2"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" text="Scan Code" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzq-p0-iXv">
+                                                                <rect key="frame" x="34.5" y="-10" width="83" height="20.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                                                <state key="normal" title="Convert to Sliders">
-                                                                    <color key="titleColor" name="renegade"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="ME2CodeSubmit:" destination="Jcz-EQ-och" eventType="touchUpInside" id="PBK-Nm-CQP"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" name="background"/>
-                                                        <constraints>
-                                                            <constraint firstItem="SZ9-t4-Pis" firstAttribute="top" secondItem="Rog-tV-dwo" secondAttribute="top" id="C5e-Io-sKL"/>
-                                                            <constraint firstAttribute="trailing" secondItem="SZ9-t4-Pis" secondAttribute="trailing" constant="15" id="lZG-Td-dKf"/>
-                                                            <constraint firstAttribute="height" priority="100" id="p97-qf-E7a"/>
-                                                            <constraint firstAttribute="bottom" secondItem="SZ9-t4-Pis" secondAttribute="bottom" id="u3f-hx-cwk"/>
-                                                            <constraint firstItem="SZ9-t4-Pis" firstAttribute="leading" secondItem="Rog-tV-dwo" secondAttribute="leading" constant="15" id="zqD-AL-04d"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="a4P-UN-7E9" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="211.5" width="375" height="50"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RG6-Oh-g2d" userLabel="ME1 Header">
-                                                                <rect key="frame" x="15" y="5" width="345" height="40"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 1 Sliders:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eB1-fV-4QK" userLabel="ME1 Label">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" priority="100" id="khN-h8-2BA"/>
-                                                                </constraints>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="RG6-Oh-g2d" firstAttribute="top" secondItem="a4P-UN-7E9" secondAttribute="top" priority="900" constant="5" id="5yE-G9-Wn2"/>
-                                                            <constraint firstAttribute="bottom" secondItem="RG6-Oh-g2d" secondAttribute="bottom" priority="900" constant="5" id="b53-VE-Rw6"/>
-                                                            <constraint firstAttribute="trailing" secondItem="RG6-Oh-g2d" secondAttribute="trailing" constant="15" id="jnd-OT-vTq"/>
-                                                            <constraint firstItem="RG6-Oh-g2d" firstAttribute="leading" secondItem="a4P-UN-7E9" secondAttribute="leading" constant="15" id="qUQ-fq-Qoz"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AK0-Zc-yTE">
-                                                        <rect key="frame" x="0.0" y="261.5" width="375" height="10"/>
-                                                        <color key="backgroundColor" name="lightestBackground"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="10" id="JYk-dS-wc9"/>
-                                                        </constraints>
-                                                    </tableView>
-                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="Yd3-qP-frt" userLabel="1 Sliders Button" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="271.5" width="375" height="58"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9k-XG-aua">
-                                                                <rect key="frame" x="15" y="0.0" width="345" height="58"/>
-                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                                                <state key="normal" title="Save Sliders">
-                                                                    <color key="titleColor" name="renegade"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="ME1SlidersSubmit:" destination="Jcz-EQ-och" eventType="touchUpInside" id="2lm-tC-LPx"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" name="background"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" priority="100" id="97L-5v-d7o"/>
-                                                            <constraint firstItem="w9k-XG-aua" firstAttribute="leading" secondItem="Yd3-qP-frt" secondAttribute="leading" constant="15" id="S9V-RC-8vs"/>
-                                                            <constraint firstAttribute="trailing" secondItem="w9k-XG-aua" secondAttribute="trailing" constant="15" id="grT-Bs-uMF"/>
-                                                            <constraint firstItem="w9k-XG-aua" firstAttribute="top" secondItem="Yd3-qP-frt" secondAttribute="top" id="lSU-Se-8Di"/>
-                                                            <constraint firstAttribute="bottom" secondItem="w9k-XG-aua" secondAttribute="bottom" id="vvb-kr-VYP"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="coP-Rb-5Cy" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="329.5" width="375" height="50"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gh1-B6-t5Y" userLabel="Notes Header">
-                                                                <rect key="frame" x="15" y="5" width="345" height="40"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="301" text="Notes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSd-wa-khd" userLabel="Notes Label">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" priority="100" id="3CX-rb-4Mk"/>
-                                                                </constraints>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="gh1-B6-t5Y" firstAttribute="top" secondItem="coP-Rb-5Cy" secondAttribute="top" priority="900" constant="5" id="Ddg-2A-bfh"/>
-                                                            <constraint firstAttribute="bottom" secondItem="gh1-B6-t5Y" secondAttribute="bottom" priority="900" constant="5" id="Dtg-hm-9q1"/>
-                                                            <constraint firstItem="gh1-B6-t5Y" firstAttribute="leading" secondItem="coP-Rb-5Cy" secondAttribute="leading" constant="15" id="pyM-t1-Cg8"/>
-                                                            <constraint firstAttribute="trailing" secondItem="gh1-B6-t5Y" secondAttribute="trailing" constant="15" id="tCQ-sE-EGK"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="Tho-JC-ZpJ" userLabel="Notes" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="379.5" width="375" height="354.5"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="290" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="800" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xz-Sa-VAZ" userLabel="Notes Text 1">
-                                                                <rect key="frame" x="15" y="10" width="345" height="334.5"/>
-                                                                <string key="text">Due to the import process between Game 1 and Game 2, you will see a different Shepard if you import unchanged than if you customize using exactly the same values. Eye colors were more vivid in Game 1 and the Scar attribute is not available in Game 2.
-
-Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None of these values convert down to Game 1 or 2, but you may want to specially customize your Game 3 Shepard to take advantage of these.  The default Shepard faces provided by the game are wholly unique and cannot be recreated using any combination of values.</string>
-                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" name="background"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="2Xz-Sa-VAZ" secondAttribute="bottom" constant="10" id="06D-Y1-3io"/>
-                                                            <constraint firstAttribute="trailing" secondItem="2Xz-Sa-VAZ" secondAttribute="trailing" constant="15" id="OO2-xp-LhI"/>
-                                                            <constraint firstAttribute="height" priority="100" id="cvz-nI-vrO"/>
-                                                            <constraint firstItem="2Xz-Sa-VAZ" firstAttribute="top" secondItem="Tho-JC-ZpJ" secondAttribute="top" constant="10" id="mdP-Zy-42W"/>
-                                                            <constraint firstItem="2Xz-Sa-VAZ" firstAttribute="leading" secondItem="Tho-JC-ZpJ" secondAttribute="leading" constant="15" id="vzg-Vp-RrN"/>
+                                                            <constraint firstItem="mU8-Qh-SEX" firstAttribute="top" secondItem="GxT-Bk-6sG" secondAttribute="top" id="IsS-UJ-cIh"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Hzq-p0-iXv" secondAttribute="trailing" id="KSn-aB-4zk"/>
+                                                            <constraint firstItem="Hzq-p0-iXv" firstAttribute="leading" secondItem="mU8-Qh-SEX" secondAttribute="trailing" constant="10" id="Nf6-ta-fMv"/>
+                                                            <constraint firstAttribute="bottom" secondItem="mU8-Qh-SEX" secondAttribute="bottom" id="haj-MY-Y2p"/>
+                                                            <constraint firstItem="Hzq-p0-iXv" firstAttribute="centerY" secondItem="mU8-Qh-SEX" secondAttribute="centerY" id="sqX-7d-o2O"/>
+                                                            <constraint firstItem="mU8-Qh-SEX" firstAttribute="leading" secondItem="GxT-Bk-6sG" secondAttribute="leading" id="tp4-Ao-AaA"/>
                                                         </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="Wnq-ED-TKh" userLabel="Filler">
-                                                        <rect key="frame" x="0.0" y="734" width="375" height="125.5"/>
-                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-uC-N3q" customClass="IBStyledButton" customModule="MEGameTracker" customModuleProvider="target">
+                                                        <rect key="frame" x="15" y="0.0" width="345" height="0.0"/>
+                                                        <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                                        <connections>
+                                                            <action selector="scanCodeAction:" destination="Jcz-EQ-och" eventType="touchUpInside" id="R74-fp-D5I"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" name="background"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GxT-Bk-6sG" secondAttribute="trailing" constant="15" id="0UU-F9-vo0"/>
+                                                    <constraint firstItem="1JD-uC-N3q" firstAttribute="leading" secondItem="I9B-Rw-8ed" secondAttribute="leading" constant="15" id="2fI-IU-KFA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1JD-uC-N3q" secondAttribute="bottom" id="Jho-sz-Hqm"/>
+                                                    <constraint firstItem="GxT-Bk-6sG" firstAttribute="top" secondItem="I9B-Rw-8ed" secondAttribute="top" priority="950" constant="8" id="QEE-qw-Hbd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1JD-uC-N3q" secondAttribute="trailing" constant="15" id="Zfv-fa-ctD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GxT-Bk-6sG" secondAttribute="bottom" priority="900" constant="8" id="bLy-ZL-Gy8"/>
+                                                    <constraint firstItem="1JD-uC-N3q" firstAttribute="top" secondItem="I9B-Rw-8ed" secondAttribute="top" id="j64-BT-pKq"/>
+                                                    <constraint firstAttribute="height" id="rgY-AU-Z7T"/>
+                                                    <constraint firstItem="GxT-Bk-6sG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I9B-Rw-8ed" secondAttribute="leading" constant="15" id="run-XZ-8zB"/>
+                                                    <constraint firstItem="GxT-Bk-6sG" firstAttribute="centerX" secondItem="I9B-Rw-8ed" secondAttribute="centerX" id="vYA-NC-ynt"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" systemColor="separatorColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="Deu-4f-xwO" userLabel="2/3 Code">
+                                                <rect key="frame" x="0.0" y="76.5" width="375" height="107.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uHr-tc-ZNv">
+                                                        <rect key="frame" x="15" y="8" width="345" height="91.5"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalCompressionResistancePriority="755" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tUz-uD-7av" userLabel="Code Field">
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="34"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                                <connections>
+                                                                    <action selector="ME2CodeChanged:" destination="Jcz-EQ-och" eventType="editingChanged" id="dSf-p6-2Kz"/>
+                                                                    <action selector="ME2CodeSelected:" destination="Jcz-EQ-och" eventType="editingDidBegin" id="n9W-nY-GIy"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="754" text="XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.XXX.X" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSf-rs-7pT" userLabel="Repeat Code">
+                                                                <rect key="frame" x="0.0" y="39" width="345" height="13.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                                <color key="textColor" name="paragon"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Notice! Something to know about this slider." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DZ-Zh-hOv">
+                                                                <rect key="frame" x="0.0" y="57.5" width="345" height="14.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Alert! This code is problematic for some reason. " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjt-6j-Wqi" userLabel="Alert Label">
+                                                                <rect key="frame" x="0.0" y="77" width="345" height="14.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                                <color key="textColor" name="renegade"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="background"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="uHr-tc-ZNv" secondAttribute="trailing" constant="15" id="1Nm-G1-2CF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="uHr-tc-ZNv" secondAttribute="bottom" priority="900" constant="8" id="LK3-n0-5qe"/>
+                                                    <constraint firstItem="uHr-tc-ZNv" firstAttribute="leading" secondItem="Deu-4f-xwO" secondAttribute="leading" constant="15" id="S1R-8r-loW"/>
+                                                    <constraint firstItem="uHr-tc-ZNv" firstAttribute="top" secondItem="Deu-4f-xwO" secondAttribute="top" priority="900" constant="8" id="aYK-5d-FrU"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-tV-dwo" userLabel="2/3 Code Button" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="184" width="375" height="51"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZ9-t4-Pis">
+                                                        <rect key="frame" x="15" y="0.0" width="345" height="51"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                                        <state key="normal" title="Convert to Sliders">
+                                                            <color key="titleColor" name="renegade"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="ME2CodeSubmit:" destination="Jcz-EQ-och" eventType="touchUpInside" id="PBK-Nm-CQP"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" name="background"/>
+                                                <constraints>
+                                                    <constraint firstItem="SZ9-t4-Pis" firstAttribute="top" secondItem="Rog-tV-dwo" secondAttribute="top" id="C5e-Io-sKL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SZ9-t4-Pis" secondAttribute="trailing" constant="15" id="lZG-Td-dKf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="SZ9-t4-Pis" secondAttribute="bottom" id="u3f-hx-cwk"/>
+                                                    <constraint firstItem="SZ9-t4-Pis" firstAttribute="leading" secondItem="Rog-tV-dwo" secondAttribute="leading" constant="15" id="zqD-AL-04d"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" systemColor="separatorColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="a4P-UN-7E9" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="235" width="375" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RG6-Oh-g2d" userLabel="ME1 Header">
+                                                        <rect key="frame" x="15" y="5" width="345" height="40"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 1 Sliders:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eB1-fV-4QK" userLabel="ME1 Label">
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" priority="100" id="roL-Pu-xai"/>
+                                                    <constraint firstItem="RG6-Oh-g2d" firstAttribute="top" secondItem="a4P-UN-7E9" secondAttribute="top" priority="900" constant="5" id="5yE-G9-Wn2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="RG6-Oh-g2d" secondAttribute="bottom" priority="900" constant="5" id="b53-VE-Rw6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RG6-Oh-g2d" secondAttribute="trailing" constant="15" id="jnd-OT-vTq"/>
+                                                    <constraint firstItem="RG6-Oh-g2d" firstAttribute="leading" secondItem="a4P-UN-7E9" secondAttribute="leading" constant="15" id="qUQ-fq-Qoz"/>
                                                 </constraints>
-                                            </stackView>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" systemColor="separatorColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AK0-Zc-yTE">
+                                                <rect key="frame" x="0.0" y="285" width="375" height="100"/>
+                                                <color key="backgroundColor" name="lightestBackground"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="R1d-pz-Ahy"/>
+                                                </constraints>
+                                            </tableView>
+                                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="Yd3-qP-frt" userLabel="1 Sliders Button" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="385" width="375" height="51"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9k-XG-aua">
+                                                        <rect key="frame" x="15" y="0.0" width="345" height="51"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                                        <state key="normal" title="Save Sliders">
+                                                            <color key="titleColor" name="renegade"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="ME1SlidersSubmit:" destination="Jcz-EQ-och" eventType="touchUpInside" id="2lm-tC-LPx"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" name="background"/>
+                                                <constraints>
+                                                    <constraint firstItem="w9k-XG-aua" firstAttribute="leading" secondItem="Yd3-qP-frt" secondAttribute="leading" constant="15" id="S9V-RC-8vs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="w9k-XG-aua" secondAttribute="trailing" constant="15" id="grT-Bs-uMF"/>
+                                                    <constraint firstItem="w9k-XG-aua" firstAttribute="top" secondItem="Yd3-qP-frt" secondAttribute="top" id="lSU-Se-8Di"/>
+                                                    <constraint firstAttribute="bottom" secondItem="w9k-XG-aua" secondAttribute="bottom" id="vvb-kr-VYP"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" systemColor="separatorColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="coP-Rb-5Cy" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="436" width="375" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gh1-B6-t5Y" userLabel="Notes Header">
+                                                        <rect key="frame" x="15" y="5" width="345" height="40"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="301" text="Notes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSd-wa-khd" userLabel="Notes Label">
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="gh1-B6-t5Y" firstAttribute="top" secondItem="coP-Rb-5Cy" secondAttribute="top" priority="900" constant="5" id="Ddg-2A-bfh"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gh1-B6-t5Y" secondAttribute="bottom" priority="900" constant="5" id="Dtg-hm-9q1"/>
+                                                    <constraint firstItem="gh1-B6-t5Y" firstAttribute="leading" secondItem="coP-Rb-5Cy" secondAttribute="leading" constant="15" id="pyM-t1-Cg8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gh1-B6-t5Y" secondAttribute="trailing" constant="15" id="tCQ-sE-EGK"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" systemColor="separatorColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="Tho-JC-ZpJ" userLabel="Notes" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="486" width="375" height="354.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="290" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="800" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xz-Sa-VAZ" userLabel="Notes Text 1">
+                                                        <rect key="frame" x="15" y="10" width="345" height="334.5"/>
+                                                        <string key="text">Due to the import process between Game 1 and Game 2, you will see a different Shepard if you import unchanged than if you customize using exactly the same values. Eye colors were more vivid in Game 1 and the Scar attribute is not available in Game 2.
+
+Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None of these values convert down to Game 1 or 2, but you may want to specially customize your Game 3 Shepard to take advantage of these.  The default Shepard faces provided by the game are wholly unique and cannot be recreated using any combination of values.</string>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="background"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="2Xz-Sa-VAZ" secondAttribute="bottom" constant="10" id="06D-Y1-3io"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2Xz-Sa-VAZ" secondAttribute="trailing" constant="15" id="OO2-xp-LhI"/>
+                                                    <constraint firstItem="2Xz-Sa-VAZ" firstAttribute="top" secondItem="Tho-JC-ZpJ" secondAttribute="top" constant="10" id="mdP-Zy-42W"/>
+                                                    <constraint firstItem="2Xz-Sa-VAZ" firstAttribute="leading" secondItem="Tho-JC-ZpJ" secondAttribute="leading" constant="15" id="vzg-Vp-RrN"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" systemColor="separatorColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="C6p-LM-9h5" secondAttribute="bottom" priority="900" constant="20" id="474-Cv-gbQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="C6p-LM-9h5" secondAttribute="trailing" id="Oac-KS-AzB"/>
-                                            <constraint firstItem="C6p-LM-9h5" firstAttribute="top" secondItem="sp9-xo-LVc" secondAttribute="top" priority="900" constant="15" id="ROw-Qd-Ifg"/>
-                                            <constraint firstItem="C6p-LM-9h5" firstAttribute="leading" secondItem="sp9-xo-LVc" secondAttribute="leading" id="oMM-9o-ieB"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="sp9-xo-LVc" firstAttribute="top" secondItem="YpK-v1-gmQ" secondAttribute="top" id="1NG-QR-Luq"/>
-                                    <constraint firstItem="sp9-xo-LVc" firstAttribute="width" secondItem="YpK-v1-gmQ" secondAttribute="width" id="4fF-QD-LwN"/>
-                                    <constraint firstAttribute="bottom" secondItem="sp9-xo-LVc" secondAttribute="bottom" id="Bbj-Ss-ZJb"/>
-                                    <constraint firstItem="sp9-xo-LVc" firstAttribute="leading" secondItem="YpK-v1-gmQ" secondAttribute="leading" id="LfN-kA-31T"/>
-                                    <constraint firstAttribute="trailing" secondItem="sp9-xo-LVc" secondAttribute="trailing" id="R5H-mC-a72"/>
-                                    <constraint firstItem="sp9-xo-LVc" firstAttribute="height" relation="greaterThanOrEqual" secondItem="YpK-v1-gmQ" secondAttribute="height" id="bvQ-1N-dCr"/>
+                                    <constraint firstItem="C6p-LM-9h5" firstAttribute="top" secondItem="YpK-v1-gmQ" secondAttribute="top" id="5XM-DE-DvK"/>
+                                    <constraint firstItem="C6p-LM-9h5" firstAttribute="height" relation="greaterThanOrEqual" secondItem="YpK-v1-gmQ" secondAttribute="height" id="J8F-pT-12o"/>
+                                    <constraint firstItem="C6p-LM-9h5" firstAttribute="leading" secondItem="YpK-v1-gmQ" secondAttribute="leading" id="S2c-zE-fE4"/>
+                                    <constraint firstAttribute="trailing" secondItem="C6p-LM-9h5" secondAttribute="trailing" id="joK-Ki-h9s"/>
+                                    <constraint firstAttribute="bottom" secondItem="C6p-LM-9h5" secondAttribute="bottom" id="ywa-YA-gIe"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" name="secondaryBackground"/>
                         <constraints>
-                            <constraint firstItem="Wnq-ED-TKh" firstAttribute="height" secondItem="ScR-fu-f4g" secondAttribute="height" priority="100" id="0lY-dV-bd3"/>
+                            <constraint firstItem="YpK-v1-gmQ" firstAttribute="width" secondItem="ScR-fu-f4g" secondAttribute="width" id="46E-XS-SXK"/>
                             <constraint firstItem="YpK-v1-gmQ" firstAttribute="leading" secondItem="ScR-fu-f4g" secondAttribute="leading" id="6NG-sL-rsK"/>
-                            <constraint firstItem="YpK-v1-gmQ" firstAttribute="top" secondItem="ScR-fu-f4g" secondAttribute="top" id="Bbi-2S-laV"/>
+                            <constraint firstItem="C6p-LM-9h5" firstAttribute="width" secondItem="ScR-fu-f4g" secondAttribute="width" id="Dek-WT-40W"/>
                             <constraint firstAttribute="trailing" secondItem="YpK-v1-gmQ" secondAttribute="trailing" id="H5a-zL-hQi"/>
-                            <constraint firstItem="sp9-xo-LVc" firstAttribute="height" secondItem="ScR-fu-f4g" secondAttribute="height" priority="100" id="YlC-h1-Gxo"/>
+                            <constraint firstItem="YpK-v1-gmQ" firstAttribute="top" secondItem="Mlg-Pn-5uh" secondAttribute="bottom" id="NaT-p8-0lu"/>
                             <constraint firstItem="FIv-9I-KHN" firstAttribute="top" secondItem="YpK-v1-gmQ" secondAttribute="bottom" id="dwI-Cp-UQD"/>
                         </constraints>
                     </view>
@@ -370,7 +339,7 @@ Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None 
                         <outlet property="ME2CodeLabel" destination="oSf-rs-7pT" id="jkE-sy-2FW"/>
                         <outlet property="ME2NoticeLabel" destination="6DZ-Zh-hOv" id="sPB-hs-dKL"/>
                         <outlet property="attributesTableView" destination="AK0-Zc-yTE" id="7Pv-hO-EEs"/>
-                        <outlet property="attributesTableViewHeightConstraint" destination="JYk-dS-wc9" id="VA9-IT-Ach"/>
+                        <outlet property="attributesTableViewHeightConstraint" destination="R1d-pz-Ahy" id="Sx5-ft-1R7"/>
                         <outlet property="scanCodeButton" destination="1JD-uC-N3q" id="j2V-Cj-jLT"/>
                         <outlet property="scrollView" destination="YpK-v1-gmQ" id="ukx-A0-7Gk"/>
                     </connections>
@@ -380,8 +349,16 @@ Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None 
             <point key="canvasLocation" x="1145.5999999999999" y="22.488755622188908"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="1JD-uC-N3q">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="THp-pr-04S">
+            <size key="intrinsicContentSize" width="133" height="31"/>
+        </designable>
+    </designables>
     <resources>
-        <image name="Camera" width="25" height="25"/>
+        <image name="camera" catalog="system" width="128" height="94"/>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -397,5 +374,11 @@ Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None 
         <namedColor name="secondaryBackground">
             <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

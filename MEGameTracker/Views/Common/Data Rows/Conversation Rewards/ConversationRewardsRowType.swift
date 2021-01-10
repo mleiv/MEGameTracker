@@ -44,28 +44,22 @@ public struct ConversationRewardsRowType: ValueDataRowType {
 	public func openRow(sender: UIView?) {
 		guard let view = view else { return }
 		view.startParentSpinner(controller: viewController)
-		DispatchQueue.global(qos: .background).async {
-			let bundle = Bundle(for: type(of: view))
-			if let navigationController = UIStoryboard(name: "ConversationRewardsDetail", bundle: bundle)
-					.instantiateInitialViewController() as? UINavigationController,
-				let rewardsController = navigationController.visibleViewController as? ConversationRewardsDetailController {
-				rewardsController.mission = self.controller?.mission
-				rewardsController.originHint = self.controller?.originHint
-				rewardsController.originPrefix = "During"
-				navigationController.modalPresentationStyle = .popover
-				if let popover = navigationController.popoverPresentationController {
-					rewardsController.preferredContentSize = CGSize(width: 400, height: 400)
-					rewardsController.popover = popover
-					popover.sourceView = sender
-					popover.sourceRect = sender?.bounds ?? CGRect.zero
-				}
-				DispatchQueue.main.async {
-					self.viewController?.present(navigationController, animated: true, completion: nil)
-					self.view?.stopParentSpinner(controller: self.viewController)
-				}
-				return
-			}
-			self.view?.stopParentSpinner(controller: self.viewController)
-		}
+        let bundle = Bundle(for: type(of: view))
+        if let navigationController = UIStoryboard(name: "ConversationRewardsDetail", bundle: bundle)
+                .instantiateInitialViewController() as? UINavigationController,
+            let rewardsController = navigationController.visibleViewController as? ConversationRewardsDetailController {
+            rewardsController.mission = self.controller?.mission
+            rewardsController.originHint = self.controller?.originHint
+            rewardsController.originPrefix = "During"
+            navigationController.modalPresentationStyle = .popover
+            if let popover = navigationController.popoverPresentationController {
+                rewardsController.preferredContentSize = CGSize(width: 400, height: 400)
+                rewardsController.popover = popover
+                popover.sourceView = sender
+                popover.sourceRect = sender?.bounds ?? CGRect.zero
+            }
+            viewController?.present(navigationController, animated: true, completion: nil)
+        }
+        view.stopParentSpinner(controller: self.viewController)
 	}
 }

@@ -148,48 +148,42 @@ final public class CalloutsView: SimpleArrayDataRow {
 			startParentSpinner()
 		}
 		lastSelectedCallout = callout
-		DispatchQueue.global(qos: .background).async {
-			if !self.calloutAllowsSegue(callout: callout) {
-				DispatchQueue.main.async {
-					MapLocation.onChangeSelection.fire(callout)
-					self.closeCalloutsWindowIfFound()
-					self.stopParentSpinner()
-				}
-				return
-			} else if let missionId = (callout as? Item)?.inMissionId,
-				let linkedMission = Mission.get(id: missionId) {
-				if self.openMission(linkedMission) {
-					return
-				}
-			} else if let _ = callout as? Item {
-				DispatchQueue.main.async {
-					// TODO: an items detail page?
-					MapLocation.onChangeSelection.fire(callout)
-					self.closeCalloutsWindowIfFound()
-					self.stopParentSpinner()
-				}
-				return
-			} else if let mission = callout as? Mission, mission.missionType != .objective {
-				if self.openMission(mission) {
-					return
-				}
-			} else if let missionId = (callout as? Mission)?.inMissionId,
-				let linkedMission = Mission.get(id: missionId) {
-				if self.openMission(linkedMission) {
-					return
-				}
-			} else if let mapId = (callout as? Map)?.linkToMapId,
-				let linkedMap = Map.get(id: mapId) {
-				if self.openMap(linkedMap) {
-					return
-				}
-			} else if let map = callout as? Map, map.isOpensDetail == true { // skip stuff that has no other data
-				if self.openMap(map) {
-					return
-				}
-			}
-			self.stopParentSpinner()
-		}
+        if !self.calloutAllowsSegue(callout: callout) {
+                MapLocation.onChangeSelection.fire(callout)
+                self.closeCalloutsWindowIfFound()
+                self.stopParentSpinner()
+            return
+        } else if let missionId = (callout as? Item)?.inMissionId,
+            let linkedMission = Mission.get(id: missionId) {
+            if self.openMission(linkedMission) {
+                return
+            }
+        } else if let _ = callout as? Item {
+                // TODO: an items detail page?
+                MapLocation.onChangeSelection.fire(callout)
+                self.closeCalloutsWindowIfFound()
+                self.stopParentSpinner()
+            return
+        } else if let mission = callout as? Mission, mission.missionType != .objective {
+            if self.openMission(mission) {
+                return
+            }
+        } else if let missionId = (callout as? Mission)?.inMissionId,
+            let linkedMission = Mission.get(id: missionId) {
+            if self.openMission(linkedMission) {
+                return
+            }
+        } else if let mapId = (callout as? Map)?.linkToMapId,
+            let linkedMap = Map.get(id: mapId) {
+            if self.openMap(linkedMap) {
+                return
+            }
+        } else if let map = callout as? Map, map.isOpensDetail == true { // skip stuff that has no other data
+            if self.openMap(map) {
+                return
+            }
+        }
+        self.stopParentSpinner()
 	}
 
 	private func openMission(_ mission: Mission) -> Bool {

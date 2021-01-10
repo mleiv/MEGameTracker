@@ -184,23 +184,23 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 	// MARK: Actions
 
 	func selectPerson(_ person: Person?) -> Bool {
-		guard let person = person, view != nil else { return false }
-		let index: Int = {
-			return tabNames.firstIndex(of: person.personType.headingValue) ?? 0
-		}()
-		if tabNames.indices.contains(index) == true,
-		   let listController = tabControllers[tabNames[index]] {
-			DispatchQueue.main.async { [weak self] in
-				self?.startSpinner(inView: self?.view)
-				self?.switchToTab(listController)
-				if let controller = listController as? PersonsController {
-					controller.selectPerson(person)
-				}
-				self?.stopSpinner(inView: self?.view)
-			}
-			return true
-		}
-		return false
+        return DispatchQueue.main.sync { [weak self] in
+            guard let person = person, view != nil else { return false }
+            let index: Int = {
+                return tabNames.firstIndex(of: person.personType.headingValue) ?? 0
+            }()
+            if tabNames.indices.contains(index) == true,
+               let listController = tabControllers[tabNames[index]] {
+                self?.startSpinner(inView: self?.view)
+                self?.switchToTab(listController)
+                if let controller = listController as? PersonsController {
+                    controller.selectPerson(person)
+                }
+                self?.stopSpinner(inView: self?.view)
+                return true
+            }
+            return false
+        }
 	}
 }
 

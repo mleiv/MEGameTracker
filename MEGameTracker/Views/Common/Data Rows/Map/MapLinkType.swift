@@ -64,31 +64,25 @@ public struct MapLinkType: ValueDataRowType {
 		guard let view = view, let controller = controller else { return }
 		var map = map
 		view.startParentSpinner(controller: viewController)
-		DispatchQueue.global(qos: .background).async {
-			var mapLocation = controller.mapLocation
-			if let _ = mapLocation, mapLocation?.mapLocationPoint == nil {
-				mapLocation?.mapLocationPoint = map?.mapLocationPoint
-			}
-			if controller.isShowInParentMap == true, let inMapId = map?.inMapId {
+        var mapLocation = controller.mapLocation
+        if let _ = mapLocation, mapLocation?.mapLocationPoint == nil {
+            mapLocation?.mapLocationPoint = map?.mapLocationPoint
+        }
+        if controller.isShowInParentMap == true, let inMapId = map?.inMapId {
 //              let gameVersion = map?.gameVersion ?? App.current.gameVersion
 //				mapLocation = map // mission/item should show now in map
-				map = Map.get(id: inMapId)
-			}
-			let bundle = Bundle(for: type(of: view))
-			if let flowController = UIStoryboard(name: "MapsFlow", bundle: bundle)
-					.instantiateViewController(withIdentifier: "Map") as? MapsFlowController,
-				let mapController = flowController.includedController as? MapSplitViewController {
-				// configure detail
-				mapController.map = map
-				mapController.mapLocation = mapLocation
-				mapController.referringOriginHint = controller.originHint
-				DispatchQueue.main.async {
-					self.viewController?.navigationController?.pushViewController(flowController, animated: true)
-					view.stopParentSpinner(controller: self.viewController)
-				}
-				return
-			}
-			view.stopParentSpinner(controller: self.viewController)
-		}
+            map = Map.get(id: inMapId)
+        }
+        let bundle = Bundle(for: type(of: view))
+        if let flowController = UIStoryboard(name: "MapsFlow", bundle: bundle)
+                .instantiateViewController(withIdentifier: "Map") as? MapsFlowController,
+            let mapController = flowController.includedController as? MapSplitViewController {
+            // configure detail
+            mapController.map = map
+            mapController.mapLocation = mapLocation
+            mapController.referringOriginHint = controller.originHint
+            self.viewController?.navigationController?.pushViewController(flowController, animated: true)
+        }
+        view.stopParentSpinner(controller: self.viewController)
 	}
 }

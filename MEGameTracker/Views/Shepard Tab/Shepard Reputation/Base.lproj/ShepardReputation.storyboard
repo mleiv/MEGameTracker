@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AYb-qF-HAv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AYb-qF-HAv">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,105 +16,92 @@
                         <viewControllerLayoutGuide type="top" id="uKK-y5-u3J"/>
                         <viewControllerLayoutGuide type="bottom" id="qQi-8n-dRX"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PdT-Y2-Dyb">
+                    <view key="view" contentMode="scaleToFill" id="PdT-Y2-Dyb" userLabel="Root">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih0-1N-XSq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X34-3a-0dA">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="4136.5"/>
+                                    <stackView contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qpA-9h-eyQ" userLabel="Values">
+                                        <rect key="frame" x="0.0" y="10" width="375" height="717"/>
                                         <subviews>
-                                            <stackView contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qpA-9h-eyQ" userLabel="Values">
-                                                <rect key="frame" x="0.0" y="10" width="375" height="4106.5"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6W-g4-GbM" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
-                                                        <color key="backgroundColor" name="background"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Sole Survivor"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHL-pb-5CD" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1000" width="375" height="35.5"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" name="paragon"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Sole Survivor grants a part-Renegade/part-Paragon bonus."/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZe-uE-R6m" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1035.5" width="375" height="1000"/>
-                                                        <color key="backgroundColor" name="background"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="War Hero"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgV-qO-8Ef" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="2035.5" width="375" height="35.5"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" name="paragon"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="War Hero grants a Paragon bonus."/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vl6-sZ-qWN" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="2071" width="375" height="1000"/>
-                                                        <color key="backgroundColor" name="background"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Ruthless"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOd-Td-JLP" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="3071" width="375" height="35.5"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" name="paragon"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Ruthless grants a Renegade point bonus."/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="la1-SY-czi" userLabel="Filler">
-                                                        <rect key="frame" x="0.0" y="3106.5" width="375" height="1000"/>
-                                                    </view>
-                                                </subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6W-g4-GbM" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="409.5"/>
+                                                <color key="backgroundColor" name="background"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Sole Survivor"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHL-pb-5CD" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="409.5" width="375" height="52.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" name="paragon"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Sole Survivor grants a part-Renegade/part-Paragon bonus."/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZe-uE-R6m" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="462" width="375" height="50"/>
+                                                <color key="backgroundColor" name="background"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="War Hero"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgV-qO-8Ef" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="512" width="375" height="52.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" name="paragon"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="War Hero grants a Paragon bonus."/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vl6-sZ-qWN" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="564.5" width="375" height="50"/>
+                                                <color key="backgroundColor" name="background"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Ruthless"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOd-Td-JLP" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="614.5" width="375" height="52.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" name="paragon"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Ruthless grants a Renegade point bonus."/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="la1-SY-czi" userLabel="Filler">
+                                                <rect key="frame" x="0.0" y="667" width="375" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" priority="100" id="wCV-qy-8bC"/>
+                                                    <constraint firstAttribute="height" priority="100" id="nDa-If-AHn"/>
                                                 </constraints>
-                                            </stackView>
+                                            </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="qpA-9h-eyQ" secondAttribute="bottom" priority="900" constant="20" id="82u-Lo-6mT"/>
-                                            <constraint firstItem="qpA-9h-eyQ" firstAttribute="leading" secondItem="X34-3a-0dA" secondAttribute="leading" id="dzh-JC-dbZ"/>
-                                            <constraint firstItem="qpA-9h-eyQ" firstAttribute="top" secondItem="X34-3a-0dA" secondAttribute="top" priority="900" constant="10" id="kbl-QA-55c"/>
-                                            <constraint firstAttribute="trailing" secondItem="qpA-9h-eyQ" secondAttribute="trailing" id="oAi-0F-0iJ"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="X34-3a-0dA" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Ih0-1N-XSq" secondAttribute="height" id="2CE-Fi-hqc"/>
-                                    <constraint firstItem="X34-3a-0dA" firstAttribute="width" secondItem="Ih0-1N-XSq" secondAttribute="width" id="B2u-JQ-IcE"/>
-                                    <constraint firstItem="X34-3a-0dA" firstAttribute="top" secondItem="Ih0-1N-XSq" secondAttribute="top" id="HPA-sk-TSl"/>
-                                    <constraint firstItem="X34-3a-0dA" firstAttribute="leading" secondItem="Ih0-1N-XSq" secondAttribute="leading" id="QLs-sJ-pyb"/>
-                                    <constraint firstAttribute="bottom" secondItem="X34-3a-0dA" secondAttribute="bottom" id="gXO-ZN-6hc"/>
-                                    <constraint firstAttribute="trailing" secondItem="X34-3a-0dA" secondAttribute="trailing" id="lfb-ed-mua"/>
+                                    <constraint firstAttribute="bottom" secondItem="qpA-9h-eyQ" secondAttribute="bottom" constant="10" id="5Cu-ER-6Fb"/>
+                                    <constraint firstItem="qpA-9h-eyQ" firstAttribute="leading" secondItem="Ih0-1N-XSq" secondAttribute="leading" id="8VB-UL-qXc"/>
+                                    <constraint firstAttribute="trailing" secondItem="qpA-9h-eyQ" secondAttribute="trailing" id="Bcg-aV-Q4e"/>
+                                    <constraint firstItem="qpA-9h-eyQ" firstAttribute="top" secondItem="Ih0-1N-XSq" secondAttribute="top" constant="10" id="EDb-Cq-e9R"/>
+                                    <constraint firstItem="qpA-9h-eyQ" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Ih0-1N-XSq" secondAttribute="height" id="d62-ZP-6Yo"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" name="secondaryBackground"/>
                         <constraints>
-                            <constraint firstItem="X34-3a-0dA" firstAttribute="height" secondItem="PdT-Y2-Dyb" secondAttribute="height" priority="100" id="496-9E-wp0"/>
                             <constraint firstItem="Ih0-1N-XSq" firstAttribute="leading" secondItem="PdT-Y2-Dyb" secondAttribute="leading" id="Bhb-Ei-lwd"/>
-                            <constraint firstAttribute="bottom" secondItem="Ih0-1N-XSq" secondAttribute="bottom" id="G9d-ol-0BI"/>
+                            <constraint firstItem="qQi-8n-dRX" firstAttribute="top" secondItem="Ih0-1N-XSq" secondAttribute="bottom" id="C7H-Fx-KmZ"/>
+                            <constraint firstItem="Ih0-1N-XSq" firstAttribute="top" secondItem="uKK-y5-u3J" secondAttribute="bottom" id="Riv-oN-OtY"/>
                             <constraint firstAttribute="trailing" secondItem="Ih0-1N-XSq" secondAttribute="trailing" id="ZXN-zq-iyr"/>
-                            <constraint firstItem="Ih0-1N-XSq" firstAttribute="top" secondItem="PdT-Y2-Dyb" secondAttribute="top" id="ZzS-9f-CLV"/>
-                            <constraint firstItem="la1-SY-czi" firstAttribute="height" secondItem="PdT-Y2-Dyb" secondAttribute="height" priority="100" id="mpx-bY-uwv"/>
+                            <constraint firstItem="qpA-9h-eyQ" firstAttribute="width" secondItem="PdT-Y2-Dyb" secondAttribute="width" id="dQY-s3-eR7"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

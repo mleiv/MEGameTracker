@@ -17,269 +17,253 @@
                         <viewControllerLayoutGuide type="top" id="CTG-ij-bLR"/>
                         <viewControllerLayoutGuide type="bottom" id="BCg-J2-dR4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pUp-Qz-wJR">
+                    <view key="view" contentMode="scaleToFill" id="pUp-Qz-wJR" userLabel="Root">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNY-cR-ZHQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-Hf-3Ao">
+                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-Hf-3Ao">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omu-tb-gkP">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="885"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ig2-YW-Gnz">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="860"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ig2-YW-Gnz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="885"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SkQ-ZN-ItO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="157"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SkQ-ZN-ItO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="157"/>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XR8-98-Vwu" userLabel="Availability Wrapper" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Availability"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                        <color key="value" systemColor="separatorColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6IP-pP-RIa" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                                                <color key="backgroundColor" name="background"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="OriginHint"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                        <color key="value" systemColor="separatorColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jb0-xP-8e8" userLabel="Breadcrumbs Wrapper" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="100" width="375" height="57"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XR8-98-Vwu" userLabel="Availability Wrapper" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Availability"/>
-                                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                                <color key="value" systemColor="separatorColor"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6IP-pP-RIa" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
-                                                                        <color key="backgroundColor" name="background"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="OriginHint"/>
-                                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                                <color key="value" systemColor="separatorColor"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="Jb0-xP-8e8" userLabel="Breadcrumbs Wrapper" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="100" width="375" height="57"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="301" translatesAutoresizingMaskIntoConstraints="NO" id="sYn-Ju-i4e">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                                                         <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="301" translatesAutoresizingMaskIntoConstraints="NO" id="sYn-Ju-i4e">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
+                                                                            <view contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="b46-xJ-pIU" userLabel="Checkbox">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="57"/>
                                                                                 <subviews>
-                                                                                    <view contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="b46-xJ-pIU" userLabel="Checkbox">
+                                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Map Checkbox Empty" translatesAutoresizingMaskIntoConstraints="NO" id="kuA-uM-HT9">
+                                                                                        <rect key="frame" x="15" y="8" width="25" height="25"/>
+                                                                                        <color key="tintColor" name="renegade"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="width" secondItem="kuA-uM-HT9" secondAttribute="height" multiplier="1:1" id="MTt-KE-bGw"/>
+                                                                                        </constraints>
+                                                                                    </imageView>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yr4-NA-puM">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="57"/>
-                                                                                        <subviews>
-                                                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Map Checkbox Empty" translatesAutoresizingMaskIntoConstraints="NO" id="kuA-uM-HT9">
-                                                                                                <rect key="frame" x="15" y="8" width="25" height="25"/>
-                                                                                                <color key="tintColor" name="renegade"/>
-                                                                                                <constraints>
-                                                                                                    <constraint firstAttribute="width" secondItem="kuA-uM-HT9" secondAttribute="height" multiplier="1:1" id="MTt-KE-bGw"/>
-                                                                                                </constraints>
-                                                                                            </imageView>
-                                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yr4-NA-puM">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="57"/>
-                                                                                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                                                                <connections>
-                                                                                                    <action selector="onClickCheckbox:" destination="FE8-Fz-nu7" eventType="touchUpInside" id="m2V-oE-0Nq"/>
-                                                                                                </connections>
-                                                                                            </button>
-                                                                                        </subviews>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kuA-uM-HT9" secondAttribute="bottom" constant="8" id="2N9-AV-1lm"/>
-                                                                                            <constraint firstItem="Yr4-NA-puM" firstAttribute="leading" secondItem="b46-xJ-pIU" secondAttribute="leading" id="6K2-jX-3QA"/>
-                                                                                            <constraint firstAttribute="width" constant="50" id="Lgt-pn-MPR"/>
-                                                                                            <constraint firstAttribute="bottom" secondItem="Yr4-NA-puM" secondAttribute="bottom" id="N4f-CP-BMx"/>
-                                                                                            <constraint firstItem="kuA-uM-HT9" firstAttribute="leading" secondItem="b46-xJ-pIU" secondAttribute="leading" constant="15" id="OhL-aq-CVb"/>
-                                                                                            <constraint firstAttribute="trailing" secondItem="Yr4-NA-puM" secondAttribute="trailing" id="TDT-9u-xj0"/>
-                                                                                            <constraint firstItem="Yr4-NA-puM" firstAttribute="top" secondItem="b46-xJ-pIU" secondAttribute="top" id="dZE-C9-HwV"/>
-                                                                                            <constraint firstItem="kuA-uM-HT9" firstAttribute="top" secondItem="b46-xJ-pIU" secondAttribute="top" priority="950" constant="8" id="i9e-HL-c8a"/>
-                                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="200" constant="42" id="nm0-uo-Xbg"/>
-                                                                                            <constraint firstAttribute="trailing" secondItem="kuA-uM-HT9" secondAttribute="trailing" constant="10" id="tMf-5M-ajL"/>
-                                                                                        </constraints>
-                                                                                    </view>
-                                                                                    <view hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="hGB-OJ-axu">
-                                                                                        <rect key="frame" x="50" y="0.0" width="0.0" height="57"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="LfW-lf-0b5"/>
-                                                                                            <constraint firstAttribute="width" priority="900" constant="15" id="Mfh-dy-dPB"/>
-                                                                                        </constraints>
-                                                                                    </view>
-                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-s8-EmI">
-                                                                                        <rect key="frame" x="50" y="0.0" width="270" height="57"/>
-                                                                                        <subviews>
-                                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="751" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Galaxy Map &gt; Omega Nebula &gt; Sahrabarik &gt; Omega" translatesAutoresizingMaskIntoConstraints="NO" id="TFH-Wb-aQT" userLabel="Breadcrumbs" customClass="MarkupTextView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="57"/>
-                                                                                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
-                                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                                            </textView>
-                                                                                        </subviews>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TFH-Wb-aQT" secondAttribute="bottom" id="GO2-4W-JfS"/>
-                                                                                            <constraint firstItem="TFH-Wb-aQT" firstAttribute="leading" secondItem="k7l-s8-EmI" secondAttribute="leading" id="XBJ-ZU-q9Y"/>
-                                                                                            <constraint firstAttribute="trailing" secondItem="TFH-Wb-aQT" secondAttribute="trailing" id="han-1u-pnw"/>
-                                                                                            <constraint firstItem="TFH-Wb-aQT" firstAttribute="centerY" secondItem="k7l-s8-EmI" secondAttribute="centerY" id="u4b-pO-tNc"/>
-                                                                                            <constraint firstItem="TFH-Wb-aQT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k7l-s8-EmI" secondAttribute="top" id="ucg-6Y-bnH"/>
-                                                                                        </constraints>
-                                                                                    </view>
-                                                                                    <view contentMode="center" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="au2-74-AED" userLabel="Detail Disclosure">
-                                                                                        <rect key="frame" x="320" y="0.0" width="55" height="57"/>
-                                                                                        <subviews>
-                                                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Vertical Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="o2B-jG-3Mp">
-                                                                                                <rect key="frame" x="5" y="8" width="35" height="20"/>
-                                                                                                <color key="tintColor" name="renegade"/>
-                                                                                            </imageView>
-                                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pN5-D0-Cr0">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="57"/>
-                                                                                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                                                                <connections>
-                                                                                                    <action selector="onClickDisclosure:" destination="FE8-Fz-nu7" eventType="touchUpInside" id="GkG-gv-oax"/>
-                                                                                                </connections>
-                                                                                            </button>
-                                                                                        </subviews>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="trailing" secondItem="o2B-jG-3Mp" secondAttribute="trailing" constant="15" id="0sO-q6-WRN"/>
-                                                                                            <constraint firstItem="o2B-jG-3Mp" firstAttribute="leading" secondItem="au2-74-AED" secondAttribute="leading" constant="5" id="6o8-9j-Sm1"/>
-                                                                                            <constraint firstItem="o2B-jG-3Mp" firstAttribute="top" secondItem="au2-74-AED" secondAttribute="top" constant="8" id="Ihk-bv-lSy"/>
-                                                                                            <constraint firstAttribute="trailing" secondItem="pN5-D0-Cr0" secondAttribute="trailing" id="KRk-la-EmL"/>
-                                                                                            <constraint firstItem="pN5-D0-Cr0" firstAttribute="leading" secondItem="au2-74-AED" secondAttribute="leading" id="Kxu-9K-YrI"/>
-                                                                                            <constraint firstAttribute="width" constant="55" id="Ucs-H3-Voj"/>
-                                                                                            <constraint firstAttribute="bottom" secondItem="pN5-D0-Cr0" secondAttribute="bottom" id="dRg-IP-4ys"/>
-                                                                                            <constraint firstItem="pN5-D0-Cr0" firstAttribute="top" secondItem="au2-74-AED" secondAttribute="top" id="rYw-uQ-7lL"/>
-                                                                                        </constraints>
-                                                                                    </view>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                                                                        <connections>
+                                                                                            <action selector="onClickCheckbox:" destination="FE8-Fz-nu7" eventType="touchUpInside" id="m2V-oE-0Nq"/>
+                                                                                        </connections>
+                                                                                    </button>
                                                                                 </subviews>
-                                                                            </stackView>
-                                                                        </subviews>
-                                                                        <constraints>
-                                                                            <constraint firstItem="sYn-Ju-i4e" firstAttribute="top" secondItem="Jb0-xP-8e8" secondAttribute="top" id="86d-vq-Zae"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="sYn-Ju-i4e" secondAttribute="bottom" id="9mK-Yy-1pe"/>
-                                                                            <constraint firstItem="sYn-Ju-i4e" firstAttribute="leading" secondItem="Jb0-xP-8e8" secondAttribute="leading" id="ZGX-P9-Pd4"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="sYn-Ju-i4e" secondAttribute="trailing" id="ewl-qJ-AcU"/>
-                                                                        </constraints>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
-                                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                                <color key="value" systemColor="separatorColor"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </view>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <view contentMode="scaleToFill" verticalHuggingPriority="305" translatesAutoresizingMaskIntoConstraints="NO" id="Jpl-wv-bK4" userLabel="Map Details">
-                                                                <rect key="frame" x="0.0" y="157" width="375" height="678"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="301" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7WG-KA-rnA">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="678"/>
-                                                                        <subviews>
-                                                                            <view opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="310" translatesAutoresizingMaskIntoConstraints="NO" id="CG6-dE-uwu" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" priority="990" constant="1" id="asW-fH-cbS"/>
+                                                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kuA-uM-HT9" secondAttribute="bottom" constant="8" id="2N9-AV-1lm"/>
+                                                                                    <constraint firstItem="Yr4-NA-puM" firstAttribute="leading" secondItem="b46-xJ-pIU" secondAttribute="leading" id="6K2-jX-3QA"/>
+                                                                                    <constraint firstAttribute="width" constant="50" id="Lgt-pn-MPR"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="Yr4-NA-puM" secondAttribute="bottom" id="N4f-CP-BMx"/>
+                                                                                    <constraint firstItem="kuA-uM-HT9" firstAttribute="leading" secondItem="b46-xJ-pIU" secondAttribute="leading" constant="15" id="OhL-aq-CVb"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="Yr4-NA-puM" secondAttribute="trailing" id="TDT-9u-xj0"/>
+                                                                                    <constraint firstItem="Yr4-NA-puM" firstAttribute="top" secondItem="b46-xJ-pIU" secondAttribute="top" id="dZE-C9-HwV"/>
+                                                                                    <constraint firstItem="kuA-uM-HT9" firstAttribute="top" secondItem="b46-xJ-pIU" secondAttribute="top" priority="950" constant="8" id="i9e-HL-c8a"/>
+                                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="200" constant="42" id="nm0-uo-Xbg"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="kuA-uM-HT9" secondAttribute="trailing" constant="10" id="tMf-5M-ajL"/>
                                                                                 </constraints>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                                        <color key="value" systemColor="separatorColor"/>
-                                                                                    </userDefinedRuntimeAttribute>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
-                                                                                </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89c-ls-ZGD" userLabel="Description" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="1" width="375" height="136"/>
-                                                                                <color key="tintColor" name="paragon"/>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Description"/>
-                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                                        <color key="value" systemColor="separatorColor"/>
-                                                                                    </userDefinedRuntimeAttribute>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                                                                                </userDefinedRuntimeAttributes>
-                                                                            </view>
-                                                                            <view contentMode="scaleToFill" verticalHuggingPriority="270" translatesAutoresizingMaskIntoConstraints="NO" id="qMt-Io-XSh" customClass="GameSegments" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="137" width="375" height="316"/>
-                                                                            </view>
-                                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="6cx-NZ-BGT" userLabel="Callouts" customClass="IBIncludedSubThing" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="453" width="375" height="100"/>
+                                                                            <view hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="hGB-OJ-axu">
+                                                                                <rect key="frame" x="50" y="0.0" width="0.0" height="57"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" priority="950" constant="100" id="ica-st-6t3"/>
+                                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="LfW-lf-0b5"/>
+                                                                                    <constraint firstAttribute="width" priority="900" constant="15" id="Mfh-dy-dPB"/>
                                                                                 </constraints>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MapCalloutsGroups"/>
-                                                                                </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="CnG-IV-0FB" customClass="RelatedLinksView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="553" width="375" height="75"/>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
-                                                                                </userDefinedRuntimeAttributes>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-s8-EmI">
+                                                                                <rect key="frame" x="50" y="0.0" width="270" height="57"/>
+                                                                                <subviews>
+                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="751" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Galaxy Map &gt; Omega Nebula &gt; Sahrabarik &gt; Omega" translatesAutoresizingMaskIntoConstraints="NO" id="TFH-Wb-aQT" userLabel="Breadcrumbs" customClass="MarkupTextView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="270" height="57"/>
+                                                                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
+                                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                                    </textView>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TFH-Wb-aQT" secondAttribute="bottom" id="GO2-4W-JfS"/>
+                                                                                    <constraint firstItem="TFH-Wb-aQT" firstAttribute="leading" secondItem="k7l-s8-EmI" secondAttribute="leading" id="XBJ-ZU-q9Y"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="TFH-Wb-aQT" secondAttribute="trailing" id="han-1u-pnw"/>
+                                                                                    <constraint firstItem="TFH-Wb-aQT" firstAttribute="centerY" secondItem="k7l-s8-EmI" secondAttribute="centerY" id="u4b-pO-tNc"/>
+                                                                                    <constraint firstItem="TFH-Wb-aQT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k7l-s8-EmI" secondAttribute="top" id="ucg-6Y-bnH"/>
+                                                                                </constraints>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="bQr-Li-DPV" userLabel="Notes Row" customClass="NotesView" customModule="MEGameTracker" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="628" width="375" height="50"/>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
-                                                                                </userDefinedRuntimeAttributes>
+                                                                            <view contentMode="center" horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="au2-74-AED" userLabel="Detail Disclosure">
+                                                                                <rect key="frame" x="320" y="0.0" width="55" height="57"/>
+                                                                                <subviews>
+                                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" image="Vertical Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="o2B-jG-3Mp">
+                                                                                        <rect key="frame" x="5" y="8" width="35" height="20"/>
+                                                                                        <color key="tintColor" name="renegade"/>
+                                                                                    </imageView>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pN5-D0-Cr0">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="57"/>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                                                                        <connections>
+                                                                                            <action selector="onClickDisclosure:" destination="FE8-Fz-nu7" eventType="touchUpInside" id="GkG-gv-oax"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="trailing" secondItem="o2B-jG-3Mp" secondAttribute="trailing" constant="15" id="0sO-q6-WRN"/>
+                                                                                    <constraint firstItem="o2B-jG-3Mp" firstAttribute="leading" secondItem="au2-74-AED" secondAttribute="leading" constant="5" id="6o8-9j-Sm1"/>
+                                                                                    <constraint firstItem="o2B-jG-3Mp" firstAttribute="top" secondItem="au2-74-AED" secondAttribute="top" constant="8" id="Ihk-bv-lSy"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="pN5-D0-Cr0" secondAttribute="trailing" id="KRk-la-EmL"/>
+                                                                                    <constraint firstItem="pN5-D0-Cr0" firstAttribute="leading" secondItem="au2-74-AED" secondAttribute="leading" id="Kxu-9K-YrI"/>
+                                                                                    <constraint firstAttribute="width" constant="55" id="Ucs-H3-Voj"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="pN5-D0-Cr0" secondAttribute="bottom" id="dRg-IP-4ys"/>
+                                                                                    <constraint firstItem="pN5-D0-Cr0" firstAttribute="top" secondItem="au2-74-AED" secondAttribute="top" id="rYw-uQ-7lL"/>
+                                                                                </constraints>
                                                                             </view>
                                                                         </subviews>
                                                                     </stackView>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="7WG-KA-rnA" secondAttribute="bottom" id="9g7-aI-xvv"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="7WG-KA-rnA" secondAttribute="trailing" id="KKx-ma-GT0"/>
-                                                                    <constraint firstItem="7WG-KA-rnA" firstAttribute="leading" secondItem="Jpl-wv-bK4" secondAttribute="leading" id="KNW-zP-KXH"/>
-                                                                    <constraint firstAttribute="height" priority="110" id="n8F-kI-bmS"/>
-                                                                    <constraint firstItem="7WG-KA-rnA" firstAttribute="top" secondItem="Jpl-wv-bK4" secondAttribute="top" id="yIr-dF-KNc"/>
+                                                                    <constraint firstItem="sYn-Ju-i4e" firstAttribute="top" secondItem="Jb0-xP-8e8" secondAttribute="top" id="86d-vq-Zae"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="sYn-Ju-i4e" secondAttribute="bottom" id="9mK-Yy-1pe"/>
+                                                                    <constraint firstItem="sYn-Ju-i4e" firstAttribute="leading" secondItem="Jb0-xP-8e8" secondAttribute="leading" id="ZGX-P9-Pd4"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="sYn-Ju-i4e" secondAttribute="trailing" id="ewl-qJ-AcU"/>
                                                                 </constraints>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" verticalHuggingPriority="200" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="ssg-oX-yqe" userLabel="Scroll Wrapper">
-                                                                <rect key="frame" x="0.0" y="835" width="375" height="50"/>
-                                                                <subviews>
-                                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="L2o-1Z-ynq">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                                                        <connections>
-                                                                            <outlet property="delegate" destination="FE8-Fz-nu7" id="zU1-xO-HPr"/>
-                                                                        </connections>
-                                                                    </scrollView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" name="mapImageBackground"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="L2o-1Z-ynq" secondAttribute="bottom" id="CGM-O0-POF"/>
-                                                                    <constraint firstAttribute="height" priority="90" id="Edn-57-ruu"/>
-                                                                    <constraint firstItem="L2o-1Z-ynq" firstAttribute="leading" secondItem="ssg-oX-yqe" secondAttribute="leading" id="HRt-EI-eus"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="L2o-1Z-ynq" secondAttribute="trailing" id="YyJ-uA-aIl"/>
-                                                                    <constraint firstItem="L2o-1Z-ynq" firstAttribute="top" secondItem="ssg-oX-yqe" secondAttribute="top" id="iT3-wU-y0L"/>
-                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                        <color key="value" systemColor="separatorColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" priority="1" id="Ipv-uQ-x4v"/>
-                                                        </constraints>
                                                     </stackView>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="305" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jpl-wv-bK4" userLabel="Map Details">
+                                                        <rect key="frame" x="0.0" y="157" width="375" height="653"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="301" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7WG-KA-rnA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="653"/>
+                                                                <subviews>
+                                                                    <view opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="310" translatesAutoresizingMaskIntoConstraints="NO" id="CG6-dE-uwu" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" priority="990" constant="1" id="asW-fH-cbS"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                                <color key="value" systemColor="separatorColor"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89c-ls-ZGD" userLabel="Description" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="1" width="375" height="136"/>
+                                                                        <color key="tintColor" name="paragon"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Description"/>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                                <color key="value" systemColor="separatorColor"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="270" translatesAutoresizingMaskIntoConstraints="NO" id="qMt-Io-XSh" customClass="GameSegments" customModule="MEGameTracker" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="137" width="375" height="316"/>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="6cx-NZ-BGT" userLabel="Callouts" customClass="IBIncludedSubThing" customModule="MEGameTracker" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="453" width="375" height="100"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" priority="950" constant="100" id="ica-st-6t3"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="incStoryboard" value="MapCalloutsGroups"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="CnG-IV-0FB" customClass="RelatedLinksView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="553" width="375" height="50"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="NO"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="bQr-Li-DPV" userLabel="Notes Row" customClass="NotesView" customModule="MEGameTracker" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="603" width="375" height="50"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderTop" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="7WG-KA-rnA" secondAttribute="bottom" id="9g7-aI-xvv"/>
+                                                            <constraint firstAttribute="trailing" secondItem="7WG-KA-rnA" secondAttribute="trailing" id="KKx-ma-GT0"/>
+                                                            <constraint firstItem="7WG-KA-rnA" firstAttribute="leading" secondItem="Jpl-wv-bK4" secondAttribute="leading" id="KNW-zP-KXH"/>
+                                                            <constraint firstAttribute="height" priority="110" id="n8F-kI-bmS"/>
+                                                            <constraint firstItem="7WG-KA-rnA" firstAttribute="top" secondItem="Jpl-wv-bK4" secondAttribute="top" id="yIr-dF-KNc"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" verticalHuggingPriority="200" verticalCompressionResistancePriority="700" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ssg-oX-yqe" userLabel="Scroll Wrapper">
+                                                        <rect key="frame" x="0.0" y="810" width="375" height="50"/>
+                                                        <subviews>
+                                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="L2o-1Z-ynq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="FE8-Fz-nu7" id="zU1-xO-HPr"/>
+                                                                </connections>
+                                                            </scrollView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="mapImageBackground"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="L2o-1Z-ynq" secondAttribute="bottom" id="CGM-O0-POF"/>
+                                                            <constraint firstAttribute="height" priority="90" id="Edn-57-ruu"/>
+                                                            <constraint firstItem="L2o-1Z-ynq" firstAttribute="leading" secondItem="ssg-oX-yqe" secondAttribute="leading" id="HRt-EI-eus"/>
+                                                            <constraint firstAttribute="trailing" secondItem="L2o-1Z-ynq" secondAttribute="trailing" id="YyJ-uA-aIl"/>
+                                                            <constraint firstItem="L2o-1Z-ynq" firstAttribute="top" secondItem="ssg-oX-yqe" secondAttribute="top" id="iT3-wU-y0L"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="Ig2-YW-Gnz" firstAttribute="top" secondItem="Omu-tb-gkP" secondAttribute="top" id="NOW-zm-P5g"/>
-                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ig2-YW-Gnz" secondAttribute="bottom" priority="900" id="cqy-MG-Lju"/>
-                                                    <constraint firstItem="Ig2-YW-Gnz" firstAttribute="leading" secondItem="Omu-tb-gkP" secondAttribute="leading" id="exp-75-go3"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Ig2-YW-Gnz" secondAttribute="bottom" priority="100" id="rlj-Y0-Yr2"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Ig2-YW-Gnz" secondAttribute="trailing" id="wOB-WF-bxy"/>
-                                                </constraints>
-                                            </view>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Omu-tb-gkP" secondAttribute="trailing" id="9MJ-GD-MTz"/>
-                                            <constraint firstItem="Omu-tb-gkP" firstAttribute="top" secondItem="MiC-Hf-3Ao" secondAttribute="top" id="HTX-gf-iDN"/>
-                                            <constraint firstItem="Omu-tb-gkP" firstAttribute="height" relation="greaterThanOrEqual" secondItem="MiC-Hf-3Ao" secondAttribute="height" id="STY-88-AUQ"/>
-                                            <constraint firstItem="Omu-tb-gkP" firstAttribute="leading" secondItem="MiC-Hf-3Ao" secondAttribute="leading" id="UQ6-8d-Qou"/>
-                                            <constraint firstItem="Omu-tb-gkP" firstAttribute="width" secondItem="MiC-Hf-3Ao" secondAttribute="width" id="Ws1-4P-GOt"/>
-                                            <constraint firstAttribute="bottom" secondItem="Omu-tb-gkP" secondAttribute="bottom" id="xtp-Oy-ea6"/>
+                                            <constraint firstItem="Ig2-YW-Gnz" firstAttribute="height" relation="greaterThanOrEqual" secondItem="MiC-Hf-3Ao" secondAttribute="height" id="G6g-aE-6MR"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ig2-YW-Gnz" secondAttribute="trailing" id="Iff-pp-Uh0"/>
+                                            <constraint firstItem="Ig2-YW-Gnz" firstAttribute="leading" secondItem="MiC-Hf-3Ao" secondAttribute="leading" id="L3e-UE-MrO"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ig2-YW-Gnz" secondAttribute="bottom" id="tD9-tq-6yF"/>
+                                            <constraint firstItem="Ig2-YW-Gnz" firstAttribute="top" secondItem="MiC-Hf-3Ao" secondAttribute="top" id="uDe-Nw-3vC"/>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="MiC-Hf-3Ao" firstAttribute="width" secondItem="lNY-cR-ZHQ" secondAttribute="width" id="1N5-y1-tvZ"/>
                                     <constraint firstAttribute="bottom" secondItem="MiC-Hf-3Ao" secondAttribute="bottom" id="5Y7-k0-Bqc"/>
-                                    <constraint firstItem="Omu-tb-gkP" firstAttribute="height" secondItem="lNY-cR-ZHQ" secondAttribute="height" priority="250" id="bwg-1w-nsS"/>
                                     <constraint firstAttribute="trailing" secondItem="MiC-Hf-3Ao" secondAttribute="trailing" id="cBh-LG-H4J"/>
                                     <constraint firstItem="MiC-Hf-3Ao" firstAttribute="top" secondItem="lNY-cR-ZHQ" secondAttribute="top" id="mdT-VR-S0j"/>
                                     <constraint firstItem="MiC-Hf-3Ao" firstAttribute="leading" secondItem="lNY-cR-ZHQ" secondAttribute="leading" id="qeL-0K-cnE"/>
@@ -288,6 +272,7 @@
                         </subviews>
                         <color key="backgroundColor" name="secondaryBackground"/>
                         <constraints>
+                            <constraint firstItem="Ig2-YW-Gnz" firstAttribute="width" secondItem="pUp-Qz-wJR" secondAttribute="width" id="2bQ-Ed-oui"/>
                             <constraint firstAttribute="trailing" secondItem="lNY-cR-ZHQ" secondAttribute="trailing" id="KOS-dS-hDE"/>
                             <constraint firstItem="BCg-J2-dR4" firstAttribute="top" secondItem="lNY-cR-ZHQ" secondAttribute="bottom" id="LNW-eH-s4c"/>
                             <constraint firstItem="lNY-cR-ZHQ" firstAttribute="leading" secondItem="pUp-Qz-wJR" secondAttribute="leading" id="d5T-Fd-bpx"/>

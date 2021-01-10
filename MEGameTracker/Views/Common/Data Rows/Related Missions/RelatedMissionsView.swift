@@ -46,21 +46,15 @@ final public class RelatedMissionsView: SimpleArrayDataRow {
 		guard missions.indices.contains((indexPath as NSIndexPath).row) else { return }
 		let mission = missions[(indexPath as NSIndexPath).row]
 		startParentSpinner()
-		DispatchQueue.global(qos: .background).async {
-			let bundle = Bundle(for: type(of: self))
-			if let flowController = UIStoryboard(name: "MissionsFlow", bundle: bundle)
-					.instantiateViewController(withIdentifier: "Mission") as? MissionsFlowController,
-				let missionController = flowController.includedController as? MissionController {
-				// configure detail
-				missionController.mission = mission
-				DispatchQueue.main.async {
-					self.viewController?.navigationController?.pushViewController(flowController, animated: true)
-					self.stopParentSpinner()
-				}
-				return
-			}
-			self.stopParentSpinner()
-		}
+        let bundle = Bundle(for: type(of: self))
+        if let flowController = UIStoryboard(name: "MissionsFlow", bundle: bundle)
+            .instantiateViewController(withIdentifier: "Mission") as? MissionsFlowController,
+            let missionController = flowController.includedController as? MissionController {
+            // configure detail
+            missionController.mission = mission
+            self.viewController?.navigationController?.pushViewController(flowController, animated: true)
+        }
+        self.stopParentSpinner()
 	}
 
 	override func startListeners() {

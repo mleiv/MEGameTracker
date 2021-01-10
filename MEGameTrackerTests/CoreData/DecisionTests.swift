@@ -17,7 +17,7 @@ final class DecisionTests: MEGameTrackerTests {
 
 	let ritaJson = "{\"id\": \"D1.Rita\",\"gameVersion\": \"1\",\"name\": \"Helped Jenna in Chora\'s Den\",\"description\": \"If you help Jenna in [Citadel: Rita\'s Sister|megametracker:\\/\\/mission?id=A1.C1.RitasSister], she can save Conrad Verner\'s life in Game 3.\",\"sortIndex\": 11}"
 
-	let conradJson = "{\"id\": \"D1.Conrad\",\"gameVersion\": \"1\",\"name\": \"Set Conrad Verner straight (Game 1)\",\"description\": \"Charm or Intimidate Conrad into giving up his idea of being a hero.\\n\\nIf Shepard helps Conrad in Games 1, 2, and 3, Conrad will save Shepard\'s life in Game 3. His doctoral dissertation could also become a War Asset (see the four requirements here: [https:\\/\\/www.reddit.com\\/r\\/masseffect\\/comments\\/1q8de2\\/dr_conrad_verner\\/]).\",\"sortIndex\": 15}"
+	let conradJson = "{\"id\": \"D1.Conrad\",\"gameVersion\": \"1\",\"name\": \"Set Conrad Verner straight (Game 1)\",\"description\": \"Charm or Intimidate Conrad into giving up his idea of being a hero.\\n\\nIf Shepard helps Conrad in Games 1, 2, and 3, Conrad will save Shepard\'s life in Game 3. His doctoral dissertation could also become a War Asset (see the four requirements here: [Reddit|https:\\/\\/www.reddit.com\\/r\\/masseffect\\/comments\\/1q8de2\\/dr_conrad_verner\\/]).\",\"sortIndex\": 15}"
 
 	let niftuJson = "{\"id\": \"D2.NiftuCal\",\"gameVersion\": \"2\",\"name\": \"Niftu Cal survived his drug trip\",\"description\": \"Shepard prevents Niftu Cal from attacking the Eclipse mercenary stronghold on Illium during [megametracker:\\/\\/mission?id=A2.D.Samara], thereby saving his life.\",\"sortIndex\": 20}"
 
