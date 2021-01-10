@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,6 +15,25 @@
             <rect key="frame" x="0.0" y="0.0" width="500" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RV3-uv-RsP" userLabel="Slider Stack">
+                    <rect key="frame" x="15" y="10" width="473" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" text="Option:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8j-Aw-a0a" userLabel="title">
+                            <rect key="frame" x="0.0" y="10.5" width="53.5" height="19.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="260" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tn1-T9-ehL" userLabel="Slider">
+                            <rect key="frame" x="56.5" y="5" width="418.5" height="31"/>
+                            <color key="tintColor" name="renegade"/>
+                            <color key="thumbTintColor" systemColor="separatorColor"/>
+                            <connections>
+                                <action selector="onChange:" destination="Z3Q-sP-nnP" eventType="valueChanged" id="Yye-CH-71s"/>
+                                <action selector="onFinishedChange:" destination="Z3Q-sP-nnP" eventType="touchUpInside" id="iHi-yI-edh"/>
+                            </connections>
+                        </slider>
+                    </subviews>
+                </stackView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9H-EQ-bmS" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
                     <rect key="frame" x="15" y="59" width="485" height="1"/>
                     <constraints>
@@ -24,29 +45,10 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
                         <userDefinedRuntimeAttribute type="color" keyPath="color">
-                            <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" systemColor="separatorColor"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RV3-uv-RsP">
-                    <rect key="frame" x="15" y="10" width="473" height="40"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" text="Option:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8j-Aw-a0a" userLabel="title">
-                            <rect key="frame" x="0.0" y="10.5" width="53.5" height="19.5"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="260" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tn1-T9-ehL" userLabel="Slider">
-                            <rect key="frame" x="56.5" y="5" width="418.5" height="31"/>
-                            <color key="tintColor" name="renegade"/>
-                            <color key="thumbTintColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="onChange:" destination="Z3Q-sP-nnP" eventType="valueChanged" id="Yye-CH-71s"/>
-                                <action selector="onFinishedChange:" destination="Z3Q-sP-nnP" eventType="touchUpInside" id="iHi-yI-edh"/>
-                            </connections>
-                        </slider>
-                    </subviews>
-                </stackView>
             </subviews>
             <constraints>
                 <constraint firstItem="RV3-uv-RsP" firstAttribute="leading" secondItem="Z3Q-sP-nnP" secondAttribute="leading" constant="15" id="2Mv-WZ-3If"/>
@@ -63,7 +65,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="color">
-                    <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="value" systemColor="separatorColor"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
@@ -82,5 +84,8 @@
         <namedColor name="renegade">
             <color red="0.75" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -41,6 +41,7 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 				let controller = SFSafariViewController(url: url)
 				controller.delegate = self
 				DispatchQueue.main.async {
+                    // don't try to load from a popover/etc - get the parent controller
                     if let wrapperController = self.originController?.tabBarController?.selectedViewController,
                        let targetController = self.targetControllerFromWrapperController(wrapperController) {
                         targetController.present(controller, animated: true, completion: nil)

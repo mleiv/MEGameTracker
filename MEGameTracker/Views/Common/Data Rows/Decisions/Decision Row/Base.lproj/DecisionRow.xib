@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,12 +18,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LbM-nb-1ze">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="900" constant="50" id="KqQ-4A-od3"/>
-                        </constraints>
-                    </view>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zaJ-hn-zPM">
                         <rect key="frame" x="15" y="10" width="290" height="30"/>
                         <subviews>
@@ -35,13 +31,13 @@
                                             <constraint firstAttribute="height" constant="25" id="thr-cc-wF1"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="lXF-Wt-WPr">
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="lXF-Wt-WPr" userLabel="Filler">
                                         <rect key="frame" x="0.0" y="25" width="25" height="5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="10" id="Kak-ao-gCD"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" priority="101" constant="30" id="lAA-fQ-5sn"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jVR-8q-8bb">
                                 <rect key="frame" x="35" y="0.0" width="255" height="30"/>
@@ -54,17 +50,14 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="804" text="Game 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npc-ZW-k4w">
                                         <rect key="frame" x="0.0" y="15.5" width="255" height="14.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="height" priority="100" id="PDn-Pz-Ctc"/>
-                        </constraints>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3n-hD-syX">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3n-hD-syX">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="h3l-kp-v0M"/>
@@ -75,15 +68,11 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="LbM-nb-1ze" firstAttribute="leading" secondItem="FYO-yV-ULR" secondAttribute="leading" id="4uP-cW-7dy"/>
                     <constraint firstAttribute="bottom" secondItem="zaJ-hn-zPM" secondAttribute="bottom" priority="900" constant="10" id="I0a-Bx-kjs"/>
                     <constraint firstItem="zaJ-hn-zPM" firstAttribute="top" secondItem="FYO-yV-ULR" secondAttribute="top" priority="900" constant="10" id="IhA-9b-L6h"/>
-                    <constraint firstAttribute="bottom" secondItem="LbM-nb-1ze" secondAttribute="bottom" priority="900" id="Qwc-Zm-MTv"/>
                     <constraint firstItem="z3n-hD-syX" firstAttribute="leading" secondItem="FYO-yV-ULR" secondAttribute="leading" id="XwD-s2-nkw"/>
-                    <constraint firstAttribute="trailing" secondItem="LbM-nb-1ze" secondAttribute="trailing" id="llX-Df-0QU"/>
                     <constraint firstAttribute="bottom" secondItem="z3n-hD-syX" secondAttribute="bottom" id="mLQ-RU-gV5"/>
                     <constraint firstItem="z3n-hD-syX" firstAttribute="top" secondItem="FYO-yV-ULR" secondAttribute="top" id="tcu-xx-hLn"/>
-                    <constraint firstItem="LbM-nb-1ze" firstAttribute="top" secondItem="FYO-yV-ULR" secondAttribute="top" id="ua2-Cm-6xD"/>
                     <constraint firstAttribute="trailing" secondItem="zaJ-hn-zPM" secondAttribute="trailing" constant="15" id="vP0-Ig-u7J"/>
                     <constraint firstItem="zaJ-hn-zPM" firstAttribute="leading" secondItem="FYO-yV-ULR" secondAttribute="leading" constant="15" id="z2E-UI-Nui"/>
                 </constraints>
@@ -99,9 +88,17 @@
             <point key="canvasLocation" x="124" y="256"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="sZT-2i-3Yv">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -63,28 +63,26 @@ final public class NotesView: SimpleArrayDataRow {
 				self.stopParentSpinner()
 				return
 			}
-			// load editor
-			let bundle = Bundle(for: type(of: self))
-			if let editorNavigationController = UIStoryboard(name: "NotesEditor", bundle: bundle)
-					.instantiateInitialViewController() as? UINavigationController,
-				let editor = editorNavigationController.visibleViewController as? NotesEditorController {
-				editor.note = note
-				editor.originHint = self.controller?.originHint
-				editor.originPrefix = "Re"
-				editorNavigationController.modalPresentationStyle = .popover
-				if let popover = editorNavigationController.popoverPresentationController {
-					editor.preferredContentSize = CGSize(width: 400, height: 400)
-					editor.popover = popover
-					popover.sourceView = sender
-					popover.sourceRect = sender?.bounds ?? CGRect.zero
-				}
-				DispatchQueue.main.async {
-					self.viewController?.present(editorNavigationController, animated: true, completion: nil)
-					self.stopParentSpinner()
-				}
-				return
-			}
-			self.stopParentSpinner()
+            DispatchQueue.main.async {
+                // load editor
+                let bundle = Bundle(for: type(of: self))
+                if let editorNavigationController = UIStoryboard(name: "NotesEditor", bundle: bundle)
+                        .instantiateInitialViewController() as? UINavigationController,
+                    let editor = editorNavigationController.visibleViewController as? NotesEditorController {
+                    editor.note = note
+                    editor.originHint = self.controller?.originHint
+                    editor.originPrefix = "Re"
+                    editorNavigationController.modalPresentationStyle = .popover
+                    if let popover = editorNavigationController.popoverPresentationController {
+                        editor.preferredContentSize = CGSize(width: 400, height: 400)
+                        editor.popover = popover
+                        popover.sourceView = sender
+                        popover.sourceRect = sender?.bounds ?? CGRect.zero
+                    }
+                    self.viewController?.present(editorNavigationController, animated: true, completion: nil)
+                }
+                self.stopParentSpinner()
+            }
 		}
 	}
 

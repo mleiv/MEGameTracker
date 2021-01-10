@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,10 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMc-fg-sQy">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMc-fg-sQy" userLabel="Rounded Corners">
                     <rect key="frame" x="15" y="10" width="345" height="24"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="270" verticalCompressionResistancePriority="770" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dZ7-rZ-cIu">
+                        <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="270" verticalCompressionResistancePriority="770" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dZ7-rZ-cIu" userLabel="Game List">
                             <rect key="frame" x="0.0" y="10" width="345" height="4"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGx-lH-0nd">
@@ -40,7 +42,7 @@
                                 <constraint firstAttribute="height" secondItem="EGx-lH-0nd" secondAttribute="height" id="pj5-7G-wGb"/>
                             </constraints>
                         </stackView>
-                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flT-fv-dRS" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flT-fv-dRS" userLabel="Vertical Divider 1" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="115" height="24"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
@@ -48,11 +50,11 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="YES"/>
                                 <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" systemColor="separatorColor"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEq-fH-Iwm" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEq-fH-Iwm" userLabel="Vertical Divider 2" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
                             <rect key="frame" x="230" y="0.0" width="115" height="24"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
@@ -60,7 +62,7 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
                                 <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" systemColor="separatorColor"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
@@ -109,5 +111,8 @@
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

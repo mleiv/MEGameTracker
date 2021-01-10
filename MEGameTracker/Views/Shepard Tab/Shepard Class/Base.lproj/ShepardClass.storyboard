@@ -20,13 +20,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEk-E8-Mxj">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QEk-E8-Mxj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8LF-94-JEJ" userLabel="Values">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8LF-94-JEJ" userLabel="Values">
                                         <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaD-Rh-2xJ" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaD-Rh-2xJ" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                 <color key="backgroundColor" name="background"/>
                                                 <userDefinedRuntimeAttributes>
@@ -35,7 +35,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Soldier"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5G-bE-aiw" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C5G-bE-aiw" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="375" height="52.5"/>
                                                 <color key="tintColor" name="paragon"/>
                                                 <userDefinedRuntimeAttributes>
@@ -48,7 +48,7 @@ The Soldier class talent increases health, and grants a small amount of health r
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-Yw-LAy" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-Yw-LAy" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="102.5" width="375" height="50"/>
                                                 <color key="backgroundColor" name="background"/>
                                                 <userDefinedRuntimeAttributes>
@@ -57,7 +57,7 @@ The Soldier class talent increases health, and grants a small amount of health r
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUO-hf-OEM" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUO-hf-OEM" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="152.5" width="375" height="52.5"/>
                                                 <color key="tintColor" name="paragon"/>
                                                 <userDefinedRuntimeAttributes>
@@ -70,7 +70,7 @@ The Engineer class talent reduces recharge time for tech abilities, and increase
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fal-wR-vho" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fal-wR-vho" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="205" width="375" height="50"/>
                                                 <color key="backgroundColor" name="background"/>
                                                 <userDefinedRuntimeAttributes>
@@ -79,7 +79,7 @@ The Engineer class talent reduces recharge time for tech abilities, and increase
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c19-41-8IL" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c19-41-8IL" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="255" width="375" height="52.5"/>
                                                 <color key="tintColor" name="paragon"/>
                                                 <userDefinedRuntimeAttributes>
@@ -92,7 +92,7 @@ The Adept class talent reduces recharge time for biotic abilities, and increases
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSy-ea-687" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSy-ea-687" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="307.5" width="375" height="50"/>
                                                 <color key="backgroundColor" name="background"/>
                                                 <userDefinedRuntimeAttributes>
@@ -101,7 +101,7 @@ The Adept class talent reduces recharge time for biotic abilities, and increases
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6O2-F9-DTH" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6O2-F9-DTH" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="357.5" width="375" height="52.5"/>
                                                 <color key="tintColor" name="paragon"/>
                                                 <userDefinedRuntimeAttributes>
@@ -114,7 +114,7 @@ The Infiltrator class talent reduces weapon heat buildup, and increases damage f
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaL-2S-LFW" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gaL-2S-LFW" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="410" width="375" height="50"/>
                                                 <color key="backgroundColor" name="background"/>
                                                 <userDefinedRuntimeAttributes>
@@ -123,7 +123,7 @@ The Infiltrator class talent reduces weapon heat buildup, and increases damage f
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Gl-eZ-NU4" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Gl-eZ-NU4" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="460" width="375" height="52.5"/>
                                                 <color key="tintColor" name="paragon"/>
                                                 <userDefinedRuntimeAttributes>
@@ -136,7 +136,7 @@ The Sentinel class reduces cooldown time on abilities and small improvement to w
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2H4-kq-bed" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2H4-kq-bed" customClass="RadioOptionRowView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="512.5" width="375" height="50"/>
                                                 <color key="backgroundColor" name="background"/>
                                                 <userDefinedRuntimeAttributes>
@@ -145,7 +145,7 @@ The Sentinel class reduces cooldown time on abilities and small improvement to w
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="borderBottom" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrK-ej-pWs" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UrK-ej-pWs" customClass="SideEffectsView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="562.5" width="375" height="52.5"/>
                                                 <color key="tintColor" name="paragon"/>
                                                 <userDefinedRuntimeAttributes>
@@ -158,7 +158,7 @@ The Vanguard class talent increases weapon damage, and increases biotic protecti
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="Wvl-Rz-f4f" userLabel="Filler">
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="700" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wvl-Rz-f4f" userLabel="Filler">
                                                 <rect key="frame" x="0.0" y="615" width="375" height="52"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="100" id="IgP-e9-LrS"/>

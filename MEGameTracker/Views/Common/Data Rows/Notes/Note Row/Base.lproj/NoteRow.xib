@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,36 +14,32 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="92" id="wwf-Sv-q2q" customClass="NoteRow" customModule="MEGameTracker" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="400" height="77"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wwf-Sv-q2q" id="Co7-MX-NIO">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wwf-Sv-q2q" id="Co7-MX-NIO" userLabel="Note Row Wrapper">
                 <rect key="frame" x="0.0" y="0.0" width="400" height="77"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5VC-oO-wNd" userLabel="Size Wrapper">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5VC-oO-wNd" userLabel="Note Row Wrapper 2">
                         <rect key="frame" x="25" y="8" width="350" height="61"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="300" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Testing" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhq-sh-RzZ" customClass="IBStyledTextView" customModule="MEGameTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="350" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="7fN-gj-iLk"/>
-                                    <constraint firstAttribute="height" priority="100" id="ShP-Tc-7nU"/>
-                                </constraints>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUf-bb-F6t" userLabel="Footer">
-                                <rect key="frame" x="76.5" y="37" width="273.5" height="24"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUf-bb-F6t" userLabel="Note Footer">
+                                <rect key="frame" x="77" y="37" width="273" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" text="2014-08-09 34:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50X-io-NvO">
                                         <rect key="frame" x="0.0" y="0.0" width="126" height="24"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text=" - John Shepard (Game 3)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZj-uz-chd">
-                                        <rect key="frame" x="126" y="0.0" width="147.5" height="24"/>
+                                        <rect key="frame" x="126" y="0.0" width="147" height="24"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -58,7 +56,6 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" priority="100" id="9v1-mn-knV"/>
                             <constraint firstItem="XUf-bb-F6t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5VC-oO-wNd" secondAttribute="leading" id="B0J-XT-bv0"/>
                             <constraint firstItem="rhq-sh-RzZ" firstAttribute="top" secondItem="5VC-oO-wNd" secondAttribute="top" id="FWd-i4-3h0"/>
                             <constraint firstAttribute="trailing" secondItem="rhq-sh-RzZ" secondAttribute="trailing" id="MFN-rn-0GB"/>
@@ -68,14 +65,14 @@
                             <constraint firstAttribute="bottom" secondItem="XUf-bb-F6t" secondAttribute="bottom" priority="900" id="xh6-D6-uoL"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSj-Oy-xgw" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSj-Oy-xgw" userLabel="Row Border Bottom" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="77" width="400" height="1"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="uSp-2n-Lwz"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" systemColor="separatorColor"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="NO"/>
@@ -105,9 +102,23 @@
             <point key="canvasLocation" x="-64" y="311.5"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="rhq-sh-RzZ">
+            <size key="intrinsicContentSize" width="63" height="37"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

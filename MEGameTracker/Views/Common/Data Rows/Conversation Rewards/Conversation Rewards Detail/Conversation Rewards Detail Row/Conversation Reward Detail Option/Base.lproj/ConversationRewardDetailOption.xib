@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,50 +14,50 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VvT-y9-Qfq">
-                    <rect key="frame" x="0.0" y="0.0" width="331" height="84"/>
+                    <rect key="frame" x="0.0" y="8" width="331" height="68"/>
                     <subviews>
-                        <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="7SU-u4-GNv" customClass="RadioButton" customModule="MEGameTracker" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="27" width="30" height="30"/>
-                            <accessibility key="accessibilityConfiguration" identifier="radio">
-                                <bool key="isElement" value="NO"/>
-                            </accessibility>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="TcP-5n-aK0"/>
-                                <constraint firstAttribute="width" constant="30" id="b53-bp-IKB"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLQ-Na-viC">
-                            <rect key="frame" x="40" y="3.5" width="291" height="77"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J6z-g8-hQQ">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="68"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lih-tp-FgG">
-                                    <rect key="frame" x="0.0" y="8" width="291" height="61"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="751" text="Paragon Context:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQU-Kb-8jt" userLabel="Paragon Context" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="291" height="19.5"/>
-                                            <accessibility key="accessibilityConfiguration" identifier="context" label="context"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="801" text="5 Paragon / 6 Renegade: &quot;Let me in and I'll help&quot;" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-de-oYq" userLabel="Paragon" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="20.5" width="291" height="40.5"/>
-                                            <accessibility key="accessibilityConfiguration" label="reward"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
+                                <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="7SU-u4-GNv" customClass="RadioButton" customModule="MEGameTracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="radio">
+                                        <bool key="isElement" value="NO"/>
+                                    </accessibility>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="TcP-5n-aK0"/>
+                                        <constraint firstAttribute="width" constant="30" id="b53-bp-IKB"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="6nH-nY-t0P" userLabel="Filler">
+                                    <rect key="frame" x="0.0" y="30" width="30" height="38"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="100" id="ssd-E2-Uvv"/>
+                                    </constraints>
+                                </view>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="Lih-tp-FgG" firstAttribute="top" secondItem="cLQ-Na-viC" secondAttribute="top" constant="8" id="205-rp-XGI"/>
-                                <constraint firstAttribute="bottom" secondItem="Lih-tp-FgG" secondAttribute="bottom" constant="8" id="25N-dr-gN2"/>
-                                <constraint firstItem="Lih-tp-FgG" firstAttribute="leading" secondItem="cLQ-Na-viC" secondAttribute="leading" id="nST-Sv-jD4"/>
-                                <constraint firstAttribute="trailing" secondItem="Lih-tp-FgG" secondAttribute="trailing" id="rvJ-gK-jUo"/>
-                            </constraints>
-                        </view>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lih-tp-FgG">
+                            <rect key="frame" x="40" y="3.5" width="291" height="61"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="751" text="Paragon Context:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQU-Kb-8jt" userLabel="Paragon Context" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="291" height="19.5"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="context" label="context"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="301" verticalCompressionResistancePriority="801" text="5 Paragon / 6 Renegade: &quot;Let me in and I'll help&quot;" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-de-oYq" userLabel="Paragon" customClass="MarkupLabel" customModule="MEGameTracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="20.5" width="291" height="40.5"/>
+                                    <accessibility key="accessibilityConfiguration" label="reward"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCS-fd-u08">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCS-fd-u08">
                     <rect key="frame" x="0.0" y="0.0" width="331" height="84"/>
                     <accessibility key="accessibilityConfiguration" identifier="button" label="Select"/>
                     <connections>
@@ -68,11 +69,11 @@
                 <bool key="isElement" value="YES"/>
             </accessibility>
             <constraints>
-                <constraint firstItem="VvT-y9-Qfq" firstAttribute="top" secondItem="9K7-r5-Zpv" secondAttribute="top" priority="950" id="0Qc-AO-J1T"/>
+                <constraint firstItem="VvT-y9-Qfq" firstAttribute="top" secondItem="9K7-r5-Zpv" secondAttribute="top" priority="950" constant="8" id="0Qc-AO-J1T"/>
                 <constraint firstAttribute="trailing" secondItem="MCS-fd-u08" secondAttribute="trailing" id="173-nS-kRt"/>
                 <constraint firstItem="VvT-y9-Qfq" firstAttribute="leading" secondItem="9K7-r5-Zpv" secondAttribute="leading" id="GPe-lx-Wy7"/>
                 <constraint firstAttribute="trailing" secondItem="VvT-y9-Qfq" secondAttribute="trailing" id="HZD-oa-y9U"/>
-                <constraint firstAttribute="bottom" secondItem="VvT-y9-Qfq" secondAttribute="bottom" id="ddh-1r-lsQ"/>
+                <constraint firstAttribute="bottom" secondItem="VvT-y9-Qfq" secondAttribute="bottom" constant="8" id="ddh-1r-lsQ"/>
                 <constraint firstItem="MCS-fd-u08" firstAttribute="leading" secondItem="9K7-r5-Zpv" secondAttribute="leading" id="k3m-Bx-FY9"/>
                 <constraint firstAttribute="bottom" secondItem="MCS-fd-u08" secondAttribute="bottom" id="kf7-Cb-ZFa"/>
                 <constraint firstItem="MCS-fd-u08" firstAttribute="top" secondItem="9K7-r5-Zpv" secondAttribute="top" id="uZq-qw-QFp"/>
@@ -89,4 +90,12 @@
             <point key="canvasLocation" x="379.5" y="-83"/>
         </view>
     </objects>
+    <designables>
+        <designable name="GQU-Kb-8jt">
+            <size key="intrinsicContentSize" width="125.5" height="19.5"/>
+        </designable>
+        <designable name="wlH-de-oYq">
+            <size key="intrinsicContentSize" width="350" height="19.5"/>
+        </designable>
+    </designables>
 </document>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,24 +36,17 @@
                                     <constraint firstItem="NBG-f7-Lt5" firstAttribute="leading" secondItem="gEp-ze-zfo" secondAttribute="leading" id="0Nm-aT-XD2"/>
                                     <constraint firstAttribute="trailing" secondItem="NBG-f7-Lt5" secondAttribute="trailing" constant="10" id="B7k-EO-iOV"/>
                                     <constraint firstItem="NBG-f7-Lt5" firstAttribute="top" secondItem="gEp-ze-zfo" secondAttribute="top" constant="4" id="LwG-R6-3js"/>
-                                    <constraint firstAttribute="height" priority="200" id="hog-v1-S1K"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NBG-f7-Lt5" secondAttribute="bottom" priority="900" constant="5" id="irK-Tp-dOg"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="300" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Some Notice Some Notice Some Notice Some Notice " adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VLr-el-qme" customClass="MarkupTextView" customModule="MEGameTracker" customModuleProvider="target">
                                 <rect key="frame" x="28" y="0.0" width="252" height="31"/>
                                 <color key="tintColor" name="paragon"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" priority="100" id="wLK-yf-dWE"/>
-                                </constraints>
                                 <color key="textColor" name="paragon"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="height" priority="100" id="uVF-xS-Ivx"/>
-                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -70,6 +64,11 @@
             <point key="canvasLocation" x="140" y="332"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="VLr-el-qme">
+            <size key="intrinsicContentSize" width="399" height="37"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Alert" width="18" height="13"/>
         <namedColor name="paragon">

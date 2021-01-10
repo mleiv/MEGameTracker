@@ -15,7 +15,6 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 
 // MARK: Outlets 
 
-	@IBOutlet weak var headerWrapper: UIView!
 	@IBOutlet weak var headerLinks: UIStackView!
 
 	@IBOutlet weak var nameField: UITextField!

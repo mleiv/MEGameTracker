@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,7 +25,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="500" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3D-Bi-e2q">
-                                    <rect key="frame" x="0.0" y="15" width="500" height="21"/>
+                                    <rect key="frame" x="229.5" y="15" width="41.5" height="21"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="textColor" name="renegade"/>
                                     <nil key="highlightedColor"/>
@@ -38,9 +40,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="cQh-OB-UeW" firstAttribute="leading" secondItem="Y5J-VX-78F" secondAttribute="leading" id="C48-Sj-vnL"/>
-                                <constraint firstAttribute="trailing" secondItem="Y3D-Bi-e2q" secondAttribute="trailing" id="GRP-uE-dxC"/>
                                 <constraint firstAttribute="bottom" secondItem="Y3D-Bi-e2q" secondAttribute="bottom" priority="800" constant="14" id="ODS-zf-Suu"/>
-                                <constraint firstItem="Y3D-Bi-e2q" firstAttribute="leading" secondItem="Y5J-VX-78F" secondAttribute="leading" id="Rmk-xb-2gL"/>
                                 <constraint firstAttribute="trailing" secondItem="cQh-OB-UeW" secondAttribute="trailing" id="SYO-SQ-yWJ"/>
                                 <constraint firstAttribute="bottom" secondItem="cQh-OB-UeW" secondAttribute="bottom" priority="900" id="e9C-n2-d5n"/>
                                 <constraint firstItem="Y3D-Bi-e2q" firstAttribute="centerX" secondItem="Y5J-VX-78F" secondAttribute="centerX" id="s27-zU-xwE"/>
@@ -51,23 +51,21 @@
                             <rect key="frame" x="0.0" y="50" width="500" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWS-7Y-B4K">
-                                    <rect key="frame" x="0.0" y="15" width="500" height="21"/>
+                                    <rect key="frame" x="229.5" y="15" width="41.5" height="21"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" systemColor="secondaryLabelColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="HWS-7Y-B4K" secondAttribute="trailing" id="PoX-Rs-6dY"/>
                                 <constraint firstItem="HWS-7Y-B4K" firstAttribute="centerX" secondItem="NSa-ji-rdR" secondAttribute="centerX" id="YBj-Ij-TRh"/>
                                 <constraint firstItem="HWS-7Y-B4K" firstAttribute="top" secondItem="NSa-ji-rdR" secondAttribute="top" priority="900" constant="15" id="Zzd-TS-RiW"/>
-                                <constraint firstItem="HWS-7Y-B4K" firstAttribute="leading" secondItem="NSa-ji-rdR" secondAttribute="leading" id="hGh-ew-iZm"/>
                                 <constraint firstAttribute="bottom" secondItem="HWS-7Y-B4K" secondAttribute="bottom" priority="800" constant="14" id="lMO-jp-mRx"/>
                             </constraints>
                         </view>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFB-FC-DN1">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFB-FC-DN1">
                     <rect key="frame" x="0.0" y="0.0" width="500" height="100"/>
                     <connections>
                         <action selector="onClick:" destination="Z3Q-sP-nnP" eventType="touchUpInside" id="O0n-dR-Kbg"/>
@@ -104,5 +102,8 @@
         <namedColor name="renegade">
             <color red="0.75" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

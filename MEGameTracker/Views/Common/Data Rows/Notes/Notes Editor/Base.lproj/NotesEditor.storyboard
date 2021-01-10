@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gsj-xB-tHj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gsj-xB-tHj">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,64 +40,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLd-GT-0FT">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ksw-sd-p3V">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ksw-sd-p3V">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="sqN-JH-X49" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <color key="backgroundColor" name="secondaryBackground"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="10" constant="50" id="CaJ-QB-XgE"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="OriginHint"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" systemColor="separatorColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="iVd-4j-7U0">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="573"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="sqN-JH-X49" customClass="TextDataRow" customModule="MEGameTracker" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
-                                                <color key="backgroundColor" name="secondaryBackground"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="OriginHint"/>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                        <color key="value" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="iVd-4j-7U0">
-                                                <rect key="frame" x="0.0" y="54" width="375" height="569"/>
-                                                <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aW1-fd-h4o" customClass="IBStyledTextView" customModule="MEGameTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="15" y="8" width="345" height="546"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="Body.NormalColor"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isScrollable" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textView>
-                                                </subviews>
-                                                <color key="backgroundColor" name="background"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="aW1-fd-h4o" secondAttribute="trailing" constant="15" id="Igj-7d-LYE"/>
-                                                    <constraint firstItem="aW1-fd-h4o" firstAttribute="leading" secondItem="iVd-4j-7U0" secondAttribute="leading" constant="15" id="lSh-ff-Urp"/>
-                                                    <constraint firstAttribute="bottom" secondItem="aW1-fd-h4o" secondAttribute="bottom" priority="900" constant="15" id="mjL-1s-FE3"/>
-                                                    <constraint firstItem="aW1-fd-h4o" firstAttribute="top" secondItem="iVd-4j-7U0" secondAttribute="top" constant="8" id="xLg-nb-mCv"/>
-                                                </constraints>
-                                            </view>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aW1-fd-h4o" customClass="IBStyledTextView" customModule="MEGameTracker" customModuleProvider="target">
+                                                <rect key="frame" x="15" y="8" width="345" height="550"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" name="background"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="aW1-fd-h4o" secondAttribute="trailing" constant="15" id="Igj-7d-LYE"/>
+                                            <constraint firstItem="aW1-fd-h4o" firstAttribute="leading" secondItem="iVd-4j-7U0" secondAttribute="leading" constant="15" id="lSh-ff-Urp"/>
+                                            <constraint firstAttribute="bottom" secondItem="aW1-fd-h4o" secondAttribute="bottom" priority="900" constant="15" id="mjL-1s-FE3"/>
+                                            <constraint firstItem="aW1-fd-h4o" firstAttribute="top" secondItem="iVd-4j-7U0" secondAttribute="top" constant="8" id="xLg-nb-mCv"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="iVd-4j-7U0" firstAttribute="height" secondItem="TLd-GT-0FT" secondAttribute="height" priority="100" id="Qyi-zA-qSs"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ksw-sd-p3V" secondAttribute="bottom" id="i3z-g0-JBF"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ksw-sd-p3V" secondAttribute="trailing" id="kVR-Rn-hja"/>
-                                    <constraint firstItem="Ksw-sd-p3V" firstAttribute="top" secondItem="TLd-GT-0FT" secondAttribute="top" id="n32-LK-kYK"/>
-                                    <constraint firstItem="Ksw-sd-p3V" firstAttribute="leading" secondItem="TLd-GT-0FT" secondAttribute="leading" id="qcj-s4-DI3"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="er1-fD-F7y" firstAttribute="top" secondItem="TLd-GT-0FT" secondAttribute="bottom" id="6gO-Ut-EQL"/>
-                            <constraint firstAttribute="trailing" secondItem="TLd-GT-0FT" secondAttribute="trailing" id="E20-4X-sJn"/>
-                            <constraint firstItem="TLd-GT-0FT" firstAttribute="top" secondItem="J8y-UA-uqE" secondAttribute="bottom" id="lK2-WO-sMz"/>
-                            <constraint firstItem="TLd-GT-0FT" firstAttribute="leading" secondItem="sTP-wb-Q2i" secondAttribute="leading" id="ztV-Yt-uwB"/>
+                            <constraint firstItem="er1-fD-F7y" firstAttribute="top" secondItem="Ksw-sd-p3V" secondAttribute="bottom" id="3xi-z7-pSA"/>
+                            <constraint firstItem="Ksw-sd-p3V" firstAttribute="leading" secondItem="sTP-wb-Q2i" secondAttribute="leading" id="8BI-C9-S1R"/>
+                            <constraint firstItem="Ksw-sd-p3V" firstAttribute="top" secondItem="J8y-UA-uqE" secondAttribute="bottom" id="ECY-b1-xNo"/>
+                            <constraint firstAttribute="trailing" secondItem="Ksw-sd-p3V" secondAttribute="trailing" id="Ehy-ck-Vsl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Note" id="m1N-QM-jST">
@@ -126,7 +115,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="headerBackground">
-            <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97000002861022949" green="0.97000002861022949" blue="0.97000002861022949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="headerFooterBackground">
             <color red="0.96999999999999997" green="0.96999999999999997" blue="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -137,5 +126,11 @@
         <namedColor name="secondaryBackground">
             <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
