@@ -633,7 +633,7 @@ extension MapController {
 		_ = Map.onChange.subscribe(with: self) { [weak self] changed in
 			if self?.map?.id == changed.id,
                 let newMap = changed.object ?? Map.get(id: changed.id) {
-                self?.changeQueue.sync {
+                self?.changeQueue.async {
                     self?.map = newMap
                     self?.reloadDataOnChange()
                 }
