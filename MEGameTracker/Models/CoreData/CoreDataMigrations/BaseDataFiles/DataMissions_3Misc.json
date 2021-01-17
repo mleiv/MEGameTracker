@@ -790,7 +790,7 @@
         "missionType": "Objective",
         "name": "Confront Garneau",
         "description": "Go to the mine and confront Garneau/Leviathan.",
-        "id": "G.Att.Cal.Ays.Mah.3.2Mine",
+        "inMapId": "G.Att.Cal.Ays.Mah.3.2Mine",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Leviathan.3",
@@ -812,7 +812,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Message From Ann Bryson",
-        "description": "Ann has sent a message to her father about the danger of the artifact. She has found another one."
+        "description": "Ann has sent a message to her father about the dangers of the artifact. She has found another one."
     }, {
         "id": "DLC3.Leviathan.3.1.1",
         "inMissionId": "DLC3.Leviathan.3",
@@ -1484,472 +1484,770 @@
         "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Dock 42",
-        "description": "Meet [megametracker://person?id=O3.Bray] at the Citadel's Dock 42 (only available for this assignment). He will take you to a cab where Aria is waiting. She explains that you will be taking no other squad members to Omega - it's just Aria. \n\nAria has stolen a Cerberus ship to infiltrate the fleet defending Omega, getting close enough to take out the command ship and then using the rest of her forces to distract Cerberus while she rams her armored ship past Omega's defenses, and then retakes it from inside. The first part goes right, but then [megametracker://person?id=E3.Petrovsky] contacts Aria to inform her that he's improved Omega's shields and she won't be able to penetrate them. When Aria tries ramming the station, the ship is destroyed, and you are forced to the escape pods. Your pod escapes the cannons and crashes into hangar bay 28.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "name": "Meet Aria",
+        "description": "Meet [megametracker://person?id=O3.Bray] at the Citadel's Dock 42 (only available for this assignment). He will take you to a cab where Aria is waiting. She explains that you will be taking no other squad members to Omega - it's just Aria.",
+        "inMapId": "G.C",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Omega2.2",
         "inMissionId": "DLC3.Omega2",
-        "sortIndex": 10802,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Disable Defense System",
-        "description": "Disable Omega's defenses so the other ships can land.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "name": "Invasion",
+        "description": "Aria has stolen a Cerberus ship to infiltrate the fleet defending Omega, getting close enough to take out the command ship and then using the rest of her forces to distract Cerberus while she rams her armored ship past Omega's defenses, and then retakes it from inside. The first part goes right, but then [megametracker://person?id=E3.Petrovsky] contacts Aria to inform her that he's improved Omega's shields and she won't be able to penetrate them. When Aria tries ramming the station, the ship is destroyed, and you are forced to the escape pods. Your pod escapes the cannons and crashes into hangar bay 28.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC"
     }, {
-        "id": "DLC3.Omega2.2.2",
+        "id": "DLC3.Omega2.2.1",
         "inMissionId": "DLC3.Omega2.2",
-        "sortIndex": 108022,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Blast Door Controls",
         "description": "Find the controls and lower the blast doors to continue. There is another batch of Cerberus soldiers in the next room.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.1Control",
+        "mapLocationPoint": {
+            "x": 364,
+            "y": 958,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Omega2.2.3",
         "inMissionId": "DLC3.Omega2.2",
-        "sortIndex": 108023,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Pressure Door",
         "description": "Head up the elevator and across to the door. Open it to a long market/ventillation room, where more Cerberus forces are waiting. Take them down and then try to open the door at the end. This will start the repressurization, and you will face another wave of Cerberus.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.1Control",
+        "mapLocationPoint": {
+            "x": 1969,
+            "y": 307,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Omega2.2.4",
         "inMissionId": "DLC3.Omega2.2",
-        "sortIndex": 108024,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Defense System Controls",
+        "name": "Disable Defenses",
         "description": "Head down the hall to the control room, where there is another fight with Cerberus. When clear, deactivate the defense system.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.1.04",
         "isShowInParentMap": true
     }, {
-        "id": "DLC3.Omega2.3",
-        "inMissionId": "DLC3.Omega2",
-        "sortIndex": 10803,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Rendezvous Point",
-        "description": "Head to the rendezvous with the rest of Aria's forces.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Omega2.3.1",
-        "inMissionId": "DLC3.Omega2.3",
-        "sortIndex": 108031,
+        "id": "DLC3.Omega2.2.5",
+        "inMissionId": "DLC3.Omega2.2",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Garage Door Controls",
-        "description": "Exit the control room and head up the elevator. Kill another team of Cerberus and then activate the garage door controls to continue to the streets of Omega, where Aria will comment on the Cerberus force fields.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "description": "Take the elevator up to Security Checkpoint 6. Kill another team of Cerberus and then activate the garage door controls to continue to the streets of Omega, where Aria will comment on the Cerberus force fields.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2.03",
         "isShowInParentMap": true
     }, {
-        "id": "DLC3.Omega2.3.2",
-        "inMissionId": "DLC3.Omega2.3",
-        "sortIndex": 108032,
+        "id": "DLC3.Omega2.2.7",
+        "inMissionId": "DLC3.Omega2.2",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Door Controls",
         "description": "Head across and down a hallway, fighting off a few Cerberus troops. Take the Talon-tagged elevator down, then across and out the door onto the broken catwalk. Drop down to the street when you see the the force field and Aria points out one of her soldiers beside it. He is killed by a Rampart mech, several of which now attack you and Aria. When the area is cleared, use the door controls to continue.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2.04",
         "isShowInParentMap": true
     }, {
-        "id": "DLC3.Omega2.3.3",
-        "inMissionId": "DLC3.Omega2.3",
-        "sortIndex": 108033,
+        "id": "DLC3.Omega2.2.8",
+        "inMissionId": "DLC3.Omega2.2",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Nyreen",
+        "name": "Access Tunnels",
         "description": "Aria will lead you down to her secret tunnels, where you meet Nyreen, an old friend of Aria's.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "mapLocationPoint": {
+            "x": 1253,
+            "y": 928,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.3.4",
-        "inMissionId": "DLC3.Omega2.3",
-        "sortIndex": 108034,
+        "id": "DLC3.Omega2.2.9",
+        "inMissionId": "DLC3.Omega2.2",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Canon Controls",
-        "description": "Bypass the door to continue on through the tunnels. When you emerge into open space, you will have to take down an Atlas as well as Cerberus troops and Rampart mechs, then target the engineer at the canon controls. Another Atlas will show up, but activating the canon controls will take care of it.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "description": "Take the ladder back up to the streets of Omega, where you will have to take down an Atlas as well as Cerberus troops and Rampart mechs, then target the engineer at the canon controls. Another Atlas will show up, but activating the canon controls will take care of it.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "mapLocationPoint": {
+            "x": 1636,
+            "y": 1827,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.4",
+        "id": "DLC3.Omega2.3",
         "inMissionId": "DLC3.Omega2",
-        "sortIndex": 10804,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Bunker, Part 1",
         "description": "You can pick up some side missions here, and prep for the rest of the assignment. Aria will reveal that she needs two things: to increase her numbers against Cerberus, and to shut down the force fields blocking off sections of Omega. She proposes an alliance with the one mercenary gang still active on Omega: the Talons. Bray will then report that Nyreen has turned up missing. When you are ready to move on, tell Aria.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC"
     }, {
-        "id": "DLC3.Omega2.5",
+        "id": "DLC3.Omega2.4",
         "inMissionId": "DLC3.Omega2",
-        "sortIndex": 10805,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Reach Talon Territory",
+        "name": "Talon Territory",
         "description": "Aria wants to strike an alliance with the Talons, a mercenary group still active on Omega.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC"
     }, {
-        "id": "DLC3.Omega2.5.1",
-        "inMissionId": "DLC3.Omega2.5",
-        "sortIndex": 108051,
+        "id": "DLC3.Omega2.4.1",
+        "inMissionId": "DLC3.Omega2.4",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Lift",
-        "description": "Once the cutscene of climbing the ladder with Aria is finished, head down the hall and up the ladder, then around the corner and up to the controls. Activate them. The lift is jammed, so shoot out the crates underneath it. Then take the ladder down to the lift and activate it to rise up on the other side.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "name": "Ventilation Access",
+        "description": "Once the cutscene of climbing the ladder with Aria is finished, head down the hall and up the ladder, then around the corner and up to the controls. Activate them. You have two choices for how to continue:",
+        "objectivesCountToCompletion": 1
     }, {
-        "id": "DLC3.Omega2.5.2",
-        "inMissionId": "DLC3.Omega2.5",
-        "sortIndex": 108052,
+        "id": "DLC3.Omega2.4.1.A",
+        "inMissionId": "DLC3.Omega2.4.1",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "A - Airlock",
+        "description": "Activate the airlock access to enter the ventilation shaft.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.1Ventilation",
+        "mapLocationPoint": {
+            "x": 555,
+            "y": 680,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.4.1.B",
+        "inMissionId": "DLC3.Omega2.4.1",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "B - Lift",
+        "description": "The lift is jammed, so shoot out the crates underneath it. Then take the ladder down to the lift and activate it to rise up on the other side. Climb over the crates to enter the ventilation shaft.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.1Ventilation",
+        "mapLocationPoint": {
+            "x": 812,
+            "y": 958,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.4.2",
+        "inMissionId": "DLC3.Omega2.4",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Outside",
+        "description": "Head down the ventilation shafts until you reach the generator controls. Reactivate the generator, then activate the terminal and the air seal to gain access to a shaft leading back outside."
+    }, {
+        "id": "DLC3.Omega2.4.2.A",
+        "inMissionId": "DLC3.Omega2.4.2",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Generator",
-        "description": "Head up the ladder and around the corner. Open the door to the tunnels. Keep going until you reach the generator controls. Reactivate the generator, then activate the air seal to gain access to the vents.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.1Ventilation",
+        "mapLocationPoint": {
+            "x": 934,
+            "y": 1831,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.5.3",
-        "inMissionId": "DLC3.Omega2.5",
-        "sortIndex": 108053,
+        "id": "DLC3.Omega2.4.2.B",
+        "inMissionId": "DLC3.Omega2.4.2",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Cargo Elevator",
-        "description": "Drop down the ladder and take several batches of stairs down to another fight with Cerberus. When they are dispatched, take the cargo elevator down.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "name": "Terminal",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.1Ventilation",
+        "mapLocationPoint": {
+            "x": 778,
+            "y": 1858,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.5.4",
-        "inMissionId": "DLC3.Omega2.5",
-        "sortIndex": 108054,
+        "id": "DLC3.Omega2.4.2.C",
+        "inMissionId": "DLC3.Omega2.4.2",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Cerberus Lockdown",
-        "description": "Head down more stairs, to more Cerberus forces. Head into the room and clear it out, then open the door to the next room and the next fight. In a small side room is a terminal where you can deactivate the Cerberus lockdown. This will open the elevator at the end of the hall, with a few mechs and a Cerberus Guardian inside it.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "name": "Air Seal",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.1Ventilation",
+        "mapLocationPoint": {
+            "x": 597,
+            "y": 1577,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.5.5",
-        "inMissionId": "DLC3.Omega2.5",
-        "sortIndex": 108055,
+        "id": "DLC3.Omega2.4.3",
+        "inMissionId": "DLC3.Omega2.4",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Disable Lockdown",
+        "description": "Drop down the ladder and take several batches of stairs down to another fight with Cerberus. When they are dispatched, head through to the triage hallway, clear out some more Cerberus. In a small side room is a terminal where you can deactivate the Cerberus lockdown. This will open the elevator at the end of the hall, with a few mechs and a Cerberus Guardian inside it.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "mapLocationPoint": {
+            "x": 1087,
+            "y": 1125,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.4.4",
+        "inMissionId": "DLC3.Omega2.4",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Cargo Bay",
+        "description": "There is a big fight in the cargo bay and up on the landing pad. When finished, head across to the lower landing pad and down to the building to the left. Entering will trigger a cutscene.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "mapLocationPoint": {
+            "x": 1357,
+            "y": 1143,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.4.5",
+        "inMissionId": "DLC3.Omega2.4",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Talon Leader",
-        "description": "Go down the elevator to the warehouse. It opens up to two landing pads, where Cerberus continues to drop off more troops. When the fight is over, head down the ramp beyond the lower landing pad and bypass the door to reach the Talon Outpost. \n\nInside, Cerberus has several Talons with guns to their heads. Nyreen takes them down, where you learn that she is leading the Talons.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "description": "Cerberus has several Talons with guns to their heads. Nyreen takes them down, where you learn that she is leading the Talons. When you are done with this area, take the elevator in the back up to Cargo Processing, and another big fight with mechs and an Atlas.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "mapLocationPoint": {
+            "x": 1858,
+            "y": 1151,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.5.6",
-        "inMissionId": "DLC3.Omega2.5",
-        "sortIndex": 108056,
+        "id": "DLC3.Omega2.4.6",
+        "inMissionId": "DLC3.Omega2.4",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Hold Position",
-        "x-comment-x": "Tie location to locked door.",
-        "description": "When you head out the door, more Rampart mechs will attack and an Atlas. Try to take the elevator, which Cerberus will disable. Shoot the latch and descend the ladder into the elevator shaft. Fight through more Cerberus forces on the catwalks until you reach the locked door. You will have to fight off more troops while Nyreen bypasses it. Just before finishing the bypass, Nyreen will shut down the bridge controls, preventing two Atlases from reaching you. Clean up whoever is left and then head out.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "name": "Disabled Elevator",
+        "description": "Try to take the elevator, which Cerberus will disable. Shoot the latch and ascend the ladder into the elevator shaft. Around the corner there is a ladder down. Follow down several other levels to get out to the exterior catwalks."
     }, {
-        "id": "DLC3.Omega2.5.7",
-        "inMissionId": "DLC3.Omega2.5",
-        "sortIndex": 108057,
+        "id": "DLC3.Omega2.4.6.1",
+        "inMissionId": "DLC3.Omega2.4.6",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Talon Outpost",
+        "name": "Shoot Latch",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.3Catwalks",
+        "mapLocationPoint": {
+            "x": 1119,
+            "y": 222,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.4.6.2",
+        "inMissionId": "DLC3.Omega2.4.6",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Emergency Access",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.3Catwalks",
+        "mapLocationPoint": {
+            "x": 1119,
+            "y": 222,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.4.7",
+        "inMissionId": "DLC3.Omega2.4",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Catwalks",
+        "description": "Fight through more Cerberus forces on the catwalks until you reach the locked door. You will have to fight off more troops while Nyreen bypasses it. Just before finishing the bypass, Nyreen will shut down the bridge controls, preventing two Atlases from reaching you. Clean up whoever is left and then head down to Talon HQ.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.3Catwalks",
+        "mapLocationPoint": {
+            "x": 1125,
+            "y": 1299,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.5",
+        "inMissionId": "DLC3.Omega2",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Talon HQ",
         "description": "Head up the elevator to the outpost. When you are ready, talk to Nyreen. Aria will give a rousing speech to Omega. Then head out the exit for another fight with Cerberus. When done, you will all return to Aria's bunker.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.4TalonHQ",
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Omega: Talon HQ"
+        }]
+    }, {
+        "id": "DLC3.Omega2.5.0",
+        "inMissionId": "DLC3.Omega2.5",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Nyreen",
+        "description": "When you are done with exploring Talon HQ, speak to Nyreen to continue.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.4TalonHQ",
+        "mapLocationPoint": {
+            "x": 1906,
+            "y": 1422,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.5.1",
+        "inMissionId": "DLC3.Omega2.5",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Retake Landing Pad",
+        "description": "Cerberus is attacking the Talon landing pad. Defeat their forces and then return to Talon HQ.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.4TalonHQ",
+        "mapLocationPoint": {
+            "x": 1608,
+            "y": 980,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.5.2",
+        "inMissionId": "DLC3.Omega2.5",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Reinforce Nyreen",
+        "description": "When you return, Cerberus is attacking Talon HQ. There is another Atlas. There is also a mounted turret you can seize to defend the area. As soon as you complete this fight, you will return to Aria's Bunker.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.4TalonHQ",
+        "mapLocationPoint": {
+            "x": 887,
+            "y": 1535,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Omega2.6",
         "inMissionId": "DLC3.Omega2",
-        "sortIndex": 10806,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Bunker, Part 2",
         "description": "You can turn in some side quests and talk to Harrot about Aria's couch. You can also talk to Nyreen privately. Use the exit when you are ready to continue.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC"
     }, {
         "id": "DLC3.Omega2.7",
         "inMissionId": "DLC3.Omega2",
-        "sortIndex": 10807,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Reach Mines",
-        "description": "You and Aria and Nyreen break into an abandoned processing plant. The elevator to the mines is deactivated, so you will need to find the power module and turn the power back on.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "name": "Mines",
+        "description": "You and Aria and Nyreen break into an abandoned eezo processing plant. The elevator to the mines is deactivated, so you will need to find the power module and turn the power back on."
     }, {
         "id": "DLC3.Omega2.7.1",
         "inMissionId": "DLC3.Omega2.7",
-        "sortIndex": 108071,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Restore Power",
-        "description": "Past the elevator, head up the ladder to the pipes, and then up the stairs, down the ladder to the power control room. You will immediately be attacked by an Adjutant. Once it is down, bypass the door to exit the room.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "description": "Past the elevator, head up the ladder to the pipes, and then up the stairs, down the ladder to the power control room and restore power. You will immediately be attacked by an Adjutant. Once it is down, bypass the door in the back to exit the room.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.1EezoPlant",
+        "mapLocationPoint": {
+            "x": 714,
+            "y": 1510,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Omega2.7.2",
         "inMissionId": "DLC3.Omega2.7",
-        "sortIndex": 108072,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Access Elevator Control",
+        "name": "Access Elevator",
         "description": "Head back to the now-active elevator. More Adjutants will attack. When you are clear, take the elevator up to the mines.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.1.03",
         "isShowInParentMap": true
     }, {
-        "id": "DLC3.Omega2.8",
-        "inMissionId": "DLC3.Omega2",
-        "sortIndex": 10808,
+        "id": "DLC3.Omega2.7.3",
+        "inMissionId": "DLC3.Omega2.7",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Reach Reactor",
-        "description": "Get to the reactor inside the mines and disable it to bring down the force fields.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "name": "Platform",
+        "description": "Head across the platform, fighting Cerberus forces as you get to the eezo testing area. Before you can reach the lift, Cerberus will blow up the bridge. Drop down to the lower level. More Cerberus troops attack there. Head to the Maintenance Area and down the ladder.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.2Platform"
     }, {
-        "id": "DLC3.Omega2.8.1",
-        "inMissionId": "DLC3.Omega2.8",
-        "sortIndex": 108081,
+        "id": "DLC3.Omega2.7.3.1",
+        "inMissionId": "DLC3.Omega2.7.3",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Reach Upper Level",
-        "x-comment-x": "Tie map to reactor-level elevator drop-off.",
-        "description": "The reactor is on the top level of the mines. Get to the lift on the far side of the catwalks.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "name": "Door Control",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.2Platform",
+        "mapLocationPoint": {
+            "x": 1963,
+            "y": 589,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.8.1.1",
-        "inMissionId": "DLC3.Omega2.8.1",
-        "sortIndex": 1080811,
+        "id": "DLC3.Omega2.7.4",
+        "inMissionId": "DLC3.Omega2.7",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Find Alternate Route",
-        "description": "Before you can reach the lift, Cerberus will blow up the bridge. Drop down to the lower level. More Cerberus troops attack there. Head to the Maintenance Area and down the ladder. Rampart mechs and more Cerberus will attack. Continue out of the Maintenance Area and up the ladder. Take the ladder up another level, then down some more stairs to the Authorized Personnel Only area and attack more Cerberus and mechs. Then take the lift up to the next platform.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "name": "Maintenance Access",
+        "description": "Rampart mechs and more Cerberus will attack. Fight your way across the maintenance area access and back to the Authorized Personnel Only area, then up the ladder to reach the mines again.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.3Maintenance",
+        "mapLocationPoint": {
+            "x": 1045,
+            "y": 1951,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.7.4.1",
+        "inMissionId": "DLC3.Omega2.7.4",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Door Control",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.3Maintenance",
+        "mapLocationPoint": {
+            "x": 1633,
+            "y": 1845,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.7.5",
+        "inMissionId": "DLC3.Omega2.7",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Platform Lift",
+        "description": "There are two levels here with several access points between them. Stay on the lower level to get some loot, then head up to kill more Cerberus and get to the elevator up to the Reactor",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.3.03",
         "isShowInParentMap": true
     }, {
-        "id": "DLC3.Omega2.8.1.2",
-        "inMissionId": "DLC3.Omega2.8.1",
-        "sortIndex": 1080812,
+        "id": "DLC3.Omega2.7.6",
+        "inMissionId": "DLC3.Omega2.7",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Mining Complex Lift",
         "description": "There's one engineer on the this platform to kill, then head past the blocked Pedway Access and take the catwalk below to get across. Use the Mining Complex elevator to go up to the reactor level.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.4Platform"
     }, {
-        "id": "DLC3.Omega2.8.2",
-        "inMissionId": "DLC3.Omega2.8",
-        "sortIndex": 108082,
+        "id": "DLC3.Omega2.7.7",
+        "inMissionId": "DLC3.Omega2.7",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Trap",
         "description": "When you cross over the circular platform, Petrovsky springs his force field trap. You and Nyreen will need to fight off several waves of Rampart mechs, while Aria takes on the force field.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.5Reactor",
+        "mapLocationPoint": {
+            "x": 546,
+            "y": 1017,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.7.8",
+        "inMissionId": "DLC3.Omega2.7",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Deactivate Reactor",
+        "description": "Aria and Nyreen open up a big enough hole in the force field to get you outside. Head to the reactor controls, killing any mechs that get in your way. When you get to the Authorized Personnel Only, you will be timed. After the fourth conversation between Aria and Nyreen, they will die and the mission fails. \n\nYou have a choice here - to save the civilians or reroute power immediately (one of the Interrupts). There is no real consequence to waiting, apart from it will disqualify you from the kiss Aria bestows at the end if you Renegade the whole mission.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.5.03",
+        "relatedDecisionIds": ["D3.OmegaReactor"]
+    }, {
+        "id": "DLC3.Omega2.8",
+        "inMissionId": "DLC3.Omega2",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Assault on Afterlife",
+        "description": "Petrovsky is holed up in Afterlife. Head up and take back Aria's home."
+    }, {
+        "id": "DLC3.Omega2.8.1.",
+        "inMissionId": "DLC3.Omega2.8",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Activate Dam Controls",
+        "description": "There is a fight with Cerberus underway when you emerge. Continue along the catwalks toward the fan. The bridge explodes before you can cross, so divert to the control room on the right and activate the dam control to get across. Open the door on the other side to continue.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.1.03",
         "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Omega2.8.2",
+        "inMissionId": "DLC3.Omega2.8",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Disable Fan",
+        "description": "There are four Cerberus Guardians to fight. When dispatched, bypass the door to Central Support. Drop down the shaft beside primary Ventillation Support and deactivate the fan control.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.2CentralSupport",
+        "mapLocationPoint": {
+            "x": 1079,
+            "y": 1721,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Omega2.8.3",
         "inMissionId": "DLC3.Omega2.8",
-        "sortIndex": 108083,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Reactor Controls",
-        "description": "Aria and Nyreen open up a big enough hole in the force field to get you through. Head to the reactor controls, killing any mechs that get in your way. When you get to the Authorized Personnel Only, you will be timed. After the fourth conversation between Aria and Nyreen, they will die and the mission fails.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "name": "Open Access Panels",
+        "description": "Go between the deactivated fan blades and jump the gap to attack the Cerberus troops. Then open the access panels to reveal the bombs.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.2.03",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Omega2.8.4",
         "inMissionId": "DLC3.Omega2.8",
-        "sortIndex": 108084,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Choice",
-        "description": "You have a choice here - to save the civilians or reroute power immediately (one of the Interrupts). There is no real consequence to waiting, apart from it will disqualify you from the kiss Aria bestows at the end if you Renegade the whole mission.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Omega2.9",
-        "inMissionId": "DLC3.Omega2",
-        "sortIndex": 10809,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Retake Afterlife",
-        "description": "Petrovsky is holed up in Afterlife. Head up and take back Aria's home.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Omega2.9.1",
-        "inMissionId": "DLC3.Omega2.9",
-        "sortIndex": 108091,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Support Columns",
-        "description": "Cerberus has placed bombs against the central support columns of Omega. If detonated, the damage would block any access to Afterlife. Find and deactivate the bombs.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Omega2.9.1.1",
-        "inMissionId": "DLC3.Omega2.9.1",
-        "sortIndex": 1080911,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Dam Control",
-        "description": "There is a fight with Cerberus underway when you emerge. Continue along the catwalks toward the fan. The bridge explodes before you can cross, so divert to the control room on the right and activate the dam control to get across. Open the door on the other side to continue.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Omega2.9.1.2",
-        "inMissionId": "DLC3.Omega2.9.1",
-        "sortIndex": 1080912,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Fan Control",
-        "description": "There are four Cerberus Guardians to fight. When dispatched, bypass the door to Central Support. Drop down the shaft beside primary Ventillation Support and deactivate the fan control.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Omega2.9.1.3",
-        "inMissionId": "DLC3.Omega2.9.1",
-        "sortIndex": 1080913,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Access Panel Controls",
-        "description": "Go between the deactivated fan blades and jump the gap to attack the Cerberus troops with the bombs. Then open the access panels to reveal the bombs.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Omega2.9.1.4",
-        "inMissionId": "DLC3.Omega2.9.1",
-        "sortIndex": 1080914,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Disable Explosives",
-        "description": "Disable the bombs while fighting off more Cerberus forces. This task is timed (5 minutes).",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "description": "Disable the bombs while fighting off more Cerberus forces. This task is timed (5 minutes)."
     }, {
-        "id": "DLC3.Omega2.9.1.4.1",
-        "inMissionId": "DLC3.Omega2.9.1.4",
-        "sortIndex": 10809141,
+        "id": "DLC3.Omega2.8.4.1",
+        "inMissionId": "DLC3.Omega2.8.4",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Bomb 1",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.2CentralSupport",
+        "mapLocationPoint": {
+            "x": 820,
+            "y": 1250,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.9.1.4.2",
-        "inMissionId": "DLC3.Omega2.9.1.4",
-        "sortIndex": 10809141,
+        "id": "DLC3.Omega2.8.4.2",
+        "inMissionId": "DLC3.Omega2.8.4",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Bomb 2",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.2CentralSupport",
+        "mapLocationPoint": {
+            "x": 1260,
+            "y": 1250,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.9.1.4.3",
-        "inMissionId": "DLC3.Omega2.9.1.4",
-        "sortIndex": 10809143,
+        "id": "DLC3.Omega2.8.4.3",
+        "inMissionId": "DLC3.Omega2.8.4",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Bomb 3",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.2CentralSupport",
+        "mapLocationPoint": {
+            "x": 820,
+            "y": 820,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.9.1.4.4",
-        "inMissionId": "DLC3.Omega2.9.1.4",
-        "sortIndex": 10809144,
+        "id": "DLC3.Omega2.8.4.4",
+        "inMissionId": "DLC3.Omega2.8.4",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Bomb 4",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.2CentralSupport",
+        "mapLocationPoint": {
+            "x": 1260,
+            "y": 820,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.9.2",
-        "inMissionId": "DLC3.Omega2.9",
-        "sortIndex": 108092,
+        "id": "DLC3.Omega2.8.5",
+        "inMissionId": "DLC3.Omega2.8",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Adjutant Lab",
+        "description": "After Aria destroys the big fan, jump back across the gap and go up three ladders to the Doru District. Go across the access way and down the stairs to discover the Adjutant labs. Beyond is an L-shaped hallway, at the end of which is a large multi-level room filled with pipes and another fight.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.3DoruDistrict",
+        "mapLocationPoint": {
+            "x": 1316,
+            "y": 1299,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.8.6",
+        "inMissionId": "DLC3.Omega2.8",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Utility Junction",
+        "description": "There is another Atlas and a hard fight here. If you head left, there is a ladder up to the upper catwalk, where you will have a bit more advantage. When done, head to the Gozu District door and up the ladder beyond.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.3DoruDistrict",
+        "mapLocationPoint": {
+            "x": 1631,
+            "y": 715,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.8.7",
+        "inMissionId": "DLC3.Omega2.8",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Talon Checkpoint",
-        "description": "After Aria destroys the big fan, jump back across the gap and go up three ladders to the Gozu District. Go across the catwalks and past the Adjutant labs to a large room with Cerberus troops and an Atlas. After the fight, bypass the door and up another ladder and past the crashed shuttle. There are a handful of Cerberus troops here to fight, then bypass the door beyond them to the Talon checkpoint. You can take a break and talk to people here. Take the elevator up when you are ready to continue.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "description": "Head past the crashed shuttle to the slums plaza beyond. There are a handful of Cerberus troops here to fight, then bypass the door beyond them to the Talon checkpoint. You can take a break and talk to people here. Take the elevator up when you are ready to continue.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.4TalonCheckpoint",
+        "mapLocationPoint": {
+            "x": 1329,
+            "y": 452,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.9.3",
-        "inMissionId": "DLC3.Omega2.9",
-        "sortIndex": 108093,
+        "id": "DLC3.Omega2.8.8",
+        "inMissionId": "DLC3.Omega2.8",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Afterlife",
-        "description": "Nyreen dies just outside Afterlife, taking three Adjutants with her. Enraged, Aria storms into Afterlife by herself. You follow. Inside, Petrovsky catches Aria in a statis net. You must deactivate the statis generators, while fighting Adjutants, before Aria dies.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "description": "Nyreen dies just outside Afterlife, taking three Adjutants with her. Enraged, Aria storms into Afterlife by herself. You follow. Inside, Petrovsky catches Aria in a statis net. You must activate each of four override consoles to expose a shield control. Shoot each shield control in turn. All while fighting Adjutants, before Aria dies. \n\nThe order of the overrides is not important, but you will only be able to expose one shield control at a time. \n\nOnce Aria is free, she will assist in cleaning up any remaining enemies.",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife"
     }, {
-        "id": "DLC3.Omega2.9.3.1",
-        "inMissionId": "DLC3.Omega2.9.3",
-        "sortIndex": 1080931,
+        "id": "DLC3.Omega2.8.8.1A",
+        "inMissionId": "DLC3.Omega2.8.8",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Statis Generator",
+        "name": "Override Console A",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "mapLocationPoint": {
+            "x": 1457,
+            "y": 200,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.9.3.2",
-        "inMissionId": "DLC3.Omega2.9.3",
-        "sortIndex": 1080932,
+        "id": "DLC3.Omega2.8.8.1B",
+        "inMissionId": "DLC3.Omega2.8.8",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Statis Generator",
+        "name": "Shield Control A",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "mapLocationPoint": {
+            "x": 1097,
+            "y": 421,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.9.3.3",
-        "inMissionId": "DLC3.Omega2.9.3",
-        "sortIndex": 1080933,
+        "id": "DLC3.Omega2.8.8.2A",
+        "inMissionId": "DLC3.Omega2.8.8",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Statis Generator",
+        "name": "Override Console B",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "mapLocationPoint": {
+            "x": 615,
+            "y": 200,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.9.3.4",
-        "inMissionId": "DLC3.Omega2.9.3",
-        "sortIndex": 1080934,
+        "id": "DLC3.Omega2.8.8.2B",
+        "inMissionId": "DLC3.Omega2.8.8",
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Statis Generator",
+        "name": "Shield Control B",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "mapLocationPoint": {
+            "x": 978,
+            "y": 421,
+            "radius": 1
+        }
     }, {
-        "id": "DLC3.Omega2.10",
+        "id": "DLC3.Omega2.8.8.3A",
+        "inMissionId": "DLC3.Omega2.8.8",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Override Console C",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "mapLocationPoint": {
+            "x": 1457,
+            "y": 848,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.8.8.3B",
+        "inMissionId": "DLC3.Omega2.8.8",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Shield Control C",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "mapLocationPoint": {
+            "x": 1097,
+            "y": 629,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.8.8.4A",
+        "inMissionId": "DLC3.Omega2.8.8",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Override Console D",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "mapLocationPoint": {
+            "x": 615,
+            "y": 848,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.8.8.4B",
+        "inMissionId": "DLC3.Omega2.8.8",
+        "sortIndex": 10801,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Shield Control D",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "mapLocationPoint": {
+            "x": 978,
+            "y": 629,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega2.9",
         "inMissionId": "DLC3.Omega2",
-        "sortIndex": 10810,
+        "sortIndex": 10801,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Petrovsky",
         "description": "Petrovsky orders the remaining Cerberus forces to surrender. Aria will attack him and strangle him. If you Paragon'd the assignment, she will let you decide his fate. Otherwise it will take a couple Interrupts to convince her to let him go. He will become a War Asset if you let him live. If you let him die (a long, brutal, noisy death) - and Renegade'd the whole assignment - Aria will kiss you ([YouTube|https://www.youtube.com/watch?v=_dz6GrqCMcE]). Aria gives another rousing speech to Omega. If you rescued Aria's couch, Harrot can be seen heading into Afterlife as you are leaving.",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true,
+        "relatedDecisionIds": ["D3.OmegaKiss"],
         "sideEffects": ["It's dumb that Aria is still available on the Citadel after this. Seriously, couldn't they have made her a hologram there instead? She said she wouldn't leave Omega again."]
 
     }, {
@@ -1959,8 +2257,12 @@
         "missionType": "DLC",
         "name": "Omega: Assist The Hacker",
         "description": "Aria's hacker at the bunker will ask you to trigger some consoles as you fight your way through Cerberus territory, so as to let Aria's team reclaim more control over that part of the station. \n\n*_This assignment was released as part of the Omega DLC pack._*",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true,
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "mapLocationPoint": {
+            "x": 712,
+            "y": 1283,
+            "radius": 1
+        },
         "experience": 0,
         "reward": "",
         "relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Assist_the_Hacker"],
@@ -1978,35 +2280,61 @@
             "id": "Completed: Priority: Cerberus Headquarters"
         }]
     }, {
-        "id": "DLC3.Omega3.Hacker.1",
+        "id": "DLC3.Omega3.Hacker.0",
         "inMissionId": "DLC3.Omega3.Hacker",
-        "sortIndex": 10819,
+        "sortIndex": 1081,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Console",
+        "name": "Speak to Hacker",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "mapLocationPoint": {
+            "x": 712,
+            "y": 1283,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega3.Hacker.1",
+        "inMissionId": "DLC3.Omega3.Hacker",
+        "sortIndex": 1081,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Terminal",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.1Ventilation",
+        "mapLocationPoint": {
+            "x": 609,
+            "y": 761,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Omega3.Hacker.2",
         "inMissionId": "DLC3.Omega3.Hacker",
-        "sortIndex": 10819,
+        "sortIndex": 1081,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Console",
+        "name": "Terminal",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "mapLocationPoint": {
+            "x": 189,
+            "y": 1356,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Omega3.Hacker.3",
         "inMissionId": "DLC3.Omega3.Hacker",
-        "sortIndex": 10819,
+        "sortIndex": 1081,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Console",
+        "name": "Terminal",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "mapLocationPoint": {
+            "x": 1087,
+            "y": 594,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Omega3.Mechanic",
         "sortIndex": 1082,
@@ -2014,8 +2342,12 @@
         "missionType": "DLC",
         "name": "Omega: Assist The Mechanic",
         "description": "The batarian mechanic at Aria's bunker is having problems with the bunker's power inverters - they keep shorting out, and he needs a new one. It can be found behind some boxes at the Talon outpost.\n\n*_This assignment was released as part of the Omega DLC pack._*",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true,
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "mapLocationPoint": {
+            "x": 1585,
+            "y": 1410,
+            "radius": 1
+        },
         "experience": 0,
         "reward": "",
         "relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Assist_Harrot"],
@@ -2033,15 +2365,33 @@
             "id": "Completed: Priority: Cerberus Headquarters"
         }]
     }, {
+        "id": "DLC3.Omega3.Mechanic.0",
+        "inMissionId": "DLC3.Omega3.Mechanic",
+        "sortIndex": 1082,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Mechanic",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "mapLocationPoint": {
+            "x": 1585,
+            "y": 1410,
+            "radius": 1
+        }
+    }, {
         "id": "DLC3.Omega3.Mechanic.1",
         "inMissionId": "DLC3.Omega3.Mechanic",
-        "sortIndex": 10822,
+        "sortIndex": 1082,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Power Inverters",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.4TalonHQ",
+        "mapLocationPoint": {
+            "x": 1680,
+            "y": 1380,
+            "radius": 1
+        }
 
     }, {
         "id": "DLC3.Omega3.Harrot",
@@ -2050,8 +2400,12 @@
         "missionType": "DLC",
         "name": "Omega: Assist Harrot",
         "description": "[megametracker://person?id=O2.Harrot] is looking for Aria's favorite couch. [megametracker://person?id=E3.Petrovsky] threw it out of Afterlife. Look for it as you fight your way back to the club. \n\n*_This assignment was released as part of the Omega DLC pack._*",
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true,
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "mapLocationPoint": {
+            "x": 1452,
+            "y": 1329,
+            "radius": 1
+        },
         "experience": 0,
         "reward": "",
         "relatedLinks": ["https://masseffect.wikia.com/wiki/Omega:_Assist_Harrot"],
@@ -2059,19 +2413,56 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: Palaven"
         }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Omega: Talon HQ"
+        }, {
             "type": "BlockedAfter",
             "id": "Completed: Priority: Cerberus Headquarters"
         }]
     }, {
+        "id": "DLC3.Omega3.Harrot.0",
+        "inMissionId": "DLC3.Omega3.Harrot",
+        "sortIndex": 1083,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Harrot",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "mapLocationPoint": {
+            "x": 1452,
+            "y": 1329,
+            "radius": 1
+        }
+    }, {
         "id": "DLC3.Omega3.Harrot.1",
         "inMissionId": "DLC3.Omega3.Harrot",
-        "sortIndex": 10831,
+        "sortIndex": 1083,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Aria's Couch",
         "isOpensDetail": false,
-        "inMapId": "G.Ter.Ome.Sah.Omega",
-        "isShowInParentMap": true
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.1WaterTreatment",
+        "mapLocationPoint": {
+            "x": 1082,
+            "y": 339,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Omega3.InjuredTalons",
+        "sortIndex": 1081,
+        "gameVersion": "3",
+        "missionType": "Collection",
+        "name": "Omega: Injured Talons",
+        "description": "Throughout the [Omega DLC|megametracker://mission?id=DLC3.Omega2] mission, you can help out injured Talons. \n\n*_This collection is part of the Omega DLC pack._*",
+        "experience": 0,
+        "reward": "",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Completed: Priority: Cerberus Headquarters"
+        }]
 
     }, {
         "id": "DLC3.Citadel1",

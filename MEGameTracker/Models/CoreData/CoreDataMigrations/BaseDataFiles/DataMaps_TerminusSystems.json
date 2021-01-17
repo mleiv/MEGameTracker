@@ -2477,6 +2477,7 @@
             "https://masseffect.wikia.com/wiki/Urdak"
         ]
     }, {
+        "x-comment-x": "-------- Omega -------",
         "id": "G.Ter.Ome.Sah.Omega",
         "name": "Omega",
         "inMapId": "G.Ter.Ome.Sahrabarik",
@@ -2495,9 +2496,14 @@
                 "referenceSize": "2083x2083",
                 "isSplitMenu": true
             },
-            "3": {}
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega.pdf",
+                "referenceSize": "2083x2083",
+                "isSplitMenu": true
+            }
         }
     }, {
+        "x-comment-x": "-------- Omega: Game 2 -------",
         "id": "G.Ter.Ome.Sah.Ome.1Main",
         "name": "Omega: Merchant District",
         "inMapId": "G.Ter.Ome.Sah.Omega",
@@ -2841,7 +2847,1224 @@
             "y": 1363,
             "radius": 20
         }
-
+    }, {
+        "x-comment-x": "-------- Omega: Game 3 -------",
+        "id": "G.Ter.Ome.Sah.Ome.1DLC",
+        "name": "Invasion",
+        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "rerootBreadcrumbs": true,
+        "isHidden": true,
+        "mapType": "Area",
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_1Invasion.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 142,
+                    "y": 154,
+                    "width": 1800,
+                    "height": 260
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.XStart",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC",
+        "name": "Start",
+        "isOpensDetail": false,
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 91,
+            "y": 1186,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.XControl",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC",
+        "name": "Control 2",
+        "isOpensDetail": false,
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1110,
+            "y": 248,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.XTehu",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC",
+        "name": "Tuhu District",
+        "isOpensDetail": false,
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1879,
+            "y": 1617,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.XBunker",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC",
+        "name": "To Aria's Bunker",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1966,
+            "y": 1853,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.1Control",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC",
+        "name": "1 - Control",
+        "mapLocationPoint": {
+            "x": 528,
+            "y": 384,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_1_1Control.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.1.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.1Control",
+        "name": "Crashed Pod (Start)",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 349,
+            "y": 2025,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.1.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.1Control",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 547,
+            "y": 478,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.1.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.1Control",
+        "name": "Crashed Pod",
+        "isOpensDetail": false,
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1188,
+            "y": 1397,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.1.04",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.1Control",
+        "name": "Defense System Controls",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1470,
+            "y": 961,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.1.05",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.1Control",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1369,
+            "y": 1670,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.1.06",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.1Control",
+        "name": "To 2 - Market",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1368,
+            "y": 1755,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC",
+        "name": "2 - Market",
+        "mapLocationPoint": {
+            "x": 1255,
+            "y": 1447,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_1_2Market.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.2.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "name": "From 1 - Control",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.1DLC.1Control",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 289,
+            "y": 508,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.2.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 288,
+            "y": 592,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.2.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "name": "Garage Door Controls",
+        "isOpensDetail": false,
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 133,
+            "y": 1040,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.2.04",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "name": "Door Controls",
+        "isOpensDetail": false,
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 895,
+            "y": 925,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.2.05",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 451,
+            "y": 113,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.2.06",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "name": "Bar",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1911,
+            "y": 1603,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.2.07",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "name": "Control Screen",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 288,
+            "y": 1209,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.2.08",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "name": "To Aria's Bunker",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1574,
+            "y": 1962,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.1DLC.2.09",
+        "inMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "name": "Graffiti",
+        "mapLocationPoint": {
+            "x": 445,
+            "y": 210,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC",
+        "name": "Talon Territory",
+        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "rerootBreadcrumbs": true,
+        "isHidden": true,
+        "mapType": "Area",
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_2TalonTerritory.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 142,
+                    "y": 540,
+                    "width": 1800,
+                    "height": 260
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.XBunker1",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC",
+        "name": "From Aria's Bunker",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1317,
+            "y": 25,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.XBunker2",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC",
+        "name": "To Aria's Bunker",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1054,
+            "y": 1467,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.1Ventilation",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC",
+        "name": "1 - Ventilation",
+        "mapLocationPoint": {
+            "x": 1196,
+            "y": 271,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_2_1Ventilation.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.1.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.1Ventilation",
+        "name": "From Aria's Bunker",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1935,
+            "y": 37,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.1.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.1Ventilation",
+        "name": "To 2 - Cargo Bay",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 147,
+            "y": 2036,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.1.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.1Ventilation",
+        "name": "Red Sand",
+        "mapLocationPoint": {
+            "x": 1923,
+            "y": 727,
+            "radius": 1
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC",
+        "name": "2 - Cargo Bay",
+        "mapLocationPoint": {
+            "x": 768,
+            "y": 690,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_2_2CargoBay.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.2.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "name": "From 1 - Ventilation",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.2DLC.1Ventilation",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 583,
+            "y": 154,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.2.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "name": "To 3 - Catwalks",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.2DLC.3Catwalks",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1605,
+            "y": 796,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.2.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 887,
+            "y": 495,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.2.04",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1807,
+            "y": 495,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.2.05",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1605,
+            "y": 855,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.3Catwalks",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC",
+        "name": "3 - Catwalks",
+        "mapLocationPoint": {
+            "x": 1279,
+            "y": 999,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_2_3Catwalk.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.3.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.3Catwalks",
+        "name": "From 2 - Cargo Bay",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.2DLC.2CargoBay",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 74,
+            "y": 209,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.3.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.3Catwalks",
+        "name": "To 4 - Talon HQ",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.2DLC.4TalonHQ",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1412,
+            "y": 2000,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.3.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.3Catwalks",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 148,
+            "y": 209,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.3.04",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.3Catwalks",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1334,
+            "y": 2012,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.4TalonHQ",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC",
+        "name": "4 - Talon HQ",
+        "mapLocationPoint": {
+            "x": 1186,
+            "y": 2012,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_2_4TalonHQ.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.4.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.4TalonHQ",
+        "name": "From 3 - Catwalks",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.2DLC.3Catwalks",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1531,
+            "y": 1254,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.4.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.4TalonHQ",
+        "name": "To Aria's Bunker",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 104,
+            "y": 1549,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.4.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.4TalonHQ",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1450,
+            "y": 1254,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.2DLC.4.04",
+        "inMapId": "G.Ter.Ome.Sah.Ome.2DLC.4TalonHQ",
+        "name": "Mounted Turret",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 970,
+            "y": 1717,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC",
+        "name": "Mines",
+        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "rerootBreadcrumbs": true,
+        "isHidden": true,
+        "mapType": "Area",
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_3Mines.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 142,
+                    "y": 925,
+                    "width": 1800,
+                    "height": 260
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.XBunker",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC",
+        "name": "From Aria's Bunker",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 248,
+            "y": 1755,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.XAfterlife",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC",
+        "name": "To Afterlife",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 2018,
+            "y": 1671,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.1EezoPlant",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC",
+        "name": "1 - Eezo Plant",
+        "mapLocationPoint": {
+            "x": 270,
+            "y": 1565,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_3_1EezoPlant.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.1.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.1EezoPlant",
+        "name": "From Aria's Bunker",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 712,
+            "y": 2051,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.1.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.1EezoPlant",
+        "name": "To 2 - Platform",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.3DLC.2Platform",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 885,
+            "y": 28,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.1.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.1EezoPlant",
+        "name": "Elevator Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 989,
+            "y": 212,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.1.04",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.1EezoPlant",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 885,
+            "y": 98,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.2Platform",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC",
+        "name": "2 - Platform",
+        "mapLocationPoint": {
+            "x": 311,
+            "y": 894,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_3_2Platform.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.2.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.2Platform",
+        "name": "From 1 - Eezo Plant",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.3DLC.1EezoPlant",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 153,
+            "y": 1861,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.2.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.2Platform",
+        "name": "To 3 - Maintenance",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.3DLC.3Maintenance",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 2015,
+            "y": 670,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.2.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.2Platform",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 153,
+            "y": 1805,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.3Maintenance",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC",
+        "name": "3 - Maintenance",
+        "mapLocationPoint": {
+            "x": 1400,
+            "y": 335,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_3_3Maintenance.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.3.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.3Maintenance",
+        "name": "From 2 - Platform",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.3DLC.2Platform",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 672,
+            "y": 1743,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.3.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.3Maintenance",
+        "name": "To 4 - Platform",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.3DLC.4Platform",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 415,
+            "y": 90,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.3.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.3Maintenance",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 361,
+            "y": 90,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.4Platform",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC",
+        "name": "4 - Platform",
+        "mapLocationPoint": {
+            "x": 1491,
+            "y": 894,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_3_4Platform.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.4.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.4Platform",
+        "name": "From 3 - Maintenance",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.3DLC.3Maintenance",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 628,
+            "y": 105,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.4.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.4Platform",
+        "name": "To 5 - Reactor",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.3DLC.5Reactor",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1622,
+            "y": 2060,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.4.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.4Platform",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 700,
+            "y": 105,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.4.04",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.4Platform",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1622,
+            "y": 1999,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.5Reactor",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC",
+        "name": "5 - Reactor",
+        "mapLocationPoint": {
+            "x": 1491,
+            "y": 1287,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_3_5Reactor.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.5.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.5Reactor",
+        "name": "From 4 - Platform",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.3DLC.4Platform",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 552,
+            "y": 71,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.5.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.5Reactor",
+        "name": "To Afterlife",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.4DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 2027,
+            "y": 490,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.5.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.5Reactor",
+        "name": "Reactor Controls",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1603,
+            "y": 491,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.3DLC.5.04",
+        "inMapId": "G.Ter.Ome.Sah.Ome.3DLC.5Reactor",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 552,
+            "y": 129,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC",
+        "name": "Assault on Afterlife",
+        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "rerootBreadcrumbs": true,
+        "isHidden": true,
+        "mapType": "Area",
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_4Assault.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 142,
+                    "y": 1314,
+                    "width": 1800,
+                    "height": 260
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.XRector",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC",
+        "name": "From Reactor",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.3DLC.5",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1059,
+            "y": 2042,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.1WaterTreatment",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC",
+        "name": "1 - Water Treatment",
+        "mapLocationPoint": {
+            "x": 1154,
+            "y": 1581,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_4_1WaterTreatment.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.1.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.1WaterTreatment",
+        "name": "From Reactor",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.3DLC.5",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 786,
+            "y": 1985,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.1.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.1WaterTreatment",
+        "name": "To 2 - Central Support",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.4DLC.2CentralSupport",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 786,
+            "y": 119,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.1.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.1WaterTreatment",
+        "name": "Dam Controls",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1255,
+            "y": 440,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.1.04",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.1WaterTreatment",
+        "name": "Weapons Bench",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 728,
+            "y": 1783,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.2CentralSupport",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC",
+        "name": "2 - Central Support",
+        "mapLocationPoint": {
+            "x": 1136,
+            "y": 1130,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_4_2CentralSupport.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.2.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.2CentralSupport",
+        "name": "From 1 - Water Treatment",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.4DLC.1WaterTreatment",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 789,
+            "y": 2059,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.2.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.2CentralSupport",
+        "name": "To 3 - Doru District",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.4DLC.3DoruDistrict",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1044,
+            "y": 83,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.2.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.2CentralSupport",
+        "name": "Access Panel Controls",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1042,
+            "y": 1062,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.3DoruDistrict",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC",
+        "name": "3 - Doru District",
+        "mapLocationPoint": {
+            "x": 1215,
+            "y": 600,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_4_3DoruDistrict.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.3.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.3DoruDistrict",
+        "name": "From 2 - Central Support",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.4DLC.2CentralSupport",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 511,
+            "y": 1949,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.3.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.3DoruDistrict",
+        "name": "To 4 - Talon Checkpoint",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.4DLC.4TalonCheckpoint",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1746,
+            "y": 31,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.4TalonCheckpoint",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC",
+        "name": "4 - Talon Checkpoint",
+        "mapLocationPoint": {
+            "x": 1346,
+            "y": 84,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_4_4TalonOutpost.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.4.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.4TalonCheckpoint",
+        "name": "From 3 - Doru District",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.4DLC.3DoruDistrict",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 864,
+            "y": 1894,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.4.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.4TalonCheckpoint",
+        "name": "To 5 - Afterlife",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 105,
+            "y": 893,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.4.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.4TalonCheckpoint",
+        "name": "Weapons Bench",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1173,
+            "y": 359,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.4.04",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.4TalonCheckpoint",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 105,
+            "y": 832,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC",
+        "name": "5 - Afterlife",
+        "mapLocationPoint": {
+            "x": 860,
+            "y": 632,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_4_5Afterlife.pdf",
+                "referenceSize": "2083x2083",
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.5.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "name": "From 4 - Talon Checkpoint",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.4DLC.4TalonCheckpoint",
+        "mapLocationPoint": {
+            "x": 1048,
+            "y": 2051,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.5.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "name": "To Petrovsky (Cutscene)",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 933,
+            "y": 199,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.4DLC.5.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.4DLC.5Afterlife",
+        "name": "To Petrovsky (Cutscene)",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1133,
+            "y": 199,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.5DLC",
+        "name": "Aria's Bunker",
+        "inMapId": "G.Ter.Ome.Sah.Omega",
+        "isHidden": true,
+        "mapType": "Area",
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Omega/Omega_5AriasBunker.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 142,
+                    "y": 1699,
+                    "width": 1800,
+                    "height": 260
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.5DLC.01",
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "name": "From Market",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.1DLC.2Market",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1021,
+            "y": 331,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.5DLC.02",
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "name": "To Talon Territory",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.2DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1976,
+            "y": 1451,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.5DLC.03",
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "name": "To Mines",
+        "linkToMapId": "G.Ter.Ome.Sah.Ome.3DLC",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 113,
+            "y": 1242,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.5DLC.04",
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "name": "Armor Locker",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1758,
+            "y": 1146,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.5DLC.05",
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "name": "Weapons Bench",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1858,
+            "y": 1233,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Ome.Sah.Ome.5DLC.06",
+        "inMapId": "G.Ter.Ome.Sah.Ome.5DLC",
+        "name": "Harrot's Kiosk",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1383,
+            "y": 1324,
+            "radius": 20
+        }
 
 
 
