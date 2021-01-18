@@ -80,10 +80,12 @@ final public class DecisionsView: SimpleArrayDataRow {
 		_ = Decision.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.decisions.firstIndex(where: { $0.id == changed.id }),
 				   let newDecision = changed.object ?? Decision.get(id: changed.id) {
-				self?.controller?.decisions[index] = newDecision
-				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(reloadRows)
-				// make sure controller listens here and updates its own object's decisions list
+                DispatchQueue.main.async {
+                    self?.controller?.decisions[index] = newDecision
+                    let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                    self?.reloadRows(reloadRows)
+                    // make sure controller listens here and updates its own object's decisions list
+                }
 			}
 		}
 	}

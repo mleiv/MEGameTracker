@@ -235,13 +235,20 @@ extension MissionsController {
 		// listen for changes to mission data
 		Mission.onChange.cancelSubscription(for: self)
 		_ = Mission.onChange.subscribe(with: self) { [weak self] changed in
-			if let index = self?.missions.firstIndex(where: { $0.id == changed.id }),
-				let newMission = changed.object ?? Mission.get(id: changed.id),
-				newMission.missionType != .objective {
-				self?.missions[index] = newMission
-				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(reloadRows)
-			}
+            DispatchQueue.main.async {
+                let missions = self?.missions ?? [] // reference to view controller prop
+                DispatchQueue.global(qos: .background).async {
+                    if let index = missions.firstIndex(where: { $0.id == changed.id }),
+                        let newMission = changed.object ?? Mission.get(id: changed.id),
+                        newMission.missionType != .objective {
+                        DispatchQueue.main.async {
+                            self?.missions[index] = newMission
+                            let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                            self?.reloadRows(reloadRows)
+                        }
+                    }
+                }
+            }
 		}
 		// decisions are loaded at detail page, don't have to listen
 	}
@@ -251,9 +258,11 @@ extension MissionsController {
 		let signal = isLoadedSignal
 		signal?.cancelSubscription(for: self)
 		signal?.subscribeOnce(with: self) { [weak self] (type: MissionType, values: [Mission]) in
-			guard type == self?.missionsType else { return }
-			self?.missions = values
-			self?.reloadAllRows()
+            DispatchQueue.main.async {
+                guard type == self?.missionsType else { return }
+                self?.missions = values
+                self?.reloadAllRows()
+            }
 		}
 	}
 }

@@ -67,24 +67,28 @@ class ShepardLoveInterestController: UITableViewController, Spinnerable {
 	func reloadDataOnChange(_ x: Bool = false) {
 		guard !isUpdating else { return }
 		isUpdating = true
-		DispatchQueue.main.async {
-			self.fetchData()
-			self.tableView.reloadData()
-			self.isUpdating = false
-		}
+        fetchData()
+        tableView.reloadData()
+        isUpdating = false
 	}
 
 	func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gender and game version changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadDataOnChange()
+            }
+        }
 		// listen for decision changes
 		Decision.onChange.cancelSubscription(for: self)
 		_ = Decision.onChange.subscribe(with: self) { [weak self] changed in
-			if let index = self?.persons.firstIndex(where: { $0.loveInterestDecisionId == changed.id }) {
-				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(reloadRows)
+            if let index = self?.persons.firstIndex(where: { $0.loveInterestDecisionId == changed.id }) {
+                DispatchQueue.main.async {
+                    let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                    self?.reloadRows(reloadRows)
+                }
 			}
 		}
 		// listen for changes to persons data
@@ -92,9 +96,11 @@ class ShepardLoveInterestController: UITableViewController, Spinnerable {
 		_ = Person.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.persons.firstIndex(where: { $0.id == changed.id }),
 				let newPerson = changed.object ?? Person.get(id: changed.id) {
-				self?.persons[index] = newPerson
-				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(reloadRows)
+                DispatchQueue.main.async {
+                    self?.persons[index] = newPerson
+                    let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                    self?.reloadRows(reloadRows)
+                }
 			}
 		}
 	}

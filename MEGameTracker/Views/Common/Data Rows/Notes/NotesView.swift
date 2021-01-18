@@ -50,7 +50,7 @@ final public class NotesView: SimpleArrayDataRow {
 
 	func openNote(_ note: Note?, sender: UIView?) {
 		startParentSpinner()
-		DispatchQueue.global(qos: .background).async {
+		DispatchQueue.global(qos: .userInitiated).async {
 			guard let note: Note = {
 				if note == nil, let blankNote = self.controller?.getBlankNote() {
 					let note = Note(identifyingObject: blankNote.identifyingObject)
@@ -60,7 +60,9 @@ final public class NotesView: SimpleArrayDataRow {
 				}
 				return nil
 			}() else {
-				self.stopParentSpinner()
+                DispatchQueue.main.sync {
+                    self.stopParentSpinner()
+                }
 				return
 			}
             DispatchQueue.main.async {
@@ -93,18 +95,24 @@ final public class NotesView: SimpleArrayDataRow {
 			if let uuid = UUID(uuidString: changed.id),
                 let index = self?.notes.firstIndex(where: { $0.uuid == uuid }) ,
 				   let newRow = changed.object ?? Note.get(uuid: uuid) {
-				self?.controller?.notes[index] = newRow
-				let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(rows)
+                DispatchQueue.main.async {
+                    self?.controller?.notes[index] = newRow
+                    let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                    self?.reloadRows(rows)
+                }
 				// make sure controller listens didset here and updates its own object's notes list
-			} else if let note = changed.object,
-				let blankNote = self?.controller?.getBlankNote(),
-				note.identifyingObject == blankNote.identifyingObject {
-				self?.controller?.notes.append(note)
-				if let index = self?.notes.firstIndex(of: note) {
-					let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
-					self?.insertRows(rows)
-				}
+            } else {
+                DispatchQueue.main.async {
+                    if let note = changed.object,
+                       let blankNote = self?.controller?.getBlankNote(),
+                        note.identifyingObject == blankNote.identifyingObject {
+                        self?.controller?.notes.append(note)
+                        if let index = self?.notes.firstIndex(of: note) {
+                            let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                            self?.insertRows(rows)
+                        }
+                    }
+                }
 			}
 		}
 	}

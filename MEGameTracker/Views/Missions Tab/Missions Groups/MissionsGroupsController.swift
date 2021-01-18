@@ -62,7 +62,7 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 
 		guard !UIWindow.isInterfaceBuilder else { return }
 
-        DispatchQueue.global(qos: .background).async { [weak self] in
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
 			self?.deepLink(self?.deepLinkedMission)
 		}
 	}
@@ -74,21 +74,15 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 	func setupMissionGroups(isReloadData: Bool = false) {
 		setupMissionCounts()
 		if isReloadData {
-			DispatchQueue.main.async {
-				self.tableView.reloadData()
-			}
+			tableView.reloadData()
 		}
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            self?.precacheMissions()
-        }
+        precacheMissions()
 	}
 
 	func setupRecentlyViewed(isReloadData: Bool = false) {
 		fetchRecentMissionData()
 		if isReloadData && !UIWindow.isInterfaceBuilder {
-			DispatchQueue.main.async {
-				self.tableView.reloadData()
-			}
+			tableView.reloadData()
 		}
 	}
 
@@ -97,21 +91,25 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 		missionCounts = [:]
 		guard !UIWindow.isInterfaceBuilder else { return fetchDummyData() }
 		let gameVersion = App.current.gameVersion
-		for type in MissionType.categories() {
-			let counts = Mission.getCountedMissionStatus(missionType: type, gameVersion: gameVersion)
-			guard gameVersion == App.current.gameVersion else { return }
-			if counts.total > 0 {
-				missionCounts[type] = counts
-			}
-		}
-		shepardUuid = App.current.game?.shepard?.uuid
+        shepardUuid = App.current.game?.shepard?.uuid
+        DispatchQueue.global(qos: .userInitiated).sync { [weak self] in
+            for type in MissionType.categories() {
+                let counts = Mission.getCountedMissionStatus(missionType: type, gameVersion: gameVersion)
+                guard gameVersion == App.current.gameVersion else { return }
+                if counts.total > 0 {
+                    self?.missionCounts[type] = counts
+                }
+            }
+        }
 	}
 
 	func fetchRecentMissionData() {
 		guard !UIWindow.isInterfaceBuilder else { return fetchDummyData() }
 		let gameVersion = App.current.gameVersion
-		recentMissions = Mission.getAllRecent(gameVersion: gameVersion)
-		shepardUuid = App.current.game?.shepard?.uuid
+        shepardUuid = App.current.game?.shepard?.uuid
+        DispatchQueue.global(qos: .userInitiated).sync { [weak self] in
+            self?.recentMissions = Mission.getAllRecent(gameVersion: gameVersion)
+        }
 	}
 
 	func fetchDummyData() {
@@ -122,19 +120,24 @@ final class MissionsGroupsController: UITableViewController, Spinnerable {
 	}
 
 	func precacheMissions() {
-        let gameVersion = App.current.gameVersion
-        for type in missionCounts.keys {
-            let missions = Mission.getAllType(type, gameVersion: gameVersion).sorted(by: Mission.sort)
-            onPreCacheFinished.fire((type: type, values: missions))
-            // cancel if we switched missions mid-query:
-            guard gameVersion == App.current.gameVersion else { return }
-            changeQueue.sync { [weak self] in
-                self?.precachedMissions[type] = missions
-                if missionCounts[type]?.unavailable == 0 {
-                    self?.recountMissions(type: type)
-                    // update rows
-                    if let index = self?.missionsRowByType(type) {
-                        self?.reloadRows([IndexPath(row: index, section: MissionsGroupsSection.main.rawValue)])
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            let gameVersion = App.current.gameVersion
+            guard let self = self else { return }
+            for type in self.missionCounts.keys {
+                let missions = Mission.getAllType(type, gameVersion: gameVersion).sorted(by: Mission.sort)
+                self.onPreCacheFinished.fire((type: type, values: missions))
+                // cancel if we switched missions mid-query:
+                guard gameVersion == App.current.gameVersion else { return }
+                self.changeQueue.sync { [weak self] in
+                    self?.precachedMissions[type] = missions
+                    if self?.missionCounts[type]?.unavailable == 0 {
+                        self?.recountMissions(type: type)
+                        DispatchQueue.main.async {
+                            // update rows
+                            if let index = self?.missionsRowByType(type) {
+                                self?.reloadRows([IndexPath(row: index, section: MissionsGroupsSection.main.rawValue)])
+                            }
+                        }
                     }
                 }
             }
@@ -183,17 +186,13 @@ extension MissionsGroupsController {
 	/// Invoked from deep links
 	func selectMission(_ mission: Mission?) -> Bool {
 		guard let mission = mission else { return false }
-		DispatchQueue.main.async { [weak self] in
-			self?.segueToMission(mission, sender: nil)
-		}
+		segueToMission(mission, sender: nil)
 		return true
 	}
 
 	/// Invoked from recently viewed and selectMission above
 	func segueToMission(_ mission: Mission?, sender: AnyObject? = nil) {
-		DispatchQueue.main.async {
-			self.startSpinner(inView: self.view.superview)
-		}
+		startSpinner(inView: view.superview)
 		transitionQueue.sync {
 			// Uses strong self (don't want to give up page until spinner is turned off)
 			self.deepLinkedMission = mission
@@ -207,9 +206,7 @@ extension MissionsGroupsController {
 
 	/// Invoked from mission category row
 	func segueToMissionsGroup(_ missionType: MissionType, sender: AnyObject?) {
-		DispatchQueue.main.async {
-			self.startSpinner(inView: self.view.superview)
-		}
+		startSpinner(inView: view.superview)
 		transitionQueue.sync {
 			// Uses strong self (don't want to give up page until spinner is turned off)
 			self.lastSelectedMissionsGroup = missionType
@@ -299,9 +296,7 @@ extension MissionsGroupsController {
 	func reloadMainRows() {
 		guard !isUpdating else { return }
 		isUpdating = true
-		DispatchQueue.main.async {
-			self.startSpinner(inView: self.view.superview)
-		}
+        startSpinner(inView: view.superview)
 		changeQueue.sync {
 			self.setupMissionGroups(isReloadData: true)
 			DispatchQueue.main.async {
@@ -314,9 +309,7 @@ extension MissionsGroupsController {
 	func reloadRecentRows(_ x: Bool = false) {
 		guard !isUpdating else { return }
 		isUpdating = true
-		DispatchQueue.main.async {
-			self.startSpinner(inView: self.view.superview)
-		}
+        startSpinner(inView: view.superview)
 		changeQueue.sync {
 			self.setupRecentlyViewed(isReloadData: true)
 			DispatchQueue.main.async {
@@ -425,33 +418,29 @@ extension MissionsGroupsController {
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var cell: UITableViewCell?
-		DispatchQueue.main.async {
-            cell = tableView.cellForRow(at: indexPath)
-			self.startSpinner(inView: self.view.superview)
-            if tableView != self.tableView { // search
-                if let missionRow = cell as? MissionRow {
-                    var mission = missionRow.mission
-                    // can't link to objectives directly
-                    if let inMissionId = mission?.inMissionId,
-                        let mission2 = Mission.get(id: inMissionId) {
-                        mission = mission2
-                    }
-                    self.segueToMission(mission, sender: cell)
-                    return
+        cell = tableView.cellForRow(at: indexPath)
+        startSpinner(inView: view.superview)
+        if tableView != self.tableView { // search
+            if let missionRow = cell as? MissionRow {
+                var mission = missionRow.mission
+                // can't link to objectives directly
+                if let inMissionId = mission?.inMissionId,
+                    let mission2 = Mission.get(id: inMissionId) {
+                    mission = mission2
                 }
-            } else {
-                if let missionRow = cell as? MissionRow {
-                    self.segueToMission(missionRow.mission, sender: cell)
-                    return
-                } else if let type = self.missionsTypeByRow((indexPath as NSIndexPath).row) {
-                    self.segueToMissionsGroup(type, sender: cell)
-                    return
-                }
+                segueToMission(mission, sender: cell)
+                return
             }
-            DispatchQueue.main.async { // strong self (don't want to give up page until spinner is turned off)
-                self.stopSpinner(inView: self.view.superview)
+        } else {
+            if let missionRow = cell as? MissionRow {
+                segueToMission(missionRow.mission, sender: cell)
+                return
+            } else if let type = missionsTypeByRow((indexPath as NSIndexPath).row) {
+                segueToMissionsGroup(type, sender: cell)
+                return
             }
         }
+        stopSpinner(inView: view.superview)
     }
 }
 
@@ -462,13 +451,25 @@ extension MissionsGroupsController {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-        _ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
+        _ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadOnShepardChange()
+            }
+        }
 		// listen for changes to recently viewed list
 		App.onRecentlyViewedMissionsChange.cancelSubscription(for: self)
-		_ = App.onRecentlyViewedMissionsChange.subscribe(with: self, callback: reloadRecentRows)
+		_ = App.onRecentlyViewedMissionsChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadRecentRows()
+            }
+        }
 		// listen for changes to mission data
 		Mission.onChange.cancelSubscription(for: self)
-        _ = Mission.onChange.subscribe(with: self, callback: processChangedMission)
+        _ = Mission.onChange.subscribe(with: self) { [weak self] changed in
+            DispatchQueue.main.async {
+                self?.processChangedMission(changed)
+            }
+        }
 		// decisions are loaded at detail page, don't have to listen
 	}
 
@@ -498,7 +499,9 @@ extension MissionsGroupsController {
 			let newMission = changed.object ?? Mission.get(id: changed.id) {
             changeQueue.sync { [weak self] in
                 self?.recentMissions[index] = newMission
-                self?.reloadRows([IndexPath(row: index, section: MissionsGroupsSection.recent.rawValue)])
+                DispatchQueue.main.async {
+                    self?.reloadRows([IndexPath(row: index, section: MissionsGroupsSection.recent.rawValue)])
+                }
             }
 		}
 	}
@@ -612,13 +615,15 @@ extension MissionsGroupsController: DeepLinkable {
 			self?.startSpinner(inView: self?.view.superview)
 		}
 		transitionQueue.sync { [weak self] in
-			if let mission = object as? Mission {
-				if self?.selectMission(mission) == true {
-//					self?.deepLinkedMission = nil
-				} else {
-					self?.deepLinkedMission = mission // wait
-				}
-			}
+            DispatchQueue.main.async {
+                if let mission = object as? Mission {
+                    if self?.selectMission(mission) == true {
+    //					self?.deepLinkedMission = nil
+                    } else {
+                        self?.deepLinkedMission = mission // wait
+                    }
+                }
+            }
 		}
 	}
 }

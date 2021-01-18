@@ -248,7 +248,7 @@ final public class MapController: UIViewController, UIScrollViewDelegate, MapIma
 
     func setupEnhancedData() {
         guard !UIWindow.isInterfaceBuilder,
-            let map = map, !map.isSplitMenu && map.image != nil else { return }
+              let map = self.map, !map.isSplitMenu && map.image != nil else { return }
 
         DispatchQueue.global(qos: .background).async { [weak self] in
             let mapLocations: [MapLocationable] = MapLocation.addChildMapLocations(
@@ -256,8 +256,8 @@ final public class MapController: UIViewController, UIScrollViewDelegate, MapIma
                 includeAllChildren: true
                 ).map { var m = $0; m.shownInMapId = map.id; return m }
             self?.changeQueue.sync {
-                self?.mapLocations = mapLocations
                 DispatchQueue.main.async {
+                        self?.mapLocations = mapLocations
                     _ = self?.mapLocationsList.add(locations: mapLocations)
                 }
             }
@@ -601,21 +601,33 @@ extension MapController {
         type: T.Type,
         changed: (id: String, object: T?)
     ) {
-        var mapLocations = self.mapLocations
-        if let index = mapLocations.firstIndex(where: { $0.id == changed.id }),
-            var newLocation: MapLocationable = changed.object ?? T.get(id: changed.id),
-            let oldLocation = mapLocations[index] as? T,
-            newLocation.modifiedDate > oldLocation.modifiedDate {
-            newLocation.shownInMapId = map?.id // set this or callout may not appear in map
-            if (newLocation.inMapId != map?.id),
-                let parentMap = mapLocations.filter({ $0.id == newLocation.inMapId }).first {
-                // child map callout
-                newLocation.mapLocationPoint = parentMap.mapLocationPoint
-            }
-            mapLocations[index] = newLocation
-            changeQueue.sync { [weak self] in
-                self?.mapLocations = mapLocations
-                self?.reloadMapLocationable(newLocation)
+        var mapLocations: [MapLocationable] = self.mapLocations // local copy to avoid view controller reference
+        guard let map = self.map else { return }// local copy to avoid view controller reference
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            if let index = mapLocations.firstIndex(where: { $0.id == changed.id }),
+               let oldLocation = mapLocations[index] as? T,
+               var newLocation: MapLocationable = changed.object ?? T.get(id: changed.id),
+               newLocation.modifiedDate > oldLocation.modifiedDate {
+                newLocation.shownInMapId = map.id // set this or callout may not appear in map
+                if (newLocation.inMapId != map.id),
+                    let parentMap = mapLocations.filter({ $0.id == newLocation.inMapId }).first {
+                    // child map callout
+                    newLocation.mapLocationPoint = parentMap.mapLocationPoint
+                }
+                self?.changeQueue.async { [weak self] in
+                    DispatchQueue.main.sync {
+                        if let index = self?.mapLocations.firstIndex(where: { $0.id == changed.id }) {
+                            self?.mapLocations[index] = newLocation
+                            if self?.explicitMapLocationable?.id == changed.id {
+                                self?.explicitMapLocationable = newLocation
+                            }
+                            if self?.mapLocation?.id == changed.id {
+                                self?.mapLocation = newLocation
+                            }
+                        }
+                        self?.reloadMapLocationable(newLocation)
+                    }
+                }
             }
         }
     }
@@ -624,32 +636,51 @@ extension MapController {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadOnShepardChange()
+            }
+        }
 		// listen for changes to map location selected
 		MapLocation.onChangeSelection.cancelSubscription(for: self)
-		_ = MapLocation.onChangeSelection.subscribe(with: self, callback: openMapLocationable)
+		_ = MapLocation.onChangeSelection.subscribe(with: self) { [weak self] changed in
+            DispatchQueue.main.async {
+                self?.openMapLocationable(changed)
+            }
+        }
 		// listen for changes to maps data 
 		Map.onChange.cancelSubscription(for: self)
 		_ = Map.onChange.subscribe(with: self) { [weak self] changed in
-			if self?.map?.id == changed.id,
-                let newMap = changed.object ?? Map.get(id: changed.id) {
-                self?.changeQueue.async {
-                    self?.map = newMap
-                    self?.reloadDataOnChange()
+            DispatchQueue.main.async {
+                guard let map = self?.map else { return }
+                DispatchQueue.global(qos: .background).async { [weak self] in
+                    if map.id == changed.id,
+                        let newMap = changed.object ?? Map.get(id: changed.id) {
+                        self?.changeQueue.async {
+                            DispatchQueue.main.async {
+                                self?.map = newMap
+                                self?.reloadDataOnChange()
+                            }
+                        }
+                    }
                 }
-			}
-//            guard changed.object == nil else { return } // filters to only events
-            self?.reloadOnLocationChange(type: Map.self, changed: changed)
+//                guard changed.object == nil else { return } // filters to only events
+                self?.reloadOnLocationChange(type: Map.self, changed: changed)
+            }
 		}
 		Mission.onChange.cancelSubscription(for: self)
 		_ = Mission.onChange.subscribe(with: self) { [weak self] changed in
 //            guard changed.object == nil else { return } // filters to only events
-            self?.reloadOnLocationChange(type: Mission.self, changed: changed)
+            DispatchQueue.main.async {
+                self?.reloadOnLocationChange(type: Mission.self, changed: changed)
+            }
 		}
 		Item.onChange.cancelSubscription(for: self)
 		_ = Item.onChange.subscribe(with: self) { [weak self] changed in
 //            guard changed.object == nil else { return } // filters to only events
-            self?.reloadOnLocationChange(type: Item.self, changed: changed)
+            DispatchQueue.main.async {
+                self?.reloadOnLocationChange(type: Item.self, changed: changed)
+            }
 		}
 	}
 
@@ -683,6 +714,7 @@ extension MapController {
             // make UI changes now
 			self.setCheckboxImage(isExplored: isExplored, isAvailable: map.isAvailable)
 			self.changeQueue.sync {
+                // still inside main UI queue?
                 // save changes to DB
                 self.map = map.changed(isExplored: isExplored, isSave: true)
 				spinnerController?.stopSpinner(inView: self.view)

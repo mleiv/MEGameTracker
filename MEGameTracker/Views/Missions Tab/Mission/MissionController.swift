@@ -55,7 +55,7 @@ final public class MissionController: UIViewController,
 		didSet {
 			// TODO: fix this, I hate didSet
 			if oldValue != nil && oldValue != mission {
-				reloadDataOnChange()
+                reloadDataOnChange()
 			}
 		}
 	}
@@ -215,9 +215,7 @@ final public class MissionController: UIViewController,
 	}
 
 	func reloadDataOnChange() {
-		DispatchQueue.main.async {
-			self.setup()
-		}
+        self.setup()
 	}
 
 	func reloadOnShepardChange(_ x: Bool = false) {
@@ -230,13 +228,20 @@ final public class MissionController: UIViewController,
 	func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadOnShepardChange()
+            }
+        }
 		// listen for changes to mission data
 		Mission.onChange.cancelSubscription(for: self)
 		_ = Mission.onChange.subscribe(with: self) { [weak self] changed in
 			if self?.mission?.id == changed.id, let newMission = changed.object ?? Mission.get(id: changed.id) {
-				self?.mission = newMission
-				self?.reloadDataOnChange() // the didSet check will view these missions as identical and not fire
+                DispatchQueue.main.async {
+                    self?.mission = newMission
+                    self?.reloadDataOnChange()
+                    // the didSet check will view these missions as identical and not fire
+                }
 			}
 		}
 	}

@@ -43,7 +43,7 @@ final public class ShepardDecisionsController: UIViewController, Spinnerable {
 
 		if !UIWindow.isInterfaceBuilder {
 			// preload other game version decisions async
-			DispatchQueue.global(qos: .background).async { [weak self] () in
+			DispatchQueue.global(qos: .userInitiated).async { [weak self] () in
 				let reloadData = self?.decisions.isEmpty ?? false
 				if self?.gameVersion != .game1 {
 					self?.allDecisions[.game1] = Decision.getAll(gameVersion: .game1).sorted(by: Decision.sort)
@@ -99,17 +99,19 @@ final public class ShepardDecisionsController: UIViewController, Spinnerable {
 	func reloadDataOnChange(_ x: Bool = false) {
 		guard !isUpdating else { return }
 		isUpdating = true
-		DispatchQueue.main.async {
-			self.setup()
-			self.isUpdating = false
-		}
+		setup()
+		isUpdating = false
 	}
 
 	func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadDataOnChange()
+            }
+        }
 		// listen for decision changes
 		let gameVersion = self.gameVersion
 		Decision.onChange.cancelSubscription(for: self)

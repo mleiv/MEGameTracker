@@ -31,38 +31,32 @@ extension UpdatingTableView {
 	}
 
 	public func reloadRows(_ rows: [IndexPath]) {
-        DispatchQueue.main.async {
-            if !rows.isEmpty && self.allRowsStillExist(rows) {
-				self.tableView?.isUserInteractionEnabled = false
-				self.tableView?.beginUpdates()
-				self.tableView?.reloadRows(at: rows, with: .automatic)
-				self.tableView?.endUpdates()
-				self.tableView?.isUserInteractionEnabled = true
-			}
-		}
+        if !rows.isEmpty && self.allRowsStillExist(rows) {
+            self.tableView?.isUserInteractionEnabled = false
+            self.tableView?.beginUpdates()
+            self.tableView?.reloadRows(at: rows, with: .automatic)
+            self.tableView?.endUpdates()
+            self.tableView?.isUserInteractionEnabled = true
+        }
 	}
 
 	public func insertRows(_ rows: [IndexPath]) {
-        DispatchQueue.main.async {
-            if !rows.isEmpty && self.allRowsStillExist(rows) {
-				self.tableView?.isUserInteractionEnabled = false
-				self.tableView?.beginUpdates()
-				self.tableView?.insertRows(at: rows, with: .automatic)
-				self.tableView?.endUpdates()
-				self.tableView?.isUserInteractionEnabled = true
-			}
-		}
+        if !rows.isEmpty && self.allRowsStillExist(rows) {
+            self.tableView?.isUserInteractionEnabled = false
+            self.tableView?.beginUpdates()
+            self.tableView?.insertRows(at: rows, with: .automatic)
+            self.tableView?.endUpdates()
+            self.tableView?.isUserInteractionEnabled = true
+        }
 	}
 
 	public func removeRows(_ rows: [IndexPath]) {
-        DispatchQueue.main.async {
-            if !rows.isEmpty && self.allRowsStillExist(rows) {
-				self.tableView?.isUserInteractionEnabled = false
-				self.tableView?.beginUpdates()
-				self.tableView?.deleteRows(at: rows, with: .automatic)
-				self.tableView?.endUpdates()
-				self.tableView?.isUserInteractionEnabled = true
-			}
-		}
+        if !rows.isEmpty && self.allRowsStillExist(rows) {
+            self.tableView?.isUserInteractionEnabled = false
+            self.tableView?.beginUpdates()
+            self.tableView?.deleteRows(at: rows, with: .automatic)
+            self.tableView?.endUpdates()
+            self.tableView?.isUserInteractionEnabled = true
+        }
 	}
 }

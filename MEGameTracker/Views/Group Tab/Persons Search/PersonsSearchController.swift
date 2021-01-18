@@ -86,15 +86,21 @@ class PersonsSearchController: UITableViewController, Spinnerable {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gender/romantic changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadDataOnChange()
+            }
+        }
 		// listen for changes to persons data
 		Person.onChange.cancelSubscription(for: self)
 		_ = Person.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.persons.firstIndex(where: { $0.id == changed.id }),
 				let newPerson = changed.object ?? Person.get(id: changed.id) {
-				self?.persons[index] = newPerson
-				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(reloadRows)
+                DispatchQueue.main.async {
+                    self?.persons[index] = newPerson
+                    let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                    self?.reloadRows(reloadRows)
+                }
 			}
 		}
 	}

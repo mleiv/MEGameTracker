@@ -161,7 +161,7 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
         guard !UIWindow.isInterfaceBuilder,
             let map = map, !map.isSplitMenu && map.image != nil else { return }
 
-        DispatchQueue.global(qos: .background).async { [weak self] in
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             let mapLocations: [MapLocationable] = MapLocation.addChildMapLocations(
                 mapLocations: map.getMapLocations(),
                 includeAllChildren: true
@@ -229,12 +229,10 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 	func reloadMapLocationRows(_ reloadRows: [IndexPath], inTabType type: MapLocationType) {
 		if let controller = tabControllers[type.headingValue] as? MapCalloutsController {
 			controller.callouts = mapLocations[type] ?? []
-			DispatchQueue.main.async { [weak self] in
-				controller.reloadRows(reloadRows)
-                self?.changeQueue.sync {
-                    self?.reloadMapLocationsCountForType(type)
-                }
-			}
+            controller.reloadRows(reloadRows)
+            changeQueue.sync {
+                self.reloadMapLocationsCountForType(type)
+            }
 		}
 	}
 
@@ -271,13 +269,19 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 		guard !UIWindow.isInterfaceBuilder else { return }
 		//listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
+        _ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadOnShepardChange()
+            }
+        }
 		// check just for tab switches
 		MapLocation.onChangeSelection.cancelSubscription(for: self)
 		_ = MapLocation.onChangeSelection.subscribe(with: self) { [weak self] mapLocation in
-			guard let controller = self?.tabControllers[mapLocation.mapLocationType.headingValue] else { return }
-			guard mapLocation.shownInMapId == self?.map?.id else { return }
-			self?.switchToTab(controller)
+            DispatchQueue.main.async {
+                guard let controller = self?.tabControllers[mapLocation.mapLocationType.headingValue] else { return }
+                guard mapLocation.shownInMapId == self?.map?.id else { return }
+                self?.switchToTab(controller)
+            }
 		}
 	}
 

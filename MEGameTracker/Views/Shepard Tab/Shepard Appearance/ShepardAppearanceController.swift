@@ -361,16 +361,18 @@ extension ShepardAppearanceController {
 	}
 
 	func reloadDataOnChange(_ x: Bool = false) {
-		DispatchQueue.main.async {
-			self.setup()
-		}
+		setup()
 	}
 
 	func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadDataOnChange()
+            }
+        }
 	}
 }
 

@@ -55,7 +55,7 @@ final public class MapsController: UITableViewController, Spinnerable {
 		setupMaps()
 		setupSearch()
 		isUpdating = false
-		DispatchQueue.global(qos: .background).async { [weak self] in
+		DispatchQueue.global(qos: .userInitiated).async { [weak self] in
 			self?.deepLink(self?.deepLinkedMap)
 		}
 	}
@@ -142,9 +142,7 @@ final public class MapsController: UITableViewController, Spinnerable {
 	func reloadDataOnChange(_ x: Bool = false) {
 		guard !isUpdating else { return }
 		isUpdating = true
-		DispatchQueue.main.async {
-			self.startSpinner(inView: self.view.superview)
-		}
+		startSpinner(inView: view.superview)
 		changeQueue.sync {
 			self.setupMaps()
 			DispatchQueue.main.async {
@@ -179,24 +177,36 @@ final public class MapsController: UITableViewController, Spinnerable {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadOnShepardChange()
+            }
+        }
 		// listen for changes to recently viewed list
 		App.onRecentlyViewedMapsChange.cancelSubscription(for: self)
-		_ = App.onRecentlyViewedMapsChange.subscribe(with: self, callback: reloadDataOnChange)
+		_ = App.onRecentlyViewedMapsChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadDataOnChange()
+            }
+        }
 		// listen for changes to maps data 
 		Map.onChange.cancelSubscription(for: self)
 		_ = Map.onChange.subscribe(with: self) { [weak self] changed in
 			var reloadRows: [IndexPath] = []
+            var maps: [MapsSection: [Map]] = self?.maps ?? [:]
 			// can appear in both sections
 			for type in (self?.maps ?? [:]).keys {
-				if let index = self?.maps[type]?.firstIndex(where: { $0.id == changed.id }),
-					let newMap = changed.object ?? Map.get(id: changed.id) {
-					self?.maps[type]?[index] = newMap
-					reloadRows.append(IndexPath(row: index, section: type.rawValue))
+				if let index = maps[type]?.firstIndex(where: { $0.id == changed.id }),
+                   let newMap = changed.object ?? Map.get(id: changed.id) {
+                    maps[type]?[index] = newMap
+                    reloadRows.append(IndexPath(row: index, section: type.rawValue))
 					break
 				}
 			}
-			self?.reloadRows(reloadRows)
+            DispatchQueue.main.async {
+                self?.maps = maps
+                self?.reloadRows(reloadRows)
+            }
 		}
 		// decisions are loaded at detail page, don't have to listen
 //			for key in (self?.searchedMapLocations ?? [:]).keys {
@@ -383,10 +393,8 @@ extension MapsController {
 	}
 
 	func segueToMap(_ map: Map?, mapLocation: MapLocationable? = nil, sender: AnyObject? = nil) {
-		DispatchQueue.main.async {
-			self.startSpinner(inView: self.view.superview)
-		}
-		DispatchQueue.global(qos: .background).async { // strong self (don't want to give up page until spinner is turned off)
+        self.startSpinner(inView: self.view.superview)
+		DispatchQueue.global(qos: .userInitiated).async { // strong self (don't want to give up page until spinner is turned off)
 			self.segueMap = map
 			self.segueMapLocationable = mapLocation
 			if mapLocation?.isShowInParentMap == true, let mapId = map?.inMapId, let map2 = Map.get(id: mapId) {
@@ -469,7 +477,7 @@ extension MapsController {
 			let currentSearchTimestamp = Date()
 			self.currentSearchTimestamp = currentSearchTimestamp
 			searchManager?.reloadData()
-			DispatchQueue.global(qos: .background).async {
+			DispatchQueue.global(qos: .userInitiated).async {
 //				print("\n\nSearching: \(search)")
 				let list1 = MapLocation.getAllMaps(
 					likeName: search,

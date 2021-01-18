@@ -93,25 +93,29 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 	func reloadDataOnChange(_ x: Bool = false) {
 		// we care about gender changes as well as game changes
 		guard !UIWindow.isInterfaceBuilder else { return }
-		DispatchQueue.main.async {
-			self.setup()
-		}
+		setup()
 	}
 
 	func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadDataOnChange()
+            }
+        }
 		// listen for changes to persons data
 		Person.onChange.cancelSubscription(for: self)
 		_ = Person.onChange.subscribe(with: self) { [weak self] changed in
 			for type in (self?.persons ?? [:]).keys {
 				if let index = self?.persons[type]?.firstIndex(where: { $0.id == changed.id }),
 					let newPerson = changed.object ?? Person.get(id: changed.id) {
-					self?.persons[type]?[index] = newPerson
-					let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-					self?.reloadPersonRows(reloadRows, inTabType: type)
+                    DispatchQueue.main.async {
+                        self?.persons[type]?[index] = newPerson
+                        let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                        self?.reloadPersonRows(reloadRows, inTabType: type)
+                    }
 					break
 				}
 			}
@@ -125,9 +129,11 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 				if let index = self?.persons[type]?.firstIndex(where: { $0.loveInterestDecisionId == changed.id }) {
 					if let personId = self?.persons[type]?[index].id,
 						let newPerson = Person.get(id: personId) {
-						self?.persons[type]?[index] = newPerson
-						let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-						self?.reloadPersonRows(reloadRows, inTabType: type)
+                        DispatchQueue.main.async {
+                            self?.persons[type]?[index] = newPerson
+                            let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                            self?.reloadPersonRows(reloadRows, inTabType: type)
+                        }
 					}
 					break
 				}
@@ -184,30 +190,28 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 	// MARK: Actions
 
 	func selectPerson(_ person: Person?) -> Bool {
-        return DispatchQueue.main.sync { [weak self] in
-            guard let person = person, view != nil else { return false }
-            let index: Int = {
-                return tabNames.firstIndex(of: person.personType.headingValue) ?? 0
-            }()
-            if tabNames.indices.contains(index) == true,
-               let listController = tabControllers[tabNames[index]] {
-                self?.startSpinner(inView: self?.view)
-                self?.switchToTab(listController)
-                if let controller = listController as? PersonsController {
-                    controller.selectPerson(person)
-                }
-                self?.stopSpinner(inView: self?.view)
-                return true
+        guard let person = person, view != nil else { return false }
+        let index: Int = {
+            return tabNames.firstIndex(of: person.personType.headingValue) ?? 0
+        }()
+        if tabNames.indices.contains(index) == true,
+           let listController = tabControllers[tabNames[index]] {
+            startSpinner(inView: view)
+            switchToTab(listController)
+            if let controller = listController as? PersonsController {
+                controller.selectPerson(person)
             }
-            return false
+            stopSpinner(inView: view)
+            return true
         }
-	}
+        return false
+    }
 }
 
 extension PersonsGroupsController: DeepLinkable {
 
 	public func deepLink(_ object: DeepLinkType?, type: String? = nil) {
-		DispatchQueue.global(qos: .background).async { [weak self] in
+        return DispatchQueue.main.sync { [weak self] in
 			if let person = object as? Person {
 				if self?.selectPerson(person) == true {
 					self?.deepLinkedPerson = nil

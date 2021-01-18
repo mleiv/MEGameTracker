@@ -63,10 +63,12 @@ final public class RelatedMissionsView: SimpleArrayDataRow {
 		_ = Mission.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.missions.firstIndex(where: { $0.id == changed.id }),
 				   let newRow = changed.object ?? Mission.get(id: changed.id) {
-				self?.controller?.relatedMissions[index] = newRow
-				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(reloadRows)
-				// make sure controller listens here and updates its own object's decisions list
+                DispatchQueue.main.async {
+                    self?.controller?.relatedMissions[index] = newRow
+                    let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                    self?.reloadRows(reloadRows)
+                    // make sure controller listens here and updates its own object's decisions list
+                }
 			}
 		}
 	}

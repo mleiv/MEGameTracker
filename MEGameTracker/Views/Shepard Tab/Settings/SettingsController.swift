@@ -218,11 +218,9 @@ class SettingsController: UITableViewController, Spinnerable {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		guard !isUpdating else { return }
 		isUpdating = true
-		DispatchQueue.main.async {
-			self.fetchData()
-			self.tableView.reloadData()
-			self.isUpdating = false
-		}
+        fetchData()
+        tableView.reloadData()
+        isUpdating = false
 	}
 
 	func fetchData() {
@@ -244,6 +242,10 @@ class SettingsController: UITableViewController, Spinnerable {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		//listen for relationship changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadDataOnChange()
+            }
+        }
 	}
 }

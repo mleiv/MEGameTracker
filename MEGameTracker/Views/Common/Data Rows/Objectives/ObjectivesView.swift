@@ -64,62 +64,61 @@ final public class ObjectivesView: SimpleArrayDataRow {
 			}
 		}()
 		startParentSpinner()
-		DispatchQueue.global(qos: .background).async { [weak self] in
-			if let mission = objective as? Mission, mission.isOpensDetail == true,
-				self?.openMission(mission) == true {
-				return
-			} else {
-				var map: Map?
-				if objective.mapLocationPoint == nil, let objectiveMapId = objective.inMapId {
-					let map = Map.get(id: objectiveMapId)
-					objective.mapLocationPoint = map?.mapLocationPoint
-				}
-				if mapId != map?.id, let mapId = mapId {
-					map = Map.get(id: mapId)
-				}
-				if objective is Item, let map = map,
-					self?.openObjective(objective, inMap: map) == true {
-					return
-				} else if let mission = objective as? Mission, mission.isOpensDetail == false, let map = map,
-					self?.openObjective(objective, inMap: map) == true {
-					return
-				}
-			}
-			self?.stopParentSpinner()
-		}
+        if let mission = objective as? Mission, mission.isOpensDetail == true,
+            openMission(mission) == true {
+            // nothing else
+        } else {
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                var map: Map?
+                if objective.mapLocationPoint == nil, let objectiveMapId = objective.inMapId {
+                    let map = Map.get(id: objectiveMapId)
+                    objective.mapLocationPoint = map?.mapLocationPoint
+                }
+                if mapId != map?.id, let mapId = mapId {
+                    map = Map.get(id: mapId)
+                }
+                DispatchQueue.main.sync {
+                    if objective is Item, let map = map,
+                        self?.openObjective(objective, inMap: map) == true {
+                        // nothing else
+                    } else if let mission = objective as? Mission, mission.isOpensDetail == false, let map = map,
+                        self?.openObjective(objective, inMap: map) == true {
+                        // nothing else
+                    } else {
+                        self?.stopParentSpinner()
+                    }
+                }
+            }
+        }
 	}
 
 	private func openMission(_ mission: Mission) -> Bool {
-        return DispatchQueue.main.sync {
-            if let flowController = UIStoryboard(name: "MissionsFlow", bundle: Bundle(for: type(of: self)))
-                    .instantiateViewController(withIdentifier: "Mission") as? MissionsFlowController,
-                let missionController = flowController.includedController as? MissionController {
-                // configure detail
-                missionController.mission = mission
+        if let flowController = UIStoryboard(name: "MissionsFlow", bundle: Bundle(for: type(of: self)))
+                .instantiateViewController(withIdentifier: "Mission") as? MissionsFlowController,
+            let missionController = flowController.includedController as? MissionController {
+            // configure detail
+            missionController.mission = mission
 //                    missionController.referringOriginHint = self.controller?.originHint
-                    self.viewController?.navigationController?.pushViewController(flowController, animated: true)
-                    self.stopParentSpinner()
-                return true
-            }
-            return false
+                self.viewController?.navigationController?.pushViewController(flowController, animated: true)
+                self.stopParentSpinner()
+            return true
         }
+        return false
 	}
 
 	private func openObjective(_ objective: MapLocationable, inMap map: Map) -> Bool {
-        return DispatchQueue.main.sync {
-            if let flowController = UIStoryboard(name: "MapsFlow", bundle: Bundle(for: type(of: self)))
-                    .instantiateViewController(withIdentifier: "Map") as? MapsFlowController,
-                let mapController = flowController.includedController as? MapSplitViewController {
-                // configure detail
-                mapController.map = map
-                mapController.mapLocation = objective
-                mapController.referringOriginHint = self.controller?.originHint
-				self.viewController?.navigationController?.pushViewController(flowController, animated: true)
-				self.stopParentSpinner()
-                return true
-            }
-            return false
+        if let flowController = UIStoryboard(name: "MapsFlow", bundle: Bundle(for: type(of: self)))
+                .instantiateViewController(withIdentifier: "Map") as? MapsFlowController,
+            let mapController = flowController.includedController as? MapSplitViewController {
+            // configure detail
+            mapController.map = map
+            mapController.mapLocation = objective
+            mapController.referringOriginHint = self.controller?.originHint
+            self.viewController?.navigationController?.pushViewController(flowController, animated: true)
+            self.stopParentSpinner()
+            return true
         }
+        return false
 	}
 
 	override func startListeners() {
@@ -128,20 +127,24 @@ final public class ObjectivesView: SimpleArrayDataRow {
 		_ = Mission.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.objectives.firstIndex(where: { $0.id == changed.id }),
 				   let newRow = changed.object ?? Mission.get(id: changed.id) {
-				self?.controller?.objectives[index] = newRow
-				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(reloadRows)
-				// make sure controller listens here and updates its own object's decisions list
+                DispatchQueue.main.async {
+                    self?.controller?.objectives[index] = newRow
+                    let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                    self?.reloadRows(reloadRows)
+                    // make sure controller listens here and updates its own object's decisions list
+                }
 			}
 		}
 		Item.onChange.cancelSubscription(for: self)
 		_ = Item.onChange.subscribe(with: self) { [weak self] changed in
 			if let index = self?.objectives.firstIndex(where: { $0.id == changed.id }),
 				   let newRow = changed.object ?? Item.get(id: changed.id) {
-				self?.controller?.objectives[index] = newRow
-				let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-				self?.reloadRows(reloadRows)
-				// make sure controller listens here and updates its own object's missions list
+                DispatchQueue.main.async {
+                    self?.controller?.objectives[index] = newRow
+                    let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                    self?.reloadRows(reloadRows)
+                    // make sure controller listens here and updates its own object's missions list
+                }
 			}
 		}
 	}

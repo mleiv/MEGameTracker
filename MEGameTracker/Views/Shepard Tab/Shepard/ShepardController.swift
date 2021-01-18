@@ -269,15 +269,12 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 // MARK: Segues
 
 	func openChangeableSegue(_ sceneId: String, sender: AnyObject!) {
-		DispatchQueue.main.async {
-            self.startSpinner(inView: self.view)
-            if let parentController = self.parent as? MESplitViewController {
-                let ferriedSegue: FerriedPrepareForSegueClosure = { _ in }
-                parentController.performChangeableSegue("Show ShepardFlow.\(sceneId)", sender: sender, ferriedSegue: ferriedSegue)
-                self.stopSpinner(inView: self.view)
-            }
-            self.stopSpinner(inView: self.view)
-		}
+        startSpinner(inView: view)
+        if let parentController = parent as? MESplitViewController {
+            let ferriedSegue: FerriedPrepareForSegueClosure = { _ in }
+            parentController.performChangeableSegue("Show ShepardFlow.\(sceneId)", sender: sender, ferriedSegue: ferriedSegue)
+        }
+        stopSpinner(inView: self.view)
 	}
 
 // MARK: Listeners
@@ -286,7 +283,11 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 		guard !UIWindow.isInterfaceBuilder else { return }
 		//listen for shepard changes
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadDataOnChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadDataOnChange()
+            }
+        }
 //		// listen for love interest decision changes
 //		Decision.onChange.cancelSubscription(for: self)
 //		_ = Decision.onChange.subscribe(with: self) { [weak self] changed in

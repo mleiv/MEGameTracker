@@ -28,27 +28,21 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 	public func openURL(_ url: URL, source: Linkable) {
 		self.source = source
 		originController = source.originController
+        let spinnerController = originController as? Spinnerable
 		DispatchQueue.main.async {
-			(self.originController as? Spinnerable)?.startSpinner(inView: self.originController?.view)
-		}
-		DispatchQueue.global(qos: .background).async {
+            spinnerController?.startSpinner(inView: self.originController?.view)
 			if self.isInternalUrl(url) {
-				self.redirectInternalUrl(url)
-				DispatchQueue.main.async {
-					(self.originController as? Spinnerable)?.stopSpinner(inView: self.originController?.view)
-				}
+                self.redirectInternalUrl(url)
 			} else {
-				let controller = SFSafariViewController(url: url)
-				controller.delegate = self
-				DispatchQueue.main.async {
-                    // don't try to load from a popover/etc - get the parent controller
-                    if let wrapperController = self.originController?.tabBarController?.selectedViewController,
-                       let targetController = self.targetControllerFromWrapperController(wrapperController) {
-                        targetController.present(controller, animated: true, completion: nil)
-                    }
-                    (self.originController  as? Spinnerable)?.stopSpinner(inView: self.originController?.view)
-				}
-			}
+                let controller = SFSafariViewController(url: url)
+                controller.delegate = self
+                // don't try to load from a popover/etc - get the parent controller
+                if let wrapperController = self.originController?.tabBarController?.selectedViewController,
+                   let targetController = self.targetControllerFromWrapperController(wrapperController) {
+                    targetController.present(controller, animated: true, completion: nil)
+                }
+            }
+            spinnerController?.stopSpinner(inView: self.originController?.view)
 		}
 	}
 
@@ -71,36 +65,38 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 
 	/// [Matriarch Benezia|megametracker://person?name=Matriarch%20Benezia]
 	private func redirectPerson(parameters: [String: String]) {
-		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
-		guard let person = parameters["id"] != nil ?
-					Person.get(id: parameters["id"] ?? "0") :
-					Person.get(name: parameters["name"] ?? "N/A")
-		else {
-			// error
-			return
-		}
-        DispatchQueue.main.async {
-            if !alwaysDeepLink &&
-                (self.originController?.tabBarController?.selectedIndex == MEMainTab.group.rawValue
-                    || (self.originController as? UITabBarController)?.selectedIndex == MEMainTab.group.rawValue) {
-                // we are in persons, so just push or we will lose our spot
-				// pop controllers to top level
-				if let originController = self.originController, originController.presentedViewController != nil {
-						originController.dismiss(animated: false, completion: nil)
-				}
-				if let controller = self.originController as? PersonController, controller.person == person {
-					return // do nothing, here already
-				}
+        DispatchQueue.global(qos: .userInitiated).async {
+            let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
+            guard let person = parameters["id"] != nil ?
+                        Person.get(id: parameters["id"] ?? "0") :
+                        Person.get(name: parameters["name"] ?? "N/A")
+            else {
+                // error
+                return
+            }
+            DispatchQueue.main.async {
+                if !alwaysDeepLink &&
+                    (self.originController?.tabBarController?.selectedIndex == MEMainTab.group.rawValue
+                        || (self.originController as? UITabBarController)?.selectedIndex == MEMainTab.group.rawValue) {
+                    // we are in persons, so just push or we will lose our spot
+                    // pop controllers to top level
+                    if let originController = self.originController, originController.presentedViewController != nil {
+                            originController.dismiss(animated: false, completion: nil)
+                    }
+                    if let controller = self.originController as? PersonController, controller.person == person {
+                        return // do nothing, here already
+                    }
 
-				self.pushStoryboard(StoryboardIdentifier(name: "GroupFlow", scene: "Person")) { destinationController in
-					destinationController.find(controllerType: PersonController.self) { controller in
-						controller.person = person
-					}
-				}
-            } else {
-                // go to persons tab and load up person, deep link style
-                self.switchToLinkableTab(.group, toControllerType: GroupSplitViewController.self) { controller in
-                    (controller as? GroupSplitViewController)?.deepLink(person, type: "Person")
+                    self.pushStoryboard(StoryboardIdentifier(name: "GroupFlow", scene: "Person")) { destinationController in
+                        destinationController.find(controllerType: PersonController.self) { controller in
+                            controller.person = person
+                        }
+                    }
+                } else {
+                    // go to persons tab and load up person, deep link style
+                    self.switchToLinkableTab(.group, toControllerType: GroupSplitViewController.self) { controller in
+                        (controller as? GroupSplitViewController)?.deepLink(person, type: "Person")
+                    }
                 }
             }
         }
@@ -111,31 +107,29 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 	/// [Galaxy Map|megametracker://map?id=1]
 	private func redirectMap(parameters: [String: String]) {
 		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
-        DispatchQueue.main.async {
-            if let mapId = parameters["id"], let map = Map.get(id: mapId) {
-                if !alwaysDeepLink && self.originController?.tabBarController?.selectedIndex == MEMainTab.maps.rawValue {
-                        // pop controllers to top level
-                        if let originController = self.originController, originController.presentedViewController != nil {
-                                originController.dismiss(animated: false, completion: nil)
-                        }
-                        if let controller = self.originController as? MapController, controller.map == map {
-                            return // do nothing, here already
-                        }
-
-                        self.pushStoryboard(StoryboardIdentifier(name: "MapsFlow", scene: "Map")) { destinationController in
-                            destinationController.find(controllerType: MapController.self) { controller in
-                                controller.map = map
-                            }
-                        }
-                } else {
-                    // go to maps tab and load up map, deep link style
-                    self.switchToLinkableTab(.maps, toControllerType: MapsController.self) { controller in
-                        (controller as? MapsController)?.deepLink(map, type: "Map")
+        if let mapId = parameters["id"], let map = Map.get(id: mapId) {
+            if !alwaysDeepLink && self.originController?.tabBarController?.selectedIndex == MEMainTab.maps.rawValue {
+                    // pop controllers to top level
+                    if let originController = self.originController, originController.presentedViewController != nil {
+                            originController.dismiss(animated: false, completion: nil)
                     }
+                    if let controller = self.originController as? MapController, controller.map == map {
+                        return // do nothing, here already
+                    }
+
+                    self.pushStoryboard(StoryboardIdentifier(name: "MapsFlow", scene: "Map")) { destinationController in
+                        destinationController.find(controllerType: MapController.self) { controller in
+                            controller.map = map
+                        }
+                    }
+            } else {
+                // go to maps tab and load up map, deep link style
+                self.switchToLinkableTab(.maps, toControllerType: MapsController.self) { controller in
+                    (controller as? MapsController)?.deepLink(map, type: "Map")
                 }
             }
-		}
-	}
+        }
+    }
 	/// [Sovereign|megametracker://item?id=I1.X]
 	private func redirectItem(parameters: [String: String]) {
 		guard Item.get(id: parameters["id"] ?? "0") != nil else { return }
@@ -145,101 +139,105 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 	// swiftlint:disable function_body_length
 	/// [Galaxy Map|megametracker://maplocation?id=1]
 	private func redirectMapLocationable(parameters: [String: String]) {
-		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
-		guard let id = parameters["id"],
-			let mapLocation: MapLocationable = {
-				if let type = MapLocationType(stringValue: parameters["type"]),
-				   let mapLocation = MapLocation.get(id: id, type: type) {
-					if var map = mapLocation as? Map {
-						map.generalData.isHidden = false // force  to be visible
-						return map
-					}
-					return mapLocation
-				} else if
-					let name = parameters["title"],
-					let mapLocationCoords = parameters["location"]?.split(separator: "x").map(String.init),
-					let mapLocationX = Double(mapLocationCoords[0]),
-					let mapLocationY = Double(mapLocationCoords[1]) {
-					let mapLocationRadius = Double(parameters["radius"] ?? "") ?? 1.0
-                    var dataMap = DataMap(id: "\(id).detail")
-                    dataMap.name = name
-                    dataMap.mapLocationPoint = MapLocationPoint(
-                        x: CGFloat(mapLocationX),
-                        y: CGFloat(mapLocationY),
-                        radius: CGFloat(mapLocationRadius)
-                    )
-                    dataMap.inMapId = id
-                    dataMap.isOpensDetail = false
-                    return Map(id: dataMap.id, gameVersion: App.current.gameVersion, generalData: dataMap)
-				}
-				return nil
-			}()
-		else {
-			// error
-			return
-		}
+        DispatchQueue.global(qos: .userInitiated).async {
+            let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
+            guard let id = parameters["id"],
+                let mapLocation: MapLocationable = {
+                    if let type = MapLocationType(stringValue: parameters["type"]),
+                       let mapLocation = MapLocation.get(id: id, type: type) {
+                        if var map = mapLocation as? Map {
+                            map.generalData.isHidden = false // force  to be visible
+                            return map
+                        }
+                        return mapLocation
+                    } else if
+                        let name = parameters["title"],
+                        let mapLocationCoords = parameters["location"]?.split(separator: "x").map(String.init),
+                        let mapLocationX = Double(mapLocationCoords[0]),
+                        let mapLocationY = Double(mapLocationCoords[1]) {
+                        let mapLocationRadius = Double(parameters["radius"] ?? "") ?? 1.0
+                        var dataMap = DataMap(id: "\(id).detail")
+                        dataMap.name = name
+                        dataMap.mapLocationPoint = MapLocationPoint(
+                            x: CGFloat(mapLocationX),
+                            y: CGFloat(mapLocationY),
+                            radius: CGFloat(mapLocationRadius)
+                        )
+                        dataMap.inMapId = id
+                        dataMap.isOpensDetail = false
+                        return Map(id: dataMap.id, gameVersion: App.current.gameVersion, generalData: dataMap)
+                    }
+                    return nil
+                }()
+            else {
+                // error
+                return
+            }
+            
+            DispatchQueue.main.async {
+                if !alwaysDeepLink && self.originController?.tabBarController?.selectedIndex == MEMainTab.maps.rawValue,
+                   let mapId = mapLocation.inMapId,
+                   let map = Map.get(id: mapId) {
+                    // pop controllers to top level
+                    if let originController = self.originController, originController.presentedViewController != nil {
+                            originController.dismiss(animated: false, completion: nil)
+                    }
+                    if let controller = self.originController as? MapController,
+                        controller.map == map && controller.self.mapLocation?.isEqual(mapLocation) == true {
+                        return // do nothing, here already
+                    }
 
-        DispatchQueue.main.async {
-            if !alwaysDeepLink && self.originController?.tabBarController?.selectedIndex == MEMainTab.maps.rawValue,
-               let mapId = mapLocation.inMapId,
-               let map = Map.get(id: mapId) {
-				// pop controllers to top level
-				if let originController = self.originController, originController.presentedViewController != nil {
-						originController.dismiss(animated: false, completion: nil)
-				}
-				if let controller = self.originController as? MapController,
-					controller.map == map && controller.self.mapLocation?.isEqual(mapLocation) == true {
-					return // do nothing, here already
-				}
-
-				self.pushStoryboard(StoryboardIdentifier(name: "MapsFlow", scene: "Map")) { destinationController in
-					destinationController.find(controllerType: MapController.self) { controller in
-						controller.map = map
-						controller.mapLocation = mapLocation
-					}
-				}
-            } else {
-                // go to maps tab and load up map, deep link style
-                self.switchToLinkableTab(.maps, toControllerType: MapsController.self) { controller in
-                    (controller as? DeepLinkable)?.deepLink(mapLocation as? DeepLinkType, type: "MapLocationable")
+                    self.pushStoryboard(StoryboardIdentifier(name: "MapsFlow", scene: "Map")) { destinationController in
+                        destinationController.find(controllerType: MapController.self) { controller in
+                            controller.map = map
+                            controller.mapLocation = mapLocation
+                        }
+                    }
+                } else {
+                    // go to maps tab and load up map, deep link style
+                    self.switchToLinkableTab(.maps, toControllerType: MapsController.self) { controller in
+                        (controller as? DeepLinkable)?.deepLink(mapLocation as? DeepLinkType, type: "MapLocationable")
+                    }
                 }
             }
-		}
+        }
 	}
 	// swiftlint:enable function_body_length
 
 	/// [Prologue|megametracker://mission?id=M1.Prologue]
 	private func redirectMission(parameters: [String: String]) {
-		let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
-		guard let id = parameters["id"],
-				  let mission = Mission.get(id: id)
-		else {
-			// error
-			return
-		}
-        DispatchQueue.main.async {
-            if !alwaysDeepLink && self.originController?.tabBarController?.selectedIndex == MEMainTab.missions.rawValue {
-                // we are in missions, so just push or we will lose our spot
-                // pop controllers to top level
-                if let originController = self.originController,
-                    originController.presentedViewController != nil {
-                    originController.dismiss(animated: false, completion: nil)
-                }
-                if let controller = self.originController as? MissionController, controller.mission == mission {
-                    return // do nothing, here already
-                }
-
-                self.pushStoryboard(
-                    StoryboardIdentifier(name: "MissionsFlow", scene: "Mission")
-                ) { destinationController in
-                    destinationController.find(controllerType: MissionController.self) { controller in
-                        controller.mission = mission
+        DispatchQueue.global(qos: .userInitiated).async {
+            let alwaysDeepLink = parameters["alwaysdeeplink"] == "1"
+            guard let id = parameters["id"],
+                      let mission = Mission.get(id: id)
+            else {
+                // error
+                return
+            }
+            DispatchQueue.main.async {
+                if !alwaysDeepLink && self.originController?.tabBarController?.selectedIndex == MEMainTab.missions.rawValue {
+                    // we are in missions, so just push or we will lose our spot
+                    // pop controllers to top level
+                    if let originController = self.originController,
+                        originController.presentedViewController != nil {
+                        originController.dismiss(animated: false, completion: nil)
                     }
-                }
-            } else {
-                // go to maps tab and load up map, deep link style
-                self.switchToLinkableTab(.missions, toControllerType: MissionsGroupsController.self) { controller in
-                    (controller as? DeepLinkable)?.deepLink(mission, type: "Mission")
+                    if let controller = self.originController as? MissionController, controller.mission == mission {
+                        return // do nothing, here already
+                    }
+
+                    self.pushStoryboard(
+                        StoryboardIdentifier(name: "MissionsFlow", scene: "Mission")
+                    ) { destinationController in
+                        destinationController.find(controllerType: MissionController.self) { controller in
+                            controller.mission = mission
+                        }
+                    }
+                } else {
+                    // go to maps tab and load up map, deep link style
+                    self.switchToLinkableTab(.missions, toControllerType: MissionsGroupsController.self) { controller in
+                        (controller as? DeepLinkable)?.deepLink(mission, type: "Mission")
+                    }
                 }
             }
         }

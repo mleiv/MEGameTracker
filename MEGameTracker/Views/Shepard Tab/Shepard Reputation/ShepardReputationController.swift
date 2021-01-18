@@ -74,12 +74,10 @@ final public class ShepardReputationController: UIViewController, SideEffectsabl
 	}
 
 	func reloadDataOnChange() {
-		DispatchQueue.main.async { [weak self] in
-			self?.fetchData()
-			if let shepard = self?.shepard {
-				self?.setupRadios(shepard: shepard)
-			}
-		}
+        fetchData()
+        if let shepard = self.shepard {
+            setupRadios(shepard: shepard)
+        }
 	}
 
 	func reloadOnShepardChange(_ x: Bool = false) {
@@ -93,6 +91,10 @@ final public class ShepardReputationController: UIViewController, SideEffectsabl
 		guard !UIWindow.isInterfaceBuilder else { return }
 		// listen for gameVersion changes only
 		App.onCurrentShepardChange.cancelSubscription(for: self)
-		_ = App.onCurrentShepardChange.subscribe(with: self, callback: reloadOnShepardChange)
+		_ = App.onCurrentShepardChange.subscribe(with: self) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadOnShepardChange()
+            }
+        }
 	}
 }

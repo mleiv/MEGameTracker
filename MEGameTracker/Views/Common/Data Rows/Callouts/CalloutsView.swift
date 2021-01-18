@@ -232,9 +232,7 @@ final public class CalloutsView: SimpleArrayDataRow {
                 callouts[index] = newRow
                 controller?.updateCallouts(callouts)
             }
-            DispatchQueue.main.async { [weak self] in
-                self?.reloadRows([IndexPath(row: index, section: 0)])
-            }
+            reloadRows([IndexPath(row: index, section: 0)])
         }
 	}
 
@@ -242,20 +240,28 @@ final public class CalloutsView: SimpleArrayDataRow {
 		guard !UIWindow.isInterfaceBuilder else { return }
         Map.onChange.cancelSubscription(for: self)
         _ = Map.onChange.subscribe(with: self) { [weak self] changed in
-            self?.reloadOnCalloutChange(type: Map.self, changed: changed)
+            DispatchQueue.main.async {
+                self?.reloadOnCalloutChange(type: Map.self, changed: changed)
+            }
         }
         Mission.onChange.cancelSubscription(for: self)
         _ = Mission.onChange.subscribe(with: self) { [weak self] changed in
-            self?.reloadOnCalloutChange(type: Mission.self, changed: changed)
+            DispatchQueue.main.async {
+                self?.reloadOnCalloutChange(type: Mission.self, changed: changed)
+            }
         }
         Item.onChange.cancelSubscription(for: self)
         _ = Item.onChange.subscribe(with: self) { [weak self] changed in
-            self?.reloadOnCalloutChange(type: Item.self, changed: changed)
+            DispatchQueue.main.async {
+                self?.reloadOnCalloutChange(type: Item.self, changed: changed)
+            }
         }
 		MapLocation.onChangeSelection.cancelSubscription(for: self)
 		_ = MapLocation.onChangeSelection.subscribe(with: self) { [weak self] (mapLocation: MapLocationable) in
 			guard mapLocation.shownInMapId == self?.callouts.first?.shownInMapId else { return }
-			self?.highlight(mapLocation: mapLocation)
+            DispatchQueue.main.async {
+                self?.highlight(mapLocation: mapLocation)
+            }
 		}
 	}
 
