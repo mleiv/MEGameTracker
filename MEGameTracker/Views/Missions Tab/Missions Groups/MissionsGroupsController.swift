@@ -495,12 +495,14 @@ extension MissionsGroupsController {
         }
 
 		// check recently viewed
-		if let index = recentMissions.firstIndex(where: { $0.id == changed.id }),
+		if recentMissions.contains(where: { $0.id == changed.id }),
 			let newMission = changed.object ?? Mission.get(id: changed.id) {
             changeQueue.sync { [weak self] in
-                self?.recentMissions[index] = newMission
                 DispatchQueue.main.async {
-                    self?.reloadRows([IndexPath(row: index, section: MissionsGroupsSection.recent.rawValue)])
+                    if let index = self?.recentMissions.firstIndex(where: { $0.id == newMission.id }) {
+                        self?.recentMissions[index] = newMission
+                        self?.reloadRows([IndexPath(row: index, section: MissionsGroupsSection.recent.rawValue)])
+                    }
                 }
             }
 		}

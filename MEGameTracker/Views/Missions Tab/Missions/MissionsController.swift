@@ -238,13 +238,15 @@ extension MissionsController {
             DispatchQueue.main.async {
                 let missions = self?.missions ?? [] // reference to view controller prop
                 DispatchQueue.global(qos: .background).async {
-                    if let index = missions.firstIndex(where: { $0.id == changed.id }),
+                    if missions.contains(where: { $0.id == changed.id }),
                         let newMission = changed.object ?? Mission.get(id: changed.id),
                         newMission.missionType != .objective {
                         DispatchQueue.main.async {
-                            self?.missions[index] = newMission
-                            let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-                            self?.reloadRows(reloadRows)
+                            if let index = missions.firstIndex(where: { $0.id == newMission.id }) {
+                                self?.missions[index] = newMission
+                                let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                                self?.reloadRows(reloadRows)
+                            }
                         }
                     }
                 }

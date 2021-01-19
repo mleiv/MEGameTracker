@@ -601,8 +601,8 @@ extension MapController {
         type: T.Type,
         changed: (id: String, object: T?)
     ) {
-        var mapLocations: [MapLocationable] = self.mapLocations // local copy to avoid view controller reference
         guard let map = self.map else { return }// local copy to avoid view controller reference
+        let mapLocations: [MapLocationable] = self.mapLocations // local copy to avoid view controller reference
         DispatchQueue.global(qos: .background).async { [weak self] in
             if let index = mapLocations.firstIndex(where: { $0.id == changed.id }),
                let oldLocation = mapLocations[index] as? T,

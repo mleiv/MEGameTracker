@@ -7039,13 +7039,24 @@
         }]
     }, {
         "id": "G.Ear.Loc.Sol.Mars.2.1Exterior",
-        "name": "To Exterior",
+        "name": "From Exterior",
         "isShowInList": false,
         "inMapId": "G.Ear.Loc.Sol.Mars.2Facility",
         "linkToMapId": "G.Ear.Loc.Sol.Mars.1Exterior",
         "mapLocationPoint": {
             "x": 53,
             "y": 570,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ear.Loc.Sol.Mars.2.1Chase",
+        "name": "To Chase",
+        "isShowInList": false,
+        "inMapId": "G.Ear.Loc.Sol.Mars.2Facility",
+        "linkToMapId": "G.Ear.Loc.Sol.Mars.3Chase",
+        "mapLocationPoint": {
+            "x": 1803,
+            "y": 1905,
             "radius": 20
         }
     }, {
@@ -7138,6 +7149,17 @@
             "type": "UnavailableInGame",
             "id": "Game2"
         }]
+    }, {
+        "id": "G.Ear.Loc.Sol.Mars.2.1Facility",
+        "name": "From Facility",
+        "isShowInList": false,
+        "inMapId": "G.Ear.Loc.Sol.Mars.3Chase",
+        "linkToMapId": "G.Ear.Loc.Sol.Mars.2Facility",
+        "mapLocationPoint": {
+            "x": 1556,
+            "y": 1642,
+            "radius": 20
+        }
     }, {
         "id": "G.Ear.Loc.Sol.Mars.3.1Archives",
         "name": "Prothean Archives",

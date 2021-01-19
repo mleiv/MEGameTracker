@@ -89,8 +89,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "2nd Convo",
-        "annotationNote": "Loyalty Mission Dialogue",
+        "name": "Loyalty Convo",
         "description": "Garrus has located Sidonis and wants your help in taking him down.",
         "inMapId": "G.N2.3.Battery",
         "isShowInParentMap": true,
@@ -111,14 +110,14 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "3rd Convo",
+        "name": "1st Convo Post-Loyalty",
         "annotationNote": "Romance Option",
         "description": "Garrus discusses managing stress when facing a tough battle.",
         "inMapId": "G.N2.3.Battery",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Garrus"
+            "id": "Finished Loyalty: Garrus"
         }, {
             "type": "Triggers",
             "id": "Completed: Garrus Convo 3"
@@ -129,7 +128,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo (FemShep)",
+        "name": "2nd Convo Post-Loyalty (FemShep)",
         "annotationNote": "Romance Option",
         "description": "Garrus discusses the weirdness of cross-species intercourse.",
         "inMapId": "G.N2.3.Battery",
@@ -150,7 +149,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo (FemShep)",
+        "name": "3rd Convo Post-Loyalty (FemShep)",
         "annotationNote": "Romance Lock",
         "description": "This is your last chance to lock-in with Garrus or friend-zone him. \n\nIf you talk to Mordin after this, he will offer you some medical advice on the hookup.",
         "inMapId": "G.N2.3.Battery",
@@ -158,6 +157,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Garrus Convo 4 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Collector Ship"
         }, {
             "type": "RequiresConfig",
             "id": "Gender F"
@@ -356,13 +358,15 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "3rd Convo",
-        "annotationNote": "Loyalty Mission Dialogue",
+        "name": "Loyalty Convo",
         "description": "Grunt is confused by the undirected rage filling him. He needs help from the krogan to make sense of this stage in his development.",
         "inMapId": "G.N2.4.Port",
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.L.Grunt"],
         "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Horizon + 1"
+        }, {
             "type": "BlockedUntil",
             "id": "Completed: Grunt Convo 2 + 1"
         }, {
@@ -375,13 +379,13 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo",
+        "name": "1st Convo Post-Loyalty",
         "description": "Grunt is pleased with his new clan. His violent tendencies have not diminished.",
         "inMapId": "G.N2.4.Port",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Grunt"
+            "id": "Finished Loyalty: Grunt"
         }, {
             "type": "Triggers",
             "id": "Completed: Grunt Convo 4"
@@ -392,7 +396,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo",
+        "name": "2nd Convo Post-Loyalty",
         "description": "Grunt shares happy imprinted memories of killing people.",
         "inMapId": "G.N2.4.Port",
         "isShowInParentMap": true,
@@ -718,7 +722,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Horizon"
+            "id": "Completed: Jack Convo 1 + 1"
         }, {
             "type": "Triggers",
             "id": "Completed: Jack Convo 2"
@@ -729,15 +733,20 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo",
-        "annotationNote": "Loyalty Mission Dialogue",
+        "name": "Loyalty Convo",
         "description": "Jack discusses her childhood in a Cerberus research facility. She has found the coordinates in the Cerberus files and she wants to go blow it up.",
         "inMapId": "G.N2.4.SubDeck",
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.L.Jack"],
         "events": [{
             "type": "BlockedUntil",
+            "id": "Completed: Horizon + 1"
+        }, {
+            "type": "BlockedUntil",
             "id": "Completed: Jack Convo 2 + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jack Convo 3"
         }, {
             "type": "Triggers",
             "id": "Loyalty Available: Jack"
@@ -748,13 +757,16 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo",
-        "description": "Jack contemplates her future now that the Cerberus facility is destroyed.",
+        "name": "4th Convo",
+        "description": "You can ask about Jack's tattoos and her prior relationships.",
         "inMapId": "G.N2.4.SubDeck",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Jack"
+            "id": "Completed: Horizon"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Jack Convo 3 + 1"
         }, {
             "type": "Triggers",
             "id": "Completed: Jack Convo 4"
@@ -765,13 +777,13 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo",
-        "description": "You can ask about Jack's tattoos and her prior relationships.",
+        "name": "1st Convo Post-Loyalty",
+        "description": "Jack contemplates her future now that the Cerberus facility is destroyed.",
         "inMapId": "G.N2.4.SubDeck",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Jack Convo 4 + 1"
+            "id": "Finished Loyalty: Jack"
         }, {
             "type": "Triggers",
             "id": "Completed: Jack Convo 5"
@@ -782,7 +794,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo",
+        "name": "2nd Convo Post-Loyalty",
         "annotationNote": "Romance Option",
         "description": "Jack rebuffs BroShep romantic overtures, or lets FemShep know she's not interested.",
         "inMapId": "G.N2.4.SubDeck",
@@ -790,6 +802,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Jack Convo 5 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Jack Convo 4 + 1"
         }, {
             "type": "Triggers",
             "id": "Completed: Jack Convo 6"
@@ -800,9 +815,9 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "7th Convo (BroShep)",
+        "name": "3rd Convo Post-Loyalty (BroShep)",
         "annotationNote": "Romance Option",
-        "description": "Jack reveals her last boyfriend died trying to help her.",
+        "description": "Jack reveals her last boyfriend died trying to help her. If you reject her here, she will not speak to you again.",
         "inMapId": "G.N2.4.SubDeck",
         "isShowInParentMap": true,
         "events": [{
@@ -821,7 +836,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "8th Convo (BroShep)",
+        "name": "4th Convo Post-Loyalty (BroShep)",
         "annotationNote": "Romance Lock",
         "description": "This is your last chance to lock-in with Jack or friend-zone her. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
         "inMapId": "G.N2.4.SubDeck",
@@ -829,6 +844,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Jack Convo 7 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Collector Ship"
         }, {
             "type": "RequiresConfig",
             "id": "Gender M"
@@ -1237,15 +1255,12 @@
         "missionType": "Objective",
         "name": "3rd Convo",
         "annotationNote": "Romance Option",
-        "description": "Jacob discusses his family (or lack thereof) and hints that he and Miranda were involved, but are not any longer.\n\nJacob is uncomfortable with any flirting from FemShep.",
+        "description": "Jacob discusses his family (or lack thereof) and hints that he and Miranda were involved, but are not any longer. \n\nJacob is uncomfortable with any flirting from FemShep.",
         "inMapId": "G.N2.2.Armory",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Jacob Convo 2 + 1"
-        }, {
-            "type": "BlockedUntil",
-            "id": "Completed: Horizon",
         }, {
             "type": "Triggers",
             "id": "Completed: Jacob Convo 3"
@@ -1256,21 +1271,23 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo",
-        "annotationNote": "Loyalty Mission Dialogue",
+        "name": "Loyalty Convo",
         "description": "Jacob reveals that his father's ship went missing 10 years ago. Cerberus has finally uncovered a lead to its crash site and Jacob wants to investigate.",
         "inMapId": "G.N2.2.Armory",
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.L.Jacob"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Jacob Convo 3 + 1"
+            "id": "Completed: Jacob Convo 2 + 1"
         }, {
             "type": "BlockedUntil",
             "id": "Completed: Horizon",
         }, {
             "type": "Triggers",
             "id": "Loyalty Available: Jacob"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Jacob Convo 4"
         }]
     }, {
         "id": "A2.Convo.Jacob.4B",
@@ -1278,13 +1295,13 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo",
+        "name": "1st Convo Post-Loyalty",
         "description": "Jacob will briefly thank you for your help on Aeia, but doesn't want to talk further.",
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.L.Jacob"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Jacob"
+            "id": "Finished Loyalty: Jacob"
         }, {
             "type": "Triggers",
             "id": "Completed: Jacob Convo 4B"
@@ -1295,7 +1312,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo",
+        "name": "2nd Convo Post-Loyalty",
         "annotationNote": "Romance Option",
         "description": "(No prior romance) Jacob complains about how little support the mission has. \n\n(Prior romance) Jacob shys away from talking about his father.",
         "inMapId": "G.N2.2.Armory",
@@ -1313,7 +1330,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "7th Convo (FemShep)",
+        "name": "3rd Convo Post-Loyalty (FemShep)",
         "annotationNote": "Romance Option",
         "description": "Jacob sweet talks you.",
         "inMapId": "G.N2.2.Armory",
@@ -1334,7 +1351,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "8th Convo (FemShep)",
+        "name": "4th Convo Post-Loyalty (FemShep)",
         "annotationNote": "Romance Lock",
         "description": "This is your last chance to lock-in with Jacob or friend-zone him. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
         "inMapId": "G.N2.2.Armory",
@@ -1342,6 +1359,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Jacob Convo 6 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Collector Ship"
         }, {
             "type": "RequiresConfig",
             "id": "Gender F"
@@ -1457,8 +1477,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "1st Convo",
-        "annotationNote": "Loyalty Mission Dialogue",
+        "name": "Loyalty Convo",
         "description": "Legion discusses the heretic virus and the location of the heretic station.",
         "inMapId": "G.N2.3.Core",
         "isShowInParentMap": true,
@@ -1476,13 +1495,13 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "2nd Convo",
+        "name": "1st Convo Post-Loyalty",
         "description": "Discuss the outcome of the mission against the Heretics.",
         "inMapId": "G.N2.3.Core",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Legion"
+            "id": "Finished Loyalty: Legion"
         }, {
             "type": "Triggers",
             "id": "Completed: Legion Convo 2"
@@ -1493,7 +1512,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "3rd Convo",
+        "name": "2nd Convo Post-Loyalty",
         "description": "You ask Legion about its N7 armor.",
         "inMapId": "G.N2.3.Core",
         "isShowInParentMap": true,
@@ -1510,7 +1529,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo",
+        "name": "3rd Convo Post-Loyalty",
         "description": "Ask Legion about its mobile platform and how it gives some independence from the geth consensus.",
         "inMapId": "G.N2.3.Core",
         "isShowInParentMap": true,
@@ -1527,7 +1546,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo",
+        "name": "4th Convo Post-Loyalty",
         "description": "Ask Legion about the war with the quarians.",
         "inMapId": "G.N2.3.Core",
         "isShowInParentMap": true,
@@ -1544,7 +1563,7 @@
          "sortIndex": 9000,
          "gameVersion": "2",
          "missionType": "Objective",
-         "name": "6th Convo",
+         "name": "5th Convo Post-Loyalty",
          "description": "Ask Legion about the future of the geth. They want to join together into one megastructure.",
          "inMapId": "G.N2.3.Core",
          "isShowInParentMap": true,
@@ -1722,8 +1741,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "3rd Convo",
-        "annotationNote": "Loyalty Mission Dialogue",
+        "name": "Loyalty Convo",
         "description": "Miranda reveals that she has a sister - or rather, a younger genetic clone - whom she has hidden from her father. But he has tracked her down and Miranda needs your help to relocate her.",
         "inMapId": "G.N2.3.Cabin",
         "isShowInParentMap": true,
@@ -1744,14 +1762,14 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo",
+        "name": "1st Convo Post-Loyalty",
         "annotationNote": "Romance Option",
         "description": "Miranda thanks you for helping to relocate Oriana.",
         "inMapId": "G.N2.3.Cabin",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Miranda"
+            "id": "Finished Loyalty: Miranda"
         }, {
             "type": "Triggers",
             "id": "Completed: Miranda Convo 4"
@@ -1762,7 +1780,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo",
+        "name": "2nd Convo Post-Loyalty",
         "annotationNote": "Romance Option",
         "description": "Miranda continues to defend Cerberus. She admits that she sees all her successes as due to her genetics rather than any merit on her part. BroShep can kiss her ([YouTube|https://www.youtube.com/watch?v=N_8-bm9cY6o]).",
         "inMapId": "G.N2.3.Cabin",
@@ -1780,7 +1798,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo (BroShep)",
+        "name": "3rd Convo Post-Loyalty (BroShep)",
         "annotationNote": "Romance Option",
         "description": "Miranda complains that this romance is distracting from the mission.",
         "inMapId": "G.N2.3.Cabin",
@@ -1801,14 +1819,17 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "7th Convo (BroShep)",
+        "name": "4th Convo Post-Loyalty (BroShep)",
         "annotationNote": "Romance Lock",
         "description": "This is your last chance to lock-in with Miranda or friend-zone her. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
         "inMapId": "G.N2.3.Cabin",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Miranda"
+            "id": "Completed: Miranda Convo 6 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Collector Ship"
         }, {
             "type": "RequiresConfig",
             "id": "Gender M"
@@ -2012,8 +2033,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "3rd Convo",
-        "annotationNote": "Loyalty Mission Dialogue",
+        "name": "Loyalty Convo",
         "description": "Mordin reveals that a member of his STG team, [megametracker://person?id=O2.Maelon], was taken by the krogan and needs rescue.",
         "inMapId": "G.N2.2.Lab",
         "isShowInParentMap": true,
@@ -2034,13 +2054,13 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo",
+        "name": "1st Convo Post-Loyalty",
         "description": "Mordin vents briefly about Maelon's actions, but is not terribly aggrieved.",
         "inMapId": "G.N2.2.Lab",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Mordin"
+            "id": "Finished Loyalty: Mordin"
         }, {
             "type": "Triggers",
             "id": "Completed: Mordin Convo 4"
@@ -2051,7 +2071,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo",
+        "name": "2nd Convo Post-Loyalty",
         "description": "Mordin explains his theory on the protheans evolving into the Collectors. He also sings Gilbert & Sullivan \"I am the very model of scientist salarian.\" (It is awesome.)",
         "inMapId": "G.N2.2.Lab",
         "isShowInParentMap": true,
@@ -2068,7 +2088,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo",
+        "name": "3rd Convo Post-Loyalty",
         "description": "If you are in a relationship, Mordin will offer some advice and suggestions on your upcoming intercourse. If you are not, he will preemptively decline a relationship between the two of you.",
         "inMapId": "G.N2.2.Lab",
         "isShowInParentMap": true,
@@ -2085,7 +2105,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "7th Convo",
+        "name": "4th Convo Post-Loyalty",
         "description": "Mordin discusses his family and explains that they know nothing about his work. He also explains that salarians have a short life span.",
         "inMapId": "G.N2.2.Lab",
         "isShowInParentMap": true,
@@ -2237,8 +2257,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "2nd Convo",
-        "annotationNote": "Loyalty Mission Dialogue",
+        "name": "Loyalty Convo",
         "description": "Samara reveals that she is hunting is her daughter Morinth, one of a dangerous breed of killers the asari have named the \"Ardat-Yakshi,\" who consume their victims when mating.",
         "inMapId": "G.N2.3.Starboard",
         "isShowInParentMap": true,
@@ -2256,13 +2275,13 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "3rd Convo",
+        "name": "1st Convo Post-Loyalty",
         "description": "Samara grieves her daughter's death. \n\nIf you let Morinth live, then Morinth will reveal that she disliked Samara and is not sad she is dead.",
         "inMapId": "G.N2.3.Starboard",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Samara"
+            "id": "Finished Loyalty: Samara"
         }, {
             "type": "Triggers",
             "id": "Completed: Samara Convo 3"
@@ -2273,7 +2292,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo (Samara)",
+        "name": "2nd Convo Post-Loyalty (Samara)",
         "description": "Samara discusses the role of the Justicar and the brutality of her code.",
         "inMapId": "G.N2.3.Starboard",
         "isShowInParentMap": true,
@@ -2290,7 +2309,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo (Samara)",
+        "name": "3rd Convo Post-Loyalty (Samara)",
         "description": "Samara discusses her adventures. She will talk about encountering [megametracker://person?id=P1.Nihlus], if you ask. Samara admits that she does not think the squad will make it through the final mission. ",
         "inMapId": "G.N2.3.Starboard",
         "isShowInParentMap": true,
@@ -2307,7 +2326,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo (Samara)",
+        "name": "4th Convo Post-Loyalty (Samara)",
         "annotationNote": "Romance Option",
         "description": "Samara rebuffs Shepard's advances.",
         "inMapId": "G.N2.3.Starboard",
@@ -2322,12 +2341,15 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo (Morinth)",
+        "name": "2nd Convo Post-Loyalty (Morinth)",
         "annotationNote": "Romance Lock",
         "description": "Morinth insists she won't kill you if you mate. But then she does.",
         "inMapId": "G.N2.3.Starboard",
         "isShowInParentMap": true,
         "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Samara Convo 3 + 1"
+        }, {
             "type": "BlockedUntil",
             "id": "Completed: Collector Base"
         }]
@@ -2340,7 +2362,7 @@
         "objectivesCountToCompletion": 6,
         "titlePrefix": "Conversation: ",
         "name": "Tali'Zorah",
-        "description": "Conversations with [megametracker://person?id=S2.Tali] after her recruitment aboard the Normandy.",
+        "description": "Conversations with [megametracker://person?id=S1.Tali] after her recruitment aboard the Normandy.",
         "inMapId": "G.N2.4Engineering",
         "mapLocationPoint": {
             "x": 1194,
@@ -2470,8 +2492,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "2nd Convo",
-        "annotationNote": "Loyalty Mission Dialogue",
+        "name": "Loyalty Convo",
         "description": "Tali reveals that the quarian Admiralty Board has accused her of treason and she must return to stand trial. She has no idea what the charges are.",
         "inMapId": "G.N2.4Engineering",
         "mapLocationPoint": {
@@ -2493,7 +2514,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "3rd Convo",
+        "name": "1st Convo Post-Loyalty",
         "description": "If you revealed that Tali's father committed treason to save Tali, she is furious and refuses to speak to you again. If you did not, she apologizes for dragging you into the trial and dicusses the power vacuum created by her father's death.",
         "inMapId": "G.N2.4Engineering",
         "mapLocationPoint": {
@@ -2504,7 +2525,7 @@
         "relatedDecisionIds": ["D2.RaelZorahReputation"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Tali"
+            "id": "Finished Loyalty: Tali"
         }, {
             "type": "Triggers",
             "id": "Completed: Tali Convo 3"
@@ -2515,7 +2536,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo",
+        "name": "2nd Convo Post-Loyalty",
         "annotationNote": "Romance Option",
         "description": "Tali discusses the risks inherent in the weakened quarian immune system.",
         "inMapId": "G.N2.4Engineering",
@@ -2537,7 +2558,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo (BroShep)",
+        "name": "3rd Convo Post-Loyalty (BroShep)",
         "annotationNote": "Romance Option",
         "description": "Tali apologizes for hitting on you before.",
         "inMapId": "G.N2.4Engineering",
@@ -2562,7 +2583,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo (BroShep)",
+        "name": "4th Convo Post-Loyalty (BroShep)",
         "annotationNote": "Romance Lock",
         "description": "This is your last chance to lock-in with Tali or friend-zone her. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
         "inMapId": "G.N2.4Engineering",
@@ -2574,6 +2595,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Tali Convo 5 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Collector Ship"
         }, {
             "type": "RequiresConfig",
             "id": "Gender M"
@@ -2844,15 +2868,14 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "4th Convo",
-        "annotationNote": "Loyalty Mission Dialogue",
+        "name": "Loyalty Convo",
         "description": "Thane reveals that he abandoned his son when his wife died, and now Kolyat has decided to become an assassin. Thane wants to prevent this.",
         "inMapId": "G.N2.3.Support",
         "isShowInParentMap": true,
         "relatedMissionIds": ["A2.L.Thane"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Thane Convo 3 + 1"
+            "id": "Completed: Thane Convo 2 + 1"
         }, {
             "type": "Triggers",
             "id": "Loyalty Available: Thane"
@@ -2863,14 +2886,14 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "5th Convo",
+        "name": "1st Convo Post-Loyalty",
         "annotationNote": "Romance Option",
         "description": "Thane discusses his wife, how he met her and how she was killed to get to him.",
         "inMapId": "G.N2.3.Support",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Thane"
+            "id": "Finished Loyalty: Thane"
         }, {
             "type": "Triggers",
             "id": "Completed: Thane Convo 5"
@@ -2881,7 +2904,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "6th Convo (FemShep)",
+        "name": "2nd Convo Post-Loyalty (FemShep)",
         "annotationNote": "Romance Option",
         "description": "Thane explains his nickname for you, \"siha,\" is a warrior-angel, and it is how he viewed his wife, and now how he sees you.",
         "inMapId": "G.N2.3.Support",
@@ -2902,7 +2925,7 @@
         "sortIndex": 9000,
         "gameVersion": "2",
         "missionType": "Objective",
-        "name": "7th Convo (FemShep)",
+        "name": "3rd Convo Post-Loyalty (FemShep)",
         "annotationNote": "Romance Lock",
         "description": "This is your last chance to lock-in with Thane or friend-zone him. If you talk to Mordin after this, he will offer you some medical advice on the hookup.",
         "inMapId": "G.N2.3.Support",
@@ -2910,6 +2933,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Thane Convo 6 + 1"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Collector Ship"
         }, {
             "type": "RequiresConfig",
             "id": "Gender F"
@@ -3482,7 +3508,7 @@
         }],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Miranda and Jack"
+            "id": "Finished Loyalty: Miranda and Jack"
         }]
     }, {
         "id": "A2.Convo.TaliLegion",
@@ -3546,7 +3572,7 @@
         }],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Secured Loyalty: Tali and Legion"
+            "id": "Finished Loyalty: Tali and Legion"
         }]
 
 

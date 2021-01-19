@@ -2282,7 +2282,7 @@
       "id": "Acquired: Kasumi"
     }, {
       "type": "Triggers",
-      "id": "Secured Loyalty: Kasumi"
+      "id": "Finished Loyalty: Kasumi"
     }],
     "experience": 750,
     "reward": "30,000 Credits",
@@ -2806,9 +2806,6 @@
     }, {
       "type": "Triggers",
       "id": "Horizon Warning 1"
-    }, {
-      "type": "Triggers",
-      "id": "Horizon Triggered"
     }]
   }, {
     "id": "A2.D.Garrus.0",
@@ -5342,13 +5339,10 @@
     }],
     "events": [{
       "type": "BlockedUntil",
-      "id": "Completed: Horizon"
-    }, {
-      "type": "BlockedUntil",
       "id": "Loyalty Available: Garrus"
     }, {
       "type": "Triggers",
-      "id": "Secured Loyalty: Garrus"
+      "id": "Finished Loyalty: Garrus"
     }]
   }, {
     "id": "A2.L.Garrus.1",
@@ -5631,13 +5625,10 @@
     }],
     "events": [{
       "type": "BlockedUntil",
-      "id": "Completed: Horizon"
-    }, {
-      "type": "BlockedUntil",
       "id": "Loyalty Available: Grunt"
     }, {
       "type": "Triggers",
-      "id": "Secured Loyalty: Grunt"
+      "id": "Finished Loyalty: Grunt"
     }]
   }, {
     "id": "A2.L.Grunt.1",
@@ -5925,13 +5916,10 @@
     }],
     "events": [{
       "type": "BlockedUntil",
-      "id": "Completed: Horizon"
-    }, {
-      "type": "BlockedUntil",
       "id": "Loyalty Available: Jack"
     }, {
       "type": "Triggers",
-      "id": "Secured Loyalty: Jack"
+      "id": "Finished Loyalty: Jack"
     }]
   }, {
     "id": "A2.L.Jack.1",
@@ -6203,13 +6191,10 @@
     }],
     "events": [{
       "type": "BlockedUntil",
-      "id": "Completed: Horizon"
-    }, {
-      "type": "BlockedUntil",
       "id": "Loyalty Available: Jacob"
     }, {
       "type": "Triggers",
-      "id": "Secured Loyalty: Jacob"
+      "id": "Finished Loyalty: Jacob"
     }]
   }, {
     "id": "A2.L.Jac.1",
@@ -6404,7 +6389,7 @@
       "id": "Loyalty Available: Legion"
     }, {
       "type": "Triggers",
-      "id": "Secured Loyalty: Legion"
+      "id": "Finished Loyalty: Legion"
     }]
   }, {
     "id": "A2.L.Legion.1",
@@ -6695,10 +6680,10 @@
     }],
     "events": [{
       "type": "BlockedUntil",
-      "id": "Completed: Horizon"
-    }, {
-      "type": "BlockedUntil",
       "id": "Loyalty Available: Miranda"
+    }, {
+      "type": "Triggers",
+      "id": "Finished Loyalty: Miranda"
     }]
   }, {
     "id": "A2.L.Mir.1",
@@ -6999,13 +6984,10 @@
     }],
     "events": [{
       "type": "BlockedUntil",
-      "id": "Completed: Horizon"
-    }, {
-      "type": "BlockedUntil",
       "id": "Loyalty Available: Mordin"
     }, {
       "type": "Triggers",
-      "id": "Secured Loyalty: Mordin"
+      "id": "Finished Loyalty: Mordin"
     }]
   }, {
     "id": "A2.L.Mor.1",
@@ -7180,13 +7162,10 @@
     }],
     "events": [{
       "type": "BlockedUntil",
-      "id": "Completed: Horizon"
-    }, {
-      "type": "BlockedUntil",
       "id": "Loyalty Available: Samara"
     }, {
       "type": "Triggers",
-      "id": "Secured Loyalty: Samara"
+      "id": "Finished Loyalty: Samara"
     }]
   }, {
     "id": "A2.L.Samara.1",
@@ -7783,13 +7762,10 @@
     }],
     "events": [{
       "type": "BlockedUntil",
-      "id": "Completed: Horizon"
-    }, {
-      "type": "BlockedUntil",
       "id": "Loyalty Available: Tali"
     }, {
       "type": "Triggers",
-      "id": "Secured Loyalty: Tali"
+      "id": "Finished Loyalty: Tali"
     }]
   }, {
     "id": "A2.L.Tali.1",
@@ -8249,13 +8225,10 @@
     }],
     "events": [{
       "type": "BlockedUntil",
-      "id": "Completed: Horizon"
-    }, {
-      "type": "BlockedUntil",
       "id": "Loyalty Available: Thane"
     }, {
       "type": "Triggers",
-      "id": "Secured Loyalty: Thane"
+      "id": "Finished Loyalty: Thane"
     }]
   }, {
     "id": "A2.L.Thane.1",
@@ -8442,7 +8415,7 @@
     "inMissionId": "A2.UC.2ArmorUpgrades",
     "sortIndex": 10000,
     "gameVersion": "2",
-    "missionType": "Objective",
+    "missionType": "Set",
     "name": "Armor Accessories",
     "description": ""
   }, {
@@ -8450,7 +8423,7 @@
     "inMissionId": "A2.UC.ArmorUpgrades.A",
     "sortIndex": 10000,
     "gameVersion": "2",
-    "missionType": "Objective",
+    "missionType": "Set",
     "name": "Helmet",
     "description": ""
   }, {
@@ -8458,7 +8431,7 @@
     "inMissionId": "A2.UC.ArmorUpgrades.A",
     "sortIndex": 10000,
     "gameVersion": "2",
-    "missionType": "Objective",
+    "missionType": "Set",
     "name": "Chest",
     "description": ""
   }, {
@@ -8466,7 +8439,7 @@
     "inMissionId": "A2.UC.ArmorUpgrades.A",
     "sortIndex": 10000,
     "gameVersion": "2",
-    "missionType": "Objective",
+    "missionType": "Set",
     "name": "Shoulders",
     "description": ""
   }, {
@@ -8474,7 +8447,7 @@
     "inMissionId": "A2.UC.ArmorUpgrades.A",
     "sortIndex": 10000,
     "gameVersion": "2",
-    "missionType": "Objective",
+    "missionType": "Set",
     "name": "Arms",
     "description": ""
   }, {
@@ -8482,7 +8455,7 @@
     "inMissionId": "A2.UC.ArmorUpgrades.A",
     "sortIndex": 10000,
     "gameVersion": "2",
-    "missionType": "Upgrade",
+    "missionType": "Set",
     "name": "Legs",
     "description": ""
   }, {

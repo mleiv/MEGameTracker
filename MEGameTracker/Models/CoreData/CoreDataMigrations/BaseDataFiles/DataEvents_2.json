@@ -245,6 +245,17 @@
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Jack.1]"
    }, {
+      "id": "Completed: Jack Convo 1 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the first conversation with Jack",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jack Convo 1"
+         ]
+      }
+   }, {
       "id": "Completed: Jack Convo 2",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Jack.2]"
@@ -264,13 +275,28 @@
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Jack.3]"
    }, {
+       "id": "Completed: Jack Convo 3",
+       "gameVersion": "2",
+       "description": "[megametracker://mission?id=A2.Convo.Jack.3]"
+   }, {
+      "id": "Completed: Jack Convo 3 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the third conversation with Jack",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Jack Convo 3"
+         ]
+      }
+   }, {
       "id": "Completed: Jack Convo 4",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.Convo.Jack.4]"
    }, {
       "id": "Completed: Jack Convo 4 + 1",
       "gameVersion": "2",
-      "description": "Complete one mission after the third conversation with Jack",
+      "description": "Complete one mission after the fourth conversation with Jack",
       "isAny": "missions",
       "dependentOn": {
          "countTo": 1,
@@ -449,6 +475,21 @@
          "countTo": 1,
          "events": [
             "Any Mission After: Completed: Miranda Convo 5"
+         ]
+      }
+   }, {
+      "id": "Completed: Miranda Convo 6",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.Convo.Miranda.6]"
+   }, {
+      "id": "Completed: Miranda Convo 6 + 1",
+      "gameVersion": "2",
+      "description": "Complete one mission after the sixth conversation with Miranda",
+      "isAny": "missions",
+      "dependentOn": {
+         "countTo": 1,
+         "events": [
+            "Any Mission After: Completed: Miranda Convo 6"
          ]
       }
    }, {
@@ -751,185 +792,49 @@
 
    }, {
       "x-comment-x": "-----------------------LOYALTY-------------------------",
-      "id": "Secured Loyalty: Garrus",
+      "id": "Finished Loyalty: Garrus",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.L.Garrus]",
-      "actions": [{
-         "target": {
-            "type": "Decision",
-            "id": "D2.GarrusLoyalty"
-         },
-         "changes": {
-            "On": {
-               "isSelected": true
-            },
-            "Off": {
-               "isSelected": false
-            }
-         }
-      }]
+      "description": "[megametracker://mission?id=A2.L.Garrus]"
    }, {
-      "id": "Secured Loyalty: Grunt",
+      "id": "Finished Loyalty: Grunt",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.L.Grunt]",
-      "actions": [{
-         "target": {
-            "type": "Decision",
-            "id": "D2.GruntLoyalty"
-         },
-         "changes": {
-            "On": {
-               "isSelected": true
-            },
-            "Off": {
-               "isSelected": false
-            }
-         }
-      }]
+      "description": "[megametracker://mission?id=A2.L.Grunt]"
    }, {
-      "id": "Secured Loyalty: Jack",
+      "id": "Finished Loyalty: Jack",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.L.Jack]",
-      "actions": [{
-         "target": {
-            "type": "Decision",
-            "id": "D2.JackLoyalty"
-         },
-         "changes": {
-            "On": {
-               "isSelected": true
-            },
-            "Off": {
-               "isSelected": false
-            }
-         }
-      }]
+      "description": "[megametracker://mission?id=A2.L.Jack]"
    }, {
-      "id": "Secured Loyalty: Jacob",
+      "id": "Finished Loyalty: Jacob",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.L.Jacob]",
-      "actions": [{
-         "target": {
-            "type": "Decision",
-            "id": "D2.JacobLoyalty"
-         },
-         "changes": {
-            "On": {
-               "isSelected": true
-            },
-            "Off": {
-               "isSelected": false
-            }
-         }
-      }]
+      "description": "[megametracker://mission?id=A2.L.Jacob]"
    }, {
-      "id": "Secured Loyalty: Kasumi",
+      "id": "Finished Loyalty: Kasumi",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.L.Kasumi]",
-      "actions": [{
-         "target": {
-            "type": "Decision",
-            "id": "D2.KasumiLoyalty"
-         },
-         "changes": {
-            "On": {
-               "isSelected": true
-            },
-            "Off": {
-               "isSelected": false
-            }
-         }
-      }]
+      "description": "[megametracker://mission?id=A2.L.Kasumi]"
    }, {
-      "id": "Secured Loyalty: Legion",
+      "id": "Finished Loyalty: Legion",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.L.Legion]",
-      "actions": [{
-         "target": {
-            "type": "Decision",
-            "id": "D2.LegionLoyalty"
-         },
-         "changes": {
-            "On": {
-               "isSelected": true
-            },
-            "Off": {
-               "isSelected": false
-            }
-         }
-      }]
+      "description": "[megametracker://mission?id=A2.L.Legion]"
    }, {
-      "id": "Secured Loyalty: Mordin",
+      "id": "Finished Loyalty: Miranda",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.L.Mordin]",
-      "actions": [{
-         "target": {
-            "type": "Decision",
-            "id": "D2.MordinLoyalty"
-         },
-         "changes": {
-            "On": {
-               "isSelected": true
-            },
-            "Off": {
-               "isSelected": false
-            }
-         }
-      }]
+      "description": "[megametracker://mission?id=A2.L.Miranda]"
    }, {
-      "id": "Secured Loyalty: Samara",
+      "id": "Finished Loyalty: Mordin",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.L.Samara]",
-      "actions": [{
-         "target": {
-            "type": "Decision",
-            "id": "D2.SamaraLoyalty"
-         },
-         "changes": {
-            "On": {
-               "isSelected": true
-            },
-            "Off": {
-               "isSelected": false
-            }
-         }
-      }]
+      "description": "[megametracker://mission?id=A2.L.Mordin]"
    }, {
-      "id": "Secured Loyalty: Tali",
+      "id": "Finished Loyalty: Samara",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.L.Tali]",
-      "actions": [{
-         "target": {
-            "type": "Decision",
-            "id": "D2.TaliLoyalty"
-         },
-         "changes": {
-            "On": {
-               "isSelected": true
-            },
-            "Off": {
-               "isSelected": false
-            }
-         }
-      }]
+      "description": "[megametracker://mission?id=A2.L.Samara]"
    }, {
-      "id": "Secured Loyalty: Thane",
+      "id": "Finished Loyalty: Tali",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.L.Thane]",
-      "actions": [{
-         "target": {
-            "type": "Decision",
-            "id": "D2.ThaneLoyalty"
-         },
-         "changes": {
-            "On": {
-               "isSelected": true
-            },
-            "Off": {
-               "isSelected": false
-            }
-         }
-      }]
+      "description": "[megametracker://mission?id=A2.L.Tali]"
+   }, {
+      "id": "Finished Loyalty: Thane",
+      "gameVersion": "2",
+      "description": "[megametracker://mission?id=A2.L.Thane]"
 
    }, {
       "id": "Loyalty Available: Mordin or Grunt",
@@ -944,36 +849,36 @@
       }
 
    }, {
-      "id": "Secured Loyalty: Miranda and Jack",
+      "id": "Finished Loyalty: Miranda and Jack",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.L.Miranda] and [megametracker://mission?id=A2.L.Jack]",
       "dependentOn": {
          "countTo": 2,
          "events": [
-            "Secured Loyalty: Miranda",
-            "Secured Loyalty: Jack"
+            "Finished Loyalty: Miranda",
+            "Finished Loyalty: Jack"
          ]
       }
    }, {
-      "id": "Secured Loyalty: Tali and Legion",
+      "id": "Finished Loyalty: Tali and Legion",
       "gameVersion": "2",
       "description": "[megametracker://mission?id=A2.L.Tali] and [megametracker://mission?id=A2.L.Legion]",
       "dependentOn": {
          "countTo": 2,
          "events": [
-            "Secured Loyalty: Tali",
-            "Secured Loyalty: Legion"
+            "Finished Loyalty: Tali",
+            "Finished Loyalty: Legion"
          ]
       }
    }, {
-      "id": "Loyalty Available: Garrus or Secured Loyalty: Thane",
+      "id": "Loyalty Available: Garrus or Finished Loyalty: Thane",
       "gameVersion": "2",
-      "description": "[megametracker://mission?id=A2.L.Tali] and [megametracker://mission?id=A2.L.Legion]",
+      "description": "[megametracker://mission?id=A2.L.Tali] or [megametracker://mission?id=A2.L.Legion]",
       "dependentOn": {
-         "countTo": 2,
+         "countTo": 1,
          "events": [
             "Loyalty Available: Garrus",
-            "Secured Loyalty: Thane"
+            "Finished Loyalty: Thane"
          ]
       }
 
@@ -1830,14 +1735,14 @@
       "dependentOn": {
          "countTo": 2,
          "events": [
-            "Completed: Acquire 8 Squad members",
+            "Completed: 8 Squad",
             "Completed: Horizon + 5"
          ]
       }
    }, {
       "id": "Collector Ship Warning",
       "gameVersion": "2",
-      "description": "Warning: after you complete five more missions and acquire 8 squad memebers, you will be diverted to the Collector Ship",
+      "description": "Warning: after you complete five more missions and acquire 8 squad members, you will be diverted to the Collector Ship",
       "isAlert": true
    }, {
       "id": "Completed: Collector Ship",

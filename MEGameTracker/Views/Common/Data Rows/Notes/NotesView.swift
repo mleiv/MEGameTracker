@@ -93,12 +93,14 @@ final public class NotesView: SimpleArrayDataRow {
 		Note.onChange.cancelSubscription(for: self)
 		_ = Note.onChange.subscribe(with: self) { [weak self] changed in
 			if let uuid = UUID(uuidString: changed.id),
-                let index = self?.notes.firstIndex(where: { $0.uuid == uuid }) ,
+                self?.notes.contains(where: { $0.uuid == uuid }) ?? false,
 				   let newRow = changed.object ?? Note.get(uuid: uuid) {
                 DispatchQueue.main.async {
-                    self?.controller?.notes[index] = newRow
-                    let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
-                    self?.reloadRows(rows)
+                    if let index = self?.notes.firstIndex(where: { $0.uuid == uuid }) {
+                        self?.controller?.notes[index] = newRow
+                        let rows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                        self?.reloadRows(rows)
+                    }
                 }
 				// make sure controller listens didset here and updates its own object's notes list
             } else {

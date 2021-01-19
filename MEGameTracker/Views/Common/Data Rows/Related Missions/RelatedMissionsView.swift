@@ -61,12 +61,13 @@ final public class RelatedMissionsView: SimpleArrayDataRow {
 		guard !UIWindow.isInterfaceBuilder else { return }
 		Mission.onChange.cancelSubscription(for: self)
 		_ = Mission.onChange.subscribe(with: self) { [weak self] changed in
-			if let index = self?.missions.firstIndex(where: { $0.id == changed.id }),
-				   let newRow = changed.object ?? Mission.get(id: changed.id) {
+			if let newRow = changed.object ?? Mission.get(id: changed.id) {
                 DispatchQueue.main.async {
-                    self?.controller?.relatedMissions[index] = newRow
-                    let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
-                    self?.reloadRows(reloadRows)
+                    if let index = self?.controller?.relatedMissions.firstIndex(where: { $0.id == newRow.id }) {
+                        self?.controller?.relatedMissions[index] = newRow
+                        let reloadRows: [IndexPath] = [IndexPath(row: index, section: 0)]
+                        self?.reloadRows(reloadRows)
+                    }
                     // make sure controller listens here and updates its own object's decisions list
                 }
 			}

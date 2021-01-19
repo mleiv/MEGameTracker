@@ -192,19 +192,24 @@ final public class MapsController: UITableViewController, Spinnerable {
 		// listen for changes to maps data 
 		Map.onChange.cancelSubscription(for: self)
 		_ = Map.onChange.subscribe(with: self) { [weak self] changed in
-			var reloadRows: [IndexPath] = []
-            var maps: [MapsSection: [Map]] = self?.maps ?? [:]
+            var changedMaps: [Map] = []
 			// can appear in both sections
 			for type in (self?.maps ?? [:]).keys {
-				if let index = maps[type]?.firstIndex(where: { $0.id == changed.id }),
+                if self?.maps[type]?.contains(where: { $0.id == changed.id }) ?? false,
                    let newMap = changed.object ?? Map.get(id: changed.id) {
-                    maps[type]?[index] = newMap
-                    reloadRows.append(IndexPath(row: index, section: type.rawValue))
-					break
+                    changedMaps.append(newMap)
 				}
 			}
             DispatchQueue.main.async {
-                self?.maps = maps
+                var reloadRows: [IndexPath] = []
+                for map in changedMaps {
+                    for type in (self?.maps ?? [:]).keys {
+                        if let index = self?.maps[type]?.firstIndex(where: { $0.id == map.id }) {
+                            self?.maps[type]?[index] = map
+                            reloadRows.append(IndexPath(row: index, section: type.rawValue))
+                        }
+                    }
+                }
                 self?.reloadRows(reloadRows)
             }
 		}
