@@ -93,6 +93,19 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
                         }
                     }
                 } else {
+                    // pop controllers to top level
+                    if let originController = self.originController, originController.presentedViewController != nil {
+                        originController.dismiss(animated: false, completion: nil)
+                    } else if let _ = self.originController?.parent as? GroupFlowController,
+                        let _ = self.originController?.parent?.parent as? UINavigationController {
+                        // special case: group search controller
+                        self.pushStoryboard(StoryboardIdentifier(name: "GroupFlow", scene: "Person")) { destinationController in
+                            destinationController.find(controllerType: PersonController.self) { controller in
+                                controller.person = person
+                            }
+                        }
+                        return
+                    }
                     // go to persons tab and load up person, deep link style
                     self.switchToLinkableTab(.group, toControllerType: GroupSplitViewController.self) { controller in
                         (controller as? GroupSplitViewController)?.deepLink(person, type: "Person")
@@ -123,6 +136,21 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
                         }
                     }
             } else {
+                // pop controllers to top level
+                if let originController = self.originController, originController.presentedViewController != nil {
+                    originController.dismiss(animated: false, completion: nil)
+                } else if let _ = self.originController?.parent as? GroupFlowController,
+                    let _ = self.originController?.parent?.parent as? UINavigationController,
+                    let presentingViewController = self.originController?.presentingViewController {
+                    // special case: pop group search controller first
+                    presentingViewController.dismiss(animated: false) {
+                        self.originController = presentingViewController
+                        self.switchToLinkableTab(.maps, toControllerType: MapsController.self) { controller in
+                            (controller as? MapsController)?.deepLink(map, type: "Map")
+                        }
+                    }
+                    return
+                }
                 // go to maps tab and load up map, deep link style
                 self.switchToLinkableTab(.maps, toControllerType: MapsController.self) { controller in
                     (controller as? MapsController)?.deepLink(map, type: "Map")
@@ -168,16 +196,16 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
                         return Map(id: dataMap.id, gameVersion: App.current.gameVersion, generalData: dataMap)
                     }
                     return nil
-                }()
+                }(),
+               let mapId = mapLocation.inMapId,
+               let map = Map.get(id: mapId)
             else {
                 // error
                 return
             }
             
             DispatchQueue.main.async {
-                if !alwaysDeepLink && self.originController?.tabBarController?.selectedIndex == MEMainTab.maps.rawValue,
-                   let mapId = mapLocation.inMapId,
-                   let map = Map.get(id: mapId) {
+                if !alwaysDeepLink && self.originController?.tabBarController?.selectedIndex == MEMainTab.maps.rawValue {
                     // pop controllers to top level
                     if let originController = self.originController, originController.presentedViewController != nil {
                             originController.dismiss(animated: false, completion: nil)
@@ -194,6 +222,21 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
                         }
                     }
                 } else {
+                    // pop controllers to top level
+                    if let originController = self.originController, originController.presentedViewController != nil {
+                        originController.dismiss(animated: false, completion: nil)
+                    } else if let _ = self.originController?.parent as? GroupFlowController,
+                        let _ = self.originController?.parent?.parent as? UINavigationController,
+                        let presentingViewController = self.originController?.presentingViewController {
+                        // special case: pop group search controller first
+                        presentingViewController.dismiss(animated: false) {
+                            self.originController = presentingViewController
+                            self.switchToLinkableTab(.maps, toControllerType: MapsController.self) { controller in
+                                (controller as? DeepLinkable)?.deepLink(mapLocation as? DeepLinkType, type: "MapLocationable")
+                            }
+                        }
+                        return
+                    }
                     // go to maps tab and load up map, deep link style
                     self.switchToLinkableTab(.maps, toControllerType: MapsController.self) { controller in
                         (controller as? DeepLinkable)?.deepLink(mapLocation as? DeepLinkType, type: "MapLocationable")
@@ -234,6 +277,33 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
                         }
                     }
                 } else {
+                    // pop controllers to top level
+                    if let originController = self.originController, originController.presentedViewController != nil {
+                        originController.dismiss(animated: false, completion: nil)
+                    }
+                    if mission.gameVersion != App.current.gameVersion {
+                        // open mission wherever we are because it is not valid in missions area
+                        self.pushStoryboard(
+                            StoryboardIdentifier(name: "MissionsFlow", scene: "Mission")
+                        ) { destinationController in
+                            destinationController.find(controllerType: MissionController.self) { controller in
+                                controller.mission = mission
+                            }
+                        }
+                        return
+                    }
+                    if let _ = self.originController?.parent as? GroupFlowController,
+                        let _ = self.originController?.parent?.parent as? UINavigationController,
+                        let presentingViewController = self.originController?.presentingViewController {
+                        // special case: pop group search controller first
+                        presentingViewController.dismiss(animated: false) {
+                            self.originController = presentingViewController
+                            self.switchToLinkableTab(.missions, toControllerType: MissionsGroupsController.self) { controller in
+                                (controller as? DeepLinkable)?.deepLink(mission, type: "Mission")
+                            }
+                        }
+                        return
+                    }
                     // go to maps tab and load up map, deep link style
                     self.switchToLinkableTab(.missions, toControllerType: MissionsGroupsController.self) { controller in
                         (controller as? DeepLinkable)?.deepLink(mission, type: "Mission")
@@ -271,35 +341,34 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 		toControllerType: T.Type,
 		withClosure closure: @escaping ConfigureViewController
 	) {
-		// go to tab
-		DispatchQueue.main.async {
-			// note: if this is first visit to tab in question, this will trigger UI changes: 
-			self.originController?.tabBarController?.selectedIndex = tab.rawValue
-			guard let wrapperController = self.originController?.tabBarController?.selectedViewController
-			else {
-				return
-				//error
-			}
+        // go to tab
+        // note: if this is first visit to tab in question, this will trigger UI changes:
+        let tabController = self.originController?.tabBarController ?? (self.originController as? UITabBarController)
+        tabController?.selectedIndex = tab.rawValue
+        guard let wrapperController = tabController?.selectedViewController
+        else {
+            return
+            //error
+        }
 
-			let targetController = self.targetControllerFromWrapperController(wrapperController)
-			var currentController = targetController
+        let targetController = self.targetControllerFromWrapperController(wrapperController)
+        var currentController = targetController
 
-			// pop controllers to top level
-			while currentController != nil && !(currentController is T) && currentController != wrapperController {
-				_ = currentController?.navigationController?.popViewController(animated: false)
-				currentController = self.targetControllerFromWrapperController(wrapperController)
-			}
+        // pop controllers to top level
+        while currentController != nil && !(currentController is T) && currentController != wrapperController {
+            _ = currentController?.navigationController?.popViewController(animated: false)
+            currentController = self.targetControllerFromWrapperController(wrapperController)
+        }
 
-			// find the target controller
-			if let targetController = targetController, let _ = targetController as? T {
-				closure(targetController)
-			} else {
-				// pass on data for controller to deal with
-				currentController?.find(controllerType: T.self) { destinationController in
-                    closure(destinationController)
-				}
-			}
-		}
+        // find the target controller
+        if let targetController = targetController, let _ = targetController as? T {
+            closure(targetController)
+        } else {
+            // pass on data for controller to deal with
+            currentController?.find(controllerType: T.self) { destinationController in
+                closure(destinationController)
+            }
+        }
 	}
 
 	public func targetControllerFromWrapperController(_ wrapperController: UIViewController) -> UIViewController? {
@@ -309,8 +378,10 @@ public class LinkHandler: NSObject, SFSafariViewControllerDelegate {
 				if let controller4 = controller3.children.first { // actual scene view controller
 					return controller4
 				}
-                // popover, dismiss before switching
-                controller3.presentingViewController?.dismiss(animated: false, completion: nil)
+                // pop controllers to top level
+                if controller3.presentedViewController != nil {
+                    controller3.dismiss(animated: false, completion: nil)
+                }
                 return controller2;
 			}
 		}

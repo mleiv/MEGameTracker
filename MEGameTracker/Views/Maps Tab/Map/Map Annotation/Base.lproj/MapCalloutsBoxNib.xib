@@ -19,16 +19,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="434" height="61"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HK-cR-wRr" userLabel="Border Wrapper">
-                            <rect key="frame" x="20" y="20" width="394" height="90"/>
+                            <rect key="frame" x="20" y="20" width="394" height="21"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RI4-de-Y7C">
-                                    <rect key="frame" x="0.0" y="0.0" width="394" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="21"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="avv-aY-CxU">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="21"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gw-50-et6" customClass="CalloutsView" customModule="MEGameTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="90"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="0.0"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" priority="900" constant="200" id="Ajx-VS-sl0"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="800" constant="25" id="GTQ-oY-12R"/>
@@ -41,21 +41,21 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbM-JY-3PZ" userLabel="Text" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="90" width="394" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="21"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UnC-Mj-ri8">
-                                                            <rect key="frame" x="15" y="1" width="367" height="15"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UnC-Mj-ri8">
+                                                            <rect key="frame" x="15" y="1" width="367" height="17"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="300" text="3 More Missions..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8A-cw-7h6">
-                                                                    <rect key="frame" x="0.0" y="0.5" width="352" height="14.5"/>
+                                                                    <rect key="frame" x="0.0" y="1.5" width="352" height="14.5"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="A11-qa-5kw">
-                                                                    <rect key="frame" x="352" y="0.0" width="15" height="15"/>
+                                                                    <rect key="frame" x="352" y="0.0" width="15" height="17"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="c8R-hh-AB4">
-                                                                            <rect key="frame" x="2.5" y="2" width="12.5" height="11.5"/>
+                                                                            <rect key="frame" x="2.5" y="2" width="12.5" height="13.5"/>
                                                                             <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                                         </imageView>
                                                                     </subviews>
@@ -71,7 +71,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hp-Oy-fES">
-                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="21"/>
                                                             <connections>
                                                                 <action selector="onClickFooter:" destination="Ifb-K7-Nhl" eventType="touchUpInside" id="zW3-Co-WvD"/>
                                                             </connections>

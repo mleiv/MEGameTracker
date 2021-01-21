@@ -211,7 +211,7 @@ final public class PersonsGroupsController: UIViewController, Spinnerable, TabGr
 extension PersonsGroupsController: DeepLinkable {
 
 	public func deepLink(_ object: DeepLinkType?, type: String? = nil) {
-        return DispatchQueue.main.sync { [weak self] in
+        return DispatchQueue.main.async { [weak self] in
 			if let person = object as? Person {
 				if self?.selectPerson(person) == true {
 					self?.deepLinkedPerson = nil

@@ -609,27 +609,39 @@ extension MapController {
                var newLocation: MapLocationable = changed.object ?? T.get(id: changed.id),
                newLocation.modifiedDate > oldLocation.modifiedDate {
                 newLocation.shownInMapId = map.id // set this or callout may not appear in map
-                if (newLocation.inMapId != map.id),
-                    let parentMap = mapLocations.filter({ $0.id == newLocation.inMapId }).first {
-                    // child map callout
+                if let parentMap = self?.findAncestorInCurrentMap(location: newLocation) {
+                    // descendent map callout, set to ancestor location for clicking
                     newLocation.mapLocationPoint = parentMap.mapLocationPoint
                 }
                 self?.changeQueue.async { [weak self] in
-                    DispatchQueue.main.sync {
-                        if let index = self?.mapLocations.firstIndex(where: { $0.id == changed.id }) {
+                    DispatchQueue.main.sync { [weak self] in
+                        if let index = self?.mapLocations.firstIndex(where: { $0.id == newLocation.id }) {
                             self?.mapLocations[index] = newLocation
-                            if self?.explicitMapLocationable?.id == changed.id {
-                                self?.explicitMapLocationable = newLocation
-                            }
-                            if self?.mapLocation?.id == changed.id {
-                                self?.mapLocation = newLocation
-                            }
+                        }
+                        if self?.explicitMapLocationable?.id == newLocation.id {
+                            self?.explicitMapLocationable = newLocation
+                        }
+                        if self?.mapLocation?.id == newLocation.id {
+                            self?.mapLocation = newLocation
                         }
                         self?.reloadMapLocationable(newLocation)
                     }
                 }
             }
         }
+    }
+    
+    private func findAncestorInCurrentMap(location: MapLocationable) -> MapLocationable? {
+        if location.inMapId == map?.id {
+            return location
+        }
+        
+        if let parentId = location.inMapId,
+           let parentMap = Map.get(id: parentId) {
+            return findAncestorInCurrentMap(location: parentMap)
+        }
+        
+        return nil
     }
 
 	private func startListeners() {
