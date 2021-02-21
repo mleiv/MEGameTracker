@@ -72,6 +72,7 @@ public struct Mission: Codable, MapLocationable, Eventsable {
 	public var description: String? { return generalData.description }
 	public var missionType: MissionType { return generalData.missionType }
 	public var identicalMissionId: String? { return generalData.identicalMissionId }
+    public var identicalMissionIds: [String] { return generalData.identicalMissionIds }
 	public var relatedLinks: [String] { return generalData.relatedLinks }
 	public var sideEffects: [String] { return generalData.sideEffects }
 	public var relatedMissionIds: [String] { return generalData.relatedMissionIds }
@@ -332,9 +333,14 @@ extension Mission {
             )
         }
         // copy changes to any identical missions
-        if !GamesDataBackup.current.isSyncing,
-            let missionId = identicalMissionId {
-            _ = Mission.get(id: missionId)?.changed(isCompleted: isCompleted)
+        if !GamesDataBackup.current.isSyncing {
+            if let missionId = identicalMissionId {
+                _ = Mission.get(id: missionId)?.changed(isCompleted: isCompleted)
+            } else {
+                identicalMissionIds.forEach {
+                    _ = Mission.get(id: $0)?.changed(isCompleted: isCompleted)
+                }
+            }
         }
         return mission
     }

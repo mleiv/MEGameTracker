@@ -20,6 +20,7 @@ public struct DataMission: Codable, DataMapLocationable {
         case titlePrefix
         case description
         case identicalMissionId
+        case identicalMissionIds
         case conversationRewards
         case sortIndex
         case relatedLinks
@@ -52,6 +53,7 @@ public struct DataMission: Codable, DataMapLocationable {
 	public var objectivesCountToCompletion: Int?
 	public var conversationRewards = ConversationRewards()
 	public var identicalMissionId: String?
+    public var identicalMissionIds: [String] = []
 
 	// Interface Builder
 	public var isDummyData = false
@@ -115,6 +117,10 @@ public struct DataMission: Codable, DataMapLocationable {
             String.self,
             forKey: .identicalMissionId
         ) ?? identicalMissionId
+        identicalMissionIds = try container.decodeIfPresent(
+            [String].self,
+            forKey: .identicalMissionIds
+        ) ?? identicalMissionIds
         conversationRewards = (try? container.decodeIfPresent(
             ConversationRewards.self,
             forKey: .conversationRewards
@@ -149,6 +155,7 @@ public struct DataMission: Codable, DataMapLocationable {
         try container.encode(titlePrefix, forKey: .titlePrefix)
         try container.encode(description, forKey: .description)
         try container.encode(identicalMissionId, forKey: .identicalMissionId)
+        try container.encode(identicalMissionIds, forKey: .identicalMissionIds)
         try container.encode(conversationRewards, forKey: .conversationRewards)
         try container.encode(sortIndex, forKey: .sortIndex)
         try container.encode(relatedLinks, forKey: .relatedLinks)

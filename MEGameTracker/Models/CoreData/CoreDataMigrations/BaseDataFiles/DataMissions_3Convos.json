@@ -417,6 +417,22 @@
             "id": "Completed: Priority: The Citadel II"
         }]
     }, {
+        "id": "A3.Convo.S.EDI.7-BRannoch",
+        "identicalMissionIds": ["A3.Convo.S.Tali.4-BRannoch","A3.Convo.S.Liara.6-CRannoch"],
+        "inMissionId": "A3.Convo.S.EDI",
+        "sortIndex": 90007,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "EDI: ",
+        "name": "Side Convo - Rannoch",
+        "description": "If Tali survived and peace is achieved, Liara expresses hope that the geth and quarians can someday be friends. \n\nOtherwise, if the geth are destroyed, she talks to EDI about whether or not the geth might have achieved full sentience.",
+        "inMapId": "G.N3.3.Liara",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Rannoch"
+        }]
+    }, {
         "id": "A3.Convo.S.EDI.8",
         "inMissionId": "A3.Convo.S.EDI",
         "sortIndex": 90008,
@@ -580,6 +596,18 @@
             "id": "Completed: Priority: Palaven"
         }]
     }, {
+        "id": "A3.Convo.S.Garrus.0-BMalfunctions",
+        "identicalMissionId": "A3.Convo.C.Joker.1-BMalfunctions",
+        "inMissionId": "A3.Convo.S.Garrus",
+        "sortIndex": 90001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Garrus: ",
+        "name": "Side Convo - Malfunctions",
+        "description": "If you go the main battery before the AI Core to meet EDI, Joker is asking if Garrus \"miscalibrated\" something.",
+        "inMapId": "G.N3.3.Battery",
+        "isShowInParentMap": true
+    }, {
         "id": "A3.Convo.S.Garrus.1",
         "inMissionId": "A3.Convo.S.Garrus",
         "sortIndex": 90001,
@@ -607,13 +635,79 @@
             "radius": 20
         }
     }, {
-        "id": "A3.Convo.S.Garrus.3",
+        "id": "A3.Convo.S.Garrus.2-ARachni",
         "inMissionId": "A3.Convo.S.Garrus",
-        "sortIndex": 90003,
+        "sortIndex": 90004,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "2nd Normandy Convo",
+        "name": "Side Convo - Rachni",
+        "description": "Garrus is chatting with Ensign Copeland in the Lounge about the Rachni. You can trigger several additional remarks on giant spiders.",
+        "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Attican Traverse: Krogan Team"
+        }]
+    }, {
+        "id": "A3.Convo.S.Garrus.2-BArchangel",
+        "identicalMissionId": "A3.Convo.S.Liara.5-BArchangel",
+        "inMissionId": "A3.Convo.S.Garrus",
+        "sortIndex": 90004,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Garrus: ",
+        "name": "Side Convo - Archangel",
+        "description": "Garrus is chatting with Liara in the Lounge about his time as Archangel on Omega.",
+        "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Tuchanka: Turian Platoon"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Completed: Priority: Tuchanka"
+        }]
+    }, {
+        "id": "A3.Convo.S.Garrus.2-CBomb",
+        "inMissionId": "A3.Convo.S.Garrus",
+        "sortIndex": 90004,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Garrus: ",
+        "name": "Side Convo - Bomb",
+        "description": "Wrex contacts Garrus, demanding he confess if he knew about the bomb. Garrus says he did not know. \n\nIf Wreave, Garrus is evasive and notes that the bomb was not planted by present-day turians anyway.",
+        "inMapId": "G.N3.3.Battery",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Tuchanka: Bomb"
+        }]
+    }, {
+        "id": "A3.Convo.S.Garrus.2-DBomb",
+        "identicalMissionId": "A3.Convo.S.Javik.2-DBomb",
+        "inMissionId": "A3.Convo.S.Garrus",
+        "sortIndex": 90004,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Garrus: ",
+        "name": "Side Convo - Bomb",
+        "description": "Javik contacts Garrus to compliment the turians on their cunning in planting the bomb.",
+        "inMapId": "G.N3.3.Battery",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Tuchanka: Bomb"
+        }]
+    }, {
+        "id": "A3.Convo.S.Garrus.3",
+        "identicalMissionId": "A3.Convo.C.Joker.5",
+        "inMissionId": "A3.Convo.S.Garrus",
+        "sortIndex": 90004,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Garrus: ",
+        "name": "Side Convo - Mordin",
         "description": "Joker and Garrus are trading jokes on the bridge. They both express their sadness at Mordin's death.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -628,13 +722,45 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "3rd Normandy Convo",
+        "name": "Side Convo - Coup",
         "description": "Garrus is standing by the Normandy Memorial. If Ashley/Kaidan was killed during the coup, he will mourn the new name. Otherwise, he is grateful that you didn't have to shoot a friend.",
         "inMapId": "G.N3.3.MemorialWall",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
+        }]
+    }, {
+        "id": "A3.Convo.S.Garrus.4-BCompetition",
+        "identicalMissionId": "A3.Convo.S.Vega.4-BCompetition",
+        "inMissionId": "A3.Convo.S.Garrus",
+        "sortIndex": 90004,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Garrus: ",
+        "name": "Side Convo - Competition",
+        "description": "Garrus is trading stories with Vega in the Mess Hall.",
+        "inMapId": "G.N3.3.Kitchen",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Ex-Cerberus Scientists"
+        }]
+    }, {
+        "id": "A3.Convo.S.Garrus.4-CWar",
+        "identicalMissionId": "A3.Convo.S.Javik.2-DWar",
+        "inMissionId": "A3.Convo.S.Garrus",
+        "sortIndex": 90004,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Garrus: ",
+        "name": "Side Convo - Wars",
+        "description": "Garrus is chatting with Javik and Ensign Copeland over wars past and present.",
+        "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Ardat-Yakshi Monastery"
         }]
     }, {
         "id": "A3.Convo.S.Garrus.5",
@@ -663,7 +789,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "3rd Normandy Convo",
+        "name": "2nd Normandy Convo",
         "description": "Garrus is happy to have Tali back aboard. He is worried about Palaven, that the turians need to stop focusing on trying to save it in order to fight the Reapers.",
         "inMapId": "G.N3.3.Battery",
         "isShowInParentMap": true,
@@ -678,7 +804,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "4th Normandy Convo",
+        "name": "3rd Normandy Convo",
         "description": "Garrus says his family made it off Palaven. He has now advised the Primarch to retreat from Palaven in order to save their forces for the Crucible.",
         "inMapId": "G.N3.3.Battery",
         "isShowInParentMap": true,
@@ -709,7 +835,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "5th Normandy Convo",
+        "name": "4th Normandy Convo",
         "description": "If you have not romanced either Garrus or Tali, they are canoodling down in the Main Battery.",
         "inMapId": "G.N3.3.Battery",
         "isShowInParentMap": true,
@@ -860,6 +986,22 @@
             "id": "Completed: Javik Convo 1"
         }]
     }, {
+        "id": "A3.Convo.S.Javik.1-AQuarians",
+        "identicalMissionId": "A3.Convo.S.Tali.1-BQuarians",
+        "inMissionId": "A3.Convo.S.Javik",
+        "sortIndex": 90001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "Side Convo - Quarians",
+        "description": "As you walk in, Javik is talking to Tali on the comms. He lectures her on the creation of the geth, and talks about the attractiveness of primitive quarians.",
+        "inMapId": "G.N3.4.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Javik Convo 1 + 1"
+        }]
+    }, {
         "id": "A3.Convo.S.Javik.1B",
         "inMissionId": "A3.Convo.S.Javik",
         "sortIndex": 90001,
@@ -892,6 +1034,54 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Javik Convo 1 + 1"
+        }]
+    }, {
+        "id": "A3.Convo.S.Javik.2-ABomb",
+        "identicalMissionId": "A3.Convo.S.Garrus.2-DBomb",
+        "inMissionId": "A3.Convo.S.Javik",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "Side Convo - Bomb",
+        "description": "Javik contacts Garrus to compliment the turians on their cunning in planting the bomb.",
+        "inMapId": "G.N3.3.Battery",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Tuchanka: Bomb"
+        }]
+    }, {
+        "id": "A3.Convo.S.Javik.2-BBreakfast",
+        "identicalMissionId": "A3.Convo.S.Vega.5-BBreakfast",
+        "inMissionId": "A3.Convo.S.Javik",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "Side Convo - Cooking",
+        "description": "James tries to bond with Javik talking about gambling and drinking, etc., but Javik wants none of it.",
+        "inMapId": "G.N3.3.Kitchen",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Rannoch: Geth Fighter Squadrons"
+        }]
+    }, {
+        "id": "A3.Convo.S.Javik.2-DWar",
+        "identicalMissionId": "A3.Convo.S.Garrus.4-CWar",
+        "inMissionId": "A3.Convo.S.Javik",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "Side Convo - Wars",
+        "description": "Javik is chatting with Garrus and Ensign Copeland over wars past and present.",
+        "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Ardat-Yakshi Monastery"
         }]
     }, {
         "id": "A3.Convo.S.Javik.3",
@@ -939,6 +1129,22 @@
             "id": "Completed: Priority: Thessia"
         }]
     }, {
+        "id": "A3.Convo.S.Javik.5-BLiara",
+        "identicalMissionId": "A3.Convo.S.Tali.8-BLiara",
+        "inMissionId": "A3.Convo.S.Javik",
+        "sortIndex": 90005,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "Side Convo - Liara",
+        "description": "(If Shepard settled the argument between Liara and Javik) As you walk in, Javik is talking to Tali on the comms. Their conversation depends on whether you talked to Tali first ([megametracker://mission?id=A3.Convo.S.Tali.9]). If not, a sober Tali thanks Javik for comforting Liara and asks him for perspective on Sanctuary. If you spoke to Tali first, she is completely wasted and teases Javik that he likes Liara, and that he likes Tali too.",
+        "inMapId": "G.N3.4.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Horizon"
+        }]
+    }, {
         "id": "A3.Convo.S.Javik.6",
         "inMissionId": "A3.Convo.S.Javik",
         "sortIndex": 90006,
@@ -946,7 +1152,7 @@
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
         "name": "5th Normandy Convo",
-        "description": "As you walk in, Javik is talking to Tali on the comms. Their conversation depends on whether you talked to Tali first ([megametracker://mission?id=A3.Convo.S.Tali.9]). If not, a sober Tali thanks Javik for comforting Liara and asks him for perspective on Sanctuary. If you spoke to Tali first, she is completely wasted and teases Javik that he likes Liara, and that he likes Tali too. \n\nJavik explains prothean memory shards to you.",
+        "description": "Javik explains prothean memory shards to you.",
         "inMapId": "G.N3.4.Port",
         "isShowInParentMap": true,
         "events": [{
@@ -1202,6 +1408,38 @@
             "id": "Completed: Citadel DLC 1"
         }]
     }, {
+        "id": "A3.Convo.S.Kaidan.8-BPoker",
+        "identicalMissionId": "A3.Convo.S.Vega.6-CPoker",
+        "inMissionId": "A3.Convo.S.Kaidan",
+        "sortIndex": 90009,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Kaidan: ",
+        "name": "Side Convo - Poker",
+        "description": "If Kaidan is on the Normandy, he and Vega are sharing a poker game.",
+        "inMapId": "G.N2.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Rannoch"
+        }]
+    }, {
+        "id": "A3.Convo.S.Kaidan.8-CThessia",
+        "identicalMissionId": "A3.Convo.C.Adams.4-AThessia",
+        "inMissionId": "A3.Convo.S.Kaidan",
+        "sortIndex": 90009,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Kaidan: ",
+        "name": "Side Convo - Cooking",
+        "description": "James and Adams are discussing Liara and her lost homeworld.",
+        "inMapId": "G.N2.4.Station",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Thessia"
+        }]
+    }, {
         "id": "A3.Convo.S.Kaidan.9",
         "inMissionId": "A3.Convo.S.Kaidan",
         "sortIndex": 90009,
@@ -1308,6 +1546,18 @@
         "inMapId": "G.N3.3.Liara",
         "isShowInParentMap": true
     }, {
+        "id": "A3.Convo.S.Liara.1-BCouncil",
+        "identicalMissionId": "A3.Convo.C.Joker.0-ACouncil",
+        "inMissionId": "A3.Convo.S.Liara",
+        "sortIndex": 90001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Liara: ",
+        "name": "Side Convo - Council",
+        "description": "Liara is complaining to Joker about the outcome of the meeting with the Council.",
+        "inMapId": "G.N3.2.Bridge",
+        "isShowInParentMap": true
+    }, {
         "id": "A3.Convo.S.Liara.2",
         "inMissionId": "A3.Convo.S.Liara",
         "sortIndex": 90001,
@@ -1363,7 +1613,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Aethyta Convo 3"
+            "id": "Completed: Aethyta Convo 1"
         }]
     }, {
         "id": "A3.Convo.S.Liara.4",
@@ -1402,6 +1652,25 @@
             "id": "Completed: Liara Convo 4 + 1"
         }]
     }, {
+        "id": "A3.Convo.S.Liara.5-BArchangel",
+        "identicalMissionId": "A3.Convo.S.Garrus.2-BArchangel",
+        "inMissionId": "A3.Convo.S.Liara",
+        "sortIndex": 90005,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Liara: ",
+        "name": "Side Convo - Archangel",
+        "description": "Liara is chatting with Garrus in the Lounge about his time as Archangel on Omega.",
+        "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Tuchanka: Turian Platoon"
+        }, {
+            "type": "BlockedAfter",
+            "id": "Completed: Priority: Tuchanka"
+        }]
+    }, {
         "id": "A3.Convo.S.Liara.6",
         "inMissionId": "A3.Convo.S.Liara",
         "sortIndex": 90006,
@@ -1421,6 +1690,53 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
+        }]
+    }, {
+        "id": "A3.Convo.S.Liara.6-BCoup",
+        "inMissionId": "A3.Convo.S.Liara",
+        "sortIndex": 90006,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Liara: ",
+        "name": "Side Convo - Coup",
+        "description": "Liara is in the lounge musing about Ashley/Kaidan.",
+        "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel II"
+        }]
+    }, {
+        "id": "A3.Convo.S.Liara.6-CGeth",
+        "identicalMissionId": "A3.Convo.A.Legion.1-BGeth",
+        "inMissionId": "A3.Convo.S.Liara",
+        "sortIndex": 90006,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Liara: ",
+        "name": "Side Convo - Geth",
+        "description": "Liara asks Legion if the geth have any greater knowledge of the Protheans, which it says they do not.",
+        "inMapId": "G.N3.3.Liara",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Rannoch: Geth Fighter Squadrons"
+        }]
+    }, {
+        "id": "A3.Convo.S.Liara.6-CRannoch",
+        "identicalMissionIds": ["A3.Convo.S.Tali.4-BRannoch","A3.Convo.S.EDI.7-BRannoch"],
+        "inMissionId": "A3.Convo.S.Liara",
+        "sortIndex": 90006,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Liara: ",
+        "name": "Side Convo - Rannoch",
+        "description": "If Tali survived and peace is achieved, Liara expresses hope that the geth and quarians can someday be friends. \n\nOtherwise, if the geth are destroyed, she talks to EDI about whether or not the geth might have achieved full sentience.",
+        "inMapId": "G.N3.3.Liara",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Rannoch"
         }]
     }, {
         "id": "A3.Convo.S.Liara.7",
@@ -1573,6 +1889,22 @@
         "inMapId": "G.N3.2.Conference",
         "isShowInParentMap": true
     }, {
+        "id": "A3.Convo.S.Tali.1-BQuarians",
+        "identicalMissionId": "A3.Convo.S.Javik.1-AQuarians",
+        "inMissionId": "A3.Convo.S.Tali",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Tali: ",
+        "name": "Side Convo - Quarians",
+        "description": "As you walk in, Javik is talking to Tali on the comms. He lectures her on the creation of the geth, and talks about the attractiveness of primitive quarians.",
+        "inMapId": "G.N3.4.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Javik Convo 1 + 1"
+        }]
+    }, {
         "id": "A3.Convo.S.Tali.2",
         "inMissionId": "A3.Convo.S.Tali",
         "sortIndex": 90002,
@@ -1595,6 +1927,22 @@
         "description": "If you recruited Tali at the end of [megametracker://mission?id=M3.2.Rannoch], she is down by the engine. She is adjusting to the idea of quarians growing up on Rannoch instead of on a ship. If the geth survived, she will mention their cooperation with resettling the quarians. She will talk sweet to you if you've romanced her, and mention she left you a gift in your cabin (a photo of her, by your bed).",
         "annotationNote": "Romance Lock",
         "inMapId": "G.N3.4.Station",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Rannoch"
+        }]
+    }, {
+        "id": "A3.Convo.S.Tali.4-BRannoch",
+        "identicalMissionIds": ["A3.Convo.S.Liara.6-CRannoch","A3.Convo.S.EDI.7-BRannoch"],
+        "inMissionId": "A3.Convo.S.Tali",
+        "sortIndex": 90004,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Tali: ",
+        "name": "Side Convo - Rannoch",
+        "description": "If Tali survived and peace is achieved, Liara expresses hope that the geth and quarians can someday be friends. \n\nOtherwise, if the geth are destroyed, she talks to EDI about whether or not the geth might have achieved full sentience.",
+        "inMapId": "G.N3.3.Liara",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -1626,7 +1974,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Tali: ",
-        "name": "4th Normandy Convo",
+        "name": "Side Convo - Thessia",
         "description": "Tali is standing by the Normandy Memorial. You can speak to her three times for reputation. \n\n1. If you have not spoken to Liara at all since Thessia, Tali will tell you Thessia is not your fault. \n\n2. If you come back after intervening between Liara and Javik, Tali will be discussing with Garrus how distraught Liara is. She will ask you to go talk to her. \n\n3. After you have spoken to Liara in her office, you can speak to Tali and let her know it's taken care of.",
         "inMapId": "G.N3.3.MemorialWall",
         "isShowInParentMap": true,
@@ -1641,9 +1989,25 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Tali: ",
-        "name": "5th Normandy Convo",
+        "name": "Side Convo - Miranda",
         "description": "Tali is very drunk at the Observation Deck. Her best line of the entire series: \"Emergency Induction Port.\" She is toasting Miranda. \n\nIf you have romanced her, she will comment that her father would have hated you.",
         "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Horizon"
+        }]
+    }, {
+        "id": "A3.Convo.S.Tali.8-BLiara",
+        "identicalMissionId": "A3.Convo.S.Javik.5-BLiara",
+        "inMissionId": "A3.Convo.S.Tali",
+        "sortIndex": 90008,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Tali: ",
+        "name": "Side Convo - Liara",
+        "description": "If Shepard settled the argument between Liara and Javik, Tali comms Javik to thank him for being kind to Liara. If this is overheard before the visit to the Port Lounge, she is drunk during the conversation.",
+        "inMapId": "G.N3.4.Starboard",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -1835,6 +2199,22 @@
             "id": "Completed: Priority: The Citadel II"
         }]
     }, {
+        "id": "A3.Convo.S.Vega.4-BCompetition",
+        "identicalMissionId": "A3.Convo.S.Garrus.4-BCompetition",
+        "inMissionId": "A3.Convo.S.Vega",
+        "sortIndex": 90004,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Vega: ",
+        "name": "Side Convo - Competition",
+        "description": "Vega is trading stories with Garrus in the Mess Hall.",
+        "inMapId": "G.N3.3.Kitchen",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Ex-Cerberus Scientists"
+        }]
+    }, {
         "id": "A3.Convo.S.Vega.5",
         "inMissionId": "A3.Convo.S.Vega",
         "sortIndex": 90005,
@@ -1853,13 +2233,28 @@
             "id": "Completed: Priority: The Citadel II"
         }]
     }, {
+        "id": "A3.Convo.S.Vega.5-BBreakfast",
+        "identicalMissionId": "A3.Convo.S.Javik.2-BBreakfast",
+        "inMissionId": "A3.Convo.S.Vega",
+        "sortIndex": 90005,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Side Convo - Cooking",
+        "description": "James is making huevos ranchos in the mess. If Javik is present, James tries to bond with him talking about gambling and drinking, etc., but Javik wants none of it.",
+        "inMapId": "G.N2.3.Kitchen",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Rannoch: Geth Fighter Squadrons"
+        }]
+    }, {
         "id": "A3.Convo.S.Vega.6",
         "inMissionId": "A3.Convo.S.Vega",
         "sortIndex": 90006,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Vega: ",
-        "name": "4th Normandy Convo",
+        "name": "2nd Normandy Convo",
         "description": "James asks if Legion can be trusted. He has nicknamed Tali \"Sparks.\"",
         "inMapId": "G.N3.5ShuttleBay",
         "mapLocationPoint": {
@@ -1870,6 +2265,38 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Geth Dreadnought"
+        }]
+    }, {
+        "id": "A3.Convo.S.Vega.6-BExoskelton",
+        "identicalMissionId": "A3.Convo.C.Joker.8-BExoskeleton",
+        "inMissionId": "A3.Convo.S.Vega",
+        "sortIndex": 90005,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Vega: ",
+        "name": "Side Convo - Exoskelton",
+        "description": "James suggests that Joker try the quarian exoskeletons to improve his mobility.",
+        "inMapId": "G.N2.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Rannoch: Admiral Koris"
+        }]
+    }, {
+        "id": "A3.Convo.S.Vega.6-CPoker",
+        "identicalMissionId": "A3.Convo.S.Kaidan.8-BPoker",
+        "inMissionId": "A3.Convo.S.Vega",
+        "sortIndex": 90005,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Vega: ",
+        "name": "Side Convo - Poker",
+        "description": "If Kaidan is on the Normandy, he and Vega are sharing a poker game.",
+        "inMapId": "G.N2.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Rannoch"
         }]
     }, {
         "id": "A3.Convo.S.Vega.7",
@@ -1973,6 +2400,22 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Sur'Kesh + 2"
+        }]
+    }, {
+        "id": "A3.Convo.C.Adams.4-AThessia",
+        "identicalMissionId": "A3.Convo.S.Kaidan.8-CThessia",
+        "inMissionId": "A3.Convo.C.Adams",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Adams: ",
+        "name": "Side Convo - Cooking",
+        "description": "James and Adams are discussing Liara and her lost homeworld.",
+        "inMapId": "G.N2.4.Station",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Thessia"
         }]
     }, {
         "id": "A3.Convo.C.Allers",
@@ -2183,34 +2626,34 @@
         "inMapId": "G.N3.3.Lab",
         "isShowInParentMap": true
     }, {
-        "id": "A3.Convo.C.Chakwas.3",
-        "inMissionId": "A3.Convo.C.Chakwas",
-        "sortIndex": 90013,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Chakwas: ",
-        "name": "2nd Normandy Convo",
-        "description": "Dr. Chakwas asks if you want to pop open the annual bottle of Serrice Ice Brandy (putting it off just eliminates the opportunity).",
-        "inMapId": "G.N3.3.Lab",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Priority: The Citadel II"
-        }]
-    }, {
         "id": "A3.Convo.C.Chakwas.4",
         "inMissionId": "A3.Convo.C.Chakwas",
         "sortIndex": 90013,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Chakwas: ",
-        "name": "3rd Normandy Convo",
+        "name": "2nd Normandy Convo",
         "description": "Dr. Chakwas is in the crew quarters talking to Adams. She explains that she has relocated temporarily to allow Mordin and Eve to use the MedBay.",
         "inMapId": "G.N3.3.Quarters",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Sur'Kesh"
+        }]
+    }, {
+        "id": "A3.Convo.C.Chakwas.3",
+        "inMissionId": "A3.Convo.C.Chakwas",
+        "sortIndex": 90014,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Chakwas: ",
+        "name": "3rd Normandy Convo",
+        "description": "Dr. Chakwas asks if you want to pop open the annual bottle of Serrice Ice Brandy (putting it off just eliminates the opportunity).",
+        "inMapId": "G.N3.3.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel II"
         }]
 
     }, {
@@ -2602,6 +3045,18 @@
             "id": "Completed: Priority: The Citadel I"
         }]
     }, {
+        "id": "A3.Convo.C.Joker.0-ACouncil",
+        "identicalMissionId": "A3.Convo.S.Liara.1-BCouncil",
+        "inMissionId": "A3.Convo.C.Joker",
+        "sortIndex": 90011,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Joker: ",
+        "name": "Side Convo - Council",
+        "description": "Liara is complaining to Joker about the outcome of the meeting with the Council.",
+        "inMapId": "G.N3.2.Bridge",
+        "isShowInParentMap": true
+    }, {
         "id": "A3.Convo.C.Joker.1",
         "inMissionId": "A3.Convo.C.Joker",
         "sortIndex": 90011,
@@ -2612,6 +3067,22 @@
         "description": "Joker mocks the Council's lack of support.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true
+    }, {
+        "id": "A3.Convo.C.Joker.1-BMalfunctions",
+        "identicalMissionId": "A3.Convo.S.Garrus.0-BMalfunctions",
+        "inMissionId": "A3.Convo.C.Joker",
+        "sortIndex": 90011,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Joker: ",
+        "name": "Side Convo - Malfunctions",
+        "description": "If you go the main battery before the AI Core to meet EDI, Joker is asking if Garrus \"miscalibrated\" something.",
+        "inMapId": "G.N3.3.Battery",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven"
+        }]
     }, {
         "id": "A3.Convo.C.Joker.2",
         "inMissionId": "A3.Convo.C.Joker",
@@ -2663,12 +3134,13 @@
         }]
     }, {
         "id": "A3.Convo.C.Joker.5",
+        "identicalMissionId": "A3.Convo.S.Garrus.3",
         "inMissionId": "A3.Convo.C.Joker",
         "sortIndex": 90015,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "4th Normandy Convo",
+        "name": "Side Convo - Mordin",
         "description": "Joker and Garrus are trading jokes on the bridge. They both express their sadness at Mordin's death.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -2683,7 +3155,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "5th Normandy Convo",
+        "name": "4th Normandy Convo",
         "description": "Joker mocks Cerberus and Ashley/Kaidan.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -2717,7 +3189,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "6th Normandy Convo",
+        "name": "5th Normandy Convo",
         "description": "Joker is happy to have Tali back, but is pissed at the quarians for firing on the ship while you were still aboard.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -2726,13 +3198,29 @@
             "id": "Completed: Priority: Geth Dreadnought"
         }]
     }, {
+        "id": "A3.Convo.C.Joker.8-BExoskeleton",
+        "identicalMissionId": "A3.Convo.S.Vega.6-BExoskelton",
+        "inMissionId": "A3.Convo.C.Joker",
+        "sortIndex": 90018,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Joker: ",
+        "name": "Side Convo - Exoskelton",
+        "description": "James suggests that Joker try the quarian exoskeletons to improve his mobility.",
+        "inMapId": "G.N2.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Rannoch: Admiral Koris"
+        }]
+    }, {
         "id": "A3.Convo.C.Joker.9",
         "inMissionId": "A3.Convo.C.Joker",
         "sortIndex": 90019,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "7th Normandy Convo",
+        "name": "6th Normandy Convo",
         "description": "This conversation is very different depending on whether the quarian fleet was destroyed. Joker is devastated by the loss of the quarians. EDI is devastated by the loss of the geth. Her dialogue is particularly bitter as she draws ties between their lack of value to organics and her own. \n\nIf you manage to save both, Joker is ebullient. EDI will chime in with her take on Legion's sacrifice, that it attained sentience before the end. \n\nTalk to the rest of the crew for more opinions.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -2747,7 +3235,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "8th Normandy Convo",
+        "name": "7th Normandy Convo",
         "description": "Joker mocks asari maiden frivolity. When you chastise him about this, he informs you that he has likely lost his family to the Reapers, but he's making jokes because he's trying to take care of you, to help with your stress levels.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -2762,7 +3250,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "9th Normandy Convo",
+        "name": "8th Normandy Convo",
         "description": "Joker is horrified by the experiments done on Horizon. ",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -2792,7 +3280,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "10th Normandy Convo",
+        "name": "9th Normandy Convo",
         "description": "Joker is drinking on the bridge. He says you are going to kick the Reapers' ass.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -3840,6 +4328,22 @@
         "inMapId": "G.N3.2.WarTerminal",
         "isShowInParentMap": true
     }, {
+        "id": "A3.Convo.A.Legion.1-BGeth",
+        "identicalMissionId": "A3.Convo.S.Liara.6-CGeth",
+        "inMissionId": "A3.Convo.A.Legion",
+        "sortIndex": 90022,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Legion: ",
+        "name": "Side Convo - Geth",
+        "description": "Liara asks Legion if the geth have any greater knowledge of the Protheans, which it says they do not.",
+        "inMapId": "G.N3.3.Liara",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Rannoch: Geth Fighter Squadrons"
+        }]
+    }, {
         "id": "A3.Convo.A.Legion.2",
         "inMissionId": "A3.Convo.A.Legion",
         "sortIndex": 90022,
@@ -4735,7 +5239,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Rannoch: Geth Fighter Squadrons"
+            "id": "Completed: Rannoch: Admiral Koris"
         }]
     }, {
         "id": "A3.Convo.N.8DanielsDonnelly",
