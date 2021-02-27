@@ -49,9 +49,9 @@ final class RelatedLinkRow: UITableViewCell {
 // MARK: Populate Data
 	private func setup() {
 		guard linkTitle != nil else { return }
-		let linkParts = parseDomainFromLink(link ?? "")
-		linkTitle?.text = linkParts.domain
-		linkTitle?.isHidden = linkParts.domain.isEmpty
+		let linkParts = parseTitleFromLink(link ?? "")
+		linkTitle?.text = linkParts.title
+		linkTitle?.isHidden = linkParts.title.isEmpty
 		linkUrl?.text = linkParts.url
 	}
 
@@ -63,11 +63,18 @@ final class RelatedLinkRow: UITableViewCell {
 	}
 
 // MARK: Supporting Functions
-	private func parseDomainFromLink(_ link: String) -> (domain: String, url: String) {
+	private func parseTitleFromLink(_ link: String) -> (title: String, url: String) {
+        // maybe it contains a title in format "title|url"
+        let linkParts = link.split(separator: "|", maxSplits: 1)
+        if linkParts.count == 2 {
+            return (title: String(linkParts[0]), url: String(linkParts[1]))
+        }
+        // otherwise just use the domain for the title
 		if let url = URL(string: link) {
-			return (domain: url.host?.capitalized ?? "", url: url.path)
-		}
-		return (domain: "", url: "")
+			return (title: url.host?.capitalized ?? "", url: url.path)
+        }
+        // fallback, nothing
+		return (title: "", url: "")
 	}
 
 }

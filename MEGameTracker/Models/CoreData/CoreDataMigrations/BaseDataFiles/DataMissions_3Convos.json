@@ -18,7 +18,7 @@
         "name": "Ashley Williams",
         "description": "Conversations with [megametracker://person?id=S1.Ashley]. \n\nAshley is available as a primary love interest for BroShep, and she will show up for the pre-Earth Normandy romantic encounter.",
         "relatedDecisionIds": ["D1.Ashley", "D1.LoveAshley", "D3.AshleyKaidanParagon", "D3.AshleyKaidan", "D3.LoveAshley"],
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/Ashley_Williams/Unique_Dialogue#Mass_Effect_3"],
+        "relatedLinks": ["Dialogue|http://masseffect.wikia.com/wiki/Ashley_Williams/Unique_Dialogue#Mass_Effect_3"],
         "conversationRewards": [{
             "context": "Visiting Ashley at the hospital (during Citadel I)",
             "id": "A3.Convo.S.Ashley.P1",
@@ -224,7 +224,7 @@
         "name": "EDI",
         "description": "Conversations with [megametracker://person?id=S3.EDI].",
         "relatedDecisionIds": ["D3.EdiJoker"],
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/EDI/Unique_dialogue#Mass_Effect_3"],
+        "relatedLinks": ["Dialogue|http://masseffect.wikia.com/wiki/EDI/Unique_dialogue#Mass_Effect_3"],
         "conversationRewards": [{
             "set": {
                 "context": "Meeting EDI in her new body",
@@ -368,6 +368,22 @@
             "id": "Completed: Priority: Sur'Kesh"
         }]
     }, {
+        "id": "A3.Convo.S.EDI.4-BRachni",
+        "identicalMissionId": "A3.Convo.C.Joker.4-CRachni",
+        "inMissionId": "A3.Convo.S.EDI",
+        "sortIndex": 90004,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "EDI: ",
+        "name": "Side Convo - Rachni",
+        "description": "Joker tells EDI a joke about a salarian and a krogan. Joker is also pleased to see Grunt progressing in krogan leadership, but he has some doubts about the rachni queen.",
+        "inMapId": "G.N3.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Attican Traverse: Krogan Team"
+        }]
+    }, {
         "id": "A3.Convo.S.EDI.5",
         "inMissionId": "A3.Convo.S.EDI",
         "sortIndex": 90005,
@@ -418,13 +434,29 @@
         }]
     }, {
         "id": "A3.Convo.S.EDI.7-BRannoch",
-        "identicalMissionIds": ["A3.Convo.S.Tali.4-BRannoch","A3.Convo.S.Liara.6-CRannoch"],
+        "identicalMissionId": "A3.Convo.C.Joker.9",
         "inMissionId": "A3.Convo.S.EDI",
         "sortIndex": 90007,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
         "name": "Side Convo - Rannoch",
+        "description": "This conversation is very different depending on whether the quarian fleet was destroyed. Joker is devastated by the loss of the quarians. EDI is devastated by the loss of the geth. Her dialogue is particularly bitter as she draws ties between their lack of value to organics and her own. \n\nIf you manage to save both, Joker is ebullient. EDI will chime in with her take on Legion's sacrifice, that it attained sentience before the end.",
+        "inMapId": "G.N3.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Rannoch"
+        }]
+    }, {
+        "id": "A3.Convo.S.EDI.7-BGethQuarians",
+        "identicalMissionIds": ["A3.Convo.S.Tali.4-BGethQuarians", "A3.Convo.S.Liara.6-CGethQuarians"],
+        "inMissionId": "A3.Convo.S.EDI",
+        "sortIndex": 90007,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "EDI: ",
+        "name": "Side Convo - Geth And Quarians",
         "description": "If Tali survived and peace is achieved, Liara expresses hope that the geth and quarians can someday be friends. \n\nOtherwise, if the geth are destroyed, she talks to EDI about whether or not the geth might have achieved full sentience.",
         "inMapId": "G.N3.3.Liara",
         "isShowInParentMap": true,
@@ -487,7 +519,7 @@
         "name": "Garrus Vakarian",
         "description": "Conversations with [megametracker://person?id=S1.Garrus]. \n\nGarrus is available as a primary love interest if romanced in Game 2, and he will show up for the pre-Earth Normandy romantic encounter.",
         "relatedDecisionIds": ["D2.LoveGarrus", "D2.Garrus", "D3.LoveGarrus", "D3.GarrusShooting"],
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/Garrus_Vakarian/Unique_dialogue#Mass_Effect_3"],
+        "relatedLinks": ["Dialogue|http://masseffect.wikia.com/wiki/Garrus_Vakarian/Unique_dialogue#Mass_Effect_3"],
         "conversationRewards": [{
             "set": {
                 "context": "First Normandy conversation",
@@ -642,7 +674,7 @@
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
         "name": "Side Convo - Rachni",
-        "description": "Garrus is chatting with Ensign Copeland in the Lounge about the Rachni. You can trigger several additional remarks on giant spiders.",
+        "description": "Garrus is chatting with Ensign Copeland in the Lounge about the rachni. You can trigger several additional remarks on giant spiders.",
         "inMapId": "G.N3.3.Port",
         "isShowInParentMap": true,
         "events": [{
@@ -869,7 +901,7 @@
         "name": "Javik",
         "description": "Conversations with [megametracker://person?id=S3.Javik]. \n\nJavik is only available as a love interest during the Citadel DLC party.",
         "relatedDecisionIds": ["D3.LoveJavik", "D3.JavikLiara", "D3.JavikMemoryShard"],
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/Javik/Unique_dialogue"],
+        "relatedLinks": ["Dialogue|http://masseffect.wikia.com/wiki/Javik/Unique_dialogue"],
         "conversationRewards": [{
             "id": "A3.Convo.S.Javik.P0",
             "type": "Paragade",
@@ -1034,6 +1066,21 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Javik Convo 1 + 1"
+        }]
+    }, {
+        "id": "A3.Convo.S.Javik.2-BRachni",
+        "inMissionId": "A3.Convo.S.Javik",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "Comment - Rachni",
+        "description": "Shepard can prompt Javik for some Prothean history of the rachni. If he went on the mission to rescue the krogan team, he is pleased to have finally met Grunt.",
+        "inMapId": "G.N3.3.Battery",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Attican Traverse: Krogan Team"
         }]
     }, {
         "id": "A3.Convo.S.Javik.2-ABomb",
@@ -1235,7 +1282,7 @@
         "name": "Kaidan Alenko",
         "description": "Conversations with [megametracker://person?id=S1.Kaidan]. \n\nKaidan is available as a primary love interest, and he will show up for the pre-Earth Normandy romantic encounter.",
         "relatedDecisionIds": ["D1.Kaidan", "D1.LoveKaidan", "D3.AshleyKaidanParagon", "D3.AshleyKaidan", "D3.LoveKaidan"],
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/Kaidan_Alenko/Unique_dialogue#Mass_Effect_3"],
+        "relatedLinks": ["Dialogue|http://masseffect.wikia.com/wiki/Kaidan_Alenko/Unique_dialogue#Mass_Effect_3"],
         "conversationRewards": [{
             "context": "Visiting Kaidan at the hospital (during Citadel I)",
             "id": "A3.Convo.S.Kaidan.P1",
@@ -1464,7 +1511,7 @@
         "name": "Liara T'Soni",
         "description": "Conversations with [megametracker://person?id=S1.Liara]. \n\nLiara is available as a primary love interest, and she will show up for the pre-Earth Normandy romantic encounter.",
         "relatedDecisionIds": ["D1.LoveLiara", "D2.LoveLiara", "D3.LoveLiara", "D3.JavikLiara"],
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/Liara_T%27Soni/Unique_Dialogue#Mass_Effect_3"],
+        "relatedLinks": ["Dialogue|http://masseffect.wikia.com/wiki/Liara_T%27Soni/Unique_Dialogue#Mass_Effect_3"],
         "conversationRewards": [{
             "context": "First Normandy conversation with Liara in her office",
             "id": "A3.Convo.S.Liara.PR1",
@@ -1616,6 +1663,27 @@
             "id": "Completed: Aethyta Convo 1"
         }]
     }, {
+        "id": "A3.Convo.S.Liara.3-DAethyta",
+        "identicalMissionId": "",
+        "inMissionId": "A3.Convo.S.Liara",
+        "sortIndex": 90003,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Liara: ",
+        "name": "Side Convo - Aethyta",
+        "description": "If you persuaded Liara to talk to Aethyta, you can go back several times and listen to their conversations. You just have to leave the area and return to trigger a new segment. \n\n1 - Aethyta teases Liara for threatening to flay people with her mind on Illium. \n\n2 - Liara complains that the asari are not participating in the Reaper war. \n\n3 - Aethyta talks about her krogan grandfather and that she has had children with hanar partners. \n\n4 - Aethyta reminisces about Benezia. \n\n5 - Aethyta talks about why she and Benezia broke up. \n\n6 - Aethyta hypothesizes that Benezia had to be single to make alliances with other species, for the sex appeal. \n\n7 - Aethyta explains how Liara got the nickname \"Little Wing.\" \n\n8 - Liara explains the Indoctrination Benezia suffered from to Aethyta. \n\n9 - Liara calls Aethyta \"Dad,\" and Aethyta gifts her an asari commando squad.",
+        "relatedLinks": ["Aethyta|https://www.youtube.com/watch?v=0OCgbjegwUM"],
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 866,
+            "y": 999,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Aethyta Convo 1"
+        }]
+    }, {
         "id": "A3.Convo.S.Liara.4",
         "inMissionId": "A3.Convo.S.Liara",
         "sortIndex": 90004,
@@ -1723,14 +1791,14 @@
             "id": "Completed: Rannoch: Geth Fighter Squadrons"
         }]
     }, {
-        "id": "A3.Convo.S.Liara.6-CRannoch",
-        "identicalMissionIds": ["A3.Convo.S.Tali.4-BRannoch","A3.Convo.S.EDI.7-BRannoch"],
+        "id": "A3.Convo.S.Liara.6-CGethQuarians",
+        "identicalMissionIds": ["A3.Convo.S.Tali.4-BGethQuarians", "A3.Convo.S.EDI.7-BGethQuarians"],
         "inMissionId": "A3.Convo.S.Liara",
         "sortIndex": 90006,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
-        "name": "Side Convo - Rannoch",
+        "name": "Side Convo - Geth And Quarians",
         "description": "If Tali survived and peace is achieved, Liara expresses hope that the geth and quarians can someday be friends. \n\nOtherwise, if the geth are destroyed, she talks to EDI about whether or not the geth might have achieved full sentience.",
         "inMapId": "G.N3.3.Liara",
         "isShowInParentMap": true,
@@ -1794,7 +1862,7 @@
         "name": "Tali'Zorah",
         "description": "Conversations with [megametracker://person?id=S1.Tali]. \n\nTali is available as a primary love interest if romanced in Game 2, and she will show up for the pre-Earth Normandy romantic encounter.",
         "relatedDecisionIds": ["D2.RaelZorahReputation", "D2.LoveTali", "D2.Tali", "D3.LoveTali"],
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/Tali%27Zorah_nar_Rayya/Unique_dialogue#Mass_Effect_3"],
+        "relatedLinks": ["Dialogue|http://masseffect.wikia.com/wiki/Tali%27Zorah_nar_Rayya/Unique_dialogue#Mass_Effect_3"],
         "conversationRewards": [{
             "set": {
                 "context": "Talking to Tali in your cabin",
@@ -1933,14 +2001,14 @@
             "id": "Completed: Priority: Rannoch"
         }]
     }, {
-        "id": "A3.Convo.S.Tali.4-BRannoch",
-        "identicalMissionIds": ["A3.Convo.S.Liara.6-CRannoch","A3.Convo.S.EDI.7-BRannoch"],
+        "id": "A3.Convo.S.Tali.4-BGethQuarians",
+        "identicalMissionIds": ["A3.Convo.S.Liara.6-CGethQuarians", "A3.Convo.S.EDI.7-BGethQuarians"],
         "inMissionId": "A3.Convo.S.Tali",
         "sortIndex": 90004,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Tali: ",
-        "name": "Side Convo - Rannoch",
+        "name": "Side Convo - Geth And Quarians",
         "description": "If Tali survived and peace is achieved, Liara expresses hope that the geth and quarians can someday be friends. \n\nOtherwise, if the geth are destroyed, she talks to EDI about whether or not the geth might have achieved full sentience.",
         "inMapId": "G.N3.3.Liara",
         "isShowInParentMap": true,
@@ -2054,7 +2122,7 @@
         "name": "James Vega",
         "description": "Conversations with [megametracker://person?id=S3.Vega]. \n\nJames is available as a love interest for FemShep, but he will not show up for the pre-Earth Normandy romantic encounter.",
         "relatedDecisionIds": ["D3.LoveJames"],
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/James_Vega/Unique_dialogue"],
+        "relatedLinks": ["Dialogue|http://masseffect.wikia.com/wiki/James_Vega/Unique_dialogue"],
         "conversationRewards": [{
             "context": "Speaking to James at the embassy (Citadel I)",
             "id": "A3.Convo.S.Vega.PR0",
@@ -2182,6 +2250,25 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Palaven"
+        }]
+    }, {
+        "id": "A3.Convo.S.Vega.3-BRachni",
+        "inMissionId": "A3.Convo.S.Vega",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Vega: ",
+        "name": "Comment - Rachni",
+        "description": "Shepard can prompt James for some brief comments about the rachni and Grunt.",
+        "inMapId": "G.N3.5ShuttleBay",
+        "mapLocationPoint": {
+            "x": 1187,
+            "y": 1354,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Attican Traverse: Krogan Team"
         }]
     }, {
         "id": "A3.Convo.S.Vega.4",
@@ -2514,6 +2601,21 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel I"
+        }]
+    }, {
+        "id": "A3.Convo.C.Allers.2-BRachni",
+        "inMissionId": "A3.Convo.C.Allers",
+        "sortIndex": 90012,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Allers: ",
+        "name": "Side Convo - Rachni",
+        "description": "Allers briefly talks with Traynor about the rachni and how she can't do a story about it.",
+        "inMapId": "G.N3.4.Starboard",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Attican Traverse: Krogan Team"
         }]
     }, {
         "id": "A3.Convo.C.Allers.3",
@@ -3005,7 +3107,7 @@
         "name": "Joker",
         "description": "Conversations with [megametracker://person?id=P1.Joker].",
         "relatedDecisionIds": ["D3.EdiJoker"],
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/Jeff_%22Joker%22_Moreau/Unique_dialogue#Mass_Effect_3"],
+        "relatedLinks": ["Dialogue|http://masseffect.wikia.com/wiki/Jeff_%22Joker%22_Moreau/Unique_dialogue#Mass_Effect_3"],
         "conversationRewards": [{
             "context": "First Citadel conversation in the Presidium Commons",
             "id": "A3.Convo.C.Joker.PR5",
@@ -3063,7 +3165,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "1st Normandy Convo",
+        "name": "Comment - Council",
         "description": "Joker mocks the Council's lack of support.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true
@@ -3090,8 +3192,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "2nd Normandy Convo",
-        "description": "Joker is giddy about EDI's new body.",
+        "name": "Comment - EDI",
+        "description": "Joker is giddy about EDI's new body. He is also pleased Garrus is back on the Normandy.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
         "events": [{
@@ -3118,19 +3220,112 @@
             "id": "Completed: Priority: Palaven"
         }]
     }, {
+        "id": "A3.Convo.C.Joker.3-BJavik",
+        "inMissionId": "A3.Convo.C.Joker",
+        "sortIndex": 90012,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Joker: ",
+        "name": "Comment - Javik",
+        "description": "Joker observes that Liara must be excited about Javik's presence on the Normandy.",
+        "inMapId": "G.N3.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Eden Prime"
+        }]
+    }, {
         "id": "A3.Convo.C.Joker.4",
         "inMissionId": "A3.Convo.C.Joker",
         "sortIndex": 90014,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "3rd Normandy Convo",
+        "name": "Comment - Sur'Kesh",
         "description": "Joker mocks the idea of bringing the krogan to a war summit, and he is pleased that Mordin has rejoined the crew.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Sur'Kesh"
+        }]
+    }, {
+        "id": "A3.Convo.C.Joker.4-ASex",
+        "identicalMissionId": "A3.Convo.A.Mordin.1-ESex",
+        "inMissionId": "A3.Convo.C.Joker",
+        "sortIndex": 90014,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Joker: ",
+        "name": "Side Convo - Sex Tips",
+        "description": "Joker asks Mordin for some tips on how to have sex with EDI.",
+        "relatedLinks": ["Sex Tips|https://www.youtube.com/watch?v=k2Ysehij3Lw"],
+        "inMapId": "G.N3.3.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Mordin Convo 3"
+        }]
+    }, {
+        "id": "A3.Convo.C.Joker.4-BJack",
+        "inMissionId": "A3.Convo.C.Joker",
+        "sortIndex": 90012,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Joker: ",
+        "name": "Comment - Jack",
+        "description": "Joker observes that Jack must have enjoyed oblitering Cerberus at Grissom Academy.",
+        "inMapId": "G.N3.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Grissom Academy"
+        }]
+    }, {
+        "id": "A3.Convo.C.Joker.4-CRachni",
+        "identicalMissionId": "A3.Convo.S.EDI.4-BRachni",
+        "inMissionId": "A3.Convo.C.Joker",
+        "sortIndex": 90014,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Joker: ",
+        "name": "Side Convo - Rachni",
+        "description": "Joker tells EDI a joke about a salarian and a krogan. Joker is also pleased to see Grunt progressing in krogan leadership, but he has some doubts about the rachni queen.",
+        "inMapId": "G.N3.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Attican Traverse: Krogan Team"
+        }]
+    }, {
+        "id": "A3.Convo.C.Joker.4-DTurians",
+        "inMissionId": "A3.Convo.C.Joker",
+        "sortIndex": 90014,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Joker: ",
+        "name": "Convo - Turians",
+        "description": "Joker is annoyed at the turians actions on Tuchanka. He notes that despite all the troubles on the Normandy, he has never mutinied.",
+        "inMapId": "G.N3.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Tuchanka: Turian Platoon"
+        }]
+    }, {
+        "id": "A3.Convo.C.Joker.4-EBomb",
+        "inMissionId": "A3.Convo.C.Joker",
+        "sortIndex": 90014,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Joker: ",
+        "name": "Comment - Bomb",
+        "description": "Joker comments on the turian bomb, and the terrifying banshees encountered on Tuchanka.",
+        "inMapId": "G.N3.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Tuchanka: Bomb"
         }]
     }, {
         "id": "A3.Convo.C.Joker.5",
@@ -3155,7 +3350,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "4th Normandy Convo",
+        "name": "Comment - Cerberus",
         "description": "Joker mocks Cerberus and Ashley/Kaidan.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -3189,7 +3384,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "5th Normandy Convo",
+        "name": "Comment - Quarians",
         "description": "Joker is happy to have Tali back, but is pissed at the quarians for firing on the ship while you were still aboard.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -3215,13 +3410,14 @@
         }]
     }, {
         "id": "A3.Convo.C.Joker.9",
+        "identicalMissionId": "A3.Convo.S.EDI.X",
         "inMissionId": "A3.Convo.C.Joker",
         "sortIndex": 90019,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "6th Normandy Convo",
-        "description": "This conversation is very different depending on whether the quarian fleet was destroyed. Joker is devastated by the loss of the quarians. EDI is devastated by the loss of the geth. Her dialogue is particularly bitter as she draws ties between their lack of value to organics and her own. \n\nIf you manage to save both, Joker is ebullient. EDI will chime in with her take on Legion's sacrifice, that it attained sentience before the end. \n\nTalk to the rest of the crew for more opinions.",
+        "name": "Side Convo - Rannoch",
+        "description": "This conversation is very different depending on whether the quarian fleet was destroyed. Joker is devastated by the loss of the quarians. EDI is devastated by the loss of the geth. Her dialogue is particularly bitter as she draws ties between their lack of value to organics and her own. \n\nIf you manage to save both, Joker is ebullient. EDI will chime in with her take on Legion's sacrifice, that it attained sentience before the end.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
         "events": [{
@@ -3235,7 +3431,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "7th Normandy Convo",
+        "name": "Convo - Thessia",
         "description": "Joker mocks asari maiden frivolity. When you chastise him about this, he informs you that he has likely lost his family to the Reapers, but he's making jokes because he's trying to take care of you, to help with your stress levels.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -3250,7 +3446,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "8th Normandy Convo",
+        "name": "Comment - Horizon",
         "description": "Joker is horrified by the experiments done on Horizon. ",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -3280,7 +3476,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "9th Normandy Convo",
+        "name": "Comment - Reapers",
         "description": "Joker is drinking on the bridge. He says you are going to kick the Reapers' ass.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -3430,6 +3626,21 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Sur'Kesh"
+        }]
+    }, {
+        "id": "A3.Convo.C.Traynor.3-BRachni",
+        "inMissionId": "A3.Convo.C.Traynor",
+        "sortIndex": 90014,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Traynor: ",
+        "name": "Comment - Rachni",
+        "description": "Traynor tells Shepard that she once studied the rachni's long-term communication, and useful that could be.",
+        "inMapId": "G.N3.2CIC",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Attican Traverse: Krogan Team"
         }]
     }, {
         "id": "A3.Convo.C.Traynor.4",
@@ -3813,6 +4024,46 @@
         "description": "After Wrex leaves the Med Lab, you can talk to Eve about her past and the process of becoming a shaman. She will also talk about Maelon's experiments and the deaths of the other females. She speaks fondly of Wrex and Mordin.",
         "inMapId": "G.N3.3.Lab",
         "isShowInParentMap": true
+    }, {
+        "id": "A3.Convo.A.Eve.1-CTalking",
+        "identicalMissionId": "A3.Convo.A.Mordin.1-CTalking",
+        "inMissionId": "A3.Convo.A.Eve",
+        "sortIndex": 90021,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Eve: ",
+        "name": "Side Convo - Talking",
+        "description": "Eve complains that Mordin is always talking to himself.",
+        "relatedLinks": ["Thinking Out Loud|https://www.youtube.com/watch?v=ac7Ha1w1Nvs"],
+        "inMapId": "G.N3.3.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Mordin Convo 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Mordin Convo 2"
+        }]
+    }, {
+        "id": "A3.Convo.A.Eve.1-DSong",
+        "identicalMissionId": "A3.Convo.A.Mordin.1-DSong",
+        "inMissionId": "A3.Convo.A.Eve",
+        "sortIndex": 90021,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Eve: ",
+        "name": "Side Convo - Song",
+        "description": "Eve asks Mordin to sing a song for her, and he sings a Gilbert and Sullivan song (\"Pirate King\") with lyrics about a krogan queen.",
+        "relatedLinks": ["Krogan Queen|https://www.youtube.com/watch?v=NWrgweie7xc"],
+        "inMapId": "G.N3.3.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Mordin Convo 2"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Mordin Convo 3"
+        }]
     }, {
         "id": "A3.Convo.A.Grunt",
         "inMissionId": "A3.Convo.Associates",
@@ -4560,23 +4811,89 @@
         "titlePrefix": "Mordin: ",
         "name": "1st Normandy Convo",
         "description": "Mordin/Wiks is treating Eve, but Wrex storms in suspiciously. He is sent off to get a tissue sample, and after you speak with Eve, you can talk more to Mordin about the Genophage cure he is creating. He still refuses to admit the Genophage was wrong. He muses about what he'll do when the war is over, go to the beach and collect seashells, experiment on the seashells.",
+        "sideEffects": ["When you walk in, Mordin is trying to set up Garrus and Eve."],
         "inMapId": "G.N3.3.Lab",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Mordin Convo 1"
+        }]
+    }, {
+        "id": "A3.Convo.A.Mordin.1-CTalking",
+        "identicalMissionId": "A3.Convo.A.Eve.1-CTalking",
+        "inMissionId": "A3.Convo.A.Mordin",
+        "sortIndex": 90011,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Mordin: ",
+        "name": "Side Convo - Talking",
+        "description": "Eve complains that Mordin is always talking to himself.",
+        "relatedLinks": ["Thinking Out Loud|https://www.youtube.com/watch?v=ac7Ha1w1Nvs"],
+        "inMapId": "G.N3.3.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Mordin Convo 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Mordin Convo 2"
+        }]
+    }, {
+        "id": "A3.Convo.A.Mordin.1-DSong",
+        "identicalMissionId": "A3.Convo.A.Eve.1-DSong",
+        "inMissionId": "A3.Convo.A.Mordin",
+        "sortIndex": 90011,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Mordin: ",
+        "name": "Side Convo - Song",
+        "description": "Eve asks Mordin to sing a song for her, and he sings a Gilbert and Sullivan song (\"Pirate King\") with lyrics about a krogan queen.",
+        "relatedLinks": ["Krogan Queen|https://www.youtube.com/watch?v=NWrgweie7xc"],
+        "inMapId": "G.N3.3.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Mordin Convo 2"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Mordin Convo 3"
+        }]
+    }, {
+        "id": "A3.Convo.A.Mordin.1-ESex",
+        "identicalMissionId": "A3.Convo.C.Joker.4-ASex",
+        "inMissionId": "A3.Convo.A.Mordin",
+        "sortIndex": 90011,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Mordin: ",
+        "name": "Side Convo - Sex Tips",
+        "description": "Joker asks Mordin for some tips on how to have sex with EDI.",
+        "relatedLinks": ["Sex Tips|https://www.youtube.com/watch?v=k2Ysehij3Lw"],
+        "inMapId": "G.N3.3.Lab",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Mordin Convo 3"
+        }]
     }, {
         "id": "A3.Convo.A.Mordin.2",
         "inMissionId": "A3.Convo.A.Mordin",
-        "sortIndex": 90012,
+        "sortIndex": 90011,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Mordin: ",
         "name": "2nd Normandy Convo",
         "description": "_Note: this is available one mission after [megametracker://mission?id=M3.1.SurKesh]_ \n\nYou can now ask Mordin about the Shroud.",
         "inMapId": "G.N3.3.Lab",
-        "isShowInParentMap": true
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Sur'Kesh + 1"
+        }]
     }, {
         "id": "A3.Convo.A.Mordin.3",
         "inMissionId": "A3.Convo.A.Mordin",
-        "sortIndex": 90013,
+        "sortIndex": 90011,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Mordin: ",
@@ -4944,7 +5261,7 @@
         "titlePrefix": "Conversations: ",
         "name": "Urdnot Wrex",
         "description": "Conversations with [megametracker://person?id=S1.Wrex].",
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/Urdnot_Wrex/Unique_Dialogue#Mass_Effect_3"],
+        "relatedLinks": ["Dialogue|http://masseffect.wikia.com/wiki/Urdnot_Wrex/Unique_Dialogue#Mass_Effect_3"],
         "conversationRewards": [{
             "set": {
                 "context": "If the Genophage cure was sabotaged and Wrex survived Game 1, he will attack Shepard at the Normandy dock during the third visit",
@@ -5010,7 +5327,7 @@
         "titlePrefix": "Conversations: ",
         "name": "Zaeed Massani",
         "description": "Conversations with [megametracker://person?id=S2.Zaeed].",
-        "relatedLinks": ["http://masseffect.wikia.com/wiki/Zaeed_Massani/Unique_dialogue"],
+        "relatedLinks": ["Dialogue|http://masseffect.wikia.com/wiki/Zaeed_Massani/Unique_dialogue#Mass_Effect_3"],
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Rannoch: Geth Fighter Squadrons and Rannoch: Admiral Koris or Priority: Rannoch"
