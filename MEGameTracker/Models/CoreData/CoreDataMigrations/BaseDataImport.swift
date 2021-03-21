@@ -37,10 +37,12 @@ public struct BaseDataImport: CoreDataMigrationType {
 	// Must group these by type
 	public typealias CoreDataFileImport = (type: BaseDataFileImportType, filename: String, progress: Double)
 
-	public let progressFiles: [CoreDataFileImport] = [
+	public let progressFilesEvents: [CoreDataFileImport] = [
 		(type: .event, filename: "DataEvents_1", progress: 1),
 		(type: .event, filename: "DataEvents_2", progress: 1),
 		(type: .event, filename: "DataEvents_3", progress: 1),
+    ]
+    public let progressFilesOther: [CoreDataFileImport] = [
 		(type: .decision, filename: "DataDecisions_1", progress: 1),
 		(type: .decision, filename: "DataDecisions_2", progress: 1),
 		(type: .decision, filename: "DataDecisions_3", progress: 1),
@@ -87,7 +89,7 @@ public struct BaseDataImport: CoreDataMigrationType {
 	}
 
 	func addData() {
-		let progressTotal = progressFiles.map { $0.progress }.reduce(0.0, +)
+		let progressTotal = (progressFilesEvents + progressFilesOther).map { $0.progress }.reduce(0.0, +)
 			+ (progressProcessImportChunk * 2.0) + progressFinalPadding
 		importDataFiles(progress: 0.0, progressTotal: progressTotal)
 		processImportedData(
@@ -104,28 +106,41 @@ extension BaseDataImport {
 
 		// load up all ids so we know if some have been removed
 		var deleteOldIds: [BaseDataFileImportType: [String]] = [:]
-		for type in Array(Set(progressFiles.map({ $0.type }))) {
+		for type in Array(Set((progressFilesEvents + progressFilesOther).map({ $0.type }))) {
 			deleteOldIds[type] = self.getAllIds(type: type, with: manager)
 		}
+        
+        let queue = DispatchQueue.global(qos: .userInitiated)
+        let queueGroup = DispatchGroup()
+        
+        let markIdsImported: (BaseDataFileImportType, [String]) -> Void = { (type, ids) in
+            deleteOldIds[type] = Array(Set(deleteOldIds[type] ?? []).subtracting(ids))
+        }
+        let updateFileProgress: (Double) -> Void = { (batchProgress) in
+            progress += batchProgress
+            self.fireProgress(progress: progress, progressTotal: progressTotal)
+        }
+        
+        // process all events first
+        for row in progressFilesEvents {
+            queueGroup.enter()
+            queue.async(group: queueGroup) {
+                importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
+                queueGroup.leave()
+            }
+        }
+        // wait for finish
+        queueGroup.wait()
 
-		for row in progressFiles {
-			let type = row.type
-			let filename = row.filename
-			let batchProgress = row.progress
-			do {
-				if let file = Bundle.main.path(forResource: filename, ofType: "json") {
-                    let data = try Data(contentsOf: URL(fileURLWithPath: file))
-					let ids = importData(data, with: manager)
-					deleteOldIds[type] = Array(Set(deleteOldIds[type] ?? []).subtracting(ids))
-				}
-			} catch {
-				// failure
-				deleteOldIds[type] = [] // don't delete any rows
-				print("Failed to load file \(filename)")
-			}
-			progress += batchProgress
-			self.fireProgress(progress: progress, progressTotal: progressTotal)
+		for row in progressFilesOther {
+            queueGroup.enter()
+            queue.async(group: queueGroup) {
+                importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
+                queueGroup.leave()
+            }
 		}
+        // wait for finish
+        queueGroup.wait()
 
 		// remove any old entries not included in this update
 		// (this is unsupported in XCTest inMemoryStore)
@@ -195,9 +210,28 @@ extension BaseDataImport {
 
 		fireProgress(progress: progressTotal, progressTotal: progressTotal)
 	}
-}
-
-extension BaseDataImport {
+    
+    func importFile(
+        fileDefinition: CoreDataFileImport,
+        markIdsImported: @escaping ((BaseDataFileImportType, [String]) -> Void),
+        updateProgress: @escaping ((Double) -> Void)
+    ) {
+        let type = fileDefinition.type
+        let filename = fileDefinition.filename
+        let batchProgress = fileDefinition.progress
+        do {
+            if let file = Bundle.main.path(forResource: filename, ofType: "json") {
+                let data = try Data(contentsOf: URL(fileURLWithPath: file))
+                let ids = importData(data, with: manager)
+                markIdsImported(type, ids)
+            }
+        } catch {
+            // failure
+            print("Failed to load file \(filename)")
+        }
+        updateProgress(batchProgress)
+    }
+    
 	func processImportedMapData(
 		queue: DispatchQueue,
 		updateProgress: @escaping ((Double, Bool) -> Void)
@@ -210,7 +244,8 @@ extension BaseDataImport {
 		let chunkProgress = Double(self.progressProcessImportChunk) * chunkPercentage
 
         for map in DataMap.getAll(with: manager, alterFetchRequest: { fetchRequest in
-            fetchRequest.predicate = NSPredicate(format: "(inMapId = nil)")
+//            fetchRequest.predicate = NSPredicate(format: "(inMapId == nil)")
+            fetchRequest.predicate = NSPredicate(format: "(relatedEvents.@count > 0)")
         }) {
             self.applyInheritedEvents(
                 map: map,
@@ -244,7 +279,8 @@ extension BaseDataImport {
 		let chunkProgress = Double(self.progressProcessImportChunk) * chunkPercentage
 
         for mission in DataMission.getAll(with: manager, alterFetchRequest: { fetchRequest in
-            fetchRequest.predicate = NSPredicate(format: "(inMissionId = nil)")
+//            fetchRequest.predicate = NSPredicate(format: "(inMissionId == nil)")
+            fetchRequest.predicate = NSPredicate(format: "(relatedEvents.@count > 0)")
         }) {
             self.applyInheritedEvents(
                 mission: mission,
@@ -275,6 +311,7 @@ extension BaseDataImport {
 		level: Int = 0,
 		runOnEachMapBlock: @escaping (() -> Void)
 	) {
+        guard !inheritableEvents.isEmpty else { return }
         var maps: [DataMap] = []
         for (var childMap) in DataMap.getAll(with: manager, alterFetchRequest: { fetchRequest in
             fetchRequest.predicate = NSPredicate(format: "(inMapId = %@)", map.id)
@@ -340,6 +377,7 @@ extension BaseDataImport {
 		level: Int = 0,
 		runOnEachMissionBlock: @escaping (() -> Void)
 	) {
+        guard !inheritableEvents.isEmpty else { return }
         var missions: [DataMission] = []
         for (var childMission) in DataMission.getAll(with: manager, alterFetchRequest: { fetchRequest in
             fetchRequest.predicate = NSPredicate(format: "(inMissionId = %@)", mission.id)
