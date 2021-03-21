@@ -279,6 +279,10 @@
         "gameVersion": "3",
         "description": "[megametracker://mission?id=DLC3.Leviathan.4]"
     }, {
+        "id": "Completed: Cerberus Fighter Base",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.N7CerberusFighterBase]"
+    }, {
         "id": "Completed: Ardat-Yakshi Monastery",
         "gameVersion": "3",
         "description": "[megametracker://mission?id=A3.ArdatYakshiMonastery]"
@@ -328,12 +332,27 @@
     }, {
         "id": "Completed: Kelly Convo 2 + 1",
         "gameVersion": "3",
-        "description": "Complete one mission after the 2nd Citadel conversation with Kelly",
+        "description": "Complete one mission after asking Kelly to change her name",
         "isAny": "missions",
         "dependentOn": {
             "countTo": 1,
             "events": [
                 "Any Mission After: Completed: Kelly Convo 2"
+            ]
+        }
+    }, {
+        "id": "Completed: Kelly Convo 4",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.Convo.A.Kelly.4]"
+    }, {
+        "id": "Completed: Kelly Convo 4 + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after the post-coup conversation with Kelly",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Kelly Convo 4"
             ]
         }
 
@@ -344,7 +363,7 @@
     }, {
         "id": "Completed: Cortez Convo 2 + 1",
         "gameVersion": "3",
-        "description": "Complete one mission after the 2nd Normandy conversation with Cortez",
+        "description": "Complete one mission after speaking to Cortez about his husband's death",
         "isAny": "missions",
         "dependentOn": {
             "countTo": 1,
@@ -359,7 +378,7 @@
     }, {
         "id": "Completed: Cortez Convo 3 + 1",
         "gameVersion": "3",
-        "description": "Complete one mission after the 3rd Normandy conversation with Cortez",
+        "description": "Complete one mission after asking Cortez to take some downtime",
         "isAny": "missions",
         "dependentOn": {
             "countTo": 1,
@@ -374,7 +393,7 @@
     }, {
         "id": "Completed: Cortez Convo 4 + 1",
         "gameVersion": "3",
-        "description": "Complete one mission after the 1st Citadel conversation with Cortez",
+        "description": "Complete one mission after speaking to Cortez at the Citadel dock",
         "isAny": "missions",
         "dependentOn": {
             "countTo": 1,
@@ -389,7 +408,7 @@
     }, {
         "id": "Completed: Cortez Convo 5 + 1",
         "gameVersion": "3",
-        "description": "Complete one mission after the 2nd Citadel conversation with Cortez",
+        "description": "Complete one mission after speaking to Cortez at the Citadel memorial wall",
         "isAny": "missions",
         "dependentOn": {
             "countTo": 1,
@@ -404,7 +423,7 @@
     }, {
         "id": "Completed: Liara Convo 3 + 1",
         "gameVersion": "3",
-        "description": "Complete one mission after the 1st Citadel conversation with Liara",
+        "description": "Complete one mission after meeting Liara at the Citadel cafe",
         "isAny": "missions",
         "dependentOn": {
             "countTo": 1,
@@ -419,7 +438,7 @@
     }, {
         "id": "Completed: Liara Convo 4 + 1",
         "gameVersion": "3",
-        "description": "Complete one mission after the 3rd Normandy conversation with Liara",
+        "description": "Complete one mission after speaking with Liara about the end of civilization",
         "isAny": "missions",
         "dependentOn": {
             "countTo": 1,
@@ -427,6 +446,23 @@
                 "Any Mission After: Completed: Liara Convo 4"
             ]
         }
+
+    }, {
+        "id": "Completed: Joker Convo 7",
+        "gameVersion": "3",
+        "description": "[megametracker://mission?id=A3.Convo.C.Joker.7]"
+    }, {
+        "id": "Completed: Joker Convo 7 + 1",
+        "gameVersion": "3",
+        "description": "Complete one mission after the conversation with Joker in Purgatory",
+        "isAny": "missions",
+        "dependentOn": {
+            "countTo": 1,
+            "events": [
+                "Any Mission After: Completed: Joker Convo 7"
+            ]
+        }
+
 
     }, {
         "id": "Completed: Mordin Convo 1",
@@ -442,6 +478,43 @@
         "description": "[megametracker://mission?id=A3.Convo.A.Mordin.1-DSong]"
 
     }, {
+        "id": "Completed: Convo: Donnelly/Daniels 1",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.DonnellyDaniels.02]"
+    }, {
+        "id": "Completed: Convo: Donnelly/Daniels 2",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.DonnellyDaniels.03]"
+    }, {
+        "id": "Completed: Convo: Donnelly/Daniels 3",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.DonnellyDaniels.04]"
+    }, {
+        "id": "Completed: Convo: Donnelly/Daniels 4",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.DonnellyDaniels.05]"
+    }, {
+        "id": "Completed: Convo: Donnelly/Daniels 5",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.DonnellyDaniels.06]"
+    }, {
+        "id": "Completed: Convo: Donnelly/Daniels 6",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.DonnellyDaniels.07]"
+    }, {
+        "id": "Completed: Convo: Donnelly/Daniels 7",
+        "gameVersion": "3",
+        "description": "[A3.Convo.C.DonnellyDaniels.08]"
+    }, {
+        "id": "Completed: GX12 Thermal Pipe",
+        "gameVersion": "3",
+        "description": "[A3.GX12ThermalPipe]"
+    }, {
+        "id": "Completed: Argument Donnelly/Daniels",
+        "gameVersion": "3",
+        "description": "[A3.Convo.N.8DanielsDonnelly]"
+
+    }, {
         "id": "Completed: Aethyta Convo 1",
         "gameVersion": "3",
         "description": "[megametracker://mission?id=A3.Convo.A.Aethyta]"
@@ -452,12 +525,12 @@
     }, {
         "id": "Completed: Javik Convo 1 + 1",
         "gameVersion": "3",
-        "description": "Complete one mission after the 1st Normandy conversation with Javik",
+        "description": "Complete one mission after the 1st conversation with Javik",
         "isAny": "missions",
         "dependentOn": {
             "countTo": 1,
             "events": [
-                "Any Mission After: Completed: Javik Convo 1 3"
+                "Any Mission After: Completed: Javik Convo 1"
             ]
         }
     }]

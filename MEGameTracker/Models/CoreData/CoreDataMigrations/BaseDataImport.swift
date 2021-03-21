@@ -123,20 +123,28 @@ extension BaseDataImport {
         
         // process all events first
         for row in progressFilesEvents {
-            queueGroup.enter()
-            queue.async(group: queueGroup) {
+            if isTestProject {
                 importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
-                queueGroup.leave()
+            } else {
+                queueGroup.enter()
+                queue.async(group: queueGroup) {
+                    importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
+                    queueGroup.leave()
+                }
             }
         }
         // wait for finish
         queueGroup.wait()
 
 		for row in progressFilesOther {
-            queueGroup.enter()
-            queue.async(group: queueGroup) {
+            if isTestProject {
                 importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
-                queueGroup.leave()
+            } else {
+                queueGroup.enter()
+                queue.async(group: queueGroup) {
+                    importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
+                    queueGroup.leave()
+                }
             }
 		}
         // wait for finish

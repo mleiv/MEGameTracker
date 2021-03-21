@@ -34,9 +34,12 @@
         "itemType": "Upgrade",
         "itemDisplayType": "Goal",
         "name": "Heating Unit Stabilizers",
-        "annotationNote": "Found under ceiling during N7: Cerberus Fighter Base",
         "inMapId": "G.Ear.Hor.Pax.Noveria",
-        "isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 1361,
+            "y": 1318,
+            "radius": 1
+        },
         "sortIndex": 1191
     }, {
         "id": "A3.PowerGrid.I.1",
@@ -152,7 +155,7 @@
         "itemDisplayType": "Goal",
         "name": "E-Gel Thermal Conduit",
         "price": "-1,000 Credits",
-        "inMapId": "G.C",
+        "inMapId": "G.C3.6.Elkoss",
         "isShowInParentMap": true,
         "sortIndex": 1170
 
@@ -610,18 +613,26 @@
         "gameVersion": "3",
         "itemType": "Request",
         "name": "Bilal Osoba's Dog Tags",
-        "inMapId": "G.Ear.Arc.Eul.Benning",
-        "isShowInParentMap": true,
         "inMissionId": "A3.BenningEvidence",
+        "inMapId": "G.Ear.Arc.Eul.Benning",
+        "mapLocationPoint": {
+            "x": 671,
+            "y": 1123,
+            "radius": 1
+        },
         "sortIndex": 1100
     }, {
         "id": "A3.KroganDying.I.0",
         "gameVersion": "3",
         "itemType": "Request",
         "name": "Charr's Last Message",
-        "inMapId": "G.Att.Nin.Mul.Utukku",
-        "isShowInParentMap": true,
         "inMissionId": "A3.KroganDying",
+        "inMapId": "G.Att.Nin.Mul.Utukku.2Tunnels",
+        "mapLocationPoint": {
+            "x": 1355,
+            "y": 2036,
+            "radius": 1
+        },
         "sortIndex": 1101
     }, {
         "id": "A3.AsariWidow.I.0",

@@ -276,7 +276,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Nav Point 1",
-        "isOpensDetail" : false,
+        "isOpensDetail": false,
         "inMapId": "G.C3.3Embassies",
         "mapLocationPoint": {
             "x": 1869,
@@ -290,7 +290,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Nav Point 2",
-        "isOpensDetail" : false,
+        "isOpensDetail": false,
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
             "x": 1743,
@@ -304,7 +304,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Nav Point 3",
-        "isOpensDetail" : false,
+        "isOpensDetail": false,
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
             "x": 176,
@@ -318,7 +318,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Nav Point 4",
-        "isOpensDetail" : false,
+        "isOpensDetail": false,
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
             "x": 1743,
@@ -460,7 +460,7 @@
         "gameVersion": "3",
         "missionType": "Assignment",
         "name": "Citadel: GX12 Thermal Pipe",
-        "description": "[megametracker://person?id=P1.Adams] has requested a GX12 thermal pipe to make the Normandy's engines safer. Puchase one at Elkoss Combine Arsenal Supplies in the Presdium Commons and deliver it to him.",
+        "description": "[megametracker://person?id=P1.Adams] has requested a GX12 thermal pipe to make the Normandy's engines safer. Puchase one at Elkoss Combine Arsenal Supplies in the Presdium Commons and deliver it to him.\n\n If you speak to Adams afterwards, he will suggest sharing their research with the Crucible team, which results in the war asset Optimized Eezo Capacitors.",
         "inMapId": "G.N3.4.Station",
         "isShowInParentMap": true,
         "experience": 375,
@@ -476,6 +476,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Sur'Kesh + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: GX12 Thermal Pipe"
         }]
     }, {
         "id": "A3.GX12ThermalPipe.2",
@@ -537,8 +540,8 @@
         "description": "C-Sec Officer Jordan Noles has requested assistance tracking illegal use of batarian diplomatic codes. Consult the Spectre terminal and then locate access points on the Citadel.",
         "inMapId": "G.C3.6Presidium",
         "mapLocationPoint": {
-            "x": 1530,
-            "y": 1168,
+            "x": 1788,
+            "y": 1011,
             "radius": 20
         },
         "experience": 210,
@@ -592,6 +595,30 @@
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
         }]
+    }, {
+        "id": "A3.BatarianCodes.0",
+        "inMissionId": "A3.BatarianCodes",
+        "sortIndex": 12101,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Noles",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 1788,
+            "y": 1011,
+            "radius": 20
+        }
+    }, {
+        "id": "A3.BatarianCodes.0B",
+        "inMissionId": "A3.BatarianCodes",
+        "sortIndex": 12101,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Enable Access Codes",
+        "description": "Enable Spectre access at the terminal, so you can see the access points across the Citadel.",
+        "inMapId": "G.C3.3.Terminal",
+        "isShowInParentMap": true
     }, {
         "id": "A3.BatarianCodes.1",
         "inMissionId": "A3.BatarianCodes",
@@ -819,7 +846,7 @@
         }],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Geth Dreadnought"
+            "id": "Completed: Priority: The Citadel II"
         }]
     }, {
         "id": "A3.ChemicalTreatment.2",
@@ -985,7 +1012,13 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Speak to Tactus",
-        "description": "Ask Tactus to swap medical supplies with the Normandy."
+        "description": "Ask Tactus to swap medical supplies with the Normandy.",
+        "inMapId": "G.C3.2HoldingArea",
+        "mapLocationPoint": {
+            "x": 960,
+            "y": 1072,
+            "radius": 20
+        }
     }, {
         "id": "A3.MedicalSupplies.3",
         "inMissionId": "A3.MedicalSupplies",
@@ -1041,13 +1074,27 @@
             "id": "Completed: Priority: The Citadel II"
         }]
     }, {
+        "id": "A3.MediGelSabotage.0",
+        "inMissionId": "A3.MediGelSabotage",
+        "sortIndex": 12191,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Doctor",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.2HoldingArea",
+        "mapLocationPoint": {
+            "x": 875,
+            "y": 947,
+            "radius": 20
+        }
+    }, {
         "id": "A3.MediGelSabotage.1",
         "inMissionId": "A3.MediGelSabotage",
         "sortIndex": 12191,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Conrad (Optional)",
-        "description": "Conrad is in the Citadel docks, promoting Cerberus (\"If Cerberus is good enough for Commander Shepard...\"). Note: this is post-Citadel coup. Talk to Conrad and explain how terrible Cerberus is and that he should right up about them. If you chose all the necessary Game 1 decisions (Conrad, Hossle's Disk on Feros, Asari Writings collection, and the Elkoss Combine Armory license), you will also get Conrad's dissertation as a War Asset.",
+        "description": "Conrad is in the Citadel docks, promoting Cerberus (\"If Cerberus is good enough for Commander Shepard...\"). Note: this is post-Citadel coup. Talk to Conrad and explain how terrible Cerberus is and that he should wise up about them. If you chose all the necessary Game 1 decisions (Conrad, Hossle's Disk on Feros, Asari Writings collection, and the Elkoss Combine Armory license), you will also get Conrad's dissertation as a War Asset. \n\nYou can prompt Conrad for some more comments afterward. His charity for war orphans on Illium, whether we will defeat the Reapers, thermal clips, family on Earth, his shrine to Shepard. After that he will prompt you to go repair the medical station.",
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
             "x": 1539,
@@ -1154,7 +1201,7 @@
         }],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Geth Dreadnought"
+            "id": "Completed: Priority: The Citadel II"
         }]
     }, {
         "id": "A3.ReaperCodeFragments.2",
@@ -1195,7 +1242,7 @@
         }],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Geth Dreadnought"
+            "id": "Completed: Priority: The Citadel II"
         }]
     }, {
         "id": "A3.TargetJammingTechnology.2",
@@ -1294,6 +1341,20 @@
         "description": "Speak to the turian guard outside the Citadel Embassy offices and convince him to let you into the office. Listen to the three recordings to learn that Din Korlack used to work for Cerberus but has severed any ties. [megametracker://person?id=S2.Zaeed] comes into the story if he survived Game 2. \n\nFind an earpiece in the office which connects you to Din Korlack. If Zaeed is with him, you can instruct Korlack to drop your name.",
         "inMapId": "G.C3.3.Office",
         "isShowInParentMap": true
+    }, {
+        "id": "A3.VolusAmbassador.2.1",
+        "inMissionId": "A3.VolusAmbassador.2",
+        "sortIndex": 12222,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Bug",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.3Embassies",
+        "mapLocationPoint": {
+            "x": 2014,
+            "y": 1118,
+            "radius": 1
+        }
     }, {
         "id": "A3.VolusAmbassador.3",
         "inMissionId": "A3.VolusAmbassador",
@@ -1848,12 +1909,54 @@
             "id": "Completed: Attican Traverse: Krogan Team or Tuchanka: Turian Platoon"
         }]
     }, {
+        "id": "A3.N7CerberusAbductions.1",
+        "inMissionId": "A3.N7CerberusAbductions",
+        "sortIndex": 1160,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Secure Area",
+        "description": "Eliminate the first wave of Cerberus on the upper streets.",
+        "inMapId": "G.Ear.Arc.Eul.Benning",
+        "mapLocationPoint": {
+            "x": 590,
+            "y": 1322,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.N7CerberusAbductions.2",
+        "inMissionId": "A3.N7CerberusAbductions",
+        "sortIndex": 1160,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Defend Civilians",
+        "description": "Head down to the lower streets to defend the civilians and organize an evacuation.",
+        "inMapId": "G.Ear.Arc.Eul.Benning",
+        "mapLocationPoint": {
+            "x": 1840,
+            "y": 1873,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.N7CerberusAbductions.3",
+        "inMissionId": "A3.N7CerberusAbductions",
+        "sortIndex": 1160,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Evacuate",
+        "description": "Help the civilians evacuate and take the shuttle off Benning.",
+        "inMapId": "G.Ear.Arc.Eul.Benning",
+        "mapLocationPoint": {
+            "x": 1725,
+            "y": 40,
+            "radius": 1
+        }
+    }, {
         "id": "A3.N7CerberusFighterBase",
         "sortIndex": 1190,
         "gameVersion": "3",
         "missionType": "Assignment",
         "name": "N7: Cerberus Fighter Base",
-        "description": "Admiral Hackett has asked you to disable a Cerberus fighter base on Noveria. \n\nFight your way to the command center. Deactivate the security console. One of your squad will be occupied with the task while the other helps you fight off a new wave of Cerberus troops. When you are finished with them, activate the console on the left and fight your way back to the landing pad and eliminate the Atlas.",
+        "description": "Admiral Hackett has asked you to disable a Cerberus fighter base on Noveria. \n\nFight your way to the command center. Deactivate the security console. One of your squad will be occupied with the task while the other helps you fight off a new wave of Cerberus troops. When you are finished with them, activate the second console on the left and fight your way back to the landing pad and eliminate the Atlas.",
         "inMapId": "G.Ear.Hor.Pax.Noveria",
         "isShowInParentMap": true,
         "experience": 0,
@@ -1869,7 +1972,38 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Tuchanka"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Cerberus Fighter Base"
         }]
+    }, {
+        "id": "A3.N7CerberusFighterBase.1",
+        "inMissionId": "A3.N7CerberusFighterBase",
+        "sortIndex": 1160,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Security Console 1",
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Hor.Pax.Noveria",
+        "mapLocationPoint": {
+            "x": 1278,
+            "y": 1770,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.N7CerberusFighterBase.2",
+        "inMissionId": "A3.N7CerberusFighterBase",
+        "sortIndex": 1160,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Security Console 2",
+        "isOpensDetail": false,
+        "inMapId": "G.Ear.Hor.Pax.Noveria",
+        "mapLocationPoint": {
+            "x": 1370,
+            "y": 1770,
+            "radius": 1
+        }
     }, {
         "id": "A3.N7FuelReactors",
         "sortIndex": 1300,
@@ -3047,7 +3181,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Alternate Route",
-        "description": "Cerberus has cut off your route back to Cortez. You need to find an alternate route off the station.",
+        "description": "Cerberus has cut off your route back to Cortez. You need to find an alternate route off the station."
     }, {
         "id": "A3.GrissomAcademy.2B.1",
         "inMissionId": "A3.GrissomAcademy.2B",
@@ -3303,7 +3437,23 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Aralakh Company",
-        "description": "Meet up with Aralakh Company, come to help investigate. If [megametracker://person?id=S2.Grunt] survived Game 2, he will be in the team, otherwise his role is filled by [megametracker://person?id=O3.Dagg]. Once you travel far enough through the krogan buildings, they will drop down to the rachni tunnels."
+        "description": "Meet up with Aralakh Company, come to help investigate. If [megametracker://person?id=S2.Grunt] survived Game 2, he will be in the team, otherwise his role is filled by [megametracker://person?id=O3.Dagg].",
+        "inMapId": "G.Att.Nin.Mul.Utukku.1Camp",
+        "mapLocationPoint": {
+            "x": 1114,
+            "y": 930,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.KroganTeam.1B",
+        "inMissionId": "A3.KroganTeam",
+        "sortIndex": 11001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Collapse",
+        "description": "Crossing the last container will trigger a collapse and you (and the building) will drop down to the rachni tunnels below.",
+        "inMapId": "G.Att.Nin.Mul.Utukku.1.Collapse",
+        "isShowInParentMap": true
     }, {
         "id": "A3.KroganTeam.2",
         "inMissionId": "A3.KroganTeam",
@@ -3311,7 +3461,69 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Tunnels",
-        "description": "Aralakh Company will split and travel down a different tunnel. Head through the tunnels until you find the missing krogan team. Then drop down for a big fight in a large cave, and travel up a series of ledges. You will see Aralakh Company fighting below. Take out the Reaper node."
+        "description": "Aralakh Company will split and travel down a different tunnel. Pick up the M-451 Firestorm to burn through the rachni webbing and enter the tunnels. Burn the rachni eggs also.",
+    }, {
+        "id": "A3.KroganTeam.2.1",
+        "inMissionId": "A3.KroganTeam.2",
+        "sortIndex": 11001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "First Battle",
+        "description": "Drop down for a big fight in a large cave with Reaper forces.",
+        "inMapId": "G.Att.Nin.Mul.Utukku.2Tunnels",
+        "mapLocationPoint": {
+            "x": 978,
+            "y": 676,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.KroganTeam.2.2",
+        "inMissionId": "A3.KroganTeam.2",
+        "sortIndex": 11001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Reaper Node",
+        "description": "Shoot the Reaper node to open up the next area. (You can't use the M-451 Firestorm to shoot the nodes.) \n\nThe tunnels collapse behind you when you cross into the next area. You can go right or left, both routes lead through eggs and bring you to the next battle.",
+        "inMapId": "G.Att.Nin.Mul.Utukku.2.Node",
+        "isShowInParentMap": true
+    }, {
+        "id": "A3.KroganTeam.2.3",
+        "inMissionId": "A3.KroganTeam.2",
+        "sortIndex": 11001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Second Battle",
+        "description": "There is a second battle with Reaper forces in this wide area. When they are cleared, drop down the ledge to the area below, and a lot more eggs.",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "mapLocationPoint": {
+            "x": 1712,
+            "y": 927,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.KroganTeam.2.4",
+        "inMissionId": "A3.KroganTeam.2",
+        "sortIndex": 11001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Arlakh Company",
+        "description": "You will head up a series of ledges and then down a long tunnel, before seeing Arlakh across the way, fighting more Reaper forces. Drop down twice more into the shallow lake, and Arlakh will meet you there, by another Reaper node. Shoot this node to continue to the next room. Arlakh will stay behind.",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "mapLocationPoint": {
+            "x": 696,
+            "y": 718,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.KroganTeam.2.5",
+        "inMissionId": "A3.KroganTeam.2",
+        "sortIndex": 11001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Narrow Passage",
+        "description": "Take the narrow passage down to the central chamber.",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3.Passage",
+        "isShowInParentMap": true
     }, {
         "id": "A3.KroganTeam.3",
         "inMissionId": "A3.KroganTeam",
@@ -3319,7 +3531,37 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Central Chamber",
-        "description": "Crawl through the narrow passage and destroy the Reaper node here also. The wall will retract and Reaper forces will flood in. When they are dispatched, take out the second Reaper node, drawing another wave of Reaper forces. Destroy the third node and the last wave of Reaper forces."
+        "description": "Three Reaper walls will spring up. You will have to destroy three Reaper nodes to continue, and three waves of Reaper forces."
+    }, {
+        "id": "A3.KroganTeam.3.1",
+        "inMissionId": "A3.KroganTeam.3",
+        "sortIndex": 11001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Reaper Node 1",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Nin.Mul.Utukku.3.Node2",
+        "isShowInParentMap": true
+    }, {
+        "id": "A3.KroganTeam.3.2",
+        "inMissionId": "A3.KroganTeam.3",
+        "sortIndex": 11001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Reaper Node 2",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Nin.Mul.Utukku.3.Node3",
+        "isShowInParentMap": true
+    }, {
+        "id": "A3.KroganTeam.3.3",
+        "inMissionId": "A3.KroganTeam.3",
+        "sortIndex": 11001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Reaper Node 3",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Nin.Mul.Utukku.3.Node4",
+        "isShowInParentMap": true
     }, {
         "id": "A3.KroganTeam.4",
         "inMissionId": "A3.KroganTeam",
@@ -3327,7 +3569,13 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Rachni Queen",
-        "description": "If you did not save the [megametracker://person?id=E1.RachniQueen], the rachni queen here is called the \"Breeder\". \n\nYou must choose whether to save the queen or not. Saving her will sacrifice Aralakh Company. If this is the Breeder, she will also betray you later, so that is not smart. If you save the queen and Grunt was loyal, he will still survive after all the rest of Aralakh Company dies."
+        "description": "If you did not save the [megametracker://person?id=E1.RachniQueen], the rachni queen here is called the \"Breeder\". \n\nYou must choose whether to save the queen or not. Saving her will sacrifice Aralakh Company. If this is the Breeder, she will also betray you later, so that is not smart. If you save the queen and Grunt was loyal, he will still survive after all the rest of Aralakh Company dies.",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "mapLocationPoint": {
+            "x": 355,
+            "y": 1109,
+            "radius": 1
+        }
     }, {
         "id": "A3.ExCerberusScientists",
         "sortIndex": 1200,

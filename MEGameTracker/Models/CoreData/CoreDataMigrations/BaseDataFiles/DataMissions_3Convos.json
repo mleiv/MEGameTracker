@@ -87,7 +87,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Ashley: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Coma",
         "description": "Check in on Ashley at the hospital. She is still unconscious.",
         "inMapId": "G.C3.4Hospital",
         "mapLocationPoint": {
@@ -102,7 +102,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Ashley: ",
-        "name": "2nd Citadel Convo",
+        "name": "Citadel Convo - Cerberus",
         "description": "_Note: this conversation must be completed immediately after [megametracker://mission?id=M3.1.Palaven]. Completing another mission will fast-forward to the next conversation._ \n\nYou interrupt Udina talking to Ashley, urging her to accept the Spectre position. Ashley is still considering the offer. She is still suspicious of your Cerberus ties. You will need to Paragon this conversation if you want to keep her alive later. She asks you to find information on her family if you can, and talks about her youngest sister, who was not on Earth and whom she invited to the Citadel to wait for news.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.4Hospital",
@@ -122,8 +122,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Ashley: ",
-        "name": "3rd Citadel Convo",
-        "description": "_Note: this is available one assignment after [megametracker://mission?id=M3.1.Palaven]_ \n\nCongratulate Ashley on accepting Spectre status. She has contacted her mom, and her sister is on the citadel - but her sister's husband was killed in action. She also recites some poetry.",
+        "name": "Citadel Convo - Spectre",
+        "description": "Congratulate Ashley on accepting Spectre status. She has contacted her mom, and her sister is on the citadel - but her sister's husband was killed in action. She also recites some poetry.",
         "inMapId": "G.C3.4Hospital",
         "mapLocationPoint": {
             "x": 1183,
@@ -132,7 +132,22 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven"
+            "id": "Completed: Priority: Palaven + 1"
+        }]
+    }, {
+        "id": "A3.Convo.S.Ashley.4",
+        "inMissionId": "A3.Convo.S.Ashley",
+        "sortIndex": 90003,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Ashley: ",
+        "name": "Citadel Convo - Coup",
+        "description": "Help Ashley process the death of Udina and she asks to rejoin the Normandy.",
+        "inMapId": "G.C3.1.Dock",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel II"
         }]
     }, {
         "id": "A3.Convo.S.Ashley.5",
@@ -141,8 +156,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Ashley: ",
-        "name": "4th Citadel Convo",
-        "description": "_Note: this is available one assignment after [megametracker://mission?id=M3.2.Citadel2]_ \n\nIf you recruited Ashley at the end of [megametracker://mission?id=M3.2.Citadel2], Ashley and her sister are leaving a memento at the refugees' Memorial Wall for Sarah's lost husband.",
+        "name": "Citadel Convo - Memorial",
+        "description": "If you recruited Ashley at the end of [megametracker://mission?id=M3.2.Citadel2], Ashley and her sister are leaving a memento at the refugees' Memorial Wall for Sarah's lost husband.",
         "inMapId": "G.C3.2.Wall",
         "isShowInParentMap": true,
         "events": [{
@@ -156,7 +171,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Ashley: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Hungover",
         "description": "Ashley is hungover on the floor in the Observation Deck. Mock her.",
         "inMapId": "G.N3.3.Port",
         "isShowInParentMap": true,
@@ -171,7 +186,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Ashley: ",
-        "name": "5th Citadel Convo",
+        "name": "Citadel Convo - Cafe",
         "description": "Meet Ashley at the Apollo Cafe on the Citadel. She is reminiscing happily about her family. BroShep can lock down a relationship.",
         "annotationNote": "Romance Lock",
         "inMapId": "G.C3.6Presidium",
@@ -191,7 +206,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Ashley: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Shots",
         "description": "Meet Ashley at the casino bar. She wants to do shots. *Renegade Interrupt* to keep pounding shots. Two batarians come by and harass you (using a line from Star Wars). You and Ashley kick their asses. \n\nIf you romanced Ashley, sorry - there's not much more than the non-romanced version, just a few flirtatious lines.",
         "inMapId": "G.C3.Silversun.Casino.Bar",
         "isShowInParentMap": true,
@@ -322,7 +337,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Body",
         "description": "Meet EDI in her new body. She will volunteer to join the squad.",
         "inMapId": "G.N3.3.Core",
         "isShowInParentMap": true
@@ -333,7 +348,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - Morality",
         "description": "On the bridge, EDI will want to speak privately with you, where she asks if it you agree with her modifying her core code to make moral choices. She also asks you to stop by occasionally and answer other difficult questions for her. You can also ask her more questions about the capabilities of her body.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true
@@ -344,7 +359,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Romance",
         "description": "You can find EDI at a store in the Presidium Commons. She senses that Jeff is forming an attachment to her. She seems interested in pursuing it. You can encourage or discourage this.",
         "inMapId": "G.C3.6Presidium",
         "mapLocationPoint": {
@@ -359,7 +374,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
-        "name": "3rd Normandy Convo",
+        "name": "Convo - Krogan",
         "description": "EDI discusses the problems with krogan's clutch sizes and logistical issues with transporting groups of krogan fighters to Palaven.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -390,7 +405,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
-        "name": "4th Normandy Convo",
+        "name": "Convo - Tuchanka",
         "description": "EDI is in the AI Core. She explains that she and the turians are reviewing data from the destroyed Reaper, looking for structural weaknesses.",
         "inMapId": "G.N3.3.Core",
         "isShowInParentMap": true,
@@ -405,10 +420,29 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
-        "name": "5th Normandy Convo",
+        "name": "Convo - Death",
         "description": "EDI is worrying about her own demise. She asks what the purpose is for synthetic life. She decides to alter her core programming to prioritize duty, altruism, and love over self-preservation.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel II"
+        }]
+    }, {
+        "id": "A3.Convo.S.EDI.6B",
+        "inMissionId": "A3.Convo.S.EDI",
+        "sortIndex": 90007,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "EDI: ",
+        "name": "Citadel Convo - Hair",
+        "description": "You can ask EDI what her body is made of, and her hair.",
+        "inMapId": "G.C3.5Purgatory",
+        "mapLocationPoint": {
+            "x": 995,
+            "y": 1744,
+            "radius": 1
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
@@ -420,17 +454,34 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
-        "name": "2nd Citadel Convo",
-        "description": "_Note: this is available on assignment after speaking to Joker at the bar ([megametracker://mission?id=A3.Convo.C.Joker.7])._ \n\nYou can find EDI sitting at a table at Purgatory. If a relationship with Joker was encouraged, she will talk enthusiastically about their relationship. Otherwise, she will muse on how alone she is, because even the geth and the Reapers have more of their own kind.",
+        "name": "Citadel Convo - Relationships",
+        "description": "You can find EDI sitting at a table at Purgatory. If a relationship with Joker was encouraged, she will talk enthusiastically about their relationship. Otherwise, she will muse on how alone she is, because even the geth and the Reapers have more of their own kind. \n\nYou can prompt EDI for more comments with Joker, including a game of hot-or-not with prominent figures of other species.",
         "inMapId": "G.C3.5Purgatory",
         "mapLocationPoint": {
             "x": 1334,
             "y": 1658,
             "radius": 20
         },
+        "relatedDecisionIds": ["D3.EdiJoker"],
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: The Citadel II"
+            "id": "Completed: Joker Convo 7 + 1"
+        }]
+    }, {
+        "id": "A3.Convo.S.EDI.7-BCerberus",
+        "identicalMissionId": "A3.Convo.S.Javik.2-16Cerberus",
+        "inMissionId": "A3.Convo.S.EDI",
+        "sortIndex": 90007,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "EDI: ",
+        "name": "Side Convo - Cerberus",
+        "description": "Javik is talking with EDI about the traitors Cerberus and that she was made by them. \n\nYou can prompt Javik for more comments about Cerberus and rescuing the scientists.",
+        "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Ex-Cerberus Scientists"
         }]
     }, {
         "id": "A3.Convo.S.EDI.7-BRannoch",
@@ -471,7 +522,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
-        "name": "6th Normandy Convo",
+        "name": "Convo - Defiance",
         "description": "EDI is puzzled by the behavior of captured humans on Earth, who remained defiant and selfless. She decides to rewrite her code to risk non-functionality for the people she cares about.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -486,7 +537,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Shopping",
         "description": "EDI goes shopping. She brings you a gift and then tries to buy something for Joker.",
         "inMapId": "G.C3.Apartment",
         "isShowInParentMap": true,
@@ -646,7 +697,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Responsibilities",
         "description": "Talk to Garrus in the Main Battery. He will commiserate a bit with you over responsibilities, and discuss how his father helped him create a Reaper task force. If you romanced him in Game 2, he will ask about your feelings.",
         "annotationNote": "Romance Option",
         "inMapId": "G.N3.3.Battery",
@@ -658,7 +709,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Refugees",
         "description": "Talk to Garrus in the Docks. He is helping manage the turian refugees and wounded.",
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
@@ -690,7 +741,7 @@
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
         "name": "Side Convo - Archangel",
-        "description": "Garrus is chatting with Liara in the Lounge about his time as Archangel on Omega.",
+        "description": "Garrus is chatting with Liara in the Lounge about his time as Archangel on Omega. You can trigger several additional comments about the turians on Tuchanka.",
         "inMapId": "G.N3.3.Port",
         "isShowInParentMap": true,
         "events": [{
@@ -717,7 +768,7 @@
         }]
     }, {
         "id": "A3.Convo.S.Garrus.2-DBomb",
-        "identicalMissionId": "A3.Convo.S.Javik.2-DBomb",
+        "identicalMissionId": "A3.Convo.S.Javik.2-12Bomb",
         "inMissionId": "A3.Convo.S.Garrus",
         "sortIndex": 90004,
         "gameVersion": "3",
@@ -725,7 +776,7 @@
         "titlePrefix": "Garrus: ",
         "name": "Side Convo - Bomb",
         "description": "Javik contacts Garrus to compliment the turians on their cunning in planting the bomb.",
-        "inMapId": "G.N3.3.Battery",
+        "inMapId": "G.N3.3.Port",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -740,7 +791,7 @@
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
         "name": "Side Convo - Mordin",
-        "description": "Joker and Garrus are trading jokes on the bridge. They both express their sadness at Mordin's death.",
+        "description": "Joker and Garrus are trading jokes on the bridge. When you join the conversation, they both express their sadness at Mordin's death. Garrus asks you how it feels to have the hrogan singing song about you. \n\nIf you prompt Garrus, he will ponder where the krogan will live now.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
         "events": [{
@@ -780,7 +831,7 @@
         }]
     }, {
         "id": "A3.Convo.S.Garrus.4-CWar",
-        "identicalMissionId": "A3.Convo.S.Javik.2-DWar",
+        "identicalMissionId": "A3.Convo.S.Javik.2-30War",
         "inMissionId": "A3.Convo.S.Garrus",
         "sortIndex": 90004,
         "gameVersion": "3",
@@ -801,8 +852,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "2nd Citadel Convo",
-        "description": "_Note: This conversation is available one assignment after [megametracker://mission?id=M3.2.Citadel2]._ \n\nGarrus is waiting at the Normandy Dock. He wants to go do something to fun to blow off steam: shooting on top the Presidium. You two get to decide who is the better shot. \n\nIf you are romancing him, Garrus asks for you to commit.",
+        "name": "Citadel Convo - Shooting",
+        "description": "Garrus is waiting at the Normandy Dock. He wants to go do something to fun to blow off steam: shooting on top the Presidium. You two get to decide who is the better shot. \n\nIf you are romancing him, Garrus asks for you to commit.",
         "annotationNote": "Romance Lock",
         "inMapId": "G.C3.1Dock",
         "mapLocationPoint": {
@@ -812,7 +863,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: The Citadel II"
+            "id": "Completed: Priority: The Citadel II + 1"
         }]
     }, {
         "id": "A3.Convo.S.Garrus.6",
@@ -821,7 +872,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - Strategy",
         "description": "Garrus is happy to have Tali back aboard. He is worried about Palaven, that the turians need to stop focusing on trying to save it in order to fight the Reapers.",
         "inMapId": "G.N3.3.Battery",
         "isShowInParentMap": true,
@@ -836,7 +887,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "3rd Normandy Convo",
+        "name": "Convo - Palaven",
         "description": "Garrus says his family made it off Palaven. He has now advised the Primarch to retreat from Palaven in order to save their forces for the Crucible.",
         "inMapId": "G.N3.3.Battery",
         "isShowInParentMap": true,
@@ -851,7 +902,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Bar",
         "description": "Try to hook Garrus up with another turian at the casino bar. Everything he says is wrong and she gets up to leave - interrupt to pass them a beer, and he calms down enough to chat her up. \n\nThe romance version of this is one of my favorites - you head off the turian woman early on, and Garrus takes you out to Tango. Use the interrupts to add some flair ([YouTube|https://www.youtube.com/watch?v=w2PPlz37HHA]).",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Silversun.Casino.Bar",
@@ -862,12 +913,13 @@
         }]
     }, {
         "id": "A3.Convo.S.Garrus.9",
+        "identicalMissionId": "A3.Convo.S.Tali.9-BGarrus",
         "inMissionId": "A3.Convo.S.Garrus",
         "sortIndex": 90009,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
-        "name": "4th Normandy Convo",
+        "name": "Side Convo - Tali",
         "description": "If you have not romanced either Garrus or Tali, they are canoodling down in the Main Battery.",
         "inMapId": "G.N3.3.Battery",
         "isShowInParentMap": true,
@@ -1009,7 +1061,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Intro",
         "description": "Javik is being guarded at gunpoint due to first contact protocol. Javik explains that protheans have greater sensory perceptions, a kind of psychic communication. He reads the prothean beacon in Shepard, and is angry that you did not heed the warnings, prepare.",
         "inMapId": "G.N3.4.Port",
         "isShowInParentMap": true,
@@ -1018,29 +1070,13 @@
             "id": "Completed: Javik Convo 1"
         }]
     }, {
-        "id": "A3.Convo.S.Javik.1-AQuarians",
-        "identicalMissionId": "A3.Convo.S.Tali.1-BQuarians",
-        "inMissionId": "A3.Convo.S.Javik",
-        "sortIndex": 90001,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Javik: ",
-        "name": "Side Convo - Quarians",
-        "description": "As you walk in, Javik is talking to Tali on the comms. He lectures her on the creation of the geth, and talks about the attractiveness of primitive quarians.",
-        "inMapId": "G.N3.4.Port",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Javik Convo 1 + 1"
-        }]
-    }, {
         "id": "A3.Convo.S.Javik.1B",
         "inMissionId": "A3.Convo.S.Javik",
         "sortIndex": 90001,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - Jack",
         "description": "Javik is exploring the ship and finds echoes of [megametracker://person?id=S2.Jack] in the subdeck.",
         "inMapId": "G.N3.4.SubDeck",
         "isShowInParentMap": true,
@@ -1055,7 +1091,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Younger Races",
         "description": "You can find Javik in the Citadel Embassies. He is awed by the Citadel, since it was already taken by the Reapers before he was born. He gathers the attention of a hanar, and then by others who realize he is a prothean. He begins a cynical accounting of prothean destruction at the hands of the Reapers, but Shepard can Interrupt him to turn the conversation to a hopeful message to the unified younger races.",
         "inMapId": "G.C3.3Embassies",
         "mapLocationPoint": {
@@ -1065,10 +1101,10 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Javik Convo 1 + 1"
+            "id": "Completed: Priority: The Citadel II + 1"
         }]
     }, {
-        "id": "A3.Convo.S.Javik.2-BRachni",
+        "id": "A3.Convo.S.Javik.2-10Rachni",
         "inMissionId": "A3.Convo.S.Javik",
         "sortIndex": 90002,
         "gameVersion": "3",
@@ -1076,14 +1112,29 @@
         "titlePrefix": "Javik: ",
         "name": "Comment - Rachni",
         "description": "Shepard can prompt Javik for some Prothean history of the rachni. If he went on the mission to rescue the krogan team, he is pleased to have finally met Grunt.",
-        "inMapId": "G.N3.3.Battery",
+        "inMapId": "G.N3.3.Port",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Attican Traverse: Krogan Team"
         }]
     }, {
-        "id": "A3.Convo.S.Javik.2-ABomb",
+        "id": "A3.Convo.S.Javik.2-11Tuchanka",
+        "inMissionId": "A3.Convo.S.Javik",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "Comment - Tuchanka",
+        "description": "Javik comments on how HE would have dealt with the incompetance of Victus Jr. He also reminisces on how lovely Tuchanka was in his day.",
+        "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Tuchanka: Turian Platoon"
+        }]
+    }, {
+        "id": "A3.Convo.S.Javik.2-12Bomb",
         "identicalMissionId": "A3.Convo.S.Garrus.2-DBomb",
         "inMissionId": "A3.Convo.S.Javik",
         "sortIndex": 90002,
@@ -1092,14 +1143,60 @@
         "titlePrefix": "Javik: ",
         "name": "Side Convo - Bomb",
         "description": "Javik contacts Garrus to compliment the turians on their cunning in planting the bomb.",
-        "inMapId": "G.N3.3.Battery",
+        "inMapId": "G.N3.3.Port",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Tuchanka: Bomb"
         }]
     }, {
-        "id": "A3.Convo.S.Javik.2-BBreakfast",
+        "id": "A3.Convo.S.Javik.2-13Bomb",
+        "inMissionId": "A3.Convo.S.Javik",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "Comment - Bomb",
+        "description": "Javik comments that Garrus would be an admirable foe, and that in his day, he would have detonated the bomb.",
+        "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Tuchanka: Bomb"
+        }]
+    }, {
+        "id": "A3.Convo.S.Javik.2-15Coup",
+        "inMissionId": "A3.Convo.S.Javik",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "Convo - Strength",
+        "description": "Javik discusses the former crew he senses on the Normandy. He thinks current civilization is too concerned with saving everyone, and should let the weak perish. He wonders if he would have been a scholar instead in this cycle. \n\nYou can prompt him for additional comments about traitors, the Citadel, and Kai Leng.",
+        "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel II"
+        }]
+    }, {
+        "id": "A3.Convo.S.Javik.2-16Cerberus",
+        "identicalMissionId": "A3.Convo.S.EDI.7-BCerberus",
+        "inMissionId": "A3.Convo.S.Javik",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "Side Convo - Cerberus",
+        "description": "Javik is talking with EDI about the traitors Cerberus and that she was made by them. \n\nYou can prompt Javik for more comments about Cerberus and rescuing the scientists.",
+        "inMapId": "G.N3.3.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Ex-Cerberus Scientists"
+        }]
+    }, {
+        "id": "A3.Convo.S.Javik.2-20Breakfast",
         "identicalMissionId": "A3.Convo.S.Vega.5-BBreakfast",
         "inMissionId": "A3.Convo.S.Javik",
         "sortIndex": 90002,
@@ -1115,7 +1212,7 @@
             "id": "Completed: Rannoch: Geth Fighter Squadrons"
         }]
     }, {
-        "id": "A3.Convo.S.Javik.2-DWar",
+        "id": "A3.Convo.S.Javik.2-30War",
         "identicalMissionId": "A3.Convo.S.Garrus.4-CWar",
         "inMissionId": "A3.Convo.S.Javik",
         "sortIndex": 90002,
@@ -1132,12 +1229,13 @@
         }]
     }, {
         "id": "A3.Convo.S.Javik.3",
+        "identicalMissionId": "A3.Convo.S.Tali.1-BQuarians",
         "inMissionId": "A3.Convo.S.Javik",
         "sortIndex": 90003,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
-        "name": "2nd Normandy Convo",
+        "name": "Sido Convo - Geth",
         "description": "You walk in on Javik and Tali talking, where Javik tells Tali that her war with the geth is the quarians own fault for being so stupid as to create AI. He tells you much the same about Legion, and suggests it be thrown out the airlock.",
         "inMapId": "G.N3.4.Port",
         "isShowInParentMap": true,
@@ -1152,28 +1250,13 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
-        "name": "3rd Normandy Convo",
+        "name": "Convo - Echoes",
         "description": "Javik is analyzing the echoes of prior individuals on the Normandy: Miranda, Thane, and Grunt. The conversation moves to evolution. The protheans apparently were very committed to survival of the fittest.",
         "inMapId": "G.N3.4.Port",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Rannoch"
-        }]
-    }, {
-        "id": "A3.Convo.S.Javik.5",
-        "inMissionId": "A3.Convo.S.Javik",
-        "sortIndex": 90005,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Javik: ",
-        "name": "4th Normandy Convo",
-        "description": "You walk in on Javik and Liara fighting. If you take the interrupt and hold Liara back, Javik will change his tone and tell her that the protheans had hoped the asari could defeat the Reapers, and as long as she is still alive, there is still hope. If you do not take the interrupt, Liara storms out and the conversation with Javik is much shorter and more cynical.",
-        "inMapId": "G.N3.4.Port",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Priority: Thessia"
         }]
     }, {
         "id": "A3.Convo.S.Javik.5-BLiara",
@@ -1198,7 +1281,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
-        "name": "5th Normandy Convo",
+        "name": "Convo - Shard",
         "description": "Javik explains prothean memory shards to you.",
         "inMapId": "G.N3.4.Port",
         "isShowInParentMap": true,
@@ -1213,7 +1296,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Blasto",
         "description": "Meet Javik outside the casino. He has been invited to participate in a morale-boosting vid, which turns out to be Blasto 7: Blasto Goes To War. Blasto complains about Shepard being in the film - he doesn't share top billing! There is a tussle over who is the biggest badass, resolved by Javik pushing aside both of you and knocking out the vorcha actor.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
@@ -1232,7 +1315,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
-        "name": "2nd Citadel DLC",
+        "name": "Citadel DLC - Morning After",
         "description": "If you have no other love interest during the party, there is a strong likelihood that you will end up in bed with Javik or James.",
         "inMapId": "G.C3.Apartment",
         "isShowInParentMap": true,
@@ -1341,7 +1424,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kaidan: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Coma",
         "description": "Check in on Kaidan at the hospital. He is still unconscious.",
         "inMapId": "G.C3.4Hospital",
         "mapLocationPoint": {
@@ -1356,7 +1439,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kaidan: ",
-        "name": "2nd Citadel Convo",
+        "name": "Citadel Convo - Cerberus",
         "description": "_Note: this conversation must be completed immediately after [megametracker://mission?id=M3.1.Palaven]. Completing another mission will fast-forward to the next conversation._ \n\nYou interrupt Udina talking to Kaidan, urging him to accept the Spectre position. Kaidan is still considering the offer. He is still suspicious of your Cerberus ties. You will need to Paragon this conversation if you want to keep him alive later. He talks about his family on Earth.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.4Hospital",
@@ -1376,7 +1459,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kaidan: ",
-        "name": "3rd Citadel Convo",
+        "name": "Citadel Convo - Spectre",
         "description": "Congratulate Kaidan on accepting Spectre status. He is trying to locate his old biotics students.",
         "inMapId": "G.C3.4Hospital",
         "mapLocationPoint": {
@@ -1389,13 +1472,28 @@
             "id": "Completed: Priority: Sur'Kesh"
         }]
     }, {
+        "id": "A3.Convo.S.Kaidan.4",
+        "inMissionId": "A3.Convo.S.Kaidan",
+        "sortIndex": 90005,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Kaidan: ",
+        "name": "Citadel Convo - Coup",
+        "description": "Help Kaidan process the death of Udina and he asks to rejoin the Normandy.",
+        "inMapId": "G.C3.1.Dock",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel II"
+        }]
+    }, {
         "id": "A3.Convo.S.Kaidan.5",
         "inMissionId": "A3.Convo.S.Kaidan",
         "sortIndex": 90005,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kaidan: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Family",
         "description": "If you recruited Kaidan at the end of [megametracker://mission?id=M3.2.Citadel2], you can talk to him at the Observation Deck. He explains that although his family escaped Vancouver, his father left to fight and is now presumed killed in action.",
         "inMapId": "G.N3.3.Starboard",
         "isShowInParentMap": true,
@@ -1410,7 +1508,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kaidan: ",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - Cerberus",
         "description": "Kaidan asks to see you in Crew Quarters, where he is musing about whether other people inside Cerberus might be trying to escape, and where the Illusive Man went wrong. FemShep can flirt with him, a bit.",
         "inMapId": "G.N3.3.Quarters",
         "isShowInParentMap": true,
@@ -1425,7 +1523,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kaidan: ",
-        "name": "4th Citadel Convo",
+        "name": "Citadel Convo - Cafe",
         "description": "Meet Kaidan on the Citadel at the Apollo Cafe. You can lock down the relationship.",
         "annotationNote": "Romance Lock",
         "inMapId": "G.C3.6Presidium",
@@ -1445,7 +1543,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kaidan: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Dinner",
         "description": "Invite Kaidan up to your apartment. He insists on making dinner. You tease him about his cooking. \n\nIf you've romanced Kaidan, he flirts the whole time, and then you go upstairs and make out (implied off-screen hookup).",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Apartment",
@@ -1478,7 +1576,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kaidan: ",
-        "name": "Side Convo - Cooking",
+        "name": "Side Convo - Thessia",
         "description": "James and Adams are discussing Liara and her lost homeworld.",
         "inMapId": "G.N2.4.Station",
         "isShowInParentMap": true,
@@ -1587,7 +1685,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Catch up",
         "description": "Liara approaches you after your dream to discuss the Crucible. \n\nHead down to her office to greet Glyph and ask her a few more questions about the Crucible. If you romanced her in Game 1, she will ask about your feelings.",
         "annotationNote": "Romance Option",
         "inMapId": "G.N3.3.Liara",
@@ -1611,7 +1709,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - Escape",
         "description": "Liara will tell you how the Illusive Man tracked her down and she crashed the Shadow Broker ship into the Cerberus cruiser to escape.",
         "inMapId": "G.N3.3.Liara",
         "isShowInParentMap": true,
@@ -1626,7 +1724,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Citadel",
         "description": "Liara comments on how the Citadel is just recovering from Sovereign's attack, and that you should stock up on supplies before the Citadel faces real privation in the current Reaper assault. She also suggests you speak to [Barla Von|megametracker://mission?id=A3.BarlaVon].",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.6Presidium",
@@ -1649,7 +1747,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
-        "name": "2nd Citadel Convo",
+        "name": "Citadel Convo - Aethyta",
         "description": "After you have spoken to [megametracker://person?id=O2.Aethyta], you can also try to tell Liara that Aethyta is her father (Liara already knows). You can then persuade Liara to go speak to Aethyta.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.6Presidium",
@@ -1690,7 +1788,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
-        "name": "3rd Normandy Convo",
+        "name": "Convo - End of Civilization",
         "description": "Liara worries about how quickly the Reapers will destroy everything.",
         "inMapId": "G.N3.3.Liara",
         "isShowInParentMap": true,
@@ -1708,7 +1806,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
-        "name": "Normandy Cabin Convo",
+        "name": "Cabin Convo - Project",
         "description": "Invite Liara up to your cabin to see her project - a record she's made of current civilization, like Vigil on Ilos. She asks you to help with the entry about your story.",
         "inMapId": "G.N3.1.Terminal",
         "isShowInParentMap": true,
@@ -1728,7 +1826,7 @@
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
         "name": "Side Convo - Archangel",
-        "description": "Liara is chatting with Garrus in the Lounge about his time as Archangel on Omega.",
+        "description": "Garrus is chatting with Liara in the Lounge about his time as Archangel on Omega. You can trigger several additional comments about the turians on Tuchanka.",
         "inMapId": "G.N3.3.Port",
         "isShowInParentMap": true,
         "events": [{
@@ -1745,8 +1843,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
-        "name": "3rd Citadel Convo",
-        "description": "_Note: this conversation is available one assignment after [megametracker://mission?id=M3.2.Citadel2]._ \n\nLiara is down at Meridian Place Market, at the bottom of the Presidium Commons, looking out over the garden. She muses about her childhood and her mother. If you are romancing here, this is where you ask her to commit.",
+        "name": "Citadel Convo - Childhood",
+        "description": "Liara is down at Meridian Place Market, at the bottom of the Presidium Commons, looking out over the garden. She muses about her childhood and her mother. If you are romancing here, this is where you ask her to commit.",
         "annotationNote": "Romance Lock",
         "inMapId": "G.C3.6Presidium",
         "mapLocationPoint": {
@@ -1757,7 +1855,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: The Citadel II"
+            "id": "Completed: Priority: The Citadel II + 1"
         }]
     }, {
         "id": "A3.Convo.S.Liara.6-BCoup",
@@ -1767,7 +1865,7 @@
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
         "name": "Side Convo - Coup",
-        "description": "Liara is in the lounge musing about Ashley/Kaidan.",
+        "description": "If Ashley/Kaidan died in the coup, Liara is in the lounge remembering when they first met.",
         "inMapId": "G.N3.3.Port",
         "isShowInParentMap": true,
         "events": [{
@@ -1813,7 +1911,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
-        "name": "4th Normandy Convo",
+        "name": "Convo - Thessia",
         "description": "Talk to Liara in her room after her argument with Javik ([megametracker://mission?id=A3.Convo.S.Javik.5]). She is trying to process the knowledge that her mother kept Thessia's prothean beacon from her. She is broken up over all the asari who died helping you get to the temple, only to lose the planet anyway.",
         "inMapId": "G.N3.3.Liara",
         "isShowInParentMap": true,
@@ -1828,7 +1926,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Piano",
         "description": "Liara plays a song on the piana she learned as a child. If you have romanced her, you can keep her from leaving and then you hold hands and kiss.",
         "inMapId": "G.C3.Apartment",
         "isShowInParentMap": true,
@@ -1952,25 +2050,25 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Tali: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Catch up",
         "description": "After a brief introduction in the Conference Room, you can talk to Tali a bit more in the War Room. She will catch you up on what has happened since you saw her last, explaining how the war with the geth was started. She asks you to call her up to your cabin to talk privately.",
         "inMapId": "G.N3.2.Conference",
         "isShowInParentMap": true
     }, {
         "id": "A3.Convo.S.Tali.1-BQuarians",
-        "identicalMissionId": "A3.Convo.S.Javik.1-AQuarians",
+        "identicalMissionId": "A3.Convo.S.Javik.3",
         "inMissionId": "A3.Convo.S.Tali",
         "sortIndex": 90002,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Tali: ",
         "name": "Side Convo - Quarians",
-        "description": "As you walk in, Javik is talking to Tali on the comms. He lectures her on the creation of the geth, and talks about the attractiveness of primitive quarians.",
+        "description": "You walk in on Javik and Tali talking, where Javik tells Tali that her war with the geth is the quarians own fault for being so stupid as to create AI. He tells you much the same about Legion, and suggests it be thrown out the airlock.",
         "inMapId": "G.N3.4.Port",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Javik Convo 1 + 1"
+            "id": "Completed: Priority: Geth Dreadnought"
         }]
     }, {
         "id": "A3.Convo.S.Tali.2",
@@ -1979,7 +2077,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Tali: ",
-        "name": "Normandy Cabin Convo",
+        "name": "Cabin Convo - Responsibilities",
         "description": "Invite Tali up to your cabin. She is overwhelmed by her new responsibilities. You can reassure her. If you revealed the evidence against her father in Game 2, she will apologize for what she said then. If you romanced her in Game 2, you can restart the relationship here (with some hand-holding).",
         "annotationNote": "Romance Option",
         "inMapId": "G.N3.1.Terminal",
@@ -1991,7 +2089,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Tali: ",
-        "name": "3rd Normandy Convo",
+        "name": "Convo - Rannoch",
         "description": "If you recruited Tali at the end of [megametracker://mission?id=M3.2.Rannoch], she is down by the engine. She is adjusting to the idea of quarians growing up on Rannoch instead of on a ship. If the geth survived, she will mention their cooperation with resettling the quarians. She will talk sweet to you if you've romanced her, and mention she left you a gift in your cabin (a photo of her, by your bed).",
         "annotationNote": "Romance Lock",
         "inMapId": "G.N3.4.Station",
@@ -2023,7 +2121,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Tali: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Prestige",
         "description": "Tali is speaking to a turian in the Presidium Commons. She recounts to you her flight from Saren and the mistreatment she received on the Citadel. The turian asking her for help was the same who threatened to arrest her three years ago.",
         "inMapId": "G.C3.6Presidium",
         "mapLocationPoint": {
@@ -2088,10 +2186,26 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Tali: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Fleet & Flotilla",
         "description": "Tali insists you watch her favorite soap opera - Fleet and Flotilla. If you've romanced her, there's some additional dialogue and kissing, and she sings along with the soap opera theme song.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Apartment",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC 1"
+        }]
+    }, {
+        "id": "A3.Convo.S.Tali.9-BGarrus",
+        "identicalMissionId": "A3.Convo.S.Garrus.9",
+        "inMissionId": "A3.Convo.S.Tali",
+        "sortIndex": 90008,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Tali: ",
+        "name": "Side Convo - Garrus",
+        "description": "If you have not romanced either Garrus or Tali, they are canoodling down in the Main Battery.",
+        "inMapId": "G.N3.3.Battery",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -2205,7 +2319,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Vega: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Embassies",
         "description": "Speak to James at the embassies about the Council's refusal to help.",
         "inMapId": "G.C3.3Embassies",
         "mapLocationPoint": {
@@ -2220,7 +2334,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Vega: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Fight",
         "description": "Start a sparring match with James, to learn more about him. If you are female, you can start flirting with him. If you return afterwards, James will talk more about his family.",
         "inMapId": "G.N3.5ShuttleBay",
         "mapLocationPoint": {
@@ -2239,7 +2353,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Vega: ",
-        "name": "2nd Citadel Convo",
+        "name": "Citadel Convo - Drinks",
         "description": "James is hanging out at Purgatory. He suggests you buy the marines there a round to make yourself one of the guys.",
         "inMapId": "G.C3.5Purgatory",
         "mapLocationPoint": {
@@ -2271,13 +2385,70 @@
             "id": "Completed: Attican Traverse: Krogan Team"
         }]
     }, {
+        "id": "A3.Convo.S.Vega.3-CCure",
+        "inMissionId": "A3.Convo.S.Vega",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Vega: ",
+        "name": "Comment - Cure",
+        "description": "Shepard can prompt James for some comments about Tuchanka and the Genophage cure. He also expresses awe about the size of the dead Reaper.",
+        "inMapId": "G.N3.5ShuttleBay",
+        "mapLocationPoint": {
+            "x": 1187,
+            "y": 1354,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Tuchanka"
+        }]
+    }, {
+        "id": "A3.Convo.S.Vega.3-DCards",
+        "inMissionId": "A3.Convo.S.Vega",
+        "sortIndex": 90004,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Vega: ",
+        "name": "Citadel Convo - Cards",
+        "description": "You can find James gambling in a card game in the holding area.",
+        "inMapId": "G.C3.2HoldingArea",
+        "mapLocationPoint": {
+            "x": 363,
+            "y": 1393,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel II"
+        }]
+    }, {
+        "id": "A3.Convo.S.Vega.3-EUdina",
+        "inMissionId": "A3.Convo.S.Vega",
+        "sortIndex": 90002,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Vega: ",
+        "name": "Comment - Udina",
+        "description": "Shepard can prompt James for some brief comments about the coup and Udina.",
+        "inMapId": "G.N3.5ShuttleBay",
+        "mapLocationPoint": {
+            "x": 1187,
+            "y": 1354,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel II"
+        }]
+    }, {
         "id": "A3.Convo.S.Vega.4",
         "inMissionId": "A3.Convo.S.Vega",
         "sortIndex": 90004,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Vega: ",
-        "name": "Normandy Cabin Convo",
+        "name": "Cabin Convo - N7",
         "description": "James sends a message asking to talk. Invite him up to your cabin. He says he is thinking about joining N7, although it is somewhat less formal under current conditions. He finally discusses his failed mission, where he lost the colony to the Collectors and most of his squad. If FemShep, you can also flirt with him.",
         "inMapId": "G.N3.1.Terminal",
         "isShowInParentMap": true,
@@ -2293,8 +2464,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Vega: ",
-        "name": "Side Convo - Competition",
-        "description": "Vega is trading stories with Garrus in the Mess Hall.",
+        "name": "Side Convo - Stories",
+        "description": "Vega is trading battle stories with Garrus in the Mess Hall. You can prompt Garrus for an additional comment about Jacob.",
         "inMapId": "G.N3.3.Kitchen",
         "isShowInParentMap": true,
         "events": [{
@@ -2307,8 +2478,8 @@
         "sortIndex": 90005,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "3rd Citadel Convo",
-        "description": "_Note: this conversation is available one assignment after [megametracker://mission?id=M3.2.Citadel2]._ \n\nJames is getting an N7 tattoo - his way of signing up. If FemShep, you can also flirt with him.",
+        "name": "Citadel Convo - Tattoo",
+        "description": "James is getting an N7 tattoo - his way of signing up. If FemShep, you can also flirt with him.",
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
             "x": 1174,
@@ -2317,7 +2488,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: The Citadel II"
+            "id": "Completed: Priority: The Citadel II + 1"
         }]
     }, {
         "id": "A3.Convo.S.Vega.5-BBreakfast",
@@ -2341,7 +2512,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Vega: ",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - Legion",
         "description": "James asks if Legion can be trusted. He has nicknamed Tali \"Sparks.\"",
         "inMapId": "G.N3.5ShuttleBay",
         "mapLocationPoint": {
@@ -2392,7 +2563,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Vega: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Workout",
         "description": "James shows off his tattoo. Follow him downstairs as he is leaving and he will be distracted by your workout room. Then you can compete with James over who can do the most pullups (although it takes 183 repetitious Paragon and Renegade Interrupts). \n\nIf you want to romance James, you can flirt with him here, but he shoots you down this time (try some more: [YouTube|https://www.youtube.com/watch?v=n8roLH2Zu6Q]).",
         "inMapId": "G.C3.Apartment",
         "isShowInParentMap": true,
@@ -2453,7 +2624,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Adams: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Absence",
         "description": "Speak to Adams in Engineering to find out why he didn't join you in Game 2, and his opinion of the new Normandy and EDI.",
         "inMapId": "G.N3.4.Station",
         "isShowInParentMap": true
@@ -2464,7 +2635,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Adams: ",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - Daniels/Donnelly",
         "description": "Speak to Adams after you pardon Daniels and Donnelly and he will praise their work.",
         "inMapId": "G.N3.4.Station",
         "isShowInParentMap": true,
@@ -2479,7 +2650,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Adams: ",
-        "name": "3rd Normandy Convo",
+        "name": "Convo - Upgrade",
         "description": "Adams and Donnelly/Daniels request an upgrade for the Normandy: [megametracker://mission?id=A3.GX12ThermalPipe].",
         "inMapId": "G.N3.4.Station",
         "isShowInParentMap": true,
@@ -2579,7 +2750,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Allers: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Join",
         "description": "Allers asks to join the Normandy",
         "inMapId": "G.C3.1Dock",
         "mapLocationPoint": {
@@ -2594,7 +2765,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Allers: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Normandy",
         "description": "Speak to Allers in the Starboard Cargo Hold. She expresses her awe at the presence of EDI, Liara, and the QED communications.",
         "inMapId": "G.N3.4.Starboard",
         "isShowInParentMap": true,
@@ -2616,7 +2787,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Attican Traverse: Krogan Team"
-        }]
+        }],
+        "after turian platoon": "how cerberus operates - poisonings, etc.",
+        "after bomb": "fall of arcturus station"
     }, {
         "id": "A3.Convo.C.Allers.3",
         "inMissionId": "A3.Convo.C.Allers",
@@ -2624,8 +2797,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Allers: ",
-        "name": "2nd Normandy Convo",
-        "description": "Allers asks for an interview regarding the Genophage cure.",
+        "name": "Convo - Genophage",
+        "description": "When you come in, Traynor is asking Allers about her homeworld. Allers interviews you regarding the Genophage cure.",
         "inMapId": "G.N3.4.Starboard",
         "isShowInParentMap": true,
         "events": [{
@@ -2639,7 +2812,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Allers: ",
-        "name": "1st Normandy Cabin Convo",
+        "name": "Cabin Convo - Interview",
         "description": "Allers sends a message asking for a lengthier, more private interview. Invite her up to your cabin. She will grill you, and if you respond badly, she leaves. Otherwise you can flirt with her.",
         "inMapId": "G.N3.1.Terminal",
         "isShowInParentMap": true,
@@ -2654,7 +2827,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Allers: ",
-        "name": "2nd Normandy Cabin Convo",
+        "name": "Cabin Convo - Romance",
         "description": "After Rannoch, Allers will send you a message asking for another interview. Invite her up to your cabin. You can ask her to stay afterwards and make out with her (implied off-screen hookup).",
         "annotationNote": "Romance Option",
         "inMapId": "G.N3.1.Terminal",
@@ -2704,7 +2877,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Chakwas: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Join",
         "description": "Option to recruit Dr. Chakwas for the Normandy.",
         "inMapId": "G.C3.4Hospital",
         "mapLocationPoint": {
@@ -2723,7 +2896,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Chakwas: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Exam",
         "description": "Dr. Chakwas performs a quick exam of you. She says she has no family, but many close friends in the Alliance. \n\nIf you wait until after [megametracker://mission?id=M3.1.Tuchanka], she will comment on the loss of Mordin.",
         "inMapId": "G.N3.3.Lab",
         "isShowInParentMap": true
@@ -2734,7 +2907,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Chakwas: ",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - Relocated",
         "description": "Dr. Chakwas is in the crew quarters talking to Adams. She explains that she has relocated temporarily to allow Mordin and Eve to use the MedBay.",
         "inMapId": "G.N3.3.Quarters",
         "isShowInParentMap": true,
@@ -2749,7 +2922,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Chakwas: ",
-        "name": "3rd Normandy Convo",
+        "name": "Convo - Brandy",
         "description": "Dr. Chakwas asks if you want to pop open the annual bottle of Serrice Ice Brandy (putting it off just eliminates the opportunity).",
         "inMapId": "G.N3.3.Lab",
         "isShowInParentMap": true,
@@ -2929,7 +3102,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Cortez: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - History",
         "description": "Meet Cortez in the Shuttle Bay. He will explain his role and his history. If you ask about family, he will briefly mention that he lost his husband to the Collectors.",
         "inMapId": "G.N3.5ShuttleBay",
         "mapLocationPoint": {
@@ -2944,8 +3117,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Cortez: ",
-        "name": "2nd Normandy Convo",
-        "description": "_Note: this is available one mission after [megametracker://mission?id=M3.1.Palaven]_ \n\nCortez is listening to a recording of his husband's death. Reassure him (or he may die later on Earth).",
+        "name": "Convo - Husband",
+        "description": "Cortez is listening to a recording of his husband's death. Reassure him (or he may die later on Earth).",
         "inMapId": "G.N3.5ShuttleBay",
         "mapLocationPoint": {
             "x": 1501,
@@ -2966,7 +3139,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Cortez: ",
-        "name": "3rd Normandy Convo",
+        "name": "Convo - Downtime",
         "description": "Talk to Cortez about his downtime. Convince him to take some shore leave (or he may die later on Earth).",
         "inMapId": "G.N3.5ShuttleBay",
         "mapLocationPoint": {
@@ -2988,7 +3161,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Cortez: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Dock",
         "description": "Find Cortez at the Normandy Dock, watching some ships pass by. He mentions the refugees' memorial wall and you encourage him to leave a memento of his own there.",
         "inMapId": "G.C3.1Dock",
         "mapLocationPoint": {
@@ -3010,7 +3183,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Cortez: ",
-        "name": "2nd Citadel Convo",
+        "name": "Citadel Convo - Memorial",
         "description": "Find Cortez at refugees' Memorial Wall, where he is saying goodbye to his husband, Robert.",
         "inMapId": "G.C3.2.Wall",
         "isShowInParentMap": true,
@@ -3031,7 +3204,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Cortez: ",
-        "name": "3rd Citadel Convo",
+        "name": "Citadel Convo - Purgatory",
         "description": "Find Cortez at Purgatory. He is ready to fight. BroShep can also start a relationship with him.",
         "annotationNote": "Romance Lock",
         "inMapId": "G.C3.5Purgatory",
@@ -3048,13 +3221,32 @@
             "id": "Completed: Cortez Convo 5 + 1"
         }]
     }, {
+        "id": "A3.Convo.C.Cortez.6-BCoup",
+        "inMissionId": "A3.Convo.C.Cortez",
+        "sortIndex": 90017,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Cortez: ",
+        "name": "Comment - Noveria",
+        "description": "Cortez and Vega trade comments about the drop on Noveria.",
+        "inMapId": "G.N3.5ShuttleBay",
+        "mapLocationPoint": {
+            "x": 1543,
+            "y": 924,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Cerberus Fighter Base"
+        }]
+    }, {
         "id": "A3.Convo.C.Cortez.7a",
         "inMissionId": "A3.Convo.C.Cortez",
         "sortIndex": 90017,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Cortez: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Drive",
         "description": "Meet Cortez by the Rapid Transit cars. He takes you for a joyride in the shuttle. If you've romanced him, there's a lot of romantic dialogue and a hookup off-screen.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
@@ -3073,7 +3265,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Cortez: ",
-        "name": "2nd Citadel DLC",
+        "name": "Citadel DLC - Game",
         "description": "Invite Cortez and Vega over to watch a biotiball game. If you've romanced him, there's some post-game snuggling.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Apartment",
@@ -3096,6 +3288,257 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Cerberus Headquarters"
+        }]
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels",
+        "inMissionId": "A3.Convo.Crew",
+        "sortIndex": 9001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Conversations: ",
+        "name": "Donnelly & Daniels",
+        "description": "Conversations with [megametracker://person?id=P2.Donnelly] and [megametracker://person?id=P2.Daniels].",
+        "relatedLinks": ["https://www.youtube.com/watch?v=EWNIHpC-0Hk"],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: The Citadel I"
+        }]
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.01",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - Thanks",
+        "description": "Donnelly and Daniels thank you for being brought back to the Normandy.",
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": "1224",
+            "y": "1201",
+            "radius": 1
+        }
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.02",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - EDI",
+        "description": "Donnelly is leering about EDI's new body.",
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": "1224",
+            "y": "1201",
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Convo: Donnelly/Daniels 1"
+        }]
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.03",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - Abductions",
+        "description": "Daniels asks Donnelly if he ever thinks about when they were abducted by the Collectors. He vehemently insists he does not.",
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": "1224",
+            "y": "1201",
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Convo: Donnelly/Daniels 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Convo: Donnelly/Daniels 2"
+        }]
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.04",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - Dog",
+        "description": "Donnelly is creeped out by the mech dog in the Shuttle bay. Daniels thinks it is cute.",
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": "1224",
+            "y": "1201",
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Convo: Donnelly/Daniels 2"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Convo: Donnelly/Daniels 3"
+        }]
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.05",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - Traynor",
+        "description": "Donnelly is lusting after Traynor, but Daniels informs him she is gay. He suggests she go hit on Traynor instead... and film it.",
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": "1224",
+            "y": "1201",
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Convo: Donnelly/Daniels 3"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Convo: Donnelly/Daniels 4"
+        }]
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.06",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - Bourbon",
+        "description": "Donnelly is disgusted that the Illusive man drinks bourbon instead of scotch.",
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": "1224",
+            "y": "1201",
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Convo: Donnelly/Daniels 4"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Convo: Donnelly/Daniels 5"
+        }]
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.07",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - Matriarchs",
+        "description": "Donnelly is considering asari matriarchs and their bosom size.",
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": "1224",
+            "y": "1201",
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Convo: Donnelly/Daniels 5"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Convo: Donnelly/Daniels 6"
+        }]
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.08",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - Poker",
+        "description": "Daniels lets Donnelly know there is poker table in the lounge. Donnelly suggest a game of strip poker with Liara and Traynor.",
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": "1224",
+            "y": "1201",
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Convo: Donnelly/Daniels 6"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Convo: Donnelly/Daniels 7"
+        }]
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.08",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - Ducts",
+        "description": "Donnelly is climbing through the ducts to install the new thermal pipe. He observes that if EDI is the Normandy, he is inside the Normandy...",
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": "1224",
+            "y": "1201",
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: GX12 Thermal Pipe"
+        }]
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.09",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - EDI",
+        "description": "Donnelly asks if Daniels helped EDI repair her mobile frame after the last mission.",
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": "1224",
+            "y": "1201",
+            "radius": 1
+        }
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.10",
+        "identicalMissionId": "",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - Static",
+        "description": "Tali is suggesting a quarian method for discharging engine static en-route.",
+        "inMapId": "G.N3.4.Station",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Rannoch"
+        }]
+    }, {
+        "id": "A3.Convo.C.DonnellyDaniels.11",
+        "inMissionId": "A3.Convo.C.DonnellyDaniels",
+        "sortIndex": 90013,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Donnelly/Daniels: ",
+        "name": "Side Convo - Makeout",
+        "description": "Donnelly and Daniels are making out in the subdeck.",
+        "inMapId": "G.N3.4.SubDeck",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Argument Donnelly/Daniels"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Thessia"
         }]
     }, {
         "id": "A3.Convo.C.Joker",
@@ -3207,7 +3650,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - War",
         "description": "Joker complains about the Citadel's frivolities while the war is going on.",
         "inMapId": "G.C3.6Presidium",
         "mapLocationPoint": {
@@ -3320,7 +3763,7 @@
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
         "name": "Comment - Bomb",
-        "description": "Joker comments on the turian bomb, and the terrifying banshees encountered on Tuchanka.",
+        "description": "Joker comments on the turian bomb, and how tough the turians are.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
         "events": [{
@@ -3365,17 +3808,36 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "2nd Citadel Convo",
-        "description": "_Note: this conversation is available one assignment after [megametracker://mission?id=M3.2.Citadel2]._ \n\nJoker is watching from the bar in Purgatory. You can encourage or discourage him in his interest in EDI.",
+        "name": "Citadel Convo - Romance",
+        "description": "Joker is watching from the bar in Purgatory. You can encourage or discourage him in his interest in EDI. If you encourage it, you can see him dancing upstairs afterward.",
         "inMapId": "G.C3.5Purgatory",
         "mapLocationPoint": {
             "x": 1407,
             "y": 1528,
             "radius": 20
         },
+        "relatedDecisionIds": ["D3.EdiJoker"],
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Joker Convo 7",
+        }]
+    }, {
+        "id": "A3.Convo.C.Joker.7-BJacob",
+        "inMissionId": "A3.Convo.C.Joker",
+        "sortIndex": 90016,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Joker: ",
+        "name": "Comment - Jacob",
+        "description": "Joker asks about Kaidan and complains about the Illusive Man.",
+        "inMapId": "G.N3.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Ex-Cerberus Scientists"
         }]
     }, {
         "id": "A3.Convo.C.Joker.8",
@@ -3461,7 +3923,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Coup",
         "description": "Joker meets you at the casino bar. He is narrating to the bartender his role in the Citadel coup, resulting in a splendid flashback of him in an Atlas, taking on hordes of Cerberus troops. You can support him in this story (in which case he gets free drinks).",
         "inMapId": "G.C3.Silversun.Casino.Bar",
         "isShowInParentMap": true,
@@ -3538,7 +4000,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Michel: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Join",
         "description": "Option to recruit Dr. Michel for the Normandy.",
         "inMapId": "G.C3.4Hospital",
         "mapLocationPoint": {
@@ -3557,7 +4019,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Michel: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Exam",
         "description": "Dr. Michel performs a quick exam of you, and you can ask about her family on Earth. \n\nIf you wait until after [megametracker://mission?id=M3.1.Tuchanka], she will comment on the loss of Mordin.",
         "inMapId": "G.N3.3.Lab",
         "isShowInParentMap": true
@@ -3593,7 +4055,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Traynor: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - History",
         "description": "After your dream, Traynor introduces herself and explains the changes made to the Normandy since it fell into Alliance hands. She also realizes that EDI is an AI, not a VI. \n\nSpeak to her again at CIC when you are done talking to Hackett and she will chat a bit about her past, her job, and her 6,000-Credit-toothbrush.",
         "inMapId": "G.N3.2CIC",
         "isShowInParentMap": true
@@ -3604,7 +4066,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Traynor: ",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - EDI",
         "description": "Traynor will discuss EDI and a distress call from Grissom Academy.",
         "inMapId": "G.N3.2CIC",
         "isShowInParentMap": true,
@@ -3619,7 +4081,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Traynor: ",
-        "name": "3rd Normandy Convo",
+        "name": "Convo - Perks",
         "description": "Traynor discusses the pros and cons of life on the Normandy - crowded living space, unlimited spending on new tech.",
         "inMapId": "G.N3.2CIC",
         "isShowInParentMap": true,
@@ -3643,13 +4105,43 @@
             "id": "Completed: Attican Traverse: Krogan Team"
         }]
     }, {
+        "id": "A3.Convo.C.Traynor.3-CVictus",
+        "inMissionId": "A3.Convo.C.Traynor",
+        "sortIndex": 90014,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Traynor: ",
+        "name": "Comment - Victus",
+        "description": "Traynor tells Shepard that she no longer thinks she is capable of the heroics shown by the turian team defusing the bomb on Tuchanka.",
+        "inMapId": "G.N3.2CIC",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Tuchanka: Bomb"
+        }]
+    }, {
+        "id": "A3.Convo.C.Traynor.3-DTuchanka",
+        "inMissionId": "A3.Convo.C.Traynor",
+        "sortIndex": 90014,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Traynor: ",
+        "name": "Comment - Krogans",
+        "description": "Traynor is amazed about the turian-krogan alliance.",
+        "inMapId": "G.N3.2CIC",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Tuchanka"
+        }]
+    }, {
         "id": "A3.Convo.C.Traynor.4",
         "inMissionId": "A3.Convo.C.Traynor",
         "sortIndex": 90014,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Traynor: ",
-        "name": "Normandy Cabin Convo",
+        "name": "Cabin Convo - Chess",
         "description": "Traynor sends you a message asking you to invite her to play chess with you some time. Invite her up to your cabin. You can offer to let her use your shower. If FemShep, you can join her. Otherwise she will play a game of chess with you.",
         "annotationNote": "Romance Lock",
         "inMapId": "G.N3.1.Terminal",
@@ -3665,7 +4157,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Traynor: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Arcade",
         "description": "Meet Traynor on the stairs of the arcade for lunch. Turns out she is still competing in a Kepesh-Yakshi tournament. Help her beat her obnoxious asari opponent.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
@@ -3684,7 +4176,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Traynor: ",
-        "name": "2nd Citadel DLC",
+        "name": "Citadel DLC - Hot Tub",
         "description": "Invite Traynor up to the apartment to try the hot tub. If romanced, you join her and there's an off-screen hookup. Otherwise, Traynor discovers [Kahlee Sanders'|megametracker://person?id=O3.Sanders] overnight bag (with massage wands).",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Apartment",
@@ -3700,7 +4192,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Traynor: ",
-        "name": "4th Normandy Convo",
+        "name": "Convo - Future",
         "description": "You can speak to Traynor before heading to Earth. If you have romanced her, she tells you she wants a house with two kids and a dog - a retriever.",
         "annotationNote": "Romance Option",
         "inMapId": "G.N3.2CIC",
@@ -3863,7 +4355,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Anderson: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Sanders",
         "description": "_Note: there is a prior conversation with Anderson during the debrief of [megametracker://mission?id=A3.GrissomAcademy] - this is different._ \n\nYou can update Anderson on Kahlee Sanders and he will talk about the struggles on Earth as they try to establish a resistance.",
         "inMapId": "G.N3.2.VidComm",
         "isShowInParentMap": true,
@@ -3878,7 +4370,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Anderson: ",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - Coup",
         "description": "Hackett brings Anderson in on the debrief for the Citadel coup. Anderson knows Kai Leng, and says he is dangerous.",
         "inMapId": "G.N3.2.VidComm",
         "isShowInParentMap": true,
@@ -3893,13 +4385,13 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Anderson: ",
-        "name": "3rd Normandy Convo",
-        "description": "_Note: this conversation is available one assignment after [megametracker://mission?id=M3.2.Citadel2]._ \n\nAnderson warns you about Kai Leng and says they should focus efforts on London, where the Reapers seem to be focusing their forces.",
+        "name": "Convo - Kai Leng",
+        "description": "Anderson warns you about Kai Leng and says they should focus efforts on London, where the Reapers seem to be focusing their forces.",
         "inMapId": "G.N3.2.VidComm",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: The Citadel II"
+            "id": "Completed: Priority: The Citadel II + 1"
         }]
     }, {
         "id": "A3.Convo.A.Anderson.4",
@@ -3908,7 +4400,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Anderson: ",
-        "name": "4th Normandy Convo",
+        "name": "Convo - Thessia",
         "description": "Anderson tells you to shake off the loss of Thessia.",
         "inMapId": "G.N3.2.VidComm",
         "isShowInParentMap": true,
@@ -3923,7 +4415,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Anderson: ",
-        "name": "4th Normandy Convo",
+        "name": "Convo - Citadel",
         "description": "Anderson asks you why the Citadel is suddenly in the Sol galaxy. You will have one more conversation with Anderson over vidcomm - part of [megametracker://mission?id=M3.3.Earth]. And then you meet in-person on Earth.",
         "inMapId": "G.N3.2.VidComm",
         "isShowInParentMap": true,
@@ -3968,7 +4460,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Bailey: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Promotion",
         "description": "Talk to Bailey in his office at the embassies about his new role and the Reaper war.",
         "inMapId": "G.C3.3Embassies",
         "mapLocationPoint": {
@@ -3988,7 +4480,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Bailey: ",
-        "name": "2nd Citadel Convo",
+        "name": "Citadel Convo - Coup",
         "description": "Talk to Bailey about the aftermath of the coup and how this has impacted the Citadel.",
         "inMapId": "G.C3.3Embassies",
         "mapLocationPoint": {
@@ -4020,7 +4512,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Eve: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - History",
         "description": "After Wrex leaves the Med Lab, you can talk to Eve about her past and the process of becoming a shaman. She will also talk about Maelon's experiments and the deaths of the other females. She speaks fondly of Wrex and Mordin.",
         "inMapId": "G.N3.3.Lab",
         "isShowInParentMap": true
@@ -4085,7 +4577,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Grunt: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Arrest",
         "description": "Talk to the Officer across from the Rapid Transit cars. He will take you to Grunt, who was arrested. You have to press him for the whole story, which is that he broke out of the hospital, got drunk and took pictures at the Presidium, and lit a C-Sec car on fire, and got blasted with riot foam. They only caught him when he stopped to get some noodles.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
@@ -4151,7 +4643,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Jacob: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Hospital",
         "description": "After completing [megametracker://mission?id=A3.ExCerberusScientists], you can find Jacob at Huerta Memorial Hospital. He reveals he has a child.",
         "inMapId": "G.C3.4Hospital",
         "mapLocationPoint": {
@@ -4166,7 +4658,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Jacob: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Arcade",
         "description": "Jacob is looking after two orphans for the day. He wants to play Shattered Eezo with you. Afterwards you get lunch. \n\nIf you romanced him in Game 2, you can slap him when you meet him.",
         "inMapId": "G.C3.Silversun.Eezo",
         "isShowInParentMap": true,
@@ -4263,7 +4755,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Jack: ",
-        "name": "1st Citadel Conversation",
+        "name": "Citadel Convo - Purgatory",
         "description": "Speak to Jack in Purgatory on the Citadel. She discusses her nole role as mentor. And she dances with you.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.5Purgatory",
@@ -4279,7 +4771,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Jack: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Arena",
         "description": "Play a game with Jack at the Armax Arsenal Arena (you must have played at least one game for this to be available). If you romanced her previously, she will suggest a hookup during the game. There is a kiss and the rest is implied off-screen.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Silversun",
@@ -4300,7 +4792,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Jack: ",
-        "name": "2nd Citadel DLC",
+        "name": "Citadel DLC - Puppy",
         "description": "Jack has rescued a varren puppy. If romanced, Jack will give you a tattoo.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Apartment",
@@ -4358,7 +4850,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kasumi: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC",
         "description": "Find a suspicious device in the casino. Kasumi and henchman will show up, about to start a heist. If you stop her from leaving, you can catch up.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
@@ -4445,7 +4937,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kelly: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Catch up",
         "description": "Kelly says she has cut ties with Cerberus. She recounts her traumatic kidnapping at the hands of the Collectors. If you want to keep her alive, tell her to change her name and hide from Cerberus. If she was feeding your fish in Game 2, she gives them back to you (including the Prejek Paddlefish).",
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
@@ -4460,7 +4952,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kelly: ",
-        "name": "2nd Citadel Convo",
+        "name": "Citadel Convo - New Name",
         "description": "If you instructed Kelly to hide from Cerberus, you can check in and she has changed her name and appearance.",
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
@@ -4482,7 +4974,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kelly: ",
-        "name": "3rd Citadel Convo",
+        "name": "Citadel Convo - Apology",
         "description": "If she hasn't already, Kelly will apologize for spying on you in Game 2 for Cerberus.",
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
@@ -4501,7 +4993,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kelly: ",
-        "name": "4th Citadel Convo",
+        "name": "Citadel Convo - Survived",
         "description": "Kelly will thank you for helping her to evade Cerberus during the coup (or she will not be there).",
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
@@ -4512,26 +5004,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
-        }]
-    }, {
-        "id": "A3.Convo.A.Kelly.5",
-        "inMissionId": "A3.Convo.A.Kelly",
-        "sortIndex": 90025,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Kelly: ",
-        "name": "5th Citadel Convo",
-        "description": "Kelly will ask you if you have any romantic entanglements. You can say you still love her.",
-        "annotationNote": "Romance Option",
-        "inMapId": "G.C3.2HoldingArea",
-        "mapLocationPoint": {
-            "x": 831,
-            "y": 883,
-            "radius": 20
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Priority: The Citadel II"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Kelly Convo 4"
         }]
     }, {
         "id": "A3.Convo.A.Kelly.6",
@@ -4540,7 +5015,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kelly: ",
-        "name": "6th Citadel Convo",
+        "name": "Citadel Convo - Romance",
         "description": "Kelly will ask you if you have any romantic entanglements. You can say you still love her. There is an implied off-screen hookup. And she'll give you a picture of her.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.2HoldingArea",
@@ -4551,7 +5026,7 @@
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: The Citadel II"
+            "id": "Completed: Kelly Convo 4 + 1"
         }]
     }, {
         "id": "A3.Convo.A.Legion",
@@ -4574,7 +5049,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Legion: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Catch up",
         "description": "Speak to Legion in the War Room. It thanks you for preventing Xen from seizing its platform. You can ask it about its interface with the Reapers, and about the repercussions of Game 2's heretic geth decision. It tells you that the quarians attack on the geth impelled them to align with the Reapers.",
         "inMapId": "G.N3.2.WarTerminal",
         "isShowInParentMap": true
@@ -4600,7 +5075,7 @@
         "sortIndex": 90022,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - Freedom",
         "titlePrefix": "Legion: ",
         "description": "Speak to Legion in the War Room. It says that the liberated geth are grateful for Shepard's actions.",
         "inMapId": "G.N3.2.WarTerminal",
@@ -4677,7 +5152,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Miranda: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Oriana",
         "description": "Find Miranda at the Normandy Dock. She is worried about her sister Oriana, who has disappeared.",
         "inMapId": "G.C3.1Dock",
         "mapLocationPoint": {
@@ -4696,8 +5171,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Miranda: ",
-        "name": "2nd Citadel Convo",
-        "description": "You can speak to Miranda at the Spectre terminal. She has learned her father is working with the Illusive Man. If you want to keep her alive, warn her about Kai Leng.",
+        "name": "Citadel Convo - Father",
+        "description": "You can speak to Miranda at the Spectre message terminal. She has learned her father is working with the Illusive Man. If you want to keep her alive, warn her about Kai Leng.",
         "inMapId": "G.C3.3.Terminal",
         "isShowInParentMap": true,
         "events": [{
@@ -4711,7 +5186,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Miranda: ",
-        "name": "3rd Citadel Convo",
+        "name": "Citadel Convo - Apology",
         "description": "Miranda asks to speak with you at the Selkish Arms. She needs Alliance funding for a project, but cannot reveal the details. Give her the funding or this is your last conversation. She also confesses that she tried to implant a control chip in Shepard during the Lazarus project, but the Illusive Man stopped her.\n\nIf you previously romanced Miranda, there will also be an option for an off-screen hookup at the end of this conversation.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.6Presidium",
@@ -4731,7 +5206,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Miranda: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Drink",
         "description": "You can invite Miranda up for a drink.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Apartment",
@@ -4747,7 +5222,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Miranda: ",
-        "name": "2nd Citadel DLC",
+        "name": "Citadel DLC - Roulette",
         "description": "Meet Miranda near the quasar machines to play some roulette and ply her with wine.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Silversun.Quasar",
@@ -4809,7 +5284,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Mordin: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Sample",
         "description": "Mordin/Wiks is treating Eve, but Wrex storms in suspiciously. He is sent off to get a tissue sample, and after you speak with Eve, you can talk more to Mordin about the Genophage cure he is creating. He still refuses to admit the Genophage was wrong. He muses about what he'll do when the war is over, go to the beach and collect seashells, experiment on the seashells.",
         "sideEffects": ["When you walk in, Mordin is trying to set up Garrus and Eve."],
         "inMapId": "G.N3.3.Lab",
@@ -4882,8 +5357,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Mordin: ",
-        "name": "2nd Normandy Convo",
-        "description": "_Note: this is available one mission after [megametracker://mission?id=M3.1.SurKesh]_ \n\nYou can now ask Mordin about the Shroud.",
+        "name": "Convo - Shroud",
+        "description": "You can now ask Mordin about the Shroud.",
         "inMapId": "G.N3.3.Lab",
         "isShowInParentMap": true,
         "events": [{
@@ -4897,7 +5372,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Mordin: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Messages",
         "description": "There are some messages from Mordin left in your apartment after the party.",
         "inMapId": "G.C3.Apartment",
         "isShowInParentMap": true,
@@ -4932,7 +5407,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Raan: ",
-        "name": "1st Normandy Convo",
+        "name": "Convo - Fleet",
         "description": "Talk to Raan in the War Room to learn more about the quarian fleet. You will learn that they have militarized their civilian fleet.",
         "inMapId": "G.N3.2.WarTerminal",
         "isShowInParentMap": true
@@ -4943,7 +5418,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Raan: ",
-        "name": "2nd Normandy Convo",
+        "name": "Convo - Distress Call",
         "description": "There is a garbled distress call in the War Room. Clean it up and warn Admiral Raan.",
         "inMapId": "G.N3.2.WarTerminal",
         "isShowInParentMap": true,
@@ -5001,7 +5476,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Samara: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Embassies",
         "description": "After completing [megametracker://mission?id=A3.ArdatYakshiMonastery], if she survived, you can find Samara at the Citadel Embassies.",
         "inMapId": "G.C3.3Embassies",
         "mapLocationPoint": {
@@ -5016,7 +5491,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Samara: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Chat",
         "description": "You can chat with Samara about her wild adventures in the news. If you romanced her in Game 2, you can share a romantic kiss and embrace.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Apartment",
@@ -5101,7 +5576,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Thane: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Dying",
         "description": "Talk to Thane about his declining health. He will reject any attempt to recruit him to the Normandy. If you romanced him in Game 2 and Ashley/Kaidan in Game 1, he will inquire about the state of that relationship. If you ask for some private time, there is some making out. \n\nIf you don't speak to Thane before [megametracker://mission?id=M3.2.Citadel2], he will die before the coup.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.4Hospital",
@@ -5117,7 +5592,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Thane: ",
-        "name": "2nd Citadel Convo",
+        "name": "Citadel Convo - Goodbye",
         "description": "Speak to the doctor about Thane's condition, then speak to Kolyat and say goodbye to Thane.",
         "inMapId": "G.C3.4Hospital",
         "mapLocationPoint": {
@@ -5136,7 +5611,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Thane: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Memorial",
         "description": "Invite the crew to a memorial for Thane. Kolyat will leave you with some messages from Thane. They are romantic messages, if you have romanced Thane.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Apartment",
@@ -5152,7 +5627,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Thane: ",
-        "name": "2nd Citadel DLC",
+        "name": "Citadel DLC - Ghost",
         "description": "If Thane is still your only love interest, he will appear to you as a ghost before you reboard the Normandy after the party ([YouTube|https://www.youtube.com/watch?v=00ymaEG0Nac]).",
         "annotationNote": "Romance Option",
         "events": [{
@@ -5197,7 +5672,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Udina: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Council",
         "description": "Udina is furious at the Council for not supporting Earth. He plans to acquire funding and materials to help as best he can. He plans to lean heavily on the colonies for funding. He gives you tips on the individual councilors and how they think.",
         "inMapId": "G.C3.3Embassies",
         "mapLocationPoint": {
@@ -5212,7 +5687,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Udina: ",
-        "name": "2nd Citadel Convo",
+        "name": "Citadel Convo - Plans",
         "description": "After Ashley/Kaidan is out of bed, go speak to Udina in his office.",
         "inMapId": "G.C3.3Embassies",
         "mapLocationPoint": {
@@ -5291,7 +5766,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Wrex: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Betrayal",
         "description": "If you betrayed Wrex (not Wreave) by releasing a fake Genophage cure, he will try to kill you at the Normandy dock.",
         "inMapId": "G.C3.1Dock",
         "mapLocationPoint": {
@@ -5339,7 +5814,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Zaeed: ",
-        "name": "1st Citadel Convo",
+        "name": "Citadel Convo - Docks",
         "description": "Talk to Zaeed in the loading docks and gain an asset for the war.",
         "inMapId": "G.C3.2HoldingArea",
         "mapLocationPoint": {
@@ -5358,7 +5833,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Zaeed: ",
-        "name": "1st Citadel DLC",
+        "name": "Citadel DLC - Claw",
         "description": "Zaeed has been thwarted by the Claw game. Help him out and then catch up.",
         "inMapId": "G.C3.Silversun.Claw",
         "isShowInParentMap": true,
@@ -5468,7 +5943,7 @@
         "missionType": "Objective",
         "titlePrefix": "Argument: ",
         "name": "Chakwas/Michel vs Adams",
-        "description": "_Note: this is available one assignment after [megametracker://mission?id=M3.2.GethDreadnought]_ \n\nDr. At the conference table by the kitchen, Chakwas/Michel is arguing with Engineer Adams about whether artificial intelligence is really life. Pick a side.",
+        "description": "_Note: this is available one assignment after [megametracker://mission?id=M3.2.GethDreadnought]_ \n\nAt the conference table by the kitchen, Chakwas/Michel is arguing with Engineer Adams about whether artificial intelligence is really life. Pick a side.",
         "conversationRewards": [{
             "context": "Resolving the argument between Chakwas/Michel and Adams",
             "id": "A3.Convo.N.4ChakwasAdams.PR1",
@@ -5574,11 +6049,18 @@
             "value": 2,
             "trigger": "(Automatic)"
         }],
-        "inMapId": "G.N3.4.Station",
-        "isShowInParentMap": true,
+        "inMapId": "G.N3.4Engineering",
+        "mapLocationPoint": {
+            "x": "1224",
+            "y": "1201",
+            "radius": 1
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Rannoch"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Argument Donnelly/Daniels"
         }]
 
 
@@ -5594,7 +6076,7 @@
     }, {
         "id": "A3.Convo.OC.Docks1",
         "inMissionId": "A3.Convo.Citadel",
-        "sortIndex": 9001,
+        "sortIndex": 9000,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Argument: ",
@@ -5619,7 +6101,7 @@
     }, {
         "id": "A3.Convo.OC.Hospital1",
         "inMissionId": "A3.Convo.Citadel",
-        "sortIndex": 9001,
+        "sortIndex": 9000,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Argument: ",
@@ -5635,6 +6117,106 @@
         "mapLocationPoint": {
             "x": 1084,
             "y": 1495,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven"
+        }]
+    }, {
+        "id": "A3.Convo.OC.Commons1",
+        "inMissionId": "A3.Convo.Citadel",
+        "sortIndex": 9000,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Argument: ",
+        "name": "Reluctant vs Gung-ho Citizen",
+        "description": "Two citizens are arguing about how to help the war effort near the Bank in the Presidium Commons. The gung-ho citizen wants to enlist, but the reluctant citizen thinks they do not have the requisite skills. Pick a side.",
+        "conversationRewards": [{
+            "id": "A3.Convo.OC.Commons1.PR5",
+            "type": "Paragade",
+            "value": 2,
+            "trigger": "(Automatic)"
+        }],
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 256,
+            "y": 1241,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven"
+        }]
+    }, {
+        "id": "A3.Convo.OC.Commons2",
+        "inMissionId": "A3.Convo.Citadel",
+        "sortIndex": 9000,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Argument: ",
+        "name": "Businessmen",
+        "description": "Two businessmen are arguing about whether to switch from financial VIs to military tech to help in the war effort. Warn them to help however they can.",
+        "conversationRewards": [{
+            "id": "A3.Convo.OC.Commons2.PR5",
+            "type": "Paragade",
+            "value": 2,
+            "trigger": "(Automatic)"
+        }],
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 1030,
+            "y": 1233,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven"
+        }]
+    }, {
+        "id": "A3.Convo.OC.Commons3",
+        "inMissionId": "A3.Convo.Citadel",
+        "sortIndex": 9000,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Argument: ",
+        "name": "Arguing Couple",
+        "description": "[megametracker://person?id=O1.PetrovskyM] and [Rebekah|megametracker://person?id=O1.PetrovskyR] are still arguing about her son. Pick a side.",
+        "conversationRewards": [{
+            "id": "A3.Convo.OC.Commons3.PR5",
+            "type": "Paragade",
+            "value": 2,
+            "trigger": "(Automatic)"
+        }],
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 1238,
+            "y": 1096,
+            "radius": 20
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Palaven"
+        }]
+    }, {
+        "id": "A3.Convo.OC.Commons4",
+        "inMissionId": "A3.Convo.Citadel",
+        "sortIndex": 9000,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Argument: ",
+        "name": "Sales Clerk vs Customer",
+        "description": "A customer wants a cash refund. The clerk insists he can't help without a sales record of some kind. Pick a side.",
+        "conversationRewards": [{
+            "id": "A3.Convo.OC.Commons4.PR5",
+            "type": "Paragade",
+            "value": 2,
+            "trigger": "(Automatic)"
+        }],
+        "inMapId": "G.C3.6Presidium",
+        "mapLocationPoint": {
+            "x": 1905,
+            "y": 815,
             "radius": 20
         },
         "events": [{
@@ -5662,110 +6244,9 @@
             "y": 168,
             "radius": 20
         },
-        "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
-        }]
-    }, {
-        "id": "A3.Convo.OC.Commons1",
-        "inMissionId": "A3.Convo.Citadel",
-        "sortIndex": 9001,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Argument: ",
-        "name": "Reluctant vs Gung-ho Citizen",
-        "description": "Two citizens are arguing about how to help the war effort near the Bank in the Presidium Commons. The gung-ho citizen wants to enlist, but the reluctant citizen thinks they do not have the requisite skills. Pick a side.",
-        "conversationRewards": [{
-            "id": "A3.Convo.OC.Commons1.PR5",
-            "type": "Paragade",
-            "value": 2,
-            "trigger": "(Automatic)"
-        }],
-        "inMapId": "G.C3.6Presidium",
-        "mapLocationPoint": {
-            "x": 256,
-            "y": 1241,
-            "radius": 20
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven"
-        }]
-    }, {
-        "id": "A3.Convo.OC.Commons2",
-        "inMissionId": "A3.Convo.Citadel",
-        "sortIndex": 9001,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Argument: ",
-        "name": "Businessmen",
-        "description": "Two businessmen are arguing about whether to switch from financial VIs to military tech to help in the war effort. Warn them to help however they can.",
-        "conversationRewards": [{
-            "id": "A3.Convo.OC.Commons2.PR5",
-            "type": "Paragade",
-            "value": 2,
-            "trigger": "(Automatic)"
-        }],
-        "inMapId": "G.C3.6Presidium",
-        "mapLocationPoint": {
-            "x": 1030,
-            "y": 1233,
-            "radius": 20
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven"
-        }]
-    }, {
-        "id": "A3.Convo.OC.Commons3",
-        "inMissionId": "A3.Convo.Citadel",
-        "sortIndex": 9001,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Argument: ",
-        "name": "Arguing Couple",
-        "description": "[megametracker://person?id=O1.PetrovskyM] and [Rebekah|megametracker://person?id=O1.PetrovskyR] are still arguing about her son. Pick a side.",
-        "conversationRewards": [{
-            "id": "A3.Convo.OC.Commons3.PR5",
-            "type": "Paragade",
-            "value": 2,
-            "trigger": "(Automatic)"
-        }],
-        "inMapId": "G.C3.6Presidium",
-        "mapLocationPoint": {
-            "x": 1238,
-            "y": 1096,
-            "radius": 20
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven"
-        }]
-    }, {
-        "id": "A3.Convo.OC.Commons4",
-        "inMissionId": "A3.Convo.Citadel",
-        "sortIndex": 9001,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Argument: ",
-        "name": "Sales Clerk vs Customer",
-        "description": "A customer wants a cash refund. The clerk insists he can't help without a sales record of some kind. Pick a side.",
-        "conversationRewards": [{
-            "id": "A3.Convo.OC.Commons4.PR5",
-            "type": "Paragade",
-            "value": 2,
-            "trigger": "(Automatic)"
-        }],
-        "inMapId": "G.C3.6Presidium",
-        "mapLocationPoint": {
-            "x": 1905,
-            "y": 815,
-            "radius": 20
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Priority: Palaven"
         }]
     }, {
         "id": "A3.Convo.OC.Commons5",
@@ -5852,7 +6333,7 @@
                 }]
             }
         }],
-        "inMapId": "G.C3.6.Cipritine",
+        "inMapId": "G.C3.6.Aegohr",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",

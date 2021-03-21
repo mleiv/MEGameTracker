@@ -29,7 +29,7 @@ final class BaseDataImportTest: MEGameTrackerTests {
 
     /// Verify that all json import files are valid
     func testValidJson() {
-        let files = BaseDataImport().progressFiles
+        let files = BaseDataImport().progressFilesEvents + BaseDataImport().progressFilesOther
         for row in files {
             var didParse = false
             let filename = row.filename
@@ -50,7 +50,7 @@ final class BaseDataImportTest: MEGameTrackerTests {
     }
 
     func testOneImport() {
-        let filename = "DataMaps_TerminusSystems"
+        let filename = "DataItems_3Loot"
         do {
             if let file = Bundle.main.path(forResource: filename, ofType: "json") {
                 let data = try Data(contentsOf: URL(fileURLWithPath: file))
@@ -103,7 +103,7 @@ final class BaseDataImportTest: MEGameTrackerTests {
 
     // The downsides of manually editing JSON files instead of maintaining a relational database
     func testConversationIdsUnique() {
-        let files = BaseDataImport().progressFiles
+        let files = BaseDataImport().progressFilesOther
         var convoIds: [String: Bool] = [:]
         var noFailuresFound = true
         for row in files where row.type == .mission {

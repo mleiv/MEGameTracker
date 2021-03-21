@@ -4564,9 +4564,230 @@
 			"y": 664,
 			"radius": 30
 		},
+        "gameVersionData": {
+            "3": {
+                "referenceSize": "2083x2083",
+                "image": "Detail_Maps/Game3/_Secondary/Utukku/Utukku.pdf"
+            }
+        },
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Utukku"
 		]
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.0Shuttle",
+        "inMapId": "G.Att.Nin.Mul.Utukku",
+        "name": "Shuttle Dropoff",
+        "mapLocationPoint": {
+            "x": 1147,
+            "y": 136,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.1Camp",
+        "inMapId": "G.Att.Nin.Mul.Utukku",
+        "name": "1 - Camp",
+        "mapType": "Area",
+        "mapLocationPoint": {
+            "x": 1349,
+            "y": 411,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "isHidden": false,
+                "referenceSize": "2083x2083",
+                "image": "Detail_Maps/Game3/_Secondary/Utukku/Utukku1Camp.pdf"
+            }
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.1.Shuttle",
+        "inMapId": "G.Att.Nin.Mul.Utukku.1Camp",
+        "name": "Shuttle Dropoff",
+        "mapLocationPoint": {
+            "x": 739,
+            "y": 284,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.1.Collapse",
+        "inMapId": "G.Att.Nin.Mul.Utukku.1Camp",
+        "name": "Collapse",
+        "mapLocationPoint": {
+            "x": 1006,
+            "y": 1075,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.1.2",
+        "inMapId": "G.Att.Nin.Mul.Utukku.1Camp",
+        "name": "To 2 - Tunnels",
+        "linkToMapId": "G.Att.Nin.Mul.Utukku.2Tunnels",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1075,
+            "y": 2021,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.2Tunnels",
+        "inMapId": "G.Att.Nin.Mul.Utukku",
+        "name": "2 - Tunnels",
+        "mapType": "Area",
+        "mapLocationPoint": {
+            "x": 1385,
+            "y": 1354,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "isHidden": false,
+                "referenceSize": "2083x2083",
+                "image": "Detail_Maps/Game3/_Secondary/Utukku/Utukku2Tunnels.pdf"
+            }
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.2.1",
+        "inMapId": "G.Att.Nin.Mul.Utukku.2Tunnels",
+        "name": "From 1 - Camp",
+        "linkToMapId": "G.Att.Nin.Mul.Utukku.1Camp",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 720,
+            "y": 89,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.2.3",
+        "inMapId": "G.Att.Nin.Mul.Utukku.2Tunnels",
+        "name": "To 3 - Central Chamber",
+        "linkToMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 1089,
+            "y": 1968,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.2.BE",
+        "inMapId": "G.Att.Nin.Mul.Utukku.2Tunnels",
+        "name": "Barrier Engine",
+        "mapLocationPoint": {
+            "x": 996,
+            "y": 844,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.2.Node",
+        "inMapId": "G.Att.Nin.Mul.Utukku.2Tunnels",
+        "name": "Reaper Node",
+        "mapLocationPoint": {
+            "x": 1196,
+            "y": 1319,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.3Central",
+        "inMapId": "G.Att.Nin.Mul.Utukku",
+        "name": "3 - Central Chamber",
+        "mapType": "Area",
+        "mapLocationPoint": {
+            "x": 563,
+            "y": 1934,
+            "radius": 150
+        },
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "isHidden": false,
+                "referenceSize": "2083x2083",
+                "image": "Detail_Maps/Game3/_Secondary/Utukku/Utukku3CentralChamber.pdf"
+            }
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.3.2",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "name": "From 2 - Tunnels",
+        "linkToMapId": "G.Att.Nin.Mul.Utukku.2Tunnels",
+        "isShowInList": false,
+        "mapLocationPoint": {
+            "x": 2028,
+            "y": 947,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.3.Passage",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "name": "Narrow Passage",
+        "mapLocationPoint": {
+            "x": 450,
+            "y": 807,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.3.BE1",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "name": "Barrier Engine",
+        "mapLocationPoint": {
+            "x": 1632,
+            "y": 987,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.3.BE2",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "name": "Barrier Engine",
+        "mapLocationPoint": {
+            "x": 1531,
+            "y": 1147,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.3.BE3",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "name": "Barrier Engine",
+        "mapLocationPoint": {
+            "x": 134,
+            "y": 1164,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.3.Node1",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "name": "Reaper Node",
+        "mapLocationPoint": {
+            "x": 645,
+            "y": 728,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.3.Node2",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "name": "Reaper Node",
+        "mapLocationPoint": {
+            "x": 392,
+            "y": 1159,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.3.Node3",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "name": "Reaper Node",
+        "mapLocationPoint": {
+            "x": 553,
+            "y": 1216,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Nin.Mul.Utukku.3.Node4",
+        "inMapId": "G.Att.Nin.Mul.Utukku.3Central",
+        "name": "Reaper Node",
+        "mapLocationPoint": {
+            "x": 118,
+            "y": 1216,
+            "radius": 20
+        }
 	}, {
 		"id": "G.Att.Nin.Mul.Inakhos",
 		"name": "Inakhos",
