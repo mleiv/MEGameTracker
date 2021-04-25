@@ -2029,21 +2029,43 @@
             "id": "Completed: Priority: Geth Dreadnought"
         }]
     }, {
+        "id": "A3.N7FuelReactors.0",
+        "inMissionId": "A3.N7FuelReactors",
+        "sortIndex": 13001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Riley",
+        "description": "Speak to Captain Riley and she will move the container in your path.",
+        "inMapId": "G.OuC.Sil.Kyp.Cyone",
+        "mapLocationPoint": {
+            "x": 1275,
+            "y": 1614,
+            "radius": 1
+        }
+    }, {
         "id": "A3.N7FuelReactors.1",
         "inMissionId": "A3.N7FuelReactors",
         "sortIndex": 13001,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Toxic Gas",
-        "description": "Avoid the gas - it will kill you. Locate the crane controls and use the buttons to move the two containers to the right. Then head to the control console to vent the gas."
+        "name": "Move Containers",
+        "description": "Locate the crane controls and use the buttons to move the two containers in your way to the right (the way you came in).",
+        "inMapId": "G.OuC.Sil.Kyp.Cyone.02Controls",
+        "isShowInParentMap": true
     }, {
-        "id": "A3.N7FuelReactors.2",
+        "id": "A3.N7FuelReactors.1B",
         "inMissionId": "A3.N7FuelReactors",
-        "sortIndex": 13002,
+        "sortIndex": 13001,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Barrier Engines (Optional)",
-        "description": "Look around the cleared area for six Reaper barrier engines and destroy them."
+        "name": "Vent Sector A1",
+        "description": "Use the console to vent the toxic gas.",
+        "inMapId": "G.OuC.Sil.Kyp.Cyone",
+        "mapLocationPoint": {
+            "x": 1727,
+            "y": 952,
+            "radius": 1
+        }
     }, {
         "id": "A3.N7FuelReactors.3",
         "inMissionId": "A3.N7FuelReactors",
@@ -2051,15 +2073,49 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Fuel Rods",
-        "description": "Return to the fuel rod control and unlock the fuel rods. Fight off the Reaper attack. After you have cleared the area, you will need to seal the two moderator tanks."
+        "description": "Return to the fuel rod control and unlock the fuel rods. Fight off the Reaper attack. After you have cleared the area, you will need to seal the two moderator tanks.",
+        "inMapId": "G.OuC.Sil.Kyp.Cyone",
+        "mapLocationPoint": {
+            "x": 1224,
+            "y": 1155,
+            "radius": 1
+        }
     }, {
         "id": "A3.N7FuelReactors.3B",
         "inMissionId": "A3.N7FuelReactors",
         "sortIndex": 13003,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Moderator Tanks",
+        "name": "Seal Tanks",
         "description": "Seal the two moderator tanks."
+    }, {
+        "id": "A3.N7FuelReactors.3B.1",
+        "inMissionId": "A3.N7FuelReactors.3B",
+        "sortIndex": 13003,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Seal Tank 1",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Sil.Kyp.Cyone",
+        "mapLocationPoint": {
+            "x": 952,
+            "y": 416,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.N7FuelReactors.3B.2",
+        "inMissionId": "A3.N7FuelReactors.3B",
+        "sortIndex": 13003,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Seal Tank 2",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Sil.Kyp.Cyone",
+        "mapLocationPoint": {
+            "x": 1211,
+            "y": 697,
+            "radius": 1
+        }
     }, {
         "id": "A3.N7FuelReactors.4",
         "inMissionId": "A3.N7FuelReactors",
@@ -2067,7 +2123,27 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Restart Reactor",
-        "description": "Restart the reactor. Fight off the Reaper attack. When Riley asks for help, if you ignore her, she will die."
+        "description": "Restart the reactor. Fight off the Reaper attack. When Riley asks for help, if you ignore her, she will die.",
+        "inMapId": "G.OuC.Sil.Kyp.Cyone",
+        "mapLocationPoint": {
+            "x": 849,
+            "y": 233,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.N7FuelReactors.5",
+        "inMissionId": "A3.N7FuelReactors",
+        "sortIndex": 13004,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Final Startup",
+        "description": "The doors will open to the reactor. Eliminate the remaining Reaper forces. Initiate the final startup.",
+        "inMapId": "G.OuC.Sil.Kyp.Cyone",
+        "mapLocationPoint": {
+            "x": 906,
+            "y": 424,
+            "radius": 1
+        }
     }, {
         "id": "A3.N7CommunicationHub",
         "sortIndex": 1400,
