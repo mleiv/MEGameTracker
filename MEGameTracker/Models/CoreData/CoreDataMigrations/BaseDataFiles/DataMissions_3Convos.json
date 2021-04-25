@@ -491,7 +491,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
-        "name": "Side Convo - Rannoch",
+        "name": "Convo - Rannoch",
         "description": "This conversation is very different depending on whether the quarian fleet was destroyed. Joker is devastated by the loss of the quarians. EDI is devastated by the loss of the geth. Her dialogue is particularly bitter as she draws ties between their lack of value to organics and her own. \n\nIf you manage to save both, Joker is ebullient. EDI will chime in with her take on Legion's sacrifice, that it attained sentience before the end.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -873,7 +873,7 @@
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
         "name": "Convo - Strategy",
-        "description": "Garrus is happy to have Tali back aboard. He is worried about Palaven, that the turians need to stop focusing on trying to save it in order to fight the Reapers.",
+        "description": "Garrus is talking to Tali when you come in, catching her up on events. \n\nWhen you speak to him, he is worried about Palaven and the difficult choices of letting people die for strategic advantage. \n\nYou can prompt him for additional comments about Tali and the geth.",
         "inMapId": "G.N3.3.Battery",
         "isShowInParentMap": true,
         "events": [{
@@ -1104,21 +1104,6 @@
             "id": "Completed: Priority: The Citadel II + 1"
         }]
     }, {
-        "id": "A3.Convo.S.Javik.2-10Rachni",
-        "inMissionId": "A3.Convo.S.Javik",
-        "sortIndex": 90002,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Javik: ",
-        "name": "Comment - Rachni",
-        "description": "Shepard can prompt Javik for some Prothean history of the rachni. If he went on the mission to rescue the krogan team, he is pleased to have finally met Grunt.",
-        "inMapId": "G.N3.3.Port",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Attican Traverse: Krogan Team"
-        }]
-    }, {
         "id": "A3.Convo.S.Javik.2-11Tuchanka",
         "inMissionId": "A3.Convo.S.Javik",
         "sortIndex": 90002,
@@ -1143,21 +1128,6 @@
         "titlePrefix": "Javik: ",
         "name": "Side Convo - Bomb",
         "description": "Javik contacts Garrus to compliment the turians on their cunning in planting the bomb.",
-        "inMapId": "G.N3.3.Port",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Priority: Tuchanka: Bomb"
-        }]
-    }, {
-        "id": "A3.Convo.S.Javik.2-13Bomb",
-        "inMissionId": "A3.Convo.S.Javik",
-        "sortIndex": 90002,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Javik: ",
-        "name": "Comment - Bomb",
-        "description": "Javik comments that Garrus would be an admirable foe, and that in his day, he would have detonated the bomb.",
         "inMapId": "G.N3.3.Port",
         "isShowInParentMap": true,
         "events": [{
@@ -1220,7 +1190,7 @@
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
         "name": "Side Convo - Wars",
-        "description": "Javik is chatting with Garrus and Ensign Copeland over wars past and present.",
+        "description": "Javik is chatting with Garrus and Ensign Copeland over wars past and present. Garrus discusses the Reapers strategy in converting the enemy into Reaper mutations. \n\nYou can prompt Javik for more comments about how much worse the Reapers made things in his time. Garrus wonders what the Reapers are doing to other species.",
         "inMapId": "G.N3.3.Port",
         "isShowInParentMap": true,
         "events": [{
@@ -1235,8 +1205,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
-        "name": "Sido Convo - Geth",
-        "description": "You walk in on Javik and Tali talking, where Javik tells Tali that her war with the geth is the quarians own fault for being so stupid as to create AI. He tells you much the same about Legion, and suggests it be thrown out the airlock.",
+        "name": "Convo - Geth",
+        "description": "You walk in on Javik and Tali talking, where Javik tells Tali that her war with the geth is the quarians own fault for being so stupid as to create AI. \n\nWhen you speak to him, he tells you much the same about Legion, and suggests it be thrown out the airlock. \n\nYou can prompt him for additional comments about machines.",
         "inMapId": "G.N3.4.Port",
         "isShowInParentMap": true,
         "events": [{
@@ -1259,6 +1229,20 @@
             "id": "Completed: Priority: Rannoch"
         }]
     }, {
+        "id": "A3.Convo.S.Javik.5",
+        "sortIndex": 90005,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Javik: ",
+        "name": "Argument - Liara",
+        "description": "You walk in on Javik and Liara fighting. If you take the interrupt and hold Liara back, Javik will change his tone and tell her that the protheans had hoped the asari could defeat the Reapers, and as long as she is still alive, there is still hope. If you do not take the interrupt, Liara storms out and the conversation with Javik is much shorter and more cynical.",
+        "inMapId": "G.N3.4.Port",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Thessia"
+        }]
+    }, {
         "id": "A3.Convo.S.Javik.5-BLiara",
         "identicalMissionId": "A3.Convo.S.Tali.8-BLiara",
         "inMissionId": "A3.Convo.S.Javik",
@@ -1267,7 +1251,7 @@
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
         "name": "Side Convo - Liara",
-        "description": "(If Shepard settled the argument between Liara and Javik) As you walk in, Javik is talking to Tali on the comms. Their conversation depends on whether you talked to Tali first ([megametracker://mission?id=A3.Convo.S.Tali.9]). If not, a sober Tali thanks Javik for comforting Liara and asks him for perspective on Sanctuary. If you spoke to Tali first, she is completely wasted and teases Javik that he likes Liara, and that he likes Tali too.",
+        "description": "(If Shepard settled the argument between Liara and Javik) As you walk in, Javik is talking to Tali on the comms. Their conversation depends on whether you talked to Tali first ([megametracker://mission?id=A3.Convo.S.Tali.8-BLiara]). If not, a sober Tali thanks Javik for comforting Liara and asks him for perspective on Sanctuary. If you spoke to Tali first, she is completely wasted and teases Javik that he likes Liara, and that he likes Tali too.",
         "inMapId": "G.N3.4.Port",
         "isShowInParentMap": true,
         "events": [{
@@ -1537,6 +1521,21 @@
             "id": "Completed: Priority: The Citadel II + 1"
         }]
     }, {
+        "id": "A3.Convo.S.Kaidan.7-BTeam",
+        "inMissionId": "A3.Convo.S.Kaidan",
+        "sortIndex": 90007,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Kaidan: ",
+        "name": "Side Convo - Recruits",
+        "description": "Kaidan is talking to EDI about locating his recruits. \n\nYou can prompt him for additional comments about Tali and the geth.",
+        "inMapId": "G.N3.3.Starboard",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Geth Dreadnought"
+        }]
+    }, {
         "id": "A3.Convo.S.Kaidan.8",
         "inMissionId": "A3.Convo.S.Kaidan",
         "sortIndex": 90008,
@@ -1566,7 +1565,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Rannoch"
+            "id": "Completed: Priority: Rannoch + 1"
         }]
     }, {
         "id": "A3.Convo.S.Kaidan.8-CThessia",
@@ -1577,7 +1576,7 @@
         "missionType": "Objective",
         "titlePrefix": "Kaidan: ",
         "name": "Side Convo - Thessia",
-        "description": "James and Adams are discussing Liara and her lost homeworld.",
+        "description": "Kaidan and Adams are discussing Liara and her lost homeworld.",
         "inMapId": "G.N2.4.Station",
         "isShowInParentMap": true,
         "events": [{
@@ -2366,44 +2365,6 @@
             "id": "Completed: Priority: Palaven"
         }]
     }, {
-        "id": "A3.Convo.S.Vega.3-BRachni",
-        "inMissionId": "A3.Convo.S.Vega",
-        "sortIndex": 90002,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Vega: ",
-        "name": "Comment - Rachni",
-        "description": "Shepard can prompt James for some brief comments about the rachni and Grunt.",
-        "inMapId": "G.N3.5ShuttleBay",
-        "mapLocationPoint": {
-            "x": 1187,
-            "y": 1354,
-            "radius": 20
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Attican Traverse: Krogan Team"
-        }]
-    }, {
-        "id": "A3.Convo.S.Vega.3-CCure",
-        "inMissionId": "A3.Convo.S.Vega",
-        "sortIndex": 90002,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Vega: ",
-        "name": "Comment - Cure",
-        "description": "Shepard can prompt James for some comments about Tuchanka and the Genophage cure. He also expresses awe about the size of the dead Reaper.",
-        "inMapId": "G.N3.5ShuttleBay",
-        "mapLocationPoint": {
-            "x": 1187,
-            "y": 1354,
-            "radius": 20
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Priority: Tuchanka"
-        }]
-    }, {
         "id": "A3.Convo.S.Vega.3-DCards",
         "inMissionId": "A3.Convo.S.Vega",
         "sortIndex": 90004,
@@ -2416,25 +2377,6 @@
         "mapLocationPoint": {
             "x": 363,
             "y": 1393,
-            "radius": 20
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Priority: The Citadel II"
-        }]
-    }, {
-        "id": "A3.Convo.S.Vega.3-EUdina",
-        "inMissionId": "A3.Convo.S.Vega",
-        "sortIndex": 90002,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Vega: ",
-        "name": "Comment - Udina",
-        "description": "Shepard can prompt James for some brief comments about the coup and Udina.",
-        "inMapId": "G.N3.5ShuttleBay",
-        "mapLocationPoint": {
-            "x": 1187,
-            "y": 1354,
             "radius": 20
         },
         "events": [{
@@ -2478,6 +2420,7 @@
         "sortIndex": 90005,
         "gameVersion": "3",
         "missionType": "Objective",
+        "titlePrefix": "Vega: ",
         "name": "Citadel Convo - Tattoo",
         "description": "James is getting an N7 tattoo - his way of signing up. If FemShep, you can also flirt with him.",
         "inMapId": "G.C3.2HoldingArea",
@@ -2497,8 +2440,9 @@
         "sortIndex": 90005,
         "gameVersion": "3",
         "missionType": "Objective",
+        "titlePrefix": "Vega: ",
         "name": "Side Convo - Cooking",
-        "description": "James is making huevos ranchos in the mess. If Javik is present, James tries to bond with him talking about gambling and drinking, etc., but Javik wants none of it.",
+        "description": "James is making huevos rancheros in the mess. If Javik is present, James tries to bond with him talking about gambling and drinking, etc., but Javik wants none of it.",
         "inMapId": "G.N2.3.Kitchen",
         "isShowInParentMap": true,
         "events": [{
@@ -2667,8 +2611,8 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Adams: ",
-        "name": "Side Convo - Cooking",
-        "description": "James and Adams are discussing Liara and her lost homeworld.",
+        "name": "Side Convo - Thessia",
+        "description": "Kaidan and Adams are discussing Liara and her lost homeworld.",
         "inMapId": "G.N2.4.Station",
         "isShowInParentMap": true,
         "events": [{
@@ -2819,6 +2763,21 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II"
+        }]
+    }, {
+        "id": "A3.Convo.C.Allers.4-AArdatYakshi",
+        "inMissionId": "A3.Convo.C.Allers",
+        "sortIndex": 90012,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Allers: ",
+        "name": "Side Convo - Ardat-Yakshi",
+        "description": "Traynor asks Allers why she isn't doing a story on the Ardat-Yakshi, but Allers says she has too many asari viewers. \n\nYou can prompt Allers for a comment about a broadcasting company trying to recruit her.",
+        "inMapId": "G.N3.4.Starboard",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Ardat-Yakshi Monastery"
         }]
     }, {
         "id": "A3.Convo.C.Allers.5",
@@ -3219,25 +3178,6 @@
         }, {
             "type": "BlockedUntil",
             "id": "Completed: Cortez Convo 5 + 1"
-        }]
-    }, {
-        "id": "A3.Convo.C.Cortez.6-BCoup",
-        "inMissionId": "A3.Convo.C.Cortez",
-        "sortIndex": 90017,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Cortez: ",
-        "name": "Comment - Noveria",
-        "description": "Cortez and Vega trade comments about the drop on Noveria.",
-        "inMapId": "G.N3.5ShuttleBay",
-        "mapLocationPoint": {
-            "x": 1543,
-            "y": 924,
-            "radius": 20
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Cerberus Fighter Base"
         }]
     }, {
         "id": "A3.Convo.C.Cortez.7a",
@@ -3710,21 +3650,6 @@
             "id": "Completed: Mordin Convo 3"
         }]
     }, {
-        "id": "A3.Convo.C.Joker.4-BJack",
-        "inMissionId": "A3.Convo.C.Joker",
-        "sortIndex": 90012,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Joker: ",
-        "name": "Comment - Jack",
-        "description": "Joker observes that Jack must have enjoyed oblitering Cerberus at Grissom Academy.",
-        "inMapId": "G.N3.2.Bridge",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Grissom Academy"
-        }]
-    }, {
         "id": "A3.Convo.C.Joker.4-CRachni",
         "identicalMissionId": "A3.Convo.S.EDI.4-BRachni",
         "inMissionId": "A3.Convo.C.Joker",
@@ -3754,21 +3679,6 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Tuchanka: Turian Platoon"
-        }]
-    }, {
-        "id": "A3.Convo.C.Joker.4-EBomb",
-        "inMissionId": "A3.Convo.C.Joker",
-        "sortIndex": 90014,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Joker: ",
-        "name": "Comment - Bomb",
-        "description": "Joker comments on the turian bomb, and how tough the turians are.",
-        "inMapId": "G.N3.2.Bridge",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Tuchanka: Bomb"
         }]
     }, {
         "id": "A3.Convo.C.Joker.5",
@@ -3822,22 +3732,7 @@
             "id": "Completed: Priority: The Citadel II"
         }, {
             "type": "Triggers",
-            "id": "Completed: Joker Convo 7",
-        }]
-    }, {
-        "id": "A3.Convo.C.Joker.7-BJacob",
-        "inMissionId": "A3.Convo.C.Joker",
-        "sortIndex": 90016,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Joker: ",
-        "name": "Comment - Jacob",
-        "description": "Joker asks about Kaidan and complains about the Illusive Man.",
-        "inMapId": "G.N3.2.Bridge",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Ex-Cerberus Scientists"
+            "id": "Completed: Joker Convo 7"
         }]
     }, {
         "id": "A3.Convo.C.Joker.8",
@@ -3872,13 +3767,13 @@
         }]
     }, {
         "id": "A3.Convo.C.Joker.9",
-        "identicalMissionId": "A3.Convo.S.EDI.X",
+        "identicalMissionId": "A3.Convo.S.EDI.7-BRannoch",
         "inMissionId": "A3.Convo.C.Joker",
         "sortIndex": 90019,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "Side Convo - Rannoch",
+        "name": "Convo - Rannoch",
         "description": "This conversation is very different depending on whether the quarian fleet was destroyed. Joker is devastated by the loss of the quarians. EDI is devastated by the loss of the geth. Her dialogue is particularly bitter as she draws ties between their lack of value to organics and her own. \n\nIf you manage to save both, Joker is ebullient. EDI will chime in with her take on Legion's sacrifice, that it attained sentience before the end.",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,
@@ -4088,51 +3983,6 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Sur'Kesh"
-        }]
-    }, {
-        "id": "A3.Convo.C.Traynor.3-BRachni",
-        "inMissionId": "A3.Convo.C.Traynor",
-        "sortIndex": 90014,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Traynor: ",
-        "name": "Comment - Rachni",
-        "description": "Traynor tells Shepard that she once studied the rachni's long-term communication, and useful that could be.",
-        "inMapId": "G.N3.2CIC",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Attican Traverse: Krogan Team"
-        }]
-    }, {
-        "id": "A3.Convo.C.Traynor.3-CVictus",
-        "inMissionId": "A3.Convo.C.Traynor",
-        "sortIndex": 90014,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Traynor: ",
-        "name": "Comment - Victus",
-        "description": "Traynor tells Shepard that she no longer thinks she is capable of the heroics shown by the turian team defusing the bomb on Tuchanka.",
-        "inMapId": "G.N3.2CIC",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Tuchanka: Bomb"
-        }]
-    }, {
-        "id": "A3.Convo.C.Traynor.3-DTuchanka",
-        "inMissionId": "A3.Convo.C.Traynor",
-        "sortIndex": 90014,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "titlePrefix": "Traynor: ",
-        "name": "Comment - Krogans",
-        "description": "Traynor is amazed about the turian-krogan alliance.",
-        "inMapId": "G.N3.2CIC",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Priority: Tuchanka"
         }]
     }, {
         "id": "A3.Convo.C.Traynor.4",
@@ -5178,6 +5028,9 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: The Citadel II + 1"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Miranda Convo 2"
         }]
     }, {
         "id": "A3.Convo.A.Miranda.3",
@@ -5187,17 +5040,17 @@
         "missionType": "Objective",
         "titlePrefix": "Miranda: ",
         "name": "Citadel Convo - Apology",
-        "description": "Miranda asks to speak with you at the Selkish Arms. She needs Alliance funding for a project, but cannot reveal the details. Give her the funding or this is your last conversation. She also confesses that she tried to implant a control chip in Shepard during the Lazarus project, but the Illusive Man stopped her.\n\nIf you previously romanced Miranda, there will also be an option for an off-screen hookup at the end of this conversation.",
+        "description": "Miranda asks to speak with you at the Selkish Arms. She needs Alliance funding for a project, but cannot reveal the details. Give her the funding or this is your last conversation. She also confesses that she tried to implant a control chip in Shepard during the Lazarus project, but the Illusive Man stopped her. \n\nIf you previously romanced Miranda, there will also be an option for an off-screen hookup at the end of this conversation.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.6Presidium",
         "mapLocationPoint": {
-            "x": 650,
-            "y": 1397,
+            "x": 1622,
+            "y": 1364,
             "radius": 20
         },
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Geth Dreadnought"
+            "id": "Completed: Miranda Convo 2 + 1"
         }]
     }, {
         "id": "A3.Convo.A.Miranda.4",
@@ -5943,7 +5796,7 @@
         "missionType": "Objective",
         "titlePrefix": "Argument: ",
         "name": "Chakwas/Michel vs Adams",
-        "description": "_Note: this is available one assignment after [megametracker://mission?id=M3.2.GethDreadnought]_ \n\nAt the conference table by the kitchen, Chakwas/Michel is arguing with Engineer Adams about whether artificial intelligence is really life. Pick a side.",
+        "description": "At the conference table by the kitchen, Chakwas/Michel is arguing with Engineer Adams about whether artificial intelligence is really life. Pick a side.",
         "conversationRewards": [{
             "context": "Resolving the argument between Chakwas/Michel and Adams",
             "id": "A3.Convo.N.4ChakwasAdams.PR1",
@@ -5955,7 +5808,7 @@
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
-            "id": "Completed: Priority: Thessia + 1"
+            "id": "Completed: Priority: Geth Dreadnought + 1"
         }]
     }, {
         "id": "A3.Convo.N.5RaanGerrel",
