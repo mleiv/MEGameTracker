@@ -575,9 +575,153 @@
             "y": 1232,
             "radius": 25
         },
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/_Secondary/Gellix/Gellix.pdf",
+                "referenceSize": "2083x2083"
+            }
+        },
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Gellix"
         ]
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.0",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Min.Arr.Gellix",
+        "mapLocationPoint": {
+            "x": 1652,
+            "y": 164,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.1Base",
+        "name": "Base",
+        "inMapId": "G.OuC.Min.Arr.Gellix",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/_Secondary/Gellix/Gellix_1Base.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 1046,
+                    "y": 754,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.1.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Min.Arr.Gellix.1Base",
+        "mapLocationPoint": {
+            "x": 1744,
+            "y": 245,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.1.2",
+        "name": "Weapons Bench",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Min.Arr.Gellix.1Base",
+        "mapLocationPoint": {
+            "x": 1306,
+            "y": 1509,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.1.3",
+        "name": "To Roof",
+        "isOpensDetail": false,
+        "linkToMapId": "G.OuC.Min.Arr.Gellix.2Roof",
+        "inMapId": "G.OuC.Min.Arr.Gellix.1Base",
+        "mapLocationPoint": {
+            "x": 595,
+            "y": 1757,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.2.4",
+        "name": "Dr. Brown",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Min.Arr.Gellix.1Base",
+        "mapLocationPoint": {
+            "x": 940,
+            "y": 1296,
+            "radius": 10
+        }
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.2.5",
+        "name": "Dr. Archer",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Min.Arr.Gellix.1Base",
+        "mapLocationPoint": {
+            "x": 1162,
+            "y": 1556,
+            "radius": 10
+        }
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.2.6",
+        "name": "Jacob",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Min.Arr.Gellix.1Base",
+        "mapLocationPoint": {
+            "x": 776,
+            "y": 1600,
+            "radius": 10
+        }
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.2.7",
+        "name": "Dr. Cole",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Min.Arr.Gellix.1Base",
+        "mapLocationPoint": {
+            "x": 1030,
+            "y": 1872,
+            "radius": 10
+        }
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.2Roof",
+        "name": "Roof",
+        "inMapId": "G.OuC.Min.Arr.Gellix",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/_Secondary/Gellix/Gellix_2Roof.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 1046,
+                    "y": 1727,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.2.1",
+        "name": "From Base",
+        "isOpensDetail": false,
+        "linkToMapId": "G.OuC.Min.Arr.Gellix.1Base",
+        "inMapId": "G.OuC.Min.Arr.Gellix.2Roof",
+        "mapLocationPoint": {
+            "x": 200,
+            "y": 1145,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Min.Arr.Gellix.2.2",
+        "name": "Mounted Turret",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Min.Arr.Gellix.2Roof",
+        "mapLocationPoint": {
+            "x": 1289,
+            "y": 245,
+            "radius": 20
+        }
     }, {
         "id": "G.OuC.Min.Arr.Antinax",
         "name": "Antinax",

@@ -3537,7 +3537,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Tunnels",
-        "description": "Aralakh Company will split and travel down a different tunnel. Pick up the M-451 Firestorm to burn through the rachni webbing and enter the tunnels. Burn the rachni eggs also.",
+        "description": "Aralakh Company will split and travel down a different tunnel. Pick up the M-451 Firestorm to burn through the rachni webbing and enter the tunnels. Burn the rachni eggs also."
     }, {
         "id": "A3.KroganTeam.2.1",
         "inMissionId": "A3.KroganTeam.2",
@@ -3734,37 +3734,107 @@
             "id": "Completed: Ex-Cerberus Scientists"
         }]
     }, {
-        "id": "A3.ExCerberusScientists.1",
-        "inMissiond": "A3.ExCerberusScientists",
+        "id": "A3.ExCerberusScientists.0",
+        "inMissionId": "A3.ExCerberusScientists",
         "sortIndex": 12001,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Speak to Scientists",
-        "description": "[megametracker://person?id=O3.Brynn] is leading the group. If [megametracker://person?id=S2.Jacob] survived Game2, he will be here also, as Dr. Cole's romantic partner. If not, Cole will be very suspicious of you. You can also talk to [megametracker://person?id=O2.ArcherG] - if you saved David at Grissom Academy, he will want to hear about it. \n\nHead outside when you want to start the battle. \n\nIf you romanced Jacob in Game 2, you can have a messy, toxic conversation where you try to win him back ([YouTube|https://www.youtube.com/watch?v=O8GqKunyspA])."
+        "name": "Entrance",
+        "description": "If [megametracker://person?id=S2.Jacob] survived Game2, he will be outside the entrance, injured. Otherwise his role is filled by Dr. Webber. \n\nJacob will vouch for you to the scientists inside, but if not, they will be very suspicious of you, requiring you to kill more Cerberus troopers before they open the door.",
+        "inMapId": "G.OuC.Min.Arr.Gellix.1Base",
+        "mapLocationPoint": {
+            "x": 1064,
+            "y": 1101,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.ExCerberusScientists.1",
+        "inMissionId": "A3.ExCerberusScientists",
+        "sortIndex": 12001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Cole",
+        "description": "[megametracker://person?id=O3.Brynn] is leading the group. You can also talk to [megametracker://person?id=O2.ArcherG] - if you saved David at Grissom Academy, he will want to hear about it. \n\nWhen you are ready, speak to Dr. Cole and get the task to head up to the roof to repair the satellite and activate the defense guns.",
+        "sideEffects": ["If you romanced Jacob in Game 2, you can have a messy, toxic conversation where you try to win him back ([YouTube|https://www.youtube.com/watch?v=O8GqKunyspA])."],
+        "inMapId": "G.OuC.Min.Arr.Gellix.2.7",
+        "showInParentMap": true
     }, {
         "id": "A3.ExCerberusScientists.2",
-        "inMissiond": "A3.ExCerberusScientists",
-        "sortIndex": 12002,
+        "inMissionId": "A3.ExCerberusScientists",
+        "sortIndex": 12001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Roof"
+    }, {
+        "id": "A3.ExCerberusScientists.2.1",
+        "inMissionId": "A3.ExCerberusScientists.2",
+        "sortIndex": 12001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Satellite",
+        "description": "Repair the telemetry on the satellite dish.",
+        "inMapId": "G.OuC.Min.Arr.Gellix.2Roof",
+        "mapLocationPoint": {
+            "x": 1111,
+            "y": 2054,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.ExCerberusScientists.2.2",
+        "inMissionId": "A3.ExCerberusScientists.2",
+        "sortIndex": 12001,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "AA Tower 1",
-        "description": "Activate the guns on the first AA tower."
+        "description": "Activate the guns on the first AA tower.",
+        "inMapId": "G.OuC.Min.Arr.Gellix.2Roof",
+        "mapLocationPoint": {
+            "x": 721,
+            "y": 91,
+            "radius": 1
+        }
     }, {
-        "id": "A3.ExCerberusScientists.3",
-        "inMissiond": "A3.ExCerberusScientists",
-        "sortIndex": 12003,
+        "id": "A3.ExCerberusScientists.2.3",
+        "inMissionId": "A3.ExCerberusScientists.2",
+        "sortIndex": 12001,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Repairs",
+        "description": "The second AA tower needs repairs, so assign a squad member to repair it while you defend the area from Cerberus.",
+        "inMapId": "G.OuC.Min.Arr.Gellix.2Roof",
+        "mapLocationPoint": {
+            "x": 1483,
+            "y": 91,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.ExCerberusScientists.2.4",
+        "inMissionId": "A3.ExCerberusScientists.2",
+        "sortIndex": 12001,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "AA Tower 2",
-        "description": "Activate the guns on the second AA tower."
+        "description": "Activate the guns on the second AA tower.",
+        "inMapId": "G.OuC.Min.Arr.Gellix.2Roof",
+        "mapLocationPoint": {
+            "x": 1483,
+            "y": 91,
+            "radius": 1
+        }
     }, {
         "id": "A3.ExCerberusScientists.4",
-        "inMissiond": "A3.ExCerberusScientists",
-        "sortIndex": 12004,
+        "inMissionId": "A3.ExCerberusScientists",
+        "sortIndex": 12001,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Evacuate",
-        "description": "Speak to Dr. Cole to start the evacuation. Defend the scientists from waves of Cerberus troops and when you destroy the Atlas, Dr. Cole will pick you up in shuttle. If Jacob is present, you can speak to him later at Huerta Memorial Hospital."
+        "description": "Speak to Dr. Cole to start the evacuation. Head back down to the base entrance and defend the scientists from waves of Cerberus troops. When you destroy the Atlas, Dr. Cole will pick you up in shuttle. \n\nIf Jacob is present, you can speak to him later at Huerta Memorial Hospital.",
+        "inMapId": "G.OuC.Min.Arr.Gellix.1Base",
+        "mapLocationPoint": {
+            "x": 1040,
+            "y": 171,
+            "radius": 1
+        }
     }, {
         "id": "A3.ArdatYakshiMonastery",
         "sortIndex": 1240,
