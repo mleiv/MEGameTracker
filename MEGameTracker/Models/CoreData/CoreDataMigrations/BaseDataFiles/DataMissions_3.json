@@ -1466,7 +1466,7 @@
         "missionType": "Mission",
         "name": "Priority: The Citadel II",
         "description": "The next time you land on the Citadel, there is no one responding on the comms. Joker gets through to [megametracker://person?id=S2.Thane] (or [megametracker://person?id=P2.Bailey], if Thane died in Game 2), and learns that Cerberus has attacked and taken over C-Sec.",
-        "inMapId": "G.C",
+        "inMapId": "G.C3.Coup",
         "isShowInParentMap": true,
         "experience": 0,
         "reward": "",
@@ -1738,8 +1738,62 @@
         "sortIndex": 201,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "C-Sec",
-        "description": "You are dropped off outside C-Sec headquarters. You will meet Bailey there and must fight your way inside. Head upstairs and take the elevator up."
+        "name": "Outside C-Sec",
+        "description": "You are dropped off outside C-Sec headquarters. Fight off Cerberus forces and meet Bailey at the entrance inside.",
+        "inMapId": "G.C3.CSecHQ",
+        "mapLocationPoint": {
+            "x": 1387,
+            "y": 1380,
+            "radius": 1
+        }
+    }, {
+        "id": "M3.2.Citadel2.1B",
+        "inMissionId": "M3.2.Citadel2",
+        "sortIndex": 201,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Inside C-Sec",
+        "description": "When Bailey accesses the C-Sec network, he discovers that [megametracker://person?id=O1.Valern] (or [megametracker://person?id=O2.Esheel]) is inside, meeting C-Sec Executor [megametracker://person?id=O1.Pallin]. He instructs you to head to the Executor's Office to protect them. \n\nHead back and up the stairs, past the check-in desk, and through the locker room to the elevator, fighting off Cerberus forces as you encounter them. \n\nThere is a long corridor after the elevator, with a broken door at the end. ",
+        "inMapId": "G.C3.CSecHQ",
+        "mapLocationPoint": {
+            "x": 1416,
+            "y": 1212,
+            "radius": 1
+        }
+    }, {
+        "id": "M3.2.Citadel2.1C",
+        "inMissionId": "M3.2.Citadel2",
+        "sortIndex": 201,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Elevator",
+        "description": "Head back and up the stairs, past the check-in desk, and through the locker room to the elevator, fighting off Cerberus forces as you encounter them. To access the elevator, shoot out the latch in the room to the left and activate the Elevator Control.",
+        "inMapId": "G.C3.CSecHQ.2",
+        "isShowInParentMap": true
+    }, {
+        "id": "M3.2.Citadel2.1D",
+        "inMissionId": "M3.2.Citadel2",
+        "sortIndex": 201,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Door Control",
+        "description": "There is a long corridor after the elevator, with a broken door at the end. To the right is a room full of terminals. You can unlock the equipment room you passed earlier by using the Door Control terminal here. Then exit through the door at the end of this room.",
+        "inMapId": "G.C3.CSecHQ.4",
+        "isShowInParentMap": true
+    }, {
+        "id": "M3.2.Citadel2.1E",
+        "inMissionId": "M3.2.Citadel2",
+        "sortIndex": 201,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Cafeteria",
+        "description": "Go down the long hall to the cafeteria, where there is a pitched battle with Cerberus. Once they are all dispatched, head up the stairs at the back to the Executor's Office.",
+        "inMapId": "G.C3.CSecHQ",
+        "mapLocationPoint": {
+            "x": 760,
+            "y": 250,
+            "radius": 1
+        }
     }, {
         "id": "M3.2.Citadel2.2",
         "inMissionId": "M3.2.Citadel2",
@@ -1747,7 +1801,9 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Save The Councilor",
-        "description": "There is a cafe here where you will fight off more Cerberus troops. Then head upstairs to the Executor's office. The Executor is dead, and then the salarian councilor appears - back in the cafe. There is no time to reach him before [megametracker://person?id=E3.KaiLeng] attacks. The councilor reveals that [megametracker://person?id=P1.Udina] is spearheading the coup. If Thane or [megametracker://person?id=P1.Kirrahe] are alive in Game 3, they will save him from Kai Leng, although being mortally wounded in the process. Otherwise, the salarian councilor dies. Kai Leng then disappears to rendesvous with Udina and the Council."
+        "description": "The Executor is dead, and then the salarian councilor appears - back in the cafe. There is no time to reach him before [megametracker://person?id=E3.KaiLeng] attacks. The councilor reveals that [megametracker://person?id=P1.Udina] is spearheading the coup. If Thane or [megametracker://person?id=P1.Kirrahe] are alive in Game 3, they will save the councilor from Kai Leng, although being mortally wounded in the process. Otherwise, the salarian councilor dies. \n\nKai Leng then disappears to rendesvous with Udina and the Council.",
+        "inMapId": "G.C3.CSecHQ.5",
+        "isShowInParentMap": true
     }, {
         "id": "M3.2.Citadel2.3",
         "inMissionId": "M3.2.Citadel2",
@@ -1755,7 +1811,9 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Presidium",
-        "description": "Bailey gets you a C-Sec car to go warn the Council, but Kai Leng disables it. You must proceed on foot through the Presidium to the elevators."
+        "description": "Bailey gets you a C-Sec car to go warn the Council, but Kai Leng disables it. You must proceed on foot through the Presidium, fighting off more cerberus forces, to reach the elevators.",
+        "inMapId": "G.C3.PresidiumChase.2",
+        "isShowInParentMap": true
     }, {
         "id": "M3.2.Citadel2.4",
         "inMissionId": "M3.2.Citadel2",
@@ -1763,7 +1821,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Stop The Elevators",
-        "description": "You fail to reach the elevators before Kai Leng takes one up to the Council. So you break into the elevator shaft and hitch a ride on top of an elevator car. As you rise, shoot out the two conduits on top or below the three Cerberus elevator cars heading up. Then jump on top of the Council's elevator car. They are now guarded by Ashley or Kaidan, the second human Spectre. Ashley or Kaidan (understandably) shoot through the roof at you, and Udina evacuates the Council out to the shuttle pad."
+        "description": "You fail to reach the elevators before Kai Leng takes one up to the Council. So, with Bailey's help, you break into the elevator shaft and hitch a ride on top of an elevator car. As you rise, shoot out the two conduits on top or below the three Cerberus elevator cars heading up. Then jump on top of the Council's elevator car. They are now guarded by Ashley or Kaidan, the second human Spectre. Ashley or Kaidan (understandably) shoot through the roof at you, and Udina evacuates the Council out to the shuttle pad."
     }, {
         "id": "M3.2.Citadel2.5",
         "inMissionId": "M3.2.Citadel2",
@@ -1771,7 +1829,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Confronting Udina",
-        "description": "The Council's evacuation shuttle is, of course, already destroyed by Cerberus. Your squad disables the elevator so the Council can't take Ashley/Kaidan's advice and head back into Kai Leng's waiting ambush. Udina claims you are the threat, working with Cerberus. You must talk down, or shoot, Ashley/Kaidan and prevent the Council from opening the elevator. Then you must shoot Udina. \n\nWhen the elevator doors open, Bailey comes out instead of Kai Leng. He explains that Kai Leng and all the Cerberus troops have fled, through tunnels under the station.",
+        "description": "The Council's evacuation shuttle is, of course, already destroyed by Cerberus. Your squad disables the elevator behind you. Udina claims you are the threat, working with Cerberus. You must talk down, or shoot, Ashley/Kaidan and prevent the Council from retreating to the elevator. Then you must shoot Udina. \n\nWhen the elevator doors open, Bailey comes out instead of Kai Leng. He explains that Kai Leng and all the Cerberus troops have fled, through tunnels under the station.",
         "relatedDecisionIds": ["D3.AshleyKaidan"]
 
     }, {
@@ -2175,7 +2233,7 @@
         "gameVersion": "3",
         "missionType": "Mission",
         "name": "Priority: The Citadel III",
-        "description": "The asari councilor [megametracker://person?id=O1.Valern] (or [megametracker://person?id=O2.Esheel] if Valern died in Game 1) urgently requests to speak with you on the Citadel. You can find her in the Citadel Embassies at Udina's former office. \n\nIf you betrayed Wrex during [megametracker://mission?id=M3.1.Tuchanka], you will need to avoid the Normandy dock (say, by completing assignments which terminate back in the Normandy) or you will be confronted and have to kill him.",
+        "description": "The asari councilor [megametracker://person?id=O1.Tevos] (or [megametracker://person?id=O2.Irissa]) urgently requests to speak with you on the Citadel. You can find her in the Citadel Embassies at Udina's former office. \n\nIf you betrayed Wrex during [megametracker://mission?id=M3.1.Tuchanka], you will need to avoid the Normandy dock (say, by completing assignments which terminate back in the Normandy) or you will be confronted and have to kill him.",
         "inMapId": "G.C3.3.Udina",
         "isShowInParentMap": true,
         "experience": 0,

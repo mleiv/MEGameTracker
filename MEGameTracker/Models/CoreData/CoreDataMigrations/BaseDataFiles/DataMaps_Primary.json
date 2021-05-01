@@ -3213,6 +3213,143 @@
             "radius": 20
         }
 
+        
+    }, {
+        "id": "G.C3.Coup",
+        "name": "Citadel Coup",
+        "mapType": "Area",
+        "isHidden": true,
+        "inMapId": "G.OuC.Ser.Widow",
+        "mapLocationPoint": {
+            "x": 1362,
+            "y": 882,
+            "radius": 75
+        },
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/CitadelCoup/CitadelCoup.pdf",
+                "referenceSize": "2083x2083",
+                "isSplitMenu": true,
+                "isHidden": false
+            }
+        },
+        "events": [{
+            "type": "UnavailableInGame",
+            "id": "Game1"
+        }, {
+            "type": "UnavailableInGame",
+            "id": "Game2"
+        }]
+    }, {
+        "id": "G.C3.CSecHQ",
+        "name": "C-Sec Headquarters",
+        "inMapId": "G.C3.Coup",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/CitadelCoup/CitadelCoup_1CSec.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 140,
+                    "y": 497,
+                    "width": 1800,
+                    "height": 420
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.CSecHQ.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.CSecHQ",
+        "mapLocationPoint": {
+            "x": 1425,
+            "y": 1951,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.CSecHQ.2",
+        "name": "Elevator Control",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.CSecHQ",
+        "mapLocationPoint": {
+            "x": 436,
+            "y": 1032,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.CSecHQ.3",
+        "name": "Weapons Bench",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.CSecHQ",
+        "mapLocationPoint": {
+            "x": 418,
+            "y": 999,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.CSecHQ.4",
+        "name": "Door Control",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.CSecHQ",
+        "mapLocationPoint": {
+            "x": 740,
+            "y": 684,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.CSecHQ.5",
+        "name": "To Executor's Office",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.CSecHQ",
+        "mapLocationPoint": {
+            "x": 486,
+            "y": 381,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.PresidiumChase",
+        "name": "Presidium Chase",
+        "inMapId": "G.C3.Coup",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/CitadelCoup/CitadelCoup_2Presidium.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 140,
+                    "y": 1055,
+                    "width": 1800,
+                    "height": 420
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.PresidiumChase.1",
+        "name": "From C-Sec Headquarters",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.PresidiumChase",
+        "linkToMapId": "G.C3.CSecHQ",
+        "mapLocationPoint": {
+            "x": 30,
+            "y": 668,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.PresidiumChase.2",
+        "name": "To Elevators",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.PresidiumChase",
+        "mapLocationPoint": {
+            "x": 1540,
+            "y": 1331,
+            "radius": 20
+        }
+        
 
     }, {
         "id": "G.C3.DLC",
