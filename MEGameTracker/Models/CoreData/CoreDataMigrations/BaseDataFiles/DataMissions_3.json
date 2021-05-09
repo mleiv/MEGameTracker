@@ -2483,32 +2483,92 @@
         "sortIndex": 251,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Barricade",
-        "description": "[megametracker://person?id=O3.Kurin] directs you to take the turret gun to defend the barricade."
+        "name": "Defend Barricade",
+        "description": "Speak to [megametracker://person?id=O3.Kurin]. She directs you to defend the barricade using the turret gun.",
+        "inMapId": "G.OuC.Ath.Par.Thessia.1.2",
+        "isShowInParentMap": true
+    }, {
+        "id": "M3.2.Thessia.1B",
+        "inMissionId": "M3.2.Thessia",
+        "sortIndex": 251,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Courtyard",
+        "description": "Cross the bridge and through the ruined courtyard, where there are more Reaper forces. Go up the terraced pools and through the doorway. There is a Hydra Missile Launcher to the left, to help with the banshee that attacks you. \n\nBeyond the door, climb up the wreckage and head down to another door you must bypass. This leads to a smaller courtyard and another fight, with several asari snipers on the wrecked platform above. \n\nBelow them is a third courtyard and another fight.",
+        "inMapId": "G.OuC.Ath.Par.Thessia.2Courtyard",
+        "mapLocationPoint": {
+            "x": 1174,
+            "y": 911,
+            "radius": 1
+        }
     }, {
         "id": "M3.2.Thessia.2",
         "inMissionId": "M3.2.Thessia",
-        "sortIndex": 252,
+        "sortIndex": 251,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Outpost Tykis",
-        "description": "Cross the bridge and head to the outpost. Once you take down the reaper forces attacking, you can talk to the last asari soldier there. A gunship will help out with the fighting, but as you near the temple, it is shot down."
+        "description": "Beyond the third courtyard is a series of terraced pebble gardens, with Outpost Tychis at the end. There is another Hydra Missile Launcher and another banshee. Once you take down the Reaper forces, you can talk to the last asari soldier there. \n\nPast the outpost and up the wrecked pebble terraces is a long water highway with the temple at the end. A gunship will help out with the fighting as you near the temple, but it is shot down.",
+        "inMapId": "G.OuC.Ath.Par.Thessia.3.2",
+        "isShowInParentMap": true
     }, {
         "id": "M3.2.Thessia.3",
         "inMissionId": "M3.2.Thessia",
-        "sortIndex": 253,
+        "sortIndex": 251,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Temple",
-        "description": "When you reach the temple, the scientific team is already dead, murdered and not by Reapers. Then you realize the temple holds a prothean beacon, touch the artifacts around the temple until you locate all the required keys to activate the beacon. [megametracker://person?id=O3.Vendetta]. Before Vendetta can explain what the Catalyst is, [megametracker://person?id=E3.KaiLeng] shows up with a message from the Illusive Man."
+        "description": "When you reach the temple, the scientific team is already dead, murdered - and not by Reapers. Touch the statue of Athame to realize the temple holds a prothean beacon. \n\nExamine the artifacts around the temple until you locate all the required keys to activate the beacon, which is actually the prothean VI [megametracker://person?id=O3.Vendetta].",
+        "inMapId": "G.OuC.Ath.Par.Thessia.4.03",
+        "isShowInParentMap": true
+    }, {
+        "id": "M3.2.Thessia.3.1",
+        "inMissionId": "M3.2.Thessia.3",
+        "sortIndex": 251,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Beacon Key",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4.05",
+        "isShowInParentMap": true
+    }, {
+        "id": "M3.2.Thessia.3.2",
+        "inMissionId": "M3.2.Thessia.3",
+        "sortIndex": 251,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Beacon Key",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4.08",
+        "isShowInParentMap": true
+    }, {
+        "id": "M3.2.Thessia.3.3",
+        "inMissionId": "M3.2.Thessia.3",
+        "sortIndex": 251,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Beacon Key",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4.10",
+        "isShowInParentMap": true
+    }, {
+        "id": "M3.2.Thessia.3.4",
+        "inMissionId": "M3.2.Thessia.3",
+        "sortIndex": 251,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Beacon Key",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4.13",
+        "isShowInParentMap": true
     }, {
         "id": "M3.2.Thessia.4",
         "inMissionId": "M3.2.Thessia",
-        "sortIndex": 254,
+        "sortIndex": 251,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Kai Leng",
-        "description": "Battle Kai Leng and his gunship. In the end, he knocks the ground out from under you and your team, takes Vendetta, and leaves you to die."
+        "description": "Before Vendetta can explain what the Catalyst is, [megametracker://person?id=E3.KaiLeng] shows up with a message from the Illusive Man. \n\nBattle Kai Leng and his gunship. In the end, he knocks the ground out from under you and your team, takes Vendetta, and leaves you to die."
     }, {
         "id": "M3.2.Horizon",
         "sortIndex": 26,

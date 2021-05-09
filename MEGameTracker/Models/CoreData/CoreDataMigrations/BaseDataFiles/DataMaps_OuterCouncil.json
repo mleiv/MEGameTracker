@@ -253,9 +253,338 @@
             "y": 1280,
             "radius": 29
         },
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Thessia/Thessia.pdf",
+                "referenceSize": "2083x2083"
+            }
+        },
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Thessia"
         ]
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.0",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia",
+        "mapLocationPoint": {
+            "x": 2023,
+            "y": 1087,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.1Bridge",
+        "name": "1 - Bridge",
+        "inMapId": "G.OuC.Ath.Par.Thessia",
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Thessia/Thessia_1Bridge.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 1722,
+                    "y": 982,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.1.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.1Bridge",
+        "mapLocationPoint": {
+            "x": 1920,
+            "y": 1220,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.1.2",
+        "name": "Mounted Turret",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.1Bridge",
+        "mapLocationPoint": {
+            "x": 1575,
+            "y": 824,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.1.3",
+        "name": "Barrier Engine",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.1Bridge",
+        "mapLocationPoint": {
+            "x": 1310,
+            "y": 954,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.1.4",
+        "name": "To 2 - Courtyard",
+        "linkToMapId": "G.OuC.Ath.Par.Thessia.2Courtyard",
+        "inMapId": "G.OuC.Ath.Par.Thessia.1Bridge",
+        "mapLocationPoint": {
+            "x": 68,
+            "y": 682,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.2Courtyard",
+        "name": "2 - Courtyard",
+        "inMapId": "G.OuC.Ath.Par.Thessia",
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Thessia/Thessia_2Courtyard.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 1342,
+                    "y": 1031,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.2.1",
+        "name": "From 1 - Bridge",
+        "linkToMapId": "G.OuC.Ath.Par.Thessia.1Bridge",
+        "inMapId": "G.OuC.Ath.Par.Thessia.2Courtyard",
+        "mapLocationPoint": {
+            "x": 1840,
+            "y": 224,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.2.2",
+        "name": "To 3 - Outpost Tykis",
+        "linkToMapId": "G.OuC.Ath.Par.Thessia.3Tykis",
+        "inMapId": "G.OuC.Ath.Par.Thessia.2Courtyard",
+        "mapLocationPoint": {
+            "x": 145,
+            "y": 1816,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.3Tykis",
+        "name": "3 - Outpost Tykis",
+        "inMapId": "G.OuC.Ath.Par.Thessia",
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Thessia/Thessia_3Tykis.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 655,
+                    "y": 1089,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.3.1",
+        "name": "From 2 - Courtyard",
+        "linkToMapId": "G.OuC.Ath.Par.Thessia.2Courtyard",
+        "inMapId": "G.OuC.Ath.Par.Thessia.3Tykis",
+        "mapLocationPoint": {
+            "x": 2037,
+            "y": 1411,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.3.2",
+        "name": "Outpost Tykis",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.3Tykis",
+        "mapLocationPoint": {
+            "x": 621,
+            "y": 524,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.3.3",
+        "name": "Barrier Engine",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.3Tykis",
+        "mapLocationPoint": {
+            "x": 1068,
+            "y": 745,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.3.4",
+        "name": "To 4 - Temple of Athame",
+        "linkToMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "inMapId": "G.OuC.Ath.Par.Thessia.3Tykis",
+        "mapLocationPoint": {
+            "x": 51,
+            "y": 823,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4Temple",
+        "name": "4 - Temple of Athame",
+        "inMapId": "G.OuC.Ath.Par.Thessia",
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Thessia/Thessia_4Temple.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 163,
+                    "y": 1173,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.00",
+        "name": "From 3 - Outpost Tykis",
+        "linkToMapId": "G.OuC.Ath.Par.Thessia.3Tykis",
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 2005,
+            "y": 1764,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.01",
+        "name": "Barrier Control",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 447,
+            "y": 726,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.02",
+        "name": "Barrier Engine",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 936,
+            "y": 612,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.03",
+        "name": "Statue of Athame",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 582,
+            "y": 1799,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.04",
+        "name": "Sword",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 497,
+            "y": 1354,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.05",
+        "name": "Shield",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 669,
+            "y": 1354,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.06",
+        "name": "Manuscript",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 343,
+            "y": 1417,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.07",
+        "name": "Manuscript",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 819,
+            "y": 1417,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.08",
+        "name": "Bust",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 310,
+            "y": 1654,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.09",
+        "name": "Bust",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 852,
+            "y": 1654,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.10",
+        "name": "Mural",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 486,
+            "y": 1892,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.11",
+        "name": "Mural",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 679,
+            "y": 1892,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.12",
+        "name": "Manuscript",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 250,
+            "y": 1934,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Ath.Par.Thessia.4.13",
+        "name": "Manuscript",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Ath.Par.Thessia.4Temple",
+        "mapLocationPoint": {
+            "x": 916,
+            "y": 1934,
+            "radius": 20
+        }
+        
     }, {
         "id": "G.OuC.Ath.Par.Piares",
         "name": "Piares",
@@ -1109,7 +1438,7 @@
         }
     }, {
         "id": "G.OuC.Nim.Mes.Lesuss.1Courtyard",
-        "name": "Courtyard",
+        "name": "1 - Courtyard",
         "inMapId": "G.OuC.Nim.Mes.Lesuss",
         "mapType": "Structure",
         "isHidden": true,
@@ -1147,7 +1476,7 @@
         }
     }, {
         "id": "G.OuC.Nim.Mes.Lesuss.1.3",
-        "name": "To Great Hall",
+        "name": "To 2 - Great Hall",
         "isOpensDetail": false,
         "linkToMapId": "G.OuC.Nim.Mes.Lesuss.2GreatHall",
         "inMapId": "G.OuC.Nim.Mes.Lesuss.1Courtyard",
@@ -1158,7 +1487,7 @@
         }
     }, {
         "id": "G.OuC.Nim.Mes.Lesuss.2GreatHall",
-        "name": "Great Hall",
+        "name": "2 - Great Hall",
         "inMapId": "G.OuC.Nim.Mes.Lesuss",
         "mapType": "Structure",
         "isHidden": true,
@@ -1176,7 +1505,7 @@
         }
     }, {
         "id": "G.OuC.Nim.Mes.Lesuss.2.1",
-        "name": "From Courtyard",
+        "name": "From 1 - Courtyard",
         "isOpensDetail": false,
         "linkToMapId": "G.OuC.Nim.Mes.Lesuss.1Courtyard",
         "inMapId": "G.OuC.Nim.Mes.Lesuss.2GreatHall",
