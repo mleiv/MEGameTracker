@@ -4068,32 +4068,75 @@
         }]
     }, {
         "id": "A3.ArdatYakshiMonastery.1",
-        "inMIssionId": "A3.ArdatYakshiMonastery",
+        "inMissionId": "A3.ArdatYakshiMonastery",
         "sortIndex": 12401,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Explore Monastery",
-        "description": "Head down through the abandoned monastery. There will be records of both the Ardat-Yakshi who were there, and the commandos."
+        "name": "Asari Commando",
+        "description": "Head into the monastery. The elevator is out, so you have to take the access shaft ladders down to an open floor. Inside, you find the corpse of a commando. \n\nWhen you go past and across the observation deck, you will encounter [megametracker://person?id=S2.Samara] (if she survived Game 2) on the level below. She will go ahead to the Great Hall, leaving you to catch up.",
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.1Courtyard",
+        "mapLocationPoint": {
+            "x": 730,
+            "y": 848,
+            "radius": 1
+        }
     }, {
         "id": "A3.ArdatYakshiMonastery.2",
-        "inMIssionId": "A3.ArdatYakshiMonastery",
-        "sortIndex": 12402,
+        "inMissionId": "A3.ArdatYakshiMonastery",
+        "sortIndex": 12401,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Courtyard",
-        "description": "In the courtyard, Reaper forces will attack, including a Banshee (most likely the first of the game). If you did not kill [megametracker://person?id=E2.Morinth] in Game 2, she will be mentioned in the logs here as trying to contact her sisters. You will find [megametracker://person?id=O3.Falere] here, fighting off a Cannibal. \n\nHead down the stairs to another battle with another Banshee."
+        "description": "Head down the curving stair to the courtyard. As you cross the garden space back toward the building, Reaper forces will attack, including a Banshee.",
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.1Courtyard",
+        "mapLocationPoint": {
+            "x": 1750,
+            "y": 770,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.ArdatYakshiMonastery.2B",
+        "inMissionId": "A3.ArdatYakshiMonastery",
+        "sortIndex": 12401,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Balcony",
+        "description": "Back inside, you are on a wrapped balcony overlooking a large water feature. [megametracker://person?id=O3.Falere] is here, fighting off a Cannibal. She heads to the Great Hall to find her sister. If Samara is here, she will levitate down and follow. \n\nUnfortunately, the elevator is broken, so your team has to follow the long way.",
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.2GreatHall",
+        "mapLocationPoint": {
+            "x": 1682,
+            "y": 957,
+            "radius": 1
+        }
+    }, {
+        "id": "A3.ArdatYakshiMonastery.2C",
+        "inMissionId": "A3.ArdatYakshiMonastery",
+        "sortIndex": 12401,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Antechamber",
+        "description": "Head right down the hallway and down the stairs to a large garden space, and another battle with another Banshee. \n\nThe water feature is in the room beyond, along with another dead asari commando.",
+        "sideEffects": ["If you did not kill [megametracker://person?id=E2.Morinth] in Game 2, she will be mentioned in the logs here as trying to contact her sisters."],
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.2GreatHall",
+        "mapLocationPoint": {
+            "x": 565,
+            "y": 523,
+            "radius": 1
+        }
     }, {
         "id": "A3.ArdatYakshiMonastery.3",
-        "inMIssionId": "A3.ArdatYakshiMonastery",
-        "sortIndex": 12403,
+        "inMissionId": "A3.ArdatYakshiMonastery",
+        "sortIndex": 12401,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Great Hall",
-        "description": "You find a bomb left by the commandos, and [megametracker://person?id=O3.Rila]. When you activate the bomb, Rila - partially Indoctrinated - will attack Falere and have to be knocked unconscious. As you look for a detonator for the bomb, Banshees and Husks show up."
+        "description": "Take the elevator to the Great Hall. At the end of the hall, you find the bomb left by the commandos, and [megametracker://person?id=O3.Rila]. When you activate the bomb, Rila - partially Indoctrinated - will attack Falere and have to be knocked unconscious. As you look for a detonator for the bomb, Banshees and Husks show up.",
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.2.4",
+        "isShowInParentMap": true
     }, {
         "id": "A3.ArdatYakshiMonastery.4",
-        "inMIssionId": "A3.ArdatYakshiMonastery",
-        "sortIndex": 12404,
+        "inMissionId": "A3.ArdatYakshiMonastery",
+        "sortIndex": 12401,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Destroy Monastery",

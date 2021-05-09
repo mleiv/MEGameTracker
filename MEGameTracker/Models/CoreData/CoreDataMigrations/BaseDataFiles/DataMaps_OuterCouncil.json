@@ -1078,9 +1078,143 @@
             "y": 1188,
             "radius": 29
         },
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/_Secondary/Lesuss/Lesuss.pdf",
+                "referenceSize": "2083x2083"
+            }
+        },
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Lesuss"
         ]
+    }, {
+        "id": "G.OuC.Nim.Mes.Lesuss.0A",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Nim.Mes.Lesuss",
+        "mapLocationPoint": {
+            "x": 650,
+            "y": 1387,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Nim.Mes.Lesuss.0B",
+        "name": "Bomb",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Nim.Mes.Lesuss",
+        "mapLocationPoint": {
+            "x": 650,
+            "y": 1985,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Nim.Mes.Lesuss.1Courtyard",
+        "name": "Courtyard",
+        "inMapId": "G.OuC.Nim.Mes.Lesuss",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/_Secondary/Lesuss/Lesuss_1Courtyard.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 1498,
+                    "y": 984,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.OuC.Nim.Mes.Lesuss.1.1",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.1Courtyard",
+        "mapLocationPoint": {
+            "x": 510,
+            "y": 1756,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Nim.Mes.Lesuss.1.2",
+        "name": "Shuttle (If Samara)",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.1Courtyard",
+        "mapLocationPoint": {
+            "x": 582,
+            "y": 1681,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Nim.Mes.Lesuss.1.3",
+        "name": "To Great Hall",
+        "isOpensDetail": false,
+        "linkToMapId": "G.OuC.Nim.Mes.Lesuss.2GreatHall",
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.1Courtyard",
+        "mapLocationPoint": {
+            "x": 1033,
+            "y": 771,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Nim.Mes.Lesuss.2GreatHall",
+        "name": "Great Hall",
+        "inMapId": "G.OuC.Nim.Mes.Lesuss",
+        "mapType": "Structure",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/_Secondary/Lesuss/Lesuss_2GreatHall.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 650,
+                    "y": 1748,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.OuC.Nim.Mes.Lesuss.2.1",
+        "name": "From Courtyard",
+        "isOpensDetail": false,
+        "linkToMapId": "G.OuC.Nim.Mes.Lesuss.1Courtyard",
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.2GreatHall",
+        "mapLocationPoint": {
+            "x": 1829,
+            "y": 960,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Nim.Mes.Lesuss.2.2",
+        "name": "Broken Elevator",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.2GreatHall",
+        "mapLocationPoint": {
+            "x": 1358,
+            "y": 1147,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Nim.Mes.Lesuss.2.3",
+        "name": "Weapons Bench",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.2GreatHall",
+        "mapLocationPoint": {
+            "x": 944,
+            "y": 237,
+            "radius": 20
+        }
+    }, {
+        "id": "G.OuC.Nim.Mes.Lesuss.2.4",
+        "name": "Bomb",
+        "isOpensDetail": false,
+        "inMapId": "G.OuC.Nim.Mes.Lesuss.2GreatHall",
+        "mapLocationPoint": {
+            "x": 563,
+            "y": 1949,
+            "radius": 20
+        }
     }, {
         "id": "G.OuC.Nim.Mes.Lymetis",
         "name": "Lymetis",

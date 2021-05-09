@@ -4136,15 +4136,259 @@
         "id": "G.Ter.Per.Tik.Dreadnought",
         "name": "Geth Dreadnought",
         "inMapId": "G.Ter.Per.Tikkun",
-        "mapType": "Planet",
+        "mapType": "Ship",
         "mapLocationPoint": {
             "x": 1005,
             "y": 1213,
             "radius": 75
         },
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Rannoch/Dreadnought/Rannoch_Dreadnought.pdf",
+                "referenceSize": "2083x2083"
+            }
+        },
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Geth_Dreadnought"
         ]
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.1Airlock",
+        "inMapId": "G.Ter.Per.Tik.Dreadnought",
+        "name": "Airlock",
+        "mapType": "Area",
+        "image": "Detail_Maps/Game3/Rannoch/Dreadnought/Rannoch_Dreadnought_1Airlock.pdf",
+        "referenceSize": "2083x2083",
+        "mapLocationPoint": {
+            "x": 2000,
+            "y": 1451,
+            "radius": 150
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.1.1",
+        "inMapId": "G.Ter.Per.Tik.Dre.1Airlock",
+        "name": "Start",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1513,
+            "y": 2048,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.1.2",
+        "inMapId": "G.Ter.Per.Tik.Dre.1Airlock",
+        "name": "To 2 - Operations Center",
+        "linkToMapId": "G.Ter.Per.Tik.Dre.2Operations",
+        "mapLocationPoint": {
+            "x": 391,
+            "y": 163,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.1.3",
+        "inMapId": "G.Ter.Per.Tik.Dre.1Airlock",
+        "name": "Docking Controls",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 915,
+            "y": 814,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.1.4",
+        "inMapId": "G.Ter.Per.Tik.Dre.1Airlock",
+        "name": "Bridge Controls",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 650,
+            "y": 103,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.2Operations",
+        "inMapId": "G.Ter.Per.Tik.Dreadnought",
+        "name": "Operations Center",
+        "mapType": "Area",
+        "image": "Detail_Maps/Game3/Rannoch/Dreadnought/Rannoch_Dreadnought_2OperationsCenter.pdf",
+        "referenceSize": "2083x2083",
+        "mapLocationPoint": {
+            "x": 923,
+            "y": 499,
+            "radius": 150
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.2.1",
+        "inMapId": "G.Ter.Per.Tik.Dre.2Operations",
+        "name": "From 1 - Airlock",
+        "linkToMapId": "G.Ter.Per.Tik.Dre.1Airlock",
+        "mapLocationPoint": {
+            "x": 2007,
+            "y": 2022,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.2.2",
+        "inMapId": "G.Ter.Per.Tik.Dre.2Operations",
+        "name": "To 3 - Main Battery",
+        "linkToMapId": "G.Ter.Per.Tik.Dre.3Battery",
+        "mapLocationPoint": {
+            "x": 1750,
+            "y": 488,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.2.3",
+        "inMapId": "G.Ter.Per.Tik.Dre.2Operations",
+        "name": "Signal Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1353,
+            "y": 1487,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.2.4",
+        "inMapId": "G.Ter.Per.Tik.Dre.2Operations",
+        "name": "Sensor Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1188,
+            "y": 1274,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.2.5",
+        "inMapId": "G.Ter.Per.Tik.Dre.2Operations",
+        "name": "Network Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1246,
+            "y": 933,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.2.6",
+        "inMapId": "G.Ter.Per.Tik.Dre.2Operations",
+        "name": "Data Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 644,
+            "y": 939,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.2.7",
+        "inMapId": "G.Ter.Per.Tik.Dre.2Operations",
+        "name": "Operations Center Console",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 241,
+            "y": 1053,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.3Battery",
+        "inMapId": "G.Ter.Per.Tik.Dreadnought",
+        "name": "Main Battery",
+        "mapType": "Area",
+        "image": "Detail_Maps/Game3/Rannoch/Dreadnought/Rannoch_Dreadnought_3MainBattery.pdf",
+        "referenceSize": "2083x2083",
+        "mapLocationPoint": {
+            "x": 642,
+            "y": 563,
+            "radius": 150
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.3.1",
+        "inMapId": "G.Ter.Per.Tik.Dre.3Battery",
+        "name": "From 2 - Operations Center",
+        "linkToMapId": "G.Ter.Per.Tik.Dre.2Operations",
+        "mapLocationPoint": {
+            "x": 1830,
+            "y": 298,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.3.2",
+        "inMapId": "G.Ter.Per.Tik.Dre.3Battery",
+        "name": "To 4 - Drive Core",
+        "linkToMapId": "G.Ter.Per.Tik.Dre.4Core",
+        "mapLocationPoint": {
+            "x": 257,
+            "y": 1561,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.3.3",
+        "inMapId": "G.Ter.Per.Tik.Dre.3Battery",
+        "name": "Maintenance Override",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1235,
+            "y": 811,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.4Core",
+        "inMapId": "G.Ter.Per.Tik.Dreadnought",
+        "name": "Drive Core",
+        "mapType": "Area",
+        "image": "Detail_Maps/Game3/Rannoch/Dreadnought/Rannoch_Dreadnought_4DriveCore.pdf",
+        "referenceSize": "2083x2083",
+        "mapLocationPoint": {
+            "x": 245,
+            "y": 1275,
+            "radius": 150
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.4.1",
+        "inMapId": "G.Ter.Per.Tik.Dre.4Core",
+        "name": "From 3 - Main Battery",
+        "linkToMapId": "G.Ter.Per.Tik.Dre.3Battery",
+        "mapLocationPoint": {
+            "x": 188,
+            "y": 21,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.4.2",
+        "inMapId": "G.Ter.Per.Tik.Dre.4Core",
+        "name": "To Normandy",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 856,
+            "y": 1960,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.4.3",
+        "inMapId": "G.Ter.Per.Tik.Dre.4Core",
+        "name": "Platform Controls",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 184,
+            "y": 308,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.4.4",
+        "inMapId": "G.Ter.Per.Tik.Dre.4Core",
+        "name": "Hardware Uplink",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 845,
+            "y": 693,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Per.Tik.Dre.4.5",
+        "inMapId": "G.Ter.Per.Tik.Dre.4Core",
+        "name": "Data Core Override",
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1365,
+            "y": 825,
+            "radius": 20
+        }
     }, {
         "id": "G.Ter.Per.Tik.Rannoch",
         "name": "Rannoch",
@@ -4158,6 +4402,7 @@
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Rannoch"
         ]
+
     }, {
         "id": "G.Ter.Per.Tik.Fleet1",
         "name": "Migrant Fleet (Position 1)",

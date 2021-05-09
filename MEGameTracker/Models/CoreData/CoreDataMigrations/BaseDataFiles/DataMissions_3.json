@@ -2026,32 +2026,39 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Airlock",
-        "description": "Head through the exposed docking tube to the airlock, walking up or down the inner hull to avoid obstacles. At the airlock you can admit your squad."
+        "description": "Head through the exposed docking tube to the airlock, walking up or down the inner hull to avoid obstacles. Continue through the ship to the next airlock docking controls and open it to admit your squad.",
+        "inMapId": "G.Ter.Per.Tik.Dre.1.3",
+        "isShowInParentMap": true
     }, {
         "id": "M3.2.GethDreadnought.3",
         "inMissionId": "M3.2.GethDreadnought",
-        "sortIndex": 223,
+        "sortIndex": 222,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Operations Center",
-        "description": ""
+        "description": "Make your way to the Operations Center, where Tali will determine that you need to get to the Drive Core to shut down the Reaper signal.",
+        "inMapId": "G.Ter.Per.Tik.Dre.2.7",
+        "isShowInParentMap": true
     }, {
         "id": "M3.2.GethDreadnought.4",
         "inMissionId": "M3.2.GethDreadnought",
-        "sortIndex": 224,
+        "sortIndex": 222,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Main Battery",
-        "description": "Avoid the periodic shockwave."
+        "description": "Head down to the main battery. Avoid the periodic shockwave. Make your way to the Maintenance Override and across to the other side of the battery.",
+        "inMapId": "G.Ter.Per.Tik.Dre.3.3",
+        "isShowInParentMap": true
     }, {
         "id": "M3.2.GethDreadnought.5",
         "inMissionId": "M3.2.GethDreadnought",
-        "sortIndex": 225,
+        "sortIndex": 222,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Reaper Signal",
-        "description": "Shut down the reaper signal. You will find the Reapers were using [megametracker://person?id=S2.Legion] to power this (if it survived [megametracker://mission?id=M2.CollectorBase.5]), otherwise it will be filled by Geth VI. Eliminate the rest of the hostile geth.",
-        "relatedDecisionIds": ["D3.Legion"]
+        "description": "Take the platform up. When it is destroyed by geth, jump across to your squad and take the ladders the rest of the way to the drive core. Access the hardware uplink to shut down the reaper signal. You will find [megametracker://person?id=S2.Legion] was powering the signal (if it survived [megametracker://mission?id=M2.CollectorBase.5]), otherwise it will be filled by Geth VI. \n\nActivate the Data Core Override on the upper level, eliminate the hostile geth, and escape back to the Normandy.",
+        "inMapId": "G.Ter.Per.Tik.Dre.4.4",
+        "isShowInParentMap": true
     }, {
         "id": "M3.2.Rannoch",
         "sortIndex": 23,
