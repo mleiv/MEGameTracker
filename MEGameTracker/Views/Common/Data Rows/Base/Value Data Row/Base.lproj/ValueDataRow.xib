@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -56,14 +55,15 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvE-Gu-f0c">
-                    <rect key="frame" x="0.0" y="0.0" width="500" height="30"/>
+                    <rect key="frame" x="0.0" y="0.0" width="500" height="52"/>
                     <connections>
-                        <action selector="buttonClicked:" destination="Z3Q-sP-nnP" eventType="touchUpInside" id="ryV-Xa-vaV"/>
+                        <action selector="buttonClicked:" destination="Z3Q-sP-nnP" eventType="touchUpInside" id="0GJ-5l-Dlg"/>
                     </connections>
                 </button>
             </subviews>
             <constraints>
                 <constraint firstItem="RV3-uv-RsP" firstAttribute="leading" secondItem="Z3Q-sP-nnP" secondAttribute="leading" constant="15" id="2Mv-WZ-3If"/>
+                <constraint firstAttribute="bottom" secondItem="SvE-Gu-f0c" secondAttribute="bottom" id="99f-B6-WBW"/>
                 <constraint firstItem="SvE-Gu-f0c" firstAttribute="leading" secondItem="Z3Q-sP-nnP" secondAttribute="leading" id="FJR-fn-xZG"/>
                 <constraint firstItem="RV3-uv-RsP" firstAttribute="top" secondItem="Z3Q-sP-nnP" secondAttribute="top" priority="900" constant="8" id="XLz-0Z-RNG"/>
                 <constraint firstAttribute="bottom" secondItem="RV3-uv-RsP" secondAttribute="bottom" priority="900" constant="8" id="ebg-AI-On0"/>

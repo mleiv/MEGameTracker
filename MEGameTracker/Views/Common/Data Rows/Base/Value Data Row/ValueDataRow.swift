@@ -22,7 +22,10 @@ final public class ValueDataRow: HairlineBorderView, ValueDataRowDisplayable {
 	@IBOutlet weak public var disclosureImageView: UIImageView?
 	@IBOutlet weak public var button: UIButton?
 
-	@IBAction public func buttonClicked(_ sender: UIButton) { onClick?(sender) }
+	@IBAction public func buttonClicked(_ sender: UIButton) {
+        print("buttonClicked")
+        onClick?(sender)
+    }
 
 // MARK: Properties
 	public var didSetup = false
@@ -32,7 +35,7 @@ final public class ValueDataRow: HairlineBorderView, ValueDataRowDisplayable {
 	public var isAttachedNibWrapper = false
 	public var isAttachedNib = false
 
-	public var onClick: ((UIButton) -> Void)?
+    public var onClick: ((UIButton) -> Void)?
 
 // MARK: IBViewable
 
