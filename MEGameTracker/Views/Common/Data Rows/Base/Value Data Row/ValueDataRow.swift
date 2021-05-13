@@ -23,7 +23,6 @@ final public class ValueDataRow: HairlineBorderView, ValueDataRowDisplayable {
 	@IBOutlet weak public var button: UIButton?
 
 	@IBAction public func buttonClicked(_ sender: UIButton) {
-        print("buttonClicked")
         onClick?(sender)
     }
 

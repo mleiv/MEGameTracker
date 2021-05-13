@@ -62,8 +62,8 @@ import UIKit
 	var tailLength = CGFloat(20.0)
 	var cornerRadius = CGFloat(10)
 	var calloutStrokeWidth = CGFloat(1.0)
-	var calloutStrokeColor = UIColor.separator // Styles.colors.backgroundBorder
-	var calloutBackgroundColor = UIColor.systemBackground // Styles.colors.background
+	var calloutStrokeColor = UIColor.placeholderText
+	var calloutBackgroundColor = UIColor.systemBackground
 
 	//footer
 	let pendingMessage = "%d_missions more missions, %d_items more items"

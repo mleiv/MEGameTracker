@@ -35,7 +35,7 @@ public struct CalloutBalloon {
 		tailWidth: CGFloat = 10.0,
 		borderWidth: CGFloat = 1.0,
 		cornerRadius: CGFloat = 5.0,
-		borderColor: UIColor = .separator,
+		borderColor: UIColor = .placeholderText,
         backgroundColor: UIColor = UIColor(named: "secondaryBackground")!
 	) {
 		self.baseLayer = baseLayer

@@ -41,7 +41,6 @@ public struct MapLinkType: ValueDataRowType {
 	}
 
 	public mutating func initMapAndClick() {
-        print("initMapAndClick1")
 		guard !UIWindow.isInterfaceBuilder  else { return }
 		if map?.id != controller?.inMapId,
             let inMapId = controller?.inMapId,
@@ -49,9 +48,7 @@ public struct MapLinkType: ValueDataRowType {
             self.map = map
             let openRow = self.openRow
             let mapCopy = self.map
-            print("initMapAndClick2")
             self.onClick = { sender in
-                print("onClick")
                 openRow(sender, mapCopy)
             }
 		} else if controller?.inMapId == nil {
@@ -65,7 +62,6 @@ public struct MapLinkType: ValueDataRowType {
 	}
 
 	public func openRow(sender: UIView?, map: Map?) {
-        print("openRow")
 		guard let view = view, let controller = controller else { return }
 		var map = map
 		view.startParentSpinner(controller: viewController)
@@ -86,7 +82,6 @@ public struct MapLinkType: ValueDataRowType {
             mapController.map = map
             mapController.mapLocation = mapLocation
             mapController.referringOriginHint = controller.originHint
-            print("segue")
             self.viewController?.navigationController?.pushViewController(flowController, animated: true)
         }
         view.stopParentSpinner(controller: self.viewController)

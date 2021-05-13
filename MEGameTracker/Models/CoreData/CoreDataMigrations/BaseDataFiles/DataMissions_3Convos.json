@@ -888,7 +888,7 @@
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
         "name": "Convo - Palaven",
-        "description": "Garrus says his family made it off Palaven. He has now advised the Primarch to retreat from Palaven in order to save their forces for the Crucible.",
+        "description": "Garrus says his family made it off Palaven. He has now advised the Primarch to retreat from Palaven in order to save their forces for the Crucible. \n\nYou can prompt him for comments on Thessia and Kai Leng. He also asks if you've checked on Liara.",
         "inMapId": "G.N3.3.Battery",
         "isShowInParentMap": true,
         "events": [{
@@ -1230,12 +1230,13 @@
         }]
     }, {
         "id": "A3.Convo.S.Javik.5",
+        "inMissionId": "A3.Convo.S.Javik",
         "sortIndex": 90005,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
         "name": "Argument - Liara",
-        "description": "You walk in on Javik and Liara fighting. If you take the interrupt and hold Liara back, Javik will change his tone and tell her that the protheans had hoped the asari could defeat the Reapers, and as long as she is still alive, there is still hope. If you do not take the interrupt, Liara storms out and the conversation with Javik is much shorter and more cynical.",
+        "description": "You walk in on Javik and Liara fighting. If you take the interrupt and hold Liara back, Javik will change his tone and tell her that the protheans had hoped the asari could defeat the Reapers, and as long as she is still alive, there is still hope. If you do not take the interrupt, Liara storms out and the conversation with Javik is much shorter and more cynical. \n\nYou can prompt Javik for more comments about the war in his cycle and the loss of Thessia.",
         "inMapId": "G.N3.4.Port",
         "isShowInParentMap": true,
         "events": [{
@@ -1911,7 +1912,7 @@
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
         "name": "Convo - Thessia",
-        "description": "Talk to Liara in her room after her argument with Javik ([megametracker://mission?id=A3.Convo.S.Javik.5]). She is trying to process the knowledge that her mother kept Thessia's prothean beacon from her. She is broken up over all the asari who died helping you get to the temple, only to lose the planet anyway.",
+        "description": "Talk to Liara in her room after her argument with Javik ([megametracker://mission?id=A3.Convo.S.Javik.5]). When you walk in, she is talking to EDI about the asari hiding the Prothean beacon. When you talk to her, she is broken up over all the asari who died helping you get to the temple, only to lose the planet anyway. She decides to pour her energies into helping the refugees.",
         "inMapId": "G.N3.3.Liara",
         "isShowInParentMap": true,
         "events": [{
@@ -2794,6 +2795,21 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Rannoch"
+        }]
+    }, {
+        "id": "A3.Convo.C.Allers.5-CThessia",
+        "inMissionId": "A3.Convo.C.Allers",
+        "sortIndex": 90012,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Allers: ",
+        "name": "Side Convo - Thessia",
+        "description": "Traynor asks Allers about her story on Thessia. Allers is concerned that if she doesn't tell it properly, it will have repercussions.",
+        "inMapId": "G.N3.4.Starboard",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Priority: Thessia"
         }]
 
     }, {
