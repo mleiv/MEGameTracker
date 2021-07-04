@@ -1239,6 +1239,7 @@
         "description": "You walk in on Javik and Liara fighting. If you take the interrupt and hold Liara back, Javik will change his tone and tell her that the protheans had hoped the asari could defeat the Reapers, and as long as she is still alive, there is still hope. If you do not take the interrupt, Liara storms out and the conversation with Javik is much shorter and more cynical. \n\nYou can prompt Javik for more comments about the war in his cycle and the loss of Thessia.",
         "inMapId": "G.N3.4.Port",
         "isShowInParentMap": true,
+        "relatedDecisionIds": ["D3.JavikLiara"],
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Thessia"
@@ -1267,9 +1268,10 @@
         "missionType": "Objective",
         "titlePrefix": "Javik: ",
         "name": "Convo - Shard",
-        "description": "Javik explains prothean memory shards to you.",
+        "description": "Javik explains prothean memory shards to you. \n\nYou can prompt him for more comments about the horrible sacrifices made in his own time.",
         "inMapId": "G.N3.4.Port",
         "isShowInParentMap": true,
+        "relatedDecisionIds": ["D3.JavikMemoryShard"],
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Horizon"
@@ -1920,6 +1922,22 @@
             "id": "Completed: Priority: Thessia"
         }]
     }, {
+        "id": "A3.Convo.S.Liara.7-BTiptree",
+        "identicalMissionId": "A3.Convo.C.Joker.10-BTiptree",
+        "inMissionId": "A3.Convo.S.Liara",
+        "sortIndex": 90007,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Liara: ",
+        "name": "Side Convo - Tiptree",
+        "description": "Liara contacts Joker to let him know that refugee ships from Tiptree have been recovered, but only with children aboard.",
+        "inMapId": "G.N2.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Communication Hub"
+        }]
+    }, {
         "id": "A3.Convo.S.Liara.8",
         "inMissionId": "A3.Convo.S.Liara",
         "sortIndex": 90008,
@@ -2155,10 +2173,13 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Tali: ",
-        "name": "Side Convo - Miranda",
+        "name": "Convo - Miranda",
         "description": "Tali is very drunk at the Observation Deck. Her best line of the entire series: \"Emergency Induction Port.\" She is toasting Miranda. \n\nIf you have romanced her, she will comment that her father would have hated you.",
         "inMapId": "G.N3.3.Port",
         "isShowInParentMap": true,
+        "sideEffects": [
+            "\"You genetically perfect Cerberus cheerleader bosh'tet\""
+        ],
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Priority: Horizon"
@@ -3813,13 +3834,29 @@
             "id": "Completed: Priority: Thessia"
         }]
     }, {
+        "id": "A3.Convo.C.Joker.10-BTiptree",
+        "identicalMissionId": "A3.Convo.S.Liara.7-BTiptree",
+        "inMissionId": "A3.Convo.C.Joker",
+        "sortIndex": 90018,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Joker: ",
+        "name": "Side Convo - Tiptree",
+        "description": "Liara contacts Joker to let him know that refugee ships from Tiptree have been recovered, but only with children aboard.",
+        "inMapId": "G.N2.2.Bridge",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Communication Hub"
+        }]
+    }, {
         "id": "A3.Convo.C.Joker.11",
         "inMissionId": "A3.Convo.C.Joker",
         "sortIndex": 90021,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Joker: ",
-        "name": "Comment - Horizon",
+        "name": "Convo - Horizon",
         "description": "Joker is horrified by the experiments done on Horizon. ",
         "inMapId": "G.N3.2.Bridge",
         "isShowInParentMap": true,

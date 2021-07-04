@@ -1063,8 +1063,13 @@
             "https://masseffect.wikia.com/wiki/Leviathan:_Scan_Locations"
         ],
         "sideEffects": [
-            "If you talk to [megametracker://person?id=S3.Vega] repeatedly in the lab when he is examining the husk head, he will eventually ask if you can take the head back to the Normandy for laughs... and you agree."
-        ]
+            "If you talk to [megametracker://person?id=S3.Vega] four times in the lab while he is examining the husk head (before using Ann to locate Leviathan), he will eventually ask if you can take the head back to the Normandy for laughs... and then you can select the head and send it to your cabin."
+        ],
+        "relatedMissionIds": ["DLC3.Leviathan.I.1B"],
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Leviathan: Find Leviathan"
+        }]
     }, {
         "id": "DLC3.Leviathan.6",
         "inMissionId": "DLC3.Leviathan",

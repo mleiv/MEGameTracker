@@ -89,7 +89,7 @@
             "x": 722,
             "y": 1887,
             "radius": 1
-        }
+        },
         "sortIndex": 1201
     }, {
         "id": "A3.ChemicalTreatment.I.1",
@@ -174,7 +174,7 @@
         "itemType": "Souvenir",
         "itemDisplayType": "Loot",
         "name": "Screaming Husk Head",
-        "annotationNote": "Talk to Vega in Bryson's lab",
+        "annotationNote": "Talk to Vega to unlock",
         "inMapId": "G.C3.Bryson",
         "mapLocationPoint": {
             "x": 431,
@@ -184,6 +184,10 @@
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Leviathan: Find Ann Bryson"
+        },
+        {
+            "type": "BlockedAfter",
+            "id": "Completed: Leviathan: Find Leviathan"
         }],
         "sortIndex": 1096
     }, {
@@ -539,7 +543,7 @@
         "sortIndex": 12226
 
 
-        
+
 
     }, {
         "x-comment-x": "-------- INJURED TALONS -------",
