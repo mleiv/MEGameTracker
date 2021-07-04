@@ -46,12 +46,17 @@ import UIKit
 	override func openRow(indexPath: IndexPath, sender: UIView?) {
 		guard links.indices.contains((indexPath as NSIndexPath).row) else { return }
 		let link = links[(indexPath as NSIndexPath).row]
-		if let url = URL(string: link),
+        if let url = URL(string: parseUrl(link: link)),
 		   let source = sender as? Linkable {
 			source.linkOriginController = viewController
 			linkHandler.openURL(url, source: source)
 		}
 	}
+    
+    private func parseUrl(link: String) -> String {
+        let components = link.split(separator: "|", maxSplits: 1)
+        return String((components.count > 1) ? components[1] : components[0])
+    }
 
 	private func dataFromText() -> [String] {
 		if text?.isEmpty == false {
