@@ -7231,8 +7231,129 @@
                     "x": 756,
                     "y": 1345,
                     "radius": 100
-                }
+                },
+                "image": "Detail_Maps/Game3/_Secondary/Namakli/Namakli.pdf",
+                "referenceSize": "2083x2083"
             }
+        }
+    }, {
+        "id": "G.Ter.Pyl.Zah.Nam.1Landing",
+        "name": "1 - Landing",
+        "isShowPin": false,
+        "inMapId": "G.Ter.Pyl.Zah.Namakli",
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/_Secondary/Namakli/Namakli_1Landing.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 90,
+                    "y": 1255,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Pyl.Zah.Nam.1.1Start",
+        "name": "Start",
+        "isOpensDetail": false,
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Pyl.Zah.Nam.1Landing",
+        "mapLocationPoint": {
+            "x": 53,
+            "y": 1086,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pyl.Zah.Nam.1.2Bridge",
+        "name": "Bridge Controls",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Pyl.Zah.Nam.1Landing",
+        "mapLocationPoint": {
+            "x": 2025,
+            "y": 748,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pyl.Zah.Nam.1.3Elevator",
+        "name": "To 2 - Elevator",
+        "linkToMapId": "G.Ter.Pyl.Zah.Nam.2Elevator",
+        "inMapId": "G.Ter.Pyl.Zah.Nam.1Landing",
+        "mapLocationPoint": {
+            "x": 2064,
+            "y": 1086,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pyl.Zah.Nam.2Elevator",
+        "name": "2 - Elevator",
+        "isShowPin": false,
+        "inMapId": "G.Ter.Pyl.Zah.Namakli",
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/_Secondary/Namakli/Namakli_2Elevator.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 2014,
+                    "y": 1008,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Ter.Pyl.Zah.Nam.2.1Landing",
+        "name": "From 1 - Landing",
+        "linkToMapId": "G.Ter.Pyl.Zah.Nam.1Landing",
+        "inMapId": "G.Ter.Pyl.Zah.Nam.2Elevator",
+        "mapLocationPoint": {
+            "x": 1423,
+            "y": 1862,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pyl.Zah.Nam.2.2Elevator",
+        "name": "Elevator Controls",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Pyl.Zah.Nam.2Elevator",
+        "mapLocationPoint": {
+            "x": 2000,
+            "y": 1685,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pyl.Zah.Nam.2.3Elevator",
+        "name": "Elevator Controls",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Pyl.Zah.Nam.2Elevator",
+        "mapLocationPoint": {
+            "x": 2000,
+            "y": 1162,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pyl.Zah.Nam.2.4Elevator",
+        "name": "Elevator",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Pyl.Zah.Nam.2Elevator",
+        "mapLocationPoint": {
+            "x": 2030,
+            "y": 1094,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Ter.Pyl.Zah.Nam.2.5Shuttle",
+        "name": "Shuttle",
+        "isOpensDetail": false,
+        "inMapId": "G.Ter.Pyl.Zah.Nam.2Elevator",
+        "mapLocationPoint": {
+            "x": 1081,
+            "y": 760,
+            "radius": 20
         }
     }, {
         "id": "G.Ter.Pyl.Zah.Azrahas",

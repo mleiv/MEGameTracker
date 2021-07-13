@@ -1049,6 +1049,50 @@
             "id": "Completed: Leviathan: Find Ann Bryson"
         }]
     }, {
+        "id": "DLC3.Leviathan.4.1",
+        "inMissionId": "DLC3.Leviathan.4",
+        "sortIndex": 10904,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Bridge",
+        "description": "You are forced to land on a lower level of the dig site. Head across through the damaged buildings, down through a building tipped sideways, up onto the roof of the last building before the broken stairs, and across the ground to the bridge controls. Activate the bridge, fight the Husks and the Banshee, and then cross the bridge to continue.",
+        "inMapId": "G.Ter.Pyl.Zah.Nam.1.2Bridge",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Leviathan.4.2",
+        "inMissionId": "DLC3.Leviathan.4",
+        "sortIndex": 10904,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Elevator (1)",
+        "description": "Cross the roof of the building, then drop down (this ladder is sometimes buggy in older game versions, but you can usually get down eventually by running and rolling off the edge). Climb the tables to reach the ramp of a collapsed building, and the elevator is just beyond that.",
+        "inMapId": "G.Ter.Pyl.Zah.Nam.2.2Elevator",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Leviathan.4.3",
+        "inMissionId": "DLC3.Leviathan.4",
+        "sortIndex": 10904,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Elevator (2)",
+        "description": "Because the elevator shaft is damaged, you need to get up to the level above to access the elevator. You will have to go back in the direction you came, through the wrecked buildings of the second level, up to a third and then a fourth level, across the ground below a collapsed buildings platform, and then down again.",
+        "inMapId": "G.Ter.Pyl.Zah.Nam.2.3Elevator",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Leviathan.4.4",
+        "inMissionId": "DLC3.Leviathan.4",
+        "sortIndex": 10904,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Artifact",
+        "description": "You reach Ann and together head to the upper landing site. There is an artifact there, but you are forced to destroy it to prevent the Reapers from accessing it. After eliminating the Reaper forces (with a Harvester), you can take the shuttle back to the Normandy.",
+        "inMapId": "G.Ter.Pyl.Zah.Nam.2Elevator",
+        "mapLocationPoint": {
+            "x": 1310,
+            "y": 253,
+            "radius": 1
+        }
+    }, {
         "id": "DLC3.Leviathan.5",
         "inMissionId": "DLC3.Leviathan",
         "sortIndex": 10905,
@@ -1056,7 +1100,7 @@
         "missionType": "Objective",
         "name": "Find Leviathan",
         "description": "You can use Ann to find Leviathan, by inducing Leviathan to speak through her and tracing the signal back. However, if you leave Ann in Leviathan's control for too long, she will suffer permanent damage and you will lose her as a War Asset.",
-        "inMapId": "G.C",
+        "inMapId": "G.C3.Bryson",
         "isShowInParentMap": true,
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Citadel:_Leviathan_III",
@@ -1070,6 +1114,76 @@
             "type": "Triggers",
             "id": "Completed: Leviathan: Find Leviathan"
         }]
+    }, {
+        "id": "DLC3.Leviathan.5.1",
+        "inMissionId": "DLC3.Leviathan.5",
+        "sortIndex": 10905,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Ann (re: Father)",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1577,
+            "y": 1883,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.5.2",
+        "inMissionId": "DLC3.Leviathan.5",
+        "sortIndex": 10905,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Ann (re: Reaper)",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1325,
+            "y": 963,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.5.3",
+        "inMissionId": "DLC3.Leviathan.5",
+        "sortIndex": 10905,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Ann (re: Rachni)",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 1308,
+            "y": 1095,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.5.4",
+        "inMissionId": "DLC3.Leviathan.5",
+        "sortIndex": 10905,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Speak to Ann (re: Artifact)",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 344,
+            "y": 912,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Leviathan.5.5",
+        "inMissionId": "DLC3.Leviathan.5",
+        "sortIndex": 10905,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Trace Leviathan",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Bryson",
+        "mapLocationPoint": {
+            "x": 330,
+            "y": 972,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Leviathan.6",
         "inMissionId": "DLC3.Leviathan",
