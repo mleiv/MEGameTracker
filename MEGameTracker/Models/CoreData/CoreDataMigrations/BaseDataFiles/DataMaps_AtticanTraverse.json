@@ -3731,43 +3731,65 @@
 			"1": {
 				"image": "Detail_Maps/Game1/UNC/Ontarom/Ontarom.pdf",
 				"referenceSize": "2083x2083"
-			}
+			},
+            "3": {
+                "image": "Detail_Maps/Game3/_Secondary/Ontarom.pdf",
+                "referenceSize": "2083x2083"
+            }
 		}
 	}, {
 		"id": "G.Att.Kep.New.Ont.1",
 		"inMapId": "G.Att.Kep.New.Ontarom",
 		"name": "Drop Zone",
+        "isHidden": true,
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 718,
 			"y": 610,
 			"radius": 20
-		}
+		},
+        "gameVersionData": {
+            "1": {
+                "isHidden": false
+            }
+        }
 	}, {
 		"id": "G.Att.Kep.New.Ont.2",
 		"inMapId": "G.Att.Kep.New.Ontarom",
 		"name": "Crashed Probe",
+        "isHidden": true,
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 1533,
 			"y": 1311,
 			"radius": 20
-		}
+		},
+        "gameVersionData": {
+            "1": {
+                "isHidden": false
+            }
+        }
 	}, {
 		"id": "G.Att.Kep.New.Ont.3",
 		"inMapId": "G.Att.Kep.New.Ontarom",
 		"name": "Turian Wreckage",
+        "isHidden": true,
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 1111,
 			"y": 782,
 			"radius": 20
-		}
+		},
+        "gameVersionData": {
+            "1": {
+                "isHidden": false
+            }
+        }
 	}, {
 		"id": "G.Att.Kep.New.Ont.Science",
 		"inMapId": "G.Att.Kep.New.Ontarom",
 		"name": "Underground Facility",
-		"isHidden": true,
+        "isHidden": true,
 		"mapType": "Structure",
 		"mapLocationPoint": {
 			"x": 1518,
@@ -3785,18 +3807,24 @@
 		"id": "G.Att.Kep.New.Ont.Sci.1",
 		"inMapId": "G.Att.Kep.New.Ont.Science",
 		"name": "To Surface",
+        "isHidden": true,
 		"isShowInList": false,
 		"linkToMapId": "G.Att.Kep.New.Ontarom",
 		"mapLocationPoint": {
 			"x": 1612,
 			"y": 475,
 			"radius": 20
-		}
-		
+		},
+        "gameVersionData": {
+            "1": {
+                "isHidden": false
+            }
+        }
 	}, {
 		"id": "G.Att.Kep.New.Ont.Cow",
 		"inMapId": "G.Att.Kep.New.Ontarom",
 		"name": "Shifty Looking Cow",
+        "isHidden": true,
 		"description": "*Beware!* The shifty looking cow will slowly steal your credits if you ever turn your back on it. If you kill it, it will just respawn.",
 		"mapLocationPoint": {
 			"x": 704,
@@ -3805,7 +3833,28 @@
 		},
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Shifty_Looking_Cow"
-		]
+		],
+        "gameVersionData": {
+            "1": {
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Att.Kep.New.Ont3.1Start",
+        "inMapId": "G.Att.Kep.New.Ontarom",
+        "name": "Start",
+        "isHidden": true,
+        "mapLocationPoint": {
+            "x": 601,
+            "y": 329,
+            "radius": 20
+        },
+        "gameVersionData": {
+            "3": {
+                "isHidden": false
+            }
+        }
+        
 	}, {
 		"id": "G.Att.Kep.New.Klencory",
 		"name": "Klencory",
