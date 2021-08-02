@@ -3385,7 +3385,7 @@
         "isHidden": true,
         "gameVersionData": {
             "3": {
-                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC/Citadel_Apartment.pdf",
+                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC/Citadel_DLC_Apartment.pdf",
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 146,
@@ -3412,8 +3412,58 @@
         "isOpensDetail": false,
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
-            "x": 851,
-            "y": 971,
+            "x": 849,
+            "y": 970,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.Stereo1",
+        "name": "Stereo",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 875,
+            "y": 1783,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.Stereo2",
+        "name": "Stereo",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1030,
+            "y": 1295,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.Stereo3",
+        "name": "Stereo",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 740,
+            "y": 690,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.Armor",
+        "name": "Armor Locker",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 815,
+            "y": 334,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Apartment.WB",
+        "name": "Weapons Bench",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 846,
+            "y": 404,
             "radius": 20
         }
     }, {
@@ -3428,6 +3478,537 @@
             "radius": 20
         }
     }, {
+        "id": "G.C3.Sushi",
+        "name": "Citadel DLC: Ryuusei Sushi",
+        "inMapId": "G.C3.DLC",
+        "rerootBreadcrumbs": true,
+        "mapType": "Level",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC/Citadel_DLC_1ShoreLeave.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 404,
+                    "width": 1800,
+                    "height": 187
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Sushi.01",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 1947,
+            "y": 130,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.02",
+        "name": "To Apartment",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "linkToMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1564,
+            "y": 1595,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.03",
+        "name": "Fresh Fish",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 1445,
+            "y": 1093,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.04",
+        "name": "Zephs",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 1382,
+            "y": 1063,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.05",
+        "name": "Blamps Lamps",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 1269,
+            "y": 1063,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.06",
+        "name": "U-Forge-It",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 834,
+            "y": 1173,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.07",
+        "name": "Ryuusei",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 405,
+            "y": 1129,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.08",
+        "name": "Value Added",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 279,
+            "y": 1290,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.09",
+        "name": "Fishdog Food Shack",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 427,
+            "y": 1334,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.10",
+        "name": "Blasto: Partners in Crime",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 23,
+            "y": 1604,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.11",
+        "name": "Goddess Essentials",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 114,
+            "y": 1732,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.12",
+        "name": "KonJuncTion",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 192,
+            "y": 1732,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.13",
+        "name": "Van Allen Belts",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 299,
+            "y": 1732,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.14",
+        "name": "Cephed Variable",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 402,
+            "y": 1732,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.15",
+        "name": "Micah Black",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 540,
+            "y": 1732,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.16",
+        "name": "Red Janey",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 688,
+            "y": 1771,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Sushi.17",
+        "name": "Cision Motors",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Sushi",
+        "mapLocationPoint": {
+            "x": 782,
+            "y": 1732,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala",
+        "name": "Citadel DLC: Charity Gala",
+        "inMapId": "G.C3.DLC",
+        "rerootBreadcrumbs": true,
+        "mapType": "Level",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC/Citadel_DLC_2CharityGala.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 680,
+                    "width": 1800,
+                    "height": 187
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.Gala.01",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1036,
+            "y": 474,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.02",
+        "name": "To Panic Room (Cutscene)",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1098,
+            "y": 2032,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.04",
+        "name": "Security Camera",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1358,
+            "y": 372,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.07",
+        "name": "Security Camera",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1679,
+            "y": 1264,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.08",
+        "name": "Security Camera",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1081,
+            "y": 1718,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.09",
+        "name": "Security Camera",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 845,
+            "y": 1657,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.11",
+        "name": "Security Camera",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1231,
+            "y": 496,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.12",
+        "name": "Security Guard",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 567,
+            "y": 1069,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.13",
+        "name": "Security Guard",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 702,
+            "y": 1151,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.14",
+        "name": "Security Guard",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 791,
+            "y": 794,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.15",
+        "name": "Security Guard",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1357,
+            "y": 802,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.16",
+        "name": "Security Guard",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1409,
+            "y": 1124,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.17",
+        "name": "Security Guard",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 904,
+            "y": 1613,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.18",
+        "name": "Security Guard",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1008,
+            "y": 1782,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.19",
+        "name": "Roulette",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 593,
+            "y": 1121,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.20",
+        "name": "Quasar",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 827,
+            "y": 1049,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.21",
+        "name": "Quasar",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 793,
+            "y": 988,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.22",
+        "name": "Quasar",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 763,
+            "y": 832,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.23",
+        "name": "Varren Racing",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1509,
+            "y": 1281,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.24",
+        "name": "Casino Bartender",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 963,
+            "y": 61,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.25",
+        "name": "Casino Bartender",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1294,
+            "y": 866,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.26",
+        "name": "Sha'ira",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 568,
+            "y": 716,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.27",
+        "name": "Ashwarya Ashland",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 637,
+            "y": 1356,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.28",
+        "name": "Lawyer",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 810,
+            "y": 901,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.29",
+        "name": "Selyana",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1148,
+            "y": 537,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.30",
+        "name": "Elspeth Murrain",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1199,
+            "y": 1056,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.31",
+        "name": "Columbia Rios",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1481,
+            "y": 906,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.32",
+        "name": "Varren Race Gambler",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1455,
+            "y": 1374,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.33",
+        "name": "X",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.34",
+        "name": "Rolan Quarn",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1030,
+            "y": 1455,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.35",
+        "name": "Andrew and Tina",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 891,
+            "y": 1753,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Gala.36",
+        "name": "Jonah Ashland",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 20
+        }
+    }, {
         "id": "G.C3.Silversun",
         "name": "Silversun Strip",
         "inMapId": "G.C3.DLC",
@@ -3436,7 +4017,7 @@
         "isHidden": true,
         "gameVersionData": {
             "3": {
-                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC/Citadel_Silversun.pdf",
+                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC/Citadel_DLC_Silversun.pdf",
                 "referenceSize": "2083x2083",
                 "mapLocationPoint": {
                     "x": 146,
@@ -3656,6 +4237,16 @@
         "mapLocationPoint": {
             "x": 1878,
             "y": 1801,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.Silversun.Ryuusei",
+        "name": "Ryuusei Sushi",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Silversun",
+        "mapLocationPoint": {
+            "x": 395,
+            "y": 787,
             "radius": 20
         }
 

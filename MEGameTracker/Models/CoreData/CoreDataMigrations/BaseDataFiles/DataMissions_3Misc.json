@@ -1209,7 +1209,7 @@
         "mapLocationPoint": {
             "x": 565,
             "y": 1546,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "",
@@ -3014,47 +3014,191 @@
     }, {
         "id": "DLC3.Citadel1.1",
         "inMissionId": "DLC3.Citadel1",
-        "sortIndex": 15001,
+        "sortIndex": 1500,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Shore Leave",
-        "description": "Visit Anderson's personal apartment on the Citadel to begin this assignment. You'll receive a message there from Joker, asking you to meet him at a restaurant.",
-        "inMapId": "G.C",
+        "description": "Visit Anderson's personal apartment on the Citadel to begin this assignment. His biography notes are scattered throughout the apartment.",
+        "inMapId": "G.C3.Apartment",
         "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel1.1.01",
+        "inMissionId": "DLC3.Citadel1.1",
+        "sortIndex": 1500,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Notes: Relationships",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1208,
+            "y": 1922,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.1.02",
+        "inMissionId": "DLC3.Citadel1.1",
+        "sortIndex": 1500,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Notes: Normandy",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 989,
+            "y": 1847,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.1.03",
+        "inMissionId": "DLC3.Citadel1.1",
+        "sortIndex": 1500,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Notes: N7",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 670,
+            "y": 1779,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.1.04",
+        "inMissionId": "DLC3.Citadel1.1",
+        "sortIndex": 1500,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Notes: Shepard",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 782,
+            "y": 1417,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.1.05",
+        "inMissionId": "DLC3.Citadel1.1",
+        "sortIndex": 1500,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Notes: Contact",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 753,
+            "y": 1235,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.1.06",
+        "inMissionId": "DLC3.Citadel1.1",
+        "sortIndex": 1500,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "ANN Interview",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 585,
+            "y": 1187,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.1.07",
+        "inMissionId": "DLC3.Citadel1.1",
+        "sortIndex": 1500,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Notes: New Questions",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1198,
+            "y": 1177,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.1.08",
+        "inMissionId": "DLC3.Citadel1.1",
+        "sortIndex": 1500,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Notes: Childhood",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 720,
+            "y": 564,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.1.09",
+        "inMissionId": "DLC3.Citadel1.1",
+        "sortIndex": 1500,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Notes: Turian Experience",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 893,
+            "y": 555,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.1.10",
+        "inMissionId": "DLC3.Citadel1.1",
+        "sortIndex": 1500,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Notes: Normandy SR1",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1157,
+            "y": 359,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.2",
         "inMissionId": "DLC3.Citadel1",
-        "sortIndex": 15002,
+        "sortIndex": 1500,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Wards Ambush",
-        "description": "This is the first mission - to escape from the mercenaries and reunite with the Normandy crew.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "description": "Visit Anderson's personal apartment on the Citadel to begin this assignment. You'll receive a message there from Joker, asking you to meet him at a restaurant.",
+        "inMapId": "G.C3.Apartment.Terminal",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "Triggers",
+            "id": "Completed: Citadel DLC Wards Ambush"
+        }]
     }, {
         "id": "DLC3.Citadel1.2.1",
         "inMissionId": "DLC3.Citadel1.2",
-        "sortIndex": 150021,
+        "sortIndex": 1500,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Sushi",
         "description": "Leave the apartment and take the elevator to meet Joker for sushi. When you both realize that you were brought there by a ruse, you are interrupted by a very flustered [Brooks (Spoilers!)|megametracker://person?id=E3.Brooks]. She explains that she has uncovered a threat to Shepard. Before she can explain more, you are attacked and Brooks is taken hostage.",
-        "inMapId": "G.C",
+        "id": "G.C3.Silversun.Ryuusei",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel1.2.2",
         "inMissionId": "DLC3.Citadel1.2",
-        "sortIndex": 150022,
+        "sortIndex": 1500,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Find Brooks",
+        "name": "Rescue Brooks",
         "description": "Kill the mercs and rescue Brooks. A remaining merc will shoot out the glass beneath you and you will fall through the aquarium floor.",
         "inMapId": "G.C",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel1.2.3",
         "inMissionId": "DLC3.Citadel1.2",
-        "sortIndex": 150023,
+        "sortIndex": 1500,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Market",
@@ -3064,7 +3208,7 @@
     }, {
         "id": "DLC3.Citadel1.2.4",
         "inMissionId": "DLC3.Citadel1.2",
-        "sortIndex": 150024,
+        "sortIndex": 1500,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Bridge Controls",
@@ -3074,7 +3218,7 @@
     }, {
         "id": "DLC3.Citadel1.2.4",
         "inMissionId": "DLC3.Citadel1.2",
-        "sortIndex": 150024,
+        "sortIndex": 1500,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Gate Controls",
@@ -3084,7 +3228,7 @@
     }, {
         "id": "DLC3.Citadel1.2.5",
         "inMissionId": "DLC3.Citadel1.2",
-        "sortIndex": 150025,
+        "sortIndex": 1500,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Extraction Zone",
@@ -3094,187 +3238,523 @@
     }, {
         "id": "DLC3.Citadel1.3",
         "inMissionId": "DLC3.Citadel1",
-        "sortIndex": 15003,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Identity Theft I",
-        "description": "Brooks will explain who is behind this attack and you will decide on your next move.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Citadel1.3.1",
-        "inMissionId": "DLC3.Citadel1.3",
-        "sortIndex": 150031,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Personal Apartment",
-        "description": "Meet back at your apartment. Brooks talks you out of contacting Bailey. She explains that someone is trying to steal Shepard's identity, and with all his privileged access, this could be disastrous. Then Joker shows up with the rest of the squad.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "description": "Meet back at your apartment. Brooks talks you out of contacting Bailey. She explains that someone is trying to steal Shepard's identity, and with all his privileged access, this could be disastrous. Then Joker shows up with the rest of the squad. Speak to everyone, then talk to Liara to decide what to do next.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Wards Ambush"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Citadel DLC Identity Theft I"
+        }]
     }, {
         "id": "DLC3.Citadel1.3.2",
         "inMissionId": "DLC3.Citadel1.3",
-        "sortIndex": 150032,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Speak to Squadmates",
-        "description": "You can talk to everyone about the preceding events. It is amusing, albeit unnecessary. Talk to Liara when you are ready to proceed.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "description": "You can talk to everyone about the preceding events. Tali is particularly sad about the sushi restaurant."
+    }, {
+        "id": "DLC3.Citadel1.3.2.01",
+        "inMissionId": "DLC3.Citadel1.3.2",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Vega",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 839,
+            "y": 1646,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.3.2.02",
+        "inMissionId": "DLC3.Citadel1.3.2",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "EDI",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 709,
+            "y": 1906,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.3.2.03",
+        "inMissionId": "DLC3.Citadel1.3.2",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Kaidan/Ashley",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 872,
+            "y": 1903,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.3.2.04",
+        "inMissionId": "DLC3.Citadel1.3.2",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Joker",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1064,
+            "y": 1842,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.3.2.05",
+        "inMissionId": "DLC3.Citadel1.3.2",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Tali",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 900,
+            "y": 2030,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.3.2.06",
+        "inMissionId": "DLC3.Citadel1.3.2",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Cortez",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 670,
+            "y": 1206,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.3.2.07",
+        "inMissionId": "DLC3.Citadel1.3.2",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Garrus",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 993,
+            "y": 773,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.3.2.08",
+        "inMissionId": "DLC3.Citadel1.3.2",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Wrex",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 816,
+            "y": 530,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.3.2.09",
+        "inMissionId": "DLC3.Citadel1.3.2",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Javik",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1008,
+            "y": 593,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.3.2.10",
+        "inMissionId": "DLC3.Citadel1.3.2",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Glyph",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 908,
+            "y": 1307,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.3.2.11",
+        "inMissionId": "DLC3.Citadel1.3.2",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Brooks",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 854,
+            "y": 1193,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.3.3",
         "inMissionId": "DLC3.Citadel1.3",
-        "sortIndex": 150033,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "The Plan",
         "description": "Liara will reveal that [megametracker://person?id=O3.Khan] sold the pistol you took from the mercs, and that the merc team is known as CAT6 - a term for dishonorably discharged Alliance soldiers. \n\nTo learn who Khan's customer is, you will need to infiltrate his casino and get past security into his panic room. You determine that Brooks is the best candidate to sneak in through a ventilation shaft, and open the room for the rest of you. And Glyph finds a casino event you can use for cover - a Black Tie charity gala that night.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 908,
+            "y": 1307,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.4",
         "inMissionId": "DLC3.Citadel1",
-        "sortIndex": 15003,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Silver Coast Casino",
         "description": "Infiltrate the casino and break into Kahn's panic room.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Identity Theft I"
+        }]
     }, {
         "id": "DLC3.Citadel1.4.1",
         "inMissionId": "DLC3.Citadel1.4",
-        "sortIndex": 150041,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Mingle",
-        "description": "Pick a crewmember to accompany you to the gala. There is no fighting, so this choice is purely about who you want to talk to and/or dress up in formal wear. \n\nIn-between mission tasks, there are lots of people to talk to (including [megametracker://person?id=O1.Shaira]) and some games you can play. I suggest talking to [megametracker://person?id=O3.Quarn], lurking by the hallway to the panic room. You can see a full transcript here: [Wikia|http://masseffect.wikia.com/wiki/Silver_Coast_Casino:_Infiltration#Mingle_Dialogue]",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "description": "Pick a crewmember to accompany you to the gala. There is no fighting, so this choice is purely about who you want to talk to and/or dress up in formal wear. \n\nIn-between mission tasks, there are lots of people to talk to (including [megametracker://person?id=O1.Shaira]) and some games you can play. I suggest talking to [megametracker://person?id=O3.Quarn], lurking by the hallway to the panic room. You can see a full transcript here: [Wikia|http://masseffect.wikia.com/wiki/Silver_Coast_Casino:_Infiltration#Mingle_Dialogue]"
     }, {
         "id": "DLC3.Citadel1.4.2",
         "inMissionId": "DLC3.Citadel1.4",
-        "sortIndex": 150042,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Shaft Access Grate",
-        "description": "Meet Brooks at the ventilation shaft access grate. She explains that it is wired with an alarm. Brooks gives you contact lenses which highlight the subfloor circuits in the casino. This is your tutorial on the rest of the casino mission: follow the circuits and beware of security cameras and guards.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "description": "Meet Brooks at the ventilation shaft access grate. She explains that it is wired with an alarm. Brooks gives you contact lenses which highlight the subfloor circuits in the casino. This is your tutorial on the rest of the casino mission: follow the circuits and disable any security cameras and distract any guards.",
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 735,
+            "y": 369,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.4.3",
         "inMissionId": "DLC3.Citadel1.4",
-        "sortIndex": 150043,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Disable Vent Alarm",
         "description": "Disable the camera pointed at the grate alarm, and then disable the alarm.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1279,
+            "y": 326,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.4.4",
         "inMissionId": "DLC3.Citadel1.4",
-        "sortIndex": 1500414,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Distract Guard",
         "description": "Find the guard below Brooks and distract him.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1359,
+            "y": 803,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.4.5",
         "inMissionId": "DLC3.Citadel1.4",
-        "sortIndex": 1500415,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Disable Sensors",
-        "description": "Follow the circuits to find each sensor and use your crewmember to distract the guard. Bypass the camera if necessary, then disable the sensor.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "description": "Follow the circuits to find each sensor and use your crewmember to distract the guard. Bypass the camera if necessary, then disable the sensor."
+    }, {
+        "id": "DLC3.Citadel1.4.5.1",
+        "inMissionId": "DLC3.Citadel1.4.5",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Sensor Power Box",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 411,
+            "y": 1283,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.4.5.2",
+        "inMissionId": "DLC3.Citadel1.4.5",
+        "sortIndex": 1501,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Sensor Power Box",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1675,
+            "y": 1142,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.4.6",
         "inMissionId": "DLC3.Citadel1.4",
-        "sortIndex": 1500416,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Stall Guard",
         "description": "Find the guard and stall him before he reaches Brooks' location.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1329,
+            "y": 1024,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.4.7",
         "inMissionId": "DLC3.Citadel1.4",
-        "sortIndex": 1500417,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Disable Door Sensor",
         "description": "The last sensor is the hardest. You can use a crewmember to distract one guard, but then you have to bypass the first camera while the other guard is turned away, and the repeat for the second camera before you can disable the door sensor. If you get caught, go mingle to reduce any suspicion and try again. If there are people you want to talk to but haven't had time yet, fail on purpose and go chat with them to mingle.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "inMapId": "G.C3.Gala",
+        "mapLocationPoint": {
+            "x": 1017,
+            "y": 1858,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.4.8",
         "inMissionId": "DLC3.Citadel1.4",
-        "sortIndex": 1500418,
+        "sortIndex": 1501,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Panic Room",
         "description": "You enter the panic room to find Khan dead and his terminal wiped. Your identify thief appears on the vidcomm and threatens you. You take the terminal disk as you leave, to see if EDI can recover anything.",
-        "inMapId": "G.C",
+        "inMapId": "G.C3.Gala.02",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel1.5",
         "inMissionId": "DLC3.Citadel1",
-        "sortIndex": 15005,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Identity Theft II",
-        "description": "EDI and Brooks decrypt the disk and Glyph learns the whereabouts of your identity thief.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Citadel1.5.1",
-        "inMissionId": "DLC3.Citadel1.5",
-        "sortIndex": 150051,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Personal Apartment",
-        "description": "Meet back at your apartment. Brooks talks you out of contacting Bailey. She explains that someone is trying to steal Shepard's identity, and with all his privileged access, this could be disastrous. Then Joker shows up with the rest of the squad.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "description": "EDI and Brooks decrypt the disk and Glyph learns the whereabouts of your identity thief. Talk to Brooks to proceed.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Identity Theft I"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Citadel DLC Identity Theft II"
+        }]
     }, {
         "id": "DLC3.Citadel1.5.2",
         "inMissionId": "DLC3.Citadel1.5",
-        "sortIndex": 150052,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Speak to Squadmates",
-        "description": "You can talk to everyone about the preceding events. It is amusing, albeit unnecessary. Talk to Brooks when you are ready to proceed.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "description": "You can talk to everyone about the preceding events."
+    }, {
+        "id": "DLC3.Citadel1.5.2.01",
+        "inMissionId": "DLC3.Citadel1.5.2",
+        "sortIndex": 1502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Vega",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 839,
+            "y": 1646,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.5.2.02",
+        "inMissionId": "DLC3.Citadel1.5.2",
+        "sortIndex": 1502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Liara and Glyph",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 709,
+            "y": 1906,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.5.2.03",
+        "inMissionId": "DLC3.Citadel1.5.2",
+        "sortIndex": 1502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Kaidan/Ashley",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 872,
+            "y": 1903,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.5.2.04",
+        "inMissionId": "DLC3.Citadel1.5.2",
+        "sortIndex": 1502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Joker",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1064,
+            "y": 1842,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.5.2.05",
+        "inMissionId": "DLC3.Citadel1.5.2",
+        "sortIndex": 1502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Tali",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 900,
+            "y": 2030,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.5.2.06",
+        "inMissionId": "DLC3.Citadel1.5.2",
+        "sortIndex": 1502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Cortez",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 670,
+            "y": 1206,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.5.2.07",
+        "inMissionId": "DLC3.Citadel1.5.2",
+        "sortIndex": 1502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Garrus",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 993,
+            "y": 773,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.5.2.08",
+        "inMissionId": "DLC3.Citadel1.5.2",
+        "sortIndex": 1502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Wrex",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 753,
+            "y": 536,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.5.2.09",
+        "inMissionId": "DLC3.Citadel1.5.2",
+        "sortIndex": 1502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Javik",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1008,
+            "y": 593,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.5.2.10",
+        "inMissionId": "DLC3.Citadel1.5.2",
+        "sortIndex": 1502,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "EDI",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 908,
+            "y": 1307,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.5.3",
         "inMissionId": "DLC3.Citadel1.5",
-        "sortIndex": 150053,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Recovered Disk",
         "description": "EDI and Brooks have cracked the purchase order on the drive. Glyph interrupts to inform you that SHepard's Spectre access code was used to gain entrance to the Citadel Archives. Also, a volus shows up with pizza.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 854,
+            "y": 1193,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.6",
         "inMissionId": "DLC3.Citadel1",
-        "sortIndex": 15006,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Citadel Archives",
         "description": "Confront your enemy at the Archives.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Identity Theft II"
+        }]
     }, {
         "id": "DLC3.Citadel1.6.1",
         "inMissionId": "DLC3.Citadel1.6",
-        "sortIndex": 150061,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Archive Entrance",
@@ -3284,7 +3764,7 @@
     }, {
         "id": "DLC3.Citadel1.6.2",
         "inMissionId": "DLC3.Citadel1.6",
-        "sortIndex": 150062,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Vault Platform",
@@ -3294,7 +3774,7 @@
     }, {
         "id": "DLC3.Citadel1.6.3",
         "inMissionId": "DLC3.Citadel1.6",
-        "sortIndex": 150062,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Teams Rendezvous",
@@ -3304,7 +3784,7 @@
     }, {
         "id": "DLC3.Citadel1.6.4",
         "inMissionId": "DLC3.Citadel1.6",
-        "sortIndex": 150062,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Atlas",
@@ -3314,7 +3794,7 @@
     }, {
         "id": "DLC3.Citadel1.6.5",
         "inMissionId": "DLC3.Citadel1.6",
-        "sortIndex": 150065,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "The Clone",
@@ -3324,7 +3804,7 @@
     }, {
         "id": "DLC3.Citadel1.6.6",
         "inMissionId": "DLC3.Citadel1.6",
-        "sortIndex": 150066,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Betrayed",
@@ -3334,27 +3814,31 @@
     }, {
         "id": "DLC3.Citadel1.7",
         "inMissionId": "DLC3.Citadel1",
-        "sortIndex": 15007,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Escape the Archives",
-        "description": "Your team is somewhat alarmed by being locked in the vault, but Glyph is outside the tube and promptly lets you out again. Joker is waiting with a SkyCar and demands you pick a squad quickly to pursue the clone. I recommend EDI, solely for the dialogue.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "description": "Your team is somewhat alarmed by being locked in the vault, but Glyph is outside the tube and promptly lets you out again. Joker is waiting with a SkyCar and demands you pick a squad quickly to pursue the clone. I recommend EDI, solely for the amusing dialogue.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Identity Theft II"
+        }]
     }, {
         "id": "DLC3.Citadel1.8",
         "inMissionId": "DLC3.Citadel1",
-        "sortIndex": 15008,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Retake The Normandy",
         "description": "Retake the Normandy before it leaves the Citadel.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Identity Theft II"
+        }]
     }, {
         "id": "DLC3.Citadel1.8.1",
         "inMissionId": "DLC3.Citadel1.8",
-        "sortIndex": 150081,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Saved By Toothbrush",
@@ -3364,7 +3848,7 @@
     }, {
         "id": "DLC3.Citadel1.8.2",
         "inMissionId": "DLC3.Citadel1.8",
-        "sortIndex": 150082,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "CIC",
@@ -3374,7 +3858,7 @@
     }, {
         "id": "DLC3.Citadel1.8.3",
         "inMissionId": "DLC3.Citadel1.8",
-        "sortIndex": 150083,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Defeat Clone",
@@ -3385,16 +3869,19 @@
     }, {
         "id": "DLC3.Citadel1.8.4",
         "inMissionId": "DLC3.Citadel1.8",
-        "sortIndex": 150084,
+        "sortIndex": 1502,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Aftermath",
         "description": "Cortez and Joker are assessing the ship for damage. EDI is back in control (and harassing a merc on the bridge). Cortez brings out Brooks in handcuffs. You can Paragon her into staying in them, or she escapes and is shot dead. Either way, there's great dialogue. Afterwards, back at your apartment Joker will suggest having a party.",
         "inMapId": "G.N3.5ShuttleBay",
         "isShowInParentMap": true
+
+
+
     }, {
         "id": "DLC3.Citadel2",
-        "sortIndex": 1501,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "DLC",
         "name": "Citadel: Party",
@@ -3411,23 +3898,20 @@
             "type": "Triggers",
             "id": "Completed: Citadel DLC"
         }]
-
-
-
     }, {
         "id": "DLC3.Citadel2.1",
         "inMissionId": "DLC3.Citadel2",
-        "sortIndex": 15021,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Invitations",
-        "description": "Joker, EDI, Liara, Vega, Cortez, and Traynor are all invited by default. The remaining invitations depend on whether the friend is available, and if you want them at the party. Invite All to just gather everyone.",
+        "description": "Joker, EDI, Liara, Vega, Cortez, and Traynor are all invited by default. The remaining invitations depend on whether the friend is available, and if you want them at the party. \"Invite All\" to just gather everyone.",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.2",
         "inMissionId": "DLC3.Citadel2",
-        "sortIndex": 15022,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Redecorate",
@@ -3437,7 +3921,7 @@
     }, {
         "id": "DLC3.Citadel2.3",
         "inMissionId": "DLC3.Citadel2",
-        "sortIndex": 15023,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Party Supplies",
@@ -3450,292 +3934,317 @@
     }, {
         "id": "DLC3.Citadel2.4",
         "inMissionId": "DLC3.Citadel2",
-        "sortIndex": 15024,
+        "sortIndex": 1504,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Socialize Round 1",
-        "description": "Many of your friends want some one-on-one before the party. Check your messages to confirm who is available and where to meet them.",
+        "description": "Many of your friends want some one-on-one time. Check your messages to confirm who is available and where to meet them. You can meet them before or after the party.",
         "inMapId": "G.C3.Apartment.Terminal",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Citadel2.4.EDI",
-        "inMissionId": "DLC3.Citadel2.4",
-        "sortIndex": 15024,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "EDI",
-        "description": "Invite EDI up to the apartment. See [megametracker://mission?id=A3.Convo.S.EDI.9] for more.",
-        "inMapId": "G.C3.Apartment.Terminal",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Citadel2.4.Garrus",
-        "inMissionId": "DLC3.Citadel2.4",
-        "sortIndex": 15024,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Garrus",
-        "description": "Meet Garrus at the upstairs dance floor. See [megametracker://mission?id=A3.Convo.S.Garrus.8] for more.",
-        "inMapId": "G.C3.Silversun.Casino.Bar",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.4.Javik",
+        "identicalMissionId": "A3.Convo.S.Javik.7",
         "inMissionId": "DLC3.Citadel2.4",
-        "sortIndex": 15024,
+        "sortIndex": 1504,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Javik",
-        "description": "Meet Javik outside the casino. See [megametracker://mission?id=A3.Convo.S.Javik.7] for more.",
+        "name": "Javik - Blasto",
+        "description": "Meet Javik outside the casino. He has been invited to participate in a morale-boosting vid, which turns out to be Blasto 7: Blasto Goes To War. Blasto complains about Shepard being in the film - he doesn't share top billing! There is a tussle over who is the biggest badass, resolved by Javik pushing aside both of you and knocking out the vorcha actor.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 700,
             "y": 819,
-            "radius": 20
+            "radius": 1
         }
     }, {
-        "id": "DLC3.Citadel2.4.Kasumi",
+        "id": "DLC3.Citadel2.4.Garrus",
+        "identicalMissionId": "A3.Convo.S.Garrus.8",
         "inMissionId": "DLC3.Citadel2.4",
-        "sortIndex": 15024,
+        "sortIndex": 1504,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Kasumi",
-        "description": "Encounter Kasumi at the casino (no prior message). See [megametracker://mission?id=A3.Convo.A.Kasumi.2] for more.",
+        "name": "Garrus - Bar",
+        "description": "Meet Garrus at the casino bar, Try to hook him up with another turian at the casino bar. Everything he says is wrong and she gets up to leave - interrupt to pass them a beer, and he calms down enough to chat her up. \n\nThe romance version of this is one of my favorites - you head off the turian woman early on, and Garrus takes you out to Tango. Use the interrupts to add some flair ([YouTube|https://www.youtube.com/watch?v=w2PPlz37HHA]).",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
-            "x": 832,
-            "y": 1763,
-            "radius": 20
+            "x": 775,
+            "y": 1265,
+            "radius": 1
         }
     }, {
-        "id": "DLC3.Citadel2.4.Miranda",
-        "inMissionId": "DLC3.Citadel2.4",
-        "sortIndex": 15024,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Miranda",
-        "description": "Invite Miranda up to the apartment. See [megametracker://mission?id=A3.Convo.A.Miranda.4] for more.",
-        "inMapId": "G.C3.Apartment.Terminal",
-        "isShowInParentMap": true
-    }, {
         "id": "DLC3.Citadel2.4.Traynor",
+        "identicalMissionId": "A3.Convo.C.Traynor.5",
         "inMissionId": "DLC3.Citadel2.4",
-        "sortIndex": 15024,
+        "sortIndex": 1504,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Traynor",
-        "description": "Meet Traynor for lunch at the arcade. See [megametracker://mission?id=A3.Convo.C.Traynor.5] for more.",
+        "name": "Traynor - Arcade",
+        "description": "Meet Traynor on the stairs of the arcade for lunch. Turns out she is still competing in a Kepesh-Yakshi tournament. Help her beat her obnoxious asari opponent.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 256,
             "y": 340,
-            "radius": 20
+            "radius": 1
         }
     }, {
-        "id": "DLC3.Citadel2.4.Vega",
+        "id": "DLC3.Citadel2.4.EDI",
+        "identicalMissionId": "A3.Convo.S.EDI.9",
         "inMissionId": "DLC3.Citadel2.4",
-        "sortIndex": 15024,
+        "sortIndex": 1504,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Vega",
-        "description": "Invite Vega up to the apartment. See [megametracker://mission?id=A3.Convo.S.Vega.7] for more.",
+        "name": "EDI - Shopping",
+        "description": "Invite EDI up to the apartment. She tries to buy something for Joker. And she brings you a gift.",
+        "inMapId": "G.C3.Apartment.Terminal",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel2.4.Vega",
+        "identicalMissionId": "A3.Convo.S.Vega.7",
+        "inMissionId": "DLC3.Citadel2.4",
+        "sortIndex": 1504,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Vega - Workout",
+        "description": "Invite James up to the apartment. He shows off his tattoo. Follow him downstairs as he is leaving and he will be distracted by your workout room. Then you can compete with James over who can do the most pullups (although it takes 183 repetitious Paragon and Renegade Interrupts). \n\nIf you want to romance James, you can flirt with him here, but he shoots you down this time (try some more: [YouTube|https://www.youtube.com/watch?v=n8roLH2Zu6Q]).",
+        "inMapId": "G.C3.Apartment.Terminal",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel2.4.Miranda",
+        "identicalMissionId": "A3.Convo.A.Miranda.4",
+        "inMissionId": "DLC3.Citadel2.4",
+        "sortIndex": 1504,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Miranda - Drink",
+        "description": "Invite Miranda up for a drink. You catch her up on the clone business and she makes a joke about you executing marine life (because your Normandy fish keep dying).",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.4.Zaeed",
+        "identicalMissionId": "A3.Convo.S.Zaeed.2",
         "inMissionId": "DLC3.Citadel2.4",
-        "sortIndex": 15024,
+        "sortIndex": 1505,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Zaeed",
-        "description": "Meet Zaeed at the arcade Claw game (no prior message). See [megametracker://mission?id=A3.Convo.S.Zaeed.2] for more.",
+        "name": "Zaeed - Claw",
+        "description": "Meet Zaeed at the aracde (no terminal message). He has been thwarted by the Claw game. Help him out and then catch up.",
         "inMapId": "G.C3.Silversun.Arcade.Claw",
         "isShowInParentMap": true
-
+    }, {
+        "id": "DLC3.Citadel2.4.Kasumi",
+        "identicalMissionId": "A3.Convo.A.Kasumi.2",
+        "inMissionId": "DLC3.Citadel2.4",
+        "sortIndex": 1505,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Kasumi - Heist",
+        "description": "Find a suspicious device attached to the wall of the lower bar in the casino (no terminal message). Kasumi and henchman will show up, about to start a heist. If you stop her from leaving, you can catch up.",
+        "inMapId": "G.C3.Silversun",
+        "mapLocationPoint": {
+            "x": 835,
+            "y": 1752,
+            "radius": 1
+        }
 
 
     }, {
         "id": "DLC3.Citadel2.5",
         "inMissionId": "DLC3.Citadel2",
-        "sortIndex": 15025,
+        "sortIndex": 1506,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Socialize Round 2",
-        "description": "Many of your friends want some one-on-one before the party. Check your messages to confirm who is available and where to meet them.",
+        "description": "Many of your friends want some one-on-one time. Check your messages to confirm who is available and where to meet them. You can meet them before or after the party.",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.5.Cortez",
+        "identicalMissionId": "A3.Convo.C.Cortez.7",
         "inMissionId": "DLC3.Citadel2.5",
-        "sortIndex": 15025,
+        "sortIndex": 1506,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Cortez",
-        "description": "Meet Cortez on the Strip. See [megametracker://mission?id=A3.Convo.C.Cortez.7] for more.",
+        "name": "Cortez - Drive",
+        "description": "Meet Cortez by the Rapid Transit cars. He takes you for a joyride in the shuttle. If you've romanced him, there's a lot of romantic dialogue and a hookup off-screen.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 1479,
             "y": 910,
-            "radius": 20
-        }
-    }, {
-        "id": "DLC3.Citadel2.5.Jack",
-        "inMissionId": "DLC3.Citadel2.5",
-        "sortIndex": 15025,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Jack",
-        "description": "Jack wants to play a game at the arena. You must have started [megametracker://mission?id=A3.Convo.A.Jack.2] before this is available.",
-        "inMapId": "G.C3.Silversun",
-        "mapLocationPoint": {
-            "x": 1365,
-            "y": 1824,
-            "radius": 20
-        }
-    }, {
-        "id": "DLC3.Citadel2.5.Jacob",
-        "inMissionId": "DLC3.Citadel2.5",
-        "sortIndex": 15026,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Jacob",
-        "description": "Meet Jacob outside the arcade. See [megametracker://mission?id=A3.Convo.A.Jacob.2] for more.",
-        "inMapId": "G.C3.Silversun",
-        "mapLocationPoint": {
-            "x": 899,
-            "y": 754,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.5.Liara",
+        "identicalMissionId": "A3.Convo.S.Liara.8",
         "inMissionId": "DLC3.Citadel2.5",
-        "sortIndex": 15025,
+        "sortIndex": 1504,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Liara",
-        "description": "Invite Liara up to the apartment. See [megametracker://mission?id=A3.Convo.S.Liara.8] for more.",
+        "name": "Liara - Piano",
+        "description": "Invite Liara up. She plays a song on the piana she learned as a child. \n\nIf you have romanced her, you can keep her from leaving and then you hold hands and kiss.",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.5.Tali",
+        "identicalMissionId": "A3.Convo.S.Tali.9",
         "inMissionId": "DLC3.Citadel2.5",
-        "sortIndex": 15025,
+        "sortIndex": 1504,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Tali",
-        "description": "Invite Tali up to the apartment. See [megametracker://mission?id=A3.Convo.S.Tali.9] for more.",
+        "name": "Tali - Fleet & Flotilla",
+        "description": "Invite Tali up. She insists you watch her favorite soap opera - Fleet and Flotilla. If you've romanced her, there's some additional dialogue and kissing, and she sings along with the soap opera theme song.",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
     }, {
-        "id": "DLC3.Citadel2.5.Thane",
+        "id": "DLC3.Citadel2.5.Jack",
+        "identicalMissionId": "A3.Convo.A.Jack.2",
         "inMissionId": "DLC3.Citadel2.5",
-        "sortIndex": 15026,
+        "sortIndex": 1506,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Kolyat",
-        "description": "Hold a memorial for Thane. See [megametracker://mission?id=A3.Convo.A.Thane.3] for more.",
+        "name": "Jack - Arena",
+        "description": "Play a game with Jack at the Armax Arsenal Arena (you must have played at least one game for this to be available). If you romanced her previously, she will suggest a hookup during the game. There is a kiss and the rest is implied off-screen.",
+        "inMapId": "G.C3.Silversun",
+        "mapLocationPoint": {
+            "x": 1365,
+            "y": 1824,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.5.Thane",
+        "identicalMissionId": "A3.Convo.A.Thane.3",
+        "inMissionId": "DLC3.Citadel2.5",
+        "sortIndex": 1506,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Kolyat - Memorial",
+        "description": "Invite the crew to a memorial for Thane. Kolyat will leave you with some messages from Thane, which you can watch in the upstairs bedroom. They are romantic messages, if you have romanced Thane.",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
+
 
 
     }, {
         "id": "DLC3.Citadel2.6",
         "inMissionId": "DLC3.Citadel2",
-        "sortIndex": 15026,
+        "sortIndex": 1507,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Socialize Round 3",
-        "description": "Many of your friends want some one-on-one before the party. Check your messages to confirm who is available and where to meet them.",
+        "description": "Many of your friends want some one-on-one time. Check your messages to confirm who is available and where to meet them. You can meet them before or after the party.",
+        "inMapId": "G.C3.Apartment.Terminal",
+        "isShowInParentMap": true
+    }, {
+        "id": "DLC3.Citadel2.5.Jacob",
+        "identicalMissionId": "A3.Convo.A.Jacob.2",
+        "inMissionId": "DLC3.Citadel2.6",
+        "sortIndex": 1507,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Jacob - Arcade",
+        "description": "Meet Jacob at the arcade. He wants to play Shattered Eezo with you. Afterwards you get lunch. \n\nIf you romanced him in Game 2, you can slap him when you meet him.",
+        "inMapId": "G.C3.Silversun",
+        "mapLocationPoint": {
+            "x": 902,
+            "y": 757,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.6.Grunt",
+        "identicalMissionId": "A3.Convo.A.Grunt.2",
+        "inMissionId": "DLC3.Citadel2.6",
+        "sortIndex": 1507,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Grunt - Arrest",
+        "description": "Talk to the Officer across from the Rapid Transit cars. He will take you to Grunt, who was arrested. You have to press him for the whole story, which is that he broke out of the hospital, got drunk and took pictures at the Presidium, lit a C-Sec car on fire, and got blasted with riot foam. They only caught him when he stopped to get some food from the Noodle House.",
+        "inMapId": "G.C3.Silversun",
+        "mapLocationPoint": {
+            "x": 1287,
+            "y": 851,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.6.V2",
+        "identicalMissionIds": ["A3.Convo.C.Cortez.8a", "A3.Convo.S.Vega.7b"],
+        "inMissionId": "DLC3.Citadel2.6",
+        "sortIndex": 1507,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Cortez & Vega - Game",
+        "description": "Invite Cortez and Vega over to watch a biotiball game. \n\nIf you've romanced Cortez, there's some post-game snuggling.",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.6.Ashley",
+        "identicalMissionId": "A3.Convo.S.Ashley.8",
         "inMissionId": "DLC3.Citadel2.6",
-        "sortIndex": 15025,
+        "sortIndex": 1507,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Ashley",
-        "description": "Meet Ashley at the upstairs casino bar. See [megametracker://mission?id=A3.Convo.S.Ashley.8] for more.",
-        "inMapId": "G.C3.Silversun.Casino.Bar",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Citadel2.6.Grunt",
-        "inMissionId": "DLC3.Citadel2.6",
-        "sortIndex": 15026,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Grunt",
-        "description": "Talk to the Officer across from the Rapid Transit cars. See [megametracker://mission?id=A3.Convo.A.Grunt.2] for more.",
-        "inMapId": "G.C3.Silversun",
-        "mapLocationPoint": {
-            "x": 1291,
-            "y": 851,
-            "radius": 20
-        }
-    }, {
-        "id": "DLC3.Citadel2.6.Joker",
-        "inMissionId": "DLC3.Citadel2.6",
-        "sortIndex": 15026,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Joker",
-        "description": "Meet Joker at the upstairs casino bar (no prior message). See [megametracker://mission?id=A3.Convo.C.Joker.12] for more.",
+        "name": "Ashley - Shots",
+        "description": "Meet Ashley at the casino bar. She wants to do shots. *Renegade Interrupt* to keep pounding shots. Two batarians come by and harass you (using a line from Star Wars). You and Ashley kick their asses. \n\nIf you romanced Ashley, sorry - there's not much more than the non-romanced version, just a few flirtatious lines.",
         "inMapId": "G.C3.Silversun.Casino.Bar",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.6.Kaidan",
+        "identicalMissionId": "A3.Convo.S.Kaidan.8",
         "inMissionId": "DLC3.Citadel2.6",
-        "sortIndex": 15025,
+        "sortIndex": 1507,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Kaidan",
-        "description": "Invite Kaidan up to the apartment. See [megametracker://mission?id=A3.Convo.S.Kaidan.8] for more.",
+        "name": "Kaidan - Dinner",
+        "description": "Invite Kaidan up to your apartment. He insists on making dinner. You tease him about his cooking. \n\nIf you've romanced Kaidan, he flirts the whole time, and then you go upstairs and make out (implied off-screen hookup).",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.6.Traynor",
+        "identicalMissionId": "A3.Convo.C.Traynor.6",
         "inMissionId": "DLC3.Citadel2.6",
-        "sortIndex": 15026,
+        "sortIndex": 1507,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Traynor",
-        "description": "Invite Traynor up to the apartment. See [megametracker://mission?id=A3.Convo.C.Traynor.6] for more.",
+        "name": "Traynor - Hot Tub",
+        "description": "Invite Traynor up to the apartment to try the hot tub. If romanced, you join her and there's an off-screen hookup. Otherwise, Traynor discovers [Kahlee Sanders'|megametracker://person?id=O3.Sanders] overnight bag (with massage wands).",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
     }, {
-        "id": "DLC3.Citadel2.6.V2",
+        "id": "DLC3.Citadel2.6.Joker",
+        "identicalMissionId": "A3.Convo.C.Joker.12",
         "inMissionId": "DLC3.Citadel2.6",
-        "sortIndex": 15026,
+        "sortIndex": 1508,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Cortez & Vega",
-        "description": "Invite Cortez and James over to watch the game. See [megametracker://mission?id=A3.Convo.C.Cortez.8] for more.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "name": "Joker - Coup",
+        "description": "Joker meets you at the casino bar. He is narrating to the bartender his role in the Citadel coup, resulting in a splendid flashback of him in an Atlas, taking on hordes of Cerberus troops. You can support him in this story (in which case he gets free drinks).",
+        "inMapId": "G.C3.Silversun.Casino.Bar",
         "isShowInParentMap": true
 
 
     }, {
         "id": "DLC3.Citadel2.7",
         "inMissionId": "DLC3.Citadel2",
-        "sortIndex": 15027,
+        "sortIndex": 1509,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Socialize Round 4",
-        "description": "Many of your friends want some one-on-one before the party. Check your messages to confirm who is available and where to meet them.",
+        "description": "Many of your friends want some one-on-one time. Check your messages to confirm who is available and where to meet them. You can meet them before or after the party.",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.7.Jack",
+        "identicalMissionId": "A3.Convo.A.Jack.3",
         "inMissionId": "DLC3.Citadel2.7",
-        "sortIndex": 15027,
+        "sortIndex": 1509,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Jack",
-        "description": "Invite Jack up to the apartment. See [megametracker://mission?id=A3.Convo.A.Jack.3] for more.",
+        "name": "Jack - Puppy",
+        "description": "Invite Jack up to the apartment. She has rescued a varren puppy. \n\nIf romanced, Jack will give you a tattoo.",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.7.Mom",
         "inMissionId": "DLC3.Citadel2.7",
-        "sortIndex": 15027,
+        "sortIndex": 1509,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Hannah Shepard",
@@ -3744,36 +4253,39 @@
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.7.Miranda",
+        "identicalMissionId": "A3.Convo.A.Miranda.5",
         "inMissionId": "DLC3.Citadel2.7",
-        "sortIndex": 15027,
+        "sortIndex": 1509,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Miranda",
-        "description": "Meet Miranda at the casino. See [megametracker://mission?id=A3.Convo.A.Miranda.5] for more.",
+        "name": "Miranda - Roulette",
+        "description": "Meet Miranda in the casino, near the quasar machines, to play some roulette and ply her with wine.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 623,
             "y": 1762,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.7.Samara",
+        "identicalMissionId": "A3.Convo.A.Samara.2",
         "inMissionId": "DLC3.Citadel2.7",
-        "sortIndex": 15027,
+        "sortIndex": 1509,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Samara",
-        "description": "Invite Samara up to the apartment. See [megametracker://mission?id=A3.Convo.A.Samara.2] for more.",
+        "name": "Samara - Chat",
+        "description": "Invite Samara up to the apartment. You can chat with her about her wild adventures in the news. \n\nIf you romanced her in Game 2, you can share a romantic kiss and embrace.",
         "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.7.Wrex",
+        "identicalMissionId": "A3.Convo.A.Wrex.4",
         "inMissionId": "DLC3.Citadel2.7",
-        "sortIndex": 15027,
+        "sortIndex": 1510,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Wrex",
-        "description": "Encounter Wrex at the upstairs casino bar (no prior message). He is trying to recover from all the krogan females who want him to father their children.",
+        "name": "Wrex - Escape",
+        "description": "Encounter Wrex at the upstairs casino bar (no terminal message). He is trying to recover from all the krogan females who want him to father their children.",
         "inMapId": "G.C3.Silversun.Casino.Bar",
         "isShowInParentMap": true
 
@@ -3782,7 +4294,7 @@
     }, {
         "id": "DLC3.Citadel2.15",
         "inMissionId": "DLC3.Citadel2",
-        "sortIndex": 15031,
+        "sortIndex": 1511,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Throw Party",
@@ -3798,7 +4310,7 @@
     }, {
         "id": "DLC3.Citadel2.15.1",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150311,
+        "sortIndex": 1511,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Tone of the Party 1",
@@ -3808,7 +4320,7 @@
         "mapLocationPoint": {
             "x": 881,
             "y": 1750,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "Triggers",
@@ -3817,21 +4329,21 @@
     }, {
         "id": "DLC3.Citadel2.15.1.1",
         "inMissionId": "DLC3.Citadel2.15.1",
-        "sortIndex": 150311,
+        "sortIndex": 1512,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Quiet"
     }, {
         "id": "DLC3.Citadel2.15.1.2",
         "inMissionId": "DLC3.Citadel2.15.1",
-        "sortIndex": 150311,
+        "sortIndex": 1512,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Energetic"
     }, {
         "id": "DLC3.Citadel2.15.2",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150312,
+        "sortIndex": 1513,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Hang Out With Guests 1",
@@ -3843,68 +4355,68 @@
     }, {
         "id": "DLC3.Citadel2.15.2.1",
         "inMissionId": "DLC3.Citadel2.15.2",
-        "sortIndex": 150312,
+        "sortIndex": 1513,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 1: ",
         "name": "Grunt, Wrex, Zaeed, and Javik",
-        "description": "...",
+        "description": "1) They are talking about the sort of gatherings they are used to. When you join, Grunt and Wrex argue over who is stronger. \n\n2) They are talking about how many vorcha they could take down.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 923,
             "y": 714,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.2.2",
         "inMissionId": "DLC3.Citadel2.15.2",
-        "sortIndex": 150312,
+        "sortIndex": 1513,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 1: ",
         "name": "Garrus, Traynor, Samara, Tali, Liara",
-        "description": "...",
+        "description": "1) They are talking about how expensive the apartment is. Kasumi makes a brief appearance. When you join, they toast to the Normandy. \n\n2) They are reminiscing about adventures with Shepard. \n\n3) They are talking about Archangel and the Shadow Broker.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 902,
             "y": 1488,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.2.3",
         "inMissionId": "DLC3.Citadel2.15.2",
-        "sortIndex": 150312,
+        "sortIndex": 1513,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 1: ",
         "name": "EDI, Joker, Miranda, Jacob",
-        "description": "Joker is mocking Cerberus' incompetance.",
+        "description": "1) Joker is talking about Cerberus' recruiting problems. When you join, he mocks Cerberus' incompetance. Kasumi makes a brief appearance. \n\n2) Miranda is asking Joker about EDI. \n\n3) Jacob talks about his proposal plans. \n\n4) Jacob asks EDI if you ever has run into trouble being an unshackled AI. \n\n5) EDI talks about her drunk-simulation software.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 667,
             "y": 1936,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.2.4",
         "inMissionId": "DLC3.Citadel2.15.2",
-        "sortIndex": 150312,
+        "sortIndex": 1513,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 1: ",
         "name": "Vega, Jack, Cortez, Kaidan/Ashley",
-        "description": "FemShep can seduce James (if she flirted with him in the pre-party socializing). You can *Support Hook Up*, or *Support Cool It*.",
+        "description": "1) If Kaidan, they are talking about the tone of the party. If Ashley, Vega is asking Jack about her tattoos. When you join, they toast to the time off. \n\nFemShep can seduce James (if she flirted with him in the pre-party socializing). You can *Support Hook Up*, or *Support Cool It*. \n\n2) They are talking about how nice the apartment is.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 987,
             "y": 1882,
-            "radius": 20
+            "radius": 1
         }
 
     }, {
         "id": "DLC3.Citadel2.15.5",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150315,
+        "sortIndex": 1514,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Tone of the Party 2",
@@ -3914,12 +4426,12 @@
         "mapLocationPoint": {
             "x": 881,
             "y": 1750,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.5.1",
         "inMissionId": "DLC3.Citadel2.15.5",
-        "sortIndex": 150315,
+        "sortIndex": 1514,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Mellow out/Keep it relaxed",
@@ -3930,7 +4442,7 @@
     }, {
         "id": "DLC3.Citadel2.15.5.2",
         "inMissionId": "DLC3.Citadel2.15.5",
-        "sortIndex": 150315,
+        "sortIndex": 1514,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Let's get louder/Kick it up!",
@@ -3941,7 +4453,7 @@
     }, {
         "id": "DLC3.Citadel2.15.6.Q",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Hang Out With Guests 2 (Mellow)",
@@ -3953,97 +4465,112 @@
     }, {
         "id": "DLC3.Citadel2.15.6.Q.1",
         "inMissionId": "DLC3.Citadel2.15.6.Q",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
         "name": "Grunt and Wrex",
-        "description": "There is an exchange between Wrex, Grunt, and Shepard where they just keep repeating each others' names indefinitely.",
+        "description": "1) Grunt and Wrex are having a drink-off. When you join, there is an exchange between Wrex, Grunt, and Shepard where they just keep repeating each others' names indefinitely. It will not end until you end it. \n\n2) They are comparing scars.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 987,
             "y": 1882,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.6.Q.2",
         "inMissionId": "DLC3.Citadel2.15.6.Q",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
         "name": "Javik, Jack, Cortez, and EDI",
-        "description": "EDI and Cortez are arguing about whether to make some food. You can *Support Mixing Drinks* or *Support Making Food*.",
+        "description": "1) Javik is very drunk and talking about how his people can sense things, and asks if he can touch Jack or Cortez. When you join, EDI asks about making some food. You can *Support Mixing Drinks* or *Support Making Food*. \n\n2) Jack is pissed that Javik touched her. \n\n3) Cortez is making drinks.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 667,
             "y": 1936,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.6.Q.3",
         "inMissionId": "DLC3.Citadel2.15.6.Q",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
         "name": "Tali, Jacob, Vega, Miranda, and Liara",
-        "description": "Liara and James are arguing about which is better: the Normandy SR1 or SR2. You can *Support Normandy SR1*, or *Support Normandy SR2*.",
+        "description": "1) Tali and James are talking about the Normandies. When you join, they argue about which version is better: the Normandy SR1 or SR2. You can *Support Normandy SR1*, or *Support Normandy SR2*. \n\n2) They are talking about missing the old Normandy. \n\n3) Vega says if he got his own ship, it would be better than both Normandies.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 687,
             "y": 1249,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.6.Q.4",
         "inMissionId": "DLC3.Citadel2.15.6.Q",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
         "name": "Garrus and Zaeed",
-        "description": "Garrus and Zaeed are discussing tactical improvements to the apartment.",
+        "description": "1) Garrus and Zaeed are annoyed at the apartment, When you join, they discuss tactical improvements. \n\n2) Still talking about how to make the apartment more defensible.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
-            "x": 917,
-            "y": 771,
-            "radius": 20
+            "x": 900,
+            "y": 769,
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.6.Q.5",
         "inMissionId": "DLC3.Citadel2.15.6.Q",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
         "name": "Traynor, Joker, and Ashley/Kaidan",
-        "description": "Traynor and Joker are talking about EDI.",
+        "description": "1) Traynor and Joker are talking about EDI. When you join, Joker teases Traynor about finding her attractive. Kasumi makes an appearance. If you are dating Traynor, Joker brings up that you are 30% cybernetic, which Traynor is delighted by. \n\n2) Joker asks Kaidan how he does his hair. \n\n3) Kaidan suggests dancing. \n\n4) Joker and Traynor agree to not talk about EDI again.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 885,
             "y": 543,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.6.Q.6",
         "inMissionId": "DLC3.Citadel2.15.6.Q",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
         "name": "Samara",
-        "description": "Samara is meditating.",
+        "description": "1) Samara is meditating. \n\n2) She says that is calming to sit by herself and listen to the others.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 998,
             "y": 388,
-            "radius": 20
+            "radius": 1
         }
     }, {
-        "id": "DLC3.Citadel2.15.6.Q.7",
+        "id": "DLC3.Citadel2.15.6.Q.7a",
         "inMissionId": "DLC3.Citadel2.15.6.Q",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Round 2: ",
+        "name": "Kasumi",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1230,
+            "y": 196,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.6.Q.7b",
+        "inMissionId": "DLC3.Citadel2.15.6.Q",
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
@@ -4053,12 +4580,12 @@
         "mapLocationPoint": {
             "x": 1200,
             "y": 1229,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.6.E",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Hang Out With Guests 2 (Loud)",
@@ -4070,7 +4597,7 @@
     }, {
         "id": "DLC3.Citadel2.15.6.E.1",
         "inMissionId": "DLC3.Citadel2.15.6.E",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
@@ -4080,12 +4607,12 @@
         "mapLocationPoint": {
             "x": 885,
             "y": 543,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.6.E.2",
         "inMissionId": "DLC3.Citadel2.15.6.E",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
@@ -4095,12 +4622,12 @@
         "mapLocationPoint": {
             "x": 923,
             "y": 714,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.6.E.3",
         "inMissionId": "DLC3.Citadel2.15.6.E",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
@@ -4110,12 +4637,12 @@
         "mapLocationPoint": {
             "x": 900,
             "y": 1151,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.6.E.4",
         "inMissionId": "DLC3.Citadel2.15.6.E",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
@@ -4125,12 +4652,12 @@
         "mapLocationPoint": {
             "x": 635,
             "y": 1244,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.6.E.5",
         "inMissionId": "DLC3.Citadel2.15.6.E",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
@@ -4140,12 +4667,12 @@
         "mapLocationPoint": {
             "x": 670,
             "y": 1803,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.6.E.6",
         "inMissionId": "DLC3.Citadel2.15.6.E",
-        "sortIndex": 150316,
+        "sortIndex": 1515,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
@@ -4155,13 +4682,13 @@
         "mapLocationPoint": {
             "x": 1251,
             "y": 1739,
-            "radius": 20
+            "radius": 1
         }
 
     }, {
         "id": "DLC3.Citadel2.15.7",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150317,
+        "sortIndex": 1516,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Tone of the Party 3",
@@ -4171,7 +4698,7 @@
         "mapLocationPoint": {
             "x": 881,
             "y": 1750,
-            "radius": 20
+            "radius": 1
         },
         "sideEffects": [
             "If it's a quiet party at this stage, Tali's fantastic tattoo is revealed: \"It's a pretty bird made of rainbows. It's flying out the eyehole of a skull being held in the mouth of a thresher maw with a naked woman holding a sword on its back.\""
@@ -4183,35 +4710,35 @@
     }, {
         "id": "DLC3.Citadel2.15.7.1",
         "inMissionId": "DLC3.Citadel2.15.7",
-        "sortIndex": 150317,
+        "sortIndex": 1516,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Make snacks"
     }, {
         "id": "DLC3.Citadel2.15.7.2",
         "inMissionId": "DLC3.Citadel2.15.7",
-        "sortIndex": 150317,
+        "sortIndex": 1516,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Deal cards"
     }, {
         "id": "DLC3.Citadel2.15.7.3",
         "inMissionId": "DLC3.Citadel2.15.7",
-        "sortIndex": 150317,
+        "sortIndex": 1516,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Dance"
     }, {
         "id": "DLC3.Citadel2.15.7.4",
         "inMissionId": "DLC3.Citadel2.15.7",
-        "sortIndex": 150317,
+        "sortIndex": 1516,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Check on guests"
     }, {
         "id": "DLC3.Citadel2.15.8.Q",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Hang Out With Guests 3 (Mellow)",
@@ -4222,101 +4749,104 @@
         }, {
             "type": "BlockedUntil",
             "id": "Completed: Citadel DLC Party - Round 2 Theme Quiet"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Citadel DLC Party - Round 3 Quiet"
         }]
     }, {
         "id": "DLC3.Citadel2.15.8.Q.1",
         "inMissionId": "DLC3.Citadel2.15.8.Q",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
         "name": "Liara, Javik, Vega, and Kasumi",
-        "description": "James is teaching Liara and Javik how to play cards. Liara is winning.",
+        "description": "1) James is teaching Liara and Javik how to play poker. When you join, you warn Vega not to underestimate Liara. Kasumi makes an appearance. \n\n2) Javik entertains them with a story of a game from his cycle. \n\n3) Liara is winning. Kasumi suggests they join up for crimes.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 666,
             "y": 1036,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.8.Q.2",
         "inMissionId": "DLC3.Citadel2.15.8.Q",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
-        "name": "Joker, Cortez, Samara, Wrex, Jacob, Jack, and Miranda",
-        "description": "Joker and Cortez are arguing over who is the better pilot.",
+        "name": "Joker, Cortez, Samara, Wrex, Jacob, Jack, Miranda, and Ashley",
+        "description": "1) Joker and Cortez are arguing over who is the better pilot. When you join, they discuss the clone versus the Collector Base. Joker narrates how he saved the Normandy. \n\n2) They are talking about the Normandy crew. \n\n3) They are talking about how nice it is seeing everyone again. If Ashley is there, Wrex asks if she would have killed him on Virmire.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 885,
             "y": 543,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.8.Q.3",
         "inMissionId": "DLC3.Citadel2.15.8.Q",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
-        "name": "Grunt, EDI, Traynor, and Kaidan/Ashley",
-        "description": "EDI is cooking food and arguing about party efficiency.",
+        "name": "Grunt, EDI, Traynor, and Kaidan",
+        "description": "1) EDI is cooking food and arguing about party efficiency. When you join, you argue with EDI over how much work should go into party preparation. \n\n2) Everyone likes the food EDI made.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 902,
             "y": 1488,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.8.Q.3",
         "inMissionId": "DLC3.Citadel2.15.8.Q",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
         "name": "Tali",
-        "description": "Tali is passed out in the bathroom, mumbling about her tattoo.",
+        "description": "1) Tali is passed out in the bathroom, mumbling about her new omni-tattoo. It's epic. \n\n2) She mumbles about having another drink with Traynor. \n\n3) She is saying it was totally worth it. One of the prompts is about Vakarian. \n\n4) Awesome sauce. \n\n5) S'all spinning. \n\n6) So many efforts.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 1200,
             "y": 1229,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.8.Q.4",
         "inMissionId": "DLC3.Citadel2.15.8.Q",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
         "name": "Garrus",
-        "description": "Garrus is discussing installing booby traps with Zaeed.",
+        "description": "Garrus is discussing installing booby traps with Zaeed. 1) He is considering adding explosives to the glass wall. \n\n2) Garrus comments that the plants won't survive the explosion. \n\n3) Garrus and Zaeed set their sights the kitchen.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 1196,
             "y": 1646,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.8.Q.5",
         "inMissionId": "DLC3.Citadel2.15.8.Q",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
         "name": "Zaeed",
-        "description": "Zaeed is discussing installing booby traps with Garrus.",
+        "description": "Zaeed is discussing installing booby traps with Garrus. 1) He is wiring up the hot tub. \n\n2) Zaeed is discussing clone DNA while finishing wiring. \n\n3) They are going to wire up the coffeemaker.",
         "inMapId": "G.C3.Apartment",
         "mapLocationPoint": {
             "x": 852,
             "y": 130,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.8.E",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Hang Out With Guests 3 (Loud)",
@@ -4327,11 +4857,14 @@
         }, {
             "type": "BlockedUntil",
             "id": "Completed: Citadel DLC Party - Round 2 Theme Energetic"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Citadel DLC Party - Round 3 Energetic"
         }]
     }, {
         "id": "DLC3.Citadel2.15.8.E.1",
         "inMissionId": "DLC3.Citadel2.15.8.E",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
@@ -4341,12 +4874,12 @@
         "mapLocationPoint": {
             "x": 899,
             "y": 1364,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.8.E.2",
         "inMissionId": "DLC3.Citadel2.15.8.E",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
@@ -4356,12 +4889,12 @@
         "mapLocationPoint": {
             "x": 923,
             "y": 714,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.8.E.3",
         "inMissionId": "DLC3.Citadel2.15.8.E",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
@@ -4371,12 +4904,12 @@
         "mapLocationPoint": {
             "x": 732,
             "y": 1939,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.8.E.4",
         "inMissionId": "DLC3.Citadel2.15.8.E",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
@@ -4386,12 +4919,12 @@
         "mapLocationPoint": {
             "x": 968,
             "y": 1946,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.8.E.5",
         "inMissionId": "DLC3.Citadel2.15.8.E",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
@@ -4401,12 +4934,12 @@
         "mapLocationPoint": {
             "x": 995,
             "y": 151,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.8.E.6",
         "inMissionId": "DLC3.Citadel2.15.8.E",
-        "sortIndex": 150318,
+        "sortIndex": 1517,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
@@ -4416,12 +4949,12 @@
         "mapLocationPoint": {
             "x": 996,
             "y": 1018,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "DLC3.Citadel2.15.9",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150319,
+        "sortIndex": 1518,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Take Photo",
@@ -4430,32 +4963,375 @@
         "mapLocationPoint": {
             "x": 1046,
             "y": 1865,
-            "radius": 20
-        }
+            "radius": 1
+        },
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Round 3"
+        }, {
+            "type": "Triggers",
+            "id": "Completed: Citadel DLC Party - Take Photo"
+        }]
     }, {
-        "id": "DLC3.Citadel2.15.10",
+        "id": "DLC3.Citadel2.15.10.Q",
         "inMissionId": "DLC3.Citadel2.15",
-        "sortIndex": 150320,
+        "sortIndex": 1519,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Investigate The Aftermath",
-        "description": "You wake up with a partner. Hopefully your love interest. If you don't have one, you may wake up with Javik instead (eek!). \n\nCheck in on your guests. Most of them are wretchedly hungover, particularly Tali."
+        "name": "Investigate The Aftermath (Mellow)",
+        "description": "You wake up with a partner. Hopefully your love interest. If you don't have one, you may wake up with Javik instead (eek!). \n\nCheck in on your guests. Most of them are wretchedly hungover, particularly Tali.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Take Photo"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Round 2 Theme Quiet"
+        }]
+    }, {
+        "id": "DLC3.Citadel2.15.10.Q.01",
+        "inMissionId": "DLC3.Citadel2.15.10.Q",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "Javik",
+        "description": "Javik asks to stay in the bathroom. It reminds him of his stasis pod.",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 838,
+            "y": 171,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.Q.02",
+        "inMissionId": "DLC3.Citadel2.15.10.Q",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "Garrus and Liara",
+        "description": "Garrus gives you the disarming code for any explosives he may have installed and forgotten. Liara is very chipper.",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 885,
+            "y": 543,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.03",
+        "inMissionId": "DLC3.Citadel2.15.10",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "Samara",
+        "description": "Samara thanks you for inviting her.",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 998,
+            "y": 388,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.Q.04",
+        "inMissionId": "DLC3.Citadel2.15.10.Q",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "Tali",
+        "description": "Tali is very hungover.",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1230,
+            "y": 196,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.Q.05",
+        "inMissionId": "DLC3.Citadel2.15.10.Q",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "Grunt, Miranda, Kaidan, and Vega",
+        "description": "Grunt is hungry. Miranda is enjoying some tea. Kaidan has had too much coffee. Vega is making eggs.",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 902,
+            "y": 1488,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.06",
+        "inMissionId": "DLC3.Citadel2.15.10",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "Traynor",
+        "description": "Traynor is checking extranet sites for records of the night before.",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 669,
+            "y": 964,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.Q.07",
+        "inMissionId": "DLC3.Citadel2.15.10.Q",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "Jacob and Jack",
+        "description": "They are working out.",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1112,
+            "y": 1010,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.Q.08",
+        "inMissionId": "DLC3.Citadel2.15.10.Q",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "Zaeed and Cortez",
+        "description": "Cortez greets you. Zaeed apparently snores.",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 987,
+            "y": 1882,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.Q.09",
+        "inMissionId": "DLC3.Citadel2.15.10.Q",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "EDI",
+        "description": "EDI jokes about murdering the neighbors when they complained about the noise.",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 1258,
+            "y": 1861,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.Q.10",
+        "inMissionId": "DLC3.Citadel2.15.10.Q",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "Joker and Wrex",
+        "description": "Wrex jokes that no humans were harmed at the party. Joker is collapsed at the bar, trying not to throw up.",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 667,
+            "y": 1936,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.Q.11",
+        "identicalMissionIds": ["A3.Convo.A.Mordin.3"],
+        "inMissionId": "DLC3.Citadel2.15.10.Q",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "Mordin",
+        "description": "There are messages from Mordin by the bed.",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 610,
+            "y": 336,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.E",
+        "inMissionId": "DLC3.Citadel2.15",
+        "sortIndex": 1517,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Investigate The Aftermath (Loud)",
+        "description": "You wake up with a partner. Hopefully your love interest. If you don't have one, you may wake up with Javik instead (eek!). \n\nCheck in on your guests. Most of them are wretchedly hungover, particularly Tali.",
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Take Photo"
+        }, {
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC Party - Round 2 Theme Energetic"
+        }]
+    }, {
+        "id": "DLC3.Citadel2.15.10.E.01",
+        "inMissionId": "DLC3.Citadel2.15.10.E",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "X",
+        "description": "",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.E.02",
+        "inMissionId": "DLC3.Citadel2.15.10.E",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "X",
+        "description": "",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.E.03",
+        "inMissionId": "DLC3.Citadel2.15.10.E",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "X",
+        "description": "",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.E.04",
+        "inMissionId": "DLC3.Citadel2.15.10.E",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "X",
+        "description": "",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.E.05",
+        "inMissionId": "DLC3.Citadel2.15.10.E",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "X",
+        "description": "",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.E.06",
+        "inMissionId": "DLC3.Citadel2.15.10.E",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "X",
+        "description": "",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.E.07",
+        "inMissionId": "DLC3.Citadel2.15.10.E",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "X",
+        "description": "",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.E.08",
+        "inMissionId": "DLC3.Citadel2.15.10.E",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "X",
+        "description": "",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.E.09",
+        "inMissionId": "DLC3.Citadel2.15.10.E",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "X",
+        "description": "",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel2.15.10.E.10",
+        "inMissionId": "DLC3.Citadel2.15.10.E",
+        "sortIndex": 1519,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Aftermath: ",
+        "name": "X",
+        "description": "",
+        "inMapId": "G.C3.Apartment",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel2.16",
         "inMissionId": "DLC3.Citadel2",
-        "sortIndex": 15033,
+        "sortIndex": 1520,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Return to The Normandy",
-        "description": "Head back to the Normandy. Your crew will meet you there. \n\n_Note: You can still complete any Silversun Strip activities after leaving the Citadel._",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "description": "Head back to the Normandy. Your crew will meet you there. \n\n_Note: You can still complete any Silversun Strip activities after leaving the Citadel._"
 
 
 
     }, {
         "id": "DLC3.Citadel3",
-        "sortIndex": 15030,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "DLC",
         "name": "Citadel Arena",
@@ -4513,7 +5389,7 @@
     }, {
         "id": "DLC3.Citadel3.01",
         "inMissionId": "DLC3.Citadel3",
-        "sortIndex": 150303,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Medi-Gel Challenge",
@@ -4523,7 +5399,7 @@
     }, {
         "id": "DLC3.Citadel3.02",
         "inMissionId": "DLC3.Citadel3",
-        "sortIndex": 150301,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Spin Zone Elite Challenge",
@@ -4533,7 +5409,7 @@
     }, {
         "id": "DLC3.Citadel3.03",
         "inMissionId": "DLC3.Citadel3",
-        "sortIndex": 150302,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Geth Challenge",
@@ -4544,7 +5420,7 @@
     }, {
         "id": "DLC3.Citadel3.04",
         "inMissionId": "DLC3.Citadel3",
-        "sortIndex": 150305,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Reaper Solo Challenge",
@@ -4554,7 +5430,7 @@
     }, {
         "id": "DLC3.Citadel3.05",
         "inMissionId": "DLC3.Citadel3",
-        "sortIndex": 150307,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Prothean Challenge",
@@ -4564,7 +5440,7 @@
     }, {
         "id": "DLC3.Citadel3.06",
         "inMissionId": "DLC3.Citadel3",
-        "sortIndex": 150304,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Thermal Clip Challenge",
@@ -4574,7 +5450,7 @@
     }, {
         "id": "DLC3.Citadel3.07",
         "inMissionId": "DLC3.Citadel3",
-        "sortIndex": 150308,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Cerberus Challenge",
@@ -4584,7 +5460,7 @@
     }, {
         "id": "DLC3.Citadel3.08",
         "inMissionId": "DLC3.Citadel3",
-        "sortIndex": 150306,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Charity Reaper Challenge",
@@ -4594,7 +5470,7 @@
     }, {
         "id": "DLC3.Citadel3.09",
         "inMissionId": "DLC3.Citadel3",
-        "sortIndex": 150310,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Break The Scoreboard",
@@ -4605,7 +5481,7 @@
     }, {
         "id": "DLC3.Citadel3.10",
         "inMissionId": "DLC3.Citadel3",
-        "sortIndex": 150309,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Unusual Scores",
@@ -4616,7 +5492,7 @@
     }, {
         "id": "DLC3.Citadel3.10.1",
         "inMissionId": "DLC3.Citadel3.10",
-        "sortIndex": 150309,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Super-Elite Enemies",
@@ -4624,7 +5500,7 @@
     }, {
         "id": "DLC3.Citadel3.10.2",
         "inMissionId": "DLC3.Citadel3.10",
-        "sortIndex": 150309,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "All Positive Bonus Modifiers",
@@ -4632,7 +5508,7 @@
     }, {
         "id": "DLC3.Citadel3.10.3",
         "inMissionId": "DLC3.Citadel3.10",
-        "sortIndex": 150309,
+        "sortIndex": 1503,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Spin Zone/Geth/Elite/Shields",
@@ -4700,7 +5576,7 @@
         "mapLocationPoint": {
             "x": 232,
             "y": 1220,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -4727,7 +5603,7 @@
         "mapLocationPoint": {
             "x": 232,
             "y": 1220,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.ObeliskofKarza",
@@ -4741,7 +5617,7 @@
         "mapLocationPoint": {
             "x": 1221,
             "y": 1094,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -4768,7 +5644,7 @@
         "mapLocationPoint": {
             "x": 1221,
             "y": 1094,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.KakliosaurFossil",
@@ -4782,7 +5658,7 @@
         "mapLocationPoint": {
             "x": 804,
             "y": 1368,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -4809,7 +5685,7 @@
         "mapLocationPoint": {
             "x": 804,
             "y": 1368,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.CodeOfTheAncients",
@@ -4823,7 +5699,7 @@
         "mapLocationPoint": {
             "x": 1036,
             "y": 139,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -4851,7 +5727,7 @@
         "mapLocationPoint": {
             "x": 1036,
             "y": 139,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.ApienCrest",
@@ -4865,7 +5741,7 @@
         "mapLocationPoint": {
             "x": 1262,
             "y": 1669,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -4892,7 +5768,7 @@
         "mapLocationPoint": {
             "x": 1262,
             "y": 1669,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.ProtheanObelisk",
@@ -4906,7 +5782,7 @@
         "mapLocationPoint": {
             "x": 1702,
             "y": 1072,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -4933,7 +5809,7 @@
         "mapLocationPoint": {
             "x": 1702,
             "y": 1072,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.BookOfPlenix",
@@ -4947,7 +5823,7 @@
         "mapLocationPoint": {
             "x": 114,
             "y": 1372,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -4977,7 +5853,7 @@
         "mapLocationPoint": {
             "x": 114,
             "y": 1372,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.PillarsOfStrength",
@@ -4991,7 +5867,7 @@
         "mapLocationPoint": {
             "x": 1202,
             "y": 1074,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -5018,7 +5894,7 @@
         "mapLocationPoint": {
             "x": 1202,
             "y": 1074,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.HesperiaPeriodStatue",
@@ -5032,7 +5908,7 @@
         "mapLocationPoint": {
             "x": 280,
             "y": 1208,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -5059,7 +5935,7 @@
         "mapLocationPoint": {
             "x": 280,
             "y": 1208,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.LibraryofAsha",
@@ -5073,7 +5949,7 @@
         "mapLocationPoint": {
             "x": 846,
             "y": 1571,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -5100,7 +5976,7 @@
         "mapLocationPoint": {
             "x": 846,
             "y": 1571,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.RingsofAlune",
@@ -5114,7 +5990,7 @@
         "mapLocationPoint": {
             "x": 1161,
             "y": 1810,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -5141,7 +6017,7 @@
         "mapLocationPoint": {
             "x": 1161,
             "y": 1810,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.ProtheanDataDrives",
@@ -5155,7 +6031,7 @@
         "mapLocationPoint": {
             "x": 1262,
             "y": 1609,
-            "radius": 20
+            "radius": 1
         },
         "experience": 0,
         "reward": "15,000 Credits",
@@ -5182,7 +6058,7 @@
         "mapLocationPoint": {
             "x": 1262,
             "y": 1609,
-            "radius": 20
+            "radius": 1
         }
     }]
 }

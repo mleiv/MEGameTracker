@@ -93,7 +93,7 @@
         "mapLocationPoint": {
             "x": 1183,
             "y": 569,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.S.Ashley.2",
@@ -109,7 +109,7 @@
         "mapLocationPoint": {
             "x": 1183,
             "y": 569,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -128,7 +128,7 @@
         "mapLocationPoint": {
             "x": 1183,
             "y": 569,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -193,7 +193,7 @@
         "mapLocationPoint": {
             "x": 984,
             "y": 859,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -201,6 +201,7 @@
         }]
     }, {
         "id": "A3.Convo.S.Ashley.8",
+        "identicalMissionId": "DLC3.Citadel2.6.Ashley",
         "inMissionId": "A3.Convo.S.Ashley",
         "sortIndex": 9000,
         "gameVersion": "3",
@@ -365,7 +366,7 @@
         "mapLocationPoint": {
             "x": 1385,
             "y": 861,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.S.EDI.4",
@@ -460,7 +461,7 @@
         "mapLocationPoint": {
             "x": 1334,
             "y": 1658,
-            "radius": 20
+            "radius": 1
         },
         "relatedDecisionIds": ["D3.EdiJoker"],
         "events": [{
@@ -532,14 +533,15 @@
         }]
     }, {
         "id": "A3.Convo.S.EDI.9",
+        "identicalMissionId": "DLC3.Citadel2.4.EDI",
         "inMissionId": "A3.Convo.S.EDI",
         "sortIndex": 9000,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "EDI: ",
         "name": "Citadel DLC - Shopping",
-        "description": "EDI goes shopping. She brings you a gift and then tries to buy something for Joker.",
-        "inMapId": "G.C3.Apartment",
+        "description": "Invite EDI up to the apartment. She tries to buy something for Joker. And she brings you a gift.",
+        "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -715,7 +717,7 @@
         "mapLocationPoint": {
             "x": 469,
             "y": 993,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.S.Garrus.2-ARachni",
@@ -859,7 +861,7 @@
         "mapLocationPoint": {
             "x": 1035,
             "y": 635,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -897,16 +899,21 @@
         }]
     }, {
         "id": "A3.Convo.S.Garrus.8",
+        "identicalMissionId": "DLC3.Citadel2.4.Garrus",
         "inMissionId": "A3.Convo.S.Garrus",
         "sortIndex": 9000,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Garrus: ",
         "name": "Citadel DLC - Bar",
-        "description": "Try to hook Garrus up with another turian at the casino bar. Everything he says is wrong and she gets up to leave - interrupt to pass them a beer, and he calms down enough to chat her up. \n\nThe romance version of this is one of my favorites - you head off the turian woman early on, and Garrus takes you out to Tango. Use the interrupts to add some flair ([YouTube|https://www.youtube.com/watch?v=w2PPlz37HHA]).",
+        "description": "Meet Garrus at the casino bar, Try to hook him up with another turian at the casino bar. Everything he says is wrong and she gets up to leave - interrupt to pass them a beer, and he calms down enough to chat her up. \n\nThe romance version of this is one of my favorites - you head off the turian woman early on, and Garrus takes you out to Tango. Use the interrupts to add some flair ([YouTube|https://www.youtube.com/watch?v=w2PPlz37HHA]).",
         "annotationNote": "Romance Option",
-        "inMapId": "G.C3.Silversun.Casino.Bar",
-        "isShowInParentMap": true,
+        "inMapId": "G.C3.Silversun",
+        "mapLocationPoint": {
+            "x": 775,
+            "y": 1265,
+            "radius": 1
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Citadel DLC 1"
@@ -1097,7 +1104,7 @@
         "mapLocationPoint": {
             "x": 1741,
             "y": 654,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -1278,6 +1285,7 @@
         }]
     }, {
         "id": "A3.Convo.S.Javik.7",
+        "identicalMissionId": "DLC3.Citadel2.4.Javik",
         "inMissionId": "A3.Convo.S.Javik",
         "sortIndex": 9000,
         "gameVersion": "3",
@@ -1287,9 +1295,9 @@
         "description": "Meet Javik outside the casino. He has been invited to participate in a morale-boosting vid, which turns out to be Blasto 7: Blasto Goes To War. Blasto complains about Shepard being in the film - he doesn't share top billing! There is a tussle over who is the biggest badass, resolved by Javik pushing aside both of you and knocking out the vorcha actor.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
-            "x": 710,
-            "y": 820,
-            "radius": 20
+            "x": 700,
+            "y": 819,
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -1417,7 +1425,7 @@
         "mapLocationPoint": {
             "x": 1183,
             "y": 569,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.S.Kaidan.2",
@@ -1433,7 +1441,7 @@
         "mapLocationPoint": {
             "x": 1183,
             "y": 569,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -1452,7 +1460,7 @@
         "mapLocationPoint": {
             "x": 1183,
             "y": 569,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -1517,7 +1525,7 @@
         "mapLocationPoint": {
             "x": 984,
             "y": 859,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -1540,6 +1548,7 @@
         }]
     }, {
         "id": "A3.Convo.S.Kaidan.8",
+        "identicalMissionId": "DLC3.Citadel2.6.Kaidan",
         "inMissionId": "A3.Convo.S.Kaidan",
         "sortIndex": 9000,
         "gameVersion": "3",
@@ -1548,7 +1557,7 @@
         "name": "Citadel DLC - Dinner",
         "description": "Invite Kaidan up to your apartment. He insists on making dinner. You tease him about his cooking. \n\nIf you've romanced Kaidan, he flirts the whole time, and then you go upstairs and make out (implied off-screen hookup).",
         "annotationNote": "Romance Option",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -1733,7 +1742,7 @@
         "mapLocationPoint": {
             "x": 970,
             "y": 764,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -1756,7 +1765,7 @@
         "mapLocationPoint": {
             "x": 970,
             "y": 764,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -1764,7 +1773,6 @@
         }]
     }, {
         "id": "A3.Convo.S.Liara.3-DAethyta",
-        "identicalMissionId": "",
         "inMissionId": "A3.Convo.S.Liara",
         "sortIndex": 9000,
         "gameVersion": "3",
@@ -1777,7 +1785,7 @@
         "mapLocationPoint": {
             "x": 866,
             "y": 999,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -1852,7 +1860,7 @@
         "mapLocationPoint": {
             "x": 1739,
             "y": 657,
-            "radius": 20
+            "radius": 1
         },
         "isShowInParentMap": true,
         "events": [{
@@ -1939,14 +1947,15 @@
         }]
     }, {
         "id": "A3.Convo.S.Liara.8",
+        "identicalMissionId": "DLC3.Citadel2.5.Liara",
         "inMissionId": "A3.Convo.S.Liara",
         "sortIndex": 9000,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Liara: ",
         "name": "Citadel DLC - Piano",
-        "description": "Liara plays a song on the piana she learned as a child. If you have romanced her, you can keep her from leaving and then you hold hands and kiss.",
-        "inMapId": "G.C3.Apartment",
+        "description": "Invite Liara up. She plays a song on the piana she learned as a child. \n\nIf you have romanced her, you can keep her from leaving and then you hold hands and kiss.",
+        "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -2145,7 +2154,7 @@
         "mapLocationPoint": {
             "x": 1439,
             "y": 1016,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -2202,15 +2211,16 @@
         }]
     }, {
         "id": "A3.Convo.S.Tali.9",
+        "identicalMissionId": "DLC3.Citadel2.5.Tali",
         "inMissionId": "A3.Convo.S.Tali",
         "sortIndex": 9000,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Tali: ",
         "name": "Citadel DLC - Fleet & Flotilla",
-        "description": "Tali insists you watch her favorite soap opera - Fleet and Flotilla. If you've romanced her, there's some additional dialogue and kissing, and she sings along with the soap opera theme song.",
+        "description": "Invite Tali up. She insists you watch her favorite soap opera - Fleet and Flotilla. If you've romanced her, there's some additional dialogue and kissing, and she sings along with the soap opera theme song.",
         "annotationNote": "Romance Option",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -2346,7 +2356,7 @@
         "mapLocationPoint": {
             "x": 1742,
             "y": 641,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.S.Vega.2",
@@ -2361,7 +2371,7 @@
         "mapLocationPoint": {
             "x": 1187,
             "y": 1354,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -2380,7 +2390,7 @@
         "mapLocationPoint": {
             "x": 1407,
             "y": 1528,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -2399,7 +2409,7 @@
         "mapLocationPoint": {
             "x": 363,
             "y": 1393,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -2449,7 +2459,7 @@
         "mapLocationPoint": {
             "x": 1174,
             "y": 953,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -2484,7 +2494,7 @@
         "mapLocationPoint": {
             "x": 1187,
             "y": 1354,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -2524,14 +2534,31 @@
         }]
     }, {
         "id": "A3.Convo.S.Vega.7",
+        "identicalMissionId": "DLC3.Citadel2.4.Vega",
         "inMissionId": "A3.Convo.S.Vega",
         "sortIndex": 9000,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Vega: ",
         "name": "Citadel DLC - Workout",
-        "description": "James shows off his tattoo. Follow him downstairs as he is leaving and he will be distracted by your workout room. Then you can compete with James over who can do the most pullups (although it takes 183 repetitious Paragon and Renegade Interrupts). \n\nIf you want to romance James, you can flirt with him here, but he shoots you down this time (try some more: [YouTube|https://www.youtube.com/watch?v=n8roLH2Zu6Q]).",
-        "inMapId": "G.C3.Apartment",
+        "description": "Invite James up to the apartment. He shows off his tattoo. Follow him downstairs as he is leaving and he will be distracted by your workout room. Then you can compete with James over who can do the most pullups (although it takes 183 repetitious Paragon and Renegade Interrupts). \n\nIf you want to romance James, you can flirt with him here, but he shoots you down this time (try some more: [YouTube|https://www.youtube.com/watch?v=n8roLH2Zu6Q]).",
+        "inMapId": "G.C3.Apartment.Terminal",
+        "isShowInParentMap": true,
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Citadel DLC 1"
+        }]
+    }, {
+        "id": "A3.Convo.S.Vega.7b",
+        "identicalMissionIds": ["A3.Convo.C.Cortez.8b", "DLC3.Citadel2.6.V2"],
+        "inMissionId": "A3.Convo.S.Vega",
+        "sortIndex": 9000,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "titlePrefix": "Vega: ",
+        "name": "Citadel DLC - Game",
+        "description": "Invite Cortez and Vega over to watch a biotiball game.",
+        "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -2722,7 +2749,7 @@
         "mapLocationPoint": {
             "x": 1402,
             "y": 1555,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.C.Allers.2",
@@ -2879,7 +2906,7 @@
         "mapLocationPoint": {
             "x": 900,
             "y": 1317,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedAfter",
@@ -3104,7 +3131,7 @@
         "mapLocationPoint": {
             "x": 1501,
             "y": 688,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.C.Cortez.2",
@@ -3119,7 +3146,7 @@
         "mapLocationPoint": {
             "x": 1501,
             "y": 688,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -3141,7 +3168,7 @@
         "mapLocationPoint": {
             "x": 1501,
             "y": 688,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -3163,7 +3190,7 @@
         "mapLocationPoint": {
             "x": 543,
             "y": 1792,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -3207,7 +3234,7 @@
         "mapLocationPoint": {
             "x": 845,
             "y": 1925,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -3218,6 +3245,7 @@
         }]
     }, {
         "id": "A3.Convo.C.Cortez.7a",
+        "identicalMissionId": "DLC3.Citadel2.5.Cortez",
         "inMissionId": "A3.Convo.C.Cortez",
         "sortIndex": 9001,
         "gameVersion": "3",
@@ -3227,9 +3255,9 @@
         "description": "Meet Cortez by the Rapid Transit cars. He takes you for a joyride in the shuttle. If you've romanced him, there's a lot of romantic dialogue and a hookup off-screen.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
-            "x": 1485,
-            "y": 873,
-            "radius": 20
+            "x": 1479,
+            "y": 910,
+            "radius": 2
         },
         "events": [{
             "type": "BlockedUntil",
@@ -3237,15 +3265,16 @@
         }]
     }, {
         "id": "A3.Convo.C.Cortez.8a",
+        "identicalMissionIds": ["DLC3.Citadel2.6.V2", "A3.Convo.S.Vega.7b"],
         "inMissionId": "A3.Convo.C.Cortez",
         "sortIndex": 9001,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Cortez: ",
         "name": "Citadel DLC - Game",
-        "description": "Invite Cortez and Vega over to watch a biotiball game. If you've romanced him, there's some post-game snuggling.",
+        "description": "Invite Cortez and Vega over to watch a biotiball game. \n\nIf you've romanced Cortez, there's some post-game snuggling.",
         "annotationNote": "Romance Option",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -3485,7 +3514,6 @@
         }
     }, {
         "id": "A3.Convo.C.DonnellyDaniels.10",
-        "identicalMissionId": "",
         "inMissionId": "A3.Convo.C.DonnellyDaniels",
         "sortIndex": 9001,
         "gameVersion": "3",
@@ -3633,7 +3661,7 @@
         "mapLocationPoint": {
             "x": 1438,
             "y": 748,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -3761,7 +3789,7 @@
         "mapLocationPoint": {
             "x": 1407,
             "y": 1528,
-            "radius": 20
+            "radius": 1
         },
         "relatedDecisionIds": ["D3.EdiJoker"],
         "events": [{
@@ -3866,6 +3894,7 @@
         }]
     }, {
         "id": "A3.Convo.C.Joker.12",
+        "identicalMissionId": "DLC3.Citadel2.6.Joker",
         "inMissionId": "A3.Convo.C.Joker",
         "sortIndex": 9001,
         "gameVersion": "3",
@@ -3954,7 +3983,7 @@
         "mapLocationPoint": {
             "x": 900,
             "y": 1317,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedAfter",
@@ -4055,6 +4084,7 @@
         }]
     }, {
         "id": "A3.Convo.C.Traynor.5",
+        "identicalMissionId": "DLC3.Citadel2.4.Traynor",
         "inMissionId": "A3.Convo.C.Traynor",
         "sortIndex": 9001,
         "gameVersion": "3",
@@ -4064,9 +4094,9 @@
         "description": "Meet Traynor on the stairs of the arcade for lunch. Turns out she is still competing in a Kepesh-Yakshi tournament. Help her beat her obnoxious asari opponent.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
-            "x": 238,
-            "y": 333,
-            "radius": 20
+            "x": 256,
+            "y": 340,
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -4074,6 +4104,7 @@
         }]
     }, {
         "id": "A3.Convo.C.Traynor.6",
+        "identicalMissionId": "DLC3.Citadel2.6.Traynor",
         "inMissionId": "A3.Convo.C.Traynor",
         "sortIndex": 9001,
         "gameVersion": "3",
@@ -4082,7 +4113,7 @@
         "name": "Citadel DLC - Hot Tub",
         "description": "Invite Traynor up to the apartment to try the hot tub. If romanced, you join her and there's an off-screen hookup. Otherwise, Traynor discovers [Kahlee Sanders'|megametracker://person?id=O3.Sanders] overnight bag (with massage wands).",
         "annotationNote": "Romance Option",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -4160,7 +4191,7 @@
         "mapLocationPoint": {
             "x": 866,
             "y": 999,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -4212,7 +4243,7 @@
         "mapLocationPoint": {
             "x": 1570,
             "y": 761,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -4369,7 +4400,7 @@
         "mapLocationPoint": {
             "x": 719,
             "y": 1100,
-            "radius": 20
+            "radius": 1
         },
         "isShowInParentMap": true,
         "events": [{
@@ -4389,7 +4420,7 @@
         "mapLocationPoint": {
             "x": 719,
             "y": 1100,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -4475,18 +4506,19 @@
         }]
     }, {
         "id": "A3.Convo.A.Grunt.2",
+        "identicalMissionId": "DLC3.Citadel2.6.Grunt",
         "inMissionId": "A3.Convo.A.Grunt",
         "sortIndex": 9002,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Grunt: ",
         "name": "Citadel DLC - Arrest",
-        "description": "Talk to the Officer across from the Rapid Transit cars. He will take you to Grunt, who was arrested. You have to press him for the whole story, which is that he broke out of the hospital, got drunk and took pictures at the Presidium, and lit a C-Sec car on fire, and got blasted with riot foam. They only caught him when he stopped to get some noodles.",
+        "description": "Talk to the Officer across from the Rapid Transit cars. He will take you to Grunt, who was arrested. You have to press him for the whole story, which is that he broke out of the hospital, got drunk and took pictures at the Presidium, lit a C-Sec car on fire, and got blasted with riot foam. They only caught him when he stopped to get some food from the Noodle House.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
-            "x": 1444,
-            "y": 857,
-            "radius": 20
+            "x": 1287,
+            "y": 851,
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -4552,19 +4584,24 @@
         "mapLocationPoint": {
             "x": 1045,
             "y": 1525,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.A.Jacob.2",
+        "identicalMissionId": "DLC3.Citadel2.5.Jacob",
         "inMissionId": "A3.Convo.A.Jacob",
         "sortIndex": 9002,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Jacob: ",
         "name": "Citadel DLC - Arcade",
-        "description": "Jacob is looking after two orphans for the day. He wants to play Shattered Eezo with you. Afterwards you get lunch. \n\nIf you romanced him in Game 2, you can slap him when you meet him.",
-        "inMapId": "G.C3.Silversun.Eezo",
-        "isShowInParentMap": true,
+        "description": "Meet Jacob at the arcade. He wants to play Shattered Eezo with you. Afterwards you get lunch. \n\nIf you romanced him in Game 2, you can slap him when you meet him.",
+        "inMapId": "G.C3.Silversun",
+        "mapLocationPoint": {
+            "x": 902,
+            "y": 757,
+            "radius": 1
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Citadel DLC 1"
@@ -4659,16 +4696,17 @@
         "missionType": "Objective",
         "titlePrefix": "Jack: ",
         "name": "Citadel Convo - Purgatory",
-        "description": "Speak to Jack in Purgatory on the Citadel. She discusses her nole role as mentor. And she dances with you.",
+        "description": "Speak to Jack in Purgatory on the Citadel. She discusses her new role as mentor. And she dances with you.",
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.5Purgatory",
         "mapLocationPoint": {
             "x": 1048,
             "y": 1553,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.A.Jack.2",
+        "identicalMissionId": "DLC3.Citadel2.5.Jack",
         "inMissionId": "A3.Convo.A.Jack",
         "sortIndex": 9002,
         "gameVersion": "3",
@@ -4679,9 +4717,9 @@
         "annotationNote": "Romance Option",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
-            "x": 1362,
-            "y": 1820,
-            "radius": 20
+            "x": 1365,
+            "y": 1824,
+            "radius": 1
         },
         "isShowInParentMap": true,
         "events": [{
@@ -4690,15 +4728,16 @@
         }]
     }, {
         "id": "A3.Convo.A.Jack.3",
+        "identicalMissionId": "DLC3.Citadel2.7.Jack",
         "inMissionId": "A3.Convo.A.Jack",
         "sortIndex": 9002,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Jack: ",
         "name": "Citadel DLC - Puppy",
-        "description": "Jack has rescued a varren puppy. If romanced, Jack will give you a tattoo.",
+        "description": "Invite Jack up to the apartment. She has rescued a varren puppy. \n\nIf romanced, Jack will give you a tattoo.",
         "annotationNote": "Romance Option",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -4748,18 +4787,19 @@
         }]
     }, {
         "id": "A3.Convo.A.Kasumi.2",
+        "identicalMissionId": "DLC3.Citadel2.4.Kasumi",
         "inMissionId": "A3.Convo.A.Kasumi",
         "sortIndex": 9002,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Kasumi: ",
-        "name": "Citadel DLC",
-        "description": "Find a suspicious device in the casino. Kasumi and henchman will show up, about to start a heist. If you stop her from leaving, you can catch up.",
+        "name": "Citadel DLC - Heist",
+        "description": "Find a suspicious device attached to the wall of the lower bar in the casino (no terminal message). Kasumi and henchman will show up, about to start a heist. If you stop her from leaving, you can catch up.",
         "inMapId": "G.C3.Silversun",
         "mapLocationPoint": {
             "x": 835,
             "y": 1752,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -4846,7 +4886,7 @@
         "mapLocationPoint": {
             "x": 831,
             "y": 883,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.A.Kelly.2",
@@ -4861,7 +4901,7 @@
         "mapLocationPoint": {
             "x": 831,
             "y": 883,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -4883,7 +4923,7 @@
         "mapLocationPoint": {
             "x": 831,
             "y": 883,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -4902,7 +4942,7 @@
         "mapLocationPoint": {
             "x": 831,
             "y": 883,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -4925,7 +4965,7 @@
         "mapLocationPoint": {
             "x": 831,
             "y": 883,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -5061,7 +5101,7 @@
         "mapLocationPoint": {
             "x": 938,
             "y": 1792,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -5099,7 +5139,7 @@
         "mapLocationPoint": {
             "x": 1622,
             "y": 1364,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -5107,15 +5147,16 @@
         }]
     }, {
         "id": "A3.Convo.A.Miranda.4",
+        "identicalMissionId": "DLC3.Citadel2.4.Miranda",
         "inMissionId": "A3.Convo.A.Miranda",
         "sortIndex": 9002,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Miranda: ",
         "name": "Citadel DLC - Drink",
-        "description": "You can invite Miranda up for a drink.",
+        "description": "Invite Miranda up for a drink. You catch her up on the clone business and she makes a joke about you executing marine life (because your Normandy fish keep dying).",
         "annotationNote": "Romance Option",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -5123,16 +5164,21 @@
         }]
     }, {
         "id": "A3.Convo.A.Miranda.5",
+        "identicalMissionId": "DLC3.Citadel2.7.Miranda",
         "inMissionId": "A3.Convo.A.Miranda",
         "sortIndex": 9002,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Miranda: ",
         "name": "Citadel DLC - Roulette",
-        "description": "Meet Miranda near the quasar machines to play some roulette and ply her with wine.",
+        "description": "Meet Miranda in the casino, near the quasar machines, to play some roulette and ply her with wine.",
         "annotationNote": "Romance Option",
-        "inMapId": "G.C3.Silversun.Quasar",
-        "isShowInParentMap": true,
+        "inMapId": "G.C3.Silversun",
+        "mapLocationPoint": {
+            "x": 623,
+            "y": 1762,
+            "radius": 1
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Citadel DLC 1"
@@ -5273,6 +5319,7 @@
         }]
     }, {
         "id": "A3.Convo.A.Mordin.3",
+        "identicalMissionIds": ["DLC3.Citadel2.15.10.Q.11"],
         "inMissionId": "A3.Convo.A.Mordin",
         "sortIndex": 9002,
         "gameVersion": "3",
@@ -5281,7 +5328,11 @@
         "name": "Citadel DLC - Messages",
         "description": "There are some messages from Mordin left in your apartment after the party.",
         "inMapId": "G.C3.Apartment",
-        "isShowInParentMap": true,
+        "mapLocationPoint": {
+            "x": 610,
+            "y": 336,
+            "radius": 1
+        },
         "events": [{
             "type": "BlockedUntil",
             "id": "Completed: Citadel DLC 1"
@@ -5388,19 +5439,20 @@
         "mapLocationPoint": {
             "x": 1395,
             "y": 646,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.A.Samara.2",
+        "identicalMissionId": "DLC3.Citadel2.7.Samara",
         "inMissionId": "A3.Convo.A.Samara",
         "sortIndex": 9002,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Samara: ",
         "name": "Citadel DLC - Chat",
-        "description": "You can chat with Samara about her wild adventures in the news. If you romanced her in Game 2, you can share a romantic kiss and embrace.",
+        "description": "Invite Samara up to the apartment. You can chat with her about her wild adventures in the news. \n\nIf you romanced her in Game 2, you can share a romantic kiss and embrace.",
         "annotationNote": "Romance Option",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -5489,7 +5541,7 @@
         "mapLocationPoint": {
             "x": 869,
             "y": 1677,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.A.Thane.2",
@@ -5504,7 +5556,7 @@
         "mapLocationPoint": {
             "x": 1190,
             "y": 347,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -5512,15 +5564,16 @@
         }]
     }, {
         "id": "A3.Convo.A.Thane.3",
+        "identicalMissionId": "DLC3.Citadel2.5.Thane",
         "inMissionId": "A3.Convo.A.Thane",
         "sortIndex": 9002,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Thane: ",
         "name": "Citadel DLC - Memorial",
-        "description": "Invite the crew to a memorial for Thane. Kolyat will leave you with some messages from Thane. They are romantic messages, if you have romanced Thane.",
+        "description": "Invite the crew to a memorial for Thane. Kolyat will leave you with some messages from Thane, which you can watch in the upstairs bedroom. They are romantic messages, if you have romanced Thane.",
         "annotationNote": "Romance Option",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.Apartment.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "BlockedUntil",
@@ -5584,7 +5637,7 @@
         "mapLocationPoint": {
             "x": 334,
             "y": 643,
-            "radius": 20
+            "radius": 1
         }
     }, {
         "id": "A3.Convo.A.Udina.2",
@@ -5599,7 +5652,7 @@
         "mapLocationPoint": {
             "x": 334,
             "y": 643,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -5678,7 +5731,7 @@
         "mapLocationPoint": {
             "x": 1521,
             "y": 1689,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -5686,13 +5739,14 @@
         }]
     }, {
         "id": "A3.Convo.A.Wrex.4",
+        "identicalMissionId": "DLC3.Citadel2.7.Wrex",
         "inMissionId": "A3.Convo.A.Wrex",
         "sortIndex": 9002,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Wrex: ",
         "name": "Citadel DLC - Escape",
-        "description": "Wrex meets you at the bar for a brief escape from his responsibilities.",
+        "description": "Encounter Wrex at the upstairs casino bar (no terminal message). He is trying to recover from all the krogan females who want him to father their children.",
         "inMapId": "G.C3.Silversun.Casino.Bar",
         "isShowInParentMap": true,
         "events": [{
@@ -5741,7 +5795,7 @@
         "mapLocationPoint": {
             "x": 1204,
             "y": 893,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -5749,13 +5803,14 @@
         }]
     }, {
         "id": "A3.Convo.A.Zaeed.2",
+        "identicalMissionId": "DLC3.Citadel2.4.Zaeed",
         "inMissionId": "A3.Convo.A.Zaeed",
         "sortIndex": 9002,
         "gameVersion": "3",
         "missionType": "Objective",
         "titlePrefix": "Zaeed: ",
         "name": "Citadel DLC - Claw",
-        "description": "Zaeed has been thwarted by the Claw game. Help him out and then catch up.",
+        "description": "Meet Zaeed at the aracde. He has been thwarted by the Claw game. Help him out and then catch up.",
         "inMapId": "G.C3.Silversun.Claw",
         "isShowInParentMap": true,
         "events": [{
@@ -6013,7 +6068,7 @@
         "mapLocationPoint": {
             "x": 1586,
             "y": 1032,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -6038,7 +6093,7 @@
         "mapLocationPoint": {
             "x": 1084,
             "y": 1495,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -6063,7 +6118,7 @@
         "mapLocationPoint": {
             "x": 256,
             "y": 1241,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -6088,7 +6143,7 @@
         "mapLocationPoint": {
             "x": 1030,
             "y": 1233,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -6113,7 +6168,7 @@
         "mapLocationPoint": {
             "x": 1238,
             "y": 1096,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -6138,7 +6193,7 @@
         "mapLocationPoint": {
             "x": 1905,
             "y": 815,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -6163,7 +6218,7 @@
         "mapLocationPoint": {
             "x": 1010,
             "y": 168,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -6188,7 +6243,7 @@
         "mapLocationPoint": {
             "x": 101,
             "y": 1221,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -6223,7 +6278,7 @@
         "mapLocationPoint": {
             "x": 1584,
             "y": 1093,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
@@ -6279,7 +6334,7 @@
         "mapLocationPoint": {
             "x": 895,
             "y": 942,
-            "radius": 20
+            "radius": 1
         },
         "events": [{
             "type": "BlockedUntil",
