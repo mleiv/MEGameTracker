@@ -110,7 +110,7 @@ extension Markupable where Self: TextRendering {
 
 	public func markupLinks(_ attributedText: NSMutableAttributedString) -> NSMutableAttributedString {
 		if let regex = try? NSRegularExpression(
-				pattern: "\\[([^\\]]+\\|)?([^\\]]+)\\]",
+				pattern: "\\[([^\\]\\|]+\\|)?([^\\]]+)\\]",
 				options: .caseInsensitive
 			) {
 			let sourceString = attributedText.string
