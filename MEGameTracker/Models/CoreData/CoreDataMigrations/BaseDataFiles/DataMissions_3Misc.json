@@ -3019,7 +3019,7 @@
         "missionType": "Objective",
         "name": "Shore Leave",
         "description": "Visit Anderson's personal apartment on the Citadel to begin this assignment. His biography notes are scattered throughout the apartment.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel1.1.01",
@@ -3029,7 +3029,7 @@
         "missionType": "Objective",
         "name": "Notes: Relationships",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1208,
             "y": 1922,
@@ -3043,7 +3043,7 @@
         "missionType": "Objective",
         "name": "Notes: Normandy",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 989,
             "y": 1847,
@@ -3057,7 +3057,7 @@
         "missionType": "Objective",
         "name": "Notes: N7",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 670,
             "y": 1779,
@@ -3071,7 +3071,7 @@
         "missionType": "Objective",
         "name": "Notes: Shepard",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 782,
             "y": 1417,
@@ -3085,7 +3085,7 @@
         "missionType": "Objective",
         "name": "Notes: Contact",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 753,
             "y": 1235,
@@ -3099,7 +3099,7 @@
         "missionType": "Objective",
         "name": "ANN Interview",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 585,
             "y": 1187,
@@ -3113,7 +3113,7 @@
         "missionType": "Objective",
         "name": "Notes: New Questions",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1198,
             "y": 1177,
@@ -3127,7 +3127,7 @@
         "missionType": "Objective",
         "name": "Notes: Childhood",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 720,
             "y": 564,
@@ -3141,7 +3141,7 @@
         "missionType": "Objective",
         "name": "Notes: Turian Experience",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 893,
             "y": 555,
@@ -3155,7 +3155,7 @@
         "missionType": "Objective",
         "name": "Notes: Normandy SR1",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1157,
             "y": 359,
@@ -3169,7 +3169,7 @@
         "missionType": "Objective",
         "name": "Wards Ambush",
         "description": "Visit Anderson's personal apartment on the Citadel to begin this assignment. You'll receive a message there from Joker, asking you to meet him at a restaurant.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "Triggers",
@@ -3183,7 +3183,7 @@
         "missionType": "Objective",
         "name": "Sushi",
         "description": "Leave the apartment and take the elevator to meet Joker for sushi. When you both realize that you were brought there by a ruse, you are interrupted by a very flustered [Brooks (Spoilers!)|megametracker://person?id=E3.Brooks]. She explains that she has uncovered a threat to Shepard. Before she can explain more, you are attacked and Brooks is taken hostage.",
-        "id": "G.C3.Silversun.Ryuusei",
+        "inMapId": "G.C3.DLC.Sushi.01",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel1.2.2",
@@ -3193,8 +3193,12 @@
         "missionType": "Objective",
         "name": "Rescue Brooks",
         "description": "Kill the mercs and rescue Brooks. A remaining merc will shoot out the glass beneath you and you will fall through the aquarium floor.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "inMapId": "G.C3.DLC.Sushi",
+        "mapLocationPoint": {
+            "x": 1943,
+            "y": 263,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.2.3",
         "inMissionId": "DLC3.Citadel1.2",
@@ -3203,37 +3207,50 @@
         "missionType": "Objective",
         "name": "Market",
         "description": "Descend through the lower Wards. You will spot a landing pad across the way, at the Cision Motors SkyCar lot. You tell Brooks to get a shuttle there to meet you. She says C-Sec has the area locked down. Go through the frozen fish storage building, and then across the rooves of the buildings until you reach a market with more mercs, where a crewmember finally gets a hold of you (your current squad love interest, or Liara by default) and says she is headed your way on foot. When you have cleared out the second batch of mercs in this area, another crewmember will contact you (your most-frequently-used squadmate) and tell you the crew is on the way.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "inMapId": "G.C3.DLC.Sushi",
+        "mapLocationPoint": {
+            "x": 304,
+            "y": 1367,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.2.4",
         "inMissionId": "DLC3.Citadel1.2",
         "sortIndex": 1500,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Bridge Controls",
+        "name": "Cision Motors",
         "description": "The bridge is locked down. Bypass the bridge controls to get across. An alarm will sound, and more mercs will drop onto the bridge. Fight your way along the bridge and the various stores which line it. Turn when you see the Service sign and head through the door to find the glass Cision Motors entrance.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
-    }, {
-        "id": "DLC3.Citadel1.2.4",
-        "inMissionId": "DLC3.Citadel1.2",
-        "sortIndex": 1500,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Gate Controls",
-        "description": "Your squad love interest (or Liara) is waiting here. She says the landing pad is behind a locked gate. Before you can shoot this, the crewmember intervenes and convinces the volus lot owner to open the gate for you.",
-        "inMapId": "G.C",
-        "isShowInParentMap": true
+        "inMapId": "G.C3.DLC.Sushi",
+        "mapLocationPoint": {
+            "x": 964,
+            "y": 1840,
+            "radius": 1
+        }
     }, {
         "id": "DLC3.Citadel1.2.5",
         "inMissionId": "DLC3.Citadel1.2",
         "sortIndex": 1500,
         "gameVersion": "3",
         "missionType": "Objective",
+        "name": "Gate Controls",
+        "description": "Your squad love interest (or Liara) is waiting here. She says the landing pad is behind a locked gate. Before you can shoot this, the crewmember intervenes and convinces the volus SkyCar manager to open the gate for you.",
+        "inMapId": "G.C3.DLC.Sushi",
+        "mapLocationPoint": {
+            "x": 1421,
+            "y": 1982,
+            "radius": 1
+        }
+    }, {
+        "id": "DLC3.Citadel1.2.6",
+        "inMissionId": "DLC3.Citadel1.2",
+        "sortIndex": 1500,
+        "gameVersion": "3",
+        "missionType": "Objective",
         "name": "Extraction Zone",
-        "description": "The shuttle that meets you at the extraction point is full of more mercs. Wrex (or James) will jump onto the shuttle and take them out. More mercs will drop down from the roof behind you. He'll give you a better gun. In the ensuing battle, if you shoot at the cars, you will hear the volus owner wailing from behind the gate. Just hold them off until the real rescue shuttle arrives, then head back out to the landing pad and escape.",
-        "inMapId": "G.C",
+        "description": "The shuttle that meets you at the extraction point is full of more mercs. Wrex (or James) will jump onto the shuttle and take them out. More mercs will drop down from the roof behind you. He'll give you a better gun. Just hold them off until the real rescue shuttle arrives, then head back out to the landing pad and escape.",
+        "sideEffects": ["During the battle, if you shoot at (and blow up) the cars, you will hear the SkyCar manager wailing from inside the locked office."],
+        "inMapId": "G.C3.DLC.Sushi.02",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel1.3",
@@ -3266,7 +3283,7 @@
         "missionType": "Objective",
         "name": "Vega",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 839,
             "y": 1646,
@@ -3280,7 +3297,7 @@
         "missionType": "Objective",
         "name": "EDI",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 709,
             "y": 1906,
@@ -3294,7 +3311,7 @@
         "missionType": "Objective",
         "name": "Kaidan/Ashley",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 872,
             "y": 1903,
@@ -3308,7 +3325,7 @@
         "missionType": "Objective",
         "name": "Joker",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1064,
             "y": 1842,
@@ -3322,7 +3339,7 @@
         "missionType": "Objective",
         "name": "Tali",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 900,
             "y": 2030,
@@ -3336,7 +3353,7 @@
         "missionType": "Objective",
         "name": "Cortez",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 670,
             "y": 1206,
@@ -3350,7 +3367,7 @@
         "missionType": "Objective",
         "name": "Garrus",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 993,
             "y": 773,
@@ -3364,7 +3381,7 @@
         "missionType": "Objective",
         "name": "Wrex",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 816,
             "y": 530,
@@ -3378,7 +3395,7 @@
         "missionType": "Objective",
         "name": "Javik",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1008,
             "y": 593,
@@ -3392,7 +3409,7 @@
         "missionType": "Objective",
         "name": "Glyph",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 908,
             "y": 1307,
@@ -3406,7 +3423,7 @@
         "missionType": "Objective",
         "name": "Brooks",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 854,
             "y": 1193,
@@ -3420,7 +3437,7 @@
         "missionType": "Objective",
         "name": "The Plan",
         "description": "Liara will reveal that [megametracker://person?id=O3.Khan] sold the pistol you took from the mercs, and that the merc team is known as CAT6 - a term for dishonorably discharged Alliance soldiers. \n\nTo learn who Khan's customer is, you will need to infiltrate his casino and get past security into his panic room. You determine that Brooks is the best candidate to sneak in through a ventilation shaft, and open the room for the rest of you. And Glyph finds a casino event you can use for cover - a Black Tie charity gala that night.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 908,
             "y": 1307,
@@ -3454,7 +3471,7 @@
         "missionType": "Objective",
         "name": "Shaft Access Grate",
         "description": "Meet Brooks at the ventilation shaft access grate. She explains that it is wired with an alarm. Brooks gives you contact lenses which highlight the subfloor circuits in the casino. This is your tutorial on the rest of the casino mission: follow the circuits and disable any security cameras and distract any guards.",
-        "inMapId": "G.C3.Gala",
+        "inMapId": "G.C3.DLC.Gala",
         "mapLocationPoint": {
             "x": 735,
             "y": 369,
@@ -3468,7 +3485,7 @@
         "missionType": "Objective",
         "name": "Disable Vent Alarm",
         "description": "Disable the camera pointed at the grate alarm, and then disable the alarm.",
-        "inMapId": "G.C3.Gala",
+        "inMapId": "G.C3.DLC.Gala",
         "mapLocationPoint": {
             "x": 1279,
             "y": 326,
@@ -3482,7 +3499,7 @@
         "missionType": "Objective",
         "name": "Distract Guard",
         "description": "Find the guard below Brooks and distract him.",
-        "inMapId": "G.C3.Gala",
+        "inMapId": "G.C3.DLC.Gala",
         "mapLocationPoint": {
             "x": 1359,
             "y": 803,
@@ -3504,7 +3521,7 @@
         "missionType": "Objective",
         "name": "Sensor Power Box",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Gala",
+        "inMapId": "G.C3.DLC.Gala",
         "mapLocationPoint": {
             "x": 411,
             "y": 1283,
@@ -3518,7 +3535,7 @@
         "missionType": "Objective",
         "name": "Sensor Power Box",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Gala",
+        "inMapId": "G.C3.DLC.Gala",
         "mapLocationPoint": {
             "x": 1675,
             "y": 1142,
@@ -3532,7 +3549,7 @@
         "missionType": "Objective",
         "name": "Stall Guard",
         "description": "Find the guard and stall him before he reaches Brooks' location.",
-        "inMapId": "G.C3.Gala",
+        "inMapId": "G.C3.DLC.Gala",
         "mapLocationPoint": {
             "x": 1329,
             "y": 1024,
@@ -3546,7 +3563,7 @@
         "missionType": "Objective",
         "name": "Disable Door Sensor",
         "description": "The last sensor is the hardest. You can use a crewmember to distract one guard, but then you have to bypass the first camera while the other guard is turned away, and the repeat for the second camera before you can disable the door sensor. If you get caught, go mingle to reduce any suspicion and try again. If there are people you want to talk to but haven't had time yet, fail on purpose and go chat with them to mingle.",
-        "inMapId": "G.C3.Gala",
+        "inMapId": "G.C3.DLC.Gala",
         "mapLocationPoint": {
             "x": 1017,
             "y": 1858,
@@ -3560,7 +3577,7 @@
         "missionType": "Objective",
         "name": "Panic Room",
         "description": "You enter the panic room to find Khan dead and his terminal wiped. Your identify thief appears on the vidcomm and threatens you. You take the terminal disk as you leave, to see if EDI can recover anything.",
-        "inMapId": "G.C3.Gala.02",
+        "inMapId": "G.C3.DLC.Gala.02",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel1.5",
@@ -3593,7 +3610,7 @@
         "missionType": "Objective",
         "name": "Vega",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 839,
             "y": 1646,
@@ -3607,7 +3624,7 @@
         "missionType": "Objective",
         "name": "Liara and Glyph",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 709,
             "y": 1906,
@@ -3621,7 +3638,7 @@
         "missionType": "Objective",
         "name": "Kaidan/Ashley",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 872,
             "y": 1903,
@@ -3635,7 +3652,7 @@
         "missionType": "Objective",
         "name": "Joker",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1064,
             "y": 1842,
@@ -3649,7 +3666,7 @@
         "missionType": "Objective",
         "name": "Tali",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 900,
             "y": 2030,
@@ -3663,7 +3680,7 @@
         "missionType": "Objective",
         "name": "Cortez",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 670,
             "y": 1206,
@@ -3677,7 +3694,7 @@
         "missionType": "Objective",
         "name": "Garrus",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 993,
             "y": 773,
@@ -3691,7 +3708,7 @@
         "missionType": "Objective",
         "name": "Wrex",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 753,
             "y": 536,
@@ -3705,7 +3722,7 @@
         "missionType": "Objective",
         "name": "Javik",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1008,
             "y": 593,
@@ -3719,7 +3736,7 @@
         "missionType": "Objective",
         "name": "EDI",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 908,
             "y": 1307,
@@ -3733,7 +3750,7 @@
         "missionType": "Objective",
         "name": "Recovered Disk",
         "description": "EDI and Brooks have cracked the purchase order on the drive. Glyph interrupts to inform you that SHepard's Spectre access code was used to gain entrance to the Citadel Archives. Also, a volus shows up with pizza.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 854,
             "y": 1193,
@@ -3886,7 +3903,7 @@
         "missionType": "DLC",
         "name": "Citadel: Party",
         "description": "Throw a party for your crew and former crew. You can also socialize and play games at the Silversun Strip. \n\n*_This assignment was released as part of the Citadel DLC pack._*",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true,
         "experience": 0,
         "reward": "",
@@ -3906,7 +3923,7 @@
         "missionType": "Objective",
         "name": "Invitations",
         "description": "Joker, EDI, Liara, Vega, Cortez, and Traynor are all invited by default. The remaining invitations depend on whether the friend is available, and if you want them at the party. \"Invite All\" to just gather everyone.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.2",
@@ -3939,7 +3956,7 @@
         "missionType": "Objective",
         "name": "Socialize Round 1",
         "description": "Many of your friends want some one-on-one time. Check your messages to confirm who is available and where to meet them. You can meet them before or after the party.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.4.Javik",
@@ -3995,7 +4012,7 @@
         "missionType": "Objective",
         "name": "EDI - Shopping",
         "description": "Invite EDI up to the apartment. She tries to buy something for Joker. And she brings you a gift.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.4.Vega",
@@ -4006,7 +4023,7 @@
         "missionType": "Objective",
         "name": "Vega - Workout",
         "description": "Invite James up to the apartment. He shows off his tattoo. Follow him downstairs as he is leaving and he will be distracted by your workout room. Then you can compete with James over who can do the most pullups (although it takes 183 repetitious Paragon and Renegade Interrupts). \n\nIf you want to romance James, you can flirt with him here, but he shoots you down this time (try some more: [YouTube|https://www.youtube.com/watch?v=n8roLH2Zu6Q]).",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.4.Miranda",
@@ -4017,7 +4034,7 @@
         "missionType": "Objective",
         "name": "Miranda - Drink",
         "description": "Invite Miranda up for a drink. You catch her up on the clone business and she makes a joke about you executing marine life (because your Normandy fish keep dying).",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.4.Zaeed",
@@ -4055,7 +4072,7 @@
         "missionType": "Objective",
         "name": "Socialize Round 2",
         "description": "Many of your friends want some one-on-one time. Check your messages to confirm who is available and where to meet them. You can meet them before or after the party.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.5.Cortez",
@@ -4081,7 +4098,7 @@
         "missionType": "Objective",
         "name": "Liara - Piano",
         "description": "Invite Liara up. She plays a song on the piana she learned as a child. \n\nIf you have romanced her, you can keep her from leaving and then you hold hands and kiss.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.5.Tali",
@@ -4092,7 +4109,7 @@
         "missionType": "Objective",
         "name": "Tali - Fleet & Flotilla",
         "description": "Invite Tali up. She insists you watch her favorite soap opera - Fleet and Flotilla. If you've romanced her, there's some additional dialogue and kissing, and she sings along with the soap opera theme song.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.5.Jack",
@@ -4118,7 +4135,7 @@
         "missionType": "Objective",
         "name": "Kolyat - Memorial",
         "description": "Invite the crew to a memorial for Thane. Kolyat will leave you with some messages from Thane, which you can watch in the upstairs bedroom. They are romantic messages, if you have romanced Thane.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
 
 
@@ -4131,7 +4148,7 @@
         "missionType": "Objective",
         "name": "Socialize Round 3",
         "description": "Many of your friends want some one-on-one time. Check your messages to confirm who is available and where to meet them. You can meet them before or after the party.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.5.Jacob",
@@ -4172,7 +4189,7 @@
         "missionType": "Objective",
         "name": "Cortez & Vega - Game",
         "description": "Invite Cortez and Vega over to watch a biotiball game. \n\nIf you've romanced Cortez, there's some post-game snuggling.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.6.Ashley",
@@ -4194,7 +4211,7 @@
         "missionType": "Objective",
         "name": "Kaidan - Dinner",
         "description": "Invite Kaidan up to your apartment. He insists on making dinner. You tease him about his cooking. \n\nIf you've romanced Kaidan, he flirts the whole time, and then you go upstairs and make out (implied off-screen hookup).",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.6.Traynor",
@@ -4205,7 +4222,7 @@
         "missionType": "Objective",
         "name": "Traynor - Hot Tub",
         "description": "Invite Traynor up to the apartment to try the hot tub. If romanced, you join her and there's an off-screen hookup. Otherwise, Traynor discovers [Kahlee Sanders'|megametracker://person?id=O3.Sanders] overnight bag (with massage wands).",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.6.Joker",
@@ -4228,7 +4245,7 @@
         "missionType": "Objective",
         "name": "Socialize Round 4",
         "description": "Many of your friends want some one-on-one time. Check your messages to confirm who is available and where to meet them. You can meet them before or after the party.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.7.Jack",
@@ -4239,7 +4256,7 @@
         "missionType": "Objective",
         "name": "Jack - Puppy",
         "description": "Invite Jack up to the apartment. She has rescued a varren puppy. \n\nIf romanced, Jack will give you a tattoo.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.7.Mom",
@@ -4249,7 +4266,7 @@
         "missionType": "Objective",
         "name": "Hannah Shepard",
         "description": "If you are Spacer, you can call your Mom. She reminisces about your childhood daydreams, and says she is proud of you.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.7.Miranda",
@@ -4275,7 +4292,7 @@
         "missionType": "Objective",
         "name": "Samara - Chat",
         "description": "Invite Samara up to the apartment. You can chat with her about her wild adventures in the news. \n\nIf you romanced her in Game 2, you can share a romantic kiss and embrace.",
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true
     }, {
         "id": "DLC3.Citadel2.7.Wrex",
@@ -4300,7 +4317,7 @@
         "name": "Throw Party",
         "description": "Invite your friends up for the party. You can have a rowdy party, or a more reserved one. \n\nIf you do not (or cannot) invite all of the guests, some of the conversations may not be available and the remaining guests will be reassigned to other conversations.",
         "objectivesCountToCompletion": 8,
-        "inMapId": "G.C3.Apartment.Terminal",
+        "inMapId": "G.C3.DLC.Apt.Terminal",
         "isShowInParentMap": true,
         "events": [{
             "type": "Triggers",
@@ -4316,7 +4333,7 @@
         "name": "Tone of the Party 1",
         "description": "You can select the tone for the first round of the party. The choice here doesn't affect the conversations available.",
         "objectivesCountToCompletion": 1,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 881,
             "y": 1750,
@@ -4361,7 +4378,7 @@
         "titlePrefix": "Round 1: ",
         "name": "Grunt, Wrex, Zaeed, and Javik",
         "description": "1) They are talking about the sort of gatherings they are used to. When you join, Grunt and Wrex argue over who is stronger. \n\n2) They are talking about how many vorcha they could take down.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 923,
             "y": 714,
@@ -4376,7 +4393,7 @@
         "titlePrefix": "Round 1: ",
         "name": "Garrus, Traynor, Samara, Tali, Liara",
         "description": "1) They are talking about how expensive the apartment is. Kasumi makes a brief appearance. When you join, they toast to the Normandy. \n\n2) They are reminiscing about adventures with Shepard. \n\n3) They are talking about Archangel and the Shadow Broker.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 902,
             "y": 1488,
@@ -4391,7 +4408,7 @@
         "titlePrefix": "Round 1: ",
         "name": "EDI, Joker, Miranda, Jacob",
         "description": "1) Joker is talking about Cerberus' recruiting problems. When you join, he mocks Cerberus' incompetance. Kasumi makes a brief appearance. \n\n2) Miranda is asking Joker about EDI. \n\n3) Jacob talks about his proposal plans. \n\n4) Jacob asks EDI if you ever has run into trouble being an unshackled AI. \n\n5) EDI talks about her drunk-simulation software.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 667,
             "y": 1936,
@@ -4406,7 +4423,7 @@
         "titlePrefix": "Round 1: ",
         "name": "Vega, Jack, Cortez, Kaidan/Ashley",
         "description": "1) If Kaidan, they are talking about the tone of the party. If Ashley, Vega is asking Jack about her tattoos. When you join, they toast to the time off. \n\nFemShep can seduce James (if she flirted with him in the pre-party socializing). You can *Support Hook Up*, or *Support Cool It*. \n\n2) They are talking about how nice the apartment is.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 987,
             "y": 1882,
@@ -4422,7 +4439,7 @@
         "name": "Tone of the Party 2",
         "description": "You can select the tone for the second round of the party. The choice here changes the conversations available.",
         "objectivesCountToCompletion": 1,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 881,
             "y": 1750,
@@ -4471,7 +4488,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Grunt and Wrex",
         "description": "1) Grunt and Wrex are having a drink-off. When you join, there is an exchange between Wrex, Grunt, and Shepard where they just keep repeating each others' names indefinitely. It will not end until you end it. \n\n2) They are comparing scars.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 987,
             "y": 1882,
@@ -4486,7 +4503,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Javik, Jack, Cortez, and EDI",
         "description": "1) Javik is very drunk and talking about how his people can sense things, and asks if he can touch Jack or Cortez. When you join, EDI asks about making some food. You can *Support Mixing Drinks* or *Support Making Food*. \n\n2) Jack is pissed that Javik touched her. \n\n3) Cortez is making drinks.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 667,
             "y": 1936,
@@ -4501,7 +4518,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Tali, Jacob, Vega, Miranda, and Liara",
         "description": "1) Tali and James are talking about the Normandies. When you join, they argue about which version is better: the Normandy SR1 or SR2. You can *Support Normandy SR1*, or *Support Normandy SR2*. \n\n2) They are talking about missing the old Normandy. \n\n3) Vega says if he got his own ship, it would be better than both Normandies.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 687,
             "y": 1249,
@@ -4516,7 +4533,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Garrus and Zaeed",
         "description": "1) Garrus and Zaeed are annoyed at the apartment, When you join, they discuss tactical improvements. \n\n2) Still talking about how to make the apartment more defensible.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 900,
             "y": 769,
@@ -4531,7 +4548,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Traynor, Joker, and Ashley/Kaidan",
         "description": "1) Traynor and Joker are talking about EDI. When you join, Joker teases Traynor about finding her attractive. Kasumi makes an appearance. If you are dating Traynor, Joker brings up that you are 30% cybernetic, which Traynor is delighted by. \n\n2) Joker asks Kaidan how he does his hair. \n\n3) Kaidan suggests dancing. \n\n4) Joker and Traynor agree to not talk about EDI again.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 885,
             "y": 543,
@@ -4546,7 +4563,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Samara",
         "description": "1) Samara is meditating. \n\n2) She says that is calming to sit by herself and listen to the others.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 998,
             "y": 388,
@@ -4561,7 +4578,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Kasumi",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1230,
             "y": 196,
@@ -4576,7 +4593,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Kasumi",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1200,
             "y": 1229,
@@ -4603,7 +4620,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Traynor, EDI, and Tali",
         "description": "1) EDI has engaged Traynor in an awkward conversation about Traynor's crush on her voice. When you join, EDI brings up some very sexually-charged things Traynor said, while Tali poisons herself on cheese. \n\n2) EDI tries to make Traynor feel better, which makes Traynor feel worse.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 885,
             "y": 543,
@@ -4618,7 +4635,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Liara, Jacob, Vega, and Kaidan/Ashley",
         "description": "1) Liara and James are arguing upstairs about which is more powerful: physical or biotic powers. You can *Support Biotics*, or *Support Physical*. Kasumi makes an appearance. If Ashley is there, Vega complains that she didn't take his side, and she suggests that she'd need a \"closer inspection.\" \n\n2) A call for more drinks. \n\n3) Vega asks the biotics if they used their biotics to throw people around as a kid, for fun.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 923,
             "y": 714,
@@ -4633,7 +4650,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Samara and Zaeed",
         "description": "1) Zaeed suggests that he and Samara have a lot in common. When you join, they admire the art. \n\n2) Zaeed propositions Samara and she turns him down. \n\n3) Zaeed suggests they chat about their lives. Apparently the love of his life was Jessie, his gun.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 900,
             "y": 1151,
@@ -4647,7 +4664,7 @@
         "missionType": "Objective",
         "titlePrefix": "Round 2: ",
         "name": "Miranda and Jack",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "description": "1) Miranda and Jack are arguing at the private bar. You can *Support Friendship* or *Support Conflict*. Kasumi makes an appearance.",
         "mapLocationPoint": {
             "x": 635,
@@ -4663,7 +4680,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Cortez, Joker, Javik, Garrus, and Wrex",
         "description": "1) They are talking about the worst planets they've been stuck on. When you join, they argue about whether Joker's hobbies are manly enough. You can *Support Cortez* or *Support Joker*. \n\n2) Joker is mad because he thinks they wanted to see him injured at the shooting range. \n\n3) Joker asks Javik about the fighter ships of his day.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 667,
             "y": 1936,
@@ -4678,7 +4695,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Grunt",
         "description": "1) Grunt is by the door rejecting would-be party-goers. You can *Invite Up* or *Turn Away*. You can also prompt him for some epic drunk lines. \n\nYou can go back 12 times for more rejections, including Sheppy teh Volus, someone selling cookies, and mimes.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1251,
             "y": 1739,
@@ -4693,7 +4710,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Kasumi",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1230,
             "y": 196,
@@ -4708,7 +4725,7 @@
         "titlePrefix": "Round 2: ",
         "name": "Kasumi",
         "isOpensDetail": false,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1200,
             "y": 1229,
@@ -4724,7 +4741,7 @@
         "name": "Tone of the Party 3",
         "description": "You can select the tone for the third round of the party. The choice here does not change the conversations available; however, they are different based on the choice from round two.",
         "objectivesCountToCompletion": 1,
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 881,
             "y": 1750,
@@ -4792,7 +4809,7 @@
         "titlePrefix": "Round 3: ",
         "name": "Liara, Javik, Vega, and Kasumi",
         "description": "1) James is teaching Liara and Javik how to play poker. When you join, you warn Vega not to underestimate Liara. Kasumi makes an appearance. \n\n2) Javik entertains them with a story of a game from his cycle. \n\n3) Liara is winning. Kasumi suggests they join up for crimes.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 666,
             "y": 1036,
@@ -4806,8 +4823,8 @@
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
         "name": "Joker, Cortez, Samara, Wrex, Jacob, Jack, Miranda, and Ashley",
-        "description": "1) Joker and Cortez are arguing over who is the better pilot. When you join, they discuss the clone versus the Collector Base. Joker narrates how he saved the Normandy. \n\n2) They are talking about the Normandy crew. \n\n3) They are talking about how nice it is seeing everyone again. If Ashley is there, Wrex asks if she would have killed him on Virmire.",
-        "inMapId": "G.C3.Apartment",
+        "description": "1) Joker and Cortez are arguing over who is the better pilot. When you join, they discuss the clone mission versus the Collector Base. Joker narrates how he saved the Normandy. \n\n2) They are talking about the Normandy crew. \n\n3) They are talking about how nice it is seeing everyone again. If Ashley is there, Wrex asks if she would have killed him on Virmire.",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 885,
             "y": 543,
@@ -4822,7 +4839,7 @@
         "titlePrefix": "Round 3: ",
         "name": "Grunt, EDI, Traynor, and Kaidan",
         "description": "1) EDI is cooking food and arguing about party efficiency. When you join, you argue with EDI over how much work should go into party preparation. \n\n2) Everyone likes the food EDI made.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 902,
             "y": 1488,
@@ -4837,7 +4854,7 @@
         "titlePrefix": "Round 3: ",
         "name": "Tali",
         "description": "1) Tali is passed out in the bathroom, mumbling about her new omni-tattoo. It's epic. \n\n2) She mumbles about having another drink with Traynor. \n\n3) She is saying it was totally worth it. One of the prompts is about Vakarian. \n\n4) Awesome sauce. \n\n5) S'all spinning. \n\n6) So many efforts.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1200,
             "y": 1229,
@@ -4851,8 +4868,8 @@
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
         "name": "Garrus",
-        "description": "Garrus is discussing installing booby traps with Zaeed. 1) He is considering adding explosives to the glass wall. \n\n2) Garrus comments that the plants won't survive the explosion. \n\n3) Garrus and Zaeed set their sights the kitchen.",
-        "inMapId": "G.C3.Apartment",
+        "description": "Garrus is discussing installing booby traps with Zaeed. 1) He is considering adding explosives to the glass wall. \n\n2) Garrus is calculating optimal grid spacing for the explosives. \n\n3) Garrus comments that the explosion will destroy all the plants. \n\n4) Garrus and Zaeed set their sights the kitchen.",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1196,
             "y": 1646,
@@ -4867,7 +4884,7 @@
         "titlePrefix": "Round 3: ",
         "name": "Zaeed",
         "description": "Zaeed is discussing installing booby traps with Garrus. 1) He is wiring up the hot tub. \n\n2) Zaeed is discussing clone DNA while finishing wiring. \n\n3) They are going to wire up the coffeemaker.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 852,
             "y": 130,
@@ -4900,7 +4917,7 @@
         "titlePrefix": "Round 3: ",
         "name": "Traynor, Garrus, Jack, Cortez, Tali, and Samara",
         "description": "1) They are dancing in the kitchen. When you join, they mock your dancing skills. \n\n2) Still dancing, and reciting the elements.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 899,
             "y": 1364,
@@ -4914,8 +4931,8 @@
         "missionType": "Objective",
         "titlePrefix": "Round 3: ",
         "name": "Miranda, Liara, Jacob, Vega, Ashley/Kaidan",
-        "description": "1) They are drunkenly arguing about biotics. If you sided with Liara in the prior argument, Liara levitates James. Otherwise, James and Jacob have a push up competition (Kasumi makes an appearance). \n\n2) They are drunkenly dancing. If you haven't romanced James or Ashley, you can find them canoodling [around the corner|megametracker://maplocation?id=G.C3.Apartment&title=James%20&%20Ashley&location=745x592]. You can *Support Hook Up*, or *Support Cool It*.",
-        "inMapId": "G.C3.Apartment",
+        "description": "1) They are drunkenly arguing about biotics. If you sided with Liara in the prior argument, Liara levitates James. Otherwise, James and Jacob have a push up competition (Kasumi makes an appearance). \n\n2) They are drunkenly dancing. If you haven't romanced James or Ashley, you can find them canoodling [around the corner|megametracker://maplocation?id=G.C3.DLC.Apartment&title=James%20&%20Ashley&location=745x592]. You can *Support Hook Up*, or *Support Cool It*.",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 923,
             "y": 714,
@@ -4930,7 +4947,7 @@
         "titlePrefix": "Round 3: ",
         "name": "Javik, Zaeed, and Wrex",
         "description": "1) They are all in agreement that dancing is stupid. \n\n2) Theya re enjoying themselves.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 667,
             "y": 1936,
@@ -4945,7 +4962,7 @@
         "titlePrefix": "Round 3: ",
         "name": "Joker and EDI",
         "description": "1) EDI wants Joker to dance with her and he does not want to. You can *Support Sitting* or *Support Dancing* (either way, they end up dancing). \n\n2) EDI suggests that Jokey would enjoy dancing more with the right partner. \n\n3) EDI suggests that Joker dances like Shepard. \n\n4) Joker injures his pancreas.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 968,
             "y": 1946,
@@ -4960,7 +4977,7 @@
         "titlePrefix": "Round 3: ",
         "name": "Grunt",
         "description": "Grunt is passed out in the shower. He mumbles drunkenly a bunch of hilarious lines.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 995,
             "y": 151,
@@ -4975,7 +4992,7 @@
         "titlePrefix": "Round 3: ",
         "name": "Kasumi",
         "description": "Kasumi is rifling through your underwear.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 996,
             "y": 1018,
@@ -4989,7 +5006,7 @@
         "missionType": "Objective",
         "name": "Take Photo",
         "description": "This ends the festivities - so save it until you are done.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1046,
             "y": 1865,
@@ -5024,7 +5041,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "Javik",
         "description": "(Mellow)\nJavik asks to stay in the bathroom. It reminds him of his stasis pod. \n\n(Loud)\nJavik asks if it is time to rule the galaxy now. He says he had a terrible dream that 50,000 years had passed. It was not a dream!",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 838,
             "y": 171,
@@ -5039,7 +5056,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "Garrus and Liara",
         "description": "(Mellow)\nGarrus gives you the disarming code for any explosives he may have installed and forgotten. Liara is very chipper. \n\n(Load)\nGarrus thinks he should stop saying calibrated. Liara begs for tea.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 885,
             "y": 543,
@@ -5054,7 +5071,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "Samara",
         "description": "Samara thanks you for inviting her.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 998,
             "y": 388,
@@ -5069,7 +5086,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "Tali",
         "description": "Tali is very hungover.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1230,
             "y": 196,
@@ -5084,7 +5101,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "Grunt, Miranda, Kaidan, and Vega",
         "description": "(Mellow)\nGrunt is hungry. Miranda is enjoying some tea. Kaidan has had too much coffee. Vega is making eggs. \n\n(Loud)\nGrunt lets you know the bathroom is cleaned up. Miranda is enjoying some tea. Kaidan has had too much coffee. Vega is making eggs.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 902,
             "y": 1488,
@@ -5099,7 +5116,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "Traynor",
         "description": "Traynor is checking extranet sites for records of the night before.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 669,
             "y": 964,
@@ -5114,7 +5131,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "Jacob and Jack",
         "description": "They are working out.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1112,
             "y": 1010,
@@ -5129,7 +5146,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "Zaeed and Cortez",
         "description": "Cortez greets you. Zaeed apparently snores.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 987,
             "y": 1882,
@@ -5144,7 +5161,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "EDI",
         "description": "EDI jokes about murdering the neighbors after they complained about the noise.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 1258,
             "y": 1861,
@@ -5159,7 +5176,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "Kasumi",
         "description": "Kasumi is pleased with the breakfast supplies.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 900,
             "y": 769,
@@ -5174,7 +5191,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "Joker and Wrex",
         "description": "(Mellow)\nWrex jokes that no humans were harmed at the party. Joker is collapsed at the bar, trying not to throw up. \n\n(Load)\nWrex says he is too old for all that drinking. Joker is collapsed at the bar, trying not to throw up. ",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 667,
             "y": 1936,
@@ -5190,7 +5207,7 @@
         "titlePrefix": "Aftermath: ",
         "name": "Mordin",
         "description": "There are messages from Mordin by the bed.",
-        "inMapId": "G.C3.Apartment",
+        "inMapId": "G.C3.DLC.Apartment",
         "mapLocationPoint": {
             "x": 610,
             "y": 336,
