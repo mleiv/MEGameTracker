@@ -3482,7 +3482,7 @@
         "name": "Citadel DLC: Ryuusei Sushi",
         "inMapId": "G.C3.DLC",
         "rerootBreadcrumbs": true,
-        "mapType": "Level",
+        "mapType": "Area",
         "isHidden": true,
         "gameVersionData": {
             "3": {
@@ -3673,7 +3673,7 @@
         "name": "Citadel DLC: Charity Gala",
         "inMapId": "G.C3.DLC",
         "rerootBreadcrumbs": true,
-        "mapType": "Level",
+        "mapType": "Structure",
         "isHidden": true,
         "gameVersionData": {
             "3": {
@@ -3998,12 +3998,293 @@
             "y": 341,
             "radius": 20
         }
+        
+    }, {
+        "id": "G.C3.DLC.Archives",
+        "name": "Citadel DLC: Archives",
+        "inMapId": "G.C3.DLC",
+        "rerootBreadcrumbs": true,
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC/Citadel_DLC_3Archives.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 960,
+                    "width": 1800,
+                    "height": 187
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.2Section",
+        "name": "1 - Section 2",
+        "isShowPin": false,
+        "inMapId": "G.C3.DLC.Archives",
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC/Citadel_DLC_3Archives_2.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 1283,
+                    "y": 235,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.2.01",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.2Section",
+        "mapLocationPoint": {
+            "x": 1456,
+            "y": 31,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.2.02",
+        "name": "To 2 - Section 3",
+        "linkToMapId": "G.C3.DLC.Arch.3Section",
+        "inMapId": "G.C3.DLC.Arch.2Section",
+        "mapLocationPoint": {
+            "x": 145,
+            "y": 1691,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.3Section",
+        "name": "2 - Section 3",
+        "isShowPin": false,
+        "inMapId": "G.C3.DLC.Archives",
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC/Citadel_DLC_3Archives_3.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 700,
+                    "y": 1307,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.3.01",
+        "name": "From 1 - Section 2",
+        "linkToMapId": "G.C3.DLC.Arch.2Section",
+        "inMapId": "G.C3.DLC.Arch.3Section",
+        "mapLocationPoint": {
+            "x": 484,
+            "y": 150,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.3.02",
+        "name": "To 3 - Section 5",
+        "linkToMapId": "G.C3.DLC.Arch.5Section",
+        "inMapId": "G.C3.DLC.Arch.3Section",
+        "mapLocationPoint": {
+            "x": 1333,
+            "y": 2042,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.3.H1",
+        "name": "First Contact War",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.3Section",
+        "mapLocationPoint": {
+            "x": 491,
+            "y": 427,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.3.H2",
+        "name": "Malfunction",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.3Section",
+        "mapLocationPoint": {
+            "x": 126,
+            "y": 599,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.3.H3",
+        "name": "Krogan Rebellions",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.3Section",
+        "mapLocationPoint": {
+            "x": 493,
+            "y": 612,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.3.H4",
+        "name": "Citadel AI Ban",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.3Section",
+        "mapLocationPoint": {
+            "x": 725,
+            "y": 894,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.3.H5",
+        "name": "Battle of the Citadel",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.3Section",
+        "mapLocationPoint": {
+            "x": 1815,
+            "y": 1060,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.3.H6",
+        "name": "Malfunction",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.3Section",
+        "mapLocationPoint": {
+            "x": 1815,
+            "y": 1290,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.3.H7",
+        "name": "X",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.3Section",
+        "mapLocationPoint": {
+            "x": 0,
+            "y": 0,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.5Section",
+        "name": "3 - Section 5",
+        "isShowPin": false,
+        "inMapId": "G.C3.DLC.Archives",
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC/Citadel_DLC_3Archives_5.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 538,
+                    "y": 1920,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.5.01",
+        "name": "From 2 - Section 3",
+        "linkToMapId": "G.C3.DLC.Arch.3Section",
+        "inMapId": "G.C3.DLC.Arch.5Section",
+        "mapLocationPoint": {
+            "x": 1009,
+            "y": 26,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.5.H1",
+        "name": "Genophage",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.5Section",
+        "mapLocationPoint": {
+            "x": 672,
+            "y": 1148,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.5.H2",
+        "name": "First Spectre",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.5Section",
+        "mapLocationPoint": {
+            "x": 672,
+            "y": 1631,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.5.H3",
+        "name": "Early Religious Artifact - Earth",
+        "annotationNote": "(Ark of the Covenant)",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.5Section",
+        "mapLocationPoint": {
+            "x": 467,
+            "y": 1867,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.5.H4",
+        "name": "Discovery of the Citadel",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.5Section",
+        "mapLocationPoint": {
+            "x": 982,
+            "y": 1634,
+            "radius": 20
+        }
+    }, {
+        "id": "G.C3.DLC.Arch.5.H5",
+        "name": "First Human Spectre",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Arch.5Section",
+        "mapLocationPoint": {
+            "x": 1880,
+            "y": 1146,
+            "radius": 20
+        }
+        
+    }, {
+        "id": "G.C3.DLC.Dock",
+        "name": "Citadel DLC: Dry Dock",
+        "inMapId": "G.C3.DLC",
+        "rerootBreadcrumbs": true,
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Citadel/Citadel_DLC/Citadel_DLC_4Dock.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 146,
+                    "y": 1234,
+                    "width": 1800,
+                    "height": 187
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.C3.DLC.Dock.01",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.C3.DLC.Dock",
+        "mapLocationPoint": {
+            "x": 63,
+            "y": 1289,
+            "radius": 20
+        }
+        
     }, {
         "id": "G.C3.Silversun",
         "name": "Silversun Strip",
         "inMapId": "G.C3.DLC",
         "rerootBreadcrumbs": true,
-        "mapType": "Level",
+        "mapType": "Area",
         "isHidden": true,
         "gameVersionData": {
             "3": {
