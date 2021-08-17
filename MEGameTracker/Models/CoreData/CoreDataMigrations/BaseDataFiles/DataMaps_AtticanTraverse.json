@@ -6254,28 +6254,218 @@
 			"2": {
 				"image": "Detail_Maps/Game2/_Secondary/Horizon/Horizon.pdf",
 				"referenceSize": "2083x2083"
-			}
+			},
+            "3": {
+                "image": "Detail_Maps/Game3/Horizon/Horizon.pdf",
+                "referenceSize": "2083x2083"
+            }
 		}
 	}, {
 		"id": "G.Att.Sha.Ier.Hor.Start",
 		"inMapId": "G.Att.Sha.Ier.Horizon",
 		"name": "Drop Zone",
+        "isHidden": true,
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 1929,
 			"y": 500,
 			"radius": 20
-		}
+		},
+        "gameVersionData": {
+            "2": {
+                "isHidden": false
+            }
+        }
 	}, {
 		"id": "G.Att.Sha.Ier.Hor.WL",
 		"inMapId": "G.Att.Sha.Ier.Horizon",
 		"name": "Weapons Locker",
+        "isHidden": true,
 		"isOpensDetail": false,
 		"mapLocationPoint": {
 			"x": 1349,
 			"y": 1441,
 			"radius": 20
-		}
+		},
+        "gameVersionData": {
+            "2": {
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.01Start",
+        "name": "Start",
+        "inMapId": "G.Att.Sha.Ier.Horizon",
+        "isHidden": true,
+        "isOpensDetail": false,
+        "mapLocationPoint": {
+            "x": 1455,
+            "y": 1960,
+            "radius": 20
+        },
+        "gameVersionData": {
+            "3": {
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.1Registration",
+        "name": "1 - Registration",
+        "isShowPin": false,
+        "inMapId": "G.Att.Sha.Ier.Horizon",
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Horizon/Horizon_1Registration.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 1455,
+                    "y": 1149,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.1.01",
+        "name": "Start",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Sha.Ier.Hor.1Registration",
+        "mapLocationPoint": {
+            "x": 1626,
+            "y": 1851,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.1.02",
+        "name": "To 2 - Laboratories",
+        "linkToMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "inMapId": "G.Att.Sha.Ier.Hor.1Registration",
+        "mapLocationPoint": {
+            "x": 148,
+            "y": 332,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.2Labs",
+        "name": "2 - Laboratories",
+        "isShowPin": false,
+        "inMapId": "G.Att.Sha.Ier.Horizon",
+        "mapType": "Area",
+        "isHidden": true,
+        "gameVersionData": {
+            "3": {
+                "image": "Detail_Maps/Game3/Horizon/Horizon_2Laboratories.pdf",
+                "referenceSize": "2083x2083",
+                "mapLocationPoint": {
+                    "x": 941,
+                    "y": 314,
+                    "radius": 150
+                },
+                "isHidden": false
+            }
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.2.01",
+        "name": "From 1 - Registration",
+        "linkToMapId": "G.Att.Sha.Ier.Hor.1Registration",
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 1678,
+            "y": 614,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.2.02",
+        "name": "To Dr. Lawson",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 1113,
+            "y": 607,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.2.BE2",
+        "name": "Barrier Engine",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 889,
+            "y": 1368,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.2.BE3",
+        "name": "Barrier Engine",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 1128,
+            "y": 1456,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.2.BE4",
+        "name": "Barrier Engine",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 1128,
+            "y": 1245,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.2.BE5",
+        "name": "Barrier Engine",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 1350,
+            "y": 1245,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.2.BE6",
+        "name": "Barrier Engine",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 1574,
+            "y": 1456,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.2.BE7",
+        "name": "Barrier Engine",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 1395,
+            "y": 1927,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.2.BE8",
+        "name": "Barrier Engine",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 1178,
+            "y": 1927,
+            "radius": 20
+        }
+    }, {
+        "id": "G.Att.Sha.Ier.Hor.2.BE9",
+        "name": "Barrier Engine",
+        "isOpensDetail": false,
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 700,
+            "y": 1949,
+            "radius": 20
+        }
 		
 	}, {
 		"id": "G.Att.Sha.Ier.Watchman",
@@ -6290,6 +6480,7 @@
 		"relatedLinks": [
 			"https://masseffect.wikia.com/wiki/Watchman"
 		]
+        
 	}, {
 		"x-comment-x": "-----------------------Styx Theta-------------------------",
 		"id": "G.Att.Styx",

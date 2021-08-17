@@ -2638,55 +2638,105 @@
     }, {
         "id": "M3.2.Horizon.1",
         "inMissionId": "M3.2.Horizon",
-        "sortIndex": 261,
+        "sortIndex": 26,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Reception Area",
-        "description": "Fight the Cerberus troops at the entrance and then explore the reception area. You will find a recording from [megametracker://person?id=S2.Miranda] (or her sister [megametracker://person?id=O2.Oriana], if Miranda did not survive Game 2), warning that Sanctuary is a front for Cerberus, experimenting on the unwitting refugees fleeing there."
+        "name": "Registration Area",
+        "description": "Fight the Cerberus troops at the entrance and then explore the reception area. You will find a recording from [megametracker://person?id=S2.Miranda] (or her sister [megametracker://person?id=O2.Oriana], if Miranda did not survive Game 2), warning that Sanctuary is a front for Cerberus, experimenting on the unwitting refugees fleeing there.",
+        "inMapId": "G.Att.Sha.Ier.Hor.1Registration",
+        "mapLocationPoint": {
+            "x": 836,
+            "y": 874,
+            "radius": 1
+        }
     }, {
         "id": "M3.2.Horizon.2",
         "inMissionId": "M3.2.Horizon",
-        "sortIndex": 262,
+        "sortIndex": 26,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Empty Pool",
-        "description": "To proceed, find the controls to empty the pool and reveal the entrance to the hidden parts of the facility. Find the command center and activate the console to turn the power back on. The room after that has a video of Miranda (or Oriana) turning off the power, with [megametracker://person?id=E3.KaiLeng] on her heels."
+        "description": "To proceed, find the controls to empty the pool and reveal the entrance to the hidden parts of the facility. Find the command center and activate the console to turn the power back on. The room after that has a video of Miranda (or Oriana) turning off the power, with [megametracker://person?id=E3.KaiLeng] on her heels.",
+        "inMapId": "G.Att.Sha.Ier.Hor.1Registration",
+        "mapLocationPoint": {
+            "x": 273,
+            "y": 1896,
+            "radius": 1
+        }
     }, {
         "id": "M3.2.Horizon.3",
         "inMissionId": "M3.2.Horizon",
-        "sortIndex": 263,
+        "sortIndex": 26,
         "gameVersion": "3",
         "missionType": "Objective",
-        "name": "Laboratories",
-        "description": "The next area holds the laboratory terminals in a long, tiered hallway, and has scattered Reaper forces. When you have defeated them, you will find a message from Miranda (or Oriana) that she is going to the tower to disable the communications scrambler."
+        "name": "Laboratories Entrance",
+        "description": "The next area is a series of long rooms or hallways. At the end, there is a terminal with a video of Miranda (or Oriana) shutting down the facility power, with Kai Leng following behind her. Beyond the door is the laboratories, where you are attacked by husks.",
+        "inMapId": "G.Att.Sha.Ier.Hor.1Registration",
+        "mapLocationPoint": {
+            "x": 281,
+            "y": 327,
+            "radius": 1
+        }
+    }, {
+        "id": "M3.2.Horizon.3B",
+        "inMissionId": "M3.2.Horizon",
+        "sortIndex": 26,
+        "gameVersion": "3",
+        "missionType": "Objective",
+        "name": "Level 1",
+        "description": "The first laboratory level has tiered rooms on each side of a long access hall with steam pipes. There are more Reaper forces in the middle. When you have defeated them and crossed to the other rooms, you will find a message from Miranda (or Oriana) that she is going to the tower to disable the communications scrambler.",
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 1242,
+            "y": 953,
+            "radius": 1
+        }
     }, {
         "id": "M3.2.Horizon.4",
         "inMissionId": "M3.2.Horizon",
-        "sortIndex": 264,
+        "sortIndex": 26,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Level 2",
-        "description": "Head upstairs. There is another tiered hallway full of experiment tanks and another big fight. There is another message from Miranda (or Oriana) there. She reveals that [megametracker://person?id=E3.Lawson] was working with the Illusive Man to unravel Indoctrination and use it to control the Reapers. At the end of the videa, she is attacked by Kai Leng."
+        "description": "Head upstairs. There is another tiered hallway full of experiment tanks and another big fight. There is another message from Miranda (or Oriana) there. She reveals that [megametracker://person?id=E3.Lawson] was working with the Illusive Man to unravel Indoctrination and use it to control the Reapers. At the end of the video, she is attacked by Kai Leng.",
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 1130,
+            "y": 1407,
+            "radius": 1
+        }
     }, {
         "id": "M3.2.Horizon.5",
         "inMissionId": "M3.2.Horizon",
-        "sortIndex": 265,
+        "sortIndex": 26,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Level 3",
-        "description": "Head up the ladder to another tiered hallway for the another battle. When finished, leap over the walkway recommended by your squadmate. Shoot out the panel on the middle top of the platform, to reveal a control panel. Active it to move the platform down the hallway, then jump back across to a doorway."
+        "description": "Head up the ladder to another tiered hallway for the another battle. When finished, leap over the walkway recommended by your squadmate. Shoot out the panel on the middle top of the platform, to reveal a control panel. Activate it to move the platform down the hallway, then jump back across to a doorway.",
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 1197,
+            "y": 1901,
+            "radius": 1
+        }
     }, {
         "id": "M3.2.Horizon.6",
         "inMissionId": "M3.2.Horizon",
-        "sortIndex": 266,
+        "sortIndex": 26,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Final Battle",
-        "description": "The next tiered hallway is a mess, with wreckage and Reaper forces and Banshees and Brutes everywhere. Defeat them and take the elevator up to the tower."
+        "description": "The next tiered hallway is a mess, with wreckage and Reaper forces and Banshees and Brutes everywhere. Defeat them and then take the elevator up to the tower, and Dr. Lawson.",
+        "inMapId": "G.Att.Sha.Ier.Hor.2Labs",
+        "mapLocationPoint": {
+            "x": 771,
+            "y": 203,
+            "radius": 1
+        }
     }, {
         "id": "M3.2.Horizon.7",
         "inMissionId": "M3.2.Horizon",
-        "sortIndex": 267,
+        "sortIndex": 26,
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Dr. Lawson",

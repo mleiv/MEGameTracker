@@ -12,7 +12,7 @@ import CoreData
 public struct BaseDataImport: CoreDataMigrationType {
 
 	let progressProcessImportChunk = 40.0
-	let progressFinalPadding = 5.0
+	let progressFinalPadding = 20.0
 	let onProcessMapDataRow = Signal<Bool>()
 	let onProcessMissionDataRow = Signal<Bool>()
 
