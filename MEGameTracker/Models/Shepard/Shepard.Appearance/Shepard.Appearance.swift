@@ -52,151 +52,171 @@ extension Shepard {
 			],
 		]
 
-		public static let attributes: [Gender: [GameVersion: [AttributeType]]] = [
+        public static let attributes: [Gender: [Shepard.AppearanceGameVersion: [AttributeType]]] = [
 			.female: [
 				.game1: [
-				.facialStructure, .skinTone, .complexion, .scar,
-				.neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
-				.eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
-				.chinHeight, .chinDepth, .chinWidth, .jawWidth,
-				.mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
-				.noseShape, .noseHeight, .noseDepth,
-				.hairColor, .hair, .brow, .browColor,
-				.blushColor, .lipColor, .eyeShadowColor,
+                    .facialStructure, .skinTone, .complexion, .scar,
+                    .neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
+                    .eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
+                    .chinHeight, .chinDepth, .chinWidth, .jawWidth,
+                    .mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
+                    .noseShape, .noseHeight, .noseDepth,
+                    .hairColor, .hair, .brow, .browColor,
+                    .blushColor, .lipColor, .eyeShadowColor,
 				],
 				.game2: [
-				.facialStructure, .skinTone, .complexion,
-				.neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
-				.eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
-				.chinHeight, .chinDepth, .chinWidth, .jawWidth,
-				.mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
-				.noseShape, .noseHeight, .noseDepth,
-				.hairColor, .hair, .brow, .browColor,
-				.blushColor, .lipColor, .eyeShadowColor,
+                    .facialStructure, .skinTone, .complexion,
+                    .neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
+                    .eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
+                    .chinHeight, .chinDepth, .chinWidth, .jawWidth,
+                    .mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
+                    .noseShape, .noseHeight, .noseDepth,
+                    .hairColor, .hair, .brow, .browColor,
+                    .blushColor, .lipColor, .eyeShadowColor,
 				],
 				.game3: [
-				.facialStructure, .skinTone, .complexion,
-				.neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
-				.eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
-				.chinHeight, .chinDepth, .chinWidth, .jawWidth,
-				.mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
-				.noseShape, .noseHeight, .noseDepth,
-				.hairColor, .hair, .brow, .browColor,
-				.blushColor, .lipColor, .eyeShadowColor,
+                    .facialStructure, .skinTone, .complexion,
+                    .neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
+                    .eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
+                    .chinHeight, .chinDepth, .chinWidth, .jawWidth,
+                    .mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
+                    .noseShape, .noseHeight, .noseDepth,
+                    .hairColor, .hair, .brow, .browColor,
+                    .blushColor, .lipColor, .eyeShadowColor,
 				],
+                .legendary: [
+                    .facialStructure, .skinTone, .complexion,
+                    .neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
+                    .eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
+                    .chinHeight, .chinDepth, .chinWidth, .jawWidth,
+                    .mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
+                    .noseShape, .noseHeight, .noseDepth,
+                    .hairColor, .hair, .brow, .browColor,
+                    .blushColor, .lipColor, .eyeShadowColor,
+                    .scar
+                ],
 			],
 			.male: [
 				.game1: [
-				.facialStructure, .skinTone, .complexion, .scar,
-				.neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
-				.eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
-				.chinHeight, .chinDepth, .chinWidth, .jawWidth,
-				.mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
-				.noseShape, .noseHeight, .noseDepth,
-				.beard, .brow, .hair, .hairColor, .facialHairColor,
+                    .facialStructure, .skinTone, .complexion, .scar,
+                    .neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
+                    .eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
+                    .chinHeight, .chinDepth, .chinWidth, .jawWidth,
+                    .mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
+                    .noseShape, .noseHeight, .noseDepth,
+                    .beard, .brow, .hair, .hairColor, .facialHairColor,
 				],
 				.game2: [
-				.facialStructure, .skinTone, .complexion,
-				.neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
-				.eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
-				.chinHeight, .chinDepth, .chinWidth, .jawWidth,
-				.mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
-				.noseShape, .noseHeight, .noseDepth,
-				.hair, .beard, .brow, .hairColor, .facialHairColor,
-
+                    .facialStructure, .skinTone, .complexion,
+                    .neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
+                    .eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
+                    .chinHeight, .chinDepth, .chinWidth, .jawWidth,
+                    .mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
+                    .noseShape, .noseHeight, .noseDepth,
+                    .hair, .beard, .brow, .hairColor, .facialHairColor,
 				],
 				.game3: [
-				.facialStructure, .skinTone, .complexion,
-				.neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
-				.eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
-				.chinHeight, .chinDepth, .chinWidth, .jawWidth,
-				.mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
-				.noseShape, .noseHeight, .noseDepth,
-				.hair, .beard, .brow, .hairColor, .facialHairColor,
+                    .facialStructure, .skinTone, .complexion,
+                    .neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
+                    .eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
+                    .chinHeight, .chinDepth, .chinWidth, .jawWidth,
+                    .mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
+                    .noseShape, .noseHeight, .noseDepth,
+                    .hair, .beard, .brow, .hairColor, .facialHairColor,
 				],
+                .legendary: [
+                    .facialStructure, .skinTone, .complexion,
+                    .neckThickness, .faceSize, .cheekWidth, .cheekBones, .cheekGaunt, .earsSize, .earsOrientation,
+                    .eyeShape, .eyeHeight, .eyeWidth, .eyeDepth, .browDepth, .browHeight, .irisColor,
+                    .chinHeight, .chinDepth, .chinWidth, .jawWidth,
+                    .mouthShape, .mouthDepth, .mouthWidth, .mouthLipSize, .mouthHeight,
+                    .noseShape, .noseHeight, .noseDepth,
+                        .hair, .beard, .brow, .hairColor, .facialHairColor,
+                    .scar
+                ],
 			]
 		]
 
-		public static let slidersMax: [Gender: [AttributeType: [GameVersion: Int]]] = {
-			func sliderMaxValues(_ value1: Int, _ value2: Int, _ value3: Int) -> [GameVersion: Int] {
-				return [.game1: value1, .game2: value2, .game3: value3]
+        public static let slidersMax: [Gender: [AttributeType: [Shepard.AppearanceGameVersion: Int]]] = {
+            func sliderMaxValues(_ value1: Int, _ value2: Int, _ value3: Int, _ value4: Int) -> [Shepard.AppearanceGameVersion: Int] {
+                return [.game1: value1, .game2: value2, .game3: value3, .legendary: value4]
 			}
 			return [
 				.female: [
-					.facialStructure: sliderMaxValues(9, 9, 9),
-					.skinTone: sliderMaxValues(6, 6, 6),
-					.complexion: sliderMaxValues(3, 3, 3),
-					.scar: sliderMaxValues(6, 0, 0),
-					.neckThickness: sliderMaxValues(31, 31, 31),
-					.faceSize: sliderMaxValues(31, 31, 31),
-					.cheekWidth: sliderMaxValues(31, 31, 31),
-					.cheekBones: sliderMaxValues(31, 31, 31),
-					.cheekGaunt: sliderMaxValues(31, 31, 31),
-					.earsSize: sliderMaxValues(31, 31, 31),
-					.earsOrientation: sliderMaxValues(31, 31, 31),
-					.eyeShape: sliderMaxValues(9, 9, 9),
-					.eyeHeight: sliderMaxValues(31, 31, 31),
-					.eyeWidth: sliderMaxValues(31, 31, 31),
-					.eyeDepth: sliderMaxValues(31, 31, 31),
-					.browDepth: sliderMaxValues(31, 31, 31),
-					.browHeight: sliderMaxValues(31, 31, 31),
-					.irisColor: sliderMaxValues(13, 13, 13),
-					.chinHeight: sliderMaxValues(31, 31, 31),
-					.chinDepth: sliderMaxValues(31, 31, 31),
-					.chinWidth: sliderMaxValues(31, 31, 31),
-					.jawWidth: sliderMaxValues(31, 31, 31),
-					.mouthShape: sliderMaxValues(10, 10, 10),
-					.mouthDepth: sliderMaxValues(31, 31, 31),
-					.mouthWidth: sliderMaxValues(31, 31, 31),
-					.mouthLipSize: sliderMaxValues(31, 31, 31),
-					.mouthHeight: sliderMaxValues(31, 31, 31),
-					.noseShape: sliderMaxValues(9, 9, 12),
-					.noseHeight: sliderMaxValues(31, 31, 31),
-					.noseDepth: sliderMaxValues(31, 31, 31),
-					.hairColor: sliderMaxValues(7, 7, 16),
-					.hair: sliderMaxValues(10, 10, 13),
-					.brow: sliderMaxValues(16, 16, 16),
-					.browColor: sliderMaxValues(6, 6, 16),
-					.blushColor: sliderMaxValues(6, 6, 10),
-					.lipColor: sliderMaxValues(7, 7, 7),
-					.eyeShadowColor: sliderMaxValues(7, 11, 11),
+					.facialStructure: sliderMaxValues(9, 9, 9, 9),
+					.skinTone: sliderMaxValues(6, 6, 6, 29),
+					.complexion: sliderMaxValues(3, 3, 3, 3),
+					.scar: sliderMaxValues(6, 0, 0, 11),
+					.neckThickness: sliderMaxValues(31, 31, 31, 32),
+					.faceSize: sliderMaxValues(31, 31, 31, 32),
+					.cheekWidth: sliderMaxValues(31, 31, 31, 32),
+					.cheekBones: sliderMaxValues(31, 31, 31, 32),
+					.cheekGaunt: sliderMaxValues(31, 31, 31, 32),
+					.earsSize: sliderMaxValues(31, 31, 31, 32),
+					.earsOrientation: sliderMaxValues(31, 31, 31, 32),
+					.eyeShape: sliderMaxValues(9, 9, 9, 9),
+					.eyeHeight: sliderMaxValues(31, 31, 31, 32),
+					.eyeWidth: sliderMaxValues(31, 31, 31, 32),
+					.eyeDepth: sliderMaxValues(31, 31, 31, 32),
+					.browDepth: sliderMaxValues(31, 31, 31, 32),
+					.browHeight: sliderMaxValues(31, 31, 31, 32),
+					.irisColor: sliderMaxValues(13, 13, 13, 17),
+					.chinHeight: sliderMaxValues(31, 31, 31, 32),
+					.chinDepth: sliderMaxValues(31, 31, 31, 32),
+					.chinWidth: sliderMaxValues(31, 31, 31, 32),
+					.jawWidth: sliderMaxValues(31, 31, 31, 32),
+					.mouthShape: sliderMaxValues(10, 10, 10, 10),
+					.mouthDepth: sliderMaxValues(31, 31, 31, 32),
+					.mouthWidth: sliderMaxValues(31, 31, 31, 32),
+					.mouthLipSize: sliderMaxValues(31, 31, 31, 32),
+					.mouthHeight: sliderMaxValues(31, 31, 31, 32),
+					.noseShape: sliderMaxValues(9, 9, 12, 12),
+					.noseHeight: sliderMaxValues(31, 31, 31, 32),
+					.noseDepth: sliderMaxValues(31, 31, 31, 32),
+					.hairColor: sliderMaxValues(7, 7, 16, 22),
+					.hair: sliderMaxValues(10, 10, 13, 20),
+					.brow: sliderMaxValues(16, 16, 16, 16),
+					.browColor: sliderMaxValues(6, 6, 16, 20),
+					.blushColor: sliderMaxValues(6, 6, 10, 32),
+					.lipColor: sliderMaxValues(7, 7, 7, 33),
+					.eyeShadowColor: sliderMaxValues(7, 11, 11, 35),
 				],
 				.male: [
-					.facialStructure: sliderMaxValues(6, 6, 6),
-					.skinTone: sliderMaxValues(6, 6, 6),
-					.complexion: sliderMaxValues(3, 3, 3),
-					.scar: sliderMaxValues(6, 0, 0),
-					.neckThickness: sliderMaxValues(31, 31, 31),
-					.faceSize: sliderMaxValues(31, 31, 31),
-					.cheekWidth: sliderMaxValues(31, 31, 31),
-					.cheekBones: sliderMaxValues(31, 31, 31),
-					.cheekGaunt: sliderMaxValues(31, 31, 31),
-					.earsSize: sliderMaxValues(31, 31, 31),
-					.earsOrientation: sliderMaxValues(31, 31, 31),
-					.eyeShape: sliderMaxValues(8, 8, 8),
-					.eyeHeight: sliderMaxValues(31, 31, 31),
-					.eyeWidth: sliderMaxValues(31, 31, 31),
-					.eyeDepth: sliderMaxValues(31, 31, 31),
-					.browDepth: sliderMaxValues(31, 31, 31),
-					.browHeight: sliderMaxValues(31, 31, 31),
-					.irisColor: sliderMaxValues(13, 13, 16),
-					.chinHeight: sliderMaxValues(31, 31, 31),
-					.chinDepth: sliderMaxValues(31, 31, 31),
-					.chinWidth: sliderMaxValues(31, 31, 31),
-					.jawWidth: sliderMaxValues(31, 31, 31),
-					.mouthShape: sliderMaxValues(9, 9, 9),
-					.mouthDepth: sliderMaxValues(31, 31, 31),
-					.mouthWidth: sliderMaxValues(31, 31, 31),
-					.mouthLipSize: sliderMaxValues(31, 31, 31),
-					.mouthHeight: sliderMaxValues(31, 31, 31),
-					.noseShape: sliderMaxValues(12, 12, 12),
-					.noseHeight: sliderMaxValues(31, 31, 31),
-					.noseDepth: sliderMaxValues(31, 31, 31),
-					.beard: sliderMaxValues(14, 14, 14),
-					.brow: sliderMaxValues(7, 7, 7),
-					.hair: sliderMaxValues(8, 8, 16),
-					.hairColor: sliderMaxValues(7, 7, 13),
-					.facialHairColor: sliderMaxValues(6, 6, 13),
+					.facialStructure: sliderMaxValues(6, 6, 6, 6),
+					.skinTone: sliderMaxValues(6, 6, 6, 29),
+					.complexion: sliderMaxValues(3, 3, 3, 3),
+					.scar: sliderMaxValues(6, 0, 0, 13),
+					.neckThickness: sliderMaxValues(31, 31, 31, 32),
+					.faceSize: sliderMaxValues(31, 31, 31, 32),
+					.cheekWidth: sliderMaxValues(31, 31, 31, 32),
+					.cheekBones: sliderMaxValues(31, 31, 31, 32),
+					.cheekGaunt: sliderMaxValues(31, 31, 31, 32),
+					.earsSize: sliderMaxValues(31, 31, 31, 32),
+					.earsOrientation: sliderMaxValues(31, 31, 31, 32),
+					.eyeShape: sliderMaxValues(8, 8, 8, 8),
+					.eyeHeight: sliderMaxValues(31, 31, 31, 32),
+					.eyeWidth: sliderMaxValues(31, 31, 31, 32),
+					.eyeDepth: sliderMaxValues(31, 31, 31, 32),
+					.browDepth: sliderMaxValues(31, 31, 31, 32),
+					.browHeight: sliderMaxValues(31, 31, 31, 32),
+					.irisColor: sliderMaxValues(13, 13, 16, 17),
+					.chinHeight: sliderMaxValues(31, 31, 31, 32),
+					.chinDepth: sliderMaxValues(31, 31, 31, 32),
+					.chinWidth: sliderMaxValues(31, 31, 31, 32),
+					.jawWidth: sliderMaxValues(31, 31, 31, 32),
+					.mouthShape: sliderMaxValues(9, 9, 9, 9),
+					.mouthDepth: sliderMaxValues(31, 31, 31, 32),
+					.mouthWidth: sliderMaxValues(31, 31, 31, 32),
+					.mouthLipSize: sliderMaxValues(31, 31, 31, 32),
+					.mouthHeight: sliderMaxValues(31, 31, 31, 32),
+					.noseShape: sliderMaxValues(12, 12, 12, 12),
+					.noseHeight: sliderMaxValues(31, 31, 31, 32),
+					.noseDepth: sliderMaxValues(31, 31, 31, 32),
+                    .hair: sliderMaxValues(8, 8, 16, 25),
+					.beard: sliderMaxValues(14, 14, 14, 14),
+					.brow: sliderMaxValues(7, 7, 7, 7),
+					.hairColor: sliderMaxValues(7, 7, 13, 22),
+					.facialHairColor: sliderMaxValues(6, 6, 13, 20),
 				]
 			]
 		}()
@@ -216,7 +236,7 @@ extension Shepard {
 
 		public var contents: [AttributeType: Int] = [:]
 		public var gender: Gender = .male
-		public var gameVersion: GameVersion = .game1
+        public var gameVersion: Shepard.AppearanceGameVersion = .game1
 		public var initError: String?
 
 		// MARK: Alert/Notice messages on conversion failures
@@ -225,13 +245,13 @@ extension Shepard {
 
 // MARK: Initialization
 
-		public init(gameVersion: GameVersion) {
+        public init(gameVersion: Shepard.AppearanceGameVersion) {
 			self.gameVersion = gameVersion
 		}
 
 		public init(
 			_ appearance: String,
-			fromGame gameVersion: GameVersion = .game1,
+            fromGame gameVersion: Shepard.AppearanceGameVersion = .game1,
 			withGender gender: Shepard.Gender = .male
 		) {
 			contents = [:]
@@ -257,11 +277,12 @@ extension Shepard.Appearance {
 
 	// swiftlint:disable function_body_length
 	/// Converts attribute values between games.
-	public mutating func convert(toGame: GameVersion) {
+    public mutating func convert(toGame: Shepard.AppearanceGameVersion) {
 		alerts = [:]
 		notices = [:]
 		var newAppearance: [AttributeType: Int] = [:]
-		if let sourceAttributes = Shepard.Appearance.attributes[gender]?[gameVersion] {
+        if gameVersion != .legendary,
+           let sourceAttributes = Shepard.Appearance.attributes[gender]?[gameVersion] {
 			for attribute in sourceAttributes {
 				var attributeValue = contents[attribute]
 				if attributeValue == nil { // not set, skip
@@ -378,3 +399,18 @@ extension Shepard.Appearance: Equatable {
 		return lhs.format() == rhs.format()
 	}
 }
+
+
+extension Shepard.Appearance {
+    static public func gameVersion(isLegendary: Bool, gameVersion: GameVersion) -> Shepard.AppearanceGameVersion {
+        if isLegendary {
+            return .legendary
+        }
+        switch gameVersion {
+        case .game1: return .game1
+        case .game2: return .game2
+        case .game3: return .game3
+        }
+    }
+}
+

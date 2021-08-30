@@ -19,6 +19,7 @@ final class ShepardAppearanceController: UIViewController,
 // MARK: Outlets
 
 	@IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var ME23Row: UIStackView!
 	@IBOutlet weak var ME23GameSegment: UISegmentedControl!
 	@IBOutlet weak var ME2CodeField: UITextField!
 	@IBOutlet weak var ME2CodeLabel: UILabel!
@@ -94,9 +95,10 @@ final class ShepardAppearanceController: UIViewController,
 	@IBAction func ME2CodeChanged(_ sender: UITextField) {
 		// TODO: format code
 		ME2CodeLabel.text = ME2CodeField.text
+        let appearanceGameVersion = Shepard.Appearance.gameVersion(isLegendary: shepard?.isLegendary ?? false, gameVersion: game23SliderChoice)
 		// save any changes to other 2/3 game:
 		var appearance = Shepard.Appearance(ME2CodeField.text?.uppercased()
-			?? "", fromGame: game23SliderChoice, withGender: currentGender)
+			?? "", fromGame: appearanceGameVersion, withGender: currentGender)
 		if game23SliderChoice == .game2 {
 			appearance.convert(toGame: .game3)
 			pendingAppearanceGame3 = appearance
@@ -108,9 +110,12 @@ final class ShepardAppearanceController: UIViewController,
 
 	@IBAction func ME2CodeSubmit(_ sender: AnyObject) {
 		startSpinner(inView: view)
+        let appearanceGameVersion = Shepard.Appearance.gameVersion(isLegendary: shepard?.isLegendary ?? false, gameVersion: game23SliderChoice)
 		var appearance = Shepard.Appearance(ME2CodeField.text?.uppercased()
-			?? "", fromGame: game23SliderChoice, withGender: currentGender)
-		appearance.convert(toGame: .game1)
+			?? "", fromGame: appearanceGameVersion, withGender: currentGender)
+        if !(shepard?.isLegendary ?? false) {
+            appearance.convert(toGame: .game1)
+        }
 		pendingAppearanceGame1 = appearance
 		currentGame1Attributes = pendingAppearanceGame1?.contents ?? [:]
 		setup()
@@ -129,13 +134,17 @@ final class ShepardAppearanceController: UIViewController,
 		pendingAppearanceGame1 = newAppearance1
 		// save to both game 2 and game 3
 		var newAppearance2 = newAppearance1
-		newAppearance2.convert(toGame: .game2)
-		pendingAppearanceGame2 = newAppearance2
-		var newAppearance3 = newAppearance1
-		newAppearance3.convert(toGame: .game2)
-		pendingAppearanceGame3 = newAppearance3
-		save()
-		ME2CodeField.text = game23SliderChoice == .game2 ? newAppearance2.format() : newAppearance3.format()
+        if shepard?.isLegendary ?? false {
+            ME2CodeField.text = newAppearance1.format()
+        } else {
+            newAppearance2.convert(toGame: .game2)
+            pendingAppearanceGame2 = newAppearance2
+            var newAppearance3 = newAppearance1
+            newAppearance3.convert(toGame: .game2)
+            pendingAppearanceGame3 = newAppearance3
+            ME2CodeField.text = game23SliderChoice == .game2 ? newAppearance2.format() : newAppearance3.format()
+        }
+        save()
 		ME2CodeLabel.text = ME2CodeField.text
 		scrollView.contentOffset = defaultScrollOffset ?? scrollView.contentOffset
 		scrollView.contentInset = defaultScrollInset ?? scrollView.contentInset
@@ -162,8 +171,9 @@ final class ShepardAppearanceController: UIViewController,
 	func save() {
         guard shepard != nil else { return }
 		startSpinner(inView: view)
-		if currentGame == .game1 {
-			var newAppearance = Shepard.Appearance("", fromGame: .game1, withGender: currentGender)
+        let appearanceGameVersion = Shepard.Appearance.gameVersion(isLegendary: shepard?.isLegendary ?? false, gameVersion: game23SliderChoice)
+        if currentGame == .game1 {
+			var newAppearance = Shepard.Appearance("", fromGame: appearanceGameVersion, withGender: currentGender)
 			for (attribute, value) in currentGame1Attributes {
 				newAppearance.contents[attribute] = value > 0 ? value : 1
 			}
@@ -171,7 +181,7 @@ final class ShepardAppearanceController: UIViewController,
 		} else if let appearanceCode = ME2CodeField.text {
 			let newAppearance = Shepard.Appearance(
 				appearanceCode,
-				fromGame: game23SliderChoice,
+				fromGame: appearanceGameVersion,
 				withGender: currentGender
 			)
             _ = shepard?.changed(appearance: newAppearance)
@@ -210,21 +220,35 @@ final class ShepardAppearanceController: UIViewController,
 			// Game 2/3 selected:
 			currentGame = shepard?.gameVersion
 			ME23GameSegment.selectedSegmentIndex = currentGame == .game3 ? 1 : 0 // game 2 is default
+            if (shepard?.isLegendary ?? false) || currentGame == .game1 {
+                ME23Row.isHidden = true
+            } else {
+                ME23Row.isHidden = false
+            }
 			// Game 1 Sliders:
 			var appearance1 = shepard?.appearance // value type == copy
-			appearance1?.convert(toGame: .game1)
+            if shepard?.isLegendary ?? false {
+                appearance1?.gameVersion = .legendary
+            } else {
+                appearance1?.convert(toGame: .game1)
+            }
 			pendingAppearanceGame1 = appearance1
 			currentGame1Attributes = pendingAppearanceGame1?.contents ?? [:]
-			// Game 2/3 Codes:
-			var appearance2 = shepard?.appearance // value type == copy
-			appearance2?.convert(toGame: .game2)
-			pendingAppearanceGame2 = appearance2
-			var appearance3 = shepard?.appearance // value type == copy
-			appearance3?.convert(toGame: .game3)
-			pendingAppearanceGame3 = appearance3
-			ME2CodeField.text = currentGame == .game2
-				? pendingAppearanceGame2?.format()
-				: pendingAppearanceGame3?.format()
+            if !(shepard?.isLegendary ?? false) {
+                // Game 2/3 Codes:
+                var appearance2 = shepard?.appearance // value type == copy
+                appearance2?.convert(toGame: .game2)
+                pendingAppearanceGame2 = appearance2
+                var appearance3 = shepard?.appearance // value type == copy
+                appearance3?.convert(toGame: .game3)
+                pendingAppearanceGame3 = appearance3
+                ME2CodeField.text = currentGame == .game2
+                    ? pendingAppearanceGame2?.format()
+                    : pendingAppearanceGame3?.format()
+            } else {
+                ME2CodeField.text = pendingAppearanceGame1?.format()
+            }
+            ME2CodeLabel.text = ME2CodeField.text
 		}
 
 		ME2AlertLabel.text = nil
@@ -241,7 +265,9 @@ final class ShepardAppearanceController: UIViewController,
 		ME2NoticeLabel.isHidden = true
 		ME2CodeField.delegate = self
 
-		ME2CodeChanged(ME2CodeField)
+        if !(shepard?.isLegendary ?? false) {
+            ME2CodeChanged(ME2CodeField)
+        } 
         
 		didSetup = true
 	}
@@ -342,10 +368,11 @@ extension ShepardAppearanceController {
 		else {
 			return
 		}
+        let appearanceGameVersion = Shepard.Appearance.gameVersion(isLegendary: shepard?.isLegendary ?? false, gameVersion: shepard?.gameVersion ?? .game1)
 		cell.define(
 			attributeType: attribute,
 			value: pendingAppearanceGame1?.contents[attribute],
-			maxValue: Shepard.Appearance.slidersMax[currentGender]?[attribute]?[.game1],
+			maxValue: Shepard.Appearance.slidersMax[currentGender]?[attribute]?[appearanceGameVersion],
 			title: attribute.title,
 			notice: pendingAppearanceGame1?.notices[attribute]?.stringValue
 				?? Shepard.Appearance.defaultNotices[attribute]?.stringValue,

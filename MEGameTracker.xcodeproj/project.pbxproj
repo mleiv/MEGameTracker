@@ -109,6 +109,7 @@
 		B08E2A531BB23246009546F8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E2A511BB23246009546F8 /* Map.swift */; };
 		B08E2A551BB23256009546F8 /* DataMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E2A541BB23256009546F8 /* DataMaps.swift */; };
 		B08E2A571BB232EF009546F8 /* GameMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E2A561BB232EF009546F8 /* GameMaps.swift */; };
+		B08E622C26DC3BFD00205152 /* Shepard.AppearanceGameVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E622B26DC3BFD00205152 /* Shepard.AppearanceGameVersion.swift */; };
 		B092C3C11BAF9EDD0078CEF2 /* GameNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092C3C01BAF9EDD0078CEF2 /* GameNotes.swift */; };
 		B093393323D5001E0016F232 /* ShepardPhotoFrameBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093393223D5001E0016F232 /* ShepardPhotoFrameBorderView.swift */; };
 		B0969B7825954F9700B9FEF9 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0066E6125954E01003A2373 /* Nuke.framework */; };
@@ -598,6 +599,7 @@
 		B08E2A511BB23246009546F8 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		B08E2A541BB23256009546F8 /* DataMaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMaps.swift; sourceTree = "<group>"; };
 		B08E2A561BB232EF009546F8 /* GameMaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMaps.swift; sourceTree = "<group>"; };
+		B08E622B26DC3BFD00205152 /* Shepard.AppearanceGameVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shepard.AppearanceGameVersion.swift; sourceTree = "<group>"; };
 		B092C3C01BAF9EDD0078CEF2 /* GameNotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameNotes.swift; sourceTree = "<group>"; };
 		B093393223D5001E0016F232 /* ShepardPhotoFrameBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShepardPhotoFrameBorderView.swift; sourceTree = "<group>"; };
 		B0A796EB1C7D764F004F1A56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ShepardSplitView.storyboard; sourceTree = "<group>"; };
@@ -1365,6 +1367,7 @@
 				B145FDE41E67EB1E00403A36 /* Shepard.AppearanceError.swift */,
 				B145FDD91E67E18800403A36 /* Shepard.AppearanceFormat.swift */,
 				B145FDDC1E67E1BC00403A36 /* Shepard.AppearanceGroupType.swift */,
+				B08E622B26DC3BFD00205152 /* Shepard.AppearanceGameVersion.swift */,
 			);
 			path = Shepard.Appearance;
 			sourceTree = "<group>";
@@ -2919,6 +2922,7 @@
 				B14EA9391CF3F4DA009F2B0A /* RelatedLinksView.swift in Sources */,
 				B1F346851CF1898900D2B28A /* Note.swift in Sources */,
 				B1C3886B1BA4B35E0088D8A8 /* PersonController.swift in Sources */,
+				B08E622C26DC3BFD00205152 /* Shepard.AppearanceGameVersion.swift in Sources */,
 				B04BF1F21BA12C7900072DA2 /* Shepard.swift in Sources */,
 				B07A2C711C792B43007B6418 /* TabGroupsControllable.swift in Sources */,
 				B1BFF9DE1DA4AFAB003FA9FA /* Signal.swift in Sources */,
@@ -3634,7 +3638,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 99;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_TEAM = LNQGUJUGYP;
 				INFOPLIST_FILE = MEGameTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
@@ -3662,7 +3666,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 99;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_TEAM = LNQGUJUGYP;
 				INFOPLIST_FILE = MEGameTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;

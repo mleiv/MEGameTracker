@@ -23,6 +23,7 @@ public struct Shepard: Codable, Photographical, PhotoEditable {
         case origin
         case reputation
         case classTalent = "class"
+        case isLegendary
         case level
         case paragon
         case renegade
@@ -69,6 +70,7 @@ public struct Shepard: Codable, Photographical, PhotoEditable {
 	public private(set) var origin = Origin.earthborn
 	public private(set) var reputation = Reputation.soleSurvivor
 	public private(set) var classTalent = ClassTalent.soldier
+    public private(set) var isLegendary = false
 	public private(set) var loveInterestId: String?
 	public private(set) var level: Int = 1
 	public private(set) var paragon: Int = 0
@@ -109,7 +111,7 @@ public struct Shepard: Codable, Photographical, PhotoEditable {
 		self.gameSequenceUuid = gameSequenceUuid
 		self.gender = gender
 		self.gameVersion = gameVersion
-		appearance = Appearance(gameVersion: gameVersion)
+        appearance = Appearance(gameVersion: Shepard.Appearance.gameVersion(isLegendary: isLegendary, gameVersion: gameVersion))
 		photo = DefaultPhoto(gender: .male, gameVersion: gameVersion).photo
 		markChanged()
 	}
@@ -120,10 +122,12 @@ public struct Shepard: Codable, Photographical, PhotoEditable {
         gameSequenceUuid = try container.decode(UUID.self, forKey: .gameSequenceUuid)
         gameVersion = try container.decode(GameVersion.self, forKey: .gameVersion)
         gender = try container.decode(Shepard.Gender.self, forKey: .gender)
+        isLegendary = try container.decodeIfPresent(Bool.self, forKey: .isLegendary) ?? false
+        let appearanceGameVersion = Shepard.Appearance.gameVersion(isLegendary: isLegendary, gameVersion: gameVersion)
         if let appearanceString = try container.decodeIfPresent(String.self, forKey: .appearance) {
-            appearance = Appearance(appearanceString, fromGame: gameVersion, withGender: gender)
+            appearance = Appearance(appearanceString, fromGame: appearanceGameVersion, withGender: gender)
         } else {
-            appearance = Appearance(gameVersion: gameVersion)
+            appearance = Appearance(gameVersion: appearanceGameVersion)
         }
         let nameString = try container.decode(String.self, forKey: .name)
         name = Shepard.Name(name: nameString, gender: gender) ?? name
@@ -157,6 +161,7 @@ public struct Shepard: Codable, Photographical, PhotoEditable {
         try container.encode(origin, forKey: .origin)
         try container.encode(reputation, forKey: .reputation)
         try container.encode(classTalent, forKey: .classTalent)
+        try container.encode(isLegendary, forKey: .isLegendary)
         try container.encode(level, forKey: .level)
         try container.encode(paragon, forKey: .paragon)
         try container.encode(renegade, forKey: .renegade)
@@ -365,6 +370,23 @@ extension Shepard {
         )
         return shepard
     }
+    
+    /// Return a copy of this Shepard with isLegendary changed
+    public func changed(
+        isLegendary: Bool,
+        isSave: Bool = true,
+        isNotify: Bool = true
+    ) -> Shepard {
+        guard isLegendary != self.isLegendary else { return self }
+        var shepard = self
+        shepard.isLegendary = isLegendary
+        shepard.changeEffects(
+            isSave: isSave,
+            isNotify: isNotify,
+            cloudChanges: ["isLegendary": isLegendary]
+        )
+        return shepard
+    }
 
     /// Return a copy of this Shepard with loveInterestId changed
     public func changed(
@@ -523,6 +545,7 @@ extension Shepard {
         list["origin"] = origin
         list["reputation"] = reputation
         list["class"] = classTalent
+        list["isLegendary"] = isLegendary
         list["appearance"] = appearance
         list["photo"] = photo?.isCustomSavedPhoto == true ? photo : nil
         return list
@@ -533,7 +556,8 @@ extension Shepard {
         setCommonData(oldData)
         // only do when converting to a new game version:
         if var oldAppearance = oldData["appearance"] as? Appearance {
-            oldAppearance.convert(toGame: gameVersion) // TODO: immutable chained convert
+            let appearanceGameVersion = Shepard.Appearance.gameVersion(isLegendary: isLegendary, gameVersion: gameVersion)
+            oldAppearance.convert(toGame: appearanceGameVersion) // TODO: immutable chained convert
             appearance = oldAppearance
         }
         classTalent = (oldData["class"] as? ClassTalent) ?? classTalent
@@ -562,6 +586,10 @@ extension Shepard {
         if let reputation = data["reputation"] as? Reputation, reputation != self.reputation {
             self.reputation = reputation
             changed["reputation"] = reputation.stringValue
+        }
+        if let isLegendary = data["isLegendary"] as? Bool, isLegendary != self.isLegendary {
+            self.isLegendary = isLegendary
+            changed["isLegendary"] = isLegendary
         }
         if let photo = data["photo"] as? Photo, photo.isCustomSavedPhoto
             && self.photo?.isCustomSavedPhoto == false && photo != self.photo {

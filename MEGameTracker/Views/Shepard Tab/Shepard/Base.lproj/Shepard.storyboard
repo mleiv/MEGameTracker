@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FE8-Fz-nu7">
     <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,13 +24,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sja-0X-ncl">
-                                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1074"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1120"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1O-NO-AsO" userLabel="Header">
-                                                <rect key="frame" x="0.0" y="0.0" width="1366" height="341"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1366" height="387"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="pFX-8X-ff0">
-                                                        <rect key="frame" x="15" y="15" width="1336" height="311"/>
+                                                        <rect key="frame" x="15" y="15" width="1336" height="357"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-6v-Kpl" userLabel="NameWrapper">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1336" height="50"/>
@@ -124,7 +123,7 @@
                                                                                     <action selector="genderChanged:" destination="FE8-Fz-nu7" eventType="valueChanged" id="ojx-rr-3ih"/>
                                                                                 </connections>
                                                                             </segmentedControl>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ap3-MV-ssv" userLabel="Values">
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ap3-MV-ssv" userLabel="Values">
                                                                                 <rect key="frame" x="0.0" y="49" width="1201" height="150"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UuV-kF-VDj" customClass="ValueAltDataRow" customModule="MEGameTracker" customModuleProvider="target">
@@ -139,7 +138,7 @@
                                                                                             <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Origin"/>
                                                                                         </userDefinedRuntimeAttributes>
                                                                                     </view>
-                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVv-UQ-MzA" customClass="ValueAltDataRow" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVv-UQ-MzA" customClass="ValueAltDataRow" customModule="MEGameTracker" customModuleProvider="target">
                                                                                         <rect key="frame" x="0.0" y="50" width="1201" height="50"/>
                                                                                         <color key="backgroundColor" name="background"/>
                                                                                         <userDefinedRuntimeAttributes>
@@ -151,7 +150,7 @@
                                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
                                                                                         </userDefinedRuntimeAttributes>
                                                                                     </view>
-                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPT-di-MOd" customClass="ValueAltDataRow" customModule="MEGameTracker" customModuleProvider="target">
+                                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PPT-di-MOd" customClass="ValueAltDataRow" customModule="MEGameTracker" customModuleProvider="target">
                                                                                         <rect key="frame" x="0.0" y="100" width="1201" height="50"/>
                                                                                         <color key="backgroundColor" name="background"/>
                                                                                         <userDefinedRuntimeAttributes>
@@ -180,21 +179,41 @@
                                                                     </view>
                                                                 </subviews>
                                                             </stackView>
-                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iwQ-xh-tdL">
-                                                                <rect key="frame" x="0.0" y="280" width="1336" height="32"/>
-                                                                <color key="backgroundColor" name="background"/>
-                                                                <segments>
-                                                                    <segment title="Game 1"/>
-                                                                    <segment title="Game 2"/>
-                                                                    <segment title="Game 3"/>
-                                                                </segments>
-                                                                <connections>
-                                                                    <action selector="gameChanged:" destination="FE8-Fz-nu7" eventType="valueChanged" id="CVN-th-aFy"/>
-                                                                </connections>
-                                                            </segmentedControl>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iFp-SZ-SQl">
+                                                                <rect key="frame" x="0.0" y="280" width="1336" height="77"/>
+                                                                <subviews>
+                                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iwQ-xh-tdL">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="1336" height="32"/>
+                                                                        <color key="backgroundColor" name="background"/>
+                                                                        <segments>
+                                                                            <segment title="Game 1"/>
+                                                                            <segment title="Game 2"/>
+                                                                            <segment title="Game 3"/>
+                                                                        </segments>
+                                                                        <connections>
+                                                                            <action selector="gameChanged:" destination="FE8-Fz-nu7" eventType="valueChanged" id="CVN-th-aFy"/>
+                                                                        </connections>
+                                                                    </segmentedControl>
+                                                                    <segmentedControl opaque="NO" contentMode="center" verticalHuggingPriority="300" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wuy-Gm-oVF">
+                                                                        <rect key="frame" x="583.5" y="46" width="169" height="32"/>
+                                                                        <color key="backgroundColor" name="background"/>
+                                                                        <segments>
+                                                                            <segment title="Classic"/>
+                                                                            <segment title="Legendary"/>
+                                                                        </segments>
+                                                                        <connections>
+                                                                            <action selector="legendaryChanged:" destination="FE8-Fz-nu7" eventType="valueChanged" id="XP3-aV-Hev"/>
+                                                                        </connections>
+                                                                    </segmentedControl>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="iwQ-xh-tdL" firstAttribute="width" secondItem="iFp-SZ-SQl" secondAttribute="width" id="K8O-0Y-qHG"/>
+                                                                </constraints>
+                                                            </stackView>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstAttribute="height" priority="100" id="aWs-Dj-v9N"/>
+                                                            <constraint firstItem="iFp-SZ-SQl" firstAttribute="width" secondItem="pFX-8X-ff0" secondAttribute="width" id="hyQ-0u-1lv"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
@@ -206,7 +225,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" verticalCompressionResistancePriority="700" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zxB-id-nwo">
-                                                <rect key="frame" x="0.0" y="341" width="1366" height="683"/>
+                                                <rect key="frame" x="0.0" y="387" width="1366" height="683"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="nUh-7j-aNP" userLabel="Level Row" customClass="SliderRow" customModule="MEGameTracker" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="1366" height="50"/>
@@ -302,7 +321,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="Knm-Pl-16x" userLabel="Filler">
-                                                <rect key="frame" x="0.0" y="1024" width="1366" height="50"/>
+                                                <rect key="frame" x="0.0" y="1070" width="1366" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="10" constant="20" id="vu3-6R-UjC"/>
                                                 </constraints>
@@ -336,6 +355,7 @@
                         <outlet property="gameSegment" destination="iwQ-xh-tdL" id="O7V-Q3-v78"/>
                         <outlet property="genderSegment" destination="VAQ-zb-J9q" id="hyT-KI-F1z"/>
                         <outlet property="headerLinks" destination="ap3-MV-ssv" id="keS-99-Lwf"/>
+                        <outlet property="legendarySegment" destination="wuy-Gm-oVF" id="3wF-8I-2lp"/>
                         <outlet property="levelRow" destination="nUh-7j-aNP" id="HFX-FO-uHg"/>
                         <outlet property="nameField" destination="Zco-9l-Ov9" id="gx5-uY-F0v"/>
                         <outlet property="notesView" destination="CeN-sY-LeT" id="a3l-tx-3R0"/>

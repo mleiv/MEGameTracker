@@ -24,8 +24,10 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 		var minSurnameWidth: CGFloat!
 	@IBOutlet weak var genderSegment: UISegmentedControl!
 	@IBOutlet weak var gameSegment: UISegmentedControl!
+    @IBOutlet weak var legendarySegment: UISegmentedControl!
 
 	@IBOutlet weak var photoImageView: UIImageView!
+    
 
 	// Appearanceable
 	@IBOutlet weak var appearanceLinkView: ValueDataRow?
@@ -92,6 +94,9 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 	@IBAction func gameChanged(_ sender: AnyObject) {
 		changeGame(index: gameSegment.selectedSegmentIndex)
 	}
+    @IBAction func legendaryChanged(_ sender: AnyObject) {
+        changeLegendary(index: legendarySegment.selectedSegmentIndex)
+    }
 	@IBAction func changePhoto(_ sender: UIButton) { pickPhoto(sender) }
 
 // MARK: Variables
@@ -150,6 +155,8 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 		genderSegment.selectedSegmentIndex = shepard.gender == .male ? 0 : 1
 
 		gameSegment.selectedSegmentIndex = shepard.gameVersion.index
+        
+        legendarySegment.selectedSegmentIndex = shepard.isLegendary == false ? 0 : 1
 
 		nameField.text = shepard.name.stringValue
 
@@ -265,6 +272,15 @@ final public class ShepardController: UIViewController, Spinnerable, UINavigatio
 		fetchData()
 		stopSpinner(inView: view)
 	}
+    
+    func changeLegendary(index: Int) {
+        startSpinner(inView: view)
+        // discard, wait for listener
+        _ = shepard?.changed(isLegendary: index == 0 ? false : true)
+        // reload shepard:
+        fetchData()
+        stopSpinner(inView: view)
+    }
 
 // MARK: Segues
 

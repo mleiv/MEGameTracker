@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jcz-EQ-och">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="C6p-LM-9h5">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="840.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="882.5"/>
                                         <subviews>
                                             <view opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="DaH-Ir-JBe" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="76.5"/>
@@ -196,7 +195,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RG6-Oh-g2d" userLabel="ME1 Header">
                                                         <rect key="frame" x="15" y="5" width="345" height="40"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game 1 Sliders:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eB1-fV-4QK" userLabel="ME1 Label">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sliders:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eB1-fV-4QK" userLabel="ME1 Label">
                                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <nil key="highlightedColor"/>
@@ -283,13 +282,15 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="753" translatesAutoresizingMaskIntoConstraints="NO" id="Tho-JC-ZpJ" userLabel="Notes" customClass="HairlineBorderView" customModule="MEGameTracker" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="486" width="375" height="354.5"/>
+                                                <rect key="frame" x="0.0" y="486" width="375" height="396.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="290" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="800" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xz-Sa-VAZ" userLabel="Notes Text 1">
-                                                        <rect key="frame" x="15" y="10" width="345" height="334.5"/>
-                                                        <string key="text">Due to the import process between Game 1 and Game 2, you will see a different Shepard if you import unchanged than if you customize using exactly the same values. Eye colors were more vivid in Game 1 and the Scar attribute is not available in Game 2.
+                                                        <rect key="frame" x="15" y="10" width="345" height="376.5"/>
+                                                        <mutableString key="text">Classic:
 
-Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None of these values convert down to Game 1 or 2, but you may want to specially customize your Game 3 Shepard to take advantage of these.  The default Shepard faces provided by the game are wholly unique and cannot be recreated using any combination of values.</string>
+Due to the import process between Game 1 and Game 2, you will see a different Shepard if you import unchanged than if you customize using exactly the same values. Eye colors were more vivid in Game 1 and the Scar attribute is not available in Game 2.
+
+Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None of these values convert down to Game 1 or 2, but you may want to specially customize your Game 3 Shepard to take advantage of these.  The default Shepard faces provided by the game are wholly unique and cannot be recreated using any combination of values.</mutableString>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -333,6 +334,7 @@ Game 3 has many more hair colors, styles, and makeup colors (for FemShep). None 
                     <connections>
                         <outlet property="ME1Button" destination="w9k-XG-aua" id="OR8-U5-oK8"/>
                         <outlet property="ME23GameSegment" destination="THp-pr-04S" id="eat-Ax-lVK"/>
+                        <outlet property="ME23Row" destination="Rg2-FL-iwD" id="xHT-0o-boN"/>
                         <outlet property="ME2AlertLabel" destination="qjt-6j-Wqi" id="3P9-2i-ogh"/>
                         <outlet property="ME2Button" destination="SZ9-t4-Pis" id="tva-nc-QeB"/>
                         <outlet property="ME2CodeField" destination="tUz-uD-7av" id="Tdx-OD-kXC"/>

@@ -15,9 +15,9 @@ extension Shepard {
 
 // MARK: Constants
 
-		public static let ExpectedCodeLength: [Gender: [GameVersion: Int]] = [
-			.male: [.game1: 35, .game2: 34, .game3: 34],
-			.female: [.game1: 37, .game2: 36, .game3: 36],
+		public static let ExpectedCodeLength: [Gender: [Shepard.AppearanceGameVersion: Int]] = [
+            .male: [.game1: 35, .game2: 34, .game3: 34, .legendary: 35],
+			.female: [.game1: 37, .game2: 36, .game3: 36, .legendary: 37],
 		]
 
 		public static let CodeLengthIncorrect = "Warning: code length (%d) does not match game selected (expected %d)"
@@ -28,7 +28,7 @@ extension Shepard {
 // MARK: Basic Actions
 
 		/// Returns a human-readable error message if the appearance code doesn't parse properly.
-		public static func codeLengthError(_ code: String, gender: Gender, game: GameVersion) -> String? {
+        public static func codeLengthError(_ code: String, gender: Gender, game: Shepard.AppearanceGameVersion) -> String? {
 			let reportLength = ExpectedCodeLength[gender]?[game] ?? 0
 			if reportLength == code.count {
 				return nil
