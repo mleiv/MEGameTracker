@@ -174,6 +174,7 @@ final class ShepardAppearanceController: UIViewController,
         let appearanceGameVersion = Shepard.Appearance.gameVersion(isLegendary: shepard?.isLegendary ?? false, gameVersion: game23SliderChoice)
         if currentGame == .game1 {
 			var newAppearance = Shepard.Appearance("", fromGame: appearanceGameVersion, withGender: currentGender)
+            newAppearance.initError = nil
 			for (attribute, value) in currentGame1Attributes {
 				newAppearance.contents[attribute] = value > 0 ? value : 1
 			}
