@@ -555,9 +555,12 @@ extension Shepard {
     public mutating func setNewData(oldData: [String: Any?]) {
         setCommonData(oldData)
         // only do when converting to a new game version:
-        if !isLegendary, var oldAppearance = oldData["appearance"] as? Appearance {
-            let appearanceGameVersion = Shepard.Appearance.gameVersion(isLegendary: isLegendary, gameVersion: gameVersion)
-            oldAppearance.convert(toGame: appearanceGameVersion) // TODO: immutable chained convert
+        if var oldAppearance = oldData["appearance"] as? Appearance {
+            if (!isLegendary) {
+                // appearance has to be converted to gameVersion
+                let appearanceGameVersion = Shepard.Appearance.gameVersion(isLegendary: isLegendary, gameVersion: gameVersion)
+                oldAppearance.convert(toGame: appearanceGameVersion) // TODO: immutable chained convert
+            }
             appearance = oldAppearance
         }
         classTalent = (oldData["class"] as? ClassTalent) ?? classTalent
@@ -597,10 +600,6 @@ extension Shepard {
             // or, if it is a gender change
             self.photo = photo
             changed["photo"] = photo.stringValue
-        }
-        if isLegendary, let appearance = data["appearance"] as? Appearance {
-            self.appearance = appearance
-            changed["appearance"] = appearance.format()
         }
         if !isInternal && !changed.isEmpty {
             markChanged()
