@@ -539,8 +539,8 @@
         "isOpensDetail": false,
         "inMapId": "G.C3.Bryson",
         "mapLocationPoint": {
-            "x": 1307,
-            "y": 1115,
+            "x": 1310,
+            "y": 1110,
             "radius": 1
         }
     }, {
@@ -564,7 +564,7 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Prothean Activities (Optional)",
-        "description": "X"
+        "isOpensDetail": false
     }, {
         "id": "DLC3.Leviathan.1.6.1",
         "inMissionId": "DLC3.Leviathan.1.6",
@@ -799,22 +799,19 @@
         "gameVersion": "3",
         "missionType": "Objective",
         "name": "Find Ann Bryson",
-        "description": "Head back to the lab on the Citadel. EDI has shielded the artifact there to protect anyone else from being Indoctrinated. There is a message from Dr. Bryson's daughter [Ann|megametracker://person?id=O3.ABryson]. \n\nYou will need two more clues to find where Ann is. Open the drawer next to the husk and examine the pda inside. It has an access card to the requisition locker. Inside the locker is a clue. \n\nRead the datapad on the table mentioning Ann's ship, the Icarus. Examine the terminal enough times to show the Icarus. It is a long range ship, another clue.\n\n Use the ship schematics and equipment filters to decide where Ann has gone.",
+        "description": "Head back to the lab on the Citadel. EDI has shielded the artifact there to protect anyone else from being Indoctrinated. There is a message from Dr. Bryson's daughter [Ann|megametracker://person?id=O3.ABryson].",
         "inMapId": "G.C3.Bryson",
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Citadel:_Leviathan_II",
             "https://masseffect.wikia.com/wiki/Leviathan:_Find_Ann_Bryson"
-        ]
+        ],
+        "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }]
+        
     }, {
         "id": "DLC3.Leviathan.3.1",
-        "inMissionId": "DLC3.Leviathan.3",
-        "sortIndex": 10903,
-        "gameVersion": "3",
-        "missionType": "Objective",
-        "name": "Message From Ann Bryson",
-        "description": "Ann has sent a message to her father about the dangers of the artifact. She has found another one."
-    }, {
-        "id": "DLC3.Leviathan.3.1.1",
         "inMissionId": "DLC3.Leviathan.3",
         "sortIndex": 10903,
         "gameVersion": "3",
@@ -826,11 +823,7 @@
             "x": 1462,
             "y": 1759,
             "radius": 1
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Leviathan: Find Garneau"
-        }]
+        }
     }, {
         "id": "DLC3.Leviathan.3.2",
         "inMissionId": "DLC3.Leviathan.3",
@@ -852,11 +845,7 @@
             "x": 1110,
             "y": 1232,
             "radius": 1
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Leviathan: Find Garneau"
-        }]
+        }
     }, {
         "id": "DLC3.Leviathan.3.2.2",
         "inMissionId": "DLC3.Leviathan.3.2",
@@ -870,11 +859,7 @@
             "x": 1072,
             "y": 893,
             "radius": 1
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Leviathan: Find Garneau"
-        }]
+        }
     }, {
         "id": "DLC3.Leviathan.3.2.3",
         "inMissionId": "DLC3.Leviathan.3.2",
@@ -888,11 +873,7 @@
             "x": 1092,
             "y": 855,
             "radius": 1
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Leviathan: Find Garneau"
-        }]
+        }
     }, {
         "id": "DLC3.Leviathan.3.3",
         "inMissionId": "DLC3.Leviathan.3",
@@ -914,11 +895,7 @@
             "x": 353,
             "y": 890,
             "radius": 1
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Leviathan: Find Garneau"
-        }]
+        }
     }, {
         "id": "DLC3.Leviathan.3.3.2",
         "inMissionId": "DLC3.Leviathan.3.3",
@@ -932,11 +909,7 @@
             "x": 353,
             "y": 890,
             "radius": 1
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Leviathan: Find Garneau"
-        }]
+        }
     }, {
         "id": "DLC3.Leviathan.3.3.3",
         "inMissionId": "DLC3.Leviathan.3.3",
@@ -950,11 +923,7 @@
             "x": 686,
             "y": 1022,
             "radius": 1
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Leviathan: Find Garneau"
-        }]
+        }
     }, {
         "id": "DLC3.Leviathan.3.4",
         "inMissionId": "DLC3.Leviathan.3",
@@ -976,11 +945,7 @@
             "x": 475,
             "y": 873,
             "radius": 1
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Leviathan: Find Garneau"
-        }]
+        }
     }, {
         "id": "DLC3.Leviathan.3.4.2",
         "inMissionId": "DLC3.Leviathan.3.4",
@@ -994,11 +959,7 @@
             "x": 423,
             "y": 878,
             "radius": 1
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Leviathan: Find Garneau"
-        }]
+        }
     }, {
         "id": "DLC3.Leviathan.3.5",
         "inMissionId": "DLC3.Leviathan.3",
@@ -1012,11 +973,7 @@
             "x": 1643,
             "y": 870,
             "radius": 1
-        },
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Leviathan: Find Garneau"
-        }]
+        }
     }, {
         "id": "DLC3.Leviathan.3.6",
         "inMissionId": "DLC3.Leviathan.3",
@@ -1025,12 +982,7 @@
         "missionType": "Objective",
         "name": "Galaxy Map",
         "description": "Enter two criteria into the galaxy map to find the next location: Ship Schematics and Equipment.",
-        "inMapId": "G.C3.Bryson.1Map",
-        "isShowInParentMap": true,
-        "events": [{
-            "type": "BlockedUntil",
-            "id": "Completed: Leviathan: Find Garneau"
-        }]
+        "inMapId": "G.C3.Bryson.1Map"
     }, {
         "id": "DLC3.Leviathan.4",
         "inMissionId": "DLC3.Leviathan",
@@ -1045,6 +997,9 @@
             "https://masseffect.wikia.com/wiki/Namakli:_Leviathan"
         ],
         "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Garneau"
+        }, {
             "type": "Triggers",
             "id": "Completed: Leviathan: Find Ann Bryson"
         }]
@@ -1101,7 +1056,6 @@
         "name": "Find Leviathan",
         "description": "You can use Ann to find Leviathan, by inducing Leviathan to speak through her and tracing the signal back. However, if you leave Ann in Leviathan's control for too long, she will suffer permanent damage and you will lose her as a War Asset.",
         "inMapId": "G.C3.Bryson",
-        "isShowInParentMap": true,
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Citadel:_Leviathan_III",
             "https://masseffect.wikia.com/wiki/Leviathan:_Scan_Locations"
@@ -1111,6 +1065,9 @@
         ],
         "relatedMissionIds": ["DLC3.Leviathan.I.1B"],
         "events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Ann Bryson"
+        }, {
             "type": "Triggers",
             "id": "Completed: Leviathan: Find Leviathan"
         }]
@@ -1152,8 +1109,8 @@
         "isOpensDetail": false,
         "inMapId": "G.C3.Bryson",
         "mapLocationPoint": {
-            "x": 1308,
-            "y": 1095,
+            "x": 1310,
+            "y": 1110,
             "radius": 1
         }
     }, {
@@ -1166,8 +1123,8 @@
         "isOpensDetail": false,
         "inMapId": "G.C3.Bryson",
         "mapLocationPoint": {
-            "x": 344,
-            "y": 912,
+            "x": 353,
+            "y": 890,
             "radius": 1
         }
     }, {
@@ -1196,7 +1153,10 @@
         "isShowInParentMap": true,
         "relatedLinks": [
             "https://masseffect.wikia.com/wiki/Despoina:_Leviathan"
-        ]
+        ],"events": [{
+            "type": "BlockedUntil",
+            "id": "Completed: Leviathan: Find Ann Bryson"
+        }]
 
     }, {
         "id": "DLC3.Omega1",

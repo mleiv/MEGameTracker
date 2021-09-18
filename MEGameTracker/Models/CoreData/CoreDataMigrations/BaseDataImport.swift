@@ -105,16 +105,16 @@ extension BaseDataImport {
 		fireProgress(progress: progress, progressTotal: progressTotal)
 
 		// load up all ids so we know if some have been removed
-//		var deleteOldIds: [BaseDataFileImportType: [String]] = [:]
-//		for type in Array(Set((progressFilesEvents + progressFilesOther).map({ $0.type }))) {
-//			deleteOldIds[type] = self.getAllIds(type: type, with: manager)
-//		}
+		var deleteOldIds: [BaseDataFileImportType: [String]] = [:]
+		for type in Array(Set((progressFilesEvents + progressFilesOther).map({ $0.type }))) {
+			deleteOldIds[type] = self.getAllIds(type: type, with: manager)
+		}
         
         let queue = DispatchQueue.global(qos: .userInitiated)
         let queueGroup = DispatchGroup()
         
         let markIdsImported: (BaseDataFileImportType, [String]) -> Void = { (type, ids) in
-//            deleteOldIds[type] = Array(Set(deleteOldIds[type] ?? []).subtracting(ids))
+            deleteOldIds[type] = Array(Set(deleteOldIds[type] ?? []).subtracting(ids))
         }
         let updateFileProgress: (Double) -> Void = { (batchProgress) in
             progress += batchProgress
@@ -153,9 +153,9 @@ extension BaseDataImport {
 		// remove any old entries not included in this update
 		// (this is unsupported in XCTest inMemoryStore)
 		if !isTestProject {
-//			for (type, ids) in deleteOldIds {
-//				_ = deleteAllIds(type: type, ids: ids, with: manager)
-//			}
+			for (type, ids) in deleteOldIds {
+				_ = deleteAllIds(type: type, ids: ids, with: manager)
+			}
 		}
 	}
 
