@@ -76,6 +76,9 @@ extension MESplitViewController where Self: UIViewController {
 		internalCloseDetailStoryboard()
 	}
 	public func internalCloseDetailStoryboard() {
+        if let flowController = (detailPlaceholder?.includedController as? UINavigationController)?.visibleViewController as? MapsFlowController {
+            flowController.removeCalloutsViewListeners()
+        }
 		detailPlaceholder?.detach()
 		detailPlaceholder?.isHidden = true
 		detailBorderLeftView?.isHidden = true

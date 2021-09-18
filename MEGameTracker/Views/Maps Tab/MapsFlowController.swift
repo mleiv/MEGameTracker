@@ -11,7 +11,7 @@ import UIKit
 class MapsFlowController: IBIncludedThing {
 
 	@IBAction func closeCallouts(_ sender: AnyObject!) {
-		dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: self.removeCalloutsViewListeners)
 	}
 
 	@IBAction func openCallouts(_ sender: AnyObject!) {
@@ -25,4 +25,12 @@ class MapsFlowController: IBIncludedThing {
 		}
 	}
 
+    func removeCalloutsViewListeners() {
+        if let groupController = children.first as? MapCalloutsGroupsController {
+            for (_, controller) in groupController.tabControllers {
+                guard let calloutsController = controller as? MapCalloutsController else { continue }
+                calloutsController.calloutsView?.removeListeners()
+            }
+        }
+    }
 }

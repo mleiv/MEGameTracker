@@ -238,38 +238,46 @@ final public class CalloutsView: SimpleArrayDataRow {
 
 	override func startListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
-        Map.onChange.cancelSubscription(for: self)
-        _ = Map.onChange.subscribe(with: self) { [weak self] changed in
-            DispatchQueue.main.async {
-                self?.reloadOnCalloutChange(type: Map.self, changed: changed)
+        let isObservingMap = Map.onChange.observers.contains { $0 as? CalloutsView == self }
+        if !isObservingMap {
+            _ = Map.onChange.subscribe(with: self) { [weak self] changed in
+                DispatchQueue.main.async {
+                    self?.reloadOnCalloutChange(type: Map.self, changed: changed)
+                }
             }
         }
-        Mission.onChange.cancelSubscription(for: self)
-        _ = Mission.onChange.subscribe(with: self) { [weak self] changed in
-            DispatchQueue.main.async {
-                self?.reloadOnCalloutChange(type: Mission.self, changed: changed)
+        let isObservingMission = Mission.onChange.observers.contains { $0 as? CalloutsView == self }
+        if !isObservingMission {
+            _ = Mission.onChange.subscribe(with: self) { [weak self] changed in
+                DispatchQueue.main.async {
+                    self?.reloadOnCalloutChange(type: Mission.self, changed: changed)
+                }
             }
         }
-        Item.onChange.cancelSubscription(for: self)
-        _ = Item.onChange.subscribe(with: self) { [weak self] changed in
-            DispatchQueue.main.async {
-                self?.reloadOnCalloutChange(type: Item.self, changed: changed)
+        let isObservingItem = Item.onChange.observers.contains { $0 as? CalloutsView == self }
+        if !isObservingItem {
+            _ = Item.onChange.subscribe(with: self) { [weak self] changed in
+                DispatchQueue.main.async {
+                    self?.reloadOnCalloutChange(type: Item.self, changed: changed)
+                }
             }
         }
-		MapLocation.onChangeSelection.cancelSubscription(for: self)
-		_ = MapLocation.onChangeSelection.subscribe(with: self) { [weak self] (mapLocation: MapLocationable) in
-			guard mapLocation.shownInMapId == self?.callouts.first?.shownInMapId else { return }
-            DispatchQueue.main.async {
-                self?.highlight(mapLocation: mapLocation)
+        let isObservingMapLocation = MapLocation.onChangeSelection.observers.contains { $0 as? CalloutsView == self }
+        if !isObservingMapLocation {
+            _ = MapLocation.onChangeSelection.subscribe(with: self) { [weak self] (mapLocation: MapLocationable) in
+                guard mapLocation.shownInMapId == self?.callouts.first?.shownInMapId else { return }
+                DispatchQueue.main.async {
+                    self?.highlight(mapLocation: mapLocation)
+                }
             }
-		}
+        }
 	}
 
 	override func removeListeners() {
 		guard !UIWindow.isInterfaceBuilder else { return }
-//        Map.onChange.cancelSubscription(for: self)
-//        Mission.onChange.cancelSubscription(for: self)
-//        Item.onChange.cancelSubscription(for: self)
+        Map.onChange.cancelSubscription(for: self)
+        Mission.onChange.cancelSubscription(for: self)
+        Item.onChange.cancelSubscription(for: self)
 		MapLocation.onChangeSelection.cancelSubscription(for: self)
 	}
 

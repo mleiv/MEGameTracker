@@ -109,10 +109,10 @@ final public class MapCalloutsGroupsController: UIViewController, TabGroupsContr
 		for (_, controller) in tabControllers {
             guard let calloutsController = controller as? MapCalloutsController else { continue }
             let height = calloutsController.estimatedHeight
-            if height == 0 && calloutsController.callouts.count > 0 {
-                calloutsController.calloutsView?.setNeedsLayout()
-                calloutsController.calloutsView?.layoutIfNeeded()
-            }
+//            if height == 0 && calloutsController.callouts.count > 0 {
+//                calloutsController.calloutsView?.setNeedsLayout()
+//                calloutsController.calloutsView?.layoutIfNeeded()
+//            }
 			maxHeight = max(maxHeight, height)
 		}
 		let height =  max(emptyTableRowHeight, maxHeight) + (tabs?.bounds.height ?? 0)
