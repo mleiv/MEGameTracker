@@ -22,6 +22,9 @@ final public class App: Codable {
         case recentlyViewedMaps
         case recentlyViewedMissions
     }
+    
+// MARK: Debug
+    public var isDebug = false
 
 // MARK: Constants
     public var postChangeWaitIntervalSeconds: TimeInterval = 60.0 * 2.0 // 2 minutes
@@ -48,9 +51,13 @@ final public class App: Codable {
 
 	public var lastBuild: Int {
 		get { return _lastBuild.get() ?? 0 }
-		set { return _lastBuild.set(newValue) }
+        set {
+            if (!isDebug) {
+                _lastBuild.set(newValue)
+            }
+        }
 	}
-		private var _lastBuild = SimpleUserDefaults<Int>(name: "LastAppBuild", defaultValue: 0)
+	private var _lastBuild = SimpleUserDefaults<Int>(name: "LastAppBuild", defaultValue: 0)
 
 	public var build: Int {
 		if let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String,
@@ -204,8 +211,8 @@ extension App {
 	}
 
 	public func startListeners() {
-		Shepard.onChange.cancelSubscription(for: self)
-		_ = Shepard.onChange.subscribe(on: self) { [weak self] (id, shepard) in
+        Shepard.onChange.cancelSubscription(for: self)
+		_ = Shepard.onChange.subscribe(with: self) { [weak self] (id, shepard) in
             if let id = UUID(uuidString: id), id == self?.game?.shepard?.uuid {
 				self?.changeGame(isSave: false) { game in
                     var game = game

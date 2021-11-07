@@ -20,12 +20,6 @@ public struct CoreDataStructuralMigrations {
         "CoreData20190609",
 	]
 
-	enum MigrationError: String, Error {
-		case missingOriginalStore = "Original store not found"
-		case incompatibleModels = "Incompatible models"
-		case missingModels = "Model not found"
-	}
-
 	private let storeName: String
 	private let storeUrl: URL
 
@@ -63,7 +57,7 @@ public struct CoreDataStructuralMigrations {
 			if directory != nil {
 				return try managedObjectModel(forName: name, bundle: bundle, directory: nil)
 			} else {
-				throw MigrationError.missingModels
+                throw CoreDataMigration.MigrationError.missingModels
 			}
 		}
 		return NSManagedObjectModel(contentsOf: url)
@@ -74,7 +68,7 @@ public struct CoreDataStructuralMigrations {
 		guard let index = moms.firstIndex(where: {
 			$0.isConfiguration(withName: nil, compatibleWithStoreMetadata: meta)
 		}) else {
-			throw MigrationError.incompatibleModels
+            throw CoreDataMigration.MigrationError.incompatibleModels
 		}
 		return Array(moms[index..<moms.count])
 	}

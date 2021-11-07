@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol CoreDataMigrationType {
-	func run()
+	func run() throws
 }
 
 extension CoreDataMigrationType {
@@ -62,11 +62,11 @@ extension CoreDataMigrationType {
 		case .event:
             return DataEvent.deleteAll(ids: ids, with: manager) && Event.deleteOrphans(with: manager)
 		case .item:
-			return DataItem.deleteAll(ids: ids, with: manager) && Item.deleteOrphans(with: manager)
+            return DataItem.deleteAll(ids: ids, with: manager) && Item.deleteOrphans(with: manager)
 		case .map:
 			return DataMap.deleteAll(ids: ids, with: manager) && Map.deleteOrphans(with: manager)
 		case .mission:
-			return DataMission.deleteAll(ids: ids, with: manager) && Mission.deleteOrphans(with: manager)
+            return DataMission.deleteAll(ids: ids, with: manager) && Mission.deleteOrphans(with: manager)
 		case .person:
 			return DataPerson.deleteAll(ids: ids, with: manager) && Person.deleteOrphans(with: manager)
 		}
@@ -75,7 +75,7 @@ extension CoreDataMigrationType {
 	public func importData(
 		_ data: Data?,
 		with manager: CodableCoreDataManageable? = nil
-	) -> [String] {
+	) throws -> [String] {
         let manager = manager ?? CoreDataManager.current
         guard let data = data else { return [] }
         if let dataImport = try? manager.decoder.decode(DecisionsImport.self, from: data) {
@@ -97,7 +97,7 @@ extension CoreDataMigrationType {
         if let dataImport = try? manager.decoder.decode(PersonsImport.self, from: data) {
             return dataImport.saveAndGetIds(with: manager)
         }
-        return []
+        throw CoreDataMigration.MigrationError.invalidJson
 	}
 }
 

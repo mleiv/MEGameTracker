@@ -26,10 +26,10 @@ public struct BaseDataImport: CoreDataMigrationType {
 		self.manager = manager ?? CoreDataManager.current
 	}
 
-	public func run() {
+	public func run() throws {
 		// Don't run base data load twice on same data:
 		guard !CoreDataMigrationManager.didLoadBaseData else { return }
-		addData()
+		try addData()
 		CoreDataMigrationManager.didLoadBaseData = true
 		print("Installed base data")
 	}
@@ -88,10 +88,10 @@ public struct BaseDataImport: CoreDataMigrationType {
 		}
 	}
 
-	func addData() {
+	func addData() throws {
 		let progressTotal = (progressFilesEvents + progressFilesOther).map { $0.progress }.reduce(0.0, +)
 			+ (progressProcessImportChunk * 2.0) + progressFinalPadding
-		importDataFiles(progress: 0.0, progressTotal: progressTotal)
+		try importDataFiles(progress: 0.0, progressTotal: progressTotal)
 		processImportedData(
 			progress: progressTotal - (progressProcessImportChunk * 2.0),
 			progressTotal: progressTotal
@@ -100,7 +100,7 @@ public struct BaseDataImport: CoreDataMigrationType {
 }
 
 extension BaseDataImport {
-	func importDataFiles(progress: Double, progressTotal: Double) {
+	func importDataFiles(progress: Double, progressTotal: Double) throws {
 		var progress = progress
 		fireProgress(progress: progress, progressTotal: progressTotal)
 
@@ -124,12 +124,16 @@ extension BaseDataImport {
         // process all events first
         for row in progressFilesEvents {
             if isTestProject {
-                importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
+                try importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
             } else {
                 queueGroup.enter()
                 queue.async(group: queueGroup) {
-                    importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
-                    queueGroup.leave()
+                    do {
+                        try importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
+                        queueGroup.leave()
+                    } catch {
+                        print("Failed to import", error)
+                    }
                 }
             }
         }
@@ -138,12 +142,16 @@ extension BaseDataImport {
 
 		for row in progressFilesOther {
             if isTestProject {
-                importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
+                try importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
             } else {
                 queueGroup.enter()
                 queue.async(group: queueGroup) {
-                    importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
-                    queueGroup.leave()
+                    do {
+                        try importFile(fileDefinition: row, markIdsImported: markIdsImported, updateProgress: updateFileProgress)
+                        queueGroup.leave()
+                    } catch let error {
+                        print("Failed to import", error)
+                    }
                 }
             }
 		}
@@ -223,19 +231,22 @@ extension BaseDataImport {
         fileDefinition: CoreDataFileImport,
         markIdsImported: @escaping ((BaseDataFileImportType, [String]) -> Void),
         updateProgress: @escaping ((Double) -> Void)
-    ) {
+    ) throws {
         let type = fileDefinition.type
         let filename = fileDefinition.filename
         let batchProgress = fileDefinition.progress
         do {
             if let file = Bundle.main.path(forResource: filename, ofType: "json") {
                 let data = try Data(contentsOf: URL(fileURLWithPath: file))
-                let ids = importData(data, with: manager)
+                let ids = try importData(data, with: manager)
                 markIdsImported(type, ids)
             }
-        } catch {
+        } catch let error {
             // failure
             print("Failed to load file \(filename)")
+            if (App.current.isDebug) {
+                throw error;
+            }
         }
         updateProgress(batchProgress)
     }

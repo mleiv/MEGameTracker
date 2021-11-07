@@ -248,7 +248,7 @@ extension AppDelegate {
 
 		// Run any migrations
 		DispatchQueue.global(qos: .background).async {
-			CoreDataMigrationManager().migrateFrom(
+			try? CoreDataMigrationManager().migrateFrom(
 				lastBuild: App.current.lastBuild
 			) { [weak self] in
 				// base data is loaded as of now

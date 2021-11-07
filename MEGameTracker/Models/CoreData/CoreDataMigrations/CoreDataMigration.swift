@@ -9,6 +9,12 @@
 import Foundation
 
 public struct CoreDataMigration {
+    enum MigrationError: String, Error {
+        case missingOriginalStore = "Original store not found"
+        case incompatibleModels = "Incompatible models"
+        case missingModels = "Model not found"
+        case invalidJson = "File JSON was not valid"
+    }
 
 	public let fromBuild: Int
 	public let loadMigration: (() -> CoreDataMigrationType)

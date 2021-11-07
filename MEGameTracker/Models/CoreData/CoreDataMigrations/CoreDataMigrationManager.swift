@@ -15,7 +15,7 @@ public struct CoreDataMigrationManager {
 	public static var didLoadBaseData = false
 
 	public let migrationsAvailable: [CoreDataMigration] = [ // Int is just for easier reference when editing
-		CoreDataMigration(fromBuild: 104, loadMigration: { return BaseDataImport() }),
+		CoreDataMigration(fromBuild: 105, loadMigration: { return BaseDataImport() }),
 //        CoreDataMigration(fromBuild: 54, loadMigration: { return CoreDataEliminateDuplicates() }),
 		CoreDataMigration(fromBuild: 42, loadMigration: { return Change20170228() }),
 		CoreDataMigration(fromBuild: 44, loadMigration: { return Change20170305() }),
@@ -28,7 +28,7 @@ public struct CoreDataMigrationManager {
         CoreDataMigration(fromBuild: 67, loadMigration: { return EventGameVersionMigration() }),
 	]
 
-	public func migrateFrom(lastBuild: Int, completion: @escaping (() -> Void) = {}) {
+	public func migrateFrom(lastBuild: Int, completion: @escaping (() -> Void) = {}) throws {
 		// reload base data on every new build
 		if lastBuild < App.current.build {
 			CoreDataMigrations.isRunning = true
@@ -38,7 +38,7 @@ public struct CoreDataMigrationManager {
 		for (migration) in migrationsAvailable {
 			if migration.fromBuild > lastBuild && migration.fromBuild <= App.current.build {
 				CoreDataMigrations.isRunning = true
-				migration.loadMigration().run()
+				try migration.loadMigration().run()
 			}
 		}
 		App.current.lastBuild = App.current.build
